@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "title": "ZeroToVPN - Best VPN Reviews & Comparisons 2025",
+    "description": "Find the perfect VPN for your needs. Expert reviews, honest comparisons, and exclusive deals on top VPN services."
+  },
+  "nav": {
+    "home": "Home",
+    "reviews": "Reviews",
+    "best": "Best VPNs",
+    "compare": "Compare",
+    "guides": "Guides",
+    "about": "About"
+  },
+  "hero": {
+    "title": "Find Your Perfect VPN",
+    "subtitle": "From zero to secure in minutes. Expert reviews, honest comparisons, and exclusive deals.",
+    "cta": "Compare VPNs",
+    "trusted": "Trusted by over 100,000 readers"
+  },
+  "comparison": {
+    "title": "Best VPNs of 2025",
+    "subtitle": "Independently tested and reviewed",
+    "visitSite": "Visit Site",
+    "readReview": "Read Review",
+    "price": "Price",
+    "perMonth": "/month",
+    "servers": "Servers",
+    "countries": "Countries",
+    "devices": "Devices",
+    "speed": "Speed",
+    "rating": "Rating",
+    "features": "Features",
+    "editorChoice": "Editor's Choice",
+    "bestValue": "Best Value",
+    "bestSpeed": "Fastest",
+    "moneyBack": "{days}-day money-back guarantee"
+  },
+  "features": {
+    "killSwitch": "Kill Switch",
+    "noLogs": "No-Logs Policy",
+    "netflix": "Netflix",
+    "torrenting": "Torrenting",
+    "encryption": "{type} Encryption"
+  },
+  "review": {
+    "pros": "Pros",
+    "cons": "Cons",
+    "verdict": "Our Verdict",
+    "visitSite": "Visit {name}",
+    "specifications": "Specifications",
+    "pricing": "Pricing",
+    "security": "Security",
+    "streaming": "Streaming",
+    "lastUpdated": "Last updated: {date}"
+  },
+  "cta": {
+    "getDeal": "Get Deal",
+    "tryFree": "Try Free",
+    "visitSite": "Visit Site",
+    "learnMore": "Learn More",
+    "compare": "Compare"
+  },
+  "footer": {
+    "about": "About ZeroToVPN",
+    "aboutText": "We help you find the best VPN for your needs through independent testing and honest reviews.",
+    "links": "Quick Links",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "disclosure": "Affiliate Disclosure",
+    "contact": "Contact",
+    "copyright": "© {year} ZeroToVPN. All rights reserved.",
+    "disclaimer": "We may earn a commission when you buy through our links, at no extra cost to you."
+  },
+  "newsletter": {
+    "title": "Stay Updated",
+    "subtitle": "Get the latest VPN deals and security tips delivered to your inbox.",
+    "placeholder": "Enter your email",
+    "button": "Subscribe",
+    "success": "Thanks for subscribing!",
+    "privacy": "We respect your privacy. Unsubscribe anytime."
+  }
+}

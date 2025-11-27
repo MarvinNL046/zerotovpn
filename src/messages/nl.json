@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "title": "ZeroToVPN - Beste VPN Reviews & Vergelijkingen 2025",
+    "description": "Vind de perfecte VPN voor jouw behoeften. Expert reviews, eerlijke vergelijkingen en exclusieve deals."
+  },
+  "nav": {
+    "home": "Home",
+    "reviews": "Reviews",
+    "best": "Beste VPNs",
+    "compare": "Vergelijken",
+    "guides": "Gidsen",
+    "about": "Over ons"
+  },
+  "hero": {
+    "title": "Vind Jouw Perfecte VPN",
+    "subtitle": "Van zero naar veilig in enkele minuten. Expert reviews, eerlijke vergelijkingen en exclusieve deals.",
+    "cta": "Vergelijk VPNs",
+    "trusted": "Vertrouwd door meer dan 100.000 lezers"
+  },
+  "comparison": {
+    "title": "Beste VPNs van 2025",
+    "subtitle": "Onafhankelijk getest en beoordeeld",
+    "visitSite": "Bezoek Site",
+    "readReview": "Lees Review",
+    "price": "Prijs",
+    "perMonth": "/maand",
+    "servers": "Servers",
+    "countries": "Landen",
+    "devices": "Apparaten",
+    "speed": "Snelheid",
+    "rating": "Beoordeling",
+    "features": "Functies",
+    "editorChoice": "Redactie Keuze",
+    "bestValue": "Beste Waarde",
+    "bestSpeed": "Snelste",
+    "moneyBack": "{days} dagen geld-terug-garantie"
+  },
+  "features": {
+    "killSwitch": "Kill Switch",
+    "noLogs": "Geen Logs Beleid",
+    "netflix": "Netflix",
+    "torrenting": "Torrenting",
+    "encryption": "{type} Encryptie"
+  },
+  "review": {
+    "pros": "Voordelen",
+    "cons": "Nadelen",
+    "verdict": "Ons Oordeel",
+    "visitSite": "Bezoek {name}",
+    "specifications": "Specificaties",
+    "pricing": "Prijzen",
+    "security": "Beveiliging",
+    "streaming": "Streaming",
+    "lastUpdated": "Laatst bijgewerkt: {date}"
+  },
+  "cta": {
+    "getDeal": "Bekijk Deal",
+    "tryFree": "Probeer Gratis",
+    "visitSite": "Bezoek Site",
+    "learnMore": "Meer Info",
+    "compare": "Vergelijk"
+  },
+  "footer": {
+    "about": "Over ZeroToVPN",
+    "aboutText": "Wij helpen je de beste VPN te vinden door onafhankelijk testen en eerlijke reviews.",
+    "links": "Snelle Links",
+    "legal": "Juridisch",
+    "privacy": "Privacybeleid",
+    "terms": "Algemene Voorwaarden",
+    "disclosure": "Affiliate Disclosure",
+    "contact": "Contact",
+    "copyright": "© {year} ZeroToVPN. Alle rechten voorbehouden.",
+    "disclaimer": "We kunnen een commissie ontvangen via onze links, zonder extra kosten voor jou."
+  },
+  "newsletter": {
+    "title": "Blijf Op De Hoogte",
+    "subtitle": "Ontvang de laatste VPN deals en beveiligingstips in je inbox.",
+    "placeholder": "Vul je e-mail in",
+    "button": "Aanmelden",
+    "success": "Bedankt voor je aanmelding!",
+    "privacy": "We respecteren je privacy. Afmelden kan altijd."
+  }
+}

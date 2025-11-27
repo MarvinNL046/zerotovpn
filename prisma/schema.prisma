@@ -1,0 +1,194 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// VPN Providers - core data for comparisons and reviews
+model VpnProvider {
+  id              String   @id @default(cuid())
+  name            String   @unique
+  slug            String   @unique
+  logo            String?
+  website         String
+  affiliateUrl    String
+
+  // Pricing
+  priceMonthly    Decimal  @db.Decimal(10, 2)
+  priceYearly     Decimal  @db.Decimal(10, 2)
+  priceTwoYear    Decimal? @db.Decimal(10, 2)
+  moneyBackDays   Int      @default(30)
+  freeTier        Boolean  @default(false)
+
+  // Features
+  servers         Int
+  countries       Int
+  maxDevices      Int
+  speedScore      Int      // 1-100
+  securityScore   Int      // 1-100
+  streamingScore  Int      // 1-100
+
+  // Protocols & Security
+  protocols       String[] // ["WireGuard", "OpenVPN", "IKEv2"]
+  encryption      String   @default("AES-256")
+  killSwitch      Boolean  @default(true)
+  noLogs          Boolean  @default(true)
+
+  // Streaming
+  netflixSupport  Boolean  @default(false)
+  torrentSupport  Boolean  @default(false)
+
+  // Ratings
+  overallRating   Decimal  @db.Decimal(2, 1) // 4.5
+  editorChoice    Boolean  @default(false)
+
+  // Content
+  shortDescription String?
+  pros            String[]
+  cons            String[]
+
+  // Meta
+  featured        Boolean  @default(false)
+  sortOrder       Int      @default(0)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  // Relations
+  reviews         Review[]
+  clicks          Click[]
+}
+
+// Reviews - multilingual review content
+model Review {
+  id          String   @id @default(cuid())
+  vpnId       String
+  vpn         VpnProvider @relation(fields: [vpnId], references: [id], onDelete: Cascade)
+
+  language    String   @default("en") // en, nl, de, es, fr
+  title       String
+  slug        String
+  excerpt     String?
+  content     String   @db.Text
+  verdict     String?
+
+  // SEO
+  metaTitle       String?
+  metaDescription String?
+
+  published   Boolean  @default(false)
+  publishedAt DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@unique([vpnId, language])
+  @@index([language, published])
+}
+
+// Click tracking for affiliate links
+model Click {
+  id          String   @id @default(cuid())
+  vpnId       String
+  vpn         VpnProvider @relation(fields: [vpnId], references: [id], onDelete: Cascade)
+
+  country     String?
+  city        String?
+  referrer    String?
+  userAgent   String?
+  page        String?
+
+  createdAt   DateTime @default(now())
+
+  @@index([vpnId, createdAt])
+  @@index([country])
+}
+
+// User reviews from visitors
+model UserReview {
+  id          String   @id @default(cuid())
+  vpnSlug     String   // Reference to VPN by slug
+
+  // Reviewer info
+  authorName  String
+  authorEmail String
+  authorCountry String?
+
+  // Review content
+  rating      Int      // 1-5 stars
+  title       String
+  content     String   @db.Text
+
+  // Usage context
+  usageType   String?  // streaming, privacy, gaming, torrenting, work
+  usagePeriod String?  // less-than-month, 1-6-months, 6-12-months, more-than-year
+
+  // Pros and cons from user perspective
+  userPros    String[]
+  userCons    String[]
+
+  // Verification & moderation
+  verified    Boolean  @default(false) // Email verified
+  approved    Boolean  @default(false) // Admin approved
+  featured    Boolean  @default(false)
+
+  // Helpfulness voting
+  helpfulCount   Int   @default(0)
+  unhelpfulCount Int   @default(0)
+
+  // Newsletter consent (GDPR compliant)
+  newsletterConsent Boolean  @default(false)
+  consentDate       DateTime?
+
+  // Meta
+  ipAddress   String?
+  userAgent   String?
+  locale      String   @default("en")
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([vpnSlug, approved])
+  @@index([newsletterConsent, authorEmail])
+  @@index([vpnSlug, rating])
+  @@index([createdAt])
+}
+
+// Email subscribers
+model Subscriber {
+  id          String   @id @default(cuid())
+  email       String   @unique
+  language    String   @default("en")
+  source      String?  // homepage, review, popup
+
+  confirmed   Boolean  @default(false)
+  confirmedAt DateTime?
+
+  createdAt   DateTime @default(now())
+
+  @@index([language])
+}
+
+// Static pages content (guides, about, etc.)
+model Page {
+  id          String   @id @default(cuid())
+  slug        String
+  language    String   @default("en")
+
+  title       String
+  content     String   @db.Text
+
+  // SEO
+  metaTitle       String?
+  metaDescription String?
+
+  published   Boolean  @default(false)
+  publishedAt DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@unique([slug, language])
+  @@index([language, published])
+}

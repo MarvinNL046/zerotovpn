@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "title": "ZeroToVPN - 2025년 최고의 VPN 리뷰 및 비교",
+    "description": "당신의 필요에 맞는 완벽한 VPN을 찾아보세요. 전문가 리뷰, 솔직한 비교, 독점 혜택."
+  },
+  "nav": {
+    "home": "홈",
+    "reviews": "리뷰",
+    "best": "베스트 VPN",
+    "compare": "비교",
+    "guides": "가이드",
+    "about": "소개"
+  },
+  "hero": {
+    "title": "완벽한 VPN을 찾아보세요",
+    "subtitle": "몇 분 만에 제로에서 보안까지. 전문가 리뷰, 솔직한 비교, 독점 혜택.",
+    "cta": "VPN 비교하기",
+    "trusted": "10만 명 이상의 독자가 신뢰합니다"
+  },
+  "comparison": {
+    "title": "2025년 베스트 VPN",
+    "subtitle": "독립적으로 테스트 및 평가",
+    "visitSite": "사이트 방문",
+    "readReview": "리뷰 읽기",
+    "price": "가격",
+    "perMonth": "/월",
+    "servers": "서버",
+    "countries": "국가",
+    "devices": "기기",
+    "speed": "속도",
+    "rating": "평점",
+    "features": "기능",
+    "editorChoice": "에디터 추천",
+    "bestValue": "최고의 가성비",
+    "bestSpeed": "가장 빠름",
+    "moneyBack": "{days}일 환불 보장"
+  },
+  "features": {
+    "killSwitch": "킬 스위치",
+    "noLogs": "노로그 정책",
+    "netflix": "Netflix",
+    "torrenting": "토렌트",
+    "encryption": "{type} 암호화"
+  },
+  "review": {
+    "pros": "장점",
+    "cons": "단점",
+    "verdict": "총평",
+    "visitSite": "{name} 방문",
+    "specifications": "사양",
+    "pricing": "가격",
+    "security": "보안",
+    "streaming": "스트리밍",
+    "lastUpdated": "최종 업데이트: {date}"
+  },
+  "cta": {
+    "getDeal": "혜택 받기",
+    "tryFree": "무료 체험",
+    "visitSite": "사이트 방문",
+    "learnMore": "자세히 보기",
+    "compare": "비교하기"
+  },
+  "footer": {
+    "about": "ZeroToVPN 소개",
+    "aboutText": "독립적인 테스트와 솔직한 리뷰로 최고의 VPN을 찾도록 도와드립니다.",
+    "links": "빠른 링크",
+    "legal": "법적 고지",
+    "privacy": "개인정보 처리방침",
+    "terms": "이용약관",
+    "disclosure": "제휴 공개",
+    "contact": "문의하기",
+    "copyright": "© {year} ZeroToVPN. All rights reserved.",
+    "disclaimer": "링크를 통해 구매 시 추가 비용 없이 수수료를 받을 수 있습니다."
+  },
+  "newsletter": {
+    "title": "최신 소식 받기",
+    "subtitle": "최신 VPN 혜택과 보안 팁을 받아보세요.",
+    "placeholder": "이메일 주소",
+    "button": "구독",
+    "success": "구독해 주셔서 감사합니다!",
+    "privacy": "개인정보를 존중합니다. 언제든 구독 취소 가능."
+  }
+}

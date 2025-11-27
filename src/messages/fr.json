@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "title": "ZeroToVPN - Meilleurs Avis et Comparaisons VPN 2025",
+    "description": "Trouvez le VPN parfait pour vos besoins. Avis d'experts, comparaisons honnêtes et offres exclusives."
+  },
+  "nav": {
+    "home": "Accueil",
+    "reviews": "Avis",
+    "best": "Meilleurs VPNs",
+    "compare": "Comparer",
+    "guides": "Guides",
+    "about": "À propos"
+  },
+  "hero": {
+    "title": "Trouvez votre VPN parfait",
+    "subtitle": "De zéro à sécurisé en quelques minutes. Avis d'experts, comparaisons honnêtes et offres exclusives.",
+    "cta": "Comparer les VPNs",
+    "trusted": "Fait confiance par plus de 100 000 lecteurs"
+  },
+  "comparison": {
+    "title": "Meilleurs VPNs de 2025",
+    "subtitle": "Testés et évalués indépendamment",
+    "visitSite": "Visiter le site",
+    "readReview": "Lire l'avis",
+    "price": "Prix",
+    "perMonth": "/mois",
+    "servers": "Serveurs",
+    "countries": "Pays",
+    "devices": "Appareils",
+    "speed": "Vitesse",
+    "rating": "Note",
+    "features": "Fonctionnalités",
+    "editorChoice": "Choix de la rédaction",
+    "bestValue": "Meilleur rapport qualité-prix",
+    "bestSpeed": "Plus rapide",
+    "moneyBack": "Garantie {days} jours"
+  },
+  "features": {
+    "killSwitch": "Kill Switch",
+    "noLogs": "Sans journaux",
+    "netflix": "Netflix",
+    "torrenting": "Torrenting",
+    "encryption": "Chiffrement {type}"
+  },
+  "review": {
+    "pros": "Avantages",
+    "cons": "Inconvénients",
+    "verdict": "Notre verdict",
+    "visitSite": "Visiter {name}",
+    "specifications": "Spécifications",
+    "pricing": "Tarifs",
+    "security": "Sécurité",
+    "streaming": "Streaming",
+    "lastUpdated": "Dernière mise à jour : {date}"
+  },
+  "cta": {
+    "getDeal": "Obtenir l'offre",
+    "tryFree": "Essayer gratuitement",
+    "visitSite": "Visiter le site",
+    "learnMore": "En savoir plus",
+    "compare": "Comparer"
+  },
+  "footer": {
+    "about": "À propos de ZeroToVPN",
+    "aboutText": "Nous vous aidons à trouver le meilleur VPN grâce à des tests indépendants et des avis honnêtes.",
+    "links": "Liens rapides",
+    "legal": "Mentions légales",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d'utilisation",
+    "disclosure": "Divulgation d'affiliation",
+    "contact": "Contact",
+    "copyright": "© {year} ZeroToVPN. Tous droits réservés.",
+    "disclaimer": "Nous pouvons recevoir une commission via nos liens, sans frais supplémentaires pour vous."
+  },
+  "newsletter": {
+    "title": "Restez informé",
+    "subtitle": "Recevez les dernières offres VPN et conseils de sécurité.",
+    "placeholder": "Votre email",
+    "button": "S'abonner",
+    "success": "Merci pour votre inscription !",
+    "privacy": "Nous respectons votre vie privée. Désabonnement possible à tout moment."
+  }
+}

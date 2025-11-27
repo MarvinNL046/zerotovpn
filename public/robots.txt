@@ -1,0 +1,13 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Disallow admin and API routes
+Disallow: /api/
+Disallow: /_next/
+
+# Sitemap
+Sitemap: https://zerotovpn.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1

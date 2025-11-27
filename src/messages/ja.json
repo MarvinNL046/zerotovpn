@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "title": "ZeroToVPN - 2025年ベストVPNレビュー＆比較",
+    "description": "あなたのニーズに最適なVPNを見つけましょう。専門家レビュー、正直な比較、限定特典。"
+  },
+  "nav": {
+    "home": "ホーム",
+    "reviews": "レビュー",
+    "best": "ベストVPN",
+    "compare": "比較",
+    "guides": "ガイド",
+    "about": "会社概要"
+  },
+  "hero": {
+    "title": "最適なVPNを見つけよう",
+    "subtitle": "数分でゼロからセキュアに。専門家レビュー、正直な比較、限定特典。",
+    "cta": "VPNを比較",
+    "trusted": "10万人以上の読者に信頼されています"
+  },
+  "comparison": {
+    "title": "2025年ベストVPN",
+    "subtitle": "独立してテスト・評価",
+    "visitSite": "サイトを訪問",
+    "readReview": "レビューを読む",
+    "price": "価格",
+    "perMonth": "/月",
+    "servers": "サーバー",
+    "countries": "国",
+    "devices": "デバイス",
+    "speed": "速度",
+    "rating": "評価",
+    "features": "機能",
+    "editorChoice": "編集者のおすすめ",
+    "bestValue": "コスパ最高",
+    "bestSpeed": "最速",
+    "moneyBack": "{days}日間返金保証"
+  },
+  "features": {
+    "killSwitch": "キルスイッチ",
+    "noLogs": "ノーログポリシー",
+    "netflix": "Netflix",
+    "torrenting": "トレント",
+    "encryption": "{type}暗号化"
+  },
+  "review": {
+    "pros": "メリット",
+    "cons": "デメリット",
+    "verdict": "総評",
+    "visitSite": "{name}を訪問",
+    "specifications": "仕様",
+    "pricing": "料金",
+    "security": "セキュリティ",
+    "streaming": "ストリーミング",
+    "lastUpdated": "最終更新：{date}"
+  },
+  "cta": {
+    "getDeal": "特典を獲得",
+    "tryFree": "無料で試す",
+    "visitSite": "サイトを訪問",
+    "learnMore": "詳細を見る",
+    "compare": "比較する"
+  },
+  "footer": {
+    "about": "ZeroToVPNについて",
+    "aboutText": "独立したテストと正直なレビューで最適なVPN選びをサポートします。",
+    "links": "クイックリンク",
+    "legal": "法的情報",
+    "privacy": "プライバシーポリシー",
+    "terms": "利用規約",
+    "disclosure": "アフィリエイト開示",
+    "contact": "お問い合わせ",
+    "copyright": "© {year} ZeroToVPN. All rights reserved.",
+    "disclaimer": "リンク経由で購入された場合、追加費用なしでコミッションを受け取る場合があります。"
+  },
+  "newsletter": {
+    "title": "最新情報を入手",
+    "subtitle": "最新のVPN特典とセキュリティ情報をお届けします。",
+    "placeholder": "メールアドレス",
+    "button": "登録",
+    "success": "ご登録ありがとうございます！",
+    "privacy": "プライバシーを尊重します。いつでも解除可能。"
+  }
+}

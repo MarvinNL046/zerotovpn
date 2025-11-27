@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "title": "ZeroToVPN - 2025年最佳VPN评测与比较",
+    "description": "找到适合您需求的完美VPN。专家评测、诚实比较和独家优惠。"
+  },
+  "nav": {
+    "home": "首页",
+    "reviews": "评测",
+    "best": "最佳VPN",
+    "compare": "比较",
+    "guides": "指南",
+    "about": "关于我们"
+  },
+  "hero": {
+    "title": "找到您的完美VPN",
+    "subtitle": "几分钟内从零到安全。专家评测、诚实比较和独家优惠。",
+    "cta": "比较VPN",
+    "trusted": "超过100,000读者信赖"
+  },
+  "comparison": {
+    "title": "2025年最佳VPN",
+    "subtitle": "独立测试和评估",
+    "visitSite": "访问网站",
+    "readReview": "阅读评测",
+    "price": "价格",
+    "perMonth": "/月",
+    "servers": "服务器",
+    "countries": "国家",
+    "devices": "设备",
+    "speed": "速度",
+    "rating": "评分",
+    "features": "功能",
+    "editorChoice": "编辑推荐",
+    "bestValue": "最佳性价比",
+    "bestSpeed": "最快速度",
+    "moneyBack": "{days}天退款保证"
+  },
+  "features": {
+    "killSwitch": "终止开关",
+    "noLogs": "无日志政策",
+    "netflix": "Netflix",
+    "torrenting": "种子下载",
+    "encryption": "{type}加密"
+  },
+  "review": {
+    "pros": "优点",
+    "cons": "缺点",
+    "verdict": "我们的评价",
+    "visitSite": "访问{name}",
+    "specifications": "规格",
+    "pricing": "价格",
+    "security": "安全性",
+    "streaming": "流媒体",
+    "lastUpdated": "最后更新：{date}"
+  },
+  "cta": {
+    "getDeal": "获取优惠",
+    "tryFree": "免费试用",
+    "visitSite": "访问网站",
+    "learnMore": "了解更多",
+    "compare": "比较"
+  },
+  "footer": {
+    "about": "关于ZeroToVPN",
+    "aboutText": "我们通过独立测试和诚实评测帮助您找到最佳VPN。",
+    "links": "快速链接",
+    "legal": "法律信息",
+    "privacy": "隐私政策",
+    "terms": "服务条款",
+    "disclosure": "联盟披露",
+    "contact": "联系我们",
+    "copyright": "© {year} ZeroToVPN。保留所有权利。",
+    "disclaimer": "我们可能通过链接获得佣金，不会增加您的额外费用。"
+  },
+  "newsletter": {
+    "title": "保持更新",
+    "subtitle": "获取最新VPN优惠和安全提示。",
+    "placeholder": "输入您的邮箱",
+    "button": "订阅",
+    "success": "感谢订阅！",
+    "privacy": "我们尊重您的隐私。随时取消订阅。"
+  }
+}

@@ -85,10 +85,34 @@ const blogPosts = [
 ];
 
 const categoryConfig = {
-  deals: { icon: TrendingUp, color: "text-green-600" },
-  security: { icon: Shield, color: "text-blue-600" },
-  tips: { icon: Globe, color: "text-purple-600" },
-  news: { icon: Newspaper, color: "text-orange-600" },
+  deals: {
+    icon: TrendingUp,
+    color: "text-green-600",
+    gradient: "from-emerald-500/20 via-green-500/10 to-yellow-500/20",
+    iconColor: "text-emerald-600",
+    bgPattern: "bg-[radial-gradient(circle_at_30%_50%,rgba(16,185,129,0.15),transparent_50%)]",
+  },
+  security: {
+    icon: Shield,
+    color: "text-blue-600",
+    gradient: "from-blue-500/20 via-indigo-500/10 to-purple-500/20",
+    iconColor: "text-blue-600",
+    bgPattern: "bg-[radial-gradient(circle_at_70%_50%,rgba(59,130,246,0.15),transparent_50%)]",
+  },
+  tips: {
+    icon: Globe,
+    color: "text-purple-600",
+    gradient: "from-orange-500/20 via-amber-500/10 to-yellow-500/20",
+    iconColor: "text-orange-600",
+    bgPattern: "bg-[radial-gradient(circle_at_50%_30%,rgba(249,115,22,0.15),transparent_50%)]",
+  },
+  news: {
+    icon: Newspaper,
+    color: "text-orange-600",
+    gradient: "from-rose-500/20 via-pink-500/10 to-orange-500/20",
+    iconColor: "text-rose-600",
+    bgPattern: "bg-[radial-gradient(circle_at_50%_70%,rgba(244,63,94,0.15),transparent_50%)]",
+  },
 };
 
 export default async function BlogPage({ params }: Props) {
@@ -154,8 +178,35 @@ export default async function BlogPage({ params }: Props) {
                 <CardContent className="p-0">
                   <div className="grid md:grid-cols-2 gap-6">
                     {/* Image placeholder */}
-                    <div className="bg-gradient-to-br from-primary/20 to-primary/5 aspect-video md:aspect-auto flex items-center justify-center">
-                      <TrendingUp className="h-16 w-16 text-primary/40" />
+                    <div
+                      className={cn(
+                        "aspect-video md:aspect-auto flex items-center justify-center relative overflow-hidden",
+                        "bg-gradient-to-br",
+                        categoryConfig[
+                          featuredPost.category as keyof typeof categoryConfig
+                        ]?.gradient || "from-primary/20 to-primary/5",
+                        categoryConfig[
+                          featuredPost.category as keyof typeof categoryConfig
+                        ]?.bgPattern
+                      )}
+                    >
+                      <div className="absolute inset-0 bg-grid-white/5" />
+                      {(() => {
+                        const FeaturedIcon =
+                          categoryConfig[
+                            featuredPost.category as keyof typeof categoryConfig
+                          ]?.icon || TrendingUp;
+                        return (
+                          <FeaturedIcon
+                            className={cn(
+                              "h-20 w-20 relative z-10",
+                              categoryConfig[
+                                featuredPost.category as keyof typeof categoryConfig
+                              ]?.iconColor || "text-primary/40"
+                            )}
+                          />
+                        );
+                      })()}
                     </div>
                     {/* Content */}
                     <div className="p-6 md:p-8 flex flex-col justify-center">
@@ -208,17 +259,31 @@ export default async function BlogPage({ params }: Props) {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {otherPosts.map((post) => {
-              const CategoryIcon =
-                categoryConfig[post.category as keyof typeof categoryConfig]
-                  ?.icon || Newspaper;
+              const config =
+                categoryConfig[post.category as keyof typeof categoryConfig];
+              const CategoryIcon = config?.icon || Newspaper;
 
               return (
                 <Link key={post.slug} href={`/blog/${post.slug}`}>
-                  <Card className="h-full hover:shadow-lg transition-all hover:border-primary/50">
+                  <Card className="h-full hover:shadow-lg transition-all hover:border-primary/50 group">
                     <CardContent className="p-0">
                       {/* Image placeholder */}
-                      <div className="bg-gradient-to-br from-muted to-muted/50 aspect-video flex items-center justify-center border-b">
-                        <CategoryIcon className="h-12 w-12 text-muted-foreground/40" />
+                      <div
+                        className={cn(
+                          "aspect-video flex items-center justify-center border-b relative overflow-hidden",
+                          "bg-gradient-to-br",
+                          config?.gradient || "from-muted to-muted/50",
+                          config?.bgPattern,
+                          "group-hover:scale-105 transition-transform duration-300"
+                        )}
+                      >
+                        <div className="absolute inset-0 bg-grid-white/5" />
+                        <CategoryIcon
+                          className={cn(
+                            "h-14 w-14 relative z-10",
+                            config?.iconColor || "text-muted-foreground/40"
+                          )}
+                        />
                       </div>
                       {/* Content */}
                       <div className="p-6">

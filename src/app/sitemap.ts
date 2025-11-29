@@ -2,6 +2,52 @@ import { MetadataRoute } from "next";
 import { getAllVpns } from "@/lib/vpn-data";
 import { routing } from "@/i18n/routing";
 
+// Auto-discovered static pages - add new pages here and they'll be in the sitemap
+const staticPages = [
+  // Main pages (priority 1.0)
+  { path: "", priority: 1.0, changeFreq: "weekly" as const },
+
+  // Reviews section (priority 0.9)
+  { path: "/reviews", priority: 0.9, changeFreq: "weekly" as const },
+
+  // Best VPN pages (priority 0.9)
+  { path: "/best/best-vpn", priority: 0.9, changeFreq: "weekly" as const },
+  { path: "/best/free-vpn", priority: 0.85, changeFreq: "weekly" as const },
+  { path: "/best/vpn-gaming", priority: 0.85, changeFreq: "weekly" as const },
+
+  // Comparison (priority 0.85)
+  { path: "/compare", priority: 0.85, changeFreq: "weekly" as const },
+
+  // Deals (priority 0.85)
+  { path: "/deals", priority: 0.85, changeFreq: "daily" as const },
+
+  // Blog section (priority 0.8)
+  { path: "/blog", priority: 0.8, changeFreq: "weekly" as const },
+  { path: "/blog/vpn-black-friday-2025", priority: 0.8, changeFreq: "weekly" as const },
+  { path: "/blog/is-vpn-legal", priority: 0.75, changeFreq: "monthly" as const },
+  { path: "/blog/vpn-vs-proxy", priority: 0.75, changeFreq: "monthly" as const },
+
+  // Guides section (priority 0.8)
+  { path: "/guides", priority: 0.8, changeFreq: "weekly" as const },
+  { path: "/guides/what-is-vpn", priority: 0.75, changeFreq: "monthly" as const },
+  { path: "/guides/how-vpn-works", priority: 0.75, changeFreq: "monthly" as const },
+  { path: "/guides/vpn-for-streaming", priority: 0.75, changeFreq: "monthly" as const },
+  { path: "/guides/vpn-for-torrenting", priority: 0.75, changeFreq: "monthly" as const },
+  { path: "/guides/vpn-for-travel", priority: 0.75, changeFreq: "monthly" as const },
+  { path: "/guides/vpn-on-mobile", priority: 0.75, changeFreq: "monthly" as const },
+  { path: "/guides/vpn-privacy-guide", priority: 0.75, changeFreq: "monthly" as const },
+  { path: "/guides/vpn-protocols-explained", priority: 0.75, changeFreq: "monthly" as const },
+  { path: "/guides/vpn-speed-guide", priority: 0.75, changeFreq: "monthly" as const },
+  { path: "/guides/public-wifi-safety", priority: 0.75, changeFreq: "monthly" as const },
+
+  // Info pages (priority 0.5)
+  { path: "/about", priority: 0.5, changeFreq: "monthly" as const },
+  { path: "/contact", priority: 0.5, changeFreq: "monthly" as const },
+  { path: "/affiliate-disclosure", priority: 0.3, changeFreq: "yearly" as const },
+  { path: "/privacy-policy", priority: 0.3, changeFreq: "yearly" as const },
+  { path: "/terms", priority: 0.3, changeFreq: "yearly" as const },
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://zerotovpn.com";
   const vpns = getAllVpns();
@@ -10,76 +56,52 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const routes: MetadataRoute.Sitemap = [];
 
-  // Homepage for each locale
-  locales.forEach((locale) => {
-    routes.push({
-      url: locale === "en" ? baseUrl : `${baseUrl}/${locale}`,
-      lastModified: currentDate,
-      changeFrequency: "weekly",
-      priority: 1.0,
-      alternates: {
-        languages: Object.fromEntries(
-          locales.map((l) => [l, l === "en" ? baseUrl : `${baseUrl}/${l}`])
-        ),
-      },
-    });
-  });
-
-  // Reviews index for each locale
-  locales.forEach((locale) => {
-    const prefix = locale === "en" ? "" : `/${locale}`;
-    routes.push({
-      url: `${baseUrl}${prefix}/reviews`,
-      lastModified: currentDate,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    });
-  });
-
-  // Individual VPN reviews for each locale
-  vpns.forEach((vpn) => {
+  // Add all static pages for each locale
+  staticPages.forEach((page) => {
     locales.forEach((locale) => {
       const prefix = locale === "en" ? "" : `/${locale}`;
+      const url = `${baseUrl}${prefix}${page.path}`;
+
+      // Generate alternates for all languages
+      const alternates: Record<string, string> = {};
+      locales.forEach((l) => {
+        const altPrefix = l === "en" ? "" : `/${l}`;
+        alternates[l] = `${baseUrl}${altPrefix}${page.path}`;
+      });
+
       routes.push({
-        url: `${baseUrl}${prefix}/reviews/${vpn.slug}`,
+        url,
         lastModified: currentDate,
-        changeFrequency: "monthly",
-        priority: 0.8,
+        changeFrequency: page.changeFreq,
+        priority: page.priority,
+        alternates: {
+          languages: alternates,
+        },
       });
     });
   });
 
-  // Static pages for each locale
-  const staticPages = [
-    // Best VPN pages
-    { path: "/best/best-vpn", priority: 0.9 },
-    { path: "/best/best-free-vpn", priority: 0.8 },
-    { path: "/best/best-vpn-streaming", priority: 0.8 },
-    // Comparison
-    { path: "/compare", priority: 0.8 },
-    // Guides index
-    { path: "/guides", priority: 0.8 },
-    // Individual guides
-    { path: "/guides/what-is-vpn", priority: 0.7 },
-    { path: "/guides/how-vpn-works", priority: 0.7 },
-    { path: "/guides/vpn-for-streaming", priority: 0.7 },
-    { path: "/guides/vpn-for-torrenting", priority: 0.7 },
-    { path: "/guides/vpn-for-travel", priority: 0.7 },
-    { path: "/guides/vpn-on-mobile", priority: 0.7 },
-    { path: "/guides/vpn-privacy-guide", priority: 0.7 },
-    { path: "/guides/vpn-protocols-explained", priority: 0.7 },
-    { path: "/guides/vpn-speed-guide", priority: 0.7 },
-    { path: "/guides/public-wifi-safety", priority: 0.7 },
-  ];
-
-  staticPages.forEach((page) => {
+  // Add individual VPN review pages for each locale
+  vpns.forEach((vpn) => {
     locales.forEach((locale) => {
       const prefix = locale === "en" ? "" : `/${locale}`;
+      const url = `${baseUrl}${prefix}/reviews/${vpn.slug}`;
+
+      // Generate alternates for all languages
+      const alternates: Record<string, string> = {};
+      locales.forEach((l) => {
+        const altPrefix = l === "en" ? "" : `/${l}`;
+        alternates[l] = `${baseUrl}${altPrefix}/reviews/${vpn.slug}`;
+      });
+
       routes.push({
-        url: `${baseUrl}${prefix}${page.path}`,
+        url,
         lastModified: currentDate,
         changeFrequency: "monthly",
-        priority: page.priority,
+        priority: 0.8,
+        alternates: {
+          languages: alternates,
+        },
       });
     });
   });

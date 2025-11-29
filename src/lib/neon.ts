@@ -3,7 +3,7 @@ import { neon, type NeonQueryFunction } from "@neondatabase/serverless";
 // Lazy initialization to avoid build-time errors
 let _sql: NeonQueryFunction<false, false> | null = null;
 
-function getSQL() {
+function getSQL(): NeonQueryFunction<false, false> {
   if (_sql) return _sql;
 
   const databaseUrl = process.env.DATABASE_URL;
@@ -16,15 +16,13 @@ function getSQL() {
   return _sql;
 }
 
-// Export a proxy that lazily initializes the connection
-export const sql = new Proxy({} as NeonQueryFunction<false, false>, {
-  apply(target, thisArg, args: any[]) {
-    return (getSQL() as any)(...args);
-  },
-  get(target, prop) {
-    return (getSQL() as any)[prop];
-  }
-});
+// Export a function that works as a tagged template literal
+export function sql(
+  strings: TemplateStringsArray,
+  ...values: unknown[]
+): Promise<Record<string, unknown>[]> {
+  return getSQL()(strings, ...values);
+}
 
 // Helper for typed queries
 export async function query<T>(

@@ -7,7 +7,6 @@ import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { OrganizationJsonLd, WebsiteJsonLd } from "@/components/seo/json-ld";
 import type { Metadata } from "next";
-import "../globals.css";
 
 type Props = {
   children: React.ReactNode;
@@ -128,7 +127,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages();
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <>
       <head>
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -137,22 +136,20 @@ export default async function LocaleLayout({ children, params }: Props) {
         <OrganizationJsonLd />
         <WebsiteJsonLd />
       </head>
-      <body className="min-h-screen bg-background font-sans antialiased">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <NextIntlClientProvider messages={messages}>
-            <div className="relative flex min-h-screen flex-col">
-              <Header />
-              <main className="flex-1">{children}</main>
-              <Footer />
-            </div>
-          </NextIntlClientProvider>
-        </ThemeProvider>
-      </body>
-    </html>
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange
+      >
+        <NextIntlClientProvider messages={messages}>
+          <div className="relative flex min-h-screen flex-col" lang={locale}>
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
+        </NextIntlClientProvider>
+      </ThemeProvider>
+    </>
   );
 }

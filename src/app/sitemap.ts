@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next";
-import { getAllVpns } from "@/lib/vpn-data";
+import { getAllVpns } from "@/lib/vpn-data-layer";
 import { routing } from "@/i18n/routing";
 
 // Auto-discovered static pages - add new pages here and they'll be in the sitemap
@@ -48,9 +48,9 @@ const staticPages = [
   { path: "/terms", priority: 0.3, changeFreq: "yearly" as const },
 ];
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://zerotovpn.com";
-  const vpns = getAllVpns();
+  const vpns = await getAllVpns();
   const locales = routing.locales;
   const currentDate = new Date().toISOString();
 

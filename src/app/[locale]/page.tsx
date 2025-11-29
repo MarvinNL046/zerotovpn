@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ComparisonTable } from "@/components/vpn/comparison-table";
 import { VpnCard } from "@/components/vpn/vpn-card";
-import { getFeaturedVpns } from "@/lib/vpn-data";
+import { getFeaturedVpns } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
 import { Shield, Zap, Globe, CheckCircle, ArrowRight } from "lucide-react";
 import {
@@ -22,7 +22,7 @@ export default async function HomePage({ params }: Props) {
   setRequestLocale(locale);
   const t = await getTranslations("home");
 
-  const featuredVpns = getFeaturedVpns();
+  const featuredVpns = await getFeaturedVpns();
 
   // Get FAQ data from translations
   const faqData = t.raw("faq") as Array<{ question: string; answer: string }>;

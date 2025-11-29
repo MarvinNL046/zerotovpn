@@ -6,6 +6,7 @@ import {
   TrendingUp,
   Clock,
   CheckCircle,
+  Shield,
 } from "lucide-react";
 import { getDashboardStats, getAdminReviews } from "@/app/actions";
 import Link from "next/link";
@@ -149,7 +150,23 @@ export default async function AdminDashboard() {
       </Card>
 
       {/* Quick Actions */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <Card className="hover:border-primary cursor-pointer transition-colors">
+          <CardContent className="pt-6">
+            <Link href="/admin/vpns" className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-full bg-indigo-50 dark:bg-indigo-900/20 flex items-center justify-center">
+                <Shield className="h-6 w-6 text-indigo-500" />
+              </div>
+              <div>
+                <h3 className="font-semibold">VPN Providers</h3>
+                <p className="text-sm text-muted-foreground">
+                  Manage VPN data
+                </p>
+              </div>
+            </Link>
+          </CardContent>
+        </Card>
+
         <Card className="hover:border-primary cursor-pointer transition-colors">
           <CardContent className="pt-6">
             <Link href="/admin/reviews" className="flex items-center gap-4">

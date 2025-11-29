@@ -1,4 +1,4 @@
-import type { VpnProvider } from "@/lib/vpn-data";
+import type { VpnProvider } from "@/lib/vpn-data-layer";
 
 // Organization Schema for the website
 export function OrganizationSchema() {

@@ -1,7 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
-import { getAllVpns } from "@/lib/vpn-data";
+import { getAllVpns } from "@/lib/vpn-data-layer";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { RatingStars } from "@/components/vpn/rating-stars";
@@ -45,7 +45,7 @@ export default async function ComparePage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const vpns = getAllVpns();
+  const vpns = await getAllVpns();
 
   return (
     <div className="flex flex-col">

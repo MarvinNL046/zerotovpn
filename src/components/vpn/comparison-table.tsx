@@ -14,7 +14,7 @@ import { AffiliateButton } from "./affiliate-button";
 import { Link } from "@/i18n/navigation";
 import { Check, X, Shield, Zap, ExternalLink } from "lucide-react";
 import { useTranslations } from "next-intl";
-import type { VpnProvider } from "@/lib/vpn-data";
+import type { VpnProvider } from "@/lib/vpn-data-layer";
 
 interface ComparisonTableProps {
   vpns: VpnProvider[];

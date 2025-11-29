@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { RatingStars } from "@/components/vpn/rating-stars";
-import { getVpnBySlug } from "@/lib/vpn-data";
+import { getVpnBySlug } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
 import {
   Shield,
@@ -107,10 +107,10 @@ export default async function GamingVpnPage({ params }: Props) {
   setRequestLocale(locale);
 
   // Get gaming VPNs data
-  const nordvpn = getVpnBySlug("nordvpn");
-  const expressvpn = getVpnBySlug("expressvpn");
-  const surfshark = getVpnBySlug("surfshark");
-  const pia = getVpnBySlug("private-internet-access");
+  const nordvpn = await getVpnBySlug("nordvpn");
+  const expressvpn = await getVpnBySlug("expressvpn");
+  const surfshark = await getVpnBySlug("surfshark");
+  const pia = await getVpnBySlug("private-internet-access");
 
   // Gaming-specific data
   const gamingVpns = [

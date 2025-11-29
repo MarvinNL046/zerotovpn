@@ -11,7 +11,7 @@ import {
   ExternalLink,
   Scale,
 } from "lucide-react";
-import { getAllVpns } from "@/lib/vpn-data";
+import { getAllVpns } from "@/lib/vpn-data-layer";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -36,7 +36,7 @@ export default async function AffiliateDisclosurePage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const vpnProviders = getAllVpns();
+  const vpnProviders = await getAllVpns();
   const lastUpdated = "November 28, 2025";
 
   return (

@@ -1,6 +1,7 @@
 generator client {
-  provider = "prisma-client-js"
-  output   = "../src/generated/prisma"
+  provider        = "prisma-client-js"
+  output          = "../src/generated/prisma"
+  previewFeatures = ["driverAdapters"]
 }
 
 datasource db {
@@ -13,6 +14,10 @@ model VpnProvider {
   name            String   @unique
   slug            String   @unique
   logo            String?
+  screenshot      String?  // Hero screenshot
+  thumbnailImage  String?  // Small thumbnail for cards
+  cardImage       String?  // Medium image for cards
+  ogImage         String?  // Social sharing image
   website         String
   affiliateUrl    String
 

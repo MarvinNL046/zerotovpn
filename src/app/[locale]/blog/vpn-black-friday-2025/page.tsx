@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { RatingStars } from "@/components/vpn/rating-stars";
 import { ArticleJsonLd } from "@/components/structured-data";
-import { getVpnBySlug } from "@/lib/vpn-data";
+import { getVpnBySlug } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
 import {
   Calendar,
@@ -75,11 +75,11 @@ export default async function BlackFridayDealsPage({ params }: Props) {
   const blogT = await getTranslations("blog");
 
   // Get VPN data
-  const surfshark = getVpnBySlug("surfshark");
-  const nordvpn = getVpnBySlug("nordvpn");
-  const expressvpn = getVpnBySlug("expressvpn");
-  const cyberghost = getVpnBySlug("cyberghost");
-  const pia = getVpnBySlug("private-internet-access");
+  const surfshark = await getVpnBySlug("surfshark");
+  const nordvpn = await getVpnBySlug("nordvpn");
+  const expressvpn = await getVpnBySlug("expressvpn");
+  const cyberghost = await getVpnBySlug("cyberghost");
+  const pia = await getVpnBySlug("private-internet-access");
 
   const deals = [
     {

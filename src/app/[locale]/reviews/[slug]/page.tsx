@@ -9,7 +9,7 @@ import { RatingStars } from "@/components/vpn/rating-stars";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { UserReviewsList } from "@/components/reviews/user-reviews-list";
 import { ReviewForm } from "@/components/reviews/review-form";
-import { getVpnBySlug, getAllVpns } from "@/lib/vpn-data";
+import { getVpnBySlug, getAllVpns } from "@/lib/vpn-data-layer";
 import { getReviewsByVpnSlug, getAverageUserRating } from "@/lib/user-reviews";
 import { Link } from "@/i18n/navigation";
 import {
@@ -36,7 +36,7 @@ type Props = {
 const baseUrl = "https://zerotovpn.com";
 
 export async function generateStaticParams() {
-  const vpns = getAllVpns();
+  const vpns = await getAllVpns();
   const locales = routing.locales;
 
   return locales.flatMap((locale) =>
@@ -49,7 +49,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
-  const vpn = getVpnBySlug(slug);
+  const vpn = await getVpnBySlug(slug);
 
   if (!vpn) {
     return { title: "VPN Not Found" };
@@ -118,20 +118,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: "ZeroToVPN",
       locale: locale,
       type: "article",
-      images: [
+      images: vpn.ogImage ? [
         {
           url: vpn.ogImage,
           width: 1200,
           height: 630,
           alt: `${vpn.name} Review`,
         },
-      ],
+      ] : undefined,
     },
     twitter: {
       card: "summary_large_image",
       title: titles[locale] || titles.en,
       description: descriptions[locale] || descriptions.en,
-      images: [vpn.ogImage],
+      images: vpn.ogImage ? [vpn.ogImage] : undefined,
     },
   };
 }
@@ -141,7 +141,7 @@ export default async function ReviewPage({ params }: Props) {
   setRequestLocale(locale);
   const t = await getTranslations("vpnReview");
 
-  const vpn = getVpnBySlug(slug);
+  const vpn = await getVpnBySlug(slug);
 
   if (!vpn) {
     notFound();
@@ -161,18 +161,20 @@ export default async function ReviewPage({ params }: Props) {
       <BreadcrumbSchema items={breadcrumbs} />
 
       {/* Hero Screenshot Section */}
-      <section className="relative h-64 md:h-80 lg:h-96 w-full overflow-hidden">
-        <Image
-          src={vpn.screenshot}
-          alt={`${vpn.name} website screenshot`}
-          fill
-          className="object-cover object-top"
-          priority
-          sizes="100vw"
-        />
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
-      </section>
+      {vpn.screenshot && (
+        <section className="relative h-64 md:h-80 lg:h-96 w-full overflow-hidden">
+          <Image
+            src={vpn.screenshot}
+            alt={`${vpn.name} website screenshot`}
+            fill
+            className="object-cover object-top"
+            priority
+            sizes="100vw"
+          />
+          {/* Gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
+        </section>
+      )}
 
       <div className="py-8">
       <div className="container">

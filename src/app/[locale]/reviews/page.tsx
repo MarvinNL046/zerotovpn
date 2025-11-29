@@ -1,6 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { VpnCard } from "@/components/vpn/vpn-card";
-import { getAllVpns } from "@/lib/vpn-data";
+import { getAllVpns } from "@/lib/vpn-data-layer";
 import { routing } from "@/i18n/routing";
 import { BreadcrumbSchema, ComparisonTableSchema } from "@/components/structured-data";
 import type { Metadata } from "next";
@@ -85,7 +85,7 @@ export default async function ReviewsPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const vpns = getAllVpns();
+  const vpns = await getAllVpns();
   const prefix = locale === "en" ? "" : `/${locale}`;
 
   const breadcrumbs = [

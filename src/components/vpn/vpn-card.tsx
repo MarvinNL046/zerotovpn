@@ -16,7 +16,7 @@ import {
   Check,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
-import type { VpnProvider } from "@/lib/vpn-data";
+import type { VpnProvider } from "@/lib/vpn-data-layer";
 
 interface VpnCardProps {
   vpn: VpnProvider;
@@ -31,13 +31,19 @@ export function VpnCard({ vpn, rank }: VpnCardProps) {
     <Card className="relative overflow-hidden">
       {/* Screenshot Image */}
       <div className="relative h-40 w-full overflow-hidden bg-muted">
-        <Image
-          src={vpn.cardImage}
-          alt={`${vpn.name} website screenshot`}
-          fill
-          className="object-cover object-top"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        />
+        {vpn.cardImage ? (
+          <Image
+            src={vpn.cardImage}
+            alt={`${vpn.name} website screenshot`}
+            fill
+            className="object-cover object-top"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary/20">
+            <Shield className="h-16 w-16 text-primary/30" />
+          </div>
+        )}
         {/* Gradient overlay for better text readability */}
         <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
 

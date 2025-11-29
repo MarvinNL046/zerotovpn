@@ -7,7 +7,7 @@ import { VpnCard } from "@/components/vpn/vpn-card";
 import { ComparisonTable } from "@/components/vpn/comparison-table";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { RatingStars } from "@/components/vpn/rating-stars";
-import { getAllVpns } from "@/lib/vpn-data";
+import { getAllVpns, type VpnProvider } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
 import {
   Shield,
@@ -63,7 +63,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 // Structured Data for ItemList (Rankings)
-function ItemListSchema({ vpns }: { vpns: ReturnType<typeof getAllVpns> }) {
+function ItemListSchema({ vpns }: { vpns: VpnProvider[] }) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -109,7 +109,7 @@ export default async function BestVpnPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const allVpns = getAllVpns();
+  const allVpns = await getAllVpns();
 
   // Content translations
   const content = {

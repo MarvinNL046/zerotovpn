@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { headers } from "next/headers";
-import { prisma } from "@/lib/db";
+import { sql } from "@/lib/neon";
 
 export async function POST(request: NextRequest) {
   try {
@@ -50,40 +50,56 @@ export async function POST(request: NextRequest) {
                       "unknown";
     const userAgent = headersList.get("user-agent") || "unknown";
 
-    // Create review in database
-    const review = await prisma.userReview.create({
-      data: {
-        vpnSlug,
-        authorName: authorName.slice(0, 50),
-        authorEmail: authorEmail.toLowerCase(),
-        rating,
-        title: title.slice(0, 100),
-        content: content.slice(0, 2000),
-        usageType: usageType || null,
-        usagePeriod: usagePeriod || null,
-        userPros: userPros.slice(0, 5).map((p: string) => p.slice(0, 100)),
-        userCons: userCons.slice(0, 5).map((c: string) => c.slice(0, 100)),
-        locale,
-        ipAddress,
-        userAgent,
-        newsletterConsent,
-        consentDate: newsletterConsent ? new Date() : null,
-        verified: false,
-        approved: false, // Requires moderation
-      },
-    });
+    // Prepare data
+    const cleanPros = userPros.slice(0, 5).map((p: string) => p.slice(0, 100));
+    const cleanCons = userCons.slice(0, 5).map((c: string) => c.slice(0, 100));
+
+    // Create review in database using Neon
+    const result = await sql`
+      INSERT INTO "UserReview" (
+        id, vpn_slug, author_name, author_email, rating, title, content,
+        usage_type, usage_period, user_pros, user_cons, locale,
+        ip_address, user_agent, newsletter_consent, consent_date,
+        verified, approved, helpful_count, unhelpful_count,
+        created_at, updated_at
+      ) VALUES (
+        gen_random_uuid()::text,
+        ${vpnSlug},
+        ${authorName.slice(0, 50)},
+        ${authorEmail.toLowerCase()},
+        ${rating},
+        ${title.slice(0, 100)},
+        ${content.slice(0, 2000)},
+        ${usageType || null},
+        ${usagePeriod || null},
+        ${cleanPros},
+        ${cleanCons},
+        ${locale},
+        ${ipAddress},
+        ${userAgent},
+        ${newsletterConsent},
+        ${newsletterConsent ? new Date() : null},
+        false,
+        false,
+        0,
+        0,
+        NOW(),
+        NOW()
+      )
+      RETURNING id
+    `;
 
     console.log("New review submitted:", {
-      id: review.id,
-      vpnSlug: review.vpnSlug,
-      rating: review.rating,
-      authorName: review.authorName,
+      id: result[0]?.id,
+      vpnSlug,
+      rating,
+      authorName,
     });
 
     return NextResponse.json({
       success: true,
       message: "Review submitted successfully. It will be visible after moderation.",
-      reviewId: review.id,
+      reviewId: result[0]?.id,
     });
   } catch (error) {
     console.error("Error submitting review:", error);
@@ -117,46 +133,26 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    const skip = (page - 1) * limit;
+    const offset = (page - 1) * limit;
 
-    // Fetch approved reviews with pagination
-    const [reviews, total] = await Promise.all([
-      prisma.userReview.findMany({
-        where: {
-          vpnSlug,
-          approved: true,
-        },
-        orderBy: {
-          createdAt: "desc",
-        },
-        skip,
-        take: limit,
-        select: {
-          id: true,
-          vpnSlug: true,
-          authorName: true,
-          rating: true,
-          title: true,
-          content: true,
-          usageType: true,
-          usagePeriod: true,
-          userPros: true,
-          userCons: true,
-          verified: true,
-          featured: true,
-          helpfulCount: true,
-          unhelpfulCount: true,
-          locale: true,
-          createdAt: true,
-        },
-      }),
-      prisma.userReview.count({
-        where: {
-          vpnSlug,
-          approved: true,
-        },
-      }),
-    ]);
+    // Fetch approved reviews with pagination using Neon
+    const reviews = await sql`
+      SELECT id, vpn_slug, author_name, rating, title, content,
+             usage_type, usage_period, user_pros, user_cons,
+             verified, featured, helpful_count, unhelpful_count,
+             locale, created_at
+      FROM "UserReview"
+      WHERE vpn_slug = ${vpnSlug} AND approved = true
+      ORDER BY created_at DESC
+      LIMIT ${limit} OFFSET ${offset}
+    `;
+
+    const countResult = await sql`
+      SELECT COUNT(*) as total FROM "UserReview"
+      WHERE vpn_slug = ${vpnSlug} AND approved = true
+    `;
+
+    const total = Number(countResult[0]?.total || 0);
 
     return NextResponse.json({
       reviews,
@@ -173,4 +169,3 @@ export async function GET(request: NextRequest) {
     );
   }
 }
-

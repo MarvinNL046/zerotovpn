@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { prisma } from "@/lib/db";
+import { sql } from "@/lib/neon";
 
 // Helper function to validate admin key
 function validateAdminKey(request: NextRequest): boolean {
@@ -20,8 +20,6 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const vpnSlug = searchParams.get("vpnSlug");
     const approved = searchParams.get("approved"); // "true", "false", or null for all
-    const startDate = searchParams.get("startDate");
-    const endDate = searchParams.get("endDate");
     const page = parseInt(searchParams.get("page") || "1", 10);
     const limit = parseInt(searchParams.get("limit") || "20", 10);
 
@@ -33,43 +31,59 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    const skip = (page - 1) * limit;
+    const offset = (page - 1) * limit;
 
-    // Build where clause
-    const where: any = {};
+    // Build query based on filters
+    let reviews;
+    let countResult;
 
-    if (vpnSlug) {
-      where.vpnSlug = vpnSlug;
+    if (vpnSlug && approved !== null) {
+      const isApproved = approved === "true";
+      reviews = await sql`
+        SELECT * FROM "UserReview"
+        WHERE vpn_slug = ${vpnSlug} AND approved = ${isApproved}
+        ORDER BY created_at DESC
+        LIMIT ${limit} OFFSET ${offset}
+      `;
+      countResult = await sql`
+        SELECT COUNT(*) as total FROM "UserReview"
+        WHERE vpn_slug = ${vpnSlug} AND approved = ${isApproved}
+      `;
+    } else if (vpnSlug) {
+      reviews = await sql`
+        SELECT * FROM "UserReview"
+        WHERE vpn_slug = ${vpnSlug}
+        ORDER BY created_at DESC
+        LIMIT ${limit} OFFSET ${offset}
+      `;
+      countResult = await sql`
+        SELECT COUNT(*) as total FROM "UserReview"
+        WHERE vpn_slug = ${vpnSlug}
+      `;
+    } else if (approved !== null) {
+      const isApproved = approved === "true";
+      reviews = await sql`
+        SELECT * FROM "UserReview"
+        WHERE approved = ${isApproved}
+        ORDER BY created_at DESC
+        LIMIT ${limit} OFFSET ${offset}
+      `;
+      countResult = await sql`
+        SELECT COUNT(*) as total FROM "UserReview"
+        WHERE approved = ${isApproved}
+      `;
+    } else {
+      reviews = await sql`
+        SELECT * FROM "UserReview"
+        ORDER BY created_at DESC
+        LIMIT ${limit} OFFSET ${offset}
+      `;
+      countResult = await sql`
+        SELECT COUNT(*) as total FROM "UserReview"
+      `;
     }
 
-    if (approved !== null) {
-      where.approved = approved === "true";
-    }
-
-    if (startDate || endDate) {
-      where.createdAt = {};
-      if (startDate) {
-        where.createdAt.gte = new Date(startDate);
-      }
-      if (endDate) {
-        where.createdAt.lte = new Date(endDate);
-      }
-    }
-
-    // Fetch reviews with pagination
-    const [reviews, total] = await Promise.all([
-      prisma.userReview.findMany({
-        where,
-        orderBy: {
-          createdAt: "desc",
-        },
-        skip,
-        take: limit,
-      }),
-      prisma.userReview.count({
-        where,
-      }),
-    ]);
+    const total = Number(countResult[0]?.total || 0);
 
     return NextResponse.json({
       reviews,

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { prisma } from "@/lib/db";
+import { sql } from "@/lib/neon";
 
 // Helper function to validate admin key
 function validateAdminKey(request: NextRequest): boolean {
@@ -22,18 +22,18 @@ export async function GET(
 
     const { id } = await params;
 
-    const review = await prisma.userReview.findUnique({
-      where: { id },
-    });
+    const reviews = await sql`
+      SELECT * FROM "UserReview" WHERE id = ${id}
+    `;
 
-    if (!review) {
+    if (reviews.length === 0) {
       return NextResponse.json(
         { error: "Review not found" },
         { status: 404 }
       );
     }
 
-    return NextResponse.json({ review });
+    return NextResponse.json({ review: reviews[0] });
   } catch (error) {
     console.error("Error fetching review:", error);
     return NextResponse.json(
@@ -59,49 +59,49 @@ export async function PATCH(
     const { id } = await params;
     const body = await request.json();
 
-    // Only allow specific fields to be updated
-    const allowedFields = [
-      "approved",
-      "featured",
-      "verified",
-      "title",
-      "content",
-      "userPros",
-      "userCons",
-    ];
-
-    const updateData: any = {};
-    for (const field of allowedFields) {
-      if (field in body) {
-        updateData[field] = body[field];
-      }
+    // Handle specific update operations
+    if (body.approved !== undefined) {
+      await sql`
+        UPDATE "UserReview"
+        SET approved = ${body.approved}, updated_at = NOW()
+        WHERE id = ${id}
+      `;
     }
 
-    if (Object.keys(updateData).length === 0) {
-      return NextResponse.json(
-        { error: "No valid fields to update" },
-        { status: 400 }
-      );
+    if (body.featured !== undefined) {
+      await sql`
+        UPDATE "UserReview"
+        SET featured = ${body.featured}, updated_at = NOW()
+        WHERE id = ${id}
+      `;
     }
 
-    const review = await prisma.userReview.update({
-      where: { id },
-      data: updateData,
-    });
+    if (body.verified !== undefined) {
+      await sql`
+        UPDATE "UserReview"
+        SET verified = ${body.verified}, updated_at = NOW()
+        WHERE id = ${id}
+      `;
+    }
 
-    return NextResponse.json({
-      success: true,
-      message: "Review updated successfully",
-      review,
-    });
-  } catch (error: any) {
-    if (error.code === "P2025") {
+    // Fetch updated review
+    const reviews = await sql`
+      SELECT * FROM "UserReview" WHERE id = ${id}
+    `;
+
+    if (reviews.length === 0) {
       return NextResponse.json(
         { error: "Review not found" },
         { status: 404 }
       );
     }
 
+    return NextResponse.json({
+      success: true,
+      message: "Review updated successfully",
+      review: reviews[0],
+    });
+  } catch (error) {
     console.error("Error updating review:", error);
     return NextResponse.json(
       { error: "Failed to update review" },
@@ -125,22 +125,22 @@ export async function DELETE(
 
     const { id } = await params;
 
-    await prisma.userReview.delete({
-      where: { id },
-    });
+    const result = await sql`
+      DELETE FROM "UserReview" WHERE id = ${id} RETURNING id
+    `;
 
-    return NextResponse.json({
-      success: true,
-      message: "Review deleted successfully",
-    });
-  } catch (error: any) {
-    if (error.code === "P2025") {
+    if (result.length === 0) {
       return NextResponse.json(
         { error: "Review not found" },
         { status: 404 }
       );
     }
 
+    return NextResponse.json({
+      success: true,
+      message: "Review deleted successfully",
+    });
+  } catch (error) {
     console.error("Error deleting review:", error);
     return NextResponse.json(
       { error: "Failed to delete review" },

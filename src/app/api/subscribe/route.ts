@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-// import { prisma } from "@/lib/db"; // Uncomment when database is connected
+import { sql } from "@/lib/neon";
 
 export async function POST(request: NextRequest) {
   try {
@@ -15,20 +15,28 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Log subscription for now (replace with database insert when connected)
+    // Check if already subscribed
+    const existing = await sql`
+      SELECT id FROM "Subscriber" WHERE email = ${email.toLowerCase()}
+    `;
+
+    if (existing.length > 0) {
+      // Already subscribed, return success anyway (don't reveal subscription status)
+      return NextResponse.json({ success: true });
+    }
+
+    // Create subscriber
+    await sql`
+      INSERT INTO "Subscriber" (id, email, language, source, confirmed, created_at)
+      VALUES (gen_random_uuid()::text, ${email.toLowerCase()}, ${language}, ${source}, false, NOW())
+    `;
+
     console.log("New subscriber:", {
-      email,
+      email: email.toLowerCase(),
       language,
       source,
       timestamp: new Date().toISOString(),
     });
-
-    // Uncomment when database is connected:
-    // await prisma.subscriber.upsert({
-    //   where: { email },
-    //   update: { language, source },
-    //   create: { email, language, source },
-    // });
 
     return NextResponse.json({ success: true });
   } catch (error) {

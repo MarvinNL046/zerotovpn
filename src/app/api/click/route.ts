@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-// import { prisma } from "@/lib/db"; // Uncomment when database is connected
+import { sql } from "@/lib/neon";
 
 export async function POST(request: NextRequest) {
   try {
@@ -9,41 +9,36 @@ export async function POST(request: NextRequest) {
     // Get geo information from headers (Netlify/Vercel provide these)
     const country = request.headers.get("x-vercel-ip-country") ||
       request.headers.get("x-country") ||
-      "unknown";
-    const city = request.headers.get("x-vercel-ip-city") ||
-      request.headers.get("x-city") ||
+      request.headers.get("x-nf-client-connection-ip") ||
       "unknown";
     const userAgent = request.headers.get("user-agent") || "unknown";
 
-    // Log click for now (replace with database insert when connected)
-    console.log("Affiliate click:", {
-      vpnId,
-      country,
-      city,
-      referrer,
-      userAgent,
-      page,
-      timestamp: new Date().toISOString(),
-    });
+    // First check if VPN exists in database
+    const vpn = await sql`
+      SELECT id FROM "VpnProvider" WHERE slug = ${vpnId} OR id = ${vpnId}
+    `;
 
-    // Uncomment when database is connected:
-    // await prisma.click.create({
-    //   data: {
-    //     vpnId,
-    //     country,
-    //     city,
-    //     referrer,
-    //     userAgent,
-    //     page,
-    //   },
-    // });
+    if (vpn.length > 0) {
+      // Insert click record
+      await sql`
+        INSERT INTO "Click" (id, vpn_id, page, country, referrer, user_agent, created_at)
+        VALUES (gen_random_uuid()::text, ${vpn[0].id}, ${page}, ${country}, ${referrer}, ${userAgent}, NOW())
+      `;
+    } else {
+      // Log click even if VPN not in DB yet
+      console.log("Affiliate click (VPN not in DB):", {
+        vpnId,
+        country,
+        referrer,
+        page,
+        timestamp: new Date().toISOString(),
+      });
+    }
 
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error("Failed to track click:", error);
-    return NextResponse.json(
-      { success: false, error: "Failed to track click" },
-      { status: 500 }
-    );
+    // Still return success - don't block user experience for tracking failures
+    return NextResponse.json({ success: true });
   }
 }

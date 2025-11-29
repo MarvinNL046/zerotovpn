@@ -9,6 +9,7 @@
     "best": "最佳VPN",
     "compare": "比较",
     "guides": "指南",
+    "blog": "博客",
     "about": "关于我们"
   },
   "hero": {
@@ -3164,6 +3165,340 @@
       "startLearning": "开始学习",
       "compareVpns": "比较VPN",
       "readGuide": "阅读指南"
+    }
+  },
+  "freeVpn": {
+    "meta": {
+      "title": "最佳免费VPN 2025年11月：测试的前4名（含真实数据限制）- ZeroToVPN",
+      "description": "正在寻找真正免费的VPN？我们测试了20多个免费VPN。ProtonVPN提供无限数据，Windscribe提供10GB/月。了解哪些免费VPN是安全的。"
+    },
+    "hero": {
+      "badge": "2025年11月更新",
+      "title": "最佳免费VPN服务2025",
+      "subtitle": "我们测试了20多个免费VPN，以找到具有最佳数据限制的最安全选项。这是真正有效的（和无效的）。"
+    },
+    "comparison": {
+      "title": "快速比较",
+      "vpn": "VPN",
+      "dataLimit": "数据限制",
+      "servers": "服务器",
+      "devices": "设备",
+      "streaming": "流媒体",
+      "unlimited": "无限",
+      "countries": "国家",
+      "locations": "位置",
+      "month": "月"
+    },
+    "reviews": {
+      "title": "顶级免费VPN排名",
+      "subtitle": "我们对2025年最佳免费VPN服务的详细分析",
+      "dataLimit": "数据限制",
+      "servers": "服务器",
+      "devices": "设备",
+      "logs": "日志",
+      "adBlocker": "广告拦截器",
+      "audited": "已审计",
+      "unlimited": "无限",
+      "noLogs": "无日志",
+      "included": "包含",
+      "yes": "是",
+      "countries": "国家",
+      "locations": "位置",
+      "month": "月",
+      "pros": "优点",
+      "cons": "缺点",
+      "getButton": "获取",
+      "protonvpn": {
+        "badge": "最佳免费VPN",
+        "unlimitedData": "无限数据",
+        "description": "ProtonVPN是唯一真正提供无限数据的免费VPN。总部位于瑞士，提供经过独立审计的无日志政策、开源应用程序，甚至可以解锁美国Netflix。",
+        "pros": [
+          "无限数据（免费VPN中独一无二）",
+          "经独立审计的无日志政策",
+          "瑞士基地提供强大隐私保护",
+          "开源应用程序确保透明度",
+          "可解锁美国Netflix",
+          "无广告或速度限制"
+        ],
+        "cons": [
+          "免费版限制1台设备",
+          "仅5个服务器位置可用",
+          "速度比付费版慢",
+          "免费服务器不支持P2P/种子下载"
+        ]
+      },
+      "windscribe": {
+        "description": "Windscribe提供慷慨的10GB/月（可扩展至15GB），非常适合中等浏览。它包括10个国家位置、无限设备连接和名为R.O.B.E.R.T.的内置广告拦截器。",
+        "pros": [
+          "10GB/月（可扩展至15GB）",
+          "无限设备连接",
+          "内置广告和恶意软件拦截器",
+          "可解锁BBC iPlayer、Hulu、HBO Max",
+          "多跳连接可用",
+          "10个国家包括英国、加拿大、法国"
+        ],
+        "cons": [
+          "限制为每月10GB数据",
+          "仅3天退款保证",
+          "总部位于加拿大（5眼联盟）",
+          "免费版速度较慢"
+        ]
+      },
+      "hideme": {
+        "description": "Hide.me提供10GB/月，严格的无日志政策。总部位于马来西亚（在5/9/14眼联盟之外），提供5个服务器位置的良好安全性。",
+        "pros": [
+          "每月10GB数据",
+          "严格的无日志政策",
+          "总部位于马来西亚",
+          "多种协议选项",
+          "独立安全审计"
+        ],
+        "cons": [
+          "仅限1台设备",
+          "仅5个服务器位置",
+          "无流媒体优化",
+          "速度可能不一致"
+        ]
+      },
+      "tunnelbear": {
+        "description": "TunnelBear凭借其友好的熊主题界面非常适合VPN初学者。虽然只提供2GB/月，但提供49个国家的访问和无限设备连接。",
+        "pros": [
+          "非常适合初学者的界面",
+          "49个国家可用",
+          "无限设备连接",
+          "每年独立审计",
+          "无日志政策"
+        ],
+        "cons": [
+          "仅2GB/月（非常有限）",
+          "无退款保证",
+          "不适用于Netflix",
+          "不支持P2P/种子下载",
+          "由McAfee拥有"
+        ]
+      }
+    },
+    "warning": {
+      "title": "警告：免费VPN风险",
+      "intro": "虽然上述免费VPN值得信赖，但大多数免费VPN都很危险。可疑免费VPN的做法：",
+      "risks": [
+        "向广告商出售您的浏览数据",
+        "在浏览器中注入广告",
+        "包含恶意软件或间谍软件",
+        "存在严重的安全漏洞",
+        "将速度限制到无法使用的水平",
+        "尽管声称不会，但仍记录活动"
+      ]
+    },
+    "upgrade": {
+      "badge": "更好的价值",
+      "title": "为什么付费VPN值得",
+      "subtitle": "每月仅需$1.99-2.99，您就能获得无限数据、更快速度、更好安全性和可靠的流媒体。",
+      "month": "月",
+      "getButton": "获取",
+      "viewAll": "查看所有VPN",
+      "nordvpn": {
+        "features": [
+          "无限数据和带宽",
+          "118个国家的7,400多台服务器",
+          "10个同时连接",
+          "适用于所有流媒体服务",
+          "30天退款保证"
+        ]
+      },
+      "surfshark": {
+        "features": [
+          "无限数据和设备",
+          "100个国家的4,500多台服务器",
+          "最佳价值$1.99/月",
+          "广告拦截器和恶意软件保护",
+          "30天退款保证"
+        ]
+      }
+    }
+  },
+  "blog": {
+    "hero": {
+      "badge": "最新文章",
+      "title": "VPN 博客",
+      "subtitle": "了解最新的VPN新闻、安全提示和深入指南，保护您的在线隐私。"
+    },
+    "categories": {
+      "all": "所有文章",
+      "deals": "优惠",
+      "security": "安全",
+      "tips": "技巧",
+      "news": "新闻"
+    },
+    "featured": {
+      "title": "特色文章"
+    },
+    "recent": {
+      "title": "最新文章"
+    },
+    "readMore": "阅读更多",
+    "cta": {
+      "title": "准备好保护您的在线隐私了吗？",
+      "subtitle": "探索我们的专家VPN评论，找到最适合您需求的解决方案。"
+    },
+    "posts": {
+      "vpn-black-friday-2025": {
+        "title": "Black Friday VPN Deals 2025: Up to 88% Off",
+        "excerpt": "Don't miss the biggest VPN deals of the year! Get massive discounts on top VPN services including Surfshark, NordVPN, ExpressVPN and more.",
+        "category": "Deals",
+        "readTime": "5 min read",
+        "author": "By ZeroToVPN Team",
+        "intro": {
+          "paragraph1": "Black Friday 2025 is here, and VPN providers are offering their best deals of the year. Whether you're looking for online privacy, streaming access, or security on public Wi-Fi, now is the perfect time to get a premium VPN at a fraction of the regular price.",
+          "paragraph2": "We've compiled all the best Black Friday VPN deals for 2025, with discounts reaching up to 88% off. These limited-time offers won't last long, so grab them while you can!"
+        },
+        "deals": {
+          "title": "Best Black Friday VPN Deals 2025",
+          "subtitle": "Compare all deals and choose the best one for you"
+        },
+        "tips": {
+          "title": "Black Friday VPN Shopping Tips",
+          "tip1": "Look for 2-year plans - They offer the best value and biggest discounts",
+          "tip2": "Check the money-back guarantee - All reputable VPNs offer at least 30 days",
+          "tip3": "Compare features, not just price - Make sure the VPN meets your specific needs",
+          "tip4": "Act fast - The best deals often sell out or end early"
+        },
+        "conclusion": {
+          "title": "Don't Miss These Black Friday VPN Deals",
+          "paragraph1": "Black Friday is the best time of year to get a premium VPN subscription at an unbeatable price. Whether you choose Surfshark for value, NordVPN for features, or ExpressVPN for speed, you can't go wrong with any of these deals.",
+          "paragraph2": "Remember, these offers are time-limited and may end at any moment. Don't wait - secure your online privacy today and save big!",
+          "cta1": "See All VPN Reviews",
+          "cta2": "Compare VPNs"
+        },
+        "related": {
+          "title": "Related Articles",
+          "post1": {
+            "title": "Is Using a VPN Legal?",
+            "excerpt": "Learn about VPN legality worldwide and where you can use them safely."
+          },
+          "post2": {
+            "title": "VPN vs Proxy: What's the Difference?",
+            "excerpt": "Understand the key differences and which one is better for your needs."
+          }
+        }
+      },
+      "is-vpn-legal": {
+        "title": "Is Using a VPN Legal? Country-by-Country Guide",
+        "excerpt": "Learn about VPN legality worldwide. Find out which countries ban or restrict VPNs, and where you can use them safely.",
+        "category": "Security",
+        "readTime": "8 min read",
+        "author": "By ZeroToVPN Team",
+        "quickAnswer": {
+          "title": "Quick Answer",
+          "answer": "Yes, VPNs are legal in most countries including the US, UK, Canada, and most of Europe. However, some countries like China, Russia, and UAE restrict or ban VPN use. The legality depends on your location and how you use the VPN."
+        },
+        "intro": {
+          "paragraph1": "One of the most common questions about VPNs is whether they're legal to use. The short answer is yes - VPNs are legal in the vast majority of countries around the world. However, the legality can vary depending on where you are and how you use them.",
+          "paragraph2": "In this comprehensive guide, we'll explore VPN legality country by country, explain when VPN use might be illegal, and help you understand the legal landscape of online privacy tools."
+        },
+        "countries": {
+          "title": "VPN Legal Status by Country",
+          "fullyLegal": "Fully Legal",
+          "restricted": "Restricted",
+          "banned": "Banned or Illegal"
+        },
+        "disclaimer": {
+          "title": "Important Disclaimer",
+          "text": "Laws change frequently. Always check current local regulations before using a VPN. This information is for educational purposes only and should not be considered legal advice."
+        },
+        "illegal": {
+          "title": "When Is VPN Use Illegal?",
+          "intro": "Even in countries where VPNs are legal, using them for illegal activities is still against the law:",
+          "point1": "Illegal file sharing or piracy",
+          "point2": "Hacking, fraud, or cybercrime",
+          "point3": "Buying or selling illegal goods",
+          "point4": "Harassment, stalking, or other illegal online activities"
+        },
+        "safeUse": {
+          "title": "How to Use a VPN Safely and Legally",
+          "tip1": "Research local laws before using a VPN, especially when traveling",
+          "tip2": "Choose reputable VPN providers with no-logs policies",
+          "tip3": "Don't use VPNs to engage in illegal activities",
+          "tip4": "Be aware of terms of service for websites and streaming platforms",
+          "cta": "Find a Trusted VPN Provider"
+        },
+        "conclusion": {
+          "title": "The Bottom Line on VPN Legality",
+          "paragraph1": "For most people in most countries, using a VPN is completely legal and a smart way to protect your online privacy and security. VPNs are widely used by businesses, journalists, activists, and everyday internet users.",
+          "paragraph2": "However, it's important to be aware of local regulations, especially if you're traveling. When used responsibly and legally, VPNs are powerful tools for protecting your digital rights and maintaining your privacy online."
+        },
+        "related": {
+          "title": "Related Articles",
+          "post1": {
+            "title": "Black Friday VPN Deals 2025",
+            "excerpt": "Get up to 88% off on top VPN services. Limited time offers!"
+          },
+          "post2": {
+            "title": "VPN vs Proxy: What's the Difference?",
+            "excerpt": "Understand the key differences and which one is better for your needs."
+          }
+        }
+      },
+      "vpn-vs-proxy": {
+        "title": "VPN vs Proxy: What's the Difference?",
+        "excerpt": "Understand the key differences between VPNs and proxies. Learn which one is better for privacy, security, and speed.",
+        "category": "Tips",
+        "readTime": "6 min read",
+        "author": "By ZeroToVPN Team",
+        "intro": {
+          "paragraph1": "Both VPNs and proxies can hide your IP address and help you access geo-restricted content, but they work in very different ways and offer different levels of security and privacy.",
+          "paragraph2": "In this comprehensive guide, we'll break down the differences between VPNs and proxies, explain when to use each, and help you make the right choice for your needs."
+        },
+        "whatIsVpn": {
+          "title": "What is a VPN?",
+          "description": "A Virtual Private Network (VPN) creates an encrypted tunnel between your device and a remote server, protecting all your internet traffic.",
+          "feature1": "Encrypts all your internet traffic with military-grade encryption",
+          "feature2": "Protects your entire device, not just your browser",
+          "feature3": "Hides your IP address and location from websites and ISPs"
+        },
+        "whatIsProxy": {
+          "title": "What is a Proxy?",
+          "description": "A proxy server acts as an intermediary between your device and the internet, routing your traffic through a different IP address.",
+          "feature1": "Routes traffic through a different IP address",
+          "feature2": "Typically faster than VPNs (no encryption overhead)",
+          "feature3": "No encryption - your data is visible to the proxy server"
+        },
+        "comparison": {
+          "title": "VPN vs Proxy: Side-by-Side Comparison",
+          "subtitle": "See how VPNs and proxies stack up across key features"
+        },
+        "whenToUse": {
+          "title": "When Should You Use Each?",
+          "vpnTitle": "Use a VPN When:",
+          "vpn1": "You need maximum security and privacy",
+          "vpn2": "You're using public Wi-Fi networks",
+          "vpn3": "You want to encrypt all device traffic",
+          "vpn4": "You're concerned about ISP tracking",
+          "proxyTitle": "Use a Proxy When:",
+          "proxy1": "You need quick access to geo-blocked content",
+          "proxy2": "You want faster speeds for simple tasks",
+          "proxy3": "You only need to route browser traffic",
+          "proxy4": "Security is not your primary concern"
+        },
+        "conclusion": {
+          "title": "Which Should You Choose?",
+          "paragraph1": "For most people, a VPN is the better choice. It provides comprehensive security, encrypts all your traffic, and protects your privacy across all applications. While proxies are faster and often free, they don't provide the same level of protection.",
+          "paragraph2": "If you're serious about online privacy and security, invest in a reputable VPN service. The small cost is worth the peace of mind knowing your data is encrypted and your online activities are private.",
+          "cta1": "Find the Best VPN",
+          "cta2": "Learn More About VPNs"
+        },
+        "related": {
+          "title": "Related Articles",
+          "post1": {
+            "title": "Black Friday VPN Deals 2025",
+            "excerpt": "Get up to 88% off on top VPN services. Limited time offers!"
+          },
+          "post2": {
+            "title": "Is Using a VPN Legal?",
+            "excerpt": "Learn about VPN legality worldwide and where you can use them safely."
+          }
+        }
+      }
     }
   }
 }

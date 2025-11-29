@@ -26,8 +26,11 @@ type Props = {
   params: Promise<{ locale: string }>;
 };
 
+const baseUrl = "https://zerotovpn.com";
+
 export async function generateMetadata(): Promise<Metadata> {
   return {
+    metadataBase: new URL(baseUrl),
     title: "Compare VPNs Side by Side - ZeroToVPN",
     description:
       "Compare the best VPN services side by side. See detailed comparisons of speed, security, pricing, features, and more to find the perfect VPN for your needs.",

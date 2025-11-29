@@ -20,8 +20,11 @@ type Props = {
   params: Promise<{ locale: string }>;
 };
 
+const baseUrl = "https://zerotovpn.com";
+
 export async function generateMetadata(): Promise<Metadata> {
   return {
+    metadataBase: new URL(baseUrl),
     title: "About Us - ZeroToVPN",
     description:
       "Learn about ZeroToVPN, our mission to help people find the best VPN services, and our commitment to honest, independent reviews.",

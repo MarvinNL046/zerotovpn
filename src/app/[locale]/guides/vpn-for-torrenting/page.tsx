@@ -41,8 +41,11 @@ type Props = {
   params: Promise<{ locale: string }>;
 };
 
+const baseUrl = "https://zerotovpn.com";
+
 export async function generateMetadata(): Promise<Metadata> {
   return {
+    metadataBase: new URL(baseUrl),
     title: "VPN for Torrenting: Stay Safe While Downloading (2025 Guide) - ZeroToVPN",
     description:
       "Learn how to use a VPN for safe torrenting. Understand P2P-friendly VPNs, kill switches, and leak protection to download securely and anonymously.",
@@ -63,8 +66,6 @@ export default async function VpnForTorrentingPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("guides.vpnForTorrenting");
-
-  const baseUrl = "https://zerotovpn.com";
   const pageUrl = locale === "en" ? `${baseUrl}/guides/vpn-for-torrenting` : `${baseUrl}/${locale}/guides/vpn-for-torrenting`;
 
   return (

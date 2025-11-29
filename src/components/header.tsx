@@ -20,6 +20,7 @@ export function Header() {
     { href: "/best/best-vpn", label: t("best"), highlight: true },
     { href: "/compare", label: t("compare"), highlight: false },
     { href: "/guides", label: t("guides"), highlight: false },
+    { href: "/blog", label: t("blog"), highlight: false },
   ];
 
   return (

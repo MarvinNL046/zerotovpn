@@ -43,8 +43,11 @@ type Props = {
   params: Promise<{ locale: string }>;
 };
 
+const baseUrl = "https://zerotovpn.com";
+
 export async function generateMetadata(): Promise<Metadata> {
   return {
+    metadataBase: new URL(baseUrl),
     title: "VPN Privacy Guide: No-Logs Policies & Jurisdiction Explained (2025) - ZeroToVPN",
     description:
       "Understand what makes a VPN truly private. Learn about no-logs policies, jurisdiction, independent audits, and how to evaluate VPN privacy claims.",
@@ -65,8 +68,6 @@ export default async function VpnPrivacyGuidePage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("guides.vpnPrivacyGuide");
-
-  const baseUrl = "https://zerotovpn.com";
   const pageUrl = locale === "en" ? `${baseUrl}/guides/vpn-privacy-guide` : `${baseUrl}/${locale}/guides/vpn-privacy-guide`;
 
   return (

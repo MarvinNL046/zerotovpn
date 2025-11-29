@@ -36,8 +36,11 @@ type Props = {
   params: Promise<{ locale: string }>;
 };
 
+const baseUrl = "https://zerotovpn.com";
+
 export async function generateMetadata(): Promise<Metadata> {
   return {
+    metadataBase: new URL(baseUrl),
     title: "VPN Protocols Explained: WireGuard vs OpenVPN vs IKEv2 (2025) - ZeroToVPN",
     description:
       "Understand the differences between VPN protocols. Compare WireGuard, OpenVPN, IKEv2, and others to choose the best protocol for your needs.",
@@ -58,8 +61,6 @@ export default async function VpnProtocolsExplainedPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("guides.vpnProtocolsExplained");
-
-  const baseUrl = "https://zerotovpn.com";
   const pageUrl = locale === "en" ? `${baseUrl}/guides/vpn-protocols-explained` : `${baseUrl}/${locale}/guides/vpn-protocols-explained`;
 
   // Get sections data

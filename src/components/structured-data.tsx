@@ -125,14 +125,27 @@ export function VpnProductSchema({ vpn }: { vpn: VpnProvider }) {
       ratingValue: vpn.overallRating,
       bestRating: 5,
       worstRating: 1,
-      ratingCount: Math.floor(Math.random() * 5000) + 1000, // Placeholder
+    },
+    review: {
+      "@type": "Review",
+      author: {
+        "@type": "Organization",
+        name: "ZeroToVPN",
+      },
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: vpn.overallRating,
+        bestRating: 5,
+      },
     },
     offers: {
-      "@type": "AggregateOffer",
-      lowPrice: vpn.priceTwoYear || vpn.priceYearly,
-      highPrice: vpn.priceMonthly,
+      "@type": "Offer",
+      price: vpn.priceTwoYear || vpn.priceYearly,
       priceCurrency: "USD",
-      offerCount: 3,
+      availability: "https://schema.org/InStock",
+      priceValidUntil: new Date(
+        new Date().setFullYear(new Date().getFullYear() + 1)
+      ).toISOString().split("T")[0],
     },
   };
 
@@ -223,6 +236,60 @@ export function BreadcrumbSchema({
       name: item.name,
       item: item.url,
     })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+// Article Schema for Blog Posts
+export function ArticleJsonLd({
+  title,
+  description,
+  datePublished,
+  dateModified,
+  authorName = "ZeroToVPN Team",
+  url,
+  imageUrl,
+}: {
+  title: string;
+  description: string;
+  datePublished: string;
+  dateModified?: string;
+  authorName?: string;
+  url: string;
+  imageUrl?: string;
+}) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description: description,
+    url: url,
+    datePublished: datePublished,
+    dateModified: dateModified || datePublished,
+    author: {
+      "@type": "Person",
+      name: authorName,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "ZeroToVPN",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://zerotovpn.com/logo.png",
+      },
+    },
+    ...(imageUrl && {
+      image: {
+        "@type": "ImageObject",
+        url: imageUrl,
+      },
+    }),
   };
 
   return (

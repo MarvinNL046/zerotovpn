@@ -37,8 +37,11 @@ type Props = {
   params: Promise<{ locale: string }>;
 };
 
+const baseUrl = "https://zerotovpn.com";
+
 export async function generateMetadata(): Promise<Metadata> {
   return {
+    metadataBase: new URL(baseUrl),
     title: "Best VPN for Streaming Netflix, Disney+ & More (2025 Guide) - ZeroToVPN",
     description:
       "Discover how to use a VPN to access Netflix, Disney+, BBC iPlayer and more streaming services from anywhere. Find the best VPNs for streaming.",
@@ -59,8 +62,6 @@ export default async function VpnForStreamingPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("guides.vpnForStreaming");
-
-  const baseUrl = "https://zerotovpn.com";
   const pageUrl = locale === "en" ? `${baseUrl}/guides/vpn-for-streaming` : `${baseUrl}/${locale}/guides/vpn-for-streaming`;
 
   return (

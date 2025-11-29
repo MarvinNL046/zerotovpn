@@ -29,8 +29,11 @@ type Props = {
   params: Promise<{ locale: string }>;
 };
 
+const baseUrl = "https://zerotovpn.com";
+
 export async function generateMetadata(): Promise<Metadata> {
   return {
+    metadataBase: new URL(baseUrl),
     title: "How Does a VPN Work? Technical Guide 2025 - ZeroToVPN",
     description:
       "Understand the technical details behind VPN technology. Learn about encryption, tunneling protocols, and how VPNs protect your data step by step.",

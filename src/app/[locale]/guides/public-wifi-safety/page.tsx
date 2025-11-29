@@ -36,8 +36,11 @@ type Props = {
   params: Promise<{ locale: string }>;
 };
 
+const baseUrl = "https://zerotovpn.com";
+
 export async function generateMetadata(): Promise<Metadata> {
   return {
+    metadataBase: new URL(baseUrl),
     title: "Public WiFi Safety: How to Stay Secure on Open Networks (2025) - ZeroToVPN",
     description:
       "Learn about public WiFi risks and how to protect yourself. Discover essential security tips for using WiFi at cafes, airports, hotels, and other public places.",
@@ -59,7 +62,6 @@ export default async function PublicWifiSafetyPage({ params }: Props) {
   setRequestLocale(locale);
   const t = await getTranslations("guides.publicWifiSafety");
 
-  const baseUrl = "https://zerotovpn.com";
   const pageUrl = locale === "en" ? `${baseUrl}/guides/public-wifi-safety` : `${baseUrl}/${locale}/guides/public-wifi-safety`;
 
   return (

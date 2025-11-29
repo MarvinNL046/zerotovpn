@@ -48,6 +48,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   return {
+    metadataBase: new URL(baseUrl),
     title: titles[locale] || titles.en,
     description: descriptions[locale] || descriptions.en,
     keywords: [

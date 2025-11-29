@@ -32,8 +32,11 @@ type Props = {
   params: Promise<{ locale: string }>;
 };
 
+const baseUrl = "https://zerotovpn.com";
+
 export async function generateMetadata(): Promise<Metadata> {
   return {
+    metadataBase: new URL(baseUrl),
     title: "VPN Speed Guide: How to Get the Fastest VPN Connection (2025) - ZeroToVPN",
     description:
       "Learn what affects VPN speed and how to optimize your connection. Get tips to maximize your VPN performance for streaming, gaming, and downloads.",
@@ -54,8 +57,6 @@ export default async function VpnSpeedGuidePage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("guides.vpnSpeedGuide");
-
-  const baseUrl = "https://zerotovpn.com";
   const pageUrl = locale === "en" ? `${baseUrl}/guides/vpn-speed-guide` : `${baseUrl}/${locale}/guides/vpn-speed-guide`;
 
   const tocItems = t.raw("toc.items") as string[];

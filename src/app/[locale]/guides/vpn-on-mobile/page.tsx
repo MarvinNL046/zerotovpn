@@ -42,8 +42,11 @@ type Props = {
   params: Promise<{ locale: string }>;
 };
 
+const baseUrl = "https://zerotovpn.com";
+
 export async function generateMetadata(): Promise<Metadata> {
   return {
+    metadataBase: new URL(baseUrl),
     title: "VPN on Mobile: Complete iOS & Android Setup Guide (2025) - ZeroToVPN",
     description:
       "Learn how to set up and use a VPN on your iPhone or Android device. Step-by-step guides, best practices, and tips for mobile VPN security.",
@@ -64,8 +67,6 @@ export default async function VpnOnMobilePage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("guides.vpnOnMobile");
-
-  const baseUrl = "https://zerotovpn.com";
   const pageUrl = locale === "en" ? `${baseUrl}/guides/vpn-on-mobile` : `${baseUrl}/${locale}/guides/vpn-on-mobile`;
 
   const whyMobileVpn = t.raw("sections.whyMobileVpn") as any;

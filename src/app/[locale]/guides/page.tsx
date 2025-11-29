@@ -21,9 +21,12 @@ type Props = {
   params: Promise<{ locale: string }>;
 };
 
+const baseUrl = "https://zerotovpn.com";
+
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("guidesIndex.meta");
   return {
+    metadataBase: new URL(baseUrl),
     title: t("title"),
     description: t("description"),
     robots: {

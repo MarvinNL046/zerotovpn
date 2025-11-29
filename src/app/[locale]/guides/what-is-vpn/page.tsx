@@ -29,8 +29,11 @@ type Props = {
   params: Promise<{ locale: string }>;
 };
 
+const baseUrl = "https://zerotovpn.com";
+
 export async function generateMetadata(): Promise<Metadata> {
   return {
+    metadataBase: new URL(baseUrl),
     title: "What is a VPN? Complete Beginner's Guide 2025 - ZeroToVPN",
     description:
       "Learn what a VPN is, how it works, and why you need one. Our comprehensive beginner's guide explains VPN technology in simple terms.",
@@ -51,8 +54,6 @@ export default async function WhatIsVpnPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("guides.whatIsVpn");
-
-  const baseUrl = "https://zerotovpn.com";
   const pageUrl = locale === "en" ? `${baseUrl}/guides/what-is-vpn` : `${baseUrl}/${locale}/guides/what-is-vpn`;
 
   return (

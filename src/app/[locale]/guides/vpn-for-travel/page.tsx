@@ -45,8 +45,11 @@ type Props = {
   params: Promise<{ locale: string }>;
 };
 
+const baseUrl = "https://zerotovpn.com";
+
 export async function generateMetadata(): Promise<Metadata> {
   return {
+    metadataBase: new URL(baseUrl),
     title: "VPN for Travel: Essential Guide to Staying Connected Abroad (2025) - ZeroToVPN",
     description:
       "Learn why you need a VPN when traveling. Access home content, bypass censorship, protect on hotel WiFi, and find deals. Complete travel VPN guide.",
@@ -67,8 +70,6 @@ export default async function VpnForTravelPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("guides.vpnForTravel");
-
-  const baseUrl = "https://zerotovpn.com";
   const pageUrl = locale === "en" ? `${baseUrl}/guides/vpn-for-travel` : `${baseUrl}/${locale}/guides/vpn-for-travel`;
 
   const tocItems = t.raw("toc.items") as string[];

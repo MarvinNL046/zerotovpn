@@ -3052,5 +3052,118 @@
     "userReviews": {
       "title": "用户评测"
     }
+  },
+  "guidesIndex": {
+    "meta": {
+      "title": "VPN指南和教程 - ZeroToVPN",
+      "description": "通过我们全面的指南学习关于VPN的一切。从基础到高级主题，成为VPN专家就在ZeroToVPN。"
+    },
+    "hero": {
+      "title": "VPN指南和教程",
+      "subtitle": "从初学者基础到高级主题 - 学习关于VPN和在线隐私您需要知道的一切。"
+    },
+    "categories": {
+      "all": "全部",
+      "basics": "基础",
+      "useCases": "使用场景",
+      "security": "安全",
+      "technical": "技术",
+      "performance": "性能",
+      "setup": "设置",
+      "privacy": "隐私"
+    },
+    "sections": {
+      "startHere": {
+        "title": "从这里开始",
+        "subtitle": "VPN初学者必备指南"
+      },
+      "allGuides": {
+        "title": "所有指南",
+        "subtitle": "浏览我们完整的VPN指南集合"
+      },
+      "topics": {
+        "title": "我们涵盖的主题",
+        "subtitle": "成为VPN专家所需的一切"
+      },
+      "cta": {
+        "title": "准备开始了吗？",
+        "subtitle": "阅读我们的初学者指南以了解VPN基础，然后比较最佳VPN服务以找到您的完美匹配。"
+      }
+    },
+    "guides": {
+      "whatIsVpn": {
+        "title": "什么是VPN？",
+        "description": "学习虚拟专用网络的基础知识、工作原理以及为什么您可能需要一个。",
+        "readTime": "8分钟阅读"
+      },
+      "howVpnWorks": {
+        "title": "VPN如何工作？",
+        "description": "了解VPN加密、隧道协议和数据保护背后的技术细节。",
+        "readTime": "10分钟阅读"
+      },
+      "vpnForStreaming": {
+        "title": "最佳流媒体VPN",
+        "description": "了解如何使用VPN从任何地方访问Netflix、Disney+、BBC iPlayer等。",
+        "readTime": "7分钟阅读"
+      },
+      "vpnSpeedGuide": {
+        "title": "VPN速度指南",
+        "description": "了解影响VPN速度的因素以及如何优化连接以获得最佳性能。",
+        "readTime": "6分钟阅读"
+      },
+      "vpnProtocolsExplained": {
+        "title": "VPN协议解释",
+        "description": "WireGuard、OpenVPN、IKEv2 - 了解VPN协议之间的差异以及如何选择。",
+        "readTime": "12分钟阅读"
+      },
+      "vpnForTorrenting": {
+        "title": "种子下载VPN",
+        "description": "使用支持P2P的VPN在下载时保持安全。了解kill switches和泄漏保护。",
+        "readTime": "8分钟阅读"
+      },
+      "vpnOnMobile": {
+        "title": "移动设备上的VPN",
+        "description": "如何在您的iPhone或Android设备上设置和使用VPN以实现移动隐私。",
+        "readTime": "5分钟阅读"
+      },
+      "vpnForTravel": {
+        "title": "旅行VPN",
+        "description": "在国外旅行时使用VPN、访问本地内容以及在公共WiFi上保持安全的重要提示。",
+        "readTime": "7分钟阅读"
+      },
+      "publicWifiSafety": {
+        "title": "公共WiFi安全",
+        "description": "为什么公共WiFi危险以及VPN如何在咖啡馆、机场和酒店保护您。",
+        "readTime": "6分钟阅读"
+      },
+      "vpnPrivacyGuide": {
+        "title": "VPN隐私指南",
+        "description": "了解无日志政策、管辖权以及使VPN真正私密的因素。",
+        "readTime": "10分钟阅读"
+      }
+    },
+    "topicCards": {
+      "basics": {
+        "title": "VPN基础",
+        "description": "了解VPN是什么、如何工作以及为什么重要"
+      },
+      "securityPrivacy": {
+        "title": "安全和隐私",
+        "description": "深入分析加密、协议和保持匿名"
+      },
+      "streaming": {
+        "title": "流媒体和内容",
+        "description": "解锁Netflix，访问全球内容，安全流媒体"
+      },
+      "setup": {
+        "title": "设置和操作指南",
+        "description": "适用于所有设备和平台的分步指南"
+      }
+    },
+    "buttons": {
+      "startLearning": "开始学习",
+      "compareVpns": "比较VPN",
+      "readGuide": "阅读指南"
+    }
   }
 }

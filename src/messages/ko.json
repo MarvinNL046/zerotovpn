@@ -3066,5 +3066,118 @@
     "userReviews": {
       "title": "사용자 리뷰"
     }
+  },
+  "guidesIndex": {
+    "meta": {
+      "title": "VPN 가이드 및 튜토리얼 - ZeroToVPN",
+      "description": "포괄적인 가이드로 VPN에 대한 모든 것을 배우세요. 기초부터 고급 주제까지, ZeroToVPN과 함께 VPN 전문가가 되세요."
+    },
+    "hero": {
+      "title": "VPN 가이드 및 튜토리얼",
+      "subtitle": "초보자 기초부터 고급 주제까지 - VPN과 온라인 프라이버시에 대해 알아야 할 모든 것을 배우세요."
+    },
+    "categories": {
+      "all": "전체",
+      "basics": "기초",
+      "useCases": "사용 사례",
+      "security": "보안",
+      "technical": "기술",
+      "performance": "성능",
+      "setup": "설정",
+      "privacy": "프라이버시"
+    },
+    "sections": {
+      "startHere": {
+        "title": "여기서 시작하기",
+        "subtitle": "VPN 초보자를 위한 필수 가이드"
+      },
+      "allGuides": {
+        "title": "모든 가이드",
+        "subtitle": "완전한 VPN 가이드 컬렉션 탐색"
+      },
+      "topics": {
+        "title": "다루는 주제",
+        "subtitle": "VPN 전문가가 되기 위해 필요한 모든 것"
+      },
+      "cta": {
+        "title": "시작할 준비가 되셨나요?",
+        "subtitle": "초보자 가이드를 읽고 VPN 기초를 이해한 다음, 최고의 VPN 서비스를 비교하여 완벽한 매치를 찾으세요."
+      }
+    },
+    "guides": {
+      "whatIsVpn": {
+        "title": "VPN이란 무엇인가요?",
+        "description": "가상 사설망의 기초, 작동 방식, 필요한 이유를 배우세요.",
+        "readTime": "8분 읽기"
+      },
+      "howVpnWorks": {
+        "title": "VPN 작동 방식",
+        "description": "VPN 암호화, 터널링 프로토콜, 데이터 보호의 기술적 세부 사항을 이해하세요.",
+        "readTime": "10분 읽기"
+      },
+      "vpnForStreaming": {
+        "title": "스트리밍을 위한 최고의 VPN",
+        "description": "어디서나 Netflix, Disney+, BBC iPlayer 등에 액세스하기 위해 VPN을 사용하는 방법을 알아보세요.",
+        "readTime": "7분 읽기"
+      },
+      "vpnSpeedGuide": {
+        "title": "VPN 속도 가이드",
+        "description": "VPN 속도에 영향을 미치는 요인과 최상의 성능을 위해 연결을 최적화하는 방법을 배우세요.",
+        "readTime": "6분 읽기"
+      },
+      "vpnProtocolsExplained": {
+        "title": "VPN 프로토콜 설명",
+        "description": "WireGuard, OpenVPN, IKEv2 - VPN 프로토콜 간의 차이점과 선택 방법을 이해하세요.",
+        "readTime": "12분 읽기"
+      },
+      "vpnForTorrenting": {
+        "title": "토렌트용 VPN",
+        "description": "P2P 친화적인 VPN으로 다운로드 중에도 안전을 유지하세요. 킬 스위치와 누수 보호에 대해 배우세요.",
+        "readTime": "8분 읽기"
+      },
+      "vpnOnMobile": {
+        "title": "모바일 기기의 VPN",
+        "description": "이동 중에도 프라이버시를 위해 iPhone 또는 Android 기기에서 VPN을 설정하고 사용하는 방법.",
+        "readTime": "5분 읽기"
+      },
+      "vpnForTravel": {
+        "title": "여행용 VPN",
+        "description": "해외 여행 중 VPN 사용, 홈 콘텐츠 액세스, 공용 WiFi에서 안전 유지를 위한 필수 팁.",
+        "readTime": "7분 읽기"
+      },
+      "publicWifiSafety": {
+        "title": "공용 WiFi 안전",
+        "description": "공용 WiFi가 위험한 이유와 카페, 공항, 호텔에서 VPN이 보호하는 방법.",
+        "readTime": "6분 읽기"
+      },
+      "vpnPrivacyGuide": {
+        "title": "VPN 프라이버시 가이드",
+        "description": "노로그 정책, 관할권, VPN을 진정으로 프라이빗하게 만드는 요소를 이해하세요.",
+        "readTime": "10분 읽기"
+      }
+    },
+    "topicCards": {
+      "basics": {
+        "title": "VPN 기초",
+        "description": "VPN이 무엇인지, 어떻게 작동하는지, 왜 중요한지 배우기"
+      },
+      "securityPrivacy": {
+        "title": "보안 및 프라이버시",
+        "description": "암호화, 프로토콜, 익명 유지에 대한 심층 분석"
+      },
+      "streaming": {
+        "title": "스트리밍 및 콘텐츠",
+        "description": "Netflix 차단 해제, 글로벌 콘텐츠 액세스, 안전한 스트리밍"
+      },
+      "setup": {
+        "title": "설정 및 사용법",
+        "description": "모든 기기 및 플랫폼을 위한 단계별 가이드"
+      }
+    },
+    "buttons": {
+      "startLearning": "학습 시작",
+      "compareVpns": "VPN 비교",
+      "readGuide": "가이드 읽기"
+    }
   }
 }

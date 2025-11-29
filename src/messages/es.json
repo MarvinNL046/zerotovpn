@@ -3407,5 +3407,118 @@
     "userReviews": {
       "title": "Reseñas de Usuarios"
     }
+  },
+  "guidesIndex": {
+    "meta": {
+      "title": "Guías y Tutoriales VPN - ZeroToVPN",
+      "description": "Aprende todo sobre VPNs con nuestras guías completas. Desde lo básico hasta temas avanzados, conviértete en un experto VPN con ZeroToVPN."
+    },
+    "hero": {
+      "title": "Guías y Tutoriales VPN",
+      "subtitle": "Desde lo básico para principiantes hasta temas avanzados - aprende todo lo que necesitas saber sobre VPNs y privacidad en línea."
+    },
+    "categories": {
+      "all": "Todas",
+      "basics": "Básico",
+      "useCases": "Casos de Uso",
+      "security": "Seguridad",
+      "technical": "Técnico",
+      "performance": "Rendimiento",
+      "setup": "Configuración",
+      "privacy": "Privacidad"
+    },
+    "sections": {
+      "startHere": {
+        "title": "Empieza Aquí",
+        "subtitle": "Guías esenciales para principiantes en VPN"
+      },
+      "allGuides": {
+        "title": "Todas las Guías",
+        "subtitle": "Explora nuestra colección completa de guías VPN"
+      },
+      "topics": {
+        "title": "Temas que Cubrimos",
+        "subtitle": "Todo lo que necesitas para convertirte en un experto VPN"
+      },
+      "cta": {
+        "title": "¿Listo para Empezar?",
+        "subtitle": "Lee nuestra guía para principiantes para entender lo básico de VPN, luego compara los mejores servicios VPN para encontrar tu combinación perfecta."
+      }
+    },
+    "guides": {
+      "whatIsVpn": {
+        "title": "¿Qué es una VPN?",
+        "description": "Aprende los conceptos básicos de las Redes Privadas Virtuales, cómo funcionan y por qué podrías necesitar una.",
+        "readTime": "8 min de lectura"
+      },
+      "howVpnWorks": {
+        "title": "¿Cómo Funciona una VPN?",
+        "description": "Comprende los detalles técnicos detrás del cifrado VPN, protocolos de túnel y protección de datos.",
+        "readTime": "10 min de lectura"
+      },
+      "vpnForStreaming": {
+        "title": "Mejor VPN para Streaming",
+        "description": "Descubre cómo usar una VPN para acceder a Netflix, Disney+, BBC iPlayer y más desde cualquier lugar.",
+        "readTime": "7 min de lectura"
+      },
+      "vpnSpeedGuide": {
+        "title": "Guía de Velocidad VPN",
+        "description": "Aprende qué afecta la velocidad de VPN y cómo optimizar tu conexión para el mejor rendimiento.",
+        "readTime": "6 min de lectura"
+      },
+      "vpnProtocolsExplained": {
+        "title": "Protocolos VPN Explicados",
+        "description": "WireGuard, OpenVPN, IKEv2 - entiende las diferencias entre protocolos VPN y cuál elegir.",
+        "readTime": "12 min de lectura"
+      },
+      "vpnForTorrenting": {
+        "title": "VPN para Torrenting",
+        "description": "Mantente seguro mientras descargas con VPNs compatibles con P2P. Aprende sobre kill switches y protección contra fugas.",
+        "readTime": "8 min de lectura"
+      },
+      "vpnOnMobile": {
+        "title": "VPN en Dispositivos Móviles",
+        "description": "Cómo configurar y usar una VPN en tu iPhone o dispositivo Android para privacidad sobre la marcha.",
+        "readTime": "5 min de lectura"
+      },
+      "vpnForTravel": {
+        "title": "VPN para Viajes",
+        "description": "Consejos esenciales para usar una VPN mientras viajas al extranjero, acceder a contenido local y mantenerte seguro en WiFi público.",
+        "readTime": "7 min de lectura"
+      },
+      "publicWifiSafety": {
+        "title": "Seguridad en WiFi Público",
+        "description": "Por qué el WiFi público es peligroso y cómo una VPN te protege en cafeterías, aeropuertos y hoteles.",
+        "readTime": "6 min de lectura"
+      },
+      "vpnPrivacyGuide": {
+        "title": "Guía de Privacidad VPN",
+        "description": "Comprende las políticas sin registros, jurisdicción y qué hace que una VPN sea verdaderamente privada.",
+        "readTime": "10 min de lectura"
+      }
+    },
+    "topicCards": {
+      "basics": {
+        "title": "Conceptos Básicos de VPN",
+        "description": "Aprende qué son las VPN, cómo funcionan y por qué son importantes"
+      },
+      "securityPrivacy": {
+        "title": "Seguridad y Privacidad",
+        "description": "Análisis profundos sobre cifrado, protocolos y cómo mantenerse anónimo"
+      },
+      "streaming": {
+        "title": "Streaming y Contenido",
+        "description": "Desbloquea Netflix, accede a contenido global y transmite de forma segura"
+      },
+      "setup": {
+        "title": "Configuración e Instrucciones",
+        "description": "Guías paso a paso para todos los dispositivos y plataformas"
+      }
+    },
+    "buttons": {
+      "startLearning": "Empezar a Aprender",
+      "compareVpns": "Comparar VPNs",
+      "readGuide": "Leer Guía"
+    }
   }
 }

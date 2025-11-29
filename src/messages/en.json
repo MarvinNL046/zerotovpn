@@ -3051,5 +3051,118 @@
     "userReviews": {
       "title": "User Reviews"
     }
+  },
+  "guidesIndex": {
+    "meta": {
+      "title": "VPN Guides & Tutorials - ZeroToVPN",
+      "description": "Learn everything about VPNs with our comprehensive guides. From basics to advanced topics, become a VPN expert with ZeroToVPN."
+    },
+    "hero": {
+      "title": "VPN Guides & Tutorials",
+      "subtitle": "From beginner basics to advanced topics - learn everything you need to know about VPNs and online privacy."
+    },
+    "categories": {
+      "all": "All",
+      "basics": "Basics",
+      "useCases": "Use Cases",
+      "security": "Security",
+      "technical": "Technical",
+      "performance": "Performance",
+      "setup": "Setup",
+      "privacy": "Privacy"
+    },
+    "sections": {
+      "startHere": {
+        "title": "Start Here",
+        "subtitle": "Essential guides for VPN beginners"
+      },
+      "allGuides": {
+        "title": "All Guides",
+        "subtitle": "Browse our complete collection of VPN guides"
+      },
+      "topics": {
+        "title": "Topics We Cover",
+        "subtitle": "Everything you need to become a VPN expert"
+      },
+      "cta": {
+        "title": "Ready to Get Started?",
+        "subtitle": "Read our beginner's guide to understand VPN basics, then compare the best VPN services to find your perfect match."
+      }
+    },
+    "guides": {
+      "whatIsVpn": {
+        "title": "What is a VPN?",
+        "description": "Learn the basics of Virtual Private Networks, how they work, and why you might need one.",
+        "readTime": "8 min read"
+      },
+      "howVpnWorks": {
+        "title": "How Does a VPN Work?",
+        "description": "Understand the technical details behind VPN encryption, tunneling protocols, and data protection.",
+        "readTime": "10 min read"
+      },
+      "vpnForStreaming": {
+        "title": "Best VPN for Streaming",
+        "description": "Discover how to use a VPN to access Netflix, Disney+, BBC iPlayer and more from anywhere.",
+        "readTime": "7 min read"
+      },
+      "vpnSpeedGuide": {
+        "title": "VPN Speed Guide",
+        "description": "Learn what affects VPN speed and how to optimize your connection for the best performance.",
+        "readTime": "6 min read"
+      },
+      "vpnProtocolsExplained": {
+        "title": "VPN Protocols Explained",
+        "description": "WireGuard, OpenVPN, IKEv2 - understand the differences between VPN protocols and which to choose.",
+        "readTime": "12 min read"
+      },
+      "vpnForTorrenting": {
+        "title": "VPN for Torrenting",
+        "description": "Stay safe while downloading with P2P-friendly VPNs. Learn about kill switches and leak protection.",
+        "readTime": "8 min read"
+      },
+      "vpnOnMobile": {
+        "title": "VPN on Mobile Devices",
+        "description": "How to set up and use a VPN on your iPhone or Android device for privacy on the go.",
+        "readTime": "5 min read"
+      },
+      "vpnForTravel": {
+        "title": "VPN for Travel",
+        "description": "Essential tips for using a VPN while traveling abroad, accessing home content, and staying secure on public WiFi.",
+        "readTime": "7 min read"
+      },
+      "publicWifiSafety": {
+        "title": "Public WiFi Safety",
+        "description": "Why public WiFi is dangerous and how a VPN protects you at cafes, airports, and hotels.",
+        "readTime": "6 min read"
+      },
+      "vpnPrivacyGuide": {
+        "title": "VPN Privacy Guide",
+        "description": "Understanding no-logs policies, jurisdiction, and what makes a VPN truly private.",
+        "readTime": "10 min read"
+      }
+    },
+    "topicCards": {
+      "basics": {
+        "title": "VPN Basics",
+        "description": "Learn what VPNs are, how they work, and why they matter"
+      },
+      "securityPrivacy": {
+        "title": "Security & Privacy",
+        "description": "Deep dives into encryption, protocols, and staying anonymous"
+      },
+      "streaming": {
+        "title": "Streaming & Content",
+        "description": "Unblock Netflix, access global content, and stream safely"
+      },
+      "setup": {
+        "title": "Setup & How-To",
+        "description": "Step-by-step guides for all devices and platforms"
+      }
+    },
+    "buttons": {
+      "startLearning": "Start Learning",
+      "compareVpns": "Compare VPNs",
+      "readGuide": "Read Guide"
+    }
   }
 }

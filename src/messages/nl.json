@@ -3051,5 +3051,118 @@
     "userReviews": {
       "title": "Gebruikersreviews"
     }
+  },
+  "guidesIndex": {
+    "meta": {
+      "title": "VPN Gidsen & Tutorials - ZeroToVPN",
+      "description": "Leer alles over VPNs met onze uitgebreide gidsen. Van basis tot geavanceerde onderwerpen, word een VPN expert met ZeroToVPN."
+    },
+    "hero": {
+      "title": "VPN Gidsen & Tutorials",
+      "subtitle": "Van beginnersbasics tot geavanceerde onderwerpen - leer alles wat je moet weten over VPNs en online privacy."
+    },
+    "categories": {
+      "all": "Alle",
+      "basics": "Basis",
+      "useCases": "Gebruikssituaties",
+      "security": "Beveiliging",
+      "technical": "Technisch",
+      "performance": "Prestaties",
+      "setup": "Installatie",
+      "privacy": "Privacy"
+    },
+    "sections": {
+      "startHere": {
+        "title": "Begin Hier",
+        "subtitle": "Essentiële gidsen voor VPN beginners"
+      },
+      "allGuides": {
+        "title": "Alle Gidsen",
+        "subtitle": "Blader door onze complete collectie VPN gidsen"
+      },
+      "topics": {
+        "title": "Onderwerpen die We Behandelen",
+        "subtitle": "Alles wat je nodig hebt om een VPN expert te worden"
+      },
+      "cta": {
+        "title": "Klaar om te Beginnen?",
+        "subtitle": "Lees onze beginnersgids om VPN basics te begrijpen, en vergelijk daarna de beste VPN diensten om jouw perfecte match te vinden."
+      }
+    },
+    "guides": {
+      "whatIsVpn": {
+        "title": "Wat is een VPN?",
+        "description": "Leer de basis van Virtual Private Networks, hoe ze werken en waarom je er een nodig zou hebben.",
+        "readTime": "8 min lezen"
+      },
+      "howVpnWorks": {
+        "title": "Hoe Werkt een VPN?",
+        "description": "Begrijp de technische details achter VPN encryptie, tunneling protocols en gegevensbescherming.",
+        "readTime": "10 min lezen"
+      },
+      "vpnForStreaming": {
+        "title": "Beste VPN voor Streaming",
+        "description": "Ontdek hoe je een VPN gebruikt om toegang te krijgen tot Netflix, Disney+, BBC iPlayer en meer van overal.",
+        "readTime": "7 min lezen"
+      },
+      "vpnSpeedGuide": {
+        "title": "VPN Snelheid Gids",
+        "description": "Leer wat VPN snelheid beïnvloedt en hoe je jouw verbinding optimaliseert voor de beste prestaties.",
+        "readTime": "6 min lezen"
+      },
+      "vpnProtocolsExplained": {
+        "title": "VPN Protocollen Uitgelegd",
+        "description": "WireGuard, OpenVPN, IKEv2 - begrijp de verschillen tussen VPN protocollen en welke je moet kiezen.",
+        "readTime": "12 min lezen"
+      },
+      "vpnForTorrenting": {
+        "title": "VPN voor Torrenting",
+        "description": "Blijf veilig tijdens het downloaden met P2P-vriendelijke VPNs. Leer over kill switches en lek bescherming.",
+        "readTime": "8 min lezen"
+      },
+      "vpnOnMobile": {
+        "title": "VPN op Mobiele Apparaten",
+        "description": "Hoe je een VPN instelt en gebruikt op je iPhone of Android apparaat voor privacy onderweg.",
+        "readTime": "5 min lezen"
+      },
+      "vpnForTravel": {
+        "title": "VPN voor Reizen",
+        "description": "Essentiële tips voor het gebruik van een VPN tijdens reizen in het buitenland, toegang tot thuiscontent en veilig blijven op openbaar WiFi.",
+        "readTime": "7 min lezen"
+      },
+      "publicWifiSafety": {
+        "title": "Openbaar WiFi Veiligheid",
+        "description": "Waarom openbaar WiFi gevaarlijk is en hoe een VPN je beschermt in cafés, luchthavens en hotels.",
+        "readTime": "6 min lezen"
+      },
+      "vpnPrivacyGuide": {
+        "title": "VPN Privacy Gids",
+        "description": "Begrijp no-logs beleid, jurisdictie en wat een VPN echt privé maakt.",
+        "readTime": "10 min lezen"
+      }
+    },
+    "topicCards": {
+      "basics": {
+        "title": "VPN Basis",
+        "description": "Leer wat VPNs zijn, hoe ze werken en waarom ze belangrijk zijn"
+      },
+      "securityPrivacy": {
+        "title": "Beveiliging & Privacy",
+        "description": "Diepgaande analyses van encryptie, protocollen en anoniem blijven"
+      },
+      "streaming": {
+        "title": "Streaming & Content",
+        "description": "Deblokkeer Netflix, krijg toegang tot wereldwijde content en stream veilig"
+      },
+      "setup": {
+        "title": "Installatie & Handleidingen",
+        "description": "Stap-voor-stap gidsen voor alle apparaten en platformen"
+      }
+    },
+    "buttons": {
+      "startLearning": "Begin met Leren",
+      "compareVpns": "Vergelijk VPNs",
+      "readGuide": "Lees Gids"
+    }
   }
 }

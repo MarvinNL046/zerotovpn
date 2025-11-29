@@ -9,5 +9,6 @@ export const config = {
   // - _next (Next.js internals)
   // - Static files (images, etc.)
   // - Admin routes (separate from i18n)
-  matcher: ["/((?!api|admin|_next|_vercel|.*\\..*).*)"],
+  // - Handler routes (Stack Auth)
+  matcher: ["/((?!api|admin|handler|_next|_vercel|.*\\..*).*)"],
 };

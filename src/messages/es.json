@@ -7,6 +7,7 @@
     "home": "Inicio",
     "reviews": "Reseñas",
     "best": "Mejores VPNs",
+    "deals": "Ofertas",
     "compare": "Comparar",
     "guides": "Guías",
     "blog": "Blog",
@@ -72,7 +73,11 @@
     "about": "Sobre Nosotros",
     "contactPage": "Contacto",
     "copyright": "© {year} ZeroToVPN. Todos los derechos reservados.",
-    "disclaimer": "Podemos recibir una comisión a través de nuestros enlaces, sin costo adicional para ti."
+    "disclaimer": "Podemos recibir una comisión a través de nuestros enlaces, sin costo adicional para ti.",
+    "deals": "Ofertas de VPN",
+    "freeVpn": "VPNs Gratis",
+    "gamingVpn": "VPNs para Juegos",
+    "blog": "Blog"
   },
   "newsletter": {
     "title": "Mantente informado",

@@ -7,6 +7,7 @@
     "home": "홈",
     "reviews": "리뷰",
     "best": "베스트 VPN",
+    "deals": "특가",
     "compare": "비교",
     "guides": "가이드",
     "blog": "블로그",
@@ -72,7 +73,11 @@
     "about": "회사 소개",
     "contactPage": "문의하기",
     "copyright": "© {year} ZeroToVPN. All rights reserved.",
-    "disclaimer": "링크를 통해 구매 시 추가 비용 없이 수수료를 받을 수 있습니다."
+    "disclaimer": "링크를 통해 구매 시 추가 비용 없이 수수료를 받을 수 있습니다.",
+    "deals": "VPN 할인",
+    "freeVpn": "무료 VPN",
+    "gamingVpn": "게이밍 VPN",
+    "blog": "블로그"
   },
   "newsletter": {
     "title": "최신 소식 받기",

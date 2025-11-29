@@ -43,6 +43,30 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/deals"
+                  className="text-muted-foreground hover:text-primary"
+                >
+                  {t("deals")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/best/free-vpn"
+                  className="text-muted-foreground hover:text-primary"
+                >
+                  {t("freeVpn")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/best/vpn-gaming"
+                  className="text-muted-foreground hover:text-primary"
+                >
+                  {t("gamingVpn")}
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/compare"
                   className="text-muted-foreground hover:text-primary"
                 >
@@ -55,6 +79,14 @@ export function Footer() {
                   className="text-muted-foreground hover:text-primary"
                 >
                   What is a VPN?
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/blog"
+                  className="text-muted-foreground hover:text-primary"
+                >
+                  {t("blog")}
                 </Link>
               </li>
             </ul>

@@ -7,6 +7,7 @@
     "home": "ホーム",
     "reviews": "レビュー",
     "best": "ベストVPN",
+    "deals": "特価",
     "compare": "比較",
     "guides": "ガイド",
     "blog": "ブログ",
@@ -72,7 +73,11 @@
     "about": "会社概要",
     "contactPage": "お問い合わせ",
     "copyright": "© {year} ZeroToVPN. All rights reserved.",
-    "disclaimer": "リンク経由で購入された場合、追加費用なしでコミッションを受け取る場合があります。"
+    "disclaimer": "リンク経由で購入された場合、追加費用なしでコミッションを受け取る場合があります。",
+    "deals": "VPNセール",
+    "freeVpn": "無料VPN",
+    "gamingVpn": "ゲーミングVPN",
+    "blog": "ブログ"
   },
   "newsletter": {
     "title": "最新情報を入手",

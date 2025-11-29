@@ -18,6 +18,7 @@ export function Header() {
     { href: "/", label: t("home"), highlight: false },
     { href: "/reviews", label: t("reviews"), highlight: false },
     { href: "/best/best-vpn", label: t("best"), highlight: true },
+    { href: "/deals", label: t("deals"), highlight: true },
     { href: "/compare", label: t("compare"), highlight: false },
     { href: "/guides", label: t("guides"), highlight: false },
     { href: "/blog", label: t("blog"), highlight: false },

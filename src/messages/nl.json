@@ -7,6 +7,7 @@
     "home": "Home",
     "reviews": "Reviews",
     "best": "Beste VPNs",
+    "deals": "Deals",
     "compare": "Vergelijken",
     "guides": "Gidsen",
     "blog": "Blog",
@@ -72,7 +73,11 @@
     "about": "Over Ons",
     "contactPage": "Contact",
     "copyright": "© {year} ZeroToVPN. Alle rechten voorbehouden.",
-    "disclaimer": "We kunnen een commissie ontvangen via onze links, zonder extra kosten voor jou."
+    "disclaimer": "We kunnen een commissie ontvangen via onze links, zonder extra kosten voor jou.",
+    "deals": "VPN Deals",
+    "freeVpn": "Gratis VPNs",
+    "gamingVpn": "Gaming VPNs",
+    "blog": "Blog"
   },
   "newsletter": {
     "title": "Blijf Op De Hoogte",

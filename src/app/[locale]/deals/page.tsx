@@ -89,7 +89,7 @@ function DealsSchema() {
 const deals = [
   {
     name: "Surfshark",
-    badge: "Best Deal",
+    badgeKey: "bestDeal" as const,
     badgeColor: "bg-green-500",
     originalPrice: 12.95,
     dealPrice: 1.99,
@@ -102,7 +102,7 @@ const deals = [
   },
   {
     name: "NordVPN",
-    badge: "Most Popular",
+    badgeKey: "mostPopular" as const,
     badgeColor: "bg-blue-500",
     originalPrice: 12.99,
     dealPrice: 2.99,
@@ -115,7 +115,7 @@ const deals = [
   },
   {
     name: "ExpressVPN",
-    badge: "Premium Choice",
+    badgeKey: "premiumChoice" as const,
     badgeColor: "bg-purple-500",
     originalPrice: 12.95,
     dealPrice: 2.44,
@@ -128,7 +128,7 @@ const deals = [
   },
   {
     name: "CyberGhost",
-    badge: "Best Value",
+    badgeKey: "bestValue" as const,
     badgeColor: "bg-orange-500",
     originalPrice: 12.99,
     dealPrice: 2.03,
@@ -159,11 +159,18 @@ export default async function DealsPage({ params }: Props) {
         totalCost: string;
         savePercent: string;
         extraMonths: string;
+        months: string;
         getDeal: string;
         copyCoupon: string;
         copied: string;
         expiresLabel: string;
         expiresSoon: string;
+      };
+      badges: {
+        bestDeal: string;
+        mostPopular: string;
+        premiumChoice: string;
+        bestValue: string;
       };
       features: {
         title: string;
@@ -195,11 +202,18 @@ export default async function DealsPage({ params }: Props) {
         totalCost: "Total cost",
         savePercent: "SAVE",
         extraMonths: "months free",
+        months: "months",
         getDeal: "Get This Deal",
         copyCoupon: "Copy Coupon Code",
         copied: "Copied!",
         expiresLabel: "Deal expires",
         expiresSoon: "Soon",
+      },
+      badges: {
+        bestDeal: "Best Deal",
+        mostPopular: "Most Popular",
+        premiumChoice: "Premium Choice",
+        bestValue: "Best Value",
       },
       features: {
         title: "Included Features",
@@ -273,11 +287,18 @@ export default async function DealsPage({ params }: Props) {
         totalCost: "Totale kosten",
         savePercent: "BESPAAR",
         extraMonths: "maanden gratis",
+        months: "maanden",
         getDeal: "Pak Deze Deal",
         copyCoupon: "Kopieer Kortingscode",
         copied: "Gekopieerd!",
         expiresLabel: "Deal verloopt",
         expiresSoon: "Binnenkort",
+      },
+      badges: {
+        bestDeal: "Beste Deal",
+        mostPopular: "Meest Populair",
+        premiumChoice: "Premium Keuze",
+        bestValue: "Beste Waarde",
       },
       features: {
         title: "Inbegrepen Functies",
@@ -351,11 +372,18 @@ export default async function DealsPage({ params }: Props) {
         totalCost: "Gesamtkosten",
         savePercent: "SPAREN",
         extraMonths: "Monate gratis",
+        months: "Monate",
         getDeal: "Dieses Angebot holen",
         copyCoupon: "Gutscheincode kopieren",
         copied: "Kopiert!",
         expiresLabel: "Angebot läuft ab",
         expiresSoon: "Bald",
+      },
+      badges: {
+        bestDeal: "Bestes Angebot",
+        mostPopular: "Am Beliebtesten",
+        premiumChoice: "Premium-Wahl",
+        bestValue: "Bester Wert",
       },
       features: {
         title: "Enthaltene Funktionen",
@@ -429,11 +457,18 @@ export default async function DealsPage({ params }: Props) {
         totalCost: "Costo total",
         savePercent: "AHORRA",
         extraMonths: "meses gratis",
+        months: "meses",
         getDeal: "Obtener Esta Oferta",
         copyCoupon: "Copiar Código de Cupón",
         copied: "¡Copiado!",
         expiresLabel: "La oferta expira",
         expiresSoon: "Pronto",
+      },
+      badges: {
+        bestDeal: "Mejor Oferta",
+        mostPopular: "Más Popular",
+        premiumChoice: "Elección Premium",
+        bestValue: "Mejor Valor",
       },
       features: {
         title: "Características Incluidas",
@@ -507,11 +542,18 @@ export default async function DealsPage({ params }: Props) {
         totalCost: "Coût total",
         savePercent: "ÉCONOMISEZ",
         extraMonths: "mois gratuits",
+        months: "mois",
         getDeal: "Obtenir Cette Offre",
         copyCoupon: "Copier le Code Promo",
         copied: "Copié!",
         expiresLabel: "L'offre expire",
         expiresSoon: "Bientôt",
+      },
+      badges: {
+        bestDeal: "Meilleure Offre",
+        mostPopular: "Plus Populaire",
+        premiumChoice: "Choix Premium",
+        bestValue: "Meilleur Rapport",
       },
       features: {
         title: "Fonctionnalités Incluses",
@@ -584,11 +626,18 @@ export default async function DealsPage({ params }: Props) {
         totalCost: "总费用",
         savePercent: "节省",
         extraMonths: "个月免费",
+        months: "个月",
         getDeal: "获取此优惠",
         copyCoupon: "复制优惠码",
         copied: "已复制！",
         expiresLabel: "优惠到期",
         expiresSoon: "即将到期",
+      },
+      badges: {
+        bestDeal: "最佳优惠",
+        mostPopular: "最受欢迎",
+        premiumChoice: "高级选择",
+        bestValue: "最佳价值",
       },
       features: {
         title: "包含功能",
@@ -653,11 +702,18 @@ export default async function DealsPage({ params }: Props) {
         totalCost: "総費用",
         savePercent: "割引",
         extraMonths: "ヶ月無料",
+        months: "ヶ月",
         getDeal: "このセールを入手",
         copyCoupon: "クーポンコードをコピー",
         copied: "コピーしました！",
         expiresLabel: "セール終了",
         expiresSoon: "まもなく",
+      },
+      badges: {
+        bestDeal: "ベストディール",
+        mostPopular: "最も人気",
+        premiumChoice: "プレミアム選択",
+        bestValue: "最高の価値",
       },
       features: {
         title: "含まれる機能",
@@ -730,11 +786,18 @@ export default async function DealsPage({ params }: Props) {
         totalCost: "총 비용",
         savePercent: "절약",
         extraMonths: "개월 무료",
+        months: "개월",
         getDeal: "이 할인 받기",
         copyCoupon: "쿠폰 코드 복사",
         copied: "복사됨!",
         expiresLabel: "할인 종료",
         expiresSoon: "곧",
+      },
+      badges: {
+        bestDeal: "최고 할인",
+        mostPopular: "가장 인기",
+        premiumChoice: "프리미엄 선택",
+        bestValue: "최고 가치",
       },
       features: {
         title: "포함된 기능",
@@ -799,11 +862,18 @@ export default async function DealsPage({ params }: Props) {
         totalCost: "ค่าใช้จ่ายทั้งหมด",
         savePercent: "ประหยัด",
         extraMonths: "เดือนฟรี",
+        months: "เดือน",
         getDeal: "รับดีลนี้",
         copyCoupon: "คัดลอกรหัสคูปอง",
         copied: "คัดลอกแล้ว!",
         expiresLabel: "ดีลหมดอายุ",
         expiresSoon: "เร็วๆ นี้",
+      },
+      badges: {
+        bestDeal: "ดีลที่ดีที่สุด",
+        mostPopular: "ยอดนิยมสูงสุด",
+        premiumChoice: "ตัวเลือกพรีเมียม",
+        bestValue: "คุ้มค่าที่สุด",
       },
       features: {
         title: "ฟีเจอร์ที่รวมอยู่",
@@ -996,7 +1066,7 @@ function DealCard({
       {/* Badge */}
       <div className="absolute top-4 right-4">
         <Badge className={`${deal.badgeColor} text-white border-0`}>
-          {deal.badge}
+          {t.badges[deal.badgeKey]}
         </Badge>
       </div>
 
@@ -1035,7 +1105,7 @@ function DealCard({
             </div>
             <div className="text-right">
               <p className="text-sm text-muted-foreground mb-1">
-                {deal.months} {locale === "en" ? "months" : "meses"}
+                {deal.months} {t.deals.months}
               </p>
               <div className="inline-flex items-center gap-1 bg-green-500/10 text-green-600 dark:text-green-400 px-3 py-1 rounded-full text-xs font-semibold">
                 <Gift className="h-3 w-3" />

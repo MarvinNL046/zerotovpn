@@ -7,6 +7,7 @@
     "home": "首页",
     "reviews": "评测",
     "best": "最佳VPN",
+    "deals": "优惠",
     "compare": "比较",
     "guides": "指南",
     "blog": "博客",
@@ -72,7 +73,11 @@
     "about": "关于我们",
     "contactPage": "联系我们",
     "copyright": "© {year} ZeroToVPN。保留所有权利。",
-    "disclaimer": "我们可能通过链接获得佣金，不会增加您的额外费用。"
+    "disclaimer": "我们可能通过链接获得佣金，不会增加您的额外费用。",
+    "deals": "VPN优惠",
+    "freeVpn": "免费VPN",
+    "gamingVpn": "游戏VPN",
+    "blog": "博客"
   },
   "newsletter": {
     "title": "保持更新",

@@ -160,14 +160,14 @@ export default async function GamingVpnPage({ params }: Props) {
     },
   ];
 
-  // Popular games that benefit from VPN
+  // Popular games that benefit from VPN (names only, reasons are in translations)
   const popularGames = [
-    { name: "Fortnite", reason: "Access exclusive skins from different regions" },
-    { name: "PUBG", reason: "Play on servers with lower player count" },
-    { name: "Call of Duty", reason: "Reduce DDoS attacks and swatting" },
-    { name: "League of Legends", reason: "Access different regional servers" },
-    { name: "Valorant", reason: "Test skills against players in other regions" },
-    { name: "CS:GO", reason: "Access region-locked tournaments" },
+    { name: "Fortnite" },
+    { name: "PUBG" },
+    { name: "Call of Duty" },
+    { name: "League of Legends" },
+    { name: "Valorant" },
+    { name: "CS:GO" },
   ];
 
   // Content translations
@@ -275,6 +275,17 @@ export default async function GamingVpnPage({ params }: Props) {
         "Test multiple server locations to find the fastest",
       ],
       popularGames: "Popular Games That Benefit from VPN",
+      popularGamesData: [
+        "Access exclusive skins from different regions",
+        "Play on servers with lower player count",
+        "Reduce DDoS attacks and swatting",
+        "Access different regional servers",
+        "Test skills against players in other regions",
+        "Access region-locked tournaments",
+      ],
+      getVpnButton: "Get",
+      ctaTitle: "Level Up Your Gaming with a VPN",
+      ctaSubtitle: "Reduce lag, protect against DDoS, and access games worldwide.",
       faqTitle: "Gaming VPN FAQs",
       faqs: [
         {
@@ -408,6 +419,17 @@ export default async function GamingVpnPage({ params }: Props) {
         "Test meerdere serverlocaties om de snelste te vinden",
       ],
       popularGames: "Populaire Games Die Profiteren Van VPN",
+      popularGamesData: [
+        "Toegang tot exclusieve skins uit verschillende regio's",
+        "Speel op servers met lagere spelersaantallen",
+        "Verminder DDoS-aanvallen en swatting",
+        "Toegang tot verschillende regionale servers",
+        "Test vaardigheden tegen spelers in andere regio's",
+        "Toegang tot regio-vergrendelde toernooien",
+      ],
+      getVpnButton: "Krijg",
+      ctaTitle: "Level Up Je Gaming Met Een VPN",
+      ctaSubtitle: "Verminder lag, bescherm tegen DDoS en krijg toegang tot games wereldwijd.",
       faqTitle: "Gaming VPN Veelgestelde Vragen",
       faqs: [
         {
@@ -545,6 +567,17 @@ export default async function GamingVpnPage({ params }: Props) {
         "Testen Sie mehrere Serverstandorte, um den schnellsten zu finden",
       ],
       popularGames: "Beliebte Spiele, Die Von VPN Profitieren",
+      popularGamesData: [
+        "Zugriff auf exklusive Skins aus verschiedenen Regionen",
+        "Spielen Sie auf Servern mit geringerer Spielerzahl",
+        "Reduzieren Sie DDoS-Angriffe und Swatting",
+        "Zugriff auf verschiedene regionale Server",
+        "Testen Sie Ihre Fähigkeiten gegen Spieler in anderen Regionen",
+        "Zugriff auf regiongesperrte Turniere",
+      ],
+      getVpnButton: "Holen",
+      ctaTitle: "Leveln Sie Ihr Gaming Mit Einem VPN Auf",
+      ctaSubtitle: "Reduzieren Sie Lag, schützen Sie vor DDoS und greifen Sie weltweit auf Spiele zu.",
       faqTitle: "Gaming VPN Häufig Gestellte Fragen",
       faqs: [
         {
@@ -682,6 +715,17 @@ export default async function GamingVpnPage({ params }: Props) {
         "Prueba múltiples ubicaciones de servidor para encontrar la más rápida",
       ],
       popularGames: "Juegos Populares Que Se Benefician De VPN",
+      popularGamesData: [
+        "Accede a skins exclusivas de diferentes regiones",
+        "Juega en servidores con menor cantidad de jugadores",
+        "Reduce ataques DDoS y swatting",
+        "Accede a diferentes servidores regionales",
+        "Prueba habilidades contra jugadores de otras regiones",
+        "Accede a torneos bloqueados por región",
+      ],
+      getVpnButton: "Obtener",
+      ctaTitle: "Mejora Tu Gaming Con Una VPN",
+      ctaSubtitle: "Reduce el lag, protégete contra DDoS y accede a juegos en todo el mundo.",
       faqTitle: "Preguntas Frecuentes Sobre VPN Para Gaming",
       faqs: [
         {
@@ -827,6 +871,17 @@ export default async function GamingVpnPage({ params }: Props) {
         "Testez plusieurs emplacements de serveurs pour trouver le plus rapide",
       ],
       popularGames: "Jeux Populaires Qui Bénéficient Du VPN",
+      popularGamesData: [
+        "Accédez aux skins exclusifs de différentes régions",
+        "Jouez sur des serveurs avec moins de joueurs",
+        "Réduisez les attaques DDoS et le swatting",
+        "Accédez à différents serveurs régionaux",
+        "Testez vos compétences contre des joueurs d'autres régions",
+        "Accédez aux tournois verrouillés par région",
+      ],
+      getVpnButton: "Obtenir",
+      ctaTitle: "Améliorez Votre Gaming Avec Un VPN",
+      ctaSubtitle: "Réduisez le lag, protégez-vous contre DDoS et accédez aux jeux dans le monde entier.",
       faqTitle: "FAQ VPN Gaming",
       faqs: [
         {
@@ -956,6 +1011,17 @@ export default async function GamingVpnPage({ params }: Props) {
         "测试多个服务器位置以找到最快的",
       ],
       popularGames: "受益于VPN的热门游戏",
+      popularGamesData: [
+        "访问来自不同地区的独家皮肤",
+        "在玩家数量较少的服务器上游戏",
+        "减少DDoS攻击和恶意举报",
+        "访问不同的区域服务器",
+        "与其他地区的玩家测试技能",
+        "访问区域锁定的锦标赛",
+      ],
+      getVpnButton: "获取",
+      ctaTitle: "使用VPN提升您的游戏体验",
+      ctaSubtitle: "减少延迟，防止DDoS攻击，访问全球游戏。",
       faqTitle: "游戏VPN常见问题",
       faqs: [
         {
@@ -1085,6 +1151,17 @@ export default async function GamingVpnPage({ params }: Props) {
         "最速のものを見つけるために複数のサーバーの場所をテスト",
       ],
       popularGames: "VPNの恩恵を受ける人気ゲーム",
+      popularGamesData: [
+        "異なる地域の限定スキンにアクセス",
+        "プレイヤー数が少ないサーバーでプレイ",
+        "DDoS攻撃とスワッティングを軽減",
+        "異なる地域サーバーにアクセス",
+        "他の地域のプレイヤーとスキルをテスト",
+        "地域ロックされたトーナメントにアクセス",
+      ],
+      getVpnButton: "入手",
+      ctaTitle: "VPNでゲーム体験をレベルアップ",
+      ctaSubtitle: "ラグを減らし、DDoS攻撃から保護し、世界中のゲームにアクセス。",
       faqTitle: "ゲーミングVPNよくある質問",
       faqs: [
         {
@@ -1214,6 +1291,17 @@ export default async function GamingVpnPage({ params }: Props) {
         "가장 빠른 것을 찾기 위해 여러 서버 위치 테스트",
       ],
       popularGames: "VPN의 혜택을 받는 인기 게임",
+      popularGamesData: [
+        "다른 지역의 독점 스킨 액세스",
+        "플레이어 수가 적은 서버에서 플레이",
+        "DDoS 공격 및 스와팅 감소",
+        "다른 지역 서버 액세스",
+        "다른 지역의 플레이어와 기술 테스트",
+        "지역 제한 토너먼트 액세스",
+      ],
+      getVpnButton: "받기",
+      ctaTitle: "VPN으로 게임을 레벨업하세요",
+      ctaSubtitle: "렉을 줄이고, DDoS로부터 보호하며, 전 세계 게임에 액세스하세요.",
       faqTitle: "게임용 VPN FAQ",
       faqs: [
         {
@@ -1355,6 +1443,17 @@ export default async function GamingVpnPage({ params }: Props) {
         "ทดสอบหลายตำแหน่งเซิร์ฟเวอร์เพื่อหาที่เร็วที่สุด",
       ],
       popularGames: "เกมยอดนิยมที่ได้รับประโยชน์จาก VPN",
+      popularGamesData: [
+        "เข้าถึงสกินพิเศษจากภูมิภาคต่างๆ",
+        "เล่นบนเซิร์ฟเวอร์ที่มีผู้เล่นน้อยกว่า",
+        "ลดการโจมตี DDoS และ swatting",
+        "เข้าถึงเซิร์ฟเวอร์ภูมิภาคต่างๆ",
+        "ทดสอบทักษะกับผู้เล่นในภูมิภาคอื่น",
+        "เข้าถึงทัวร์นาเมนต์ที่ถูกล็อคตามภูมิภาค",
+      ],
+      getVpnButton: "รับ",
+      ctaTitle: "ยกระดับการเล่นเกมของคุณด้วย VPN",
+      ctaSubtitle: "ลด lag ป้องกันการโจมตี DDoS และเข้าถึงเกมทั่วโลก",
       faqTitle: "คำถามที่พบบ่อยเกี่ยวกับ VPN เกม",
       faqs: [
         {
@@ -1499,7 +1598,7 @@ export default async function GamingVpnPage({ params }: Props) {
                           affiliateUrl={item.vpn.affiliateUrl}
                           className="w-full"
                         >
-                          Get {item.vpn.name}
+                          {t.getVpnButton} {item.vpn.name}
                         </AffiliateButton>
                       </div>
                     </CardContent>
@@ -1715,7 +1814,7 @@ export default async function GamingVpnPage({ params }: Props) {
                         <h3 className="font-bold">{game.name}</h3>
                       </div>
                       <p className="text-sm text-muted-foreground">
-                        {game.reason}
+                        {t.popularGamesData[index]}
                       </p>
                     </CardContent>
                   </Card>
@@ -1751,10 +1850,10 @@ export default async function GamingVpnPage({ params }: Props) {
           <div className="container">
             <div className="max-w-3xl mx-auto text-center space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold">
-                Level Up Your Gaming with a VPN
+                {t.ctaTitle}
               </h2>
               <p className="text-lg text-muted-foreground">
-                Reduce lag, protect against DDoS, and access games worldwide.
+                {t.ctaSubtitle}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" asChild>

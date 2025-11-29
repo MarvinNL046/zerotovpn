@@ -71,6 +71,7 @@ export default async function VpnVsProxyPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations(`blog.posts.${slug}`);
+  const blogT = await getTranslations("blog");
 
   const comparisonData = [
     {
@@ -402,7 +403,7 @@ export default async function VpnVsProxyPage({ params }: Props) {
                   <Card className="hover:shadow-lg transition-shadow h-full">
                     <CardContent className="p-6">
                       <Badge variant="secondary" className="mb-3">
-                        Deals
+                        {blogT("categories.deals")}
                       </Badge>
                       <h3 className="text-lg font-bold mb-2">
                         {t("related.post1.title")}
@@ -411,7 +412,7 @@ export default async function VpnVsProxyPage({ params }: Props) {
                         {t("related.post1.excerpt")}
                       </p>
                       <span className="text-sm text-primary font-medium flex items-center gap-1">
-                        Read more
+                        {blogT("readMore")}
                         <ArrowRight className="h-3 w-3" />
                       </span>
                     </CardContent>
@@ -421,7 +422,7 @@ export default async function VpnVsProxyPage({ params }: Props) {
                   <Card className="hover:shadow-lg transition-shadow h-full">
                     <CardContent className="p-6">
                       <Badge variant="secondary" className="mb-3">
-                        Security
+                        {blogT("categories.security")}
                       </Badge>
                       <h3 className="text-lg font-bold mb-2">
                         {t("related.post2.title")}
@@ -430,7 +431,7 @@ export default async function VpnVsProxyPage({ params }: Props) {
                         {t("related.post2.excerpt")}
                       </p>
                       <span className="text-sm text-primary font-medium flex items-center gap-1">
-                        Read more
+                        {blogT("readMore")}
                         <ArrowRight className="h-3 w-3" />
                       </span>
                     </CardContent>

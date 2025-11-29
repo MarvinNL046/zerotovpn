@@ -30,7 +30,7 @@ export function Footer() {
                   href="/reviews"
                   className="text-muted-foreground hover:text-primary"
                 >
-                  VPN Reviews
+                  {t("reviews")}
                 </Link>
               </li>
               <li>
@@ -38,7 +38,7 @@ export function Footer() {
                   href="/best/best-vpn"
                   className="text-muted-foreground hover:text-primary"
                 >
-                  Best VPNs 2025
+                  {t("bestVpns")}
                 </Link>
               </li>
               <li>
@@ -70,7 +70,7 @@ export function Footer() {
                   href="/compare"
                   className="text-muted-foreground hover:text-primary"
                 >
-                  Compare VPNs
+                  {t("compare")}
                 </Link>
               </li>
               <li>
@@ -78,7 +78,7 @@ export function Footer() {
                   href="/guides/what-is-vpn"
                   className="text-muted-foreground hover:text-primary"
                 >
-                  What is a VPN?
+                  {t("whatIsVpn")}
                 </Link>
               </li>
               <li>

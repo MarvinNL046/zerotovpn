@@ -1516,170 +1516,149 @@
         "iosSetup": {
           "title": "Configuración de VPN en iPhone/iPad",
           "intro": "iOS tiene soporte VPN integrado, pero usar una app VPN dedicada ofrece características mejoradas y mejor experiencia de usuario.",
-          "method1": {
-            "title": "Método 1: Usar una App VPN (Recomendado)",
-            "steps": [
-              {
-                "number": 1,
-                "title": "Descarga la App VPN",
-                "description": "Abre el App Store y busca tu proveedor VPN (ej. NordVPN, ExpressVPN). Descarga la app oficial."
-              },
-              {
-                "number": 2,
-                "title": "Iniciar Sesión",
-                "description": "Abre la app e inicia sesión con las credenciales de tu cuenta VPN."
-              },
-              {
-                "number": 3,
-                "title": "Permitir Configuraciones VPN",
-                "description": "iOS pedirá permiso para añadir configuraciones VPN. Toca 'Permitir' e ingresa tu código/Touch ID/Face ID."
-              },
-              {
-                "number": 4,
-                "title": "Elegir Ubicación de Servidor",
-                "description": "Selecciona un país/servidor de la lista. Para mejor velocidad, elige uno cercano a ti."
-              },
-              {
-                "number": 5,
-                "title": "Conectar",
-                "description": "Toca el botón de conectar. Verás un ícono VPN en tu barra de estado cuando esté activo."
-              }
-            ]
-          },
-          "method2": {
-            "title": "Método 2: Configuración Manual (Avanzado)",
-            "description": "Solo para usuarios avanzados con detalles de configuración de su proveedor VPN.",
-            "steps": [
-              "Configuración → General → VPN y Gestión de Dispositivos",
-              "Añadir Configuración VPN",
-              "Ingresa detalles del servidor (tipo, dirección, credenciales)",
-              "Guarda y conecta"
-            ],
-            "warning": "La configuración manual carece de características como kill switch y cambio automático de servidor."
-          },
-          "iosFeatures": {
-            "title": "Características Específicas de iOS",
-            "features": [
-              {
-                "title": "Conexión bajo Demanda",
-                "description": "Conecta automáticamente a VPN cuando accedes a ciertas apps o dominios."
-              },
-              {
-                "title": "Integración con Siri",
-                "description": "Usa comandos de voz como 'Hey Siri, conecta mi VPN'."
-              },
-              {
-                "title": "Widget de VPN",
-                "description": "Añade un widget de acceso rápido a tu pantalla de inicio para conexiones de un toque."
-              }
+          "steps": [
+            {
+              "number": 1,
+              "title": "Descarga la App VPN",
+              "description": "Abre el App Store y busca tu proveedor VPN (ej. NordVPN, ExpressVPN). Descarga la app oficial."
+            },
+            {
+              "number": 2,
+              "title": "Iniciar Sesión",
+              "description": "Abre la app e inicia sesión con las credenciales de tu cuenta VPN."
+            },
+            {
+              "number": 3,
+              "title": "Permitir Configuraciones VPN",
+              "description": "iOS pedirá permiso para añadir configuraciones VPN. Toca 'Permitir' e ingresa tu código/Touch ID/Face ID."
+            },
+            {
+              "number": 4,
+              "title": "Elegir Ubicación de Servidor",
+              "description": "Selecciona un país/servidor de la lista. Para mejor velocidad, elige uno cercano a ti."
+            }
+          ],
+          "iosSettings": {
+            "title": "Configuraciones Específicas de iOS",
+            "settings": [
+              "Habilita 'Conectar bajo Demanda' para protección automática",
+              "Usa IKEv2 o WireGuard para mejor integración con iOS",
+              "Permite notificaciones para alertas de estado de conexión"
             ]
           }
         },
         "androidSetup": {
           "title": "Configuración de VPN en Android",
           "intro": "Android ofrece configuración VPN flexible con soporte nativo y características mejoradas a través de apps.",
-          "appMethod": {
-            "title": "Método de App VPN (Recomendado)",
-            "steps": [
-              {
-                "number": 1,
-                "title": "Instala desde Google Play",
-                "description": "Abre Google Play Store, busca tu proveedor VPN y descarga la app oficial."
-              },
-              {
-                "number": 2,
-                "title": "Configuración Inicial",
-                "description": "Abre la app, inicia sesión y concede permisos necesarios cuando se solicite."
-              },
-              {
-                "number": 3,
-                "title": "Permitir Solicitud de Conexión",
-                "description": "Android mostrará una advertencia de conexión VPN. Marca 'Confío en esta aplicación' y toca OK."
-              },
-              {
-                "number": 4,
-                "title": "Elegir Servidor y Conectar",
-                "description": "Selecciona tu ubicación de servidor preferida y toca conectar. Verás un ícono de llave en tu barra de notificaciones."
-              }
-            ]
-          },
-          "nativeSetup": {
-            "title": "VPN Nativa de Android (Alternativa)",
-            "steps": [
-              "Configuración → Red e Internet → VPN",
-              "Toca + para añadir una nueva VPN",
-              "Ingresa detalles del servidor de tu proveedor",
-              "Guarda y conecta desde el menú VPN"
-            ],
-            "limitation": "La VPN nativa de Android carece de características avanzadas como kill switch, rotación automática de servidor y tunel dividido."
-          },
+          "steps": [
+            {
+              "number": 1,
+              "title": "Instala desde Google Play",
+              "description": "Abre Google Play Store, busca tu proveedor VPN y descarga la app oficial."
+            },
+            {
+              "number": 2,
+              "title": "Configuración Inicial",
+              "description": "Abre la app, inicia sesión y concede permisos necesarios cuando se solicite."
+            },
+            {
+              "number": 3,
+              "title": "Permitir Solicitud de Conexión",
+              "description": "Android mostrará una advertencia de conexión VPN. Marca 'Confío en esta aplicación' y toca OK."
+            },
+            {
+              "number": 4,
+              "title": "Elegir Servidor y Conectar",
+              "description": "Selecciona tu ubicación de servidor preferida y toca conectar. Verás un ícono de llave en tu barra de notificaciones."
+            }
+          ],
           "androidFeatures": {
             "title": "Características Específicas de Android",
             "features": [
-              {
-                "title": "VPN Siempre Activa",
-                "description": "Bloquea automáticamente conexiones sin VPN. Encuentra en Configuración → Red → VPN → Configuración."
-              },
-              {
-                "title": "Tunel Dividido",
-                "description": "Elige qué apps usan la VPN y cuáles se conectan directamente. Útil para apps bancarias que bloquean VPN."
-              },
-              {
-                "title": "Configuraciones Por App",
-                "description": "Diferentes servidores VPN para diferentes apps según tus necesidades."
-              }
+              "VPN siempre activa bloquea conexiones sin VPN automáticamente",
+              "Túnel dividido para excluir apps específicas de la VPN",
+              "Soporte para widgets de conexión/desconexión rápida"
             ]
           }
         },
-        "optimalSettings": {
+        "bestSettings": {
           "title": "Configuraciones Óptimas de VPN Móvil",
-          "intro": "Afina estos ajustes para equilibrar seguridad, velocidad y uso de batería:",
-          "recommendations": [
+          "intro": "Configura estos ajustes para el mejor equilibrio entre seguridad, velocidad y duración de batería en dispositivos móviles:",
+          "settings": [
             {
               "setting": "Protocolo",
-              "recommended": "WireGuard o IKEv2",
-              "reason": "Mejor equilibrio entre velocidad, seguridad y uso de batería en móviles.",
-              "icon": "Settings"
+              "recommended": "WireGuard",
+              "why": "Mejor para móviles - rápido, ligero, eficiente en batería"
             },
             {
               "setting": "Auto-Conectar",
-              "recommended": "Activado para WiFi No Seguro",
-              "reason": "Se conecta automáticamente cuando te unes a redes WiFi públicas.",
-              "icon": "Wifi"
+              "recommended": "Activado",
+              "why": "Se conecta automáticamente al unirse a redes no confiables"
             },
             {
               "setting": "Kill Switch",
               "recommended": "Activado",
-              "reason": "Previene fugas de datos si la VPN se desconecta inesperadamente.",
-              "icon": "Shield"
+              "why": "Previene fugas de datos si la conexión VPN se cae"
             },
             {
-              "setting": "Tunel Dividido",
-              "recommended": "Usa Selectivamente",
-              "reason": "Excluye apps que no necesitan VPN para ahorrar batería y datos.",
-              "icon": "Zap"
+              "setting": "Túnel Dividido",
+              "recommended": "Según sea necesario",
+              "why": "Excluir apps bancarias que puedan bloquear conexiones VPN"
             },
             {
-              "setting": "Ubicación de Servidor",
-              "recommended": "Geográficamente Cercano",
-              "reason": "Servidores más cercanos = velocidades más rápidas y menos uso de batería.",
-              "icon": "MapPin"
+              "setting": "DNS",
+              "recommended": "DNS de VPN",
+              "why": "Previene fugas de DNS y asegura privacidad"
             }
           ],
-          "batteryTips": {
-            "title": "Consejos de Optimización de Batería",
-            "items": [
-              "Usa WireGuard o IKEv2 en lugar de OpenVPN para mejor eficiencia de batería",
-              "Activa tunel dividido para excluir apps de uso intensivo de datos",
-              "Desconecta VPN cuando uses WiFi de confianza en casa",
-              "Elige servidores cercanos para reducir sobrecarga de procesamiento",
-              "Desactiva 'reconexión automática' si no necesitas protección constante"
-            ]
+          "iosWarning": {
+            "title": "Importante para Usuarios de iOS",
+            "text": "iOS puede ocasionalmente omitir VPN para servicios de Apple. Verifica tu app VPN para opciones de incluir todo el tráfico o usar una app de firewall."
           }
         },
-        "batteryPerformance": {
+        "batteryTips": {
           "title": "Consejos de Batería y Rendimiento",
-          "intro": "Las VPN usan batería debido al cifrado y mantenimiento de conexión. Aquí está cómo minimizar el impacto:",
+          "intro": "Una preocupación común es el impacto de la VPN en la duración de la batería. Así es como minimizar el consumo de batería mientras te mantienes protegido:",
+          "doThis": {
+            "title": "Haz esto",
+            "items": [
+              "Usa el protocolo WireGuard (más eficiente)",
+              "Conéctate a servidores cercanos",
+              "Habilita auto-conectar solo para WiFi",
+              "Usa túnel dividido sabiamente",
+              "Mantén la app actualizada"
+            ]
+          },
+          "avoidThis": {
+            "title": "Evita esto",
+            "items": [
+              "Cambiar servidores constantemente",
+              "Usar VPN doble a menos que sea necesario",
+              "Conectarse a servidores distantes",
+              "Ejecutar múltiples apps de seguridad",
+              "Usar protocolos antiguos como PPTP"
+            ]
+          },
+          "protocolImpact": {
+            "title": "Impacto en Batería por Protocolo",
+            "protocols": [
+              {
+                "name": "WireGuard",
+                "impact": "Bajo Impacto",
+                "percentage": 20
+              },
+              {
+                "name": "IKEv2",
+                "impact": "Bajo Impacto",
+                "percentage": 25
+              },
+              {
+                "name": "OpenVPN",
+                "impact": "Impacto Moderado",
+                "percentage": 50
+              }
+            ]
+          },
           "impactFactors": {
             "title": "Factores que Afectan el Uso de Batería",
             "factors": [
@@ -1757,15 +1736,14 @@
             ]
           }
         },
-        "bestMobileVpns": {
-          "title": "Mejores VPN para Móvil",
-          "intro": "Estas VPN ofrecen apps móviles excelentes con interfaces intuitivas y rendimiento optimizado:",
+        "bestVpns": {
+          "title": "Mejores VPN para Móviles",
+          "intro": "No todas las VPN funcionan igual en dispositivos móviles. Aquí están nuestras principales recomendaciones basadas en calidad de app, eficiencia de batería y características específicas para móviles:",
           "vpns": [
             {
               "name": "ExpressVPN",
-              "badge": "Mejor en General",
-              "rating": "9.7/10",
-              "description": "Apps móviles pulidas con protocolo Lightway optimizado para velocidad y eficiencia de batería.",
+              "badge": "Elección del Editor",
+              "description": "Mejor experiencia móvil general",
               "features": [
                 "Apps nativas para iOS y Android",
                 "Protocolo Lightway (rápido y eficiente en batería)",
@@ -1802,6 +1780,32 @@
                 "Alerta de Violación (monitoreo de email)"
               ],
               "platforms": "iOS 14.1+, Android 5.0+"
+            }
+          ],
+          "proTip": "Descarga tu app VPN antes de viajar a países con acceso a internet restringido. Algunas tiendas de apps pueden no ofrecer apps VPN en ciertas regiones."
+        },
+        "quickTips": {
+          "title": "Consejos Rápidos de VPN Móvil",
+          "tips": [
+            {
+              "title": "Usar Bloqueo Biométrico",
+              "description": "Habilita Face ID/huella digital para prevenir acceso VPN no autorizado",
+              "icon": "Key"
+            },
+            {
+              "title": "Mantener App Actualizada",
+              "description": "Las actualizaciones a menudo incluyen parches de seguridad y mejoras de rendimiento",
+              "icon": "RefreshCw"
+            },
+            {
+              "title": "Guardar Servidores Favoritos",
+              "description": "Guarda servidores frecuentemente usados para conexión rápida con un toque",
+              "icon": "MapPin"
+            },
+            {
+              "title": "Usar Widgets",
+              "description": "Agrega widget VPN a pantalla de inicio para acceso rápido",
+              "icon": "ToggleLeft"
             }
           ]
         },
@@ -1908,165 +1912,135 @@
       "sections": {
         "whatIsPrivacy": {
           "title": "¿Qué es la Privacidad VPN?",
-          "intro": "La privacidad VPN se refiere a qué tan bien un servicio VPN protege tu identidad y actividad online de terceros - incluyendo al mismo proveedor VPN. No todas las VPN son iguales en este aspecto.",
-          "privacyLayers": {
-            "title": "Capas de Privacidad VPN",
-            "layers": [
-              {
-                "layer": "Cifrado",
-                "description": "Protege tus datos de interceptación durante el tránsito.",
-                "icon": "Lock"
-              },
-              {
-                "layer": "Sin Registros",
-                "description": "El proveedor no almacena registros de tu actividad.",
-                "icon": "EyeOff"
-              },
-              {
-                "layer": "Jurisdicción",
-                "description": "Ubicación legal de la empresa determina las leyes de retención de datos.",
-                "icon": "Globe"
-              },
-              {
-                "layer": "Métodos de Pago",
-                "description": "Opciones de pago anónimas como criptomonedas o efectivo.",
-                "icon": "CreditCard"
-              }
-            ]
+          "intro1": "La privacidad VPN se refiere a qué tan bien un servicio VPN protege tu identidad, actividad de navegación y datos personales de ser rastreados, registrados o expuestos a terceros, incluyendo tu ISP, agencias gubernamentales y el propio proveedor de VPN.",
+          "intro2": "La paradoja fundamental de la privacidad: Debes confiar en tu proveedor de VPN con tu tráfico de internet. Sin las protecciones de privacidad adecuadas, simplemente estás trasladando la vigilancia de tu ISP a la compañía VPN.",
+          "trustShiftTitle": "La Paradoja del Cambio de Confianza",
+          "trustShiftIntro": "Usar una VPN cambia quién puede ver tu actividad de internet, pero no elimina completamente los requisitos de confianza.",
+          "withoutVpn": {
+            "title": "Sin VPN",
+            "description": "Tu ISP puede ver cada sitio web que visitas, registrar tu actividad, vender tus datos a anunciantes y está legalmente obligado a cumplir con las solicitudes de vigilancia gubernamental."
           },
-          "trustModel": {
-            "title": "El Modelo de Confianza VPN",
-            "description": "Cuando usas una VPN, esencialmente estás cambiando la confianza de tu ISP al proveedor VPN. Por eso elegir un proveedor VPN confiable es crucial.",
-            "comparison": [
-              {
-                "entity": "Sin VPN",
-                "canSee": [
-                  "Tu ISP ve todos los sitios que visitas",
-                  "Sitios web ven tu IP real y ubicación",
-                  "Anunciantes rastrean tu actividad",
-                  "Gobierno puede requerir datos del ISP"
-                ]
-              },
-              {
-                "entity": "Con VPN (Buena)",
-                "canSee": [
-                  "Tu ISP solo ve tráfico cifrado a servidor VPN",
-                  "Sitios web ven IP VPN, no la tuya",
-                  "VPN no registra tu actividad",
-                  "Ninguna data para entregar si es solicitada"
-                ]
-              },
-              {
-                "entity": "Con VPN (Mala)",
-                "canSee": [
-                  "El proveedor VPN registra tu actividad",
-                  "Puede vender tus datos a anunciantes",
-                  "Puede cumplir con solicitudes gubernamentales",
-                  "Menos privacidad que sin VPN"
-                ]
-              }
-            ]
-          }
+          "withVpn": {
+            "title": "Con VPN",
+            "description": "Tu ISP solo ve tráfico VPN cifrado. El proveedor de VPN ve tu actividad en su lugar. La privacidad depende completamente de las políticas de registro, jurisdicción e integridad del proveedor de VPN."
+          },
+          "keyElementsTitle": "Elementos Clave de Privacidad",
+          "keyElements": [
+            {
+              "title": "Política sin registros:",
+              "description": "La VPN no registra tu actividad de navegación, tiempos de conexión, direcciones IP o uso de ancho de banda."
+            },
+            {
+              "title": "Jurisdicción favorable a la privacidad:",
+              "description": "La compañía opera en un país con leyes de privacidad sólidas y sin requisitos obligatorios de retención de datos."
+            },
+            {
+              "title": "Auditorías independientes:",
+              "description": "Empresas de seguridad de terceros han verificado las afirmaciones sin registros de la VPN y la seguridad de su infraestructura."
+            },
+            {
+              "title": "Propiedad transparente:",
+              "description": "La compañía divulga claramente quién posee y opera el servicio, dónde están ubicados y su historial de privacidad."
+            }
+          ]
         },
-        "noLogsPolicies": {
-          "title": "Políticas Sin Registros Explicadas",
-          "intro": "Una política 'sin registros' o 'cero registros' significa que el proveedor VPN no almacena registros de tu actividad online. Pero no todas las afirmaciones de 'sin registros' son iguales.",
-          "typesOfLogs": {
-            "title": "Tipos de Registros",
-            "logs": [
-              {
-                "type": "Registros de Actividad",
-                "badge": "Nunca Aceptables",
-                "badgeColor": "red",
-                "description": "Sitios web visitados, archivos descargados, aplicaciones usadas. Una verdadera VPN sin registros nunca almacena esto.",
-                "examples": [
-                  "Historial de navegación",
-                  "Consultas DNS",
-                  "Direcciones IP de destino",
-                  "Marcas de tiempo de actividad",
-                  "Transferencias de datos por sesión"
-                ]
-              },
-              {
-                "type": "Registros de Conexión",
-                "badge": "A Veces Aceptables",
-                "badgeColor": "yellow",
-                "description": "Metadata sobre tus conexiones. Algunos proveedores mantienen registros mínimos para operaciones.",
-                "examples": [
-                  "Fecha de conexión (no hora exacta)",
-                  "Cantidad de datos usados",
-                  "Ubicación del servidor VPN elegido",
-                  "Duración de sesión (agregada, no específica)"
-                ]
-              },
-              {
-                "type": "Datos de Cuenta",
-                "badge": "Esperado",
-                "badgeColor": "green",
-                "description": "Información mínima necesaria para gestionar tu cuenta y suscripción.",
-                "examples": [
-                  "Dirección de email",
-                  "Información de pago",
-                  "Fecha de creación de cuenta",
-                  "Estado de suscripción"
-                ]
-              }
-            ]
-          },
-          "redFlags": {
-            "title": "Señales de Alerta en Políticas de Privacidad",
-            "flags": [
-              {
-                "flag": "Lenguaje Vago",
-                "description": "Afirmaciones como 'no registramos actividad' sin detalles específicos.",
-                "example": "Malo: 'Respetamos tu privacidad' vs Bueno: 'No registramos direcciones IP, marcas de tiempo o historial de navegación'"
-              },
-              {
-                "flag": "Múltiples Contradicciones",
-                "description": "Política de privacidad contradice las afirmaciones de marketing.",
-                "example": "El sitio dice 'cero registros' pero la política menciona 'registros de conexión agregados'"
-              },
-              {
-                "flag": "Compartir con Terceros",
-                "description": "Lenguaje sobre compartir datos con socios o anunciantes.",
-                "example": "Cualquier mención de 'socios de marketing' o 'anunciantes de terceros'"
-              },
-              {
-                "flag": "Jurisdicción 14-Eyes",
-                "description": "Ubicación en países con acuerdos de vigilancia y sin auditoría independiente.",
-                "example": "EE.UU., Reino Unido, Australia sin auditoría externa que verifique 'sin registros'"
-              }
-            ]
-          },
-          "verification": {
-            "title": "Cómo Verificar Afirmaciones Sin Registros",
-            "methods": [
-              {
-                "method": "Buscar Auditorías Independientes",
-                "description": "Las mejores VPN contratan empresas de ciberseguridad de terceros para auditar sus sistemas y políticas.",
-                "icon": "CheckCircle"
-              },
-              {
-                "method": "Revisar Casos Legales Pasados",
-                "description": "Algunos proveedores han probado sus políticas sin registros cuando autoridades solicitaron datos.",
-                "icon": "Scale"
-              },
-              {
-                "method": "Revisar Servidor y Infraestructura",
-                "description": "Servidores solo en RAM no pueden almacenar datos permanentemente. Los datos se borran al reiniciar.",
-                "icon": "Server"
-              },
-              {
-                "method": "Leer el Canario de Transparencia",
-                "description": "Algunos proveedores publican 'canarios de transparencia' indicando que no han recibido órdenes secretas.",
-                "icon": "FileText"
-              }
-            ]
-          }
+        "noLogs": {
+          "title": "Comprender las Políticas Sin Registros",
+          "intro": "Una política sin registros significa que el proveedor de VPN no registra información que podría identificarte a ti o a tus actividades en línea. Sin embargo, no todas las políticas \"sin registros\" son iguales. Algunas VPN afirman ser \"sin registros\" mientras aún recopilan metadatos significativos.",
+          "loggingTypesTitle": "Tipos de Políticas de Registro",
+          "loggingTypes": [
+            {
+              "type": "Registro Completo",
+              "badge": "Evitar",
+              "badgeColor": "destructive",
+              "description": "Registra historial de navegación, marcas de tiempo de conexión, direcciones IP, uso de ancho de banda e información de sesión.",
+              "warning": "⚠️ Derrota completamente el propósito de privacidad de usar una VPN."
+            },
+            {
+              "type": "Registro de Metadatos",
+              "badge": "Usar con Precaución",
+              "badgeColor": "orange",
+              "description": "No registra la actividad de navegación pero registra tiempos de conexión, duración de sesión y ancho de banda. A menudo afirma ser \"sin registros\" en marketing.",
+              "warning": "⚠️ Los metadatos aún pueden usarse para identificar usuarios y rastrear patrones."
+            },
+            {
+              "type": "Registro Mínimo",
+              "badge": "Aceptable",
+              "badgeColor": "secondary",
+              "description": "Solo registra datos mínimos requeridos para la operación del servicio: ancho de banda total usado (no por sesión) y correo electrónico para gestión de cuenta.",
+              "warning": "✓ Compromiso razonable entre privacidad y funcionalidad del servicio."
+            },
+            {
+              "type": "Sin Registros Estricto",
+              "badge": "Mejor",
+              "badgeColor": "green",
+              "description": "Sin registro de direcciones IP, actividad de navegación, marcas de tiempo de conexión, datos de sesión, ancho de banda por sesión o consultas DNS. Verificado por auditorías independientes.",
+              "warning": "✓ Máxima protección de privacidad. Busca verificación de auditoría independiente."
+            }
+          ],
+          "verificationTitle": "Cómo Verificar las Afirmaciones Sin Registros",
+          "verificationItems": [
+            {
+              "title": "Lee la política de privacidad:",
+              "description": "Busca declaraciones específicas sobre lo que NO se registra, no solo afirmaciones de marketing."
+            },
+            {
+              "title": "Verifica auditorías independientes:",
+              "description": "Las VPN de buena reputación contratan empresas de seguridad de terceros (PwC, Deloitte, Cure53) para verificar sus afirmaciones."
+            },
+            {
+              "title": "Investiga pruebas del mundo real:",
+              "description": "Busca casos donde las VPN fueron citadas y no pudieron proporcionar registros porque no existían."
+            },
+            {
+              "title": "Revisa informes de transparencia:",
+              "description": "Algunas VPN publican informes de transparencia mostrando solicitudes de datos gubernamentales que han recibido y sus respuestas."
+            }
+          ]
         },
         "jurisdiction": {
-          "title": "Por Qué Importa la Jurisdicción",
-          "intro": "La ubicación legal de una empresa VPN determina a qué leyes de retención de datos y órdenes gubernamentales está sujeta.",
+          "title": "La Jurisdicción VPN Importa",
+          "intro": "La jurisdicción es donde tu proveedor de VPN está legalmente establecido. Esto determina qué leyes deben seguir, incluyendo requisitos obligatorios de retención de datos y obligaciones de vigilancia gubernamental. Una VPN establecida en el país equivocado podría verse obligada a registrar tus datos sin importar su política de privacidad.",
+          "eyesAlliancesTitle": "Las Alianzas \"Eyes\"",
+          "eyesAlliancesIntro": "Alianzas de intercambio de inteligencia entre países. Los miembros comparten datos de vigilancia entre sí, potencialmente comprometiendo la privacidad VPN incluso si tus datos no se recopilan en tu propio país.",
+          "eyesAlliances": [
+            {
+              "type": "5 Eyes",
+              "countries": "EE.UU., Reino Unido, Canadá, Australia, Nueva Zelanda",
+              "warning": "⚠️ Mayor cooperación de vigilancia. Las VPN establecidas aquí enfrentan más presión.",
+              "color": "red"
+            },
+            {
+              "type": "9 Eyes",
+              "countries": "5 Eyes + Dinamarca, Francia, Países Bajos, Noruega",
+              "warning": "",
+              "color": "orange"
+            },
+            {
+              "type": "14 Eyes",
+              "countries": "9 Eyes + Alemania, Bélgica, Italia, España, Suecia",
+              "warning": "",
+              "color": "yellow"
+            }
+          ],
+          "privacyFriendlyTitle": "Jurisdicciones Amigables con la Privacidad",
+          "bestChoices": [
+            "🇨🇭 Suiza - Leyes de privacidad fuertes, neutral",
+            "🇵🇦 Panamá - Sin leyes de retención de datos",
+            "🇻🇬 Islas Vírgenes Británicas - Fuera de la jurisdicción del Reino Unido",
+            "🇷🇴 Rumania - Sin retención de datos obligatoria",
+            "🇸🇪 Suecia - Protección GDPR a pesar de 14 Eyes"
+          ],
+          "vpnLocationsTitle": "Dónde Están Ubicadas las Mejores VPN",
+          "vpnLocations": [
+            "ExpressVPN - Islas Vírgenes Británicas",
+            "NordVPN - Panamá",
+            "Surfshark - Países Bajos",
+            "ProtonVPN - Suiza",
+            "Mullvad - Suecia"
+          ],
+          "importantNoteTitle": "Nota Importante",
+          "importantNote": "La jurisdicción por sí sola no garantiza privacidad. Una VPN en un país amigable con la privacidad aún puede registrar tus datos si así lo decide. Busca la combinación de buena jurisdicción + política estricta sin registros + auditorías independientes.",
           "alliances": {
             "title": "Alianzas de Vigilancia Internacional",
             "description": "Estos países tienen acuerdos de compartir inteligencia, lo que significa que pueden solicitar y compartir datos entre ellos.",
@@ -2158,103 +2132,62 @@
             "conclusion": "Considera la jurisdicción junto con otras características de privacidad, no aisladamente."
           }
         },
-        "independentAudits": {
-          "title": "Auditorías Independientes",
-          "intro": "Las auditorías de terceros son la forma más confiable de verificar las afirmaciones de privacidad de una VPN. Aquí está qué buscar:",
-          "typeOfAudits": {
-            "title": "Tipos de Auditorías",
-            "audits": [
-              {
-                "type": "Auditoría de Política Sin Registros",
-                "description": "Verifica que la VPN realmente no almacene registros de actividad de usuarios.",
-                "whatTheyCheck": [
-                  "Código del servidor y configuraciones de base de datos",
-                  "Procesos de gestión de logs",
-                  "Infraestructura de servidor",
-                  "Práctica de políticas vs. reclamos"
-                ]
-              },
-              {
-                "type": "Auditoría de Seguridad de Infraestructura",
-                "description": "Revisa configuración del servidor, seguridad de red y protecciones de sistema.",
-                "whatTheyCheck": [
-                  "Configuraciones de servidor",
-                  "Controles de acceso a red",
-                  "Parchado de vulnerabilidades",
-                  "Mecanismos de respuesta a incidentes"
-                ]
-              },
-              {
-                "type": "Auditoría de Código de Aplicación",
-                "description": "Examina el código de la aplicación VPN en busca de vulnerabilidades de seguridad.",
-                "whatTheyCheck": [
-                  "Implementación de cifrado",
-                  "Configuración de kill switch",
-                  "Protección contra fugas de DNS/IP",
-                  "Manejo de credenciales de usuario"
-                ]
-              }
-            ]
-          },
-          "reputableFirms": {
-            "title": "Empresas de Auditoría Reputadas",
-            "firms": [
-              {
-                "name": "PricewaterhouseCoopers (PwC)",
-                "specialty": "Auditorías de privacidad y cumplimiento de seguridad",
-                "vpnsAudited": [
-                  "ExpressVPN",
-                  "TunnelBear"
-                ]
-              },
-              {
-                "name": "Cure53",
-                "specialty": "Pruebas de penetración y auditorías de seguridad",
-                "vpnsAudited": [
-                  "NordVPN",
-                  "ProtonVPN",
-                  "Mullvad"
-                ]
-              },
-              {
-                "name": "Deloitte",
-                "specialty": "Auditorías corporativas de privacidad y cumplimiento",
-                "vpnsAudited": [
-                  "NordVPN"
-                ]
-              },
-              {
-                "name": "VerSprite",
-                "specialty": "Auditorías de seguridad cibernética",
-                "vpnsAudited": [
-                  "IPVanish"
-                ]
-              }
-            ]
-          },
-          "readingReports": {
-            "title": "Cómo Leer Informes de Auditoría",
-            "tips": [
-              {
-                "tip": "Verifica la Fecha",
-                "description": "Las auditorías deben ser recientes (dentro del último año). La tecnología y las amenazas cambian rápidamente."
-              },
-              {
-                "tip": "Lee la Sección de Alcance",
-                "description": "¿Qué exactamente fue auditado? Toda la infraestructura o solo aspectos específicos?"
-              },
-              {
-                "tip": "Busca Hallazgos",
-                "description": "¿Se encontraron problemas? ¿Cómo respondió la VPN? Ningún hallazgo es sospechoso - las auditorías reales encuentran problemas."
-              },
-              {
-                "tip": "Verifica si es Pública",
-                "description": "Las VPN transparentes publican informes de auditoría completos, no solo resúmenes de marketing."
-              }
-            ]
-          }
+        "keyTakeaways": {
+          "title": "Puntos Clave",
+          "items": [
+            "Una verdadera política sin registros significa que no se almacena actividad de usuario - busca auditorías independientes para verificación",
+            "La jurisdicción importa pero no es el único factor - considera ella junto con auditorías, tecnología y historial probado",
+            "Las VPN gratuitas a menudo monetizan vendiendo tus datos - invierte en una VPN premium reputada para privacidad real",
+            "Lee políticas de privacidad cuidadosamente y busca señales de alerta como lenguaje vago o afirmaciones contradictorias"
+          ]
         },
-        "privacyRedFlags": {
+        "audits": {
+          "title": "Auditorías de Seguridad Independientes",
+          "intro": "Las auditorías independientes son evaluaciones de seguridad de terceros que verifican las afirmaciones de privacidad de una VPN. Empresas de buena reputación como PwC, Deloitte, Cure53 y KPMG examinan la infraestructura, el código y las prácticas de registro de la VPN para confirmar que coinciden con las afirmaciones de marketing.",
+          "whatAuditsCheckTitle": "Qué Verifican las Auditorías",
+          "auditChecks": [
+            {
+              "title": "Seguridad de Infraestructura",
+              "description": "Configuraciones de servidor, implementación de cifrado y arquitectura de red para asegurar que no filtren datos."
+            },
+            {
+              "title": "Verificación Sin Registros",
+              "description": "Examen de registros de servidor, sistemas de base de datos e infraestructura backend para confirmar que no se almacenen datos identificables."
+            },
+            {
+              "title": "Revisión de Código",
+              "description": "Análisis de aplicaciones VPN y software de servidor para identificar posibles vulnerabilidades de privacidad o fugas de datos."
+            },
+            {
+              "title": "Pruebas de Fugas DNS",
+              "description": "Pruebas para fugas de IP, fugas de DNS y fugas de WebRTC que podrían exponer tu identidad real incluso cuando estás conectado."
+            }
+          ],
+          "auditedVpnsTitle": "VPN Auditadas Independientemente",
+          "auditedVpns": [
+            {
+              "name": "NordVPN",
+              "audits": "Auditada por PwC (2018, 2020, 2023)",
+              "badge": "Verificada"
+            },
+            {
+              "name": "ExpressVPN",
+              "audits": "Auditada por PwC (2019, 2022), Cure53 (2023)",
+              "badge": "Verificada"
+            },
+            {
+              "name": "Surfshark",
+              "audits": "Auditada por Cure53 (2021, 2023)",
+              "badge": "Verificada"
+            },
+            {
+              "name": "ProtonVPN",
+              "audits": "Auditada por SEC Consult (2020, 2022)",
+              "badge": "Verificada"
+            }
+          ]
+        },
+        "redFlags": {
           "title": "Señales de Alerta de Privacidad",
           "flags": [
             {
@@ -2292,76 +2225,42 @@
             }
           ]
         },
-        "privacyChecklist": {
-          "title": "Lista de Verificación de Privacidad",
-          "intro": "Usa esta lista al evaluar una VPN para privacidad:",
-          "checklist": [
-            {
-              "category": "Registros y Políticas",
-              "items": [
-                "Política sin registros clara y específica",
-                "Sin registros de actividad (historial de navegación, DNS, direcciones IP)",
-                "Registros de conexión mínimos o nulos",
-                "Política de privacidad transparente y detallada"
-              ]
-            },
-            {
-              "category": "Verificación Independiente",
-              "items": [
-                "Política sin registros auditada por tercero reputado",
-                "Informes de auditoría públicos disponibles",
-                "Auditorías regulares (al menos anualmente)",
-                "Casos legales pasados que prueban sin registros"
-              ]
-            },
-            {
-              "category": "Jurisdicción",
-              "items": [
-                "Con base fuera de países 5/9/14 Eyes (preferido)",
-                "Leyes de privacidad fuertes en jurisdicción",
-                "Sin leyes de retención de datos obligatorias",
-                "Canario de transparencia (bonus)"
-              ]
-            },
-            {
-              "category": "Opciones de Pago",
-              "items": [
-                "Acepta criptomonedas (Bitcoin, Monero)",
-                "Permite pago en efectivo/tarjetas de regalo",
-                "No requiere información personal para registro",
-                "Opción de pago anónimo disponible"
-              ]
-            },
-            {
-              "category": "Seguridad Técnica",
-              "items": [
-                "Cifrado fuerte (AES-256)",
-                "Protocolos modernos (WireGuard, OpenVPN)",
-                "Servidores solo en RAM (bonus)",
-                "Perfect forward secrecy",
-                "Protección contra fugas de DNS/IPv6",
-                "Kill switch"
-              ]
-            },
-            {
-              "category": "Reputación y Transparencia",
-              "items": [
-                "Propietario de empresa conocido",
-                "Sin historial de violaciones",
-                "Reportes de transparencia publicados",
-                "Equipo de privacidad responsivo",
-                "Código abierto de apps (bonus)"
-              ]
-            }
-          ]
-        },
-        "keyTakeaways": {
-          "title": "Puntos Clave",
+        "checklist": {
+          "title": "Lista de Verificación para Evaluar Privacidad VPN",
+          "intro": "Usa esta lista de verificación al evaluar las afirmaciones de privacidad de una VPN. Cuantas más casillas puedas marcar, mejor será la protección de privacidad.",
           "items": [
-            "Una verdadera política sin registros significa que no se almacena actividad de usuario - busca auditorías independientes para verificación",
-            "La jurisdicción importa pero no es el único factor - considera ella junto con auditorías, tecnología y historial probado",
-            "Las VPN gratuitas a menudo monetizan vendiendo tus datos - invierte en una VPN premium reputada para privacidad real",
-            "Lee políticas de privacidad cuidadosamente y busca señales de alerta como lenguaje vago o afirmaciones contradictorias"
+            {
+              "title": "Política estricta sin registros claramente declarada",
+              "description": "Sin registro de IP, sin marcas de tiempo, sin historial de navegación, sin consultas DNS almacenadas."
+            },
+            {
+              "title": "Jurisdicción favorable a la privacidad",
+              "description": "Fuera de las alianzas de vigilancia 5/9/14 Eyes, con leyes de privacidad sólidas."
+            },
+            {
+              "title": "Auditada independientemente",
+              "description": "Auditoría reciente por empresa de buena reputación (PwC, Deloitte, Cure53, etc.) con resultados publicados."
+            },
+            {
+              "title": "Propiedad transparente",
+              "description": "Propiedad de la compañía, liderazgo y ubicación física claramente divulgados."
+            },
+            {
+              "title": "Política de privacidad transparente",
+              "description": "Política de privacidad clara y detallada sin términos vagos o contradicciones."
+            },
+            {
+              "title": "Historial probado",
+              "description": "Evidencia del mundo real de sin registros (por ejemplo, no pudo proporcionar datos cuando fue citada)."
+            },
+            {
+              "title": "Opciones de pago anónimas",
+              "description": "Acepta pagos en criptomonedas o efectivo para verdadero anonimato."
+            },
+            {
+              "title": "Características avanzadas de privacidad",
+              "description": "Servidores solo RAM, perfect forward secrecy, infraestructura sin disco."
+            }
           ]
         }
       }
@@ -2414,49 +2313,24 @@
         "whatIsProtocol": {
           "title": "¿Qué es un Protocolo VPN?",
           "intro": "Un protocolo VPN es un conjunto de reglas e instrucciones que determinan cómo tus datos son enrutados y cifrados entre tu dispositivo y el servidor VPN. Piensa en ello como el 'lenguaje' que tu dispositivo y la VPN usan para comunicarse de forma segura.",
-          "analogy": {
-            "title": "Analogía: Protocolos como Métodos de Envío",
-            "description": "Imagina enviar un paquete valioso:",
-            "methods": [
-              {
-                "method": "Mensajería Express",
-                "protocol": "WireGuard",
-                "description": "Más rápido, tecnología moderna, eficiente"
-              },
-              {
-                "method": "Servicio Postal Estándar",
-                "protocol": "OpenVPN",
-                "description": "Confiable, ampliamente disponible, compatible"
-              },
-              {
-                "method": "Correo Blindado",
-                "protocol": "IKEv2/IPSec",
-                "description": "Muy seguro, bueno para distancias largas"
-              }
-            ]
-          },
-          "protocolComponents": {
+          "determines": {
             "title": "Componentes de un Protocolo VPN",
-            "components": [
+            "items": [
               {
-                "component": "Encriptación",
-                "description": "Cómo tus datos se codifican para hacerlos ilegibles",
-                "icon": "Lock"
+                "title": "Encryption Method",
+                "description": "How your data is scrambled to prevent interception"
               },
               {
-                "component": "Autenticación",
-                "description": "Verificar que te estás conectando al servidor VPN correcto",
-                "icon": "Shield"
+                "title": "Authentication",
+                "description": "How your identity is verified with the VPN server"
               },
               {
-                "component": "Tunelización",
-                "description": "Cómo los datos se empaquetan y enrutan",
-                "icon": "Server"
+                "title": "Speed & Efficiency",
+                "description": "How fast data moves through the VPN tunnel"
               },
               {
-                "component": "Transporte",
-                "description": "Los métodos de transmisión de datos (UDP/TCP)",
-                "icon": "Zap"
+                "title": "Security Level",
+                "description": "How resistant the connection is to attacks"
               }
             ]
           }
@@ -2465,77 +2339,47 @@
           "title": "WireGuard",
           "badge": "Recomendado para Mayoría de Usuarios",
           "intro": "WireGuard es el protocolo VPN más nuevo y está ganando popularidad rápidamente debido a su velocidad excepcional, seguridad moderna y simplicidad.",
-          "history": {
-            "title": "Breve Historia",
-            "description": "Desarrollado por Jason A. Donenfeld en 2015, WireGuard fue inicialmente diseñado para Linux pero ahora soporta todas las plataformas principales. Fue oficialmente incorporado al kernel de Linux en 2020."
+          "bestFor": {
+            "title": "Mejor Para",
+            "description": "Uso diario general, Streaming y gaming, Dispositivos móviles (iOS/Android), Usuarios que priorizan velocidad, Ubicaciones con internet limitado"
           },
-          "technicalDetails": {
-            "title": "Detalles Técnicos",
-            "specs": [
-              {
-                "spec": "Base de Código",
-                "value": "~4,000 líneas",
-                "comparison": "vs 400,000+ en OpenVPN",
-                "benefit": "Más fácil de auditar, menos errores"
-              },
-              {
-                "spec": "Cifrado",
-                "value": "ChaCha20, Poly1305",
-                "benefit": "Criptografía de última generación"
-              },
-              {
-                "spec": "Autenticación",
-                "value": "Noise Protocol Framework",
-                "benefit": "Handshakes modernos y rápidos"
-              },
-              {
-                "spec": "Transporte",
-                "value": "Solo UDP",
-                "benefit": "Más rápido que TCP"
-              }
-            ]
-          },
-          "prosAndCons": {
-            "pros": [
+          "released": null,
+          "stats": [
+            {
+              "value": "~4K",
+              "label": "Lines of Code"
+            },
+            {
+              "value": "5%",
+              "label": "Speed Loss"
+            },
+            {
+              "value": "<1ms",
+              "label": "Handshake"
+            },
+            {
+              "value": "ChaCha20",
+              "label": "Encryption"
+            }
+          ],
+          "advantages": {
+            "title": "Pros",
+            "items": [
               "El más rápido - hasta 2x más rápido que OpenVPN",
               "Seguridad moderna con criptografía de última generación",
               "Eficiencia de batería (genial para móviles)",
               "Reconexión rápida al cambiar de redes",
               "Base de código pequeña = más fácil de auditar",
               "Rendimiento excelente en dispositivos de bajo consumo"
-            ],
-            "cons": [
+            ]
+          },
+          "disadvantages": {
+            "title": "Cons",
+            "items": [
               "Relativamente nuevo (menos probado en batalla)",
               "Solo UDP (algunos firewall pueden bloquear)",
               "Asignación de IP estática (preocupaciones de privacidad potenciales)",
               "Soporte de plataforma limitado en VPN más antiguas"
-            ]
-          },
-          "bestFor": {
-            "title": "Mejor Para",
-            "useCases": [
-              "Uso diario general",
-              "Streaming y gaming",
-              "Dispositivos móviles (iOS/Android)",
-              "Usuarios que priorizan velocidad",
-              "Ubicaciones con internet limitado"
-            ]
-          },
-          "implementations": {
-            "title": "Implementaciones VPN",
-            "variants": [
-              {
-                "name": "NordLynx (NordVPN)",
-                "description": "Implementación personalizada de WireGuard con direcciones IP dinámicas para mejor privacidad."
-              },
-              {
-                "name": "WireGuard Estándar",
-                "description": "Usado por Mullvad, IVPN y otros proveedores enfocados en privacidad."
-              },
-              {
-                "name": "WireGuard con Ofuscación",
-                "description": "Algunas VPN añaden ofuscación encima para evitar bloqueos."
-              }
             ]
           }
         },
@@ -2543,65 +2387,43 @@
           "title": "OpenVPN",
           "badge": "Estándar de la Industria",
           "intro": "OpenVPN ha sido el protocolo VPN predeterminado durante más de dos décadas. Es código abierto, altamente configurable y soportado en prácticamente todas las plataformas.",
-          "history": {
-            "title": "Breve Historia",
-            "description": "Lanzado en 2001 por James Yonan, OpenVPN se ha convertido en el estándar de oro para conexiones VPN. Su naturaleza de código abierto significa que ha sido exhaustivamente auditado y confiado por organizaciones de seguridad en todo el mundo."
+          "bestFor": {
+            "title": "Mejor Para",
+            "description": "Máxima compatibilidad en todas las plataformas, Evadir firewall estrictos (TCP puerto 443), Usuarios que priorizan seguridad probada, Redes empresariales/corporativas, Situaciones donde WireGuard/IKEv2 están bloqueados"
           },
-          "technicalDetails": {
-            "title": "Detalles Técnicos",
-            "specs": [
-              {
-                "spec": "Base de Código",
-                "value": "~400,000 líneas",
-                "benefit": "Maduro y probado en batalla"
-              },
-              {
-                "spec": "Cifrado",
-                "value": "AES-256, Blowfish",
-                "benefit": "Cifrado de grado militar probado"
-              },
-              {
-                "spec": "Autenticación",
-                "value": "Certificados RSA, claves compartidas",
-                "benefit": "Opciones de autenticación flexibles"
-              },
-              {
-                "spec": "Transporte",
-                "value": "TCP o UDP",
-                "benefit": "Funciona en prácticamente cualquier red"
-              }
-            ]
-          },
-          "variants": {
-            "title": "OpenVPN UDP vs TCP",
-            "comparison": [
-              {
-                "variant": "UDP (User Datagram Protocol)",
-                "speed": "Más rápido",
-                "reliability": "Menos confiable",
-                "bestFor": "Streaming, gaming, uso general",
-                "description": "No espera confirmación de paquetes. Algunos paquetes pueden perderse pero la conexión es más rápida."
-              },
-              {
-                "variant": "TCP (Transmission Control Protocol)",
-                "speed": "Más lento",
-                "reliability": "Más confiable",
-                "bestFor": "Redes restrictivas, navegación web",
-                "description": "Espera confirmación de cada paquete. Más lento pero asegura que todos los datos lleguen."
-              }
-            ],
-            "recommendation": "Usa UDP por defecto. Cambia a TCP si UDP es bloqueado o tienes problemas de conexión."
-          },
-          "prosAndCons": {
-            "pros": [
+          "released": null,
+          "stats": [
+            {
+              "value": "400K+",
+              "label": "Lines of Code"
+            },
+            {
+              "value": "20%",
+              "label": "Speed Loss"
+            },
+            {
+              "value": "High",
+              "label": "CPU Usage"
+            },
+            {
+              "value": "AES-256",
+              "label": "Encryption"
+            }
+          ],
+          "advantages": {
+            "title": "Pros",
+            "items": [
               "Probado en batalla durante más de 20 años",
               "Altamente configurable y flexible",
               "Funciona en todas las plataformas",
               "Puede evadir la mayoría de firewall (especialmente TCP puerto 443)",
               "Código abierto y auditado independientemente",
               "Soportado por casi todas las VPN"
-            ],
-            "cons": [
+            ]
+          },
+          "disadvantages": {
+            "title": "Cons",
+            "items": [
               "Más lento que WireGuard e IKEv2",
               "Base de código compleja (más difícil de auditar)",
               "Consume más batería en móviles",
@@ -2609,50 +2431,22 @@
               "Sobrecarga mayor que protocolos más nuevos"
             ]
           },
-          "bestFor": {
-            "title": "Mejor Para",
-            "useCases": [
-              "Máxima compatibilidad en todas las plataformas",
-              "Evadir firewall estrictos (TCP puerto 443)",
-              "Usuarios que priorizan seguridad probada",
-              "Redes empresariales/corporativas",
-              "Situaciones donde WireGuard/IKEv2 están bloqueados"
-            ]
+          "tcpVsUdp": {
+            "title": "OpenVPN UDP vs TCP",
+            "udp": {
+              "title": null,
+              "description": null
+            },
+            "tcp": {
+              "title": null,
+              "description": null
+            }
           }
         },
-        "ikev2ipsec": {
+        "ikev2": {
           "title": "IKEv2/IPSec",
           "badge": "Optimizado para Móvil",
           "intro": "IKEv2 (Internet Key Exchange version 2) emparejado con IPSec es excelente para dispositivos móviles. Se destaca en mantenimiento de conexión al cambiar entre redes WiFi y datos celulares.",
-          "history": {
-            "title": "Breve Historia",
-            "description": "Desarrollado conjuntamente por Microsoft y Cisco a mediados de los 2000. IKEv2 es el protocolo de negociación de claves, mientras IPSec maneja el cifrado de datos real. Juntos forman un protocolo VPN robusto."
-          },
-          "technicalDetails": {
-            "title": "Detalles Técnicos",
-            "specs": [
-              {
-                "spec": "Cifrado",
-                "value": "AES-256, 3DES",
-                "benefit": "Cifrado de grado militar"
-              },
-              {
-                "spec": "Autenticación",
-                "value": "Certificados, EAP",
-                "benefit": "Autenticación de nivel empresarial"
-              },
-              {
-                "spec": "Transporte",
-                "value": "UDP (puerto 500/4500)",
-                "benefit": "Rendimiento rápido"
-              },
-              {
-                "spec": "MOBIKE",
-                "value": "Soporte de movilidad",
-                "benefit": "Reconexión perfecta al cambiar redes"
-              }
-            ]
-          },
           "mobileAdvantages": {
             "title": "Por Qué IKEv2 es Excelente para Móvil",
             "advantages": [
@@ -2678,35 +2472,52 @@
               }
             ]
           },
-          "prosAndCons": {
-            "pros": [
+          "bestFor": {
+            "title": "Mejor Para",
+            "description": "iPhones, iPads y dispositivos macOS, Usuarios Android que frecuentemente cambian de red, Viajeros que mueven entre WiFi y celular, Usuarios móviles que priorizan batería, Situaciones que requieren reconexión rápida"
+          },
+          "released": null,
+          "stats": [
+            {
+              "value": "Very Good",
+              "label": "Speed"
+            },
+            {
+              "value": "Excellent",
+              "label": "Mobile"
+            },
+            {
+              "value": "<1s",
+              "label": "Reconnection"
+            },
+            {
+              "value": "AES-256",
+              "label": "Encryption"
+            }
+          ],
+          "advantages": {
+            "title": "Pros",
+            "items": [
               "Excelente para dispositivos móviles",
               "Reconexión rápida cuando se cambia de red",
               "Velocidades muy rápidas (comparable a WireGuard)",
               "Soporte nativo en OS principales",
               "Estable y seguro",
               "Buen rendimiento en conexiones celulares"
-            ],
-            "cons": [
+            ]
+          },
+          "disadvantages": {
+            "title": "Cons",
+            "items": [
               "Cerrado (desarrollado por Microsoft/Cisco)",
               "Puede ser bloqueado más fácilmente que OpenVPN",
               "Menos configurable que OpenVPN",
               "No tan ampliamente soportado como OpenVPN",
               "Potencialmente vulnerable a firewall que bloquean UDP 500/4500"
             ]
-          },
-          "bestFor": {
-            "title": "Mejor Para",
-            "useCases": [
-              "iPhones, iPads y dispositivos macOS",
-              "Usuarios Android que frecuentemente cambian de red",
-              "Viajeros que mueven entre WiFi y celular",
-              "Usuarios móviles que priorizan batería",
-              "Situaciones que requieren reconexión rápida"
-            ]
           }
         },
-        "otherProtocols": {
+        "others": {
           "title": "Otros Protocolos",
           "protocols": [
             {
@@ -2809,14 +2620,13 @@
           "title": "Comparación de Protocolos",
           "intro": "Aquí está un resumen rápido para ayudarte a elegir el protocolo correcto para tus necesidades:",
           "table": {
-            "headers": {
-              "protocol": "Protocolo",
-              "speed": "Velocidad",
-              "security": "Seguridad",
-              "stability": "Estabilidad",
-              "compatibility": "Compatibilidad",
-              "bestFor": "Mejor Para"
-            },
+            "headers": [
+              "Protocolo",
+              "Velocidad",
+              "Seguridad",
+              "Estabilidad",
+              "Compatibilidad"
+            ],
             "rows": [
               {
                 "protocol": "WireGuard",
@@ -2862,77 +2672,27 @@
           },
           "recommendations": {
             "title": "Recomendaciones Rápidas",
-            "scenarios": [
+            "items": [
               {
-                "scenario": "Uso diario general",
-                "recommendation": "WireGuard",
-                "reason": "Mejor equilibrio de velocidad, seguridad y eficiencia de batería"
+                "title": "Uso diario general",
+                "description": "WireGuard - Mejor equilibrio de velocidad, seguridad y eficiencia de batería"
               },
               {
-                "scenario": "Máxima seguridad",
-                "recommendation": "OpenVPN (TCP puerto 443)",
-                "reason": "Probado en batalla, ampliamente confiado, difícil de bloquear"
+                "title": "Máxima seguridad",
+                "description": "OpenVPN (TCP puerto 443) - Probado en batalla, ampliamente confiado, difícil de bloquear"
               },
               {
-                "scenario": "Dispositivos móviles",
-                "recommendation": "WireGuard o IKEv2",
-                "reason": "Rápido, eficiente en batería, maneja cambios de red bien"
+                "title": "Dispositivos móviles",
+                "description": "WireGuard o IKEv2 - Rápido, eficiente en batería, maneja cambios de red bien"
               },
               {
-                "scenario": "Streaming & Gaming",
-                "recommendation": "WireGuard",
-                "reason": "Velocidades más rápidas con mínima latencia"
-              },
-              {
-                "scenario": "China o países restrictivos",
-                "recommendation": "OpenVPN (TCP 443) ofuscado",
-                "reason": "Más difícil de detectar y bloquear"
-              },
-              {
-                "scenario": "Máxima compatibilidad",
-                "recommendation": "OpenVPN",
-                "reason": "Funciona en prácticamente todas las plataformas y redes"
+                "title": "Streaming & Gaming",
+                "description": "WireGuard - Velocidades más rápidas con mínima latencia"
               }
             ]
           }
         },
-        "howToChoose": {
-          "title": "Cómo Elegir un Protocolo",
-          "decisionTree": {
-            "title": "Árbol de Decisión",
-            "questions": [
-              {
-                "question": "¿Estás usando móvil?",
-                "yes": "IKEv2 o WireGuard",
-                "no": "Siguiente pregunta"
-              },
-              {
-                "question": "¿Tu red bloquea WireGuard?",
-                "yes": "OpenVPN (TCP 443)",
-                "no": "WireGuard"
-              },
-              {
-                "question": "¿Priorizas velocidad sobre todo?",
-                "yes": "WireGuard",
-                "no": "Siguiente pregunta"
-              },
-              {
-                "question": "¿Necesitas máxima compatibilidad?",
-                "yes": "OpenVPN",
-                "no": "WireGuard (predeterminado)"
-              }
-            ]
-          },
-          "tips": [
-            "La mayoría de apps VPN permiten cambiar protocolos en configuración",
-            "Prueba diferentes protocolos para ver cuál funciona mejor en tu red",
-            "Cuando dudes, comienza con WireGuard",
-            "Cambia a OpenVPN si WireGuard es bloqueado o inestable",
-            "Usa IKEv2 en dispositivos móviles si WireGuard no está disponible",
-            "Nunca uses PPTP o L2TP/IPSec a menos que sea absolutamente necesario"
-          ]
-        },
-        "keyTakeaways": {
+        "summary": {
           "title": "Puntos Clave",
           "items": [
             "WireGuard es el mejor protocolo todo en uno para la mayoría de usuarios - rápido, seguro y eficiente en batería",
@@ -2988,480 +2748,215 @@
         "button": "Comparar Velocidades VPN"
       },
       "sections": {
-        "understandingSpeed": {
-          "title": "Entender la Velocidad VPN",
-          "intro": "Las VPN siempre ralentizarán tu internet hasta cierto punto - es la compensación por privacidad y seguridad. Pero las buenas VPN minimizan esta pérdida de velocidad a niveles apenas perceptibles.",
-          "speedBasics": {
-            "title": "Conceptos Básicos de Velocidad",
-            "metrics": [
-              {
-                "metric": "Velocidad de Descarga",
-                "description": "Qué tan rápido puedes recibir datos (streaming, descargas de archivos).",
-                "icon": "Download",
-                "measured": "Mbps (Megabits por segundo)"
-              },
-              {
-                "metric": "Velocidad de Carga",
-                "description": "Qué tan rápido puedes enviar datos (subir archivos, videollamadas).",
-                "icon": "Upload",
-                "measured": "Mbps"
-              },
-              {
-                "metric": "Latencia (Ping)",
-                "description": "Tiempo que tarda un paquete de datos en hacer un viaje redondo.",
-                "icon": "Clock",
-                "measured": "ms (milisegundos)"
-              },
-              {
-                "metric": "Jitter",
-                "description": "Variación en latencia - importante para gaming y videollamadas.",
-                "icon": "Activity",
-                "measured": "ms"
-              }
-            ]
-          },
-          "realistic Expectations": {
-            "title": "Expectativas Realistas",
-            "description": "Aquí está lo que puedes esperar con diferentes calidades de VPN:",
-            "tiers": [
-              {
-                "tier": "VPN Premium (NordVPN, ExpressVPN)",
-                "speedLoss": "10-20%",
-                "description": "Apenas perceptible para la mayoría de actividades. Puedes hacer streaming 4K cómodamente.",
-                "color": "green"
-              },
-              {
-                "tier": "VPN de Nivel Medio",
-                "speedLoss": "25-40%",
-                "description": "Perceptible pero usable para la mayoría de tareas. Streaming HD funciona.",
-                "color": "yellow"
-              },
-              {
-                "tier": "VPN Gratuita/Económica",
-                "speedLoss": "50-80%",
-                "description": "Ralentización significativa. El streaming buferea, las páginas cargan lentamente.",
-                "color": "red"
-              }
-            ]
-          }
-        },
-        "factorsAffecting": {
-          "title": "Factores que Afectan la Velocidad",
-          "intro": "Múltiples factores determinan qué tan rápido será tu conexión VPN:",
-          "factors": [
-            {
-              "factor": "Distancia del Servidor",
-              "impact": "Alto",
-              "description": "Los datos deben viajar de ti al servidor VPN y de vuelta. Más lejos = más lento.",
-              "example": "Conectarse a un servidor VPN japonés desde Europa añadirá ~200-300ms de latencia.",
-              "optimization": "Elige servidores geográficamente cercanos a ti cuando la velocidad importa."
+        "understandingVpnSpeed": {
+          "intro": "La velocidad VPN se refiere a qué tan rápido viajan los datos a través de su conexión VPN cifrada. Como los VPN agregan un paso adicional en su conexión a Internet (cifrado y enrutamiento a través de un servidor), es normal una cierta reducción de velocidad.",
+          "keyMetrics": {
+            "title": "Métricas de velocidad clave",
+            "download": {
+              "title": "Velocidad de descarga",
+              "description": "Qué tan rápido recibes datos (streaming, navegación, descargas)"
             },
-            {
-              "factor": "Carga del Servidor",
-              "impact": "Alto",
-              "description": "Los servidores abarrotados ralentizan a todos. Las VPN premium tienen más servidores para distribuir carga.",
-              "example": "Un servidor al 90% de capacidad será significativamente más lento que uno al 30%.",
-              "optimization": "Usa apps VPN que muestren carga del servidor y elige servidores menos abarrotados."
+            "upload": {
+              "title": "Velocidad de subida",
+              "description": "Qué tan rápido envías datos (videollamadas, subida de archivos)"
             },
-            {
-              "factor": "Elección de Protocolo",
-              "impact": "Medio-Alto",
-              "description": "Diferentes protocolos tienen diferentes sobrecarga de velocidad.",
-              "example": "WireGuard típicamente es 2x más rápido que OpenVPN en la misma conexión.",
-              "optimization": "Usa WireGuard para máxima velocidad. Recurre a OpenVPN solo si es necesario."
-            },
-            {
-              "factor": "Cifrado",
-              "impact": "Medio",
-              "description": "Cifrar y descifrar datos toma tiempo de procesamiento. Cifrado más fuerte = algo más lento.",
-              "example": "AES-256 vs AES-128 - diferencia mínima en hardware moderno pero notable en dispositivos antiguos.",
-              "optimization": "Mantente con AES-256 - el impacto de velocidad es mínimo en dispositivos modernos."
-            },
-            {
-              "factor": "Tu Velocidad de Internet Base",
-              "impact": "Fundamental",
-              "description": "Una VPN no puede hacer tu internet más rápido de lo que es inicialmente.",
-              "example": "Con internet de 50Mbps, incluso la mejor VPN solo llegará a ~40-45Mbps.",
-              "optimization": "Actualiza tu plan de internet si necesitas velocidades más rápidas en general."
-            },
-            {
-              "factor": "Congestión del ISP",
-              "impact": "Variable",
-              "description": "Tu ISP puede limitar cierto tráfico. Una VPN a veces puede evadir esto.",
-              "example": "Algunos ISP limitan BitTorrent o streaming - una VPN puede acelerar estas actividades.",
-              "optimization": "Prueba con y sin VPN durante horas pico para ver si tu ISP está limitando."
+            "ping": {
+              "title": "Ping/Latencia",
+              "description": "Tiempo de respuesta en milisegundos (crítico para juegos)"
             }
-          ]
-        },
-        "expectedLoss": {
-          "title": "Pérdida de Velocidad Esperada",
-          "intro": "Aquí están pérdidas de velocidad del mundo real basadas en pruebas extensivas con VPN premium:",
-          "byActivity": {
-            "title": "Por Actividad",
-            "activities": [
-              {
-                "activity": "Navegación Web",
-                "speedRequired": "5-10 Mbps",
-                "vpnImpact": "Mínimo",
-                "description": "Apenas perceptible. Las páginas cargan casi tan rápido con VPN activada."
-              },
-              {
-                "activity": "Streaming HD (1080p)",
-                "speedRequired": "5-8 Mbps",
-                "vpnImpact": "Bajo",
-                "description": "Sin buffering con VPN premium. Puede buferear ocasionalmente con VPN más lentas."
-              },
-              {
-                "activity": "Streaming 4K",
-                "speedRequired": "25+ Mbps",
-                "vpnImpact": "Medio",
-                "description": "Requiere VPN rápida y servidor cercano. VPN económicas probablemente bufearán."
-              },
-              {
-                "activity": "Gaming Online",
-                "speedRequired": "3-6 Mbps (pero latencia <50ms crítica)",
-                "vpnImpact": "Medio-Alto",
-                "description": "VPN añade latencia. Elige servidor cercano al servidor del juego y usa WireGuard."
-              },
-              {
-                "activity": "Videollamadas (Zoom, Teams)",
-                "speedRequired": "3-4 Mbps arriba/abajo",
-                "vpnImpact": "Bajo-Medio",
-                "description": "Generalmente bien con VPN decente. Jitter es más importante que velocidad bruta."
-              },
-              {
-                "activity": "Descargas Grandes de Archivos",
-                "speedRequired": "Depende del tamaño de archivo",
-                "vpnImpact": "Medio",
-                "description": "Pérdida de velocidad notable pero aceptable. Una descarga de 1 hora podría tomar 1.2 horas con VPN."
-              },
-              {
-                "activity": "Torrenting",
-                "speedRequired": "Variable",
-                "vpnImpact": "Medio",
-                "description": "VPN ralentizará algo las descargas pero la privacidad lo vale. Usa servidores optimizados para P2P."
-              }
-            ]
           },
-          "byProtocol": {
-            "title": "Por Protocolo",
-            "description": "Pruebas de velocidad con la misma VPN, misma ubicación de servidor, protocolos diferentes:",
-            "protocols": [
-              {
-                "protocol": "WireGuard",
-                "speedRetention": "80-90%",
-                "download": "450 Mbps (de 500 Mbps base)",
-                "latency": "+5-10ms"
-              },
-              {
-                "protocol": "IKEv2/IPSec",
-                "speedRetention": "75-85%",
-                "download": "400 Mbps (de 500 Mbps base)",
-                "latency": "+10-15ms"
-              },
-              {
-                "protocol": "OpenVPN UDP",
-                "speedRetention": "60-75%",
-                "download": "350 Mbps (de 500 Mbps base)",
-                "latency": "+15-25ms"
-              },
-              {
-                "protocol": "OpenVPN TCP",
-                "speedRetention": "50-65%",
-                "download": "300 Mbps (de 500 Mbps base)",
-                "latency": "+20-35ms"
-              }
+          "speedRequirements": {
+            "title": "Requisitos de velocidad",
+            "items": [
+              "Streaming HD: 5-10 Mbps",
+              "Streaming 4K: 25+ Mbps",
+              "Juegos en línea: 3-6 Mbps (el ping bajo es más importante)",
+              "Videollamadas: 1.5-4 Mbps"
             ]
           }
         },
-        "optimizationTips": {
-          "title": "Consejos de Optimización de Velocidad",
-          "intro": "Prueba estos consejos para exprimir cada bit de velocidad de tu conexión VPN:",
+        "factorsThatAffectSpeed": {
+          "serverDistance": {
+            "title": "Distancia del Servidor",
+            "impact": "Impacto Alto",
+            "description": "Cuanto más lejos esté el servidor VPN, más tiempo tardan los datos en viajar. Conectarse desde Nueva York a un servidor de Tokio añade más de 200 ms de latencia.",
+            "tip": "Siempre elige el servidor más cercano a tu ubicación real a menos que necesites un país específico."
+          },
+          "serverLoad": {
+            "title": "Carga del Servidor",
+            "impact": "Impacto Medio",
+            "description": "Los servidores sobrecargados ralentizan a todos. Los servidores populares en las principales ciudades suelen tener cargas más altas durante las horas pico.",
+            "tip": "Muchas aplicaciones VPN muestran el porcentaje de carga del servidor. Elige servidores con menos del 70% de carga."
+          },
+          "vpnProtocol": {
+            "title": "Protocolo VPN",
+            "impact": "Impacto Medio",
+            "description": "Los diferentes protocolos tienen diferentes características de velocidad. WireGuard es el más rápido, OpenVPN es el más compatible pero más lento.",
+            "tip": "Cambia a WireGuard para las mejores velocidades. La mayoría de las aplicaciones VPN modernas lo admiten."
+          },
+          "encryptionLevel": {
+            "title": "Nivel de Encriptación",
+            "impact": "Impacto Bajo",
+            "description": "Una encriptación más alta es más segura pero requiere más procesamiento. AES-256 es estándar y tiene un impacto mínimo en la velocidad en dispositivos modernos.",
+            "tip": "Mantén la encriptación AES-256. El beneficio de seguridad supera con creces el costo mínimo de velocidad."
+          },
+          "baseInternetSpeed": {
+            "title": "Tu Velocidad de Internet Base",
+            "impact": "Impacto Alto",
+            "description": "Una VPN no puede hacer tu internet más rápido que tu conexión base. Si tienes 50 Mbps, tu techo de velocidad VPN es de 50 Mbps (menos la sobrecarga de la VPN).",
+            "tip": "Prueba primero tu velocidad base sin VPN para establecer expectativas realistas."
+          }
+        },
+        "expectedSpeedLoss": {
+          "intro": "Todas las VPN reducen tu velocidad en cierta medida. Esto es lo que puedes esperar razonablemente de los proveedores de VPN premium:",
+          "typicalRetention": {
+            "title": "Retención de Velocidad Típica",
+            "nearbySameCountry": {
+              "label": "Servidor Cercano (mismo país)",
+              "percentage": "85-95%"
+            },
+            "regionalNearbyCountry": {
+              "label": "Servidor Regional (país cercano)",
+              "percentage": "75-85%"
+            },
+            "sameContinent": {
+              "label": "Mismo Continente",
+              "percentage": "60-75%"
+            },
+            "crossContinental": {
+              "label": "Intercontinental",
+              "percentage": "40-60%"
+            }
+          },
+          "premiumVpns": {
+            "title": "VPNs Premium",
+            "items": [
+              "Pérdida de velocidad típica del 10-25%",
+              "Infraestructura de servidor optimizada",
+              "Soporte para WireGuard",
+              "Actualizaciones regulares de servidores"
+            ]
+          },
+          "freeVpns": {
+            "title": "VPNs Gratuitas",
+            "items": [
+              "Pérdida de velocidad común del 50-80%",
+              "Servidores sobrecargados",
+              "Ubicaciones de servidor limitadas",
+              "Limitación de ancho de banda"
+            ]
+          }
+        },
+        "speedOptimizationTips": {
           "tips": [
             {
               "number": 1,
-              "title": "Usa WireGuard Cuando Sea Posible",
-              "description": "WireGuard es consistentemente el protocolo más rápido. Si tu VPN lo soporta, úsalo.",
-              "howTo": "Configuración de App → Protocolo → WireGuard",
-              "impact": "Hasta 2x más rápido que OpenVPN"
+              "title": "Elija el servidor más cercano",
+              "description": "La distancia es el mayor enemigo de la velocidad. Si solo necesita privacidad y no una ubicación específica, conéctese al servidor más cercano."
             },
             {
               "number": 2,
-              "title": "Elige el Servidor Más Cercano",
-              "description": "La física importa. Cuanto más cercano el servidor, menos tiempo de viaje de datos.",
-              "howTo": "Usa la función 'servidor más rápido' o elige manualmente servidores cercanos",
-              "impact": "20-50% más rápido que servidores distantes"
+              "title": "Use el protocolo WireGuard",
+              "description": "WireGuard es 3-4 veces más rápido que OpenVPN en la mayoría de las pruebas. Verifique la configuración de su aplicación VPN y cambie si está disponible."
             },
             {
               "number": 3,
-              "title": "Cierra Apps en Segundo Plano",
-              "description": "Otras apps usando internet pueden ralentizar tu conexión VPN.",
-              "howTo": "Cierra BitTorrent, actualizaciones de sistema, sincronización en la nube mientras uses VPN",
-              "impact": "10-30% mejor rendimiento"
+              "title": "Evite las horas pico",
+              "description": "La carga del servidor es más alta durante las horas de la tarde (7-11 PM hora local). Intente conectarse durante las horas valle para mejores velocidades."
             },
             {
               "number": 4,
-              "title": "Usa Ethernet en Lugar de WiFi",
-              "description": "Las conexiones cableadas son más rápidas y estables que WiFi.",
-              "howTo": "Conecta tu ordenador directamente al router con cable Ethernet",
-              "impact": "15-40% más rápido que WiFi, especialmente en casas abarrotadas"
+              "title": "Use conexión por cable",
+              "description": "Ethernet es más estable y rápido que WiFi. Si la velocidad es crítica, conecte directamente a su enrutador."
             },
             {
               "number": 5,
-              "title": "Actualiza Tu Router",
-              "description": "Routers antiguos pueden ser un cuello de botella para conexiones VPN.",
-              "howTo": "Considera router con CPU más fuerte si tienes internet de alta velocidad",
-              "impact": "Mejora significativa si el router es de hace más de 5 años"
+              "title": "Pruebe túnel dividido",
+              "description": "Enrute solo tráfico sensible a través de VPN. Deje que streaming y juegos usen su conexión regular para máxima velocidad."
             },
             {
               "number": 6,
-              "title": "Cambia Puerto UDP (OpenVPN)",
-              "description": "Algunos ISP limitan ciertos puertos. Cambiar puertos puede ayudar.",
-              "howTo": "Configuración Avanzada → Puerto → Prueba 53, 80, 443 o 1194",
-              "impact": "Variable - puede desbloquear velocidades completas si el ISP estaba limitando"
-            },
-            {
-              "number": 7,
-              "title": "Prueba Servidores Diferentes",
-              "description": "No todos los servidores en la misma ciudad tienen el mismo rendimiento.",
-              "howTo": "Prueba 3-5 servidores diferentes en tu ubicación objetivo y mantén el más rápido",
-              "impact": "10-40% de variación entre servidores en la misma ubicación"
-            },
-            {
-              "number": 8,
-              "title": "Desactiva Características Extra",
-              "description": "Características como double VPN, ofuscación y bloqueo de anuncios ralentizan las cosas.",
-              "howTo": "Desactiva double VPN, multihop, ofuscación a menos que las necesites específicamente",
-              "impact": "5-20% más rápido con características desactivadas"
-            },
-            {
-              "number": 9,
-              "title": "Actualiza Tu App VPN",
-              "description": "Las versiones más nuevas a menudo incluyen optimizaciones de velocidad.",
-              "howTo": "Verifica actualizaciones de app regularmente",
-              "impact": "Variable - a veces mejoras significativas"
-            },
-            {
-              "number": 10,
-              "title": "Usa Tunel Dividido",
-              "description": "Envía solo cierto tráfico a través de VPN, deja el resto directo.",
-              "howTo": "Habilita tunel dividido y excluye apps que no necesitan VPN",
-              "impact": "Mejora significativa para tráfico excluido, algo para todo lo demás"
+              "title": "Reinicie su conexión",
+              "description": "A veces reconectarse le asigna a un servidor menos cargado. Intente desconectarse y reconectarse si las velocidades son pobres."
             }
           ]
         },
-        "fastestProtocols": {
-          "title": "Protocolos VPN Más Rápidos",
-          "intro": "Diferentes protocolos tienen características de velocidad diferentes. Aquí está la jerarquía:",
-          "ranking": [
-            {
-              "rank": 1,
-              "protocol": "WireGuard",
-              "speedRating": "Más Rápido",
-              "avgSpeed": "400-500+ Mbps (en conexión de 500Mbps)",
-              "latency": "+5-10ms",
-              "whyFast": "Base de código moderna y delgada, criptografía eficiente, overhead mínimo",
-              "availability": "La mayoría de VPN premium, soporte nativo en Linux"
-            },
-            {
-              "rank": 2,
-              "protocol": "IKEv2/IPSec",
-              "speedRating": "Muy Rápido",
-              "avgSpeed": "350-450 Mbps (en conexión de 500Mbps)",
-              "latency": "+10-15ms",
-              "whyFast": "Protocolo eficiente con buen soporte nativo de OS",
-              "availability": "Soporte nativo en iOS, macOS, Windows"
-            },
-            {
-              "rank": 3,
-              "protocol": "OpenVPN UDP",
-              "speedRating": "Moderado",
-              "avgSpeed": "300-400 Mbps (en conexión de 500Mbps)",
-              "latency": "+15-25ms",
-              "whyFast": "UDP es más rápido que TCP pero aún tiene overhead significativo",
-              "availability": "Ampliamente disponible, máxima compatibilidad"
-            },
-            {
-              "rank": 4,
-              "protocol": "OpenVPN TCP",
-              "speedRating": "Más Lento",
-              "avgSpeed": "250-350 Mbps (en conexión de 500Mbps)",
-              "latency": "+20-35ms",
-              "whyFast": "TCP añade overhead extra para confiabilidad",
-              "availability": "Ampliamente disponible, mejor para redes inestables"
-            }
-          ],
-          "proprietaryProtocols": {
-            "title": "Protocolos Propietarios",
-            "description": "Algunos proveedores VPN tienen protocolos personalizados optimizados para velocidad:",
-            "protocols": [
-              {
-                "name": "Lightway (ExpressVPN)",
-                "speed": "Comparable a WireGuard",
-                "description": "Diseñado por ExpressVPN como alternativa ligera a OpenVPN"
-              },
-              {
-                "name": "NordLynx (NordVPN)",
-                "speed": "Basado en WireGuard",
-                "description": "Implementación de WireGuard con mejoras de privacidad de NordVPN"
-              },
-              {
-                "name": "Catapult Hydra (Hotspot Shield)",
-                "speed": "Muy Rápido",
-                "description": "Protocolo propietario optimizado para streaming"
-              }
-            ]
+        "fastestVpnProtocols": {
+          "wireGuard": {
+            "title": "WireGuard",
+            "badge": "Más Rápido",
+            "speedLoss": "5-10%",
+            "linesOfCode": "~4.000",
+            "latency": "Muy baja",
+            "compatibility": "Buena"
+          },
+          "ikev2": {
+            "title": "IKEv2/IPSec",
+            "badge": "Rápido",
+            "speedLoss": "10-20%",
+            "linesOfCode": "~400.000",
+            "latency": "Baja",
+            "compatibility": "Excelente"
+          },
+          "openVpn": {
+            "title": "OpenVPN",
+            "badge": "Confiable",
+            "speedLoss": "15-30%",
+            "linesOfCode": "~100.000",
+            "latency": "Moderada",
+            "compatibility": "Universal"
+          },
+          "recommendation": {
+            "title": "Recomendación de Protocolo",
+            "description": "Comienza con WireGuard para mejores velocidades. Si no está disponible o tienes problemas, cambia a IKEv2 (móvil) u OpenVPN (escritorio)."
           }
         },
-        "speedTesting": {
-          "title": "Cómo Probar la Velocidad VPN",
-          "intro": "Prueba tu velocidad VPN correctamente para obtener resultados precisos y accionables:",
-          "steps": [
-            {
-              "step": 1,
-              "title": "Establece Tu Velocidad Baseline",
-              "description": "Primero, prueba tu internet SIN VPN para establecer un baseline.",
-              "howTo": [
-                "Desconecta tu VPN completamente",
-                "Ve a fast.com o speedtest.net",
-                "Ejecuta la prueba 3 veces y promedia los resultados",
-                "Nota tu velocidad de descarga, carga y ping"
-              ]
-            },
-            {
-              "step": 2,
-              "title": "Prueba Con VPN",
-              "description": "Ahora prueba con tu VPN conectada.",
-              "howTo": [
-                "Conéctate a un servidor VPN (comienza con el más cercano)",
-                "Espera 10 segundos para que la conexión se estabilice",
-                "Ejecuta la misma prueba de velocidad 3 veces",
-                "Promedia los resultados"
-              ]
-            },
-            {
-              "step": 3,
-              "title": "Calcula la Pérdida de Velocidad",
-              "description": "Compara tus resultados para ver cuánta velocidad pierdes.",
-              "formula": "Pérdida de Velocidad = ((Baseline - VPN) / Baseline) × 100%",
-              "example": "Baseline: 500Mbps, VPN: 425Mbps → (75/500) × 100% = 15% de pérdida"
-            },
-            {
-              "step": 4,
-              "title": "Prueba Diferentes Variables",
-              "description": "Prueba diferentes configuraciones para encontrar la más rápida:",
-              "variables": [
-                "Diferentes ubicaciones de servidores",
-                "Diferentes protocolos (WireGuard vs OpenVPN)",
-                "Diferentes horas del día",
-                "Con/sin características extra (doble VPN, etc.)"
-              ]
-            }
-          ],
-          "bestPractices": {
-            "title": "Mejores Prácticas de Pruebas de Velocidad",
-            "practices": [
-              "Prueba a la misma hora del día para consistencia",
-              "Cierra todas las apps en segundo plano",
-              "Usa conexión Ethernet cuando sea posible",
-              "Ejecuta múltiples pruebas y promedia los resultados",
-              "Documenta tus configuraciones para cada prueba",
-              "Prueba servidores en la misma ciudad pero diferentes servidores",
-              "Usa múltiples herramientas de prueba de velocidad para verificar"
-            ]
-          },
-          "tools": {
-            "title": "Herramientas de Prueba de Velocidad Recomendadas",
-            "tools": [
+        "howToTestVpnSpeed": {
+          "testingProcess": {
+            "title": "Proceso de prueba paso a paso",
+            "steps": [
               {
-                "name": "Fast.com",
-                "pros": "Simple, preciso, propiedad de Netflix (bueno para pruebas de streaming)",
-                "url": "fast.com"
+                "number": 1,
+                "title": "Prueba de velocidad de línea base",
+                "description": "Primero, pruebe su velocidad de Internet sin VPN para establecer una línea base. Cierre todas las aplicaciones que usan ancho de banda."
               },
               {
+                "number": 2,
+                "title": "Conectar al VPN",
+                "description": "Conéctese a su servidor VPN preferido (elija uno cercano para resultados representativos)."
+              },
+              {
+                "number": 3,
+                "title": "Prueba de velocidad con VPN",
+                "description": "Ejecute la misma prueba de velocidad mientras está conectado al VPN."
+              },
+              {
+                "number": 4,
+                "title": "Comparar resultados",
+                "description": "Compare las velocidades de descarga, subida y ping. Calcule el porcentaje de pérdida de velocidad."
+              }
+            ]
+          },
+          "popularTools": {
+            "title": "Herramientas de prueba de velocidad populares",
+            "tools": [
+              {
                 "name": "Speedtest by Ookla",
-                "pros": "Estándar de la industria, muestra latencia, jitter",
-                "url": "speedtest.net"
+                "url": "speedtest.net",
+                "description": "La herramienta de prueba de velocidad más popular y confiable."
+              },
+              {
+                "name": "Fast.com",
+                "url": "fast.com",
+                "description": "Herramienta simple de Netflix enfocada en velocidad de descarga."
               },
               {
                 "name": "Google Speed Test",
-                "pros": "Conveniente, rápido, confiable",
-                "url": "Buscar 'speed test' en Google"
-              },
-              {
-                "name": "TestMy.net",
-                "pros": "Sin Flash/Java, respetuoso con la privacidad",
-                "url": "testmy.net"
+                "url": "google.com/search?q=speed+test",
+                "description": "Prueba integrada de Google, rápida y confiable."
               }
             ]
           }
-        },
-        "troubleshooting": {
-          "title": "Solución de Problemas de Velocidad Lenta",
-          "problems": [
-            {
-              "problem": "VPN es extremadamente lenta (>50% de pérdida)",
-              "possibleCauses": [
-                "Servidor sobrecargado",
-                "Ubicación de servidor muy lejana",
-                "Usando protocolo lento (OpenVPN TCP)",
-                "ISP limitando tráfico VPN",
-                "Router antiguo/débil"
-              ],
-              "solutions": [
-                "Cambia a servidor diferente (preferiblemente menos abarrotado)",
-                "Elige servidor geográficamente más cercano",
-                "Cambia a WireGuard o OpenVPN UDP",
-                "Prueba puerto diferente o protocolo ofuscado",
-                "Conecta directamente al módem, evitando router"
-              ]
-            },
-            {
-              "problem": "Streaming buferea constantemente",
-              "possibleCauses": [
-                "Velocidad VPN demasiado baja para resolución",
-                "Servidor VPN sobrecargado",
-                "ISP limitando streaming",
-                "Demasiados dispositivos en la red"
-              ],
-              "solutions": [
-                "Baja resolución de streaming (4K → 1080p)",
-                "Cambia a servidor diferente con menos carga",
-                "Usa WireGuard para velocidades más rápidas",
-                "Desconecta otros dispositivos de la red",
-                "Usa función 'servidor más rápido' de la VPN"
-              ]
-            },
-            {
-              "problem": "Alta latencia para gaming (>100ms)",
-              "possibleCauses": [
-                "Servidor VPN lejano del servidor del juego",
-                "Protocolo de alta latencia",
-                "Enrutamiento de red subóptimo"
-              ],
-              "solutions": [
-                "Conecta a servidor VPN cercano al servidor del juego",
-                "Usa WireGuard o IKEv2 (latencia más baja)",
-                "Considera VPN específica para gaming (ExitLag, NoPing)",
-                "Contacta soporte VPN para servidor optimizado para gaming"
-              ]
-            },
-            {
-              "problem": "Velocidades inconsistentes/fluctuantes",
-              "possibleCauses": [
-                "Carga de servidor variando con el tiempo",
-                "Congestión de red",
-                "Interferencia WiFi",
-                "Limitación del ISP"
-              ],
-              "solutions": [
-                "Prueba en diferentes horas del día",
-                "Cambia de WiFi a Ethernet",
-                "Cambia banda WiFi (2.4GHz ↔ 5GHz)",
-                "Contacta soporte VPN para servidores estables"
-              ]
-            }
-          ]
         },
         "keyTakeaways": {
           "title": "Puntos Clave",
@@ -3519,492 +3014,185 @@
         "button": "Ver Mejores VPN"
       },
       "sections": {
-        "risksExplained": {
-          "title": "Riesgos del WiFi Público Explicados",
-          "intro": "El WiFi público es conveniente pero inherentemente inseguro. Cuando te conectas a una red abierta, estás compartiendo esa red con extraños - algunos de los cuales podrían ser atacantes.",
-          "whyUnsafe": {
-            "title": "Por Qué el WiFi Público es Inseguro",
-            "reasons": [
-              {
-                "reason": "Sin Cifrado",
-                "description": "La mayoría de WiFi público no está cifrado, lo que significa que cualquiera en la red puede ver tus datos.",
-                "icon": "Unlock",
-                "severity": "Crítico"
-              },
-              {
-                "reason": "Redes Compartidas",
-                "description": "Estás compartiendo la red con extraños que podrían estar ejecutando herramientas de hacking.",
-                "icon": "Users",
-                "severity": "Alto"
-              },
-              {
-                "reason": "Sin Autenticación",
-                "description": "Cualquiera puede unirse sin verificación, haciendo fácil para atacantes acceder.",
-                "icon": "UserX",
-                "severity": "Alto"
-              },
-              {
-                "reason": "Operadores de Red No Confiables",
-                "description": "No sabes quién opera la red o qué están monitoreando.",
-                "icon": "EyeOff",
-                "severity": "Medio"
-              }
-            ]
+        "wifiRisks": {
+          "title": "Por Qué el WiFi Público es Peligroso",
+          "intro": [
+            "Ese WiFi gratuito en tu cafetería favorita puede parecer conveniente, pero viene con serios riesgos de seguridad. Las redes WiFi públicas están diseñadas para acceso fácil, lo que significa que a menudo carecen de cifrado adecuado y medidas de seguridad.",
+            "Cuando te conectas a WiFi público, tus datos viajan por el aire sin cifrar. Esto hace que sea fácil para los cibercriminales interceptar información sensible como contraseñas, números de tarjetas de crédito y mensajes personales."
+          ],
+          "scaryTruth": {
+            "title": "La Verdad Aterradora",
+            "description": "Según expertos en ciberseguridad, el 43% de los usuarios de WiFi público han tenido sus datos comprometidos. Tú podrías ser el próximo si no tomas precauciones."
           },
-          "realWorldImpact": {
-            "title": "Impacto en el Mundo Real",
-            "description": "¿Qué pueden realmente hacer los atacantes en WiFi público?",
-            "attacks": [
-              {
-                "attack": "Robar Credenciales de Inicio de Sesión",
-                "likelihood": "Alto",
-                "description": "Capturar nombres de usuario y contraseñas de sitios sin HTTPS.",
-                "example": "Iniciar sesión en HTTP email o foro - contraseña capturada en texto plano."
-              },
-              {
-                "attack": "Secuestro de Sesión",
-                "likelihood": "Medio",
-                "description": "Robar cookies de sesión para acceder a tus cuentas sin contraseña.",
-                "example": "Mantener tu sesión de Facebook - atacante roba cookie y accede a tu cuenta."
-              },
-              {
-                "attack": "Espiar Tráfico",
-                "likelihood": "Alto",
-                "description": "Monitorear qué sitios visitas y qué datos no cifrados envías.",
-                "example": "Rastrear tu actividad de navegación, capturar consultas de búsqueda."
-              },
-              {
-                "attack": "Distribuir Malware",
-                "likelihood": "Medio",
-                "description": "Inyectar código malicioso en tu tráfico web.",
-                "example": "Reemplazar descarga legítima con versión infectada con malware."
-              },
-              {
-                "attack": "Robo de Datos Personales",
-                "likelihood": "Medio-Alto",
-                "description": "Capturar información sensible enviada sin cifrar.",
-                "example": "Información de tarjeta de crédito ingresada en sitio sin HTTPS."
-              }
-            ]
-          }
+          "risks": [
+            {
+              "title": "Sin Cifrado",
+              "description": "La mayoría de redes WiFi públicas no cifran tus datos, haciendo fácil para cualquiera con herramientas básicas de hacking ver lo que haces en línea."
+            },
+            {
+              "title": "Red Compartida",
+              "description": "Todos en la misma red WiFi pueden potencialmente ver el tráfico no cifrado de los demás. Es como gritar tus contraseñas en una sala llena de gente."
+            },
+            {
+              "title": "Hotspots Maliciosos",
+              "description": "Los hackers a menudo configuran redes WiFi falsas que parecen legítimas. Una vez que te conectas, pueden monitorear todo lo que haces."
+            }
+          ]
         },
-        "commonAttacks": {
-          "title": "Tipos Comunes de Ataques WiFi",
+        "attackTypes": {
+          "title": "Ataques Comunes en WiFi Público",
+          "intro": "Entender cómo los hackers explotan el WiFi público te ayuda a reconocer y evitar estas amenazas. Estos son los métodos de ataque más comunes:",
           "attacks": [
             {
-              "name": "Ataque Man-in-the-Middle (MITM)",
-              "severity": "Alto",
-              "description": "El atacante intercepta comunicación entre tu dispositivo y la internet, pudiendo leer y modificar datos.",
-              "howItWorks": [
-                "El atacante se posiciona entre tú y el router",
-                "Todo tu tráfico pasa a través del dispositivo del atacante",
-                "Pueden leer, capturar y modificar tus datos",
-                "Típicamente indetectable sin herramientas especiales"
-              ],
-              "prevention": [
-                "Usar VPN (cifra todo el tráfico)",
-                "Solo visitar sitios HTTPS",
-                "Evitar transacciones sensibles en WiFi público"
-              ],
-              "icon": "Network"
+              "title": "Ataques Man-in-the-Middle (MITM)",
+              "description": "Los hackers se posicionan entre tú y el punto de conexión. En lugar de comunicarte directamente con el hotspot WiFi, tus datos pasan primero por el atacante, quien puede leer, modificar o robarlos.",
+              "protection": "Siempre usa una VPN para cifrar tu conexión de extremo a extremo."
             },
             {
-              "name": "Gemelo Malvado",
-              "severity": "Crítico",
-              "description": "El atacante crea una red WiFi falsa que se hace pasar por legítima para engañarte para que te conectes.",
-              "howItWorks": [
-                "El atacante configura hotspot con nombre como 'Starbucks WiFi' o 'Airport_Free_WiFi'",
-                "Tu dispositivo se conecta automáticamente al pensar que es legítimo",
-                "Todo tu tráfico pasa a través del dispositivo del atacante",
-                "Control completo sobre tus datos"
-              ],
-              "prevention": [
-                "Verificar nombres exactos de WiFi con el personal",
-                "Desactivar auto-conexión a redes abiertas",
-                "Usar VPN en todas las redes públicas",
-                "Olvidar redes WiFi públicas después de usarlas"
-              ],
-              "icon": "Wifi"
+              "title": "Ataques de Gemelo Malvado",
+              "description": "Los cibercriminales crean hotspots WiFi falsos con nombres similares a los legítimos (ej. 'Starbucks_Free_WiFi'). Cuando te conectas, controlan toda la red y pueden monitorear toda tu actividad.",
+              "protection": "Verifica el nombre oficial de la red con el personal antes de conectarte."
             },
             {
-              "name": "Rastreo de Paquetes",
-              "severity": "Medio-Alto",
-              "description": "El atacante usa software para capturar y analizar paquetes de datos enviados sobre la red.",
-              "howItWorks": [
-                "El atacante ejecuta herramientas de rastreo (Wireshark, tcpdump)",
-                "Captura todos los paquetes de datos en la red",
-                "Analiza paquetes en busca de información sensible",
-                "Extrae contraseñas, cookies de sesión, datos personales"
-              ],
-              "prevention": [
-                "Usar VPN (cifra paquetes)",
-                "Solo usar sitios HTTPS",
-                "Evitar enviar datos sensibles",
-                "Usar extensiones de navegador HTTPS-only"
-              ],
-              "icon": "Eye"
+              "title": "Rastreo de Paquetes",
+              "description": "Usando software fácilmente disponible, los hackers pueden capturar paquetes de datos que viajan a través de la red WiFi. Esto incluye nombres de usuario, contraseñas y cualquier información no cifrada.",
+              "protection": "Solo visita sitios web HTTPS y usa una VPN para todas las conexiones."
             },
             {
-              "name": "Rastreo de Sidejacking/Sesión",
-              "severity": "Alto",
-              "description": "Robar cookies de sesión para secuestrar sesiones de inicio de sesión sin necesitar contraseñas.",
-              "howItWorks": [
-                "Interceptas cookie de sesión después de iniciar sesión en un sitio",
-                "El atacante usa cookie para hacerse pasar por ti",
-                "Accede a tu cuenta sin conocer tu contraseña",
-                "Funciona incluso si el sitio usa HTTPS para inicio de sesión pero no para navegación"
-              ],
-              "prevention": [
-                "Usar VPN en WiFi público",
-                "Cerrar sesión de cuentas cuando termines",
-                "Usar extensiones de navegador HTTPS Everywhere",
-                "Habilitar autenticación de dos factores"
-              ],
-              "icon": "Key"
-            },
-            {
-              "name": "Ataques de Malware",
-              "severity": "Medio",
-              "description": "Distribuir malware a través de compartición de archivos no asegurada o actualizaciones de software falsas.",
-              "howItWorks": [
-                "Windows a veces habilita compartición de archivos automáticamente en nuevas redes",
-                "El atacante puede acceder a carpetas compartidas e inyectar malware",
-                "Alternativamente, popups falsos de actualización de software instalan malware",
-                "El dispositivo queda infectado con spyware, ransomware o keyloggers"
-              ],
-              "prevention": [
-                "Desactivar compartición de archivos en redes públicas",
-                "Habilitar modo de 'red pública' en Windows",
-                "Nunca instalar actualizaciones de software en WiFi público",
-                "Usar software antivirus actualizado"
-              ],
-              "icon": "AlertTriangle"
+              "title": "Secuestro de Sesión",
+              "description": "Los atacantes roban tus cookies de sesión para hacerse pasar por ti en sitios web. Esto puede darles acceso a tus cuentas sin necesidad de tu contraseña.",
+              "protection": "Cierra sesión de las cuentas cuando termines y habilita la autenticación de dos factores."
             }
           ]
         },
-        "essentialProtection": {
+        "protectionTips": {
           "title": "Consejos Esenciales de Protección",
-          "intro": "Sigue estos consejos cruciales para mantenerte seguro en WiFi público:",
-          "tips": [
-            {
-              "priority": "Crítico",
-              "tip": "Siempre Usa una VPN",
-              "description": "Una VPN cifra todo tu tráfico, haciéndolo ilegible para atacantes en la misma red.",
-              "icon": "Shield",
-              "implementation": [
-                "Instala app VPN antes de viajar",
-                "Habilita VPN automática para redes públicas",
-                "Verifica que VPN esté conectada antes de navegar",
-                "Usa protocolos VPN confiables (WireGuard, OpenVPN)"
-              ]
-            },
-            {
-              "priority": "Crítico",
-              "tip": "Visita Solo Sitios HTTPS",
-              "description": "HTTPS cifra comunicación entre tú y los sitios web. Nunca ingreses datos sensibles en sitios HTTP.",
-              "icon": "Lock",
-              "implementation": [
-                "Busca el ícono de candado en la barra de direcciones",
-                "Instala extensión 'HTTPS Everywhere'",
-                "Evita sitios que muestran advertencias de seguridad",
-                "Nunca ignores advertencias de certificados SSL"
-              ]
-            },
-            {
-              "priority": "Alto",
-              "tip": "Desactiva Compartición de Archivos",
-              "description": "La compartición de archivos permite a otros en la red acceder a tus archivos.",
-              "icon": "FolderMinus",
-              "implementation": [
-                "Windows: Configuración → Red → Cambiar configuración de compartición avanzadas → Desactivar",
-                "Mac: Preferencias del Sistema → Compartir → Desmarcar Compartir Archivos",
-                "Verifica antes de conectarte a redes públicas"
-              ]
-            },
-            {
-              "priority": "Alto",
-              "tip": "Usa Autenticación de Dos Factores (2FA)",
-              "description": "Incluso si alguien roba tu contraseña, no puede acceder sin tu segundo factor.",
-              "icon": "Smartphone",
-              "implementation": [
-                "Habilita 2FA en todas las cuentas importantes",
-                "Usa apps de autenticación (Google Authenticator, Authy)",
-                "Evita 2FA por SMS (puede ser interceptado)",
-                "Guarda códigos de respaldo de forma segura"
-              ]
-            },
-            {
-              "priority": "Medio",
-              "tip": "Verifica Nombres de Red",
-              "description": "Asegúrate de estar conectando a la red legítima, no a un gemelo malvado.",
-              "icon": "CheckCircle",
-              "implementation": [
-                "Pregunta al personal por el nombre exacto de WiFi",
-                "Busca nombres de red oficiales (ej. 'Starbucks_WiFi_Secure')",
-                "Evita redes genéricas como 'Free_WiFi' o 'Public_WiFi'",
-                "Desconfía de múltiples redes con nombres similares"
-              ]
-            },
-            {
-              "priority": "Medio",
-              "tip": "Desactiva Auto-Conexión",
-              "description": "Previene que tu dispositivo se conecte automáticamente a redes WiFi no seguras.",
-              "icon": "WifiOff",
-              "implementation": [
-                "iOS: Configuración → WiFi → Desactivar 'Auto-Unirse'",
-                "Android: Configuración → WiFi → Desactivar 'Conectar Automáticamente'",
-                "Windows: Desmarcar 'Conectar automáticamente' al unirse a redes",
-                "Olvidar redes públicas después de usarlas"
-              ]
-            },
-            {
-              "priority": "Medio",
-              "tip": "Mantén Software Actualizado",
-              "description": "Actualizaciones de seguridad parchean vulnerabilidades que atacantes podrían explotar.",
-              "icon": "RefreshCw",
-              "implementation": [
-                "Habilita actualizaciones automáticas de SO",
-                "Actualiza apps regularmente",
-                "Actualiza firmware del router en casa",
-                "No demorar actualizaciones de seguridad críticas"
-              ]
-            },
-            {
-              "priority": "Bajo",
-              "tip": "Usa Firewall",
-              "description": "Un firewall bloquea conexiones entrantes no autorizadas.",
-              "icon": "Shield",
-              "implementation": [
-                "Habilita firewall integrado de OS",
-                "Windows: Panel de Control → Sistema y Seguridad → Firewall de Windows Defender",
-                "Mac: Preferencias del Sistema → Seguridad → Firewall → Activar",
-                "Considera firewalls de terceros para protección mejorada"
-              ]
-            }
-          ]
-        },
-        "howVpnsProtect": {
-          "title": "Cómo las VPN te Protegen",
-          "intro": "Las VPN son tu mejor defensa en WiFi público. Así es como protegen tus datos:",
-          "protectionMechanisms": [
-            {
-              "mechanism": "Cifrado de Extremo a Extremo",
-              "description": "Todos los datos entre tu dispositivo y el servidor VPN están cifrados con cifrado de grado militar (AES-256).",
-              "benefit": "Incluso si alguien intercepta tus datos, solo ve basura cifrada.",
-              "icon": "Lock"
-            },
-            {
-              "mechanism": "Túnel Seguro",
-              "description": "Crea un 'túnel' privado que protege todos los datos que pasan a través de él.",
-              "benefit": "Los atacantes en la misma red WiFi no pueden ver tu tráfico real.",
-              "icon": "Shield"
-            },
-            {
-              "mechanism": "Enmascaramiento de IP",
-              "description": "Tu dirección IP real se reemplaza con la del servidor VPN.",
-              "benefit": "Los atacantes no pueden rastrear tu ubicación o identidad reales.",
-              "icon": "EyeOff"
-            },
-            {
-              "mechanism": "Protección contra Fugas de DNS",
-              "description": "Las consultas DNS van a través del túnel VPN, no a través de la red pública.",
-              "benefit": "Los atacantes no pueden ver qué sitios web estás visitando.",
-              "icon": "Globe"
-            },
-            {
-              "mechanism": "Kill Switch",
-              "description": "Bloquea automáticamente internet si la conexión VPN se cae.",
-              "benefit": "Previene exposición accidental de datos si la VPN se desconecta temporalmente.",
-              "icon": "Power"
-            }
-          ],
-          "withoutVpn": {
-            "title": "Sin VPN en WiFi Público",
-            "risks": [
-              "Contraseñas capturadas en texto plano",
-              "Cookies de sesión robadas",
-              "Historial de navegación rastreado",
-              "Datos personales interceptados",
-              "Malware inyectado en descargas",
-              "Dispositivo vulnerable a ataques"
+          "intro": "Aunque el WiFi público siempre tendrá algún riesgo, seguir estas mejores prácticas puede reducir significativamente tu vulnerabilidad a ataques:",
+          "doThis": {
+            "title": "Haz Esto",
+            "items": [
+              "Usa una VPN en cada conexión a WiFi público",
+              "Habilita la autenticación de dos factores en todas las cuentas",
+              "Solo visita sitios web HTTPS (busca el ícono del candado)",
+              "Desactiva la compartición de archivos y AirDrop",
+              "Olvida la red después de irte"
             ]
           },
-          "withVpn": {
-            "title": "Con VPN en WiFi Público",
-            "protections": [
-              "Todo el tráfico cifrado e ilegible",
-              "IP real oculta de atacantes",
-              "Seguro incluso en redes completamente abiertas",
-              "Protección contra rastreo y espionaje",
-              "Previene secuestro de sesión",
-              "Kill switch previene fugas de datos"
+          "neverDoThis": {
+            "title": "Nunca Hagas Esto",
+            "items": [
+              "Acceder a banca en línea sin una VPN",
+              "Comprar en línea o ingresar información de tarjeta de crédito",
+              "Iniciar sesión en cuentas de trabajo o aplicaciones sensibles",
+              "Habilitar conexiones automáticas a WiFi",
+              "Usar WiFi público para trabajo confidencial"
+            ]
+          },
+          "deviceSettings": {
+            "title": "Configuraciones de Dispositivo a Habilitar",
+            "items": [
+              "Protección de firewall (integrada en la mayoría de sistemas operativos)",
+              "Desactivar conexión automática a WiFi a redes desconocidas",
+              "Desactivar descubrimiento de red y compartición de archivos",
+              "Habilitar 'siempre usar HTTPS' en la configuración del navegador"
             ]
           }
         },
-        "locationSecurity": {
-          "title": "Seguridad por Ubicación",
-          "intro": "Diferentes ubicaciones públicas tienen diferentes niveles de riesgo:",
+        "vpnProtection": {
+          "title": "Por Qué una VPN es Esencial para WiFi Público",
+          "intro": "Una VPN (Red Privada Virtual) es tu mejor defensa contra las amenazas del WiFi público. Crea un túnel cifrado entre tu dispositivo e internet, haciendo que tus datos sean ilegibles para cualquiera que intente interceptarlos.",
+          "benefits": [
+            {
+              "title": "Cifrado de Grado Militar",
+              "description": "Las VPN usan cifrado AES-256, el mismo nivel usado por bancos y gobiernos. Incluso si alguien intercepta tus datos, no puede leerlos."
+            },
+            {
+              "title": "Oculta tu Actividad",
+              "description": "Tu proveedor de servicios de internet, el dueño del WiFi y los hackers potenciales no pueden ver qué sitios web visitas o qué datos envías."
+            },
+            {
+              "title": "Asegura Todos los Dispositivos",
+              "description": "Una suscripción VPN típicamente cubre todos tus dispositivos - teléfonos, tabletas y laptops - protegiéndote dondequiera que te conectes."
+            }
+          ],
+          "comparison": {
+            "title": "WiFi Público: Con vs. Sin VPN",
+            "withoutVpn": {
+              "label": "Sin VPN:",
+              "description": "Tus datos son visibles para cualquiera en la red. Los hackers pueden ver contraseñas, correos electrónicos, mensajes e historial de navegación."
+            },
+            "withVpn": {
+              "label": "Con VPN:",
+              "description": "Todos tus datos están cifrados. Los hackers solo ven galimatías, incluso si interceptan tu conexión."
+            }
+          },
+          "proTip": "Siempre conéctate a tu VPN antes de unirte a cualquier red WiFi pública. Configúrala para conectarse automáticamente para que nunca lo olvides."
+        },
+        "locationGuide": {
+          "title": "Guía de Seguridad por Ubicación",
+          "intro": "Diferentes lugares públicos tienen diferentes niveles de riesgo. Esto es lo que necesitas saber sobre ubicaciones comunes:",
           "locations": [
             {
-              "location": "Cafeterías",
-              "riskLevel": "Medio-Alto",
-              "commonThreats": [
-                "Gemelos malvados haciéndose pasar por WiFi de la cafetería",
-                "Atacantes dirigidos cazando en ubicaciones populares",
-                "Redes compartidas con muchos extraños"
-              ],
-              "tips": [
-                "Siempre verifica nombre de WiFi con el personal",
-                "Usa VPN antes de conectarte",
-                "Evita banca o compras si es posible",
-                "Siéntate donde puedas ver tu pantalla (conciencia de hombro)"
-              ],
-              "icon": "Coffee"
+              "name": "Cafeterías y Cafés",
+              "riskLevel": "Alto Riesgo",
+              "description": "Objetivos populares para hackers debido a estancias largas y seguridad relajada. Muchas personas trabajan aquí, convirtiéndolo en un lugar privilegiado para robo de datos.",
+              "tips": "Siempre usa una VPN. Verifica el nombre de la red con el personal. Evita transacciones financieras."
             },
             {
-              "location": "Aeropuertos",
-              "riskLevel": "Alto",
-              "commonThreats": [
-                "Múltiples gemelos malvados dirigidos a viajeros",
-                "Profesionales intentando robar datos de negocios",
-                "Redes masivamente compartidas (cientos de usuarios)"
-              ],
-              "tips": [
-                "NUNCA uses WiFi de aeropuerto sin VPN",
-                "Considera usar datos móviles en su lugar",
-                "Evita acceder a información de negocios sensible",
-                "Desactiva auto-conexión a redes abiertas"
-              ],
-              "icon": "Plane"
+              "name": "Aeropuertos",
+              "riskLevel": "Alto Riesgo",
+              "description": "Tráfico extremadamente alto con muchos viajeros de negocios manejando datos sensibles. Los hotspots falsos son comunes aquí.",
+              "tips": "Usa tu hotspot móvil cuando sea posible. Si usas WiFi del aeropuerto, la VPN es obligatoria."
             },
             {
-              "location": "Hoteles",
-              "riskLevel": "Medio",
-              "commonThreats": [
-                "Seguridad de red variable por hotel",
-                "Huéspedes maliciosos en la misma red",
-                "WiFi potencialmente monitoreado por el hotel"
-              ],
-              "tips": [
-                "Usa VPN en WiFi de hotel",
-                "Desconfía de redes que requieren instalar certificados",
-                "Pregunta en recepción por nombre oficial de WiFi",
-                "Considera usar datos móviles para trabajar sensible"
-              ],
-              "icon": "Building"
+              "name": "Hoteles",
+              "riskLevel": "Riesgo Medio",
+              "description": "Las redes de hotel a menudo están mejor aseguradas que las de cafeterías, pero siguen siendo redes compartidas con muchos huéspedes.",
+              "tips": "Usa la red protegida con contraseña. Habilita VPN. Ten cuidado con aplicaciones de Smart TV en la habitación."
             },
             {
-              "location": "Bibliotecas Públicas",
-              "riskLevel": "Medio",
-              "commonThreats": [
-                "Redes compartidas con muchos usuarios",
-                "Seguridad variable dependiendo de la biblioteca",
-                "Potencial monitoreo de uso de red"
-              ],
-              "tips": [
-                "Usa VPN para privacidad",
-                "Evita transacciones financieras",
-                "Asume que el personal de biblioteca puede monitorear actividad",
-                "Usa datos móviles para tareas sensibles"
-              ],
-              "icon": "Book"
-            },
-            {
-              "location": "Centros Comerciales",
-              "riskLevel": "Medio-Alto",
-              "commonThreats": [
-                "Múltiples WiFi de tiendas (riesgo de gemelo malvado)",
-                "Grandes áreas = más fácil para atacantes mezclarse",
-                "WiFi típicamente inseguro"
-              ],
-              "tips": [
-                "Verifica nombre exacto de WiFi con tienda individual",
-                "Evita WiFi genérico de 'centro comercial'",
-                "Usa VPN si debes conectarte",
-                "Prefiere datos móviles para compras online"
-              ],
-              "icon": "ShoppingBag"
+              "name": "Bibliotecas Públicas",
+              "riskLevel": "Riesgo Medio",
+              "description": "Generalmente más seguras que las cafeterías debido a una mejor gestión de TI, pero aún son una red pública.",
+              "tips": "Se recomienda VPN. Evita tareas sensibles. Ten cuidado con miradas indiscretas."
             }
           ]
         },
-        "quickChecklist": {
+        "checklist": {
           "title": "Lista Rápida de Seguridad",
-          "intro": "Usa esta lista cada vez que te conectes a WiFi público:",
+          "intro": "Usa esta lista cada vez que te conectes a WiFi público para asegurarte de estar protegido:",
           "beforeConnecting": {
             "title": "Antes de Conectarte",
             "items": [
-              "Verifica el nombre oficial de WiFi con el personal/señalización",
-              "Desactiva compartición de archivos en tu dispositivo",
-              "Asegúrate de que tu firewall esté activado",
-              "Cierra apps sensibles (banca, email de trabajo)",
-              "Habilita VPN en tu dispositivo"
+              "Habilita tu VPN",
+              "Desactiva la compartición de archivos y AirDrop",
+              "Verifica el nombre oficial de la red con el personal",
+              "Verifica que el firewall esté habilitado"
             ]
           },
           "whileConnected": {
             "title": "Mientras Estés Conectado",
             "items": [
-              "Verifica que VPN está activa y conectada",
-              "Solo visita sitios HTTPS (busca el candado)",
-              "Evita acceder a cuentas bancarias o información financiera",
-              "No instales actualizaciones de software",
-              "Vigila tu dispositivo - no lo dejes sin supervisión",
-              "Usa autenticación de dos factores para inicios de sesión"
+              "Mantén la VPN funcionando en todo momento",
+              "Solo visita sitios web HTTPS",
+              "No accedas a cuentas bancarias o financieras si es posible",
+              "Ten cuidado con tu entorno (miradas indiscretas)",
+              "Cierra sesión de las cuentas cuando termines"
             ]
           },
-          "afterDisconnecting": {
-            "title": "Después de Desconectarte",
+          "beforeLeaving": {
+            "title": "Antes de Irte",
             "items": [
-              "Olvida la red WiFi (previene auto-conexión futura)",
-              "Cierra sesión de todas las cuentas que usaste",
-              "Considera cambiar contraseñas de cuentas accedidas",
-              "Ejecuta escaneo de malware si instalaste algo",
-              "Revisa actividad de cuenta para accesos no autorizados"
+              "Desconéctate de la red",
+              "Olvida la red en tu configuración",
+              "Desactiva WiFi hasta que lo necesites de nuevo"
             ]
           }
         },
-        "myths": {
-          "title": "Mitos Comunes Desmentidos",
-          "myths": [
-            {
-              "myth": "HTTPS es suficiente - no necesito VPN",
-              "reality": "HTTPS solo cifra comunicación con sitios web. Tu ISP, operador WiFi y atacantes aún pueden ver qué sitios visitas, tu dirección IP y metadata. Una VPN cifra TODO tu tráfico.",
-              "verdict": "FALSO"
-            },
-            {
-              "myth": "WiFi protegido por contraseña es seguro",
-              "reality": "Si todos conocen la contraseña (como en cafeterías), no es seguro. Cualquiera en la red puede potencialmente espiar a otros. Necesitas VPN incluso en WiFi protegido por contraseña.",
-              "verdict": "FALSO"
-            },
-            {
-              "myth": "Solo necesito VPN para actividades sensibles",
-              "reality": "Los atacantes pueden capturar cookies de sesión, rastrear navegación y construir perfil de ti incluso de actividades 'no sensibles'. Usa VPN para TODO en WiFi público.",
-              "verdict": "FALSO"
-            },
-            {
-              "myth": "Los hackers solo apuntan a redes de aeropuertos/hoteles",
-              "reality": "Los atacantes apuntan a CUALQUIER WiFi público donde haya víctimas potenciales. Cafeterías, bibliotecas, parques - todos son objetivos.",
-              "verdict": "FALSO"
-            },
-            {
-              "myth": "Modo incógnito me protege en WiFi público",
-              "reality": "El modo incógnito solo previene que tu navegador guarde historial localmente. No cifra tu tráfico o esconde tu actividad de otros en la red. Necesitas VPN.",
-              "verdict": "FALSO"
-            },
-            {
-              "myth": "Los dispositivos Mac/iPhone no pueden ser hackeados",
-              "reality": "Todos los dispositivos son vulnerables en WiFi público. Mac, iPhone, Android, Windows - todos necesitan VPN en redes públicas.",
-              "verdict": "FALSO"
-            }
-          ]
-        },
-        "keyTakeaways": {
-          "title": "Puntos Clave",
-          "items": [
-            "NUNCA uses WiFi público sin VPN - cifra todo tu tráfico y te protege de atacantes",
-            "Verifica siempre nombres de red con el personal para evitar gemelos malvados que se hacen pasar por WiFi legítimo",
-            "Usa solo sitios HTTPS (candado en barra de direcciones) y habilita autenticación de dos factores en cuentas importantes",
-            "Desactiva compartición de archivos, auto-conexión a WiFi y olvida redes públicas después de usarlas"
-          ]
+        "summary": {
+          "title": "La Conclusión",
+          "content": "El WiFi público es conveniente pero peligroso sin la protección adecuada. El paso más importante que puedes tomar es usar una VPN confiable cada vez que te conectes a cualquier red pública. Es una pequeña inversión que protege tus contraseñas, datos financieros y privacidad personal de los cibercriminales.",
+          "costBenefit": "Una VPN cuesta menos que un café al mes pero protege miles de dólares en datos"
         }
       }
     }

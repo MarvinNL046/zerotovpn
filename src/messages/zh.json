@@ -651,6 +651,260 @@
         "title": "准备好开始流媒体观看了吗？",
         "description": "选择一个专为流媒体优化的VPN，立即解锁全球内容。",
         "button": "查找最佳流媒体VPN"
+      },
+      "sections": {
+        "whyUseVpn": {
+          "title": "为什么使用VPN观看流媒体?",
+          "intro": "Netflix、Disney+和Amazon Prime Video等流媒体服务在不同国家拥有不同的内容库。这是由于与内容创作者和发行商的许可协议所致。",
+          "geoRestrictionTitle": "地理限制问题",
+          "regions": [
+            {
+              "name": "Netflix美国",
+              "description": "约5,800多部作品,包括其他地方没有的独家节目和电影。",
+              "color": "red"
+            },
+            {
+              "name": "Netflix英国",
+              "description": "约5,500多部作品,内容组合不同,包括BBC联合制作。",
+              "color": "orange"
+            },
+            {
+              "name": "Netflix日本",
+              "description": "约6,000多部作品,包括大量动漫收藏和日本原创作品。",
+              "color": "yellow"
+            },
+            {
+              "name": "Netflix德国",
+              "description": "约4,500多部作品,包含德语配音内容和本地制作。",
+              "color": "blue"
+            }
+          ],
+          "benefitsTitle": "VPN流媒体的主要好处",
+          "benefits": [
+            {
+              "title": "访问更多内容:",
+              "description": "观看您所在国家无法访问的节目和电影。"
+            },
+            {
+              "title": "旅行时观看:",
+              "description": "在国外保持访问您本国的内容库。"
+            },
+            {
+              "title": "提前发布:",
+              "description": "某些内容在特定地区提前发布。"
+            },
+            {
+              "title": "避免ISP限速:",
+              "description": "一些ISP会降低流媒体速度 - VPN可以绕过这一限制。"
+            }
+          ]
+        },
+        "howItWorks": {
+          "title": "VPN流媒体如何工作",
+          "steps": [
+            {
+              "number": 1,
+              "title": "连接到VPN服务器",
+              "description": "选择您想访问其内容的国家的服务器(例如,选择美国服务器访问美国Netflix)。"
+            },
+            {
+              "number": 2,
+              "title": "获取新的IP地址",
+              "description": "您的真实IP被隐藏,替换为VPN服务器所在位置的IP。"
+            },
+            {
+              "number": 3,
+              "title": "打开流媒体应用",
+              "description": "流媒体服务看到您的VPN IP,并向您显示该地区的内容库。"
+            },
+            {
+              "number": 4,
+              "title": "享受无限制流媒体",
+              "description": "观看在您实际位置之前无法访问的内容。"
+            }
+          ],
+          "warningTitle": "VPN封锁",
+          "warningText": "流媒体服务会主动尝试检测和封锁VPN连接。这就是为什么选择专门支持流媒体的VPN很重要 - 它们不断更新服务器以保持领先。"
+        },
+        "streamingServices": {
+          "title": "热门流媒体服务",
+          "services": [
+            {
+              "name": "Netflix",
+              "badge": "运行良好",
+              "badgeColor": "green",
+              "icon": "N",
+              "iconColor": "red-600",
+              "description": "在190多个国家拥有不同的内容库。美国、英国、日本和加拿大拥有最大的选择。",
+              "features": [
+                "全球15,000多部作品",
+                "4K超高清",
+                "多个配置文件"
+              ]
+            },
+            {
+              "name": "Disney+",
+              "badge": "运行良好",
+              "badgeColor": "green",
+              "icon": "D+",
+              "iconColor": "blue-700",
+              "description": "内容因地区而异。美国拥有星球大战、漫威等内容。一些国家包含Star内容(成人作品)。",
+              "features": [
+                "迪士尼、漫威、星球大战",
+                "IMAX增强",
+                "可下载"
+              ]
+            },
+            {
+              "name": "BBC iPlayer",
+              "badge": "仅限英国",
+              "badgeColor": "yellow",
+              "icon": "BBC",
+              "iconColor": "pink-600",
+              "description": "需要英国电视许可证免费观看。访问需要英国IP地址。适合观看英国电视节目、纪录片和直播电视。",
+              "features": [
+                "免费(需英国许可证)",
+                "直播电视",
+                "BBC原创作品"
+              ]
+            },
+            {
+              "name": "Amazon Prime Video",
+              "badge": "运行良好",
+              "badgeColor": "green",
+              "icon": "P",
+              "iconColor": "sky-500",
+              "description": "每个国家的内容库不同。一些内容包含在Prime会员中,其他内容可以租赁或购买。",
+              "features": [
+                "Prime原创作品",
+                "X-Ray功能",
+                "租赁选项"
+              ]
+            },
+            {
+              "name": "Hulu",
+              "badge": "仅限美国",
+              "badgeColor": "yellow",
+              "icon": "H",
+              "iconColor": "green-500",
+              "description": "美国独家服务,提供次日电视剧集、原创内容和直播电视选项。需要美国支付方式。",
+              "features": [
+                "次日电视",
+                "直播电视选项",
+                "FX内容"
+              ]
+            }
+          ]
+        },
+        "bestVpns": {
+          "title": "最佳流媒体VPN",
+          "intro": "并非所有VPN都能很好地支持流媒体服务。以下是我们持续解锁热门平台的首选:",
+          "vpns": [
+            {
+              "name": "ExpressVPN",
+              "badge": "最佳整体",
+              "rating": "9.8/10",
+              "description": "支持Netflix(15个以上的库)、Disney+、Hulu、BBC iPlayer、Amazon Prime等。快速的速度非常适合4K流媒体。",
+              "supportedServices": [
+                "Netflix美国",
+                "Disney+",
+                "BBC iPlayer",
+                "Hulu"
+              ]
+            },
+            {
+              "name": "NordVPN",
+              "badge": "最佳性价比",
+              "rating": "9.6/10",
+              "description": "出色的流媒体支持,配备SmartPlay技术,自动优化流媒体服务。",
+              "supportedServices": [
+                "Netflix美国",
+                "Disney+",
+                "BBC iPlayer",
+                "Amazon Prime"
+              ]
+            },
+            {
+              "name": "Surfshark",
+              "badge": "预算之选",
+              "rating": "9.2/10",
+              "description": "无限设备连接,价格实惠。可靠地解锁主要流媒体平台。",
+              "supportedServices": [
+                "Netflix美国",
+                "Disney+",
+                "BBC iPlayer",
+                "Amazon Prime"
+              ]
+            }
+          ],
+          "viewFullComparison": "查看完整的VPN比较"
+        },
+        "tips": {
+          "title": "更好的流媒体观看技巧",
+          "items": [
+            {
+              "icon": "Server",
+              "iconColor": "blue",
+              "title": "选择附近的服务器",
+              "description": "连接到物理距离更近的VPN服务器以获得更快的速度。在美国访问英国内容的用户应选择美国东海岸的英国服务器。"
+            },
+            {
+              "icon": "Zap",
+              "iconColor": "green",
+              "title": "使用WireGuard协议",
+              "description": "WireGuard为流媒体提供最佳速度。大多数VPN应用允许您在设置中选择它。"
+            },
+            {
+              "icon": "Monitor",
+              "iconColor": "purple",
+              "title": "清除缓存和Cookie",
+              "description": "如果流媒体服务仍显示错误的内容,请清除浏览器缓存和cookie,然后重新连接。"
+            },
+            {
+              "icon": "Smartphone",
+              "iconColor": "orange",
+              "title": "尝试不同的服务器",
+              "description": "如果一个服务器被封锁,请尝试同一国家的另一个服务器。高级VPN在每个位置都有多个服务器。"
+            },
+            {
+              "icon": "Shield",
+              "iconColor": "red",
+              "title": "使用智能DNS(可选)",
+              "description": "一些VPN为不支持VPN应用的设备(如智能电视)提供智能DNS。更快但安全性较低。"
+            }
+          ]
+        },
+        "faq": {
+          "title": "常见问题",
+          "items": [
+            {
+              "question": "使用VPN观看流媒体合法吗？",
+              "answer": "VPN在大多数国家是合法的。但是，绕过地理限制可能违反流媒体服务的服务条款。通常最坏的情况是账户暂时被封锁。"
+            },
+            {
+              "question": "VPN会降低我的流媒体速度吗？",
+              "answer": "高级VPN通常将速度降低10-20%，这对于4K流媒体来说仍然足够快。选择靠近您的服务器并使用WireGuard等快速协议以获得最佳效果。"
+            },
+            {
+              "question": "为什么Netflix能检测到我的VPN？",
+              "answer": "Netflix封锁已知的VPN IP地址。免费或便宜的VPN很容易被检测到。高级VPN定期轮换其IP以保持领先于封锁。"
+            },
+            {
+              "question": "我可以使用免费VPN观看流媒体吗？",
+              "answer": "免费VPN很少支持流媒体服务。它们的服务器有限，很快被封锁，速度慢，并且有数据上限，使流媒体不切实际。"
+            }
+          ]
+        },
+        "keyTakeaways": {
+          "title": "要点总结",
+          "items": [
+            "VPN通过更改您的IP地址来解锁地理限制内容",
+            "并非所有VPN都能支持流媒体 - 坚持使用经过验证的提供商",
+            "ExpressVPN、NordVPN和Surfshark是流媒体的最佳选择",
+            "连接到您想访问其内容的国家的服务器",
+            "如果一个服务器被封锁,请尝试同一国家的另一个服务器"
+          ]
+        }
       }
     },
     "vpnForTorrenting": {
@@ -696,6 +950,236 @@
         "title": "寻找安全的种子下载VPN",
         "description": "比较支持P2P、具有终止开关和经过验证的无日志政策的VPN，以便在下载时保持安全。",
         "button": "查找最佳P2P VPN"
+      },
+      "sections": {
+        "disclaimer": {
+          "intro": "免责声明：",
+          "text": "本指南仅用于教育目的。我们不纵容非法下载。许多种子包含合法内容，如开源软件、公共领域媒体和知识共享材料。请始终遵守您所在司法管辖区的版权法。"
+        },
+        "whyVpn": {
+          "title": "为什么使用VPN进行种子下载?",
+          "intro": [
+            "BitTorrent是一种点对点(P2P)协议,您的计算机直接连接到其他用户。这意味着您的IP地址对种子下载群中的每个人都是可见的 - 这可能是数百或数千人。"
+          ],
+          "exposureBox": {
+            "title": "种子下载如何暴露您",
+            "you": "您",
+            "yourIp": "IP: 192.168.x.x",
+            "exposed": "已暴露",
+            "swarm": "种子下载群",
+            "peers": "数百至数千个对等节点"
+          },
+          "whoCanSee": {
+            "title": "谁能看到您的IP?",
+            "items": [
+              {
+                "title": "其他种子下载用户:",
+                "description": "群中的每个对等节点都可以看到您的IP地址。有些会记录这些数据。"
+              },
+              {
+                "title": "版权巨魔:",
+                "description": "公司加入群以收集IP地址并发送法律通知。"
+              },
+              {
+                "title": "您的ISP:",
+                "description": "可以看到您正在使用BitTorrent,并可能限制您的连接或发送警告。"
+              },
+              {
+                "title": "政府机构:",
+                "description": "在某些国家,当局监控种子下载活动。"
+              }
+            ]
+          }
+        },
+        "risks": {
+          "title": "不使用VPN下载种子的风险",
+          "items": [
+            {
+              "title": "法律通知和罚款",
+              "description": "版权持有者可以追踪您的IP并通过您的ISP发送DMCA通知。和解金额可能从数百美元到数千美元不等。",
+              "color": "red"
+            },
+            {
+              "title": "ISP限速",
+              "description": "许多ISP故意降低P2P流量的速度。有些在检测到种子下载活动时会将速度降低50-90%。",
+              "color": "orange"
+            },
+            {
+              "title": "账户终止",
+              "description": "在多次警告后,您的ISP可能会终止您的互联网服务。这因国家和提供商而异。",
+              "color": "yellow"
+            },
+            {
+              "title": "隐私侵犯",
+              "description": "您的IP会揭示您的大致位置和ISP。恶意行为者可能会利用这些信息进行针对性攻击。",
+              "color": "purple"
+            }
+          ]
+        },
+        "features": {
+          "title": "种子下载VPN的必备功能",
+          "items": [
+            {
+              "title": "终止开关",
+              "badge": "关键",
+              "description": "如果VPN连接断开,会自动阻止所有互联网流量。如果没有这个功能,您的真实IP可能会在您注意到之前暴露几秒钟。",
+              "whyItMatters": "为什么重要:",
+              "note": "VPN连接可能会意外断开。终止开关确保零暴露。",
+              "critical": true
+            },
+            {
+              "title": "无日志政策",
+              "badge": "关键",
+              "description": "VPN提供商不存储您的任何活动日志。如果他们没有任何记录,就无法交出任何东西。",
+              "lookFor": "寻找:",
+              "note": "由独立机构(如PwC、Deloitte或Cure53)验证无日志政策的审计。",
+              "critical": true
+            },
+            {
+              "title": "P2P优化服务器",
+              "badge": "重要",
+              "description": "专为种子下载流量配置的专用服务器,具有高带宽和端口转发支持。",
+              "whyItMatters": "为什么重要:",
+              "note": "一些VPN会在某些服务器上阻止或限制P2P。P2P服务器针对速度进行了优化。",
+              "critical": false
+            },
+            {
+              "title": "DNS泄漏保护",
+              "badge": "重要",
+              "description": "确保DNS查询通过VPN隧道,而不是可能记录您访问网站的ISP服务器。",
+              "testIt": "测试方法:",
+              "note": "在连接时使用ipleak.net或dnsleaktest.com验证没有泄漏。",
+              "critical": false
+            },
+            {
+              "title": "快速下载速度",
+              "badge": "锦上添花",
+              "description": "种子下载涉及传输大文件。您需要一个能将速度损失降到最低的VPN(寻找80%以上的速度保持率)。",
+              "tip": "提示:",
+              "note": "使用WireGuard协议以获得最快的种子下载速度。",
+              "critical": false
+            }
+          ]
+        },
+        "bestVpns": {
+          "title": "最佳种子下载VPN",
+          "vpns": [
+            {
+              "name": "NordVPN",
+              "badge": "最佳P2P",
+              "rating": "9.7/10",
+              "description": "在45个以上国家拥有专用P2P服务器。经过审计的无日志政策。双重VPN提供额外安全性。快速的WireGuard速度。",
+              "features": [
+                "终止开关",
+                "无日志",
+                "P2P服务器",
+                "WireGuard"
+              ],
+              "visitLink": "访问NordVPN"
+            },
+            {
+              "name": "ExpressVPN",
+              "badge": "最快",
+              "rating": "9.6/10",
+              "description": "所有服务器上允许P2P。TrustedServer技术(仅RAM)。Lightway协议实现快速下载。经过验证的无日志。",
+              "features": [
+                "终止开关",
+                "无日志",
+                "所有服务器P2P",
+                "仅RAM"
+              ],
+              "visitLink": "访问ExpressVPN"
+            },
+            {
+              "name": "Mullvad",
+              "badge": "最隐私",
+              "rating": "9.2/10",
+              "description": "匿名账号编号(不需要电子邮件)。接受现金或加密货币支付。支持端口转发。开源应用程序。",
+              "features": [
+                "终止开关",
+                "匿名",
+                "端口转发",
+                "WireGuard"
+              ]
+            }
+          ],
+          "viewFullComparison": "查看完整VPN比较"
+        },
+        "setup": {
+          "title": "如何设置VPN进行种子下载",
+          "steps": [
+            {
+              "number": 1,
+              "title": "选择支持P2P的VPN",
+              "description": "确保VPN明确允许种子下载并拥有P2P优化服务器。"
+            },
+            {
+              "number": 2,
+              "title": "安装和配置",
+              "description": "下载VPN应用程序并在设置中启用终止开关。这很关键 - 不要跳过!"
+            },
+            {
+              "number": 3,
+              "title": "连接到P2P服务器",
+              "description": "选择针对P2P流量优化的服务器。选择地理位置接近您的服务器以获得更好的速度。"
+            },
+            {
+              "number": 4,
+              "title": "测试泄漏",
+              "description": "访问ipleak.net验证您的真实IP不可见。同时检查DNS泄漏测试。"
+            },
+            {
+              "number": 5,
+              "title": "配置种子下载客户端",
+              "description": "将您的种子下载客户端绑定到VPN接口。如果VPN断开连接,这会增加另一层保护。"
+            },
+            {
+              "number": 6,
+              "title": "开始下载",
+              "description": "您现在受到保护了!您的真实IP已从种子下载群中隐藏。"
+            }
+          ],
+          "proTip": {
+            "title": "专业提示:绑定您的种子下载客户端",
+            "description": "在qBittorrent中:设置→高级→网络接口→选择您的VPN适配器。在Deluge中:首选项→网络→接口。这确保种子下载仅在VPN连接时工作。"
+          }
+        },
+        "legal": {
+          "title": "法律考虑因素",
+          "question": "种子下载合法吗?",
+          "intro": "种子下载本身是完全合法的 - 它只是一种文件共享技术。重要的是您下载的内容:",
+          "legalTitle": "合法种子下载",
+          "legalItems": [
+            "Linux发行版",
+            "开源软件",
+            "公共域书籍/电影",
+            "知识共享内容",
+            "个人文件共享",
+            "游戏补丁/模组(经授权)"
+          ],
+          "illegalTitle": "非法种子下载",
+          "illegalItems": [
+            "受版权保护的电影/电视节目",
+            "商业软件",
+            "付费音乐专辑",
+            "仍受版权保护的电子书",
+            "盗版游戏",
+            "任何您无权访问的内容"
+          ],
+          "warning": {
+            "title": "VPN不会使非法活动合法化",
+            "description": "VPN保护您的隐私,但不会改变法律。未经许可下载受版权保护的材料是非法的,无论您是否使用VPN。"
+          }
+        },
+        "keyTakeaways": {
+          "title": "要点总结",
+          "items": [
+            "种子下载时始终使用带有终止开关的VPN",
+            "选择具有经过验证的无日志政策和P2P服务器的VPN",
+            "在开始任何下载之前测试IP和DNS泄漏",
+            "将您的种子下载客户端绑定到VPN接口以获得额外保护"
+          ]
+        }
       }
     },
     "vpnForTravel": {
@@ -741,6 +1225,305 @@
         "title": "为您的下一次冒险做好准备了吗？",
         "description": "不要在没有VPN保护的情况下离开家。比较最佳国际旅行VPN，随时随地保持连接。",
         "button": "查看最佳VPN"
+      },
+      "sections": {
+        "whyNeedVpn": {
+          "title": "为什么旅行时需要VPN",
+          "intro": "在没有VPN的情况下旅行意味着接受不必要的风险和限制。无论您是商务旅行还是度假,VPN对于在国外维护您的数字自由和安全至关重要。",
+          "reasons": [
+            {
+              "title": "访问家乡内容",
+              "description": "从世界任何地方观看您喜爱的节目和体育赛事",
+              "icon": "Tv"
+            },
+            {
+              "title": "保持安全",
+              "description": "在酒店和机场的公共WiFi网络上保护您的数据",
+              "icon": "Shield"
+            },
+            {
+              "title": "绕过审查",
+              "description": "在限制性国家访问被封锁的网站和服务",
+              "icon": "Globe"
+            },
+            {
+              "title": "省钱",
+              "description": "通过比较不同国家的价格找到更好的优惠",
+              "icon": "DollarSign"
+            }
+          ],
+          "proTip": "专业提示:在出发前设置并测试您的VPN。不要等到您已经在国外并面临连接问题或被封锁的服务时才设置。"
+        },
+        "accessHomeContent": {
+          "title": "访问家乡内容",
+          "intro": "旅行最令人沮丧的部分之一是发现您喜爱的流媒体服务、银行应用程序或本地网站由于地理限制而在国外无法使用。",
+          "services": [
+            {
+              "title": "流媒体服务",
+              "description": "Netflix、Hulu、BBC iPlayer和其他流媒体平台通常根据您的位置限制内容。",
+              "solution": "连接到您本国的VPN服务器以访问您平常的内容库。",
+              "icon": "Tv"
+            },
+            {
+              "title": "银行和金融服务",
+              "description": "一些银行作为安全措施会封锁来自外国的访问。",
+              "solution": "使用VPN使其看起来您是从本国访问的。",
+              "icon": "CreditCard"
+            },
+            {
+              "title": "体育和直播活动",
+              "description": "体育直播通常根据转播权进行地理限制。",
+              "solution": "连接到拥有转播权的国家的服务器进行观看。",
+              "icon": "MapPin"
+            }
+          ],
+          "legalNote": {
+            "title": "重要法律说明",
+            "text": "虽然在大多数国家使用VPN是合法的,但访问内容可能违反服务条款。在使用VPN访问地理限制内容之前,请查看您的流媒体服务条款。"
+          }
+        },
+        "bypassCensorship": {
+          "title": "绕过审查和限制",
+          "intro": "许多国家实施严格的互联网审查,封锁社交媒体、新闻网站、消息应用程序和其他在线服务的访问。VPN帮助您保持对开放互联网的访问。",
+          "tableHeaders": {
+            "country": "国家",
+            "blocked": "常见封锁",
+            "status": "VPN状态"
+          },
+          "countries": [
+            {
+              "country": "中国",
+              "blocked": "Facebook、Google、YouTube、WhatsApp",
+              "status": "需要VPN",
+              "statusVariant": "destructive",
+              "icon": "red"
+            },
+            {
+              "country": "阿联酋",
+              "blocked": "VoIP服务(Skype、WhatsApp通话)",
+              "status": "受限",
+              "statusVariant": "secondary",
+              "icon": "orange"
+            },
+            {
+              "country": "俄罗斯",
+              "blocked": "各种社交媒体和新闻网站",
+              "status": "受限",
+              "statusVariant": "secondary",
+              "icon": "blue"
+            },
+            {
+              "country": "伊朗",
+              "blocked": "社交媒体、消息应用",
+              "status": "需要VPN",
+              "statusVariant": "destructive",
+              "icon": "purple"
+            },
+            {
+              "country": "土耳其",
+              "blocked": "维基百科、部分社交媒体",
+              "status": "受限",
+              "statusVariant": "secondary",
+              "icon": "green"
+            }
+          ],
+          "tips": {
+            "title": "在限制性国家使用VPN的技巧",
+            "items": [
+              "在前往有限制的国家之前下载并设置您的VPN",
+              "在您迫切需要之前测试您的VPN连接",
+              "配置多个VPN服务器作为备份",
+              "使用旨在绕过深度包检测的混淆服务器",
+              "检查您的VPN提供商是否在您的目的地国家可用"
+            ]
+          },
+          "legalWarning": {
+            "title": "法律警告",
+            "text": "VPN在某些国家受到限制或非法。在旅行前研究当地法律并负责任地使用VPN。本指南仅供参考。"
+          }
+        },
+        "travelSecurity": {
+          "title": "旅行安全提示",
+          "intro": "公共WiFi网络很方便但很危险。黑客经常在酒店和机场WiFi上针对旅行者窃取个人信息、密码和信用卡详细信息。",
+          "networks": [
+            {
+              "title": "酒店WiFi",
+              "description": "通常不安全且容易被监控。连接到酒店网络时始终使用VPN。",
+              "icon": "Hotel"
+            },
+            {
+              "title": "机场WiFi",
+              "description": "机场的公共网络是黑客的主要目标。连接前启用您的VPN。",
+              "icon": "Plane"
+            },
+            {
+              "title": "咖啡馆和餐厅WiFi",
+              "description": "免费公共WiFi很方便但不安全。使用VPN连接保护您的数据。",
+              "icon": "Car"
+            },
+            {
+              "title": "邮轮WiFi",
+              "description": "昂贵且通常不安全。VPN可以帮助保护您的数据并可能省钱。",
+              "icon": "Ship"
+            }
+          ],
+          "dos": {
+            "title": "安全要做的事",
+            "items": [
+              "连接到公共WiFi之前启用VPN",
+              "在重要账户上使用双因素身份验证",
+              "保持VPN应用程序更新",
+              "使用强大的、独特的密码",
+              "启用自动VPN连接"
+            ]
+          },
+          "donts": {
+            "title": "安全不要做的事",
+            "items": [
+              "在公共WiFi上不使用VPN访问银行",
+              "在不安全的网络上让VPN断开连接",
+              "共享您的VPN凭据",
+              "使用免费VPN服务(它们经常出售您的数据)",
+              "忽略VPN连接失败"
+            ]
+          }
+        },
+        "saveMoney": {
+          "title": "使用VPN省钱",
+          "intro": "许多旅行服务根据您的位置使用动态定价。航空公司、酒店和租车公司经常向来自不同国家的用户显示不同的价格。",
+          "howItWorks": {
+            "title": "基于位置的定价如何运作",
+            "description": "公司根据您的IP地址位置、浏览历史和感知购买力调整价格。同一航班在一个国家可能比另一个国家贵数百美元。",
+            "examples": [
+              {
+                "price": "$450",
+                "location": "来自美国",
+                "color": "red"
+              },
+              {
+                "price": "$380",
+                "location": "来自英国",
+                "color": "orange"
+              },
+              {
+                "price": "$320",
+                "location": "来自印度",
+                "color": "green"
+              }
+            ]
+          },
+          "services": [
+            {
+              "title": "航班预订",
+              "description": "航空公司和预订网站通常根据您的位置显示不同的价格。",
+              "tip": "尝试不同国家的服务器并使用无痕模式比较价格。",
+              "icon": "Plane"
+            },
+            {
+              "title": "酒店预订",
+              "description": "酒店预订网站可能为不同地区提供不同的价格。",
+              "tip": "在预订前检查来自各个国家的价格。",
+              "icon": "Building"
+            },
+            {
+              "title": "租车",
+              "description": "租赁公司有时会有特定地区的定价。",
+              "tip": "比较您的本国与目的地国家的价格。",
+              "icon": "Car"
+            }
+          ],
+          "realityCheck": {
+            "title": "现实检查",
+            "text": "节省不是保证的。价格基于许多因素波动。将VPN位置切换作为寻找最佳优惠的众多策略之一。"
+          }
+        },
+        "bestVpns": {
+          "title": "最佳旅行VPN",
+          "intro": "并非所有VPN都同样适合旅行。您需要可靠的连接、广泛的服务器覆盖范围以及专为旅行者设计的功能。",
+          "vpns": [
+            {
+              "name": "ExpressVPN",
+              "badge": "编辑推荐",
+              "badgeVariant": "default",
+              "description": "最佳整体旅行VPN,在105多个国家拥有服务器和可靠的连接。",
+              "features": [
+                "在中国和限制性国家可用",
+                "24/7客户支持",
+                "快速的流媒体速度",
+                "所有设备的易用应用",
+                "30天退款保证"
+              ],
+              "link": "expressvpn"
+            },
+            {
+              "name": "NordVPN",
+              "badge": "最佳性价比",
+              "badgeVariant": "secondary",
+              "description": "出色的安全功能和混淆服务器的超值选择。",
+              "features": [
+                "混淆服务器用于绕过审查",
+                "双重VPN提供额外安全性",
+                "大型服务器网络",
+                "实惠的长期套餐",
+                "30天退款保证"
+              ],
+              "link": "nordvpn"
+            },
+            {
+              "name": "Surfshark",
+              "badge": "预算之选",
+              "badgeVariant": "secondary",
+              "description": "预算友好的选择,无限设备连接。",
+              "features": [
+                "无限同时连接",
+                "NoBorders模式用于限制性国家",
+                "CleanWeb广告拦截器",
+                "非常实惠的价格",
+                "30天退款保证"
+              ],
+              "link": "surfshark"
+            }
+          ],
+          "featureChecklist": {
+            "title": "旅行VPN功能检查清单",
+            "features": [
+              "在您的本国和旅行目的地的服务器位置",
+              "iOS和Android的移动应用",
+              "24/7客户支持",
+              "终止开关以在VPN断开连接时保护",
+              "用于绕过审查的混淆技术",
+              "隐私的无日志政策",
+              "多设备支持"
+            ]
+          }
+        },
+        "preTravel": {
+          "title": "旅行前VPN检查清单",
+          "beforeDeparture": {
+            "title": "出发前",
+            "items": [
+              "订阅可靠的VPN服务",
+              "在所有设备上下载并安装VPN应用",
+              "在家测试VPN连接",
+              "保存您目的地的VPN服务器列表",
+              "研究您目的地的互联网限制",
+              "启用自动连接功能",
+              "下载离线地图和内容"
+            ]
+          },
+          "uponArrival": {
+            "title": "抵达时",
+            "items": [
+              "在访问WiFi之前连接到VPN",
+              "测试您的VPN在该国家是否可用",
+              "配置自动连接",
+              "检查您的IP地址是否被掩盖",
+              "测试对被封锁服务的访问",
+              "保存本地紧急联系信息",
+              "随身携带VPN客户支持详细信息"
+            ]
+          }
+        }
       }
     },
     "vpnOnMobile": {
@@ -786,6 +1569,244 @@
         "title": "准备好保护您的移动设备了吗？",
         "description": "比较最适合移动设备的VPN，为您的智能手机或平板电脑找到完美的保护。",
         "button": "查看最佳VPN"
+      },
+      "sections": {
+        "whyMobileVpn": {
+          "title": "为什么在移动设备上使用VPN?",
+          "intro": "您的智能手机始终连接 - 无论您是在咖啡店使用WiFi、使用移动数据,还是连接到家庭网络。这种持续的连接为隐私泄露和安全威胁创造了多个机会。",
+          "benefits": [
+            {
+              "title": "公共WiFi保护",
+              "description": "在不安全的公共网络上加密您的连接,以防止中间人攻击和数据窥探。",
+              "icon": "Wifi"
+            },
+            {
+              "title": "访问地理封锁内容",
+              "description": "在国外旅行时流式传输您喜爱的节目并访问地区锁定的应用。",
+              "icon": "Globe"
+            },
+            {
+              "title": "隐藏您的位置",
+              "description": "防止应用和网站追踪您的真实IP地址和位置以进行定向广告。",
+              "icon": "Shield"
+            },
+            {
+              "title": "安全银行和购物",
+              "description": "在移动中访问敏感金融应用时添加额外的加密层。",
+              "icon": "Lock"
+            }
+          ],
+          "didYouKnow": "移动设备经常自动在网络之间切换,使它们更容易受到攻击。具有自动连接功能的VPN可确保您始终受到保护。"
+        },
+        "iosSetup": {
+          "title": "在iPhone/iPad上设置VPN",
+          "intro": "iOS使VPN设置变得简单。以下是如何在您的Apple设备上开始使用VPN:",
+          "steps": [
+            {
+              "number": 1,
+              "title": "从App Store下载",
+              "description": "在App Store中搜索您的VPN提供商并下载其官方应用。避免第三方或非官方应用。"
+            },
+            {
+              "number": 2,
+              "title": "登录或创建账户",
+              "description": "打开应用并使用您现有的账户登录,或者如果需要创建新订阅。"
+            },
+            {
+              "number": 3,
+              "title": "允许VPN配置",
+              "description": "出现提示时,点击「允许」以让应用添加VPN配置。您需要使用Face ID或Touch ID进行身份验证。"
+            },
+            {
+              "number": 4,
+              "title": "连接到服务器",
+              "description": "选择服务器位置并点击连接。连接时,您将在状态栏中看到VPN图标。"
+            }
+          ],
+          "iosSettings": {
+            "title": "iOS特定设置",
+            "settings": [
+              "启用「按需连接」以自动保护",
+              "使用IKEv2或WireGuard以获得最佳iOS集成",
+              "允许连接状态警报的通知"
+            ]
+          }
+        },
+        "androidSetup": {
+          "title": "在Android上设置VPN",
+          "intro": "Android为VPN配置提供了更多灵活性。以下是设置过程:",
+          "steps": [
+            {
+              "number": 1,
+              "title": "从Google Play下载",
+              "description": "从Google Play商店获取您的VPN应用。检查开发者名称以确保这是官方应用。"
+            },
+            {
+              "number": 2,
+              "title": "授予权限",
+              "description": "出现提示时接受VPN连接请求。Android会显示有关网络监控的警告 - 这是正常的。"
+            },
+            {
+              "number": 3,
+              "title": "配置始终开启VPN",
+              "description": "转到设置→网络→VPN→您的VPN应用→切换「始终开启VPN」以持续保护。"
+            },
+            {
+              "number": 4,
+              "title": "启用终止开关",
+              "description": "在Android设置中查找「没有VPN时阻止连接」或应用的终止开关功能。"
+            }
+          ],
+          "androidFeatures": {
+            "title": "Android特定功能",
+            "features": [
+              "分离隧道以从VPN中排除特定应用",
+              "每个应用的VPN设置(Android 7.0+)",
+              "小部件支持快速连接/断开连接"
+            ]
+          }
+        },
+        "bestSettings": {
+          "title": "最佳移动VPN设置",
+          "intro": "配置这些设置以在移动设备上获得安全性、速度和电池寿命的最佳平衡:",
+          "settings": [
+            {
+              "setting": "协议",
+              "recommended": "WireGuard",
+              "why": "最适合移动设备 - 快速、轻量级、节能"
+            },
+            {
+              "setting": "自动连接",
+              "recommended": "已启用",
+              "why": "加入不受信任的网络时自动连接"
+            },
+            {
+              "setting": "终止开关",
+              "recommended": "已启用",
+              "why": "如果VPN连接断开则防止数据泄漏"
+            },
+            {
+              "setting": "分离隧道",
+              "recommended": "根据需要",
+              "why": "排除可能封锁VPN连接的银行应用"
+            },
+            {
+              "setting": "DNS",
+              "recommended": "VPN的DNS",
+              "why": "防止DNS泄漏并确保隐私"
+            }
+          ],
+          "iosWarning": {
+            "title": "iOS用户重要提示",
+            "text": "iOS可能偶尔会绕过Apple服务的VPN。检查您的VPN应用以获取包含所有流量的选项或使用防火墙应用。"
+          }
+        },
+        "batteryTips": {
+          "title": "电池和性能提示",
+          "intro": "一个常见的担忧是VPN对电池寿命的影响。以下是如何在保持保护的同时最小化电池消耗:",
+          "doThis": {
+            "title": "这样做",
+            "items": [
+              "使用WireGuard协议(最高效)",
+              "连接到附近的服务器",
+              "仅在WiFi时启用自动连接",
+              "明智地使用分离隧道",
+              "保持应用更新"
+            ]
+          },
+          "avoidThis": {
+            "title": "避免这样做",
+            "items": [
+              "不断切换服务器",
+              "除非需要否则使用双重VPN",
+              "连接到远距离服务器",
+              "运行多个安全应用",
+              "使用PPTP等较旧协议"
+            ]
+          },
+          "protocolImpact": {
+            "title": "按协议划分的电池影响",
+            "protocols": [
+              {
+                "name": "WireGuard",
+                "impact": "低影响",
+                "percentage": 20
+              },
+              {
+                "name": "IKEv2",
+                "impact": "低影响",
+                "percentage": 25
+              },
+              {
+                "name": "OpenVPN",
+                "impact": "中等影响",
+                "percentage": 50
+              }
+            ]
+          }
+        },
+        "bestVpns": {
+          "title": "最佳移动VPN",
+          "intro": "并非所有VPN在移动设备上的表现都一样。以下是我们根据应用质量、电池效率和移动特定功能的首选:",
+          "vpns": [
+            {
+              "name": "ExpressVPN",
+              "badge": "编辑推荐",
+              "description": "最佳整体移动体验",
+              "features": [
+                "为移动设备优化的Lightway协议",
+                "出色的iOS和Android应用",
+                "Network Lock终止开关"
+              ]
+            },
+            {
+              "name": "NordVPN",
+              "badge": "首选",
+              "description": "最适合注重安全的用户",
+              "features": [
+                "NordLynx(基于WireGuard)提供速度",
+                "移动设备上的威胁保护",
+                "包含暗网监控"
+              ]
+            },
+            {
+              "name": "Surfshark",
+              "badge": "最佳性价比",
+              "description": "无限设备的最佳性价比",
+              "features": [
+                "无限同时连接",
+                "内置CleanWeb广告拦截器",
+                "Android上的GPS欺骗"
+              ]
+            }
+          ],
+          "proTip": "在前往互联网受限的国家旅行前下载您的VPN应用。某些应用商店在某些地区可能不提供VPN应用。"
+        },
+        "quickTips": {
+          "title": "移动VPN快速提示",
+          "tips": [
+            {
+              "title": "使用生物识别锁",
+              "description": "启用Face ID/指纹以防止未经授权的VPN访问",
+              "icon": "Key"
+            },
+            {
+              "title": "保持应用更新",
+              "description": "更新通常包含安全补丁和性能修复",
+              "icon": "RefreshCw"
+            },
+            {
+              "title": "收藏您的服务器",
+              "description": "保存常用服务器以快速一键连接",
+              "icon": "MapPin"
+            },
+            {
+              "title": "使用小部件",
+              "description": "将VPN小部件添加到主屏幕以快速访问",
+              "icon": "ToggleLeft"
+            }
+          ]
+        }
       }
     },
     "vpnPrivacyGuide": {
@@ -831,6 +1852,264 @@
         "title": "找到真正私密的VPN",
         "description": "根据隐私功能、无日志政策和独立审计比较VPN。",
         "button": "比较私密VPN"
+      },
+      "sections": {
+        "whatIsPrivacy": {
+          "title": "什么是VPN隐私?",
+          "intro1": "VPN隐私是指VPN服务如何保护您的身份、浏览活动和个人数据不被追踪、记录或暴露给第三方,包括您的ISP、政府机构和VPN提供商本身。",
+          "intro2": "基本的隐私悖论:您必须信任您的VPN提供商处理您的互联网流量。如果没有适当的隐私保护,您只是将监视从您的ISP转移到VPN公司。",
+          "trustShiftTitle": "信任转移悖论",
+          "trustShiftIntro": "使用VPN会转移谁可以看到您的互联网活动,但不会完全消除信任要求。",
+          "withoutVpn": {
+            "title": "不使用VPN",
+            "description": "您的ISP可以看到您访问的每个网站,记录您的活动,将您的数据出售给广告商,并且在法律上必须遵守政府监视请求。"
+          },
+          "withVpn": {
+            "title": "使用VPN",
+            "description": "您的ISP只能看到加密的VPN流量。VPN提供商会看到您的活动。隐私完全取决于VPN提供商的日志政策、管辖权和完整性。"
+          },
+          "keyElementsTitle": "关键隐私要素",
+          "keyElements": [
+            {
+              "title": "无日志政策:",
+              "description": "VPN不记录您的浏览活动、连接时间、IP地址或带宽使用情况。"
+            },
+            {
+              "title": "隐私友好的管辖权:",
+              "description": "公司在具有强大隐私法和没有强制数据保留要求的国家运营。"
+            },
+            {
+              "title": "独立审计:",
+              "description": "第三方安全公司已验证VPN的无日志声明和基础设施安全性。"
+            },
+            {
+              "title": "透明的所有权:",
+              "description": "公司清楚地披露谁拥有和运营该服务、他们的总部在哪里以及他们的隐私记录。"
+            }
+          ]
+        },
+        "noLogs": {
+          "title": "了解无日志政策",
+          "intro": "无日志政策意味着VPN提供商不记录可以识别您或您的在线活动的信息。然而,并非所有「无日志」政策都是平等的。一些VPN声称是「无日志」,同时仍在收集大量元数据。",
+          "loggingTypesTitle": "日志政策类型",
+          "loggingTypes": [
+            {
+              "type": "完全记录",
+              "badge": "避免",
+              "badgeColor": "destructive",
+              "description": "记录浏览历史、连接时间戳、IP地址、带宽使用和会话信息。",
+              "warning": "⚠️ 完全违背了使用VPN的隐私目的。"
+            },
+            {
+              "type": "元数据记录",
+              "badge": "谨慎使用",
+              "badgeColor": "orange",
+              "description": "不记录浏览活动,但记录连接时间、会话持续时间和带宽。在营销中通常声称是「无日志」。",
+              "warning": "⚠️ 元数据仍可用于识别用户和追踪模式。"
+            },
+            {
+              "type": "最小记录",
+              "badge": "可接受",
+              "badgeColor": "secondary",
+              "description": "仅记录服务运营所需的最小数据:总带宽使用(不是每个会话)和用于账户管理的电子邮件。",
+              "warning": "✓ 隐私和服务功能之间的合理折衷。"
+            },
+            {
+              "type": "严格无日志",
+              "badge": "最佳",
+              "badgeColor": "green",
+              "description": "不记录IP地址、浏览活动、连接时间戳、会话数据、每个会话的带宽或DNS查询。经过独立审计验证。",
+              "warning": "✓ 最大隐私保护。寻找独立审计验证。"
+            }
+          ],
+          "verificationTitle": "如何验证无日志声明",
+          "verificationItems": [
+            {
+              "title": "阅读隐私政策:",
+              "description": "查找关于什么不被记录的具体声明,而不仅仅是营销声明。"
+            },
+            {
+              "title": "检查独立审计:",
+              "description": "信誉良好的VPN聘请第三方安全公司(PwC、Deloitte、Cure53)来验证他们的声明。"
+            },
+            {
+              "title": "研究真实世界测试:",
+              "description": "寻找VPN被传唤但无法提供日志的案例,因为它们不存在。"
+            },
+            {
+              "title": "检查透明度报告:",
+              "description": "一些VPN发布透明度报告,显示他们收到的政府数据请求及其回应。"
+            }
+          ]
+        },
+        "jurisdiction": {
+          "title": "VPN管辖权很重要",
+          "intro": "管辖权是您的VPN提供商在法律上所在的地方。这决定了他们必须遵守哪些法律,包括强制数据保留要求和政府监视义务。位于错误国家的VPN可能被迫记录您的数据,无论他们的隐私政策如何。",
+          "eyesAlliancesTitle": "「眼睛」联盟",
+          "eyesAlliancesIntro": "国家之间的情报共享联盟。成员相互共享监视数据,即使您的数据不是在您自己的国家收集的,也可能损害VPN隐私。",
+          "eyesAlliances": [
+            {
+              "type": "五眼",
+              "countries": "美国、英国、加拿大、澳大利亚、新西兰",
+              "warning": "⚠️ 最高的监视合作。这里的VPN面临最大压力。",
+              "color": "red"
+            },
+            {
+              "type": "九眼",
+              "countries": "五眼 + 丹麦、法国、荷兰、挪威",
+              "warning": "",
+              "color": "orange"
+            },
+            {
+              "type": "十四眼",
+              "countries": "九眼 + 德国、比利时、意大利、西班牙、瑞典",
+              "warning": "",
+              "color": "yellow"
+            }
+          ],
+          "privacyFriendlyTitle": "隐私友好的管辖权",
+          "bestChoices": [
+            "🇨🇭 瑞士 - 强大的隐私法,中立",
+            "🇵🇦 巴拿马 - 没有数据保留法",
+            "🇻🇬 英属维尔京群岛 - 不受英国管辖",
+            "🇷🇴 罗马尼亚 - 没有强制数据保留",
+            "🇸🇪 瑞典 - GDPR保护,尽管是十四眼成员"
+          ],
+          "vpnLocationsTitle": "顶级VPN所在地",
+          "vpnLocations": [
+            "ExpressVPN - 英属维尔京群岛",
+            "NordVPN - 巴拿马",
+            "Surfshark - 荷兰",
+            "ProtonVPN - 瑞士",
+            "Mullvad - 瑞典"
+          ],
+          "importantNoteTitle": "重要说明",
+          "importantNote": "仅管辖权并不能保证隐私。位于隐私友好国家的VPN如果选择仍然可以记录您的数据。寻找良好管辖权 + 严格无日志政策 + 独立审计的组合。"
+        },
+        "audits": {
+          "title": "独立安全审计",
+          "intro": "独立审计是第三方安全评估,验证VPN的隐私声明。PwC、Deloitte、Cure53和KPMG等信誉良好的公司检查VPN的基础设施、代码和日志实践,以确认它们与营销声明相符。",
+          "whatAuditsCheckTitle": "审计检查内容",
+          "auditChecks": [
+            {
+              "title": "基础设施安全",
+              "description": "服务器配置、加密实施和网络架构,以确保它们不会泄漏数据。"
+            },
+            {
+              "title": "无日志验证",
+              "description": "检查服务器日志、数据库系统和后端基础设施,以确认没有存储可识别数据。"
+            },
+            {
+              "title": "代码审查",
+              "description": "分析VPN应用和服务器软件以识别潜在的隐私漏洞或数据泄漏。"
+            },
+            {
+              "title": "DNS泄漏测试",
+              "description": "测试IP泄漏、DNS泄漏和WebRTC泄漏,这些可能会在连接时暴露您的真实身份。"
+            }
+          ],
+          "auditedVpnsTitle": "经过独立审计的VPN",
+          "auditedVpns": [
+            {
+              "name": "NordVPN",
+              "audits": "由PwC审计(2018、2020、2023)",
+              "badge": "已验证"
+            },
+            {
+              "name": "ExpressVPN",
+              "audits": "由PwC审计(2019、2022)、Cure53(2023)",
+              "badge": "已验证"
+            },
+            {
+              "name": "Surfshark",
+              "audits": "由Cure53审计(2021、2023)",
+              "badge": "已验证"
+            },
+            {
+              "name": "ProtonVPN",
+              "audits": "由SEC Consult审计(2020、2022)",
+              "badge": "已验证"
+            }
+          ]
+        },
+        "redFlags": {
+          "title": "要避免的隐私危险信号",
+          "flags": [
+            {
+              "title": "免费VPN",
+              "description": "「如果您不为产品付费,那您就是产品。」免费VPN通常会记录并向广告商出售您的数据、注入广告或包含恶意软件。商业模式需要货币化您的数据。",
+              "severity": "critical"
+            },
+            {
+              "title": "模糊的隐私政策",
+              "description": "营销说「无日志」,但隐私政策包含诸如「最小记录」、「匿名数据收集」或「汇总统计」等术语,而没有明确定义收集的内容。",
+              "severity": "critical"
+            },
+            {
+              "title": "没有独立审计",
+              "description": "声称无日志但从未经过独立审计。为什么要信任他们?合法的VPN主动寻求第三方验证。",
+              "severity": "critical"
+            },
+            {
+              "title": "未知所有权",
+              "description": "VPN没有清楚地披露谁拥有或运营它。一些VPN秘密由数据挖掘公司拥有或位于监视严重的管辖区,尽管营销声明。",
+              "severity": "warning"
+            },
+            {
+              "title": "矛盾的条款",
+              "description": "隐私政策与营销声明相矛盾。例如:主页说「零日志」,但隐私政策提到「连接时间戳」或「带宽监控」。",
+              "severity": "warning"
+            }
+          ]
+        },
+        "checklist": {
+          "title": "VPN隐私评估检查清单",
+          "intro": "在评估VPN隐私声明时使用此检查清单。您可以勾选的框越多,隐私保护就越好。",
+          "items": [
+            {
+              "title": "明确声明严格的无日志政策",
+              "description": "不记录IP、时间戳、浏览历史、DNS查询。"
+            },
+            {
+              "title": "隐私友好的管辖权",
+              "description": "在5/9/14眼监视联盟之外,拥有强大的隐私法律。"
+            },
+            {
+              "title": "独立审计",
+              "description": "由知名公司(PwC、Deloitte、Cure53等)最近进行的审计并公布结果。"
+            },
+            {
+              "title": "透明的所有权",
+              "description": "清楚地披露公司所有权、领导层和实际地址。"
+            },
+            {
+              "title": "透明的隐私政策",
+              "description": "清晰、详细的隐私政策,没有模糊条款或矛盾。"
+            },
+            {
+              "title": "经过验证的记录",
+              "description": "无日志的真实证据(例如,被传唤时无法提供数据)。"
+            },
+            {
+              "title": "匿名支付选项",
+              "description": "接受加密货币或现金支付以实现真正的匿名性。"
+            },
+            {
+              "title": "高级隐私功能",
+              "description": "纯RAM服务器、完美前向保密、无盘基础设施。"
+            }
+          ]
+        },
+        "keyTakeaways": {
+          "title": "要点总结",
+          "items": [
+            "并非所有「无日志」声明都是平等的。仔细阅读隐私政策并寻找独立验证。",
+            "管辖权非常重要。总部设在监视严重国家的VPN面临记录数据的法律压力。",
+            "独立安全审计是验证隐私声明的黄金标准。寻找知名公司的最近审计。",
+            "免费VPN是隐私噩梦。它们必须以某种方式盈利,通常是通过记录和出售您的数据。",
+            "最佳隐私来自结合:严格的无日志政策 + 隐私友好的管辖权 + 独立审计 + 透明的所有权。"
+          ]
+        }
       }
     },
     "vpnProtocolsExplained": {
@@ -876,6 +2155,293 @@
         "title": "找到支持您首选协议的VPN",
         "description": "根据协议支持、速度和安全功能比较VPN。",
         "button": "比较VPN"
+      },
+      "sections": {
+        "whatIsProtocol": {
+          "title": "什么是VPN协议?",
+          "intro": "VPN协议是一套规则,决定了您的数据如何在设备和VPN服务器之间加密、传输和验证。可以把它想象成VPN所说的「语言」。",
+          "determines": {
+            "title": "协议决定什么",
+            "items": [
+              {
+                "title": "加密方法",
+                "description": "如何对您的数据进行加密以防止拦截"
+              },
+              {
+                "title": "身份验证",
+                "description": "如何与VPN服务器验证您的身份"
+              },
+              {
+                "title": "速度和效率",
+                "description": "数据通过VPN隧道的速度"
+              },
+              {
+                "title": "安全级别",
+                "description": "连接对攻击的抵抗力"
+              }
+            ]
+          }
+        },
+        "wireguard": {
+          "title": "WireGuard",
+          "badge": "推荐",
+          "released": "发布于2018年",
+          "intro": "WireGuard是最新的主要VPN协议,已迅速成为速度和现代加密的黄金标准。自2020年起内置于Linux内核。",
+          "stats": [
+            {
+              "value": "约4K",
+              "label": "代码行数"
+            },
+            {
+              "value": "5%",
+              "label": "速度损失"
+            },
+            {
+              "value": "<1ms",
+              "label": "握手"
+            },
+            {
+              "value": "ChaCha20",
+              "label": "加密"
+            }
+          ],
+          "advantages": {
+            "title": "优势",
+            "items": [
+              "可用的最快协议",
+              "现代、经过审计的加密",
+              "简单、最小的代码(更容易审计)",
+              "移动设备优秀(无缝漫游)",
+              "内置于Linux内核"
+            ]
+          },
+          "disadvantages": {
+            "title": "劣势",
+            "items": [
+              "较新(经过实战测试较少)",
+              "默认静态IP(隐私问题)",
+              "并非所有VPN都支持",
+              "仅UDP(可能被封锁)"
+            ]
+          },
+          "bestFor": {
+            "title": "最适合",
+            "description": "通用用途、流媒体、游戏、移动用户、任何想要最快速度和现代安全性的人。"
+          }
+        },
+        "openvpn": {
+          "title": "OpenVPN",
+          "badge": "行业标准",
+          "released": "发布于2001年",
+          "intro": "OpenVPN已经成为行业标准超过20年。它是开源的、高度可配置的,并且几乎可以在每个平台和网络上工作。",
+          "stats": [
+            {
+              "value": "约400K",
+              "label": "代码行数"
+            },
+            {
+              "value": "20%",
+              "label": "速度损失"
+            },
+            {
+              "value": "AES-256",
+              "label": "加密"
+            },
+            {
+              "value": "TCP/UDP",
+              "label": "传输"
+            }
+          ],
+          "advantages": {
+            "title": "优势",
+            "items": [
+              "经过20多年的实战测试",
+              "高度可配置",
+              "可在任何端口上工作(难以封锁)",
+              "TCP模式适用于不稳定的网络",
+              "几乎可在任何设备上运行"
+            ]
+          },
+          "disadvantages": {
+            "title": "劣势",
+            "items": [
+              "比WireGuard慢",
+              "复杂的代码库",
+              "移动设备电池消耗更高",
+              "大多数设备需要第三方应用"
+            ]
+          },
+          "tcpVsUdp": {
+            "title": "OpenVPN TCP vs UDP",
+            "udp": {
+              "title": "UDP(推荐)",
+              "description": "更快,更适合流媒体和一般使用。大多数VPN的默认选择。"
+            },
+            "tcp": {
+              "title": "TCP",
+              "description": "在不稳定的网络上更可靠。更好地绕过防火墙(端口443)。"
+            }
+          },
+          "bestFor": {
+            "title": "最适合",
+            "description": "需要最大兼容性、绕过严格防火墙或在限制性网络(学校、工作场所、有审查的国家)中工作的用户。"
+          }
+        },
+        "ikev2": {
+          "title": "IKEv2/IPSec",
+          "badge": "移动优化",
+          "released": "发布于2005年",
+          "intro": "IKEv2(互联网密钥交换版本2)与IPSec结合,非常适合移动设备。它内置于大多数操作系统,并在切换网络时快速重新连接。",
+          "stats": [
+            {
+              "value": "快速",
+              "label": "重新连接"
+            },
+            {
+              "value": "10%",
+              "label": "速度损失"
+            },
+            {
+              "value": "AES-256",
+              "label": "加密"
+            },
+            {
+              "value": "原生",
+              "label": "操作系统支持"
+            }
+          ],
+          "advantages": {
+            "title": "优势",
+            "items": [
+              "移动设备优秀(MOBIKE支持)",
+              "网络变化后快速重新连接",
+              "内置于iOS、macOS、Windows",
+              "速度和安全性的良好平衡",
+              "低电池消耗"
+            ]
+          },
+          "disadvantages": {
+            "title": "劣势",
+            "items": [
+              "非开源(Microsoft/Cisco)",
+              "UDP端口500可能被封锁",
+              "配置选项有限",
+              "潜在的NSA问题(传闻)"
+            ]
+          },
+          "bestFor": {
+            "title": "最适合",
+            "description": "经常在WiFi和蜂窝网络之间切换的移动用户,iPhone/iPad用户(原生支持),Windows用户。"
+          }
+        },
+        "others": {
+          "title": "其他协议",
+          "protocols": [
+            {
+              "name": "L2TP/IPSec",
+              "badge": "过时",
+              "description": "结合L2TP隧道和IPSec加密的较旧协议。仍然广泛支持但速度较慢,可能被NSA破坏。",
+              "verdict": "如果有更好的选择请避免。"
+            },
+            {
+              "name": "PPTP",
+              "badge": "不安全",
+              "description": "最古老的VPN协议(1999年)。快速但有已知的安全漏洞。NSA可以实时破解。",
+              "verdict": "绝不用于安全。仅用于绕过简单的地理封锁。"
+            },
+            {
+              "name": "SSTP",
+              "badge": "仅Windows",
+              "description": "Microsoft的专有协议,在端口443上使用SSL/TLS。非常有效地绕过防火墙,但仅限Windows。",
+              "verdict": "适合在限制性网络中使用Windows,但是闭源。"
+            },
+            {
+              "name": "专有协议",
+              "badge": "各不相同",
+              "description": "一些VPN提供商创建自己的协议:Lightway(ExpressVPN)、NordLynx(NordVPN的WireGuard实现)、Chameleon(VyprVPN)。",
+              "verdict": "通常是现有协议的优化版本。使用信誉良好的提供商通常是安全的。"
+            }
+          ]
+        },
+        "comparison": {
+          "title": "协议比较图表",
+          "table": {
+            "headers": [
+              "协议",
+              "速度",
+              "安全性",
+              "稳定性",
+              "移动"
+            ],
+            "rows": [
+              {
+                "protocol": "WireGuard",
+                "speed": "优秀",
+                "security": "优秀",
+                "stability": "优秀",
+                "mobile": "优秀"
+              },
+              {
+                "protocol": "OpenVPN UDP",
+                "speed": "良好",
+                "security": "优秀",
+                "stability": "良好",
+                "mobile": "良好"
+              },
+              {
+                "protocol": "OpenVPN TCP",
+                "speed": "中等",
+                "security": "优秀",
+                "stability": "优秀",
+                "mobile": "良好"
+              },
+              {
+                "protocol": "IKEv2/IPSec",
+                "speed": "优秀",
+                "security": "良好",
+                "stability": "优秀",
+                "mobile": "优秀"
+              },
+              {
+                "protocol": "PPTP",
+                "speed": "优秀",
+                "security": "差",
+                "stability": "良好",
+                "mobile": "良好"
+              }
+            ]
+          },
+          "recommendations": {
+            "title": "快速推荐",
+            "items": [
+              {
+                "title": "最佳综合",
+                "description": "WireGuard - 最快且最安全"
+              },
+              {
+                "title": "最佳兼容性",
+                "description": "OpenVPN - 可在任何地方工作"
+              },
+              {
+                "title": "最适合移动",
+                "description": "IKEv2或WireGuard"
+              },
+              {
+                "title": "绕过防火墙",
+                "description": "OpenVPN TCP(端口443)"
+              }
+            ]
+          }
+        },
+        "summary": {
+          "title": "关键要点",
+          "items": [
+            "WireGuard是大多数用户的最佳选择(快速、安全、现代)",
+            "当您需要最大兼容性时,OpenVPN是备选方案",
+            "IKEv2在移动设备上表现出色,具有快速重新连接功能",
+            "避免PPTP - 虽然快速但完全不安全"
+          ]
+        }
       }
     },
     "vpnSpeedGuide": {
@@ -921,6 +2487,224 @@
         "title": "找到最快的VPN",
         "description": "比较VPN速度，找到最适合您需求的最快提供商。我们测试所有VPN的真实性能。",
         "button": "比较VPN速度"
+      },
+      "sections": {
+        "understandingVpnSpeed": {
+          "intro": "VPN速度指的是数据通过加密VPN连接传输的速度。由于VPN在您的互联网连接中增加了额外步骤(加密和通过服务器路由),一些速度降低是正常的。",
+          "keyMetrics": {
+            "title": "关键速度指标",
+            "download": {
+              "title": "下载速度",
+              "description": "您接收数据的速度(流媒体、浏览、下载)"
+            },
+            "upload": {
+              "title": "上传速度",
+              "description": "您发送数据的速度(视频通话、文件上传)"
+            },
+            "ping": {
+              "title": "Ping/延迟",
+              "description": "以毫秒为单位的响应时间(对游戏至关重要)"
+            }
+          },
+          "speedRequirements": {
+            "title": "速度要求",
+            "items": [
+              "高清流媒体:5-10 Mbps",
+              "4K流媒体:25+ Mbps",
+              "在线游戏:3-6 Mbps(低ping更重要)",
+              "视频通话:1.5-4 Mbps"
+            ]
+          }
+        },
+        "factorsThatAffectSpeed": {
+          "serverDistance": {
+            "title": "服务器距离",
+            "impact": "高影响",
+            "description": "VPN服务器越远,数据传输所需时间就越长。从纽约连接到东京服务器会增加200+毫秒的延迟。",
+            "tip": "除非您需要特定国家,否则请始终选择距离您实际位置最近的服务器。"
+          },
+          "serverLoad": {
+            "title": "服务器负载",
+            "impact": "中等影响",
+            "description": "过载的服务器会拖慢所有人的速度。主要城市的热门服务器在高峰时段通常负载较高。",
+            "tip": "许多VPN应用显示服务器负载百分比。选择负载低于70%的服务器。"
+          },
+          "vpnProtocol": {
+            "title": "VPN协议",
+            "impact": "中等影响",
+            "description": "不同的协议具有不同的速度特性。WireGuard最快,OpenVPN最兼容但较慢。",
+            "tip": "切换到WireGuard以获得最佳速度。大多数现代VPN应用都支持它。"
+          },
+          "encryptionLevel": {
+            "title": "加密级别",
+            "impact": "低影响",
+            "description": "更高的加密更安全但需要更多处理。AES-256是标准,在现代设备上对速度的影响很小。",
+            "tip": "保持AES-256加密。安全优势远超过最小的速度成本。"
+          },
+          "baseInternetSpeed": {
+            "title": "您的基础互联网速度",
+            "impact": "高影响",
+            "description": "VPN无法使您的互联网速度超过基础连接。如果您有50 Mbps,您的VPN速度上限是50 Mbps(减去VPN开销)。",
+            "tip": "在不使用VPN的情况下先测试您的基础速度,以设定现实预期。"
+          }
+        },
+        "expectedSpeedLoss": {
+          "intro": "所有VPN都会在某种程度上降低您的速度。以下是您可以从高级VPN提供商那里实际期望的:",
+          "typicalRetention": {
+            "title": "典型速度保留",
+            "nearbySameCountry": {
+              "label": "附近服务器(同一国家)",
+              "percentage": "85-95%"
+            },
+            "regionalNearbyCountry": {
+              "label": "区域服务器(邻近国家)",
+              "percentage": "75-85%"
+            },
+            "sameContinent": {
+              "label": "同一大陆",
+              "percentage": "60-75%"
+            },
+            "crossContinental": {
+              "label": "跨大陆",
+              "percentage": "40-60%"
+            }
+          },
+          "premiumVpns": {
+            "title": "高级VPN",
+            "items": [
+              "10-25%的速度损失是典型的",
+              "优化的服务器基础设施",
+              "支持WireGuard",
+              "定期服务器升级"
+            ]
+          },
+          "freeVpns": {
+            "title": "免费VPN",
+            "items": [
+              "50-80%的速度损失很常见",
+              "拥挤的服务器",
+              "有限的服务器位置",
+              "带宽限制"
+            ]
+          }
+        },
+        "speedOptimizationTips": {
+          "tips": [
+            {
+              "number": 1,
+              "title": "选择最近的服务器",
+              "description": "距离是最大的速度杀手。如果您只需要隐私而不需要特定位置,请连接到最近的服务器。"
+            },
+            {
+              "number": 2,
+              "title": "使用WireGuard协议",
+              "description": "在大多数测试中,WireGuard比OpenVPN快3-4倍。检查您的VPN应用设置并在可用时切换。"
+            },
+            {
+              "number": 3,
+              "title": "避开高峰时段",
+              "description": "服务器负载在晚间时段(当地时间晚上7-11点)最高。尝试在非高峰时段连接以获得更好的速度。"
+            },
+            {
+              "number": 4,
+              "title": "使用有线连接",
+              "description": "以太网比WiFi更稳定、更快。如果速度至关重要,请直接插入路由器。"
+            },
+            {
+              "number": 5,
+              "title": "尝试分离隧道",
+              "description": "仅通过VPN路由敏感流量。让流媒体和游戏使用常规连接以获得最大速度。"
+            },
+            {
+              "number": 6,
+              "title": "重启您的连接",
+              "description": "有时重新连接会将您分配到负载较低的服务器。如果速度不佳,请尝试断开连接并重新连接。"
+            }
+          ]
+        },
+        "fastestVpnProtocols": {
+          "wireGuard": {
+            "title": "WireGuard",
+            "badge": "最快",
+            "speedLoss": "~5%",
+            "linesOfCode": "4,000",
+            "latency": "优秀",
+            "compatibility": "良好"
+          },
+          "ikev2": {
+            "title": "IKEv2/IPSec",
+            "badge": "非常快",
+            "speedLoss": "~10%",
+            "linesOfCode": "~15,000",
+            "latency": "优秀",
+            "compatibility": "优秀"
+          },
+          "openVpn": {
+            "title": "OpenVPN",
+            "badge": "最兼容",
+            "speedLoss": "~20%",
+            "linesOfCode": "~400,000",
+            "latency": "良好",
+            "compatibility": "优秀"
+          },
+          "recommendation": {
+            "title": "协议建议",
+            "description": "使用WireGuard以获得最佳速度和现代安全性。在移动设备上回退到IKEv2,如果需要最大兼容性则使用OpenVPN。"
+          }
+        },
+        "howToTestVpnSpeed": {
+          "testingProcess": {
+            "title": "速度测试过程",
+            "steps": [
+              {
+                "number": 1,
+                "title": "首先在不使用VPN的情况下测试",
+                "description": "访问speedtest.net或fast.com,在断开VPN的情况下运行测试。记录您的下载、上传和ping。"
+              },
+              {
+                "number": 2,
+                "title": "连接到VPN",
+                "description": "连接到您首选的服务器,等待几秒钟让连接稳定。"
+              },
+              {
+                "number": 3,
+                "title": "再次运行速度测试",
+                "description": "使用相同的速度测试网站。比较结果以计算您的速度保留百分比。"
+              },
+              {
+                "number": 4,
+                "title": "测试多个服务器",
+                "description": "尝试不同的服务器和协议,找到最适合您需求的最快组合。"
+              }
+            ]
+          },
+          "popularTools": {
+            "title": "流行的速度测试工具",
+            "tools": [
+              {
+                "name": "Speedtest.net",
+                "description": "最准确"
+              },
+              {
+                "name": "Fast.com",
+                "description": "Netflix支持"
+              },
+              {
+                "name": "Cloudflare速度测试",
+                "description": "详细指标"
+              }
+            ]
+          }
+        },
+        "keyTakeaways": {
+          "title": "关键要点",
+          "items": [
+            "高级VPN通常保留75-95%的原始速度",
+            "服务器距离和负载是最大的速度因素",
+            "WireGuard协议提供最佳速度性能",
+            "在使用VPN前后始终测试速度以了解实际影响"
+          ]
+        }
       }
     },
     "publicWifiSafety": {
@@ -966,6 +2750,188 @@
         "title": "在任何WiFi网络上保持安全",
         "description": "不要在公共网络上冒您的个人数据风险。获取VPN，在全球任何地方都能自信地浏览。",
         "button": "查看最佳VPN"
+      },
+      "sections": {
+        "wifiRisks": {
+          "title": "为什么公共WiFi危险",
+          "intro": [
+            "您最喜欢的咖啡店的免费WiFi看起来很方便,但它带来了严重的安全风险。公共WiFi网络设计为易于访问,这意味着它们通常缺乏适当的加密和安全措施。",
+            "当您连接到公共WiFi时,您的数据在空中传输时未加密。这使得网络犯罪分子很容易拦截敏感信息,如密码、信用卡号和个人消息。"
+          ],
+          "scaryTruth": {
+            "title": "可怕的真相",
+            "description": "根据网络安全专家的说法,43%的公共WiFi用户的数据已被泄露。如果您不采取预防措施,您可能是下一个。"
+          },
+          "risks": [
+            {
+              "title": "无加密",
+              "description": "大多数公共WiFi网络不加密您的数据,使任何具有基本黑客工具的人都可以轻松看到您在线做什么。"
+            },
+            {
+              "title": "共享网络",
+              "description": "同一WiFi网络上的每个人都可能看到彼此未加密的流量。这就像在拥挤的房间里大声说出您的密码。"
+            },
+            {
+              "title": "恶意热点",
+              "description": "黑客经常设置看起来合法的虚假WiFi网络。一旦您连接,他们就可以监控您所做的一切。"
+            }
+          ]
+        },
+        "attackTypes": {
+          "title": "公共WiFi上的常见攻击",
+          "intro": "了解黑客如何利用公共WiFi可以帮助您识别和避免这些威胁。以下是最常见的攻击方法:",
+          "attacks": [
+            {
+              "title": "中间人(MITM)攻击",
+              "description": "黑客将自己定位在您和连接点之间。您的数据不是直接与WiFi热点通信,而是首先通过攻击者,攻击者可以读取、修改或窃取它。",
+              "protection": "始终使用VPN对您的连接进行端到端加密。"
+            },
+            {
+              "title": "邪恶双胞胎攻击",
+              "description": "网络犯罪分子创建名称与合法热点相似的虚假WiFi热点(例如,'星巴克免费WiFi')。当您连接时,他们控制整个网络并可以监控您的所有活动。",
+              "protection": "在连接之前向工作人员确认官方网络名称。"
+            },
+            {
+              "title": "数据包嗅探",
+              "description": "使用易于获得的软件,黑客可以捕获通过WiFi网络传输的数据包。这包括用户名、密码和任何未加密的信息。",
+              "protection": "仅访问HTTPS网站,并对所有连接使用VPN。"
+            },
+            {
+              "title": "会话劫持",
+              "description": "攻击者窃取您的会话cookie以在网站上冒充您。这可以让他们访问您的帐户而无需您的密码。",
+              "protection": "完成后注销帐户并启用双因素身份验证。"
+            }
+          ]
+        },
+        "protectionTips": {
+          "title": "基本保护提示",
+          "intro": "虽然公共WiFi总是存在一些风险,但遵循这些最佳实践可以显著降低您对攻击的脆弱性:",
+          "doThis": {
+            "title": "这样做",
+            "items": [
+              "在每个公共WiFi连接上使用VPN",
+              "在所有帐户上启用双因素身份验证",
+              "仅访问HTTPS网站(查找挂锁图标)",
+              "关闭文件共享和AirDrop",
+              "离开后忘记网络"
+            ]
+          },
+          "neverDoThis": {
+            "title": "永远不要这样做",
+            "items": [
+              "在没有VPN的情况下访问在线银行",
+              "在线购物或输入信用卡信息",
+              "登录工作帐户或敏感应用",
+              "启用自动WiFi连接",
+              "将公共WiFi用于机密工作"
+            ]
+          },
+          "deviceSettings": {
+            "title": "要启用的设备设置",
+            "items": [
+              "防火墙保护(内置于大多数操作系统)",
+              "禁用自动连接到未知网络的WiFi",
+              "关闭网络发现和文件共享",
+              "在浏览器设置中启用「始终使用HTTPS」"
+            ]
+          }
+        },
+        "vpnProtection": {
+          "title": "为什么VPN对公共WiFi至关重要",
+          "intro": "VPN(虚拟专用网络)是您抵御公共WiFi威胁的最佳防御。它在您的设备和互联网之间创建了一个加密隧道,使任何试图拦截它的人都无法读取您的数据。",
+          "benefits": [
+            {
+              "title": "军用级加密",
+              "description": "VPN使用AES-256加密,与银行和政府使用的级别相同。即使有人拦截了您的数据,他们也无法读取它。"
+            },
+            {
+              "title": "隐藏您的活动",
+              "description": "您的互联网服务提供商、WiFi所有者和潜在的黑客无法看到您访问的网站或发送的数据。"
+            },
+            {
+              "title": "保护所有设备",
+              "description": "一个VPN订阅通常涵盖您的所有设备 - 手机、平板电脑和笔记本电脑 - 无论您在哪里连接都能保护您。"
+            }
+          ],
+          "comparison": {
+            "title": "公共WiFi:有VPN与无VPN",
+            "withoutVpn": {
+              "label": "无VPN:",
+              "description": "您的数据对网络上的任何人都可见。黑客可以看到密码、电子邮件、消息和浏览历史。"
+            },
+            "withVpn": {
+              "label": "有VPN:",
+              "description": "您的所有数据都被加密。即使黑客拦截了您的连接,他们也只能看到乱码。"
+            }
+          },
+          "proTip": "在加入任何公共WiFi网络之前,请始终连接到您的VPN。将其设置为自动连接,这样您就不会忘记。"
+        },
+        "locationGuide": {
+          "title": "按位置分类的安全指南",
+          "intro": "不同的公共场所有不同的风险级别。以下是您需要了解的常见位置:",
+          "locations": [
+            {
+              "name": "咖啡店和咖啡馆",
+              "riskLevel": "高风险",
+              "description": "由于长时间停留和宽松的安全性,成为黑客的热门目标。许多人在这里工作,使其成为数据盗窃的主要场所。",
+              "tips": "始终使用VPN。向工作人员确认网络名称。避免金融交易。"
+            },
+            {
+              "name": "机场",
+              "riskLevel": "高风险",
+              "description": "人流量极高,许多商务旅行者处理敏感数据。这里经常出现虚假热点。",
+              "tips": "尽可能使用您的移动热点。如果使用机场WiFi,VPN是强制性的。"
+            },
+            {
+              "name": "酒店",
+              "riskLevel": "中等风险",
+              "description": "酒店网络通常比咖啡馆更安全,但它们仍然是许多客人的共享网络。",
+              "tips": "使用受密码保护的网络。启用VPN。小心房间里的智能电视应用。"
+            },
+            {
+              "name": "公共图书馆",
+              "riskLevel": "中等风险",
+              "description": "由于更好的IT管理,通常比咖啡馆更安全,但仍然是公共网络。",
+              "tips": "建议使用VPN。避免敏感任务。注意肩窥者。"
+            }
+          ]
+        },
+        "checklist": {
+          "title": "快速安全检查清单",
+          "intro": "每次连接到公共WiFi时使用此检查清单以确保您受到保护:",
+          "beforeConnecting": {
+            "title": "连接前",
+            "items": [
+              "启用您的VPN",
+              "关闭文件共享和AirDrop",
+              "向工作人员确认官方网络名称",
+              "检查防火墙是否已启用"
+            ]
+          },
+          "whileConnected": {
+            "title": "连接时",
+            "items": [
+              "始终保持VPN运行",
+              "仅访问HTTPS网站",
+              "如果可能,不要访问银行或金融帐户",
+              "注意您的周围环境(肩窥者)",
+              "完成后注销帐户"
+            ]
+          },
+          "beforeLeaving": {
+            "title": "离开前",
+            "items": [
+              "从网络断开连接",
+              "在您的设置中忘记网络",
+              "再次需要之前禁用WiFi"
+            ]
+          }
+        },
+        "summary": {
+          "title": "底线",
+          "content": "公共WiFi虽然方便,但如果没有适当的保护,它是危险的。您可以采取的最重要的一步是每次连接到任何公共网络时使用可靠的VPN。这是一项小投资,可以保护您的密码、财务数据和个人隐私免受网络犯罪分子的侵害。",
+          "costBenefit": "VPN每月花费不到一杯咖啡的钱,但可以保护价值数千美元的数据"
+        }
       }
     }
   },

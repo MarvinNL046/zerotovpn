@@ -169,3 +169,4 @@ Admin routes are excluded from i18n middleware. The admin layout handles its own
 Configured for Netlify static hosting with:
 - Image optimization disabled (`unoptimized: true`)
 - Static export ready (uncomment `output: "export"` in next.config.ts)
+# Database connected

@@ -61,14 +61,15 @@
     "compare": "Vergelijk"
   },
   "footer": {
-    "about": "Over ZeroToVPN",
     "aboutText": "Wij helpen je de beste VPN te vinden door onafhankelijk testen en eerlijke reviews.",
     "links": "Snelle Links",
     "legal": "Juridisch",
     "privacy": "Privacybeleid",
     "terms": "Algemene Voorwaarden",
     "disclosure": "Affiliate Disclosure",
-    "contact": "Contact",
+    "company": "Bedrijf",
+    "about": "Over Ons",
+    "contactPage": "Contact",
     "copyright": "© {year} ZeroToVPN. Alle rechten voorbehouden.",
     "disclaimer": "We kunnen een commissie ontvangen via onze links, zonder extra kosten voor jou."
   },
@@ -79,5 +80,2976 @@
     "button": "Aanmelden",
     "success": "Bedankt voor je aanmelding!",
     "privacy": "We respecteren je privacy. Afmelden kan altijd."
+  },
+  "home": {
+    "hero": {
+      "badge": "Bijgewerkt voor 2025",
+      "title": "Vind Jouw",
+      "titleHighlight": "Perfecte VPN",
+      "subtitle": "Van zero naar veilig in enkele minuten. Expert reviews, eerlijke vergelijkingen en exclusieve deals op de beste VPN-diensten.",
+      "primaryCta": "Vergelijk VPNs",
+      "secondaryCta": "Wat is een VPN?",
+      "trusted": "Vertrouwd door meer dan 100.000 lezers wereldwijd"
+    },
+    "trustIndicators": {
+      "vpnsTested": {
+        "value": "50+",
+        "label": "VPNs Getest"
+      },
+      "monthlyReaders": {
+        "value": "100K+",
+        "label": "Maandelijkse Lezers"
+      },
+      "speedTests": {
+        "value": "500+",
+        "label": "Snelheidstests"
+      },
+      "updated": {
+        "value": "24/7",
+        "label": "Bijgewerkt"
+      }
+    },
+    "comparison": {
+      "title": "Beste VPNs van 2025",
+      "subtitle": "Onafhankelijk getest en beoordeeld. We testen elke VPN op snelheid, beveiliging, streaming en prijs-kwaliteitverhouding."
+    },
+    "topPicks": {
+      "title": "Top VPN Keuzes",
+      "subtitle": "De topaanbevelingen van onze experts"
+    },
+    "whyVpn": {
+      "title": "Waarom je een VPN Nodig Hebt",
+      "subtitle": "Bescherm je privacy, krijg toegang tot wereldwijde content en blijf veilig online.",
+      "features": [
+        {
+          "title": "Privacybescherming",
+          "description": "Verberg je IP-adres en versleutel je internetverkeer om je online activiteiten privé te houden voor hackers, providers en adverteerders.",
+          "icon": "Shield"
+        },
+        {
+          "title": "Toegang tot Wereldwijde Content",
+          "description": "Omzeil geo-beperkingen om toegang te krijgen tot streamingdiensten, websites en content van overal ter wereld.",
+          "icon": "Globe"
+        },
+        {
+          "title": "Beveilig Openbare WiFi",
+          "description": "Blijf veilig op openbare WiFi-netwerken in cafés, luchthavens en hotels met militaire encryptie.",
+          "icon": "Zap"
+        }
+      ]
+    },
+    "howWeTest": {
+      "title": "Hoe We VPNs Testen",
+      "subtitle": "Onze grondige testmethodologie garandeert eerlijke, onpartijdige reviews.",
+      "items": [
+        "Snelheidstests op 50+ serverlocaties",
+        "Beveiligingsaudits en lektests",
+        "Compatibiliteitscontroles voor streamingplatformen",
+        "Analyse van privacybeleid en jurisdictie",
+        "Responsiviteit van klantenservice",
+        "Beoordeling van prijs-kwaliteitverhouding"
+      ]
+    },
+    "ctaSection": {
+      "title": "Klaar om te Beginnen?",
+      "subtitle": "Vergelijk de beste VPNs en vind de perfecte voor jouw behoeften.",
+      "button": "Bekijk Alle VPNs"
+    },
+    "faq": [
+      {
+        "question": "Wat is een VPN?",
+        "answer": "Een VPN (Virtual Private Network) versleutelt je internetverbinding en verbergt je IP-adres, waardoor je privacy online wordt beschermd en je toegang krijgt tot geografisch beperkte content."
+      },
+      {
+        "question": "Welke VPN is de beste in 2025?",
+        "answer": "Op basis van onze tests is NordVPN de beste algehele VPN in 2025, met uitstekende snelheden, sterke beveiliging en een goede prijs-kwaliteitverhouding. Surfshark is de beste budgetoptie met onbeperkte apparaten."
+      },
+      {
+        "question": "Zijn gratis VPNs veilig?",
+        "answer": "De meeste gratis VPNs worden niet aanbevolen omdat ze mogelijk je gegevens loggen, advertenties tonen of beveiligingslekken hebben. ProtonVPN biedt een betrouwbare gratis versie zonder datalimiet."
+      },
+      {
+        "question": "Kan een VPN getraceerd worden?",
+        "answer": "Kwaliteits-VPNs met een no-logs beleid kunnen niet naar jou worden getraceerd. De VPN-aanbieder slaat geen informatie op over je online activiteiten."
+      }
+    ]
+  },
+  "guides": {
+    "whatIsVpn": {
+      "meta": {
+        "title": "Wat is een VPN? Volledige Beginnersgids 2025 - ZeroToVPN",
+        "description": "Ontdek wat een VPN is, hoe het werkt en waarom je er een nodig hebt. Onze uitgebreide beginnersgids legt VPN-technologie in eenvoudige termen uit."
+      },
+      "hero": {
+        "badge": "Beginnersgids",
+        "readTime": "8 min leestijd",
+        "title": "Wat is een VPN?",
+        "subtitle": "Een Virtual Private Network (VPN) is een krachtig hulpmiddel dat jouw internetverbinding versleutelt en je IP-adres verbergt, waardoor je privacy en veiligheid online worden beschermd. In deze gids leggen we alles uit wat je moet weten over VPN's in begrijpelijke taal.",
+        "updated": "Bijgewerkt november 2025",
+        "level": "Beginnersvriendelijk"
+      },
+      "toc": {
+        "title": "In deze gids:",
+        "items": [
+          "1. Wat is een VPN?",
+          "2. Hoe werkt een VPN?",
+          "3. Waarom een VPN gebruiken?",
+          "4. Voordelen van een VPN",
+          "5. VPN-beperkingen",
+          "6. De juiste VPN kiezen"
+        ]
+      },
+      "sections": {
+        "whatIsVpn": {
+          "title": "Wat is een VPN?",
+          "intro": [
+            "Een Virtual Private Network (VPN) is een dienst die een beveiligde, versleutelde verbinding maakt tussen jouw apparaat en het internet. Zie het als een privétunnel die je online activiteiten afschermt van nieuwsgierige blikken.",
+            "Wanneer je normaal verbinding maakt met het internet, reizen je gegevens via je internetprovider (ISP), die alles kan zien wat je online doet. Met een VPN worden je gegevens versleuteld voordat ze je apparaat verlaten, waardoor ze onleesbaar worden voor iedereen die ze zou kunnen onderscheppen - inclusief je ISP, hackers en zelfs overheden."
+          ],
+          "withoutVpn": {
+            "title": "Zonder VPN",
+            "items": [
+              "Je ISP kan al je online activiteiten zien",
+              "Websites kunnen je echte IP-adres en locatie volgen",
+              "Hackers op openbare WiFi kunnen je gegevens onderscheppen",
+              "Je browsegeschiedenis kan worden verkocht aan adverteerders"
+            ]
+          },
+          "withVpn": {
+            "title": "Met een VPN",
+            "items": [
+              "Je verbinding wordt versleuteld met militaire encryptie",
+              "Je echte IP-adres blijft verborgen voor websites",
+              "Je gegevens zijn beschermd op elk netwerk, inclusief openbare WiFi",
+              "Je online activiteiten blijven privé"
+            ]
+          }
+        },
+        "howVpnWorks": {
+          "title": "Hoe werkt een VPN?",
+          "intro": "Begrijpen hoe een VPN werkt helpt je om te waarderen waarom het zo'n effectief privacytool is. Hier is het proces opgedeeld in eenvoudige stappen:",
+          "steps": [
+            {
+              "number": 1,
+              "title": "Je maakt verbinding met een VPN-server",
+              "description": "Wanneer je je VPN activeert, maakt je apparaat verbinding met een van de servers van de VPN-aanbieder."
+            },
+            {
+              "number": 2,
+              "title": "Je gegevens worden versleuteld",
+              "description": "Alle gegevens die je apparaat verlaten worden versleuteld met protocollen zoals AES-256 - dezelfde encryptie die door overheden en banken wordt gebruikt."
+            },
+            {
+              "number": 3,
+              "title": "Je IP-adres verandert",
+              "description": "Websites zien het IP-adres van de VPN-server in plaats van dat van jou, waardoor je echte locatie en identiteit worden gemaskeerd."
+            },
+            {
+              "number": 4,
+              "title": "Beveiligde tunnel opgezet",
+              "description": "Er wordt een beveiligde \"tunnel\" aangelegd tussen jou en de VPN-server, die alle gegevens beschermt die erdoorheen gaan."
+            }
+          ]
+        },
+        "whyUseVpn": {
+          "title": "Waarom een VPN gebruiken?",
+          "intro": "Er zijn veel redenen waarom miljoenen mensen dagelijks een VPN gebruiken. Hier zijn de meest voorkomende toepassingen:",
+          "useCases": [
+            {
+              "title": "Privacybescherming",
+              "description": "Houd je browsegeschiedenis privé voor je ISP, werkgevers en adverteerders die je online gedrag willen volgen en te gelde willen maken.",
+              "icon": "Lock"
+            },
+            {
+              "title": "Beveiliging op openbare WiFi",
+              "description": "Bescherm jezelf bij het gebruik van WiFi in cafés, op luchthavens, in hotels en andere openbare plekken waar hackers vaak rondsnuffelen.",
+              "icon": "Wifi"
+            },
+            {
+              "title": "Toegang tot streamingcontent",
+              "description": "Kijk je favoriete shows op Netflix, Disney+, BBC iPlayer en meer vanaf elke locatie ter wereld door verbinding te maken met servers in verschillende landen.",
+              "icon": "Tv"
+            },
+            {
+              "title": "Veilig downloaden",
+              "description": "Download bestanden veilig en privé. VPN's zijn populair onder gebruikers die hun P2P-activiteit willen beschermen.",
+              "icon": "Download"
+            },
+            {
+              "title": "Beveiliging voor thuiswerken",
+              "description": "Krijg veilig toegang tot je bedrijfsnetwerk en gevoelige werkbestanden vanaf elke locatie, waardoor bedrijfsgegevens worden beschermd.",
+              "icon": "Building"
+            },
+            {
+              "title": "Mobiele privacy",
+              "description": "Bescherm je smartphone of tablet bij gebruik van mobiele data of bij verbinding met onbekende WiFi-netwerken.",
+              "icon": "Smartphone"
+            }
+          ]
+        },
+        "vpnBenefits": {
+          "title": "Voordelen van een VPN",
+          "benefits": [
+            "Versleutelt al je internetverkeer",
+            "Verbergt je IP-adres en locatie",
+            "Voorkomt tracking en vertraging door je ISP",
+            "Beschermt tegen hackers op openbare netwerken",
+            "Omzeilt geografische beperkingen",
+            "Bespaar geld op vluchten en hotels (prijzen variëren per locatie)",
+            "Voorkomt bandbreedtebeperking door providers",
+            "Voegt een laag anonimiteit toe online"
+          ]
+        },
+        "vpnLimitations": {
+          "title": "VPN-beperkingen",
+          "intro": "Hoewel VPN's krachtige privacytools zijn, zijn ze geen wondermiddel voor alle online beveiligingsproblemen. Dit is wat VPN's niet kunnen doen:",
+          "limitations": [
+            {
+              "title": "VPN's maken je niet volledig anoniem",
+              "description": "Websites kunnen je nog steeds volgen via cookies, browser fingerprinting en ingelogde accounts."
+            },
+            {
+              "title": "VPN's beschermen niet tegen malware",
+              "description": "Je hebt nog steeds antivirussoftware nodig om te beschermen tegen virussen en kwaadaardige downloads."
+            },
+            {
+              "title": "VPN's kunnen je verbinding vertragen",
+              "description": "Encryptie voegt overhead toe, hoewel premium VPN's deze impact minimaliseren."
+            },
+            {
+              "title": "Sommige diensten blokkeren VPN's",
+              "description": "Bepaalde websites en streamingplatforms proberen actief VPN-gebruikers te blokkeren."
+            },
+            {
+              "title": "Gratis VPN's hebben vaak addertjes onder het gras",
+              "description": "Veel gratis VPN's loggen je gegevens, tonen advertenties of hebben ernstige beveiligingslekken."
+            }
+          ]
+        },
+        "choosingVpn": {
+          "title": "De juiste VPN kiezen",
+          "intro": "Niet alle VPN's zijn gelijk. Dit is waar je op moet letten bij het kiezen van een VPN-dienst:",
+          "features": [
+            {
+              "title": "Sterke encryptie",
+              "description": "Zoek naar AES-256-encryptie en moderne protocollen zoals WireGuard, OpenVPN of IKEv2. Sommige aanbieders bieden ook eigen protocollen die zijn geoptimaliseerd voor snelheid."
+            },
+            {
+              "title": "Geen-logbeleid",
+              "description": "Kies een VPN die geen logs bijhoudt van je activiteiten. Zoek naar onafhankelijk gecontroleerde geen-logclaims."
+            },
+            {
+              "title": "Hoge snelheden",
+              "description": "Een goede VPN moet snelheidsverlies minimaliseren. Zoek naar VPN's met grote servernetwerken en moderne protocollen."
+            },
+            {
+              "title": "Kill switch",
+              "description": "Een kill switch blokkeert je internet als de VPN-verbinding wegvalt, waardoor accidentele gegevenslekken worden voorkomen."
+            },
+            {
+              "title": "Serverlocaties",
+              "description": "Meer serverlocaties betekenen betere snelheden en meer opties voor toegang tot geografisch beperkte content."
+            }
+          ]
+        }
+      },
+      "cta": {
+        "title": "Klaar om beschermd te worden?",
+        "description": "Nu je begrijpt wat een VPN is en waarom je er een nodig hebt, bekijk dan onze vergelijking van de beste VPN-diensten om de juiste voor jou te vinden.",
+        "primaryButton": "VPN's vergelijken",
+        "secondaryButton": "Bekijk beste VPN's 2025"
+      },
+      "relatedGuides": {
+        "title": "Blijf leren",
+        "guides": [
+          {
+            "title": "Hoe werkt een VPN?",
+            "description": "Duik dieper in VPN-technologie",
+            "url": "/guides/how-vpn-works"
+          },
+          {
+            "title": "Beste VPN voor streaming",
+            "description": "Toegang tot Netflix, Disney+ en meer",
+            "url": "/guides/vpn-for-streaming"
+          }
+        ]
+      }
+    },
+    "howVpnWorks": {
+      "meta": {
+        "title": "Hoe werkt een VPN? Technische gids 2025 - ZeroToVPN",
+        "description": "Begrijp de technische details achter VPN-technologie. Leer over encryptie, tunnelingprotocollen en hoe VPN's stap voor stap je gegevens beschermen."
+      },
+      "hero": {
+        "badge": "Technische gids",
+        "readTime": "10 min leestijd",
+        "title": "Hoe werkt een VPN?",
+        "subtitle": "Heb je je ooit afgevraagd wat er gebeurt wanneer je op \"Verbinden\" klikt in je VPN? Deze gids legt de technische magie achter VPN-technologie uit, waarbij encryptie, tunnelingprotocollen en gegevensbescherming in duidelijke, begrijpelijke termen worden uitgelegd.",
+        "updated": "Bijgewerkt november 2025",
+        "level": "Gemiddeld niveau"
+      },
+      "toc": {
+        "title": "In deze gids:",
+        "items": [
+          "1. VPN-verbindingsoverzicht",
+          "2. Encryptie uitgelegd",
+          "3. VPN-tunneling",
+          "4. VPN-protocollen vergeleken",
+          "5. Stap-voor-stap proces",
+          "6. Beveiligingsfuncties"
+        ]
+      },
+      "sections": {
+        "overview": {
+          "title": "VPN-verbindingsoverzicht",
+          "intro": "Een VPN creëert een beveiligde, versleutelde verbinding tussen je apparaat en een VPN-server. Deze verbinding werkt als een \"tunnel\" die je gegevens beschermt tegen inzage of onderschepping door derden.",
+          "diagram": {
+            "title": "Hoe je gegevens reizen",
+            "steps": [
+              {
+                "label": "Jouw apparaat",
+                "icon": "Wifi"
+              },
+              {
+                "label": "Versleuteld",
+                "status": "protected"
+              },
+              {
+                "label": "VPN-server",
+                "icon": "Server"
+              },
+              {
+                "label": "Internet",
+                "icon": "Globe"
+              }
+            ]
+          },
+          "note": "Het belangrijkste concept is dat tussen jouw apparaat en de VPN-server alle gegevens versleuteld en onleesbaar zijn. Pas nadat ze de VPN-server bereiken, worden ze ontsleuteld en naar hun bestemming gestuurd."
+        },
+        "encryption": {
+          "title": "Encryptie uitgelegd",
+          "intro": "Encryptie is het proces waarbij leesbare gegevens (platte tekst) worden omgezet in een onleesbaar formaat (cijfertekst) met behulp van wiskundige algoritmen. Alleen iemand met de juiste decoderingssleutel kan het terugzetten.",
+          "aes256": {
+            "title": "AES-256-encryptie",
+            "description": "De meeste moderne VPN's gebruiken AES-256 (Advanced Encryption Standard met 256-bit sleutels), dezelfde encryptie die wereldwijd door overheden en militaire organisaties wordt gebruikt.",
+            "specs": [
+              {
+                "title": "Sleutellengte",
+                "description": "256 bits = 2^256 mogelijke combinaties. Dat zijn er meer dan het aantal atomen in het waarneembare universum!"
+              },
+              {
+                "title": "Kraaktijd",
+                "description": "Met de huidige technologie zou het miljarden jaren duren om AES-256-encryptie met brute force te kraken."
+              }
+            ]
+          },
+          "keyTypes": {
+            "title": "Soorten encryptiesleutels",
+            "items": [
+              {
+                "type": "Symmetrische encryptie",
+                "description": "Dezelfde sleutel voor versleuteling en ontsleuteling. Snel, maar vereist veilige sleuteluitwisseling."
+              },
+              {
+                "type": "Asymmetrische encryptie",
+                "description": "Publieke sleutel versleutelt, privésleutel ontsleutelt. Gebruikt voor initiële handshake en sleuteluitwisseling."
+              }
+            ]
+          }
+        },
+        "tunneling": {
+          "title": "VPN-tunneling",
+          "intro": "VPN-tunneling is het proces waarbij je datapakketten in een ander pakket worden ingekapseld. Zie het als een brief in een andere envelop stoppen - de buitenste envelop verbergt wat erin zit.",
+          "process": {
+            "title": "Inkapselingsproces",
+            "steps": [
+              {
+                "number": 1,
+                "title": "Oorspronkelijke gegevens",
+                "description": "Je daadwerkelijke datapakket met bestemmingsadres"
+              },
+              {
+                "number": 2,
+                "title": "Encryptie",
+                "description": "Gegevens worden versleuteld met VPN-protocol"
+              },
+              {
+                "number": 3,
+                "title": "Inkapseling",
+                "description": "Versleutelde gegevens verpakt in nieuw pakket geadresseerd aan VPN-server"
+              },
+              {
+                "number": 4,
+                "title": "Verzending",
+                "description": "Pakket reist via ISP naar VPN-server (ISP ziet alleen versleuteld blok)"
+              }
+            ]
+          }
+        },
+        "protocols": {
+          "title": "VPN-protocollen vergeleken",
+          "intro": "VPN-protocollen bepalen hoe je gegevens worden versleuteld en verzonden. Elk protocol heeft zijn eigen balans tussen snelheid, beveiliging en compatibiliteit.",
+          "list": [
+            {
+              "name": "WireGuard",
+              "badge": "Aanbevolen",
+              "description": "Het nieuwste en snelste protocol. Gebruikt geavanceerde cryptografie met slechts 4.000 regels code (vergeleken met 400.000+ voor OpenVPN).",
+              "ratings": {
+                "speed": "Uitstekend",
+                "security": "Uitstekend",
+                "compatibility": "Goed"
+              }
+            },
+            {
+              "name": "OpenVPN",
+              "badge": "Industriestandaard",
+              "description": "Het meest gebruikte protocol. Open-source en beproefd over 20+ jaar. Werkt op vrijwel elk apparaat en netwerk.",
+              "ratings": {
+                "speed": "Goed",
+                "security": "Uitstekend",
+                "compatibility": "Uitstekend"
+              }
+            },
+            {
+              "name": "IKEv2/IPSec",
+              "badge": "Mobiel geoptimaliseerd",
+              "description": "Uitstekend voor mobiele apparaten. Maakt snel opnieuw verbinding bij schakelen tussen WiFi en mobiele netwerken. Ingebouwd in de meeste besturingssystemen.",
+              "ratings": {
+                "speed": "Uitstekend",
+                "security": "Uitstekend",
+                "compatibility": "Uitstekend"
+              }
+            }
+          ]
+        },
+        "stepByStep": {
+          "title": "Stap-voor-stap: Wat gebeurt er wanneer je verbinding maakt",
+          "steps": [
+            {
+              "number": 1,
+              "title": "VPN-app start verbinding",
+              "description": "Wanneer je op \"Verbinden\" klikt, neemt je VPN-app contact op met een VPN-server en begint het authenticatieproces."
+            },
+            {
+              "number": 2,
+              "title": "Handshake & authenticatie",
+              "description": "Jouw apparaat en de VPN-server wisselen cryptografische sleutels uit en verifiëren elkaars identiteit via certificaten."
+            },
+            {
+              "number": 3,
+              "title": "Tunnel opgezet",
+              "description": "Een beveiligde versleutelde tunnel wordt aangelegd. Al je internetverkeer zal nu door deze tunnel stromen."
+            },
+            {
+              "number": 4,
+              "title": "IP-adres gemaskeerd",
+              "description": "Je echte IP-adres wordt vervangen door het IP-adres van de VPN-server. Websites zien nu de locatie van de server, niet die van jou."
+            },
+            {
+              "number": 5,
+              "title": "Gegevens stromen veilig",
+              "description": "Elk pakket dat je verstuurt wordt versleuteld, getunneld naar de VPN-server, ontsleuteld en doorgestuurd naar de bestemming. Antwoorden volgen het omgekeerde pad."
+            }
+          ]
+        },
+        "securityFeatures": {
+          "title": "Belangrijkste beveiligingsfuncties",
+          "features": [
+            {
+              "name": "Kill switch",
+              "icon": "EyeOff",
+              "description": "Blokkeert automatisch al het internetverkeer als de VPN-verbinding wegvalt, waardoor gegevenslekken worden voorkomen."
+            },
+            {
+              "name": "DNS-lekbescherming",
+              "icon": "Cloud",
+              "description": "Zorgt ervoor dat DNS-queries via de VPN-tunnel gaan, niet via de DNS-servers van je ISP die je browsegeschiedenis zouden kunnen blootleggen."
+            },
+            {
+              "name": "Perfect Forward Secrecy",
+              "icon": "Lock",
+              "description": "Genereert unieke encryptiesleutels voor elke sessie. Zelfs als één sleutel wordt gecompromitteerd, blijven eerdere sessies veilig."
+            },
+            {
+              "name": "RAM-only servers",
+              "icon": "Server",
+              "description": "Sommige VPN's draaien volledig in RAM-geheugen. Bij uitschakeling worden alle gegevens automatisch gewist, zonder sporen achter te laten."
+            }
+          ]
+        },
+        "keyTakeaways": {
+          "title": "Belangrijkste punten",
+          "items": [
+            "VPN's versleutelen je gegevens met militaire AES-256-encryptie",
+            "Tunneling verbergt je gegevens door ze in te kapselen in versleutelde pakketten",
+            "WireGuard is het snelste moderne protocol; OpenVPN is het meest compatibel",
+            "Functies zoals kill switch en DNS-lekbescherming voegen extra beveiligingslagen toe"
+          ]
+        }
+      },
+      "relatedGuides": {
+        "title": "Blijf leren",
+        "guides": [
+          {
+            "title": "Wat is een VPN?",
+            "description": "Begin met de basis als je nieuw bent met VPN's.",
+            "url": "/guides/what-is-vpn"
+          },
+          {
+            "title": "VPN voor streaming",
+            "description": "Leer hoe je een VPN gebruikt voor toegang tot streamingcontent.",
+            "url": "/guides/vpn-for-streaming"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Klaar om een VPN uit te proberen?",
+        "description": "Nu je begrijpt hoe VPN's werken, bekijk dan onze best beoordeelde VPN-aanbieders en vind de perfecte voor jouw behoeften.",
+        "button": "Bekijk beste VPN's"
+      }
+    },
+    "vpnForStreaming": {
+      "meta": {
+        "title": "Beste VPN voor Streaming Netflix, Disney+ & Meer (2025 Gids) - ZeroToVPN",
+        "description": "Ontdek hoe je een VPN gebruikt om toegang te krijgen tot Netflix, Disney+, BBC iPlayer en meer streamingdiensten vanaf elke locatie. Vind de beste VPNs voor streaming."
+      },
+      "hero": {
+        "badge": "Streaming Gids",
+        "readTime": "7 min lezen",
+        "title": "Beste VPN voor Streaming",
+        "subtitle": "Wil je Netflix US kijken vanuit Europa? Toegang tot BBC iPlayer vanuit het buitenland? Een VPN kan streamingcontent van over de hele wereld ontgrendelen. Deze gids behandelt alles wat je moet weten over VPNs en streaming.",
+        "updated": "Bijgewerkt november 2025",
+        "level": "Praktische Gids"
+      },
+      "toc": {
+        "title": "In Deze Gids:",
+        "items": [
+          "1. Waarom een VPN gebruiken voor Streaming?",
+          "2. Hoe Streaming met VPN werkt",
+          "3. Populaire Streamingdiensten",
+          "4. Beste VPNs voor Streaming",
+          "5. Tips voor Beter Streamen",
+          "6. Veelgestelde Vragen"
+        ]
+      },
+      "relatedGuides": {
+        "title": "Blijf Leren",
+        "guides": [
+          {
+            "title": "Hoe Werkt een VPN?",
+            "description": "Begrijp de technische details achter VPN-technologie.",
+            "url": "/guides/how-vpn-works"
+          },
+          {
+            "title": "Wat is een VPN?",
+            "description": "Begin met de basis als je nieuw bent met VPNs.",
+            "url": "/guides/what-is-vpn"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Klaar om te Beginnen met Streamen?",
+        "description": "Kies een streaming-geoptimaliseerde VPN en ontgrendel vandaag nog content van over de hele wereld.",
+        "button": "Vind Beste VPN voor Streaming"
+      },
+      "sections": {
+        "whyUseVpn": {
+          "title": "Waarom een VPN gebruiken voor Streaming?",
+          "intro": "Streamingdiensten zoals Netflix, Disney+ en Amazon Prime Video hebben verschillende contentbibliotheken voor verschillende landen. Dit komt door licentieovereenkomsten met contentcreators en distributeurs.",
+          "geoRestrictionTitle": "Het Geo-Restrictie Probleem",
+          "regions": [
+            {
+              "name": "Netflix US",
+              "description": "~5.800+ titels inclusief exclusieve shows en films die nergens anders beschikbaar zijn.",
+              "color": "red"
+            },
+            {
+              "name": "Netflix UK",
+              "description": "~5.500+ titels met een andere contentmix en BBC co-producties.",
+              "color": "orange"
+            },
+            {
+              "name": "Netflix Japan",
+              "description": "~6.000+ titels waaronder een uitgebreide animecollectie en Japanse originals.",
+              "color": "yellow"
+            },
+            {
+              "name": "Netflix Duitsland",
+              "description": "~4.500+ titels met Duitse nasynchronisatie en lokale producties.",
+              "color": "blue"
+            }
+          ],
+          "benefitsTitle": "Belangrijkste Voordelen van VPN Streaming",
+          "benefits": [
+            {
+              "title": "Toegang tot Meer Content:",
+              "description": "Kijk shows en films die niet beschikbaar zijn in jouw land."
+            },
+            {
+              "title": "Kijken Tijdens het Reizen:",
+              "description": "Behoud toegang tot de contentbibliotheek van je thuisland in het buitenland."
+            },
+            {
+              "title": "Vroege Releases:",
+              "description": "Sommige content komt eerder uit in bepaalde regio's."
+            },
+            {
+              "title": "Vermijd ISP Throttling:",
+              "description": "Sommige providers vertragen streaming - VPN's kunnen dit omzeilen."
+            }
+          ]
+        },
+        "howItWorks": {
+          "title": "Hoe Streaming met VPN Werkt",
+          "steps": [
+            {
+              "number": 1,
+              "title": "Verbind met VPN-server",
+              "description": "Kies een server in het land waarvan je content wilt bekijken (bijv. VS-server voor Amerikaanse Netflix)."
+            },
+            {
+              "number": 2,
+              "title": "Krijg Nieuw IP-adres",
+              "description": "Je echte IP wordt verborgen en vervangen door één van de locatie van de VPN-server."
+            },
+            {
+              "number": 3,
+              "title": "Open Streaming-app",
+              "description": "De streamingdienst ziet jouw VPN's IP en toont je de contentbibliotheek voor die regio."
+            },
+            {
+              "number": 4,
+              "title": "Geniet van Onbeperkt Streamen",
+              "description": "Bekijk content die voorheen niet beschikbaar was op je werkelijke locatie."
+            }
+          ],
+          "warningTitle": "VPN-blokkering",
+          "warningText": "Streamingdiensten proberen actief VPN-verbindingen te detecteren en blokkeren. Daarom is het kiezen van een VPN die specifiek werkt voor streaming belangrijk - ze updaten constant hun servers om voorop te blijven."
+        },
+        "streamingServices": {
+          "title": "Populaire Streamingdiensten",
+          "services": [
+            {
+              "name": "Netflix",
+              "badge": "Werkt Goed",
+              "badgeColor": "green",
+              "icon": "N",
+              "iconColor": "red-600",
+              "description": "Verschillende contentbibliotheken in 190+ landen. VS, VK, Japan en Canada hebben de grootste selecties.",
+              "features": [
+                "15.000+ titels wereldwijd",
+                "4K Ultra HD",
+                "Meerdere profielen"
+              ]
+            },
+            {
+              "name": "Disney+",
+              "badge": "Werkt Goed",
+              "badgeColor": "green",
+              "icon": "D+",
+              "iconColor": "blue-700",
+              "description": "Content varieert per regio. VS heeft Star Wars, Marvel en meer. Sommige landen bevatten Star-content (volwassen titels).",
+              "features": [
+                "Disney, Marvel, Star Wars",
+                "IMAX Enhanced",
+                "Downloads beschikbaar"
+              ]
+            },
+            {
+              "name": "BBC iPlayer",
+              "badge": "Alleen VK",
+              "badgeColor": "yellow",
+              "icon": "BBC",
+              "iconColor": "pink-600",
+              "description": "Gratis met VK TV-licentie. Toegang vereist VK IP-adres. Geweldig voor Britse tv-shows, documentaires en live TV.",
+              "features": [
+                "Gratis (VK licentie)",
+                "Live TV",
+                "BBC Originals"
+              ]
+            },
+            {
+              "name": "Amazon Prime Video",
+              "badge": "Werkt Goed",
+              "badgeColor": "green",
+              "icon": "P",
+              "iconColor": "sky-500",
+              "description": "Verschillende bibliotheken per land. Sommige content inbegrepen bij Prime, andere beschikbaar om te huren of kopen.",
+              "features": [
+                "Prime Originals",
+                "X-Ray functies",
+                "Huur opties"
+              ]
+            },
+            {
+              "name": "Hulu",
+              "badge": "Alleen VS",
+              "badgeColor": "yellow",
+              "icon": "H",
+              "iconColor": "green-500",
+              "description": "VS-exclusieve dienst met afleveringen van de volgende dag, originals en live TV optie. Vereist VS betaalmethode.",
+              "features": [
+                "TV volgende dag",
+                "Live TV optie",
+                "FX content"
+              ]
+            }
+          ]
+        },
+        "bestVpns": {
+          "title": "Beste VPN's voor Streaming",
+          "intro": "Niet alle VPN's werken goed met streamingdiensten. Hier zijn onze topkeuzes die consistent populaire platforms ontgrendelen:",
+          "vpns": [
+            {
+              "name": "ExpressVPN",
+              "badge": "Beste Algeheel",
+              "rating": "9.8/10",
+              "description": "Werkt met Netflix (15+ bibliotheken), Disney+, Hulu, BBC iPlayer, Amazon Prime en meer. Snelle snelheden ideaal voor 4K streaming.",
+              "supportedServices": [
+                "Netflix VS",
+                "Disney+",
+                "BBC iPlayer",
+                "Hulu"
+              ]
+            },
+            {
+              "name": "NordVPN",
+              "badge": "Beste Waarde",
+              "rating": "9.6/10",
+              "description": "Uitstekende streamingondersteuning met SmartPlay-technologie die automatisch optimaliseert voor streamingdiensten.",
+              "supportedServices": [
+                "Netflix VS",
+                "Disney+",
+                "BBC iPlayer",
+                "Amazon Prime"
+              ]
+            },
+            {
+              "name": "Surfshark",
+              "badge": "Budget Keuze",
+              "rating": "9.2/10",
+              "description": "Onbeperkte gelijktijdige verbindingen. Geweldig voor gezinnen die op meerdere apparaten willen streamen.",
+              "supportedServices": [
+                "Netflix VS",
+                "Disney+",
+                "BBC iPlayer",
+                "HBO Max"
+              ]
+            }
+          ],
+          "viewFullComparison": "Bekijk Volledige VPN Vergelijking"
+        },
+        "tips": {
+          "title": "Tips voor Beter VPN Streamen",
+          "items": [
+            {
+              "icon": "Server",
+              "iconColor": "blue",
+              "title": "Kies Nabijgelegen Servers",
+              "description": "Maak verbinding met VPN-servers geografisch dichter bij je voor snellere snelheden. Een VS-gebruiker die VK-content bekijkt, zou een VK-server aan de oostkust van de VS moeten kiezen."
+            },
+            {
+              "icon": "Zap",
+              "iconColor": "green",
+              "title": "Gebruik WireGuard Protocol",
+              "description": "WireGuard biedt de beste snelheden voor streaming. De meeste VPN-apps laten je dit selecteren in de instellingen."
+            },
+            {
+              "icon": "Monitor",
+              "iconColor": "purple",
+              "title": "Wis Cache & Cookies",
+              "description": "Als een streamingdienst nog steeds verkeerde content toont, wis dan je browsercache en cookies, en maak opnieuw verbinding."
+            },
+            {
+              "icon": "Smartphone",
+              "iconColor": "orange",
+              "title": "Probeer Verschillende Servers",
+              "description": "Als één server geblokkeerd wordt, probeer dan een andere in hetzelfde land. Premium VPN's hebben meerdere servers per locatie."
+            },
+            {
+              "icon": "Shield",
+              "iconColor": "red",
+              "title": "Gebruik Smart DNS (Optioneel)",
+              "description": "Sommige VPN's bevatten Smart DNS voor apparaten die geen VPN-apps ondersteunen (zoals smart TV's). Sneller maar minder veilig."
+            }
+          ]
+        },
+        "faq": {
+          "title": "Veelgestelde Vragen",
+          "items": [
+            {
+              "question": "Is het legaal om een VPN te gebruiken voor streaming?",
+              "answer": "VPN's zijn legaal in de meeste landen. Het omzeilen van geo-restricties kan echter de servicevoorwaarden van streamingdiensten schenden. Het ergste dat meestal gebeurt is tijdelijke blokkering van je account."
+            },
+            {
+              "question": "Zal een VPN mijn streaming vertragen?",
+              "answer": "Premium VPN's verminderen snelheden meestal met 10-20%, wat nog steeds snel genoeg is voor 4K streaming. Kies servers dicht bij je en gebruik snelle protocollen zoals WireGuard voor de beste resultaten."
+            },
+            {
+              "question": "Waarom detecteert Netflix mijn VPN?",
+              "answer": "Netflix blokkeert bekende VPN IP-adressen. Gratis of goedkope VPN's worden gemakkelijk gedetecteerd. Premium VPN's roteren regelmatig hun IP's om blokkades voor te blijven."
+            },
+            {
+              "question": "Kan ik een gratis VPN gebruiken voor streaming?",
+              "answer": "Gratis VPN's werken zelden met streamingdiensten. Ze hebben beperkte servers die snel geblokkeerd worden, trage snelheden en datalimiten die streaming onpraktisch maken."
+            }
+          ]
+        },
+        "keyTakeaways": {
+          "title": "Belangrijkste Punten",
+          "items": [
+            "VPN's laten je toegang krijgen tot verschillende streamingbibliotheken door je virtuele locatie te veranderen",
+            "Niet alle VPN's werken met streaming - kies er één met toegewijde streamingondersteuning",
+            "ExpressVPN, NordVPN en Surfshark zijn topkeuzes voor streaming",
+            "Gebruik WireGuard protocol en nabijgelegen servers voor beste snelheden"
+          ]
+        }
+      }
+    },
+    "vpnForTorrenting": {
+      "meta": {
+        "title": "VPN voor Torrenting: Blijf Veilig Tijdens Downloaden (2025 Gids) - ZeroToVPN",
+        "description": "Leer hoe je een VPN gebruikt voor veilig torrenten. Begrijp P2P-vriendelijke VPNs, kill switches en lekbescherming om veilig en anoniem te downloaden."
+      },
+      "hero": {
+        "badge": "Privacy Gids",
+        "readTime": "8 min lezen",
+        "title": "VPN voor Torrenting",
+        "subtitle": "Torrenten zonder bescherming stelt je IP-adres bloot aan duizenden peers. Leer hoe een VPN je veilig houdt tijdens het downloaden, en naar welke functies je moet zoeken in een P2P-vriendelijke VPN.",
+        "updated": "Bijgewerkt november 2025",
+        "level": "Privacy Gids"
+      },
+      "toc": {
+        "title": "In Deze Gids:",
+        "items": [
+          "1. Waarom een VPN gebruiken voor Torrenting?",
+          "2. Risico's van Torrenten zonder VPN",
+          "3. Essentiële VPN-functies",
+          "4. Beste VPNs voor Torrenting",
+          "5. Hoe Instellen",
+          "6. Juridische Overwegingen"
+        ]
+      },
+      "relatedGuides": {
+        "title": "Blijf Leren",
+        "guides": [
+          {
+            "title": "VPN Privacy Gids",
+            "description": "Duik dieper in no-logs beleid en wat een VPN privé maakt.",
+            "url": "/guides/vpn-privacy-guide"
+          },
+          {
+            "title": "VPN Snelheid Gids",
+            "description": "Optimaliseer je VPN voor snellere downloadsnelheden.",
+            "url": "/guides/vpn-speed-guide"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Vind een Veilige VPN voor Torrenting",
+        "description": "Vergelijk VPNs met P2P-ondersteuning, kill switches en geverifieerd no-logs beleid om veilig te blijven tijdens het downloaden.",
+        "button": "Vind Beste VPN voor P2P"
+      },
+      "sections": {
+        "disclaimer": {
+          "intro": "Disclaimer:",
+          "text": "Deze gids is bedoeld voor educatieve doeleinden. Wij keuren illegaal downloaden niet goed. Veel torrents bevatten legale content zoals open-source software, publiek domein media en creative commons materiaal. Respecteer altijd de auteursrechtwetten in jouw jurisdictie."
+        },
+        "whyVpn": {
+          "title": "Waarom een VPN gebruiken voor Torrenting?",
+          "intro": [
+            "BitTorrent is een peer-to-peer (P2P) protocol waarbij jouw computer direct verbinding maakt met andere gebruikers. Dit betekent dat je IP-adres zichtbaar is voor iedereen in de torrent swarm - wat honderden of duizenden mensen kunnen zijn."
+          ],
+          "exposureBox": {
+            "title": "Hoe Torrenting Je Blootstelt",
+            "you": "Jij",
+            "yourIp": "IP: 192.168.x.x",
+            "exposed": "Blootgesteld",
+            "swarm": "Torrent Swarm",
+            "peers": "100en-1000en peers"
+          },
+          "whoCanSee": {
+            "title": "Wie Kan Jouw IP Zien?",
+            "items": [
+              {
+                "title": "Andere Torrentgebruikers:",
+                "description": "Elke peer in de swarm kan je IP-adres zien. Sommigen loggen deze gegevens."
+              },
+              {
+                "title": "Copyright Trolls:",
+                "description": "Bedrijven sluiten zich aan bij swarms om IP-adressen te verzamelen en juridische kennisgevingen te versturen."
+              },
+              {
+                "title": "Jouw ISP:",
+                "description": "Kan zien dat je BitTorrent gebruikt en kan je verbinding vertragen of waarschuwingen sturen."
+              },
+              {
+                "title": "Overheidsinstanties:",
+                "description": "In sommige landen monitoren autoriteiten torrentactiviteit."
+              }
+            ]
+          }
+        },
+        "risks": {
+          "title": "Risico's van Torrenting Zonder VPN",
+          "items": [
+            {
+              "title": "Juridische Kennisgevingen & Boetes",
+              "description": "Auteursrechthebbenden kunnen je IP traceren en DMCA-kennisgevingen sturen via je ISP. Schikkingen kunnen variëren van honderden tot duizenden euro's.",
+              "color": "red"
+            },
+            {
+              "title": "ISP Throttling",
+              "description": "Veel ISP's vertragen opzettelijk P2P-verkeer. Sommigen verminderen snelheden met 50-90% wanneer ze torrentactiviteit detecteren.",
+              "color": "orange"
+            },
+            {
+              "title": "Account Beëindiging",
+              "description": "Na meerdere waarschuwingen kan je ISP je internetdienst beëindigen. Dit varieert per land en provider.",
+              "color": "yellow"
+            },
+            {
+              "title": "Privacy Invasie",
+              "description": "Je IP onthult je geschatte locatie en ISP. Kwaadwillende actoren kunnen dit gebruiken voor gerichte aanvallen.",
+              "color": "purple"
+            }
+          ]
+        },
+        "features": {
+          "title": "Essentiële VPN-functies voor Torrenting",
+          "items": [
+            {
+              "title": "Kill Switch",
+              "badge": "Kritiek",
+              "description": "Blokkeert automatisch al het internetverkeer als de VPN-verbinding wegvalt. Zonder dit kan je echte IP secondenlang blootgesteld worden voordat je het merkt.",
+              "whyItMatters": "Waarom het belangrijk is:",
+              "note": "VPN-verbindingen kunnen onverwacht uitvallen. Een kill switch garandeert zero blootstelling.",
+              "critical": true
+            },
+            {
+              "title": "No-Logs Beleid",
+              "badge": "Kritiek",
+              "description": "De VPN-provider slaat geen logs op van je activiteit. Als ze niets hebben, kunnen ze niets overhandigen.",
+              "lookFor": "Zoek naar:",
+              "note": "Onafhankelijke audits (door bedrijven zoals PwC, Deloitte of Cure53) die het no-logs beleid verifiëren.",
+              "critical": true
+            },
+            {
+              "title": "P2P-Geoptimaliseerde Servers",
+              "badge": "Belangrijk",
+              "description": "Toegewijde servers geconfigureerd voor torrentverkeer met hoge bandbreedte en port forwarding ondersteuning.",
+              "whyItMatters": "Waarom het belangrijk is:",
+              "note": "Sommige VPN's blokkeren of beperken P2P op bepaalde servers. P2P-servers zijn geoptimaliseerd voor snelheid.",
+              "critical": false
+            },
+            {
+              "title": "DNS Lekbescherming",
+              "badge": "Belangrijk",
+              "description": "Zorgt ervoor dat DNS-queries door de VPN-tunnel gaan, niet via de servers van je ISP die kunnen loggen welke sites je bezoekt.",
+              "testIt": "Test het:",
+              "note": "Gebruik ipleak.net of dnsleaktest.com terwijl je verbonden bent om te verifiëren dat er geen lekken zijn.",
+              "critical": false
+            },
+            {
+              "title": "Snelle Downloadsnelheden",
+              "badge": "Nice to Have",
+              "description": "Torrenting omvat het overdragen van grote bestanden. Je wilt een VPN die snelheidsverlies minimaliseert (zoek naar 80%+ snelheidsretentie).",
+              "tip": "Tip:",
+              "note": "Gebruik WireGuard protocol voor snelste downloadsnelheden tijdens torrenting.",
+              "critical": false
+            }
+          ]
+        },
+        "bestVpns": {
+          "title": "Beste VPN's voor Torrenting",
+          "vpns": [
+            {
+              "name": "NordVPN",
+              "badge": "Best voor P2P",
+              "rating": "9.7/10",
+              "description": "Toegewijde P2P-servers in 45+ landen. Gecontroleerd no-logs beleid. Double VPN voor extra beveiliging. Snelle WireGuard snelheden.",
+              "features": [
+                "Kill Switch",
+                "No Logs",
+                "P2P Servers",
+                "WireGuard"
+              ],
+              "visitLink": "Bezoek NordVPN"
+            },
+            {
+              "name": "ExpressVPN",
+              "badge": "Snelste",
+              "rating": "9.6/10",
+              "description": "P2P toegestaan op alle servers. TrustedServer technologie (alleen RAM). Lightway protocol voor snelle downloads. Geverifieerd no-logs.",
+              "features": [
+                "Kill Switch",
+                "No Logs",
+                "Alle Servers P2P",
+                "Alleen RAM"
+              ],
+              "visitLink": "Bezoek ExpressVPN"
+            },
+            {
+              "name": "Mullvad",
+              "badge": "Meest Privé",
+              "rating": "9.2/10",
+              "description": "Anonieme accountnummers (geen e-mail nodig). Betaal met contant of crypto. Port forwarding ondersteuning. Open-source apps.",
+              "features": [
+                "Kill Switch",
+                "Anoniem",
+                "Port Forward",
+                "WireGuard"
+              ]
+            }
+          ],
+          "viewFullComparison": "Bekijk Volledige VPN Vergelijking"
+        },
+        "setup": {
+          "title": "Hoe een VPN Instellen voor Torrenting",
+          "steps": [
+            {
+              "number": 1,
+              "title": "Kies een P2P-Vriendelijke VPN",
+              "description": "Zorg ervoor dat de VPN torrenting expliciet toestaat en P2P-geoptimaliseerde servers heeft."
+            },
+            {
+              "number": 2,
+              "title": "Installeer en Configureer",
+              "description": "Download de VPN-app en schakel de kill switch in bij de instellingen. Dit is cruciaal - sla dit niet over!"
+            },
+            {
+              "number": 3,
+              "title": "Verbind met P2P-server",
+              "description": "Selecteer een server geoptimaliseerd voor P2P-verkeer. Kies er één geografisch dicht bij je voor betere snelheden."
+            },
+            {
+              "number": 4,
+              "title": "Test op Lekken",
+              "description": "Bezoek ipleak.net om te verifiëren dat je echte IP niet zichtbaar is. Controleer ook de DNS-lektest."
+            },
+            {
+              "number": 5,
+              "title": "Configureer Torrentclient",
+              "description": "Bind je torrentclient aan de VPN-interface. Dit voegt een extra beschermingslaag toe als de VPN uitvalt."
+            },
+            {
+              "number": 6,
+              "title": "Begin met Downloaden",
+              "description": "Je bent nu beschermd! Je echte IP is verborgen voor de torrent swarm."
+            }
+          ],
+          "proTip": {
+            "title": "Pro Tip: Je Torrentclient Binden",
+            "description": "In qBittorrent: Instellingen → Geavanceerd → Netwerkinterface → Selecteer je VPN-adapter. In Deluge: Voorkeuren → Netwerk → Interface. Dit zorgt ervoor dat torrents ALLEEN werken wanneer VPN verbonden is."
+          }
+        },
+        "legal": {
+          "title": "Juridische Overwegingen",
+          "question": "Is Torrenting Legaal?",
+          "intro": "Torrenting zelf is volledig legaal - het is gewoon een technologie voor het delen van bestanden. Wat telt is wat je downloadt:",
+          "legalTitle": "Legale Torrents",
+          "legalItems": [
+            "Linux distributies",
+            "Open-source software",
+            "Publiek domein boeken/films",
+            "Creative Commons content",
+            "Persoonlijk bestanden delen",
+            "Game patches/mods (geautoriseerd)"
+          ],
+          "illegalTitle": "Illegale Torrents",
+          "illegalItems": [
+            "Auteursrechtelijk beschermde films/TV-shows",
+            "Commerciële software",
+            "Betaalde muziekalbums",
+            "E-books nog onder auteursrecht",
+            "Gepirateerde games",
+            "Elke content waarvoor je geen rechten hebt"
+          ],
+          "warning": {
+            "title": "Een VPN Maakt Illegale Activiteit Niet Legaal",
+            "description": "Een VPN beschermt je privacy maar verandert de wet niet. Het downloaden van auteursrechtelijk beschermd materiaal zonder toestemming is illegaal, ongeacht of je een VPN gebruikt."
+          }
+        },
+        "keyTakeaways": {
+          "title": "Belangrijkste Punten",
+          "items": [
+            "Gebruik altijd een VPN met een kill switch bij torrenting",
+            "Kies VPN's met geverifieerde no-logs beleid en P2P-servers",
+            "Test op IP- en DNS-lekken voordat je downloads start",
+            "Bind je torrentclient aan de VPN-interface voor extra bescherming"
+          ]
+        }
+      }
+    },
+    "vpnForTravel": {
+      "meta": {
+        "title": "VPN voor Reizen: Essentiële Gids om Verbonden te Blijven in het Buitenland (2025) - ZeroToVPN",
+        "description": "Leer waarom je een VPN nodig hebt tijdens het reizen. Toegang tot thuiscontent, omzeil censuur, bescherm jezelf op hotel-WiFi en vind deals. Complete reis-VPN gids."
+      },
+      "hero": {
+        "badge": "Reisgids",
+        "readTime": "10 min lezen",
+        "title": "VPN voor Reizen Gids",
+        "subtitle": "Reis je naar het buitenland? Een VPN is net zo essentieel als je paspoort. Leer hoe je toegang krijgt tot thuiscontent, veilig blijft op hotel-WiFi, censuur omzeilt en zelfs geld bespaart op boekingen.",
+        "updated": "Bijgewerkt november 2025",
+        "level": "Reis Essentieel"
+      },
+      "toc": {
+        "title": "In Deze Gids:",
+        "items": [
+          "1. Waarom je een VPN nodig hebt voor Reizen",
+          "2. Toegang tot Content van Thuis",
+          "3. Censuur Omzeilen",
+          "4. Reis Beveiligingstips",
+          "5. Geld Besparen met VPNs",
+          "6. Beste VPNs voor Reizigers"
+        ]
+      },
+      "relatedGuides": {
+        "title": "Blijf Leren",
+        "guides": [
+          {
+            "title": "Openbare WiFi Veiligheid",
+            "description": "Essentiële beveiligingstips voor openbare netwerken.",
+            "url": "/guides/public-wifi-safety"
+          },
+          {
+            "title": "VPN op Mobiel",
+            "description": "Stel VPN in op je smartphone of tablet.",
+            "url": "/guides/vpn-on-mobile"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Klaar voor je Volgende Avontuur?",
+        "description": "Vertrek niet zonder VPN-bescherming. Vergelijk de beste VPNs voor internationaal reizen en blijf overal verbonden.",
+        "button": "Bekijk Beste VPNs"
+      },
+      "sections": {
+        "whyNeedVpn": {
+          "title": "Waarom je een VPN nodig hebt voor Reizen",
+          "intro": "Reizen zonder VPN betekent onnodige risico's en beperkingen accepteren. Of je nu op zakenreis bent of op vakantie, een VPN is essentieel voor het behouden van je digitale vrijheid en beveiliging in het buitenland.",
+          "reasons": [
+            {
+              "title": "Toegang tot Thuiscontent",
+              "description": "Bekijk je favoriete shows en sport vanaf elke plek ter wereld",
+              "icon": "Tv"
+            },
+            {
+              "title": "Blijf Veilig",
+              "description": "Bescherm je gegevens op openbare WiFi-netwerken in hotels en op luchthavens",
+              "icon": "Shield"
+            },
+            {
+              "title": "Omzeil Censuur",
+              "description": "Krijg toegang tot geblokkeerde websites en diensten in restrictieve landen",
+              "icon": "Globe"
+            },
+            {
+              "title": "Bespaar Geld",
+              "description": "Vind betere deals door prijzen uit verschillende landen te vergelijken",
+              "icon": "DollarSign"
+            }
+          ],
+          "proTip": "Pro Tip: Stel je VPN in en test deze voordat je vertrekt. Wacht niet tot je al in het buitenland bent en te maken krijgt met verbindingsproblemen of geblokkeerde diensten."
+        },
+        "accessHomeContent": {
+          "title": "Toegang tot Content van Thuis",
+          "intro": "Een van de meest frustrerende onderdelen van reizen is ontdekken dat je favoriete streamingdiensten, bank-apps of lokale websites niet werken in het buitenland door geo-restricties.",
+          "services": [
+            {
+              "title": "Streamingdiensten",
+              "description": "Netflix, Hulu, BBC iPlayer en andere streamingplatforms beperken vaak content op basis van je locatie.",
+              "solution": "Maak verbinding met een VPN-server in je thuisland om toegang te krijgen tot je gebruikelijke contentbibliotheek.",
+              "icon": "Tv"
+            },
+            {
+              "title": "Bank & Financiële Diensten",
+              "description": "Sommige banken blokkeren toegang vanuit het buitenland als veiligheidsmaatregel.",
+              "solution": "Gebruik een VPN om te verschijnen alsof je toegang hebt vanuit je thuisland.",
+              "icon": "CreditCard"
+            },
+            {
+              "title": "Sport & Live Evenementen",
+              "description": "Live sportuitzendingen zijn vaak geo-beperkt op basis van uitzendrechten.",
+              "solution": "Maak verbinding met een server in een land met uitzendrechten om live te kijken.",
+              "icon": "MapPin"
+            }
+          ],
+          "legalNote": {
+            "title": "Belangrijke Juridische Opmerking",
+            "text": "Hoewel het gebruik van een VPN legaal is in de meeste landen, kan toegang tot content de servicevoorwaarden schenden. Controleer de servicevoorwaarden van je streamingdienst voordat je een VPN gebruikt om toegang te krijgen tot geo-beperkte content."
+          }
+        },
+        "bypassCensorship": {
+          "title": "Censuur & Restricties Omzeilen",
+          "intro": "Veel landen leggen strenge internetcensuur op, waarbij toegang tot sociale media, nieuwssites, messaging-apps en andere online diensten wordt geblokkeerd. Een VPN helpt je toegang te behouden tot het open internet.",
+          "tableHeaders": {
+            "country": "Land",
+            "blocked": "Vaak Geblokkeerd",
+            "status": "VPN Status"
+          },
+          "countries": [
+            {
+              "country": "China",
+              "blocked": "Facebook, Google, YouTube, WhatsApp",
+              "status": "VPN Vereist",
+              "statusVariant": "destructive",
+              "icon": "red"
+            },
+            {
+              "country": "VAE",
+              "blocked": "VoIP-diensten (Skype, WhatsApp gesprekken)",
+              "status": "Beperkt",
+              "statusVariant": "secondary",
+              "icon": "orange"
+            },
+            {
+              "country": "Rusland",
+              "blocked": "Diverse sociale media en nieuwssites",
+              "status": "Beperkt",
+              "statusVariant": "secondary",
+              "icon": "blue"
+            },
+            {
+              "country": "Iran",
+              "blocked": "Sociale media, messaging-apps",
+              "status": "VPN Vereist",
+              "statusVariant": "destructive",
+              "icon": "purple"
+            },
+            {
+              "country": "Turkije",
+              "blocked": "Wikipedia, sommige sociale media",
+              "status": "Beperkt",
+              "statusVariant": "secondary",
+              "icon": "green"
+            }
+          ],
+          "tips": {
+            "title": "Tips voor VPN Gebruik in Restrictieve Landen",
+            "items": [
+              "Download en configureer je VPN voordat je reist naar landen met restricties",
+              "Test je VPN-verbinding voordat je deze kritiek nodig hebt",
+              "Heb meerdere VPN-servers geconfigureerd als backup",
+              "Gebruik geobfusceerde servers ontworpen om deep packet inspection te omzeilen",
+              "Controleer of je VPN-provider werkt in je bestemmingsland"
+            ]
+          },
+          "legalWarning": {
+            "title": "Juridische Waarschuwing",
+            "text": "VPN-gebruik is beperkt of illegaal in sommige landen. Onderzoek lokale wetten voordat je reist en gebruik VPN's verantwoord. Deze gids is alleen voor informatieve doeleinden."
+          }
+        },
+        "travelSecurity": {
+          "title": "Reis Beveiligingstips",
+          "intro": "Openbare WiFi-netwerken zijn handig maar gevaarlijk. Hackers richten zich vaak op reizigers op hotel- en luchthaven-WiFi om persoonlijke informatie, wachtwoorden en creditcardgegevens te stelen.",
+          "networks": [
+            {
+              "title": "Hotel WiFi",
+              "description": "Vaak onbeveiligd en gemakkelijk te monitoren. Gebruik altijd een VPN bij verbinding met hotelnetwerken.",
+              "icon": "Hotel"
+            },
+            {
+              "title": "Luchthaven WiFi",
+              "description": "Openbare netwerken op luchthavens zijn primaire doelwitten voor hackers. Schakel je VPN in voordat je verbinding maakt.",
+              "icon": "Plane"
+            },
+            {
+              "title": "Café & Restaurant WiFi",
+              "description": "Gratis openbare WiFi is handig maar onveilig. Bescherm je gegevens met een VPN-verbinding.",
+              "icon": "Car"
+            },
+            {
+              "title": "Cruiseschip WiFi",
+              "description": "Duur en vaak onveilig. Een VPN kan helpen je gegevens te beschermen en mogelijk geld besparen.",
+              "icon": "Ship"
+            }
+          ],
+          "dos": {
+            "title": "Beveiligings Do's",
+            "items": [
+              "Schakel VPN in voordat je verbinding maakt met openbare WiFi",
+              "Gebruik twee-factor authenticatie op belangrijke accounts",
+              "Houd je VPN-app up-to-date",
+              "Gebruik sterke, unieke wachtwoorden",
+              "Schakel automatische VPN-verbinding in"
+            ]
+          },
+          "donts": {
+            "title": "Beveiligings Don'ts",
+            "items": [
+              "Toegang tot bankieren zonder VPN op openbare WiFi",
+              "Laat VPN losgekoppeld op onbeveiligde netwerken",
+              "Deel je VPN-inloggegevens",
+              "Gebruik gratis VPN-diensten (ze verkopen vaak je gegevens)",
+              "Negeer VPN-verbindingsfouten"
+            ]
+          }
+        },
+        "saveMoney": {
+          "title": "Geld Besparen met VPN's",
+          "intro": "Veel reisdiensten gebruiken dynamische prijzen op basis van je locatie. Luchtvaartmaatschappijen, hotels en autoverhuurbedrijven tonen vaak verschillende prijzen aan gebruikers uit verschillende landen.",
+          "howItWorks": {
+            "title": "Hoe Locatiegebaseerde Prijzen Werken",
+            "description": "Bedrijven passen prijzen aan op basis van je IP-adreslocatie, browsegeschiedenis en veronderstelde koopkracht. Dezelfde vlucht kan honderden euro's meer kosten in het ene land dan in het andere.",
+            "examples": [
+              {
+                "price": "$450",
+                "location": "Vanuit VS",
+                "color": "red"
+              },
+              {
+                "price": "$380",
+                "location": "Vanuit VK",
+                "color": "orange"
+              },
+              {
+                "price": "$320",
+                "location": "Vanuit India",
+                "color": "green"
+              }
+            ]
+          },
+          "services": [
+            {
+              "title": "Vluchtboekingen",
+              "description": "Luchtvaartmaatschappijen en boekingssites tonen vaak verschillende prijzen op basis van je locatie.",
+              "tip": "Probeer servers in verschillende landen en gebruik incognito-modus om prijzen te vergelijken.",
+              "icon": "Plane"
+            },
+            {
+              "title": "Hotelboekingen",
+              "description": "Hotelboekingssites kunnen verschillende tarieven bieden voor verschillende regio's.",
+              "tip": "Controleer prijzen vanuit verschillende landen voordat je boekt.",
+              "icon": "Building"
+            },
+            {
+              "title": "Autoverhuur",
+              "description": "Verhuurbedrijven hebben soms regiospecifieke prijzen.",
+              "tip": "Vergelijk prijzen vanuit je thuisland vs. bestemmingsland.",
+              "icon": "Car"
+            }
+          ],
+          "realityCheck": {
+            "title": "Realiteitscheck",
+            "text": "Besparingen zijn niet gegarandeerd. Prijzen fluctueren op basis van veel factoren. Gebruik VPN-locatiewisseling als één strategie onder veel voor het vinden van de beste deals."
+          }
+        },
+        "bestVpns": {
+          "title": "Beste VPN's voor Reizigers",
+          "intro": "Niet alle VPN's zijn gelijk geschapen voor reizen. Je hebt betrouwbare verbindingen nodig, brede serverbedekking en functies speciaal ontworpen voor reizigers.",
+          "vpns": [
+            {
+              "name": "ExpressVPN",
+              "badge": "Redactie Keuze",
+              "badgeVariant": "default",
+              "description": "Beste algeheel voor reizen met servers in 105+ landen en betrouwbare verbinding.",
+              "features": [
+                "Werkt in China en restrictieve landen",
+                "24/7 klantenondersteuning",
+                "Snelle snelheden voor streaming",
+                "Eenvoudig te gebruiken apps voor alle apparaten",
+                "30-dagen geld-terug-garantie"
+              ],
+              "link": "expressvpn"
+            },
+            {
+              "name": "NordVPN",
+              "badge": "Beste Waarde",
+              "badgeVariant": "secondary",
+              "description": "Geweldige waarde met uitstekende beveiligingsfuncties en geobfusceerde servers.",
+              "features": [
+                "Geobfusceerde servers voor het omzeilen van censuur",
+                "Double VPN voor extra beveiliging",
+                "Groot servernetwerk",
+                "Betaalbare langetermijnplannen",
+                "30-dagen geld-terug-garantie"
+              ],
+              "link": "nordvpn"
+            },
+            {
+              "name": "Surfshark",
+              "badge": "Budget Keuze",
+              "badgeVariant": "secondary",
+              "description": "Budgetvriendelijke optie met onbeperkte apparaatverbindingen.",
+              "features": [
+                "Onbeperkte gelijktijdige verbindingen",
+                "NoBorders-modus voor restrictieve landen",
+                "CleanWeb adblocker",
+                "Zeer betaalbare prijzen",
+                "30-dagen geld-terug-garantie"
+              ],
+              "link": "surfshark"
+            }
+          ],
+          "featureChecklist": {
+            "title": "Reis VPN Functie Checklist",
+            "features": [
+              "Serverlocaties in je thuisland en reisbestemmingen",
+              "Mobiele apps voor iOS en Android",
+              "24/7 klantenondersteuning",
+              "Kill switch om te beschermen als VPN uitvalt",
+              "Obfuscatietechnologie voor censuuromzeiling",
+              "No-logs beleid voor privacy",
+              "Ondersteuning voor meerdere apparaten"
+            ]
+          }
+        },
+        "preTravel": {
+          "title": "Pre-Reis VPN Checklist",
+          "beforeDeparture": {
+            "title": "Voor Vertrek",
+            "items": [
+              "Abonneer op een betrouwbare VPN-dienst",
+              "Download en installeer VPN-apps op alle apparaten",
+              "Test de VPN-verbinding thuis",
+              "Bewaar VPN-serverlijst voor je bestemming",
+              "Onderzoek internetrestricties in je bestemming",
+              "Schakel auto-connect functie in",
+              "Download offline kaarten en content"
+            ]
+          },
+          "uponArrival": {
+            "title": "Bij Aankomst",
+            "items": [
+              "Maak verbinding met VPN voordat je toegang krijgt tot WiFi",
+              "Test of je VPN werkt in het land",
+              "Configureer automatische verbinding",
+              "Controleer of je IP-adres gemaskeerd is",
+              "Test toegang tot geblokkeerde diensten",
+              "Bewaar lokale noodcontactinformatie",
+              "Houd VPN klantenondersteuningsgegevens bij de hand"
+            ]
+          }
+        }
+      }
+    },
+    "vpnOnMobile": {
+      "meta": {
+        "title": "VPN op Mobiel: Complete iOS & Android Setup Gids (2025) - ZeroToVPN",
+        "description": "Leer hoe je een VPN instelt en gebruikt op je iPhone of Android-apparaat. Stap-voor-stap handleidingen, best practices en tips voor mobiele VPN-beveiliging."
+      },
+      "hero": {
+        "badge": "Mobiele Gids",
+        "readTime": "9 min lezen",
+        "title": "VPN op Mobiele Apparaten",
+        "subtitle": "Je smartphone gaat overal mee naartoe - en je VPN-bescherming ook. Leer hoe je een VPN instelt en optimaliseert op iOS en Android voor maximale beveiliging en gebruiksgemak.",
+        "updated": "Bijgewerkt november 2025",
+        "level": "Mobiele Setup Gids"
+      },
+      "toc": {
+        "title": "In Deze Gids:",
+        "items": [
+          "1. Waarom VPN gebruiken op Mobiel?",
+          "2. VPN Setup op iPhone/iPad",
+          "3. VPN Setup op Android",
+          "4. Optimale Mobiele VPN-instellingen",
+          "5. Batterij & Prestatie Tips",
+          "6. Beste VPNs voor Mobiel"
+        ]
+      },
+      "relatedGuides": {
+        "title": "Blijf Leren",
+        "guides": [
+          {
+            "title": "Openbare WiFi Veiligheid",
+            "description": "Blijf veilig op openbare netwerken.",
+            "url": "/guides/public-wifi-safety"
+          },
+          {
+            "title": "VPN voor Reizen",
+            "description": "Essentiële VPN-gids voor reizigers.",
+            "url": "/guides/vpn-for-travel"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Klaar om je Mobiele Apparaat te Beschermen?",
+        "description": "Vergelijk de beste mobiel-vriendelijke VPNs en vind de perfecte bescherming voor je smartphone of tablet.",
+        "button": "Bekijk Beste VPNs"
+      },
+      "sections": {
+        "whyMobileVpn": {
+          "title": "Waarom VPN gebruiken op Mobiel?",
+          "intro": "Je smartphone is altijd verbonden - of je nu op WiFi zit in een coffeeshop, mobiele data gebruikt of verbonden bent met je thuisnetwerk. Deze constante connectiviteit creëert meerdere mogelijkheden voor privacy-inbreuken en beveiligingsdreigingen.",
+          "benefits": [
+            {
+              "title": "Openbare WiFi Bescherming",
+              "description": "Versleutel je verbinding op onbeveiligde openbare netwerken om man-in-the-middle aanvallen en data snooping te voorkomen.",
+              "icon": "Wifi"
+            },
+            {
+              "title": "Toegang tot Geo-Geblokkeerde Content",
+              "description": "Stream je favoriete shows en krijg toegang tot regio-vergrendelde apps tijdens het reizen in het buitenland.",
+              "icon": "Globe"
+            },
+            {
+              "title": "Verberg Je Locatie",
+              "description": "Voorkom dat apps en websites je echte IP-adres en locatie volgen voor gerichte advertenties.",
+              "icon": "Shield"
+            },
+            {
+              "title": "Beveilig Bankieren & Winkelen",
+              "description": "Voeg een extra versleutelingslaag toe bij toegang tot gevoelige financiële apps onderweg.",
+              "icon": "Lock"
+            }
+          ],
+          "didYouKnow": "Mobiele apparaten schakelen vaak automatisch tussen netwerken, waardoor ze kwetsbaarder zijn voor aanvallen. Een VPN met auto-connect zorgt ervoor dat je altijd beschermd bent."
+        },
+        "iosSetup": {
+          "title": "VPN Instellen op iPhone/iPad",
+          "intro": "iOS maakt VPN-installatie eenvoudig. Zo begin je met een VPN op je Apple-apparaat:",
+          "steps": [
+            {
+              "number": 1,
+              "title": "Download uit App Store",
+              "description": "Zoek naar je VPN-provider in de App Store en download hun officiële app. Vermijd apps van derden of onofficiële apps."
+            },
+            {
+              "number": 2,
+              "title": "Inloggen of Account Aanmaken",
+              "description": "Open de app en log in met je bestaande account, of maak een nieuw abonnement aan indien nodig."
+            },
+            {
+              "number": 3,
+              "title": "Sta VPN-configuratie toe",
+              "description": "Wanneer gevraagd, tik op \"Toestaan\" om de app VPN-configuraties te laten toevoegen. Je moet authenticeren met Face ID of Touch ID."
+            },
+            {
+              "number": 4,
+              "title": "Verbind met een Server",
+              "description": "Selecteer een serverlocatie en tik op verbinden. Je ziet een VPN-pictogram in de statusbalk wanneer je verbonden bent."
+            }
+          ],
+          "iosSettings": {
+            "title": "iOS-Specifieke Instellingen",
+            "settings": [
+              "Schakel \"Verbind op Verzoek\" in voor automatische bescherming",
+              "Gebruik IKEv2 of WireGuard voor beste iOS-integratie",
+              "Sta meldingen toe voor verbindingsstatuswaarschuwingen"
+            ]
+          }
+        },
+        "androidSetup": {
+          "title": "VPN Instellen op Android",
+          "intro": "Android biedt meer flexibiliteit met VPN-configuraties. Hier is het installatieproces:",
+          "steps": [
+            {
+              "number": 1,
+              "title": "Download uit Google Play",
+              "description": "Haal je VPN-app op uit Google Play Store. Controleer de ontwikkelaarsnaam om te verifiëren dat het de officiële app is."
+            },
+            {
+              "number": 2,
+              "title": "Verleen Permissies",
+              "description": "Accepteer het VPN-verbindingsverzoek wanneer gevraagd. Android toont een waarschuwing over netwerkmonitoring - dit is normaal."
+            },
+            {
+              "number": 3,
+              "title": "Configureer Always-On VPN",
+              "description": "Ga naar Instellingen → Netwerk → VPN → je VPN-app → schakel \"Always-on VPN\" in voor persistente bescherming."
+            },
+            {
+              "number": 4,
+              "title": "Schakel Kill Switch in",
+              "description": "Zoek naar \"Blokkeer verbindingen zonder VPN\" in Android-instellingen of de kill switch-functie van de app."
+            }
+          ],
+          "androidFeatures": {
+            "title": "Android-Specifieke Functies",
+            "features": [
+              "Split tunneling om specifieke apps uit te sluiten van VPN",
+              "Per-app VPN-instellingen (Android 7.0+)",
+              "Widget-ondersteuning voor snel verbinden/verbreken"
+            ]
+          }
+        },
+        "bestSettings": {
+          "title": "Optimale Mobiele VPN-instellingen",
+          "intro": "Configureer deze instellingen voor de beste balans tussen beveiliging, snelheid en batterijduur op mobiel:",
+          "settings": [
+            {
+              "setting": "Protocol",
+              "recommended": "WireGuard",
+              "why": "Best voor mobiel - snel, lichtgewicht, batterij-efficiënt"
+            },
+            {
+              "setting": "Auto-Connect",
+              "recommended": "Ingeschakeld",
+              "why": "Maakt automatisch verbinding bij het deelnemen aan niet-vertrouwde netwerken"
+            },
+            {
+              "setting": "Kill Switch",
+              "recommended": "Ingeschakeld",
+              "why": "Voorkomt datalekken als VPN-verbinding wegvalt"
+            },
+            {
+              "setting": "Split Tunneling",
+              "recommended": "Indien nodig",
+              "why": "Sluit bank-apps uit die VPN-verbindingen kunnen blokkeren"
+            },
+            {
+              "setting": "DNS",
+              "recommended": "VPN's DNS",
+              "why": "Voorkomt DNS-lekken en garandeert privacy"
+            }
+          ],
+          "iosWarning": {
+            "title": "Belangrijk voor iOS-gebruikers",
+            "text": "iOS kan af en toe VPN omzeilen voor Apple-diensten. Controleer je VPN-app op opties om alle verkeer op te nemen of gebruik een firewall-app."
+          }
+        },
+        "batteryTips": {
+          "title": "Batterij & Prestatie Tips",
+          "intro": "Een veelvoorkomende zorg is VPN-impact op batterijduur. Zo minimaliseer je batterijverbruik terwijl je beschermd blijft:",
+          "doThis": {
+            "title": "Doe Dit",
+            "items": [
+              "Gebruik WireGuard protocol (meest efficiënt)",
+              "Maak verbinding met nabijgelegen servers",
+              "Schakel auto-connect alleen in voor WiFi",
+              "Gebruik split tunneling verstandig",
+              "Houd de app up-to-date"
+            ]
+          },
+          "avoidThis": {
+            "title": "Vermijd Dit",
+            "items": [
+              "Constant servers wisselen",
+              "Double VPN gebruiken tenzij nodig",
+              "Verbinden met verre servers",
+              "Meerdere beveiligings-apps draaien",
+              "Oudere protocollen zoals PPTP gebruiken"
+            ]
+          },
+          "protocolImpact": {
+            "title": "Batterij-impact per Protocol",
+            "protocols": [
+              {
+                "name": "WireGuard",
+                "impact": "Lage Impact",
+                "percentage": 20
+              },
+              {
+                "name": "IKEv2",
+                "impact": "Lage Impact",
+                "percentage": 25
+              },
+              {
+                "name": "OpenVPN",
+                "impact": "Gematigde Impact",
+                "percentage": 50
+              }
+            ]
+          }
+        },
+        "bestVpns": {
+          "title": "Beste VPN's voor Mobiel",
+          "intro": "Niet alle VPN's presteren gelijk op mobiel. Hier zijn onze topkeuzes gebaseerd op app-kwaliteit, batterij-efficiëntie en mobiel-specifieke functies:",
+          "vpns": [
+            {
+              "name": "ExpressVPN",
+              "badge": "Redactie Keuze",
+              "description": "Beste algehele mobiele ervaring",
+              "features": [
+                "Lightway protocol geoptimaliseerd voor mobiel",
+                "Uitstekende iOS en Android apps",
+                "Network Lock kill switch"
+              ]
+            },
+            {
+              "name": "NordVPN",
+              "badge": "Top Keuze",
+              "description": "Best voor beveiligingsgerichte gebruikers",
+              "features": [
+                "NordLynx (WireGuard-gebaseerd) voor snelheid",
+                "Threat Protection op mobiel",
+                "Dark Web Monitor inbegrepen"
+              ]
+            },
+            {
+              "name": "Surfshark",
+              "badge": "Beste Waarde",
+              "description": "Beste waarde met onbeperkte apparaten",
+              "features": [
+                "Onbeperkte gelijktijdige verbindingen",
+                "CleanWeb adblocker ingebouwd",
+                "GPS spoofing op Android"
+              ]
+            }
+          ],
+          "proTip": "Download je VPN-app voordat je reist naar landen met beperkte internettoegang. Sommige app stores bieden mogelijk geen VPN-apps aan in bepaalde regio's."
+        },
+        "quickTips": {
+          "title": "Mobiele VPN Snelle Tips",
+          "tips": [
+            {
+              "title": "Gebruik Biometrische Vergrendeling",
+              "description": "Schakel Face ID/vingerafdruk in om ongeautoriseerde VPN-toegang te voorkomen",
+              "icon": "Key"
+            },
+            {
+              "title": "Houd App Up-to-date",
+              "description": "Updates bevatten vaak beveiligingspatches en prestatieverbeteringen",
+              "icon": "RefreshCw"
+            },
+            {
+              "title": "Markeer Je Servers als Favoriet",
+              "description": "Bewaar regelmatig gebruikte servers voor snelle verbinding met één tik",
+              "icon": "MapPin"
+            },
+            {
+              "title": "Gebruik Widgets",
+              "description": "Voeg VPN-widget toe aan startscherm voor snelle toegang",
+              "icon": "ToggleLeft"
+            }
+          ]
+        }
+      }
+    },
+    "vpnPrivacyGuide": {
+      "meta": {
+        "title": "VPN Privacy Gids: No-Logs Beleid & Jurisdictie Uitgelegd (2025) - ZeroToVPN",
+        "description": "Begrijp wat een VPN echt privé maakt. Leer over no-logs beleid, jurisdictie, onafhankelijke audits en hoe je VPN-privacyclaims kunt evalueren."
+      },
+      "hero": {
+        "badge": "Privacy Gids",
+        "readTime": "10 min lezen",
+        "title": "VPN Privacy Gids",
+        "subtitle": "Niet alle VPNs zijn gelijk als het gaat om privacy. Leer wat \"no-logs\" echt betekent, waarom jurisdictie belangrijk is en hoe je kunt zien of een VPN echt je privacy beschermt.",
+        "updated": "Bijgewerkt november 2025",
+        "level": "Privacy Verdieping"
+      },
+      "toc": {
+        "title": "In Deze Gids:",
+        "items": [
+          "1. Wat is VPN Privacy?",
+          "2. No-Logs Beleid Uitgelegd",
+          "3. Waarom Jurisdictie Belangrijk is",
+          "4. Onafhankelijke Audits",
+          "5. Privacy Waarschuwingssignalen",
+          "6. Privacy Checklist"
+        ]
+      },
+      "relatedGuides": {
+        "title": "Blijf Leren",
+        "guides": [
+          {
+            "title": "VPN voor Torrenting",
+            "description": "Pas privacykennis toe op veilig P2P downloaden.",
+            "url": "/guides/vpn-for-torrenting"
+          },
+          {
+            "title": "Hoe Werkt een VPN?",
+            "description": "Begrijp de technische details van VPN-bescherming.",
+            "url": "/guides/how-vpn-works"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Vind een Echt Privé VPN",
+        "description": "Vergelijk VPNs op basis van privacyfuncties, no-logs beleid en onafhankelijke audits.",
+        "button": "Vergelijk Privé VPNs"
+      },
+      "sections": {
+        "whatIsPrivacy": {
+          "title": "Wat is VPN Privacy?",
+          "intro1": "VPN privacy verwijst naar hoe goed een VPN-dienst je identiteit, browseactiviteit en persoonlijke gegevens beschermt tegen tracking, logging of blootstelling aan derden, inclusief je ISP, overheidsinstanties en de VPN-provider zelf.",
+          "intro2": "De fundamentele privacy-paradox: Je moet je VPN-provider vertrouwen met je internetverkeer. Zonder de juiste privacy-bescherming verplaats je surveillance simpelweg van je ISP naar het VPN-bedrijf.",
+          "trustShiftTitle": "De Vertrouwensverschuiving Paradox",
+          "trustShiftIntro": "Een VPN gebruiken verschuift wie je internetactiviteit kan zien, maar elimineert vertrouwensvereisten niet volledig.",
+          "withoutVpn": {
+            "title": "Zonder VPN",
+            "description": "Je ISP kan elke website die je bezoekt zien, je activiteit loggen, je gegevens verkopen aan adverteerders en is wettelijk verplicht te voldoen aan overheidssurveillanceverzoeken."
+          },
+          "withVpn": {
+            "title": "Met VPN",
+            "description": "Je ISP ziet alleen versleuteld VPN-verkeer. De VPN-provider ziet in plaats daarvan je activiteit. Privacy hangt volledig af van het logbeleid, de jurisdictie en de integriteit van de VPN-provider."
+          },
+          "keyElementsTitle": "Belangrijkste Privacy Elementen",
+          "keyElements": [
+            {
+              "title": "No-logs beleid:",
+              "description": "De VPN registreert je browseactiviteit, verbindingstijden, IP-adressen of bandbreedtegebruik niet."
+            },
+            {
+              "title": "Privacy-vriendelijke jurisdictie:",
+              "description": "Het bedrijf opereert in een land met sterke privacywetten en geen verplichte data-retentievereisten."
+            },
+            {
+              "title": "Onafhankelijke audits:",
+              "description": "Externe beveiligingsbedrijven hebben de no-logs claims en infrastructuurbeveiliging van de VPN geverifieerd."
+            },
+            {
+              "title": "Transparant eigendom:",
+              "description": "Het bedrijf maakt duidelijk bekend wie de dienst bezit en exploiteert, waar ze gevestigd zijn en hun privacy-trackrecord."
+            }
+          ]
+        },
+        "noLogs": {
+          "title": "No-Logs Beleid Begrijpen",
+          "intro": "Een no-logs beleid betekent dat de VPN-provider geen informatie registreert die jou of je online activiteiten kan identificeren. Niet alle \"no-logs\" beleid zijn echter gelijk. Sommige VPN's beweren \"no-logs\" te zijn terwijl ze nog steeds aanzienlijke metadata verzamelen.",
+          "loggingTypesTitle": "Types Logbeleid",
+          "loggingTypes": [
+            {
+              "type": "Volledig Loggen",
+              "badge": "Vermijd",
+              "badgeColor": "destructive",
+              "description": "Registreert browsegeschiedenis, verbindingstijdstempels, IP-adressen, bandbreedtegebruik en sessie-informatie.",
+              "warning": "Verslaat het privacy-doel van het gebruik van een VPN volledig."
+            },
+            {
+              "type": "Metadata Loggen",
+              "badge": "Gebruik Voorzichtig",
+              "badgeColor": "orange",
+              "description": "Logt geen browseactiviteit maar registreert wel verbindingstijden, sessieduur en bandbreedte. Claimt vaak \"no-logs\" te zijn in marketing.",
+              "warning": "Metadata kan nog steeds gebruikt worden om gebruikers te identificeren en patronen te volgen."
+            },
+            {
+              "type": "Minimaal Loggen",
+              "badge": "Acceptabel",
+              "badgeColor": "secondary",
+              "description": "Logt alleen minimale gegevens vereist voor dienstwerking: totale bandbreedte gebruikt (niet per sessie) en e-mail voor accountbeheer.",
+              "warning": "Redelijk compromis tussen privacy en dienstfunctionaliteit."
+            },
+            {
+              "type": "Strikt No-Logs",
+              "badge": "Best",
+              "badgeColor": "green",
+              "description": "Geen logging van IP-adressen, browseactiviteit, verbindingstijdstempels, sessiedata, bandbreedte per sessie of DNS-queries. Geverifieerd door onafhankelijke audits.",
+              "warning": "Maximale privacy-bescherming. Zoek naar onafhankelijke audit-verificatie."
+            }
+          ],
+          "verificationTitle": "Hoe No-Logs Claims Verifiëren",
+          "verificationItems": [
+            {
+              "title": "Lees het privacybeleid:",
+              "description": "Zoek naar specifieke verklaringen over wat NIET gelogd wordt, niet alleen marketingclaims."
+            },
+            {
+              "title": "Controleer op onafhankelijke audits:",
+              "description": "Gerenommeerde VPN's huren externe beveiligingsbedrijven in (PwC, Deloitte, Cure53) om hun claims te verifiëren."
+            },
+            {
+              "title": "Onderzoek praktijktests:",
+              "description": "Zoek naar gevallen waarin VPN's gedagvaard werden en geen logs konden verstrekken omdat ze niet bestonden."
+            },
+            {
+              "title": "Controleer transparantierapporten:",
+              "description": "Sommige VPN's publiceren transparantierapporten met overheidsdataverzoeken die ze hebben ontvangen en hun antwoorden."
+            }
+          ]
+        },
+        "jurisdiction": {
+          "title": "VPN Jurisdictie Doet Ertoe",
+          "intro": "Jurisdictie is waar je VPN-provider wettelijk gevestigd is. Dit bepaalt welke wetten ze moeten volgen, inclusief verplichte data-retentievereisten en overheidssurveillanceverplichtingen. Een VPN gevestigd in het verkeerde land kan gedwongen worden je gegevens te loggen, ongeacht hun privacybeleid.",
+          "eyesAlliancesTitle": "De \"Eyes\" Allianties",
+          "eyesAlliancesIntro": "Intelligence-delingsallianties tussen landen. Leden delen surveillancegegevens met elkaar, wat VPN-privacy potentieel kan compromitteren, zelfs als je gegevens niet in je eigen land worden verzameld.",
+          "eyesAlliances": [
+            {
+              "type": "5 Eyes",
+              "countries": "VS, VK, Canada, Australië, Nieuw-Zeeland",
+              "warning": "Hoogste surveillance-samenwerking. VPN's hier gevestigd krijgen de meeste druk.",
+              "color": "red"
+            },
+            {
+              "type": "9 Eyes",
+              "countries": "5 Eyes + Denemarken, Frankrijk, Nederland, Noorwegen",
+              "warning": "",
+              "color": "orange"
+            },
+            {
+              "type": "14 Eyes",
+              "countries": "9 Eyes + Duitsland, België, Italië, Spanje, Zweden",
+              "warning": "",
+              "color": "yellow"
+            }
+          ],
+          "privacyFriendlyTitle": "Privacy-Vriendelijke Jurisdicties",
+          "bestChoices": [
+            "Zwitserland - Sterke privacywetten, neutraal",
+            "Panama - Geen data-retentiewetten",
+            "Britse Maagdeneilanden - Buiten VK jurisdictie",
+            "Roemenië - Geen verplichte data-retentie",
+            "Zweden - GDPR-bescherming ondanks 14 Eyes"
+          ],
+          "vpnLocationsTitle": "Waar Top VPN's Gevestigd Zijn",
+          "vpnLocations": [
+            "ExpressVPN - Britse Maagdeneilanden",
+            "NordVPN - Panama",
+            "Surfshark - Nederland",
+            "ProtonVPN - Zwitserland",
+            "Mullvad - Zweden"
+          ],
+          "importantNoteTitle": "Belangrijke Opmerking",
+          "importantNote": "Jurisdictie alleen garandeert geen privacy. Een VPN in een privacy-vriendelijk land kan nog steeds je gegevens loggen als ze dat willen. Zoek naar de combinatie van goede jurisdictie + strikt no-logs beleid + onafhankelijke audits."
+        },
+        "audits": {
+          "title": "Onafhankelijke Beveiligingsaudits",
+          "intro": "Onafhankelijke audits zijn beveiligingsbeoordelingen door derden die de privacy-claims van een VPN verifiëren. Gerenommeerde bedrijven zoals PwC, Deloitte, Cure53 en KPMG onderzoeken de infrastructuur, code en logpraktijken van de VPN om te bevestigen dat ze overeenkomen met de marketingclaims.",
+          "whatAuditsCheckTitle": "Wat Audits Controleren",
+          "auditChecks": [
+            {
+              "title": "Infrastructuur Beveiliging",
+              "description": "Serverconfiguraties, encryptie-implementatie en netwerkarchitectuur om te garanderen dat ze geen gegevens lekken."
+            },
+            {
+              "title": "No-Logs Verificatie",
+              "description": "Onderzoek van serverlogs, databasesystemen en backend-infrastructuur om te bevestigen dat geen identificeerbare gegevens worden opgeslagen."
+            },
+            {
+              "title": "Code Review",
+              "description": "Analyse van VPN-apps en serversoftware om potentiële privacy-kwetsbaarheden of datalekken te identificeren."
+            },
+            {
+              "title": "DNS Lektesten",
+              "description": "Testen op IP-lekken, DNS-lekken en WebRTC-lekken die je echte identiteit kunnen blootstellen zelfs wanneer je verbonden bent."
+            }
+          ],
+          "auditedVpnsTitle": "Onafhankelijk Gecontroleerde VPN's",
+          "auditedVpns": [
+            {
+              "name": "NordVPN",
+              "audits": "Gecontroleerd door PwC (2018, 2020, 2023)",
+              "badge": "Geverifieerd"
+            },
+            {
+              "name": "ExpressVPN",
+              "audits": "Gecontroleerd door PwC (2019, 2022), Cure53 (2023)",
+              "badge": "Geverifieerd"
+            },
+            {
+              "name": "Surfshark",
+              "audits": "Gecontroleerd door Cure53 (2021, 2023)",
+              "badge": "Geverifieerd"
+            },
+            {
+              "name": "ProtonVPN",
+              "audits": "Gecontroleerd door SEC Consult (2020, 2022)",
+              "badge": "Geverifieerd"
+            }
+          ]
+        },
+        "redFlags": {
+          "title": "Privacy Waarschuwingssignalen om te Vermijden",
+          "flags": [
+            {
+              "title": "Gratis VPN's",
+              "description": "\"Als je niet betaalt voor het product, ben je het product.\" Gratis VPN's loggen en verkopen vaak je gegevens aan adverteerders, injecteren advertenties of bevatten malware. Het bedrijfsmodel vereist het monetariseren van je gegevens.",
+              "severity": "critical"
+            },
+            {
+              "title": "Vage Privacybeleid",
+              "description": "Marketing zegt \"no-logs\" maar het privacybeleid bevat termen zoals \"minimale logging,\" \"anonieme gegevensverzameling\" of \"geaggregeerde statistieken\" zonder duidelijk te definiëren wat verzameld wordt.",
+              "severity": "critical"
+            },
+            {
+              "title": "Geen Onafhankelijke Audits",
+              "description": "Claimt no-logs maar is nooit onafhankelijk gecontroleerd. Waarom hen vertrouwen? Legitieme VPN's zoeken proactief verificatie door derden.",
+              "severity": "critical"
+            },
+            {
+              "title": "Onbekend Eigendom",
+              "description": "VPN maakt niet duidelijk bekend wie het bezit of exploiteert. Sommige VPN's zijn in het geheim eigendom van datamining-bedrijven of gevestigd in surveillance-zware jurisdicties ondanks marketingclaims.",
+              "severity": "warning"
+            },
+            {
+              "title": "Tegenstrijdige Voorwaarden",
+              "description": "Privacybeleid spreekt marketingclaims tegen. Bijvoorbeeld: homepage zegt \"zero logs\" maar privacybeleid noemt \"verbindingstijdstempels\" of \"bandbreedtemonitoring.\"",
+              "severity": "warning"
+            }
+          ]
+        },
+        "checklist": {
+          "title": "VPN Privacy Evaluatie Checklist",
+          "intro": "Gebruik deze checklist bij het evalueren van VPN privacy-claims. Hoe meer vakjes je kunt aanvinken, hoe beter de privacy-bescherming.",
+          "items": [
+            {
+              "title": "Strikt no-logs beleid duidelijk vermeld",
+              "description": "Geen IP-logging, geen tijdstempels, geen browsegeschiedenis, geen DNS-queries opgeslagen."
+            },
+            {
+              "title": "Privacy-vriendelijke jurisdictie",
+              "description": "Buiten 5/9/14 Eyes surveillance-allianties, met sterke privacywetten."
+            },
+            {
+              "title": "Onafhankelijk gecontroleerd",
+              "description": "Recente audit door gerenommeerd bedrijf (PwC, Deloitte, Cure53, etc.) met gepubliceerde resultaten."
+            },
+            {
+              "title": "Transparant eigendom",
+              "description": "Duidelijk bekendgemaakt bedrijfseigendom, leiderschap en fysieke locatie."
+            },
+            {
+              "title": "Transparant privacybeleid",
+              "description": "Duidelijk, gedetailleerd privacybeleid zonder vage termen of tegenstrijdigheden."
+            },
+            {
+              "title": "Bewezen trackrecord",
+              "description": "Praktijkbewijs van no-logs (bijv. kon geen gegevens verstrekken toen gedagvaard)."
+            },
+            {
+              "title": "Anonieme betalingsopties",
+              "description": "Accepteert cryptocurrency of contante betalingen voor echte anonimiteit."
+            },
+            {
+              "title": "Geavanceerde privacy-functies",
+              "description": "Alleen-RAM servers, perfect forward secrecy, diskloze infrastructuur."
+            }
+          ]
+        },
+        "keyTakeaways": {
+          "title": "Belangrijkste Punten",
+          "items": [
+            "Niet alle \"no-logs\" claims zijn gelijk. Lees het privacybeleid zorgvuldig en zoek naar onafhankelijke verificatie.",
+            "Jurisdictie doet er significant toe. VPN's gevestigd in surveillance-zware landen krijgen juridische druk om gegevens te loggen.",
+            "Onafhankelijke beveiligingsaudits zijn de gouden standaard voor het verifiëren van privacy-claims. Zoek naar recente audits van gerenommeerde bedrijven.",
+            "Gratis VPN's zijn privacy-nachtmerries. Ze moeten op de een of andere manier geld verdienen, meestal door het loggen en verkopen van je gegevens.",
+            "De beste privacy komt van het combineren van: strikt no-logs beleid + privacy-vriendelijke jurisdictie + onafhankelijke audits + transparant eigendom."
+          ]
+        }
+      }
+    },
+    "vpnProtocolsExplained": {
+      "meta": {
+        "title": "VPN Protocollen Uitgelegd: WireGuard vs OpenVPN vs IKEv2 (2025) - ZeroToVPN",
+        "description": "Begrijp de verschillen tussen VPN-protocollen. Vergelijk WireGuard, OpenVPN, IKEv2 en anderen om het beste protocol voor jouw behoeften te kiezen."
+      },
+      "hero": {
+        "badge": "Technische Gids",
+        "readTime": "12 min lezen",
+        "title": "VPN Protocollen Uitgelegd",
+        "subtitle": "WireGuard, OpenVPN, IKEv2 - wat betekenen deze termen en welke moet je gebruiken? Deze gids legt VPN-protocollen uit in begrijpelijke taal om je te helpen de juiste keuze te maken.",
+        "updated": "Bijgewerkt november 2025",
+        "level": "Technische Gids"
+      },
+      "toc": {
+        "title": "In Deze Gids:",
+        "items": [
+          "1. Wat is een VPN Protocol?",
+          "2. WireGuard",
+          "3. OpenVPN",
+          "4. IKEv2/IPSec",
+          "5. Andere Protocollen",
+          "6. Protocol Vergelijking"
+        ]
+      },
+      "relatedGuides": {
+        "title": "Blijf Leren",
+        "guides": [
+          {
+            "title": "Hoe Werkt een VPN?",
+            "description": "Begrijp de technische details achter VPN-technologie.",
+            "url": "/guides/how-vpn-works"
+          },
+          {
+            "title": "VPN Snelheid Gids",
+            "description": "Leer hoe je je VPN optimaliseert voor maximale snelheid.",
+            "url": "/guides/vpn-speed-guide"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Vind een VPN met je Voorkeursprotocol",
+        "description": "Vergelijk VPNs op basis van protocolondersteuning, snelheid en beveiligingsfuncties.",
+        "button": "Vergelijk VPNs"
+      },
+      "sections": {
+        "whatIsProtocol": {
+          "title": "Wat is een VPN Protocol?",
+          "intro": "Een VPN-protocol is een set regels die bepaalt hoe gegevens worden versleuteld, verzonden en geauthenticeerd tussen jouw apparaat en de VPN-server. Zie het als de \"taal\" die je VPN spreekt.",
+          "determines": {
+            "title": "Wat Protocollen Bepalen",
+            "items": [
+              {
+                "title": "Encryptiemethode",
+                "description": "Hoe je gegevens worden versleuteld om onderschepping te voorkomen"
+              },
+              {
+                "title": "Authenticatie",
+                "description": "Hoe je identiteit wordt geverifieerd met de VPN-server"
+              },
+              {
+                "title": "Snelheid & Efficiëntie",
+                "description": "Hoe snel gegevens door de VPN-tunnel gaan"
+              },
+              {
+                "title": "Beveiligingsniveau",
+                "description": "Hoe resistent de verbinding is tegen aanvallen"
+              }
+            ]
+          }
+        },
+        "wireguard": {
+          "title": "WireGuard",
+          "badge": "Aanbevolen",
+          "released": "Uitgebracht 2018",
+          "intro": "WireGuard is het nieuwste grote VPN-protocol en is snel de gouden standaard geworden voor snelheid en moderne cryptografie. Het is sinds 2020 ingebouwd in de Linux-kernel.",
+          "stats": [
+            {
+              "value": "~4K",
+              "label": "Regels Code"
+            },
+            {
+              "value": "5%",
+              "label": "Snelheidsverlies"
+            },
+            {
+              "value": "<1ms",
+              "label": "Handshake"
+            },
+            {
+              "value": "ChaCha20",
+              "label": "Encryptie"
+            }
+          ],
+          "advantages": {
+            "title": "Voordelen",
+            "items": [
+              "Snelste protocol beschikbaar",
+              "Moderne, gecontroleerde cryptografie",
+              "Eenvoudige, minimale code (gemakkelijker te controleren)",
+              "Uitstekend voor mobiel (naadloze roaming)",
+              "Ingebouwd in Linux-kernel"
+            ]
+          },
+          "disadvantages": {
+            "title": "Nadelen",
+            "items": [
+              "Nieuwer (minder gevechtsgetest)",
+              "Standaard statisch IP (privacy-zorg)",
+              "Nog niet alle VPN's ondersteunen het",
+              "Alleen UDP (kan geblokkeerd worden)"
+            ]
+          },
+          "bestFor": {
+            "title": "Best Voor",
+            "description": "Algemeen gebruik, streaming, gaming, mobiele gebruikers, iedereen die de snelste snelheden wil met moderne beveiliging."
+          }
+        },
+        "openvpn": {
+          "title": "OpenVPN",
+          "badge": "Industriestandaard",
+          "released": "Uitgebracht 2001",
+          "intro": "OpenVPN is al meer dan 20 jaar de industriestandaard. Het is open-source, zeer configureerbaar en werkt op vrijwel elk platform en netwerk.",
+          "stats": [
+            {
+              "value": "~400K",
+              "label": "Regels Code"
+            },
+            {
+              "value": "20%",
+              "label": "Snelheidsverlies"
+            },
+            {
+              "value": "AES-256",
+              "label": "Encryptie"
+            },
+            {
+              "value": "TCP/UDP",
+              "label": "Transport"
+            }
+          ],
+          "advantages": {
+            "title": "Voordelen",
+            "items": [
+              "Gevechtsgetest over 20+ jaar",
+              "Zeer configureerbaar",
+              "Werkt op elke poort (moeilijk te blokkeren)",
+              "TCP-modus voor instabiele netwerken",
+              "Draait op bijna elk apparaat"
+            ]
+          },
+          "disadvantages": {
+            "title": "Nadelen",
+            "items": [
+              "Langzamer dan WireGuard",
+              "Complexe codebase",
+              "Hoger batterijverbruik op mobiel",
+              "Vereist app van derden op de meeste apparaten"
+            ]
+          },
+          "tcpVsUdp": {
+            "title": "OpenVPN TCP vs UDP",
+            "udp": {
+              "title": "UDP (Aanbevolen)",
+              "description": "Sneller, beter voor streaming en algemeen gebruik. Standaard voor de meeste VPN's."
+            },
+            "tcp": {
+              "title": "TCP",
+              "description": "Betrouwbaarder op instabiele netwerken. Beter in het omzeilen van firewalls (poort 443)."
+            }
+          },
+          "bestFor": {
+            "title": "Best Voor",
+            "description": "Gebruikers die maximale compatibiliteit nodig hebben, strikte firewalls moeten omzeilen of in restrictieve netwerken werken (scholen, werkplekken, landen met censuur)."
+          }
+        },
+        "ikev2": {
+          "title": "IKEv2/IPSec",
+          "badge": "Mobiel Geoptimaliseerd",
+          "released": "Uitgebracht 2005",
+          "intro": "IKEv2 (Internet Key Exchange versie 2) gecombineerd met IPSec is uitstekend voor mobiele apparaten. Het is ingebouwd in de meeste besturingssystemen en maakt snel opnieuw verbinding bij het wisselen van netwerken.",
+          "stats": [
+            {
+              "value": "Snel",
+              "label": "Herverbinding"
+            },
+            {
+              "value": "10%",
+              "label": "Snelheidsverlies"
+            },
+            {
+              "value": "AES-256",
+              "label": "Encryptie"
+            },
+            {
+              "value": "Natief",
+              "label": "OS Ondersteuning"
+            }
+          ],
+          "advantages": {
+            "title": "Voordelen",
+            "items": [
+              "Uitstekend voor mobiel (MOBIKE ondersteuning)",
+              "Snelle herverbinding na netwerkwissel",
+              "Ingebouwd in iOS, macOS, Windows",
+              "Goede balans tussen snelheid en beveiliging",
+              "Laag batterijverbruik"
+            ]
+          },
+          "disadvantages": {
+            "title": "Nadelen",
+            "items": [
+              "Niet open-source (Microsoft/Cisco)",
+              "UDP poort 500 kan geblokkeerd worden",
+              "Beperkte configuratieopties",
+              "Potentiële NSA-zorgen (geruchten)"
+            ]
+          },
+          "bestFor": {
+            "title": "Best Voor",
+            "description": "Mobiele gebruikers die regelmatig wisselen tussen WiFi en mobiel, iPhone/iPad gebruikers (native ondersteuning), Windows gebruikers."
+          }
+        },
+        "others": {
+          "title": "Andere Protocollen",
+          "protocols": [
+            {
+              "name": "L2TP/IPSec",
+              "badge": "Verouderd",
+              "description": "Een ouder protocol dat L2TP-tunneling combineert met IPSec-encryptie. Nog steeds breed ondersteund maar langzamer en mogelijk gecompromitteerd door NSA.",
+              "verdict": "Vermijd als betere opties beschikbaar zijn."
+            },
+            {
+              "name": "PPTP",
+              "badge": "Onveilig",
+              "description": "Het oudste VPN-protocol (1999). Snel maar met bekende beveiligingskwetsbaarheden. Kan in realtime gekraakt worden door de NSA.",
+              "verdict": "Gebruik nooit voor beveiliging. Alleen voor het omzeilen van eenvoudige geo-blokkades."
+            },
+            {
+              "name": "SSTP",
+              "badge": "Alleen Windows",
+              "description": "Microsoft's proprietaire protocol dat SSL/TLS gebruikt over poort 443. Zeer effectief in het omzeilen van firewalls maar alleen Windows.",
+              "verdict": "Goed voor Windows in restrictieve netwerken, maar closed-source."
+            },
+            {
+              "name": "Proprietaire Protocollen",
+              "badge": "Varieert",
+              "description": "Sommige VPN-providers creëren hun eigen protocollen: Lightway (ExpressVPN), NordLynx (NordVPN's WireGuard implementatie), Chameleon (VyprVPN).",
+              "verdict": "Meestal geoptimaliseerde versies van bestaande protocollen. Over het algemeen veilig bij gerenommeerde providers."
+            }
+          ]
+        },
+        "comparison": {
+          "title": "Protocol Vergelijkingstabel",
+          "table": {
+            "headers": [
+              "Protocol",
+              "Snelheid",
+              "Beveiliging",
+              "Stabiliteit",
+              "Mobiel"
+            ],
+            "rows": [
+              {
+                "protocol": "WireGuard",
+                "speed": "Uitstekend",
+                "security": "Uitstekend",
+                "stability": "Uitstekend",
+                "mobile": "Uitstekend"
+              },
+              {
+                "protocol": "OpenVPN UDP",
+                "speed": "Goed",
+                "security": "Uitstekend",
+                "stability": "Goed",
+                "mobile": "Goed"
+              },
+              {
+                "protocol": "OpenVPN TCP",
+                "speed": "Gematigd",
+                "security": "Uitstekend",
+                "stability": "Uitstekend",
+                "mobile": "Goed"
+              },
+              {
+                "protocol": "IKEv2/IPSec",
+                "speed": "Uitstekend",
+                "security": "Goed",
+                "stability": "Uitstekend",
+                "mobile": "Uitstekend"
+              },
+              {
+                "protocol": "PPTP",
+                "speed": "Uitstekend",
+                "security": "Slecht",
+                "stability": "Goed",
+                "mobile": "Goed"
+              }
+            ]
+          },
+          "recommendations": {
+            "title": "Snelle Aanbeveling",
+            "items": [
+              {
+                "title": "Beste Algeheel",
+                "description": "WireGuard - snelst en veiligst"
+              },
+              {
+                "title": "Beste Compatibiliteit",
+                "description": "OpenVPN - werkt overal"
+              },
+              {
+                "title": "Best voor Mobiel",
+                "description": "IKEv2 of WireGuard"
+              },
+              {
+                "title": "Omzeil Firewalls",
+                "description": "OpenVPN TCP (poort 443)"
+              }
+            ]
+          }
+        },
+        "summary": {
+          "title": "Belangrijkste Punten",
+          "items": [
+            "WireGuard is de beste keuze voor de meeste gebruikers (snel, veilig, modern)",
+            "OpenVPN is de fallback wanneer je maximale compatibiliteit nodig hebt",
+            "IKEv2 blinkt uit op mobiele apparaten met zijn snelle herverbinding",
+            "Vermijd PPTP - het is snel maar volledig onveilig"
+          ]
+        }
+      }
+    },
+    "vpnSpeedGuide": {
+      "meta": {
+        "title": "VPN Snelheid Gids: Hoe je de Snelste VPN-verbinding Krijgt (2025) - ZeroToVPN",
+        "description": "Leer wat VPN-snelheid beïnvloedt en hoe je je verbinding optimaliseert. Krijg tips om je VPN-prestaties te maximaliseren voor streaming, gaming en downloads."
+      },
+      "hero": {
+        "badge": "Prestatie Gids",
+        "readTime": "6 min lezen",
+        "title": "VPN Snelheid Gids",
+        "subtitle": "Vertraagt je VPN je internet? Leer welke factoren VPN-snelheid beïnvloeden en ontdek bewezen tips om je verbinding te optimaliseren voor streaming, gaming en dagelijks browsen.",
+        "updated": "Bijgewerkt november 2025",
+        "level": "Praktische Gids"
+      },
+      "toc": {
+        "title": "In Deze Gids:",
+        "items": [
+          "1. VPN Snelheid Begrijpen",
+          "2. Factoren die Snelheid Beïnvloeden",
+          "3. Verwacht Snelheidsverlies",
+          "4. Snelheid Optimalisatie Tips",
+          "5. Snelste VPN Protocollen",
+          "6. Hoe VPN Snelheid te Testen"
+        ]
+      },
+      "relatedGuides": {
+        "title": "Blijf Leren",
+        "guides": [
+          {
+            "title": "Hoe Werkt een VPN?",
+            "description": "Begrijp de technische details achter VPN-technologie.",
+            "url": "/guides/how-vpn-works"
+          },
+          {
+            "title": "VPN voor Streaming",
+            "description": "Leer hoe je een VPN gebruikt voor Netflix, Disney+ en meer.",
+            "url": "/guides/vpn-for-streaming"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Vind de Snelste VPN",
+        "description": "Vergelijk VPN-snelheden en vind de snelste provider voor jouw behoeften. We testen alle VPNs op prestaties in de praktijk.",
+        "button": "Vergelijk VPN Snelheden"
+      },
+      "sections": {
+        "understandingVpnSpeed": {
+          "intro": "VPN-snelheid verwijst naar hoe snel gegevens reizen door je versleutelde VPN-verbinding. Aangezien VPN's een extra stap toevoegen aan je internetverbinding (encryptie en routering via een server), is enige snelheidsvermindering normaal.",
+          "keyMetrics": {
+            "title": "Belangrijkste Snelheidsmetrieken",
+            "download": {
+              "title": "Downloadsnelheid",
+              "description": "Hoe snel je gegevens ontvangt (streaming, browsen, downloads)"
+            },
+            "upload": {
+              "title": "Uploadsnelheid",
+              "description": "Hoe snel je gegevens verstuurt (videogesprekken, bestandsuploads)"
+            },
+            "ping": {
+              "title": "Ping/Latentie",
+              "description": "Responstijd in milliseconden (kritiek voor gaming)"
+            }
+          },
+          "speedRequirements": {
+            "title": "Snelheidsvereisten",
+            "items": [
+              "HD Streaming: 5-10 Mbps",
+              "4K Streaming: 25+ Mbps",
+              "Online Gaming: 3-6 Mbps (lage ping is belangrijker)",
+              "Videogesprekken: 1.5-4 Mbps"
+            ]
+          }
+        },
+        "factorsThatAffectSpeed": {
+          "serverDistance": {
+            "title": "Serverafstand",
+            "impact": "Hoge Impact",
+            "description": "Hoe verder de VPN-server, hoe langer gegevens erover doen om te reizen. Verbinding maken van New York naar een Tokyo-server voegt 200+ ms latentie toe.",
+            "tip": "Kies altijd de dichtstbijzijnde server bij je werkelijke locatie, tenzij je een specifiek land nodig hebt."
+          },
+          "serverLoad": {
+            "title": "Serverbelasting",
+            "impact": "Gemiddelde Impact",
+            "description": "Overbelaste servers vertragen iedereen. Populaire servers in grote steden hebben vaak hogere belasting tijdens piekuren.",
+            "tip": "Veel VPN-apps tonen serverbelastingspercentage. Kies servers met minder dan 70% belasting."
+          },
+          "vpnProtocol": {
+            "title": "VPN Protocol",
+            "impact": "Gemiddelde Impact",
+            "description": "Verschillende protocollen hebben verschillende snelheidskarakteristieken. WireGuard is het snelst, OpenVPN is het meest compatibel maar langzamer.",
+            "tip": "Schakel over naar WireGuard voor beste snelheden. De meeste moderne VPN-apps ondersteunen het."
+          },
+          "encryptionLevel": {
+            "title": "Encryptieniveau",
+            "impact": "Lage Impact",
+            "description": "Hogere encryptie is veiliger maar vereist meer verwerking. AES-256 is standaard en heeft minimale snelheidsimpact op moderne apparaten.",
+            "tip": "Behoud AES-256-encryptie. Het beveiligingsvoordeel weegt ruimschoots op tegen de minimale snelheidskosten."
+          },
+          "baseInternetSpeed": {
+            "title": "Jouw Basis Internetsnelheid",
+            "impact": "Hoge Impact",
+            "description": "Een VPN kan je internet niet sneller maken dan je basisverbinding. Als je 50 Mbps hebt, is je VPN-snelheidsplafond 50 Mbps (minus VPN-overhead).",
+            "tip": "Test je basissnelheid eerst zonder VPN om realistische verwachtingen te stellen."
+          }
+        },
+        "expectedSpeedLoss": {
+          "intro": "Alle VPN's verminderen je snelheid tot op zekere hoogte. Dit is wat je realistisch kunt verwachten van premium VPN-providers:",
+          "typicalRetention": {
+            "title": "Typische Snelheidsretentie",
+            "nearbySameCountry": {
+              "label": "Nabijgelegen Server (zelfde land)",
+              "percentage": "85-95%"
+            },
+            "regionalNearbyCountry": {
+              "label": "Regionale Server (nabijgelegen land)",
+              "percentage": "75-85%"
+            },
+            "sameContinent": {
+              "label": "Zelfde Continent",
+              "percentage": "60-75%"
+            },
+            "crossContinental": {
+              "label": "Cross-Continentaal",
+              "percentage": "40-60%"
+            }
+          },
+          "premiumVpns": {
+            "title": "Premium VPN's",
+            "items": [
+              "10-25% snelheidsverlies typisch",
+              "Geoptimaliseerde serverinfrastructuur",
+              "Ondersteuning voor WireGuard",
+              "Regelmatige server-upgrades"
+            ]
+          },
+          "freeVpns": {
+            "title": "Gratis VPN's",
+            "items": [
+              "50-80% snelheidsverlies gebruikelijk",
+              "Overvolle servers",
+              "Beperkte serverlocaties",
+              "Bandbreedtebeperking"
+            ]
+          }
+        },
+        "speedOptimizationTips": {
+          "tips": [
+            {
+              "number": 1,
+              "title": "Kies de Dichtstbijzijnde Server",
+              "description": "Afstand is de grootste snelheidskiller. Als je alleen privacy nodig hebt en geen specifieke locatie, maak dan verbinding met de dichtstbijzijnde server."
+            },
+            {
+              "number": 2,
+              "title": "Gebruik WireGuard Protocol",
+              "description": "WireGuard is 3-4x sneller dan OpenVPN in de meeste tests. Controleer je VPN-app instellingen en schakel over indien beschikbaar."
+            },
+            {
+              "number": 3,
+              "title": "Vermijd Piekuren",
+              "description": "Serverbelasting is het hoogst tijdens avonduren (19-23 uur lokale tijd). Probeer verbinding te maken tijdens daluren voor betere snelheden."
+            },
+            {
+              "number": 4,
+              "title": "Gebruik Bedrade Verbinding",
+              "description": "Ethernet is stabieler en sneller dan WiFi. Als snelheid kritiek is, sluit direct aan op je router."
+            },
+            {
+              "number": 5,
+              "title": "Probeer Split Tunneling",
+              "description": "Routeer alleen gevoelig verkeer door VPN. Laat streaming en gaming je reguliere verbinding gebruiken voor maximale snelheid."
+            },
+            {
+              "number": 6,
+              "title": "Herstart Je Verbinding",
+              "description": "Soms wijst opnieuw verbinden je toe aan een minder belaste server. Probeer los te koppelen en opnieuw verbinden als snelheden slecht zijn."
+            }
+          ]
+        },
+        "fastestVpnProtocols": {
+          "wireGuard": {
+            "title": "WireGuard",
+            "badge": "Snelst",
+            "speedLoss": "~5%",
+            "linesOfCode": "4.000",
+            "latency": "Uitstekend",
+            "compatibility": "Goed"
+          },
+          "ikev2": {
+            "title": "IKEv2/IPSec",
+            "badge": "Erg Snel",
+            "speedLoss": "~10%",
+            "linesOfCode": "~15.000",
+            "latency": "Uitstekend",
+            "compatibility": "Uitstekend"
+          },
+          "openVpn": {
+            "title": "OpenVPN",
+            "badge": "Meest Compatibel",
+            "speedLoss": "~20%",
+            "linesOfCode": "~400.000",
+            "latency": "Goed",
+            "compatibility": "Uitstekend"
+          },
+          "recommendation": {
+            "title": "Protocol Aanbeveling",
+            "description": "Gebruik WireGuard voor beste snelheden en moderne beveiliging. Val terug op IKEv2 op mobiele apparaten of OpenVPN als je maximale compatibiliteit nodig hebt."
+          }
+        },
+        "howToTestVpnSpeed": {
+          "testingProcess": {
+            "title": "Snelheidstestproces",
+            "steps": [
+              {
+                "number": 1,
+                "title": "Test Eerst Zonder VPN",
+                "description": "Ga naar speedtest.net of fast.com en voer een test uit met VPN losgekoppeld. Noteer je download, upload en ping."
+              },
+              {
+                "number": 2,
+                "title": "Verbind met VPN",
+                "description": "Maak verbinding met je voorkeursserver en wacht een paar seconden tot de verbinding is gestabiliseerd."
+              },
+              {
+                "number": 3,
+                "title": "Voer Snelheidstest Opnieuw Uit",
+                "description": "Gebruik dezelfde snelheidstestsite. Vergelijk resultaten om je snelheidsretentiepercentage te berekenen."
+              },
+              {
+                "number": 4,
+                "title": "Test Meerdere Servers",
+                "description": "Probeer verschillende servers en protocollen om de snelste combinatie voor jouw behoeften te vinden."
+              }
+            ]
+          },
+          "popularTools": {
+            "title": "Populaire Snelheidstesttools",
+            "tools": [
+              {
+                "name": "Speedtest.net",
+                "description": "Meest nauwkeurig"
+              },
+              {
+                "name": "Fast.com",
+                "description": "Netflix-powered"
+              },
+              {
+                "name": "Cloudflare Speed Test",
+                "description": "Gedetailleerde metrieken"
+              }
+            ]
+          }
+        },
+        "keyTakeaways": {
+          "title": "Belangrijkste Punten",
+          "items": [
+            "Premium VPN's behouden meestal 75-95% van je oorspronkelijke snelheid",
+            "Serverafstand en belasting zijn de grootste snelheidsfactoren",
+            "WireGuard protocol biedt de beste snelheidsprestaties",
+            "Test altijd snelheden voor en na VPN om je werkelijke impact te kennen"
+          ]
+        }
+      }
+    },
+    "publicWifiSafety": {
+      "meta": {
+        "title": "Openbare WiFi Veiligheid: Hoe Veilig te Blijven op Open Netwerken (2025) - ZeroToVPN",
+        "description": "Leer over openbare WiFi-risico's en hoe je jezelf beschermt. Ontdek essentiële beveiligingstips voor het gebruik van WiFi in cafés, luchthavens, hotels en andere openbare plaatsen."
+      },
+      "hero": {
+        "badge": "Beveiligingsgids",
+        "readTime": "8 min lezen",
+        "title": "Openbare WiFi Veiligheid Gids",
+        "subtitle": "Gratis WiFi is handig, maar brengt serieuze risico's met zich mee. Leer hoe hackers openbare netwerken misbruiken en de essentiële stappen om je gegevens te beschermen in coffeeshops, luchthavens, hotels en daarbuiten.",
+        "updated": "Bijgewerkt november 2025",
+        "level": "Beveiliging Essentieel"
+      },
+      "toc": {
+        "title": "In Deze Gids:",
+        "items": [
+          "1. Openbare WiFi Risico's Uitgelegd",
+          "2. Veelvoorkomende WiFi Aanvalstypen",
+          "3. Essentiële Beschermingstips",
+          "4. Hoe VPNs je Beschermen",
+          "5. Veiligheid per Locatie",
+          "6. Snelle Beveiligings Checklist"
+        ]
+      },
+      "relatedGuides": {
+        "title": "Blijf Leren",
+        "guides": [
+          {
+            "title": "VPN voor Reizen",
+            "description": "Essentiële VPN-gids voor internationale reizigers.",
+            "url": "/guides/vpn-for-travel"
+          },
+          {
+            "title": "VPN op Mobiel",
+            "description": "Stel VPN-bescherming in op je smartphone.",
+            "url": "/guides/vpn-on-mobile"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Blijf Veilig op elk WiFi Netwerk",
+        "description": "Riskeer je persoonlijke gegevens niet op openbare netwerken. Neem een VPN en browse met vertrouwen overal ter wereld.",
+        "button": "Bekijk Beste VPNs"
+      },
+      "sections": {
+        "wifiRisks": {
+          "title": "Waarom Openbare WiFi Gevaarlijk is",
+          "intro": [
+            "Die gratis WiFi in je favoriete coffeeshop lijkt misschien handig, maar komt met serieuze beveiligingsrisico's. Openbare WiFi-netwerken zijn ontworpen voor gemakkelijke toegang, wat betekent dat ze vaak gebrek hebben aan goede encryptie en beveiligingsmaatregelen.",
+            "Wanneer je verbinding maakt met openbare WiFi, reizen je gegevens onversleuteld door de lucht. Dit maakt het gemakkelijk voor cybercriminelen om gevoelige informatie zoals wachtwoorden, creditcardnummers en persoonlijke berichten te onderscheppen."
+          ],
+          "scaryTruth": {
+            "title": "De Enge Waarheid",
+            "description": "Volgens cybersecurity-experts heeft 43% van openbare WiFi-gebruikers hun gegevens gecompromitteerd gehad. Je zou de volgende kunnen zijn als je geen voorzorgsmaatregelen neemt."
+          },
+          "risks": [
+            {
+              "title": "Geen Encryptie",
+              "description": "De meeste openbare WiFi-netwerken versleutelen je gegevens niet, waardoor het gemakkelijk is voor iedereen met basis hacktools om te zien wat je online doet."
+            },
+            {
+              "title": "Gedeeld Netwerk",
+              "description": "Iedereen op hetzelfde WiFi-netwerk kan potentieel elkaars onversleutelde verkeer zien. Het is alsof je je wachtwoorden schreeuwt in een drukke kamer."
+            },
+            {
+              "title": "Kwaadaardige Hotspots",
+              "description": "Hackers zetten vaak valse WiFi-netwerken op die legitiem lijken. Zodra je verbinding maakt, kunnen ze alles wat je doet monitoren."
+            }
+          ]
+        },
+        "attackTypes": {
+          "title": "Veelvoorkomende Aanvallen op Openbare WiFi",
+          "intro": "Begrijpen hoe hackers openbare WiFi misbruiken helpt je deze bedreigingen te herkennen en te vermijden. Dit zijn de meest voorkomende aanvalsmethoden:",
+          "attacks": [
+            {
+              "title": "Man-in-the-Middle (MITM) Aanvallen",
+              "description": "Hackers positioneren zich tussen jou en het verbindingspunt. In plaats van direct met de WiFi-hotspot te communiceren, gaan je gegevens eerst door de aanvaller, die ze kan lezen, wijzigen of stelen.",
+              "protection": "Gebruik altijd een VPN om je verbinding end-to-end te versleutelen."
+            },
+            {
+              "title": "Evil Twin Aanvallen",
+              "description": "Cybercriminelen creëren valse WiFi-hotspots met namen vergelijkbaar met legitieme (bijv. \"Starbucks_Free_WiFi\"). Wanneer je verbinding maakt, controleren ze het hele netwerk en kunnen ze al je activiteit monitoren.",
+              "protection": "Verifieer de officiële netwerknaam bij personeel voordat je verbinding maakt."
+            },
+            {
+              "title": "Packet Sniffing",
+              "description": "Met gemakkelijk verkrijgbare software kunnen hackers datapakketten die over het WiFi-netwerk reizen onderscheppen. Dit omvat gebruikersnamen, wachtwoorden en alle onversleutelde informatie.",
+              "protection": "Bezoek alleen HTTPS-websites en gebruik een VPN voor alle verbindingen."
+            },
+            {
+              "title": "Sessiekaping",
+              "description": "Aanvallers stelen je sessiecookies om zich voor te doen als jou op websites. Dit kan hen toegang geven tot je accounts zonder je wachtwoord nodig te hebben.",
+              "protection": "Log uit van accounts wanneer je klaar bent en schakel twee-factor authenticatie in."
+            }
+          ]
+        },
+        "protectionTips": {
+          "title": "Essentiële Beschermingstips",
+          "intro": "Hoewel openbare WiFi altijd enig risico zal hebben, kan het volgen van deze best practices je kwetsbaarheid voor aanvallen aanzienlijk verminderen:",
+          "doThis": {
+            "title": "Doe Dit",
+            "items": [
+              "Gebruik een VPN op elke openbare WiFi-verbinding",
+              "Schakel twee-factor authenticatie in op alle accounts",
+              "Bezoek alleen HTTPS-websites (zoek naar het hangslotpictogram)",
+              "Schakel bestandsdeling en AirDrop uit",
+              "Vergeet het netwerk nadat je vertrekt"
+            ]
+          },
+          "neverDoThis": {
+            "title": "Doe Dit Nooit",
+            "items": [
+              "Toegang tot online bankieren zonder VPN",
+              "Online winkelen of creditcardgegevens invoeren",
+              "Inloggen op werkaccounts of gevoelige apps",
+              "Automatische WiFi-verbindingen inschakelen",
+              "Openbare WiFi gebruiken voor vertrouwelijk werk"
+            ]
+          },
+          "deviceSettings": {
+            "title": "Apparaatinstellingen om in te Schakelen",
+            "items": [
+              "Firewall-bescherming (ingebouwd in de meeste besturingssystemen)",
+              "Schakel automatische WiFi-verbinding met onbekende netwerken uit",
+              "Schakel netwerkdetectie en bestandsdeling uit",
+              "Schakel \"gebruik altijd HTTPS\" in browserinstellingen in"
+            ]
+          }
+        },
+        "vpnProtection": {
+          "title": "Waarom een VPN Essentieel is voor Openbare WiFi",
+          "intro": "Een VPN (Virtual Private Network) is je beste verdediging tegen openbare WiFi-bedreigingen. Het creëert een versleutelde tunnel tussen je apparaat en het internet, waardoor je gegevens onleesbaar worden voor iedereen die probeert ze te onderscheppen.",
+          "benefits": [
+            {
+              "title": "Militaire Encryptie",
+              "description": "VPN's gebruiken AES-256-encryptie, hetzelfde niveau gebruikt door banken en overheden. Zelfs als iemand je gegevens onderschept, kunnen ze het niet lezen."
+            },
+            {
+              "title": "Verberg Je Activiteit",
+              "description": "Je internetprovider, de WiFi-eigenaar en potentiële hackers kunnen niet zien welke websites je bezoekt of welke gegevens je verstuurt."
+            },
+            {
+              "title": "Beveilig Alle Apparaten",
+              "description": "Eén VPN-abonnement dekt meestal al je apparaten - telefoons, tablets en laptops - en beschermt je waar je ook verbinding maakt."
+            }
+          ],
+          "comparison": {
+            "title": "Openbare WiFi: Met vs Zonder VPN",
+            "withoutVpn": {
+              "label": "Zonder VPN:",
+              "description": "Je gegevens zijn zichtbaar voor iedereen op het netwerk. Hackers kunnen wachtwoorden, e-mails, berichten en browsegeschiedenis zien."
+            },
+            "withVpn": {
+              "label": "Met VPN:",
+              "description": "Al je gegevens zijn versleuteld. Hackers zien alleen wartaal, zelfs als ze je verbinding onderscheppen."
+            }
+          },
+          "proTip": "Maak altijd eerst verbinding met je VPN voordat je deelneemt aan een openbaar WiFi-netwerk. Stel het in om automatisch verbinding te maken zodat je het nooit vergeet."
+        },
+        "locationGuide": {
+          "title": "Veiligheidsgids per Locatie",
+          "intro": "Verschillende openbare plekken hebben verschillende risiconiveaus. Dit is wat je moet weten over veelvoorkomende locaties:",
+          "locations": [
+            {
+              "name": "Coffeeshops & Cafés",
+              "riskLevel": "Hoog Risico",
+              "description": "Populaire doelwitten voor hackers vanwege lange verblijven en ontspannen beveiliging. Veel mensen werken hier, waardoor het een prime locatie is voor gegevensdiefstal.",
+              "tips": "Gebruik altijd een VPN. Verifieer de netwerknaam bij personeel. Vermijd financiële transacties."
+            },
+            {
+              "name": "Luchthavens",
+              "riskLevel": "Hoog Risico",
+              "description": "Extreem hoog verkeer met veel zakelijke reizigers die gevoelige gegevens verwerken. Valse hotspots komen hier vaak voor.",
+              "tips": "Gebruik indien mogelijk je mobiele hotspot. Als je luchthaven-WiFi gebruikt, is VPN verplicht."
+            },
+            {
+              "name": "Hotels",
+              "riskLevel": "Gemiddeld Risico",
+              "description": "Hotelnetwerken zijn vaak beter beveiligd dan cafés, maar ze zijn nog steeds gedeelde netwerken met veel gasten.",
+              "tips": "Gebruik het met wachtwoord beveiligde netwerk. Schakel VPN in. Wees voorzichtig met smart TV-apps in de kamer."
+            },
+            {
+              "name": "Openbare Bibliotheken",
+              "riskLevel": "Gemiddeld Risico",
+              "description": "Over het algemeen veiliger dan cafés vanwege beter IT-beheer, maar nog steeds een openbaar netwerk.",
+              "tips": "VPN aanbevolen. Vermijd gevoelige taken. Wees je bewust van schoudergluurders."
+            }
+          ]
+        },
+        "checklist": {
+          "title": "Snelle Beveiligingschecklist",
+          "intro": "Gebruik deze checklist elke keer dat je verbinding maakt met openbare WiFi om te zorgen dat je beschermd bent:",
+          "beforeConnecting": {
+            "title": "Voor Verbinden",
+            "items": [
+              "Schakel je VPN in",
+              "Schakel bestandsdeling en AirDrop uit",
+              "Verifieer de officiële netwerknaam bij personeel",
+              "Controleer of firewall is ingeschakeld"
+            ]
+          },
+          "whileConnected": {
+            "title": "Tijdens Verbinding",
+            "items": [
+              "Houd VPN altijd actief",
+              "Bezoek alleen HTTPS-websites",
+              "Krijg indien mogelijk geen toegang tot bank- of financiële accounts",
+              "Wees je bewust van je omgeving (schoudergluurders)",
+              "Log uit van accounts wanneer je klaar bent"
+            ]
+          },
+          "beforeLeaving": {
+            "title": "Voor Vertrek",
+            "items": [
+              "Verbreek verbinding met het netwerk",
+              "Vergeet het netwerk in je instellingen",
+              "Schakel WiFi uit tot het weer nodig is"
+            ]
+          }
+        },
+        "summary": {
+          "title": "De Conclusie",
+          "content": "Openbare WiFi is handig maar gevaarlijk zonder goede bescherming. De belangrijkste stap die je kunt nemen is het gebruik van een betrouwbare VPN elke keer dat je verbinding maakt met een openbaar netwerk. Het is een kleine investering die je wachtwoorden, financiële gegevens en persoonlijke privacy beschermt tegen cybercriminelen.",
+          "costBenefit": "Een VPN kost minder dan een koffie per maand maar beschermt duizenden euro's aan gegevens"
+        }
+      }
+    }
+  },
+  "vpnTable": {
+    "headers": {
+      "rank": "#",
+      "vpn": "VPN",
+      "rating": "Beoordeling",
+      "speed": "Snelheid",
+      "security": "Beveiliging",
+      "servers": "Servers",
+      "netflix": "Netflix",
+      "price": "Prijs",
+      "action": "Actie"
+    },
+    "editorChoice": "Redactie Keuze",
+    "countries": "landen",
+    "devices": "apparaten",
+    "unlimited": "Onbeperkt",
+    "perMonth": "/maand",
+    "visit": "Bezoek"
+  },
+  "vpnCard": {
+    "editorChoice": "Redactie Keuze",
+    "from": "Vanaf",
+    "perMonth": "/maand",
+    "servers": "Servers",
+    "countries": "Landen",
+    "devices": "Apparaten",
+    "speed": "Snelheid",
+    "security": "Beveiliging",
+    "netflix": "Netflix",
+    "torrenting": "Torrenting",
+    "noLogs": "Geen Logs",
+    "freeTier": "Gratis Versie",
+    "getVpn": "Krijg {name}",
+    "review": "Review"
+  },
+  "vpnReview": {
+    "backToReviews": "Terug naar Reviews",
+    "editorChoice": "Redactie Keuze",
+    "freeTierAvailable": "Gratis Versie Beschikbaar",
+    "reviewTitle": "{name} Review 2025",
+    "basedOnTesting": "Gebaseerd op onze uitgebreide tests",
+    "getVpnPrice": "Krijg {name} - ${price}/mnd",
+    "quickStats": {
+      "title": "Snelle Statistieken",
+      "servers": "Servers",
+      "countries": "Landen",
+      "devices": "Apparaten",
+      "moneyBack": "Geld-terug",
+      "days": "{count} dagen",
+      "startingAt": "Vanaf",
+      "perMonth": "/mnd",
+      "unlimited": "Onbeperkt"
+    },
+    "scores": {
+      "speed": "Snelheid",
+      "security": "Beveiliging",
+      "streaming": "Streaming"
+    },
+    "prosAndCons": {
+      "pros": "Voordelen",
+      "cons": "Nadelen"
+    },
+    "tabs": {
+      "overview": "Overzicht",
+      "pricing": "Prijzen",
+      "security": "Beveiliging",
+      "streaming": "Streaming"
+    },
+    "overview": {
+      "about": "Over {name}",
+      "description": "{name} is een van de toonaangevende VPN-aanbieders op de markt, met {servers} servers verspreid over {countries} landen. Met ondersteuning voor maximaal {devices} gelijktijdige verbindingen is het geschikt voor zowel particulieren als gezinnen.",
+      "keyFeatures": "Belangrijkste Functies",
+      "serverNetwork": "Servernetwerk:",
+      "serversInCountries": "{servers} servers in {countries} landen",
+      "protocols": "Protocollen:",
+      "encryption": "Encryptie:",
+      "killSwitch": "Kill Switch:",
+      "noLogsPolicy": "Geen-Logs Beleid:",
+      "yes": "Ja",
+      "no": "Nee",
+      "yesAudited": "Ja (gecontroleerd)",
+      "limited": "Beperkt"
+    },
+    "pricing": {
+      "title": "{name} Prijsplannen",
+      "monthly": "Maandelijks",
+      "yearly": "Jaarlijks",
+      "twoYears": "2 Jaar",
+      "mostPopular": "Meest Populair",
+      "bestValue": "Beste Waarde",
+      "moneyBackGuarantee": "Alle plannen bevatten een {days} dagen geld-terug-garantie"
+    },
+    "securityFeatures": {
+      "title": "Beveiliging & Privacy Functies",
+      "noLogsPolicy": "Geen-Logs Beleid",
+      "killSwitch": "Kill Switch",
+      "encryption": "{type} Encryptie",
+      "supportedProtocols": "Ondersteunde Protocollen"
+    },
+    "streamingSection": {
+      "title": "Streaming Compatibiliteit",
+      "netflix": "Netflix",
+      "disneyPlus": "Disney+",
+      "amazonPrime": "Amazon Prime",
+      "bbcIplayer": "BBC iPlayer",
+      "p2pSupported": "P2P/Torrenting Ondersteund",
+      "torrentDescription": "{name} staat torrenting toe op speciale servers met geoptimaliseerde snelheden."
+    },
+    "verdict": {
+      "title": "Ons Oordeel",
+      "description": "{name} scoort {rating}/5 in onze uitgebreide tests. Met {servers} servers verspreid over {countries} landen, biedt het uitstekende dekking en betrouwbare prestaties.",
+      "editorChoiceNote": " Het heeft onze Redactie Keuze award verdiend voor de uitstekende combinatie van snelheid, beveiliging en prijs-kwaliteitverhouding.",
+      "getVpnNow": "Krijg {name} Nu - ${price}/mnd"
+    },
+    "userReviews": {
+      "title": "Gebruikersreviews"
+    }
   }
 }

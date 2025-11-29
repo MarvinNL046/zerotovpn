@@ -1,3 +1,6 @@
+"use client";
+
+import Image from "next/image";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -11,8 +14,8 @@ import {
   Server,
   Globe,
   Check,
-  X,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 import type { VpnProvider } from "@/lib/vpn-data";
 
 interface VpnCardProps {
@@ -21,35 +24,50 @@ interface VpnCardProps {
   locale: string;
 }
 
-export function VpnCard({ vpn, rank, locale }: VpnCardProps) {
+export function VpnCard({ vpn, rank }: VpnCardProps) {
+  const t = useTranslations("vpnCard");
+
   return (
     <Card className="relative overflow-hidden">
-      {/* Badges */}
-      <div className="absolute top-3 left-3 flex gap-2">
-        {rank && (
-          <Badge variant="secondary" className="font-bold">
-            #{rank}
-          </Badge>
-        )}
-        {vpn.editorChoice && (
-          <Badge className="bg-yellow-500 text-yellow-950">
-            Editor&apos;s Choice
-          </Badge>
-        )}
+      {/* Screenshot Image */}
+      <div className="relative h-40 w-full overflow-hidden bg-muted">
+        <Image
+          src={vpn.cardImage}
+          alt={`${vpn.name} website screenshot`}
+          fill
+          className="object-cover object-top"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
+        {/* Gradient overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+
+        {/* Badges - now positioned over image */}
+        <div className="absolute top-3 left-3 flex gap-2 z-10">
+          {rank && (
+            <Badge variant="secondary" className="font-bold shadow-md">
+              #{rank}
+            </Badge>
+          )}
+          {vpn.editorChoice && (
+            <Badge className="bg-yellow-500 text-yellow-950 shadow-md">
+              {t("editorChoice")}
+            </Badge>
+          )}
+        </div>
       </div>
 
-      <CardHeader className="pt-12 pb-4">
+      <CardHeader className="pt-4 pb-4">
         <div className="flex items-center justify-between">
           <div>
             <h3 className="text-2xl font-bold">{vpn.name}</h3>
             <RatingStars rating={vpn.overallRating} size="md" />
           </div>
           <div className="text-right">
-            <div className="text-sm text-muted-foreground">From</div>
+            <div className="text-sm text-muted-foreground">{t("from")}</div>
             <div className="text-3xl font-bold text-primary">
               ${vpn.priceTwoYear || vpn.priceYearly}
             </div>
-            <div className="text-xs text-muted-foreground">/month</div>
+            <div className="text-xs text-muted-foreground">{t("perMonth")}</div>
           </div>
         </div>
       </CardHeader>
@@ -63,19 +81,19 @@ export function VpnCard({ vpn, rank, locale }: VpnCardProps) {
           <div>
             <Server className="h-5 w-5 mx-auto text-muted-foreground" />
             <div className="font-bold">{vpn.servers.toLocaleString()}</div>
-            <div className="text-xs text-muted-foreground">Servers</div>
+            <div className="text-xs text-muted-foreground">{t("servers")}</div>
           </div>
           <div>
             <Globe className="h-5 w-5 mx-auto text-muted-foreground" />
             <div className="font-bold">{vpn.countries}</div>
-            <div className="text-xs text-muted-foreground">Countries</div>
+            <div className="text-xs text-muted-foreground">{t("countries")}</div>
           </div>
           <div>
             <Monitor className="h-5 w-5 mx-auto text-muted-foreground" />
             <div className="font-bold">
               {vpn.maxDevices >= 999 ? "∞" : vpn.maxDevices}
             </div>
-            <div className="text-xs text-muted-foreground">Devices</div>
+            <div className="text-xs text-muted-foreground">{t("devices")}</div>
           </div>
         </div>
 
@@ -83,7 +101,7 @@ export function VpnCard({ vpn, rank, locale }: VpnCardProps) {
         <div className="space-y-2">
           <div className="flex items-center justify-between text-sm">
             <span className="flex items-center gap-2">
-              <Zap className="h-4 w-4" /> Speed
+              <Zap className="h-4 w-4" /> {t("speed")}
             </span>
             <div className="flex items-center gap-2">
               <div className="w-24 h-2 bg-gray-200 rounded-full overflow-hidden">
@@ -97,7 +115,7 @@ export function VpnCard({ vpn, rank, locale }: VpnCardProps) {
           </div>
           <div className="flex items-center justify-between text-sm">
             <span className="flex items-center gap-2">
-              <Shield className="h-4 w-4" /> Security
+              <Shield className="h-4 w-4" /> {t("security")}
             </span>
             <div className="flex items-center gap-2">
               <div className="w-24 h-2 bg-gray-200 rounded-full overflow-hidden">
@@ -115,22 +133,22 @@ export function VpnCard({ vpn, rank, locale }: VpnCardProps) {
         <div className="flex flex-wrap gap-2">
           {vpn.netflixSupport && (
             <Badge variant="outline" className="text-xs">
-              <Check className="h-3 w-3 mr-1" /> Netflix
+              <Check className="h-3 w-3 mr-1" /> {t("netflix")}
             </Badge>
           )}
           {vpn.torrentSupport && (
             <Badge variant="outline" className="text-xs">
-              <Check className="h-3 w-3 mr-1" /> Torrenting
+              <Check className="h-3 w-3 mr-1" /> {t("torrenting")}
             </Badge>
           )}
           {vpn.noLogs && (
             <Badge variant="outline" className="text-xs">
-              <Check className="h-3 w-3 mr-1" /> No-Logs
+              <Check className="h-3 w-3 mr-1" /> {t("noLogs")}
             </Badge>
           )}
           {vpn.freeTier && (
             <Badge variant="outline" className="text-xs bg-green-50">
-              Free Tier
+              {t("freeTier")}
             </Badge>
           )}
         </div>
@@ -143,10 +161,10 @@ export function VpnCard({ vpn, rank, locale }: VpnCardProps) {
           affiliateUrl={vpn.affiliateUrl}
           className="flex-1"
         >
-          Get {vpn.name}
+          {t("getVpn", { name: vpn.name })}
         </AffiliateButton>
         <Button variant="outline" asChild>
-          <Link href={`/reviews/${vpn.slug}`}>Review</Link>
+          <Link href={`/reviews/${vpn.slug}`}>{t("review")}</Link>
         </Button>
       </CardFooter>
     </Card>

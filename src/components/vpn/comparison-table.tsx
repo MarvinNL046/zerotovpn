@@ -13,6 +13,7 @@ import { RatingStars } from "./rating-stars";
 import { AffiliateButton } from "./affiliate-button";
 import { Link } from "@/i18n/navigation";
 import { Check, X, Shield, Zap, ExternalLink } from "lucide-react";
+import { useTranslations } from "next-intl";
 import type { VpnProvider } from "@/lib/vpn-data";
 
 interface ComparisonTableProps {
@@ -20,20 +21,22 @@ interface ComparisonTableProps {
 }
 
 export function ComparisonTable({ vpns }: ComparisonTableProps) {
+  const t = useTranslations("vpnTable");
+
   return (
     <div className="w-full overflow-x-auto">
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead className="w-12">#</TableHead>
-            <TableHead>VPN</TableHead>
-            <TableHead>Rating</TableHead>
-            <TableHead className="text-center">Speed</TableHead>
-            <TableHead className="text-center">Security</TableHead>
-            <TableHead className="text-center">Servers</TableHead>
-            <TableHead className="text-center">Netflix</TableHead>
-            <TableHead className="text-right">Price</TableHead>
-            <TableHead className="text-right">Action</TableHead>
+            <TableHead className="w-12">{t("headers.rank")}</TableHead>
+            <TableHead>{t("headers.vpn")}</TableHead>
+            <TableHead>{t("headers.rating")}</TableHead>
+            <TableHead className="text-center">{t("headers.speed")}</TableHead>
+            <TableHead className="text-center">{t("headers.security")}</TableHead>
+            <TableHead className="text-center">{t("headers.servers")}</TableHead>
+            <TableHead className="text-center">{t("headers.netflix")}</TableHead>
+            <TableHead className="text-right">{t("headers.price")}</TableHead>
+            <TableHead className="text-right">{t("headers.action")}</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -50,12 +53,12 @@ export function ComparisonTable({ vpns }: ComparisonTableProps) {
                       {vpn.name}
                       {vpn.editorChoice && (
                         <Badge className="bg-yellow-500 text-yellow-950 text-xs">
-                          Editor&apos;s Choice
+                          {t("editorChoice")}
                         </Badge>
                       )}
                     </Link>
                     <div className="text-xs text-muted-foreground">
-                      {vpn.countries} countries • {vpn.maxDevices >= 999 ? "Unlimited" : vpn.maxDevices} devices
+                      {vpn.countries} {t("countries")} • {vpn.maxDevices >= 999 ? t("unlimited") : vpn.maxDevices} {t("devices")}
                     </div>
                   </div>
                 </div>
@@ -89,7 +92,7 @@ export function ComparisonTable({ vpns }: ComparisonTableProps) {
                 <div className="font-bold text-primary">
                   ${vpn.priceTwoYear || vpn.priceYearly}
                 </div>
-                <div className="text-xs text-muted-foreground">/month</div>
+                <div className="text-xs text-muted-foreground">{t("perMonth")}</div>
               </TableCell>
               <TableCell className="text-right">
                 <AffiliateButton
@@ -98,7 +101,7 @@ export function ComparisonTable({ vpns }: ComparisonTableProps) {
                   affiliateUrl={vpn.affiliateUrl}
                   size="sm"
                 >
-                  Visit <ExternalLink className="h-3 w-3 ml-1" />
+                  {t("visit")} <ExternalLink className="h-3 w-3 ml-1" />
                 </AffiliateButton>
               </TableCell>
             </TableRow>

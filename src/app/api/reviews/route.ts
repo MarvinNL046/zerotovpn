@@ -1,27 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { headers } from "next/headers";
-
-// In-memory storage for demo (replace with database in production)
-// This simulates what would be stored in the UserReview table
-const pendingReviews: Array<{
-  id: string;
-  vpnSlug: string;
-  authorName: string;
-  authorEmail: string;
-  rating: number;
-  title: string;
-  content: string;
-  usageType?: string;
-  usagePeriod?: string;
-  userPros: string[];
-  userCons: string[];
-  locale: string;
-  ipAddress?: string;
-  userAgent?: string;
-  verified: boolean;
-  approved: boolean;
-  createdAt: Date;
-}> = [];
+import { prisma } from "@/lib/db";
 
 export async function POST(request: NextRequest) {
   try {
@@ -39,6 +18,7 @@ export async function POST(request: NextRequest) {
       userPros = [],
       userCons = [],
       locale = "en",
+      newsletterConsent = false,
     } = body;
 
     // Validation
@@ -70,29 +50,28 @@ export async function POST(request: NextRequest) {
                       "unknown";
     const userAgent = headersList.get("user-agent") || "unknown";
 
-    // Create review object (in production, this would be saved to database)
-    const review = {
-      id: `review_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
-      vpnSlug,
-      authorName: authorName.slice(0, 50),
-      authorEmail: authorEmail.toLowerCase(),
-      rating,
-      title: title.slice(0, 100),
-      content: content.slice(0, 2000),
-      usageType,
-      usagePeriod,
-      userPros: userPros.slice(0, 5).map((p: string) => p.slice(0, 100)),
-      userCons: userCons.slice(0, 5).map((c: string) => c.slice(0, 100)),
-      locale,
-      ipAddress,
-      userAgent,
-      verified: false,
-      approved: false, // Requires moderation
-      createdAt: new Date(),
-    };
-
-    // In production: await prisma.userReview.create({ data: review })
-    pendingReviews.push(review);
+    // Create review in database
+    const review = await prisma.userReview.create({
+      data: {
+        vpnSlug,
+        authorName: authorName.slice(0, 50),
+        authorEmail: authorEmail.toLowerCase(),
+        rating,
+        title: title.slice(0, 100),
+        content: content.slice(0, 2000),
+        usageType: usageType || null,
+        usagePeriod: usagePeriod || null,
+        userPros: userPros.slice(0, 5).map((p: string) => p.slice(0, 100)),
+        userCons: userCons.slice(0, 5).map((c: string) => c.slice(0, 100)),
+        locale,
+        ipAddress,
+        userAgent,
+        newsletterConsent,
+        consentDate: newsletterConsent ? new Date() : null,
+        verified: false,
+        approved: false, // Requires moderation
+      },
+    });
 
     console.log("New review submitted:", {
       id: review.id,
@@ -119,31 +98,8 @@ export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
     const vpnSlug = searchParams.get("vpnSlug");
-    const status = searchParams.get("status"); // all, pending, approved
-    const adminKey = searchParams.get("adminKey");
-
-    // For admin access (simple key check - in production use proper auth)
-    const isAdmin = adminKey === process.env.ADMIN_KEY;
-
-    if (isAdmin) {
-      // Return all reviews for admin
-      let reviews = pendingReviews;
-
-      if (vpnSlug) {
-        reviews = reviews.filter((r) => r.vpnSlug === vpnSlug);
-      }
-
-      if (status === "pending") {
-        reviews = reviews.filter((r) => !r.approved);
-      } else if (status === "approved") {
-        reviews = reviews.filter((r) => r.approved);
-      }
-
-      return NextResponse.json({
-        reviews,
-        total: reviews.length,
-      });
-    }
+    const page = parseInt(searchParams.get("page") || "1", 10);
+    const limit = parseInt(searchParams.get("limit") || "10", 10);
 
     // Public access - only return approved reviews
     if (!vpnSlug) {
@@ -153,13 +109,61 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    const approvedReviews = pendingReviews.filter(
-      (r) => r.vpnSlug === vpnSlug && r.approved
-    );
+    // Validate pagination parameters
+    if (page < 1 || limit < 1 || limit > 100) {
+      return NextResponse.json(
+        { error: "Invalid pagination parameters" },
+        { status: 400 }
+      );
+    }
+
+    const skip = (page - 1) * limit;
+
+    // Fetch approved reviews with pagination
+    const [reviews, total] = await Promise.all([
+      prisma.userReview.findMany({
+        where: {
+          vpnSlug,
+          approved: true,
+        },
+        orderBy: {
+          createdAt: "desc",
+        },
+        skip,
+        take: limit,
+        select: {
+          id: true,
+          vpnSlug: true,
+          authorName: true,
+          rating: true,
+          title: true,
+          content: true,
+          usageType: true,
+          usagePeriod: true,
+          userPros: true,
+          userCons: true,
+          verified: true,
+          featured: true,
+          helpfulCount: true,
+          unhelpfulCount: true,
+          locale: true,
+          createdAt: true,
+        },
+      }),
+      prisma.userReview.count({
+        where: {
+          vpnSlug,
+          approved: true,
+        },
+      }),
+    ]);
 
     return NextResponse.json({
-      reviews: approvedReviews,
-      total: approvedReviews.length,
+      reviews,
+      total,
+      page,
+      limit,
+      totalPages: Math.ceil(total / limit),
     });
   } catch (error) {
     console.error("Error fetching reviews:", error);
@@ -170,53 +174,3 @@ export async function GET(request: NextRequest) {
   }
 }
 
-// For moderation actions (approve/reject)
-export async function PATCH(request: NextRequest) {
-  try {
-    const body = await request.json();
-    const { reviewId, action, adminKey } = body;
-
-    // Simple admin key check (in production use proper auth)
-    if (adminKey !== process.env.ADMIN_KEY) {
-      return NextResponse.json(
-        { error: "Unauthorized" },
-        { status: 401 }
-      );
-    }
-
-    const reviewIndex = pendingReviews.findIndex((r) => r.id === reviewId);
-
-    if (reviewIndex === -1) {
-      return NextResponse.json(
-        { error: "Review not found" },
-        { status: 404 }
-      );
-    }
-
-    if (action === "approve") {
-      pendingReviews[reviewIndex].approved = true;
-      return NextResponse.json({
-        success: true,
-        message: "Review approved",
-      });
-    } else if (action === "reject") {
-      // Remove the review
-      pendingReviews.splice(reviewIndex, 1);
-      return NextResponse.json({
-        success: true,
-        message: "Review rejected and removed",
-      });
-    }
-
-    return NextResponse.json(
-      { error: "Invalid action" },
-      { status: 400 }
-    );
-  } catch (error) {
-    console.error("Error moderating review:", error);
-    return NextResponse.json(
-      { error: "Failed to moderate review" },
-      { status: 500 }
-    );
-  }
-}

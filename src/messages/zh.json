@@ -61,14 +61,15 @@
     "compare": "比较"
   },
   "footer": {
-    "about": "关于ZeroToVPN",
     "aboutText": "我们通过独立测试和诚实评测帮助您找到最佳VPN。",
     "links": "快速链接",
     "legal": "法律信息",
     "privacy": "隐私政策",
     "terms": "服务条款",
     "disclosure": "联盟披露",
-    "contact": "联系我们",
+    "company": "公司",
+    "about": "关于我们",
+    "contactPage": "联系我们",
     "copyright": "© {year} ZeroToVPN。保留所有权利。",
     "disclaimer": "我们可能通过链接获得佣金，不会增加您的额外费用。"
   },
@@ -79,5 +80,1011 @@
     "button": "订阅",
     "success": "感谢订阅！",
     "privacy": "我们尊重您的隐私。随时取消订阅。"
+  },
+  "home": {
+    "hero": {
+      "badge": "2025年更新",
+      "title": "找到您的",
+      "titleHighlight": "完美VPN",
+      "subtitle": "几分钟内从零到安全。专家评测、诚实比较和顶级VPN服务的独家优惠。",
+      "primaryCta": "比较VPN",
+      "secondaryCta": "什么是VPN？",
+      "trusted": "全球超过100,000名读者信赖"
+    },
+    "trustIndicators": {
+      "vpnsTested": {
+        "value": "50+",
+        "label": "VPN测试数"
+      },
+      "monthlyReaders": {
+        "value": "100K+",
+        "label": "月度读者"
+      },
+      "speedTests": {
+        "value": "500+",
+        "label": "速度测试"
+      },
+      "updated": {
+        "value": "24/7",
+        "label": "更新"
+      }
+    },
+    "comparison": {
+      "title": "2025年最佳VPN",
+      "subtitle": "独立测试和评估。我们对每个VPN的速度、安全性、流媒体和性价比进行测试。"
+    },
+    "topPicks": {
+      "title": "顶级VPN推荐",
+      "subtitle": "我们专家的首选推荐"
+    },
+    "whyVpn": {
+      "title": "为什么您需要VPN",
+      "subtitle": "保护您的隐私，访问全球内容，保持在线安全。",
+      "features": [
+        {
+          "title": "隐私保护",
+          "description": "隐藏您的IP地址并加密您的互联网流量，使您的在线活动对黑客、ISP和广告商保持私密。",
+          "icon": "Shield"
+        },
+        {
+          "title": "访问全球内容",
+          "description": "绕过地理限制，从世界任何地方访问流媒体服务、网站和内容。",
+          "icon": "Globe"
+        },
+        {
+          "title": "保护公共WiFi",
+          "description": "在咖啡馆、机场和酒店的公共WiFi网络上使用军用级加密保持安全。",
+          "icon": "Zap"
+        }
+      ]
+    },
+    "howWeTest": {
+      "title": "我们如何测试VPN",
+      "subtitle": "我们严格的测试方法确保诚实、公正的评测。",
+      "items": [
+        "50多个服务器位置的速度测试",
+        "安全审计和泄漏测试",
+        "流媒体平台兼容性检查",
+        "隐私政策和管辖权分析",
+        "客户支持响应能力",
+        "性价比评估"
+      ]
+    },
+    "ctaSection": {
+      "title": "准备好开始了吗？",
+      "subtitle": "比较最佳VPN，找到最适合您需求的那一个。",
+      "button": "查看所有VPN"
+    },
+    "faq": [
+      {
+        "question": "什么是VPN？",
+        "answer": "VPN（虚拟专用网络）加密您的互联网连接并隐藏您的IP地址，保护您的在线隐私并允许您访问地理限制的内容。"
+      },
+      {
+        "question": "2025年哪个VPN最好？",
+        "answer": "根据我们的测试，NordVPN是2025年最佳综合VPN，提供出色的速度、强大的安全性和超高的性价比。Surfshark是最佳预算选择，支持无限设备。"
+      },
+      {
+        "question": "免费VPN安全吗？",
+        "answer": "大多数免费VPN不推荐使用，因为它们可能会记录您的数据、显示广告或存在安全漏洞。ProtonVPN提供值得信赖的免费套餐，没有数据限制。"
+      },
+      {
+        "question": "VPN可以被追踪吗？",
+        "answer": "具有无日志政策的优质VPN无法追溯到您。VPN提供商不会存储任何关于您在线活动的信息。"
+      }
+    ]
+  },
+  "guides": {
+    "whatIsVpn": {
+      "meta": {
+        "title": "什么是VPN?2025年完整初学者指南 - ZeroToVPN",
+        "description": "了解什么是VPN、它如何工作以及为什么你需要它。我们的综合初学者指南用简单的语言解释VPN技术。"
+      },
+      "hero": {
+        "badge": "初学者指南",
+        "readTime": "8分钟阅读",
+        "title": "什么是VPN?",
+        "subtitle": "虚拟专用网络(VPN)是一种强大的工具,它可以加密您的互联网连接并隐藏您的IP地址,保护您的在线隐私和安全。在本指南中,我们将用简单的语言解释您需要了解的关于VPN的所有内容。",
+        "updated": "更新于2025年11月",
+        "level": "初学者友好"
+      },
+      "toc": {
+        "title": "本指南内容:",
+        "items": [
+          "1. 什么是VPN?",
+          "2. VPN如何工作?",
+          "3. 为什么使用VPN?",
+          "4. 使用VPN的好处",
+          "5. VPN的局限性",
+          "6. 选择合适的VPN"
+        ]
+      },
+      "sections": {
+        "whatIsVpn": {
+          "title": "什么是VPN?",
+          "intro": [
+            "虚拟专用网络(VPN)是一种在您的设备和互联网之间创建安全加密连接的服务。可以把它想象成一条私人隧道,保护您的在线活动免受窥探。",
+            "当您正常连接到互联网时,您的数据会通过您的互联网服务提供商(ISP)传输,他们可以看到您在线做的一切。使用VPN时,您的数据在离开设备之前就会被加密,使得任何可能拦截它的人都无法读取——包括您的ISP、黑客,甚至政府。"
+          ],
+          "withoutVpn": {
+            "title": "不使用VPN",
+            "items": [
+              "您的ISP可以看到您的所有在线活动",
+              "网站可以追踪您的真实IP地址和位置",
+              "公共WiFi上的黑客可以拦截您的数据",
+              "您的浏览历史可能被出售给广告商"
+            ]
+          },
+          "withVpn": {
+            "title": "使用VPN",
+            "items": [
+              "您的连接使用军用级加密进行保护",
+              "您的真实IP地址对网站隐藏",
+              "您的数据在任何网络上都受到保护,包括公共WiFi",
+              "您的在线活动保持私密"
+            ]
+          }
+        },
+        "howVpnWorks": {
+          "title": "VPN如何工作?",
+          "intro": "了解VPN的工作原理有助于您理解为什么它是如此有效的隐私工具。以下是分解为简单步骤的过程:",
+          "steps": [
+            {
+              "number": 1,
+              "title": "您连接到VPN服务器",
+              "description": "当您激活VPN时,您的设备会与VPN提供商的某个服务器建立连接。"
+            },
+            {
+              "number": 2,
+              "title": "您的数据被加密",
+              "description": "离开您设备的所有数据都使用AES-256等协议进行加密——这与政府和银行使用的加密相同。"
+            },
+            {
+              "number": 3,
+              "title": "您的IP地址改变",
+              "description": "网站看到的是VPN服务器的IP地址而不是您的,掩盖了您的真实位置和身份。"
+            },
+            {
+              "number": 4,
+              "title": "建立安全隧道",
+              "description": "在您和VPN服务器之间创建一条安全的「隧道」,保护通过它的所有数据。"
+            }
+          ]
+        },
+        "whyUseVpn": {
+          "title": "为什么使用VPN?",
+          "intro": "数百万人每天使用VPN有很多原因。以下是最常见的使用场景:",
+          "useCases": [
+            {
+              "title": "隐私保护",
+              "description": "让您的浏览历史对想要追踪和利用您在线行为的ISP、雇主和广告商保持私密。",
+              "icon": "Lock"
+            },
+            {
+              "title": "公共WiFi安全",
+              "description": "在咖啡馆、机场、酒店和其他黑客经常出没的公共场所使用WiFi时保护自己。",
+              "icon": "Wifi"
+            },
+            {
+              "title": "访问流媒体内容",
+              "description": "通过连接到不同国家的服务器,从世界任何地方观看您喜爱的Netflix、Disney+、BBC iPlayer等节目。",
+              "icon": "Tv"
+            },
+            {
+              "title": "安全下载",
+              "description": "安全且私密地下载文件。VPN在想要保护其P2P活动的用户中很受欢迎。",
+              "icon": "Download"
+            },
+            {
+              "title": "远程工作安全",
+              "description": "从任何地方安全访问您的公司网络和敏感工作文件,保护业务数据。",
+              "icon": "Building"
+            },
+            {
+              "title": "移动隐私",
+              "description": "在使用移动数据或连接到不熟悉的WiFi网络时保护您的智能手机或平板电脑。",
+              "icon": "Smartphone"
+            }
+          ]
+        },
+        "vpnBenefits": {
+          "title": "使用VPN的好处",
+          "benefits": [
+            "加密您的所有互联网流量",
+            "隐藏您的IP地址和位置",
+            "防止ISP追踪和限速",
+            "保护免受公共网络上的黑客攻击",
+            "绕过地理限制",
+            "节省机票和酒店费用(价格因地区而异)",
+            "防止ISP带宽限制",
+            "增加在线匿名性"
+          ]
+        },
+        "vpnLimitations": {
+          "title": "VPN的局限性",
+          "intro": "虽然VPN是强大的隐私工具,但它们并不是解决所有在线安全问题的魔法方案。以下是VPN无法做到的:",
+          "limitations": [
+            {
+              "title": "VPN不能让您完全匿名",
+              "description": "网站仍然可以通过cookie、浏览器指纹和登录账户追踪您。"
+            },
+            {
+              "title": "VPN无法防范恶意软件",
+              "description": "您仍然需要杀毒软件来防范病毒和恶意下载。"
+            },
+            {
+              "title": "VPN可能会降低您的连接速度",
+              "description": "加密会增加开销,尽管高级VPN会最小化这种影响。"
+            },
+            {
+              "title": "某些服务会屏蔽VPN",
+              "description": "某些网站和流媒体平台会主动尝试屏蔽VPN用户。"
+            },
+            {
+              "title": "免费VPN通常有陷阱",
+              "description": "许多免费VPN会记录您的数据、显示广告或存在严重的安全漏洞。"
+            }
+          ]
+        },
+        "choosingVpn": {
+          "title": "选择合适的VPN",
+          "intro": "并非所有VPN都是平等的。以下是选择VPN服务时需要注意的事项:",
+          "features": [
+            {
+              "title": "强大的加密",
+              "description": "寻找AES-256加密和现代协议,如WireGuard、OpenVPN或IKEv2。一些提供商还提供针对速度优化的专有协议。"
+            },
+            {
+              "title": "无日志政策",
+              "description": "选择不存储您活动日志的VPN。寻找经过独立审计的无日志声明。"
+            },
+            {
+              "title": "快速速度",
+              "description": "好的VPN应该最小化速度损失。寻找拥有大型服务器网络和现代协议的VPN。"
+            },
+            {
+              "title": "终止开关",
+              "description": "如果VPN断开连接,终止开关会切断您的互联网,防止意外的数据泄露。"
+            },
+            {
+              "title": "服务器位置",
+              "description": "更多的服务器位置意味着更好的速度和更多访问地理限制内容的选项。"
+            }
+          ]
+        }
+      },
+      "cta": {
+        "title": "准备好获得保护了吗?",
+        "description": "现在您已经了解了什么是VPN以及为什么需要它,请查看我们对最佳VPN服务的比较,找到适合您的那一个。",
+        "primaryButton": "比较VPN",
+        "secondaryButton": "查看2025年最佳VPN"
+      },
+      "relatedGuides": {
+        "title": "继续学习",
+        "guides": [
+          {
+            "title": "VPN如何工作?",
+            "description": "深入了解VPN技术",
+            "url": "/guides/how-vpn-works"
+          },
+          {
+            "title": "最佳流媒体VPN",
+            "description": "访问Netflix、Disney+等",
+            "url": "/guides/vpn-for-streaming"
+          }
+        ]
+      }
+    },
+    "howVpnWorks": {
+      "meta": {
+        "title": "VPN如何工作?2025年技术指南 - ZeroToVPN",
+        "description": "了解VPN技术背后的技术细节。逐步学习加密、隧道协议以及VPN如何保护您的数据。"
+      },
+      "hero": {
+        "badge": "技术指南",
+        "readTime": "10分钟阅读",
+        "title": "VPN如何工作?",
+        "subtitle": "曾经想知道当您在VPN上点击「连接」时会发生什么吗?本指南分解了VPN技术背后的技术魔法,用清晰易懂的语言解释加密、隧道协议和数据保护。",
+        "updated": "更新于2025年11月",
+        "level": "中级水平"
+      },
+      "toc": {
+        "title": "本指南内容:",
+        "items": [
+          "1. VPN连接概述",
+          "2. 加密解释",
+          "3. VPN隧道",
+          "4. VPN协议比较",
+          "5. 分步过程",
+          "6. 安全功能"
+        ]
+      },
+      "sections": {
+        "overview": {
+          "title": "VPN连接概述",
+          "intro": "VPN在您的设备和VPN服务器之间创建一个安全的加密连接。这个连接充当一条「隧道」,保护您的数据不被第三方看到或拦截。",
+          "diagram": {
+            "title": "您的数据如何传输",
+            "steps": [
+              {
+                "label": "您的设备",
+                "icon": "Wifi"
+              },
+              {
+                "label": "已加密",
+                "status": "protected"
+              },
+              {
+                "label": "VPN服务器",
+                "icon": "Server"
+              },
+              {
+                "label": "互联网",
+                "icon": "Globe"
+              }
+            ]
+          },
+          "note": "关键概念是,在您的设备和VPN服务器之间,所有数据都是加密且不可读的。只有在到达VPN服务器后才会被解密并发送到目的地。"
+        },
+        "encryption": {
+          "title": "加密解释",
+          "intro": "加密是使用数学算法将可读数据(明文)转换为不可读格式(密文)的过程。只有拥有正确解密密钥的人才能将其转换回来。",
+          "aes256": {
+            "title": "AES-256加密",
+            "description": "大多数现代VPN使用AES-256(高级加密标准,256位密钥),这与全球政府和军事组织使用的加密相同。",
+            "specs": [
+              {
+                "title": "密钥长度",
+                "description": "256位 = 2^256种可能的组合。这比可观测宇宙中的原子数量还要多!"
+              },
+              {
+                "title": "破解时间",
+                "description": "使用当前技术,通过暴力破解AES-256加密需要数十亿年。"
+              }
+            ]
+          },
+          "keyTypes": {
+            "title": "加密密钥类型",
+            "items": [
+              {
+                "type": "对称加密",
+                "description": "加密和解密使用相同的密钥。速度快但需要安全的密钥交换。"
+              },
+              {
+                "type": "非对称加密",
+                "description": "公钥加密,私钥解密。用于初始握手和密钥交换。"
+              }
+            ]
+          }
+        },
+        "tunneling": {
+          "title": "VPN隧道",
+          "intro": "VPN隧道是将您的数据包封装在另一个数据包内的过程。可以把它想象成把一封信放进另一个信封——外层信封隐藏了里面的内容。",
+          "process": {
+            "title": "封装过程",
+            "steps": [
+              {
+                "number": 1,
+                "title": "原始数据",
+                "description": "您的实际数据包带有目标地址"
+              },
+              {
+                "number": 2,
+                "title": "加密",
+                "description": "数据使用VPN协议进行加密"
+              },
+              {
+                "number": 3,
+                "title": "封装",
+                "description": "加密数据包装在新数据包中,地址指向VPN服务器"
+              },
+              {
+                "number": 4,
+                "title": "传输",
+                "description": "数据包通过ISP传输到VPN服务器(ISP只能看到加密的数据块)"
+              }
+            ]
+          }
+        },
+        "protocols": {
+          "title": "VPN协议比较",
+          "intro": "VPN协议决定了您的数据如何被加密和传输。每个协议在速度、安全性和兼容性之间都有自己的平衡。",
+          "list": [
+            {
+              "name": "WireGuard",
+              "badge": "推荐",
+              "description": "最新且最快的协议。使用最先进的加密技术,只有4,000行代码(相比之下OpenVPN有400,000多行)。",
+              "ratings": {
+                "speed": "优秀",
+                "security": "优秀",
+                "compatibility": "良好"
+              }
+            },
+            {
+              "name": "OpenVPN",
+              "badge": "行业标准",
+              "description": "使用最广泛的协议。开源且经过20多年的实战测试。几乎可以在任何设备和网络上工作。",
+              "ratings": {
+                "speed": "良好",
+                "security": "优秀",
+                "compatibility": "优秀"
+              }
+            },
+            {
+              "name": "IKEv2/IPSec",
+              "badge": "移动优化",
+              "description": "非常适合移动设备。在WiFi和蜂窝网络之间切换时快速重新连接。内置于大多数操作系统。",
+              "ratings": {
+                "speed": "优秀",
+                "security": "优秀",
+                "compatibility": "优秀"
+              }
+            }
+          ]
+        },
+        "stepByStep": {
+          "title": "分步说明:连接时会发生什么",
+          "steps": [
+            {
+              "number": 1,
+              "title": "VPN应用程序启动连接",
+              "description": "当您点击「连接」时,您的VPN应用程序会联系VPN服务器并开始身份验证过程。"
+            },
+            {
+              "number": 2,
+              "title": "握手与身份验证",
+              "description": "您的设备和VPN服务器交换加密密钥,并通过证书验证彼此的身份。"
+            },
+            {
+              "number": 3,
+              "title": "建立隧道",
+              "description": "创建一条安全的加密隧道。您的所有互联网流量现在都将通过这条隧道流动。"
+            },
+            {
+              "number": 4,
+              "title": "IP地址被掩盖",
+              "description": "您的真实IP地址被VPN服务器的IP替换。网站现在看到的是服务器的位置,而不是您的。"
+            },
+            {
+              "number": 5,
+              "title": "数据安全流动",
+              "description": "您发送的每个数据包都会被加密,通过隧道传输到VPN服务器,解密,然后转发到目的地。响应遵循相反的路径。"
+            }
+          ]
+        },
+        "securityFeatures": {
+          "title": "关键安全功能",
+          "features": [
+            {
+              "name": "终止开关",
+              "icon": "EyeOff",
+              "description": "如果VPN连接断开,自动阻止所有互联网流量,防止数据泄露。"
+            },
+            {
+              "name": "DNS泄漏保护",
+              "icon": "Cloud",
+              "description": "确保DNS查询通过VPN隧道,而不是可能暴露您浏览历史的ISP DNS服务器。"
+            },
+            {
+              "name": "完全前向保密",
+              "icon": "Lock",
+              "description": "为每个会话生成唯一的加密密钥。即使一个密钥被泄露,过去的会话仍然安全。"
+            },
+            {
+              "name": "仅RAM服务器",
+              "icon": "Server",
+              "description": "一些VPN完全在RAM内存中运行。断电时,所有数据会自动清除,不留痕迹。"
+            }
+          ]
+        },
+        "keyTakeaways": {
+          "title": "要点总结",
+          "items": [
+            "VPN使用军用级AES-256加密您的数据",
+            "隧道通过将数据封装在加密数据包中来隐藏您的数据",
+            "WireGuard是最快的现代协议;OpenVPN兼容性最好",
+            "终止开关和DNS泄漏保护等功能增加了额外的安全层"
+          ]
+        }
+      },
+      "relatedGuides": {
+        "title": "继续学习",
+        "guides": [
+          {
+            "title": "什么是VPN?",
+            "description": "如果您是VPN新手,请从基础开始。",
+            "url": "/guides/what-is-vpn"
+          },
+          {
+            "title": "流媒体VPN",
+            "description": "了解如何使用VPN访问流媒体内容。",
+            "url": "/guides/vpn-for-streaming"
+          }
+        ]
+      },
+      "cta": {
+        "title": "准备好试用VPN了吗?",
+        "description": "现在您已经了解了VPN的工作原理,请查看我们评分最高的VPN提供商,找到最适合您需求的那一个。",
+        "button": "查看最佳VPN"
+      }
+    },
+    "vpnForStreaming": {
+      "meta": {
+        "title": "最佳流媒体VPN - Netflix、Disney+等（2025指南）- ZeroToVPN",
+        "description": "了解如何使用VPN从任何地方访问Netflix、Disney+、BBC iPlayer等流媒体服务。找到最适合流媒体的VPN。"
+      },
+      "hero": {
+        "badge": "流媒体指南",
+        "readTime": "7分钟阅读",
+        "title": "最佳流媒体VPN",
+        "subtitle": "想从欧洲观看美国Netflix？想在国外访问BBC iPlayer？VPN可以解锁全球各地的流媒体内容。本指南涵盖了关于VPN和流媒体的一切知识。",
+        "updated": "更新于2025年11月",
+        "level": "实用指南"
+      },
+      "toc": {
+        "title": "本指南内容：",
+        "items": [
+          "1. 为什么使用VPN观看流媒体？",
+          "2. VPN流媒体工作原理",
+          "3. 热门流媒体服务",
+          "4. 最佳流媒体VPN",
+          "5. 更好的流媒体观看技巧",
+          "6. 常见问题"
+        ]
+      },
+      "relatedGuides": {
+        "title": "继续学习",
+        "guides": [
+          {
+            "title": "VPN如何工作？",
+            "description": "了解VPN技术背后的技术细节。",
+            "url": "/guides/how-vpn-works"
+          },
+          {
+            "title": "什么是VPN？",
+            "description": "如果您是VPN新手，请从基础开始。",
+            "url": "/guides/what-is-vpn"
+          }
+        ]
+      },
+      "cta": {
+        "title": "准备好开始流媒体观看了吗？",
+        "description": "选择一个专为流媒体优化的VPN，立即解锁全球内容。",
+        "button": "查找最佳流媒体VPN"
+      }
+    },
+    "vpnForTorrenting": {
+      "meta": {
+        "title": "种子下载VPN：下载时保持安全（2025指南）- ZeroToVPN",
+        "description": "学习如何使用VPN进行安全的种子下载。了解支持P2P的VPN、终止开关和泄漏保护，以便安全和匿名地下载。"
+      },
+      "hero": {
+        "badge": "隐私指南",
+        "readTime": "8分钟阅读",
+        "title": "种子下载VPN",
+        "subtitle": "在没有保护的情况下使用种子下载会将您的IP地址暴露给数千个对等节点。了解VPN如何在您下载时保护您的安全，以及在支持P2P的VPN中应该寻找哪些功能。",
+        "updated": "更新于2025年11月",
+        "level": "隐私指南"
+      },
+      "toc": {
+        "title": "本指南内容：",
+        "items": [
+          "1. 为什么使用VPN进行种子下载？",
+          "2. 不使用VPN下载种子的风险",
+          "3. 必备VPN功能",
+          "4. 最佳种子下载VPN",
+          "5. 如何设置",
+          "6. 法律考虑因素"
+        ]
+      },
+      "relatedGuides": {
+        "title": "继续学习",
+        "guides": [
+          {
+            "title": "VPN隐私指南",
+            "description": "深入了解无日志政策以及VPN真正的隐私性。",
+            "url": "/guides/vpn-privacy-guide"
+          },
+          {
+            "title": "VPN速度指南",
+            "description": "优化您的VPN以获得更快的下载速度。",
+            "url": "/guides/vpn-speed-guide"
+          }
+        ]
+      },
+      "cta": {
+        "title": "寻找安全的种子下载VPN",
+        "description": "比较支持P2P、具有终止开关和经过验证的无日志政策的VPN，以便在下载时保持安全。",
+        "button": "查找最佳P2P VPN"
+      }
+    },
+    "vpnForTravel": {
+      "meta": {
+        "title": "旅行VPN：国外保持连接的必备指南（2025）- ZeroToVPN",
+        "description": "了解为什么旅行时需要VPN。访问家乡内容、绕过审查、保护酒店WiFi安全并找到优惠。完整的旅行VPN指南。"
+      },
+      "hero": {
+        "badge": "旅行指南",
+        "readTime": "10分钟阅读",
+        "title": "旅行VPN指南",
+        "subtitle": "出国旅行？VPN与护照一样重要。学习如何访问家乡内容、在酒店WiFi上保持安全、绕过审查，甚至在预订时省钱。",
+        "updated": "更新于2025年11月",
+        "level": "旅行必备"
+      },
+      "toc": {
+        "title": "本指南内容：",
+        "items": [
+          "1. 为什么旅行时需要VPN",
+          "2. 访问家乡内容",
+          "3. 绕过审查",
+          "4. 旅行安全提示",
+          "5. 使用VPN省钱",
+          "6. 最佳旅行VPN"
+        ]
+      },
+      "relatedGuides": {
+        "title": "继续学习",
+        "guides": [
+          {
+            "title": "公共WiFi安全",
+            "description": "公共网络的基本安全提示。",
+            "url": "/guides/public-wifi-safety"
+          },
+          {
+            "title": "移动设备VPN",
+            "description": "在智能手机或平板电脑上设置VPN。",
+            "url": "/guides/vpn-on-mobile"
+          }
+        ]
+      },
+      "cta": {
+        "title": "为您的下一次冒险做好准备了吗？",
+        "description": "不要在没有VPN保护的情况下离开家。比较最佳国际旅行VPN，随时随地保持连接。",
+        "button": "查看最佳VPN"
+      }
+    },
+    "vpnOnMobile": {
+      "meta": {
+        "title": "移动设备VPN：iOS和Android完整设置指南（2025）- ZeroToVPN",
+        "description": "学习如何在iPhone或Android设备上设置和使用VPN。分步指南、最佳实践和移动VPN安全提示。"
+      },
+      "hero": {
+        "badge": "移动指南",
+        "readTime": "9分钟阅读",
+        "title": "移动设备VPN",
+        "subtitle": "您的智能手机随处可见——您的VPN保护也应该如此。学习如何在iOS和Android上设置和优化VPN，以实现最大的安全性和便利性。",
+        "updated": "更新于2025年11月",
+        "level": "移动设置指南"
+      },
+      "toc": {
+        "title": "本指南内容：",
+        "items": [
+          "1. 为什么在移动设备上使用VPN？",
+          "2. iPhone/iPad VPN设置",
+          "3. Android VPN设置",
+          "4. 最佳移动VPN设置",
+          "5. 电池和性能提示",
+          "6. 最佳移动VPN"
+        ]
+      },
+      "relatedGuides": {
+        "title": "继续学习",
+        "guides": [
+          {
+            "title": "公共WiFi安全",
+            "description": "在公共网络上保持安全。",
+            "url": "/guides/public-wifi-safety"
+          },
+          {
+            "title": "旅行VPN",
+            "description": "旅行者必备的VPN指南。",
+            "url": "/guides/vpn-for-travel"
+          }
+        ]
+      },
+      "cta": {
+        "title": "准备好保护您的移动设备了吗？",
+        "description": "比较最适合移动设备的VPN，为您的智能手机或平板电脑找到完美的保护。",
+        "button": "查看最佳VPN"
+      }
+    },
+    "vpnPrivacyGuide": {
+      "meta": {
+        "title": "VPN隐私指南：无日志政策和管辖权解释（2025）- ZeroToVPN",
+        "description": "了解什么使VPN真正私密。学习无日志政策、管辖权、独立审计以及如何评估VPN隐私声明。"
+      },
+      "hero": {
+        "badge": "隐私指南",
+        "readTime": "10分钟阅读",
+        "title": "VPN隐私指南",
+        "subtitle": "并非所有VPN在隐私方面都是平等的。了解「无日志」的真正含义，为什么管辖权很重要，以及如何判断VPN是否真正保护您的隐私。",
+        "updated": "更新于2025年11月",
+        "level": "隐私深度解析"
+      },
+      "toc": {
+        "title": "本指南内容：",
+        "items": [
+          "1. 什么是VPN隐私？",
+          "2. 无日志政策解释",
+          "3. 为什么管辖权很重要",
+          "4. 独立审计",
+          "5. 隐私危险信号",
+          "6. 隐私检查清单"
+        ]
+      },
+      "relatedGuides": {
+        "title": "继续学习",
+        "guides": [
+          {
+            "title": "种子下载VPN",
+            "description": "将隐私知识应用于安全的P2P下载。",
+            "url": "/guides/vpn-for-torrenting"
+          },
+          {
+            "title": "VPN如何工作？",
+            "description": "了解VPN保护的技术细节。",
+            "url": "/guides/how-vpn-works"
+          }
+        ]
+      },
+      "cta": {
+        "title": "找到真正私密的VPN",
+        "description": "根据隐私功能、无日志政策和独立审计比较VPN。",
+        "button": "比较私密VPN"
+      }
+    },
+    "vpnProtocolsExplained": {
+      "meta": {
+        "title": "VPN协议解释：WireGuard vs OpenVPN vs IKEv2（2025）- ZeroToVPN",
+        "description": "了解VPN协议之间的差异。比较WireGuard、OpenVPN、IKEv2等，选择最适合您需求的协议。"
+      },
+      "hero": {
+        "badge": "技术指南",
+        "readTime": "12分钟阅读",
+        "title": "VPN协议解释",
+        "subtitle": "WireGuard、OpenVPN、IKEv2——这些术语是什么意思，您应该使用哪个？本指南用通俗易懂的语言分解了VPN协议，帮助您做出正确的选择。",
+        "updated": "更新于2025年11月",
+        "level": "技术指南"
+      },
+      "toc": {
+        "title": "本指南内容：",
+        "items": [
+          "1. 什么是VPN协议？",
+          "2. WireGuard",
+          "3. OpenVPN",
+          "4. IKEv2/IPSec",
+          "5. 其他协议",
+          "6. 协议比较"
+        ]
+      },
+      "relatedGuides": {
+        "title": "继续学习",
+        "guides": [
+          {
+            "title": "VPN如何工作？",
+            "description": "了解VPN技术背后的技术细节。",
+            "url": "/guides/how-vpn-works"
+          },
+          {
+            "title": "VPN速度指南",
+            "description": "了解如何优化VPN以获得最大速度。",
+            "url": "/guides/vpn-speed-guide"
+          }
+        ]
+      },
+      "cta": {
+        "title": "找到支持您首选协议的VPN",
+        "description": "根据协议支持、速度和安全功能比较VPN。",
+        "button": "比较VPN"
+      }
+    },
+    "vpnSpeedGuide": {
+      "meta": {
+        "title": "VPN速度指南：如何获得最快的VPN连接（2025）- ZeroToVPN",
+        "description": "了解影响VPN速度的因素以及如何优化您的连接。获取最大化VPN性能的提示，用于流媒体、游戏和下载。"
+      },
+      "hero": {
+        "badge": "性能指南",
+        "readTime": "6分钟阅读",
+        "title": "VPN速度指南",
+        "subtitle": "您的VPN拖慢了您的互联网速度吗？了解影响VPN速度的因素，发现经过验证的技巧，优化您的连接以用于流媒体、游戏和日常浏览。",
+        "updated": "更新于2025年11月",
+        "level": "实用指南"
+      },
+      "toc": {
+        "title": "本指南内容：",
+        "items": [
+          "1. 了解VPN速度",
+          "2. 影响速度的因素",
+          "3. 预期速度损失",
+          "4. 速度优化提示",
+          "5. 最快的VPN协议",
+          "6. 如何测试VPN速度"
+        ]
+      },
+      "relatedGuides": {
+        "title": "继续学习",
+        "guides": [
+          {
+            "title": "VPN如何工作？",
+            "description": "了解VPN技术背后的技术细节。",
+            "url": "/guides/how-vpn-works"
+          },
+          {
+            "title": "流媒体VPN",
+            "description": "了解如何使用VPN观看Netflix、Disney+等。",
+            "url": "/guides/vpn-for-streaming"
+          }
+        ]
+      },
+      "cta": {
+        "title": "找到最快的VPN",
+        "description": "比较VPN速度，找到最适合您需求的最快提供商。我们测试所有VPN的真实性能。",
+        "button": "比较VPN速度"
+      }
+    },
+    "publicWifiSafety": {
+      "meta": {
+        "title": "公共WiFi安全：如何在开放网络上保持安全（2025）- ZeroToVPN",
+        "description": "了解公共WiFi风险以及如何保护自己。发现在咖啡馆、机场、酒店和其他公共场所使用WiFi的基本安全提示。"
+      },
+      "hero": {
+        "badge": "安全指南",
+        "readTime": "8分钟阅读",
+        "title": "公共WiFi安全指南",
+        "subtitle": "免费WiFi很方便，但也伴随着严重的风险。了解黑客如何利用公共网络，以及在咖啡店、机场、酒店等场所保护您数据的基本步骤。",
+        "updated": "更新于2025年11月",
+        "level": "安全必备"
+      },
+      "toc": {
+        "title": "本指南内容：",
+        "items": [
+          "1. 公共WiFi风险解释",
+          "2. 常见WiFi攻击类型",
+          "3. 基本保护提示",
+          "4. VPN如何保护您",
+          "5. 按位置分类的安全",
+          "6. 快速安全检查清单"
+        ]
+      },
+      "relatedGuides": {
+        "title": "继续学习",
+        "guides": [
+          {
+            "title": "旅行VPN",
+            "description": "国际旅行者必备的VPN指南。",
+            "url": "/guides/vpn-for-travel"
+          },
+          {
+            "title": "移动设备VPN",
+            "description": "在智能手机上设置VPN保护。",
+            "url": "/guides/vpn-on-mobile"
+          }
+        ]
+      },
+      "cta": {
+        "title": "在任何WiFi网络上保持安全",
+        "description": "不要在公共网络上冒您的个人数据风险。获取VPN，在全球任何地方都能自信地浏览。",
+        "button": "查看最佳VPN"
+      }
+    }
+  },
+  "vpnTable": {
+    "headers": {
+      "rank": "#",
+      "vpn": "VPN",
+      "rating": "评分",
+      "speed": "速度",
+      "security": "安全性",
+      "servers": "服务器",
+      "netflix": "Netflix",
+      "price": "价格",
+      "action": "操作"
+    },
+    "editorChoice": "编辑推荐",
+    "countries": "国家",
+    "devices": "设备",
+    "unlimited": "无限制",
+    "perMonth": "/月",
+    "visit": "访问"
+  },
+  "vpnCard": {
+    "editorChoice": "编辑推荐",
+    "from": "起价",
+    "perMonth": "/月",
+    "servers": "服务器",
+    "countries": "国家",
+    "devices": "设备",
+    "speed": "速度",
+    "security": "安全性",
+    "netflix": "Netflix",
+    "torrenting": "种子下载",
+    "noLogs": "无日志",
+    "freeTier": "免费套餐",
+    "getVpn": "获取{name}",
+    "review": "评测"
+  },
+  "vpnReview": {
+    "backToReviews": "返回评测",
+    "editorChoice": "编辑推荐",
+    "freeTierAvailable": "提供免费套餐",
+    "reviewTitle": "{name} 2025年评测",
+    "basedOnTesting": "基于我们的综合测试",
+    "getVpnPrice": "获取{name} - ${price}/月",
+    "quickStats": {
+      "title": "快速统计",
+      "servers": "服务器",
+      "countries": "国家",
+      "devices": "设备",
+      "moneyBack": "退款保证",
+      "days": "{count}天",
+      "startingAt": "起价",
+      "perMonth": "/月",
+      "unlimited": "无限制"
+    },
+    "scores": {
+      "speed": "速度",
+      "security": "安全性",
+      "streaming": "流媒体"
+    },
+    "prosAndCons": {
+      "pros": "优点",
+      "cons": "缺点"
+    },
+    "tabs": {
+      "overview": "概述",
+      "pricing": "价格",
+      "security": "安全性",
+      "streaming": "流媒体"
+    },
+    "overview": {
+      "about": "关于{name}",
+      "description": "{name}是市场上领先的VPN提供商之一，在{countries}个国家提供{servers}台服务器。支持最多{devices}个设备同时连接，适合个人和家庭使用。",
+      "keyFeatures": "主要功能",
+      "serverNetwork": "服务器网络：",
+      "serversInCountries": "{countries}个国家的{servers}台服务器",
+      "protocols": "协议：",
+      "encryption": "加密：",
+      "killSwitch": "终止开关：",
+      "noLogsPolicy": "无日志政策：",
+      "yes": "是",
+      "no": "否",
+      "yesAudited": "是（已审计）",
+      "limited": "有限"
+    },
+    "pricing": {
+      "title": "{name}价格方案",
+      "monthly": "月付",
+      "yearly": "年付",
+      "twoYears": "2年",
+      "mostPopular": "最受欢迎",
+      "bestValue": "最佳性价比",
+      "moneyBackGuarantee": "所有套餐均提供{days}天退款保证"
+    },
+    "securityFeatures": {
+      "title": "安全与隐私功能",
+      "noLogsPolicy": "无日志政策",
+      "killSwitch": "终止开关",
+      "encryption": "{type}加密",
+      "supportedProtocols": "支持的协议"
+    },
+    "streamingSection": {
+      "title": "流媒体兼容性",
+      "netflix": "Netflix",
+      "disneyPlus": "Disney+",
+      "amazonPrime": "Amazon Prime",
+      "bbcIplayer": "BBC iPlayer",
+      "p2pSupported": "支持P2P/种子下载",
+      "torrentDescription": "{name}允许在专用服务器上进行种子下载，并提供优化的速度。"
+    },
+    "verdict": {
+      "title": "我们的评价",
+      "description": "在我们的综合测试中，{name}获得了{rating}/5分。凭借{countries}个国家的{servers}台服务器，它提供了出色的覆盖范围和可靠的性能。",
+      "editorChoiceNote": " 它以出色的速度、安全性和性价比组合赢得了我们的编辑推荐奖。",
+      "getVpnNow": "立即获取{name} - ${price}/月"
+    },
+    "userReviews": {
+      "title": "用户评测"
+    }
   }
 }

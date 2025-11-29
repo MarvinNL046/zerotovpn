@@ -61,14 +61,15 @@
     "compare": "비교하기"
   },
   "footer": {
-    "about": "ZeroToVPN 소개",
     "aboutText": "독립적인 테스트와 솔직한 리뷰로 최고의 VPN을 찾도록 도와드립니다.",
     "links": "빠른 링크",
     "legal": "법적 고지",
     "privacy": "개인정보 처리방침",
     "terms": "이용약관",
     "disclosure": "제휴 공개",
-    "contact": "문의하기",
+    "company": "회사 정보",
+    "about": "회사 소개",
+    "contactPage": "문의하기",
     "copyright": "© {year} ZeroToVPN. All rights reserved.",
     "disclaimer": "링크를 통해 구매 시 추가 비용 없이 수수료를 받을 수 있습니다."
   },
@@ -79,5 +80,1011 @@
     "button": "구독",
     "success": "구독해 주셔서 감사합니다!",
     "privacy": "개인정보를 존중합니다. 언제든 구독 취소 가능."
+  },
+  "guides": {
+    "whatIsVpn": {
+      "meta": {
+        "title": "VPN이란 무엇인가요? 초보자 완벽 가이드 2025 - ZeroToVPN",
+        "description": "VPN이 무엇인지, 어떻게 작동하는지, 왜 필요한지 알아보세요. 초보자를 위한 종합 가이드로 VPN 기술을 쉽게 설명합니다."
+      },
+      "hero": {
+        "badge": "초보자 가이드",
+        "readTime": "8분 소요",
+        "title": "VPN이란 무엇인가요?",
+        "subtitle": "VPN(가상 사설망)은 인터넷 연결을 암호화하고 IP 주소를 숨겨 온라인 개인정보와 보안을 보호하는 강력한 도구입니다. 이 가이드에서는 VPN에 대해 알아야 할 모든 것을 쉬운 용어로 설명합니다.",
+        "updated": "2025년 11월 업데이트",
+        "level": "초보자 친화적"
+      },
+      "toc": {
+        "title": "이 가이드의 내용:",
+        "items": [
+          "1. VPN이란 무엇인가요?",
+          "2. VPN은 어떻게 작동하나요?",
+          "3. VPN을 왜 사용하나요?",
+          "4. VPN 사용의 장점",
+          "5. VPN의 한계",
+          "6. 올바른 VPN 선택하기"
+        ]
+      },
+      "sections": {
+        "whatIsVpn": {
+          "title": "VPN이란 무엇인가요?",
+          "intro": [
+            "VPN(가상 사설망)은 사용자의 기기와 인터넷 사이에 안전하고 암호화된 연결을 생성하는 서비스입니다. 온라인 활동을 엿보는 눈으로부터 보호하는 개인 터널이라고 생각하시면 됩니다.",
+            "일반적으로 인터넷에 연결할 때 데이터는 인터넷 서비스 공급자(ISP)를 통해 이동하며, ISP는 사용자의 모든 온라인 활동을 볼 수 있습니다. VPN을 사용하면 데이터가 기기를 떠나기 전에 암호화되어 ISP, 해커, 심지어 정부를 포함한 누구도 가로챈 데이터를 읽을 수 없게 됩니다."
+          ],
+          "withoutVpn": {
+            "title": "VPN 없이",
+            "items": [
+              "ISP가 모든 온라인 활동을 볼 수 있습니다",
+              "웹사이트가 실제 IP 주소와 위치를 추적할 수 있습니다",
+              "공용 WiFi에서 해커가 데이터를 가로챌 수 있습니다",
+              "브라우징 기록이 광고주에게 판매될 수 있습니다"
+            ]
+          },
+          "withVpn": {
+            "title": "VPN 사용 시",
+            "items": [
+              "군용 등급 암호화로 연결이 보호됩니다",
+              "실제 IP 주소가 웹사이트로부터 숨겨집니다",
+              "공용 WiFi를 포함한 모든 네트워크에서 데이터가 보호됩니다",
+              "온라인 활동이 비공개로 유지됩니다"
+            ]
+          }
+        },
+        "howVpnWorks": {
+          "title": "VPN은 어떻게 작동하나요?",
+          "intro": "VPN이 어떻게 작동하는지 이해하면 왜 효과적인 개인정보 보호 도구인지 알 수 있습니다. 간단한 단계로 나눈 프로세스는 다음과 같습니다:",
+          "steps": [
+            {
+              "number": 1,
+              "title": "VPN 서버에 연결합니다",
+              "description": "VPN을 활성화하면 기기가 VPN 제공업체의 서버 중 하나에 연결을 설정합니다."
+            },
+            {
+              "number": 2,
+              "title": "데이터가 암호화됩니다",
+              "description": "기기를 떠나는 모든 데이터는 정부와 은행에서 사용하는 것과 동일한 AES-256과 같은 프로토콜을 사용하여 암호화됩니다."
+            },
+            {
+              "number": 3,
+              "title": "IP 주소가 변경됩니다",
+              "description": "웹사이트는 사용자의 IP 주소 대신 VPN 서버의 IP 주소를 보게 되어 실제 위치와 신원이 숨겨집니다."
+            },
+            {
+              "number": 4,
+              "title": "보안 터널이 설정됩니다",
+              "description": "사용자와 VPN 서버 사이에 안전한 '터널'이 생성되어 통과하는 모든 데이터를 보호합니다."
+            }
+          ]
+        },
+        "whyUseVpn": {
+          "title": "VPN을 왜 사용하나요?",
+          "intro": "매일 수백만 명이 VPN을 사용하는 이유는 다양합니다. 가장 일반적인 사용 사례는 다음과 같습니다:",
+          "useCases": [
+            {
+              "title": "개인정보 보호",
+              "description": "온라인 행동을 추적하고 수익화하려는 ISP, 고용주, 광고주로부터 브라우징 기록을 비공개로 유지합니다.",
+              "icon": "Lock"
+            },
+            {
+              "title": "공용 WiFi 보안",
+              "description": "카페, 공항, 호텔 및 해커가 자주 숨어있는 기타 공공 장소에서 WiFi를 사용할 때 자신을 보호합니다.",
+              "icon": "Wifi"
+            },
+            {
+              "title": "스트리밍 콘텐츠 액세스",
+              "description": "다른 국가의 서버에 연결하여 전 세계 어디서나 Netflix, Disney+, BBC iPlayer 등에서 좋아하는 프로그램을 시청합니다.",
+              "icon": "Tv"
+            },
+            {
+              "title": "안전한 다운로드",
+              "description": "파일을 안전하고 비공개로 다운로드합니다. VPN은 P2P 활동을 보호하려는 사용자들에게 인기가 있습니다.",
+              "icon": "Download"
+            },
+            {
+              "title": "원격 근무 보안",
+              "description": "어디서나 회사 네트워크와 민감한 업무 파일에 안전하게 액세스하여 비즈니스 데이터를 보호합니다.",
+              "icon": "Building"
+            },
+            {
+              "title": "모바일 개인정보 보호",
+              "description": "모바일 데이터를 사용하거나 낯선 WiFi 네트워크에 연결할 때 스마트폰이나 태블릿을 보호합니다.",
+              "icon": "Smartphone"
+            }
+          ]
+        },
+        "vpnBenefits": {
+          "title": "VPN 사용의 장점",
+          "benefits": [
+            "모든 인터넷 트래픽을 암호화합니다",
+            "IP 주소와 위치를 숨깁니다",
+            "ISP 추적 및 제한을 방지합니다",
+            "공용 네트워크에서 해커로부터 보호합니다",
+            "지역 제한을 우회합니다",
+            "항공권과 호텔 비용을 절약합니다 (가격은 위치에 따라 다름)",
+            "ISP의 대역폭 제한을 방지합니다",
+            "온라인 익명성 계층을 추가합니다"
+          ]
+        },
+        "vpnLimitations": {
+          "title": "VPN의 한계",
+          "intro": "VPN은 강력한 개인정보 보호 도구이지만 모든 온라인 보안 문제에 대한 만능 솔루션은 아닙니다. VPN이 할 수 없는 것은 다음과 같습니다:",
+          "limitations": [
+            {
+              "title": "VPN은 완전한 익명성을 제공하지 않습니다",
+              "description": "웹사이트는 여전히 쿠키, 브라우저 지문, 로그인한 계정을 통해 사용자를 추적할 수 있습니다."
+            },
+            {
+              "title": "VPN은 악성코드로부터 보호하지 않습니다",
+              "description": "바이러스와 악의적인 다운로드로부터 보호하려면 여전히 안티바이러스 소프트웨어가 필요합니다."
+            },
+            {
+              "title": "VPN은 연결 속도를 느리게 할 수 있습니다",
+              "description": "암호화는 오버헤드를 추가하지만, 프리미엄 VPN은 이러한 영향을 최소화합니다."
+            },
+            {
+              "title": "일부 서비스는 VPN을 차단합니다",
+              "description": "특정 웹사이트와 스트리밍 플랫폼은 적극적으로 VPN 사용자를 차단하려고 시도합니다."
+            },
+            {
+              "title": "무료 VPN에는 종종 함정이 있습니다",
+              "description": "많은 무료 VPN은 데이터를 기록하거나 광고를 표시하거나 심각한 보안 결함이 있습니다."
+            }
+          ]
+        },
+        "choosingVpn": {
+          "title": "올바른 VPN 선택하기",
+          "intro": "모든 VPN이 동일하게 만들어지는 것은 아닙니다. VPN 서비스를 선택할 때 찾아야 할 사항은 다음과 같습니다:",
+          "features": [
+            {
+              "title": "강력한 암호화",
+              "description": "AES-256 암호화와 WireGuard, OpenVPN 또는 IKEv2와 같은 최신 프로토콜을 찾으세요. 일부 제공업체는 속도에 최적화된 독점 프로토콜도 제공합니다."
+            },
+            {
+              "title": "무로그 정책",
+              "description": "활동 로그를 저장하지 않는 VPN을 선택하세요. 독립적으로 감사된 무로그 주장을 찾으세요."
+            },
+            {
+              "title": "빠른 속도",
+              "description": "좋은 VPN은 속도 손실을 최소화해야 합니다. 대규모 서버 네트워크와 최신 프로토콜을 갖춘 VPN을 찾으세요."
+            },
+            {
+              "title": "킬 스위치",
+              "description": "킬 스위치는 VPN 연결이 끊어지면 인터넷을 차단하여 우발적인 데이터 노출을 방지합니다."
+            },
+            {
+              "title": "서버 위치",
+              "description": "서버 위치가 많을수록 더 빠른 속도와 지역 제한 콘텐츠 액세스 옵션이 많아집니다."
+            }
+          ]
+        }
+      },
+      "cta": {
+        "title": "보호받을 준비가 되셨나요?",
+        "description": "이제 VPN이 무엇이고 왜 필요한지 이해하셨다면 최고의 VPN 서비스 비교를 확인하여 자신에게 맞는 서비스를 찾으세요.",
+        "primaryButton": "VPN 비교하기",
+        "secondaryButton": "2025년 최고의 VPN 보기"
+      },
+      "relatedGuides": {
+        "title": "계속 학습하기",
+        "guides": [
+          {
+            "title": "VPN은 어떻게 작동하나요?",
+            "description": "VPN 기술에 대해 더 깊이 알아보기",
+            "url": "/guides/how-vpn-works"
+          },
+          {
+            "title": "스트리밍을 위한 최고의 VPN",
+            "description": "Netflix, Disney+ 등에 액세스하기",
+            "url": "/guides/vpn-for-streaming"
+          }
+        ]
+      }
+    },
+    "howVpnWorks": {
+      "meta": {
+        "title": "VPN은 어떻게 작동하나요? 기술 가이드 2025 - ZeroToVPN",
+        "description": "VPN 기술의 기술적 세부사항을 이해하세요. 암호화, 터널링 프로토콜, VPN이 데이터를 보호하는 방법을 단계별로 알아봅니다."
+      },
+      "hero": {
+        "badge": "기술 가이드",
+        "readTime": "10분 소요",
+        "title": "VPN은 어떻게 작동하나요?",
+        "subtitle": "VPN에서 '연결'을 클릭하면 무슨 일이 일어나는지 궁금하신가요? 이 가이드는 VPN 기술의 기술적 마법을 분석하여 암호화, 터널링 프로토콜, 데이터 보호를 명확하고 이해하기 쉬운 용어로 설명합니다.",
+        "updated": "2025년 11월 업데이트",
+        "level": "중급 수준"
+      },
+      "toc": {
+        "title": "이 가이드의 내용:",
+        "items": [
+          "1. VPN 연결 개요",
+          "2. 암호화 설명",
+          "3. VPN 터널링",
+          "4. VPN 프로토콜 비교",
+          "5. 단계별 프로세스",
+          "6. 보안 기능"
+        ]
+      },
+      "sections": {
+        "overview": {
+          "title": "VPN 연결 개요",
+          "intro": "VPN은 기기와 VPN 서버 사이에 안전하고 암호화된 연결을 생성합니다. 이 연결은 제3자가 데이터를 보거나 가로채는 것을 방지하는 '터널' 역할을 합니다.",
+          "diagram": {
+            "title": "데이터가 이동하는 방법",
+            "steps": [
+              {
+                "label": "사용자 기기",
+                "icon": "Wifi"
+              },
+              {
+                "label": "암호화됨",
+                "status": "protected"
+              },
+              {
+                "label": "VPN 서버",
+                "icon": "Server"
+              },
+              {
+                "label": "인터넷",
+                "icon": "Globe"
+              }
+            ]
+          },
+          "note": "핵심 개념은 기기와 VPN 서버 사이에서 모든 데이터가 암호화되어 읽을 수 없다는 것입니다. VPN 서버에 도달한 후에야 복호화되어 목적지로 전송됩니다."
+        },
+        "encryption": {
+          "title": "암호화 설명",
+          "intro": "암호화는 수학적 알고리즘을 사용하여 읽을 수 있는 데이터(평문)를 읽을 수 없는 형식(암호문)으로 변환하는 프로세스입니다. 올바른 복호화 키를 가진 사람만 다시 변환할 수 있습니다.",
+          "aes256": {
+            "title": "AES-256 암호화",
+            "description": "대부분의 최신 VPN은 전 세계 정부 및 군사 조직에서 사용하는 것과 동일한 암호화인 AES-256(256비트 키가 있는 고급 암호화 표준)을 사용합니다.",
+            "specs": [
+              {
+                "title": "키 길이",
+                "description": "256비트 = 2^256 가능한 조합. 이는 관측 가능한 우주의 원자 수보다 많습니다!"
+              },
+              {
+                "title": "해독 시간",
+                "description": "현재 기술로는 무차별 대입 공격으로 AES-256 암호화를 해독하는 데 수십억 년이 걸립니다."
+              }
+            ]
+          },
+          "keyTypes": {
+            "title": "암호화 키 유형",
+            "items": [
+              {
+                "type": "대칭 암호화",
+                "description": "암호화와 복호화에 동일한 키 사용. 빠르지만 안전한 키 교환이 필요합니다."
+              },
+              {
+                "type": "비대칭 암호화",
+                "description": "공개 키로 암호화하고 개인 키로 복호화. 초기 핸드셰이크와 키 교환에 사용됩니다."
+              }
+            ]
+          }
+        },
+        "tunneling": {
+          "title": "VPN 터널링",
+          "intro": "VPN 터널링은 데이터 패킷을 다른 패킷 안에 캡슐화하는 프로세스입니다. 편지를 다른 봉투 안에 넣는 것과 같다고 생각하세요 - 바깥 봉투가 안에 있는 내용을 숨깁니다.",
+          "process": {
+            "title": "캡슐화 프로세스",
+            "steps": [
+              {
+                "number": 1,
+                "title": "원본 데이터",
+                "description": "목적지 주소가 있는 실제 데이터 패킷"
+              },
+              {
+                "number": 2,
+                "title": "암호화",
+                "description": "VPN 프로토콜을 사용하여 데이터 암호화"
+              },
+              {
+                "number": 3,
+                "title": "캡슐화",
+                "description": "암호화된 데이터를 VPN 서버 주소로 지정된 새 패킷으로 감싸기"
+              },
+              {
+                "number": 4,
+                "title": "전송",
+                "description": "패킷이 ISP를 통해 VPN 서버로 이동 (ISP는 암호화된 데이터만 봄)"
+              }
+            ]
+          }
+        },
+        "protocols": {
+          "title": "VPN 프로토콜 비교",
+          "intro": "VPN 프로토콜은 데이터가 암호화되고 전송되는 방법을 결정합니다. 각 프로토콜은 속도, 보안 및 호환성의 고유한 균형을 가지고 있습니다.",
+          "list": [
+            {
+              "name": "WireGuard",
+              "badge": "권장",
+              "description": "가장 새롭고 빠른 프로토콜. OpenVPN의 400,000개 이상 코드 줄에 비해 단 4,000줄의 코드로 최첨단 암호화를 사용합니다.",
+              "ratings": {
+                "speed": "우수",
+                "security": "우수",
+                "compatibility": "양호"
+              }
+            },
+            {
+              "name": "OpenVPN",
+              "badge": "업계 표준",
+              "description": "가장 널리 사용되는 프로토콜. 20년 이상 검증된 오픈 소스. 거의 모든 기기와 네트워크에서 작동합니다.",
+              "ratings": {
+                "speed": "양호",
+                "security": "우수",
+                "compatibility": "우수"
+              }
+            },
+            {
+              "name": "IKEv2/IPSec",
+              "badge": "모바일 최적화",
+              "description": "모바일 기기에 탁월. WiFi와 셀룰러 네트워크를 전환할 때 빠르게 재연결됩니다. 대부분의 운영 체제에 내장되어 있습니다.",
+              "ratings": {
+                "speed": "우수",
+                "security": "우수",
+                "compatibility": "우수"
+              }
+            }
+          ]
+        },
+        "stepByStep": {
+          "title": "단계별: 연결할 때 일어나는 일",
+          "steps": [
+            {
+              "number": 1,
+              "title": "VPN 앱이 연결을 시작합니다",
+              "description": "'연결'을 클릭하면 VPN 앱이 VPN 서버에 연결하고 인증 프로세스를 시작합니다."
+            },
+            {
+              "number": 2,
+              "title": "핸드셰이크 및 인증",
+              "description": "기기와 VPN 서버가 암호화 키를 교환하고 인증서를 통해 서로의 신원을 확인합니다."
+            },
+            {
+              "number": 3,
+              "title": "터널 설정",
+              "description": "안전한 암호화된 터널이 생성됩니다. 이제 모든 인터넷 트래픽이 이 터널을 통해 흐릅니다."
+            },
+            {
+              "number": 4,
+              "title": "IP 주소 마스킹",
+              "description": "실제 IP 주소가 VPN 서버의 IP로 대체됩니다. 웹사이트는 이제 사용자의 위치가 아닌 서버의 위치를 봅니다."
+            },
+            {
+              "number": 5,
+              "title": "데이터가 안전하게 흐릅니다",
+              "description": "보내는 모든 패킷은 암호화되고, VPN 서버로 터널링되며, 복호화되어 목적지로 전달됩니다. 응답은 역방향 경로를 따릅니다."
+            }
+          ]
+        },
+        "securityFeatures": {
+          "title": "주요 보안 기능",
+          "features": [
+            {
+              "name": "킬 스위치",
+              "icon": "EyeOff",
+              "description": "VPN 연결이 끊어지면 모든 인터넷 트래픽을 자동으로 차단하여 데이터 유출을 방지합니다."
+            },
+            {
+              "name": "DNS 유출 보호",
+              "icon": "Cloud",
+              "description": "DNS 쿼리가 브라우징 기록을 노출할 수 있는 ISP의 DNS 서버가 아닌 VPN 터널을 통과하도록 보장합니다."
+            },
+            {
+              "name": "완전 순방향 비밀성",
+              "icon": "Lock",
+              "description": "각 세션에 대해 고유한 암호화 키를 생성합니다. 한 키가 손상되더라도 과거 세션은 안전하게 유지됩니다."
+            },
+            {
+              "name": "RAM 전용 서버",
+              "icon": "Server",
+              "description": "일부 VPN은 전적으로 RAM 메모리에서 실행됩니다. 전원이 꺼지면 모든 데이터가 자동으로 삭제되어 흔적이 남지 않습니다."
+            }
+          ]
+        },
+        "keyTakeaways": {
+          "title": "핵심 요점",
+          "items": [
+            "VPN은 군용 등급 AES-256 암호화로 데이터를 암호화합니다",
+            "터널링은 암호화된 패킷에 데이터를 캡슐화하여 숨깁니다",
+            "WireGuard는 가장 빠른 최신 프로토콜이며, OpenVPN은 가장 호환성이 높습니다",
+            "킬 스위치 및 DNS 유출 보호와 같은 기능은 추가 보안 계층을 제공합니다"
+          ]
+        }
+      },
+      "relatedGuides": {
+        "title": "계속 학습하기",
+        "guides": [
+          {
+            "title": "VPN이란 무엇인가요?",
+            "description": "VPN이 처음이라면 기본부터 시작하세요.",
+            "url": "/guides/what-is-vpn"
+          },
+          {
+            "title": "스트리밍을 위한 VPN",
+            "description": "VPN을 사용하여 스트리밍 콘텐츠에 액세스하는 방법을 알아보세요.",
+            "url": "/guides/vpn-for-streaming"
+          }
+        ]
+      },
+      "cta": {
+        "title": "VPN을 사용해볼 준비가 되셨나요?",
+        "description": "이제 VPN이 어떻게 작동하는지 이해하셨으니 최고 등급의 VPN 제공업체를 확인하고 필요에 맞는 완벽한 서비스를 찾으세요.",
+        "button": "최고의 VPN 보기"
+      }
+    },
+    "vpnForStreaming": {
+      "meta": {
+        "title": "스트리밍을 위한 최고의 VPN: Netflix, Disney+ 등 (2025 가이드) - ZeroToVPN",
+        "description": "VPN을 사용하여 어디서나 Netflix, Disney+, BBC iPlayer 및 기타 스트리밍 서비스에 액세스하는 방법을 알아보세요. 스트리밍에 최적화된 VPN을 찾아보세요."
+      },
+      "hero": {
+        "badge": "스트리밍 가이드",
+        "readTime": "7분 소요",
+        "title": "스트리밍을 위한 최고의 VPN",
+        "subtitle": "유럽에서 Netflix 미국 콘텐츠를 시청하고 싶으신가요? 해외에서 BBC iPlayer에 액세스하고 싶으신가요? VPN을 사용하면 전 세계 스트리밍 콘텐츠를 즐길 수 있습니다. 이 가이드는 VPN과 스트리밍에 대해 알아야 할 모든 것을 다룹니다.",
+        "updated": "2025년 11월 업데이트",
+        "level": "실용 가이드"
+      },
+      "toc": {
+        "title": "이 가이드의 내용:",
+        "items": [
+          "1. 스트리밍에 VPN을 사용하는 이유는?",
+          "2. VPN으로 스트리밍하는 방법",
+          "3. 인기 스트리밍 서비스",
+          "4. 스트리밍에 최적화된 VPN",
+          "5. 더 나은 스트리밍을 위한 팁",
+          "6. 자주 묻는 질문"
+        ]
+      },
+      "relatedGuides": {
+        "title": "더 알아보기",
+        "guides": [
+          {
+            "title": "VPN은 어떻게 작동하나요?",
+            "description": "VPN 기술의 기술적 세부사항을 이해하세요.",
+            "url": "/guides/how-vpn-works"
+          },
+          {
+            "title": "VPN이란 무엇인가요?",
+            "description": "VPN이 처음이시라면 기본부터 시작하세요.",
+            "url": "/guides/what-is-vpn"
+          }
+        ]
+      },
+      "cta": {
+        "title": "스트리밍을 시작할 준비가 되셨나요?",
+        "description": "스트리밍에 최적화된 VPN을 선택하고 오늘 전 세계 콘텐츠를 즐기세요.",
+        "button": "스트리밍 최적 VPN 찾기"
+      }
+    },
+    "vpnForTorrenting": {
+      "meta": {
+        "title": "토렌트를 위한 VPN: 안전한 다운로드 방법 (2025 가이드) - ZeroToVPN",
+        "description": "안전한 토렌트를 위해 VPN을 사용하는 방법을 알아보세요. P2P 친화적인 VPN, 킬 스위치, 유출 방지 기능을 이해하여 안전하고 익명으로 다운로드하세요."
+      },
+      "hero": {
+        "badge": "프라이버시 가이드",
+        "readTime": "8분 소요",
+        "title": "토렌트를 위한 VPN",
+        "subtitle": "보호 장치 없이 토렌트를 사용하면 수천 명의 피어에게 IP 주소가 노출됩니다. 다운로드하는 동안 VPN이 어떻게 안전을 지켜주는지, 그리고 P2P 친화적인 VPN에서 찾아야 할 기능을 알아보세요.",
+        "updated": "2025년 11월 업데이트",
+        "level": "프라이버시 가이드"
+      },
+      "toc": {
+        "title": "이 가이드의 내용:",
+        "items": [
+          "1. 토렌트에 VPN을 사용하는 이유는?",
+          "2. VPN 없이 토렌트를 사용할 때의 위험",
+          "3. 필수 VPN 기능",
+          "4. 토렌트에 최적화된 VPN",
+          "5. 설정 방법",
+          "6. 법적 고려사항"
+        ]
+      },
+      "relatedGuides": {
+        "title": "더 알아보기",
+        "guides": [
+          {
+            "title": "VPN 프라이버시 가이드",
+            "description": "노로그 정책과 VPN을 진정으로 프라이빗하게 만드는 요소에 대해 자세히 알아보세요.",
+            "url": "/guides/vpn-privacy-guide"
+          },
+          {
+            "title": "VPN 속도 가이드",
+            "description": "더 빠른 다운로드 속도를 위해 VPN을 최적화하세요.",
+            "url": "/guides/vpn-speed-guide"
+          }
+        ]
+      },
+      "cta": {
+        "title": "토렌트를 위한 안전한 VPN 찾기",
+        "description": "P2P 지원, 킬 스위치, 검증된 노로그 정책을 갖춘 VPN을 비교하여 다운로드하는 동안 안전을 유지하세요.",
+        "button": "P2P 최적 VPN 찾기"
+      }
+    },
+    "vpnForTravel": {
+      "meta": {
+        "title": "여행을 위한 VPN: 해외에서 연결 유지하기 필수 가이드 (2025) - ZeroToVPN",
+        "description": "여행할 때 VPN이 필요한 이유를 알아보세요. 집에서 보던 콘텐츠에 액세스하고, 검열을 우회하며, 호텔 WiFi에서 보호받고, 할인 혜택을 찾으세요. 완전한 여행용 VPN 가이드입니다."
+      },
+      "hero": {
+        "badge": "여행 가이드",
+        "readTime": "10분 소요",
+        "title": "여행을 위한 VPN 가이드",
+        "subtitle": "해외 여행을 계획 중이신가요? VPN은 여권만큼 필수적입니다. 집에서 보던 콘텐츠에 액세스하고, 호텔 WiFi에서 안전을 유지하며, 검열을 우회하고, 예약 시 비용까지 절약하는 방법을 알아보세요.",
+        "updated": "2025년 11월 업데이트",
+        "level": "여행 필수품"
+      },
+      "toc": {
+        "title": "이 가이드의 내용:",
+        "items": [
+          "1. 여행 시 VPN이 필요한 이유",
+          "2. 집에서 보던 콘텐츠 액세스하기",
+          "3. 검열 우회하기",
+          "4. 여행 보안 팁",
+          "5. VPN으로 비용 절약하기",
+          "6. 여행자를 위한 최고의 VPN"
+        ]
+      },
+      "relatedGuides": {
+        "title": "더 알아보기",
+        "guides": [
+          {
+            "title": "공용 WiFi 안전",
+            "description": "공용 네트워크를 위한 필수 보안 팁.",
+            "url": "/guides/public-wifi-safety"
+          },
+          {
+            "title": "모바일에서 VPN 사용하기",
+            "description": "스마트폰이나 태블릿에서 VPN을 설정하세요.",
+            "url": "/guides/vpn-on-mobile"
+          }
+        ]
+      },
+      "cta": {
+        "title": "다음 모험을 준비하셨나요?",
+        "description": "VPN 보호 없이 집을 떠나지 마세요. 해외 여행에 최적화된 VPN을 비교하고 어디서나 연결 상태를 유지하세요.",
+        "button": "최고의 VPN 보기"
+      }
+    },
+    "vpnOnMobile": {
+      "meta": {
+        "title": "모바일에서 VPN 사용: iOS 및 Android 완벽 설정 가이드 (2025) - ZeroToVPN",
+        "description": "iPhone 또는 Android 기기에서 VPN을 설정하고 사용하는 방법을 알아보세요. 단계별 가이드, 모범 사례, 모바일 VPN 보안 팁을 제공합니다."
+      },
+      "hero": {
+        "badge": "모바일 가이드",
+        "readTime": "9분 소요",
+        "title": "모바일 기기에서 VPN 사용하기",
+        "subtitle": "스마트폰은 어디든 함께 가죠 - 그리고 VPN 보호도 함께 가야 합니다. 최대 보안과 편의성을 위해 iOS 및 Android에서 VPN을 설정하고 최적화하는 방법을 알아보세요.",
+        "updated": "2025년 11월 업데이트",
+        "level": "모바일 설정 가이드"
+      },
+      "toc": {
+        "title": "이 가이드의 내용:",
+        "items": [
+          "1. 모바일에서 VPN을 사용하는 이유는?",
+          "2. iPhone/iPad에서 VPN 설정",
+          "3. Android에서 VPN 설정",
+          "4. 최적의 모바일 VPN 설정",
+          "5. 배터리 및 성능 팁",
+          "6. 모바일에 최적화된 VPN"
+        ]
+      },
+      "relatedGuides": {
+        "title": "더 알아보기",
+        "guides": [
+          {
+            "title": "공용 WiFi 안전",
+            "description": "공용 네트워크에서 안전을 유지하세요.",
+            "url": "/guides/public-wifi-safety"
+          },
+          {
+            "title": "여행을 위한 VPN",
+            "description": "여행자를 위한 필수 VPN 가이드.",
+            "url": "/guides/vpn-for-travel"
+          }
+        ]
+      },
+      "cta": {
+        "title": "모바일 기기를 보호할 준비가 되셨나요?",
+        "description": "모바일 친화적인 최고의 VPN을 비교하고 스마트폰이나 태블릿에 완벽한 보호 기능을 찾으세요.",
+        "button": "최고의 VPN 보기"
+      }
+    },
+    "vpnPrivacyGuide": {
+      "meta": {
+        "title": "VPN 프라이버시 가이드: 노로그 정책 및 관할권 설명 (2025) - ZeroToVPN",
+        "description": "VPN을 진정으로 프라이빗하게 만드는 요소를 이해하세요. 노로그 정책, 관할권, 독립 감사, VPN 프라이버시 주장을 평가하는 방법을 알아보세요."
+      },
+      "hero": {
+        "badge": "프라이버시 가이드",
+        "readTime": "10분 소요",
+        "title": "VPN 프라이버시 가이드",
+        "subtitle": "프라이버시에 관해서는 모든 VPN이 동등하게 만들어지지 않았습니다. \"노로그\"의 실제 의미, 관할권이 중요한 이유, VPN이 정말로 프라이버시를 보호하는지 판단하는 방법을 알아보세요.",
+        "updated": "2025년 11월 업데이트",
+        "level": "프라이버시 심층 분석"
+      },
+      "toc": {
+        "title": "이 가이드의 내용:",
+        "items": [
+          "1. VPN 프라이버시란 무엇인가요?",
+          "2. 노로그 정책 설명",
+          "3. 관할권이 중요한 이유",
+          "4. 독립 감사",
+          "5. 프라이버시 위험 신호",
+          "6. 프라이버시 체크리스트"
+        ]
+      },
+      "relatedGuides": {
+        "title": "더 알아보기",
+        "guides": [
+          {
+            "title": "토렌트를 위한 VPN",
+            "description": "안전한 P2P 다운로드에 프라이버시 지식을 적용하세요.",
+            "url": "/guides/vpn-for-torrenting"
+          },
+          {
+            "title": "VPN은 어떻게 작동하나요?",
+            "description": "VPN 보호의 기술적 세부사항을 이해하세요.",
+            "url": "/guides/how-vpn-works"
+          }
+        ]
+      },
+      "cta": {
+        "title": "진정으로 프라이빗한 VPN 찾기",
+        "description": "프라이버시 기능, 노로그 정책, 독립 감사를 기준으로 VPN을 비교하세요.",
+        "button": "프라이빗 VPN 비교하기"
+      }
+    },
+    "vpnProtocolsExplained": {
+      "meta": {
+        "title": "VPN 프로토콜 설명: WireGuard vs OpenVPN vs IKEv2 (2025) - ZeroToVPN",
+        "description": "VPN 프로토콜 간의 차이점을 이해하세요. WireGuard, OpenVPN, IKEv2 등을 비교하여 필요에 맞는 최고의 프로토콜을 선택하세요."
+      },
+      "hero": {
+        "badge": "기술 가이드",
+        "readTime": "12분 소요",
+        "title": "VPN 프로토콜 설명",
+        "subtitle": "WireGuard, OpenVPN, IKEv2 - 이 용어들은 무엇을 의미하며 어떤 것을 사용해야 할까요? 이 가이드는 VPN 프로토콜을 쉬운 언어로 설명하여 올바른 선택을 할 수 있도록 도와줍니다.",
+        "updated": "2025년 11월 업데이트",
+        "level": "기술 가이드"
+      },
+      "toc": {
+        "title": "이 가이드의 내용:",
+        "items": [
+          "1. VPN 프로토콜이란 무엇인가요?",
+          "2. WireGuard",
+          "3. OpenVPN",
+          "4. IKEv2/IPSec",
+          "5. 기타 프로토콜",
+          "6. 프로토콜 비교"
+        ]
+      },
+      "relatedGuides": {
+        "title": "더 알아보기",
+        "guides": [
+          {
+            "title": "VPN은 어떻게 작동하나요?",
+            "description": "VPN 기술의 기술적 세부사항을 이해하세요.",
+            "url": "/guides/how-vpn-works"
+          },
+          {
+            "title": "VPN 속도 가이드",
+            "description": "최대 속도를 위해 VPN을 최적화하는 방법을 알아보세요.",
+            "url": "/guides/vpn-speed-guide"
+          }
+        ]
+      },
+      "cta": {
+        "title": "선호하는 프로토콜을 지원하는 VPN 찾기",
+        "description": "프로토콜 지원, 속도, 보안 기능을 기준으로 VPN을 비교하세요.",
+        "button": "VPN 비교하기"
+      }
+    },
+    "vpnSpeedGuide": {
+      "meta": {
+        "title": "VPN 속도 가이드: 가장 빠른 VPN 연결을 얻는 방법 (2025) - ZeroToVPN",
+        "description": "VPN 속도에 영향을 미치는 요소와 연결을 최적화하는 방법을 알아보세요. 스트리밍, 게임, 다운로드를 위해 VPN 성능을 극대화하는 팁을 얻으세요."
+      },
+      "hero": {
+        "badge": "성능 가이드",
+        "readTime": "6분 소요",
+        "title": "VPN 속도 가이드",
+        "subtitle": "VPN이 인터넷 속도를 느리게 만들고 있나요? VPN 속도에 영향을 미치는 요소를 알아보고 스트리밍, 게임, 일상적인 브라우징을 위해 연결을 최적화하는 검증된 팁을 확인하세요.",
+        "updated": "2025년 11월 업데이트",
+        "level": "실용 가이드"
+      },
+      "toc": {
+        "title": "이 가이드의 내용:",
+        "items": [
+          "1. VPN 속도 이해하기",
+          "2. 속도에 영향을 미치는 요소",
+          "3. 예상 속도 손실",
+          "4. 속도 최적화 팁",
+          "5. 가장 빠른 VPN 프로토콜",
+          "6. VPN 속도 테스트 방법"
+        ]
+      },
+      "relatedGuides": {
+        "title": "더 알아보기",
+        "guides": [
+          {
+            "title": "VPN은 어떻게 작동하나요?",
+            "description": "VPN 기술의 기술적 세부사항을 이해하세요.",
+            "url": "/guides/how-vpn-works"
+          },
+          {
+            "title": "스트리밍을 위한 VPN",
+            "description": "Netflix, Disney+ 등을 위해 VPN을 사용하는 방법을 알아보세요.",
+            "url": "/guides/vpn-for-streaming"
+          }
+        ]
+      },
+      "cta": {
+        "title": "가장 빠른 VPN 찾기",
+        "description": "VPN 속도를 비교하고 필요에 맞는 가장 빠른 제공업체를 찾으세요. 모든 VPN의 실제 성능을 테스트합니다.",
+        "button": "VPN 속도 비교하기"
+      }
+    },
+    "publicWifiSafety": {
+      "meta": {
+        "title": "공용 WiFi 안전: 개방형 네트워크에서 안전을 유지하는 방법 (2025) - ZeroToVPN",
+        "description": "공용 WiFi 위험에 대해 알아보고 자신을 보호하는 방법을 배우세요. 카페, 공항, 호텔 및 기타 공공장소에서 WiFi를 사용하기 위한 필수 보안 팁을 확인하세요."
+      },
+      "hero": {
+        "badge": "보안 가이드",
+        "readTime": "8분 소요",
+        "title": "공용 WiFi 안전 가이드",
+        "subtitle": "무료 WiFi는 편리하지만 심각한 위험이 따릅니다. 해커가 공용 네트워크를 악용하는 방법과 커피숍, 공항, 호텔 등에서 데이터를 보호하기 위한 필수 단계를 알아보세요.",
+        "updated": "2025년 11월 업데이트",
+        "level": "보안 필수사항"
+      },
+      "toc": {
+        "title": "이 가이드의 내용:",
+        "items": [
+          "1. 공용 WiFi 위험 설명",
+          "2. 일반적인 WiFi 공격 유형",
+          "3. 필수 보호 팁",
+          "4. VPN이 보호하는 방법",
+          "5. 위치별 안전 수칙",
+          "6. 빠른 보안 체크리스트"
+        ]
+      },
+      "relatedGuides": {
+        "title": "더 알아보기",
+        "guides": [
+          {
+            "title": "여행을 위한 VPN",
+            "description": "해외 여행자를 위한 필수 VPN 가이드.",
+            "url": "/guides/vpn-for-travel"
+          },
+          {
+            "title": "모바일에서 VPN 사용하기",
+            "description": "스마트폰에서 VPN 보호를 설정하세요.",
+            "url": "/guides/vpn-on-mobile"
+          }
+        ]
+      },
+      "cta": {
+        "title": "모든 WiFi 네트워크에서 안전을 유지하세요",
+        "description": "공용 네트워크에서 개인 데이터를 위험에 빠뜨리지 마세요. VPN을 받고 전 세계 어디서나 자신 있게 브라우징하세요.",
+        "button": "최고의 VPN 보기"
+      }
+    }
+  },
+  "home": {
+    "hero": {
+      "badge": "2025년 업데이트",
+      "title": "당신의",
+      "titleHighlight": "완벽한 VPN을",
+      "subtitle": "몇 분 만에 제로에서 보안까지. 전문가 리뷰, 솔직한 비교, 최고의 VPN 서비스 독점 혜택.",
+      "primaryCta": "VPN 비교하기",
+      "secondaryCta": "VPN이란 무엇인가요?",
+      "trusted": "전 세계 10만 명 이상의 독자가 신뢰합니다"
+    },
+    "trustIndicators": {
+      "vpnsTested": {
+        "value": "50+",
+        "label": "테스트한 VPN"
+      },
+      "monthlyReaders": {
+        "value": "100K+",
+        "label": "월간 독자"
+      },
+      "speedTests": {
+        "value": "500+",
+        "label": "속도 테스트"
+      },
+      "updated": {
+        "value": "24/7",
+        "label": "업데이트"
+      }
+    },
+    "comparison": {
+      "title": "2025년 베스트 VPN",
+      "subtitle": "독립적으로 테스트하고 평가했습니다. 속도, 보안, 스트리밍, 가성비를 모두 테스트합니다."
+    },
+    "topPicks": {
+      "title": "최고의 VPN 선택",
+      "subtitle": "전문가들의 최고 추천"
+    },
+    "whyVpn": {
+      "title": "VPN이 필요한 이유",
+      "subtitle": "개인정보를 보호하고, 전 세계 콘텐츠에 액세스하며, 온라인에서 안전을 유지하세요.",
+      "features": [
+        {
+          "title": "개인정보 보호",
+          "description": "IP 주소를 숨기고 인터넷 트래픽을 암호화하여 해커, ISP, 광고주로부터 온라인 활동을 비공개로 유지합니다.",
+          "icon": "Shield"
+        },
+        {
+          "title": "전 세계 콘텐츠 액세스",
+          "description": "지역 제한을 우회하여 전 세계 어디서나 스트리밍 서비스, 웹사이트, 콘텐츠에 액세스하세요.",
+          "icon": "Globe"
+        },
+        {
+          "title": "공용 WiFi 보안",
+          "description": "카페, 공항, 호텔의 공용 WiFi 네트워크에서 군용 등급 암호화로 안전하게 보호받으세요.",
+          "icon": "Zap"
+        }
+      ]
+    },
+    "howWeTest": {
+      "title": "VPN 테스트 방법",
+      "subtitle": "엄격한 테스트 방법론으로 솔직하고 편향되지 않은 리뷰를 보장합니다.",
+      "items": [
+        "50개 이상의 서버 위치에서 속도 테스트",
+        "보안 감사 및 유출 테스트",
+        "스트리밍 플랫폼 호환성 확인",
+        "개인정보 처리방침 및 관할권 분석",
+        "고객 지원 응답성",
+        "가성비 평가"
+      ]
+    },
+    "ctaSection": {
+      "title": "시작할 준비가 되셨나요?",
+      "subtitle": "최고의 VPN을 비교하고 필요에 맞는 완벽한 서비스를 찾으세요.",
+      "button": "모든 VPN 보기"
+    },
+    "faq": [
+      {
+        "question": "VPN이란 무엇인가요?",
+        "answer": "VPN(가상 사설망)은 인터넷 연결을 암호화하고 IP 주소를 숨겨 온라인 개인정보를 보호하고 지역 제한 콘텐츠에 액세스할 수 있게 해줍니다."
+      },
+      {
+        "question": "2025년 최고의 VPN은 무엇인가요?",
+        "answer": "테스트 결과, NordVPN은 우수한 속도, 강력한 보안, 뛰어난 가성비를 제공하는 2025년 최고의 종합 VPN입니다. Surfshark는 무제한 기기를 지원하는 최고의 가성비 옵션입니다."
+      },
+      {
+        "question": "무료 VPN은 안전한가요?",
+        "answer": "대부분의 무료 VPN은 데이터를 기록하거나 광고를 표시하거나 보안 취약점이 있어 권장하지 않습니다. ProtonVPN은 데이터 제한이 없는 신뢰할 수 있는 무료 플랜을 제공합니다."
+      },
+      {
+        "question": "VPN을 추적할 수 있나요?",
+        "answer": "노로그 정책을 사용하는 품질 좋은 VPN은 사용자를 추적할 수 없습니다. VPN 제공업체는 온라인 활동에 대한 정보를 저장하지 않습니다."
+      }
+    ]
+  },
+  "vpnTable": {
+    "headers": {
+      "rank": "#",
+      "vpn": "VPN",
+      "rating": "평점",
+      "speed": "속도",
+      "security": "보안",
+      "servers": "서버",
+      "netflix": "Netflix",
+      "price": "가격",
+      "action": "액션"
+    },
+    "editorChoice": "에디터 추천",
+    "countries": "국가",
+    "devices": "기기",
+    "unlimited": "무제한",
+    "perMonth": "/월",
+    "visit": "방문"
+  },
+  "vpnCard": {
+    "editorChoice": "에디터 추천",
+    "from": "부터",
+    "perMonth": "/월",
+    "servers": "서버",
+    "countries": "국가",
+    "devices": "기기",
+    "speed": "속도",
+    "security": "보안",
+    "netflix": "Netflix",
+    "torrenting": "토렌트",
+    "noLogs": "무로그",
+    "freeTier": "무료 플랜",
+    "getVpn": "{name} 받기",
+    "review": "리뷰"
+  },
+  "vpnReview": {
+    "backToReviews": "리뷰 목록으로",
+    "editorChoice": "에디터 추천",
+    "freeTierAvailable": "무료 플랜 제공",
+    "reviewTitle": "{name} 리뷰 2025",
+    "basedOnTesting": "종합적인 테스트 결과 기반",
+    "getVpnPrice": "{name} 받기 - ${price}/월",
+    "quickStats": {
+      "title": "주요 정보",
+      "servers": "서버",
+      "countries": "국가",
+      "devices": "기기",
+      "moneyBack": "환불 보장",
+      "days": "{count}일",
+      "startingAt": "최저가",
+      "perMonth": "/월",
+      "unlimited": "무제한"
+    },
+    "scores": {
+      "speed": "속도",
+      "security": "보안",
+      "streaming": "스트리밍"
+    },
+    "prosAndCons": {
+      "pros": "장점",
+      "cons": "단점"
+    },
+    "tabs": {
+      "overview": "개요",
+      "pricing": "가격",
+      "security": "보안",
+      "streaming": "스트리밍"
+    },
+    "overview": {
+      "about": "{name} 소개",
+      "description": "{name}은(는) {countries}개국에 {servers}개의 서버를 제공하는 시장 선도적인 VPN 제공업체 중 하나입니다. 최대 {devices}개의 동시 연결을 지원하여 개인과 가족 모두에게 적합합니다.",
+      "keyFeatures": "주요 기능",
+      "serverNetwork": "서버 네트워크:",
+      "serversInCountries": "{countries}개국 {servers}개 서버",
+      "protocols": "프로토콜:",
+      "encryption": "암호화:",
+      "killSwitch": "킬 스위치:",
+      "noLogsPolicy": "무로그 정책:",
+      "yes": "있음",
+      "no": "없음",
+      "yesAudited": "있음 (감사됨)",
+      "limited": "제한적"
+    },
+    "pricing": {
+      "title": "{name} 가격 플랜",
+      "monthly": "월간",
+      "yearly": "연간",
+      "twoYears": "2년",
+      "mostPopular": "가장 인기",
+      "bestValue": "최고의 가성비",
+      "moneyBackGuarantee": "모든 플랜에 {days}일 환불 보장 포함"
+    },
+    "securityFeatures": {
+      "title": "보안 및 프라이버시 기능",
+      "noLogsPolicy": "무로그 정책",
+      "killSwitch": "킬 스위치",
+      "encryption": "{type} 암호화",
+      "supportedProtocols": "지원 프로토콜"
+    },
+    "streamingSection": {
+      "title": "스트리밍 호환성",
+      "netflix": "Netflix",
+      "disneyPlus": "Disney+",
+      "amazonPrime": "Amazon Prime",
+      "bbcIplayer": "BBC iPlayer",
+      "p2pSupported": "P2P/토렌트 지원",
+      "torrentDescription": "{name}은(는) 최적화된 속도로 전용 서버에서 토렌트를 허용합니다."
+    },
+    "verdict": {
+      "title": "총평",
+      "description": "{name}은(는) 종합 테스트에서 {rating}/5점을 받았습니다. {countries}개국에 {servers}개의 서버를 갖추고 있어 우수한 커버리지와 안정적인 성능을 제공합니다.",
+      "editorChoiceNote": " 속도, 보안, 가성비의 뛰어난 조합으로 에디터 추천을 받았습니다.",
+      "getVpnNow": "{name} 지금 받기 - ${price}/월"
+    },
+    "userReviews": {
+      "title": "사용자 리뷰"
+    }
   }
 }

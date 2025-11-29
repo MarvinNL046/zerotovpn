@@ -1,4 +1,5 @@
-import { setRequestLocale } from "next-intl/server";
+import Image from "next/image";
+import { setRequestLocale, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -118,7 +119,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "article",
       images: [
         {
-          url: `/vpn/${vpn.slug}-og.png`,
+          url: vpn.ogImage,
           width: 1200,
           height: 630,
           alt: `${vpn.name} Review`,
@@ -129,7 +130,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: "summary_large_image",
       title: titles[locale] || titles.en,
       description: descriptions[locale] || descriptions.en,
-      images: [`/vpn/${vpn.slug}-og.png`],
+      images: [vpn.ogImage],
     },
   };
 }
@@ -137,6 +138,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ReviewPage({ params }: Props) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
+  const t = await getTranslations("vpnReview");
 
   const vpn = getVpnBySlug(slug);
 
@@ -156,6 +158,21 @@ export default async function ReviewPage({ params }: Props) {
       <VpnReviewSchema vpn={vpn} />
       <VpnProductSchema vpn={vpn} />
       <BreadcrumbSchema items={breadcrumbs} />
+
+      {/* Hero Screenshot Section */}
+      <section className="relative h-64 md:h-80 lg:h-96 w-full overflow-hidden">
+        <Image
+          src={vpn.screenshot}
+          alt={`${vpn.name} website screenshot`}
+          fill
+          className="object-cover object-top"
+          priority
+          sizes="100vw"
+        />
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
+      </section>
+
       <div className="py-8">
       <div className="container">
         {/* Breadcrumb */}
@@ -165,7 +182,7 @@ export default async function ReviewPage({ params }: Props) {
             className="text-sm text-muted-foreground hover:text-primary inline-flex items-center gap-2"
           >
             <ArrowLeft className="h-4 w-4" />
-            Back to Reviews
+            {t("backToReviews")}
           </Link>
         </div>
 
@@ -175,16 +192,16 @@ export default async function ReviewPage({ params }: Props) {
             <div className="flex items-center gap-3 mb-4">
               {vpn.editorChoice && (
                 <Badge className="bg-yellow-500 text-yellow-950">
-                  Editor&apos;s Choice
+                  {t("editorChoice")}
                 </Badge>
               )}
-              {vpn.freeTier && <Badge variant="secondary">Free Tier Available</Badge>}
+              {vpn.freeTier && <Badge variant="secondary">{t("freeTierAvailable")}</Badge>}
             </div>
-            <h1 className="text-4xl font-bold mb-4">{vpn.name} Review 2025</h1>
+            <h1 className="text-4xl font-bold mb-4">{t("reviewTitle", { name: vpn.name })}</h1>
             <div className="flex items-center gap-4 mb-4">
               <RatingStars rating={vpn.overallRating} size="lg" />
               <span className="text-muted-foreground">
-                Based on our comprehensive testing
+                {t("basedOnTesting")}
               </span>
             </div>
             <p className="text-lg text-muted-foreground mb-6">
@@ -197,7 +214,7 @@ export default async function ReviewPage({ params }: Props) {
                 affiliateUrl={vpn.affiliateUrl}
                 size="lg"
               >
-                Get {vpn.name} - ${vpn.priceTwoYear || vpn.priceYearly}/mo
+                {t("getVpnPrice", { name: vpn.name, price: String(vpn.priceTwoYear || vpn.priceYearly) })}
               </AffiliateButton>
             </div>
           </div>
@@ -205,37 +222,37 @@ export default async function ReviewPage({ params }: Props) {
           {/* Quick Stats Card */}
           <Card className="lg:w-80">
             <CardHeader>
-              <CardTitle className="text-lg">Quick Stats</CardTitle>
+              <CardTitle className="text-lg">{t("quickStats.title")}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex justify-between">
-                <span className="text-muted-foreground">Servers</span>
+                <span className="text-muted-foreground">{t("quickStats.servers")}</span>
                 <span className="font-semibold">
                   {vpn.servers.toLocaleString()}
                 </span>
               </div>
               <div className="flex justify-between">
-                <span className="text-muted-foreground">Countries</span>
+                <span className="text-muted-foreground">{t("quickStats.countries")}</span>
                 <span className="font-semibold">{vpn.countries}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-muted-foreground">Devices</span>
+                <span className="text-muted-foreground">{t("quickStats.devices")}</span>
                 <span className="font-semibold">
-                  {vpn.maxDevices >= 999 ? "Unlimited" : vpn.maxDevices}
+                  {vpn.maxDevices >= 999 ? t("quickStats.unlimited") : vpn.maxDevices}
                 </span>
               </div>
               <div className="flex justify-between">
-                <span className="text-muted-foreground">Money-back</span>
-                <span className="font-semibold">{vpn.moneyBackDays} days</span>
+                <span className="text-muted-foreground">{t("quickStats.moneyBack")}</span>
+                <span className="font-semibold">{t("quickStats.days", { count: vpn.moneyBackDays })}</span>
               </div>
               <Separator />
               <div className="flex justify-between items-center">
-                <span className="text-muted-foreground">Starting at</span>
+                <span className="text-muted-foreground">{t("quickStats.startingAt")}</span>
                 <div className="text-right">
                   <span className="text-2xl font-bold text-primary">
                     ${vpn.priceTwoYear || vpn.priceYearly}
                   </span>
-                  <span className="text-muted-foreground">/mo</span>
+                  <span className="text-muted-foreground">{t("quickStats.perMonth")}</span>
                 </div>
               </div>
             </CardContent>
@@ -249,7 +266,7 @@ export default async function ReviewPage({ params }: Props) {
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
                   <Zap className="h-5 w-5 text-yellow-500" />
-                  <span className="font-semibold">Speed</span>
+                  <span className="font-semibold">{t("scores.speed")}</span>
                 </div>
                 <span className="text-2xl font-bold">{vpn.speedScore}%</span>
               </div>
@@ -266,7 +283,7 @@ export default async function ReviewPage({ params }: Props) {
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
                   <Shield className="h-5 w-5 text-blue-500" />
-                  <span className="font-semibold">Security</span>
+                  <span className="font-semibold">{t("scores.security")}</span>
                 </div>
                 <span className="text-2xl font-bold">{vpn.securityScore}%</span>
               </div>
@@ -283,7 +300,7 @@ export default async function ReviewPage({ params }: Props) {
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
                   <Tv className="h-5 w-5 text-purple-500" />
-                  <span className="font-semibold">Streaming</span>
+                  <span className="font-semibold">{t("scores.streaming")}</span>
                 </div>
                 <span className="text-2xl font-bold">{vpn.streamingScore}%</span>
               </div>
@@ -303,7 +320,7 @@ export default async function ReviewPage({ params }: Props) {
             <CardHeader>
               <CardTitle className="text-green-600 flex items-center gap-2">
                 <Check className="h-5 w-5" />
-                Pros
+                {t("prosAndCons.pros")}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -321,7 +338,7 @@ export default async function ReviewPage({ params }: Props) {
             <CardHeader>
               <CardTitle className="text-red-600 flex items-center gap-2">
                 <X className="h-5 w-5" />
-                Cons
+                {t("prosAndCons.cons")}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -340,41 +357,42 @@ export default async function ReviewPage({ params }: Props) {
         {/* Detailed Tabs */}
         <Tabs defaultValue="overview" className="mb-12">
           <TabsList className="grid w-full grid-cols-4">
-            <TabsTrigger value="overview">Overview</TabsTrigger>
-            <TabsTrigger value="pricing">Pricing</TabsTrigger>
-            <TabsTrigger value="security">Security</TabsTrigger>
-            <TabsTrigger value="streaming">Streaming</TabsTrigger>
+            <TabsTrigger value="overview">{t("tabs.overview")}</TabsTrigger>
+            <TabsTrigger value="pricing">{t("tabs.pricing")}</TabsTrigger>
+            <TabsTrigger value="security">{t("tabs.security")}</TabsTrigger>
+            <TabsTrigger value="streaming">{t("tabs.streaming")}</TabsTrigger>
           </TabsList>
           <TabsContent value="overview" className="mt-6">
             <Card>
               <CardContent className="pt-6 prose prose-gray max-w-none">
-                <h3>About {vpn.name}</h3>
+                <h3>{t("overview.about", { name: vpn.name })}</h3>
                 <p>
-                  {vpn.name} is one of the leading VPN providers in the market,
-                  offering {vpn.servers.toLocaleString()} servers across{" "}
-                  {vpn.countries} countries. With support for up to{" "}
-                  {vpn.maxDevices >= 999 ? "unlimited" : vpn.maxDevices} simultaneous
-                  connections, it&apos;s suitable for individuals and families alike.
+                  {t("overview.description", {
+                    name: vpn.name,
+                    servers: vpn.servers.toLocaleString(),
+                    countries: vpn.countries,
+                    devices: vpn.maxDevices >= 999 ? t("quickStats.unlimited").toLowerCase() : String(vpn.maxDevices)
+                  })}
                 </p>
-                <h4>Key Features</h4>
+                <h4>{t("overview.keyFeatures")}</h4>
                 <ul>
                   <li>
-                    <strong>Server Network:</strong> {vpn.servers.toLocaleString()}{" "}
-                    servers in {vpn.countries} countries
+                    <strong>{t("overview.serverNetwork")}</strong>{" "}
+                    {t("overview.serversInCountries", { servers: vpn.servers.toLocaleString(), countries: vpn.countries })}
                   </li>
                   <li>
-                    <strong>Protocols:</strong> {vpn.protocols.join(", ")}
+                    <strong>{t("overview.protocols")}</strong> {vpn.protocols.join(", ")}
                   </li>
                   <li>
-                    <strong>Encryption:</strong> {vpn.encryption}
+                    <strong>{t("overview.encryption")}</strong> {vpn.encryption}
                   </li>
                   <li>
-                    <strong>Kill Switch:</strong>{" "}
-                    {vpn.killSwitch ? "Yes" : "No"}
+                    <strong>{t("overview.killSwitch")}</strong>{" "}
+                    {vpn.killSwitch ? t("overview.yes") : t("overview.no")}
                   </li>
                   <li>
-                    <strong>No-Logs Policy:</strong>{" "}
-                    {vpn.noLogs ? "Yes (audited)" : "Limited"}
+                    <strong>{t("overview.noLogsPolicy")}</strong>{" "}
+                    {vpn.noLogs ? t("overview.yesAudited") : t("overview.limited")}
                   </li>
                 </ul>
               </CardContent>
@@ -384,41 +402,41 @@ export default async function ReviewPage({ params }: Props) {
             <Card>
               <CardContent className="pt-6">
                 <h3 className="text-xl font-semibold mb-6">
-                  {vpn.name} Pricing Plans
+                  {t("pricing.title", { name: vpn.name })}
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div className="border rounded-lg p-4 text-center">
                     <div className="text-sm text-muted-foreground mb-2">
-                      Monthly
+                      {t("pricing.monthly")}
                     </div>
                     <div className="text-3xl font-bold">${vpn.priceMonthly}</div>
-                    <div className="text-sm text-muted-foreground">/month</div>
+                    <div className="text-sm text-muted-foreground">{t("quickStats.perMonth")}</div>
                   </div>
                   <div className="border rounded-lg p-4 text-center border-primary bg-primary/5">
                     <div className="text-sm text-muted-foreground mb-2">
-                      Yearly
+                      {t("pricing.yearly")}
                     </div>
                     <div className="text-3xl font-bold text-primary">
                       ${vpn.priceYearly}
                     </div>
-                    <div className="text-sm text-muted-foreground">/month</div>
-                    <Badge className="mt-2">Most Popular</Badge>
+                    <div className="text-sm text-muted-foreground">{t("quickStats.perMonth")}</div>
+                    <Badge className="mt-2">{t("pricing.mostPopular")}</Badge>
                   </div>
                   {vpn.priceTwoYear && (
                     <div className="border rounded-lg p-4 text-center">
                       <div className="text-sm text-muted-foreground mb-2">
-                        2 Years
+                        {t("pricing.twoYears")}
                       </div>
                       <div className="text-3xl font-bold">${vpn.priceTwoYear}</div>
-                      <div className="text-sm text-muted-foreground">/month</div>
+                      <div className="text-sm text-muted-foreground">{t("quickStats.perMonth")}</div>
                       <Badge variant="secondary" className="mt-2">
-                        Best Value
+                        {t("pricing.bestValue")}
                       </Badge>
                     </div>
                   )}
                 </div>
                 <p className="text-sm text-muted-foreground mt-6 text-center">
-                  All plans include a {vpn.moneyBackDays}-day money-back guarantee
+                  {t("pricing.moneyBackGuarantee", { days: vpn.moneyBackDays })}
                 </p>
               </CardContent>
             </Card>
@@ -427,7 +445,7 @@ export default async function ReviewPage({ params }: Props) {
             <Card>
               <CardContent className="pt-6">
                 <h3 className="text-xl font-semibold mb-6">
-                  Security & Privacy Features
+                  {t("securityFeatures.title")}
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-4">
@@ -437,7 +455,7 @@ export default async function ReviewPage({ params }: Props) {
                       ) : (
                         <X className="h-5 w-5 text-red-500" />
                       )}
-                      <span>No-Logs Policy</span>
+                      <span>{t("securityFeatures.noLogsPolicy")}</span>
                     </div>
                     <div className="flex items-center gap-3">
                       {vpn.killSwitch ? (
@@ -445,15 +463,15 @@ export default async function ReviewPage({ params }: Props) {
                       ) : (
                         <X className="h-5 w-5 text-red-500" />
                       )}
-                      <span>Kill Switch</span>
+                      <span>{t("securityFeatures.killSwitch")}</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <Check className="h-5 w-5 text-green-500" />
-                      <span>{vpn.encryption} Encryption</span>
+                      <span>{t("securityFeatures.encryption", { type: vpn.encryption })}</span>
                     </div>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2">Supported Protocols</h4>
+                    <h4 className="font-semibold mb-2">{t("securityFeatures.supportedProtocols")}</h4>
                     <div className="flex flex-wrap gap-2">
                       {vpn.protocols.map((protocol) => (
                         <Badge key={protocol} variant="outline">
@@ -470,7 +488,7 @@ export default async function ReviewPage({ params }: Props) {
             <Card>
               <CardContent className="pt-6">
                 <h3 className="text-xl font-semibold mb-6">
-                  Streaming Compatibility
+                  {t("streamingSection.title")}
                 </h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   <div className="flex items-center gap-2">
@@ -479,7 +497,7 @@ export default async function ReviewPage({ params }: Props) {
                     ) : (
                       <X className="h-5 w-5 text-red-500" />
                     )}
-                    <span>Netflix</span>
+                    <span>{t("streamingSection.netflix")}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     {vpn.netflixSupport ? (
@@ -487,7 +505,7 @@ export default async function ReviewPage({ params }: Props) {
                     ) : (
                       <X className="h-5 w-5 text-red-500" />
                     )}
-                    <span>Disney+</span>
+                    <span>{t("streamingSection.disneyPlus")}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     {vpn.netflixSupport ? (
@@ -495,7 +513,7 @@ export default async function ReviewPage({ params }: Props) {
                     ) : (
                       <X className="h-5 w-5 text-red-500" />
                     )}
-                    <span>Amazon Prime</span>
+                    <span>{t("streamingSection.amazonPrime")}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     {vpn.netflixSupport ? (
@@ -503,18 +521,17 @@ export default async function ReviewPage({ params }: Props) {
                     ) : (
                       <X className="h-5 w-5 text-red-500" />
                     )}
-                    <span>BBC iPlayer</span>
+                    <span>{t("streamingSection.bbcIplayer")}</span>
                   </div>
                 </div>
                 {vpn.torrentSupport && (
                   <div className="mt-6 p-4 bg-muted rounded-lg">
                     <div className="flex items-center gap-2">
                       <Check className="h-5 w-5 text-green-500" />
-                      <span className="font-semibold">P2P/Torrenting Supported</span>
+                      <span className="font-semibold">{t("streamingSection.p2pSupported")}</span>
                     </div>
                     <p className="text-sm text-muted-foreground mt-2">
-                      {vpn.name} allows torrenting on dedicated servers with
-                      optimized speeds.
+                      {t("streamingSection.torrentDescription", { name: vpn.name })}
                     </p>
                   </div>
                 )}
@@ -526,15 +543,17 @@ export default async function ReviewPage({ params }: Props) {
         {/* Verdict */}
         <Card className="mb-12 border-primary">
           <CardHeader>
-            <CardTitle>Our Verdict</CardTitle>
+            <CardTitle>{t("verdict.title")}</CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-lg mb-6">
-              {vpn.name} scores {vpn.overallRating}/5 in our comprehensive testing.
-              With {vpn.servers.toLocaleString()} servers across {vpn.countries}{" "}
-              countries, it offers excellent coverage and reliable performance.
-              {vpn.editorChoice &&
-                " It has earned our Editor's Choice award for its outstanding combination of speed, security, and value."}
+              {t("verdict.description", {
+                name: vpn.name,
+                rating: vpn.overallRating,
+                servers: vpn.servers.toLocaleString(),
+                countries: vpn.countries
+              })}
+              {vpn.editorChoice && t("verdict.editorChoiceNote")}
             </p>
             <AffiliateButton
               vpnId={vpn.id}
@@ -542,13 +561,13 @@ export default async function ReviewPage({ params }: Props) {
               affiliateUrl={vpn.affiliateUrl}
               size="lg"
             >
-              Get {vpn.name} Now - ${vpn.priceTwoYear || vpn.priceYearly}/mo
+              {t("verdict.getVpnNow", { name: vpn.name, price: String(vpn.priceTwoYear || vpn.priceYearly) })}
             </AffiliateButton>
           </CardContent>
         </Card>
 
         {/* User Reviews Section */}
-        <UserReviewsSection vpn={vpn} locale={locale} />
+        <UserReviewsSection vpn={vpn} locale={locale} title={t("userReviews.title")} />
       </div>
       </div>
     </>
@@ -556,7 +575,7 @@ export default async function ReviewPage({ params }: Props) {
 }
 
 // User Reviews Section Component
-function UserReviewsSection({ vpn, locale }: { vpn: { slug: string; name: string }; locale: string }) {
+function UserReviewsSection({ vpn, locale, title }: { vpn: { slug: string; name: string }; locale: string; title: string }) {
   const userReviews = getReviewsByVpnSlug(vpn.slug, locale);
   const { average, count } = getAverageUserRating(vpn.slug);
 
@@ -564,7 +583,7 @@ function UserReviewsSection({ vpn, locale }: { vpn: { slug: string; name: string
     <section id="user-reviews" className="space-y-8">
       <div className="flex items-center gap-3">
         <MessageSquare className="h-6 w-6 text-primary" />
-        <h2 className="text-2xl font-bold">User Reviews</h2>
+        <h2 className="text-2xl font-bold">{title}</h2>
       </div>
 
       {/* Review Form */}

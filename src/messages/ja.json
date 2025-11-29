@@ -61,14 +61,15 @@
     "compare": "比較する"
   },
   "footer": {
-    "about": "ZeroToVPNについて",
     "aboutText": "独立したテストと正直なレビューで最適なVPN選びをサポートします。",
     "links": "クイックリンク",
     "legal": "法的情報",
     "privacy": "プライバシーポリシー",
     "terms": "利用規約",
     "disclosure": "アフィリエイト開示",
-    "contact": "お問い合わせ",
+    "company": "会社情報",
+    "about": "会社概要",
+    "contactPage": "お問い合わせ",
     "copyright": "© {year} ZeroToVPN. All rights reserved.",
     "disclaimer": "リンク経由で購入された場合、追加費用なしでコミッションを受け取る場合があります。"
   },
@@ -79,5 +80,1011 @@
     "button": "登録",
     "success": "ご登録ありがとうございます！",
     "privacy": "プライバシーを尊重します。いつでも解除可能。"
+  },
+  "guides": {
+    "whatIsVpn": {
+      "meta": {
+        "title": "VPNとは？初心者向け完全ガイド 2025年版 - ZeroToVPN",
+        "description": "VPNとは何か、その仕組みと必要性について学びましょう。VPN技術をわかりやすく解説した初心者向け総合ガイドです。"
+      },
+      "hero": {
+        "badge": "初心者向けガイド",
+        "readTime": "8分で読めます",
+        "title": "VPNとは？",
+        "subtitle": "仮想プライベートネットワーク（VPN）は、インターネット接続を暗号化しIPアドレスを隠すことで、オンラインでのプライバシーとセキュリティを保護する強力なツールです。このガイドでは、VPNについて知っておくべきすべてのことをわかりやすく説明します。",
+        "updated": "2025年11月更新",
+        "level": "初心者向け"
+      },
+      "toc": {
+        "title": "このガイドの内容：",
+        "items": [
+          "1. VPNとは？",
+          "2. VPNの仕組み",
+          "3. VPNを使う理由",
+          "4. VPN利用のメリット",
+          "5. VPNの限界",
+          "6. 適切なVPNの選び方"
+        ]
+      },
+      "sections": {
+        "whatIsVpn": {
+          "title": "VPNとは？",
+          "intro": [
+            "仮想プライベートネットワーク（VPN）とは、お使いのデバイスとインターネットの間に安全な暗号化接続を作成するサービスです。オンライン活動を詮索から守るプライベートなトンネルと考えてください。",
+            "通常インターネットに接続する場合、データはインターネットサービスプロバイダー（ISP）を経由して送信され、ISPはあなたのオンライン活動をすべて見ることができます。VPNを使用すると、データはデバイスから送信される前に暗号化されるため、ISP、ハッカー、さらには政府を含む誰にも傍受されたとしても読み取ることができません。"
+          ],
+          "withoutVpn": {
+            "title": "VPNなしの場合",
+            "items": [
+              "ISPがあなたのオンライン活動をすべて見ることができます",
+              "ウェブサイトがあなたの実際のIPアドレスと位置情報を追跡できます",
+              "公衆WiFiのハッカーがあなたのデータを傍受できます",
+              "閲覧履歴が広告主に販売される可能性があります"
+            ]
+          },
+          "withVpn": {
+            "title": "VPNありの場合",
+            "items": [
+              "軍事レベルの暗号化で接続が保護されます",
+              "実際のIPアドレスがウェブサイトから隠されます",
+              "公衆WiFiを含むあらゆるネットワークでデータが保護されます",
+              "オンライン活動がプライベートに保たれます"
+            ]
+          }
+        },
+        "howVpnWorks": {
+          "title": "VPNの仕組み",
+          "intro": "VPNがどのように機能するかを理解することで、なぜこれほど効果的なプライバシーツールなのかが分かります。プロセスを簡単なステップに分解してみましょう：",
+          "steps": [
+            {
+              "number": 1,
+              "title": "VPNサーバーに接続",
+              "description": "VPNを起動すると、デバイスはVPNプロバイダーのサーバーの1つとの接続を確立します。"
+            },
+            {
+              "number": 2,
+              "title": "データの暗号化",
+              "description": "デバイスから送信されるすべてのデータは、AES-256などのプロトコルを使用して暗号化されます。これは政府や銀行が使用するのと同じ暗号化方式です。"
+            },
+            {
+              "number": 3,
+              "title": "IPアドレスの変更",
+              "description": "ウェブサイトには、あなたのIPアドレスではなくVPNサーバーのIPアドレスが表示され、実際の位置情報と身元が隠されます。"
+            },
+            {
+              "number": 4,
+              "title": "安全なトンネルの確立",
+              "description": "あなたとVPNサーバーの間に安全な「トンネル」が作成され、通過するすべてのデータが保護されます。"
+            }
+          ]
+        },
+        "whyUseVpn": {
+          "title": "VPNを使う理由",
+          "intro": "毎日何百万人もの人々がVPNを使用する理由はたくさんあります。最も一般的な使用例をご紹介します：",
+          "useCases": [
+            {
+              "title": "プライバシー保護",
+              "description": "あなたのオンライン行動を追跡して収益化しようとするISP、雇用主、広告主から閲覧履歴を守ります。",
+              "icon": "Lock"
+            },
+            {
+              "title": "公衆WiFiのセキュリティ",
+              "description": "カフェ、空港、ホテル、その他ハッカーが潜んでいることが多い公共の場所でWiFiを使用する際に自分を守ります。",
+              "icon": "Wifi"
+            },
+            {
+              "title": "ストリーミングコンテンツへのアクセス",
+              "description": "世界中どこからでも、さまざまな国のサーバーに接続することで、Netflix、Disney+、BBC iPlayerなどでお気に入りの番組を視聴できます。",
+              "icon": "Tv"
+            },
+            {
+              "title": "安全なダウンロード",
+              "description": "ファイルを安全かつプライベートにダウンロードできます。VPNはP2P活動を保護したいユーザーに人気があります。",
+              "icon": "Download"
+            },
+            {
+              "title": "リモートワークのセキュリティ",
+              "description": "どこからでも会社のネットワークや機密の仕事ファイルに安全にアクセスし、ビジネスデータを保護します。",
+              "icon": "Building"
+            },
+            {
+              "title": "モバイルプライバシー",
+              "description": "モバイルデータを使用するときや、見知らぬWiFiネットワークに接続するときに、スマートフォンやタブレットを保護します。",
+              "icon": "Smartphone"
+            }
+          ]
+        },
+        "vpnBenefits": {
+          "title": "VPN利用のメリット",
+          "benefits": [
+            "すべてのインターネットトラフィックを暗号化",
+            "IPアドレスと位置情報を隠す",
+            "ISPによる追跡と速度制限を防止",
+            "公衆ネットワーク上のハッカーから保護",
+            "地理的制限を回避",
+            "航空券やホテルの料金を節約（料金は場所によって異なります）",
+            "ISPによる帯域幅制限を防止",
+            "オンラインで匿名性のレイヤーを追加"
+          ]
+        },
+        "vpnLimitations": {
+          "title": "VPNの限界",
+          "intro": "VPNは強力なプライバシーツールですが、すべてのオンラインセキュリティ問題に対する魔法の解決策ではありません。VPNにできないことは以下の通りです：",
+          "limitations": [
+            {
+              "title": "VPNは完全に匿名にするわけではありません",
+              "description": "ウェブサイトは、Cookie、ブラウザフィンガープリント、ログインアカウントを通じて引き続きあなたを追跡できます。"
+            },
+            {
+              "title": "VPNはマルウェアから保護できません",
+              "description": "ウイルスや悪意のあるダウンロードから保護するには、引き続きウイルス対策ソフトウェアが必要です。"
+            },
+            {
+              "title": "VPNは接続速度を低下させる可能性があります",
+              "description": "暗号化によりオーバーヘッドが発生しますが、プレミアムVPNはこの影響を最小限に抑えます。"
+            },
+            {
+              "title": "一部のサービスはVPNをブロックします",
+              "description": "特定のウェブサイトやストリーミングプラットフォームは、積極的にVPNユーザーをブロックしようとします。"
+            },
+            {
+              "title": "無料VPNには落とし穴があることが多いです",
+              "description": "多くの無料VPNは、データをログに記録したり、広告を表示したり、深刻なセキュリティ上の欠陥があります。"
+            }
+          ]
+        },
+        "choosingVpn": {
+          "title": "適切なVPNの選び方",
+          "intro": "すべてのVPNが同じように作られているわけではありません。VPNサービスを選ぶ際に注目すべき点は次のとおりです：",
+          "features": [
+            {
+              "title": "強力な暗号化",
+              "description": "AES-256暗号化と、WireGuard、OpenVPN、IKEv2などの最新プロトコルを探しましょう。一部のプロバイダーは、速度に最適化された独自プロトコルも提供しています。"
+            },
+            {
+              "title": "ノーログポリシー",
+              "description": "あなたの活動のログを保存しないVPNを選びましょう。独立して監査されたノーログ主張を探しましょう。"
+            },
+            {
+              "title": "高速性",
+              "description": "優れたVPNは速度低下を最小限に抑える必要があります。大規模なサーバーネットワークと最新のプロトコルを備えたVPNを探しましょう。"
+            },
+            {
+              "title": "キルスイッチ",
+              "description": "キルスイッチは、VPN接続が切断された場合にインターネット接続を遮断し、偶発的なデータ漏洩を防ぎます。"
+            },
+            {
+              "title": "サーバーの場所",
+              "description": "サーバーの場所が多いほど、速度が向上し、地域制限されたコンテンツへのアクセスオプションが増えます。"
+            }
+          ]
+        }
+      },
+      "cta": {
+        "title": "保護を受ける準備はできましたか？",
+        "description": "VPNとは何か、そしてなぜ必要なのかを理解したところで、最高のVPNサービスの比較をチェックして、あなたに最適なものを見つけましょう。",
+        "primaryButton": "VPNを比較する",
+        "secondaryButton": "2025年版ベストVPNを見る"
+      },
+      "relatedGuides": {
+        "title": "学習を続ける",
+        "guides": [
+          {
+            "title": "VPNの仕組みは？",
+            "description": "VPN技術をより深く理解する",
+            "url": "/guides/how-vpn-works"
+          },
+          {
+            "title": "ストリーミングに最適なVPN",
+            "description": "Netflix、Disney+などにアクセスする",
+            "url": "/guides/vpn-for-streaming"
+          }
+        ]
+      }
+    },
+    "howVpnWorks": {
+      "meta": {
+        "title": "VPNはどのように機能するのか？技術ガイド 2025年版 - ZeroToVPN",
+        "description": "VPN技術の技術的な詳細を理解しましょう。暗号化、トンネリングプロトコル、そしてVPNがどのようにデータを保護するのかをステップバイステップで学びます。"
+      },
+      "hero": {
+        "badge": "技術ガイド",
+        "readTime": "10分で読めます",
+        "title": "VPNはどのように機能するのか？",
+        "subtitle": "VPNの「接続」ボタンをクリックしたときに何が起こるのか疑問に思ったことはありませんか？このガイドでは、VPN技術の背後にある技術的な仕組みを解説し、暗号化、トンネリングプロトコル、データ保護を明確で理解しやすい言葉で説明します。",
+        "updated": "2025年11月更新",
+        "level": "中級レベル"
+      },
+      "toc": {
+        "title": "このガイドの内容：",
+        "items": [
+          "1. VPN接続の概要",
+          "2. 暗号化の説明",
+          "3. VPNトンネリング",
+          "4. VPNプロトコルの比較",
+          "5. ステップバイステッププロセス",
+          "6. セキュリティ機能"
+        ]
+      },
+      "sections": {
+        "overview": {
+          "title": "VPN接続の概要",
+          "intro": "VPNは、お使いのデバイスとVPNサーバーの間に安全な暗号化接続を作成します。この接続は、第三者にデータを見られたり傍受されたりするのを防ぐ「トンネル」として機能します。",
+          "diagram": {
+            "title": "データの移動経路",
+            "steps": [
+              {
+                "label": "あなたのデバイス",
+                "icon": "Wifi"
+              },
+              {
+                "label": "暗号化済み",
+                "status": "protected"
+              },
+              {
+                "label": "VPNサーバー",
+                "icon": "Server"
+              },
+              {
+                "label": "インターネット",
+                "icon": "Globe"
+              }
+            ]
+          },
+          "note": "重要な概念は、デバイスとVPNサーバーの間では、すべてのデータが暗号化されており読み取ることができないということです。VPNサーバーに到達して初めて復号化され、宛先に送信されます。"
+        },
+        "encryption": {
+          "title": "暗号化の説明",
+          "intro": "暗号化とは、数学的アルゴリズムを使用して、読み取り可能なデータ（平文）を読み取り不可能な形式（暗号文）に変換するプロセスです。正しい復号化キーを持っている人だけがそれを元に戻すことができます。",
+          "aes256": {
+            "title": "AES-256暗号化",
+            "description": "最新のVPNのほとんどは、世界中の政府や軍事組織が使用しているのと同じAES-256（256ビットキーを使用した高度暗号化標準）を使用しています。",
+            "specs": [
+              {
+                "title": "キーの長さ",
+                "description": "256ビット = 2^256通りの組み合わせ。これは観測可能な宇宙の原子の数よりも多いです！"
+              },
+              {
+                "title": "解読にかかる時間",
+                "description": "現在の技術では、ブルートフォースでAES-256暗号化を解読するには数十億年かかります。"
+              }
+            ]
+          },
+          "keyTypes": {
+            "title": "暗号化キーの種類",
+            "items": [
+              {
+                "type": "対称暗号化",
+                "description": "暗号化と復号化に同じキーを使用します。高速ですが、安全なキー交換が必要です。"
+              },
+              {
+                "type": "非対称暗号化",
+                "description": "公開キーで暗号化し、秘密キーで復号化します。初期ハンドシェイクとキー交換に使用されます。"
+              }
+            ]
+          }
+        },
+        "tunneling": {
+          "title": "VPNトンネリング",
+          "intro": "VPNトンネリングとは、データパケットを別のパケット内にカプセル化するプロセスです。手紙を別の封筒に入れるようなものと考えてください。外側の封筒が中身を隠します。",
+          "process": {
+            "title": "カプセル化プロセス",
+            "steps": [
+              {
+                "number": 1,
+                "title": "元のデータ",
+                "description": "宛先アドレス付きの実際のデータパケット"
+              },
+              {
+                "number": 2,
+                "title": "暗号化",
+                "description": "VPNプロトコルを使用してデータが暗号化されます"
+              },
+              {
+                "number": 3,
+                "title": "カプセル化",
+                "description": "暗号化されたデータがVPNサーバー宛ての新しいパケットに包まれます"
+              },
+              {
+                "number": 4,
+                "title": "送信",
+                "description": "パケットはISPを経由してVPNサーバーに移動します（ISPには暗号化された塊しか見えません）"
+              }
+            ]
+          }
+        },
+        "protocols": {
+          "title": "VPNプロトコルの比較",
+          "intro": "VPNプロトコルは、データの暗号化と送信方法を決定します。各プロトコルには、速度、セキュリティ、互換性の独自のバランスがあります。",
+          "list": [
+            {
+              "name": "WireGuard",
+              "badge": "推奨",
+              "description": "最新かつ最速のプロトコルです。最先端の暗号技術を使用し、わずか4,000行のコードで構成されています（OpenVPNの400,000行以上と比較して）。",
+              "ratings": {
+                "speed": "優秀",
+                "security": "優秀",
+                "compatibility": "良好"
+              }
+            },
+            {
+              "name": "OpenVPN",
+              "badge": "業界標準",
+              "description": "最も広く使用されているプロトコルです。オープンソースで20年以上にわたって実戦でテストされています。事実上すべてのデバイスとネットワークで動作します。",
+              "ratings": {
+                "speed": "良好",
+                "security": "優秀",
+                "compatibility": "優秀"
+              }
+            },
+            {
+              "name": "IKEv2/IPSec",
+              "badge": "モバイル最適化",
+              "description": "モバイルデバイスに最適です。WiFiとセルラーネットワークを切り替える際に素早く再接続します。ほとんどのオペレーティングシステムに組み込まれています。",
+              "ratings": {
+                "speed": "優秀",
+                "security": "優秀",
+                "compatibility": "優秀"
+              }
+            }
+          ]
+        },
+        "stepByStep": {
+          "title": "ステップバイステップ：接続時に何が起こるか",
+          "steps": [
+            {
+              "number": 1,
+              "title": "VPNアプリが接続を開始",
+              "description": "「接続」をクリックすると、VPNアプリはVPNサーバーに接続し、認証プロセスを開始します。"
+            },
+            {
+              "number": 2,
+              "title": "ハンドシェイクと認証",
+              "description": "デバイスとVPNサーバーが暗号化キーを交換し、証明書を通じてお互いの身元を確認します。"
+            },
+            {
+              "number": 3,
+              "title": "トンネルの確立",
+              "description": "安全な暗号化トンネルが作成されます。これ以降、すべてのインターネットトラフィックはこのトンネルを通って流れます。"
+            },
+            {
+              "number": 4,
+              "title": "IPアドレスのマスキング",
+              "description": "実際のIPアドレスがVPNサーバーのIPアドレスに置き換えられます。ウェブサイトには、あなたの場所ではなく、サーバーの場所が表示されます。"
+            },
+            {
+              "number": 5,
+              "title": "データの安全な流れ",
+              "description": "送信するすべてのパケットは暗号化され、VPNサーバーにトンネリングされ、復号化されて宛先に転送されます。応答は逆の経路をたどります。"
+            }
+          ]
+        },
+        "securityFeatures": {
+          "title": "主要なセキュリティ機能",
+          "features": [
+            {
+              "name": "キルスイッチ",
+              "icon": "EyeOff",
+              "description": "VPN接続が切断された場合に自動的にすべてのインターネットトラフィックをブロックし、データ漏洩を防ぎます。"
+            },
+            {
+              "name": "DNS漏洩保護",
+              "icon": "Cloud",
+              "description": "DNSクエリが、閲覧履歴を公開する可能性のあるISPのDNSサーバーではなく、VPNトンネルを経由することを保証します。"
+            },
+            {
+              "name": "完全転送秘密",
+              "icon": "Lock",
+              "description": "各セッションで一意の暗号化キーを生成します。1つのキーが侵害されても、過去のセッションは安全なままです。"
+            },
+            {
+              "name": "RAMのみのサーバー",
+              "icon": "Server",
+              "description": "一部のVPNは完全にRAMメモリで動作します。電源を切ると、すべてのデータが自動的に消去され、痕跡が残りません。"
+            }
+          ]
+        },
+        "keyTakeaways": {
+          "title": "重要なポイント",
+          "items": [
+            "VPNは軍事レベルのAES-256暗号化でデータを暗号化します",
+            "トンネリングは、暗号化されたパケットにデータをカプセル化することで隠します",
+            "WireGuardは最速の最新プロトコルです。OpenVPNは最も互換性があります",
+            "キルスイッチやDNS漏洩保護などの機能が追加のセキュリティレイヤーを提供します"
+          ]
+        }
+      },
+      "relatedGuides": {
+        "title": "学習を続ける",
+        "guides": [
+          {
+            "title": "VPNとは？",
+            "description": "VPNが初めての方は基本から始めましょう。",
+            "url": "/guides/what-is-vpn"
+          },
+          {
+            "title": "ストリーミング用VPN",
+            "description": "VPNを使用してストリーミングコンテンツにアクセスする方法を学びます。",
+            "url": "/guides/vpn-for-streaming"
+          }
+        ]
+      },
+      "cta": {
+        "title": "VPNを試す準備はできましたか？",
+        "description": "VPNの仕組みを理解したところで、最高評価のVPNプロバイダーをチェックして、ニーズに最適なものを見つけましょう。",
+        "button": "ベストVPNを見る"
+      }
+    },
+    "vpnForStreaming": {
+      "meta": {
+        "title": "ストリーミングに最適なVPN：Netflix、Disney+など（2025年版ガイド）- ZeroToVPN",
+        "description": "VPNを使用してNetflix、Disney+、BBC iPlayerなどのストリーミングサービスにどこからでもアクセスする方法を紹介。ストリーミングに最適なVPNを見つけましょう。"
+      },
+      "hero": {
+        "badge": "ストリーミングガイド",
+        "readTime": "7分で読める",
+        "title": "ストリーミングに最適なVPN",
+        "subtitle": "ヨーロッパから米国版Netflixを視聴したいですか？海外からBBC iPlayerにアクセスしたいですか？VPNは世界中のストリーミングコンテンツのロックを解除できます。このガイドでは、VPNとストリーミングに関する必要な情報をすべて網羅しています。",
+        "updated": "2025年11月更新",
+        "level": "実践ガイド"
+      },
+      "toc": {
+        "title": "このガイドの内容：",
+        "items": [
+          "1. ストリーミングにVPNを使用する理由",
+          "2. VPNでストリーミングする仕組み",
+          "3. 人気のストリーミングサービス",
+          "4. ストリーミングに最適なVPN",
+          "5. より良いストリーミングのためのヒント",
+          "6. よくある質問"
+        ]
+      },
+      "relatedGuides": {
+        "title": "続けて学ぶ",
+        "guides": [
+          {
+            "title": "VPNの仕組み",
+            "description": "VPN技術の技術的な詳細を理解する。",
+            "url": "/guides/how-vpn-works"
+          },
+          {
+            "title": "VPNとは何か？",
+            "description": "VPNが初めての方は基本から始めましょう。",
+            "url": "/guides/what-is-vpn"
+          }
+        ]
+      },
+      "cta": {
+        "title": "ストリーミングを始める準備はできましたか？",
+        "description": "ストリーミングに最適化されたVPNを選んで、今日から世界中のコンテンツのロックを解除しましょう。",
+        "button": "ストリーミングに最適なVPNを見つける"
+      }
+    },
+    "vpnForTorrenting": {
+      "meta": {
+        "title": "トレント用VPN：ダウンロード中も安全を保つ（2025年版ガイド）- ZeroToVPN",
+        "description": "安全なトレントのためのVPNの使用方法を学びましょう。P2P対応VPN、キルスイッチ、リーク保護を理解して、安全かつ匿名でダウンロードしましょう。"
+      },
+      "hero": {
+        "badge": "プライバシーガイド",
+        "readTime": "8分で読める",
+        "title": "トレント用VPN",
+        "subtitle": "保護なしでトレントすると、数千のピアにあなたのIPアドレスが露出します。ダウンロード中にVPNがどのようにあなたを保護するか、そしてP2P対応VPNで探すべき機能について学びましょう。",
+        "updated": "2025年11月更新",
+        "level": "プライバシーガイド"
+      },
+      "toc": {
+        "title": "このガイドの内容：",
+        "items": [
+          "1. トレントにVPNを使用する理由",
+          "2. VPNなしでトレントするリスク",
+          "3. 必須のVPN機能",
+          "4. トレントに最適なVPN",
+          "5. 設定方法",
+          "6. 法的考慮事項"
+        ]
+      },
+      "relatedGuides": {
+        "title": "続けて学ぶ",
+        "guides": [
+          {
+            "title": "VPNプライバシーガイド",
+            "description": "ノーログポリシーとVPNを真にプライベートにするものについて深く掘り下げる。",
+            "url": "/guides/vpn-privacy-guide"
+          },
+          {
+            "title": "VPN速度ガイド",
+            "description": "より高速なダウンロード速度のためにVPNを最適化する。",
+            "url": "/guides/vpn-speed-guide"
+          }
+        ]
+      },
+      "cta": {
+        "title": "トレントに安全なVPNを見つける",
+        "description": "P2Pサポート、キルスイッチ、検証済みノーログポリシーを備えたVPNを比較して、ダウンロード中も安全を保ちましょう。",
+        "button": "P2Pに最適なVPNを見つける"
+      }
+    },
+    "vpnForTravel": {
+      "meta": {
+        "title": "旅行用VPN：海外で接続を維持するための必須ガイド（2025年版）- ZeroToVPN",
+        "description": "旅行中にVPNが必要な理由を学びましょう。自国のコンテンツへのアクセス、検閲の回避、ホテルのWiFiでの保護、お得な情報の発見。完全な旅行用VPNガイド。"
+      },
+      "hero": {
+        "badge": "旅行ガイド",
+        "readTime": "10分で読める",
+        "title": "旅行用VPNガイド",
+        "subtitle": "海外旅行中ですか？VPNはパスポートと同じくらい必須です。自国のコンテンツへのアクセス方法、ホテルのWiFiでの安全確保、検閲の回避、さらには予約でお金を節約する方法を学びましょう。",
+        "updated": "2025年11月更新",
+        "level": "旅行必須"
+      },
+      "toc": {
+        "title": "このガイドの内容：",
+        "items": [
+          "1. 旅行にVPNが必要な理由",
+          "2. 自国からのコンテンツへのアクセス",
+          "3. 検閲の回避",
+          "4. 旅行セキュリティのヒント",
+          "5. VPNでお金を節約する",
+          "6. 旅行者に最適なVPN"
+        ]
+      },
+      "relatedGuides": {
+        "title": "続けて学ぶ",
+        "guides": [
+          {
+            "title": "公共WiFiの安全性",
+            "description": "公共ネットワークのための必須セキュリティヒント。",
+            "url": "/guides/public-wifi-safety"
+          },
+          {
+            "title": "モバイルでのVPN",
+            "description": "スマートフォンやタブレットでVPNを設定する。",
+            "url": "/guides/vpn-on-mobile"
+          }
+        ]
+      },
+      "cta": {
+        "title": "次の冒険の準備はできましたか？",
+        "description": "VPN保護なしで出発しないでください。国際旅行に最適なVPNを比較して、どこにいても接続を維持しましょう。",
+        "button": "最適なVPNを見る"
+      }
+    },
+    "vpnOnMobile": {
+      "meta": {
+        "title": "モバイルでのVPN：完全なiOS・Android設定ガイド（2025年版）- ZeroToVPN",
+        "description": "iPhoneまたはAndroidデバイスでVPNを設定して使用する方法を学びましょう。ステップバイステップガイド、ベストプラクティス、モバイルVPNセキュリティのヒント。"
+      },
+      "hero": {
+        "badge": "モバイルガイド",
+        "readTime": "9分で読める",
+        "title": "モバイルデバイスでのVPN",
+        "subtitle": "スマートフォンはどこにでも持ち歩きます。VPN保護も同じであるべきです。最大限のセキュリティと利便性のために、iOSとAndroidでVPNを設定して最適化する方法を学びましょう。",
+        "updated": "2025年11月更新",
+        "level": "モバイル設定ガイド"
+      },
+      "toc": {
+        "title": "このガイドの内容：",
+        "items": [
+          "1. モバイルでVPNを使用する理由",
+          "2. iPhone/iPadでのVPN設定",
+          "3. AndroidでのVPN設定",
+          "4. 最適なモバイルVPN設定",
+          "5. バッテリーとパフォーマンスのヒント",
+          "6. モバイルに最適なVPN"
+        ]
+      },
+      "relatedGuides": {
+        "title": "続けて学ぶ",
+        "guides": [
+          {
+            "title": "公共WiFiの安全性",
+            "description": "公共ネットワークで安全を保つ。",
+            "url": "/guides/public-wifi-safety"
+          },
+          {
+            "title": "旅行用VPN",
+            "description": "旅行者のための必須VPNガイド。",
+            "url": "/guides/vpn-for-travel"
+          }
+        ]
+      },
+      "cta": {
+        "title": "モバイルデバイスを保護する準備はできましたか？",
+        "description": "最高のモバイル対応VPNを比較して、スマートフォンやタブレットに最適な保護を見つけましょう。",
+        "button": "最適なVPNを見る"
+      }
+    },
+    "vpnPrivacyGuide": {
+      "meta": {
+        "title": "VPNプライバシーガイド：ノーログポリシーと管轄権の説明（2025年版）- ZeroToVPN",
+        "description": "VPNを真にプライベートにするものを理解しましょう。ノーログポリシー、管轄権、独立監査、VPNのプライバシー主張を評価する方法について学びます。"
+      },
+      "hero": {
+        "badge": "プライバシーガイド",
+        "readTime": "10分で読める",
+        "title": "VPNプライバシーガイド",
+        "subtitle": "プライバシーに関して、すべてのVPNが同じように作られているわけではありません。「ノーログ」が本当に意味するもの、管轄権が重要な理由、そしてVPNが本当にあなたのプライバシーを保護しているかどうかを見分ける方法を学びましょう。",
+        "updated": "2025年11月更新",
+        "level": "プライバシー詳細解説"
+      },
+      "toc": {
+        "title": "このガイドの内容：",
+        "items": [
+          "1. VPNプライバシーとは何か？",
+          "2. ノーログポリシーの説明",
+          "3. 管轄権が重要な理由",
+          "4. 独立監査",
+          "5. プライバシーの警告サイン",
+          "6. プライバシーチェックリスト"
+        ]
+      },
+      "relatedGuides": {
+        "title": "続けて学ぶ",
+        "guides": [
+          {
+            "title": "トレント用VPN",
+            "description": "安全なP2Pダウンロードにプライバシーの知識を応用する。",
+            "url": "/guides/vpn-for-torrenting"
+          },
+          {
+            "title": "VPNの仕組み",
+            "description": "VPN保護の技術的詳細を理解する。",
+            "url": "/guides/how-vpn-works"
+          }
+        ]
+      },
+      "cta": {
+        "title": "真にプライベートなVPNを見つける",
+        "description": "プライバシー機能、ノーログポリシー、独立監査に基づいてVPNを比較しましょう。",
+        "button": "プライベートVPNを比較する"
+      }
+    },
+    "vpnProtocolsExplained": {
+      "meta": {
+        "title": "VPNプロトコル解説：WireGuard vs OpenVPN vs IKEv2（2025年版）- ZeroToVPN",
+        "description": "VPNプロトコル間の違いを理解しましょう。WireGuard、OpenVPN、IKEv2などを比較して、ニーズに最適なプロトコルを選びます。"
+      },
+      "hero": {
+        "badge": "技術ガイド",
+        "readTime": "12分で読める",
+        "title": "VPNプロトコル解説",
+        "subtitle": "WireGuard、OpenVPN、IKEv2 - これらの用語は何を意味し、どれを使用すべきでしょうか？このガイドでは、VPNプロトコルを分かりやすい言葉で説明し、正しい選択をするのに役立ちます。",
+        "updated": "2025年11月更新",
+        "level": "技術ガイド"
+      },
+      "toc": {
+        "title": "このガイドの内容：",
+        "items": [
+          "1. VPNプロトコルとは何か？",
+          "2. WireGuard",
+          "3. OpenVPN",
+          "4. IKEv2/IPSec",
+          "5. その他のプロトコル",
+          "6. プロトコル比較"
+        ]
+      },
+      "relatedGuides": {
+        "title": "続けて学ぶ",
+        "guides": [
+          {
+            "title": "VPNの仕組み",
+            "description": "VPN技術の技術的な詳細を理解する。",
+            "url": "/guides/how-vpn-works"
+          },
+          {
+            "title": "VPN速度ガイド",
+            "description": "最大速度のためにVPNを最適化する方法を学ぶ。",
+            "url": "/guides/vpn-speed-guide"
+          }
+        ]
+      },
+      "cta": {
+        "title": "お好みのプロトコルを持つVPNを見つける",
+        "description": "プロトコルサポート、速度、セキュリティ機能に基づいてVPNを比較しましょう。",
+        "button": "VPNを比較する"
+      }
+    },
+    "vpnSpeedGuide": {
+      "meta": {
+        "title": "VPN速度ガイド：最速のVPN接続を得る方法（2025年版）- ZeroToVPN",
+        "description": "VPN速度に影響する要因と接続を最適化する方法を学びましょう。ストリーミング、ゲーム、ダウンロードのためにVPNパフォーマンスを最大化するヒントを入手。"
+      },
+      "hero": {
+        "badge": "パフォーマンスガイド",
+        "readTime": "6分で読める",
+        "title": "VPN速度ガイド",
+        "subtitle": "VPNがインターネットを遅くしていますか？VPN速度に影響する要因を学び、ストリーミング、ゲーム、日常のブラウジングのために接続を最適化する実証済みのヒントを発見しましょう。",
+        "updated": "2025年11月更新",
+        "level": "実践ガイド"
+      },
+      "toc": {
+        "title": "このガイドの内容：",
+        "items": [
+          "1. VPN速度を理解する",
+          "2. 速度に影響する要因",
+          "3. 予想される速度低下",
+          "4. 速度最適化のヒント",
+          "5. 最速のVPNプロトコル",
+          "6. VPN速度のテスト方法"
+        ]
+      },
+      "relatedGuides": {
+        "title": "続けて学ぶ",
+        "guides": [
+          {
+            "title": "VPNの仕組み",
+            "description": "VPN技術の技術的な詳細を理解する。",
+            "url": "/guides/how-vpn-works"
+          },
+          {
+            "title": "ストリーミング用VPN",
+            "description": "Netflix、Disney+などにVPNを使用する方法を学ぶ。",
+            "url": "/guides/vpn-for-streaming"
+          }
+        ]
+      },
+      "cta": {
+        "title": "最速のVPNを見つける",
+        "description": "VPN速度を比較して、ニーズに最適な最速プロバイダーを見つけましょう。すべてのVPNを実際のパフォーマンスでテストしています。",
+        "button": "VPN速度を比較する"
+      }
+    },
+    "publicWifiSafety": {
+      "meta": {
+        "title": "公共WiFiの安全性：オープンネットワークで安全を保つ方法（2025年版）- ZeroToVPN",
+        "description": "公共WiFiのリスクと自分自身を保護する方法について学びましょう。カフェ、空港、ホテル、その他の公共の場所でWiFiを使用するための必須セキュリティヒントを発見。"
+      },
+      "hero": {
+        "badge": "セキュリティガイド",
+        "readTime": "8分で読める",
+        "title": "公共WiFi安全ガイド",
+        "subtitle": "無料WiFiは便利ですが、深刻なリスクが伴います。ハッカーが公共ネットワークを悪用する方法と、コーヒーショップ、空港、ホテルなどでデータを保護するための必須ステップを学びましょう。",
+        "updated": "2025年11月更新",
+        "level": "セキュリティ必須"
+      },
+      "toc": {
+        "title": "このガイドの内容：",
+        "items": [
+          "1. 公共WiFiのリスク解説",
+          "2. 一般的なWiFi攻撃の種類",
+          "3. 必須の保護ヒント",
+          "4. VPNがどのように保護するか",
+          "5. 場所別の安全性",
+          "6. クイックセキュリティチェックリスト"
+        ]
+      },
+      "relatedGuides": {
+        "title": "続けて学ぶ",
+        "guides": [
+          {
+            "title": "旅行用VPN",
+            "description": "海外旅行者のための必須VPNガイド。",
+            "url": "/guides/vpn-for-travel"
+          },
+          {
+            "title": "モバイルでのVPN",
+            "description": "スマートフォンでVPN保護を設定する。",
+            "url": "/guides/vpn-on-mobile"
+          }
+        ]
+      },
+      "cta": {
+        "title": "あらゆるWiFiネットワークで安全を保つ",
+        "description": "公共ネットワークで個人データをリスクにさらさないでください。VPNを入手して、世界中どこでも自信を持ってブラウジングしましょう。",
+        "button": "最適なVPNを見る"
+      }
+    }
+  },
+  "home": {
+    "hero": {
+      "badge": "2025年版更新",
+      "title": "あなたに",
+      "titleHighlight": "最適なVPN",
+      "subtitle": "数分でゼロからセキュアに。専門家レビュー、正直な比較、最高のVPNサービスの限定特典。",
+      "primaryCta": "VPNを比較",
+      "secondaryCta": "VPNとは？",
+      "trusted": "世界中で10万人以上の読者に信頼されています"
+    },
+    "trustIndicators": {
+      "vpnsTested": {
+        "value": "50+",
+        "label": "テスト済みVPN"
+      },
+      "monthlyReaders": {
+        "value": "10万+",
+        "label": "月間読者数"
+      },
+      "speedTests": {
+        "value": "500+",
+        "label": "速度テスト"
+      },
+      "updated": {
+        "value": "24時間365日",
+        "label": "更新"
+      }
+    },
+    "comparison": {
+      "title": "2025年ベストVPN",
+      "subtitle": "独立してテスト・評価。速度、セキュリティ、ストリーミング、コストパフォーマンスについてすべてのVPNをテストしています。"
+    },
+    "topPicks": {
+      "title": "トップVPN選択",
+      "subtitle": "専門家のトップ推奨"
+    },
+    "whyVpn": {
+      "title": "VPNが必要な理由",
+      "subtitle": "プライバシーを保護し、グローバルコンテンツにアクセスし、オンラインで安全を維持。",
+      "features": [
+        {
+          "title": "プライバシー保護",
+          "description": "IPアドレスを隠し、インターネットトラフィックを暗号化して、ハッカー、ISP、広告主からオンライン活動をプライベートに保ちます。",
+          "icon": "Shield"
+        },
+        {
+          "title": "グローバルコンテンツへのアクセス",
+          "description": "地域制限を回避して、世界中どこからでもストリーミングサービス、ウェブサイト、コンテンツにアクセスできます。",
+          "icon": "Globe"
+        },
+        {
+          "title": "公衆WiFiを保護",
+          "description": "軍事レベルの暗号化で、カフェ、空港、ホテルなどの公衆WiFiネットワークで安全を確保します。",
+          "icon": "Zap"
+        }
+      ]
+    },
+    "howWeTest": {
+      "title": "VPNのテスト方法",
+      "subtitle": "厳格なテスト方法論により、正直で偏りのないレビューを保証します。",
+      "items": [
+        "50以上のサーバーロケーションでの速度テスト",
+        "セキュリティ監査とリークテスト",
+        "ストリーミングプラットフォーム互換性チェック",
+        "プライバシーポリシーと管轄権の分析",
+        "カスタマーサポートの応答性",
+        "コストパフォーマンス評価"
+      ]
+    },
+    "ctaSection": {
+      "title": "始める準備はできましたか？",
+      "subtitle": "最高のVPNを比較して、ニーズに最適なものを見つけましょう。",
+      "button": "すべてのVPNを見る"
+    },
+    "faq": [
+      {
+        "question": "VPNとは何ですか？",
+        "answer": "VPN（仮想プライベートネットワーク）は、インターネット接続を暗号化しIPアドレスを隠すことで、オンラインでのプライバシーを保護し、地域制限されたコンテンツへのアクセスを可能にします。"
+      },
+      {
+        "question": "2025年で最高のVPNはどれですか？",
+        "answer": "テストの結果、NordVPNが2025年で総合的に最高のVPNであり、優れた速度、強力なセキュリティ、高いコストパフォーマンスを提供しています。Surfsharkは無制限のデバイスで最高の予算オプションです。"
+      },
+      {
+        "question": "無料VPNは安全ですか？",
+        "answer": "ほとんどの無料VPNは、データをログに記録したり、広告を表示したり、セキュリティ上の脆弱性がある可能性があるため、推奨されません。ProtonVPNは、データ制限のない信頼できる無料プランを提供しています。"
+      },
+      {
+        "question": "VPNは追跡できますか？",
+        "answer": "ノーログポリシーを持つ高品質なVPNは、あなたに遡って追跡することはできません。VPNプロバイダーは、あなたのオンライン活動に関する情報を一切保存しません。"
+      }
+    ]
+  },
+  "vpnTable": {
+    "headers": {
+      "rank": "#",
+      "vpn": "VPN",
+      "rating": "評価",
+      "speed": "速度",
+      "security": "セキュリティ",
+      "servers": "サーバー",
+      "netflix": "Netflix",
+      "price": "価格",
+      "action": "アクション"
+    },
+    "editorChoice": "編集者のおすすめ",
+    "countries": "国",
+    "devices": "デバイス",
+    "unlimited": "無制限",
+    "perMonth": "/月",
+    "visit": "訪問"
+  },
+  "vpnCard": {
+    "editorChoice": "編集者のおすすめ",
+    "from": "から",
+    "perMonth": "/月",
+    "servers": "サーバー",
+    "countries": "国",
+    "devices": "デバイス",
+    "speed": "速度",
+    "security": "セキュリティ",
+    "netflix": "Netflix",
+    "torrenting": "トレント",
+    "noLogs": "ノーログ",
+    "freeTier": "無料プラン",
+    "getVpn": "{name}を入手",
+    "review": "レビュー"
+  },
+  "vpnReview": {
+    "backToReviews": "レビュー一覧に戻る",
+    "editorChoice": "編集者のおすすめ",
+    "freeTierAvailable": "無料プランあり",
+    "reviewTitle": "{name}レビュー2025年版",
+    "basedOnTesting": "総合的なテスト結果に基づく",
+    "getVpnPrice": "{name}を入手 - ${price}/月",
+    "quickStats": {
+      "title": "クイック統計",
+      "servers": "サーバー数",
+      "countries": "対応国数",
+      "devices": "同時接続数",
+      "moneyBack": "返金保証",
+      "days": "{count}日間",
+      "startingAt": "から",
+      "perMonth": "/月",
+      "unlimited": "無制限"
+    },
+    "scores": {
+      "speed": "速度",
+      "security": "セキュリティ",
+      "streaming": "ストリーミング"
+    },
+    "prosAndCons": {
+      "pros": "メリット",
+      "cons": "デメリット"
+    },
+    "tabs": {
+      "overview": "概要",
+      "pricing": "料金",
+      "security": "セキュリティ",
+      "streaming": "ストリーミング"
+    },
+    "overview": {
+      "about": "{name}について",
+      "description": "{name}は市場をリードするVPNプロバイダーの1つで、{countries}カ国に{servers}台のサーバーを提供しています。最大{devices}台の同時接続に対応しており、個人でもファミリーでも利用できます。",
+      "keyFeatures": "主な機能",
+      "serverNetwork": "サーバーネットワーク：",
+      "serversInCountries": "{countries}カ国に{servers}台のサーバー",
+      "protocols": "プロトコル：",
+      "encryption": "暗号化：",
+      "killSwitch": "キルスイッチ：",
+      "noLogsPolicy": "ノーログポリシー：",
+      "yes": "あり",
+      "no": "なし",
+      "yesAudited": "あり（監査済み）",
+      "limited": "限定的"
+    },
+    "pricing": {
+      "title": "{name}の料金プラン",
+      "monthly": "月額",
+      "yearly": "年額",
+      "twoYears": "2年",
+      "mostPopular": "最も人気",
+      "bestValue": "最高のコスパ",
+      "moneyBackGuarantee": "すべてのプランに{days}日間の返金保証が含まれます"
+    },
+    "securityFeatures": {
+      "title": "セキュリティとプライバシー機能",
+      "noLogsPolicy": "ノーログポリシー",
+      "killSwitch": "キルスイッチ",
+      "encryption": "{type}暗号化",
+      "supportedProtocols": "対応プロトコル"
+    },
+    "streamingSection": {
+      "title": "ストリーミング対応状況",
+      "netflix": "Netflix",
+      "disneyPlus": "Disney+",
+      "amazonPrime": "Amazon Prime",
+      "bbcIplayer": "BBC iPlayer",
+      "p2pSupported": "P2P/トレント対応",
+      "torrentDescription": "{name}は専用サーバーでトレントを許可しており、速度も最適化されています。"
+    },
+    "verdict": {
+      "title": "総評",
+      "description": "{name}は総合的なテストで{rating}/5を獲得しました。{countries}カ国に{servers}台のサーバーを展開し、優れたカバレッジと信頼性の高いパフォーマンスを提供しています。",
+      "editorChoiceNote": "速度、セキュリティ、コストパフォーマンスの優れた組み合わせにより、編集者のおすすめ賞を獲得しています。",
+      "getVpnNow": "{name}を今すぐ入手 - ${price}/月"
+    },
+    "userReviews": {
+      "title": "ユーザーレビュー"
+    }
   }
 }

@@ -2,12 +2,25 @@
 User-agent: *
 Allow: /
 
-# Disallow admin and API routes
+# Disallow admin, API, and internal routes
+Disallow: /admin/
 Disallow: /api/
 Disallow: /_next/
+Disallow: /static/
+
+# Block common bad bots
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Disallow: /
 
 # Sitemap
 Sitemap: https://zerotovpn.com/sitemap.xml
 
-# Crawl-delay for respectful crawling
+# Crawl-delay for respectful crawling (for all other bots)
+User-agent: *
 Crawl-delay: 1

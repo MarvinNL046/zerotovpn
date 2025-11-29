@@ -5,6 +5,7 @@ import { routing } from "@/i18n/routing";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
+import { OrganizationJsonLd, WebsiteJsonLd } from "@/components/seo/json-ld";
 import type { Metadata } from "next";
 import "../globals.css";
 
@@ -89,20 +90,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: "ZeroToVPN",
       title: titles[locale] || titles.en,
       description: descriptions[locale] || descriptions.en,
-      images: [
-        {
-          url: "/og-image.png",
-          width: 1200,
-          height: 630,
-          alt: "ZeroToVPN - Best VPN Reviews",
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",
       title: titles[locale] || titles.en,
       description: descriptions[locale] || descriptions.en,
-      images: ["/og-image.png"],
     },
     robots: {
       index: true,
@@ -137,6 +129,14 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <html lang={locale} suppressHydrationWarning>
+      <head>
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" href="/icon-192.png" />
+        <meta name="theme-color" content="#3b82f6" />
+        <OrganizationJsonLd />
+        <WebsiteJsonLd />
+      </head>
       <body className="min-h-screen bg-background font-sans antialiased">
         <ThemeProvider
           attribute="class"

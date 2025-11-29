@@ -51,11 +51,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Static pages for each locale
   const staticPages = [
+    // Best VPN pages
     { path: "/best/best-vpn", priority: 0.9 },
     { path: "/best/best-free-vpn", priority: 0.8 },
     { path: "/best/best-vpn-streaming", priority: 0.8 },
-    { path: "/guides/what-is-vpn", priority: 0.7 },
+    // Comparison
     { path: "/compare", priority: 0.8 },
+    // Guides index
+    { path: "/guides", priority: 0.8 },
+    // Individual guides
+    { path: "/guides/what-is-vpn", priority: 0.7 },
+    { path: "/guides/how-vpn-works", priority: 0.7 },
+    { path: "/guides/vpn-for-streaming", priority: 0.7 },
+    { path: "/guides/vpn-for-torrenting", priority: 0.7 },
+    { path: "/guides/vpn-for-travel", priority: 0.7 },
+    { path: "/guides/vpn-on-mobile", priority: 0.7 },
+    { path: "/guides/vpn-privacy-guide", priority: 0.7 },
+    { path: "/guides/vpn-protocols-explained", priority: 0.7 },
+    { path: "/guides/vpn-speed-guide", priority: 0.7 },
+    { path: "/guides/public-wifi-safety", priority: 0.7 },
   ];
 
   staticPages.forEach((page) => {

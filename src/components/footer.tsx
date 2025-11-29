@@ -91,11 +91,27 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Company */}
           <div>
-            <h4 className="font-semibold mb-4">{t("contact")}</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>contact@zerotovpn.com</li>
+            <h4 className="font-semibold mb-4">{t("company")}</h4>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link
+                  href="/about"
+                  className="text-muted-foreground hover:text-primary"
+                >
+                  {t("about")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-muted-foreground hover:text-primary"
+                >
+                  {t("contactPage")}
+                </Link>
+              </li>
+              <li className="text-muted-foreground">contact@zerotovpn.com</li>
             </ul>
           </div>
         </div>

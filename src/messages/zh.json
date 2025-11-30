@@ -9,7 +9,11 @@
     "best": "最佳VPN",
     "bestVpn": "2025年最佳VPN",
     "vpnChina": "中国最佳VPN",
+    "vpnRussia": "俄罗斯最佳VPN",
+    "vpnUae": "阿联酋最佳VPN",
+    "vpnIran": "伊朗最佳VPN",
     "vpnGaming": "游戏最佳VPN",
+    "vpnMobile": "最佳移动VPN",
     "freeVpn": "最佳免费VPN",
     "deals": "优惠",
     "compare": "比较",
@@ -3665,5 +3669,612 @@
     "vpnImpact": "VPN速度影响",
     "vpnImpactDesc": "好的VPN通常只会降低10-20%的速度。如果速度下降更多，请尝试其他服务器或协议。",
     "recommendedVpns": "推荐的高速VPN"
+  },
+  "androidVpn": {
+    "meta": {
+      "title": "2025年11月最佳Android VPN：前3名测试应用 – ZeroToVPN",
+      "description": "寻找最佳Android VPN？我们测试了15+款Android VPN应用。NordVPN（95%）、Surfshark（94%）和ExpressVPN（93%）是速度、安全性和分流隧道等功能的首选。"
+    },
+    "hero": {
+      "badge": "2025年11月更新",
+      "title": "最佳Android VPN – 2025年指南",
+      "subtitle": "我们测试了15+款Android VPN应用，找到了速度、安全性和Android特定功能的最佳选择。以下是在您的Android手机或平板电脑上效果最好的选项。"
+    },
+    "whyAndroid": {
+      "title": "为什么Android需要VPN",
+      "tracking": {
+        "title": "Google跟踪",
+        "description": "Android与Google的深度集成意味着您的浏览、位置和应用使用情况会被持续跟踪。VPN可以隐藏您的IP并加密流量。"
+      },
+      "ecosystem": {
+        "title": "开放生态系统",
+        "description": "Android的开放性使其更容易受到恶意应用和数据收集的攻击。VPN添加了必不可少的安全层。"
+      },
+      "wifi": {
+        "title": "公共WiFi",
+        "description": "在Android手机上使用公共WiFi？黑客可以拦截未加密的数据。VPN可以在咖啡店和酒店网络上保护您。"
+      }
+    },
+    "comparison": {
+      "title": "快速比较",
+      "vpn": "VPN",
+      "rating": "评分",
+      "protocol": "协议",
+      "splitTunneling": "分流隧道",
+      "price": "价格",
+      "month": "月",
+      "recommended": "推荐"
+    },
+    "reviews": {
+      "title": "Android前3名VPN排名",
+      "subtitle": "我们对2025年最佳Android VPN应用的详细分析",
+      "protocol": "协议",
+      "servers": "服务器",
+      "splitTunnel": "分流隧道",
+      "killSwitch": "终止开关",
+      "devices": "设备",
+      "gpsSpoofing": "GPS欺骗",
+      "camouflage": "伪装模式",
+      "countries": "国家",
+      "reliability": "可靠性",
+      "yes": "是",
+      "unlimited": "无限",
+      "excellent": "优秀",
+      "pros": "优点",
+      "cons": "缺点",
+      "getButton": "获取",
+      "nordvpn": {
+        "badge": "最适合Android",
+        "description": "NordVPN的Android应用是我们测试过的功能最完整的VPN。它包括NordLynx（他们的WireGuard实现）以实现极快的速度，分流隧道可排除特定应用，以及真正有效的可靠终止开关。",
+        "pros": [
+          "NordLynx协议在Android上提供最快速度",
+          "分流隧道让您排除银行应用",
+          "始终开启VPN支持自动保护",
+          "7,000+台服务器提供一致性能",
+          "简洁直观的Android界面",
+          "支持Android 5.0+（Lollipop及更高版本）"
+        ],
+        "cons": [
+          "比Surfshark略贵",
+          "6台设备限制（相比Surfshark的无限）",
+          "某些功能需要Android 7.0+",
+          "无GPS欺骗功能"
+        ]
+      },
+      "surfshark": {
+        "description": "Surfshark因无限设备连接和Android独有功能而脱颖而出。GPS欺骗让基于位置的应用认为您在其他地方，而伪装模式可以向ISP隐藏VPN使用情况。",
+        "pros": [
+          "无限同时设备连接",
+          "基于位置的应用GPS欺骗",
+          "伪装模式隐藏VPN使用",
+          "CleanWeb拦截广告和恶意软件",
+          "最优价格$2.19/月",
+          "支持Android TV和Fire TV"
+        ],
+        "cons": [
+          "速度略慢于NordVPN",
+          "服务器网络较小（3,200 vs 7,000）",
+          "GPS欺骗需要Android 6.0+",
+          "流媒体一致性较差"
+        ]
+      },
+      "expressvpn": {
+        "description": "ExpressVPN的Lightway协议专为移动设备构建，在Android上提供最稳定的连接。在WiFi和移动数据之间切换时可即时重新连接，非常适合移动使用。",
+        "pros": [
+          "Lightway协议针对移动设备优化",
+          "切换网络时连接最稳定",
+          "94个国家实现最大全球访问",
+          "出色的24/7客户支持",
+          "智能位置选择最快服务器",
+          "网络保护 = 始终开启VPN"
+        ],
+        "cons": [
+          "价格最贵$6.67/月",
+          "5台设备限制",
+          "应用体积较大（50MB vs 竞争对手的30MB）",
+          "无GPS欺骗或伪装模式"
+        ]
+      }
+    },
+    "features": {
+      "title": "Android特定VPN功能",
+      "splitTunneling": {
+        "title": "分流隧道",
+        "description": "选择哪些应用使用VPN，哪些不使用。排除阻止VPN的银行应用，同时保护您的浏览。",
+        "availability": "可用：NordVPN、Surfshark、ExpressVPN"
+      },
+      "alwaysOn": {
+        "title": "始终开启VPN",
+        "description": "Android的内置功能，当设备启动时自动连接到您的VPN。如果VPN失败则阻止互联网。",
+        "availability": "所有主流VPN都支持"
+      },
+      "killSwitch": {
+        "title": "终止开关",
+        "description": "如果VPN连接断开，则阻止所有互联网流量，防止数据泄露。对公共WiFi至关重要。",
+        "availability": "所有顶级VPN都包含此功能"
+      },
+      "apkSideloading": {
+        "title": "APK侧载",
+        "description": "在Google Play阻止VPN的国家（中国、伊朗、俄罗斯）直接通过APK安装VPN应用。",
+        "availability": "NordVPN、ExpressVPN、Surfshark提供APK"
+      },
+      "widgets": {
+        "title": "主屏幕小部件",
+        "description": "快速连接小部件让您无需打开应用即可直接从主屏幕启用VPN保护。",
+        "availability": "NordVPN、Surfshark"
+      },
+      "gpsSpoofing": {
+        "title": "GPS欺骗",
+        "description": "让基于位置的应用认为您在不同的位置。对地理限制的应用和服务很有用。",
+        "availability": "仅Surfshark"
+      }
+    },
+    "setup": {
+      "title": "如何在Android上设置VPN（分步指南）",
+      "steps": [
+        "从Google Play商店下载VPN应用（NordVPN、Surfshark或ExpressVPN）",
+        "创建帐户并选择订阅计划（所有都提供30天退款保证）",
+        "打开应用并使用您的凭据登录",
+        "当Android询问时授予VPN权限（这允许应用创建安全隧道）",
+        "点击「连接」或选择特定服务器位置",
+        "您受保护了！VPN图标将出现在状态栏中",
+        "可选：在Android设置→网络和互联网→VPN→设置中启用「始终开启VPN」"
+      ]
+    },
+    "apk": {
+      "title": "受审查国家的APK安装",
+      "subtitle": "在中国、伊朗、俄罗斯和其他Google Play阻止VPN应用的国家，您可以通过APK安装：",
+      "warning": {
+        "title": "重要安全警告",
+        "description": "仅从VPN提供商的官方网站直接下载APK。第三方APK网站可能包含恶意软件。"
+      },
+      "instructions": {
+        "title": "如何安装VPN APK：",
+        "steps": [
+          "访问VPN的网站（如果被阻止，请使用其他VPN或代理）",
+          "从官方下载页面下载Android APK文件",
+          "转到Android设置→安全→启用「未知来源」或「安装未知应用」",
+          "打开文件管理器并点击下载的APK文件",
+          "点击「安装」并等待安装完成",
+          "打开VPN应用并登录（您可能需要先创建帐户）",
+          "安装后为了安全起见禁用「未知来源」"
+        ]
+      }
+    },
+    "avoid": {
+      "title": "应避免的免费Android VPN",
+      "subtitle": "这些常见风险使免费Android VPN变得危险：",
+      "reasons": [
+        "将您的浏览数据出售给广告商和数据经纪人",
+        "在您的浏览器和应用中注入广告",
+        "包含隐藏的恶意软件、间谍软件或跟踪库",
+        "存在严重的安全漏洞会暴露您的数据",
+        "严重限制速度使其无法使用",
+        "尽管声称不记录日志仍记录您的活动",
+        "通过激进的后台进程耗尽电池",
+        "请求他们不需要的过多Android权限"
+      ]
+    },
+    "conclusion": {
+      "title": "立即获取最佳Android VPN",
+      "description": "NordVPN提供最佳的Android整体体验，具有快速速度、分流隧道和出色的安全性。我们推荐的所有VPN都提供30天退款保证，因此您可以无风险试用。",
+      "tryNordvpn": "无风险试用NordVPN",
+      "compareAll": "比较所有VPN"
+    }
+  },
+  "mobileVpn": {
+    "meta": {
+      "title": "最佳移动VPN（iPhone和Android）2025年11月 – ZeroToVPN",
+      "description": "为您的iPhone或Android找到最佳移动VPN。我们测试了15+款VPN应用。Surfshark、NordVPN和ExpressVPN是移动安全的首选。"
+    },
+    "hero": {
+      "badge": "📱 2025年移动VPN指南",
+      "title": "最佳移动VPN（iPhone和Android）",
+      "subtitle": "使用适用于iOS和Android的最佳VPN应用，在公共WiFi上保护您的智能手机，绕过地理限制，保护您的移动数据。"
+    },
+    "why": {
+      "title": "为什么需要移动VPN",
+      "publicWifi": {
+        "title": "公共WiFi保护",
+        "description": "在咖啡店、机场和酒店WiFi网络上保持安全，这些网络是黑客最喜欢利用的目标。"
+      },
+      "dataProtection": {
+        "title": "4G/5G数据保护",
+        "description": "防止您的移动运营商跟踪和出售您的浏览数据。"
+      },
+      "travel": {
+        "title": "旅行自由",
+        "description": "在国外旅行时访问您的本地流媒体服务并绕过审查。"
+      },
+      "streaming": {
+        "title": "移动流媒体",
+        "description": "在手机上观看Netflix、YouTube和其他服务，无需ISP限速。"
+      }
+    },
+    "reviews": {
+      "title": "前3名移动VPN（2025年）",
+      "subtitle": "我们的专家在iPhone和Android设备上测试了这些VPN",
+      "surfshark": {
+        "badge": "最佳综合",
+        "description": "Surfshark为移动用户提供最佳价值，支持无限设备连接、轻量级应用程序，在iOS和Android上都有出色的速度。",
+        "pros": [
+          "无限设备",
+          "轻量级应用",
+          "最优价格",
+          "GPS欺骗（Android）"
+        ],
+        "cons": [
+          "服务器较少",
+          "较新公司"
+        ]
+      },
+      "nordvpn": {
+        "description": "NordVPN的专有NordLynx协议在移动设备上提供最快的速度。该应用在App Store和Google Play上均获得高评分。",
+        "pros": [
+          "NordLynx - 最快速度",
+          "高评分应用",
+          "分流隧道（Android）",
+          "威胁保护"
+        ],
+        "cons": [
+          "对初学者复杂",
+          "无GPS欺骗"
+        ]
+      },
+      "expressvpn": {
+        "description": "ExpressVPN是旅行者最可靠的选择。它在中国、阿联酋和土耳其可用，在4G/5G上连接极其稳定。",
+        "pros": [
+          "在中国、阿联酋、土耳其可用",
+          "4G/5G超稳定",
+          "Lightway协议",
+          "最适合旅行"
+        ],
+        "cons": [
+          "价格较贵",
+          "8台设备限制"
+        ]
+      },
+      "pros": "优点",
+      "cons": "缺点",
+      "getButton": "获取VPN",
+      "speed": "速度",
+      "security": "安全性",
+      "servers": "服务器",
+      "countries": "国家",
+      "devices": "设备",
+      "unlimited": "无限",
+      "battery": "电池影响",
+      "low": "低",
+      "moderate": "中等"
+    },
+    "platforms": {
+      "title": "平台特定功能",
+      "ios": {
+        "title": "最适合iPhone",
+        "description": "原生iOS集成、Siri快捷方式、App Store评分4.5+、优化的电池使用和Apple Watch应用。",
+        "features": [
+          "4.5+ App Store评分",
+          "原生IKEv2支持",
+          "Siri快捷方式",
+          "Apple Watch应用",
+          "优化的电池使用"
+        ],
+        "readMore": "iPhone最佳VPN →"
+      },
+      "android": {
+        "title": "最适合Android",
+        "description": "分流隧道、APK侧载（用于受审查国家）、小部件、自定义DNS和GPS欺骗（Surfshark）。",
+        "features": [
+          "分流隧道",
+          "APK侧载",
+          "始终开启VPN",
+          "自定义DNS",
+          "终止开关",
+          "小部件",
+          "GPS欺骗（Surfshark）"
+        ],
+        "readMore": "Android最佳VPN →"
+      }
+    },
+    "useCases": {
+      "title": "按移动使用场景分类的VPN",
+      "cases": [
+        {
+          "title": "旅行",
+          "vpns": "ExpressVPN、Surfshark",
+          "description": "在国外访问本地内容"
+        },
+        {
+          "title": "公共WiFi",
+          "vpns": "NordVPN、Surfshark",
+          "description": "保护咖啡店和酒店网络"
+        },
+        {
+          "title": "流媒体",
+          "vpns": "NordVPN、ExpressVPN",
+          "description": "解锁Netflix和YouTube"
+        },
+        {
+          "title": "社交媒体",
+          "vpns": "ExpressVPN、Surfshark",
+          "description": "绕过中国、阿联酋的封锁"
+        },
+        {
+          "title": "游戏",
+          "vpns": "NordVPN、ExpressVPN",
+          "description": "PUBG、CoD Mobile低延迟"
+        }
+      ]
+    },
+    "performance": {
+      "title": "移动VPN性能",
+      "vpn": "VPN",
+      "speed": "速度",
+      "battery": "电池",
+      "protocol": "协议",
+      "fastest": "最快",
+      "fast": "快速",
+      "lowest": "最低",
+      "moderate": "中等"
+    },
+    "setup": {
+      "title": "如何设置移动VPN",
+      "ios": {
+        "title": "iPhone设置",
+        "steps": [
+          "打开App Store",
+          "搜索VPN应用",
+          "点击「获取」以安装",
+          "打开应用并登录",
+          "允许VPN配置",
+          "点击「快速连接」"
+        ]
+      },
+      "android": {
+        "title": "Android设置",
+        "steps": [
+          "打开Google Play商店",
+          "搜索VPN应用",
+          "点击「安装」",
+          "打开应用并登录",
+          "授予VPN权限",
+          "在设置中启用终止开关",
+          "点击「快速连接」"
+        ]
+      }
+    },
+    "avoid": {
+      "title": "应避免的免费移动VPN",
+      "description": "免费VPN通常会收集您的数据、注入广告、提供慢速度并使用弱加密。避免使用TurboVPN、HolaVPN、Betternet、SuperVPN和ThunderVPN。",
+      "vpns": [
+        {
+          "name": "TurboVPN",
+          "reason": "收集用户数据"
+        },
+        {
+          "name": "HolaVPN",
+          "reason": "将您用作出口节点"
+        },
+        {
+          "name": "Betternet",
+          "reason": "恶意软件问题"
+        },
+        {
+          "name": "SuperVPN",
+          "reason": "安全漏洞"
+        },
+        {
+          "name": "ThunderVPN",
+          "reason": "缺乏透明度"
+        }
+      ]
+    },
+    "conclusion": {
+      "title": "我们的结论",
+      "description": "经过广泛测试，以下是我们2025年移动VPN的首选：",
+      "best": {
+        "title": "最佳综合",
+        "description": "Surfshark提供最佳价值，支持无限设备和出色的移动应用。"
+      },
+      "fastest": {
+        "title": "最快移动VPN",
+        "description": "NordVPN配合NordLynx在4G/5G网络上提供无与伦比的速度。"
+      },
+      "travel": {
+        "title": "最适合旅行",
+        "description": "ExpressVPN在中国和阿联酋等限制性国家可靠运行。"
+      },
+      "getBest": "获取Surfshark – 82%折扣",
+      "getFastest": "试用NordVPN – 30天免费",
+      "getTravel": "获取ExpressVPN – 49%折扣"
+    }
+  },
+  "iphoneVpn": {
+    "meta": {
+      "title": "2025年11月最佳iPhone和iOS VPN – ZeroToVPN",
+      "description": "找到最佳iPhone和iOS VPN。我们测试了15+款VPN应用。ExpressVPN、NordVPN和Surfshark是iOS安全和隐私的首选。"
+    },
+    "hero": {
+      "badge": "📱 2025年iOS VPN指南",
+      "title": "最佳iPhone和iOS VPN",
+      "subtitle": "使用针对iOS优化的最佳VPN应用保护您的iPhone。原生集成、出色的App Store评分和省电性能。"
+    },
+    "comparison": {
+      "title": "快速比较",
+      "vpn": "VPN",
+      "rating": "App Store",
+      "protocol": "协议",
+      "battery": "电池",
+      "price": "价格",
+      "excellent": "优秀",
+      "good": "良好"
+    },
+    "whyIos": {
+      "title": "为什么iPhone需要VPN",
+      "appStore": {
+        "title": "仅App Store",
+        "description": "iOS限制VPN只能从App Store应用安装，确保质量和安全验证。"
+      },
+      "privacy": {
+        "title": "Apple隐私",
+        "description": "通过端到端加密增强Apple的隐私功能，保护您的所有互联网流量。"
+      },
+      "publicWifi": {
+        "title": "公共WiFi保护",
+        "description": "在黑客经常攻击的咖啡店、机场和酒店网络上保护您的iPhone。"
+      }
+    },
+    "reviews": {
+      "title": "iPhone前3名VPN",
+      "subtitle": "在iOS 17+和最新iPhone型号上测试",
+      "expressvpn": {
+        "badge": "最佳iOS应用",
+        "description": "ExpressVPN凭借其Lightway协议、直观的UI和出色的App Store评分，提供最佳的iOS整体体验。",
+        "appStoreRating": "4.7★（200K+评论）",
+        "pros": [
+          "最佳iOS应用体验",
+          "Lightway协议 - 快速安全",
+          "直观界面",
+          "24/7客户支持"
+        ],
+        "cons": [
+          "价格较高",
+          "限制8台设备"
+        ]
+      },
+      "nordvpn": {
+        "description": "NordVPN的iOS应用具有NordLynx协议以实现最快速度、Siri快捷方式和Apple Watch集成。",
+        "appStoreRating": "4.6★（150K+评论）",
+        "pros": [
+          "NordLynx - 最快协议",
+          "支持Siri快捷方式",
+          "Apple Watch应用",
+          "威胁保护"
+        ],
+        "cons": [
+          "iOS上无分流隧道",
+          "应用可能复杂"
+        ]
+      },
+      "surfshark": {
+        "description": "Surfshark在一个订阅中提供无限设备，具有简洁的iOS界面和出色的性价比。",
+        "appStoreRating": "4.5★（100K+评论）",
+        "pros": [
+          "无限设备",
+          "最优价格",
+          "CleanWeb广告拦截器",
+          "GPS欺骗"
+        ],
+        "cons": [
+          "服务器网络较小",
+          "无Apple Watch应用"
+        ]
+      },
+      "pros": "优点",
+      "cons": "缺点",
+      "getButton": "获取iPhone版",
+      "servers": "服务器",
+      "devices": "设备",
+      "unlimited": "无限",
+      "protocol": "协议",
+      "battery": "电池",
+      "excellent": "优秀",
+      "good": "良好"
+    },
+    "iosFeatures": {
+      "title": "iOS特定功能",
+      "appStore": {
+        "title": "App Store评分",
+        "description": "所有推荐的VPN都有4.5+星评分，拥有数十万条评论。",
+        "ratings": [
+          "ExpressVPN：4.7★（200K+评论）",
+          "NordVPN：4.6★（150K+评论）",
+          "Surfshark：4.5★（100K+评论）"
+        ]
+      },
+      "protocols": {
+        "title": "协议支持",
+        "description": "原生IKEv2支持加上WireGuard和Lightway，实现最佳iOS性能。",
+        "list": [
+          "IKEv2（原生iOS）",
+          "WireGuard",
+          "Lightway（ExpressVPN）",
+          "NordLynx（NordVPN）",
+          "OpenVPN"
+        ]
+      },
+      "battery": {
+        "title": "电池优化",
+        "description": "现代协议在保持安全的同时最大限度地减少电池消耗。",
+        "tips": [
+          "使用WireGuard获得最佳电池寿命",
+          "仅在需要时启用自动连接",
+          "禁用VPN的后台应用刷新"
+        ]
+      },
+      "integration": {
+        "title": "iOS集成",
+        "description": "Siri快捷方式、小部件和Apple Watch应用实现无缝控制。",
+        "features": [
+          "Siri快捷方式（NordVPN、Surfshark）",
+          "iOS小部件",
+          "Apple Watch应用（ExpressVPN、NordVPN）",
+          "钥匙串集成"
+        ]
+      }
+    },
+    "setupGuide": {
+      "title": "如何在iPhone上设置VPN",
+      "steps": [
+        "在iPhone上打开App Store",
+        "搜索您的VPN（ExpressVPN、NordVPN或Surfshark）",
+        "点击「获取」以下载并安装",
+        "打开应用并登录或创建帐户",
+        "出现提示时允许VPN配置",
+        "点击「快速连接」以保护您的连接"
+      ]
+    },
+    "limitations": {
+      "title": "iOS VPN限制",
+      "items": [
+        "iOS上无分流隧道（Apple限制）",
+        "VPN必须仅来自App Store",
+        "某些协议可能无法在所有网络上工作",
+        "低电量模式下后台VPN可能断开连接"
+      ]
+    },
+    "avoidFree": {
+      "title": "应避免的免费iPhone VPN",
+      "recommendation": {
+        "title": "我们的建议",
+        "description": "免费VPN通常会收集数据并显示广告。高级VPN提供更好的安全性和无日志政策。"
+      },
+      "reasons": [
+        "收集并出售您的数据",
+        "在您的浏览中注入广告",
+        "严重限制带宽",
+        "弱加密标准",
+        "无客户支持"
+      ]
+    },
+    "conclusion": {
+      "title": "我们的结论",
+      "description": "对于2025年的iPhone用户，这些是我们的首选推荐：",
+      "tryButton": "试用VPN",
+      "cards": {
+        "best": {
+          "badge": "最佳iOS应用",
+          "description": "ExpressVPN凭借Lightway协议提供最佳的iOS整体体验。"
+        },
+        "value": {
+          "badge": "最快iOS VPN",
+          "description": "NordVPN的NordLynx提供无与伦比的速度和iOS集成。"
+        },
+        "budget": {
+          "badge": "最佳性价比",
+          "description": "Surfshark为iPhone用户提供最优价格的无限设备。"
+        }
+      }
+    }
   }
 }

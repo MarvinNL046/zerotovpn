@@ -118,6 +118,16 @@ export default async function UAEVpnPage({ params }: Props) {
       whatWorks: "Recommended VPNs for UAE (2025)",
       whatWorksText:
         "These VPNs offer obfuscated servers that work in the UAE's restrictive environment. Choose providers based outside the UAE with strong no-logs policies.",
+      notWorking: "VPNs That Don't Work in UAE",
+      notWorkingText:
+        "These VPNs are blocked by UAE ISPs (Etisalat/Du) and fail to bypass the country's Deep Packet Inspection (DPI) filters:",
+      notWorkingVpns: [
+        "CyberGhost",
+        "IPVanish",
+        "Private Internet Access (PIA)",
+        "Avast SecureLine",
+        "AtlasVPN",
+      ],
       keyFeatures: "Essential Features for UAE",
       features: [
         {
@@ -219,6 +229,16 @@ export default async function UAEVpnPage({ params }: Props) {
       whatWorks: "Aanbevolen VPNs voor VAE (2025)",
       whatWorksText:
         "Deze VPNs bieden obfuscated servers die werken in de VAE. Kies providers buiten de VAE met sterke no-logs policies.",
+      notWorking: "VPNs Die Niet Werken in VAE",
+      notWorkingText:
+        "Deze VPNs worden geblokkeerd door VAE ISPs (Etisalat/Du) en falen om de Deep Packet Inspection (DPI) te omzeilen:",
+      notWorkingVpns: [
+        "CyberGhost",
+        "IPVanish",
+        "Private Internet Access (PIA)",
+        "Avast SecureLine",
+        "AtlasVPN",
+      ],
       keyFeatures: "Essentiële Functies voor VAE",
       features: [
         {
@@ -320,6 +340,16 @@ export default async function UAEVpnPage({ params }: Props) {
       whatWorks: "Empfohlene VPNs für VAE (2025)",
       whatWorksText:
         "Diese VPNs bieten verschleierte Server, die in der restriktiven Umgebung der VAE funktionieren. Wählen Sie Anbieter außerhalb der VAE mit strengen No-Logs-Richtlinien.",
+      notWorking: "VPNs Die in den VAE Nicht Funktionieren",
+      notWorkingText:
+        "Diese VPNs werden von den VAE-ISPs (Etisalat/Du) blockiert und können die Deep Packet Inspection (DPI) nicht umgehen:",
+      notWorkingVpns: [
+        "CyberGhost",
+        "IPVanish",
+        "Private Internet Access (PIA)",
+        "Avast SecureLine",
+        "AtlasVPN",
+      ],
       keyFeatures: "Wesentliche Funktionen für VAE",
       features: [
         {
@@ -421,6 +451,16 @@ export default async function UAEVpnPage({ params }: Props) {
       whatWorks: "VPNs Recomendados para EAU (2025)",
       whatWorksText:
         "Estos VPN ofrecen servidores ofuscados que funcionan en el entorno restrictivo de los EAU. Elige proveedores fuera de los EAU con políticas estrictas de no registros.",
+      notWorking: "VPNs Que No Funcionan en EAU",
+      notWorkingText:
+        "Estos VPNs están bloqueados por los ISPs de EAU (Etisalat/Du) y no logran evadir la Inspección Profunda de Paquetes (DPI):",
+      notWorkingVpns: [
+        "CyberGhost",
+        "IPVanish",
+        "Private Internet Access (PIA)",
+        "Avast SecureLine",
+        "AtlasVPN",
+      ],
       keyFeatures: "Características Esenciales para EAU",
       features: [
         {
@@ -522,6 +562,16 @@ export default async function UAEVpnPage({ params }: Props) {
       whatWorks: "VPN Recommandés pour les EAU (2025)",
       whatWorksText:
         "Ces VPN offrent des serveurs obscurcis qui fonctionnent dans l'environnement restrictif des EAU. Choisissez des fournisseurs basés hors des EAU avec des politiques strictes de non-journalisation.",
+      notWorking: "VPN Qui Ne Fonctionnent Pas aux EAU",
+      notWorkingText:
+        "Ces VPN sont bloqués par les FAI des EAU (Etisalat/Du) et ne parviennent pas à contourner l'inspection approfondie des paquets (DPI):",
+      notWorkingVpns: [
+        "CyberGhost",
+        "IPVanish",
+        "Private Internet Access (PIA)",
+        "Avast SecureLine",
+        "AtlasVPN",
+      ],
       keyFeatures: "Fonctionnalités Essentielles pour les EAU",
       features: [
         {
@@ -623,6 +673,16 @@ export default async function UAEVpnPage({ params }: Props) {
       whatWorks: "推荐的阿联酋VPN（2025）",
       whatWorksText:
         "这些VPN提供混淆服务器，可在阿联酋的限制性环境中使用。选择位于阿联酋境外且有严格无日志政策的供应商。",
+      notWorking: "在阿联酋不可用的VPN",
+      notWorkingText:
+        "这些VPN被阿联酋ISP（Etisalat/Du）封锁，无法绕过深度包检测（DPI）：",
+      notWorkingVpns: [
+        "CyberGhost",
+        "IPVanish",
+        "Private Internet Access (PIA)",
+        "Avast SecureLine",
+        "AtlasVPN",
+      ],
       keyFeatures: "阿联酋必备功能",
       features: [
         {
@@ -724,6 +784,16 @@ export default async function UAEVpnPage({ params }: Props) {
       whatWorks: "UAEに推奨されるVPN（2025年）",
       whatWorksText:
         "これらのVPNは、UAEの制限的な環境で動作する難読化サーバーを提供しています。厳格なノーログポリシーを持つUAE外のプロバイダーを選択してください。",
+      notWorking: "UAEで機能しないVPN",
+      notWorkingText:
+        "これらのVPNはUAEのISP（Etisalat/Du）によってブロックされ、ディープパケットインスペクション（DPI）を回避できません：",
+      notWorkingVpns: [
+        "CyberGhost",
+        "IPVanish",
+        "Private Internet Access (PIA)",
+        "Avast SecureLine",
+        "AtlasVPN",
+      ],
       keyFeatures: "UAEに必須の機能",
       features: [
         {
@@ -825,6 +895,16 @@ export default async function UAEVpnPage({ params }: Props) {
       whatWorks: "UAE 추천 VPN (2025)",
       whatWorksText:
         "이러한 VPN은 UAE의 제한적인 환경에서 작동하는 난독화 서버를 제공합니다. 엄격한 무로그 정책을 가진 UAE 외부의 제공업체를 선택하세요.",
+      notWorking: "UAE에서 작동하지 않는 VPN",
+      notWorkingText:
+        "이러한 VPN은 UAE ISP(Etisalat/Du)에 의해 차단되며 심층 패킷 검사(DPI)를 우회하지 못합니다:",
+      notWorkingVpns: [
+        "CyberGhost",
+        "IPVanish",
+        "Private Internet Access (PIA)",
+        "Avast SecureLine",
+        "AtlasVPN",
+      ],
       keyFeatures: "UAE 필수 기능",
       features: [
         {
@@ -926,6 +1006,16 @@ export default async function UAEVpnPage({ params }: Props) {
       whatWorks: "VPN ที่แนะนำสำหรับ UAE (2025)",
       whatWorksText:
         "VPN เหล่านี้นำเสนอเซิร์ฟเวอร์ที่ซ่อนตัวที่ทำงานในสภาพแวดล้อมที่จำกัดของ UAE เลือกผู้ให้บริการที่อยู่นอก UAE ที่มีนโยบายไม่เก็บบันทึกที่เข้มงวด",
+      notWorking: "VPN ที่ใช้ไม่ได้ใน UAE",
+      notWorkingText:
+        "VPN เหล่านี้ถูกบล็อกโดย ISP ของ UAE (Etisalat/Du) และไม่สามารถหลีกเลี่ยง Deep Packet Inspection (DPI):",
+      notWorkingVpns: [
+        "CyberGhost",
+        "IPVanish",
+        "Private Internet Access (PIA)",
+        "Avast SecureLine",
+        "AtlasVPN",
+      ],
       keyFeatures: "คุณสมบัติที่จำเป็นสำหรับ UAE",
       features: [
         {
@@ -1156,6 +1246,32 @@ export default async function UAEVpnPage({ params }: Props) {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* VPNs That Don't Work */}
+      <section className="py-12">
+        <div className="container">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl font-bold text-center mb-4 text-red-600 dark:text-red-400">
+              {t.notWorking}
+            </h2>
+            <p className="text-center text-muted-foreground mb-6">
+              {t.notWorkingText}
+            </p>
+            <Card className="border-red-500/50">
+              <CardContent className="pt-6">
+                <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3">
+                  {t.notWorkingVpns.map((vpn, index) => (
+                    <div key={index} className="flex items-center gap-2 p-2 rounded bg-red-500/10">
+                      <XCircle className="h-4 w-4 text-red-500 flex-shrink-0" />
+                      <span className="text-sm font-medium">{vpn}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

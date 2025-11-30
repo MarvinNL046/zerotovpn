@@ -9,7 +9,11 @@
     "best": "ベストVPN",
     "bestVpn": "2025年ベストVPN",
     "vpnChina": "中国向けベストVPN",
+    "vpnRussia": "ロシア向けベストVPN",
+    "vpnUae": "UAE向けベストVPN",
+    "vpnIran": "イラン向けベストVPN",
     "vpnGaming": "ゲーム向けベストVPN",
+    "vpnMobile": "最高のモバイルVPN",
     "freeVpn": "ベスト無料VPN",
     "deals": "特価",
     "compare": "比較",
@@ -3664,5 +3668,612 @@
     "vpnImpact": "VPNの速度への影響",
     "vpnImpactDesc": "良いVPNは通常10-20%の速度低下に抑えます。それ以上低下する場合は、別のサーバーやプロトコルを試してください。",
     "recommendedVpns": "おすすめの高速VPN"
+  },
+  "androidVpn": {
+    "meta": {
+      "title": "Android向けベストVPN 2025年11月 - トップ3のテスト済みアプリ – ZeroToVPN",
+      "description": "Android向けのベストVPNをお探しですか？15以上のAndroid VPNアプリをテストしました。NordVPN(95%)、Surfshark(94%)、ExpressVPN(93%)がスピード、セキュリティ、スプリットトンネリングなどの機能において最高の選択肢です。"
+    },
+    "hero": {
+      "badge": "2025年11月更新",
+      "title": "Android向けベストVPN – 2025年ガイド",
+      "subtitle": "スピード、セキュリティ、Android専用機能において最適なオプションを見つけるために、15以上のAndroid向けVPNアプリをテストしました。Androidスマートフォンまたはタブレットに最適なものをご紹介します。"
+    },
+    "whyAndroid": {
+      "title": "AndroidにVPNが必要な理由",
+      "tracking": {
+        "title": "Googleトラッキング",
+        "description": "AndroidのGoogleとの深い統合により、ブラウジング、位置情報、アプリの使用状況が常に追跡されます。VPNはIPをマスクし、トラフィックを暗号化します。"
+      },
+      "ecosystem": {
+        "title": "オープンエコシステム",
+        "description": "Androidのオープンな性質により、悪意のあるアプリやデータ収集に対して脆弱になります。VPNは必須のセキュリティレイヤーを追加します。"
+      },
+      "wifi": {
+        "title": "公衆WiFi",
+        "description": "Androidスマートフォンで公衆WiFiを使用していますか？ハッカーは暗号化されていないデータを傍受できます。VPNはカフェやホテルのネットワークであなたを保護します。"
+      }
+    },
+    "comparison": {
+      "title": "クイック比較",
+      "vpn": "VPN",
+      "rating": "評価",
+      "protocol": "プロトコル",
+      "splitTunneling": "スプリットトンネリング",
+      "price": "価格",
+      "month": "月",
+      "recommended": "おすすめ"
+    },
+    "reviews": {
+      "title": "Android向けトップ3 VPNランキング",
+      "subtitle": "2025年のAndroid向けベストVPNアプリの詳細分析",
+      "protocol": "プロトコル",
+      "servers": "サーバー",
+      "splitTunnel": "スプリットトンネリング",
+      "killSwitch": "キルスイッチ",
+      "devices": "デバイス数",
+      "gpsSpoofing": "GPS偽装",
+      "camouflage": "カモフラージュモード",
+      "countries": "対応国",
+      "reliability": "信頼性",
+      "yes": "あり",
+      "unlimited": "無制限",
+      "excellent": "優秀",
+      "pros": "長所",
+      "cons": "短所",
+      "getButton": "入手",
+      "nordvpn": {
+        "badge": "Android向けベスト",
+        "description": "NordVPNのAndroidアプリは、私たちがテストした中で最も機能が充実したVPNです。超高速スピードを実現するNordLynx（WireGuard実装）、特定のアプリを除外できるスプリットトンネリング、実際に機能する信頼性の高いキルスイッチが含まれています。",
+        "pros": [
+          "NordLynxプロトコルがAndroidで最速スピードを提供",
+          "スプリットトンネリングで銀行アプリを除外可能",
+          "自動保護のための常時接続VPNサポート",
+          "7,000以上のサーバーで安定したパフォーマンス",
+          "クリーンで直感的なAndroidインターフェース",
+          "Android 5.0以降（Lollipop以降）で動作"
+        ],
+        "cons": [
+          "Surfsharkよりやや高価",
+          "6デバイス制限（Surfsharkは無制限）",
+          "一部機能にAndroid 7.0以降が必要",
+          "GPS偽装機能なし"
+        ]
+      },
+      "surfshark": {
+        "description": "Surfsharkは無制限のデバイス接続とAndroid専用機能で際立っています。GPS偽装により位置情報ベースのアプリに別の場所にいると認識させ、カモフラージュモードはISPからVPN使用を隠します。",
+        "pros": [
+          "無制限の同時デバイス接続",
+          "位置情報ベースのアプリ向けGPS偽装",
+          "VPN使用を隠すカモフラージュモード",
+          "CleanWebが広告とマルウェアをブロック",
+          "月額$2.19で最高のコストパフォーマンス",
+          "Android TVとFire TVで動作"
+        ],
+        "cons": [
+          "NordVPNよりスピードがやや遅い",
+          "サーバーネットワークが小規模（3,200 vs 7,000）",
+          "GPS偽装にAndroid 6.0以降が必要",
+          "ストリーミングの安定性がやや劣る"
+        ]
+      },
+      "expressvpn": {
+        "description": "ExpressVPNのLightwayプロトコルはモバイル向けに構築されており、Android上で最も安定した接続を提供します。WiFiとモバイルデータ間の切り替え時に即座に再接続するため、外出先での使用に最適です。",
+        "pros": [
+          "モバイル最適化されたLightwayプロトコル",
+          "ネットワーク切り替え時の最も安定した接続",
+          "94カ国でグローバルアクセス最大化",
+          "優れた24時間365日カスタマーサポート",
+          "スマートロケーションが最速サーバーを選択",
+          "ネットワーク保護 = 常時接続VPN"
+        ],
+        "cons": [
+          "月額$6.67で最も高価",
+          "5デバイス制限",
+          "アプリサイズが大きい（競合の30MBに対し50MB）",
+          "GPS偽装やカモフラージュモードなし"
+        ]
+      }
+    },
+    "features": {
+      "title": "Android専用VPN機能",
+      "splitTunneling": {
+        "title": "スプリットトンネリング",
+        "description": "VPNを使用するアプリと使用しないアプリを選択できます。VPNをブロックする銀行アプリを除外しながらブラウジングを保護できます。",
+        "availability": "利用可能: NordVPN、Surfshark、ExpressVPN"
+      },
+      "alwaysOn": {
+        "title": "常時接続VPN",
+        "description": "デバイス起動時に自動的にVPNに接続するAndroid組み込み機能。VPN接続失敗時にインターネットをブロックします。",
+        "availability": "すべての主要VPNがサポート"
+      },
+      "killSwitch": {
+        "title": "キルスイッチ",
+        "description": "VPN接続が切断された場合にすべてのインターネットトラフィックをブロックし、データ漏洩を防ぎます。公衆WiFiには必須です。",
+        "availability": "すべてのトップVPNに含まれる"
+      },
+      "apkSideloading": {
+        "title": "APKサイドローディング",
+        "description": "Google PlayがブロックされているPR（中国、イラン、ロシア）でAPKから直接VPNアプリをインストールできます。",
+        "availability": "NordVPN、ExpressVPN、SurfsharkがAPKを提供"
+      },
+      "widgets": {
+        "title": "ホーム画面ウィジェット",
+        "description": "クイック接続ウィジェットにより、アプリを開かずにホーム画面から直接VPN保護を有効にできます。",
+        "availability": "NordVPN、Surfshark"
+      },
+      "gpsSpoofing": {
+        "title": "GPS偽装",
+        "description": "位置情報ベースのアプリに異なる場所にいると認識させます。地域制限のあるアプリやサービスに便利です。",
+        "availability": "Surfsharkのみ"
+      }
+    },
+    "setup": {
+      "title": "AndroidでVPNをセットアップする方法（ステップバイステップ）",
+      "steps": [
+        "Google Play StoreからVPNアプリをダウンロード（NordVPN、Surfshark、またはExpressVPN）",
+        "アカウントを作成し、サブスクリプションプランを選択（すべて30日間返金保証あり）",
+        "アプリを開き、認証情報でログイン",
+        "Androidが求める際にVPN権限を許可（これによりアプリが安全なトンネルを作成できます）",
+        "「接続」をタップするか、特定のサーバーロケーションを選択",
+        "保護されました！VPNアイコンがステータスバーに表示されます",
+        "オプション: Android設定 → ネットワークとインターネット → VPN → 設定で「常時接続VPN」を有効化"
+      ]
+    },
+    "apk": {
+      "title": "検閲国向けAPKインストール",
+      "subtitle": "中国、イラン、ロシアなどGoogle PlayがVPNアプリをブロックしている国では、APK経由でインストールできます：",
+      "warning": {
+        "title": "重要なセキュリティ警告",
+        "description": "APKはVPNプロバイダーの公式ウェブサイトから直接ダウンロードしてください。サードパーティのAPKサイトにはマルウェアが含まれている可能性があります。"
+      },
+      "instructions": {
+        "title": "VPN APKのインストール方法：",
+        "steps": [
+          "VPNのウェブサイトにアクセス（ブロックされている場合は別のVPNまたはプロキシを使用）",
+          "公式ダウンロードページからAndroid APKファイルをダウンロード",
+          "Android設定 → セキュリティ → 「提供元不明のアプリ」または「不明なアプリのインストール」を有効化",
+          "ファイルマネージャーを開き、ダウンロードしたAPKファイルをタップ",
+          "「インストール」をタップし、インストールが完了するまで待つ",
+          "VPNアプリを開いてログイン（最初にアカウント作成が必要な場合があります）",
+          "セキュリティのため、インストール後に「提供元不明のアプリ」を無効化"
+        ]
+      }
+    },
+    "avoid": {
+      "title": "避けるべき無料Android VPN",
+      "subtitle": "これらの一般的なリスクにより、無料Android VPNは危険です：",
+      "reasons": [
+        "ブラウジングデータを広告主やデータブローカーに販売",
+        "ブラウザやアプリに広告を挿入",
+        "隠れたマルウェア、スパイウェア、トラッキングライブラリを含む",
+        "データを露出させる深刻なセキュリティ脆弱性がある",
+        "使用不能になるほど速度を大幅に制限",
+        "ノーログポリシーを主張しながらアクティビティを記録",
+        "積極的なバックグラウンドプロセスでバッテリーを消耗",
+        "不要な過剰なAndroid権限を要求"
+      ]
+    },
+    "conclusion": {
+      "title": "今すぐ最高のAndroid VPNを入手",
+      "description": "NordVPNは、高速スピード、スプリットトンネリング、優れたセキュリティを備えた総合的に最高のAndroid体験を提供します。推奨するすべてのVPNは30日間返金保証を提供しているため、リスクなくテストできます。",
+      "tryNordvpn": "NordVPNをリスクなしで試す",
+      "compareAll": "すべてのVPNを比較"
+    }
+  },
+  "mobileVpn": {
+    "meta": {
+      "title": "最高のモバイルVPN（iPhone & Android）2025年11月 – ZeroToVPN",
+      "description": "iPhoneまたはAndroid用の最高のモバイルVPNを見つけましょう。15以上のVPNアプリをテストしました。Surfshark、NordVPN、ExpressVPNがモバイルセキュリティのトップチョイスです。"
+    },
+    "hero": {
+      "badge": "📱 モバイルVPNガイド 2025",
+      "title": "最高のモバイルVPN（iPhone & Android）",
+      "subtitle": "iOSとAndroid用の最高のVPNアプリで、公共WiFiでスマートフォンを保護し、地域制限を回避し、モバイルデータを保護します。"
+    },
+    "why": {
+      "title": "モバイルVPNが必要な理由",
+      "publicWifi": {
+        "title": "公共WiFiの保護",
+        "description": "ハッカーが悪用しやすいカフェ、空港、ホテルのWiFiネットワークで安全を保ちます。"
+      },
+      "dataProtection": {
+        "title": "4G/5Gデータ保護",
+        "description": "モバイル通信事業者があなたの閲覧データを追跡・販売するのを防ぎます。"
+      },
+      "travel": {
+        "title": "旅行の自由",
+        "description": "海外旅行中に自国のストリーミングサービスにアクセスし、検閲を回避します。"
+      },
+      "streaming": {
+        "title": "モバイルストリーミング",
+        "description": "ISPのスロットリングなしに、スマートフォンでNetflix、YouTubeなどのサービスを視聴します。"
+      }
+    },
+    "reviews": {
+      "title": "トップ3モバイルVPN（2025）",
+      "subtitle": "専門家がiPhoneとAndroidデバイスでこれらのVPNをテストしました",
+      "surfshark": {
+        "badge": "総合最優秀",
+        "description": "Surfsharkは、無制限のデバイス接続、軽量アプリ、iOSとAndroidの両方での優れた速度により、モバイルユーザーに最高の価値を提供します。",
+        "pros": [
+          "無制限のデバイス",
+          "軽量アプリ",
+          "最安価格",
+          "GPS偽装（Android）"
+        ],
+        "cons": [
+          "サーバー数が少ない",
+          "新しい会社"
+        ]
+      },
+      "nordvpn": {
+        "description": "NordVPN独自のNordLynxプロトコルは、モバイルで最速の速度を提供します。アプリはApp StoreとGoogle Playの両方で高評価を受けています。",
+        "pros": [
+          "NordLynx - 最速",
+          "高評価アプリ",
+          "スプリットトンネリング（Android）",
+          "脅威保護"
+        ],
+        "cons": [
+          "初心者には複雑",
+          "GPS偽装なし"
+        ]
+      },
+      "expressvpn": {
+        "description": "ExpressVPNは旅行者にとって最も信頼できる選択肢です。中国、UAE、トルコで動作し、4G/5Gで非常に安定した接続を提供します。",
+        "pros": [
+          "中国、UAE、トルコで動作",
+          "4G/5Gで超安定",
+          "Lightwayプロトコル",
+          "旅行に最適"
+        ],
+        "cons": [
+          "より高価",
+          "8台デバイス制限"
+        ]
+      },
+      "pros": "長所",
+      "cons": "短所",
+      "getButton": "VPNを入手",
+      "speed": "速度",
+      "security": "セキュリティ",
+      "servers": "サーバー",
+      "countries": "国数",
+      "devices": "デバイス",
+      "unlimited": "無制限",
+      "battery": "バッテリー影響",
+      "low": "低",
+      "moderate": "中程度"
+    },
+    "platforms": {
+      "title": "プラットフォーム固有の機能",
+      "ios": {
+        "title": "iPhone用ベスト",
+        "description": "ネイティブiOS統合、Siriショートカット、App Store評価4.5以上、最適化されたバッテリー使用、Apple Watchアプリ。",
+        "features": [
+          "4.5以上のApp Store評価",
+          "ネイティブIKEv2サポート",
+          "Siriショートカット",
+          "Apple Watchアプリ",
+          "最適化されたバッテリー使用"
+        ],
+        "readMore": "iPhone用ベストVPN →"
+      },
+      "android": {
+        "title": "Android用ベスト",
+        "description": "スプリットトンネリング、検閲国向けAPKサイドローディング、ウィジェット、カスタムDNS、GPS偽装（Surfshark）。",
+        "features": [
+          "スプリットトンネリング",
+          "APKサイドローディング",
+          "常時接続VPN",
+          "カスタムDNS",
+          "キルスイッチ",
+          "ウィジェット",
+          "GPS偽装（Surfshark）"
+        ],
+        "readMore": "Android用ベストVPN →"
+      }
+    },
+    "useCases": {
+      "title": "モバイル用途別VPN",
+      "cases": [
+        {
+          "title": "旅行",
+          "vpns": "ExpressVPN, Surfshark",
+          "description": "海外で自国のコンテンツにアクセス"
+        },
+        {
+          "title": "公共WiFi",
+          "vpns": "NordVPN, Surfshark",
+          "description": "カフェやホテルのネットワークを保護"
+        },
+        {
+          "title": "ストリーミング",
+          "vpns": "NordVPN, ExpressVPN",
+          "description": "NetflixとYouTubeのブロック解除"
+        },
+        {
+          "title": "ソーシャルメディア",
+          "vpns": "ExpressVPN, Surfshark",
+          "description": "中国、UAEでの禁止を回避"
+        },
+        {
+          "title": "ゲーミング",
+          "vpns": "NordVPN, ExpressVPN",
+          "description": "PUBG、CoD Mobileで低遅延"
+        }
+      ]
+    },
+    "performance": {
+      "title": "モバイルVPNパフォーマンス",
+      "vpn": "VPN",
+      "speed": "速度",
+      "battery": "バッテリー",
+      "protocol": "プロトコル",
+      "fastest": "最速",
+      "fast": "速い",
+      "lowest": "最低",
+      "moderate": "中程度"
+    },
+    "setup": {
+      "title": "モバイルVPNの設定方法",
+      "ios": {
+        "title": "iPhoneの設定",
+        "steps": [
+          "App Storeを開く",
+          "VPNアプリを検索",
+          "「入手」をタップしてインストール",
+          "アプリを開いてサインイン",
+          "VPN構成を許可",
+          "「クイック接続」をタップ"
+        ]
+      },
+      "android": {
+        "title": "Androidの設定",
+        "steps": [
+          "Google Play Storeを開く",
+          "VPNアプリを検索",
+          "「インストール」をタップ",
+          "アプリを開いてサインイン",
+          "VPN権限を付与",
+          "設定でキルスイッチを有効化",
+          "「クイック接続」をタップ"
+        ]
+      }
+    },
+    "avoid": {
+      "title": "避けるべき無料モバイルVPN",
+      "description": "無料VPNは、データを収集し、広告を挿入し、速度が遅く、暗号化が弱いことがよくあります。TurboVPN、HolaVPN、Betternet、SuperVPN、ThunderVPNは避けてください。",
+      "vpns": [
+        {
+          "name": "TurboVPN",
+          "reason": "ユーザーデータを収集"
+        },
+        {
+          "name": "HolaVPN",
+          "reason": "出口ノードとして使用される"
+        },
+        {
+          "name": "Betternet",
+          "reason": "マルウェアの懸念"
+        },
+        {
+          "name": "SuperVPN",
+          "reason": "セキュリティの脆弱性"
+        },
+        {
+          "name": "ThunderVPN",
+          "reason": "透明性なし"
+        }
+      ]
+    },
+    "conclusion": {
+      "title": "私たちの評価",
+      "description": "広範なテストの結果、2025年のモバイルVPNのトップピックは次のとおりです：",
+      "best": {
+        "title": "総合最優秀",
+        "description": "Surfsharkは無制限のデバイスと優れたモバイルアプリで最高の価値を提供します。"
+      },
+      "fastest": {
+        "title": "最速モバイルVPN",
+        "description": "NordVPNのNordLynxは4G/5Gネットワークで比類のない速度を提供します。"
+      },
+      "travel": {
+        "title": "旅行に最適",
+        "description": "ExpressVPNは中国やUAEなどの制限の厳しい国でも確実に動作します。"
+      },
+      "getBest": "Surfsharkを入手 - 82% OFF",
+      "getFastest": "NordVPNを試す - 30日間無料",
+      "getTravel": "ExpressVPNを入手 - 49% OFF"
+    }
+  },
+  "iphoneVpn": {
+    "meta": {
+      "title": "iPhone・iOS向けベストVPN 2025年11月 – ZeroToVPN",
+      "description": "iPhone・iOS向けのベストVPNを見つけましょう。15以上のVPNアプリをテストしました。ExpressVPN、NordVPN、SurfsharkがiOSのセキュリティとプライバシーにおいて最高の選択肢です。"
+    },
+    "hero": {
+      "badge": "📱 iOS VPNガイド 2025",
+      "title": "iPhone・iOS向けベストVPN",
+      "subtitle": "iOS向けに最適化された最高のVPNアプリでiPhoneを保護しましょう。ネイティブ統合、優れたApp Storeレーティング、バッテリー効率の高いパフォーマンス。"
+    },
+    "comparison": {
+      "title": "クイック比較",
+      "vpn": "VPN",
+      "rating": "App Store",
+      "protocol": "プロトコル",
+      "battery": "バッテリー",
+      "price": "価格",
+      "excellent": "優秀",
+      "good": "良好"
+    },
+    "whyIos": {
+      "title": "iPhoneにVPNが必要な理由",
+      "appStore": {
+        "title": "App Storeのみ",
+        "description": "iOSはVPNインストールをApp Storeアプリに制限し、品質とセキュリティ検証を保証します。"
+      },
+      "privacy": {
+        "title": "Appleのプライバシー",
+        "description": "すべてのインターネットトラフィックのエンドツーエンド暗号化でAppleのプライバシー機能を強化します。"
+      },
+      "publicWifi": {
+        "title": "公衆WiFi保護",
+        "description": "ハッカーが標的とするカフェ、空港、ホテルのネットワークでiPhoneを保護します。"
+      }
+    },
+    "reviews": {
+      "title": "iPhone向けトップ3 VPN",
+      "subtitle": "最新のiPhoneモデルでiOS 17以降でテスト済み",
+      "expressvpn": {
+        "badge": "ベストiOSアプリ",
+        "description": "ExpressVPNは、Lightwayプロトコル、直感的なUI、優れたApp Storeレーティングで最高のiOS体験を提供します。",
+        "appStoreRating": "4.7★（20万件以上のレビュー）",
+        "pros": [
+          "最高のiOSアプリ体験",
+          "Lightwayプロトコル - 高速で安全",
+          "直感的なインターフェース",
+          "24時間365日カスタマーサポート"
+        ],
+        "cons": [
+          "価格が高め",
+          "8デバイスに制限"
+        ]
+      },
+      "nordvpn": {
+        "description": "NordVPNのiOSアプリは、最速スピードを実現するNordLynxプロトコル、Siriショートカット、Apple Watch統合を特徴としています。",
+        "appStoreRating": "4.6★（15万件以上のレビュー）",
+        "pros": [
+          "NordLynx - 最速プロトコル",
+          "Siriショートカット対応",
+          "Apple Watchアプリ",
+          "脅威保護機能"
+        ],
+        "cons": [
+          "iOSでスプリットトンネリングなし",
+          "アプリが複雑な場合がある"
+        ]
+      },
+      "surfshark": {
+        "description": "Surfsharkは、1つのサブスクリプションで無制限のデバイス、クリーンなiOSインターフェース、優れたコストパフォーマンスを提供します。",
+        "appStoreRating": "4.5★（10万件以上のレビュー）",
+        "pros": [
+          "無制限のデバイス",
+          "最高の価格",
+          "CleanWeb広告ブロッカー",
+          "GPS偽装"
+        ],
+        "cons": [
+          "サーバーネットワークが小規模",
+          "Apple Watchアプリなし"
+        ]
+      },
+      "pros": "長所",
+      "cons": "短所",
+      "getButton": "iPhone用に入手",
+      "servers": "サーバー",
+      "devices": "デバイス数",
+      "unlimited": "無制限",
+      "protocol": "プロトコル",
+      "battery": "バッテリー",
+      "excellent": "優秀",
+      "good": "良好"
+    },
+    "iosFeatures": {
+      "title": "iOS専用機能",
+      "appStore": {
+        "title": "App Storeレーティング",
+        "description": "推奨するすべてのVPNは、数十万件のレビューで4.5以上の星評価を獲得しています。",
+        "ratings": [
+          "ExpressVPN: 4.7★（20万件以上のレビュー）",
+          "NordVPN: 4.6★（15万件以上のレビュー）",
+          "Surfshark: 4.5★（10万件以上のレビュー）"
+        ]
+      },
+      "protocols": {
+        "title": "プロトコルサポート",
+        "description": "最適なiOSパフォーマンスのためのネイティブIKEv2サポートに加え、WireGuardとLightway。",
+        "list": [
+          "IKEv2（iOSネイティブ）",
+          "WireGuard",
+          "Lightway（ExpressVPN）",
+          "NordLynx（NordVPN）",
+          "OpenVPN"
+        ]
+      },
+      "battery": {
+        "title": "バッテリー最適化",
+        "description": "最新プロトコルは、セキュリティを維持しながらバッテリー消費を最小限に抑えます。",
+        "tips": [
+          "最高のバッテリー寿命にはWireGuardを使用",
+          "必要な時のみ自動接続を有効化",
+          "VPNのバックグラウンドアプリ更新を無効化"
+        ]
+      },
+      "integration": {
+        "title": "iOS統合",
+        "description": "シームレスな制御のためのSiriショートカット、ウィジェット、Apple Watchアプリ。",
+        "features": [
+          "Siriショートカット（NordVPN、Surfshark）",
+          "iOSウィジェット",
+          "Apple Watchアプリ（ExpressVPN、NordVPN）",
+          "キーチェーン統合"
+        ]
+      }
+    },
+    "setupGuide": {
+      "title": "iPhoneでVPNをセットアップする方法",
+      "steps": [
+        "iPhoneでApp Storeを開く",
+        "VPNを検索（ExpressVPN、NordVPN、またはSurfshark）",
+        "「入手」をタップしてダウンロードとインストール",
+        "アプリを開いてサインインまたはアカウント作成",
+        "プロンプトが表示されたらVPN構成を許可",
+        "「クイック接続」をタップして接続を保護"
+      ]
+    },
+    "limitations": {
+      "title": "iOS VPNの制限",
+      "items": [
+        "iOSではスプリットトンネリングなし（Appleの制限）",
+        "VPNはApp StoreからのみインストールPossible",
+        "一部のプロトコルはすべてのネットワークで動作しない場合がある",
+        "低電力モード中にバックグラウンドVPNが切断される可能性がある"
+      ]
+    },
+    "avoidFree": {
+      "title": "避けるべき無料iPhone VPN",
+      "recommendation": {
+        "title": "推奨事項",
+        "description": "無料VPNは多くの場合データを収集し、広告を表示します。プレミアムVPNはより優れたセキュリティとノーログポリシーを提供します。"
+      },
+      "reasons": [
+        "データを収集して販売",
+        "ブラウジングに広告を挿入",
+        "帯域幅が大幅に制限",
+        "暗号化規格が弱い",
+        "カスタマーサポートなし"
+      ]
+    },
+    "conclusion": {
+      "title": "最終評価",
+      "description": "2025年のiPhoneユーザー向けに、これらが私たちのトップ推奨です：",
+      "tryButton": "VPNを試す",
+      "cards": {
+        "best": {
+          "badge": "ベストiOSアプリ",
+          "description": "ExpressVPNは、Lightwayプロトコルで最高のiOS体験を提供します。"
+        },
+        "value": {
+          "badge": "最速iOS VPN",
+          "description": "NordLynxを搭載したNordVPNは、比類のないスピードとiOS統合を提供します。"
+        },
+        "budget": {
+          "badge": "最高のコストパフォーマンス",
+          "description": "Surfsharkは、iPhoneユーザーに最高の価格で無制限のデバイスを提供します。"
+        }
+      }
+    }
   }
 }

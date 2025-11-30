@@ -112,14 +112,18 @@ export default async function RussiaVpnPage({ params }: Props) {
       legalStatus: "Legal Status in Russia",
       legalStatusText:
         "VPNs are not formally illegal, but everything around them is being criminalized. Since March 2024, sharing VPN guides is illegal. In July 2025, using a VPN to access 'extremist' content became an aggravating circumstance for crimes.",
-      blockedVpns: "VPNs Blocked in Russia",
+      blockedVpns: "VPNs That Don't Work in Russia",
       blockedList: [
-        "NordVPN (website blocked, may still work)",
+        "IPVanish",
+        "CyberGhost",
+        "Private Internet Access (PIA)",
+        "AtlasVPN",
+        "Mullvad (actively blocked)",
+      ],
+      sometimesWorking: "VPNs That Sometimes Work",
+      sometimesWorkingList: [
         "ProtonVPN",
-        "Surfshark (delisted from Apple Store)",
-        "AdGuard VPN",
-        "TurboVPN",
-        "Many others (197+ blocked in 2024)",
+        "VyprVPN (Chameleon protocol)",
       ],
       whatMayWork: "VPNs That May Still Work (2025)",
       whatMayWorkText:
@@ -207,14 +211,18 @@ export default async function RussiaVpnPage({ params }: Props) {
       legalStatus: "Juridische Status in Rusland",
       legalStatusText:
         "VPNs zijn niet formeel illegaal, maar alles eromheen wordt gecriminaliseerd. Sinds maart 2024 is het delen van VPN-informatie illegaal.",
-      blockedVpns: "Geblokkeerde VPNs in Rusland",
+      blockedVpns: "VPNs Die Niet Werken in Rusland",
       blockedList: [
-        "NordVPN (website geblokkeerd)",
+        "IPVanish",
+        "CyberGhost",
+        "Private Internet Access (PIA)",
+        "AtlasVPN",
+        "Mullvad (actief geblokkeerd)",
+      ],
+      sometimesWorking: "VPNs Die Soms Werken",
+      sometimesWorkingList: [
         "ProtonVPN",
-        "Surfshark (verwijderd uit App Store)",
-        "AdGuard VPN",
-        "TurboVPN",
-        "Vele anderen (197+ geblokkeerd in 2024)",
+        "VyprVPN (Chameleon protocol)",
       ],
       whatMayWork: "VPNs Die Mogelijk Nog Werken (2025)",
       whatMayWorkText:
@@ -302,14 +310,18 @@ export default async function RussiaVpnPage({ params }: Props) {
       legalStatus: "Rechtsstatus in Russland",
       legalStatusText:
         "VPNs sind nicht formell illegal, aber alles drumherum wird kriminalisiert. Seit März 2024 ist das Teilen von VPN-Anleitungen illegal. Im Juli 2025 wurde die Nutzung eines VPN zum Zugriff auf 'extremistische' Inhalte zu einem erschwerenden Umstand für Verbrechen.",
-      blockedVpns: "Blockierte VPNs in Russland",
+      blockedVpns: "VPNs, die in Russland Nicht Funktionieren",
       blockedList: [
-        "NordVPN (Website blockiert, funktioniert möglicherweise noch)",
+        "IPVanish",
+        "CyberGhost",
+        "Private Internet Access (PIA)",
+        "AtlasVPN",
+        "Mullvad (aktiv blockiert)",
+      ],
+      sometimesWorking: "VPNs, die Manchmal Funktionieren",
+      sometimesWorkingList: [
         "ProtonVPN",
-        "Surfshark (aus dem Apple Store entfernt)",
-        "AdGuard VPN",
-        "TurboVPN",
-        "Viele andere (197+ blockiert in 2024)",
+        "VyprVPN (Chameleon-Protokoll)",
       ],
       whatMayWork: "VPNs, die möglicherweise noch funktionieren (2025)",
       whatMayWorkText:
@@ -397,14 +409,18 @@ export default async function RussiaVpnPage({ params }: Props) {
       legalStatus: "Estado Legal en Rusia",
       legalStatusText:
         "Los VPNs no son formalmente ilegales, pero todo lo relacionado con ellos está siendo criminalizado. Desde marzo de 2024, compartir guías de VPN es ilegal. En julio de 2025, usar un VPN para acceder a contenido 'extremista' se convirtió en una circunstancia agravante para crímenes.",
-      blockedVpns: "VPNs Bloqueados en Rusia",
+      blockedVpns: "VPNs Que No Funcionan en Rusia",
       blockedList: [
-        "NordVPN (sitio web bloqueado, puede que aún funcione)",
+        "IPVanish",
+        "CyberGhost",
+        "Private Internet Access (PIA)",
+        "AtlasVPN",
+        "Mullvad (bloqueado activamente)",
+      ],
+      sometimesWorking: "VPNs Que A Veces Funcionan",
+      sometimesWorkingList: [
         "ProtonVPN",
-        "Surfshark (eliminado de la App Store)",
-        "AdGuard VPN",
-        "TurboVPN",
-        "Muchos otros (197+ bloqueados en 2024)",
+        "VyprVPN (protocolo Chameleon)",
       ],
       whatMayWork: "VPNs que Pueden Funcionar Aún (2025)",
       whatMayWorkText:
@@ -492,14 +508,18 @@ export default async function RussiaVpnPage({ params }: Props) {
       legalStatus: "Statut Juridique en Russie",
       legalStatusText:
         "Les VPN ne sont pas formellement illégaux, mais tout ce qui les entoure est criminalisé. Depuis mars 2024, le partage de guides VPN est illégal. En juillet 2025, l'utilisation d'un VPN pour accéder à du contenu 'extrémiste' est devenue une circonstance aggravante pour les crimes.",
-      blockedVpns: "VPN Bloqués en Russie",
+      blockedVpns: "VPN Qui Ne Fonctionnent Pas en Russie",
       blockedList: [
-        "NordVPN (site web bloqué, peut encore fonctionner)",
+        "IPVanish",
+        "CyberGhost",
+        "Private Internet Access (PIA)",
+        "AtlasVPN",
+        "Mullvad (activement bloqué)",
+      ],
+      sometimesWorking: "VPN Qui Fonctionnent Parfois",
+      sometimesWorkingList: [
         "ProtonVPN",
-        "Surfshark (retiré de l'Apple Store)",
-        "AdGuard VPN",
-        "TurboVPN",
-        "Beaucoup d'autres (197+ bloqués en 2024)",
+        "VyprVPN (protocole Chameleon)",
       ],
       whatMayWork: "VPN qui Peuvent Encore Fonctionner (2025)",
       whatMayWorkText:
@@ -587,14 +607,18 @@ export default async function RussiaVpnPage({ params }: Props) {
       legalStatus: "俄罗斯的法律地位",
       legalStatusText:
         "VPN并未正式非法，但围绕它们的一切都在被定罪。自2024年3月以来，分享VPN指南是非法的。2025年7月，使用VPN访问「极端主义」内容成为犯罪的加重情节。",
-      blockedVpns: "俄罗斯封锁的VPN",
+      blockedVpns: "在俄罗斯不起作用的VPN",
       blockedList: [
-        "NordVPN（网站被封锁，可能仍然有效）",
+        "IPVanish",
+        "CyberGhost",
+        "Private Internet Access (PIA)",
+        "AtlasVPN",
+        "Mullvad（积极封锁）",
+      ],
+      sometimesWorking: "有时起作用的VPN",
+      sometimesWorkingList: [
         "ProtonVPN",
-        "Surfshark（从苹果商店下架）",
-        "AdGuard VPN",
-        "TurboVPN",
-        "许多其他（2024年封锁197+个）",
+        "VyprVPN（Chameleon协议）",
       ],
       whatMayWork: "可能仍然有效的VPN（2025）",
       whatMayWorkText:
@@ -682,14 +706,18 @@ export default async function RussiaVpnPage({ params }: Props) {
       legalStatus: "ロシアにおける法的地位",
       legalStatusText:
         "VPNは正式に違法ではありませんが、それを取り巻くすべてが犯罪化されています。2024年3月以降、VPNガイドの共有は違法です。2025年7月、「過激派」コンテンツにアクセスするためにVPNを使用することが犯罪の加重事情となりました。",
-      blockedVpns: "ロシアでブロックされたVPN",
+      blockedVpns: "ロシアで機能しないVPN",
       blockedList: [
-        "NordVPN（ウェブサイトがブロックされているが、まだ機能する可能性あり）",
+        "IPVanish",
+        "CyberGhost",
+        "Private Internet Access (PIA)",
+        "AtlasVPN",
+        "Mullvad（積極的にブロック）",
+      ],
+      sometimesWorking: "時々機能するVPN",
+      sometimesWorkingList: [
         "ProtonVPN",
-        "Surfshark（Apple Storeから削除）",
-        "AdGuard VPN",
-        "TurboVPN",
-        "その他多数（2024年に197以上がブロック）",
+        "VyprVPN（Chameleonプロトコル）",
       ],
       whatMayWork: "まだ機能する可能性のあるVPN（2025）",
       whatMayWorkText:
@@ -777,14 +805,18 @@ export default async function RussiaVpnPage({ params }: Props) {
       legalStatus: "러시아의 법적 지위",
       legalStatusText:
         "VPN은 공식적으로 불법이 아니지만 이와 관련된 모든 것이 범죄화되고 있습니다. 2024년 3월부터 VPN 가이드 공유는 불법입니다. 2025년 7월, '극단주의' 콘텐츠에 액세스하기 위해 VPN을 사용하는 것이 범죄의 가중 사유가 되었습니다.",
-      blockedVpns: "러시아에서 차단된 VPN",
+      blockedVpns: "러시아에서 작동하지 않는 VPN",
       blockedList: [
-        "NordVPN (웹사이트 차단됨, 여전히 작동할 수 있음)",
+        "IPVanish",
+        "CyberGhost",
+        "Private Internet Access (PIA)",
+        "AtlasVPN",
+        "Mullvad (적극적으로 차단됨)",
+      ],
+      sometimesWorking: "때때로 작동하는 VPN",
+      sometimesWorkingList: [
         "ProtonVPN",
-        "Surfshark (앱 스토어에서 제거됨)",
-        "AdGuard VPN",
-        "TurboVPN",
-        "기타 다수 (2024년에 197개 이상 차단)",
+        "VyprVPN (Chameleon 프로토콜)",
       ],
       whatMayWork: "여전히 작동할 수 있는 VPN (2025)",
       whatMayWorkText:
@@ -872,14 +904,18 @@ export default async function RussiaVpnPage({ params }: Props) {
       legalStatus: "สถานะทางกฎหมายในรัสเซีย",
       legalStatusText:
         "VPN ไม่ผิดกฎหมายอย่างเป็นทางการ แต่ทุกสิ่งรอบ ๆ มันกำลังถูกกำหนดเป็นอาชญากรรม ตั้งแต่มีนาคม 2024 การแบ่งปันคู่มือ VPN เป็นสิ่งผิดกฎหมาย ในกรกฎาคม 2025 การใช้ VPN เพื่อเข้าถึงเนื้อหา 'หัวรุนแรง' กลายเป็นสถานการณ์ที่รุนแรงขึ้นสำหรับอาชญากรรม",
-      blockedVpns: "VPN ที่ถูกบล็อกในรัสเซีย",
+      blockedVpns: "VPN ที่ไม่ทำงานในรัสเซีย",
       blockedList: [
-        "NordVPN (เว็บไซต์ถูกบล็อก อาจยังใช้งานได้)",
+        "IPVanish",
+        "CyberGhost",
+        "Private Internet Access (PIA)",
+        "AtlasVPN",
+        "Mullvad (ถูกบล็อกอย่างแข็งขัน)",
+      ],
+      sometimesWorking: "VPN ที่บางครั้งทำงาน",
+      sometimesWorkingList: [
         "ProtonVPN",
-        "Surfshark (ถูกลบออกจาก Apple Store)",
-        "AdGuard VPN",
-        "TurboVPN",
-        "อื่น ๆ อีกมากมาย (197+ ถูกบล็อกในปี 2024)",
+        "VyprVPN (โปรโตคอล Chameleon)",
       ],
       whatMayWork: "VPN ที่อาจยังใช้งานได้ (2025)",
       whatMayWorkText:
@@ -1053,23 +1089,43 @@ export default async function RussiaVpnPage({ params }: Props) {
           </div>
         </section>
 
-        {/* Blocked VPNs */}
+        {/* Blocked VPNs and Sometimes Working */}
         <section className="py-12 bg-muted/30">
           <div className="container">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl font-bold text-center mb-6">{t.blockedVpns}</h2>
-              <Card>
-                <CardContent className="pt-6">
-                  <div className="space-y-3">
-                    {t.blockedList.map((vpn, index) => (
-                      <div key={index} className="flex items-center gap-2">
-                        <XCircle className="h-4 w-4 text-red-500 flex-shrink-0" />
-                        <span className="text-sm">{vpn}</span>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+            <div className="max-w-3xl mx-auto space-y-6">
+              {/* VPNs That Don't Work */}
+              <div>
+                <h2 className="text-2xl font-bold text-center mb-6">{t.blockedVpns}</h2>
+                <Card>
+                  <CardContent className="pt-6">
+                    <div className="space-y-3">
+                      {t.blockedList.map((vpn, index) => (
+                        <div key={index} className="flex items-center gap-2">
+                          <XCircle className="h-4 w-4 text-red-500 flex-shrink-0" />
+                          <span className="text-sm">{vpn}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Sometimes Working VPNs */}
+              <div>
+                <h2 className="text-2xl font-bold text-center mb-6">{t.sometimesWorking}</h2>
+                <Card>
+                  <CardContent className="pt-6">
+                    <div className="space-y-3">
+                      {t.sometimesWorkingList.map((vpn, index) => (
+                        <div key={index} className="flex items-center gap-2">
+                          <AlertTriangle className="h-4 w-4 text-yellow-500 flex-shrink-0" />
+                          <span className="text-sm">{vpn}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
         </section>

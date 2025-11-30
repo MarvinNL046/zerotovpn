@@ -9,7 +9,11 @@
     "best": "Beste VPNs",
     "bestVpn": "Beste VPNs 2025",
     "vpnChina": "Beste VPN voor China",
+    "vpnRussia": "Beste VPN voor Rusland",
+    "vpnUae": "Beste VPN voor VAE",
+    "vpnIran": "Beste VPN voor Iran",
     "vpnGaming": "Beste VPN voor Gaming",
+    "vpnMobile": "Beste Mobiele VPN",
     "freeVpn": "Beste Gratis VPNs",
     "deals": "Deals",
     "compare": "Vergelijken",
@@ -3664,5 +3668,612 @@
     "vpnImpact": "VPN Snelheidsimpact",
     "vpnImpactDesc": "Een goede VPN vermindert de snelheid doorgaans met slechts 10-20%. Als je snelheid meer daalt, probeer een andere server of protocol.",
     "recommendedVpns": "Aanbevolen Snelle VPNs"
+  },
+  "androidVpn": {
+    "meta": {
+      "title": "Beste VPN voor Android November 2025: Top 3 Geteste Apps – ZeroToVPN",
+      "description": "Op zoek naar de beste VPN voor Android? We testten 15+ Android VPN apps. NordVPN (95%), Surfshark (94%) en ExpressVPN (93%) zijn de beste keuzes voor snelheid, beveiliging en functies zoals split tunneling."
+    },
+    "hero": {
+      "badge": "Bijgewerkt November 2025",
+      "title": "Beste VPN voor Android – 2025 Gids",
+      "subtitle": "We testten 15+ VPN apps voor Android om de beste opties te vinden voor snelheid, beveiliging en Android-specifieke functies. Dit werkt het beste op je Android telefoon of tablet."
+    },
+    "whyAndroid": {
+      "title": "Waarom Android een VPN Nodig Heeft",
+      "tracking": {
+        "title": "Google Tracking",
+        "description": "Door de diepe Google-integratie van Android worden je surfgedrag, locatie en app-gebruik constant gevolgd. Een VPN maskeert je IP en versleutelt verkeer."
+      },
+      "ecosystem": {
+        "title": "Open Ecosysteem",
+        "description": "De open aard van Android maakt het kwetsbaarder voor kwaadaardige apps en dataverzameling. VPN's voegen een essentiële beveiligingslaag toe."
+      },
+      "wifi": {
+        "title": "Openbare WiFi",
+        "description": "Gebruik je openbare WiFi op je Android telefoon? Hackers kunnen onversleutelde data onderscheppen. Een VPN beschermt je op koffiebar- en hotelnetwerken."
+      }
+    },
+    "comparison": {
+      "title": "Snelle Vergelijking",
+      "vpn": "VPN",
+      "rating": "Beoordeling",
+      "protocol": "Protocol",
+      "splitTunneling": "Split Tunneling",
+      "price": "Prijs",
+      "month": "maand",
+      "recommended": "Aanbevolen"
+    },
+    "reviews": {
+      "title": "Top 3 VPN's voor Android Gerangschikt",
+      "subtitle": "Onze gedetailleerde analyse van de beste VPN apps voor Android in 2025",
+      "protocol": "Protocol",
+      "servers": "Servers",
+      "splitTunnel": "Split Tunneling",
+      "killSwitch": "Kill Switch",
+      "devices": "Apparaten",
+      "gpsSpoofing": "GPS Spoofing",
+      "camouflage": "Camouflage Modus",
+      "countries": "Landen",
+      "reliability": "Betrouwbaarheid",
+      "yes": "Ja",
+      "unlimited": "Onbeperkt",
+      "excellent": "Uitstekend",
+      "pros": "Voordelen",
+      "cons": "Nadelen",
+      "getButton": "Verkrijgen",
+      "nordvpn": {
+        "badge": "Beste voor Android",
+        "description": "De Android-app van NordVPN is de meest complete VPN die we testten. Het bevat NordLynx (hun WireGuard-implementatie) voor razendsnelle snelheden, split tunneling om specifieke apps uit te sluiten en een betrouwbare kill switch die daadwerkelijk werkt.",
+        "pros": [
+          "NordLynx protocol levert snelste snelheden op Android",
+          "Split tunneling laat je bank-apps uitsluiten",
+          "Always-on VPN ondersteuning voor automatische bescherming",
+          "7.000+ servers voor consistente prestaties",
+          "Schone, intuïtieve Android interface",
+          "Werkt met Android 5.0+ (Lollipop en nieuwer)"
+        ],
+        "cons": [
+          "Iets duurder dan Surfshark",
+          "6 apparaten limiet (vs Surfshark's onbeperkt)",
+          "Sommige functies vereisen Android 7.0+",
+          "Geen GPS spoofing functie"
+        ]
+      },
+      "surfshark": {
+        "description": "Surfshark valt op door onbeperkte apparaatverbindingen en Android-exclusieve functies. GPS spoofing laat locatie-gebaseerde apps denken dat je ergens anders bent, terwijl Camouflage-modus VPN-gebruik verbergt voor je ISP.",
+        "pros": [
+          "Onbeperkte gelijktijdige apparaatverbindingen",
+          "GPS spoofing voor locatie-gebaseerde apps",
+          "Camouflage-modus verbergt VPN-gebruik",
+          "CleanWeb blokkeert advertenties en malware",
+          "Beste waarde voor €2,19/maand",
+          "Werkt op Android TV en Fire TV"
+        ],
+        "cons": [
+          "Snelheden iets langzamer dan NordVPN",
+          "Kleiner servernetwerk (3.200 vs 7.000)",
+          "GPS spoofing vereist Android 6.0+",
+          "Minder consistent voor streaming"
+        ]
+      },
+      "expressvpn": {
+        "description": "Het Lightway-protocol van ExpressVPN is gebouwd voor mobiel en biedt de meest stabiele verbindingen op Android. Het maakt onmiddellijk opnieuw verbinding bij het wisselen tussen WiFi en mobiele data, perfect voor onderweg.",
+        "pros": [
+          "Lightway protocol geoptimaliseerd voor mobiel",
+          "Meest stabiele verbinding bij wisselen van netwerken",
+          "94 landen voor maximale wereldwijde toegang",
+          "Uitstekende 24/7 klantenondersteuning",
+          "Slimme locatie kiest snelste server",
+          "Network Protection = always-on VPN"
+        ],
+        "cons": [
+          "Duurste op €6,67/maand",
+          "5 apparaten limiet",
+          "Grotere app-grootte (50MB vs concurrenten 30MB)",
+          "Geen GPS spoofing of Camouflage-modus"
+        ]
+      }
+    },
+    "features": {
+      "title": "Android-Specifieke VPN Functies",
+      "splitTunneling": {
+        "title": "Split Tunneling",
+        "description": "Kies welke apps de VPN gebruiken en welke niet. Sluit bank-apps uit die VPN's blokkeren terwijl je je browsen beschermt.",
+        "availability": "Beschikbaar: NordVPN, Surfshark, ExpressVPN"
+      },
+      "alwaysOn": {
+        "title": "Always-On VPN",
+        "description": "Ingebouwde Android-functie die automatisch verbinding maakt met je VPN wanneer je apparaat start. Blokkeert internet als VPN faalt.",
+        "availability": "Ondersteund door alle grote VPN's"
+      },
+      "killSwitch": {
+        "title": "Kill Switch",
+        "description": "Blokkeert al het internetverkeer als de VPN-verbinding wegvalt, waardoor datalekken worden voorkomen. Essentieel voor openbare WiFi.",
+        "availability": "Alle top VPN's bevatten dit"
+      },
+      "apkSideloading": {
+        "title": "APK Sideloading",
+        "description": "Installeer VPN-apps rechtstreeks via APK in landen waar Google Play ze blokkeert (China, Iran, Rusland).",
+        "availability": "NordVPN, ExpressVPN, Surfshark bieden APK's"
+      },
+      "widgets": {
+        "title": "Startscherm Widgets",
+        "description": "Snelle-verbinding widgets laten je VPN-bescherming rechtstreeks vanaf je startscherm inschakelen zonder de app te openen.",
+        "availability": "NordVPN, Surfshark"
+      },
+      "gpsSpoofing": {
+        "title": "GPS Spoofing",
+        "description": "Laat locatie-gebaseerde apps denken dat je op een andere locatie bent. Handig voor geo-beperkte apps en diensten.",
+        "availability": "Alleen Surfshark"
+      }
+    },
+    "setup": {
+      "title": "Hoe een VPN op Android Instellen (Stap-voor-Stap)",
+      "steps": [
+        "Download VPN-app van Google Play Store (NordVPN, Surfshark of ExpressVPN)",
+        "Maak een account aan en kies een abonnement (allen bieden 30 dagen geld-terug-garantie)",
+        "Open de app en log in met je inloggegevens",
+        "Geef VPN-toestemming wanneer Android vraagt (dit stelt de app in staat een veilige tunnel te maken)",
+        "Tik op 'Verbinden' of kies een specifieke serverlocatie",
+        "Je bent beschermd! Het VPN-icoon verschijnt in je statusbalk",
+        "Optioneel: Schakel 'Always-on VPN' in bij Android Instellingen → Netwerk & internet → VPN → Instellingen"
+      ]
+    },
+    "apk": {
+      "title": "APK Installatie voor Gecensureerde Landen",
+      "subtitle": "In China, Iran, Rusland en andere landen waar Google Play VPN-apps blokkeert, kun je installeren via APK:",
+      "warning": {
+        "title": "Belangrijke Beveiligingswaarschuwing",
+        "description": "Download alleen APK's rechtstreeks van de officiële website van de VPN-provider. APK-sites van derden kunnen malware bevatten."
+      },
+      "instructions": {
+        "title": "Hoe VPN APK's te Installeren:",
+        "steps": [
+          "Bezoek de website van de VPN (gebruik een andere VPN of proxy als geblokkeerd)",
+          "Download het Android APK-bestand van de officiële downloadpagina",
+          "Ga naar Android Instellingen → Beveiliging → Schakel 'Onbekende bronnen' of 'Onbekende apps installeren' in",
+          "Open je bestandsbeheerder en tik op het gedownloade APK-bestand",
+          "Tik op 'Installeren' en wacht tot de installatie voltooid is",
+          "Open de VPN-app en log in (je moet mogelijk eerst een account aanmaken)",
+          "Schakel 'Onbekende bronnen' uit voor beveiliging na installatie"
+        ]
+      }
+    },
+    "avoid": {
+      "title": "Gratis Android VPN's om te Vermijden",
+      "subtitle": "Deze veelvoorkomende risico's maken gratis Android VPN's gevaarlijk:",
+      "reasons": [
+        "Verkopen je surfgegevens aan adverteerders en datahandelaren",
+        "Injecteren advertenties in je browser en apps",
+        "Bevatten verborgen malware, spyware of tracking-bibliotheken",
+        "Hebben ernstige beveiligingskwetsbaarheden die je data blootstellen",
+        "Vertragen snelheden ernstig waardoor ze onbruikbaar worden",
+        "Loggen je activiteit ondanks no-logs claims",
+        "Tappen batterij met agressieve achtergrondprocessen",
+        "Vragen buitensporige Android-rechten die ze niet nodig hebben"
+      ]
+    },
+    "conclusion": {
+      "title": "Krijg Vandaag de Beste Android VPN",
+      "description": "NordVPN biedt de beste algehele Android-ervaring met snelle snelheden, split tunneling en uitstekende beveiliging. Alle onze aanbevolen VPN's bieden 30 dagen geld-terug-garantie, zodat je ze risicovrij kunt testen.",
+      "tryNordvpn": "Probeer NordVPN Risicovrij",
+      "compareAll": "Vergelijk Alle VPN's"
+    }
+  },
+  "mobileVpn": {
+    "meta": {
+      "title": "Beste Mobiele VPN (iPhone & Android) November 2025 – ZeroToVPN",
+      "description": "Vind de beste mobiele VPN voor je iPhone of Android. We testten 15+ VPN apps. Surfshark, NordVPN en ExpressVPN zijn de beste keuzes voor mobiele beveiliging."
+    },
+    "hero": {
+      "badge": "📱 Mobiele VPN Gids 2025",
+      "title": "Beste Mobiele VPN (iPhone & Android)",
+      "subtitle": "Bescherm je smartphone op openbare WiFi, omzeil geo-beperkingen en beveilig je mobiele data met de beste VPN apps voor iOS en Android."
+    },
+    "why": {
+      "title": "Waarom Je een Mobiele VPN Nodig Hebt",
+      "publicWifi": {
+        "title": "Openbare WiFi Bescherming",
+        "description": "Blijf veilig op koffiebar, luchthaven en hotel WiFi netwerken die hackers graag misbruiken."
+      },
+      "dataProtection": {
+        "title": "4G/5G Data Bescherming",
+        "description": "Voorkom dat je mobiele provider je surfgedrag volgt en verkoopt."
+      },
+      "travel": {
+        "title": "Reisvrijheid",
+        "description": "Toegang tot je thuisstreaming diensten en omzeil censuur tijdens reizen in het buitenland."
+      },
+      "streaming": {
+        "title": "Mobiel Streamen",
+        "description": "Kijk Netflix, YouTube en andere diensten zonder ISP vertraging op je telefoon."
+      }
+    },
+    "reviews": {
+      "title": "Top 3 Mobiele VPNs (2025)",
+      "subtitle": "Onze experts testten deze VPNs op iPhone en Android apparaten",
+      "surfshark": {
+        "badge": "Beste Algeheel",
+        "description": "Surfshark biedt de beste waarde voor mobiele gebruikers met onbeperkte apparaatverbindingen, een lichtgewicht app en uitstekende snelheden op zowel iOS als Android.",
+        "pros": [
+          "Onbeperkte apparaten",
+          "Lichtgewicht apps",
+          "Beste prijs",
+          "GPS spoofing (Android)"
+        ],
+        "cons": [
+          "Minder servers",
+          "Nieuwer bedrijf"
+        ]
+      },
+      "nordvpn": {
+        "description": "NordVPN's eigen NordLynx protocol levert de snelste snelheden op mobiel. De apps krijgen topbeoordelingen in zowel App Store als Google Play.",
+        "pros": [
+          "NordLynx - snelste snelheden",
+          "Best beoordeelde apps",
+          "Split tunneling (Android)",
+          "Threat Protection"
+        ],
+        "cons": [
+          "Complex voor beginners",
+          "Geen GPS spoofing"
+        ]
+      },
+      "expressvpn": {
+        "description": "ExpressVPN is de meest betrouwbare keuze voor reizigers. Het werkt in China, VAE en Turkije, met ongelooflijk stabiele verbindingen op 4G/5G.",
+        "pros": [
+          "Werkt in China, VAE, Turkije",
+          "Super stabiel op 4G/5G",
+          "Lightway protocol",
+          "Beste voor reizen"
+        ],
+        "cons": [
+          "Duurder",
+          "8 apparaten limiet"
+        ]
+      },
+      "pros": "Voordelen",
+      "cons": "Nadelen",
+      "getButton": "VPN Krijgen",
+      "speed": "Snelheid",
+      "security": "Beveiliging",
+      "servers": "Servers",
+      "countries": "Landen",
+      "devices": "Apparaten",
+      "unlimited": "Onbeperkt",
+      "battery": "Batterij Impact",
+      "low": "Laag",
+      "moderate": "Matig"
+    },
+    "platforms": {
+      "title": "Platform-Specifieke Functies",
+      "ios": {
+        "title": "Beste voor iPhone",
+        "description": "Natuurlijke iOS integratie, Siri snelkoppelingen, App Store beoordelingen 4.5+, geoptimaliseerd batterijgebruik en Apple Watch apps.",
+        "features": [
+          "4.5+ App Store beoordelingen",
+          "Natuurlijke IKEv2 ondersteuning",
+          "Siri Snelkoppelingen",
+          "Apple Watch apps",
+          "Geoptimaliseerd batterijgebruik"
+        ],
+        "readMore": "Beste VPNs voor iPhone →"
+      },
+      "android": {
+        "title": "Beste voor Android",
+        "description": "Split tunneling, APK sideloading voor gecensureerde landen, widgets, aangepaste DNS en GPS spoofing (Surfshark).",
+        "features": [
+          "Split tunneling",
+          "APK sideloading",
+          "Altijd-aan VPN",
+          "Aangepaste DNS",
+          "Kill switch",
+          "Widgets",
+          "GPS spoofing (Surfshark)"
+        ],
+        "readMore": "Beste VPNs voor Android →"
+      }
+    },
+    "useCases": {
+      "title": "VPN per Mobiel Gebruikssituatie",
+      "cases": [
+        {
+          "title": "Reizen",
+          "vpns": "ExpressVPN, Surfshark",
+          "description": "Toegang tot thuiscontent in het buitenland"
+        },
+        {
+          "title": "Openbare WiFi",
+          "vpns": "NordVPN, Surfshark",
+          "description": "Beveilig koffiebar & hotel netwerken"
+        },
+        {
+          "title": "Streamen",
+          "vpns": "NordVPN, ExpressVPN",
+          "description": "Deblokkeer Netflix & YouTube"
+        },
+        {
+          "title": "Sociale Media",
+          "vpns": "ExpressVPN, Surfshark",
+          "description": "Omzeil blokkades in China, VAE"
+        },
+        {
+          "title": "Gaming",
+          "vpns": "NordVPN, ExpressVPN",
+          "description": "Lage ping voor PUBG, CoD Mobile"
+        }
+      ]
+    },
+    "performance": {
+      "title": "Mobiele VPN Prestaties",
+      "vpn": "VPN",
+      "speed": "Snelheid",
+      "battery": "Batterij",
+      "protocol": "Protocol",
+      "fastest": "Snelste",
+      "fast": "Snel",
+      "lowest": "Laagste",
+      "moderate": "Matig"
+    },
+    "setup": {
+      "title": "Hoe een Mobiele VPN Instellen",
+      "ios": {
+        "title": "iPhone Installatie",
+        "steps": [
+          "Open App Store",
+          "Zoek naar VPN app",
+          "Tik op 'Krijg' om te installeren",
+          "Open app en log in",
+          "Sta VPN configuratie toe",
+          "Tik op 'Snelle Verbinding'"
+        ]
+      },
+      "android": {
+        "title": "Android Installatie",
+        "steps": [
+          "Open Google Play Store",
+          "Zoek naar VPN app",
+          "Tik op 'Installeren'",
+          "Open app en log in",
+          "Verleen VPN machtigingen",
+          "Schakel Kill Switch in bij instellingen",
+          "Tik op 'Snelle Verbinding'"
+        ]
+      }
+    },
+    "avoid": {
+      "title": "Gratis Mobiele VPNs om te Vermijden",
+      "description": "Gratis VPNs verzamelen vaak je data, injecteren advertenties, bieden trage snelheden en gebruiken zwakke encryptie. Vermijd TurboVPN, HolaVPN, Betternet, SuperVPN en ThunderVPN.",
+      "vpns": [
+        {
+          "name": "TurboVPN",
+          "reason": "Verzamelt gebruikersdata"
+        },
+        {
+          "name": "HolaVPN",
+          "reason": "Gebruikt jou als exit node"
+        },
+        {
+          "name": "Betternet",
+          "reason": "Malware zorgen"
+        },
+        {
+          "name": "SuperVPN",
+          "reason": "Beveiligingslekken"
+        },
+        {
+          "name": "ThunderVPN",
+          "reason": "Geen transparantie"
+        }
+      ]
+    },
+    "conclusion": {
+      "title": "Ons Oordeel",
+      "description": "Na uitgebreid testen, hier zijn onze topkeuzes voor mobiele VPN in 2025:",
+      "best": {
+        "title": "Beste Algeheel",
+        "description": "Surfshark biedt de beste waarde met onbeperkte apparaten en uitstekende mobiele apps."
+      },
+      "fastest": {
+        "title": "Snelste Mobiele VPN",
+        "description": "NordVPN met NordLynx levert ongeëvenaarde snelheden op 4G/5G netwerken."
+      },
+      "travel": {
+        "title": "Beste voor Reizen",
+        "description": "ExpressVPN werkt betrouwbaar in restrictieve landen zoals China en VAE."
+      },
+      "getBest": "Surfshark Krijgen – 82% KORTING",
+      "getFastest": "NordVPN Proberen – 30 Dagen Gratis",
+      "getTravel": "ExpressVPN Krijgen – 49% KORTING"
+    }
+  },
+  "iphoneVpn": {
+    "meta": {
+      "title": "Beste VPN voor iPhone & iOS November 2025 – ZeroToVPN",
+      "description": "Vind de beste VPN voor iPhone en iOS. We testten 15+ VPN apps. ExpressVPN, NordVPN en Surfshark zijn de beste keuzes voor iOS beveiliging en privacy."
+    },
+    "hero": {
+      "badge": "📱 iOS VPN Gids 2025",
+      "title": "Beste VPN voor iPhone & iOS",
+      "subtitle": "Bescherm je iPhone met de beste VPN apps geoptimaliseerd voor iOS. Native integratie, uitstekende App Store beoordelingen en batterijefficiënte prestaties."
+    },
+    "comparison": {
+      "title": "Snelle Vergelijking",
+      "vpn": "VPN",
+      "rating": "App Store",
+      "protocol": "Protocol",
+      "battery": "Batterij",
+      "price": "Prijs",
+      "excellent": "Uitstekend",
+      "good": "Goed"
+    },
+    "whyIos": {
+      "title": "Waarom iPhone een VPN Nodig Heeft",
+      "appStore": {
+        "title": "Alleen App Store",
+        "description": "iOS beperkt VPN-installatie tot App Store apps, waardoor kwaliteit en beveiligingsverificatie gewaarborgd is."
+      },
+      "privacy": {
+        "title": "Apple Privacy",
+        "description": "Verbeter Apple's privacyfuncties met end-to-end versleuteling voor al je internetverkeer."
+      },
+      "publicWifi": {
+        "title": "Openbare WiFi Bescherming",
+        "description": "Beveilig je iPhone op koffiebar-, luchthaven- en hotelnetwerken die hackers targeten."
+      }
+    },
+    "reviews": {
+      "title": "Top 3 VPN's voor iPhone",
+      "subtitle": "Getest op iOS 17+ met de nieuwste iPhone modellen",
+      "expressvpn": {
+        "badge": "Beste iOS App",
+        "description": "ExpressVPN biedt de beste algemene iOS-ervaring met zijn Lightway protocol, intuïtieve UI en uitstekende App Store beoordelingen.",
+        "appStoreRating": "4,7★ (200K+ reviews)",
+        "pros": [
+          "Beste iOS app ervaring",
+          "Lightway protocol - snel & veilig",
+          "Intuïtieve interface",
+          "24/7 klantenondersteuning"
+        ],
+        "cons": [
+          "Hogere prijs",
+          "Beperkt tot 8 apparaten"
+        ]
+      },
+      "nordvpn": {
+        "description": "NordVPN's iOS app bevat NordLynx protocol voor snelste snelheden, Siri shortcuts en Apple Watch integratie.",
+        "appStoreRating": "4,6★ (150K+ reviews)",
+        "pros": [
+          "NordLynx - snelste protocol",
+          "Siri Shortcuts ondersteuning",
+          "Apple Watch app",
+          "Threat Protection"
+        ],
+        "cons": [
+          "Geen split tunneling op iOS",
+          "App kan complex zijn"
+        ]
+      },
+      "surfshark": {
+        "description": "Surfshark biedt onbeperkte apparaten op één abonnement met een schone iOS interface en uitstekende waarde.",
+        "appStoreRating": "4,5★ (100K+ reviews)",
+        "pros": [
+          "Onbeperkte apparaten",
+          "Beste prijs",
+          "CleanWeb advertentieblokker",
+          "GPS spoofing"
+        ],
+        "cons": [
+          "Kleiner servernetwerk",
+          "Geen Apple Watch app"
+        ]
+      },
+      "pros": "Voordelen",
+      "cons": "Nadelen",
+      "getButton": "Verkrijg voor iPhone",
+      "servers": "Servers",
+      "devices": "Apparaten",
+      "unlimited": "Onbeperkt",
+      "protocol": "Protocol",
+      "battery": "Batterij",
+      "excellent": "Uitstekend",
+      "good": "Goed"
+    },
+    "iosFeatures": {
+      "title": "iOS-Specifieke Functies",
+      "appStore": {
+        "title": "App Store Beoordelingen",
+        "description": "Alle aanbevolen VPN's hebben 4,5+ sterbeoordelingen met honderdduizenden reviews.",
+        "ratings": [
+          "ExpressVPN: 4,7★ (200K+ reviews)",
+          "NordVPN: 4,6★ (150K+ reviews)",
+          "Surfshark: 4,5★ (100K+ reviews)"
+        ]
+      },
+      "protocols": {
+        "title": "Protocol Ondersteuning",
+        "description": "Native IKEv2 ondersteuning plus WireGuard en Lightway voor optimale iOS prestaties.",
+        "list": [
+          "IKEv2 (native iOS)",
+          "WireGuard",
+          "Lightway (ExpressVPN)",
+          "NordLynx (NordVPN)",
+          "OpenVPN"
+        ]
+      },
+      "battery": {
+        "title": "Batterij Optimalisatie",
+        "description": "Moderne protocollen minimaliseren batterijverbruik terwijl ze beveiliging handhaven.",
+        "tips": [
+          "Gebruik WireGuard voor beste batterijduur",
+          "Schakel auto-connect alleen in wanneer nodig",
+          "Schakel achtergrond app vernieuwing uit voor VPN"
+        ]
+      },
+      "integration": {
+        "title": "iOS Integratie",
+        "description": "Siri Shortcuts, widgets en Apple Watch apps voor naadloze controle.",
+        "features": [
+          "Siri Shortcuts (NordVPN, Surfshark)",
+          "iOS Widgets",
+          "Apple Watch apps (ExpressVPN, NordVPN)",
+          "Keychain integratie"
+        ]
+      }
+    },
+    "setupGuide": {
+      "title": "Hoe VPN op iPhone Instellen",
+      "steps": [
+        "Open App Store op je iPhone",
+        "Zoek naar je VPN (ExpressVPN, NordVPN of Surfshark)",
+        "Tik op 'Ophalen' om te downloaden en installeren",
+        "Open de app en log in of maak een account",
+        "Sta VPN-configuratie toe wanneer gevraagd",
+        "Tik op 'Snelle Verbinding' om je verbinding te beveiligen"
+      ]
+    },
+    "limitations": {
+      "title": "iOS VPN Beperkingen",
+      "items": [
+        "Geen split tunneling op iOS (Apple beperking)",
+        "VPN moet alleen van App Store komen",
+        "Sommige protocollen werken mogelijk niet op alle netwerken",
+        "Achtergrond VPN kan verbreken tijdens energiebesparende modus"
+      ]
+    },
+    "avoidFree": {
+      "title": "Gratis iPhone VPN's om te Vermijden",
+      "recommendation": {
+        "title": "Onze Aanbeveling",
+        "description": "Gratis VPN's verzamelen vaak data en tonen advertenties. Premium VPN's bieden betere beveiliging en no-log beleid."
+      },
+      "reasons": [
+        "Verzamelen en verkopen je data",
+        "Injecteren advertenties in je browsen",
+        "Ernstig beperkte bandbreedte",
+        "Zwakke versleutelingsstandaarden",
+        "Geen klantenondersteuning"
+      ]
+    },
+    "conclusion": {
+      "title": "Ons Oordeel",
+      "description": "Voor iPhone gebruikers in 2025 zijn dit onze top aanbevelingen:",
+      "tryButton": "Probeer VPN",
+      "cards": {
+        "best": {
+          "badge": "Beste iOS App",
+          "description": "ExpressVPN biedt de beste algemene iOS-ervaring met Lightway protocol."
+        },
+        "value": {
+          "badge": "Snelste iOS VPN",
+          "description": "NordVPN met NordLynx levert ongeëvenaarde snelheden en iOS integratie."
+        },
+        "budget": {
+          "badge": "Beste Waarde",
+          "description": "Surfshark biedt onbeperkte apparaten voor de beste prijs voor iPhone gebruikers."
+        }
+      }
+    }
   }
 }

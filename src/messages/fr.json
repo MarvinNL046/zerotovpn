@@ -9,7 +9,11 @@
     "best": "Meilleurs VPNs",
     "bestVpn": "Meilleurs VPNs 2025",
     "vpnChina": "Meilleur VPN pour la Chine",
+    "vpnRussia": "Meilleur VPN pour la Russie",
+    "vpnUae": "Meilleur VPN pour les EAU",
+    "vpnIran": "Meilleur VPN pour l'Iran",
     "vpnGaming": "Meilleur VPN pour le Gaming",
+    "vpnMobile": "Meilleur VPN Mobile",
     "freeVpn": "Meilleurs VPNs Gratuits",
     "deals": "Offres",
     "compare": "Comparer",
@@ -3671,5 +3675,612 @@
     "vpnImpact": "Impact du VPN sur la Vitesse",
     "vpnImpactDesc": "Un bon VPN réduit généralement la vitesse de seulement 10-20%. Si votre vitesse baisse davantage, essayez un autre serveur ou protocole.",
     "recommendedVpns": "VPNs Rapides Recommandés"
+  },
+  "androidVpn": {
+    "meta": {
+      "title": "Meilleur VPN pour Android Novembre 2025 : Top 3 des Applications Testées – ZeroToVPN",
+      "description": "Vous cherchez le meilleur VPN pour Android ? Nous avons testé plus de 15 applications VPN Android. NordVPN (95%), Surfshark (94%) et ExpressVPN (93%) sont les meilleurs choix pour la vitesse, la sécurité et des fonctionnalités comme le tunneling fractionné."
+    },
+    "hero": {
+      "badge": "Mis à jour Novembre 2025",
+      "title": "Meilleur VPN pour Android – Guide 2025",
+      "subtitle": "Nous avons testé plus de 15 applications VPN pour Android afin de trouver les meilleures options en termes de vitesse, de sécurité et de fonctionnalités spécifiques à Android. Voici ce qui fonctionne le mieux sur votre téléphone ou tablette Android."
+    },
+    "whyAndroid": {
+      "title": "Pourquoi Android a besoin d'un VPN",
+      "tracking": {
+        "title": "Suivi Google",
+        "description": "L'intégration profonde de Google dans Android signifie que votre navigation, votre localisation et l'utilisation de vos applications sont constamment suivies. Un VPN masque votre adresse IP et chiffre le trafic."
+      },
+      "ecosystem": {
+        "title": "Écosystème ouvert",
+        "description": "La nature ouverte d'Android le rend plus vulnérable aux applications malveillantes et à la collecte de données. Les VPN ajoutent une couche de sécurité essentielle."
+      },
+      "wifi": {
+        "title": "WiFi public",
+        "description": "Vous utilisez le WiFi public sur votre téléphone Android ? Les pirates peuvent intercepter les données non chiffrées. Un VPN vous protège sur les réseaux des cafés et des hôtels."
+      }
+    },
+    "comparison": {
+      "title": "Comparaison rapide",
+      "vpn": "VPN",
+      "rating": "Note",
+      "protocol": "Protocole",
+      "splitTunneling": "Tunneling fractionné",
+      "price": "Prix",
+      "month": "mois",
+      "recommended": "Recommandé"
+    },
+    "reviews": {
+      "title": "Top 3 des VPN pour Android classés",
+      "subtitle": "Notre analyse détaillée des meilleures applications VPN pour Android en 2025",
+      "protocol": "Protocole",
+      "servers": "Serveurs",
+      "splitTunnel": "Tunneling fractionné",
+      "killSwitch": "Coupe-circuit",
+      "devices": "Appareils",
+      "gpsSpoofing": "Usurpation GPS",
+      "camouflage": "Mode camouflage",
+      "countries": "Pays",
+      "reliability": "Fiabilité",
+      "yes": "Oui",
+      "unlimited": "Illimité",
+      "excellent": "Excellent",
+      "pros": "Avantages",
+      "cons": "Inconvénients",
+      "getButton": "Obtenir",
+      "nordvpn": {
+        "badge": "Meilleur pour Android",
+        "description": "L'application Android de NordVPN est le VPN le plus complet que nous avons testé. Il inclut NordLynx (leur implémentation de WireGuard) pour des vitesses ultra-rapides, le tunneling fractionné pour exclure des applications spécifiques et un coupe-circuit fiable qui fonctionne réellement.",
+        "pros": [
+          "Le protocole NordLynx offre les vitesses les plus rapides sur Android",
+          "Le tunneling fractionné vous permet d'exclure les applications bancaires",
+          "Support VPN permanent pour une protection automatique",
+          "Plus de 7 000 serveurs pour des performances constantes",
+          "Interface Android propre et intuitive",
+          "Fonctionne avec Android 5.0+ (Lollipop et versions ultérieures)"
+        ],
+        "cons": [
+          "Légèrement plus cher que Surfshark",
+          "Limite de 6 appareils (contre illimité pour Surfshark)",
+          "Certaines fonctionnalités nécessitent Android 7.0+",
+          "Pas de fonctionnalité d'usurpation GPS"
+        ]
+      },
+      "surfshark": {
+        "description": "Surfshark se distingue par ses connexions d'appareils illimitées et ses fonctionnalités exclusives à Android. L'usurpation GPS fait croire aux applications basées sur la localisation que vous êtes ailleurs, tandis que le mode Camouflage masque l'utilisation du VPN à votre FAI.",
+        "pros": [
+          "Connexions simultanées d'appareils illimitées",
+          "Usurpation GPS pour les applications basées sur la localisation",
+          "Le mode Camouflage masque l'utilisation du VPN",
+          "CleanWeb bloque les publicités et les logiciels malveillants",
+          "Meilleur rapport qualité-prix à 2,19 $/mois",
+          "Fonctionne sur Android TV et Fire TV"
+        ],
+        "cons": [
+          "Vitesses légèrement plus lentes que NordVPN",
+          "Réseau de serveurs plus petit (3 200 contre 7 000)",
+          "L'usurpation GPS nécessite Android 6.0+",
+          "Moins cohérent pour le streaming"
+        ]
+      },
+      "expressvpn": {
+        "description": "Le protocole Lightway d'ExpressVPN est conçu pour le mobile et offre les connexions les plus stables sur Android. Il se reconnecte instantanément lors du passage entre WiFi et données mobiles, ce qui le rend parfait pour une utilisation en déplacement.",
+        "pros": [
+          "Protocole Lightway optimisé pour le mobile",
+          "Connexion la plus stable lors du changement de réseaux",
+          "94 pays pour un accès mondial maximal",
+          "Excellent support client 24h/24 et 7j/7",
+          "L'emplacement intelligent choisit le serveur le plus rapide",
+          "Protection réseau = VPN permanent"
+        ],
+        "cons": [
+          "Le plus cher à 6,67 $/mois",
+          "Limite de 5 appareils",
+          "Taille d'application plus grande (50 Mo contre 30 Mo pour les concurrents)",
+          "Pas d'usurpation GPS ni de mode Camouflage"
+        ]
+      }
+    },
+    "features": {
+      "title": "Fonctionnalités VPN spécifiques à Android",
+      "splitTunneling": {
+        "title": "Tunneling fractionné",
+        "description": "Choisissez quelles applications utilisent le VPN et lesquelles ne l'utilisent pas. Excluez les applications bancaires qui bloquent les VPN tout en protégeant votre navigation.",
+        "availability": "Disponible : NordVPN, Surfshark, ExpressVPN"
+      },
+      "alwaysOn": {
+        "title": "VPN permanent",
+        "description": "Fonctionnalité intégrée d'Android qui connecte automatiquement votre VPN au démarrage de votre appareil. Bloque Internet si le VPN échoue.",
+        "availability": "Pris en charge par tous les VPN majeurs"
+      },
+      "killSwitch": {
+        "title": "Coupe-circuit",
+        "description": "Bloque tout le trafic Internet si la connexion VPN est interrompue, évitant les fuites de données. Essentiel pour le WiFi public.",
+        "availability": "Tous les meilleurs VPN incluent ceci"
+      },
+      "apkSideloading": {
+        "title": "Installation APK",
+        "description": "Installez les applications VPN directement via APK dans les pays où Google Play les bloque (Chine, Iran, Russie).",
+        "availability": "NordVPN, ExpressVPN, Surfshark proposent des APK"
+      },
+      "widgets": {
+        "title": "Widgets d'écran d'accueil",
+        "description": "Les widgets de connexion rapide vous permettent d'activer la protection VPN directement depuis votre écran d'accueil sans ouvrir l'application.",
+        "availability": "NordVPN, Surfshark"
+      },
+      "gpsSpoofing": {
+        "title": "Usurpation GPS",
+        "description": "Fait croire aux applications basées sur la localisation que vous êtes dans un endroit différent. Utile pour les applications et services géo-restreints.",
+        "availability": "Surfshark uniquement"
+      }
+    },
+    "setup": {
+      "title": "Comment configurer un VPN sur Android (étape par étape)",
+      "steps": [
+        "Téléchargez l'application VPN depuis Google Play Store (NordVPN, Surfshark ou ExpressVPN)",
+        "Créez un compte et choisissez un plan d'abonnement (tous offrent des garanties de remboursement de 30 jours)",
+        "Ouvrez l'application et connectez-vous avec vos identifiants",
+        "Accordez l'autorisation VPN lorsqu'Android le demande (cela permet à l'application de créer un tunnel sécurisé)",
+        "Appuyez sur 'Connexion' ou choisissez un emplacement de serveur spécifique",
+        "Vous êtes protégé ! L'icône VPN apparaîtra dans votre barre d'état",
+        "Facultatif : Activez 'VPN permanent' dans Paramètres Android → Réseau et Internet → VPN → Paramètres"
+      ]
+    },
+    "apk": {
+      "title": "Installation APK pour les pays censurés",
+      "subtitle": "En Chine, en Iran, en Russie et dans d'autres pays où Google Play bloque les applications VPN, vous pouvez installer via APK :",
+      "warning": {
+        "title": "Avertissement de sécurité important",
+        "description": "Téléchargez uniquement les APK directement depuis le site Web officiel du fournisseur VPN. Les sites APK tiers peuvent contenir des logiciels malveillants."
+      },
+      "instructions": {
+        "title": "Comment installer les APK VPN :",
+        "steps": [
+          "Visitez le site Web du VPN (utilisez un autre VPN ou proxy s'il est bloqué)",
+          "Téléchargez le fichier APK Android depuis la page de téléchargements officielle",
+          "Allez dans Paramètres Android → Sécurité → Activez 'Sources inconnues' ou 'Installer des applications inconnues'",
+          "Ouvrez votre gestionnaire de fichiers et appuyez sur le fichier APK téléchargé",
+          "Appuyez sur 'Installer' et attendez la fin de l'installation",
+          "Ouvrez l'application VPN et connectez-vous (vous devrez peut-être d'abord créer un compte)",
+          "Désactivez 'Sources inconnues' pour la sécurité après l'installation"
+        ]
+      }
+    },
+    "avoid": {
+      "title": "VPN Android gratuits à éviter",
+      "subtitle": "Ces risques courants rendent les VPN Android gratuits dangereux :",
+      "reasons": [
+        "Vendent vos données de navigation aux annonceurs et aux courtiers en données",
+        "Injectent des publicités dans votre navigateur et vos applications",
+        "Contiennent des logiciels malveillants, des logiciels espions ou des bibliothèques de suivi cachés",
+        "Présentent de graves vulnérabilités de sécurité qui exposent vos données",
+        "Limitent sévèrement les vitesses, les rendant inutilisables",
+        "Enregistrent votre activité malgré les affirmations de non-journalisation",
+        "Épuisent la batterie avec des processus d'arrière-plan agressifs",
+        "Demandent des autorisations Android excessives dont ils n'ont pas besoin"
+      ]
+    },
+    "conclusion": {
+      "title": "Obtenez le meilleur VPN Android dès aujourd'hui",
+      "description": "NordVPN offre la meilleure expérience Android globale avec des vitesses rapides, le tunneling fractionné et une excellente sécurité. Tous nos VPN recommandés offrent des garanties de remboursement de 30 jours, vous pouvez donc les tester sans risque.",
+      "tryNordvpn": "Essayez NordVPN sans risque",
+      "compareAll": "Comparer tous les VPN"
+    }
+  },
+  "mobileVpn": {
+    "meta": {
+      "title": "Meilleur VPN Mobile (iPhone & Android) Novembre 2025 – ZeroToVPN",
+      "description": "Trouvez le meilleur VPN mobile pour votre iPhone ou Android. Nous avons testé plus de 15 applications VPN. Surfshark, NordVPN et ExpressVPN sont les meilleurs choix pour la sécurité mobile."
+    },
+    "hero": {
+      "badge": "📱 Guide VPN Mobile 2025",
+      "title": "Meilleur VPN Mobile (iPhone & Android)",
+      "subtitle": "Protégez votre smartphone sur les WiFi publics, contournez les restrictions géographiques et sécurisez vos données mobiles avec les meilleures applications VPN pour iOS et Android."
+    },
+    "why": {
+      "title": "Pourquoi vous avez besoin d'un VPN mobile",
+      "publicWifi": {
+        "title": "Protection WiFi public",
+        "description": "Restez en sécurité sur les réseaux WiFi des cafés, aéroports et hôtels que les pirates adorent exploiter."
+      },
+      "dataProtection": {
+        "title": "Protection des données 4G/5G",
+        "description": "Empêchez votre opérateur mobile de suivre et de vendre vos données de navigation."
+      },
+      "travel": {
+        "title": "Liberté en voyage",
+        "description": "Accédez à vos services de streaming domestiques et contournez la censure lors de vos voyages à l'étranger."
+      },
+      "streaming": {
+        "title": "Streaming mobile",
+        "description": "Regardez Netflix, YouTube et d'autres services sans limitation de débit par votre FAI sur votre téléphone."
+      }
+    },
+    "reviews": {
+      "title": "Top 3 des VPN mobiles (2025)",
+      "subtitle": "Nos experts ont testé ces VPN sur des appareils iPhone et Android",
+      "surfshark": {
+        "badge": "Meilleur dans l'ensemble",
+        "description": "Surfshark offre le meilleur rapport qualité-prix pour les utilisateurs mobiles avec des connexions d'appareils illimitées, une application légère et d'excellentes vitesses sur iOS et Android.",
+        "pros": [
+          "Appareils illimités",
+          "Applications légères",
+          "Meilleur prix",
+          "Usurpation GPS (Android)"
+        ],
+        "cons": [
+          "Moins de serveurs",
+          "Entreprise plus récente"
+        ]
+      },
+      "nordvpn": {
+        "description": "Le protocole propriétaire NordLynx de NordVPN offre les vitesses les plus rapides sur mobile. Les applications sont les mieux notées sur l'App Store et Google Play.",
+        "pros": [
+          "NordLynx - vitesses les plus rapides",
+          "Applications les mieux notées",
+          "Tunneling fractionné (Android)",
+          "Protection contre les menaces"
+        ],
+        "cons": [
+          "Complexe pour les débutants",
+          "Pas d'usurpation GPS"
+        ]
+      },
+      "expressvpn": {
+        "description": "ExpressVPN est le choix le plus fiable pour les voyageurs. Il fonctionne en Chine, aux Émirats arabes unis et en Turquie, avec des connexions incroyablement stables sur 4G/5G.",
+        "pros": [
+          "Fonctionne en Chine, EAU, Turquie",
+          "Super stable sur 4G/5G",
+          "Protocole Lightway",
+          "Meilleur pour voyager"
+        ],
+        "cons": [
+          "Plus cher",
+          "Limite de 8 appareils"
+        ]
+      },
+      "pros": "Avantages",
+      "cons": "Inconvénients",
+      "getButton": "Obtenir le VPN",
+      "speed": "Vitesse",
+      "security": "Sécurité",
+      "servers": "Serveurs",
+      "countries": "Pays",
+      "devices": "Appareils",
+      "unlimited": "Illimité",
+      "battery": "Impact sur la batterie",
+      "low": "Faible",
+      "moderate": "Modéré"
+    },
+    "platforms": {
+      "title": "Fonctionnalités spécifiques à la plateforme",
+      "ios": {
+        "title": "Meilleur pour iPhone",
+        "description": "Intégration iOS native, raccourcis Siri, notes App Store 4.5+, utilisation optimisée de la batterie et applications Apple Watch.",
+        "features": [
+          "Notes App Store 4.5+",
+          "Support IKEv2 natif",
+          "Raccourcis Siri",
+          "Applications Apple Watch",
+          "Utilisation optimisée de la batterie"
+        ],
+        "readMore": "Meilleurs VPNs pour iPhone →"
+      },
+      "android": {
+        "title": "Meilleur pour Android",
+        "description": "Tunneling fractionné, installation APK pour les pays censurés, widgets, DNS personnalisé et usurpation GPS (Surfshark).",
+        "features": [
+          "Tunneling fractionné",
+          "Installation APK",
+          "VPN permanent",
+          "DNS personnalisé",
+          "Coupe-circuit",
+          "Widgets",
+          "Usurpation GPS (Surfshark)"
+        ],
+        "readMore": "Meilleurs VPNs pour Android →"
+      }
+    },
+    "useCases": {
+      "title": "VPN par cas d'utilisation mobile",
+      "cases": [
+        {
+          "title": "Voyage",
+          "vpns": "ExpressVPN, Surfshark",
+          "description": "Accédez au contenu local à l'étranger"
+        },
+        {
+          "title": "WiFi public",
+          "vpns": "NordVPN, Surfshark",
+          "description": "Sécurisez les réseaux des cafés et hôtels"
+        },
+        {
+          "title": "Streaming",
+          "vpns": "NordVPN, ExpressVPN",
+          "description": "Débloquez Netflix et YouTube"
+        },
+        {
+          "title": "Réseaux sociaux",
+          "vpns": "ExpressVPN, Surfshark",
+          "description": "Contournez les interdictions en Chine, EAU"
+        },
+        {
+          "title": "Jeux",
+          "vpns": "NordVPN, ExpressVPN",
+          "description": "Faible latence pour PUBG, CoD Mobile"
+        }
+      ]
+    },
+    "performance": {
+      "title": "Performance VPN mobile",
+      "vpn": "VPN",
+      "speed": "Vitesse",
+      "battery": "Batterie",
+      "protocol": "Protocole",
+      "fastest": "Le plus rapide",
+      "fast": "Rapide",
+      "lowest": "Le plus faible",
+      "moderate": "Modéré"
+    },
+    "setup": {
+      "title": "Comment configurer un VPN mobile",
+      "ios": {
+        "title": "Configuration iPhone",
+        "steps": [
+          "Ouvrir l'App Store",
+          "Rechercher l'application VPN",
+          "Appuyer sur 'Obtenir' pour installer",
+          "Ouvrir l'application et se connecter",
+          "Autoriser la configuration VPN",
+          "Appuyer sur 'Connexion rapide'"
+        ]
+      },
+      "android": {
+        "title": "Configuration Android",
+        "steps": [
+          "Ouvrir le Google Play Store",
+          "Rechercher l'application VPN",
+          "Appuyer sur 'Installer'",
+          "Ouvrir l'application et se connecter",
+          "Accorder les permissions VPN",
+          "Activer le coupe-circuit dans les paramètres",
+          "Appuyer sur 'Connexion rapide'"
+        ]
+      }
+    },
+    "avoid": {
+      "title": "VPN mobiles gratuits à éviter",
+      "description": "Les VPN gratuits collectent souvent vos données, injectent des publicités, offrent des vitesses lentes et utilisent un chiffrement faible. Évitez TurboVPN, HolaVPN, Betternet, SuperVPN et ThunderVPN.",
+      "vpns": [
+        {
+          "name": "TurboVPN",
+          "reason": "Collecte les données utilisateur"
+        },
+        {
+          "name": "HolaVPN",
+          "reason": "Vous utilise comme nœud de sortie"
+        },
+        {
+          "name": "Betternet",
+          "reason": "Préoccupations de malware"
+        },
+        {
+          "name": "SuperVPN",
+          "reason": "Vulnérabilités de sécurité"
+        },
+        {
+          "name": "ThunderVPN",
+          "reason": "Aucune transparence"
+        }
+      ]
+    },
+    "conclusion": {
+      "title": "Notre verdict",
+      "description": "Après des tests approfondis, voici nos meilleurs choix pour les VPN mobiles en 2025 :",
+      "best": {
+        "title": "Meilleur dans l'ensemble",
+        "description": "Surfshark offre le meilleur rapport qualité-prix avec des appareils illimités et d'excellentes applications mobiles."
+      },
+      "fastest": {
+        "title": "VPN mobile le plus rapide",
+        "description": "NordVPN avec NordLynx offre des vitesses inégalées sur les réseaux 4G/5G."
+      },
+      "travel": {
+        "title": "Meilleur pour voyager",
+        "description": "ExpressVPN fonctionne de manière fiable dans les pays restrictifs comme la Chine et les EAU."
+      },
+      "getBest": "Obtenir Surfshark – 82% DE RÉDUCTION",
+      "getFastest": "Essayer NordVPN – 30 jours gratuits",
+      "getTravel": "Obtenir ExpressVPN – 49% DE RÉDUCTION"
+    }
+  },
+  "iphoneVpn": {
+    "meta": {
+      "title": "Meilleur VPN pour iPhone et iOS Novembre 2025 – ZeroToVPN",
+      "description": "Trouvez le meilleur VPN pour iPhone et iOS. Nous avons testé plus de 15 applications VPN. ExpressVPN, NordVPN et Surfshark sont les meilleurs choix pour la sécurité et la confidentialité iOS."
+    },
+    "hero": {
+      "badge": "📱 Guide VPN iOS 2025",
+      "title": "Meilleur VPN pour iPhone et iOS",
+      "subtitle": "Protégez votre iPhone avec les meilleures applications VPN optimisées pour iOS. Intégration native, excellentes notes App Store et performances économes en batterie."
+    },
+    "comparison": {
+      "title": "Comparaison rapide",
+      "vpn": "VPN",
+      "rating": "App Store",
+      "protocol": "Protocole",
+      "battery": "Batterie",
+      "price": "Prix",
+      "excellent": "Excellent",
+      "good": "Bon"
+    },
+    "whyIos": {
+      "title": "Pourquoi iPhone a besoin d'un VPN",
+      "appStore": {
+        "title": "App Store uniquement",
+        "description": "iOS limite l'installation de VPN aux applications de l'App Store, garantissant la qualité et la vérification de la sécurité."
+      },
+      "privacy": {
+        "title": "Confidentialité Apple",
+        "description": "Améliorez les fonctionnalités de confidentialité d'Apple avec un chiffrement de bout en bout pour tout votre trafic Internet."
+      },
+      "publicWifi": {
+        "title": "Protection WiFi public",
+        "description": "Sécurisez votre iPhone sur les réseaux de cafés, d'aéroports et d'hôtels que les pirates ciblent."
+      }
+    },
+    "reviews": {
+      "title": "Top 3 des VPN pour iPhone",
+      "subtitle": "Testés sur iOS 17+ avec les derniers modèles d'iPhone",
+      "expressvpn": {
+        "badge": "Meilleure application iOS",
+        "description": "ExpressVPN offre la meilleure expérience iOS globale avec son protocole Lightway, son interface intuitive et ses excellentes notes sur l'App Store.",
+        "appStoreRating": "4.7★ (plus de 200 000 avis)",
+        "pros": [
+          "Meilleure expérience d'application iOS",
+          "Protocole Lightway - rapide et sécurisé",
+          "Interface intuitive",
+          "Support client 24h/24 et 7j/7"
+        ],
+        "cons": [
+          "Prix plus élevé",
+          "Limité à 8 appareils"
+        ]
+      },
+      "nordvpn": {
+        "description": "L'application iOS de NordVPN propose le protocole NordLynx pour des vitesses maximales, des raccourcis Siri et une intégration Apple Watch.",
+        "appStoreRating": "4.6★ (plus de 150 000 avis)",
+        "pros": [
+          "NordLynx - protocole le plus rapide",
+          "Support des raccourcis Siri",
+          "Application Apple Watch",
+          "Protection contre les menaces"
+        ],
+        "cons": [
+          "Pas de tunneling fractionné sur iOS",
+          "L'application peut être complexe"
+        ]
+      },
+      "surfshark": {
+        "description": "Surfshark propose des appareils illimités sur un seul abonnement avec une interface iOS épurée et un excellent rapport qualité-prix.",
+        "appStoreRating": "4.5★ (plus de 100 000 avis)",
+        "pros": [
+          "Appareils illimités",
+          "Meilleur prix",
+          "Bloqueur de publicités CleanWeb",
+          "Usurpation GPS"
+        ],
+        "cons": [
+          "Réseau de serveurs plus petit",
+          "Pas d'application Apple Watch"
+        ]
+      },
+      "pros": "Avantages",
+      "cons": "Inconvénients",
+      "getButton": "Obtenir pour iPhone",
+      "servers": "Serveurs",
+      "devices": "Appareils",
+      "unlimited": "Illimité",
+      "protocol": "Protocole",
+      "battery": "Batterie",
+      "excellent": "Excellent",
+      "good": "Bon"
+    },
+    "iosFeatures": {
+      "title": "Fonctionnalités spécifiques à iOS",
+      "appStore": {
+        "title": "Notes App Store",
+        "description": "Tous les VPN recommandés ont des notes de 4.5+ étoiles avec des centaines de milliers d'avis.",
+        "ratings": [
+          "ExpressVPN : 4.7★ (plus de 200 000 avis)",
+          "NordVPN : 4.6★ (plus de 150 000 avis)",
+          "Surfshark : 4.5★ (plus de 100 000 avis)"
+        ]
+      },
+      "protocols": {
+        "title": "Support des protocoles",
+        "description": "Support IKEv2 natif plus WireGuard et Lightway pour des performances iOS optimales.",
+        "list": [
+          "IKEv2 (natif iOS)",
+          "WireGuard",
+          "Lightway (ExpressVPN)",
+          "NordLynx (NordVPN)",
+          "OpenVPN"
+        ]
+      },
+      "battery": {
+        "title": "Optimisation de la batterie",
+        "description": "Les protocoles modernes minimisent la consommation de la batterie tout en maintenant la sécurité.",
+        "tips": [
+          "Utilisez WireGuard pour la meilleure autonomie de batterie",
+          "Activez la connexion automatique uniquement si nécessaire",
+          "Désactivez l'actualisation en arrière-plan pour le VPN"
+        ]
+      },
+      "integration": {
+        "title": "Intégration iOS",
+        "description": "Raccourcis Siri, widgets et applications Apple Watch pour un contrôle transparent.",
+        "features": [
+          "Raccourcis Siri (NordVPN, Surfshark)",
+          "Widgets iOS",
+          "Applications Apple Watch (ExpressVPN, NordVPN)",
+          "Intégration Trousseau"
+        ]
+      }
+    },
+    "setupGuide": {
+      "title": "Comment configurer un VPN sur iPhone",
+      "steps": [
+        "Ouvrez l'App Store sur votre iPhone",
+        "Recherchez votre VPN (ExpressVPN, NordVPN ou Surfshark)",
+        "Appuyez sur 'Obtenir' pour télécharger et installer",
+        "Ouvrez l'application et connectez-vous ou créez un compte",
+        "Autorisez la configuration VPN lorsqu'on vous le demande",
+        "Appuyez sur 'Connexion rapide' pour sécuriser votre connexion"
+      ]
+    },
+    "limitations": {
+      "title": "Limitations VPN iOS",
+      "items": [
+        "Pas de tunneling fractionné sur iOS (restriction Apple)",
+        "Le VPN doit provenir uniquement de l'App Store",
+        "Certains protocoles peuvent ne pas fonctionner sur tous les réseaux",
+        "Le VPN en arrière-plan peut se déconnecter en mode basse consommation"
+      ]
+    },
+    "avoidFree": {
+      "title": "VPN iPhone gratuits à éviter",
+      "recommendation": {
+        "title": "Notre recommandation",
+        "description": "Les VPN gratuits collectent souvent des données et affichent des publicités. Les VPN premium offrent une meilleure sécurité et des politiques de non-journalisation."
+      },
+      "reasons": [
+        "Collectent et vendent vos données",
+        "Injectent des publicités dans votre navigation",
+        "Bande passante sévèrement limitée",
+        "Normes de chiffrement faibles",
+        "Aucun support client"
+      ]
+    },
+    "conclusion": {
+      "title": "Notre verdict",
+      "description": "Pour les utilisateurs d'iPhone en 2025, voici nos principales recommandations :",
+      "tryButton": "Essayer le VPN",
+      "cards": {
+        "best": {
+          "badge": "Meilleure application iOS",
+          "description": "ExpressVPN offre la meilleure expérience iOS globale avec le protocole Lightway."
+        },
+        "value": {
+          "badge": "VPN iOS le plus rapide",
+          "description": "NordVPN avec NordLynx offre des vitesses inégalées et une intégration iOS."
+        },
+        "budget": {
+          "badge": "Meilleur rapport qualité-prix",
+          "description": "Surfshark propose des appareils illimités au meilleur prix pour les utilisateurs d'iPhone."
+        }
+      }
+    }
   }
 }

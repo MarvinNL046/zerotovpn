@@ -172,6 +172,34 @@ const countries = [
     },
   },
   {
+    slug: "iran",
+    flag: "🇮🇷",
+    name: { en: "Iran", nl: "Iran", de: "Iran", es: "Irán", fr: "Iran", zh: "伊朗", ja: "イラン", ko: "이란", th: "อิหร่าน" },
+    status: "restricted",
+    statusText: {
+      en: "Heavily restricted",
+      nl: "Zwaar beperkt",
+      de: "Stark eingeschränkt",
+      es: "Muy restringido",
+      fr: "Très restreint",
+      zh: "严格限制",
+      ja: "厳しく制限",
+      ko: "엄격히 제한됨",
+      th: "ถูกจำกัดอย่างหนัก"
+    },
+    description: {
+      en: "One of strictest censorship systems. DPI blocks most VPNs. Obfuscation technology essential.",
+      nl: "Een van de strengste censuursystemen. DPI blokkeert de meeste VPNs. Obfuscatie-technologie essentieel.",
+      de: "Eines der strengsten Zensursysteme. DPI blockiert die meisten VPNs. Verschleierungstechnologie unerlässlich.",
+      es: "Uno de los sistemas de censura más estrictos. DPI bloquea la mayoría de VPNs. Tecnología de ofuscación esencial.",
+      fr: "L'un des systèmes de censure les plus stricts. Le DPI bloque la plupart des VPN. Technologie d'obfuscation essentielle.",
+      zh: "最严格的审查系统之一。DPI阻止大多数VPN。混淆技术至关重要。",
+      ja: "最も厳しい検閲システムの1つ。DPIがほとんどのVPNをブロック。難読化技術が不可欠。",
+      ko: "가장 엄격한 검열 시스템 중 하나. DPI가 대부분의 VPN을 차단. 난독화 기술 필수.",
+      th: "หนึ่งในระบบเซ็นเซอร์ที่เข้มงวดที่สุด DPI บล็อก VPN ส่วนใหญ่ เทคโนโลยีการปิดบังจำเป็นอย่างยิ่ง"
+    },
+  },
+  {
     slug: "netherlands",
     flag: "🇳🇱",
     name: { en: "Netherlands", nl: "Nederland", de: "Niederlande", es: "Países Bajos", fr: "Pays-Bas", zh: "荷兰", ja: "オランダ", ko: "네덜란드", th: "เนเธอร์แลนด์" },
@@ -213,7 +241,7 @@ const content = {
     regulatedLabel: "Regulated",
     viewGuide: "View Guide",
     moreCountries: "More Country Guides Coming Soon",
-    moreCountriesText: "We're researching VPN situations in more countries including Iran, India, Pakistan, Vietnam, and Saudi Arabia.",
+    moreCountriesText: "We're researching VPN situations in more countries including India, Pakistan, Vietnam, and Saudi Arabia.",
   },
   nl: {
     badge: "Bijgewerkt november 2025",
@@ -226,7 +254,7 @@ const content = {
     regulatedLabel: "Gereguleerd",
     viewGuide: "Bekijk Gids",
     moreCountries: "Meer Landgidsen Binnenkort",
-    moreCountriesText: "We onderzoeken VPN-situaties in meer landen waaronder Iran, India, Pakistan, Vietnam en Saoedi-Arabië.",
+    moreCountriesText: "We onderzoeken VPN-situaties in meer landen waaronder India, Pakistan, Vietnam en Saoedi-Arabië.",
   },
   de: {
     badge: "Aktualisiert November 2025",
@@ -239,7 +267,7 @@ const content = {
     regulatedLabel: "Reguliert",
     viewGuide: "Leitfaden anzeigen",
     moreCountries: "Weitere Länderführer folgen bald",
-    moreCountriesText: "Wir erforschen VPN-Situationen in weiteren Ländern einschließlich Iran, Indien, Pakistan, Vietnam und Saudi-Arabien.",
+    moreCountriesText: "Wir erforschen VPN-Situationen in weiteren Ländern einschließlich Indien, Pakistan, Vietnam und Saudi-Arabien.",
   },
   es: {
     badge: "Actualizado noviembre 2025",
@@ -252,7 +280,7 @@ const content = {
     regulatedLabel: "Regulado",
     viewGuide: "Ver Guía",
     moreCountries: "Más Guías de Países Próximamente",
-    moreCountriesText: "Estamos investigando situaciones de VPN en más países incluyendo Irán, India, Pakistán, Vietnam y Arabia Saudita.",
+    moreCountriesText: "Estamos investigando situaciones de VPN en más países incluyendo India, Pakistán, Vietnam y Arabia Saudita.",
   },
   fr: {
     badge: "Mis à jour novembre 2025",
@@ -265,7 +293,7 @@ const content = {
     regulatedLabel: "Réglementé",
     viewGuide: "Voir le Guide",
     moreCountries: "Plus de Guides de Pays Bientôt",
-    moreCountriesText: "Nous recherchons les situations VPN dans d'autres pays, notamment l'Iran, l'Inde, le Pakistan, le Vietnam et l'Arabie Saoudite.",
+    moreCountriesText: "Nous recherchons les situations VPN dans d'autres pays, notamment l'Inde, le Pakistan, le Vietnam et l'Arabie Saoudite.",
   },
   zh: {
     badge: "2025年11月更新",
@@ -278,7 +306,7 @@ const content = {
     regulatedLabel: "受监管",
     viewGuide: "查看指南",
     moreCountries: "更多国家/地区指南即将推出",
-    moreCountriesText: "我们正在研究更多国家/地区的VPN情况，包括伊朗、印度、巴基斯坦、越南和沙特阿拉伯。",
+    moreCountriesText: "我们正在研究更多国家/地区的VPN情况，包括印度、巴基斯坦、越南和沙特阿拉伯。",
   },
   ja: {
     badge: "2025年11月更新",
@@ -291,7 +319,7 @@ const content = {
     regulatedLabel: "規制あり",
     viewGuide: "ガイドを見る",
     moreCountries: "さらに多くの国別ガイドが近日公開",
-    moreCountriesText: "イラン、インド、パキスタン、ベトナム、サウジアラビアなど、さらに多くの国のVPN状況を調査中です。",
+    moreCountriesText: "インド、パキスタン、ベトナム、サウジアラビアなど、さらに多くの国のVPN状況を調査中です。",
   },
   ko: {
     badge: "2025년 11월 업데이트",
@@ -304,7 +332,7 @@ const content = {
     regulatedLabel: "규제됨",
     viewGuide: "가이드 보기",
     moreCountries: "더 많은 국가 가이드 곧 공개",
-    moreCountriesText: "이란, 인도, 파키스탄, 베트남, 사우디아라비아를 포함한 더 많은 국가의 VPN 상황을 조사하고 있습니다.",
+    moreCountriesText: "인도, 파키스탄, 베트남, 사우디아라비아를 포함한 더 많은 국가의 VPN 상황을 조사하고 있습니다.",
   },
   th: {
     badge: "อัปเดตพฤศจิกายน 2025",
@@ -317,7 +345,7 @@ const content = {
     regulatedLabel: "มีการควบคุม",
     viewGuide: "ดูคู่มือ",
     moreCountries: "คู่มือประเทศเพิ่มเติมเร็วๆ นี้",
-    moreCountriesText: "เรากำลังศึกษาสถานการณ์ VPN ในประเทศเพิ่มเติม รวมถึงอิหร่าน อินเดีย ปากีสถาน เวียดนาม และซาอุดีอาระเบีย",
+    moreCountriesText: "เรากำลังศึกษาสถานการณ์ VPN ในประเทศเพิ่มเติม รวมถึงอินเดีย ปากีสถาน เวียดนาม และซาอุดีอาระเบีย",
   },
 };
 
@@ -438,7 +466,6 @@ export default async function CountriesPage({ params }: Props) {
             <h2 className="text-2xl font-bold mb-4">{t.moreCountries}</h2>
             <p className="text-muted-foreground">{t.moreCountriesText}</p>
             <div className="flex justify-center gap-4 mt-6">
-              <span className="text-3xl opacity-50">🇮🇷</span>
               <span className="text-3xl opacity-50">🇮🇳</span>
               <span className="text-3xl opacity-50">🇵🇰</span>
               <span className="text-3xl opacity-50">🇻🇳</span>

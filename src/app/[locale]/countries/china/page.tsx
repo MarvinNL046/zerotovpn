@@ -116,7 +116,7 @@ export default async function ChinaVpnPage({ params }: Props) {
 
   // Top 3 VPNs that actually work in China (based on research)
   const topChinaVpns = allVpns.filter((vpn) =>
-    ["expressvpn", "surfshark"].includes(vpn.slug)
+    ["expressvpn", "astrill", "surfshark"].includes(vpn.slug)
   );
 
   // VPNs that sometimes work (~70% success rate)

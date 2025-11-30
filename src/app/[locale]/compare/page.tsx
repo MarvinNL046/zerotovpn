@@ -1,4 +1,4 @@
-import { setRequestLocale } from "next-intl/server";
+import { setRequestLocale, getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import { getAllVpns } from "@/lib/vpn-data-layer";
@@ -46,6 +46,7 @@ export default async function ComparePage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
 
+  const t = await getTranslations("comparePage");
   const vpns = await getAllVpns();
 
   return (
@@ -55,17 +56,16 @@ export default async function ComparePage({ params }: Props) {
         <div className="container">
           <div className="max-w-3xl mx-auto text-center space-y-4">
             <Badge variant="secondary" className="px-4 py-1">
-              Updated November 2025
+              {t("badge")}
             </Badge>
             <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
               <Scale className="h-8 w-8 text-primary" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-              Compare VPNs Side by Side
+              {t("title")}
             </h1>
             <p className="text-lg text-muted-foreground">
-              See how the top VPN services stack up against each other. Compare
-              speeds, security features, pricing, and more.
+              {t("subtitle")}
             </p>
           </div>
         </div>
@@ -81,13 +81,13 @@ export default async function ComparePage({ params }: Props) {
       {/* Full Comparison Table */}
       <section className="py-12 lg:py-16">
         <div className="container">
-          <h2 className="text-2xl font-bold mb-6 text-center">Full Comparison Table</h2>
+          <h2 className="text-2xl font-bold mb-6 text-center">{t("fullComparisonTable")}</h2>
           <div className="overflow-x-auto">
             <table className="w-full border-collapse">
               <thead>
                 <tr className="border-b">
                   <th className="text-left p-4 bg-muted/50 font-semibold sticky left-0 min-w-[200px]">
-                    VPN Provider
+                    {t("vpnProvider")}
                   </th>
                   {vpns.map((vpn) => (
                     <th
@@ -99,7 +99,7 @@ export default async function ComparePage({ params }: Props) {
                         <RatingStars rating={vpn.overallRating} size="sm" />
                         {vpn.editorChoice && (
                           <Badge className="bg-yellow-500 text-yellow-950 text-xs">
-                            Editor&apos;s Choice
+                            {t("editorsChoice")}
                           </Badge>
                         )}
                       </div>
@@ -113,7 +113,7 @@ export default async function ComparePage({ params }: Props) {
                   <td className="p-4 font-medium sticky left-0 bg-background">
                     <div className="flex items-center gap-2">
                       <Shield className="h-4 w-4 text-primary" />
-                      Overall Rating
+                      {t("overallRating")}
                     </div>
                   </td>
                   {vpns.map((vpn) => (
@@ -131,13 +131,13 @@ export default async function ComparePage({ params }: Props) {
                   <td className="p-4 font-medium sticky left-0 bg-background">
                     <div className="flex items-center gap-2">
                       <DollarSign className="h-4 w-4 text-primary" />
-                      Monthly Price
+                      {t("monthlyPrice")}
                     </div>
                   </td>
                   {vpns.map((vpn) => (
                     <td key={vpn.id} className="p-4 text-center">
                       <span className="font-semibold">${vpn.priceMonthly}</span>
-                      <span className="text-muted-foreground">/mo</span>
+                      <span className="text-muted-foreground">{t("perMonth")}</span>
                     </td>
                   ))}
                 </tr>
@@ -147,7 +147,7 @@ export default async function ComparePage({ params }: Props) {
                   <td className="p-4 font-medium sticky left-0 bg-green-50/50 dark:bg-green-900/10">
                     <div className="flex items-center gap-2">
                       <DollarSign className="h-4 w-4 text-green-600" />
-                      Best Price (2yr plan)
+                      {t("bestPrice")}
                     </div>
                   </td>
                   {vpns.map((vpn) => (
@@ -155,7 +155,7 @@ export default async function ComparePage({ params }: Props) {
                       <span className="text-xl font-bold text-green-600">
                         ${vpn.priceTwoYear || vpn.priceYearly}
                       </span>
-                      <span className="text-muted-foreground">/mo</span>
+                      <span className="text-muted-foreground">{t("perMonth")}</span>
                     </td>
                   ))}
                 </tr>
@@ -165,13 +165,13 @@ export default async function ComparePage({ params }: Props) {
                   <td className="p-4 font-medium sticky left-0 bg-background">
                     <div className="flex items-center gap-2">
                       <Clock className="h-4 w-4 text-primary" />
-                      Money-Back Guarantee
+                      {t("moneyBackGuarantee")}
                     </div>
                   </td>
                   {vpns.map((vpn) => (
                     <td key={vpn.id} className="p-4 text-center">
                       <span className="font-semibold">{vpn.moneyBackDays}</span>{" "}
-                      days
+                      {t("days")}
                     </td>
                   ))}
                 </tr>
@@ -181,7 +181,7 @@ export default async function ComparePage({ params }: Props) {
                   <td className="p-4 font-medium sticky left-0 bg-background">
                     <div className="flex items-center gap-2">
                       <DollarSign className="h-4 w-4 text-primary" />
-                      Free Tier
+                      {t("freeTier")}
                     </div>
                   </td>
                   {vpns.map((vpn) => (
@@ -200,7 +200,7 @@ export default async function ComparePage({ params }: Props) {
                   <td className="p-4 font-medium sticky left-0 bg-background">
                     <div className="flex items-center gap-2">
                       <Server className="h-4 w-4 text-primary" />
-                      Total Servers
+                      {t("totalServers")}
                     </div>
                   </td>
                   {vpns.map((vpn) => (
@@ -217,7 +217,7 @@ export default async function ComparePage({ params }: Props) {
                   <td className="p-4 font-medium sticky left-0 bg-background">
                     <div className="flex items-center gap-2">
                       <Globe className="h-4 w-4 text-primary" />
-                      Countries
+                      {t("countries")}
                     </div>
                   </td>
                   {vpns.map((vpn) => (
@@ -232,13 +232,13 @@ export default async function ComparePage({ params }: Props) {
                   <td className="p-4 font-medium sticky left-0 bg-background">
                     <div className="flex items-center gap-2">
                       <Monitor className="h-4 w-4 text-primary" />
-                      Simultaneous Devices
+                      {t("simultaneousDevices")}
                     </div>
                   </td>
                   {vpns.map((vpn) => (
                     <td key={vpn.id} className="p-4 text-center">
                       <span className="font-semibold">
-                        {vpn.maxDevices >= 999 ? "Unlimited" : vpn.maxDevices}
+                        {vpn.maxDevices >= 999 ? t("unlimited") : vpn.maxDevices}
                       </span>
                     </td>
                   ))}
@@ -249,7 +249,7 @@ export default async function ComparePage({ params }: Props) {
                   <td className="p-4 font-medium sticky left-0 bg-background">
                     <div className="flex items-center gap-2">
                       <Zap className="h-4 w-4 text-primary" />
-                      Speed Score
+                      {t("speedScore")}
                     </div>
                   </td>
                   {vpns.map((vpn) => (
@@ -274,7 +274,7 @@ export default async function ComparePage({ params }: Props) {
                   <td className="p-4 font-medium sticky left-0 bg-background">
                     <div className="flex items-center gap-2">
                       <Lock className="h-4 w-4 text-primary" />
-                      Security Score
+                      {t("securityScore")}
                     </div>
                   </td>
                   {vpns.map((vpn) => (
@@ -299,7 +299,7 @@ export default async function ComparePage({ params }: Props) {
                   <td className="p-4 font-medium sticky left-0 bg-background">
                     <div className="flex items-center gap-2">
                       <Tv className="h-4 w-4 text-primary" />
-                      Streaming Score
+                      {t("streamingScore")}
                     </div>
                   </td>
                   {vpns.map((vpn) => (
@@ -324,7 +324,7 @@ export default async function ComparePage({ params }: Props) {
                   <td className="p-4 font-medium sticky left-0 bg-background">
                     <div className="flex items-center gap-2">
                       <Shield className="h-4 w-4 text-primary" />
-                      Protocols
+                      {t("protocols")}
                     </div>
                   </td>
                   {vpns.map((vpn) => (
@@ -349,7 +349,7 @@ export default async function ComparePage({ params }: Props) {
                   <td className="p-4 font-medium sticky left-0 bg-background">
                     <div className="flex items-center gap-2">
                       <Lock className="h-4 w-4 text-primary" />
-                      Encryption
+                      {t("encryption")}
                     </div>
                   </td>
                   {vpns.map((vpn) => (
@@ -364,7 +364,7 @@ export default async function ComparePage({ params }: Props) {
                   <td className="p-4 font-medium sticky left-0 bg-background">
                     <div className="flex items-center gap-2">
                       <Shield className="h-4 w-4 text-primary" />
-                      Kill Switch
+                      {t("killSwitch")}
                     </div>
                   </td>
                   {vpns.map((vpn) => (
@@ -383,7 +383,7 @@ export default async function ComparePage({ params }: Props) {
                   <td className="p-4 font-medium sticky left-0 bg-background">
                     <div className="flex items-center gap-2">
                       <Shield className="h-4 w-4 text-primary" />
-                      No-Logs Policy
+                      {t("noLogsPolicy")}
                     </div>
                   </td>
                   {vpns.map((vpn) => (
@@ -402,7 +402,7 @@ export default async function ComparePage({ params }: Props) {
                   <td className="p-4 font-medium sticky left-0 bg-background">
                     <div className="flex items-center gap-2">
                       <Tv className="h-4 w-4 text-primary" />
-                      Netflix Support
+                      {t("netflixSupport")}
                     </div>
                   </td>
                   {vpns.map((vpn) => (
@@ -421,7 +421,7 @@ export default async function ComparePage({ params }: Props) {
                   <td className="p-4 font-medium sticky left-0 bg-background">
                     <div className="flex items-center gap-2">
                       <Download className="h-4 w-4 text-primary" />
-                      Torrenting Support
+                      {t("torrentingSupport")}
                     </div>
                   </td>
                   {vpns.map((vpn) => (
@@ -438,7 +438,7 @@ export default async function ComparePage({ params }: Props) {
                 {/* CTA Row */}
                 <tr className="bg-muted/30">
                   <td className="p-4 font-medium sticky left-0 bg-muted/30">
-                    Get Started
+                    {t("getStarted")}
                   </td>
                   {vpns.map((vpn) => (
                     <td key={vpn.id} className="p-4 text-center">
@@ -449,10 +449,10 @@ export default async function ComparePage({ params }: Props) {
                           affiliateUrl={vpn.affiliateUrl}
                           className="w-full"
                         >
-                          Visit {vpn.name}
+                          {t("visit")} {vpn.name}
                         </AffiliateButton>
                         <Button variant="outline" size="sm" asChild>
-                          <Link href={`/reviews/${vpn.slug}`}>Read Review</Link>
+                          <Link href={`/reviews/${vpn.slug}`}>{t("readReview")}</Link>
                         </Button>
                       </div>
                     </td>
@@ -468,9 +468,9 @@ export default async function ComparePage({ params }: Props) {
       <section className="py-12 lg:py-16 bg-muted/30">
         <div className="container">
           <div className="text-center mb-10">
-            <h2 className="text-2xl font-bold mb-2">Quick Comparison</h2>
+            <h2 className="text-2xl font-bold mb-2">{t("quickComparison")}</h2>
             <p className="text-muted-foreground">
-              Here&apos;s how the top VPNs compare in key categories
+              {t("quickComparisonSubtitle")}
             </p>
           </div>
 
@@ -479,15 +479,14 @@ export default async function ComparePage({ params }: Props) {
             <div className="bg-card border rounded-xl p-6">
               <div className="flex items-center gap-2 mb-4">
                 <Shield className="h-5 w-5 text-primary" />
-                <h3 className="font-bold">Best Overall</h3>
+                <h3 className="font-bold">{t("bestOverall")}</h3>
               </div>
               <div className="flex items-center justify-between mb-2">
                 <span className="text-2xl font-bold">NordVPN</span>
-                <Badge className="bg-yellow-500 text-yellow-950">Winner</Badge>
+                <Badge className="bg-yellow-500 text-yellow-950">{t("winner")}</Badge>
               </div>
               <p className="text-sm text-muted-foreground mb-4">
-                Excellent balance of speed, security, and features. Our top pick
-                for most users.
+                {t("bestOverallDesc")}
               </p>
               <AffiliateButton
                 vpnId="nordvpn"
@@ -503,15 +502,14 @@ export default async function ComparePage({ params }: Props) {
             <div className="bg-card border rounded-xl p-6">
               <div className="flex items-center gap-2 mb-4">
                 <DollarSign className="h-5 w-5 text-green-500" />
-                <h3 className="font-bold">Best Value</h3>
+                <h3 className="font-bold">{t("bestValue")}</h3>
               </div>
               <div className="flex items-center justify-between mb-2">
                 <span className="text-2xl font-bold">Surfshark</span>
-                <Badge variant="secondary">$1.99/mo</Badge>
+                <Badge variant="secondary">$1.99{t("perMonth")}</Badge>
               </div>
               <p className="text-sm text-muted-foreground mb-4">
-                Unlimited devices at the lowest price. Perfect for families and
-                budget-conscious users.
+                {t("bestValueDesc")}
               </p>
               <AffiliateButton
                 vpnId="surfshark"
@@ -527,15 +525,14 @@ export default async function ComparePage({ params }: Props) {
             <div className="bg-card border rounded-xl p-6">
               <div className="flex items-center gap-2 mb-4">
                 <Zap className="h-5 w-5 text-orange-500" />
-                <h3 className="font-bold">Fastest VPN</h3>
+                <h3 className="font-bold">{t("fastestVpn")}</h3>
               </div>
               <div className="flex items-center justify-between mb-2">
                 <span className="text-2xl font-bold">ExpressVPN</span>
-                <Badge variant="secondary">96% Speed</Badge>
+                <Badge variant="secondary">96% {t("speed")}</Badge>
               </div>
               <p className="text-sm text-muted-foreground mb-4">
-                Consistently the fastest VPN in our tests. Best for streaming and
-                gaming.
+                {t("fastestVpnDesc")}
               </p>
               <AffiliateButton
                 vpnId="expressvpn"
@@ -551,15 +548,14 @@ export default async function ComparePage({ params }: Props) {
             <div className="bg-card border rounded-xl p-6">
               <div className="flex items-center gap-2 mb-4">
                 <Lock className="h-5 w-5 text-blue-500" />
-                <h3 className="font-bold">Best Security</h3>
+                <h3 className="font-bold">{t("bestSecurity")}</h3>
               </div>
               <div className="flex items-center justify-between mb-2">
                 <span className="text-2xl font-bold">ProtonVPN</span>
-                <Badge variant="secondary">99% Security</Badge>
+                <Badge variant="secondary">99% {t("security")}</Badge>
               </div>
               <p className="text-sm text-muted-foreground mb-4">
-                Swiss-based with Secure Core servers. Open source and audited for
-                maximum privacy.
+                {t("bestSecurityDesc")}
               </p>
               <AffiliateButton
                 vpnId="protonvpn"
@@ -575,15 +571,14 @@ export default async function ComparePage({ params }: Props) {
             <div className="bg-card border rounded-xl p-6">
               <div className="flex items-center gap-2 mb-4">
                 <Server className="h-5 w-5 text-purple-500" />
-                <h3 className="font-bold">Most Servers</h3>
+                <h3 className="font-bold">{t("mostServers")}</h3>
               </div>
               <div className="flex items-center justify-between mb-2">
                 <span className="text-2xl font-bold">PIA</span>
                 <Badge variant="secondary">35,000+</Badge>
               </div>
               <p className="text-sm text-muted-foreground mb-4">
-                Massive server network with proven no-logs policy. Unlimited
-                connections included.
+                {t("mostServersDesc")}
               </p>
               <AffiliateButton
                 vpnId="pia"
@@ -599,15 +594,14 @@ export default async function ComparePage({ params }: Props) {
             <div className="bg-card border rounded-xl p-6">
               <div className="flex items-center gap-2 mb-4">
                 <DollarSign className="h-5 w-5 text-green-500" />
-                <h3 className="font-bold">Best Free Option</h3>
+                <h3 className="font-bold">{t("bestFreeOption")}</h3>
               </div>
               <div className="flex items-center justify-between mb-2">
                 <span className="text-2xl font-bold">ProtonVPN</span>
-                <Badge className="bg-green-500 text-white">Free Tier</Badge>
+                <Badge className="bg-green-500 text-white">{t("freeTierBadge")}</Badge>
               </div>
               <p className="text-sm text-muted-foreground mb-4">
-                Only trustworthy free VPN with no data limits or ads. Limited
-                servers but fully secure.
+                {t("bestFreeDesc")}
               </p>
               <AffiliateButton
                 vpnId="protonvpn"
@@ -615,7 +609,7 @@ export default async function ComparePage({ params }: Props) {
                 affiliateUrl="https://go.zerotovpn.com/protonvpn"
                 className="w-full"
               >
-                Try Free
+                {t("tryFree")}
               </AffiliateButton>
             </div>
           </div>
@@ -627,49 +621,43 @@ export default async function ComparePage({ params }: Props) {
         <div className="container">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-2xl font-bold mb-6 text-center">
-              How We Compare VPNs
+              {t("howWeCompare")}
             </h2>
             <div className="space-y-4">
               <div className="bg-card border rounded-lg p-5">
                 <h3 className="font-semibold mb-2 flex items-center gap-2">
                   <Zap className="h-5 w-5 text-primary" />
-                  Speed Testing
+                  {t("speedTesting")}
                 </h3>
                 <p className="text-muted-foreground text-sm">
-                  We test download and upload speeds across 50+ server locations
-                  using standardized conditions. Speeds are measured multiple
-                  times and averaged.
+                  {t("speedTestingDesc")}
                 </p>
               </div>
               <div className="bg-card border rounded-lg p-5">
                 <h3 className="font-semibold mb-2 flex items-center gap-2">
                   <Shield className="h-5 w-5 text-primary" />
-                  Security Analysis
+                  {t("securityAnalysis")}
                 </h3>
                 <p className="text-muted-foreground text-sm">
-                  We evaluate encryption protocols, check for DNS/WebRTC leaks,
-                  review privacy policies, and consider the jurisdiction of each
-                  provider.
+                  {t("securityAnalysisDesc")}
                 </p>
               </div>
               <div className="bg-card border rounded-lg p-5">
                 <h3 className="font-semibold mb-2 flex items-center gap-2">
                   <Tv className="h-5 w-5 text-primary" />
-                  Streaming Tests
+                  {t("streamingTests")}
                 </h3>
                 <p className="text-muted-foreground text-sm">
-                  We test each VPN with Netflix, Disney+, BBC iPlayer, and other
-                  popular streaming services across multiple regions.
+                  {t("streamingTestsDesc")}
                 </p>
               </div>
               <div className="bg-card border rounded-lg p-5">
                 <h3 className="font-semibold mb-2 flex items-center gap-2">
                   <DollarSign className="h-5 w-5 text-primary" />
-                  Value Assessment
+                  {t("valueAssessment")}
                 </h3>
                 <p className="text-muted-foreground text-sm">
-                  We compare pricing, features, and performance to determine which
-                  VPNs offer the best value for money at each price point.
+                  {t("valueAssessmentDesc")}
                 </p>
               </div>
             </div>
@@ -681,17 +669,16 @@ export default async function ComparePage({ params }: Props) {
       <section className="py-12 lg:py-16 bg-primary/5">
         <div className="container">
           <div className="max-w-2xl mx-auto text-center space-y-6">
-            <h2 className="text-2xl font-bold">Need Help Deciding?</h2>
+            <h2 className="text-2xl font-bold">{t("needHelpDeciding")}</h2>
             <p className="text-muted-foreground">
-              Check out our detailed reviews for in-depth analysis of each VPN, or
-              read our guide to learn more about what to look for in a VPN.
+              {t("needHelpDesc")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild>
-                <Link href="/best/best-vpn">View Best VPNs</Link>
+                <Link href="/best/best-vpn">{t("viewBestVpns")}</Link>
               </Button>
               <Button variant="outline" asChild>
-                <Link href="/guides/what-is-vpn">What is a VPN?</Link>
+                <Link href="/guides/what-is-vpn">{t("whatIsVpn")}</Link>
               </Button>
             </div>
           </div>

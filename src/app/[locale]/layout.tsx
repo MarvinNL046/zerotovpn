@@ -129,16 +129,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages();
 
   return (
-    <>
-      <head>
-        <link rel="manifest" href="/manifest.json" />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/icon-192.png" />
-        <meta name="theme-color" content="#3b82f6" />
-        <OrganizationJsonLd />
-        <WebsiteJsonLd />
-      </head>
-      <ThemeProvider
+    <ThemeProvider
         attribute="class"
         defaultTheme="system"
         enableSystem
@@ -152,9 +143,11 @@ export default async function LocaleLayout({ children, params }: Props) {
             {/* Conversion optimization components */}
             <ExitIntentPopup />
             <StickyCTABar />
+            {/* JSON-LD Structured Data - placed in body to avoid hydration issues */}
+            <OrganizationJsonLd />
+            <WebsiteJsonLd />
           </div>
         </NextIntlClientProvider>
       </ThemeProvider>
-    </>
   );
 }

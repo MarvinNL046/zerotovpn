@@ -15,6 +15,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" href="/icon-192.png" />
+        <meta name="theme-color" content="#3b82f6" />
+      </head>
       <body className="min-h-screen bg-background font-sans antialiased">
         <StackProvider app={stackServerApp}>
           <StackTheme>

@@ -40,6 +40,7 @@ export function SpeedTestWidget() {
   const [serverLocation, setServerLocation] = useState("Cloudflare CDN");
   const abortControllerRef = useRef<AbortController | null>(null);
   const animationFrameRef = useRef<number | null>(null);
+  const displaySpeedRef = useRef(0);
 
   // Load history
   useEffect(() => {
@@ -53,9 +54,11 @@ export function SpeedTestWidget() {
     }
   }, []);
 
-  // Animate speed needle smoothly
+  // Animate speed needle smoothly - using ref to avoid closure issues
   const animateSpeed = useCallback((targetSpeed: number, duration: number = 500) => {
-    const startSpeed = currentSpeed;
+    // Cap speed to max 500 Mbps for display
+    const cappedTarget = Math.min(targetSpeed, 500);
+    const startSpeed = displaySpeedRef.current;
     const startTime = performance.now();
 
     const animate = (currentTime: number) => {
@@ -64,9 +67,11 @@ export function SpeedTestWidget() {
 
       // Easing function for smooth animation
       const easeOut = 1 - Math.pow(1 - progress, 3);
-      const newSpeed = startSpeed + (targetSpeed - startSpeed) * easeOut;
+      const newSpeed = startSpeed + (cappedTarget - startSpeed) * easeOut;
+      const roundedSpeed = Math.round(newSpeed * 10) / 10;
 
-      setCurrentSpeed(Math.round(newSpeed * 10) / 10);
+      displaySpeedRef.current = roundedSpeed;
+      setCurrentSpeed(roundedSpeed);
 
       if (progress < 1) {
         animationFrameRef.current = requestAnimationFrame(animate);
@@ -77,7 +82,7 @@ export function SpeedTestWidget() {
       cancelAnimationFrame(animationFrameRef.current);
     }
     animationFrameRef.current = requestAnimationFrame(animate);
-  }, [currentSpeed]);
+  }, []);
 
   // Measure ping with multiple samples
   const measurePing = async (signal: AbortSignal): Promise<{ ping: number; jitter: number }> => {
@@ -156,11 +161,16 @@ export function SpeedTestWidget() {
           receivedBytes += value.length;
           const now = performance.now();
 
-          // Update speed display every 100ms
-          if (now - lastUpdate > 100) {
+          // Update speed display every 200ms with minimum elapsed time
+          if (now - lastUpdate > 200) {
             const elapsed = (now - startTime) / 1000;
-            const currentMbps = (receivedBytes * 8) / (elapsed * 1000000);
-            animateSpeed(currentMbps, 150);
+            // Only calculate speed if we have at least 0.1 seconds of data
+            if (elapsed > 0.1) {
+              const currentMbps = (receivedBytes * 8) / (elapsed * 1000000);
+              // Sanity check: cap at reasonable maximum
+              const cappedMbps = Math.min(currentMbps, 1000);
+              animateSpeed(cappedMbps, 300);
+            }
             lastUpdate = now;
           }
         }
@@ -191,10 +201,10 @@ export function SpeedTestWidget() {
   // Upload speed test
   const measureUpload = async (signal: AbortSignal): Promise<number> => {
     const testSizes = [
-      500000,   // 500KB warmup
+      256000,   // 256KB warmup
+      512000,   // 512KB
       1000000,  // 1MB
       2000000,  // 2MB
-      5000000,  // 5MB
     ];
 
     const speeds: number[] = [];
@@ -202,9 +212,14 @@ export function SpeedTestWidget() {
     for (const size of testSizes) {
       if (signal.aborted) throw new Error("Aborted");
 
-      // Create random data
+      // Create random data in smaller chunks (max 65536 bytes per getRandomValues call)
       const data = new Uint8Array(size);
-      crypto.getRandomValues(data);
+      const chunkSize = 65536;
+      for (let offset = 0; offset < size; offset += chunkSize) {
+        const chunk = new Uint8Array(Math.min(chunkSize, size - offset));
+        crypto.getRandomValues(chunk);
+        data.set(chunk, offset);
+      }
       const blob = new Blob([data]);
 
       const startTime = performance.now();
@@ -243,6 +258,7 @@ export function SpeedTestWidget() {
 
     // Reset state
     setPhase("init");
+    displaySpeedRef.current = 0;
     setCurrentSpeed(0);
     setPing(0);
     setJitter(0);
@@ -265,9 +281,10 @@ export function SpeedTestWidget() {
       setDownloadSpeed(dlSpeed);
       animateSpeed(dlSpeed, 300);
 
-      // Brief pause
+      // Brief pause - smoothly animate to 0 before upload
+      await new Promise(r => setTimeout(r, 800));
+      animateSpeed(0, 400);
       await new Promise(r => setTimeout(r, 500));
-      setCurrentSpeed(0);
 
       // Upload test
       setPhase("upload");
@@ -306,6 +323,8 @@ export function SpeedTestWidget() {
     if (animationFrameRef.current) {
       cancelAnimationFrame(animationFrameRef.current);
     }
+    displaySpeedRef.current = 0;
+    setCurrentSpeed(0);
     setPhase("idle");
   };
 
@@ -326,11 +345,12 @@ Tested on ZeroToVPN.com`;
     }
   };
 
-  // Calculate needle rotation (0-270 degrees for 0-500 Mbps)
+  // Calculate needle rotation (0-180 degrees for 0-500 Mbps)
+  // The gauge arc spans from left (-90°) to right (+90°) via top (0°)
   const getNeedleRotation = () => {
     const maxSpeed = 500;
-    const angle = Math.min((currentSpeed / maxSpeed) * 270, 270);
-    return angle - 135; // Offset to start from left
+    const angle = Math.min((currentSpeed / maxSpeed) * 180, 180);
+    return angle - 90; // Start from left (-90°) to right (+90°)
   };
 
   // Get speed color
@@ -403,7 +423,8 @@ Tested on ZeroToVPN.com`;
 
             {/* Scale markers */}
             {[0, 10, 25, 50, 100, 250, 500].map((speed, i) => {
-              const angle = (speed / 500) * 270 - 135;
+              // Use 180 degree range: left (-90°) to right (+90°)
+              const angle = (speed / 500) * 180 - 90;
               const rad = (angle * Math.PI) / 180;
               const x = 100 + 65 * Math.cos(rad);
               const y = 100 + 65 * Math.sin(rad);

@@ -20,7 +20,6 @@ export function Header() {
     { href: "/best/best-vpn", label: t("best"), highlight: true, icon: Star },
     { href: "/deals", label: t("deals"), highlight: true, icon: Star },
     { href: "/compare", label: t("compare"), highlight: false, icon: null },
-    { href: "/speed-test", label: t("speedTest"), highlight: true, icon: Zap },
     { href: "/guides", label: t("guides"), highlight: false, icon: null },
   ];
 
@@ -72,6 +71,13 @@ export function Header() {
 
         {/* Right side */}
         <div className="flex items-center gap-2">
+          <Link
+            href="/speed-test"
+            className="hidden md:flex items-center justify-center h-9 w-9 rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors"
+            title={t("speedTest")}
+          >
+            <Zap className="h-4 w-4" />
+          </Link>
           <ThemeToggle />
           <LanguageSwitcher />
 
@@ -123,6 +129,15 @@ export function Header() {
                 </Link>
               );
             })}
+            {/* Speed Test - separate button */}
+            <Link
+              href="/speed-test"
+              onClick={() => setMobileMenuOpen(false)}
+              className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-lg bg-gradient-to-r from-primary to-primary/80 text-primary-foreground w-fit"
+            >
+              <Zap className="h-4 w-4" />
+              {t("speedTest")}
+            </Link>
           </div>
         </nav>
       )}

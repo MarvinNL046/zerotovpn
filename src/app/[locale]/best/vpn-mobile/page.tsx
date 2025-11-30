@@ -642,6 +642,59 @@ export default async function MobileVpnPage({ params }: Props) {
           </div>
         </section>
 
+        {/* Is Mobile VPN Safe? */}
+        <section className="py-16 lg:py-24">
+          <div className="container">
+            <div className="max-w-4xl mx-auto">
+              <div className="flex items-center gap-3 mb-8">
+                <Lock className="h-8 w-8 text-green-500" />
+                <h2 className="text-3xl md:text-4xl font-bold">{t("safety.title")}</h2>
+              </div>
+              <div className="space-y-6">
+                <p className="text-lg text-muted-foreground">{t("safety.description")}</p>
+
+                <Card className="border-green-200 bg-green-50/50 dark:bg-green-950/20">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2 text-green-700 dark:text-green-400">
+                      <CheckCircle className="h-5 w-5" />
+                      {t("safety.premium.title")}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-2">
+                      {(t.raw("safety.premium.features") as string[]).map((feature, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm">
+                          <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0 mt-0.5" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-red-200 bg-red-50/50 dark:bg-red-950/20">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2 text-red-700 dark:text-red-400">
+                      <XCircle className="h-5 w-5" />
+                      {t("safety.free.title")}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-2">
+                      {(t.raw("safety.free.dangers") as string[]).map((danger, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm">
+                          <XCircle className="h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" />
+                          <span>{danger}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Free VPNs to Avoid */}
         <section className="py-16 lg:py-24 bg-muted/30">
           <div className="container">

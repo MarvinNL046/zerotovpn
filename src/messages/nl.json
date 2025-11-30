@@ -4042,6 +4042,32 @@
         ]
       }
     },
+    "safety": {
+      "title": "Is een Mobiele VPN Veilig?",
+      "description": "Ja, mobiele VPN's zijn veilig wanneer je een betrouwbare premium aanbieder gebruikt. Premium VPN-diensten gebruiken militaire encryptie en hebben een strikt no-logs beleid. Gratis VPN's kunnen echter juist je privacy in gevaar brengen.",
+      "premium": {
+        "title": "Premium VPN's Zijn Veilig Omdat:",
+        "features": [
+          "Militaire AES-256 encryptie",
+          "Strikt no-logs beleid (onafhankelijk geauditeerd)",
+          "Veilige VPN-protocollen (WireGuard, NordLynx, Lightway)",
+          "Kill switch om datalekken te voorkomen",
+          "Regelmatige beveiligingsaudits door derden",
+          "Transparant privacybeleid"
+        ]
+      },
+      "free": {
+        "title": "Gratis VPN's Zijn Gevaarlijk Omdat:",
+        "dangers": [
+          "Ze je browsegegevens verzamelen en verkopen",
+          "Ze advertenties in je webverkeer injecteren",
+          "Ze zwakke of geen encryptie hebben",
+          "Ze malware of spyware kunnen bevatten",
+          "Ze bandbreedte en snelheid sterk beperken",
+          "Ze geen klantenservice bieden bij problemen"
+        ]
+      }
+    },
     "avoid": {
       "title": "Gratis Mobiele VPNs om te Vermijden",
       "description": "Gratis VPNs verzamelen vaak je data, injecteren advertenties, bieden trage snelheden en gebruiken zwakke encryptie. Vermijd TurboVPN, HolaVPN, Betternet, SuperVPN en ThunderVPN.",

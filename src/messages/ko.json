@@ -11,7 +11,8 @@
     "compare": "비교",
     "guides": "가이드",
     "blog": "블로그",
-    "about": "소개"
+    "about": "소개",
+    "speedTest": "속도 테스트"
   },
   "hero": {
     "title": "완벽한 VPN을 찾아보세요",
@@ -81,7 +82,8 @@
     "reviews": "VPN 리뷰",
     "bestVpns": "2025년 최고의 VPN",
     "compare": "VPN 비교",
-    "whatIsVpn": "VPN이란 무엇인가요?"
+    "whatIsVpn": "VPN이란 무엇인가요?",
+    "speedTest": "속도 테스트"
   },
   "newsletter": {
     "title": "최신 소식 받기",

@@ -11,7 +11,8 @@
     "compare": "Vergelijken",
     "guides": "Gidsen",
     "blog": "Blog",
-    "about": "Over ons"
+    "about": "Over ons",
+    "speedTest": "Snelheidstest"
   },
   "hero": {
     "title": "Vind Jouw Perfecte VPN",
@@ -81,7 +82,8 @@
     "reviews": "VPN Reviews",
     "bestVpns": "Beste VPNs 2025",
     "compare": "Vergelijk VPNs",
-    "whatIsVpn": "Wat is een VPN?"
+    "whatIsVpn": "Wat is een VPN?",
+    "speedTest": "Snelheidstest"
   },
   "newsletter": {
     "title": "Blijf Op De Hoogte",

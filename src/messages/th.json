@@ -11,7 +11,8 @@
     "compare": "เปรียบเทียบ",
     "guides": "คู่มือ",
     "blog": "บล็อก",
-    "about": "เกี่ยวกับเรา"
+    "about": "เกี่ยวกับเรา",
+    "speedTest": "ทดสอบความเร็ว"
   },
   "hero": {
     "title": "ค้นหา VPN ที่สมบูรณ์แบบของคุณ",
@@ -81,7 +82,8 @@
     "reviews": "รีวิว VPN",
     "bestVpns": "VPN ที่ดีที่สุด 2025",
     "compare": "เปรียบเทียบ VPN",
-    "whatIsVpn": "VPN คืออะไร?"
+    "whatIsVpn": "VPN คืออะไร?",
+    "speedTest": "ทดสอบความเร็ว"
   },
   "newsletter": {
     "title": "รับข่าวสารล่าสุด",

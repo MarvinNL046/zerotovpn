@@ -2,7 +2,7 @@
 
 import { Link, usePathname } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
-import { Shield, Menu, X, Star } from "lucide-react";
+import { Shield, Menu, X, Star, Zap } from "lucide-react";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { LanguageSwitcher } from "./language-switcher";
@@ -15,13 +15,13 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { href: "/", label: t("home"), highlight: false },
-    { href: "/reviews", label: t("reviews"), highlight: false },
-    { href: "/best/best-vpn", label: t("best"), highlight: true },
-    { href: "/deals", label: t("deals"), highlight: true },
-    { href: "/compare", label: t("compare"), highlight: false },
-    { href: "/guides", label: t("guides"), highlight: false },
-    { href: "/blog", label: t("blog"), highlight: false },
+    { href: "/", label: t("home"), highlight: false, icon: null },
+    { href: "/reviews", label: t("reviews"), highlight: false, icon: null },
+    { href: "/best/best-vpn", label: t("best"), highlight: true, icon: Star },
+    { href: "/deals", label: t("deals"), highlight: true, icon: Star },
+    { href: "/compare", label: t("compare"), highlight: false, icon: null },
+    { href: "/speed-test", label: t("speedTest"), highlight: true, icon: Zap },
+    { href: "/guides", label: t("guides"), highlight: false, icon: null },
   ];
 
   return (
@@ -37,8 +37,9 @@ export function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">
-          {navItems.map((item) => (
-            item.highlight ? (
+          {navItems.map((item) => {
+            const Icon = item.icon;
+            return item.highlight ? (
               <Link
                 key={item.href}
                 href={item.href}
@@ -49,7 +50,7 @@ export function Header() {
                   "border border-primary/20"
                 )}
               >
-                <Star className="h-3.5 w-3.5 fill-current" />
+                {Icon && <Icon className="h-3.5 w-3.5 fill-current" />}
                 {item.label}
               </Link>
             ) : (
@@ -65,8 +66,8 @@ export function Header() {
               >
                 {item.label}
               </Link>
-            )
-          ))}
+            );
+          })}
         </nav>
 
         {/* Right side */}
@@ -94,15 +95,16 @@ export function Header() {
       {mobileMenuOpen && (
         <nav className="md:hidden border-t p-4 bg-background">
           <div className="flex flex-col space-y-4">
-            {navItems.map((item) => (
-              item.highlight ? (
+            {navItems.map((item) => {
+              const Icon = item.icon;
+              return item.highlight ? (
                 <Link
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-lg bg-gradient-to-r from-primary to-primary/80 text-primary-foreground w-fit"
                 >
-                  <Star className="h-4 w-4 fill-current" />
+                  {Icon && <Icon className="h-4 w-4 fill-current" />}
                   {item.label}
                 </Link>
               ) : (
@@ -119,8 +121,8 @@ export function Header() {
                 >
                   {item.label}
                 </Link>
-              )
-            ))}
+              );
+            })}
           </div>
         </nav>
       )}

@@ -11,7 +11,8 @@
     "compare": "Comparar",
     "guides": "Guías",
     "blog": "Blog",
-    "about": "Sobre nosotros"
+    "about": "Sobre nosotros",
+    "speedTest": "Test de Velocidad"
   },
   "hero": {
     "title": "Encuentra tu VPN perfecta",
@@ -81,7 +82,8 @@
     "reviews": "Reseñas de VPN",
     "bestVpns": "Mejores VPNs 2025",
     "compare": "Comparar VPNs",
-    "whatIsVpn": "¿Qué es una VPN?"
+    "whatIsVpn": "¿Qué es una VPN?",
+    "speedTest": "Test de Velocidad"
   },
   "newsletter": {
     "title": "Mantente informado",

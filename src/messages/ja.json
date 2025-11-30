@@ -11,7 +11,8 @@
     "compare": "比較",
     "guides": "ガイド",
     "blog": "ブログ",
-    "about": "会社概要"
+    "about": "会社概要",
+    "speedTest": "速度テスト"
   },
   "hero": {
     "title": "最適なVPNを見つけよう",
@@ -81,7 +82,8 @@
     "reviews": "VPNレビュー",
     "bestVpns": "2025年ベストVPN",
     "compare": "VPN比較",
-    "whatIsVpn": "VPNとは？"
+    "whatIsVpn": "VPNとは？",
+    "speedTest": "速度テスト"
   },
   "newsletter": {
     "title": "最新情報を入手",

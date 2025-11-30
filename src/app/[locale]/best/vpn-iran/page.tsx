@@ -24,6 +24,7 @@ import {
   HelpCircle,
 } from "lucide-react";
 import { RelatedPages } from "@/components/seo/related-pages";
+import { FAQSchema } from "@/components/seo/faq-schema";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -1567,6 +1568,35 @@ export default async function VpnIranPage({ params }: Props) {
               </div>
 
               <p className="mt-8 text-sm opacity-75">{t.lastUpdated}</p>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Schema Section */}
+        <section className="py-16 bg-muted/30">
+          <div className="container">
+            <div className="max-w-3xl mx-auto">
+              <FAQSchema
+                title="Frequently Asked Questions"
+                faqs={[
+                  {
+                    question: "Are VPNs legal in Iran?",
+                    answer: "VPNs are technically legal in Iran if they are government-approved. However, the government only approves VPNs that comply with censorship rules, which defeats the purpose. Despite this, millions of Iranians use unauthorized VPNs daily without significant consequences. The government focuses more on blocking VPN services than prosecuting individual users, though risks exist during periods of heightened political tension."
+                  },
+                  {
+                    question: "Which VPNs work in Iran?",
+                    answer: "Based on our testing, VPNs that work reliably in Iran include those with advanced obfuscation and anti-DPI technology. The most effective are those that can disguise VPN traffic as regular HTTPS traffic, making it harder for Iran's deep packet inspection systems to detect and block. VPNs need to regularly update their obfuscation methods as Iran's blocking becomes more sophisticated."
+                  },
+                  {
+                    question: "How to get a VPN in Iran?",
+                    answer: "Since VPN websites are blocked in Iran, download and install your VPN before traveling to Iran. If you're already in Iran, you can try: asking someone outside Iran to email you the installer, using Tor Browser to access VPN websites, trying mirror sites or alternative domains, or using Psiphon or Lantern as bridge VPNs to download a main VPN. Iranian app stores may have limited VPN apps, but be cautious of surveillance risks."
+                  },
+                  {
+                    question: "Can I access social media in Iran with a VPN?",
+                    answer: "Yes, with a reliable VPN you can access blocked social media platforms including Instagram, Facebook, Twitter, Telegram, WhatsApp, YouTube, and TikTok. Iran blocks these platforms as part of its internet censorship policy. A VPN bypasses these blocks by encrypting your traffic and routing it through servers outside Iran. However, blocking intensifies during protests or political events, and VPN reliability may vary."
+                  }
+                ]}
+              />
             </div>
           </div>
         </section>

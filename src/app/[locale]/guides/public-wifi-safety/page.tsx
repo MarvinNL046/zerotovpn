@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { Badge } from "@/components/ui/badge";
 import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { RelatedPages } from "@/components/seo/related-pages";
+import { FAQSchema } from "@/components/seo/faq-schema";
 import {
   Wifi,
   WifiOff,
@@ -470,6 +471,28 @@ export default async function PublicWifiSafetyPage({ params }: Props) {
                 ))}
               </div>
             </section>
+
+            {/* FAQ Section */}
+            <FAQSchema
+              faqs={[
+                {
+                  question: "Is public WiFi really dangerous?",
+                  answer: "Yes, public WiFi poses significant security risks. Unencrypted networks allow hackers to intercept your data, including passwords, emails, and credit card information. Attackers can perform man-in-the-middle attacks, set up fake WiFi hotspots, and monitor your browsing activity. Even legitimate public WiFi networks are vulnerable because they're shared with potentially malicious users."
+                },
+                {
+                  question: "What can hackers see on public WiFi?",
+                  answer: "On unencrypted public WiFi, hackers can see almost everything you do online: websites you visit, login credentials, emails, messages, files you download, and even intercept your session cookies to access your accounts. They can also see the apps you're using and potentially inject malware into your device. HTTPS provides some protection, but isn't foolproof without additional security measures."
+                },
+                {
+                  question: "Does a VPN protect me on public WiFi?",
+                  answer: "Yes, a VPN provides excellent protection on public WiFi by encrypting all your internet traffic before it leaves your device. This encryption prevents hackers, ISPs, and network administrators from seeing what you're doing online or stealing your data. A VPN creates a secure tunnel for your data, making public WiFi nearly as safe as your home network."
+                },
+                {
+                  question: "Should I use a VPN at hotels?",
+                  answer: "Absolutely. Hotel WiFi is often poorly secured and used by many guests, making it a prime target for hackers. Hotels may also monitor and log your internet activity. Using a VPN at hotels protects your sensitive data, prevents tracking, and ensures your online banking, work emails, and personal information remain private. It's a small precaution that provides significant security benefits."
+                }
+              ]}
+            />
 
             {/* Related Pages */}
             <RelatedPages

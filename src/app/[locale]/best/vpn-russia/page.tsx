@@ -24,6 +24,7 @@ import {
   HelpCircle,
 } from "lucide-react";
 import { RelatedPages } from "@/components/seo/related-pages";
+import { FAQSchema } from "@/components/seo/faq-schema";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -1537,6 +1538,35 @@ export default async function VpnRussiaPage({ params }: Props) {
                 </Button>
               </div>
               <p className="text-sm text-muted-foreground">{t.lastUpdated}</p>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Schema Section */}
+        <section className="py-16 bg-muted/30">
+          <div className="container">
+            <div className="max-w-3xl mx-auto">
+              <FAQSchema
+                title="Frequently Asked Questions"
+                faqs={[
+                  {
+                    question: "Are VPNs legal in Russia?",
+                    answer: "VPNs are legal in Russia for personal use, but there are restrictions. Since 2017, Russia requires VPN providers to block access to blacklisted sites. Foreign VPN services that don't comply with these regulations continue to operate, though they may be blocked by Roskomnadzor. Individual use of VPNs for privacy is not illegal, but using them to access banned content is technically prohibited."
+                  },
+                  {
+                    question: "Which VPNs still work in Russia?",
+                    answer: "Based on our testing, ExpressVPN, NordVPN, and Surfshark continue to work reliably in Russia despite ongoing blocking attempts by Roskomnadzor. These VPNs use obfuscation technology and regularly update their servers to bypass blocks. Success rates vary, but users report 80-90% reliability with these providers."
+                  },
+                  {
+                    question: "Is it safe to use a VPN in Russia?",
+                    answer: "Using a VPN in Russia is generally safe for individual users. The Russian government primarily targets VPN providers rather than individual users. Choose reputable VPN services with strong encryption (AES-256), a no-logs policy, and servers outside Russia. Avoid free VPNs and Russian-based VPN services that may be required to log user data."
+                  },
+                  {
+                    question: "Can I access blocked sites in Russia?",
+                    answer: "Yes, a reliable VPN allows you to access websites blocked by Roskomnadzor, including Facebook, Instagram, Twitter, LinkedIn, and various news sites. As of 2024, over 197 services are blocked in Russia. By connecting to VPN servers outside Russia, you can bypass these restrictions and access the open internet."
+                  }
+                ]}
+              />
             </div>
           </div>
         </section>

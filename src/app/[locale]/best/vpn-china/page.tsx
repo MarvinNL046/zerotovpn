@@ -24,6 +24,7 @@ import {
   HelpCircle,
 } from "lucide-react";
 import { RelatedPages } from "@/components/seo/related-pages";
+import { FAQSchema } from "@/components/seo/faq-schema";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -1391,6 +1392,35 @@ export default async function VpnChinaPage({ params }: Props) {
                 </Button>
               </div>
               <p className="text-sm text-muted-foreground">{t.lastUpdated}</p>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Schema Section */}
+        <section className="py-16 bg-muted/30">
+          <div className="container">
+            <div className="max-w-3xl mx-auto">
+              <FAQSchema
+                title={t.faqTitle}
+                faqs={[
+                  {
+                    question: "Are VPNs legal in China?",
+                    answer: "VPN use exists in a legal gray area in China. While not explicitly illegal for individuals, only government-approved VPNs are officially allowed. Foreign visitors and expats commonly use VPNs without issues, but discretion is advised. The law primarily targets VPN providers operating without approval rather than individual users."
+                  },
+                  {
+                    question: "Which VPNs work in China?",
+                    answer: "Based on our testing, ExpressVPN (95% reliability), Astrill (90% reliability), and Surfshark (85% reliability) are the most reliable VPNs in China. These VPNs use advanced obfuscation technology like Lightway protocol, StealthVPN, and NoBorders mode to bypass the Great Firewall's deep packet inspection."
+                  },
+                  {
+                    question: "How to download a VPN before traveling to China?",
+                    answer: "Download and install your VPN before entering China, as VPN websites are blocked inside the country. Set up your VPN on all devices you plan to bring. Consider installing 2-3 different VPNs as backups. If you're already in China, ask someone outside to email you the installer, or try accessing VPN sites from hotel WiFi or international areas."
+                  },
+                  {
+                    question: "Can I use WhatsApp in China with a VPN?",
+                    answer: "Yes, WhatsApp works in China when connected to a reliable VPN. WhatsApp is blocked by the Great Firewall along with other foreign messaging apps. Once connected to a VPN server outside China, you can access WhatsApp, Facebook Messenger, Telegram, and other blocked communication services normally."
+                  }
+                ]}
+              />
             </div>
           </div>
         </section>

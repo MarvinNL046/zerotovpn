@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { RatingStars } from "@/components/vpn/rating-stars";
 import { RelatedPages } from "@/components/seo/related-pages";
+import { FAQSchema } from "@/components/seo/faq-schema";
 import { Link } from "@/i18n/navigation";
 import {
   Shield,
@@ -659,6 +660,39 @@ export default async function FreeVpnPage({ params }: Props) {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-12">
+          <div className="container">
+            <div className="max-w-3xl mx-auto">
+              <FAQSchema
+                title="Free VPN FAQs"
+                faqs={[
+                  {
+                    question: "Are free VPNs safe to use?",
+                    answer: "Most free VPNs are NOT safe and should be avoided. Many free VPNs log your data and sell it to third parties, inject ads, or contain malware. However, ProtonVPN's free tier is a notable exception - it's operated by a reputable Swiss company with a strict no-logs policy and strong encryption. If you must use a free VPN, stick to ProtonVPN, Windscribe, or Hide.me from our recommended list."
+                  },
+                  {
+                    question: "What are the limitations of free VPNs?",
+                    answer: "Free VPNs typically have several limitations: data caps (2-10GB per month, except ProtonVPN which is unlimited), slower speeds, fewer server locations, limited device connections, no customer support, and no access to streaming services. They may also display ads or restrict bandwidth. These limitations exist because running VPN servers is expensive, so free tiers are designed to encourage upgrades to paid plans."
+                  },
+                  {
+                    question: "Which free VPN is best for streaming?",
+                    answer: "ProtonVPN Free and Windscribe Free are the only free VPNs that work with some streaming services. However, both have significant limitations - ProtonVPN Free only allows 1 device and has slower speeds, while Windscribe limits you to 10GB/month. For reliable streaming access to Netflix, Hulu, and other platforms, you'll need a paid VPN like NordVPN ($2.99/month) or Surfshark ($1.99/month)."
+                  },
+                  {
+                    question: "Do free VPNs sell your data?",
+                    answer: "Yes, many free VPNs sell user data to advertisers and third parties - this is how they make money. They may track your browsing history, inject tracking cookies, or share your information with data brokers. Notable exceptions are ProtonVPN, Windscribe, and Hide.me, which have verified no-logs policies and are funded by their premium tiers. Always read the privacy policy before using any free VPN."
+                  },
+                  {
+                    question: "Should I use a free VPN or pay for one?",
+                    answer: "For serious privacy, security, and unrestricted access, paying for a VPN is strongly recommended. Premium VPNs like Surfshark ($1.99/month) or NordVPN ($2.99/month) offer unlimited data, faster speeds, better security, streaming access, and customer support. Free VPNs are only suitable for light, occasional use. If budget is a concern, premium VPNs often have sales and money-back guarantees, making them very affordable."
+                  }
+                ]}
+              />
             </div>
           </div>
         </section>

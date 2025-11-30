@@ -8,6 +8,7 @@ import { ComparisonTable } from "@/components/vpn/comparison-table";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { RatingStars } from "@/components/vpn/rating-stars";
 import { RelatedPages } from "@/components/seo/related-pages";
+import { FAQSchema } from "@/components/seo/faq-schema";
 import { getAllVpns, type VpnProvider } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
 import {
@@ -490,17 +491,31 @@ export default async function BestVpnPage({ params }: Props) {
         <section className="py-16 bg-muted/30">
           <div className="container">
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-3xl font-bold text-center mb-8">{t.faqTitle}</h2>
-              <div className="space-y-6">
-                {t.faqs.map((faq, index) => (
-                  <Card key={index}>
-                    <CardContent className="pt-6">
-                      <h3 className="text-lg font-semibold mb-2">{faq.q}</h3>
-                      <p className="text-muted-foreground">{faq.a}</p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
+              <FAQSchema
+                title={t.faqTitle}
+                faqs={[
+                  {
+                    question: "What is the best VPN in 2025?",
+                    answer: "Based on our extensive testing, NordVPN is the best VPN in 2025. It offers the best combination of speed (up to 6,730 Mbps), security features (AES-256 encryption, kill switch, no-logs policy), and streaming capabilities at a competitive price of $2.99/month. With 7,000+ servers in 127 countries and excellent 24/7 support, it's our top choice for most users."
+                  },
+                  {
+                    question: "Are VPNs legal to use?",
+                    answer: "Yes, VPNs are legal in most countries including the US, UK, Canada, Australia, and throughout the EU. However, some countries like China, Russia, Iran, and UAE restrict or ban VPN usage. Even where legal, using a VPN for illegal activities (like copyright infringement or hacking) remains illegal. Always check your local laws and the terms of service of websites you visit."
+                  },
+                  {
+                    question: "How much does a good VPN cost?",
+                    answer: "Quality VPNs typically cost between $2-12 per month. Budget options like Surfshark start at $1.99/month on 2-year plans. Mid-range options like NordVPN cost around $2.99/month, while premium services like ExpressVPN are about $6.67/month. Longer subscriptions (1-2 years) offer significant discounts compared to monthly plans. All top VPNs offer 30-day money-back guarantees."
+                  },
+                  {
+                    question: "Can a VPN slow down my internet?",
+                    answer: "A VPN can slow down your internet slightly because it encrypts your data and routes it through a remote server. However, top VPNs like ExpressVPN and NordVPN typically reduce speeds by only 10-20% on nearby servers. With fast protocols like WireGuard and Lightway, many users don't notice any slowdown. In some cases, a VPN can actually improve speeds by bypassing ISP throttling."
+                  },
+                  {
+                    question: "Do I need a VPN if I have nothing to hide?",
+                    answer: "Yes, even if you have 'nothing to hide,' a VPN is essential for privacy. Your ISP can see and sell your browsing history to advertisers. Public WiFi networks are vulnerable to hackers who can intercept your data. Websites track your location and activity to build detailed profiles. A VPN encrypts your traffic, hides your IP address, and protects you from surveillance, data breaches, and targeted advertising."
+                  }
+                ]}
+              />
             </div>
           </div>
         </section>

@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { Badge } from "@/components/ui/badge";
 import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { RelatedPages } from "@/components/seo/related-pages";
+import { FAQSchema } from "@/components/seo/faq-schema";
 import {
   Lock,
   Server,
@@ -386,6 +387,34 @@ export default async function HowVpnWorksPage({ params }: Props) {
                 ))}
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-12 lg:py-16">
+        <div className="container">
+          <div className="max-w-3xl mx-auto">
+            <FAQSchema
+              faqs={[
+                {
+                  question: "What is VPN encryption?",
+                  answer: "VPN encryption is the process of scrambling your internet data using advanced algorithms like AES-256. This encryption makes your data unreadable to anyone who might intercept it, including hackers, ISPs, and governments. Even if someone captures your encrypted data, they cannot decrypt it without the encryption key."
+                },
+                {
+                  question: "What is a VPN tunnel?",
+                  answer: "A VPN tunnel is a secure, encrypted connection between your device and the VPN server. It works by encapsulating your data packets in an encrypted wrapper, routing them through the VPN server, and then sending them to their final destination. This 'tunnel' protects your data from being intercepted or monitored along the way."
+                },
+                {
+                  question: "What are VPN protocols?",
+                  answer: "VPN protocols are sets of rules that determine how your data is routed and encrypted. Popular protocols include WireGuard (fastest and most modern), OpenVPN (most secure and widely supported), and IKEv2 (best for mobile). Each protocol offers different balances of speed, security, and compatibility."
+                },
+                {
+                  question: "Does a VPN hide my IP address?",
+                  answer: "Yes, a VPN hides your real IP address by routing your traffic through a VPN server. Websites and online services see the VPN server's IP address instead of yours, making it appear as if you're browsing from the server's location. This protects your identity and allows you to access geo-restricted content."
+                }
+              ]}
+            />
           </div>
         </div>
       </section>

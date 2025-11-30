@@ -2,7 +2,7 @@
 
 import { Link, usePathname } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
-import { Shield, Menu, X, Star, Zap, Globe } from "lucide-react";
+import { Shield, Menu, X, Star, Zap, Globe, Tag } from "lucide-react";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { LanguageSwitcher } from "./language-switcher";
@@ -19,6 +19,7 @@ export function Header() {
     { href: "/reviews", label: t("reviews"), highlight: false, icon: null },
     { href: "/best/best-vpn", label: t("best"), highlight: true, icon: Star },
     { href: "/countries", label: t("countries"), highlight: true, icon: Globe },
+    { href: "/deals", label: t("deals"), highlight: true, icon: Tag },
     { href: "/compare", label: t("compare"), highlight: false, icon: null },
     { href: "/guides", label: t("guides"), highlight: false, icon: null },
   ];

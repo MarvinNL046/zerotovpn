@@ -9,6 +9,7 @@ import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { RatingStars } from "@/components/vpn/rating-stars";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { FAQSchema } from "@/components/seo/faq-schema";
+import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { getAllVpns, type VpnProvider } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
 import {
@@ -230,6 +231,10 @@ export default async function BestVpnPage({ params }: Props) {
         <section className="relative py-16 lg:py-24 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background" />
           <div className="container relative">
+            <BreadcrumbSchema
+              items={[{ name: "Best VPNs", href: "/best/best-vpn" }]}
+              className="mb-6"
+            />
             <div className="max-w-4xl mx-auto text-center space-y-6">
               <Badge variant="secondary" className="px-4 py-1">
                 <Clock className="h-3 w-3 mr-1" />

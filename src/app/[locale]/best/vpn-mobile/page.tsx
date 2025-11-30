@@ -24,6 +24,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { RelatedPages } from "@/components/seo/related-pages";
+import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -166,6 +167,13 @@ export default async function MobileVpnPage({ params }: Props) {
         <section className="relative py-16 lg:py-24 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-background to-background" />
           <div className="container relative">
+            <BreadcrumbSchema
+              items={[
+                { name: "Best VPNs", href: "/best/best-vpn" },
+                { name: "Mobile VPNs", href: "/best/vpn-mobile" }
+              ]}
+              className="mb-6"
+            />
             <div className="max-w-4xl mx-auto text-center space-y-6">
               <Badge variant="secondary" className="px-4 py-1">
                 <Smartphone className="h-3 w-3 mr-1" />

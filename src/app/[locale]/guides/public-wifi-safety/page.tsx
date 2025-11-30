@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { FAQSchema } from "@/components/seo/faq-schema";
+import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import {
   Wifi,
   WifiOff,
@@ -87,6 +88,7 @@ export default async function PublicWifiSafetyPage({ params }: Props) {
       <section className="py-16 lg:py-20 bg-gradient-to-br from-orange-500/10 via-background to-background">
         <div className="container">
           <div className="max-w-3xl mx-auto">
+            <BreadcrumbSchema items={[{ name: "Guides", href: "/guides" }, { name: "Public WiFi Safety", href: "/guides/public-wifi-safety" }]} className="mb-6" />
             <div className="flex items-center gap-2 mb-4">
               <Badge variant="secondary">{t("hero.badge")}</Badge>
               <Badge variant="outline">{t("hero.readTime")}</Badge>

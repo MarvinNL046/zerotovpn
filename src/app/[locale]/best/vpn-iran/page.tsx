@@ -25,6 +25,7 @@ import {
 } from "lucide-react";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { FAQSchema } from "@/components/seo/faq-schema";
+import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -1292,6 +1293,10 @@ export default async function VpnIranPage({ params }: Props) {
         {/* Hero Section */}
         <section className="border-b bg-card">
           <div className="container mx-auto px-4 py-12 md:py-20">
+            <BreadcrumbSchema
+              items={[{ name: "Best VPNs", href: "/best/best-vpn" }, { name: "VPN for Iran", href: "/best/vpn-iran" }]}
+              className="mb-6"
+            />
             <div className="mx-auto max-w-4xl text-center">
               <Badge className="mb-4" variant="secondary">
                 {t.badge}

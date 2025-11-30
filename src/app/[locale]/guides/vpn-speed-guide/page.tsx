@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { Badge } from "@/components/ui/badge";
 import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { RelatedPages } from "@/components/seo/related-pages";
+import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import {
   Zap,
   Gauge,
@@ -91,6 +92,7 @@ export default async function VpnSpeedGuidePage({ params }: Props) {
       <section className="py-16 lg:py-20 bg-gradient-to-br from-yellow-500/10 via-background to-background">
         <div className="container">
           <div className="max-w-3xl mx-auto">
+            <BreadcrumbSchema items={[{ name: "Guides", href: "/guides" }, { name: "VPN Speed Guide", href: "/guides/vpn-speed-guide" }]} className="mb-6" />
             <div className="flex items-center gap-2 mb-4">
               <Badge variant="secondary">{t("hero.badge")}</Badge>
               <Badge variant="outline">{t("hero.readTime")}</Badge>

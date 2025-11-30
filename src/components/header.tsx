@@ -2,7 +2,13 @@
 
 import { Link, usePathname } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
-import { Shield, Menu, X, Star, Zap, Globe, Tag } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Shield, Menu, X, Star, Zap, Globe, Tag, ChevronDown, Trophy, Gamepad2, Gift } from "lucide-react";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { LanguageSwitcher } from "./language-switcher";
@@ -14,10 +20,16 @@ export function Header() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const bestVpnItems = [
+    { href: "/best/best-vpn", label: t("bestVpn"), icon: Trophy },
+    { href: "/best/vpn-china", label: t("vpnChina"), icon: Globe },
+    { href: "/best/vpn-gaming", label: t("vpnGaming"), icon: Gamepad2 },
+    { href: "/best/free-vpn", label: t("freeVpn"), icon: Gift },
+  ];
+
   const navItems = [
     { href: "/", label: t("home"), highlight: false, icon: null },
     { href: "/reviews", label: t("reviews"), highlight: false, icon: null },
-    { href: "/best/best-vpn", label: t("best"), highlight: true, icon: Star },
     { href: "/countries", label: t("countries"), highlight: true, icon: Globe },
     { href: "/deals", label: t("deals"), highlight: true, icon: Tag },
     { href: "/compare", label: t("compare"), highlight: false, icon: null },
@@ -37,12 +49,32 @@ export function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">
-          {navItems.map((item) => {
-            const Icon = item.icon;
-            return item.highlight ? (
-              <Link
-                key={item.href}
-                href={item.href}
+          {/* Home & Reviews - regular links */}
+          <Link
+            href="/"
+            className={cn(
+              "text-sm font-medium transition-colors hover:text-primary",
+              pathname === "/" ? "text-primary" : "text-muted-foreground"
+            )}
+          >
+            {t("home")}
+          </Link>
+          <Link
+            href="/reviews"
+            className={cn(
+              "text-sm font-medium transition-colors hover:text-primary",
+              pathname === "/reviews" || pathname.startsWith("/reviews/")
+                ? "text-primary"
+                : "text-muted-foreground"
+            )}
+          >
+            {t("reviews")}
+          </Link>
+
+          {/* Best VPNs - Dropdown */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button
                 className={cn(
                   "relative inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold rounded-full transition-all",
                   "bg-gradient-to-r from-primary to-primary/80 text-primary-foreground",
@@ -50,24 +82,78 @@ export function Header() {
                   "border border-primary/20"
                 )}
               >
-                {Icon && <Icon className="h-3.5 w-3.5 fill-current" />}
-                {item.label}
-              </Link>
-            ) : (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={cn(
-                  "text-sm font-medium transition-colors hover:text-primary",
-                  pathname === item.href
-                    ? "text-primary"
-                    : "text-muted-foreground"
-                )}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
+                <Star className="h-3.5 w-3.5 fill-current" />
+                {t("best")}
+                <ChevronDown className="h-3.5 w-3.5" />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="center" className="w-48">
+              {bestVpnItems.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <DropdownMenuItem key={item.href} asChild>
+                    <Link
+                      href={item.href}
+                      className="flex items-center gap-2 cursor-pointer"
+                    >
+                      <Icon className="h-4 w-4" />
+                      {item.label}
+                    </Link>
+                  </DropdownMenuItem>
+                );
+              })}
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          {/* Countries - highlighted */}
+          <Link
+            href="/countries"
+            className={cn(
+              "relative inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold rounded-full transition-all",
+              "bg-gradient-to-r from-primary to-primary/80 text-primary-foreground",
+              "hover:from-primary/90 hover:to-primary/70 hover:shadow-md hover:scale-105",
+              "border border-primary/20"
+            )}
+          >
+            <Globe className="h-3.5 w-3.5 fill-current" />
+            {t("countries")}
+          </Link>
+
+          {/* Deals - highlighted */}
+          <Link
+            href="/deals"
+            className={cn(
+              "relative inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold rounded-full transition-all",
+              "bg-gradient-to-r from-primary to-primary/80 text-primary-foreground",
+              "hover:from-primary/90 hover:to-primary/70 hover:shadow-md hover:scale-105",
+              "border border-primary/20"
+            )}
+          >
+            <Tag className="h-3.5 w-3.5 fill-current" />
+            {t("deals")}
+          </Link>
+
+          {/* Compare & Guides - regular links */}
+          <Link
+            href="/compare"
+            className={cn(
+              "text-sm font-medium transition-colors hover:text-primary",
+              pathname === "/compare" ? "text-primary" : "text-muted-foreground"
+            )}
+          >
+            {t("compare")}
+          </Link>
+          <Link
+            href="/guides"
+            className={cn(
+              "text-sm font-medium transition-colors hover:text-primary",
+              pathname === "/guides" || pathname.startsWith("/guides/")
+                ? "text-primary"
+                : "text-muted-foreground"
+            )}
+          >
+            {t("guides")}
+          </Link>
         </nav>
 
         {/* Right side */}
@@ -102,35 +188,93 @@ export function Header() {
       {mobileMenuOpen && (
         <nav className="md:hidden border-t p-4 bg-background">
           <div className="flex flex-col space-y-4">
-            {navItems.map((item) => {
-              const Icon = item.icon;
-              return item.highlight ? (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-lg bg-gradient-to-r from-primary to-primary/80 text-primary-foreground w-fit"
-                >
-                  {Icon && <Icon className="h-4 w-4 fill-current" />}
-                  {item.label}
-                </Link>
-              ) : (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={cn(
-                    "text-sm font-medium transition-colors hover:text-primary",
-                    pathname === item.href
-                      ? "text-primary"
-                      : "text-muted-foreground"
-                  )}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
-            {/* Speed Test - separate button */}
+            {/* Regular nav items */}
+            <Link
+              href="/"
+              onClick={() => setMobileMenuOpen(false)}
+              className={cn(
+                "text-sm font-medium transition-colors hover:text-primary",
+                pathname === "/" ? "text-primary" : "text-muted-foreground"
+              )}
+            >
+              {t("home")}
+            </Link>
+            <Link
+              href="/reviews"
+              onClick={() => setMobileMenuOpen(false)}
+              className={cn(
+                "text-sm font-medium transition-colors hover:text-primary",
+                pathname === "/reviews" ? "text-primary" : "text-muted-foreground"
+              )}
+            >
+              {t("reviews")}
+            </Link>
+
+            {/* Best VPNs section */}
+            <div className="space-y-2">
+              <span className="text-sm font-semibold text-primary flex items-center gap-2">
+                <Star className="h-4 w-4" />
+                {t("best")}
+              </span>
+              <div className="pl-6 space-y-2">
+                {bestVpnItems.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      <Icon className="h-4 w-4" />
+                      {item.label}
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Highlighted items */}
+            <Link
+              href="/countries"
+              onClick={() => setMobileMenuOpen(false)}
+              className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-lg bg-gradient-to-r from-primary to-primary/80 text-primary-foreground w-fit"
+            >
+              <Globe className="h-4 w-4 fill-current" />
+              {t("countries")}
+            </Link>
+            <Link
+              href="/deals"
+              onClick={() => setMobileMenuOpen(false)}
+              className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-lg bg-gradient-to-r from-primary to-primary/80 text-primary-foreground w-fit"
+            >
+              <Tag className="h-4 w-4 fill-current" />
+              {t("deals")}
+            </Link>
+
+            {/* Regular items */}
+            <Link
+              href="/compare"
+              onClick={() => setMobileMenuOpen(false)}
+              className={cn(
+                "text-sm font-medium transition-colors hover:text-primary",
+                pathname === "/compare" ? "text-primary" : "text-muted-foreground"
+              )}
+            >
+              {t("compare")}
+            </Link>
+            <Link
+              href="/guides"
+              onClick={() => setMobileMenuOpen(false)}
+              className={cn(
+                "text-sm font-medium transition-colors hover:text-primary",
+                pathname === "/guides" ? "text-primary" : "text-muted-foreground"
+              )}
+            >
+              {t("guides")}
+            </Link>
+
+            {/* Speed Test */}
             <Link
               href="/speed-test"
               onClick={() => setMobileMenuOpen(false)}

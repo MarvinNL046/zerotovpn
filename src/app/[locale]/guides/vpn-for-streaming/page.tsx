@@ -7,6 +7,7 @@ import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
+import { HowToSchema } from "@/components/seo/howto-schema";
 import {
   Tv,
   Globe,
@@ -81,6 +82,29 @@ export default async function VpnForStreamingPage({ params }: Props) {
           { name: "Home", url: baseUrl },
           { name: "Guides", url: `${baseUrl}/guides` },
           { name: "VPN for Streaming", url: pageUrl },
+        ]}
+      />
+      <HowToSchema
+        name="How to Use a VPN for Streaming Netflix and Other Services"
+        description="Step-by-step guide to accessing geo-restricted streaming content using a VPN service."
+        totalTime="PT10M"
+        steps={[
+          {
+            name: "Choose a Streaming-Optimized VPN",
+            text: "Select a VPN service known for reliable streaming support like ExpressVPN, NordVPN, or Surfshark. These VPNs have servers specifically optimized to bypass geo-restrictions and work with Netflix, Disney+, BBC iPlayer, and other streaming platforms."
+          },
+          {
+            name: "Install and Connect to Server",
+            text: "Download and install the VPN application on your device. Launch the app, select a server in the country whose content you want to access (e.g., US server for US Netflix), and click connect."
+          },
+          {
+            name: "Access Streaming Services",
+            text: "Once connected, open your streaming service website or app. You should now have access to the content library from the server's location. Clear your browser cache if you still see your old location's content."
+          },
+          {
+            name: "Enjoy Unrestricted Content",
+            text: "Start streaming your favorite shows and movies. For best performance, choose a nearby server or one optimized for streaming to ensure fast speeds and no buffering."
+          }
         ]}
       />
       <article className="flex flex-col">

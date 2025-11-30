@@ -148,7 +148,7 @@ export function VpnComparisonTool({ vpns, maxCompare = 4 }: VpnComparisonToolPro
               {vpn.logo ? (
                 <Image
                   src={vpn.logo}
-                  alt={vpn.name}
+                  alt={`${vpn.name} VPN logo`}
                   width={80}
                   height={40}
                   className="mx-auto h-10 object-contain"
@@ -177,7 +177,7 @@ export function VpnComparisonTool({ vpns, maxCompare = 4 }: VpnComparisonToolPro
                         {vpn.logo ? (
                           <Image
                             src={vpn.logo}
-                            alt={vpn.name}
+                            alt={`${vpn.name} VPN logo`}
                             width={40}
                             height={20}
                             className="h-5 object-contain"

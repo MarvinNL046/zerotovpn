@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import { Badge } from "@/components/ui/badge";
 import { RelatedPages } from "@/components/seo/related-pages";
+import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import {
   BookOpen,
   Shield,
@@ -124,6 +125,11 @@ export default async function GuidesPage({ params }: Props) {
 
   return (
     <div className="flex flex-col">
+      {/* Breadcrumbs */}
+      <div className="container pt-6">
+        <BreadcrumbSchema items={[{ name: "Guides", href: "/guides" }]} />
+      </div>
+
       {/* Hero Section */}
       <section className="py-16 lg:py-20 bg-gradient-to-br from-primary/5 via-background to-background">
         <div className="container">

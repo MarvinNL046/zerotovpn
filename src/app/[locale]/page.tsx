@@ -1,4 +1,5 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
+import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ComparisonTable } from "@/components/vpn/comparison-table";
@@ -12,10 +13,33 @@ import {
   ComparisonTableSchema,
   FaqSchema,
 } from "@/components/structured-data";
+import { routing } from "@/i18n/routing";
 
 type Props = {
   params: Promise<{ locale: string }>;
 };
+
+const baseUrl = "https://zerotovpn.com";
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+
+  const canonicalUrl = locale === "en" ? baseUrl : `${baseUrl}/${locale}`;
+
+  // Generate alternates for all languages
+  const languages: Record<string, string> = { "x-default": baseUrl };
+  routing.locales.forEach((l) => {
+    languages[l] = l === "en" ? baseUrl : `${baseUrl}/${l}`;
+  });
+
+  return {
+    metadataBase: new URL(baseUrl),
+    alternates: {
+      canonical: canonicalUrl,
+      languages: languages,
+    },
+  };
+}
 
 export default async function HomePage({ params }: Props) {
   const { locale } = await params;

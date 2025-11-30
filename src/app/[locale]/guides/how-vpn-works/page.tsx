@@ -7,6 +7,7 @@ import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
+import { HowToSchema } from "@/components/seo/howto-schema";
 import {
   Lock,
   Server,
@@ -75,6 +76,29 @@ export default async function HowVpnWorksPage({ params }: Props) {
           { name: "Home", url: baseUrl },
           { name: "Guides", url: `${baseUrl}/guides` },
           { name: "How VPN Works", url: pageUrl },
+        ]}
+      />
+      <HowToSchema
+        name="How to Use a VPN to Protect Your Data"
+        description="Learn the complete process of how VPN technology encrypts and protects your internet traffic from your device to the destination server."
+        totalTime="PT5M"
+        steps={[
+          {
+            name: "Connect to VPN Server",
+            text: "Launch your VPN application and select a server location. Click connect to establish a secure connection between your device and the VPN server."
+          },
+          {
+            name: "Traffic is Encrypted",
+            text: "Once connected, all your internet traffic is encrypted using AES-256 encryption before leaving your device, making it unreadable to anyone who might intercept it."
+          },
+          {
+            name: "IP Address is Masked",
+            text: "Your real IP address is hidden and replaced with the VPN server's IP address, making it appear as if you're browsing from the server's location."
+          },
+          {
+            name: "Access Content Securely",
+            text: "Browse the internet normally. All your data travels through the encrypted VPN tunnel, protecting your privacy and allowing secure access to websites and services."
+          }
         ]}
       />
       <article className="flex flex-col">

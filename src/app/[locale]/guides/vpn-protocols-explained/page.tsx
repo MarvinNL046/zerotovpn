@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
+import { TableOfContents } from "@/components/seo/table-of-contents";
 import {
   Server,
   Shield,
@@ -121,20 +122,20 @@ export default async function VpnProtocolsExplainedPage({ params }: Props) {
       </section>
 
       {/* Table of Contents */}
-      <section className="py-8 border-b bg-muted/30">
+      <section className="py-8 border-b">
         <div className="container">
           <div className="max-w-3xl mx-auto">
-            <h2 className="font-bold mb-4">{t("toc.title")}</h2>
-            <nav className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
-              {(t.raw("toc.items") as string[]).map((item, index) => {
-                const anchors = ["what-is-protocol", "wireguard", "openvpn", "ikev2", "others", "comparison"];
-                return (
-                  <a key={index} href={`#${anchors[index]}`} className="text-primary hover:underline">
-                    {item}
-                  </a>
-                );
-              })}
-            </nav>
+            <TableOfContents
+              title={t("toc.title")}
+              items={[
+                { id: "what-is-protocol", title: (t.raw("toc.items") as string[])[0] },
+                { id: "wireguard", title: (t.raw("toc.items") as string[])[1] },
+                { id: "openvpn", title: (t.raw("toc.items") as string[])[2] },
+                { id: "ikev2", title: (t.raw("toc.items") as string[])[3] },
+                { id: "others", title: (t.raw("toc.items") as string[])[4] },
+                { id: "comparison", title: (t.raw("toc.items") as string[])[5] },
+              ]}
+            />
           </div>
         </div>
       </section>

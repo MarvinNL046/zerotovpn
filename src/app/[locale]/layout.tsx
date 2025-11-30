@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const canonicalUrl = locale === "en" ? baseUrl : `${baseUrl}/${locale}`;
 
   // Generate alternates for all languages
-  const languages: Record<string, string> = {};
+  const languages: Record<string, string> = { "x-default": baseUrl };
   routing.locales.forEach((l) => {
     languages[l] = l === "en" ? baseUrl : `${baseUrl}/${l}`;
   });

@@ -2,6 +2,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { SpeedTestWidget } from "@/components/tools/speed-test-widget";
 import { VpnCard } from "@/components/vpn/vpn-card";
 import { vpnProviders } from "@/lib/vpn-data";
+import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { Zap, Shield, Info } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -31,6 +32,9 @@ export default async function SpeedTestPage({ params }: Props) {
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-6xl">
+      {/* Breadcrumbs */}
+      <BreadcrumbSchema items={[{ name: "Speed Test", href: "/speed-test" }]} className="mb-8" />
+
       {/* Hero Section */}
       <div className="text-center mb-10">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">

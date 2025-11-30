@@ -12,6 +12,7 @@ import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { getAllVpns, type VpnProvider } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
+import { routing } from "@/i18n/routing";
 import {
   Shield,
   Zap,
@@ -53,10 +54,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     fr: "Vous cherchez le meilleur VPN en 2025? Nous avons testé plus de 35 VPNs pour la vitesse, la sécurité et le streaming. Voir nos classements d'experts.",
   };
 
+  const prefix = locale === "en" ? "" : `/${locale}`;
+  const canonicalUrl = `${baseUrl}${prefix}/best/best-vpn`;
+
+  // Generate alternates for all languages
+  const languages: Record<string, string> = { "x-default": `${baseUrl}/best/best-vpn` };
+  routing.locales.forEach((l) => {
+    const p = l === "en" ? "" : `/${l}`;
+    languages[l] = `${baseUrl}${p}/best/best-vpn`;
+  });
+
   return {
     metadataBase: new URL(baseUrl),
     title: titles[locale] || titles.en,
     description: descriptions[locale] || descriptions.en,
+    alternates: {
+      canonical: canonicalUrl,
+      languages: languages,
+    },
     openGraph: {
       title: titles[locale] || titles.en,
       description: descriptions[locale] || descriptions.en,

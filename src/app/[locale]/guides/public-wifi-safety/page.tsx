@@ -7,6 +7,7 @@ import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
+import { HowToSchema } from "@/components/seo/howto-schema";
 import {
   Wifi,
   WifiOff,
@@ -81,6 +82,29 @@ export default async function PublicWifiSafetyPage({ params }: Props) {
           { name: "Home", url: baseUrl },
           { name: "Guides", url: `${baseUrl}/guides` },
           { name: "Public WiFi Safety", url: pageUrl },
+        ]}
+      />
+      <HowToSchema
+        name="How to Safely Use Public WiFi with a VPN"
+        description="Essential steps to protect your data and privacy when connecting to public WiFi networks at cafes, airports, and hotels."
+        totalTime="PT3M"
+        steps={[
+          {
+            name: "Enable VPN Before Connecting",
+            text: "Before connecting to any public WiFi network, launch your VPN application and connect to a server. This ensures all your data is encrypted from the moment you access the network."
+          },
+          {
+            name: "Verify VPN Connection",
+            text: "Check that your VPN is actively connected and the kill switch is enabled. Confirm your IP address shows the VPN server location, not your actual location. This prevents any data leaks if the VPN disconnects."
+          },
+          {
+            name: "Browse Securely",
+            text: "With your VPN active, you can safely access websites, check emails, and use online banking. All your traffic is encrypted and protected from hackers on the public network. Still avoid accessing highly sensitive accounts unless necessary."
+          },
+          {
+            name: "Disconnect Safely",
+            text: "When finished, close sensitive applications first, then disconnect from the WiFi network. Keep your VPN enabled until you're on a trusted network. Turn off WiFi auto-connect to prevent automatic connections to unsafe networks."
+          }
         ]}
       />
       <article className="flex flex-col">

@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button";
 import { RatingStars } from "@/components/vpn/rating-stars";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { VpnComparisonTool } from "@/components/conversion/vpn-comparison-tool";
+import { routing } from "@/i18n/routing";
+import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import {
   Check,
   X,
@@ -29,17 +31,54 @@ type Props = {
 
 const baseUrl = "https://zerotovpn.com";
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+
+  const prefix = locale === "en" ? "" : `/${locale}`;
+  const canonicalUrl = `${baseUrl}${prefix}/compare`;
+
+  // Generate alternates for all languages
+  const languages: Record<string, string> = { "x-default": `${baseUrl}/compare` };
+  routing.locales.forEach((l) => {
+    const p = l === "en" ? "" : `/${l}`;
+    languages[l] = `${baseUrl}${p}/compare`;
+  });
+
   return {
     metadataBase: new URL(baseUrl),
     title: "Compare VPNs Side by Side - ZeroToVPN",
     description:
       "Compare the best VPN services side by side. See detailed comparisons of speed, security, pricing, features, and more to find the perfect VPN for your needs.",
+    alternates: {
+      canonical: canonicalUrl,
+      languages: languages,
+    },
     robots: {
       index: true,
       follow: true,
     },
   };
+}
+// Structured Data for VPN Comparison List
+function ItemListSchema({ vpns }: { vpns: any[] }) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "VPN Comparison List",
+    numberOfItems: vpns.length,
+    itemListElement: vpns.map((vpn, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: vpn.name,
+      url: `https://zerotovpn.com/reviews/${vpn.slug}`,
+    })),
+  };
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
 }
 
 export default async function ComparePage({ params }: Props) {
@@ -50,9 +89,17 @@ export default async function ComparePage({ params }: Props) {
   const vpns = await getAllVpns();
 
   return (
-    <div className="flex flex-col">
-      {/* Hero Section */}
-      <section className="py-16 lg:py-20 bg-gradient-to-br from-primary/5 via-background to-background">
+    <>
+      <ItemListSchema vpns={vpns} />
+
+      <div className="flex flex-col">
+        {/* Breadcrumbs */}
+        <div className="container pt-6">
+          <BreadcrumbSchema items={[{ name: "Compare VPNs", href: "/compare" }]} />
+        </div>
+
+        {/* Hero Section */}
+        <section className="py-16 lg:py-20 bg-gradient-to-br from-primary/5 via-background to-background">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center space-y-4">
             <Badge variant="secondary" className="px-4 py-1">
@@ -684,6 +731,7 @@ export default async function ComparePage({ params }: Props) {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

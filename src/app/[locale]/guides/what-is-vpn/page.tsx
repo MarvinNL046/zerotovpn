@@ -8,6 +8,8 @@ import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
+import { TableOfContents } from "@/components/seo/table-of-contents";
+import { routing } from "@/i18n/routing";
 import {
   Shield,
   Lock,
@@ -34,12 +36,28 @@ type Props = {
 
 const baseUrl = "https://zerotovpn.com";
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+
+  const prefix = locale === "en" ? "" : `/${locale}`;
+  const canonicalUrl = `${baseUrl}${prefix}/guides/what-is-vpn`;
+
+  // Generate alternates for all languages
+  const languages: Record<string, string> = { "x-default": `${baseUrl}/guides/what-is-vpn` };
+  routing.locales.forEach((l) => {
+    const p = l === "en" ? "" : `/${l}`;
+    languages[l] = `${baseUrl}${p}/guides/what-is-vpn`;
+  });
+
   return {
     metadataBase: new URL(baseUrl),
     title: "What is a VPN? Complete Beginner's Guide 2025 - ZeroToVPN",
     description:
       "Learn what a VPN is, how it works, and why you need one. Our comprehensive beginner's guide explains VPN technology in simple terms.",
+    alternates: {
+      canonical: canonicalUrl,
+      languages: languages,
+    },
     robots: {
       index: true,
       follow: true,
@@ -106,21 +124,20 @@ export default async function WhatIsVpnPage({ params }: Props) {
       </section>
 
       {/* Table of Contents */}
-      <section className="py-8 border-b bg-muted/30">
+      <section className="py-8 border-b">
         <div className="container">
           <div className="max-w-3xl mx-auto">
-            <h2 className="font-bold mb-4">{t("toc.title")}</h2>
-            <nav className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
-              {(t.raw("toc.items") as string[]).map((item, index) => (
-                <a
-                  key={index}
-                  href={`#${["what-is-vpn", "how-vpn-works", "why-use-vpn", "vpn-benefits", "vpn-limitations", "choosing-vpn"][index]}`}
-                  className="text-primary hover:underline"
-                >
-                  {item}
-                </a>
-              ))}
-            </nav>
+            <TableOfContents
+              title={t("toc.title")}
+              items={[
+                { id: "what-is-vpn", title: (t.raw("toc.items") as string[])[0] },
+                { id: "how-vpn-works", title: (t.raw("toc.items") as string[])[1] },
+                { id: "why-use-vpn", title: (t.raw("toc.items") as string[])[2] },
+                { id: "vpn-benefits", title: (t.raw("toc.items") as string[])[3] },
+                { id: "vpn-limitations", title: (t.raw("toc.items") as string[])[4] },
+                { id: "choosing-vpn", title: (t.raw("toc.items") as string[])[5] },
+              ]}
+            />
           </div>
         </div>
       </section>

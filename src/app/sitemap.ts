@@ -90,7 +90,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       const url = `${baseUrl}${prefix}${page.path}`;
 
       // Generate alternates for all languages
-      const alternates: Record<string, string> = {};
+      const alternates: Record<string, string> = {
+        "x-default": `${baseUrl}${page.path}`
+      };
       locales.forEach((l) => {
         const altPrefix = l === "en" ? "" : `/${l}`;
         alternates[l] = `${baseUrl}${altPrefix}${page.path}`;
@@ -115,7 +117,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       const url = `${baseUrl}${prefix}/reviews/${vpn.slug}`;
 
       // Generate alternates for all languages
-      const alternates: Record<string, string> = {};
+      const alternates: Record<string, string> = {
+        "x-default": `${baseUrl}/reviews/${vpn.slug}`
+      };
       locales.forEach((l) => {
         const altPrefix = l === "en" ? "" : `/${l}`;
         alternates[l] = `${baseUrl}${altPrefix}/reviews/${vpn.slug}`;

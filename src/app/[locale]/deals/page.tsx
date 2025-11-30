@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
+import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import {
   Tag,
   TrendingDown,
@@ -940,6 +941,11 @@ export default async function DealsPage({ params }: Props) {
   return (
     <main className="min-h-screen">
       <DealsSchema />
+
+      {/* Breadcrumbs */}
+      <div className="container pt-6">
+        <BreadcrumbSchema items={[{ name: "Deals", href: "/deals" }]} />
+      </div>
 
       {/* Hero Section */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 md:py-24">

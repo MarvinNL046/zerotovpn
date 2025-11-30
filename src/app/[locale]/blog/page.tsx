@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { RelatedPages } from "@/components/seo/related-pages";
+import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -126,6 +127,11 @@ export default async function BlogPage({ params }: Props) {
 
   return (
     <div className="flex flex-col">
+      {/* Breadcrumbs */}
+      <div className="container pt-6">
+        <BreadcrumbSchema items={[{ name: "Blog", href: "/blog" }]} />
+      </div>
+
       {/* Hero Section */}
       <section className="relative py-12 lg:py-16 overflow-hidden border-b">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background" />

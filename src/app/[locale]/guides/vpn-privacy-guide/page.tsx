@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
+import { TableOfContents } from "@/components/seo/table-of-contents";
 import {
   Eye,
   EyeOff,
@@ -119,33 +120,20 @@ export default async function VpnPrivacyGuidePage({ params }: Props) {
       </section>
 
       {/* Table of Contents */}
-      <section className="py-8 border-b bg-muted/30">
+      <section className="py-8 border-b">
         <div className="container">
           <div className="max-w-3xl mx-auto">
-            <h2 className="font-bold mb-4">{t("toc.title")}</h2>
-            <nav className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
-              {(t.raw("toc.items") as string[]).map((item, index) => (
-                <a
-                  key={index}
-                  href={`#${
-                    index === 0
-                      ? "what-is-privacy"
-                      : index === 1
-                      ? "no-logs"
-                      : index === 2
-                      ? "jurisdiction"
-                      : index === 3
-                      ? "audits"
-                      : index === 4
-                      ? "red-flags"
-                      : "checklist"
-                  }`}
-                  className="text-primary hover:underline"
-                >
-                  {item}
-                </a>
-              ))}
-            </nav>
+            <TableOfContents
+              title={t("toc.title")}
+              items={[
+                { id: "what-is-privacy", title: (t.raw("toc.items") as string[])[0] },
+                { id: "no-logs", title: (t.raw("toc.items") as string[])[1] },
+                { id: "jurisdiction", title: (t.raw("toc.items") as string[])[2] },
+                { id: "audits", title: (t.raw("toc.items") as string[])[3] },
+                { id: "red-flags", title: (t.raw("toc.items") as string[])[4] },
+                { id: "checklist", title: (t.raw("toc.items") as string[])[5] },
+              ]}
+            />
           </div>
         </div>
       </section>

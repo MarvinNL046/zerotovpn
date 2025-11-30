@@ -9,6 +9,8 @@ import { ArticleJsonLd } from "@/components/structured-data";
 import { getVpnBySlug } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
 import { RelatedPages } from "@/components/seo/related-pages";
+import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
+import { routing } from "@/i18n/routing";
 import {
   Calendar,
   Clock,
@@ -55,10 +57,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     th: "อย่าพลาดดีล VPN ที่ใหญ่ที่สุดของปี! รับส่วนลดสูงสุด 88% สำหรับ Surfshark, NordVPN, ExpressVPN และอื่นๆ ข้อเสนอ Black Friday จำกัดเวลา",
   };
 
+  const prefix = locale === "en" ? "" : `/${locale}`;
+  const canonicalUrl = `${baseUrl}${prefix}/blog/${slug}`;
+
+  // Generate alternates for all languages
+  const languages: Record<string, string> = { "x-default": `${baseUrl}/blog/${slug}` };
+  routing.locales.forEach((l) => {
+    const p = l === "en" ? "" : `/${l}`;
+    languages[l] = `${baseUrl}${p}/blog/${slug}`;
+  });
+
   return {
     metadataBase: new URL(baseUrl),
     title: titles[locale] || titles.en,
     description: descriptions[locale] || descriptions.en,
+    alternates: {
+      canonical: canonicalUrl,
+      languages: languages,
+    },
     openGraph: {
       title: titles[locale] || titles.en,
       description: descriptions[locale] || descriptions.en,
@@ -135,6 +151,16 @@ export default async function BlackFridayDealsPage({ params }: Props) {
       />
 
       <article className="flex flex-col">
+        {/* Breadcrumbs */}
+        <div className="container pt-6">
+          <BreadcrumbSchema
+            items={[
+              { name: "Blog", href: "/blog" },
+              { name: "Black Friday 2025", href: "/blog/vpn-black-friday-2025" }
+            ]}
+          />
+        </div>
+
         {/* Hero Section */}
         <section className="relative py-12 lg:py-16 overflow-hidden border-b">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background" />

@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "@/i18n/navigation";
 import { RelatedPages } from "@/components/seo/related-pages";
+import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import {
   Globe,
   Clock,
@@ -387,6 +388,11 @@ export default async function CountriesPage({ params }: Props) {
 
   return (
     <div className="flex flex-col">
+      {/* Breadcrumbs */}
+      <div className="container pt-6">
+        <BreadcrumbSchema items={[{ name: "Countries", href: "/countries" }]} />
+      </div>
+
       {/* Hero Section */}
       <section className="relative py-16 lg:py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background" />

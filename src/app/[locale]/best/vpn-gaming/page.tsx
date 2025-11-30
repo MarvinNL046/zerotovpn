@@ -73,28 +73,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-// Structured Data for Gaming VPNs
-function GamingVpnSchema() {
+// Structured Data for Gaming VPNs ItemList
+function ItemListSchema({ gamingVpns }: { gamingVpns: any[] }) {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: "Best VPN for Gaming 2025: Low Ping, DDoS Protection",
-    description:
-      "Comprehensive guide to the best gaming VPNs tested for ping, speed, and DDoS protection in 2025.",
-    author: {
-      "@type": "Organization",
-      name: "ZeroToVPN",
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "ZeroToVPN",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://zerotovpn.com/logo.png",
-      },
-    },
-    datePublished: "2025-11-29",
-    dateModified: "2025-11-29",
+    "@type": "ItemList",
+    name: "Best Gaming VPN Services 2025",
+    numberOfItems: gamingVpns.length,
+    itemListElement: gamingVpns.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.vpn?.name || "",
+      url: `https://zerotovpn.com/reviews/${item.vpn?.slug}`,
+    })),
   };
 
   return (
@@ -1496,7 +1487,7 @@ export default async function GamingVpnPage({ params }: Props) {
 
   return (
     <>
-      <GamingVpnSchema />
+      <ItemListSchema gamingVpns={gamingVpns} />
 
       <div className="flex flex-col">
         {/* Hero Section */}

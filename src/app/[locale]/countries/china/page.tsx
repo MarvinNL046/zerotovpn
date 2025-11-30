@@ -8,6 +8,7 @@ import { RatingStars } from "@/components/vpn/rating-stars";
 import { getAllVpns, type VpnProvider } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
 import { RelatedPages } from "@/components/seo/related-pages";
+import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import {
   Shield,
   AlertTriangle,
@@ -1228,6 +1229,16 @@ export default async function ChinaVpnPage({ params }: Props) {
       <CountryVpnSchema vpns={topChinaVpns} locale={locale} />
 
       <div className="flex flex-col">
+        {/* Breadcrumbs */}
+        <div className="container pt-6">
+          <BreadcrumbSchema
+            items={[
+              { name: "Countries", href: "/countries" },
+              { name: "China", href: "/countries/china" }
+            ]}
+          />
+        </div>
+
         {/* Hero Section */}
         <section className="relative py-16 lg:py-24 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 via-background to-background" />

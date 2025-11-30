@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArticleJsonLd } from "@/components/structured-data";
 import { Link } from "@/i18n/navigation";
 import { RelatedPages } from "@/components/seo/related-pages";
+import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import {
   Calendar,
   Clock,
@@ -111,6 +112,16 @@ export default async function VpnLegalityPage({ params }: Props) {
       />
 
       <article className="flex flex-col">
+        {/* Breadcrumbs */}
+        <div className="container pt-6">
+          <BreadcrumbSchema
+            items={[
+              { name: "Blog", href: "/blog" },
+              { name: "Is VPN Legal?", href: "/blog/is-vpn-legal" }
+            ]}
+          />
+        </div>
+
         {/* Hero Section */}
         <section className="relative py-12 lg:py-16 overflow-hidden border-b">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background" />

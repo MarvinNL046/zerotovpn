@@ -12,7 +12,8 @@
     "guides": "指南",
     "blog": "博客",
     "about": "关于我们",
-    "speedTest": "速度测试"
+    "speedTest": "速度测试",
+    "countries": "国家"
   },
   "hero": {
     "title": "找到您的完美VPN",
@@ -83,7 +84,8 @@
     "bestVpns": "2025年最佳VPN",
     "compare": "比较VPN",
     "whatIsVpn": "什么是VPN？",
-    "speedTest": "速度测试"
+    "speedTest": "速度测试",
+    "countries": "国家"
   },
   "newsletter": {
     "title": "保持更新",

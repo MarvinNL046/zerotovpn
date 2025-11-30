@@ -75,6 +75,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/countries"
+                  className="text-muted-foreground hover:text-primary"
+                >
+                  {t("countries")}
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/speed-test"
                   className="text-muted-foreground hover:text-primary"
                 >

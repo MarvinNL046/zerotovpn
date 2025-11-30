@@ -12,7 +12,8 @@
     "guides": "Gidsen",
     "blog": "Blog",
     "about": "Over ons",
-    "speedTest": "Snelheidstest"
+    "speedTest": "Snelheidstest",
+    "countries": "Landen"
   },
   "hero": {
     "title": "Vind Jouw Perfecte VPN",
@@ -83,7 +84,8 @@
     "bestVpns": "Beste VPNs 2025",
     "compare": "Vergelijk VPNs",
     "whatIsVpn": "Wat is een VPN?",
-    "speedTest": "Snelheidstest"
+    "speedTest": "Snelheidstest",
+    "countries": "Landen"
   },
   "newsletter": {
     "title": "Blijf Op De Hoogte",

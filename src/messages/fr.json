@@ -12,7 +12,8 @@
     "guides": "Guides",
     "blog": "Blog",
     "about": "À propos",
-    "speedTest": "Test de Vitesse"
+    "speedTest": "Test de Vitesse",
+    "countries": "Pays"
   },
   "hero": {
     "title": "Trouvez votre VPN parfait",
@@ -83,7 +84,8 @@
     "bestVpns": "Meilleurs VPNs 2025",
     "compare": "Comparer les VPNs",
     "whatIsVpn": "Qu'est-ce qu'un VPN ?",
-    "speedTest": "Test de Vitesse"
+    "speedTest": "Test de Vitesse",
+    "countries": "Pays"
   },
   "newsletter": {
     "title": "Restez informé",

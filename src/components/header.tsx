@@ -8,7 +8,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Shield, Menu, X, Star, Zap, Globe, Tag, ChevronDown, Trophy, Gamepad2, Gift, Smartphone, Tablet } from "lucide-react";
+import { Shield, Menu, X, Star, Zap, Globe, Tag, ChevronDown, Trophy, Gamepad2, Gift, Smartphone, Tablet, Laptop, Monitor, Apple } from "lucide-react";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { LanguageSwitcher } from "./language-switcher";
@@ -30,6 +30,14 @@ export function Header() {
     { href: "/best/vpn-mobile", label: t("vpnMobile"), icon: Smartphone },
     { href: "/best/vpn-tablet", label: t("vpnTablet"), icon: Tablet },
     { href: "/best/free-vpn", label: t("freeVpn"), icon: Gift },
+  ];
+
+  const deviceItems = [
+    { href: "/best/vpn-laptops", label: t("vpnLaptops"), icon: Laptop },
+    { href: "/best/vpn-windows", label: t("vpnWindows"), icon: Monitor },
+    { href: "/best/vpn-macos", label: t("vpnMacos"), icon: Apple },
+    { href: "/best/vpn-chromebook", label: t("vpnChromebook"), icon: Laptop },
+    { href: "/best/vpn-linux", label: t("vpnLinux"), icon: Monitor },
   ];
 
   const navItems = [
@@ -94,6 +102,43 @@ export function Header() {
             </DropdownMenuTrigger>
             <DropdownMenuContent align="center" className="w-48">
               {bestVpnItems.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <DropdownMenuItem key={item.href} asChild>
+                    <Link
+                      href={item.href}
+                      className="flex items-center gap-2 cursor-pointer"
+                    >
+                      <Icon className="h-4 w-4" />
+                      {item.label}
+                    </Link>
+                  </DropdownMenuItem>
+                );
+              })}
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          {/* Devices - Dropdown */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button
+                className={cn(
+                  "text-sm font-medium transition-colors hover:text-primary inline-flex items-center gap-1",
+                  pathname.startsWith("/best/vpn-laptop") ||
+                  pathname.startsWith("/best/vpn-windows") ||
+                  pathname.startsWith("/best/vpn-macos") ||
+                  pathname.startsWith("/best/vpn-chromebook") ||
+                  pathname.startsWith("/best/vpn-linux")
+                    ? "text-primary"
+                    : "text-muted-foreground"
+                )}
+              >
+                {t("devices")}
+                <ChevronDown className="h-3.5 w-3.5" />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="center" className="w-48">
+              {deviceItems.map((item) => {
                 const Icon = item.icon;
                 return (
                   <DropdownMenuItem key={item.href} asChild>
@@ -223,6 +268,30 @@ export function Header() {
               </span>
               <div className="pl-6 space-y-2">
                 {bestVpnItems.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      <Icon className="h-4 w-4" />
+                      {item.label}
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Devices section */}
+            <div className="space-y-2">
+              <span className="text-sm font-semibold text-muted-foreground flex items-center gap-2">
+                <Laptop className="h-4 w-4" />
+                {t("devices")}
+              </span>
+              <div className="pl-6 space-y-2">
+                {deviceItems.map((item) => {
                   const Icon = item.icon;
                   return (
                     <Link

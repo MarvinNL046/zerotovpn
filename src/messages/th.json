@@ -22,7 +22,13 @@
     "blog": "บล็อก",
     "about": "เกี่ยวกับเรา",
     "speedTest": "ทดสอบความเร็ว",
-    "countries": "ประเทศ"
+    "countries": "ประเทศ",
+    "devices": "อุปกรณ์",
+    "vpnLaptops": "VPN สำหรับแล็ปท็อป",
+    "vpnWindows": "VPN สำหรับ Windows",
+    "vpnMacos": "VPN สำหรับ macOS",
+    "vpnChromebook": "VPN สำหรับ Chromebook",
+    "vpnLinux": "VPN สำหรับ Linux"
   },
   "hero": {
     "title": "ค้นหา VPN ที่สมบูรณ์แบบของคุณ",
@@ -94,7 +100,13 @@
     "compare": "เปรียบเทียบ VPN",
     "whatIsVpn": "VPN คืออะไร?",
     "speedTest": "ทดสอบความเร็ว",
-    "countries": "ประเทศ"
+    "countries": "ประเทศ",
+    "devices": "อุปกรณ์",
+    "vpnLaptops": "VPN สำหรับแล็ปท็อป",
+    "vpnWindows": "VPN สำหรับ Windows",
+    "vpnMacos": "VPN สำหรับ macOS",
+    "vpnChromebook": "VPN สำหรับ Chromebook",
+    "vpnLinux": "VPN สำหรับ Linux"
   },
   "newsletter": {
     "title": "รับข่าวสารล่าสุด",

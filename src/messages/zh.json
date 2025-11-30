@@ -22,7 +22,13 @@
     "blog": "博客",
     "about": "关于我们",
     "speedTest": "速度测试",
-    "countries": "国家"
+    "countries": "国家",
+    "devices": "设备",
+    "vpnLaptops": "笔记本电脑VPN",
+    "vpnWindows": "Windows VPN",
+    "vpnMacos": "macOS VPN",
+    "vpnChromebook": "Chromebook VPN",
+    "vpnLinux": "Linux VPN"
   },
   "hero": {
     "title": "找到您的完美VPN",
@@ -94,7 +100,13 @@
     "compare": "比较VPN",
     "whatIsVpn": "什么是VPN？",
     "speedTest": "速度测试",
-    "countries": "国家"
+    "countries": "国家",
+    "devices": "设备",
+    "vpnLaptops": "笔记本电脑VPN",
+    "vpnWindows": "Windows VPN",
+    "vpnMacos": "macOS VPN",
+    "vpnChromebook": "Chromebook VPN",
+    "vpnLinux": "Linux VPN"
   },
   "newsletter": {
     "title": "保持更新",
@@ -4352,20 +4364,47 @@
       "nordvpn": {
         "badge": "最佳iPad",
         "description": "NordVPN凭借精美设计的界面、NordLynx协议带来的极速速度和应用内分离隧道，提供最佳iPad体验。",
-        "pros": ["最佳iPad界面设计", "NordLynx协议 - 最快速度", "应用内分离隧道", "出色的流媒体支持", "Siri快捷指令集成"],
-        "cons": ["无系统级分离隧道", "高级定价"]
+        "pros": [
+          "最佳iPad界面设计",
+          "NordLynx协议 - 最快速度",
+          "应用内分离隧道",
+          "出色的流媒体支持",
+          "Siri快捷指令集成"
+        ],
+        "cons": [
+          "无系统级分离隧道",
+          "高级定价"
+        ]
       },
       "surfshark": {
         "badge": "最佳家庭",
         "description": "Surfshark的无限设备政策和家庭共享兼容性使其成为拥有多台iPad的家庭的完美选择。",
-        "pros": ["无限设备", "家庭共享兼容", "最优价格（82%折扣）", "CleanWeb广告拦截器", "轻量级应用"],
-        "cons": ["服务器网络较小", "无Siri快捷指令"]
+        "pros": [
+          "无限设备",
+          "家庭共享兼容",
+          "最优价格（82%折扣）",
+          "CleanWeb广告拦截器",
+          "轻量级应用"
+        ],
+        "cons": [
+          "服务器网络较小",
+          "无Siri快捷指令"
+        ]
       },
       "expressvpn": {
         "badge": "最佳旅行",
         "description": "ExpressVPN在受限国家可靠运行，并在全球酒店和机场WiFi上提供稳定连接。",
-        "pros": ["在中国、阿联酋、土耳其可用", "最稳定的连接", "Lightway协议", "全天候支持", "MediaStreamer用于Apple TV"],
-        "cons": ["价格较高", "仅8台设备"]
+        "pros": [
+          "在中国、阿联酋、土耳其可用",
+          "最稳定的连接",
+          "Lightway协议",
+          "全天候支持",
+          "MediaStreamer用于Apple TV"
+        ],
+        "cons": [
+          "价格较高",
+          "仅8台设备"
+        ]
       }
     },
     "features": {
@@ -4389,33 +4428,70 @@
     },
     "setup": {
       "title": "如何在iPad上设置VPN",
-      "steps": ["在iPad上打开App Store", "搜索您选择的VPN（NordVPN、Surfshark或ExpressVPN）", "点击「获取」下载并安装", "打开VPN应用并登录或创建账户", "在提示时允许VPN配置", "点击「快速连接」以保护您的连接"]
+      "steps": [
+        "在iPad上打开App Store",
+        "搜索您选择的VPN（NordVPN、Surfshark或ExpressVPN）",
+        "点击「获取」下载并安装",
+        "打开VPN应用并登录或创建账户",
+        "在提示时允许VPN配置",
+        "点击「快速连接」以保护您的连接"
+      ]
     },
     "streaming": {
       "title": "在iPad上使用VPN流媒体",
       "description": "您的iPad大屏幕非常适合流媒体。使用VPN，您可以从任何地方访问内容。",
-      "services": ["Netflix（所有地区）", "Disney+（美国、英国等）", "BBC iPlayer（英国）", "Hulu（美国）", "Amazon Prime Video"]
+      "services": [
+        "Netflix（所有地区）",
+        "Disney+（美国、英国等）",
+        "BBC iPlayer（英国）",
+        "Hulu（美国）",
+        "Amazon Prime Video"
+      ]
     },
     "safety": {
       "title": "iPad VPN安全吗？",
       "description": "是的，高级iPad VPN完全安全。它们使用与银行相同的加密，并经过独立审计。",
       "premium": {
         "title": "高级VPN保护您的iPad：",
-        "features": ["AES-256加密", "无日志政策", "终止开关保护", "安全协议", "定期安全审计"]
+        "features": [
+          "AES-256加密",
+          "无日志政策",
+          "终止开关保护",
+          "安全协议",
+          "定期安全审计"
+        ]
       },
       "free": {
         "title": "避免在iPad上使用免费VPN：",
-        "dangers": ["数据收集和出售", "广告注入", "弱加密", "恶意软件风险", "带宽限制"]
+        "dangers": [
+          "数据收集和出售",
+          "广告注入",
+          "弱加密",
+          "恶意软件风险",
+          "带宽限制"
+        ]
       }
     },
     "avoid": {
       "title": "要避免的免费iPad VPN",
       "description": "不要用这些危险的免费VPN危害您iPad的安全。",
       "vpns": [
-        {"name": "HolaVPN", "reason": "使用您的iPad作为出口节点"},
-        {"name": "TurboVPN", "reason": "出售用户数据"},
-        {"name": "SuperVPN", "reason": "安全漏洞"},
-        {"name": "Betternet", "reason": "包含恶意软件"}
+        {
+          "name": "HolaVPN",
+          "reason": "使用您的iPad作为出口节点"
+        },
+        {
+          "name": "TurboVPN",
+          "reason": "出售用户数据"
+        },
+        {
+          "name": "SuperVPN",
+          "reason": "安全漏洞"
+        },
+        {
+          "name": "Betternet",
+          "reason": "包含恶意软件"
+        }
       ]
     },
     "conclusion": {
@@ -4682,20 +4758,47 @@
       "nordvpn": {
         "badge": "最佳整体",
         "description": "NordVPN凭借NordLynx协议、iPad和Android优化应用以及出色的流媒体性能，提供最快的平板体验。",
-        "pros": ["NordLynx最快平板速度", "出色的iPad和Android应用", "Android平板分离隧道", "118个国家的7,400+服务器", "完美流媒体"],
-        "cons": ["iPad无分离隧道", "价格稍高"]
+        "pros": [
+          "NordLynx最快平板速度",
+          "出色的iPad和Android应用",
+          "Android平板分离隧道",
+          "118个国家的7,400+服务器",
+          "完美流媒体"
+        ],
+        "cons": [
+          "iPad无分离隧道",
+          "价格稍高"
+        ]
       },
       "surfshark": {
         "badge": "最佳性价比",
         "description": "Surfshark提供无限设备连接，非常适合拥有多台平板的家庭。轻量级应用即使在旧平板上也能很好地工作。",
-        "pros": ["无限设备 - 非常适合家庭", "最轻应用 - 完美适合旧平板", "82%折扣的最优价格", "CleanWeb拦截广告和恶意软件", "Android上的GPS欺骗"],
-        "cons": ["服务器网络较小", "比NordVPN稍慢"]
+        "pros": [
+          "无限设备 - 非常适合家庭",
+          "最轻应用 - 完美适合旧平板",
+          "82%折扣的最优价格",
+          "CleanWeb拦截广告和恶意软件",
+          "Android上的GPS欺骗"
+        ],
+        "cons": [
+          "服务器网络较小",
+          "比NordVPN稍慢"
+        ]
       },
       "expressvpn": {
         "badge": "最佳旅行",
         "description": "ExpressVPN是旅行者最可靠的选择，在中国、阿联酋和土耳其稳定运行。在酒店和机场WiFi上稳定性出色。",
-        "pros": ["在中国、阿联酋、土耳其可用", "酒店WiFi最稳定", "Lightway协议 - 快速高效", "全天候客户支持", "覆盖105个国家"],
-        "cons": ["更贵", "限制8台设备"]
+        "pros": [
+          "在中国、阿联酋、土耳其可用",
+          "酒店WiFi最稳定",
+          "Lightway协议 - 快速高效",
+          "全天候客户支持",
+          "覆盖105个国家"
+        ],
+        "cons": [
+          "更贵",
+          "限制8台设备"
+        ]
       }
     },
     "platforms": {
@@ -4703,19 +4806,37 @@
       "ipad": {
         "title": "最佳iPad VPN",
         "description": "iPadOS优化应用，大屏幕界面、家庭共享支持和Apple隐私合规。",
-        "features": ["iPadOS优化界面", "家庭共享兼容", "Apple隐私标签", "多任务处理支持", "iCloud钥匙串集成"],
+        "features": [
+          "iPadOS优化界面",
+          "家庭共享兼容",
+          "Apple隐私标签",
+          "多任务处理支持",
+          "iCloud钥匙串集成"
+        ],
         "readMore": "最佳iPad VPN →"
       },
       "android": {
         "title": "最佳Android平板VPN",
         "description": "完整分离隧道、审查国家的APK侧载以及快速连接的小部件。",
-        "features": ["完整分离隧道支持", "可用APK侧载", "自定义DNS设置", "主屏幕小部件", "始终在线VPN"],
+        "features": [
+          "完整分离隧道支持",
+          "可用APK侧载",
+          "自定义DNS设置",
+          "主屏幕小部件",
+          "始终在线VPN"
+        ],
         "readMore": "最佳Android平板VPN →"
       },
       "windows": {
         "title": "最佳Windows平板VPN",
         "description": "Surface Pro和Surface Go上的完整Windows VPN支持。非常适合远程工作和企业安全。",
-        "features": ["完整Windows应用支持", "触控优化UI", "企业安全功能", "分离隧道", "原生协议支持"],
+        "features": [
+          "完整Windows应用支持",
+          "触控优化UI",
+          "企业安全功能",
+          "分离隧道",
+          "原生协议支持"
+        ],
         "readMore": "最佳Windows平板VPN →"
       }
     },
@@ -4768,22 +4889,51 @@
       "description": "是的，当您使用信誉良好的高级提供商时，平板VPN是安全的。高级VPN服务使用军事级加密和严格的无日志政策。然而，免费VPN实际上可能会使您平板的数据面临风险。",
       "premium": {
         "title": "高级VPN安全是因为：",
-        "features": ["军事级AES-256加密", "严格的无日志政策（经审计）", "安全协议（WireGuard、NordLynx）", "终止开关防止数据泄漏", "定期第三方安全审计", "透明的隐私政策"]
+        "features": [
+          "军事级AES-256加密",
+          "严格的无日志政策（经审计）",
+          "安全协议（WireGuard、NordLynx）",
+          "终止开关防止数据泄漏",
+          "定期第三方安全审计",
+          "透明的隐私政策"
+        ]
       },
       "free": {
         "title": "免费VPN危险是因为：",
-        "dangers": ["收集和出售您的数据", "在浏览中注入广告", "弱或无加密", "可能包含恶意软件或间谍软件", "严重限制速度", "无客户支持"]
+        "dangers": [
+          "收集和出售您的数据",
+          "在浏览中注入广告",
+          "弱或无加密",
+          "可能包含恶意软件或间谍软件",
+          "严重限制速度",
+          "无客户支持"
+        ]
       }
     },
     "avoid": {
       "title": "要避免的免费平板VPN",
       "description": "这些免费VPN被发现收集用户数据、注入广告或存在安全漏洞。不要冒险危害您平板的安全。",
       "vpns": [
-        {"name": "HolaVPN", "reason": "将您的设备用作其他用户的出口节点"},
-        {"name": "TurboVPN", "reason": "收集和出售用户浏览数据"},
-        {"name": "SuperVPN", "reason": "发现多个安全漏洞"},
-        {"name": "Betternet", "reason": "包含跟踪库和恶意软件"},
-        {"name": "Free VPN Unlimited", "reason": "记录用户活动并注入广告"}
+        {
+          "name": "HolaVPN",
+          "reason": "将您的设备用作其他用户的出口节点"
+        },
+        {
+          "name": "TurboVPN",
+          "reason": "收集和出售用户浏览数据"
+        },
+        {
+          "name": "SuperVPN",
+          "reason": "发现多个安全漏洞"
+        },
+        {
+          "name": "Betternet",
+          "reason": "包含跟踪库和恶意软件"
+        },
+        {
+          "name": "Free VPN Unlimited",
+          "reason": "记录用户活动并注入广告"
+        }
       ]
     },
     "conclusion": {
@@ -4847,20 +4997,47 @@
       "nordvpn": {
         "badge": "最佳整体",
         "description": "NordVPN的原生Windows应用在Surface平板上提供最佳体验，采用NordLynx协议和完整终止开关支持。",
-        "pros": ["原生Windows应用", "NordLynx协议", "完整终止开关", "触控友好UI", "商业功能"],
-        "cons": ["价格较高", "资源使用"]
+        "pros": [
+          "原生Windows应用",
+          "NordLynx协议",
+          "完整终止开关",
+          "触控友好UI",
+          "商业功能"
+        ],
+        "cons": [
+          "价格较高",
+          "资源使用"
+        ]
       },
       "surfshark": {
         "badge": "最佳性价比",
         "description": "Surfshark以最优价格提供无限设备，非常适合拥有多台Windows设备的专业人士。",
-        "pros": ["无限设备", "轻量级应用", "最优价格", "CleanWeb功能", "良好速度"],
-        "cons": ["功能较少", "网络较小"]
+        "pros": [
+          "无限设备",
+          "轻量级应用",
+          "最优价格",
+          "CleanWeb功能",
+          "良好速度"
+        ],
+        "cons": [
+          "功能较少",
+          "网络较小"
+        ]
       },
       "expressvpn": {
         "badge": "最佳稳定性",
         "description": "ExpressVPN为Windows平板提供最稳定的连接，Lightway协议针对移动使用进行了优化。",
-        "pros": ["最稳定", "Lightway协议", "非常适合旅行", "全天候支持", "易于设置"],
-        "cons": ["最贵", "8台设备限制"]
+        "pros": [
+          "最稳定",
+          "Lightway协议",
+          "非常适合旅行",
+          "全天候支持",
+          "易于设置"
+        ],
+        "cons": [
+          "最贵",
+          "8台设备限制"
+        ]
       }
     },
     "features": {
@@ -4900,33 +5077,70 @@
     },
     "setup": {
       "title": "如何在Windows平板上设置VPN",
-      "steps": ["访问VPN提供商的网站", "下载Windows应用", "安装并运行应用", "登录您的账户", "在设置中启用终止开关", "选择服务器并连接"]
+      "steps": [
+        "访问VPN提供商的网站",
+        "下载Windows应用",
+        "安装并运行应用",
+        "登录您的账户",
+        "在设置中启用终止开关",
+        "选择服务器并连接"
+      ]
     },
     "remoteWork": {
       "title": "使用Windows平板VPN远程工作",
       "description": "使用Surface平板远程工作时保护您的公司访问。",
-      "benefits": ["加密公司访问", "安全文件传输", "受保护的视频通话", "符合政策", "在任何网络上工作"]
+      "benefits": [
+        "加密公司访问",
+        "安全文件传输",
+        "受保护的视频通话",
+        "符合政策",
+        "在任何网络上工作"
+      ]
     },
     "safety": {
       "title": "Windows平板VPN安全吗？",
       "description": "是的，Windows平板上的高级VPN提供与台式电脑相同的安全性。",
       "premium": {
         "title": "高级VPN优势：",
-        "features": ["军事级加密", "无日志政策", "终止开关保护", "DNS泄漏防护", "定期审计"]
+        "features": [
+          "军事级加密",
+          "无日志政策",
+          "终止开关保护",
+          "DNS泄漏防护",
+          "定期审计"
+        ]
       },
       "free": {
         "title": "避免免费VPN：",
-        "dangers": ["数据记录", "弱加密", "广告注入", "恶意软件风险", "功能有限"]
+        "dangers": [
+          "数据记录",
+          "弱加密",
+          "广告注入",
+          "恶意软件风险",
+          "功能有限"
+        ]
       }
     },
     "avoid": {
       "title": "要避免的免费Windows VPN",
       "description": "不要用免费VPN危害您Surface平板的安全。",
       "vpns": [
-        {"name": "Hola VPN", "reason": "将您的设备用作代理"},
-        {"name": "Hotspot Shield Free", "reason": "记录和出售数据"},
-        {"name": "Betternet", "reason": "包含恶意软件"},
-        {"name": "SuperVPN", "reason": "安全漏洞"}
+        {
+          "name": "Hola VPN",
+          "reason": "将您的设备用作代理"
+        },
+        {
+          "name": "Hotspot Shield Free",
+          "reason": "记录和出售数据"
+        },
+        {
+          "name": "Betternet",
+          "reason": "包含恶意软件"
+        },
+        {
+          "name": "SuperVPN",
+          "reason": "安全漏洞"
+        }
       ]
     },
     "conclusion": {

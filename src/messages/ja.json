@@ -22,7 +22,13 @@
     "blog": "ブログ",
     "about": "会社概要",
     "speedTest": "速度テスト",
-    "countries": "国別ガイド"
+    "countries": "国別ガイド",
+    "devices": "デバイス",
+    "vpnLaptops": "ラップトップ用VPN",
+    "vpnWindows": "Windows用VPN",
+    "vpnMacos": "macOS用VPN",
+    "vpnChromebook": "Chromebook用VPN",
+    "vpnLinux": "Linux用VPN"
   },
   "hero": {
     "title": "最適なVPNを見つけよう",
@@ -94,7 +100,13 @@
     "compare": "VPN比較",
     "whatIsVpn": "VPNとは？",
     "speedTest": "速度テスト",
-    "countries": "国別ガイド"
+    "countries": "国別ガイド",
+    "devices": "デバイス",
+    "vpnLaptops": "ラップトップ用VPN",
+    "vpnWindows": "Windows用VPN",
+    "vpnMacos": "macOS用VPN",
+    "vpnChromebook": "Chromebook用VPN",
+    "vpnLinux": "Linux用VPN"
   },
   "newsletter": {
     "title": "最新情報を入手",

@@ -22,7 +22,13 @@
     "blog": "Blog",
     "about": "À propos",
     "speedTest": "Test de Vitesse",
-    "countries": "Pays"
+    "countries": "Pays",
+    "devices": "Appareils",
+    "vpnLaptops": "VPN pour Ordinateurs Portables",
+    "vpnWindows": "VPN pour Windows",
+    "vpnMacos": "VPN pour macOS",
+    "vpnChromebook": "VPN pour Chromebook",
+    "vpnLinux": "VPN pour Linux"
   },
   "hero": {
     "title": "Trouvez votre VPN parfait",
@@ -94,7 +100,13 @@
     "compare": "Comparer les VPNs",
     "whatIsVpn": "Qu'est-ce qu'un VPN ?",
     "speedTest": "Test de Vitesse",
-    "countries": "Pays"
+    "countries": "Pays",
+    "devices": "Appareils",
+    "vpnLaptops": "VPN pour Ordinateurs Portables",
+    "vpnWindows": "VPN pour Windows",
+    "vpnMacos": "VPN pour macOS",
+    "vpnChromebook": "VPN pour Chromebook",
+    "vpnLinux": "VPN pour Linux"
   },
   "newsletter": {
     "title": "Restez informé",
@@ -4358,20 +4370,47 @@
       "nordvpn": {
         "badge": "Meilleur pour iPad",
         "description": "NordVPN offre la meilleure expérience iPad avec une interface magnifiquement conçue, le protocole NordLynx pour des vitesses fulgurantes et un tunneling fractionné intégré à l'application.",
-        "pros": ["Meilleure conception d'interface iPad", "Protocole NordLynx - vitesses les plus rapides", "Tunneling fractionné dans l'application", "Excellent support de streaming", "Intégration Raccourcis Siri"],
-        "cons": ["Pas de tunneling fractionné à l'échelle du système", "Prix premium"]
+        "pros": [
+          "Meilleure conception d'interface iPad",
+          "Protocole NordLynx - vitesses les plus rapides",
+          "Tunneling fractionné dans l'application",
+          "Excellent support de streaming",
+          "Intégration Raccourcis Siri"
+        ],
+        "cons": [
+          "Pas de tunneling fractionné à l'échelle du système",
+          "Prix premium"
+        ]
       },
       "surfshark": {
         "badge": "Meilleur pour les familles",
         "description": "La politique d'appareils illimités de Surfshark et la compatibilité avec le Partage familial en font le choix parfait pour les foyers avec plusieurs iPad.",
-        "pros": ["Appareils illimités", "Compatible Partage familial", "Meilleur prix (82% de réduction)", "Bloqueur de publicités CleanWeb", "Application légère"],
-        "cons": ["Réseau de serveurs plus petit", "Pas de Raccourcis Siri"]
+        "pros": [
+          "Appareils illimités",
+          "Compatible Partage familial",
+          "Meilleur prix (82% de réduction)",
+          "Bloqueur de publicités CleanWeb",
+          "Application légère"
+        ],
+        "cons": [
+          "Réseau de serveurs plus petit",
+          "Pas de Raccourcis Siri"
+        ]
       },
       "expressvpn": {
         "badge": "Meilleur pour voyager",
         "description": "ExpressVPN fonctionne de manière fiable dans les pays restreints et fournit des connexions stables sur le WiFi des hôtels et aéroports dans le monde entier.",
-        "pros": ["Fonctionne en Chine, EAU, Turquie", "Connexions les plus stables", "Protocole Lightway", "Support 24/7", "MediaStreamer pour Apple TV"],
-        "cons": ["Prix plus élevé", "Seulement 8 appareils"]
+        "pros": [
+          "Fonctionne en Chine, EAU, Turquie",
+          "Connexions les plus stables",
+          "Protocole Lightway",
+          "Support 24/7",
+          "MediaStreamer pour Apple TV"
+        ],
+        "cons": [
+          "Prix plus élevé",
+          "Seulement 8 appareils"
+        ]
       }
     },
     "features": {
@@ -4395,33 +4434,70 @@
     },
     "setup": {
       "title": "Comment configurer un VPN sur iPad",
-      "steps": ["Ouvrez l'App Store sur votre iPad", "Recherchez votre VPN choisi (NordVPN, Surfshark ou ExpressVPN)", "Appuyez sur 'Obtenir' pour télécharger et installer", "Ouvrez l'application VPN et connectez-vous ou créez un compte", "Autorisez la configuration VPN lorsqu'on vous le demande", "Appuyez sur 'Connexion rapide' pour sécuriser votre connexion"]
+      "steps": [
+        "Ouvrez l'App Store sur votre iPad",
+        "Recherchez votre VPN choisi (NordVPN, Surfshark ou ExpressVPN)",
+        "Appuyez sur 'Obtenir' pour télécharger et installer",
+        "Ouvrez l'application VPN et connectez-vous ou créez un compte",
+        "Autorisez la configuration VPN lorsqu'on vous le demande",
+        "Appuyez sur 'Connexion rapide' pour sécuriser votre connexion"
+      ]
     },
     "streaming": {
       "title": "Streaming sur iPad avec VPN",
       "description": "Le grand écran de votre iPad est parfait pour le streaming. Avec un VPN, vous pouvez accéder au contenu de n'importe où.",
-      "services": ["Netflix (toutes les régions)", "Disney+ (US, UK, plus)", "BBC iPlayer (UK)", "Hulu (US)", "Amazon Prime Video"]
+      "services": [
+        "Netflix (toutes les régions)",
+        "Disney+ (US, UK, plus)",
+        "BBC iPlayer (UK)",
+        "Hulu (US)",
+        "Amazon Prime Video"
+      ]
     },
     "safety": {
       "title": "Le VPN iPad est-il sûr ?",
       "description": "Oui, les VPN premium pour iPad sont totalement sûrs. Ils utilisent le même chiffrement que les banques et ont été audités de manière indépendante.",
       "premium": {
         "title": "Les VPN premium protègent votre iPad :",
-        "features": ["Chiffrement AES-256", "Politique de non-journalisation", "Protection par kill switch", "Protocoles sécurisés", "Audits de sécurité réguliers"]
+        "features": [
+          "Chiffrement AES-256",
+          "Politique de non-journalisation",
+          "Protection par kill switch",
+          "Protocoles sécurisés",
+          "Audits de sécurité réguliers"
+        ]
       },
       "free": {
         "title": "Évitez les VPN gratuits sur iPad :",
-        "dangers": ["Collection et vente de données", "Injection de publicités", "Chiffrement faible", "Risques de malware", "Limites de bande passante"]
+        "dangers": [
+          "Collection et vente de données",
+          "Injection de publicités",
+          "Chiffrement faible",
+          "Risques de malware",
+          "Limites de bande passante"
+        ]
       }
     },
     "avoid": {
       "title": "VPN iPad gratuits à éviter",
       "description": "Ne compromettez pas la sécurité de votre iPad avec ces VPN gratuits risqués.",
       "vpns": [
-        {"name": "HolaVPN", "reason": "Utilise votre iPad comme nœud de sortie"},
-        {"name": "TurboVPN", "reason": "Vend les données utilisateur"},
-        {"name": "SuperVPN", "reason": "Vulnérabilités de sécurité"},
-        {"name": "Betternet", "reason": "Contient des malware"}
+        {
+          "name": "HolaVPN",
+          "reason": "Utilise votre iPad comme nœud de sortie"
+        },
+        {
+          "name": "TurboVPN",
+          "reason": "Vend les données utilisateur"
+        },
+        {
+          "name": "SuperVPN",
+          "reason": "Vulnérabilités de sécurité"
+        },
+        {
+          "name": "Betternet",
+          "reason": "Contient des malware"
+        }
       ]
     },
     "conclusion": {
@@ -4688,20 +4764,47 @@
       "nordvpn": {
         "badge": "Meilleur global",
         "description": "NordVPN offre l'expérience tablette la plus rapide avec le protocole NordLynx, des applications optimisées pour iPad et Android, et d'excellentes performances de streaming.",
-        "pros": ["Vitesses tablette les plus rapides avec NordLynx", "Excellentes applications iPad et Android", "Tunneling fractionné sur tablettes Android", "7 400+ serveurs dans 118 pays", "Parfait pour le streaming"],
-        "cons": ["Pas de tunneling fractionné sur iPad", "Prix légèrement plus élevé"]
+        "pros": [
+          "Vitesses tablette les plus rapides avec NordLynx",
+          "Excellentes applications iPad et Android",
+          "Tunneling fractionné sur tablettes Android",
+          "7 400+ serveurs dans 118 pays",
+          "Parfait pour le streaming"
+        ],
+        "cons": [
+          "Pas de tunneling fractionné sur iPad",
+          "Prix légèrement plus élevé"
+        ]
       },
       "surfshark": {
         "badge": "Meilleur rapport qualité-prix",
         "description": "Surfshark offre des connexions d'appareils illimitées, ce qui le rend parfait pour les familles avec plusieurs tablettes. L'application légère fonctionne parfaitement même sur les tablettes plus anciennes.",
-        "pros": ["Appareils illimités - idéal pour les familles", "Application la plus légère - parfaite pour les tablettes anciennes", "Meilleur prix avec 82% de réduction", "CleanWeb bloque les publicités et malwares", "Usurpation GPS sur Android"],
-        "cons": ["Réseau de serveurs plus petit", "Légèrement plus lent que NordVPN"]
+        "pros": [
+          "Appareils illimités - idéal pour les familles",
+          "Application la plus légère - parfaite pour les tablettes anciennes",
+          "Meilleur prix avec 82% de réduction",
+          "CleanWeb bloque les publicités et malwares",
+          "Usurpation GPS sur Android"
+        ],
+        "cons": [
+          "Réseau de serveurs plus petit",
+          "Légèrement plus lent que NordVPN"
+        ]
       },
       "expressvpn": {
         "badge": "Meilleur pour voyager",
         "description": "ExpressVPN est le choix le plus fiable pour les voyageurs, fonctionnant de manière cohérente en Chine, EAU et Turquie. Excellente stabilité sur le WiFi des hôtels et aéroports.",
-        "pros": ["Fonctionne en Chine, EAU, Turquie", "Le plus stable sur WiFi d'hôtel", "Protocole Lightway - rapide et efficace", "Support client 24/7", "105 pays couverts"],
-        "cons": ["Plus cher", "Limité à 8 appareils"]
+        "pros": [
+          "Fonctionne en Chine, EAU, Turquie",
+          "Le plus stable sur WiFi d'hôtel",
+          "Protocole Lightway - rapide et efficace",
+          "Support client 24/7",
+          "105 pays couverts"
+        ],
+        "cons": [
+          "Plus cher",
+          "Limité à 8 appareils"
+        ]
       }
     },
     "platforms": {
@@ -4709,19 +4812,37 @@
       "ipad": {
         "title": "Meilleur VPN pour iPad",
         "description": "Applications optimisées iPadOS avec interfaces grand écran, support du Partage familial et conformité à la confidentialité Apple.",
-        "features": ["Interface optimisée iPadOS", "Compatible Partage familial", "Étiquettes de confidentialité Apple", "Support multitâche", "Intégration Trousseau iCloud"],
+        "features": [
+          "Interface optimisée iPadOS",
+          "Compatible Partage familial",
+          "Étiquettes de confidentialité Apple",
+          "Support multitâche",
+          "Intégration Trousseau iCloud"
+        ],
         "readMore": "Meilleurs VPN pour iPad →"
       },
       "android": {
         "title": "Meilleur VPN pour tablettes Android",
         "description": "Tunneling fractionné complet, installation APK pour les pays censurés et widgets pour des connexions rapides.",
-        "features": ["Support complet du tunneling fractionné", "Installation APK disponible", "Paramètres DNS personnalisés", "Widgets d'écran d'accueil", "VPN permanent"],
+        "features": [
+          "Support complet du tunneling fractionné",
+          "Installation APK disponible",
+          "Paramètres DNS personnalisés",
+          "Widgets d'écran d'accueil",
+          "VPN permanent"
+        ],
         "readMore": "Meilleurs VPN pour tablettes Android →"
       },
       "windows": {
         "title": "Meilleur VPN pour tablettes Windows",
         "description": "Support VPN Windows complet sur Surface Pro et Surface Go. Parfait pour le travail à distance et la sécurité d'entreprise.",
-        "features": ["Support complet de l'application Windows", "Interface optimisée tactile", "Fonctionnalités de sécurité d'entreprise", "Tunneling fractionné", "Support de protocole natif"],
+        "features": [
+          "Support complet de l'application Windows",
+          "Interface optimisée tactile",
+          "Fonctionnalités de sécurité d'entreprise",
+          "Tunneling fractionné",
+          "Support de protocole natif"
+        ],
         "readMore": "Meilleurs VPN pour tablettes Windows →"
       }
     },
@@ -4774,22 +4895,51 @@
       "description": "Oui, les VPN pour tablettes sont sûrs lorsque vous utilisez un fournisseur premium réputé. Les services VPN premium utilisent un chiffrement de niveau militaire et des politiques strictes de non-journalisation. Cependant, les VPN gratuits peuvent réellement mettre les données de votre tablette en danger.",
       "premium": {
         "title": "Les VPN premium sont sûrs parce que :",
-        "features": ["Chiffrement AES-256 de niveau militaire", "Politiques strictes de non-journalisation (auditées)", "Protocoles sécurisés (WireGuard, NordLynx)", "Le kill switch empêche les fuites de données", "Audits de sécurité tiers réguliers", "Politiques de confidentialité transparentes"]
+        "features": [
+          "Chiffrement AES-256 de niveau militaire",
+          "Politiques strictes de non-journalisation (auditées)",
+          "Protocoles sécurisés (WireGuard, NordLynx)",
+          "Le kill switch empêche les fuites de données",
+          "Audits de sécurité tiers réguliers",
+          "Politiques de confidentialité transparentes"
+        ]
       },
       "free": {
         "title": "Les VPN gratuits sont dangereux parce que :",
-        "dangers": ["Ils collectent et vendent vos données", "Ils injectent des publicités dans votre navigation", "Chiffrement faible ou inexistant", "Peuvent contenir des malwares ou spywares", "Vitesses sévèrement limitées", "Aucun support client"]
+        "dangers": [
+          "Ils collectent et vendent vos données",
+          "Ils injectent des publicités dans votre navigation",
+          "Chiffrement faible ou inexistant",
+          "Peuvent contenir des malwares ou spywares",
+          "Vitesses sévèrement limitées",
+          "Aucun support client"
+        ]
       }
     },
     "avoid": {
       "title": "VPN tablettes gratuits à éviter",
       "description": "Ces VPN gratuits ont été surpris en train de collecter des données utilisateur, d'injecter des publicités ou d'avoir des vulnérabilités de sécurité. Ne risquez pas la sécurité de votre tablette.",
       "vpns": [
-        {"name": "HolaVPN", "reason": "Utilise votre appareil comme nœud de sortie pour d'autres utilisateurs"},
-        {"name": "TurboVPN", "reason": "Collecte et vend les données de navigation des utilisateurs"},
-        {"name": "SuperVPN", "reason": "Plusieurs vulnérabilités de sécurité découvertes"},
-        {"name": "Betternet", "reason": "Contient des bibliothèques de suivi et des malwares"},
-        {"name": "Free VPN Unlimited", "reason": "Enregistre l'activité des utilisateurs et injecte des publicités"}
+        {
+          "name": "HolaVPN",
+          "reason": "Utilise votre appareil comme nœud de sortie pour d'autres utilisateurs"
+        },
+        {
+          "name": "TurboVPN",
+          "reason": "Collecte et vend les données de navigation des utilisateurs"
+        },
+        {
+          "name": "SuperVPN",
+          "reason": "Plusieurs vulnérabilités de sécurité découvertes"
+        },
+        {
+          "name": "Betternet",
+          "reason": "Contient des bibliothèques de suivi et des malwares"
+        },
+        {
+          "name": "Free VPN Unlimited",
+          "reason": "Enregistre l'activité des utilisateurs et injecte des publicités"
+        }
       ]
     },
     "conclusion": {
@@ -4853,20 +5003,47 @@
       "nordvpn": {
         "badge": "Meilleur global",
         "description": "L'application Windows native de NordVPN offre la meilleure expérience sur les tablettes Surface avec le protocole NordLynx et support complet du kill switch.",
-        "pros": ["Application Windows native", "Protocole NordLynx", "Kill switch complet", "Interface tactile conviviale", "Fonctionnalités professionnelles"],
-        "cons": ["Prix plus élevé", "Utilisation des ressources"]
+        "pros": [
+          "Application Windows native",
+          "Protocole NordLynx",
+          "Kill switch complet",
+          "Interface tactile conviviale",
+          "Fonctionnalités professionnelles"
+        ],
+        "cons": [
+          "Prix plus élevé",
+          "Utilisation des ressources"
+        ]
       },
       "surfshark": {
         "badge": "Meilleur rapport qualité-prix",
         "description": "Surfshark offre des appareils illimités au meilleur prix, parfait pour les professionnels avec plusieurs appareils Windows.",
-        "pros": ["Appareils illimités", "Application légère", "Meilleur prix", "Fonction CleanWeb", "Bonnes vitesses"],
-        "cons": ["Moins de fonctionnalités", "Réseau plus petit"]
+        "pros": [
+          "Appareils illimités",
+          "Application légère",
+          "Meilleur prix",
+          "Fonction CleanWeb",
+          "Bonnes vitesses"
+        ],
+        "cons": [
+          "Moins de fonctionnalités",
+          "Réseau plus petit"
+        ]
       },
       "expressvpn": {
         "badge": "Meilleure stabilité",
         "description": "ExpressVPN fournit les connexions les plus stables pour les tablettes Windows, avec le protocole Lightway optimisé pour une utilisation mobile.",
-        "pros": ["Le plus stable", "Protocole Lightway", "Idéal pour voyager", "Support 24/7", "Installation facile"],
-        "cons": ["Le plus cher", "Limite de 8 appareils"]
+        "pros": [
+          "Le plus stable",
+          "Protocole Lightway",
+          "Idéal pour voyager",
+          "Support 24/7",
+          "Installation facile"
+        ],
+        "cons": [
+          "Le plus cher",
+          "Limite de 8 appareils"
+        ]
       }
     },
     "features": {
@@ -4906,33 +5083,70 @@
     },
     "setup": {
       "title": "Comment configurer un VPN sur tablette Windows",
-      "steps": ["Visitez le site web du fournisseur VPN", "Téléchargez l'application Windows", "Installez et exécutez l'application", "Connectez-vous à votre compte", "Activez le kill switch dans les paramètres", "Sélectionnez un serveur et connectez-vous"]
+      "steps": [
+        "Visitez le site web du fournisseur VPN",
+        "Téléchargez l'application Windows",
+        "Installez et exécutez l'application",
+        "Connectez-vous à votre compte",
+        "Activez le kill switch dans les paramètres",
+        "Sélectionnez un serveur et connectez-vous"
+      ]
     },
     "remoteWork": {
       "title": "Travail à distance avec VPN tablette Windows",
       "description": "Sécurisez votre accès d'entreprise lors du travail à distance avec votre tablette Surface.",
-      "benefits": ["Accès d'entreprise chiffré", "Transferts de fichiers sécurisés", "Appels vidéo protégés", "Conforme aux politiques", "Fonctionne sur n'importe quel réseau"]
+      "benefits": [
+        "Accès d'entreprise chiffré",
+        "Transferts de fichiers sécurisés",
+        "Appels vidéo protégés",
+        "Conforme aux politiques",
+        "Fonctionne sur n'importe quel réseau"
+      ]
     },
     "safety": {
       "title": "Le VPN pour tablette Windows est-il sûr ?",
       "description": "Oui, les VPN premium sur tablettes Windows fournissent la même sécurité que les ordinateurs de bureau.",
       "premium": {
         "title": "Avantages des VPN premium :",
-        "features": ["Chiffrement de niveau militaire", "Politique de non-journalisation", "Protection par kill switch", "Prévention des fuites DNS", "Audits réguliers"]
+        "features": [
+          "Chiffrement de niveau militaire",
+          "Politique de non-journalisation",
+          "Protection par kill switch",
+          "Prévention des fuites DNS",
+          "Audits réguliers"
+        ]
       },
       "free": {
         "title": "Évitez les VPN gratuits :",
-        "dangers": ["Journalisation des données", "Chiffrement faible", "Injection de publicités", "Risques de malware", "Fonctionnalités limitées"]
+        "dangers": [
+          "Journalisation des données",
+          "Chiffrement faible",
+          "Injection de publicités",
+          "Risques de malware",
+          "Fonctionnalités limitées"
+        ]
       }
     },
     "avoid": {
       "title": "VPN Windows gratuits à éviter",
       "description": "Ne compromettez pas la sécurité de votre tablette Surface avec des VPN gratuits.",
       "vpns": [
-        {"name": "Hola VPN", "reason": "Utilise votre appareil comme proxy"},
-        {"name": "Hotspot Shield Free", "reason": "Enregistre et vend les données"},
-        {"name": "Betternet", "reason": "Contient des malwares"},
-        {"name": "SuperVPN", "reason": "Vulnérabilités de sécurité"}
+        {
+          "name": "Hola VPN",
+          "reason": "Utilise votre appareil comme proxy"
+        },
+        {
+          "name": "Hotspot Shield Free",
+          "reason": "Enregistre et vend les données"
+        },
+        {
+          "name": "Betternet",
+          "reason": "Contient des malwares"
+        },
+        {
+          "name": "SuperVPN",
+          "reason": "Vulnérabilités de sécurité"
+        }
       ]
     },
     "conclusion": {

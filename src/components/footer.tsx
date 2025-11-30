@@ -9,7 +9,7 @@ export function Footer() {
   return (
     <footer className="border-t bg-muted/50">
       <div className="container py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Brand */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center space-x-2">
@@ -103,6 +103,53 @@ export function Footer() {
                   className="text-muted-foreground hover:text-primary"
                 >
                   {t("blog")}
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Devices */}
+          <div>
+            <h4 className="font-semibold mb-4">{t("devices")}</h4>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link
+                  href="/best/vpn-laptops"
+                  className="text-muted-foreground hover:text-primary"
+                >
+                  {t("vpnLaptops")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/best/vpn-windows"
+                  className="text-muted-foreground hover:text-primary"
+                >
+                  {t("vpnWindows")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/best/vpn-macos"
+                  className="text-muted-foreground hover:text-primary"
+                >
+                  {t("vpnMacos")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/best/vpn-chromebook"
+                  className="text-muted-foreground hover:text-primary"
+                >
+                  {t("vpnChromebook")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/best/vpn-linux"
+                  className="text-muted-foreground hover:text-primary"
+                >
+                  {t("vpnLinux")}
                 </Link>
               </li>
             </ul>

@@ -22,7 +22,13 @@
     "blog": "Blog",
     "about": "Over ons",
     "speedTest": "Snelheidstest",
-    "countries": "Landen"
+    "countries": "Landen",
+    "devices": "Apparaten",
+    "vpnLaptops": "VPN voor Laptops",
+    "vpnWindows": "VPN voor Windows",
+    "vpnMacos": "VPN voor macOS",
+    "vpnChromebook": "VPN voor Chromebook",
+    "vpnLinux": "VPN voor Linux"
   },
   "hero": {
     "title": "Vind Jouw Perfecte VPN",
@@ -94,7 +100,13 @@
     "compare": "Vergelijk VPNs",
     "whatIsVpn": "Wat is een VPN?",
     "speedTest": "Snelheidstest",
-    "countries": "Landen"
+    "countries": "Landen",
+    "devices": "Apparaten",
+    "vpnLaptops": "VPN voor Laptops",
+    "vpnWindows": "VPN voor Windows",
+    "vpnMacos": "VPN voor macOS",
+    "vpnChromebook": "VPN voor Chromebook",
+    "vpnLinux": "VPN voor Linux"
   },
   "newsletter": {
     "title": "Blijf Op De Hoogte",
@@ -4351,20 +4363,47 @@
       "nordvpn": {
         "badge": "Beste voor iPad",
         "description": "NordVPN biedt de beste iPad-ervaring met een prachtig ontworpen interface, NordLynx protocol voor razendsnelle snelheden en in-app split tunneling.",
-        "pros": ["Beste iPad interface ontwerp", "NordLynx protocol - snelste snelheden", "In-app split tunneling", "Uitstekende streaming ondersteuning", "Siri Shortcuts integratie"],
-        "cons": ["Geen systeembrede split tunneling", "Premium prijsstelling"]
+        "pros": [
+          "Beste iPad interface ontwerp",
+          "NordLynx protocol - snelste snelheden",
+          "In-app split tunneling",
+          "Uitstekende streaming ondersteuning",
+          "Siri Shortcuts integratie"
+        ],
+        "cons": [
+          "Geen systeembrede split tunneling",
+          "Premium prijsstelling"
+        ]
       },
       "surfshark": {
         "badge": "Beste voor Gezinnen",
         "description": "Surfshark's onbeperkt apparaat beleid en Family Sharing compatibiliteit maken het perfect voor huishoudens met meerdere iPads.",
-        "pros": ["Onbeperkt aantal apparaten", "Family Sharing compatibel", "Beste prijs (82% korting)", "CleanWeb adblocker", "Lichtgewicht app"],
-        "cons": ["Kleiner servernetwerk", "Geen Siri Shortcuts"]
+        "pros": [
+          "Onbeperkt aantal apparaten",
+          "Family Sharing compatibel",
+          "Beste prijs (82% korting)",
+          "CleanWeb adblocker",
+          "Lichtgewicht app"
+        ],
+        "cons": [
+          "Kleiner servernetwerk",
+          "Geen Siri Shortcuts"
+        ]
       },
       "expressvpn": {
         "badge": "Beste voor Reizen",
         "description": "ExpressVPN werkt betrouwbaar in beperkte landen en biedt stabiele verbindingen op hotel en luchthaven WiFi wereldwijd.",
-        "pros": ["Werkt in China, VAE, Turkije", "Meest stabiele verbindingen", "Lightway protocol", "24/7 ondersteuning", "MediaStreamer voor Apple TV"],
-        "cons": ["Hogere prijs", "Slechts 8 apparaten"]
+        "pros": [
+          "Werkt in China, VAE, Turkije",
+          "Meest stabiele verbindingen",
+          "Lightway protocol",
+          "24/7 ondersteuning",
+          "MediaStreamer voor Apple TV"
+        ],
+        "cons": [
+          "Hogere prijs",
+          "Slechts 8 apparaten"
+        ]
       }
     },
     "features": {
@@ -4388,33 +4427,70 @@
     },
     "setup": {
       "title": "Hoe VPN op iPad Instellen",
-      "steps": ["Open de App Store op je iPad", "Zoek naar je gekozen VPN (NordVPN, Surfshark of ExpressVPN)", "Tik op 'Ophalen' om te downloaden en installeren", "Open de VPN app en log in of maak een account", "Sta VPN configuratie toe wanneer gevraagd", "Tik op 'Snelle Verbinding' om je verbinding te beveiligen"]
+      "steps": [
+        "Open de App Store op je iPad",
+        "Zoek naar je gekozen VPN (NordVPN, Surfshark of ExpressVPN)",
+        "Tik op 'Ophalen' om te downloaden en installeren",
+        "Open de VPN app en log in of maak een account",
+        "Sta VPN configuratie toe wanneer gevraagd",
+        "Tik op 'Snelle Verbinding' om je verbinding te beveiligen"
+      ]
     },
     "streaming": {
       "title": "Streamen op iPad met VPN",
       "description": "Je iPad's grote scherm is perfect voor streamen. Met een VPN kun je overal content bekijken.",
-      "services": ["Netflix (alle regio's)", "Disney+ (VS, VK, meer)", "BBC iPlayer (VK)", "Hulu (VS)", "Amazon Prime Video"]
+      "services": [
+        "Netflix (alle regio's)",
+        "Disney+ (VS, VK, meer)",
+        "BBC iPlayer (VK)",
+        "Hulu (VS)",
+        "Amazon Prime Video"
+      ]
     },
     "safety": {
       "title": "Is iPad VPN Veilig?",
       "description": "Ja, premium iPad VPN's zijn volledig veilig. Ze gebruiken dezelfde versleuteling als banken en zijn onafhankelijk geaudit.",
       "premium": {
         "title": "Premium VPN's Beschermen Je iPad:",
-        "features": ["AES-256 versleuteling", "No-logs beleid", "Kill switch bescherming", "Veilige protocollen", "Regelmatige security audits"]
+        "features": [
+          "AES-256 versleuteling",
+          "No-logs beleid",
+          "Kill switch bescherming",
+          "Veilige protocollen",
+          "Regelmatige security audits"
+        ]
       },
       "free": {
         "title": "Vermijd Gratis VPN's op iPad:",
-        "dangers": ["Data verzameling en verkoop", "Advertentie injectie", "Zwakke versleuteling", "Malware risico's", "Bandbreedte limieten"]
+        "dangers": [
+          "Data verzameling en verkoop",
+          "Advertentie injectie",
+          "Zwakke versleuteling",
+          "Malware risico's",
+          "Bandbreedte limieten"
+        ]
       }
     },
     "avoid": {
       "title": "Gratis iPad VPN's om te Vermijden",
       "description": "Breng de veiligheid van je iPad niet in gevaar met deze risicovolle gratis VPN's.",
       "vpns": [
-        {"name": "HolaVPN", "reason": "Gebruikt je iPad als exit node"},
-        {"name": "TurboVPN", "reason": "Verkoopt gebruikersdata"},
-        {"name": "SuperVPN", "reason": "Beveiligingskwetsbaarheden"},
-        {"name": "Betternet", "reason": "Bevat malware"}
+        {
+          "name": "HolaVPN",
+          "reason": "Gebruikt je iPad als exit node"
+        },
+        {
+          "name": "TurboVPN",
+          "reason": "Verkoopt gebruikersdata"
+        },
+        {
+          "name": "SuperVPN",
+          "reason": "Beveiligingskwetsbaarheden"
+        },
+        {
+          "name": "Betternet",
+          "reason": "Bevat malware"
+        }
       ]
     },
     "conclusion": {
@@ -4681,20 +4757,47 @@
       "nordvpn": {
         "badge": "Beste Algeheel",
         "description": "NordVPN levert de snelste tablet ervaring met NordLynx protocol, geoptimaliseerde apps voor iPad en Android, en uitstekende streaming prestaties.",
-        "pros": ["Snelste tablet snelheden met NordLynx", "Uitstekende iPad & Android apps", "Split tunneling op Android tablets", "7.400+ servers in 118 landen", "Perfect voor streaming"],
-        "cons": ["Geen split tunneling op iPad", "Iets hogere prijs"]
+        "pros": [
+          "Snelste tablet snelheden met NordLynx",
+          "Uitstekende iPad & Android apps",
+          "Split tunneling op Android tablets",
+          "7.400+ servers in 118 landen",
+          "Perfect voor streaming"
+        ],
+        "cons": [
+          "Geen split tunneling op iPad",
+          "Iets hogere prijs"
+        ]
       },
       "surfshark": {
         "badge": "Beste Waarde",
         "description": "Surfshark biedt onbeperkte apparaat verbindingen, waardoor het perfect is voor gezinnen met meerdere tablets. Lichtgewicht app werkt geweldig zelfs op oudere tablets.",
-        "pros": ["Onbeperkt aantal apparaten - geweldig voor gezinnen", "Lichtste app - perfect voor oudere tablets", "Beste prijs met 82% korting", "CleanWeb blokkeert ads & malware", "GPS spoofing op Android"],
-        "cons": ["Kleiner servernetwerk", "Iets langzamer dan NordVPN"]
+        "pros": [
+          "Onbeperkt aantal apparaten - geweldig voor gezinnen",
+          "Lichtste app - perfect voor oudere tablets",
+          "Beste prijs met 82% korting",
+          "CleanWeb blokkeert ads & malware",
+          "GPS spoofing op Android"
+        ],
+        "cons": [
+          "Kleiner servernetwerk",
+          "Iets langzamer dan NordVPN"
+        ]
       },
       "expressvpn": {
         "badge": "Beste voor Reizen",
         "description": "ExpressVPN is de meest betrouwbare keuze voor reizigers, werkt consistent in China, VAE en Turkije. Uitstekende stabiliteit op hotel en luchthaven WiFi.",
-        "pros": ["Werkt in China, VAE, Turkije", "Meest stabiel op hotel WiFi", "Lightway protocol - snel & efficiënt", "24/7 klantenondersteuning", "105 landen gedekt"],
-        "cons": ["Duurder", "Beperkt tot 8 apparaten"]
+        "pros": [
+          "Werkt in China, VAE, Turkije",
+          "Meest stabiel op hotel WiFi",
+          "Lightway protocol - snel & efficiënt",
+          "24/7 klantenondersteuning",
+          "105 landen gedekt"
+        ],
+        "cons": [
+          "Duurder",
+          "Beperkt tot 8 apparaten"
+        ]
       }
     },
     "platforms": {
@@ -4702,19 +4805,37 @@
       "ipad": {
         "title": "Beste VPN voor iPad",
         "description": "iPadOS-geoptimaliseerde apps met grote scherm interfaces, Family Sharing ondersteuning en Apple privacy compliance.",
-        "features": ["iPadOS geoptimaliseerde interface", "Family Sharing compatibel", "Apple privacy labels", "Multitasking ondersteuning", "iCloud Keychain integratie"],
+        "features": [
+          "iPadOS geoptimaliseerde interface",
+          "Family Sharing compatibel",
+          "Apple privacy labels",
+          "Multitasking ondersteuning",
+          "iCloud Keychain integratie"
+        ],
         "readMore": "Beste VPN's voor iPad →"
       },
       "android": {
         "title": "Beste VPN voor Android Tablets",
         "description": "Volledige split tunneling, APK sideloading voor gecensureerde landen en widgets voor snelle verbindingen.",
-        "features": ["Volledige split tunneling ondersteuning", "APK sideloading beschikbaar", "Custom DNS instellingen", "Startscherm widgets", "Always-on VPN"],
+        "features": [
+          "Volledige split tunneling ondersteuning",
+          "APK sideloading beschikbaar",
+          "Custom DNS instellingen",
+          "Startscherm widgets",
+          "Always-on VPN"
+        ],
         "readMore": "Beste VPN's voor Android Tablets →"
       },
       "windows": {
         "title": "Beste VPN voor Windows Tablets",
         "description": "Volledige Windows VPN ondersteuning op Surface Pro en Surface Go. Perfect voor op afstand werken en bedrijfsbeveiliging.",
-        "features": ["Volledige Windows app ondersteuning", "Touch-geoptimaliseerde UI", "Enterprise beveiligingsfuncties", "Split tunneling", "Native protocol ondersteuning"],
+        "features": [
+          "Volledige Windows app ondersteuning",
+          "Touch-geoptimaliseerde UI",
+          "Enterprise beveiligingsfuncties",
+          "Split tunneling",
+          "Native protocol ondersteuning"
+        ],
         "readMore": "Beste VPN's voor Windows Tablets →"
       }
     },
@@ -4767,22 +4888,51 @@
       "description": "Ja, tablet VPN's zijn veilig wanneer je een gerenommeerde premium provider gebruikt. Premium VPN diensten gebruiken militaire-grade versleuteling en strikte no-logs beleidsregels. Gratis VPN's kunnen echter je tablet's data juist in gevaar brengen.",
       "premium": {
         "title": "Premium VPN's Zijn Veilig Omdat:",
-        "features": ["Militaire-grade AES-256 versleuteling", "Strikte no-logs beleidsregels (geaudit)", "Veilige protocollen (WireGuard, NordLynx)", "Kill switch voorkomt data lekken", "Regelmatige third-party security audits", "Transparante privacy beleidsregels"]
+        "features": [
+          "Militaire-grade AES-256 versleuteling",
+          "Strikte no-logs beleidsregels (geaudit)",
+          "Veilige protocollen (WireGuard, NordLynx)",
+          "Kill switch voorkomt data lekken",
+          "Regelmatige third-party security audits",
+          "Transparante privacy beleidsregels"
+        ]
       },
       "free": {
         "title": "Gratis VPN's Zijn Gevaarlijk Omdat:",
-        "dangers": ["Ze verzamelen en verkopen je data", "Ze injecteren advertenties in je browsen", "Zwakke of geen versleuteling", "Kunnen malware of spyware bevatten", "Ernstig beperkte snelheden", "Geen klantenondersteuning"]
+        "dangers": [
+          "Ze verzamelen en verkopen je data",
+          "Ze injecteren advertenties in je browsen",
+          "Zwakke of geen versleuteling",
+          "Kunnen malware of spyware bevatten",
+          "Ernstig beperkte snelheden",
+          "Geen klantenondersteuning"
+        ]
       }
     },
     "avoid": {
       "title": "Gratis Tablet VPN's om te Vermijden",
       "description": "Deze gratis VPN's zijn betrapt op het verzamelen van gebruikersdata, injecteren van advertenties of het hebben van beveiligingskwetsbaarheden. Breng de beveiliging van je tablet niet in gevaar.",
       "vpns": [
-        {"name": "HolaVPN", "reason": "Gebruikt je apparaat als exit node voor andere gebruikers"},
-        {"name": "TurboVPN", "reason": "Verzamelt en verkoopt gebruikers browse data"},
-        {"name": "SuperVPN", "reason": "Meerdere beveiligingskwetsbaarheden ontdekt"},
-        {"name": "Betternet", "reason": "Bevat tracking libraries en malware"},
-        {"name": "Free VPN Unlimited", "reason": "Logt gebruikersactiviteit en injecteert advertenties"}
+        {
+          "name": "HolaVPN",
+          "reason": "Gebruikt je apparaat als exit node voor andere gebruikers"
+        },
+        {
+          "name": "TurboVPN",
+          "reason": "Verzamelt en verkoopt gebruikers browse data"
+        },
+        {
+          "name": "SuperVPN",
+          "reason": "Meerdere beveiligingskwetsbaarheden ontdekt"
+        },
+        {
+          "name": "Betternet",
+          "reason": "Bevat tracking libraries en malware"
+        },
+        {
+          "name": "Free VPN Unlimited",
+          "reason": "Logt gebruikersactiviteit en injecteert advertenties"
+        }
       ]
     },
     "conclusion": {
@@ -4846,20 +4996,47 @@
       "nordvpn": {
         "badge": "Beste Algeheel",
         "description": "NordVPN's native Windows app biedt de beste ervaring op Surface tablets met NordLynx protocol en volledige kill switch ondersteuning.",
-        "pros": ["Native Windows app", "NordLynx protocol", "Volledige kill switch", "Touch-vriendelijke UI", "Bedrijfsfuncties"],
-        "cons": ["Hogere prijs", "Resource gebruik"]
+        "pros": [
+          "Native Windows app",
+          "NordLynx protocol",
+          "Volledige kill switch",
+          "Touch-vriendelijke UI",
+          "Bedrijfsfuncties"
+        ],
+        "cons": [
+          "Hogere prijs",
+          "Resource gebruik"
+        ]
       },
       "surfshark": {
         "badge": "Beste Waarde",
         "description": "Surfshark biedt onbeperkt aantal apparaten voor de beste prijs, perfect voor professionals met meerdere Windows apparaten.",
-        "pros": ["Onbeperkt aantal apparaten", "Lichtgewicht app", "Beste prijs", "CleanWeb functie", "Goede snelheden"],
-        "cons": ["Minder functies", "Kleiner netwerk"]
+        "pros": [
+          "Onbeperkt aantal apparaten",
+          "Lichtgewicht app",
+          "Beste prijs",
+          "CleanWeb functie",
+          "Goede snelheden"
+        ],
+        "cons": [
+          "Minder functies",
+          "Kleiner netwerk"
+        ]
       },
       "expressvpn": {
         "badge": "Beste Stabiliteit",
         "description": "ExpressVPN biedt de meest stabiele verbindingen voor Windows tablets, met Lightway protocol geoptimaliseerd voor mobiel gebruik.",
-        "pros": ["Meest stabiel", "Lightway protocol", "Geweldig voor reizen", "24/7 ondersteuning", "Eenvoudige installatie"],
-        "cons": ["Duurste", "8 apparaten limiet"]
+        "pros": [
+          "Meest stabiel",
+          "Lightway protocol",
+          "Geweldig voor reizen",
+          "24/7 ondersteuning",
+          "Eenvoudige installatie"
+        ],
+        "cons": [
+          "Duurste",
+          "8 apparaten limiet"
+        ]
       }
     },
     "features": {
@@ -4899,33 +5076,70 @@
     },
     "setup": {
       "title": "Hoe VPN op Windows Tablet Instellen",
-      "steps": ["Bezoek de website van de VPN provider", "Download de Windows app", "Installeer en start de app", "Log in op je account", "Schakel kill switch in via instellingen", "Selecteer een server en maak verbinding"]
+      "steps": [
+        "Bezoek de website van de VPN provider",
+        "Download de Windows app",
+        "Installeer en start de app",
+        "Log in op je account",
+        "Schakel kill switch in via instellingen",
+        "Selecteer een server en maak verbinding"
+      ]
     },
     "remoteWork": {
       "title": "Op Afstand Werken met Windows Tablet VPN",
       "description": "Beveilig je bedrijfstoegang wanneer je op afstand werkt met je Surface tablet.",
-      "benefits": ["Versleutelde bedrijfstoegang", "Veilige bestandsoverdrachten", "Beschermde videogesprekken", "Voldoet aan beleidsregels", "Werkt op elk netwerk"]
+      "benefits": [
+        "Versleutelde bedrijfstoegang",
+        "Veilige bestandsoverdrachten",
+        "Beschermde videogesprekken",
+        "Voldoet aan beleidsregels",
+        "Werkt op elk netwerk"
+      ]
     },
     "safety": {
       "title": "Is Windows Tablet VPN Veilig?",
       "description": "Ja, premium VPN's op Windows tablets bieden dezelfde beveiliging als desktop computers.",
       "premium": {
         "title": "Premium VPN Voordelen:",
-        "features": ["Militaire-grade versleuteling", "No-logs beleid", "Kill switch bescherming", "DNS leak preventie", "Regelmatige audits"]
+        "features": [
+          "Militaire-grade versleuteling",
+          "No-logs beleid",
+          "Kill switch bescherming",
+          "DNS leak preventie",
+          "Regelmatige audits"
+        ]
       },
       "free": {
         "title": "Vermijd Gratis VPN's:",
-        "dangers": ["Data logging", "Zwakke versleuteling", "Advertentie injectie", "Malware risico's", "Beperkte functies"]
+        "dangers": [
+          "Data logging",
+          "Zwakke versleuteling",
+          "Advertentie injectie",
+          "Malware risico's",
+          "Beperkte functies"
+        ]
       }
     },
     "avoid": {
       "title": "Gratis Windows VPN's om te Vermijden",
       "description": "Breng de beveiliging van je Surface tablet niet in gevaar met gratis VPN's.",
       "vpns": [
-        {"name": "Hola VPN", "reason": "Gebruikt je apparaat als proxy"},
-        {"name": "Hotspot Shield Free", "reason": "Logt en verkoopt data"},
-        {"name": "Betternet", "reason": "Bevat malware"},
-        {"name": "SuperVPN", "reason": "Beveiligingskwetsbaarheden"}
+        {
+          "name": "Hola VPN",
+          "reason": "Gebruikt je apparaat als proxy"
+        },
+        {
+          "name": "Hotspot Shield Free",
+          "reason": "Logt en verkoopt data"
+        },
+        {
+          "name": "Betternet",
+          "reason": "Bevat malware"
+        },
+        {
+          "name": "SuperVPN",
+          "reason": "Beveiligingskwetsbaarheden"
+        }
       ]
     },
     "conclusion": {

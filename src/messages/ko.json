@@ -22,7 +22,13 @@
     "vpnTablet": "최고의 태블릿 VPN",
     "vpnRussia": "Best VPN for Russia",
     "vpnUae": "Best VPN for UAE",
-    "vpnIran": "Best VPN for Iran"
+    "vpnIran": "Best VPN for Iran",
+    "devices": "기기",
+    "vpnLaptops": "노트북용 VPN",
+    "vpnWindows": "Windows용 VPN",
+    "vpnMacos": "macOS용 VPN",
+    "vpnChromebook": "Chromebook용 VPN",
+    "vpnLinux": "Linux용 VPN"
   },
   "hero": {
     "title": "완벽한 VPN을 찾아보세요",
@@ -94,7 +100,13 @@
     "compare": "VPN 비교",
     "whatIsVpn": "VPN이란 무엇인가요?",
     "speedTest": "속도 테스트",
-    "countries": "국가별"
+    "countries": "국가별",
+    "devices": "기기",
+    "vpnLaptops": "노트북용 VPN",
+    "vpnWindows": "Windows용 VPN",
+    "vpnMacos": "macOS용 VPN",
+    "vpnChromebook": "Chromebook용 VPN",
+    "vpnLinux": "Linux용 VPN"
   },
   "newsletter": {
     "title": "최신 소식 받기",
@@ -4366,20 +4378,47 @@
       "nordvpn": {
         "badge": "iPad 최고",
         "description": "NordVPN은 아름답게 디자인된 인터페이스, 초고속 NordLynx 프로토콜 및 인앱 분할 터널링으로 최고의 iPad 경험을 제공합니다.",
-        "pros": ["최고의 iPad 인터페이스 디자인", "NordLynx 프로토콜 - 가장 빠른 속도", "인앱 분할 터널링", "우수한 스트리밍 지원", "Siri 단축어 통합"],
-        "cons": ["시스템 전체 분할 터널링 없음", "프리미엄 가격"]
+        "pros": [
+          "최고의 iPad 인터페이스 디자인",
+          "NordLynx 프로토콜 - 가장 빠른 속도",
+          "인앱 분할 터널링",
+          "우수한 스트리밍 지원",
+          "Siri 단축어 통합"
+        ],
+        "cons": [
+          "시스템 전체 분할 터널링 없음",
+          "프리미엄 가격"
+        ]
       },
       "surfshark": {
         "badge": "가족용 최고",
         "description": "Surfshark의 무제한 기기 정책과 가족 공유 호환성은 여러 iPad를 보유한 가정에 완벽합니다.",
-        "pros": ["무제한 기기", "가족 공유 호환", "최고의 가격 (82% 할인)", "CleanWeb 광고 차단기", "가벼운 앱"],
-        "cons": ["더 작은 서버 네트워크", "Siri 단축어 없음"]
+        "pros": [
+          "무제한 기기",
+          "가족 공유 호환",
+          "최고의 가격 (82% 할인)",
+          "CleanWeb 광고 차단기",
+          "가벼운 앱"
+        ],
+        "cons": [
+          "더 작은 서버 네트워크",
+          "Siri 단축어 없음"
+        ]
       },
       "expressvpn": {
         "badge": "여행용 최고",
         "description": "ExpressVPN은 제한된 국가에서 안정적으로 작동하며 전 세계 호텔 및 공항 WiFi에서 안정적인 연결을 제공합니다.",
-        "pros": ["중국, UAE, 터키에서 작동", "가장 안정적인 연결", "Lightway 프로토콜", "24/7 지원", "Apple TV용 MediaStreamer"],
-        "cons": ["더 높은 가격", "8대 기기만"]
+        "pros": [
+          "중국, UAE, 터키에서 작동",
+          "가장 안정적인 연결",
+          "Lightway 프로토콜",
+          "24/7 지원",
+          "Apple TV용 MediaStreamer"
+        ],
+        "cons": [
+          "더 높은 가격",
+          "8대 기기만"
+        ]
       }
     },
     "features": {
@@ -4403,33 +4442,70 @@
     },
     "setup": {
       "title": "iPad에서 VPN을 설정하는 방법",
-      "steps": ["iPad에서 App Store 열기", "선택한 VPN 검색 (NordVPN, Surfshark 또는 ExpressVPN)", "'받기'를 탭하여 다운로드 및 설치", "VPN 앱을 열고 로그인하거나 계정 만들기", "메시지가 표시되면 VPN 구성 허용", "'빠른 연결'을 탭하여 연결 보호"]
+      "steps": [
+        "iPad에서 App Store 열기",
+        "선택한 VPN 검색 (NordVPN, Surfshark 또는 ExpressVPN)",
+        "'받기'를 탭하여 다운로드 및 설치",
+        "VPN 앱을 열고 로그인하거나 계정 만들기",
+        "메시지가 표시되면 VPN 구성 허용",
+        "'빠른 연결'을 탭하여 연결 보호"
+      ]
     },
     "streaming": {
       "title": "VPN으로 iPad에서 스트리밍",
       "description": "iPad의 대형 화면은 스트리밍에 완벽합니다. VPN을 사용하면 어디서나 콘텐츠에 액세스할 수 있습니다.",
-      "services": ["Netflix (모든 지역)", "Disney+ (미국, 영국 등)", "BBC iPlayer (영국)", "Hulu (미국)", "Amazon Prime Video"]
+      "services": [
+        "Netflix (모든 지역)",
+        "Disney+ (미국, 영국 등)",
+        "BBC iPlayer (영국)",
+        "Hulu (미국)",
+        "Amazon Prime Video"
+      ]
     },
     "safety": {
       "title": "iPad VPN은 안전한가요?",
       "description": "예, 프리미엄 iPad VPN은 완전히 안전합니다. 은행과 동일한 암호화를 사용하며 독립적으로 감사를 받았습니다.",
       "premium": {
         "title": "프리미엄 VPN이 iPad를 보호합니다:",
-        "features": ["AES-256 암호화", "노로그 정책", "킬 스위치 보호", "보안 프로토콜", "정기 보안 감사"]
+        "features": [
+          "AES-256 암호화",
+          "노로그 정책",
+          "킬 스위치 보호",
+          "보안 프로토콜",
+          "정기 보안 감사"
+        ]
       },
       "free": {
         "title": "iPad에서 무료 VPN 피하기:",
-        "dangers": ["데이터 수집 및 판매", "광고 삽입", "약한 암호화", "맬웨어 위험", "대역폭 제한"]
+        "dangers": [
+          "데이터 수집 및 판매",
+          "광고 삽입",
+          "약한 암호화",
+          "맬웨어 위험",
+          "대역폭 제한"
+        ]
       }
     },
     "avoid": {
       "title": "피해야 할 무료 iPad VPN",
       "description": "이러한 위험한 무료 VPN으로 iPad의 보안을 손상시키지 마세요.",
       "vpns": [
-        {"name": "HolaVPN", "reason": "iPad를 출구 노드로 사용"},
-        {"name": "TurboVPN", "reason": "사용자 데이터 판매"},
-        {"name": "SuperVPN", "reason": "보안 취약점"},
-        {"name": "Betternet", "reason": "맬웨어 포함"}
+        {
+          "name": "HolaVPN",
+          "reason": "iPad를 출구 노드로 사용"
+        },
+        {
+          "name": "TurboVPN",
+          "reason": "사용자 데이터 판매"
+        },
+        {
+          "name": "SuperVPN",
+          "reason": "보안 취약점"
+        },
+        {
+          "name": "Betternet",
+          "reason": "맬웨어 포함"
+        }
       ]
     },
     "conclusion": {
@@ -4696,20 +4772,47 @@
       "nordvpn": {
         "badge": "전체 최고",
         "description": "NordVPN은 NordLynx 프로토콜, iPad 및 Android용 최적화 앱 및 우수한 스트리밍 성능으로 가장 빠른 태블릿 경험을 제공합니다.",
-        "pros": ["NordLynx로 가장 빠른 태블릿 속도", "우수한 iPad 및 Android 앱", "Android 태블릿에서 분할 터널링", "118개국 7,400개 이상의 서버", "스트리밍에 완벽"],
-        "cons": ["iPad에서 분할 터널링 없음", "약간 더 높은 가격"]
+        "pros": [
+          "NordLynx로 가장 빠른 태블릿 속도",
+          "우수한 iPad 및 Android 앱",
+          "Android 태블릿에서 분할 터널링",
+          "118개국 7,400개 이상의 서버",
+          "스트리밍에 완벽"
+        ],
+        "cons": [
+          "iPad에서 분할 터널링 없음",
+          "약간 더 높은 가격"
+        ]
       },
       "surfshark": {
         "badge": "최고의 가치",
         "description": "Surfshark는 무제한 기기 연결을 제공하여 여러 태블릿을 보유한 가족에게 완벽합니다. 가벼운 앱은 오래된 태블릿에서도 잘 작동합니다.",
-        "pros": ["무제한 기기 - 가족에게 적합", "가장 가벼운 앱 - 오래된 태블릿에 완벽", "82% 할인으로 최고의 가격", "CleanWeb이 광고 및 맬웨어 차단", "Android에서 GPS 스푸핑"],
-        "cons": ["더 작은 서버 네트워크", "NordVPN보다 약간 느림"]
+        "pros": [
+          "무제한 기기 - 가족에게 적합",
+          "가장 가벼운 앱 - 오래된 태블릿에 완벽",
+          "82% 할인으로 최고의 가격",
+          "CleanWeb이 광고 및 맬웨어 차단",
+          "Android에서 GPS 스푸핑"
+        ],
+        "cons": [
+          "더 작은 서버 네트워크",
+          "NordVPN보다 약간 느림"
+        ]
       },
       "expressvpn": {
         "badge": "여행용 최고",
         "description": "ExpressVPN은 여행자에게 가장 안정적인 선택이며 중국, UAE 및 터키에서 일관되게 작동합니다. 호텔 및 공항 WiFi에서 우수한 안정성.",
-        "pros": ["중국, UAE, 터키에서 작동", "호텔 WiFi에서 가장 안정적", "Lightway 프로토콜 - 빠르고 효율적", "24/7 고객 지원", "105개국 범위"],
-        "cons": ["더 비쌈", "8대 기기로 제한"]
+        "pros": [
+          "중국, UAE, 터키에서 작동",
+          "호텔 WiFi에서 가장 안정적",
+          "Lightway 프로토콜 - 빠르고 효율적",
+          "24/7 고객 지원",
+          "105개국 범위"
+        ],
+        "cons": [
+          "더 비쌈",
+          "8대 기기로 제한"
+        ]
       }
     },
     "platforms": {
@@ -4717,19 +4820,37 @@
       "ipad": {
         "title": "최고의 iPad VPN",
         "description": "대형 화면 인터페이스, 가족 공유 지원 및 Apple 개인정보 보호 규정 준수가 있는 iPadOS 최적화 앱.",
-        "features": ["iPadOS 최적화 인터페이스", "가족 공유 호환", "Apple 개인정보 보호 라벨", "멀티태스킹 지원", "iCloud Keychain 통합"],
+        "features": [
+          "iPadOS 최적화 인터페이스",
+          "가족 공유 호환",
+          "Apple 개인정보 보호 라벨",
+          "멀티태스킹 지원",
+          "iCloud Keychain 통합"
+        ],
         "readMore": "iPad용 최고의 VPN →"
       },
       "android": {
         "title": "최고의 Android 태블릿 VPN",
         "description": "완전한 분할 터널링, 검열된 국가를 위한 APK 사이드로딩 및 빠른 연결을 위한 위젯.",
-        "features": ["완전한 분할 터널링 지원", "APK 사이드로딩 가능", "사용자 정의 DNS 설정", "홈 화면 위젯", "상시 VPN"],
+        "features": [
+          "완전한 분할 터널링 지원",
+          "APK 사이드로딩 가능",
+          "사용자 정의 DNS 설정",
+          "홈 화면 위젯",
+          "상시 VPN"
+        ],
         "readMore": "Android 태블릿용 최고의 VPN →"
       },
       "windows": {
         "title": "최고의 Windows 태블릿 VPN",
         "description": "Surface Pro 및 Surface Go에서 전체 Windows VPN 지원. 원격 근무 및 엔터프라이즈 보안에 완벽.",
-        "features": ["전체 Windows 앱 지원", "터치 최적화 UI", "엔터프라이즈 보안 기능", "분할 터널링", "네이티브 프로토콜 지원"],
+        "features": [
+          "전체 Windows 앱 지원",
+          "터치 최적화 UI",
+          "엔터프라이즈 보안 기능",
+          "분할 터널링",
+          "네이티브 프로토콜 지원"
+        ],
         "readMore": "Windows 태블릿용 최고의 VPN →"
       }
     },
@@ -4782,22 +4903,51 @@
       "description": "예, 평판이 좋은 프리미엄 제공업체를 사용하면 태블릿 VPN은 안전합니다. 프리미엄 VPN 서비스는 군사 등급 암호화와 엄격한 노로그 정책을 사용합니다. 그러나 무료 VPN은 실제로 태블릿의 데이터를 위험에 빠뜨릴 수 있습니다.",
       "premium": {
         "title": "프리미엄 VPN이 안전한 이유:",
-        "features": ["군사 등급 AES-256 암호화", "엄격한 노로그 정책 (감사됨)", "보안 프로토콜 (WireGuard, NordLynx)", "킬 스위치가 데이터 누출 방지", "정기 제3자 보안 감사", "투명한 개인정보 보호 정책"]
+        "features": [
+          "군사 등급 AES-256 암호화",
+          "엄격한 노로그 정책 (감사됨)",
+          "보안 프로토콜 (WireGuard, NordLynx)",
+          "킬 스위치가 데이터 누출 방지",
+          "정기 제3자 보안 감사",
+          "투명한 개인정보 보호 정책"
+        ]
       },
       "free": {
         "title": "무료 VPN이 위험한 이유:",
-        "dangers": ["데이터를 수집하고 판매", "탐색에 광고 삽입", "약하거나 암호화 없음", "맬웨어 또는 스파이웨어 포함 가능", "심각하게 제한된 속도", "고객 지원 없음"]
+        "dangers": [
+          "데이터를 수집하고 판매",
+          "탐색에 광고 삽입",
+          "약하거나 암호화 없음",
+          "맬웨어 또는 스파이웨어 포함 가능",
+          "심각하게 제한된 속도",
+          "고객 지원 없음"
+        ]
       }
     },
     "avoid": {
       "title": "피해야 할 무료 태블릿 VPN",
       "description": "이러한 무료 VPN은 사용자 데이터를 수집하거나 광고를 삽입하거나 보안 취약점이 있는 것으로 확인되었습니다. 태블릿의 보안을 위험에 빠뜨리지 마세요.",
       "vpns": [
-        {"name": "HolaVPN", "reason": "다른 사용자를 위한 출구 노드로 기기 사용"},
-        {"name": "TurboVPN", "reason": "사용자 탐색 데이터 수집 및 판매"},
-        {"name": "SuperVPN", "reason": "여러 보안 취약점 발견"},
-        {"name": "Betternet", "reason": "추적 라이브러리 및 맬웨어 포함"},
-        {"name": "Free VPN Unlimited", "reason": "사용자 활동 기록 및 광고 삽입"}
+        {
+          "name": "HolaVPN",
+          "reason": "다른 사용자를 위한 출구 노드로 기기 사용"
+        },
+        {
+          "name": "TurboVPN",
+          "reason": "사용자 탐색 데이터 수집 및 판매"
+        },
+        {
+          "name": "SuperVPN",
+          "reason": "여러 보안 취약점 발견"
+        },
+        {
+          "name": "Betternet",
+          "reason": "추적 라이브러리 및 맬웨어 포함"
+        },
+        {
+          "name": "Free VPN Unlimited",
+          "reason": "사용자 활동 기록 및 광고 삽입"
+        }
       ]
     },
     "conclusion": {
@@ -4861,20 +5011,47 @@
       "nordvpn": {
         "badge": "전체 최고",
         "description": "NordVPN의 네이티브 Windows 앱은 NordLynx 프로토콜과 완전한 킬 스위치 지원으로 Surface 태블릿에서 최고의 경험을 제공합니다.",
-        "pros": ["네이티브 Windows 앱", "NordLynx 프로토콜", "완전한 킬 스위치", "터치 친화적 UI", "비즈니스 기능"],
-        "cons": ["더 높은 가격", "리소스 사용량"]
+        "pros": [
+          "네이티브 Windows 앱",
+          "NordLynx 프로토콜",
+          "완전한 킬 스위치",
+          "터치 친화적 UI",
+          "비즈니스 기능"
+        ],
+        "cons": [
+          "더 높은 가격",
+          "리소스 사용량"
+        ]
       },
       "surfshark": {
         "badge": "최고의 가치",
         "description": "Surfshark는 최고의 가격으로 무제한 기기를 제공하여 여러 Windows 기기를 가진 전문가에게 완벽합니다.",
-        "pros": ["무제한 기기", "가벼운 앱", "최고의 가격", "CleanWeb 기능", "좋은 속도"],
-        "cons": ["더 적은 기능", "더 작은 네트워크"]
+        "pros": [
+          "무제한 기기",
+          "가벼운 앱",
+          "최고의 가격",
+          "CleanWeb 기능",
+          "좋은 속도"
+        ],
+        "cons": [
+          "더 적은 기능",
+          "더 작은 네트워크"
+        ]
       },
       "expressvpn": {
         "badge": "최고의 안정성",
         "description": "ExpressVPN은 Windows 태블릿에 가장 안정적인 연결을 제공하며 모바일 사용에 최적화된 Lightway 프로토콜이 있습니다.",
-        "pros": ["가장 안정적", "Lightway 프로토콜", "여행에 적합", "24/7 지원", "쉬운 설정"],
-        "cons": ["가장 비쌈", "8대 기기 제한"]
+        "pros": [
+          "가장 안정적",
+          "Lightway 프로토콜",
+          "여행에 적합",
+          "24/7 지원",
+          "쉬운 설정"
+        ],
+        "cons": [
+          "가장 비쌈",
+          "8대 기기 제한"
+        ]
       }
     },
     "features": {
@@ -4914,33 +5091,70 @@
     },
     "setup": {
       "title": "Windows 태블릿에서 VPN을 설정하는 방법",
-      "steps": ["VPN 제공업체 웹사이트 방문", "Windows 앱 다운로드", "앱 설치 및 실행", "계정에 로그인", "설정에서 킬 스위치 활성화", "서버를 선택하고 연결"]
+      "steps": [
+        "VPN 제공업체 웹사이트 방문",
+        "Windows 앱 다운로드",
+        "앱 설치 및 실행",
+        "계정에 로그인",
+        "설정에서 킬 스위치 활성화",
+        "서버를 선택하고 연결"
+      ]
     },
     "remoteWork": {
       "title": "Windows 태블릿 VPN으로 원격 근무",
       "description": "Surface 태블릿으로 원격 근무할 때 기업 액세스를 보호하세요.",
-      "benefits": ["암호화된 기업 액세스", "안전한 파일 전송", "보호된 화상 통화", "정책 준수", "모든 네트워크에서 작동"]
+      "benefits": [
+        "암호화된 기업 액세스",
+        "안전한 파일 전송",
+        "보호된 화상 통화",
+        "정책 준수",
+        "모든 네트워크에서 작동"
+      ]
     },
     "safety": {
       "title": "Windows 태블릿 VPN은 안전한가요?",
       "description": "예, Windows 태블릿의 프리미엄 VPN은 데스크톱 컴퓨터와 동일한 보안을 제공합니다.",
       "premium": {
         "title": "프리미엄 VPN 이점:",
-        "features": ["군사 등급 암호화", "노로그 정책", "킬 스위치 보호", "DNS 누출 방지", "정기 감사"]
+        "features": [
+          "군사 등급 암호화",
+          "노로그 정책",
+          "킬 스위치 보호",
+          "DNS 누출 방지",
+          "정기 감사"
+        ]
       },
       "free": {
         "title": "무료 VPN 피하기:",
-        "dangers": ["데이터 로깅", "약한 암호화", "광고 삽입", "맬웨어 위험", "제한된 기능"]
+        "dangers": [
+          "데이터 로깅",
+          "약한 암호화",
+          "광고 삽입",
+          "맬웨어 위험",
+          "제한된 기능"
+        ]
       }
     },
     "avoid": {
       "title": "피해야 할 무료 Windows VPN",
       "description": "무료 VPN으로 Surface 태블릿의 보안을 손상시키지 마세요.",
       "vpns": [
-        {"name": "Hola VPN", "reason": "기기를 프록시로 사용"},
-        {"name": "Hotspot Shield Free", "reason": "데이터 기록 및 판매"},
-        {"name": "Betternet", "reason": "맬웨어 포함"},
-        {"name": "SuperVPN", "reason": "보안 취약점"}
+        {
+          "name": "Hola VPN",
+          "reason": "기기를 프록시로 사용"
+        },
+        {
+          "name": "Hotspot Shield Free",
+          "reason": "데이터 기록 및 판매"
+        },
+        {
+          "name": "Betternet",
+          "reason": "맬웨어 포함"
+        },
+        {
+          "name": "SuperVPN",
+          "reason": "보안 취약점"
+        }
       ]
     },
     "conclusion": {

@@ -14,6 +14,7 @@
     "vpnIran": "伊朗最佳VPN",
     "vpnGaming": "游戏最佳VPN",
     "vpnMobile": "最佳移动VPN",
+    "vpnTablet": "最佳平板VPN",
     "freeVpn": "最佳免费VPN",
     "deals": "优惠",
     "compare": "比较",
@@ -4301,6 +4302,639 @@
           "description": "Surfshark为iPhone用户提供最优价格的无限设备。"
         }
       }
+    }
+  },
+  "ipadVpn": {
+    "meta": {
+      "title": "最佳iPad VPN（iPadOS）2025 - 专家测试",
+      "description": "寻找最佳iPad VPN应用。在iPadOS上测试，专注于界面、性能、家庭共享和流媒体功能。"
+    },
+    "hero": {
+      "badge": "iPad VPN指南2025",
+      "title": "最佳iPad VPN",
+      "subtitle": "针对iPadOS优化的专家测试VPN应用。大屏幕界面、家庭共享支持和无缝Apple生态系统集成。"
+    },
+    "why": {
+      "title": "为什么您的iPad需要VPN",
+      "largeScreen": {
+        "title": "大屏幕流媒体",
+        "description": "非常适合在iPad的精美显示屏上观看Netflix、Disney+等"
+      },
+      "publicWifi": {
+        "title": "公共WiFi保护",
+        "description": "在咖啡馆、酒店和机场WiFi网络上保持安全"
+      },
+      "familySharing": {
+        "title": "家庭共享就绪",
+        "description": "通过Apple家庭共享与整个家庭共享VPN保护"
+      }
+    },
+    "comparison": {
+      "title": "快速比较",
+      "vpn": "VPN",
+      "rating": "评分",
+      "interface": "iPad界面",
+      "splitTunnel": "分离隧道",
+      "multitasking": "多任务处理",
+      "price": "价格",
+      "excellent": "优秀",
+      "good": "良好",
+      "inApp": "应用内",
+      "native": "原生",
+      "full": "完整"
+    },
+    "reviews": {
+      "title": "最佳iPad VPN（2025）",
+      "subtitle": "针对iPadOS性能测试和排名",
+      "pros": "优点",
+      "cons": "缺点",
+      "getButton": "获取",
+      "nordvpn": {
+        "badge": "最佳iPad",
+        "description": "NordVPN凭借精美设计的界面、NordLynx协议带来的极速速度和应用内分离隧道，提供最佳iPad体验。",
+        "pros": ["最佳iPad界面设计", "NordLynx协议 - 最快速度", "应用内分离隧道", "出色的流媒体支持", "Siri快捷指令集成"],
+        "cons": ["无系统级分离隧道", "高级定价"]
+      },
+      "surfshark": {
+        "badge": "最佳家庭",
+        "description": "Surfshark的无限设备政策和家庭共享兼容性使其成为拥有多台iPad的家庭的完美选择。",
+        "pros": ["无限设备", "家庭共享兼容", "最优价格（82%折扣）", "CleanWeb广告拦截器", "轻量级应用"],
+        "cons": ["服务器网络较小", "无Siri快捷指令"]
+      },
+      "expressvpn": {
+        "badge": "最佳旅行",
+        "description": "ExpressVPN在受限国家可靠运行，并在全球酒店和机场WiFi上提供稳定连接。",
+        "pros": ["在中国、阿联酋、土耳其可用", "最稳定的连接", "Lightway协议", "全天候支持", "MediaStreamer用于Apple TV"],
+        "cons": ["价格较高", "仅8台设备"]
+      }
+    },
+    "features": {
+      "title": "iPadOS特定功能",
+      "profiles": {
+        "title": "VPN配置文件",
+        "description": "直接在iPadOS设置中配置VPN配置文件以实现始终在线保护"
+      },
+      "familySharing": {
+        "title": "家庭共享",
+        "description": "通过Apple家庭共享与最多6名家庭成员共享您的VPN订阅"
+      },
+      "privacyLabels": {
+        "title": "Apple隐私标签",
+        "description": "所有推荐的VPN在App Store中都有透明的Apple隐私标签"
+      },
+      "multitasking": {
+        "title": "多任务处理支持",
+        "description": "VPN在分屏视图、侧拉和台前调度期间保持连接"
+      }
+    },
+    "setup": {
+      "title": "如何在iPad上设置VPN",
+      "steps": ["在iPad上打开App Store", "搜索您选择的VPN（NordVPN、Surfshark或ExpressVPN）", "点击「获取」下载并安装", "打开VPN应用并登录或创建账户", "在提示时允许VPN配置", "点击「快速连接」以保护您的连接"]
+    },
+    "streaming": {
+      "title": "在iPad上使用VPN流媒体",
+      "description": "您的iPad大屏幕非常适合流媒体。使用VPN，您可以从任何地方访问内容。",
+      "services": ["Netflix（所有地区）", "Disney+（美国、英国等）", "BBC iPlayer（英国）", "Hulu（美国）", "Amazon Prime Video"]
+    },
+    "safety": {
+      "title": "iPad VPN安全吗？",
+      "description": "是的，高级iPad VPN完全安全。它们使用与银行相同的加密，并经过独立审计。",
+      "premium": {
+        "title": "高级VPN保护您的iPad：",
+        "features": ["AES-256加密", "无日志政策", "终止开关保护", "安全协议", "定期安全审计"]
+      },
+      "free": {
+        "title": "避免在iPad上使用免费VPN：",
+        "dangers": ["数据收集和出售", "广告注入", "弱加密", "恶意软件风险", "带宽限制"]
+      }
+    },
+    "avoid": {
+      "title": "要避免的免费iPad VPN",
+      "description": "不要用这些危险的免费VPN危害您iPad的安全。",
+      "vpns": [
+        {"name": "HolaVPN", "reason": "使用您的iPad作为出口节点"},
+        {"name": "TurboVPN", "reason": "出售用户数据"},
+        {"name": "SuperVPN", "reason": "安全漏洞"},
+        {"name": "Betternet", "reason": "包含恶意软件"}
+      ]
+    },
+    "conclusion": {
+      "title": "为您的iPad获取最佳VPN",
+      "description": "使用这些顶级VPN保护您的iPad并解锁全球内容。",
+      "getBest": "获取NordVPN用于iPad",
+      "getValue": "获取Surfshark - 82%折扣",
+      "getTravel": "获取ExpressVPN"
+    }
+  },
+  "androidTabletVpn": {
+    "meta": {
+      "title": "最佳Android平板VPN（三星、联想、小米）2025",
+      "description": "寻找最佳Android平板VPN。在三星Galaxy Tab、联想Tab和小米平板上测试，支持分离隧道和APK。"
+    },
+    "hero": {
+      "badge": "Android平板VPN指南2025",
+      "title": "最佳Android平板VPN",
+      "subtitle": "针对三星Galaxy Tab、联想Tab、小米平板等的专家测试VPN应用。完整分离隧道、APK侧载和自定义。"
+    },
+    "why": {
+      "title": "为什么您的Android平板需要VPN",
+      "items": [
+        "在平板的大屏幕上安全流媒体",
+        "保护公共WiFi网络上的数据",
+        "在审查国家侧载APK",
+        "完整分离隧道支持",
+        "降低延迟的游戏",
+        "比iOS更多自定义"
+      ]
+    },
+    "comparison": {
+      "title": "快速比较",
+      "vpn": "VPN",
+      "rating": "评分",
+      "protocol": "协议",
+      "tabletOptimized": "平板优化",
+      "price": "价格"
+    },
+    "reviews": {
+      "title": "最佳Android平板VPN（2025）",
+      "subtitle": "在三星Galaxy Tab、联想Tab和小米平板上测试",
+      "pros": "优点",
+      "cons": "缺点",
+      "getButton": "获取",
+      "appSize": "应用大小",
+      "nordvpn": {
+        "badge": "最快",
+        "description": "NordVPN是Android平板最快的VPN，采用NordLynx协议、完整终止开关支持和平板优化UI。",
+        "pros": [
+          "NordLynx最快速度",
+          "完整终止开关支持",
+          "平板优化界面",
+          "7,400+服务器",
+          "分离隧道"
+        ],
+        "cons": [
+          "应用体积较大",
+          "无GPS欺骗"
+        ]
+      },
+      "surfshark": {
+        "badge": "最轻应用",
+        "description": "Surfshark拥有最轻的Android应用（45MB），非常适合存储空间有限的平板。包括GPS欺骗和无限设备。",
+        "pros": [
+          "最轻应用（45MB）",
+          "GPS欺骗功能",
+          "无限设备",
+          "最优价格",
+          "CleanWeb广告拦截器"
+        ],
+        "cons": [
+          "服务器少于Nord",
+          "稍慢一些"
+        ]
+      },
+      "expressvpn": {
+        "badge": "最佳旅行",
+        "description": "ExpressVPN为Android平板提供最佳稳定性，尤其是旅行时。在全球4G/5G网络上可靠运行。",
+        "pros": [
+          "4G/5G最稳定",
+          "在受限国家可用",
+          "Lightway协议",
+          "出色支持",
+          "易于使用"
+        ],
+        "cons": [
+          "价格较高",
+          "限制8台设备"
+        ]
+      }
+    },
+    "features": {
+      "title": "Android平板特定功能",
+      "splitTunneling": {
+        "title": "完整分离隧道",
+        "description": "选择哪些应用使用VPN，哪些使用常规连接"
+      },
+      "apkSideload": {
+        "title": "APK侧载",
+        "description": "在Play商店被屏蔽的国家直接安装VPN APK"
+      },
+      "customDns": {
+        "title": "自定义DNS和终止开关",
+        "description": "高级DNS设置和自动终止开关保护"
+      },
+      "alwaysOn": {
+        "title": "始终在线VPN",
+        "description": "Android的原生始终在线VPN自动保护您"
+      },
+      "widgets": {
+        "title": "主屏幕小部件",
+        "description": "快速连接小部件实现即时VPN保护"
+      },
+      "gpsSpoofing": {
+        "title": "GPS欺骗",
+        "description": "Surfshark可以在Android平板上欺骗您的GPS位置"
+      }
+    },
+    "tablets": {
+      "title": "流行的Android平板",
+      "samsung": {
+        "title": "三星Galaxy Tab",
+        "models": "Galaxy Tab S9、S8、S7、A8、A7",
+        "status": "完全兼容"
+      },
+      "lenovo": {
+        "title": "联想Tab",
+        "models": "Tab P12、P11、M10、M8",
+        "status": "完全兼容"
+      },
+      "xiaomi": {
+        "title": "小米平板",
+        "models": "Pad 6、Pad 5、Redmi Pad",
+        "status": "完全兼容"
+      }
+    },
+    "setup": {
+      "title": "如何在Android平板上设置VPN",
+      "steps": [
+        "在平板上打开Google Play商店",
+        "搜索您选择的VPN",
+        "点击「安装」下载",
+        "打开应用并登录",
+        "授予VPN权限",
+        "在设置中启用终止开关",
+        "点击「快速连接」"
+      ]
+    },
+    "streaming": {
+      "title": "在Android平板上流媒体",
+      "description": "在Android平板的大屏幕上享受带VPN保护的流媒体。",
+      "services": [
+        "Netflix全球",
+        "Disney+所有地区",
+        "YouTube Premium",
+        "Hulu（美国）",
+        "区域内容"
+      ]
+    },
+    "gaming": {
+      "title": "Android平板游戏VPN",
+      "description": "在Android平板上降低延迟并访问地理限制游戏。",
+      "games": [
+        "PUBG Mobile",
+        "Call of Duty Mobile",
+        "原神",
+        "Free Fire"
+      ]
+    },
+    "torrenting": {
+      "title": "在Android平板上下载种子",
+      "warning": "下载种子可能有风险。仅下载合法内容。",
+      "requirements": [
+        "启用终止开关",
+        "DNS泄漏保护",
+        "P2P优化服务器",
+        "无日志政策"
+      ]
+    },
+    "safety": {
+      "title": "Android平板VPN安全吗？",
+      "tips": [
+        "仅从Play商店或官方APK下载",
+        "启用终止开关",
+        "使用安全协议",
+        "保持应用更新"
+      ]
+    },
+    "avoid": {
+      "title": "要避免的免费Android VPN",
+      "description": "这些免费VPN对您的Android平板危险。",
+      "reasons": [
+        "数据收集",
+        "广告注入",
+        "恶意软件风险",
+        "无加密",
+        "带宽限制"
+      ]
+    },
+    "conclusion": {
+      "title": "选择您的Android平板VPN",
+      "description": "立即为您的Android平板获取最佳保护。",
+      "getBest": "获取NordVPN",
+      "getValue": "获取Surfshark - 82%折扣",
+      "getTravel": "获取ExpressVPN"
+    }
+  },
+  "tabletVpn": {
+    "meta": {
+      "title": "最佳平板VPN（iPad、Android、Windows）2025",
+      "description": "比较最佳平板VPN应用。在iPad、Android平板和Surface Pro上测试。快速、安全且针对大屏幕优化。"
+    },
+    "hero": {
+      "badge": "平板VPN指南2025",
+      "title": "最佳平板VPN",
+      "subtitle": "针对iPad、Android平板和Windows平板的专家测试VPN应用。保护您的数据、解锁流媒体，在任何平板上保持安全。"
+    },
+    "intro": {
+      "title": "为什么平板需要特别的VPN关注",
+      "description": "平板占据智能手机和笔记本电脑之间的独特空间。无论您是在度假时观看Netflix、在酒店远程工作，还是让孩子安全浏览，平板VPN都提供必要的保护。凭借非常适合流媒体和多任务处理的大屏幕，平板极大地受益于针对更大显示屏优化的VPN功能。"
+    },
+    "why": {
+      "title": "为什么在平板上使用VPN？",
+      "publicWifi": {
+        "title": "公共WiFi安全",
+        "description": "在酒店、机场和咖啡馆WiFi网络上保护您的数据"
+      },
+      "tracking": {
+        "title": "防止跟踪",
+        "description": "阻止应用和网站跟踪您的在线活动"
+      },
+      "streaming": {
+        "title": "解锁流媒体",
+        "description": "从任何地方访问Netflix、Disney+、BBC iPlayer等"
+      },
+      "largeScreen": {
+        "title": "大屏幕优化",
+        "description": "专为平板界面和多任务处理设计的VPN应用"
+      },
+      "travel": {
+        "title": "完美旅行",
+        "description": "非常适合学习、远程工作或移动娱乐"
+      },
+      "throttling": {
+        "title": "防止限速",
+        "description": "阻止ISP降低您的流媒体和下载速度"
+      }
+    },
+    "reviews": {
+      "title": "前3名最佳平板VPN（2025）",
+      "subtitle": "在iPad、Android平板和Windows平板上测试",
+      "devices": "设备",
+      "unlimited": "无限",
+      "battery": "电池",
+      "low": "低",
+      "moderate": "中等",
+      "speed": "速度",
+      "servers": "服务器",
+      "countries": "国家",
+      "pros": "优点",
+      "cons": "缺点",
+      "getButton": "获取",
+      "nordvpn": {
+        "badge": "最佳整体",
+        "description": "NordVPN凭借NordLynx协议、iPad和Android优化应用以及出色的流媒体性能，提供最快的平板体验。",
+        "pros": ["NordLynx最快平板速度", "出色的iPad和Android应用", "Android平板分离隧道", "118个国家的7,400+服务器", "完美流媒体"],
+        "cons": ["iPad无分离隧道", "价格稍高"]
+      },
+      "surfshark": {
+        "badge": "最佳性价比",
+        "description": "Surfshark提供无限设备连接，非常适合拥有多台平板的家庭。轻量级应用即使在旧平板上也能很好地工作。",
+        "pros": ["无限设备 - 非常适合家庭", "最轻应用 - 完美适合旧平板", "82%折扣的最优价格", "CleanWeb拦截广告和恶意软件", "Android上的GPS欺骗"],
+        "cons": ["服务器网络较小", "比NordVPN稍慢"]
+      },
+      "expressvpn": {
+        "badge": "最佳旅行",
+        "description": "ExpressVPN是旅行者最可靠的选择，在中国、阿联酋和土耳其稳定运行。在酒店和机场WiFi上稳定性出色。",
+        "pros": ["在中国、阿联酋、土耳其可用", "酒店WiFi最稳定", "Lightway协议 - 快速高效", "全天候客户支持", "覆盖105个国家"],
+        "cons": ["更贵", "限制8台设备"]
+      }
+    },
+    "platforms": {
+      "title": "按平板类型分类的最佳VPN",
+      "ipad": {
+        "title": "最佳iPad VPN",
+        "description": "iPadOS优化应用，大屏幕界面、家庭共享支持和Apple隐私合规。",
+        "features": ["iPadOS优化界面", "家庭共享兼容", "Apple隐私标签", "多任务处理支持", "iCloud钥匙串集成"],
+        "readMore": "最佳iPad VPN →"
+      },
+      "android": {
+        "title": "最佳Android平板VPN",
+        "description": "完整分离隧道、审查国家的APK侧载以及快速连接的小部件。",
+        "features": ["完整分离隧道支持", "可用APK侧载", "自定义DNS设置", "主屏幕小部件", "始终在线VPN"],
+        "readMore": "最佳Android平板VPN →"
+      },
+      "windows": {
+        "title": "最佳Windows平板VPN",
+        "description": "Surface Pro和Surface Go上的完整Windows VPN支持。非常适合远程工作和企业安全。",
+        "features": ["完整Windows应用支持", "触控优化UI", "企业安全功能", "分离隧道", "原生协议支持"],
+        "readMore": "最佳Windows平板VPN →"
+      }
+    },
+    "streaming": {
+      "title": "平板VPN流媒体",
+      "subtitle": "在平板的大屏幕上解锁您喜欢的内容",
+      "uk": {
+        "title": "英国",
+        "services": "BBC iPlayer、ITV Hub、Channel 4",
+        "recommended": "NordVPN、ExpressVPN"
+      },
+      "usa": {
+        "title": "美国",
+        "services": "Hulu、ESPN+、HBO Max、Peacock",
+        "recommended": "NordVPN、Surfshark"
+      },
+      "netherlands": {
+        "title": "荷兰",
+        "services": "Ziggo GO、NPO、Videoland",
+        "recommended": "NordVPN、Surfshark"
+      },
+      "germany": {
+        "title": "德国",
+        "services": "DAZN、RTL+、ZDF Mediathek",
+        "recommended": "NordVPN、ExpressVPN"
+      }
+    },
+    "travel": {
+      "title": "旅行时最佳平板VPN",
+      "subtitle": "在移动中保持保护和连接",
+      "airport": {
+        "title": "机场WiFi",
+        "description": "在臭名昭著的不安全机场网络上保护您的连接"
+      },
+      "hotel": {
+        "title": "酒店WiFi",
+        "description": "在全球共享酒店网络上保护您的数据"
+      },
+      "regionLocks": {
+        "title": "区域锁定",
+        "description": "在国外访问您的家庭流媒体服务"
+      },
+      "socialMedia": {
+        "title": "社交媒体禁令",
+        "description": "在土耳其、阿联酋、埃及和中国访问被屏蔽的应用"
+      }
+    },
+    "safety": {
+      "title": "平板VPN安全吗？",
+      "description": "是的，当您使用信誉良好的高级提供商时，平板VPN是安全的。高级VPN服务使用军事级加密和严格的无日志政策。然而，免费VPN实际上可能会使您平板的数据面临风险。",
+      "premium": {
+        "title": "高级VPN安全是因为：",
+        "features": ["军事级AES-256加密", "严格的无日志政策（经审计）", "安全协议（WireGuard、NordLynx）", "终止开关防止数据泄漏", "定期第三方安全审计", "透明的隐私政策"]
+      },
+      "free": {
+        "title": "免费VPN危险是因为：",
+        "dangers": ["收集和出售您的数据", "在浏览中注入广告", "弱或无加密", "可能包含恶意软件或间谍软件", "严重限制速度", "无客户支持"]
+      }
+    },
+    "avoid": {
+      "title": "要避免的免费平板VPN",
+      "description": "这些免费VPN被发现收集用户数据、注入广告或存在安全漏洞。不要冒险危害您平板的安全。",
+      "vpns": [
+        {"name": "HolaVPN", "reason": "将您的设备用作其他用户的出口节点"},
+        {"name": "TurboVPN", "reason": "收集和出售用户浏览数据"},
+        {"name": "SuperVPN", "reason": "发现多个安全漏洞"},
+        {"name": "Betternet", "reason": "包含跟踪库和恶意软件"},
+        {"name": "Free VPN Unlimited", "reason": "记录用户活动并注入广告"}
+      ]
+    },
+    "conclusion": {
+      "title": "为您的平板选择最佳VPN",
+      "description": "无论您拥有iPad、Android平板还是Windows平板，这些VPN都将保护您的安全并让您享受无限制的内容。",
+      "best": {
+        "title": "NordVPN",
+        "subtitle": "最佳平板整体",
+        "description": "最快速度、最佳应用、随处可用"
+      },
+      "value": {
+        "title": "Surfshark",
+        "subtitle": "最佳家庭性价比",
+        "description": "无限设备、最优价格、非常适合家庭"
+      },
+      "travel": {
+        "title": "ExpressVPN",
+        "subtitle": "最佳旅行者",
+        "description": "在中国、阿联酋可用，最可靠"
+      },
+      "getBest": "获取NordVPN",
+      "getValue": "获取Surfshark - 82%折扣",
+      "getTravel": "获取ExpressVPN"
+    }
+  },
+  "windowsTabletVpn": {
+    "meta": {
+      "title": "最佳Windows平板VPN（Surface Pro、Surface Go）2025",
+      "description": "寻找最佳Windows平板VPN。在Surface Pro和Surface Go上测试，完整Windows应用支持和企业安全。"
+    },
+    "hero": {
+      "badge": "Windows平板VPN指南2025",
+      "title": "最佳Windows平板VPN",
+      "subtitle": "针对Surface Pro、Surface Go和Windows平板的专家测试VPN应用。便携包装中的完整桌面VPN功能。"
+    },
+    "why": {
+      "title": "为什么您的Windows平板需要VPN",
+      "remoteWork": {
+        "title": "远程工作安全",
+        "description": "使用企业级加密从任何地方安全访问公司"
+      },
+      "fullWindows": {
+        "title": "完整Windows功能",
+        "description": "访问具有所有桌面功能的完整Windows VPN应用"
+      },
+      "travel": {
+        "title": "旅行就绪",
+        "description": "非常适合商务旅行，全球连接可靠"
+      },
+      "enterprise": {
+        "title": "企业安全",
+        "description": "通过审计就绪的VPN满足公司安全要求"
+      }
+    },
+    "reviews": {
+      "title": "最佳Windows平板VPN（2025）",
+      "subtitle": "在Surface Pro和Surface Go上测试",
+      "pros": "优点",
+      "cons": "缺点",
+      "getButton": "获取",
+      "nordvpn": {
+        "badge": "最佳整体",
+        "description": "NordVPN的原生Windows应用在Surface平板上提供最佳体验，采用NordLynx协议和完整终止开关支持。",
+        "pros": ["原生Windows应用", "NordLynx协议", "完整终止开关", "触控友好UI", "商业功能"],
+        "cons": ["价格较高", "资源使用"]
+      },
+      "surfshark": {
+        "badge": "最佳性价比",
+        "description": "Surfshark以最优价格提供无限设备，非常适合拥有多台Windows设备的专业人士。",
+        "pros": ["无限设备", "轻量级应用", "最优价格", "CleanWeb功能", "良好速度"],
+        "cons": ["功能较少", "网络较小"]
+      },
+      "expressvpn": {
+        "badge": "最佳稳定性",
+        "description": "ExpressVPN为Windows平板提供最稳定的连接，Lightway协议针对移动使用进行了优化。",
+        "pros": ["最稳定", "Lightway协议", "非常适合旅行", "全天候支持", "易于设置"],
+        "cons": ["最贵", "8台设备限制"]
+      }
+    },
+    "features": {
+      "title": "Windows平板特定功能",
+      "killSwitch": {
+        "title": "完整终止开关",
+        "description": "Windows原生终止开关在VPN断开时防止数据泄漏"
+      },
+      "splitTunneling": {
+        "title": "应用级分离隧道",
+        "description": "选择Surface平板上哪些应用通过VPN路由"
+      },
+      "protocols": {
+        "title": "原生协议支持",
+        "description": "Windows上支持WireGuard、OpenVPN和IKEv2"
+      },
+      "touchUi": {
+        "title": "触控优化UI",
+        "description": "专为触摸屏使用设计界面的VPN应用"
+      },
+      "security": {
+        "title": "Windows安全集成",
+        "description": "与Windows Defender和安全功能无缝协作"
+      }
+    },
+    "surface": {
+      "title": "Surface Pro和Surface Go",
+      "description": "所有推荐的VPN在Microsoft Surface平板上完美运行。",
+      "pro": {
+        "title": "Surface Pro",
+        "description": "完整Windows 11支持，所有VPN功能"
+      },
+      "go": {
+        "title": "Surface Go",
+        "description": "针对Surface Go硬件优化的轻量级VPN应用"
+      }
+    },
+    "setup": {
+      "title": "如何在Windows平板上设置VPN",
+      "steps": ["访问VPN提供商的网站", "下载Windows应用", "安装并运行应用", "登录您的账户", "在设置中启用终止开关", "选择服务器并连接"]
+    },
+    "remoteWork": {
+      "title": "使用Windows平板VPN远程工作",
+      "description": "使用Surface平板远程工作时保护您的公司访问。",
+      "benefits": ["加密公司访问", "安全文件传输", "受保护的视频通话", "符合政策", "在任何网络上工作"]
+    },
+    "safety": {
+      "title": "Windows平板VPN安全吗？",
+      "description": "是的，Windows平板上的高级VPN提供与台式电脑相同的安全性。",
+      "premium": {
+        "title": "高级VPN优势：",
+        "features": ["军事级加密", "无日志政策", "终止开关保护", "DNS泄漏防护", "定期审计"]
+      },
+      "free": {
+        "title": "避免免费VPN：",
+        "dangers": ["数据记录", "弱加密", "广告注入", "恶意软件风险", "功能有限"]
+      }
+    },
+    "avoid": {
+      "title": "要避免的免费Windows VPN",
+      "description": "不要用免费VPN危害您Surface平板的安全。",
+      "vpns": [
+        {"name": "Hola VPN", "reason": "将您的设备用作代理"},
+        {"name": "Hotspot Shield Free", "reason": "记录和出售数据"},
+        {"name": "Betternet", "reason": "包含恶意软件"},
+        {"name": "SuperVPN", "reason": "安全漏洞"}
+      ]
+    },
+    "conclusion": {
+      "title": "为您的Windows平板选择最佳VPN",
+      "description": "使用这些顶级VPN保护您的Surface Pro或Surface Go。",
+      "getBest": "获取NordVPN",
+      "getValue": "获取Surfshark - 82%折扣",
+      "getTravel": "获取ExpressVPN"
     }
   }
 }

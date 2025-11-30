@@ -8,7 +8,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Shield, Menu, X, Star, Zap, Globe, Tag, ChevronDown, Trophy, Gamepad2, Gift, Smartphone } from "lucide-react";
+import { Shield, Menu, X, Star, Zap, Globe, Tag, ChevronDown, Trophy, Gamepad2, Gift, Smartphone, Tablet } from "lucide-react";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { LanguageSwitcher } from "./language-switcher";
@@ -28,6 +28,7 @@ export function Header() {
     { href: "/best/vpn-iran", label: t("vpnIran"), icon: Globe },
     { href: "/best/vpn-gaming", label: t("vpnGaming"), icon: Gamepad2 },
     { href: "/best/vpn-mobile", label: t("vpnMobile"), icon: Smartphone },
+    { href: "/best/vpn-tablet", label: t("vpnTablet"), icon: Tablet },
     { href: "/best/free-vpn", label: t("freeVpn"), icon: Gift },
   ];
 

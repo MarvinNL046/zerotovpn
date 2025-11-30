@@ -3508,5 +3508,53 @@
         }
       }
     }
+  },
+  "exitPopup": {
+    "close": "閉じる",
+    "waitTitle": "ちょっと待って！まだ行かないで！",
+    "specialOffer": "特別オファーをご用意しました",
+    "limitedTime": "期間限定オファー",
+    "useCode": "チェックアウト時にコードを使用：",
+    "claimDeal": "このディールを獲得",
+    "moneyBack": "30日間返金保証",
+    "noThanks": "いいえ、全額払います"
+  },
+  "stickyBar": {
+    "getExclusive": "{vpn}を限定割引で入手！",
+    "limitedOffer": "期間限定 - お見逃しなく！",
+    "claimDeal": "ディールを獲得",
+    "getDeal": "入手する",
+    "dismiss": "閉じる"
+  },
+  "comparisonTool": {
+    "title": "VPN比較ツール",
+    "subtitle": "VPNを選択して並べて比較",
+    "selected": "選択済み",
+    "addVpn": "VPNを追加",
+    "remove": "削除",
+    "feature": "機能",
+    "pricing": "価格",
+    "monthlyPrice": "月額料金",
+    "yearlyPrice": "年間料金",
+    "moneyBack": "返金保証(日)",
+    "performance": "パフォーマンス",
+    "speedScore": "速度スコア",
+    "securityScore": "セキュリティスコア",
+    "streamingScore": "ストリーミングスコア",
+    "network": "ネットワーク",
+    "servers": "サーバー",
+    "countries": "国",
+    "devices": "最大デバイス数",
+    "features": "機能",
+    "netflix": "Netflix対応",
+    "torrenting": "トレント",
+    "killSwitch": "キルスイッチ",
+    "noLogs": "ノーログポリシー",
+    "protocols": "プロトコル",
+    "getStarted": "始める",
+    "visitSite": "サイトを訪問",
+    "noVpnsSelected": "VPN未選択",
+    "selectToCompare": "2-4個のVPNを選択して機能を比較",
+    "addFirstVpn": "最初のVPNを追加"
   }
 }

@@ -3508,5 +3508,53 @@
         }
       }
     }
+  },
+  "exitPopup": {
+    "close": "Sluiten",
+    "waitTitle": "Wacht! Ga nog niet weg!",
+    "specialOffer": "We hebben een speciale aanbieding voor je",
+    "limitedTime": "Tijdelijke aanbieding",
+    "useCode": "Gebruik code bij afrekenen:",
+    "claimDeal": "Claim Deze Deal",
+    "moneyBack": "30 dagen geld-terug-garantie",
+    "noThanks": "Nee bedankt, ik betaal de volle prijs"
+  },
+  "stickyBar": {
+    "getExclusive": "Krijg {vpn} met exclusieve korting!",
+    "limitedOffer": "Tijdelijke aanbieding - Mis het niet!",
+    "claimDeal": "Claim Deal",
+    "getDeal": "Krijg Deal",
+    "dismiss": "Sluiten"
+  },
+  "comparisonTool": {
+    "title": "VPN Vergelijkingstool",
+    "subtitle": "Selecteer VPN's om naast elkaar te vergelijken",
+    "selected": "geselecteerd",
+    "addVpn": "VPN Toevoegen",
+    "remove": "Verwijderen",
+    "feature": "Functie",
+    "pricing": "Prijzen",
+    "monthlyPrice": "Maandprijs",
+    "yearlyPrice": "Jaarprijs",
+    "moneyBack": "Geld-terug (dagen)",
+    "performance": "Prestaties",
+    "speedScore": "Snelheidsscore",
+    "securityScore": "Beveiligingsscore",
+    "streamingScore": "Streamingscore",
+    "network": "Netwerk",
+    "servers": "Servers",
+    "countries": "Landen",
+    "devices": "Max Apparaten",
+    "features": "Functies",
+    "netflix": "Netflix Ondersteuning",
+    "torrenting": "Torrenting",
+    "killSwitch": "Kill Switch",
+    "noLogs": "Geen-Logs Beleid",
+    "protocols": "Protocollen",
+    "getStarted": "Aan de slag",
+    "visitSite": "Bezoek Site",
+    "noVpnsSelected": "Geen VPN's Geselecteerd",
+    "selectToCompare": "Selecteer 2-4 VPN's om hun functies naast elkaar te vergelijken",
+    "addFirstVpn": "Voeg Je Eerste VPN Toe"
   }
 }

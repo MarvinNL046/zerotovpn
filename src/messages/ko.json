@@ -3523,5 +3523,53 @@
         }
       }
     }
+  },
+  "exitPopup": {
+    "close": "닫기",
+    "waitTitle": "잠깐! 아직 가지 마세요!",
+    "specialOffer": "특별 할인을 준비했습니다",
+    "limitedTime": "한정 기간 혜택",
+    "useCode": "결제 시 코드 사용:",
+    "claimDeal": "이 혜택 받기",
+    "moneyBack": "30일 환불 보장",
+    "noThanks": "괜찮아요, 정가로 결제할게요"
+  },
+  "stickyBar": {
+    "getExclusive": "{vpn}을 특별 할인으로 받으세요!",
+    "limitedOffer": "한정 기간 혜택 - 놓치지 마세요!",
+    "claimDeal": "혜택 받기",
+    "getDeal": "받기",
+    "dismiss": "닫기"
+  },
+  "comparisonTool": {
+    "title": "VPN 비교 도구",
+    "subtitle": "비교할 VPN 선택",
+    "selected": "선택됨",
+    "addVpn": "VPN 추가",
+    "remove": "제거",
+    "feature": "기능",
+    "pricing": "가격",
+    "monthlyPrice": "월 요금",
+    "yearlyPrice": "연 요금",
+    "moneyBack": "환불(일)",
+    "performance": "성능",
+    "speedScore": "속도 점수",
+    "securityScore": "보안 점수",
+    "streamingScore": "스트리밍 점수",
+    "network": "네트워크",
+    "servers": "서버",
+    "countries": "국가",
+    "devices": "최대 기기 수",
+    "features": "기능",
+    "netflix": "Netflix 지원",
+    "torrenting": "토렌트",
+    "killSwitch": "킬 스위치",
+    "noLogs": "노로그 정책",
+    "protocols": "프로토콜",
+    "getStarted": "시작하기",
+    "visitSite": "사이트 방문",
+    "noVpnsSelected": "선택된 VPN 없음",
+    "selectToCompare": "2-4개의 VPN을 선택하여 비교하세요",
+    "addFirstVpn": "첫 번째 VPN 추가"
   }
 }

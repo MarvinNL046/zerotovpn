@@ -3677,5 +3677,53 @@
         }
       }
     }
+  },
+  "exitPopup": {
+    "close": "ปิด",
+    "waitTitle": "รอก่อน! อย่าเพิ่งไป!",
+    "specialOffer": "เรามีข้อเสนอพิเศษสำหรับคุณ",
+    "limitedTime": "ข้อเสนอจำกัดเวลา",
+    "useCode": "ใช้รหัสที่ชำระเงิน:",
+    "claimDeal": "รับข้อเสนอนี้",
+    "moneyBack": "รับประกันคืนเงิน 30 วัน",
+    "noThanks": "ไม่ล่ะ ฉันจะจ่ายเต็มราคา"
+  },
+  "stickyBar": {
+    "getExclusive": "รับ {vpn} พร้อมส่วนลดพิเศษ!",
+    "limitedOffer": "ข้อเสนอจำกัดเวลา - อย่าพลาด!",
+    "claimDeal": "รับข้อเสนอ",
+    "getDeal": "รับเลย",
+    "dismiss": "ปิด"
+  },
+  "comparisonTool": {
+    "title": "เครื่องมือเปรียบเทียบ VPN",
+    "subtitle": "เลือก VPN เพื่อเปรียบเทียบ",
+    "selected": "เลือกแล้ว",
+    "addVpn": "เพิ่ม VPN",
+    "remove": "ลบ",
+    "feature": "คุณสมบัติ",
+    "pricing": "ราคา",
+    "monthlyPrice": "ราคาต่อเดือน",
+    "yearlyPrice": "ราคาต่อปี",
+    "moneyBack": "คืนเงิน(วัน)",
+    "performance": "ประสิทธิภาพ",
+    "speedScore": "คะแนนความเร็ว",
+    "securityScore": "คะแนนความปลอดภัย",
+    "streamingScore": "คะแนนสตรีมมิ่ง",
+    "network": "เครือข่าย",
+    "servers": "เซิร์ฟเวอร์",
+    "countries": "ประเทศ",
+    "devices": "อุปกรณ์สูงสุด",
+    "features": "คุณสมบัติ",
+    "netflix": "รองรับ Netflix",
+    "torrenting": "ทอร์เรนต์",
+    "killSwitch": "Kill Switch",
+    "noLogs": "นโยบายไม่เก็บ Log",
+    "protocols": "โปรโตคอล",
+    "getStarted": "เริ่มต้น",
+    "visitSite": "เยี่ยมชมเว็บ",
+    "noVpnsSelected": "ยังไม่เลือก VPN",
+    "selectToCompare": "เลือก 2-4 VPN เพื่อเปรียบเทียบ",
+    "addFirstVpn": "เพิ่ม VPN แรก"
   }
 }

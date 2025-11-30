@@ -3559,5 +3559,53 @@
         }
       }
     }
+  },
+  "exitPopup": {
+    "close": "Schließen",
+    "waitTitle": "Warte! Geh noch nicht!",
+    "specialOffer": "Wir haben ein Sonderangebot nur für dich",
+    "limitedTime": "Zeitlich begrenztes Angebot",
+    "useCode": "Code an der Kasse verwenden:",
+    "claimDeal": "Deal Sichern",
+    "moneyBack": "30 Tage Geld-zurück-Garantie",
+    "noThanks": "Nein danke, ich zahle den vollen Preis"
+  },
+  "stickyBar": {
+    "getExclusive": "Hol dir {vpn} mit exklusivem Rabatt!",
+    "limitedOffer": "Zeitlich begrenztes Angebot - Nicht verpassen!",
+    "claimDeal": "Deal Sichern",
+    "getDeal": "Deal Holen",
+    "dismiss": "Schließen"
+  },
+  "comparisonTool": {
+    "title": "VPN Vergleichstool",
+    "subtitle": "Wähle VPNs zum Vergleich nebeneinander",
+    "selected": "ausgewählt",
+    "addVpn": "VPN Hinzufügen",
+    "remove": "Entfernen",
+    "feature": "Funktion",
+    "pricing": "Preise",
+    "monthlyPrice": "Monatspreis",
+    "yearlyPrice": "Jahrespreis",
+    "moneyBack": "Geld-zurück (Tage)",
+    "performance": "Leistung",
+    "speedScore": "Geschwindigkeitswert",
+    "securityScore": "Sicherheitswert",
+    "streamingScore": "Streaming-Wert",
+    "network": "Netzwerk",
+    "servers": "Server",
+    "countries": "Länder",
+    "devices": "Max Geräte",
+    "features": "Funktionen",
+    "netflix": "Netflix Unterstützung",
+    "torrenting": "Torrenting",
+    "killSwitch": "Kill Switch",
+    "noLogs": "Keine-Logs-Richtlinie",
+    "protocols": "Protokolle",
+    "getStarted": "Loslegen",
+    "visitSite": "Seite Besuchen",
+    "noVpnsSelected": "Keine VPNs Ausgewählt",
+    "selectToCompare": "Wähle 2-4 VPNs um ihre Funktionen nebeneinander zu vergleichen",
+    "addFirstVpn": "Füge Dein Erstes VPN Hinzu"
   }
 }

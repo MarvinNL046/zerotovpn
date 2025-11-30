@@ -3508,5 +3508,53 @@
         }
       }
     }
+  },
+  "exitPopup": {
+    "close": "Close",
+    "waitTitle": "Wait! Don't Leave Yet!",
+    "specialOffer": "We have a special offer just for you",
+    "limitedTime": "Limited time offer",
+    "useCode": "Use code at checkout:",
+    "claimDeal": "Claim This Deal",
+    "moneyBack": "30-day money-back guarantee",
+    "noThanks": "No thanks, I'll pay full price"
+  },
+  "stickyBar": {
+    "getExclusive": "Get {vpn} with exclusive discount!",
+    "limitedOffer": "Limited time offer - Don't miss out!",
+    "claimDeal": "Claim Deal",
+    "getDeal": "Get Deal",
+    "dismiss": "Dismiss"
+  },
+  "comparisonTool": {
+    "title": "VPN Comparison Tool",
+    "subtitle": "Select VPNs to compare side by side",
+    "selected": "selected",
+    "addVpn": "Add VPN",
+    "remove": "Remove",
+    "feature": "Feature",
+    "pricing": "Pricing",
+    "monthlyPrice": "Monthly Price",
+    "yearlyPrice": "Yearly Price",
+    "moneyBack": "Money-back (days)",
+    "performance": "Performance",
+    "speedScore": "Speed Score",
+    "securityScore": "Security Score",
+    "streamingScore": "Streaming Score",
+    "network": "Network",
+    "servers": "Servers",
+    "countries": "Countries",
+    "devices": "Max Devices",
+    "features": "Features",
+    "netflix": "Netflix Support",
+    "torrenting": "Torrenting",
+    "killSwitch": "Kill Switch",
+    "noLogs": "No-Logs Policy",
+    "protocols": "Protocols",
+    "getStarted": "Get Started",
+    "visitSite": "Visit Site",
+    "noVpnsSelected": "No VPNs Selected",
+    "selectToCompare": "Select 2-4 VPNs to compare their features side by side",
+    "addFirstVpn": "Add Your First VPN"
   }
 }

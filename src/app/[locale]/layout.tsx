@@ -6,6 +6,8 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { OrganizationJsonLd, WebsiteJsonLd } from "@/components/seo/json-ld";
+import { ExitIntentPopup } from "@/components/conversion/exit-intent-popup";
+import { StickyCTABar } from "@/components/conversion/sticky-cta-bar";
 import type { Metadata } from "next";
 
 type Props = {
@@ -147,6 +149,9 @@ export default async function LocaleLayout({ children, params }: Props) {
             <Header />
             <main className="flex-1">{children}</main>
             <Footer />
+            {/* Conversion optimization components */}
+            <ExitIntentPopup />
+            <StickyCTABar />
           </div>
         </NextIntlClientProvider>
       </ThemeProvider>

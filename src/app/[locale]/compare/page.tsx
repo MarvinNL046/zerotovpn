@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { RatingStars } from "@/components/vpn/rating-stars";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
+import { VpnComparisonTool } from "@/components/conversion/vpn-comparison-tool";
 import {
   Check,
   X,
@@ -70,9 +71,17 @@ export default async function ComparePage({ params }: Props) {
         </div>
       </section>
 
+      {/* Interactive Comparison Tool */}
+      <section className="py-12 lg:py-16 bg-muted/30">
+        <div className="container">
+          <VpnComparisonTool vpns={vpns} maxCompare={4} />
+        </div>
+      </section>
+
       {/* Full Comparison Table */}
       <section className="py-12 lg:py-16">
         <div className="container">
+          <h2 className="text-2xl font-bold mb-6 text-center">Full Comparison Table</h2>
           <div className="overflow-x-auto">
             <table className="w-full border-collapse">
               <thead>

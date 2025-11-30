@@ -3509,5 +3509,53 @@
         }
       }
     }
+  },
+  "exitPopup": {
+    "close": "关闭",
+    "waitTitle": "等等！先别走！",
+    "specialOffer": "我们为您准备了特别优惠",
+    "limitedTime": "限时优惠",
+    "useCode": "结账时使用代码：",
+    "claimDeal": "领取此优惠",
+    "moneyBack": "30天退款保证",
+    "noThanks": "不用了，我付全价"
+  },
+  "stickyBar": {
+    "getExclusive": "以独家折扣获取{vpn}！",
+    "limitedOffer": "限时优惠 - 不要错过！",
+    "claimDeal": "领取优惠",
+    "getDeal": "获取优惠",
+    "dismiss": "关闭"
+  },
+  "comparisonTool": {
+    "title": "VPN对比工具",
+    "subtitle": "选择VPN进行并排比较",
+    "selected": "已选择",
+    "addVpn": "添加VPN",
+    "remove": "移除",
+    "feature": "功能",
+    "pricing": "价格",
+    "monthlyPrice": "月费",
+    "yearlyPrice": "年费",
+    "moneyBack": "退款(天)",
+    "performance": "性能",
+    "speedScore": "速度评分",
+    "securityScore": "安全评分",
+    "streamingScore": "流媒体评分",
+    "network": "网络",
+    "servers": "服务器",
+    "countries": "国家",
+    "devices": "最大设备数",
+    "features": "功能",
+    "netflix": "Netflix支持",
+    "torrenting": "种子下载",
+    "killSwitch": "终止开关",
+    "noLogs": "无日志政策",
+    "protocols": "协议",
+    "getStarted": "开始",
+    "visitSite": "访问网站",
+    "noVpnsSelected": "未选择VPN",
+    "selectToCompare": "选择2-4个VPN进行功能比较",
+    "addFirstVpn": "添加第一个VPN"
   }
 }

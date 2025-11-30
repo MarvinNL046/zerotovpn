@@ -3864,5 +3864,53 @@
         }
       }
     }
+  },
+  "exitPopup": {
+    "close": "Cerrar",
+    "waitTitle": "¡Espera! ¡No te vayas todavía!",
+    "specialOffer": "Tenemos una oferta especial solo para ti",
+    "limitedTime": "Oferta por tiempo limitado",
+    "useCode": "Usa el código al pagar:",
+    "claimDeal": "Reclamar Esta Oferta",
+    "moneyBack": "Garantía de devolución de 30 días",
+    "noThanks": "No gracias, pagaré el precio completo"
+  },
+  "stickyBar": {
+    "getExclusive": "¡Obtén {vpn} con descuento exclusivo!",
+    "limitedOffer": "Oferta por tiempo limitado - ¡No te la pierdas!",
+    "claimDeal": "Reclamar Oferta",
+    "getDeal": "Obtener Oferta",
+    "dismiss": "Cerrar"
+  },
+  "comparisonTool": {
+    "title": "Herramienta de Comparación VPN",
+    "subtitle": "Selecciona VPNs para comparar lado a lado",
+    "selected": "seleccionados",
+    "addVpn": "Añadir VPN",
+    "remove": "Eliminar",
+    "feature": "Característica",
+    "pricing": "Precios",
+    "monthlyPrice": "Precio Mensual",
+    "yearlyPrice": "Precio Anual",
+    "moneyBack": "Devolución (días)",
+    "performance": "Rendimiento",
+    "speedScore": "Puntuación de Velocidad",
+    "securityScore": "Puntuación de Seguridad",
+    "streamingScore": "Puntuación de Streaming",
+    "network": "Red",
+    "servers": "Servidores",
+    "countries": "Países",
+    "devices": "Dispositivos Máx",
+    "features": "Características",
+    "netflix": "Soporte Netflix",
+    "torrenting": "Torrenting",
+    "killSwitch": "Kill Switch",
+    "noLogs": "Política Sin Registros",
+    "protocols": "Protocolos",
+    "getStarted": "Comenzar",
+    "visitSite": "Visitar Sitio",
+    "noVpnsSelected": "Ningún VPN Seleccionado",
+    "selectToCompare": "Selecciona 2-4 VPNs para comparar sus características",
+    "addFirstVpn": "Añade Tu Primer VPN"
   }
 }

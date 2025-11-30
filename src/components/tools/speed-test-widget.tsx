@@ -1,22 +1,19 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { useTranslations } from "next-intl";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import {
-  Wifi,
   Download,
   Upload,
-  Gauge,
-  Zap,
-  Clock,
-  CheckCircle2,
-  AlertCircle,
-  History,
+  Activity,
+  Play,
+  RotateCcw,
   Share2,
-  Loader2,
+  History,
+  Server,
+  Wifi,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -24,428 +21,590 @@ interface SpeedTestResult {
   downloadSpeed: number;
   uploadSpeed: number;
   ping: number;
+  jitter: number;
   timestamp: number;
+  server: string;
 }
 
-type TestStatus = "idle" | "testing-ping" | "testing-download" | "testing-upload" | "completed";
+type TestPhase = "idle" | "init" | "ping" | "download" | "upload" | "complete";
 
 export function SpeedTestWidget() {
   const t = useTranslations("speedTest");
-  const [status, setStatus] = useState<TestStatus>("idle");
-  const [currentResult, setCurrentResult] = useState<SpeedTestResult | null>(null);
+  const [phase, setPhase] = useState<TestPhase>("idle");
+  const [currentSpeed, setCurrentSpeed] = useState(0);
+  const [ping, setPing] = useState(0);
+  const [jitter, setJitter] = useState(0);
+  const [downloadSpeed, setDownloadSpeed] = useState(0);
+  const [uploadSpeed, setUploadSpeed] = useState(0);
   const [history, setHistory] = useState<SpeedTestResult[]>([]);
-  const [progress, setProgress] = useState(0);
+  const [serverLocation, setServerLocation] = useState("Cloudflare CDN");
+  const abortControllerRef = useRef<AbortController | null>(null);
+  const animationFrameRef = useRef<number | null>(null);
 
-  // Load history from localStorage on mount
+  // Load history
   useEffect(() => {
     const saved = localStorage.getItem("speedTestHistory");
     if (saved) {
       try {
         setHistory(JSON.parse(saved));
       } catch (e) {
-        console.error("Failed to load speed test history", e);
+        console.error("Failed to load history", e);
       }
     }
   }, []);
 
-  // Save to history
-  const saveToHistory = (result: SpeedTestResult) => {
-    const newHistory = [result, ...history].slice(0, 5); // Keep last 5 tests
-    setHistory(newHistory);
-    localStorage.setItem("speedTestHistory", JSON.stringify(newHistory));
-  };
+  // Animate speed needle smoothly
+  const animateSpeed = useCallback((targetSpeed: number, duration: number = 500) => {
+    const startSpeed = currentSpeed;
+    const startTime = performance.now();
 
-  // Test ping/latency
-  const testPing = async (): Promise<number> => {
-    const iterations = 3;
-    const pings: number[] = [];
+    const animate = (currentTime: number) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
 
-    for (let i = 0; i < iterations; i++) {
-      const startTime = performance.now();
-      try {
-        await fetch("https://www.cloudflare.com/cdn-cgi/trace", {
-          method: "HEAD",
-          cache: "no-cache",
-        });
-        const endTime = performance.now();
-        pings.push(endTime - startTime);
-      } catch (error) {
-        console.error("Ping test failed", error);
-        pings.push(0);
+      // Easing function for smooth animation
+      const easeOut = 1 - Math.pow(1 - progress, 3);
+      const newSpeed = startSpeed + (targetSpeed - startSpeed) * easeOut;
+
+      setCurrentSpeed(Math.round(newSpeed * 10) / 10);
+
+      if (progress < 1) {
+        animationFrameRef.current = requestAnimationFrame(animate);
       }
-      setProgress((i + 1) * 10);
+    };
+
+    if (animationFrameRef.current) {
+      cancelAnimationFrame(animationFrameRef.current);
+    }
+    animationFrameRef.current = requestAnimationFrame(animate);
+  }, [currentSpeed]);
+
+  // Measure ping with multiple samples
+  const measurePing = async (signal: AbortSignal): Promise<{ ping: number; jitter: number }> => {
+    const samples: number[] = [];
+    const testUrl = "https://www.cloudflare.com/cdn-cgi/trace";
+
+    for (let i = 0; i < 10; i++) {
+      if (signal.aborted) throw new Error("Aborted");
+
+      const start = performance.now();
+      try {
+        await fetch(testUrl, {
+          method: "HEAD",
+          cache: "no-store",
+          signal
+        });
+        const end = performance.now();
+        samples.push(end - start);
+      } catch (e) {
+        if (signal.aborted) throw e;
+      }
+
+      // Small delay between pings
+      await new Promise(r => setTimeout(r, 100));
     }
 
-    return pings.reduce((a, b) => a + b, 0) / pings.length;
+    if (samples.length === 0) return { ping: 0, jitter: 0 };
+
+    const avgPing = samples.reduce((a, b) => a + b, 0) / samples.length;
+
+    // Calculate jitter (variation in ping)
+    const jitterCalc = samples.length > 1
+      ? Math.sqrt(samples.reduce((sum, p) => sum + Math.pow(p - avgPing, 2), 0) / samples.length)
+      : 0;
+
+    return {
+      ping: Math.round(avgPing),
+      jitter: Math.round(jitterCalc * 10) / 10
+    };
   };
 
-  // Test download speed
-  const testDownload = async (): Promise<number> => {
-    // Use a 5MB file from Cloudflare's speed test
-    const testUrl = "https://speed.cloudflare.com/__down?bytes=5000000";
-    const startTime = performance.now();
+  // Download speed test with progressive measurement
+  const measureDownload = async (signal: AbortSignal): Promise<number> => {
+    const testSizes = [
+      { size: 1000000, url: "https://speed.cloudflare.com/__down?bytes=1000000" },   // 1MB warmup
+      { size: 5000000, url: "https://speed.cloudflare.com/__down?bytes=5000000" },   // 5MB
+      { size: 10000000, url: "https://speed.cloudflare.com/__down?bytes=10000000" }, // 10MB
+      { size: 25000000, url: "https://speed.cloudflare.com/__down?bytes=25000000" }, // 25MB
+    ];
 
-    try {
-      const response = await fetch(testUrl, { cache: "no-cache" });
-      const data = await response.blob();
-      const endTime = performance.now();
+    const speeds: number[] = [];
+    let totalBytes = 0;
+    let totalTime = 0;
 
-      const durationSeconds = (endTime - startTime) / 1000;
-      const bitsLoaded = data.size * 8;
-      const speedBps = bitsLoaded / durationSeconds;
-      const speedMbps = speedBps / 1000000;
+    for (const test of testSizes) {
+      if (signal.aborted) throw new Error("Aborted");
 
-      setProgress(60);
-      return speedMbps;
-    } catch (error) {
-      console.error("Download test failed", error);
-      return 0;
+      const startTime = performance.now();
+
+      try {
+        const response = await fetch(test.url, {
+          cache: "no-store",
+          signal
+        });
+
+        if (!response.body) continue;
+
+        const reader = response.body.getReader();
+        let receivedBytes = 0;
+        let lastUpdate = startTime;
+
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+
+          receivedBytes += value.length;
+          const now = performance.now();
+
+          // Update speed display every 100ms
+          if (now - lastUpdate > 100) {
+            const elapsed = (now - startTime) / 1000;
+            const currentMbps = (receivedBytes * 8) / (elapsed * 1000000);
+            animateSpeed(currentMbps, 150);
+            lastUpdate = now;
+          }
+        }
+
+        const endTime = performance.now();
+        const duration = (endTime - startTime) / 1000;
+        const speedMbps = (receivedBytes * 8) / (duration * 1000000);
+
+        speeds.push(speedMbps);
+        totalBytes += receivedBytes;
+        totalTime += duration;
+
+      } catch (e) {
+        if (signal.aborted) throw e;
+        console.error("Download test error:", e);
+      }
     }
+
+    // Calculate average speed (excluding warmup)
+    const relevantSpeeds = speeds.slice(1);
+    if (relevantSpeeds.length === 0) return 0;
+
+    // Use weighted average favoring larger tests
+    const avgSpeed = relevantSpeeds.reduce((a, b) => a + b, 0) / relevantSpeeds.length;
+    return Math.round(avgSpeed * 10) / 10;
   };
 
-  // Test upload speed
-  const testUpload = async (): Promise<number> => {
-    // Create a 1MB blob to upload
-    const uploadSize = 1000000; // 1MB
-    const data = new Blob([new ArrayBuffer(uploadSize)]);
-    const formData = new FormData();
-    formData.append("file", data);
+  // Upload speed test
+  const measureUpload = async (signal: AbortSignal): Promise<number> => {
+    const testSizes = [
+      500000,   // 500KB warmup
+      1000000,  // 1MB
+      2000000,  // 2MB
+      5000000,  // 5MB
+    ];
 
-    const startTime = performance.now();
+    const speeds: number[] = [];
 
-    try {
-      await fetch("https://speed.cloudflare.com/__up", {
-        method: "POST",
-        body: formData,
-        cache: "no-cache",
-      });
-      const endTime = performance.now();
+    for (const size of testSizes) {
+      if (signal.aborted) throw new Error("Aborted");
 
-      const durationSeconds = (endTime - startTime) / 1000;
-      const bitsLoaded = uploadSize * 8;
-      const speedBps = bitsLoaded / durationSeconds;
-      const speedMbps = speedBps / 1000000;
+      // Create random data
+      const data = new Uint8Array(size);
+      crypto.getRandomValues(data);
+      const blob = new Blob([data]);
 
-      setProgress(90);
-      return speedMbps;
-    } catch (error) {
-      console.error("Upload test failed", error);
-      return 0;
+      const startTime = performance.now();
+
+      try {
+        await fetch("https://speed.cloudflare.com/__up", {
+          method: "POST",
+          body: blob,
+          signal,
+        });
+
+        const endTime = performance.now();
+        const duration = (endTime - startTime) / 1000;
+        const speedMbps = (size * 8) / (duration * 1000000);
+
+        speeds.push(speedMbps);
+        animateSpeed(speedMbps, 200);
+
+      } catch (e) {
+        if (signal.aborted) throw e;
+        console.error("Upload test error:", e);
+      }
     }
+
+    // Average excluding warmup
+    const relevantSpeeds = speeds.slice(1);
+    if (relevantSpeeds.length === 0) return 0;
+
+    return Math.round((relevantSpeeds.reduce((a, b) => a + b, 0) / relevantSpeeds.length) * 10) / 10;
   };
 
-  // Run the full speed test
-  const runSpeedTest = async () => {
-    setStatus("testing-ping");
-    setProgress(0);
-    setCurrentResult(null);
+  // Main test function
+  const runTest = async () => {
+    abortControllerRef.current = new AbortController();
+    const signal = abortControllerRef.current.signal;
+
+    // Reset state
+    setPhase("init");
+    setCurrentSpeed(0);
+    setPing(0);
+    setJitter(0);
+    setDownloadSpeed(0);
+    setUploadSpeed(0);
 
     try {
-      // Test ping
-      const ping = await testPing();
-      setProgress(30);
+      // Initialize
+      await new Promise(r => setTimeout(r, 500));
 
-      // Test download
-      setStatus("testing-download");
-      const download = await testDownload();
+      // Ping test
+      setPhase("ping");
+      const pingResult = await measurePing(signal);
+      setPing(pingResult.ping);
+      setJitter(pingResult.jitter);
 
-      // Test upload
-      setStatus("testing-upload");
-      const upload = await testUpload();
+      // Download test
+      setPhase("download");
+      const dlSpeed = await measureDownload(signal);
+      setDownloadSpeed(dlSpeed);
+      animateSpeed(dlSpeed, 300);
+
+      // Brief pause
+      await new Promise(r => setTimeout(r, 500));
+      setCurrentSpeed(0);
+
+      // Upload test
+      setPhase("upload");
+      const ulSpeed = await measureUpload(signal);
+      setUploadSpeed(ulSpeed);
+      animateSpeed(ulSpeed, 300);
 
       // Complete
-      setProgress(100);
+      setPhase("complete");
+
+      // Save to history
       const result: SpeedTestResult = {
-        downloadSpeed: Math.round(download * 10) / 10,
-        uploadSpeed: Math.round(upload * 10) / 10,
-        ping: Math.round(ping),
+        downloadSpeed: dlSpeed,
+        uploadSpeed: ulSpeed,
+        ping: pingResult.ping,
+        jitter: pingResult.jitter,
         timestamp: Date.now(),
+        server: serverLocation,
       };
 
-      setCurrentResult(result);
-      saveToHistory(result);
-      setStatus("completed");
-    } catch (error) {
-      console.error("Speed test failed", error);
-      setStatus("idle");
+      const newHistory = [result, ...history].slice(0, 10);
+      setHistory(newHistory);
+      localStorage.setItem("speedTestHistory", JSON.stringify(newHistory));
+
+    } catch (e) {
+      if (!signal.aborted) {
+        console.error("Speed test failed:", e);
+      }
+      setPhase("idle");
     }
   };
 
-  // Determine speed quality
-  const getSpeedQuality = (speed: number): { label: string; color: string } => {
-    if (speed >= 50) return { label: t("fast"), color: "text-green-600 dark:text-green-500" };
-    if (speed >= 25) return { label: t("medium"), color: "text-yellow-600 dark:text-yellow-500" };
-    return { label: t("slow"), color: "text-red-600 dark:text-red-500" };
+  // Stop test
+  const stopTest = () => {
+    abortControllerRef.current?.abort();
+    if (animationFrameRef.current) {
+      cancelAnimationFrame(animationFrameRef.current);
+    }
+    setPhase("idle");
   };
 
   // Share results
   const shareResults = () => {
-    if (!currentResult) return;
+    const text = `🚀 My Internet Speed Test Results:
+📥 Download: ${downloadSpeed} Mbps
+📤 Upload: ${uploadSpeed} Mbps
+📶 Ping: ${ping} ms
+📊 Jitter: ${jitter} ms
 
-    const text = `My internet speed test results:\n📥 Download: ${currentResult.downloadSpeed} Mbps\n📤 Upload: ${currentResult.uploadSpeed} Mbps\n⚡ Ping: ${currentResult.ping} ms\n\nTested on ZeroToVPN.com`;
+Tested on ZeroToVPN.com`;
 
     if (navigator.share) {
       navigator.share({ text }).catch(() => {});
     } else {
       navigator.clipboard.writeText(text);
-      alert("Results copied to clipboard!");
     }
   };
 
-  const isTesting = status !== "idle" && status !== "completed";
-  const showResults = currentResult && status === "completed";
+  // Calculate needle rotation (0-270 degrees for 0-500 Mbps)
+  const getNeedleRotation = () => {
+    const maxSpeed = 500;
+    const angle = Math.min((currentSpeed / maxSpeed) * 270, 270);
+    return angle - 135; // Offset to start from left
+  };
+
+  // Get speed color
+  const getSpeedColor = (speed: number) => {
+    if (speed >= 100) return "text-green-500";
+    if (speed >= 50) return "text-emerald-500";
+    if (speed >= 25) return "text-yellow-500";
+    if (speed >= 10) return "text-orange-500";
+    return "text-red-500";
+  };
+
+  const isRunning = phase !== "idle" && phase !== "complete";
 
   return (
-    <Card className="w-full max-w-2xl mx-auto">
-      <CardHeader>
-        <div className="flex items-center justify-between">
-          <div>
-            <CardTitle className="flex items-center gap-2">
-              <Wifi className="h-6 w-6" />
-              {t("title")}
-            </CardTitle>
-            <CardDescription>{t("subtitle")}</CardDescription>
-          </div>
-          {showResults && (
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={shareResults}
-              title="Share results"
+    <Card className="w-full max-w-3xl mx-auto overflow-hidden bg-gradient-to-b from-slate-900 to-slate-950 text-white border-slate-800">
+      <CardContent className="p-8">
+        {/* Server Info */}
+        <div className="flex items-center justify-center gap-2 text-slate-400 text-sm mb-6">
+          <Server className="h-4 w-4" />
+          <span>{serverLocation}</span>
+          <Wifi className="h-4 w-4 ml-2" />
+        </div>
+
+        {/* Speedometer */}
+        <div className="relative w-72 h-44 mx-auto mb-8">
+          {/* SVG Gauge */}
+          <svg viewBox="0 0 200 120" className="w-full h-full">
+            {/* Background arc */}
+            <path
+              d="M 20 100 A 80 80 0 0 1 180 100"
+              fill="none"
+              stroke="#1e293b"
+              strokeWidth="12"
+              strokeLinecap="round"
+            />
+
+            {/* Speed segments */}
+            <path
+              d="M 20 100 A 80 80 0 0 1 50 35"
+              fill="none"
+              stroke="#ef4444"
+              strokeWidth="12"
+              strokeLinecap="round"
+              opacity={currentSpeed > 0 ? 1 : 0.3}
+            />
+            <path
+              d="M 50 35 A 80 80 0 0 1 100 20"
+              fill="none"
+              stroke="#f97316"
+              strokeWidth="12"
+              strokeLinecap="round"
+              opacity={currentSpeed > 10 ? 1 : 0.3}
+            />
+            <path
+              d="M 100 20 A 80 80 0 0 1 150 35"
+              fill="none"
+              stroke="#eab308"
+              strokeWidth="12"
+              strokeLinecap="round"
+              opacity={currentSpeed > 25 ? 1 : 0.3}
+            />
+            <path
+              d="M 150 35 A 80 80 0 0 1 180 100"
+              fill="none"
+              stroke="#22c55e"
+              strokeWidth="12"
+              strokeLinecap="round"
+              opacity={currentSpeed > 50 ? 1 : 0.3}
+            />
+
+            {/* Scale markers */}
+            {[0, 10, 25, 50, 100, 250, 500].map((speed, i) => {
+              const angle = (speed / 500) * 270 - 135;
+              const rad = (angle * Math.PI) / 180;
+              const x = 100 + 65 * Math.cos(rad);
+              const y = 100 + 65 * Math.sin(rad);
+              return (
+                <text
+                  key={speed}
+                  x={x}
+                  y={y}
+                  textAnchor="middle"
+                  dominantBaseline="middle"
+                  className="fill-slate-500 text-[8px] font-medium"
+                >
+                  {speed}
+                </text>
+              );
+            })}
+
+            {/* Needle */}
+            <g
+              transform={`rotate(${getNeedleRotation()}, 100, 100)`}
+              className="transition-transform duration-150 ease-out"
             >
-              <Share2 className="h-4 w-4" />
+              <line
+                x1="100"
+                y1="100"
+                x2="100"
+                y2="35"
+                stroke="white"
+                strokeWidth="3"
+                strokeLinecap="round"
+              />
+              <circle cx="100" cy="100" r="8" fill="white" />
+              <circle cx="100" cy="100" r="4" fill="#0f172a" />
+            </g>
+          </svg>
+
+          {/* Current speed display */}
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 text-center">
+            <div className={cn("text-5xl font-bold tabular-nums", getSpeedColor(currentSpeed))}>
+              {currentSpeed.toFixed(1)}
+            </div>
+            <div className="text-slate-400 text-sm font-medium">Mbps</div>
+          </div>
+        </div>
+
+        {/* Phase indicator */}
+        <div className="flex justify-center gap-8 mb-8">
+          <div className={cn(
+            "flex flex-col items-center transition-opacity",
+            phase === "ping" ? "opacity-100" : "opacity-40"
+          )}>
+            <Activity className={cn(
+              "h-5 w-5 mb-1",
+              phase === "ping" && "animate-pulse text-cyan-400"
+            )} />
+            <span className="text-xs text-slate-400">PING</span>
+            <span className={cn(
+              "text-lg font-bold",
+              ping > 0 ? "text-white" : "text-slate-600"
+            )}>
+              {ping > 0 ? `${ping}` : "—"}
+            </span>
+            <span className="text-xs text-slate-500">ms</span>
+          </div>
+
+          <div className={cn(
+            "flex flex-col items-center transition-opacity",
+            phase === "download" ? "opacity-100" : "opacity-40"
+          )}>
+            <Download className={cn(
+              "h-5 w-5 mb-1",
+              phase === "download" && "animate-bounce text-green-400"
+            )} />
+            <span className="text-xs text-slate-400">DOWNLOAD</span>
+            <span className={cn(
+              "text-lg font-bold",
+              downloadSpeed > 0 ? "text-white" : "text-slate-600"
+            )}>
+              {downloadSpeed > 0 ? downloadSpeed.toFixed(1) : "—"}
+            </span>
+            <span className="text-xs text-slate-500">Mbps</span>
+          </div>
+
+          <div className={cn(
+            "flex flex-col items-center transition-opacity",
+            phase === "upload" ? "opacity-100" : "opacity-40"
+          )}>
+            <Upload className={cn(
+              "h-5 w-5 mb-1",
+              phase === "upload" && "animate-bounce text-purple-400"
+            )} />
+            <span className="text-xs text-slate-400">UPLOAD</span>
+            <span className={cn(
+              "text-lg font-bold",
+              uploadSpeed > 0 ? "text-white" : "text-slate-600"
+            )}>
+              {uploadSpeed > 0 ? uploadSpeed.toFixed(1) : "—"}
+            </span>
+            <span className="text-xs text-slate-500">Mbps</span>
+          </div>
+        </div>
+
+        {/* Action button */}
+        <div className="flex justify-center gap-4">
+          {!isRunning ? (
+            <Button
+              onClick={runTest}
+              size="lg"
+              className={cn(
+                "rounded-full w-32 h-32 text-xl font-bold shadow-lg transition-all",
+                "bg-gradient-to-br from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500",
+                "hover:scale-105 active:scale-95"
+              )}
+            >
+              {phase === "complete" ? (
+                <RotateCcw className="h-10 w-10" />
+              ) : (
+                <Play className="h-10 w-10 ml-1" />
+              )}
+            </Button>
+          ) : (
+            <Button
+              onClick={stopTest}
+              size="lg"
+              variant="outline"
+              className="rounded-full w-32 h-32 text-lg font-bold border-slate-600 hover:bg-slate-800"
+            >
+              <span className="animate-pulse">
+                {phase === "init" && "Connecting..."}
+                {phase === "ping" && "Testing Ping"}
+                {phase === "download" && "Downloading"}
+                {phase === "upload" && "Uploading"}
+              </span>
             </Button>
           )}
         </div>
-      </CardHeader>
 
-      <CardContent className="space-y-6">
-        {/* Main Speed Display */}
-        <div className="relative">
-          {/* Circular gauge background */}
-          <div className="relative w-64 h-64 mx-auto">
-            {/* Background circle */}
-            <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-              {/* Background arc */}
-              <circle
-                cx="50"
-                cy="50"
-                r="40"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="8"
-                className="text-gray-200 dark:text-gray-700"
-                strokeDasharray="251.2"
-                strokeDashoffset="62.8"
-              />
-              {/* Progress arc */}
-              {isTesting && (
-                <circle
-                  cx="50"
-                  cy="50"
-                  r="40"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="8"
-                  className="text-primary transition-all duration-300"
-                  strokeDasharray="251.2"
-                  strokeDashoffset={251.2 - (progress / 100) * 188.4}
-                  strokeLinecap="round"
-                />
-              )}
-              {/* Results arc */}
-              {showResults && currentResult && (
-                <circle
-                  cx="50"
-                  cy="50"
-                  r="40"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="8"
-                  className={cn(
-                    "transition-all duration-500",
-                    getSpeedQuality(currentResult.downloadSpeed).color
-                  )}
-                  strokeDasharray="251.2"
-                  strokeDashoffset={
-                    251.2 - (Math.min(currentResult.downloadSpeed / 100, 1) * 188.4)
-                  }
-                  strokeLinecap="round"
-                />
-              )}
-            </svg>
-
-            {/* Center content */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center">
-              {status === "idle" && (
-                <div className="text-center">
-                  <Gauge className="h-12 w-12 mx-auto text-muted-foreground mb-2" />
-                  <div className="text-sm text-muted-foreground">{t("startTest")}</div>
-                </div>
-              )}
-
-              {isTesting && (
-                <div className="text-center">
-                  <Loader2 className="h-12 w-12 mx-auto text-primary animate-spin mb-2" />
-                  <div className="text-lg font-bold">{progress}%</div>
-                  <div className="text-sm text-muted-foreground">
-                    {status === "testing-ping" && t("testing")}
-                    {status === "testing-download" && t("testing")}
-                    {status === "testing-upload" && t("testing")}
-                  </div>
-                </div>
-              )}
-
-              {showResults && currentResult && (
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-primary">
-                    {currentResult.downloadSpeed}
-                  </div>
-                  <div className="text-lg text-muted-foreground">Mbps</div>
-                  <Badge
-                    variant="outline"
-                    className={cn("mt-2", getSpeedQuality(currentResult.downloadSpeed).color)}
-                  >
-                    {getSpeedQuality(currentResult.downloadSpeed).label}
-                  </Badge>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-
-        {/* Detailed Results */}
-        {showResults && currentResult && (
-          <div className="grid grid-cols-3 gap-4 pt-4 border-t">
-            <div className="text-center">
-              <div className="flex items-center justify-center gap-2 text-muted-foreground mb-1">
-                <Download className="h-4 w-4" />
-                <span className="text-sm">{t("download")}</span>
-              </div>
-              <div className="text-2xl font-bold text-primary">
-                {currentResult.downloadSpeed}
-              </div>
-              <div className="text-xs text-muted-foreground">Mbps</div>
-            </div>
-
-            <div className="text-center">
-              <div className="flex items-center justify-center gap-2 text-muted-foreground mb-1">
-                <Upload className="h-4 w-4" />
-                <span className="text-sm">{t("upload")}</span>
-              </div>
-              <div className="text-2xl font-bold text-primary">
-                {currentResult.uploadSpeed}
-              </div>
-              <div className="text-xs text-muted-foreground">Mbps</div>
-            </div>
-
-            <div className="text-center">
-              <div className="flex items-center justify-center gap-2 text-muted-foreground mb-1">
-                <Clock className="h-4 w-4" />
-                <span className="text-sm">{t("ping")}</span>
-              </div>
-              <div className="text-2xl font-bold text-primary">{currentResult.ping}</div>
-              <div className="text-xs text-muted-foreground">ms</div>
-            </div>
+        {/* Share button */}
+        {phase === "complete" && (
+          <div className="flex justify-center mt-6">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={shareResults}
+              className="text-slate-400 hover:text-white"
+            >
+              <Share2 className="h-4 w-4 mr-2" />
+              Share Results
+            </Button>
           </div>
         )}
 
-        {/* Action Buttons */}
-        <div className="flex gap-3">
-          <Button
-            onClick={runSpeedTest}
-            disabled={isTesting}
-            className="flex-1"
-            size="lg"
-          >
-            {isTesting ? (
-              <>
-                <Loader2 className="h-4 w-4 animate-spin" />
-                {t("testing")}
-              </>
-            ) : showResults ? (
-              <>
-                <Zap className="h-4 w-4" />
-                {t("testAgain")}
-              </>
-            ) : (
-              <>
-                <Gauge className="h-4 w-4" />
-                {t("startTest")}
-              </>
-            )}
-          </Button>
-        </div>
-
-        {/* VPN Suggestion */}
-        {showResults && currentResult && currentResult.downloadSpeed < 25 && (
-          <div className="bg-yellow-50 dark:bg-yellow-950/20 border border-yellow-200 dark:border-yellow-900 rounded-lg p-4">
-            <div className="flex items-start gap-3">
-              <AlertCircle className="h-5 w-5 text-yellow-600 dark:text-yellow-500 shrink-0 mt-0.5" />
-              <div className="flex-1">
-                <div className="font-semibold text-yellow-900 dark:text-yellow-200 mb-1">
-                  {t("tip")}
-                </div>
-                <p className="text-sm text-yellow-800 dark:text-yellow-300">
-                  Your connection seems slow. A premium VPN might help improve your internet
-                  speed and security. Check our top-rated VPN providers!
-                </p>
+        {/* Results summary */}
+        {phase === "complete" && (
+          <div className="mt-8 p-4 bg-slate-800/50 rounded-xl">
+            <div className="grid grid-cols-4 gap-4 text-center">
+              <div>
+                <div className="text-2xl font-bold text-green-400">{downloadSpeed}</div>
+                <div className="text-xs text-slate-400">Download Mbps</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-purple-400">{uploadSpeed}</div>
+                <div className="text-xs text-slate-400">Upload Mbps</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-cyan-400">{ping}</div>
+                <div className="text-xs text-slate-400">Ping ms</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-orange-400">{jitter}</div>
+                <div className="text-xs text-slate-400">Jitter ms</div>
               </div>
             </div>
           </div>
         )}
 
-        {showResults && currentResult && currentResult.downloadSpeed >= 50 && (
-          <div className="bg-green-50 dark:bg-green-950/20 border border-green-200 dark:border-green-900 rounded-lg p-4">
-            <div className="flex items-start gap-3">
-              <CheckCircle2 className="h-5 w-5 text-green-600 dark:text-green-500 shrink-0 mt-0.5" />
-              <div className="flex-1">
-                <div className="font-semibold text-green-900 dark:text-green-200 mb-1">
-                  Great speed!
-                </div>
-                <p className="text-sm text-green-800 dark:text-green-300">
-                  Your connection is fast! A VPN can help you maintain this speed while adding
-                  security and privacy to your browsing.
-                </p>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Test History */}
-        {history.length > 0 && (
-          <div className="pt-4 border-t">
-            <h4 className="text-sm font-semibold mb-3 flex items-center gap-2">
+        {/* History */}
+        {history.length > 0 && phase !== "idle" && (
+          <div className="mt-8 pt-6 border-t border-slate-800">
+            <h4 className="text-sm font-medium text-slate-400 mb-3 flex items-center gap-2">
               <History className="h-4 w-4" />
-              {t("history")}
+              Recent Tests
             </h4>
-            <div className="space-y-2">
-              {history.map((test, index) => (
+            <div className="space-y-2 max-h-40 overflow-y-auto">
+              {history.slice(0, 5).map((test, i) => (
                 <div
                   key={test.timestamp}
-                  className="flex items-center justify-between text-sm p-2 rounded-md hover:bg-muted/50 transition-colors"
+                  className="flex items-center justify-between text-xs bg-slate-800/30 rounded-lg p-2"
                 >
-                  <div className="flex items-center gap-3 flex-1">
-                    <Badge variant="outline" className="text-xs">
-                      {new Date(test.timestamp).toLocaleString(undefined, {
-                        month: "short",
-                        day: "numeric",
-                        hour: "2-digit",
-                        minute: "2-digit",
-                      })}
-                    </Badge>
-                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                      <Download className="h-3 w-3" />
-                      <span className="font-medium">{test.downloadSpeed} Mbps</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                      <Upload className="h-3 w-3" />
-                      <span className="font-medium">{test.uploadSpeed} Mbps</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                      <Clock className="h-3 w-3" />
-                      <span className="font-medium">{test.ping} ms</span>
-                    </div>
+                  <span className="text-slate-500">
+                    {new Date(test.timestamp).toLocaleDateString(undefined, {
+                      month: "short",
+                      day: "numeric",
+                      hour: "2-digit",
+                      minute: "2-digit",
+                    })}
+                  </span>
+                  <div className="flex gap-4">
+                    <span className="text-green-400">↓ {test.downloadSpeed}</span>
+                    <span className="text-purple-400">↑ {test.uploadSpeed}</span>
+                    <span className="text-cyan-400">{test.ping}ms</span>
                   </div>
                 </div>
               ))}

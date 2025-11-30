@@ -345,15 +345,13 @@ Tested on ZeroToVPN.com`;
     }
   };
 
-  // Calculate needle rotation (0-180 degrees for 0-500 Mbps)
-  // The gauge arc spans from left (-90°) to right (+90°) via top (0°)
-  const getNeedleRotation = () => {
+  // Calculate progress percentage (0-100) for arc
+  const getProgressPercent = () => {
     const maxSpeed = 500;
-    const angle = Math.min((currentSpeed / maxSpeed) * 180, 180);
-    return angle - 90; // Start from left (-90°) to right (+90°)
+    return Math.min((currentSpeed / maxSpeed) * 100, 100);
   };
 
-  // Get speed color
+  // Get speed color based on value
   const getSpeedColor = (speed: number) => {
     if (speed >= 100) return "text-green-500";
     if (speed >= 50) return "text-emerald-500";
@@ -374,99 +372,63 @@ Tested on ZeroToVPN.com`;
           <Wifi className="h-4 w-4 ml-2" />
         </div>
 
-        {/* Speedometer */}
-        <div className="relative w-72 h-44 mx-auto mb-8">
-          {/* SVG Gauge */}
-          <svg viewBox="0 0 200 120" className="w-full h-full">
+        {/* Speed Display - Clean Arc Design */}
+        <div className="relative w-64 h-64 mx-auto mb-6">
+          {/* SVG Progress Arc */}
+          <svg viewBox="0 0 200 200" className="w-full h-full -rotate-90">
             {/* Background arc */}
-            <path
-              d="M 20 100 A 80 80 0 0 1 180 100"
+            <circle
+              cx="100"
+              cy="100"
+              r="85"
               fill="none"
               stroke="#1e293b"
               strokeWidth="12"
               strokeLinecap="round"
+              strokeDasharray="400"
+              strokeDashoffset="133"
             />
 
-            {/* Speed segments */}
-            <path
-              d="M 20 100 A 80 80 0 0 1 50 35"
+            {/* Progress arc with gradient color */}
+            <circle
+              cx="100"
+              cy="100"
+              r="85"
               fill="none"
-              stroke="#ef4444"
+              stroke="url(#speedGradient)"
               strokeWidth="12"
               strokeLinecap="round"
-              opacity={currentSpeed > 0 ? 1 : 0.3}
-            />
-            <path
-              d="M 50 35 A 80 80 0 0 1 100 20"
-              fill="none"
-              stroke="#f97316"
-              strokeWidth="12"
-              strokeLinecap="round"
-              opacity={currentSpeed > 10 ? 1 : 0.3}
-            />
-            <path
-              d="M 100 20 A 80 80 0 0 1 150 35"
-              fill="none"
-              stroke="#eab308"
-              strokeWidth="12"
-              strokeLinecap="round"
-              opacity={currentSpeed > 25 ? 1 : 0.3}
-            />
-            <path
-              d="M 150 35 A 80 80 0 0 1 180 100"
-              fill="none"
-              stroke="#22c55e"
-              strokeWidth="12"
-              strokeLinecap="round"
-              opacity={currentSpeed > 50 ? 1 : 0.3}
+              strokeDasharray="400"
+              strokeDashoffset={400 - (getProgressPercent() / 100) * 267}
+              className="transition-all duration-300 ease-out"
+              style={{ filter: currentSpeed > 0 ? 'drop-shadow(0 0 8px rgba(34, 197, 94, 0.5))' : 'none' }}
             />
 
-            {/* Scale markers */}
-            {[0, 10, 25, 50, 100, 250, 500].map((speed, i) => {
-              // Use 180 degree range: left (-90°) to right (+90°)
-              const angle = (speed / 500) * 180 - 90;
-              const rad = (angle * Math.PI) / 180;
-              const x = 100 + 65 * Math.cos(rad);
-              const y = 100 + 65 * Math.sin(rad);
-              return (
-                <text
-                  key={speed}
-                  x={x}
-                  y={y}
-                  textAnchor="middle"
-                  dominantBaseline="middle"
-                  className="fill-slate-500 text-[8px] font-medium"
-                >
-                  {speed}
-                </text>
-              );
-            })}
-
-            {/* Needle */}
-            <g
-              transform={`rotate(${getNeedleRotation()}, 100, 100)`}
-              className="transition-transform duration-150 ease-out"
-            >
-              <line
-                x1="100"
-                y1="100"
-                x2="100"
-                y2="35"
-                stroke="white"
-                strokeWidth="3"
-                strokeLinecap="round"
-              />
-              <circle cx="100" cy="100" r="8" fill="white" />
-              <circle cx="100" cy="100" r="4" fill="#0f172a" />
-            </g>
+            {/* Gradient definition */}
+            <defs>
+              <linearGradient id="speedGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#ef4444" />
+                <stop offset="33%" stopColor="#f97316" />
+                <stop offset="66%" stopColor="#eab308" />
+                <stop offset="100%" stopColor="#22c55e" />
+              </linearGradient>
+            </defs>
           </svg>
 
-          {/* Current speed display */}
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 text-center">
-            <div className={cn("text-5xl font-bold tabular-nums", getSpeedColor(currentSpeed))}>
+          {/* Center speed display */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center">
+            <div className={cn("text-6xl font-bold tabular-nums", getSpeedColor(currentSpeed))}>
               {currentSpeed.toFixed(1)}
             </div>
-            <div className="text-slate-400 text-sm font-medium">Mbps</div>
+            <div className="text-slate-400 text-lg font-medium">Mbps</div>
+            {isRunning && (
+              <div className="text-xs text-slate-500 mt-2 animate-pulse">
+                {phase === "init" && "Connecting..."}
+                {phase === "ping" && "Testing ping..."}
+                {phase === "download" && "Downloading..."}
+                {phase === "upload" && "Uploading..."}
+              </div>
+            )}
           </div>
         </div>
 

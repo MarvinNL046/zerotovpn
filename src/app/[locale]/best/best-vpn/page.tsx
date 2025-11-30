@@ -7,6 +7,7 @@ import { VpnCard } from "@/components/vpn/vpn-card";
 import { ComparisonTable } from "@/components/vpn/comparison-table";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { RatingStars } from "@/components/vpn/rating-stars";
+import { RelatedPages } from "@/components/seo/related-pages";
 import { getAllVpns, type VpnProvider } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
 import {
@@ -524,6 +525,23 @@ export default async function BestVpnPage({ params }: Props) {
               </div>
               <p className="text-sm text-muted-foreground">{t.lastUpdated}</p>
             </div>
+          </div>
+        </section>
+
+        {/* Related Pages */}
+        <section className="py-16 bg-muted/30">
+          <div className="container">
+            <RelatedPages
+              title="Explore More VPN Categories"
+              pages={[
+                { title: "Best Free VPNs", description: "Top free VPN options with no subscription", href: "/best/free-vpn", icon: "gift" },
+                { title: "Best VPN for Gaming", description: "Low-latency VPNs for online gaming", href: "/best/vpn-gaming", icon: "gamepad" },
+                { title: "Best VPN for China", description: "VPNs that bypass the Great Firewall", href: "/best/vpn-china", icon: "globe" },
+                { title: "Best VPN for Russia", description: "Access blocked content in Russia", href: "/best/vpn-russia", icon: "globe" },
+                { title: "Best Mobile VPNs", description: "VPNs optimized for smartphones", href: "/best/vpn-mobile", icon: "smartphone" },
+                { title: "Best Tablet VPNs", description: "VPNs for iPad and Android tablets", href: "/best/vpn-tablet", icon: "tablet" },
+              ]}
+            />
           </div>
         </section>
       </div>

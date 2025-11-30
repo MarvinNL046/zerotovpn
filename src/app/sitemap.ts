@@ -10,16 +10,40 @@ const staticPages = [
   // Reviews section (priority 0.9)
   { path: "/reviews", priority: 0.9, changeFreq: "weekly" as const },
 
-  // Best VPN pages (priority 0.9)
+  // Best VPN pages - General (priority 0.9)
   { path: "/best/best-vpn", priority: 0.9, changeFreq: "weekly" as const },
   { path: "/best/free-vpn", priority: 0.85, changeFreq: "weekly" as const },
   { path: "/best/vpn-gaming", priority: 0.85, changeFreq: "weekly" as const },
+
+  // Best VPN pages - Mobile devices (priority 0.85)
+  { path: "/best/vpn-mobile", priority: 0.85, changeFreq: "weekly" as const },
+  { path: "/best/vpn-iphone", priority: 0.85, changeFreq: "weekly" as const },
+  { path: "/best/vpn-android", priority: 0.85, changeFreq: "weekly" as const },
+  { path: "/best/vpn-tablet", priority: 0.85, changeFreq: "weekly" as const },
+  { path: "/best/vpn-ipad", priority: 0.85, changeFreq: "weekly" as const },
+  { path: "/best/vpn-android-tablet", priority: 0.85, changeFreq: "weekly" as const },
+  { path: "/best/vpn-windows-tablet", priority: 0.85, changeFreq: "weekly" as const },
+
+  // Best VPN pages - Countries (priority 0.85)
+  { path: "/best/vpn-china", priority: 0.85, changeFreq: "weekly" as const },
+  { path: "/best/vpn-russia", priority: 0.85, changeFreq: "weekly" as const },
+  { path: "/best/vpn-uae", priority: 0.85, changeFreq: "weekly" as const },
+  { path: "/best/vpn-iran", priority: 0.85, changeFreq: "weekly" as const },
 
   // Comparison (priority 0.85)
   { path: "/compare", priority: 0.85, changeFreq: "weekly" as const },
 
   // Deals (priority 0.85)
   { path: "/deals", priority: 0.85, changeFreq: "daily" as const },
+
+  // Countries section (priority 0.8)
+  { path: "/countries", priority: 0.8, changeFreq: "weekly" as const },
+  { path: "/countries/china", priority: 0.8, changeFreq: "weekly" as const },
+  { path: "/countries/russia", priority: 0.8, changeFreq: "weekly" as const },
+  { path: "/countries/uae", priority: 0.8, changeFreq: "weekly" as const },
+  { path: "/countries/iran", priority: 0.8, changeFreq: "weekly" as const },
+  { path: "/countries/turkey", priority: 0.8, changeFreq: "weekly" as const },
+  { path: "/countries/netherlands", priority: 0.8, changeFreq: "weekly" as const },
 
   // Blog section (priority 0.8)
   { path: "/blog", priority: 0.8, changeFreq: "weekly" as const },
@@ -39,6 +63,9 @@ const staticPages = [
   { path: "/guides/vpn-protocols-explained", priority: 0.75, changeFreq: "monthly" as const },
   { path: "/guides/vpn-speed-guide", priority: 0.75, changeFreq: "monthly" as const },
   { path: "/guides/public-wifi-safety", priority: 0.75, changeFreq: "monthly" as const },
+
+  // Tools (priority 0.7)
+  { path: "/speed-test", priority: 0.7, changeFreq: "weekly" as const },
 
   // Info pages (priority 0.5)
   { path: "/about", priority: 0.5, changeFreq: "monthly" as const },

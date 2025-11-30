@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "@/i18n/navigation";
+import { RelatedPages } from "@/components/seo/related-pages";
 import {
   Globe,
   Clock,
@@ -472,6 +473,21 @@ export default async function CountriesPage({ params }: Props) {
               <span className="text-3xl opacity-50">🇸🇦</span>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Related Pages */}
+      <section className="py-12">
+        <div className="container">
+          <RelatedPages
+            title="Related Guides"
+            pages={[
+              { title: "Best VPN for China", description: "Top VPNs that bypass the Great Firewall", href: "/best/vpn-china", icon: "trophy" },
+              { title: "What is a VPN?", description: "Learn how VPNs protect your privacy", href: "/guides/what-is-vpn", icon: "shield" },
+              { title: "VPN Comparison", description: "Compare all VPN providers side-by-side", href: "/compare", icon: "check" },
+              { title: "All VPN Reviews", description: "In-depth reviews of top VPN services", href: "/reviews", icon: "star" }
+            ]}
+          />
         </div>
       </section>
     </div>

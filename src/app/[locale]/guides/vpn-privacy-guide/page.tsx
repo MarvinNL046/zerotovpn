@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import { Badge } from "@/components/ui/badge";
 import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { RelatedPages } from "@/components/seo/related-pages";
 import {
   Eye,
   EyeOff,
@@ -520,23 +521,15 @@ export default async function VpnPrivacyGuidePage({ params }: Props) {
       <section className="py-12 lg:py-16 bg-muted/30">
         <div className="container">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl font-bold mb-6">{t("relatedGuides.title")}</h2>
-            <div className="grid gap-4 md:grid-cols-2">
-              {(t.raw("relatedGuides.guides") as Array<{ title: string; description: string; url: string }>).map((guide, idx) => (
-                <Link
-                  key={idx}
-                  href={guide.url}
-                  className="bg-card border rounded-lg p-5 hover:shadow-md hover:border-primary/50 transition-all group"
-                >
-                  <h3 className="font-bold mb-2 group-hover:text-primary transition-colors">
-                    {guide.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    {guide.description}
-                  </p>
-                </Link>
-              ))}
-            </div>
+            <RelatedPages
+              title="Related Privacy Guides"
+              pages={[
+                { title: "What is a VPN?", description: "Understanding VPN basics", href: "/guides/what-is-vpn", icon: "shield" },
+                { title: "How VPNs Work", description: "VPN encryption explained", href: "/guides/how-vpn-works", icon: "lock" },
+                { title: "VPN for Torrenting", description: "Anonymous downloading", href: "/guides/vpn-for-torrenting", icon: "download" },
+                { title: "Best VPNs 2025", description: "Privacy-focused VPN recommendations", href: "/best/best-vpn", icon: "trophy" }
+              ]}
+            />
           </div>
         </div>
       </section>

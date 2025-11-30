@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import { Badge } from "@/components/ui/badge";
 import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { RelatedPages } from "@/components/seo/related-pages";
 import {
   Server,
   Shield,
@@ -544,23 +545,15 @@ export default async function VpnProtocolsExplainedPage({ params }: Props) {
       <section className="py-12 lg:py-16 bg-muted/30">
         <div className="container">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl font-bold mb-6">{t("relatedGuides.title")}</h2>
-            <div className="grid gap-4 md:grid-cols-2">
-              {(t.raw("relatedGuides.guides") as Array<{ title: string; description: string; url: string }>).map((guide, index) => (
-                <Link
-                  key={index}
-                  href={guide.url}
-                  className="bg-card border rounded-lg p-5 hover:shadow-md hover:border-primary/50 transition-all group"
-                >
-                  <h3 className="font-bold mb-2 group-hover:text-primary transition-colors">
-                    {guide.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    {guide.description}
-                  </p>
-                </Link>
-              ))}
-            </div>
+            <RelatedPages
+              title="Related Technical Guides"
+              pages={[
+                { title: "How VPNs Work", description: "Understanding VPN encryption", href: "/guides/how-vpn-works", icon: "lock" },
+                { title: "VPN Speed Guide", description: "Protocol performance comparison", href: "/guides/vpn-speed-guide", icon: "zap" },
+                { title: "VPN on Mobile", description: "Protocol setup on iOS and Android", href: "/guides/vpn-on-mobile", icon: "smartphone" },
+                { title: "Best VPNs 2025", description: "VPNs with modern protocols", href: "/best/best-vpn", icon: "trophy" }
+              ]}
+            />
           </div>
         </div>
       </section>

@@ -7,6 +7,7 @@ import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { RatingStars } from "@/components/vpn/rating-stars";
 import { getAllVpns, type VpnProvider } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
+import { RelatedPages } from "@/components/seo/related-pages";
 import {
   Shield,
   AlertTriangle,
@@ -1171,6 +1172,21 @@ export default async function TurkeyVpnPage({ params }: Props) {
             </ul>
             <p className="text-xs text-muted-foreground mt-4">{t.lastUpdated}</p>
           </div>
+        </div>
+      </section>
+
+      {/* Related Pages */}
+      <section className="py-12 bg-muted/30">
+        <div className="container">
+          <RelatedPages
+            title="Related Guides"
+            pages={[
+              { title: "VPN Guide: China", description: "Bypass the Great Firewall with advanced obfuscation", href: "/countries/china", icon: "globe" },
+              { title: "VPN Guide: Russia", description: "Internet restrictions and VPN use in Russia", href: "/countries/russia", icon: "globe" },
+              { title: "VPN Guide: Iran", description: "Overcome strict DPI censorship in Iran", href: "/countries/iran", icon: "globe" },
+              { title: "All Country Guides", description: "VPN guides for restrictive countries", href: "/countries", icon: "map" }
+            ]}
+          />
         </div>
       </section>
     </div>

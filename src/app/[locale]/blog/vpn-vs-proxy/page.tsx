@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArticleJsonLd } from "@/components/structured-data";
 import { Link } from "@/i18n/navigation";
+import { RelatedPages } from "@/components/seo/related-pages";
 import {
   Calendar,
   Clock,
@@ -438,6 +439,23 @@ export default async function VpnVsProxyPage({ params }: Props) {
                   </Card>
                 </Link>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Related Pages */}
+        <section className="py-12 lg:py-16 bg-muted/30">
+          <div className="container">
+            <div className="max-w-6xl mx-auto">
+              <RelatedPages
+                title="Related Articles"
+                pages={[
+                  { title: "Is VPN Legal?", description: "VPN legality around the world", href: "/blog/is-vpn-legal", icon: "shield" },
+                  { title: "What is a VPN?", description: "Learn VPN basics", href: "/guides/what-is-vpn", icon: "shield" },
+                  { title: "Best VPNs 2025", description: "Our top-rated VPN services", href: "/best/best-vpn", icon: "trophy" },
+                  { title: "VPN for Streaming", description: "Best VPNs for Netflix and more", href: "/best/streaming-vpn", icon: "play" }
+                ]}
+              />
             </div>
           </div>
         </section>

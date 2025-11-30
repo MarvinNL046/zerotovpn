@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { RatingStars } from "@/components/vpn/rating-stars";
+import { RelatedPages } from "@/components/seo/related-pages";
 import { getVpnBySlug } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
 import {
@@ -1865,6 +1866,23 @@ export default async function GamingVpnPage({ params }: Props) {
               </div>
               <p className="text-sm text-muted-foreground">{t.lastUpdated}</p>
             </div>
+          </div>
+        </section>
+
+        {/* Related Pages */}
+        <section className="py-16">
+          <div className="container">
+            <RelatedPages
+              title="Explore More VPN Categories"
+              pages={[
+                { title: "Best Overall VPNs", description: "Top-rated VPN services for all uses", href: "/best/best-vpn", icon: "trophy" },
+                { title: "Best Free VPNs", description: "Top free VPN options with no subscription", href: "/best/free-vpn", icon: "gift" },
+                { title: "Best VPN for Streaming", description: "Unblock Netflix, Hulu, and more", href: "/guides/vpn-streaming", icon: "play" },
+                { title: "Best Mobile VPNs", description: "VPNs optimized for smartphones", href: "/best/vpn-mobile", icon: "smartphone" },
+                { title: "Best VPN for China", description: "VPNs that bypass the Great Firewall", href: "/best/vpn-china", icon: "globe" },
+                { title: "VPN Setup Guides", description: "Learn how to configure your VPN", href: "/guides", icon: "map" },
+              ]}
+            />
           </div>
         </section>
       </div>

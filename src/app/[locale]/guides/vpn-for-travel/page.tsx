@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import { Badge } from "@/components/ui/badge";
 import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { RelatedPages } from "@/components/seo/related-pages";
 import {
   Plane,
   Globe,
@@ -580,6 +581,17 @@ export default async function VpnForTravelPage({ params }: Props) {
                 </Link>
               </div>
             </section>
+
+            {/* Related Pages */}
+            <RelatedPages
+              title="Related Travel Security Guides"
+              pages={[
+                { title: "Public WiFi Safety", description: "Stay secure on hotel and airport WiFi", href: "/guides/public-wifi-safety", icon: "wifi" },
+                { title: "VPN on Mobile", description: "Setup VPN on iPhone and Android", href: "/guides/vpn-on-mobile", icon: "smartphone" },
+                { title: "VPN for Streaming", description: "Access home content while abroad", href: "/guides/vpn-for-streaming", icon: "play" },
+                { title: "Best VPNs 2025", description: "Top-rated travel VPNs", href: "/best/best-vpn", icon: "trophy" }
+              ]}
+            />
           </div>
         </div>
       </div>

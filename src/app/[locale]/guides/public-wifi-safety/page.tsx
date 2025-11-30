@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import { Badge } from "@/components/ui/badge";
 import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { RelatedPages } from "@/components/seo/related-pages";
 import {
   Wifi,
   WifiOff,
@@ -469,6 +470,17 @@ export default async function PublicWifiSafetyPage({ params }: Props) {
                 ))}
               </div>
             </section>
+
+            {/* Related Pages */}
+            <RelatedPages
+              title="Related Security Guides"
+              pages={[
+                { title: "VPN for Travel", description: "Stay secure while traveling", href: "/guides/vpn-for-travel", icon: "globe" },
+                { title: "VPN on Mobile", description: "Secure your smartphone", href: "/guides/vpn-on-mobile", icon: "smartphone" },
+                { title: "VPN Privacy Guide", description: "Maximize online privacy", href: "/guides/vpn-privacy-guide", icon: "shield" },
+                { title: "Best VPNs 2025", description: "Top-rated secure VPNs", href: "/best/best-vpn", icon: "trophy" }
+              ]}
+            />
           </div>
         </div>
       </div>

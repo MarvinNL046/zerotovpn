@@ -27,6 +27,7 @@ import {
   Star,
   Award,
 } from "lucide-react";
+import { RelatedPages } from "@/components/seo/related-pages";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -728,6 +729,35 @@ export default async function IphoneVpnPage({ params }: Props) {
                 </CardContent>
               </Card>
             </div>
+          </div>
+        </section>
+
+        {/* Related Pages */}
+        <section className="py-16 lg:py-24">
+          <div className="container">
+            <RelatedPages
+              title="Related Guides"
+              pages={[
+                {
+                  title: "All Mobile VPNs",
+                  description: "Comprehensive comparison of the best VPN apps for iPhone and Android devices",
+                  href: "/best/vpn-mobile",
+                  icon: "smartphone",
+                },
+                {
+                  title: "VPN for iPad",
+                  description: "Best VPN apps optimized for iPad with split-screen support and tablet-friendly interfaces",
+                  href: "/best/vpn-ipad",
+                  icon: "monitor",
+                },
+                {
+                  title: "VPN for Streaming",
+                  description: "Top VPN services for streaming Netflix, Hulu, BBC iPlayer and other platforms",
+                  href: "/guides/vpn-for-streaming",
+                  icon: "play",
+                },
+              ]}
+            />
           </div>
         </section>
 

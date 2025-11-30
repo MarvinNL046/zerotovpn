@@ -4,6 +4,7 @@ import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Badge } from "@/components/ui/badge";
 import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { RelatedPages } from "@/components/seo/related-pages";
 import {
   Lock,
   Server,
@@ -393,23 +394,15 @@ export default async function HowVpnWorksPage({ params }: Props) {
       <section className="py-12 lg:py-16 bg-muted/30">
         <div className="container">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl font-bold mb-6">{t("relatedGuides.title")}</h2>
-            <div className="grid gap-4 md:grid-cols-2">
-              {(t.raw("relatedGuides.guides") as Array<{ title: string; description: string; url: string }>).map((guide) => (
-                <Link
-                  key={guide.url}
-                  href={guide.url}
-                  className="bg-card border rounded-lg p-5 hover:shadow-md hover:border-primary/50 transition-all group"
-                >
-                  <h3 className="font-bold mb-2 group-hover:text-primary transition-colors">
-                    {guide.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    {guide.description}
-                  </p>
-                </Link>
-              ))}
-            </div>
+            <RelatedPages
+              title="Related Guides"
+              pages={[
+                { title: "What is a VPN?", description: "Start with the basics of VPN technology", href: "/guides/what-is-vpn", icon: "shield" },
+                { title: "VPN Protocols Explained", description: "Compare WireGuard, OpenVPN, and more", href: "/guides/vpn-protocols-explained", icon: "lock" },
+                { title: "VPN Speed Guide", description: "Optimize your VPN connection speed", href: "/guides/vpn-speed-guide", icon: "zap" },
+                { title: "VPN Privacy Guide", description: "No-logs policies and jurisdiction explained", href: "/guides/vpn-privacy-guide", icon: "shield" }
+              ]}
+            />
           </div>
         </div>
       </section>

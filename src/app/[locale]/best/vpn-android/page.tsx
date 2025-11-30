@@ -27,6 +27,7 @@ import {
   Settings,
   Download,
 } from "lucide-react";
+import { RelatedPages } from "@/components/seo/related-pages";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -730,6 +731,35 @@ export default async function AndroidVpnPage({ params }: Props) {
                 </CardContent>
               </Card>
             </div>
+          </div>
+        </section>
+
+        {/* Related Pages */}
+        <section className="py-16 lg:py-24">
+          <div className="container">
+            <RelatedPages
+              title="Related Guides"
+              pages={[
+                {
+                  title: "All Mobile VPNs",
+                  description: "Compare the best VPN apps for all mobile platforms including Android and iOS",
+                  href: "/best/vpn-mobile",
+                  icon: "smartphone",
+                },
+                {
+                  title: "VPN for Android Tablet",
+                  description: "Best VPN apps optimized for Android tablets with large screen interfaces",
+                  href: "/best/vpn-android-tablet",
+                  icon: "monitor",
+                },
+                {
+                  title: "VPN Privacy Guide",
+                  description: "Complete guide to protecting your privacy and anonymity with VPN services",
+                  href: "/guides/vpn-privacy-guide",
+                  icon: "shield",
+                },
+              ]}
+            />
           </div>
         </section>
 

@@ -23,6 +23,7 @@ import {
   Lock,
   ArrowRight,
 } from "lucide-react";
+import { RelatedPages } from "@/components/seo/related-pages";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -720,6 +721,41 @@ export default async function MobileVpnPage({ params }: Props) {
                 ))}
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Related Pages */}
+        <section className="py-16 lg:py-24 bg-muted/30">
+          <div className="container">
+            <RelatedPages
+              title="Related Guides"
+              pages={[
+                {
+                  title: "VPN for iPhone",
+                  description: "Best VPN apps optimized for iOS with excellent App Store ratings and battery efficiency",
+                  href: "/best/vpn-iphone",
+                  icon: "smartphone",
+                },
+                {
+                  title: "VPN for Android",
+                  description: "Top-rated Android VPN apps with split tunneling and GPS spoofing features",
+                  href: "/best/vpn-android",
+                  icon: "smartphone",
+                },
+                {
+                  title: "VPN for Tablets",
+                  description: "VPN solutions designed for tablets with optimized interfaces and multi-device support",
+                  href: "/best/vpn-tablet",
+                  icon: "monitor",
+                },
+                {
+                  title: "Mobile VPN Setup Guide",
+                  description: "Complete guide to installing and configuring VPN on your mobile device",
+                  href: "/guides/vpn-on-mobile",
+                  icon: "document",
+                },
+              ]}
+            />
           </div>
         </section>
 

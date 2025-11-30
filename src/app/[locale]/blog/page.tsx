@@ -13,6 +13,7 @@ import {
   Newspaper,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { RelatedPages } from "@/components/seo/related-pages";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -331,6 +332,23 @@ export default async function BlogPage({ params }: Props) {
           <div className="max-w-3xl mx-auto text-center space-y-4">
             <h2 className="text-3xl font-bold">{t("cta.title")}</h2>
             <p className="text-lg text-muted-foreground">{t("cta.subtitle")}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Pages */}
+      <section className="py-12 lg:py-16 bg-muted/30">
+        <div className="container">
+          <div className="max-w-6xl mx-auto">
+            <RelatedPages
+              title="Explore More"
+              pages={[
+                { title: "Best VPNs 2025", description: "Our top-rated VPN services", href: "/best/best-vpn", icon: "trophy" },
+                { title: "VPN Black Friday Deals", description: "Biggest discounts of the year", href: "/blog/vpn-black-friday-2025", icon: "tag" },
+                { title: "Is VPN Legal?", description: "VPN legality around the world", href: "/blog/is-vpn-legal", icon: "shield" },
+                { title: "VPN vs Proxy", description: "Differences and when to use each", href: "/blog/vpn-vs-proxy", icon: "zap" }
+              ]}
+            />
           </div>
         </div>
       </section>

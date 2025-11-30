@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import { Badge } from "@/components/ui/badge";
 import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { RelatedPages } from "@/components/seo/related-pages";
 import {
   Smartphone,
   Shield,
@@ -499,6 +500,17 @@ export default async function VpnOnMobilePage({ params }: Props) {
                 </Link>
               </div>
             </section>
+
+            {/* Related Pages */}
+            <RelatedPages
+              title="Related Mobile Security Guides"
+              pages={[
+                { title: "Public WiFi Safety", description: "Secure mobile connections on public WiFi", href: "/guides/public-wifi-safety", icon: "wifi" },
+                { title: "VPN for Travel", description: "Essential travel security tips", href: "/guides/vpn-for-travel", icon: "globe" },
+                { title: "VPN Speed Guide", description: "Optimize mobile VPN performance", href: "/guides/vpn-speed-guide", icon: "zap" },
+                { title: "Best VPNs 2025", description: "Top-rated mobile VPN apps", href: "/best/best-vpn", icon: "trophy" }
+              ]}
+            />
           </div>
         </div>
       </div>

@@ -24,6 +24,7 @@ import {
   Video,
   Server,
 } from "lucide-react";
+import { RelatedPages } from "@/components/seo/related-pages";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -707,6 +708,41 @@ export default async function TabletVpnPage({ params }: Props) {
                 ))}
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Related Pages */}
+        <section className="py-16 lg:py-24 bg-muted/30">
+          <div className="container">
+            <RelatedPages
+              title="Related Guides"
+              pages={[
+                {
+                  title: "VPN for Mobile",
+                  description: "Best VPN apps for smartphones with optimized mobile performance",
+                  href: "/best/vpn-mobile",
+                  icon: "smartphone",
+                },
+                {
+                  title: "VPN for iPad",
+                  description: "Specialized VPN solutions for iPad with iPadOS optimization",
+                  href: "/best/vpn-ipad",
+                  icon: "monitor",
+                },
+                {
+                  title: "VPN for Android Tablet",
+                  description: "Best VPNs for Android tablets with split tunneling and GPS spoofing",
+                  href: "/best/vpn-android-tablet",
+                  icon: "monitor",
+                },
+                {
+                  title: "VPN for Windows Tablet",
+                  description: "Complete VPN solutions for Windows tablets and Surface devices",
+                  href: "/best/vpn-windows-tablet",
+                  icon: "laptop",
+                },
+              ]}
+            />
           </div>
         </section>
 

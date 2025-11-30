@@ -23,6 +23,7 @@ import {
   Zap,
   HelpCircle,
 } from "lucide-react";
+import { RelatedPages } from "@/components/seo/related-pages";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -1393,6 +1394,18 @@ export default async function VpnChinaPage({ params }: Props) {
             </div>
           </div>
         </section>
+
+        {/* Related Pages Section */}
+        <RelatedPages
+          title="Related VPN Guides"
+          pages={[
+            { title: "Best VPN for Russia", description: "VPNs that work reliably in Russia", href: "/best/vpn-russia", icon: "globe" },
+            { title: "Best VPN for UAE", description: "VPNs for Dubai and the Emirates", href: "/best/vpn-uae", icon: "globe" },
+            { title: "Best VPN for Iran", description: "Top VPNs for bypassing Iranian censorship", href: "/best/vpn-iran", icon: "globe" },
+            { title: "Best VPNs 2025", description: "Our top-rated VPN services", href: "/best/best-vpn", icon: "trophy" },
+            { title: "Best Mobile VPN", description: "VPNs optimized for mobile devices", href: "/best/vpn-mobile", icon: "smartphone" }
+          ]}
+        />
       </div>
     </>
   );

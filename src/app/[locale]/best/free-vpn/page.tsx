@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { RatingStars } from "@/components/vpn/rating-stars";
+import { RelatedPages } from "@/components/seo/related-pages";
 import { Link } from "@/i18n/navigation";
 import {
   Shield,
@@ -659,6 +660,23 @@ export default async function FreeVpnPage({ params }: Props) {
                 </Link>
               </Button>
             </div>
+          </div>
+        </section>
+
+        {/* Related Pages */}
+        <section className="py-16 bg-muted/30">
+          <div className="container">
+            <RelatedPages
+              title="Explore More VPN Options"
+              pages={[
+                { title: "Best Overall VPNs", description: "Top-rated premium VPN services", href: "/best/best-vpn", icon: "trophy" },
+                { title: "Best VPN for Gaming", description: "Low-latency VPNs for online gaming", href: "/best/vpn-gaming", icon: "gamepad" },
+                { title: "Best VPN for Streaming", description: "Unblock Netflix, Hulu, and more", href: "/guides/vpn-streaming", icon: "play" },
+                { title: "Best VPN for China", description: "VPNs that bypass the Great Firewall", href: "/best/vpn-china", icon: "globe" },
+                { title: "Best Mobile VPNs", description: "VPNs optimized for smartphones", href: "/best/vpn-mobile", icon: "smartphone" },
+                { title: "VPN Setup Guides", description: "Learn how to set up your VPN", href: "/guides", icon: "map" },
+              ]}
+            />
           </div>
         </section>
       </div>

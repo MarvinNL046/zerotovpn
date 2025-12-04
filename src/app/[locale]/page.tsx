@@ -1,7 +1,6 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { ComparisonTable } from "@/components/vpn/comparison-table";
 import { VpnCard } from "@/components/vpn/vpn-card";
 import { getFeaturedVpns } from "@/lib/vpn-data-layer";
@@ -77,12 +76,7 @@ export default async function HomePage({ params }: Props) {
           </div>
           <div className="container relative">
             <div className="max-w-3xl mx-auto text-center space-y-8">
-              <div className="inline-flex items-center gap-2">
-                <Badge variant="secondary" className="px-4 py-1">
-                  {t("hero.badge")}
-                </Badge>
-                <PulseIndicator variant="success" label="Updated 2025" size="sm" />
-              </div>
+              <PulseIndicator variant="success" label={t("hero.badge")} size="sm" />
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight animate-fade-in-up">
                 {t("hero.title")}{" "}
                 <HighlightedText variant="primary">

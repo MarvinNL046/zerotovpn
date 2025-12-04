@@ -1,14 +1,32 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { Shield, Check, Globe, Zap, Lock, Server, Wifi, Eye } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { PulseIndicator } from "@/components/ui/pulse-indicator";
+
+// Hook to detect visitor's country
+function useVisitorCountry(fallback = "Netherlands") {
+  const [country, setCountry] = useState<string | null>(null);
+
+  useEffect(() => {
+    // Fetch visitor's country from IP geolocation API
+    fetch("https://ipapi.co/country_name/")
+      .then((res) => res.ok ? res.text() : Promise.reject())
+      .then((name) => setCountry(name.trim()))
+      .catch(() => setCountry(fallback));
+  }, [fallback]);
+
+  return country;
+}
 
 interface HeroIllustrationProps {
   className?: string;
 }
 
 export function HeroIllustration({ className }: HeroIllustrationProps) {
+  const visitorCountry = useVisitorCountry();
+
   return (
     <div className={cn("relative w-full max-w-4xl mx-auto", className)}>
       {/* Main Dashboard Card */}
@@ -48,7 +66,7 @@ export function HeroIllustration({ className }: HeroIllustrationProps) {
                 <p className="text-xs text-muted-foreground mb-1">Location</p>
                 <p className="font-mono text-sm flex items-center gap-1">
                   <Globe className="h-3 w-3" />
-                  Netherlands
+                  {visitorCountry ?? <span className="animate-pulse">•••</span>}
                 </p>
               </div>
             </div>
@@ -119,6 +137,8 @@ function FeaturePill({ icon, label, active = false }: { icon: React.ReactNode; l
 
 // Simpler version for smaller spaces
 export function MiniDashboard({ className }: { className?: string }) {
+  const visitorCountry = useVisitorCountry();
+
   return (
     <div className={cn("bg-card border rounded-lg p-4 shadow-lg", className)}>
       <div className="flex items-center justify-between mb-3">
@@ -135,7 +155,7 @@ export function MiniDashboard({ className }: { className?: string }) {
         </div>
         <div className="flex justify-between text-xs">
           <span className="text-muted-foreground">Location</span>
-          <span className="font-medium">Netherlands</span>
+          <span className="font-medium">{visitorCountry ?? "•••"}</span>
         </div>
       </div>
     </div>

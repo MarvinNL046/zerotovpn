@@ -253,7 +253,11 @@ export default async function VpnForTorrentingPage({ params }: Props) {
                   badge: string;
                   description: string;
                   critical: boolean;
-                  [key: string]: any;
+                  whyItMatters?: string;
+                  lookFor?: string;
+                  testIt?: string;
+                  tip?: string;
+                  note?: string;
                 }>).map((item, index) => {
                   const icons = [EyeOff, Lock, Server, Shield, Zap];
                   const iconColors = ["text-green-500", "text-green-500", "text-blue-500", "text-purple-500", "text-yellow-500"];

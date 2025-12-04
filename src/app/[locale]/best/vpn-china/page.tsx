@@ -8,16 +8,12 @@ import { RatingStars } from "@/components/vpn/rating-stars";
 import { Link } from "@/i18n/navigation";
 import {
   Shield,
-  Globe,
   CheckCircle,
-  Award,
   Clock,
   ArrowRight,
-  Server,
   AlertTriangle,
   Eye,
   Lock,
-  Wifi,
   XCircle,
   Info,
   Zap,
@@ -87,7 +83,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 // Structured Data for Article
-function ArticleSchema({ locale }: { locale: string }) {
+function ArticleSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -1112,7 +1108,7 @@ export default async function VpnChinaPage({ params }: Props) {
 
   return (
     <>
-      <ArticleSchema locale={locale} />
+      <ArticleSchema />
 
       <div className="flex flex-col">
         {/* Hero Section */}

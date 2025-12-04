@@ -79,6 +79,17 @@
     "learnMore": "자세히 보기",
     "compare": "비교하기"
   },
+  "exitIntent": {
+    "headline": "잠깐만요! 이 특별 혜택을 놓치지 마세요!",
+    "subheadline": "#1 평점 VPN을 특가로 만나보세요",
+    "off": "할인",
+    "specialDeal": "기간 한정 특별 혜택",
+    "feature1": "전 세계 {servers}개의 초고속 서버",
+    "feature2": "{countries}개국에서 사용 가능",
+    "feature3": "{days}일 환불 보장",
+    "claimDeal": "지금 신청하기",
+    "dontShowAgain": "다시 보지 않기"
+  },
   "footer": {
     "aboutText": "독립적인 테스트와 솔직한 리뷰로 최고의 VPN을 찾도록 도와드립니다.",
     "links": "빠른 링크",
@@ -109,12 +120,28 @@
     "vpnLinux": "Linux용 VPN"
   },
   "newsletter": {
-    "title": "최신 소식 받기",
-    "subtitle": "최신 VPN 혜택과 보안 팁을 받아보세요.",
-    "placeholder": "이메일 주소",
-    "button": "구독",
+    "title": "최신 정보 받기",
+    "subtitle": "최신 VPN 세일과 보안 팁을 이메일로 받아보세요.",
+    "placeholder": "이메일 주소 입력",
+    "emailLabel": "이메일 주소",
+    "button": "구독하기",
+    "subscribe": "구독하기",
+    "subscribing": "구독 중...",
     "success": "구독해 주셔서 감사합니다!",
-    "privacy": "개인정보를 존중합니다. 언제든 구독 취소 가능."
+    "checkEmail": "구독 확인을 위해 이메일을 확인해 주세요",
+    "error": "오류가 발생했습니다. 다시 시도해 주세요.",
+    "consent": "이메일 수신에 동의하며 언제든지 구독을 취소할 수 있습니다",
+    "consentRequired": "이메일 수신에 동의해 주세요",
+    "privacy": "개인정보를 존중합니다. 언제든지 구독 취소 가능합니다.",
+    "popupTitle": "독점 VPN 혜택 받기! 🔒",
+    "popupSubtitle": "최고의 VPN 혜택과 보안 팁을 받는 수천 명의 사용자와 함께하세요.",
+    "popupDescription": "최신 VPN 세일과 보안 팁을 이메일로 받아보세요.",
+    "dontShowAgain": "다시 보지 않기",
+    "footerTitle": "뉴스레터",
+    "footerSubtitle": "독점 VPN 혜택과 보안 팁 받기",
+    "blogCtaTitle": "VPN 혜택을 놓치지 마세요",
+    "blogCtaSubtitle": "매주 VPN 리뷰, 보안 팁, 독점 혜택을 받아보세요.",
+    "privacyNote": "개인정보를 존중합니다. 언제든지 구독 취소 가능합니다."
   },
   "guides": {
     "whatIsVpn": {
@@ -2896,6 +2923,7 @@
       "badge": "2025년 업데이트",
       "title": "당신의",
       "titleHighlight": "완벽한 VPN을",
+      "titleAccent": "찾아보세요",
       "subtitle": "몇 분 만에 제로에서 보안까지. 전문가 리뷰, 솔직한 비교, 최고의 VPN 서비스 독점 혜택.",
       "primaryCta": "VPN 비교하기",
       "secondaryCta": "VPN이란 무엇인가요?",
@@ -2982,7 +3010,10 @@
         "question": "VPN을 추적할 수 있나요?",
         "answer": "노로그 정책을 사용하는 품질 좋은 VPN은 사용자를 추적할 수 없습니다. VPN 제공업체는 온라인 활동에 대한 정보를 저장하지 않습니다."
       }
-    ]
+    ],
+    "faqSection": {
+      "title": "자주 묻는 질문"
+    }
   },
   "vpnTable": {
     "headers": {
@@ -3017,7 +3048,8 @@
     "noLogs": "무로그",
     "freeTier": "무료 플랜",
     "getVpn": "{name} 받기",
-    "review": "리뷰"
+    "review": "리뷰",
+    "hasCoupon": "쿠폰"
   },
   "vpnReview": {
     "backToReviews": "리뷰 목록으로",
@@ -3100,6 +3132,10 @@
     },
     "userReviews": {
       "title": "사용자 리뷰"
+    },
+    "coupons": {
+      "title": "{name} 활성 쿠폰 및 할인",
+      "subtitle": "검증된 할인 코드로 절약하세요"
     }
   },
   "guidesIndex": {
@@ -3658,7 +3694,32 @@
     "needHelpDeciding": "결정에 도움이 필요하신가요?",
     "needHelpDesc": "각 VPN의 심층 분석을 위해 상세 리뷰를 확인하거나, VPN에서 무엇을 찾아야 하는지 알아보려면 가이드를 읽어보세요.",
     "viewBestVpns": "최고의 VPN 보기",
-    "whatIsVpn": "VPN이란?"
+    "whatIsVpn": "VPN이란?",
+    "faqSection": {
+      "title": "자주 묻는 질문"
+    },
+    "faq": [
+      {
+        "question": "VPN을 어떻게 비교하나요?",
+        "answer": "50개 이상의 서버 위치에서 속도 테스트, 보안 분석(암호화, 유출 테스트, 개인정보 보호 정책), Netflix 및 기타 서비스와의 스트리밍 테스트, 가치 평가를 포함하는 종합적인 방법으로 VPN을 비교합니다. 각 VPN은 속도, 보안, 스트리밍, 전체 가치에 대해 평가됩니다."
+      },
+      {
+        "question": "VPN 비교 시 가장 중요한 기능은 무엇인가요?",
+        "answer": "가장 중요한 기능은: 강력한 암호화(AES-256), 감사로 검증된 노로그 정책, 킬 스위치 기능, 빠른 연결 속도, 대규모 서버 네트워크, Netflix/Disney+ 스트리밍 지원, 신속한 고객 지원입니다. 가격과 동시 접속 기기 수도 주요 고려 사항입니다."
+      },
+      {
+        "question": "스트리밍에 가장 빠른 VPN은 무엇인가요?",
+        "answer": "ExpressVPN은 테스트에서 96% 속도 유지율로 가장 빠른 VPN이며, 4K 스트리밍에 이상적입니다. NordVPN은 우수한 속도와 더 나은 가성비로 그 뒤를 따릅니다. 둘 다 Netflix, Disney+ 및 기타 스트리밍 플랫폼을 안정적으로 차단 해제합니다."
+      },
+      {
+        "question": "무료 VPN을 신뢰할 수 있나요?",
+        "answer": "대부분의 무료 VPN은 데이터를 기록하고 판매하거나, 광고를 삽입하거나, 보안 취약점이 있어 신뢰할 수 없습니다. ProtonVPN은 우리가 추천하는 유일한 무료 VPN입니다 - 신뢰할 수 있는 회사에서 제공하며, 데이터 제한이 없고, 높은 개인정보 보호 표준을 유지합니다."
+      },
+      {
+        "question": "월간 요금제와 장기 VPN 요금제의 차이점은 무엇인가요?",
+        "answer": "장기 요금제(1-2년)는 월간 가격 대비 60-80% 할인된 상당한 할인을 제공합니다. 예를 들어, NordVPN은 월간 요금제에서 $12.99/월이지만 2년 요금제에서는 $2.99/월입니다. 모든 주요 VPN은 30일 환불 보장을 제공합니다."
+      }
+    ]
   },
   "speedTest": {
     "title": "인터넷 속도 테스트",
@@ -5163,6 +5224,137 @@
       "getBest": "NordVPN 받기",
       "getValue": "Surfshark 받기 - 82% 할인",
       "getTravel": "ExpressVPN 받기"
+    }
+  },
+  "coupons": {
+    "code": "쿠폰 코드",
+    "copy": "코드 복사",
+    "copied": "복사됨!",
+    "verified": "검증됨",
+    "expiringSoon": "곧 만료",
+    "expires": "만료",
+    "getDeal": "혜택 받기",
+    "noCoupons": "사용 가능한 쿠폰이 없습니다"
+  },
+  "couponsPage": {
+    "title": "VPN 쿠폰 및 할인 코드",
+    "subtitle": "검증된 쿠폰 코드로 최대 83% 절약. 매일 업데이트되는 독점 혜택.",
+    "coupons": "쿠폰",
+    "activeCoupon": "활성 쿠폰",
+    "activeCoupons": "활성 쿠폰",
+    "editorChoice": "에디터 추천",
+    "features": {
+      "verified": "검증된 코드",
+      "verifiedDesc": "모든 쿠폰 테스트 및 작동 확인",
+      "savings": "대폭 할인",
+      "savingsDesc": "최대 83% 절약",
+      "updated": "매일 업데이트",
+      "updatedDesc": "매일 새로운 혜택",
+      "exclusive": "독점 혜택",
+      "exclusiveDesc": "독자를 위한 특별 혜택"
+    },
+    "howToUse": {
+      "title": "VPN 쿠폰 사용 방법",
+      "step1": "VPN 선택",
+      "step1Desc": "활성 할인 코드가 있는 검증된 VPN 제공업체를 선택하세요.",
+      "step2": "코드 복사",
+      "step2Desc": "복사 버튼을 클릭하여 쿠폰 코드를 클립보드에 저장하세요.",
+      "step3": "결제 시 적용",
+      "step3Desc": "VPN 제공업체 웹사이트의 결제 시 코드를 붙여넣어 할인을 받으세요."
+    }
+  }
+,
+  "quiz": {
+    "metadata": {
+      "title": "VPN 찾기 퀴즈 - 완벽한 VPN 찾기 | ZeroToVPN",
+      "description": "5가지 간단한 질문에 답하여 귀하의 필요에 맞는 완벽한 VPN을 찾으세요. 예산, 사용 목적 및 위치를 기반으로 개인화된 VPN 추천을 받으세요.",
+      "ogTitle": "5가지 질문으로 완벽한 VPN 찾기",
+      "ogDescription": "빠른 퀴즈를 통해 스트리밍, 게임, 개인정보 보호 또는 토렌트에 가장 적합한 VPN을 찾아보세요. 2분 이내에 개인화된 추천을 받으세요.",
+      "ogImageAlt": "VPN 찾기 퀴즈 - 완벽한 VPN 매치 찾기"
+    },
+    "hero": {
+      "title": "완벽한 VPN 찾기",
+      "subtitle": "5가지 간단한 질문에 답하고 귀하의 필요에 맞는 개인화된 VPN 추천을 받으세요"
+    },
+    "progress": {
+      "step": "질문",
+      "of": "/"
+    },
+    "questions": {
+      "primaryUse": {
+        "title": "VPN이 주로 필요한 용도는 무엇인가요?",
+        "options": {
+          "streaming": "스트리밍 (Netflix, Disney+ 등)",
+          "privacy": "개인정보 보호 및 보안",
+          "gaming": "게임",
+          "torrenting": "토렌트/P2P",
+          "work": "업무/비즈니스"
+        }
+      },
+      "budget": {
+        "title": "월 예산은 얼마인가요?",
+        "options": {
+          "free": "무료 (€0)",
+          "budget": "저가형 (€2-4/월)",
+          "midrange": "중가형 (€4-8/월)",
+          "premium": "프리미엄 (€8+/월)"
+        }
+      },
+      "devices": {
+        "title": "연결해야 할 기기는 몇 대인가요?",
+        "options": {
+          "few": "1-2대",
+          "several": "3-5대",
+          "many": "6-10대",
+          "unlimited": "무제한"
+        }
+      },
+      "speedPriority": {
+        "title": "속도가 얼마나 중요한가요?",
+        "options": {
+          "critical": "매우 중요 (게임, 4K 스트리밍)",
+          "important": "중요",
+          "notPriority": "우선순위 아님"
+        }
+      },
+      "location": {
+        "title": "어디에 계신가요?",
+        "options": {
+          "europe": "유럽",
+          "northAmerica": "북미",
+          "asia": "아시아",
+          "middleEast": "중동",
+          "other": "기타"
+        }
+      }
+    },
+    "navigation": {
+      "back": "이전",
+      "next": "다음",
+      "showResults": "결과 보기"
+    },
+    "helpText": "모든 답변은 익명으로 처리되며 최적의 VPN과 매칭하는 데에만 사용됩니다.",
+    "results": {
+      "badge": "결과",
+      "title": "완벽한 VPN 매치",
+      "subtitle": "답변을 바탕으로 귀하의 필요에 가장 적합한 상위 3개 VPN을 소개합니다",
+      "topMatch": "최고의 매치",
+      "matchScore": "매치 점수",
+      "save": "저장",
+      "getDeal": "혜택 받기",
+      "readReview": "리뷰 읽기",
+      "modifyAnswers": "답변 수정",
+      "startOver": "처음부터 다시",
+      "features": {
+        "netflix": "Netflix 지원",
+        "torrenting": "토렌트",
+        "killSwitch": "킬 스위치",
+        "noLogs": "무로그 정책"
+      }
+    },
+    "info": {
+      "title": "VPN 매칭 방식",
+      "description": "저희 퀴즈 알고리즘은 속도, 보안, 스트리밍 기능, 기기 호환성, 가격대 등 귀하의 구체적인 필요에 따라 VPN 제공업체를 평가합니다. 각 추천은 귀하의 요구사항과의 일치도에 따라 점수가 매겨집니다."
     }
   }
 }

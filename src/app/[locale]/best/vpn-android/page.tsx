@@ -5,7 +5,6 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
-import { RatingStars } from "@/components/vpn/rating-stars";
 import { Link } from "@/i18n/navigation";
 import {
   Shield,
@@ -15,14 +14,11 @@ import {
   XCircle,
   AlertTriangle,
   Crown,
-  TrendingUp,
-  Clock,
+  Eye,
   ArrowRight,
   Server,
   Smartphone,
-  Database,
   Wifi,
-  Eye,
   MapPin,
   Settings,
   Download,

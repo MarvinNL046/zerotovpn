@@ -1,10 +1,5 @@
-import prisma from "@/lib/prisma";
-import type { VpnProvider } from "@/generated/prisma";
-
-// Helper to check if database is available
-function isDatabaseAvailable(): boolean {
-  return prisma !== null;
-}
+import { eq, asc, count } from "drizzle-orm";
+import { getDb, vpnProviders, type VpnProvider } from "./index";
 
 // Type for VPN data that matches the frontend interface
 export interface VpnData {
@@ -44,7 +39,7 @@ export interface VpnData {
   sortOrder: number;
 }
 
-// Convert Prisma VpnProvider to frontend VpnData
+// Convert Drizzle VpnProvider to frontend VpnData
 function toVpnData(vpn: VpnProvider): VpnData {
   return {
     id: vpn.id,
@@ -68,7 +63,7 @@ function toVpnData(vpn: VpnProvider): VpnData {
     speedScore: vpn.speedScore,
     securityScore: vpn.securityScore,
     streamingScore: vpn.streamingScore,
-    protocols: vpn.protocols,
+    protocols: vpn.protocols ?? [],
     encryption: vpn.encryption,
     killSwitch: vpn.killSwitch,
     noLogs: vpn.noLogs,
@@ -77,8 +72,8 @@ function toVpnData(vpn: VpnProvider): VpnData {
     overallRating: Number(vpn.overallRating),
     editorChoice: vpn.editorChoice,
     shortDescription: vpn.shortDescription,
-    pros: vpn.pros,
-    cons: vpn.cons,
+    pros: vpn.pros ?? [],
+    cons: vpn.cons ?? [],
     featured: vpn.featured,
     sortOrder: vpn.sortOrder,
   };
@@ -86,47 +81,45 @@ function toVpnData(vpn: VpnProvider): VpnData {
 
 // Get all VPNs sorted by sortOrder
 export async function getAllVpnsFromDb(): Promise<VpnData[]> {
-  if (!isDatabaseAvailable()) {
-    throw new Error("Database not available");
-  }
-  const vpns = await prisma!.vpnProvider.findMany({
-    orderBy: { sortOrder: "asc" },
-  });
+  const db = getDb();
+  const vpns = await db
+    .select()
+    .from(vpnProviders)
+    .orderBy(asc(vpnProviders.sortOrder));
   return vpns.map(toVpnData);
 }
 
 // Get featured VPNs
 export async function getFeaturedVpnsFromDb(): Promise<VpnData[]> {
-  if (!isDatabaseAvailable()) {
-    throw new Error("Database not available");
-  }
-  const vpns = await prisma!.vpnProvider.findMany({
-    where: { featured: true },
-    orderBy: { sortOrder: "asc" },
-  });
+  const db = getDb();
+  const vpns = await db
+    .select()
+    .from(vpnProviders)
+    .where(eq(vpnProviders.featured, true))
+    .orderBy(asc(vpnProviders.sortOrder));
   return vpns.map(toVpnData);
 }
 
 // Get VPN by slug
 export async function getVpnBySlugFromDb(slug: string): Promise<VpnData | null> {
-  if (!isDatabaseAvailable()) {
-    throw new Error("Database not available");
-  }
-  const vpn = await prisma!.vpnProvider.findUnique({
-    where: { slug },
-  });
-  return vpn ? toVpnData(vpn) : null;
+  const db = getDb();
+  const vpns = await db
+    .select()
+    .from(vpnProviders)
+    .where(eq(vpnProviders.slug, slug))
+    .limit(1);
+  return vpns[0] ? toVpnData(vpns[0]) : null;
 }
 
 // Get VPN by ID
 export async function getVpnByIdFromDb(id: string): Promise<VpnData | null> {
-  if (!isDatabaseAvailable()) {
-    throw new Error("Database not available");
-  }
-  const vpn = await prisma!.vpnProvider.findUnique({
-    where: { id },
-  });
-  return vpn ? toVpnData(vpn) : null;
+  const db = getDb();
+  const vpns = await db
+    .select()
+    .from(vpnProviders)
+    .where(eq(vpnProviders.id, id))
+    .limit(1);
+  return vpns[0] ? toVpnData(vpns[0]) : null;
 }
 
 // Admin functions for CRUD operations
@@ -136,11 +129,10 @@ export type VpnUpdateInput = Partial<VpnCreateInput>;
 
 // Create VPN
 export async function createVpn(data: VpnCreateInput): Promise<VpnData> {
-  if (!isDatabaseAvailable()) {
-    throw new Error("Database not available");
-  }
-  const vpn = await prisma!.vpnProvider.create({
-    data: {
+  const db = getDb();
+  const result = await db
+    .insert(vpnProviders)
+    .values({
       name: data.name,
       slug: data.slug,
       logo: data.logo,
@@ -150,9 +142,9 @@ export async function createVpn(data: VpnCreateInput): Promise<VpnData> {
       ogImage: data.ogImage,
       website: data.website,
       affiliateUrl: data.affiliateUrl,
-      priceMonthly: data.priceMonthly,
-      priceYearly: data.priceYearly,
-      priceTwoYear: data.priceTwoYear ?? null,
+      priceMonthly: String(data.priceMonthly),
+      priceYearly: String(data.priceYearly),
+      priceTwoYear: data.priceTwoYear ? String(data.priceTwoYear) : null,
       moneyBackDays: data.moneyBackDays,
       freeTier: data.freeTier,
       servers: data.servers,
@@ -167,24 +159,23 @@ export async function createVpn(data: VpnCreateInput): Promise<VpnData> {
       noLogs: data.noLogs,
       netflixSupport: data.netflixSupport,
       torrentSupport: data.torrentSupport,
-      overallRating: data.overallRating,
+      overallRating: String(data.overallRating),
       editorChoice: data.editorChoice,
       shortDescription: data.shortDescription,
       pros: data.pros,
       cons: data.cons,
       featured: data.featured,
       sortOrder: data.sortOrder,
-    },
-  });
-  return toVpnData(vpn);
+    })
+    .returning();
+  return toVpnData(result[0]);
 }
 
 // Update VPN
 export async function updateVpn(id: string, data: VpnUpdateInput): Promise<VpnData> {
-  if (!isDatabaseAvailable()) {
-    throw new Error("Database not available");
-  }
-  const updateData: Record<string, unknown> = {};
+  const db = getDb();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const updateData: Record<string, any> = {};
 
   // Only include fields that are provided
   if (data.name !== undefined) updateData.name = data.name;
@@ -196,9 +187,9 @@ export async function updateVpn(id: string, data: VpnUpdateInput): Promise<VpnDa
   if (data.ogImage !== undefined) updateData.ogImage = data.ogImage;
   if (data.website !== undefined) updateData.website = data.website;
   if (data.affiliateUrl !== undefined) updateData.affiliateUrl = data.affiliateUrl;
-  if (data.priceMonthly !== undefined) updateData.priceMonthly = data.priceMonthly;
-  if (data.priceYearly !== undefined) updateData.priceYearly = data.priceYearly;
-  if (data.priceTwoYear !== undefined) updateData.priceTwoYear = data.priceTwoYear ?? null;
+  if (data.priceMonthly !== undefined) updateData.priceMonthly = String(data.priceMonthly);
+  if (data.priceYearly !== undefined) updateData.priceYearly = String(data.priceYearly);
+  if (data.priceTwoYear !== undefined) updateData.priceTwoYear = data.priceTwoYear ? String(data.priceTwoYear) : null;
   if (data.moneyBackDays !== undefined) updateData.moneyBackDays = data.moneyBackDays;
   if (data.freeTier !== undefined) updateData.freeTier = data.freeTier;
   if (data.servers !== undefined) updateData.servers = data.servers;
@@ -213,7 +204,7 @@ export async function updateVpn(id: string, data: VpnUpdateInput): Promise<VpnDa
   if (data.noLogs !== undefined) updateData.noLogs = data.noLogs;
   if (data.netflixSupport !== undefined) updateData.netflixSupport = data.netflixSupport;
   if (data.torrentSupport !== undefined) updateData.torrentSupport = data.torrentSupport;
-  if (data.overallRating !== undefined) updateData.overallRating = data.overallRating;
+  if (data.overallRating !== undefined) updateData.overallRating = String(data.overallRating);
   if (data.editorChoice !== undefined) updateData.editorChoice = data.editorChoice;
   if (data.shortDescription !== undefined) updateData.shortDescription = data.shortDescription;
   if (data.pros !== undefined) updateData.pros = data.pros;
@@ -221,27 +212,25 @@ export async function updateVpn(id: string, data: VpnUpdateInput): Promise<VpnDa
   if (data.featured !== undefined) updateData.featured = data.featured;
   if (data.sortOrder !== undefined) updateData.sortOrder = data.sortOrder;
 
-  const vpn = await prisma!.vpnProvider.update({
-    where: { id },
-    data: updateData,
-  });
-  return toVpnData(vpn);
+  updateData.updatedAt = new Date();
+
+  const result = await db
+    .update(vpnProviders)
+    .set(updateData)
+    .where(eq(vpnProviders.id, id))
+    .returning();
+  return toVpnData(result[0]);
 }
 
 // Delete VPN
 export async function deleteVpn(id: string): Promise<void> {
-  if (!isDatabaseAvailable()) {
-    throw new Error("Database not available");
-  }
-  await prisma!.vpnProvider.delete({
-    where: { id },
-  });
+  const db = getDb();
+  await db.delete(vpnProviders).where(eq(vpnProviders.id, id));
 }
 
 // Get VPN count
 export async function getVpnCount(): Promise<number> {
-  if (!isDatabaseAvailable()) {
-    throw new Error("Database not available");
-  }
-  return prisma!.vpnProvider.count();
+  const db = getDb();
+  const result = await db.select({ count: count() }).from(vpnProviders);
+  return result[0]?.count ?? 0;
 }

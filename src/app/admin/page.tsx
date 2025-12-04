@@ -104,7 +104,7 @@ export default async function AdminDashboard() {
             </p>
           ) : (
             <div className="space-y-4">
-              {recentReviewsData.map((review: any) => (
+              {recentReviewsData.map((review) => (
                 <div
                   key={review.id}
                   className="flex items-center justify-between p-4 rounded-lg bg-muted/50"

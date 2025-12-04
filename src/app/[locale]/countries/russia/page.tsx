@@ -14,15 +14,14 @@ import {
   CheckCircle,
   XCircle,
   Globe,
-  Download,
   Clock,
   ArrowRight,
-  Info,
   Scale,
   Smartphone,
   Lock,
   Ban,
   TrendingUp,
+  Info,
 } from "lucide-react";
 
 type Props = {

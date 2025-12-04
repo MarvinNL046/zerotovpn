@@ -16,6 +16,81 @@ interface VpnComparisonToolProps {
   maxCompare?: number;
 }
 
+interface ComparisonRowProps {
+  label: string;
+  icon?: React.ComponentType<{ className?: string }>;
+  valueKey: keyof VpnData;
+  format?: "number" | "boolean" | "price" | "array" | "percentage";
+  betterIs?: "highest" | "lowest";
+  selectedVpns: VpnData[];
+  maxCompare: number;
+  isWinner: (vpn: VpnData, key: keyof VpnData, type: "highest" | "lowest") => boolean;
+}
+
+function ComparisonRow({
+  label,
+  icon: Icon,
+  valueKey,
+  format = "number",
+  betterIs = "highest",
+  selectedVpns,
+  maxCompare,
+  isWinner,
+}: ComparisonRowProps) {
+  return (
+    <tr className="border-b border-border/50">
+      <td className="py-3 px-4 font-medium text-sm flex items-center gap-2">
+        {Icon && <Icon className="h-4 w-4 text-muted-foreground" />}
+        {label}
+      </td>
+      {selectedVpns.map(vpn => {
+        const value = vpn[valueKey];
+        const winner = isWinner(vpn, valueKey, betterIs);
+
+        let displayValue: React.ReactNode;
+        if (format === "boolean") {
+          displayValue = value ? (
+            <Check className="h-5 w-5 text-green-500 mx-auto" />
+          ) : (
+            <Minus className="h-5 w-5 text-muted-foreground mx-auto" />
+          );
+        } else if (format === "price") {
+          displayValue = `$${typeof value === "number" ? value.toFixed(2) : value}`;
+        } else if (format === "array") {
+          displayValue = (Array.isArray(value) ? value : []).join(", ");
+        } else if (format === "percentage") {
+          displayValue = (
+            <div className="flex items-center gap-2 justify-center">
+              <div className="w-16 h-2 bg-muted rounded-full overflow-hidden">
+                <div
+                  className={`h-full rounded-full ${winner ? "bg-primary" : "bg-muted-foreground/50"}`}
+                  style={{ width: `${typeof value === "number" ? value : 0}%` }}
+                />
+              </div>
+              <span className="text-sm">{typeof value === "number" ? value : 0}%</span>
+            </div>
+          );
+        } else {
+          displayValue = typeof value === "number" ? value.toLocaleString() : String(value ?? "");
+        }
+
+        return (
+          <td
+            key={vpn.id}
+            className={`py-3 px-4 text-center ${winner && selectedVpns.length > 1 ? "bg-primary/5 font-semibold" : ""}`}
+          >
+            {displayValue}
+            {winner && selectedVpns.length > 1 && format !== "boolean" && (
+              <Crown className="h-3 w-3 text-yellow-500 inline ml-1" />
+            )}
+          </td>
+        );
+      })}
+      {selectedVpns.length < maxCompare && <td className="py-3 px-4" />}
+    </tr>
+  );
+}
+
 export function VpnComparisonTool({ vpns, maxCompare = 4 }: VpnComparisonToolProps) {
   const t = useTranslations("comparisonTool");
   const [selectedVpns, setSelectedVpns] = useState<VpnData[]>([]);
@@ -36,82 +111,23 @@ export function VpnComparisonTool({ vpns, maxCompare = 4 }: VpnComparisonToolPro
     setSelectedVpns(selectedVpns.filter(v => v.id !== vpnId));
   };
 
-  const getBestValue = (key: keyof VpnData, type: "highest" | "lowest" = "highest") => {
+  const getBestValue = (key: keyof VpnData, type: "highest" | "lowest" = "highest"): number | null => {
     if (selectedVpns.length < 2) return null;
-    const values = selectedVpns.map(vpn => vpn[key] as number);
+    const values = selectedVpns
+      .map(vpn => {
+        const value = vpn[key];
+        return typeof value === 'number' ? value : null;
+      })
+      .filter((v): v is number => v !== null);
+
+    if (values.length === 0) return null;
     return type === "highest" ? Math.max(...values) : Math.min(...values);
   };
 
-  const isWinner = (vpn: VpnData, key: keyof VpnData, type: "highest" | "lowest" = "highest") => {
+  const isWinner = (vpn: VpnData, key: keyof VpnData, type: "highest" | "lowest" = "highest"): boolean => {
     const best = getBestValue(key, type);
-    return best !== null && vpn[key] === best;
-  };
-
-  const ComparisonRow = ({
-    label,
-    icon: Icon,
-    valueKey,
-    format = "number",
-    betterIs = "highest",
-  }: {
-    label: string;
-    icon?: React.ComponentType<{ className?: string }>;
-    valueKey: keyof VpnData;
-    format?: "number" | "boolean" | "price" | "array" | "percentage";
-    betterIs?: "highest" | "lowest";
-  }) => {
-    return (
-      <tr className="border-b border-border/50">
-        <td className="py-3 px-4 font-medium text-sm flex items-center gap-2">
-          {Icon && <Icon className="h-4 w-4 text-muted-foreground" />}
-          {label}
-        </td>
-        {selectedVpns.map(vpn => {
-          const value = vpn[valueKey];
-          const winner = isWinner(vpn, valueKey, betterIs);
-
-          let displayValue: React.ReactNode;
-          if (format === "boolean") {
-            displayValue = value ? (
-              <Check className="h-5 w-5 text-green-500 mx-auto" />
-            ) : (
-              <Minus className="h-5 w-5 text-muted-foreground mx-auto" />
-            );
-          } else if (format === "price") {
-            displayValue = `$${value}`;
-          } else if (format === "array") {
-            displayValue = (Array.isArray(value) ? value : []).join(", ");
-          } else if (format === "percentage") {
-            displayValue = (
-              <div className="flex items-center gap-2 justify-center">
-                <div className="w-16 h-2 bg-muted rounded-full overflow-hidden">
-                  <div
-                    className={`h-full rounded-full ${winner ? "bg-primary" : "bg-muted-foreground/50"}`}
-                    style={{ width: `${value}%` }}
-                  />
-                </div>
-                <span className="text-sm">{value}%</span>
-              </div>
-            );
-          } else {
-            displayValue = typeof value === "number" ? value.toLocaleString() : value;
-          }
-
-          return (
-            <td
-              key={vpn.id}
-              className={`py-3 px-4 text-center ${winner && selectedVpns.length > 1 ? "bg-primary/5 font-semibold" : ""}`}
-            >
-              {displayValue}
-              {winner && selectedVpns.length > 1 && format !== "boolean" && (
-                <Crown className="h-3 w-3 text-yellow-500 inline ml-1" />
-              )}
-            </td>
-          );
-        })}
-        {selectedVpns.length < maxCompare && <td className="py-3 px-4" />}
-      </tr>
-    );
+    const value = vpn[key];
+    return best !== null && typeof value === 'number' && value === best;
   };
 
   return (
@@ -225,9 +241,9 @@ export function VpnComparisonTool({ vpns, maxCompare = 4 }: VpnComparisonToolPro
                     {t("pricing")}
                   </td>
                 </tr>
-                <ComparisonRow label={t("monthlyPrice")} valueKey="priceMonthly" format="price" betterIs="lowest" />
-                <ComparisonRow label={t("yearlyPrice")} valueKey="priceYearly" format="price" betterIs="lowest" />
-                <ComparisonRow label={t("moneyBack")} valueKey="moneyBackDays" format="number" betterIs="highest" />
+                <ComparisonRow label={t("monthlyPrice")} valueKey="priceMonthly" format="price" betterIs="lowest" selectedVpns={selectedVpns} maxCompare={maxCompare} isWinner={isWinner} />
+                <ComparisonRow label={t("yearlyPrice")} valueKey="priceYearly" format="price" betterIs="lowest" selectedVpns={selectedVpns} maxCompare={maxCompare} isWinner={isWinner} />
+                <ComparisonRow label={t("moneyBack")} valueKey="moneyBackDays" format="number" betterIs="highest" selectedVpns={selectedVpns} maxCompare={maxCompare} isWinner={isWinner} />
 
                 {/* Performance */}
                 <tr className="bg-muted/30">
@@ -235,9 +251,9 @@ export function VpnComparisonTool({ vpns, maxCompare = 4 }: VpnComparisonToolPro
                     {t("performance")}
                   </td>
                 </tr>
-                <ComparisonRow label={t("speedScore")} icon={Zap} valueKey="speedScore" format="percentage" betterIs="highest" />
-                <ComparisonRow label={t("securityScore")} icon={Shield} valueKey="securityScore" format="percentage" betterIs="highest" />
-                <ComparisonRow label={t("streamingScore")} icon={Monitor} valueKey="streamingScore" format="percentage" betterIs="highest" />
+                <ComparisonRow label={t("speedScore")} icon={Zap} valueKey="speedScore" format="percentage" betterIs="highest" selectedVpns={selectedVpns} maxCompare={maxCompare} isWinner={isWinner} />
+                <ComparisonRow label={t("securityScore")} icon={Shield} valueKey="securityScore" format="percentage" betterIs="highest" selectedVpns={selectedVpns} maxCompare={maxCompare} isWinner={isWinner} />
+                <ComparisonRow label={t("streamingScore")} icon={Monitor} valueKey="streamingScore" format="percentage" betterIs="highest" selectedVpns={selectedVpns} maxCompare={maxCompare} isWinner={isWinner} />
 
                 {/* Network */}
                 <tr className="bg-muted/30">
@@ -245,9 +261,9 @@ export function VpnComparisonTool({ vpns, maxCompare = 4 }: VpnComparisonToolPro
                     {t("network")}
                   </td>
                 </tr>
-                <ComparisonRow label={t("servers")} icon={Server} valueKey="servers" format="number" betterIs="highest" />
-                <ComparisonRow label={t("countries")} icon={Globe} valueKey="countries" format="number" betterIs="highest" />
-                <ComparisonRow label={t("devices")} icon={Monitor} valueKey="maxDevices" format="number" betterIs="highest" />
+                <ComparisonRow label={t("servers")} icon={Server} valueKey="servers" format="number" betterIs="highest" selectedVpns={selectedVpns} maxCompare={maxCompare} isWinner={isWinner} />
+                <ComparisonRow label={t("countries")} icon={Globe} valueKey="countries" format="number" betterIs="highest" selectedVpns={selectedVpns} maxCompare={maxCompare} isWinner={isWinner} />
+                <ComparisonRow label={t("devices")} icon={Monitor} valueKey="maxDevices" format="number" betterIs="highest" selectedVpns={selectedVpns} maxCompare={maxCompare} isWinner={isWinner} />
 
                 {/* Features */}
                 <tr className="bg-muted/30">
@@ -255,11 +271,11 @@ export function VpnComparisonTool({ vpns, maxCompare = 4 }: VpnComparisonToolPro
                     {t("features")}
                   </td>
                 </tr>
-                <ComparisonRow label={t("netflix")} valueKey="netflixSupport" format="boolean" />
-                <ComparisonRow label={t("torrenting")} valueKey="torrentSupport" format="boolean" />
-                <ComparisonRow label={t("killSwitch")} valueKey="killSwitch" format="boolean" />
-                <ComparisonRow label={t("noLogs")} valueKey="noLogs" format="boolean" />
-                <ComparisonRow label={t("protocols")} valueKey="protocols" format="array" />
+                <ComparisonRow label={t("netflix")} valueKey="netflixSupport" format="boolean" selectedVpns={selectedVpns} maxCompare={maxCompare} isWinner={isWinner} />
+                <ComparisonRow label={t("torrenting")} valueKey="torrentSupport" format="boolean" selectedVpns={selectedVpns} maxCompare={maxCompare} isWinner={isWinner} />
+                <ComparisonRow label={t("killSwitch")} valueKey="killSwitch" format="boolean" selectedVpns={selectedVpns} maxCompare={maxCompare} isWinner={isWinner} />
+                <ComparisonRow label={t("noLogs")} valueKey="noLogs" format="boolean" selectedVpns={selectedVpns} maxCompare={maxCompare} isWinner={isWinner} />
+                <ComparisonRow label={t("protocols")} valueKey="protocols" format="array" selectedVpns={selectedVpns} maxCompare={maxCompare} isWinner={isWinner} />
 
                 {/* CTA Row */}
                 <tr className="border-t-2">

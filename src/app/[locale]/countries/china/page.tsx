@@ -12,10 +12,8 @@ import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import {
   Shield,
   AlertTriangle,
-  CheckCircle,
   XCircle,
   Globe,
-  Download,
   Clock,
   ArrowRight,
   Info,
@@ -24,6 +22,7 @@ import {
   Lock,
   TrendingUp,
   Ban,
+  CheckCircle,
 } from "lucide-react";
 
 type Props = {

@@ -8,16 +8,10 @@ import { RatingStars } from "@/components/vpn/rating-stars";
 import { Link } from "@/i18n/navigation";
 import {
   Shield,
-  Globe,
   CheckCircle,
   Award,
-  Clock,
   ArrowRight,
-  Server,
   AlertTriangle,
-  Eye,
-  Lock,
-  Wifi,
   XCircle,
   Info,
   Zap,
@@ -87,7 +81,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 // Structured Data for Article
-function ArticleSchema({ locale }: { locale: string }) {
+function ArticleSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -1250,7 +1244,7 @@ export default async function VpnUAEPage({ params }: Props) {
 
   return (
     <>
-      <ArticleSchema locale={locale} />
+      <ArticleSchema />
       <div className="min-h-screen bg-background">
         {/* Hero Section */}
         <section className="bg-gradient-to-b from-primary/5 to-background border-b">
@@ -1393,7 +1387,7 @@ export default async function VpnUAEPage({ params }: Props) {
                             <ArrowRight className="ml-2 h-4 w-4" />
                           </AffiliateButton>
                           <Link
-                            href={`/reviews/${vpn.slug}` as any}
+                            href={`/reviews/${vpn.slug}`}
                             className="text-sm text-primary hover:underline"
                           >
                             {locale === "en" && "Read full review →"}
@@ -1484,7 +1478,7 @@ export default async function VpnUAEPage({ params }: Props) {
                 {t.howToUseTitle}
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
-                {t.howToSteps.map((step: any, idx: number) => (
+                {t.howToSteps.map((step: { title: string; desc: string }, idx: number) => (
                   <Card key={idx}>
                     <CardContent className="p-6">
                       <div className="flex items-start gap-4">
@@ -1510,7 +1504,7 @@ export default async function VpnUAEPage({ params }: Props) {
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl font-bold mb-8 text-center">{t.tipsTitle}</h2>
               <div className="grid md:grid-cols-2 gap-6">
-                {t.tips.map((tip: any, idx: number) => (
+                {t.tips.map((tip: { title: string; desc: string }, idx: number) => (
                   <Card key={idx}>
                     <CardContent className="p-6">
                       <div className="flex items-start gap-3">
@@ -1534,7 +1528,7 @@ export default async function VpnUAEPage({ params }: Props) {
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl font-bold mb-8 text-center">{t.faqTitle}</h2>
               <div className="space-y-6">
-                {t.faqs.map((faq: any, idx: number) => (
+                {t.faqs.map((faq: { q: string; a: string }, idx: number) => (
                   <Card key={idx}>
                     <CardContent className="p-6">
                       <div className="flex items-start gap-3">

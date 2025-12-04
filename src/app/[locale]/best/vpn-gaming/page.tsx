@@ -8,7 +8,7 @@ import { RatingStars } from "@/components/vpn/rating-stars";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
-import { getVpnBySlug } from "@/lib/vpn-data-layer";
+import { getVpnBySlug, type VpnProvider } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
 import {
   Shield,
@@ -74,7 +74,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 // Structured Data for Gaming VPNs ItemList
-function ItemListSchema({ gamingVpns }: { gamingVpns: any[] }) {
+function ItemListSchema({ gamingVpns }: { gamingVpns: { vpn: VpnProvider | null }[] }) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "ItemList",

@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { AlertCircle } from "lucide-react";
 import { getAdminReviews } from "@/app/actions";
@@ -31,7 +31,7 @@ export default async function ReviewModerationPage({
   });
 
   // Get unique VPN slugs for filter
-  const vpnSlugs = [...new Set(reviews.map((r: any) => r.vpn_slug))];
+  const vpnSlugs = [...new Set(reviews.map((r) => r.vpn_slug))];
 
   // Count pending reviews
   const { reviews: pendingReviews } = await getAdminReviews({
@@ -79,7 +79,7 @@ export default async function ReviewModerationPage({
             </CardContent>
           </Card>
         ) : (
-          reviews.map((review: any) => (
+          reviews.map((review) => (
             <ReviewCard key={review.id} review={review} />
           ))
         )}

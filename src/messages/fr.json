@@ -79,6 +79,17 @@
     "learnMore": "En savoir plus",
     "compare": "Comparer"
   },
+  "exitIntent": {
+    "headline": "Attendez ! Ne manquez pas cette offre exclusive !",
+    "subheadline": "Obtenez notre VPN #1 à un prix imbattable",
+    "off": "RÉDUCTION",
+    "specialDeal": "Offre spéciale à durée limitée",
+    "feature1": "{servers} serveurs ultra-rapides dans le monde",
+    "feature2": "Disponible dans {countries} pays",
+    "feature3": "Garantie de remboursement de {days} jours",
+    "claimDeal": "Profiter de l'offre",
+    "dontShowAgain": "Ne plus afficher"
+  },
   "footer": {
     "aboutText": "Nous vous aidons à trouver le meilleur VPN grâce à des tests indépendants et des avis honnêtes.",
     "links": "Liens rapides",
@@ -110,11 +121,27 @@
   },
   "newsletter": {
     "title": "Restez informé",
-    "subtitle": "Recevez les dernières offres VPN et conseils de sécurité.",
-    "placeholder": "Votre email",
+    "subtitle": "Recevez les dernières offres VPN et conseils de sécurité dans votre boîte mail.",
+    "placeholder": "Entrez votre email",
+    "emailLabel": "Adresse email",
     "button": "S'abonner",
-    "success": "Merci pour votre inscription !",
-    "privacy": "Nous respectons votre vie privée. Désabonnement possible à tout moment."
+    "subscribe": "S'abonner",
+    "subscribing": "Abonnement en cours...",
+    "success": "Merci de votre inscription!",
+    "checkEmail": "Vérifiez votre email pour confirmer votre abonnement",
+    "error": "Une erreur s'est produite. Veuillez réessayer.",
+    "consent": "J'accepte de recevoir des emails et peux me désabonner à tout moment",
+    "consentRequired": "Veuillez accepter de recevoir des emails",
+    "privacy": "Nous respectons votre vie privée. Désabonnez-vous à tout moment.",
+    "popupTitle": "Recevez des offres VPN exclusives! 🔒",
+    "popupSubtitle": "Rejoignez des milliers d'utilisateurs qui reçoivent les meilleures offres VPN et conseils de sécurité.",
+    "popupDescription": "Recevez les dernières offres VPN et conseils de sécurité directement dans votre boîte mail.",
+    "dontShowAgain": "Ne plus afficher",
+    "footerTitle": "Newsletter",
+    "footerSubtitle": "Recevez des offres VPN exclusives et des conseils de sécurité",
+    "blogCtaTitle": "Ne manquez jamais une offre VPN",
+    "blogCtaSubtitle": "Recevez des avis VPN hebdomadaires, des conseils de sécurité et des offres exclusives.",
+    "privacyNote": "Nous respectons votre vie privée. Désabonnez-vous à tout moment."
   },
   "guides": {
     "whatIsVpn": {
@@ -2888,6 +2915,7 @@
       "badge": "Mis à jour pour 2025",
       "title": "Trouvez votre",
       "titleHighlight": "VPN parfait",
+      "titleAccent": "aujourd'hui",
       "subtitle": "De zéro à sécurisé en quelques minutes. Avis d'experts, comparaisons honnêtes et offres exclusives sur les meilleurs services VPN.",
       "primaryCta": "Comparer les VPN",
       "secondaryCta": "Qu'est-ce qu'un VPN ?",
@@ -2974,7 +3002,10 @@
         "question": "Un VPN peut-il être tracé ?",
         "answer": "Les VPN de qualité avec des politiques sans logs ne peuvent pas être retracés jusqu'à vous. Le fournisseur VPN ne stocke aucune information sur vos activités en ligne."
       }
-    ]
+    ],
+    "faqSection": {
+      "title": "Questions Fréquentes"
+    }
   },
   "vpnTable": {
     "headers": {
@@ -3009,7 +3040,8 @@
     "noLogs": "Sans logs",
     "freeTier": "Niveau gratuit",
     "getVpn": "Obtenir {name}",
-    "review": "Avis"
+    "review": "Avis",
+    "hasCoupon": "Coupon"
   },
   "vpnReview": {
     "backToReviews": "Retour aux avis",
@@ -3092,6 +3124,10 @@
     },
     "userReviews": {
       "title": "Avis des utilisateurs"
+    },
+    "coupons": {
+      "title": "Coupons et Réductions Actifs pour {name}",
+      "subtitle": "Économisez avec ces codes de réduction vérifiés"
     }
   },
   "guidesIndex": {
@@ -3650,7 +3686,32 @@
     "needHelpDeciding": "Besoin d'Aide pour Décider?",
     "needHelpDesc": "Consultez nos avis détaillés pour une analyse approfondie de chaque VPN, ou lisez notre guide pour en savoir plus sur ce qu'il faut rechercher dans un VPN.",
     "viewBestVpns": "Voir les Meilleurs VPNs",
-    "whatIsVpn": "Qu'est-ce qu'un VPN?"
+    "whatIsVpn": "Qu'est-ce qu'un VPN?",
+    "faqSection": {
+      "title": "Questions Fréquemment Posées"
+    },
+    "faq": [
+      {
+        "question": "Comment comparez-vous les VPN ?",
+        "answer": "Nous comparons les VPN en utilisant une méthodologie complète qui comprend des tests de vitesse sur plus de 50 emplacements de serveurs, une analyse de sécurité (chiffrement, tests de fuite, politiques de confidentialité), des tests de streaming avec Netflix et d'autres services, et une évaluation du rapport qualité-prix. Chaque VPN est noté sur la vitesse, la sécurité, le streaming et la valeur globale."
+      },
+      {
+        "question": "Quelles fonctionnalités sont les plus importantes pour comparer les VPN ?",
+        "answer": "Les fonctionnalités les plus importantes sont : un chiffrement fort (AES-256), une politique de non-journalisation vérifiée par des audits, une fonction kill switch, des vitesses de connexion rapides, un grand réseau de serveurs, le support du streaming pour Netflix/Disney+ et un support client réactif. Le prix et les limites d'appareils simultanés sont également des considérations clés."
+      },
+      {
+        "question": "Quel VPN est le plus rapide pour le streaming ?",
+        "answer": "ExpressVPN est constamment le VPN le plus rapide dans nos tests avec 96% de rétention de vitesse, idéal pour le streaming 4K. NordVPN suit de près avec d'excellentes vitesses et un meilleur rapport qualité-prix. Les deux débloquent de manière fiable Netflix, Disney+ et d'autres plateformes de streaming."
+      },
+      {
+        "question": "Puis-je faire confiance aux VPN gratuits ?",
+        "answer": "La plupart des VPN gratuits ne sont pas dignes de confiance car ils enregistrent et vendent souvent vos données, injectent des publicités ou présentent des vulnérabilités de sécurité. ProtonVPN est le seul VPN gratuit que nous recommandons - il provient d'une entreprise réputée, n'a pas de limites de données et maintient des standards de confidentialité élevés."
+      },
+      {
+        "question": "Quelle est la différence entre les plans VPN mensuels et à long terme ?",
+        "answer": "Les plans à long terme (1-2 ans) offrent des réductions significatives - souvent 60-80% de réduction par rapport au prix mensuel. Par exemple, NordVPN coûte 12,99€/mois sur un plan mensuel mais seulement 2,99€/mois sur un plan de 2 ans. Tous les meilleurs VPN offrent des garanties de remboursement de 30 jours."
+      }
+    ]
   },
   "speedTest": {
     "title": "Test de Vitesse Internet",
@@ -5155,6 +5216,137 @@
       "getBest": "Obtenir NordVPN",
       "getValue": "Obtenir Surfshark - 82% de réduction",
       "getTravel": "Obtenir ExpressVPN"
+    }
+  },
+  "coupons": {
+    "code": "Code Promo",
+    "copy": "Copier le Code",
+    "copied": "Copié !",
+    "verified": "Vérifié",
+    "expiringSoon": "Expire Bientôt",
+    "expires": "Expire",
+    "getDeal": "Obtenir l'Offre",
+    "noCoupons": "Aucun coupon actif disponible"
+  },
+  "couponsPage": {
+    "title": "Coupons et Codes Promo VPN",
+    "subtitle": "Économisez jusqu'à 83% avec des codes promo vérifiés. Offres exclusives mises à jour quotidiennement.",
+    "coupons": "Coupons",
+    "activeCoupon": "coupon actif",
+    "activeCoupons": "coupons actifs",
+    "editorChoice": "Choix de la Rédaction",
+    "features": {
+      "verified": "Codes Vérifiés",
+      "verifiedDesc": "Tous les coupons testés et fonctionnels",
+      "savings": "Grandes Économies",
+      "savingsDesc": "Économisez jusqu'à 83%",
+      "updated": "Mises à Jour Quotidiennes",
+      "updatedDesc": "Nouvelles offres chaque jour",
+      "exclusive": "Offres Exclusives",
+      "exclusiveDesc": "Offres spéciales pour nos lecteurs"
+    },
+    "howToUse": {
+      "title": "Comment Utiliser les Coupons VPN",
+      "step1": "Choisissez Votre VPN",
+      "step1Desc": "Sélectionnez parmi nos fournisseurs VPN vérifiés avec des codes de réduction actifs.",
+      "step2": "Copiez le Code",
+      "step2Desc": "Cliquez sur le bouton copier pour enregistrer le code promo dans votre presse-papiers.",
+      "step3": "Appliquez à la Caisse",
+      "step3Desc": "Collez le code à la caisse sur le site du fournisseur VPN pour obtenir votre réduction."
+    }
+  }
+,
+  "quiz": {
+    "metadata": {
+      "title": "Quiz VPN - Trouvez Votre VPN Parfait | ZeroToVPN",
+      "description": "Répondez à 5 questions simples pour trouver le VPN parfait pour vos besoins. Obtenez des recommandations VPN personnalisées en fonction de votre budget, utilisation et localisation.",
+      "ogTitle": "Trouvez Votre VPN Parfait en 5 Questions",
+      "ogDescription": "Faites notre quiz rapide pour découvrir le meilleur VPN pour le streaming, le gaming, la confidentialité ou le torrenting. Recommandations personnalisées en moins de 2 minutes.",
+      "ogImageAlt": "Quiz VPN - Trouvez votre VPN parfait"
+    },
+    "hero": {
+      "title": "Trouvez Votre VPN Parfait",
+      "subtitle": "Répondez à 5 questions simples et obtenez des recommandations VPN personnalisées adaptées à vos besoins"
+    },
+    "progress": {
+      "step": "Question",
+      "of": "sur"
+    },
+    "questions": {
+      "primaryUse": {
+        "title": "Pour quoi avez-vous principalement besoin d'un VPN ?",
+        "options": {
+          "streaming": "Streaming (Netflix, Disney+, etc.)",
+          "privacy": "Confidentialité et Sécurité",
+          "gaming": "Gaming",
+          "torrenting": "Torrenting/P2P",
+          "work": "Travail/Entreprise"
+        }
+      },
+      "budget": {
+        "title": "Quel est votre budget mensuel ?",
+        "options": {
+          "free": "Gratuit (€0)",
+          "budget": "Économique (€2-4/mois)",
+          "midrange": "Milieu de Gamme (€4-8/mois)",
+          "premium": "Premium (€8+/mois)"
+        }
+      },
+      "devices": {
+        "title": "Combien d'appareils devez-vous connecter ?",
+        "options": {
+          "few": "1-2 appareils",
+          "several": "3-5 appareils",
+          "many": "6-10 appareils",
+          "unlimited": "Appareils illimités"
+        }
+      },
+      "speedPriority": {
+        "title": "Quelle importance accordez-vous à la vitesse ?",
+        "options": {
+          "critical": "Critique (gaming, streaming 4K)",
+          "important": "Important",
+          "notPriority": "Pas une priorité"
+        }
+      },
+      "location": {
+        "title": "Où êtes-vous situé ?",
+        "options": {
+          "europe": "Europe",
+          "northAmerica": "Amérique du Nord",
+          "asia": "Asie",
+          "middleEast": "Moyen-Orient",
+          "other": "Autre"
+        }
+      }
+    },
+    "navigation": {
+      "back": "Retour",
+      "next": "Suivant",
+      "showResults": "Afficher les Résultats"
+    },
+    "helpText": "Toutes les réponses sont anonymes et utilisées uniquement pour vous associer au meilleur VPN.",
+    "results": {
+      "badge": "Vos Résultats",
+      "title": "Vos VPNs Parfaits",
+      "subtitle": "En fonction de vos réponses, voici les 3 meilleurs VPNs qui correspondent le mieux à vos besoins",
+      "topMatch": "Meilleure Correspondance",
+      "matchScore": "Score de Correspondance",
+      "save": "Enregistrer",
+      "getDeal": "Obtenir l'Offre",
+      "readReview": "Lire l'Avis",
+      "modifyAnswers": "Modifier les Réponses",
+      "startOver": "Recommencer",
+      "features": {
+        "netflix": "Support Netflix",
+        "torrenting": "Torrenting",
+        "killSwitch": "Kill Switch",
+        "noLogs": "Politique Sans Logs"
+      }
+    },
+    "info": {
+      "title": "Comment Nous Vous Associons aux VPNs",
+      "description": "Notre algorithme de quiz évalue les fournisseurs VPN en fonction de vos besoins spécifiques, notamment la vitesse, la sécurité, les capacités de streaming, la compatibilité des appareils et la gamme de prix. Chaque recommandation est notée en fonction de sa correspondance avec vos exigences."
     }
   }
 }

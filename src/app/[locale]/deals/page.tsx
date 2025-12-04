@@ -1,25 +1,18 @@
 import { setRequestLocale } from "next-intl/server";
 import { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
+import { CountdownTimer } from "@/components/ui/countdown-timer";
 import {
   Tag,
-  TrendingDown,
   Clock,
   CheckCircle,
   Gift,
   Sparkles,
   Shield,
-  AlertCircle,
-  Copy,
-  Check,
   Zap,
-  DollarSign,
-  Calendar,
-  Award,
   Info,
 } from "lucide-react";
 
@@ -100,6 +93,7 @@ const deals = [
     features: ["Unlimited devices", "Ad blocker", "24/7 support"],
     coupon: "SHARKGIFT",
     affiliateUrl: "https://go.zerotovpn.com/surfshark",
+    expiresAt: new Date("2025-12-31T23:59:59"),
   },
   {
     name: "NordVPN",
@@ -113,6 +107,7 @@ const deals = [
     features: ["10 devices", "Threat Protection", "Dark Web Monitor"],
     coupon: null,
     affiliateUrl: "https://go.zerotovpn.com/nordvpn",
+    expiresAt: new Date("2025-12-31T23:59:59"),
   },
   {
     name: "ExpressVPN",
@@ -126,6 +121,7 @@ const deals = [
     features: ["12 devices", "Password manager", "Router app"],
     coupon: null,
     affiliateUrl: "https://go.zerotovpn.com/expressvpn",
+    expiresAt: new Date("2025-12-31T23:59:59"),
   },
   {
     name: "CyberGhost",
@@ -139,6 +135,7 @@ const deals = [
     features: ["7 devices", "Dedicated streaming servers", "45-day guarantee"],
     coupon: null,
     affiliateUrl: "https://go.zerotovpn.com/cyberghost",
+    expiresAt: new Date("2025-12-31T23:59:59"),
   },
 ];
 
@@ -153,6 +150,7 @@ export default async function DealsPage({ params }: Props) {
         title: string;
         subtitle: string;
         urgency: string;
+        timerLabel: string;
       };
       deals: {
         perMonth: string;
@@ -196,6 +194,7 @@ export default async function DealsPage({ params }: Props) {
         subtitle:
           "Exclusive discounts on premium VPN services. Save up to 87% with our verified deals and coupon codes.",
         urgency: "Limited-time offers - Don't miss out!",
+        timerLabel: "Deals End In",
       },
       deals: {
         perMonth: "/month",
@@ -281,6 +280,7 @@ export default async function DealsPage({ params }: Props) {
         subtitle:
           "Exclusieve kortingen op premium VPN-diensten. Bespaar tot 87% met onze geverifieerde deals en kortingscodes.",
         urgency: "Tijdelijke aanbiedingen - Mis het niet!",
+        timerLabel: "Deals Eindigen In",
       },
       deals: {
         perMonth: "/maand",
@@ -366,6 +366,7 @@ export default async function DealsPage({ params }: Props) {
         subtitle:
           "Exklusive Rabatte auf Premium-VPN-Dienste. Sparen Sie bis zu 87% mit unseren verifizierten Angeboten und Gutscheincodes.",
         urgency: "Zeitlich begrenzte Angebote - Verpassen Sie es nicht!",
+        timerLabel: "Angebote Enden In",
       },
       deals: {
         perMonth: "/Monat",
@@ -451,6 +452,7 @@ export default async function DealsPage({ params }: Props) {
         subtitle:
           "Descuentos exclusivos en servicios VPN premium. Ahorra hasta 87% con nuestras ofertas verificadas y códigos de cupón.",
         urgency: "¡Ofertas por tiempo limitado - No te lo pierdas!",
+        timerLabel: "Las Ofertas Terminan En",
       },
       deals: {
         perMonth: "/mes",
@@ -536,6 +538,7 @@ export default async function DealsPage({ params }: Props) {
         subtitle:
           "Remises exclusives sur les services VPN premium. Économisez jusqu'à 87% avec nos offres vérifiées et codes promo.",
         urgency: "Offres à durée limitée - Ne manquez pas ça!",
+        timerLabel: "Les Offres Se Terminent Dans",
       },
       deals: {
         perMonth: "/mois",
@@ -620,6 +623,7 @@ export default async function DealsPage({ params }: Props) {
         title: "VPN优惠与折扣码2025",
         subtitle: "高级VPN服务独家折扣。使用我们验证过的优惠和折扣码节省高达87%。",
         urgency: "限时优惠 - 不要错过！",
+        timerLabel: "优惠结束倒计时",
       },
       deals: {
         perMonth: "/月",
@@ -696,6 +700,7 @@ export default async function DealsPage({ params }: Props) {
         title: "VPNセール＆クーポン2025",
         subtitle: "プレミアムVPNサービスの独占割引。検証済みのセールとクーポンコードで最大87％節約。",
         urgency: "期間限定オファー - お見逃しなく！",
+        timerLabel: "セール終了まで",
       },
       deals: {
         perMonth: "/月",
@@ -780,6 +785,7 @@ export default async function DealsPage({ params }: Props) {
         title: "VPN 할인 및 쿠폰 2025",
         subtitle: "프리미엄 VPN 서비스 독점 할인. 검증된 할인 및 쿠폰 코드로 최대 87% 절약하세요.",
         urgency: "기간 한정 혜택 - 놓치지 마세요!",
+        timerLabel: "할인 종료까지",
       },
       deals: {
         perMonth: "/월",
@@ -856,6 +862,7 @@ export default async function DealsPage({ params }: Props) {
         title: "ดีล VPN และคูปอง 2025",
         subtitle: "ส่วนลดพิเศษสำหรับบริการ VPN พรีเมียม ประหยัดสูงสุด 87% ด้วยดีลและรหัสคูปองที่ตรวจสอบแล้วของเรา",
         urgency: "ข้อเสนอจำกัดเวลา - อย่าพลาด!",
+        timerLabel: "ดีลสิ้นสุดใน",
       },
       deals: {
         perMonth: "/เดือน",
@@ -958,12 +965,22 @@ export default async function DealsPage({ params }: Props) {
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               {t.hero.title}
             </h1>
-            <p className="text-xl text-muted-foreground mb-6">
+            <p className="text-xl text-muted-foreground mb-8">
               {t.hero.subtitle}
             </p>
-            <div className="inline-flex items-center gap-2 bg-destructive/10 text-destructive px-6 py-3 rounded-full font-semibold">
+            <div className="inline-flex items-center gap-2 bg-destructive/10 text-destructive px-6 py-3 rounded-full font-semibold mb-8">
               <Clock className="h-5 w-5" />
               {t.hero.urgency}
+            </div>
+
+            {/* Countdown Timer */}
+            <div className="mt-8 inline-block">
+              <CountdownTimer
+                endDate={new Date("2025-12-31T23:59:59")}
+                variant="full"
+                label={t.hero.timerLabel}
+                className="bg-card/50 backdrop-blur-sm p-6 rounded-2xl border shadow-lg"
+              />
             </div>
           </div>
         </div>
@@ -974,7 +991,7 @@ export default async function DealsPage({ params }: Props) {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {deals.map((deal, index) => (
-              <DealCard key={index} deal={deal} locale={locale} t={t} />
+              <DealCard key={index} deal={deal} t={t} />
             ))}
           </div>
         </div>
@@ -1054,15 +1071,38 @@ export default async function DealsPage({ params }: Props) {
   );
 }
 
-// Deal Card Component
+// Deal Card Component types
+type DealCardTranslations = {
+  deals: {
+    perMonth: string;
+    wasPrice: string;
+    totalCost: string;
+    savePercent: string;
+    extraMonths: string;
+    months: string;
+    getDeal: string;
+    copyCoupon: string;
+    copied: string;
+    expiresLabel: string;
+    expiresSoon: string;
+  };
+  badges: {
+    bestDeal: string;
+    mostPopular: string;
+    premiumChoice: string;
+    bestValue: string;
+  };
+  features: {
+    title: string;
+  };
+};
+
 function DealCard({
   deal,
-  locale,
   t,
 }: {
   deal: (typeof deals)[0];
-  locale: string;
-  t: any;
+  t: DealCardTranslations;
 }) {
   // Note: Coupon copy functionality would require client component
   // For now, coupon is displayed but not interactive
@@ -1156,12 +1196,14 @@ function DealCard({
           {t.deals.getDeal}
         </AffiliateButton>
 
-        {/* Expires Soon */}
-        <div className="mt-4 text-center">
-          <p className="text-sm text-muted-foreground flex items-center justify-center gap-2">
-            <AlertCircle className="h-4 w-4 text-destructive" />
-            {t.deals.expiresLabel}: {t.deals.expiresSoon}
-          </p>
+        {/* Countdown Timer */}
+        <div className="mt-4 pt-4 border-t">
+          <CountdownTimer
+            endDate={deal.expiresAt}
+            variant="compact"
+            label={t.deals.expiresLabel}
+            className="justify-center"
+          />
         </div>
       </CardContent>
     </Card>

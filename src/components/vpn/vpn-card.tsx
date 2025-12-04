@@ -14,9 +14,12 @@ import {
   Server,
   Globe,
   Check,
+  Ticket,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import type { VpnProvider } from "@/lib/vpn-data-layer";
+import { hasActiveCoupon } from "@/lib/coupon-data";
+import { cn } from "@/lib/utils";
 
 interface VpnCardProps {
   vpn: VpnProvider;
@@ -26,9 +29,14 @@ interface VpnCardProps {
 
 export function VpnCard({ vpn, rank }: VpnCardProps) {
   const t = useTranslations("vpnCard");
+  const hasCoupon = hasActiveCoupon(vpn.slug);
+  const isTopRanked = rank === 1;
 
   return (
-    <Card className="relative overflow-hidden">
+    <Card className={cn(
+      "relative overflow-hidden card-hover",
+      isTopRanked && "gradient-border"
+    )}>
       {/* Screenshot Image */}
       <div className="relative h-40 w-full overflow-hidden bg-muted">
         {vpn.cardImage ? (
@@ -57,6 +65,12 @@ export function VpnCard({ vpn, rank }: VpnCardProps) {
           {vpn.editorChoice && (
             <Badge className="bg-yellow-500 text-yellow-950 shadow-md">
               {t("editorChoice")}
+            </Badge>
+          )}
+          {hasCoupon && (
+            <Badge className="bg-orange-500 text-white shadow-md">
+              <Ticket className="h-3 w-3 mr-1" />
+              {t("hasCoupon")}
             </Badge>
           )}
         </div>

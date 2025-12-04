@@ -9,8 +9,10 @@ import { RatingStars } from "@/components/vpn/rating-stars";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { UserReviewsList } from "@/components/reviews/user-reviews-list";
 import { ReviewForm } from "@/components/reviews/review-form";
+import { CouponList } from "@/components/coupons/coupon-list";
 import { getVpnBySlug, getAllVpns } from "@/lib/vpn-data-layer";
 import { getReviewsByVpnSlug, getAverageUserRating } from "@/lib/user-reviews";
+import { getCouponsByVpnSlug } from "@/lib/coupon-data";
 import { Link } from "@/i18n/navigation";
 import {
   Shield,
@@ -20,6 +22,7 @@ import {
   ArrowLeft,
   Tv,
   MessageSquare,
+  Ticket,
 } from "lucide-react";
 import {
   VpnReviewSchema,
@@ -137,8 +140,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function ReviewPage({ params }: Props) {
-  const { locale, slug } = await params;
-  setRequestLocale(locale);
+  const { locale: _locale, slug } = await params;
+  setRequestLocale(_locale);
   const t = await getTranslations("vpnReview");
 
   const vpn = await getVpnBySlug(slug);
@@ -147,7 +150,7 @@ export default async function ReviewPage({ params }: Props) {
     notFound();
   }
 
-  const prefix = locale === "en" ? "" : `/${locale}`;
+  const prefix = _locale === "en" ? "" : `/${_locale}`;
   const breadcrumbs = [
     { name: "Home", url: `${baseUrl}${prefix}` },
     { name: "Reviews", url: `${baseUrl}${prefix}/reviews` },
@@ -543,6 +546,9 @@ export default async function ReviewPage({ params }: Props) {
           </TabsContent>
         </Tabs>
 
+        {/* Coupon Section */}
+        <CouponSection vpn={vpn} locale={_locale} t={t} />
+
         {/* Verdict */}
         <Card className="mb-12 border-primary">
           <CardHeader>
@@ -570,10 +576,52 @@ export default async function ReviewPage({ params }: Props) {
         </Card>
 
         {/* User Reviews Section */}
-        <UserReviewsSection vpn={vpn} locale={locale} title={t("userReviews.title")} />
+        <UserReviewsSection vpn={vpn} locale={_locale} title={t("userReviews.title")} />
       </div>
       </div>
     </>
+  );
+}
+
+// Coupon Section Component
+function CouponSection({
+  vpn,
+  locale,
+  t
+}: {
+  vpn: { slug: string; name: string; affiliateUrl: string };
+  locale: string;
+  t: (key: string, params?: Record<string, string>) => string;
+}) {
+  const coupons = getCouponsByVpnSlug(vpn.slug);
+
+  if (coupons.length === 0) {
+    return null;
+  }
+
+  return (
+    <section id="coupons" className="mb-12">
+      <Card className="border-orange-200 bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-950/20 dark:to-red-950/20">
+        <CardHeader>
+          <div className="flex items-center gap-3">
+            <Ticket className="h-6 w-6 text-orange-600" />
+            <CardTitle className="text-2xl">
+              {t("coupons.title", { name: vpn.name })}
+            </CardTitle>
+          </div>
+          <p className="text-muted-foreground">
+            {t("coupons.subtitle")}
+          </p>
+        </CardHeader>
+        <CardContent>
+          <CouponList
+            coupons={coupons}
+            vpnName={vpn.name}
+            affiliateUrl={vpn.affiliateUrl}
+          />
+        </CardContent>
+      </Card>
+    </section>
   );
 }
 

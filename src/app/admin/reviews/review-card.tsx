@@ -16,8 +16,28 @@ import {
 import { moderateReview, deleteReview, toggleFeatured } from "@/app/actions";
 import { useRouter } from "next/navigation";
 
+// Type matching the database structure (snake_case)
+interface UserReview {
+  id: string;
+  vpn_slug: string;
+  author_name: string;
+  author_email: string;
+  rating: number;
+  title: string;
+  content: string;
+  usage_type: string | null;
+  usage_period: string | null;
+  user_pros: string[] | null;
+  user_cons: string[] | null;
+  approved: boolean;
+  featured: boolean;
+  helpful_count: number;
+  unhelpful_count: number;
+  created_at: Date;
+}
+
 interface ReviewCardProps {
-  review: any;
+  review: UserReview;
 }
 
 export function ReviewCard({ review }: ReviewCardProps) {
@@ -123,7 +143,7 @@ export function ReviewCard({ review }: ReviewCardProps) {
             <p className="text-muted-foreground">{review.content}</p>
 
             {/* Pros & Cons */}
-            {(review.user_pros?.length > 0 || review.user_cons?.length > 0) && (
+            {((review.user_pros?.length ?? 0) > 0 || (review.user_cons?.length ?? 0) > 0) && (
               <div className="flex flex-wrap gap-2">
                 {review.user_pros?.map((pro: string, i: number) => (
                   <Badge

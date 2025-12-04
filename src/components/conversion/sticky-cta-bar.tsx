@@ -26,6 +26,8 @@ export function StickyCTABar({
     // Check if user has dismissed the bar in this session
     const dismissed = sessionStorage.getItem("stickyBarDismissed");
     if (dismissed) {
+      // Intentional setState in effect to restore session state from storage
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsDismissed(true);
       return;
     }

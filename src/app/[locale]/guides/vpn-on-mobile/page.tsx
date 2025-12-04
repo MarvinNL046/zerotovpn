@@ -15,11 +15,8 @@ import {
   Clock,
   BookOpen,
   Apple,
-  Download,
   Settings,
-  Wifi,
   Battery,
-  Lock,
   ToggleLeft,
   AlertTriangle,
   Zap,
@@ -28,7 +25,71 @@ import {
   RefreshCw,
   MapPin,
   ExternalLink,
+  Wifi,
+  Lock,
 } from "lucide-react";
+
+// Type definitions
+type Benefit = {
+  icon: string;
+  title: string;
+  description: string;
+};
+
+type SetupStep = {
+  number: number;
+  title: string;
+  description: string;
+};
+
+type SettingsSection = {
+  title: string;
+  settings: string[];
+};
+
+type FeaturesSection = {
+  title: string;
+  features: string[];
+};
+
+type IosSetupSection = {
+  title: string;
+  intro: string;
+  steps: SetupStep[];
+  iosSettings: SettingsSection;
+};
+
+type AndroidSetupSection = {
+  title: string;
+  intro: string;
+  steps: SetupStep[];
+  androidFeatures: FeaturesSection;
+};
+
+type BestSetting = {
+  setting: string;
+  recommended: string;
+  why: string;
+};
+
+type Protocol = {
+  name: string;
+  impact: string;
+  percentage: number;
+};
+
+type VpnRecommendation = {
+  name: string;
+  badge: string;
+  description: string;
+  features: string[];
+};
+
+type QuickTip = {
+  icon: string;
+  title: string;
+  description: string;
+};
 
 // Affiliate links
 const affiliateLinks = {
@@ -71,13 +132,13 @@ export default async function VpnOnMobilePage({ params }: Props) {
   const t = await getTranslations("guides.vpnOnMobile");
   const pageUrl = locale === "en" ? `${baseUrl}/guides/vpn-on-mobile` : `${baseUrl}/${locale}/guides/vpn-on-mobile`;
 
-  const whyMobileVpn = t.raw("sections.whyMobileVpn") as any;
-  const iosSetup = t.raw("sections.iosSetup") as any;
-  const androidSetup = t.raw("sections.androidSetup") as any;
-  const bestSettings = t.raw("sections.bestSettings") as any;
-  const batteryTips = t.raw("sections.batteryTips") as any;
-  const bestVpns = t.raw("sections.bestVpns") as any;
-  const quickTips = t.raw("sections.quickTips") as any;
+  const whyMobileVpn = t.raw("sections.whyMobileVpn") as { title: string; intro: string; benefits: Benefit[]; didYouKnow: string };
+  const iosSetup = t.raw("sections.iosSetup") as IosSetupSection;
+  const androidSetup = t.raw("sections.androidSetup") as AndroidSetupSection;
+  const bestSettings = t.raw("sections.bestSettings") as { title: string; intro: string; settings: BestSetting[]; iosWarning: { title: string; text: string } };
+  const batteryTips = t.raw("sections.batteryTips") as { title: string; intro: string; doThis: { title: string; items: string[] }; avoidThis: { title: string; items: string[] }; protocolImpact: { title: string; protocols: Protocol[] } };
+  const bestVpns = t.raw("sections.bestVpns") as { title: string; intro: string; vpns: VpnRecommendation[]; proTip: string };
+  const quickTips = t.raw("sections.quickTips") as { title: string; tips: QuickTip[] };
 
   return (
     <>
@@ -163,7 +224,7 @@ export default async function VpnOnMobilePage({ params }: Props) {
               </p>
 
               <div className="grid md:grid-cols-2 gap-4 mb-6">
-                {whyMobileVpn.benefits.map((benefit: any, index: number) => {
+                {whyMobileVpn.benefits.map((benefit, index) => {
                   const IconComponent = benefit.icon === "Wifi" ? Wifi : benefit.icon === "Globe" ? Globe : benefit.icon === "Shield" ? Shield : Lock;
                   const iconColor = benefit.icon === "Wifi" ? "text-blue-500" : benefit.icon === "Globe" ? "text-green-500" : benefit.icon === "Shield" ? "text-purple-500" : "text-orange-500";
 
@@ -202,7 +263,7 @@ export default async function VpnOnMobilePage({ params }: Props) {
               </p>
 
               <div className="space-y-4 mb-6">
-                {iosSetup.steps.map((step: any) => (
+                {iosSetup.steps.map((step) => (
                   <div key={step.number} className="flex gap-4 p-4 bg-muted/50 rounded-lg">
                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">
                       {step.number}
@@ -247,7 +308,7 @@ export default async function VpnOnMobilePage({ params }: Props) {
               </p>
 
               <div className="space-y-4 mb-6">
-                {androidSetup.steps.map((step: any) => (
+                {androidSetup.steps.map((step) => (
                   <div key={step.number} className="flex gap-4 p-4 bg-muted/50 rounded-lg">
                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">
                       {step.number}
@@ -301,7 +362,7 @@ export default async function VpnOnMobilePage({ params }: Props) {
                     </tr>
                   </thead>
                   <tbody className="divide-y">
-                    {bestSettings.settings.map((setting: any, index: number) => (
+                    {bestSettings.settings.map((setting, index) => (
                       <tr key={index}>
                         <td className="py-3 px-4 font-medium">{setting.setting}</td>
                         <td className="py-3 px-4">{setting.recommended}</td>
@@ -373,7 +434,7 @@ export default async function VpnOnMobilePage({ params }: Props) {
                   {batteryTips.protocolImpact.title}
                 </h4>
                 <div className="space-y-3">
-                  {batteryTips.protocolImpact.protocols.map((protocol: any, index: number) => {
+                  {batteryTips.protocolImpact.protocols.map((protocol, index) => {
                     const color = protocol.impact === "Low Impact" ? "green-500" : "yellow-500";
                     return (
                       <div key={index}>
@@ -405,7 +466,7 @@ export default async function VpnOnMobilePage({ params }: Props) {
               </p>
 
               <div className="space-y-4 mb-6">
-                {bestVpns.vpns.map((vpn: any, index: number) => {
+                {bestVpns.vpns.map((vpn, index) => {
                   const vpnKey = vpn.name.toLowerCase().replace(/\s+/g, "") as keyof typeof affiliateLinks;
                   return (
                     <div key={index} className="border rounded-lg p-4">
@@ -459,7 +520,7 @@ export default async function VpnOnMobilePage({ params }: Props) {
             <section className="bg-muted/50 rounded-xl p-6">
               <h3 className="text-xl font-bold mb-4">{quickTips.title}</h3>
               <div className="grid md:grid-cols-2 gap-4">
-                {quickTips.tips.map((tip: any, index: number) => {
+                {quickTips.tips.map((tip, index) => {
                   const IconComponent = tip.icon === "Key" ? Key : tip.icon === "RefreshCw" ? RefreshCw : tip.icon === "MapPin" ? MapPin : ToggleLeft;
                   return (
                     <div key={index} className="flex items-start gap-3">

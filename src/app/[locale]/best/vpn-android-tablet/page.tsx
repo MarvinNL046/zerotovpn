@@ -2,11 +2,8 @@ import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 import { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
-import { RatingStars } from "@/components/vpn/rating-stars";
-import { Link } from "@/i18n/navigation";
 import {
   Shield,
   Zap,
@@ -15,14 +12,10 @@ import {
   XCircle,
   AlertTriangle,
   Crown,
-  TrendingUp,
-  Clock,
-  ArrowRight,
   Server,
   Tablet,
   Database,
   Wifi,
-  Eye,
   MapPin,
   Settings,
   Download,

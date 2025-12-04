@@ -110,11 +110,38 @@
   },
   "newsletter": {
     "title": "最新情報を入手",
-    "subtitle": "最新のVPN特典とセキュリティ情報をお届けします。",
-    "placeholder": "メールアドレス",
-    "button": "登録",
+    "subtitle": "最新のVPNセールやセキュリティのヒントをメールでお届けします。",
+    "placeholder": "メールアドレスを入力",
+    "emailLabel": "メールアドレス",
+    "button": "購読する",
+    "subscribe": "購読する",
+    "subscribing": "購読中...",
     "success": "ご登録ありがとうございます！",
-    "privacy": "プライバシーを尊重します。いつでも解除可能。"
+    "checkEmail": "メールで購読を確認してください",
+    "error": "エラーが発生しました。もう一度お試しください。",
+    "consent": "メール受信に同意し、いつでも配信停止できます",
+    "consentRequired": "メール受信に同意してください",
+    "privacy": "プライバシーを尊重します。いつでも配信停止できます。",
+    "popupTitle": "限定VPNセールをゲット！ 🔒",
+    "popupSubtitle": "最高のVPNセールとセキュリティのヒントを受け取る数千人のユーザーに参加しましょう。",
+    "popupDescription": "最新のVPNセールやセキュリティのヒントをメールでお届けします。",
+    "dontShowAgain": "今後表示しない",
+    "footerTitle": "ニュースレター",
+    "footerSubtitle": "限定VPNセールとセキュリティのヒントを受け取る",
+    "blogCtaTitle": "VPNセールをお見逃しなく",
+    "blogCtaSubtitle": "毎週VPNレビュー、セキュリティのヒント、限定セールをお届けします。",
+    "privacyNote": "プライバシーを尊重します。いつでも配信停止できます。"
+  },
+  "exitIntent": {
+    "headline": "お待ちください！この限定オファーをお見逃しなく！",
+    "subheadline": "当社の#1評価VPNを特別価格で",
+    "off": "割引",
+    "specialDeal": "期間限定特別オファー",
+    "feature1": "世界中に{servers}台の超高速サーバー",
+    "feature2": "{countries}カ国で利用可能",
+    "feature3": "{days}日間の返金保証",
+    "claimDeal": "今すぐ申し込む",
+    "dontShowAgain": "今後表示しない"
   },
   "guides": {
     "whatIsVpn": {
@@ -2881,6 +2908,7 @@
       "badge": "2025年版更新",
       "title": "あなたに",
       "titleHighlight": "最適なVPN",
+      "titleAccent": "を見つけよう",
       "subtitle": "数分でゼロからセキュアに。専門家レビュー、正直な比較、最高のVPNサービスの限定特典。",
       "primaryCta": "VPNを比較",
       "secondaryCta": "VPNとは？",
@@ -2967,7 +2995,10 @@
         "question": "VPNは追跡できますか？",
         "answer": "ノーログポリシーを持つ高品質なVPNは、あなたに遡って追跡することはできません。VPNプロバイダーは、あなたのオンライン活動に関する情報を一切保存しません。"
       }
-    ]
+    ],
+    "faqSection": {
+      "title": "よくある質問"
+    }
   },
   "vpnTable": {
     "headers": {
@@ -3002,7 +3033,8 @@
     "noLogs": "ノーログ",
     "freeTier": "無料プラン",
     "getVpn": "{name}を入手",
-    "review": "レビュー"
+    "review": "レビュー",
+    "hasCoupon": "クーポン"
   },
   "vpnReview": {
     "backToReviews": "レビュー一覧に戻る",
@@ -3085,6 +3117,10 @@
     },
     "userReviews": {
       "title": "ユーザーレビュー"
+    },
+    "coupons": {
+      "title": "{name}のアクティブなクーポン＆割引",
+      "subtitle": "これらの検証済み割引コードで節約しましょう"
     }
   },
   "guidesIndex": {
@@ -3643,7 +3679,32 @@
     "needHelpDeciding": "決定にお困りですか？",
     "needHelpDesc": "各VPNの詳細な分析については詳細レビューをご覧いただくか、VPNで何を探すべきかについてはガイドをお読みください。",
     "viewBestVpns": "ベストVPNを見る",
-    "whatIsVpn": "VPNとは？"
+    "whatIsVpn": "VPNとは？",
+    "faqSection": {
+      "title": "よくある質問"
+    },
+    "faq": [
+      {
+        "question": "VPNをどのように比較していますか？",
+        "answer": "50以上のサーバーロケーションでの速度テスト、セキュリティ分析（暗号化、リークテスト、プライバシーポリシー）、Netflixやその他のサービスでのストリーミングテスト、価値評価を含む包括的な方法でVPNを比較しています。各VPNは速度、セキュリティ、ストリーミング、総合価値で評価されます。"
+      },
+      {
+        "question": "VPN比較で最も重要な機能は何ですか？",
+        "answer": "最も重要な機能は：強力な暗号化（AES-256）、監査で検証されたノーログポリシー、キルスイッチ機能、高速接続速度、大規模サーバーネットワーク、Netflix/Disney+のストリーミングサポート、迅速なカスタマーサポートです。価格と同時接続デバイス数も重要な考慮事項です。"
+      },
+      {
+        "question": "ストリーミングに最速のVPNはどれですか？",
+        "answer": "ExpressVPNは当社のテストで96%の速度保持率を持ち、最も高速なVPNで、4Kストリーミングに最適です。NordVPNは優れた速度とより良いコストパフォーマンスで僅差で続きます。どちらもNetflix、Disney+、その他のストリーミングプラットフォームを確実にブロック解除します。"
+      },
+      {
+        "question": "無料VPNを信頼できますか？",
+        "answer": "ほとんどの無料VPNは、データを記録して販売したり、広告を挿入したり、セキュリティの脆弱性があるため信頼できません。ProtonVPNは私たちが推奨する唯一の無料VPNです - 信頼できる会社が提供し、データ制限がなく、高いプライバシー基準を維持しています。"
+      },
+      {
+        "question": "月額プランと長期VPNプランの違いは何ですか？",
+        "answer": "長期プラン（1〜2年）は、月額価格から60〜80%の大幅な割引を提供します。例えば、NordVPNは月額プランで$12.99/月ですが、2年プランでは$2.99/月です。すべてのトップVPNは30日間の返金保証を提供しています。"
+      }
+    ]
   },
   "speedTest": {
     "title": "インターネット速度テスト",
@@ -5148,6 +5209,137 @@
       "getBest": "NordVPNを入手",
       "getValue": "Surfsharkを入手 - 82% OFF",
       "getTravel": "ExpressVPNを入手"
+    }
+  },
+  "coupons": {
+    "code": "クーポンコード",
+    "copy": "コードをコピー",
+    "copied": "コピーしました！",
+    "verified": "検証済み",
+    "expiringSoon": "まもなく期限切れ",
+    "expires": "有効期限",
+    "getDeal": "セールを見る",
+    "noCoupons": "利用可能なクーポンがありません"
+  },
+  "couponsPage": {
+    "title": "VPNクーポン＆割引コード",
+    "subtitle": "検証済みクーポンコードで最大83%節約。限定セールを毎日更新。",
+    "coupons": "クーポン",
+    "activeCoupon": "アクティブなクーポン",
+    "activeCoupons": "アクティブなクーポン",
+    "editorChoice": "編集者のおすすめ",
+    "features": {
+      "verified": "検証済みコード",
+      "verifiedDesc": "すべてのクーポンがテスト済みで動作確認済み",
+      "savings": "大幅節約",
+      "savingsDesc": "最大83%オフ",
+      "updated": "毎日更新",
+      "updatedDesc": "毎日新しいセール",
+      "exclusive": "限定セール",
+      "exclusiveDesc": "読者限定の特別オファー"
+    },
+    "howToUse": {
+      "title": "VPNクーポンの使い方",
+      "step1": "VPNを選択",
+      "step1Desc": "アクティブな割引コードがある検証済みVPNプロバイダーから選択してください。",
+      "step2": "コードをコピー",
+      "step2Desc": "コピーボタンをクリックしてクーポンコードをクリップボードに保存します。",
+      "step3": "チェックアウトで適用",
+      "step3Desc": "VPNプロバイダーのウェブサイトのチェックアウトでコードを貼り付けて割引を受けましょう。"
+    }
+  }
+,
+  "quiz": {
+    "metadata": {
+      "title": "VPNファインダークイズ - あなたに最適なVPNを見つけよう | ZeroToVPN",
+      "description": "5つの簡単な質問に答えて、あなたのニーズに最適なVPNを見つけましょう。予算、用途、場所に基づいてパーソナライズされたVPN推奨を取得します。",
+      "ogTitle": "5つの質問であなたに最適なVPNを見つけよう",
+      "ogDescription": "クイッククイズに答えて、ストリーミング、ゲーム、プライバシー、トレントに最適なVPNを発見しましょう。2分以内にパーソナライズされた推奨を取得。",
+      "ogImageAlt": "VPNファインダークイズ - あなたに最適なVPNマッチを見つけよう"
+    },
+    "hero": {
+      "title": "あなたに最適なVPNを見つけよう",
+      "subtitle": "5つの簡単な質問に答えて、あなたのニーズに合わせたパーソナライズされたVPN推奨を取得しましょう"
+    },
+    "progress": {
+      "step": "質問",
+      "of": "/"
+    },
+    "questions": {
+      "primaryUse": {
+        "title": "主にVPNを何に使用しますか？",
+        "options": {
+          "streaming": "ストリーミング（Netflix、Disney+など）",
+          "privacy": "プライバシーとセキュリティ",
+          "gaming": "ゲーム",
+          "torrenting": "トレント/P2P",
+          "work": "仕事/ビジネス"
+        }
+      },
+      "budget": {
+        "title": "月額予算はいくらですか？",
+        "options": {
+          "free": "無料（€0）",
+          "budget": "予算型（€2-4/月）",
+          "midrange": "ミッドレンジ（€4-8/月）",
+          "premium": "プレミアム（€8+/月）"
+        }
+      },
+      "devices": {
+        "title": "接続するデバイスは何台ですか？",
+        "options": {
+          "few": "1-2台",
+          "several": "3-5台",
+          "many": "6-10台",
+          "unlimited": "無制限"
+        }
+      },
+      "speedPriority": {
+        "title": "速度はどれくらい重要ですか？",
+        "options": {
+          "critical": "非常に重要（ゲーム、4Kストリーミング）",
+          "important": "重要",
+          "notPriority": "優先度は低い"
+        }
+      },
+      "location": {
+        "title": "どこにお住まいですか？",
+        "options": {
+          "europe": "ヨーロッパ",
+          "northAmerica": "北米",
+          "asia": "アジア",
+          "middleEast": "中東",
+          "other": "その他"
+        }
+      }
+    },
+    "navigation": {
+      "back": "戻る",
+      "next": "次へ",
+      "showResults": "結果を表示"
+    },
+    "helpText": "すべての回答は匿名で、最適なVPNとのマッチングにのみ使用されます。",
+    "results": {
+      "badge": "あなたの結果",
+      "title": "あなたに最適なVPNマッチ",
+      "subtitle": "あなたの回答に基づいて、あなたのニーズに最も適した上位3つのVPNをご紹介します",
+      "topMatch": "ベストマッチ",
+      "matchScore": "マッチスコア",
+      "save": "保存",
+      "getDeal": "お得な情報を入手",
+      "readReview": "レビューを読む",
+      "modifyAnswers": "回答を変更",
+      "startOver": "最初からやり直す",
+      "features": {
+        "netflix": "Netflixサポート",
+        "torrenting": "トレント",
+        "killSwitch": "キルスイッチ",
+        "noLogs": "ログなしポリシー"
+      }
+    },
+    "info": {
+      "title": "VPNとのマッチング方法",
+      "description": "当社のクイズアルゴリズムは、速度、セキュリティ、ストリーミング機能、デバイス互換性、価格帯など、あなたの具体的なニーズに基づいてVPNプロバイダーを評価します。各推奨は、あなたの要件にどれだけ適合しているかに基づいてスコア化されます。"
     }
   }
 }

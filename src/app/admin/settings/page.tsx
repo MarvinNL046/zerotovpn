@@ -11,7 +11,6 @@ import {
   Save,
   Database,
   Key,
-  Mail,
   Bell,
   Shield,
   Globe,

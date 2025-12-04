@@ -30,6 +30,24 @@ import {
   RefreshCw,
 } from "lucide-react";
 
+// Type definitions
+type OptimizationTip = {
+  number: number;
+  title: string;
+  description: string;
+};
+
+type TestingStep = {
+  number: number;
+  title: string;
+  description: string;
+};
+
+type SpeedTestTool = {
+  name: string;
+  description: string;
+};
+
 type Props = {
   params: Promise<{ locale: string }>;
 };
@@ -64,9 +82,9 @@ export default async function VpnSpeedGuidePage({ params }: Props) {
   const tocItems = t.raw("toc.items") as string[];
   const relatedGuides = t.raw("relatedGuides.guides") as Array<{ title: string; description: string; url: string }>;
   const speedRequirements = t.raw("sections.understandingVpnSpeed.speedRequirements.items") as string[];
-  const optimizationTips = t.raw("sections.speedOptimizationTips.tips") as Array<{ number: number; title: string; description: string }>;
-  const testingSteps = t.raw("sections.howToTestVpnSpeed.testingProcess.steps") as Array<{ number: number; title: string; description: string }>;
-  const speedTestTools = t.raw("sections.howToTestVpnSpeed.popularTools.tools") as Array<{ name: string; description: string }>;
+  const optimizationTips = t.raw("sections.speedOptimizationTips.tips") as OptimizationTip[];
+  const testingSteps = t.raw("sections.howToTestVpnSpeed.testingProcess.steps") as TestingStep[];
+  const speedTestTools = t.raw("sections.howToTestVpnSpeed.popularTools.tools") as SpeedTestTool[];
   const keyTakeaways = t.raw("sections.keyTakeaways.items") as string[];
   const premiumVpnItems = t.raw("sections.expectedSpeedLoss.premiumVpns.items") as string[];
   const freeVpnItems = t.raw("sections.expectedSpeedLoss.freeVpns.items") as string[];

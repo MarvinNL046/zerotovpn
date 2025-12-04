@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { RatingStars } from "@/components/vpn/rating-stars";
-import { getAllVpns, type VpnProvider } from "@/lib/vpn-data-layer";
+import { getAllVpns } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
 import { RelatedPages } from "@/components/seo/related-pages";
 import {
@@ -14,7 +14,6 @@ import {
   Globe,
   Clock,
   ArrowRight,
-  Info,
   Smartphone,
   Lock,
   Eye,

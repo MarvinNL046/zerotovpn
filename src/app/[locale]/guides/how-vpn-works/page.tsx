@@ -22,7 +22,6 @@ import {
   Zap,
   Clock,
   BookOpen,
-  Eye,
   EyeOff,
   Router,
   Cloud,
@@ -55,12 +54,12 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function HowVpnWorksPage({ params }: Props) {
-  const { locale } = await params;
-  setRequestLocale(locale);
+  const { locale: _locale } = await params;
+  setRequestLocale(_locale);
   const t = await getTranslations("guides.howVpnWorks");
 
   const baseUrl = "https://zerotovpn.com";
-  const pageUrl = locale === "en" ? `${baseUrl}/guides/how-vpn-works` : `${baseUrl}/${locale}/guides/how-vpn-works`;
+  const pageUrl = _locale === "en" ? `${baseUrl}/guides/how-vpn-works` : `${baseUrl}/${_locale}/guides/how-vpn-works`;
 
   return (
     <>

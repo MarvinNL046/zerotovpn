@@ -25,7 +25,6 @@ import {
   Play,
   Download,
   Ban,
-  Building,
   Hotel,
   Car,
   Ship,
@@ -34,7 +33,52 @@ import {
   DollarSign,
   Calendar,
   ExternalLink,
+  Building,
 } from "lucide-react";
+
+// Type definitions
+type Reason = {
+  title: string;
+  description: string;
+  icon: string;
+};
+
+type Service = {
+  title: string;
+  description: string;
+  solution?: string;
+  tip?: string;
+  icon: string;
+};
+
+type Country = {
+  country: string;
+  blocked: string;
+  status: string;
+  statusVariant: string;
+  icon: string;
+};
+
+type Network = {
+  title: string;
+  description: string;
+  icon: string;
+};
+
+type PriceExample = {
+  price: string;
+  location: string;
+  color: string;
+};
+
+type BestVpn = {
+  name: string;
+  badge: string;
+  badgeVariant: string;
+  description: string;
+  features: string[];
+  link: string;
+};
 
 // Affiliate links
 const affiliateLinks = {
@@ -76,16 +120,16 @@ export default async function VpnForTravelPage({ params }: Props) {
 
   const tocItems = t.raw("toc.items") as string[];
   const relatedGuides = t.raw("relatedGuides.guides") as Array<{ title: string; description: string; url: string }>;
-  const whyNeedVpnReasons = t.raw("sections.whyNeedVpn.reasons") as Array<{ title: string; description: string; icon: string }>;
-  const accessHomeContentServices = t.raw("sections.accessHomeContent.services") as Array<{ title: string; description: string; solution: string; icon: string }>;
-  const censorshipCountries = t.raw("sections.bypassCensorship.countries") as Array<{ country: string; blocked: string; status: string; statusVariant: string; icon: string }>;
+  const whyNeedVpnReasons = t.raw("sections.whyNeedVpn.reasons") as Reason[];
+  const accessHomeContentServices = t.raw("sections.accessHomeContent.services") as Service[];
+  const censorshipCountries = t.raw("sections.bypassCensorship.countries") as Country[];
   const censorshipTips = t.raw("sections.bypassCensorship.tips.items") as string[];
-  const travelSecurityNetworks = t.raw("sections.travelSecurity.networks") as Array<{ title: string; description: string; icon: string }>;
+  const travelSecurityNetworks = t.raw("sections.travelSecurity.networks") as Network[];
   const securityDos = t.raw("sections.travelSecurity.dos.items") as string[];
   const securityDonts = t.raw("sections.travelSecurity.donts.items") as string[];
-  const saveMoneyServices = t.raw("sections.saveMoney.services") as Array<{ title: string; description: string; tip: string; icon: string }>;
-  const saveMoneyExamples = t.raw("sections.saveMoney.howItWorks.examples") as Array<{ price: string; location: string; color: string }>;
-  const bestVpns = t.raw("sections.bestVpns.vpns") as Array<{ name: string; badge: string; badgeVariant: string; description: string; features: string[]; link: string }>;
+  const saveMoneyServices = t.raw("sections.saveMoney.services") as Service[];
+  const saveMoneyExamples = t.raw("sections.saveMoney.howItWorks.examples") as PriceExample[];
+  const bestVpns = t.raw("sections.bestVpns.vpns") as BestVpn[];
   const featureChecklist = t.raw("sections.bestVpns.featureChecklist.features") as string[];
   const checklistBefore = t.raw("sections.preTravel.beforeDeparture.items") as string[];
   const checklistArrival = t.raw("sections.preTravel.uponArrival.items") as string[];

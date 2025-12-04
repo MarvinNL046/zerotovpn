@@ -8,7 +8,7 @@ import { RatingStars } from "@/components/vpn/rating-stars";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
-import { getVpnBySlug } from "@/lib/vpn-data-layer";
+import { getVpnBySlug, type VpnProvider } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
 import {
   Terminal,
@@ -71,7 +71,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 // Structured Data for Linux VPNs ItemList
-function ItemListSchema({ linuxVpns }: { linuxVpns: any[] }) {
+function ItemListSchema({ linuxVpns }: { linuxVpns: { vpn: VpnProvider | null }[] }) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "ItemList",

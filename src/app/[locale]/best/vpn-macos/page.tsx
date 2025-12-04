@@ -8,10 +8,9 @@ import { RatingStars } from "@/components/vpn/rating-stars";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
-import { getVpnBySlug } from "@/lib/vpn-data-layer";
+import { getVpnBySlug, type VpnProvider } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
 import {
-  Shield,
   Zap,
   Apple,
   CheckCircle,
@@ -22,7 +21,6 @@ import {
   Cloud,
   Wifi,
   Settings,
-  Download,
 } from "lucide-react";
 
 type Props = {
@@ -71,7 +69,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 // Structured Data for macOS VPNs ItemList
-function ItemListSchema({ macosVpns }: { macosVpns: any[] }) {
+function ItemListSchema({ macosVpns }: { macosVpns: { vpn: VpnProvider | null }[] }) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "ItemList",

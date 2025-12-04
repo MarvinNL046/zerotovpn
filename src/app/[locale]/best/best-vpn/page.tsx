@@ -3,7 +3,6 @@ import { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { VpnCard } from "@/components/vpn/vpn-card";
 import { ComparisonTable } from "@/components/vpn/comparison-table";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { RatingStars } from "@/components/vpn/rating-stars";
@@ -14,7 +13,6 @@ import { getAllVpns, type VpnProvider } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import {
-  Shield,
   Zap,
   Globe,
   CheckCircle,
@@ -26,7 +24,6 @@ import {
   Monitor,
   Trophy,
   Crown,
-  Star,
 } from "lucide-react";
 
 type Props = {
@@ -230,7 +227,6 @@ export default async function BestVpnPage({ params }: Props) {
   const t = content[locale as keyof typeof content] || content.en;
 
   // Get top 3 for quick picks
-  const topVpns = allVpns.slice(0, 3);
   const [bestOverall, bestValue, bestSpeed] = [
     allVpns.find((v) => v.slug === "nordvpn"),
     allVpns.find((v) => v.slug === "surfshark"),

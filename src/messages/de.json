@@ -108,13 +108,38 @@
     "vpnChromebook": "VPN für Chromebook",
     "vpnLinux": "VPN für Linux"
   },
+  "exitIntent": {
+    "headline": "Warten Sie! Verpassen Sie dieses exklusive Angebot nicht!",
+    "subheadline": "Holen Sie sich unser #1 bewertetes VPN zum unschlagbaren Preis",
+    "off": "RABATT",
+    "specialDeal": "Zeitlich begrenztes Sonderangebot",
+    "feature1": "{servers} ultraschnelle Server weltweit",
+    "feature2": "Verfügbar in {countries} Ländern",
+    "feature3": "{days}-Tage Geld-zurück-Garantie",
+    "claimDeal": "Jetzt Angebot sichern",
+    "dontShowAgain": "Nicht mehr anzeigen"
+  },
   "newsletter": {
     "title": "Bleiben Sie informiert",
     "subtitle": "Erhalten Sie die neuesten VPN-Angebote und Sicherheitstipps.",
     "placeholder": "Ihre E-Mail eingeben",
+    "emailLabel": "E-Mail-Adresse",
     "button": "Abonnieren",
+    "subscribe": "Abonnieren",
+    "subscribing": "Wird abonniert...",
     "success": "Danke für Ihre Anmeldung!",
-    "privacy": "Wir respektieren Ihre Privatsphäre. Jederzeit abmeldbar."
+    "checkEmail": "Überprüfen Sie Ihre E-Mail, um Ihr Abonnement zu bestätigen",
+    "error": "Etwas ist schief gelaufen. Bitte versuchen Sie es erneut.",
+    "consent": "Ich stimme zu, E-Mails zu erhalten und kann mich jederzeit abmelden",
+    "consentRequired": "Bitte stimmen Sie zu, E-Mails zu erhalten",
+    "privacy": "Wir respektieren Ihre Privatsphäre. Jederzeit abmeldbar.",
+    "popupTitle": "Erhalten Sie exklusive VPN-Angebote! 🔒",
+    "popupSubtitle": "Schließen Sie sich tausenden Nutzern an, die die besten VPN-Angebote und Sicherheitstipps erhalten.",
+    "dontShowAgain": "Nicht mehr anzeigen",
+    "footerTitle": "Newsletter",
+    "footerSubtitle": "Erhalten Sie exklusive VPN-Angebote und Sicherheitstipps",
+    "blogCtaTitle": "Verpassen Sie keine VPN-Angebote",
+    "blogCtaSubtitle": "Erhalten Sie wöchentlich VPN-Bewertungen, Sicherheitstipps und exklusive Angebote."
   },
   "guides": {
     "whatIsVpn": {
@@ -2932,6 +2957,7 @@
       "badge": "Aktualisiert für 2025",
       "title": "Finden Sie Ihr",
       "titleHighlight": "perfektes VPN",
+      "titleAccent": "heute",
       "subtitle": "Von null auf sicher in wenigen Minuten. Expertenbewertungen, ehrliche Vergleiche und exklusive Angebote für die besten VPN-Dienste.",
       "primaryCta": "VPNs vergleichen",
       "secondaryCta": "Was ist ein VPN?",
@@ -3018,7 +3044,10 @@
         "question": "Kann ein VPN zurückverfolgt werden?",
         "answer": "Hochwertige VPNs mit No-Logs-Richtlinien können nicht zu Ihnen zurückverfolgt werden. Der VPN-Anbieter speichert keine Informationen über Ihre Online-Aktivitäten."
       }
-    ]
+    ],
+    "faqSection": {
+      "title": "Häufig gestellte Fragen"
+    }
   },
   "vpnTable": {
     "headers": {
@@ -3053,7 +3082,8 @@
     "noLogs": "Keine-Logs",
     "freeTier": "Kostenlos",
     "getVpn": "{name} holen",
-    "review": "Bewertung"
+    "review": "Bewertung",
+    "hasCoupon": "Gutschein"
   },
   "vpnReview": {
     "backToReviews": "Zurück zu den Bewertungen",
@@ -3136,6 +3166,10 @@
     },
     "userReviews": {
       "title": "Nutzerbewertungen"
+    },
+    "coupons": {
+      "title": "Aktive {name} Gutscheine & Rabatte",
+      "subtitle": "Sparen Sie mit diesen verifizierten Rabattcodes"
     }
   },
   "guidesIndex": {
@@ -3694,7 +3728,32 @@
     "needHelpDeciding": "Hilfe bei der Entscheidung?",
     "needHelpDesc": "Schauen Sie sich unsere detaillierten Tests für eine tiefgehende Analyse jedes VPNs an, oder lesen Sie unseren Leitfaden, um mehr darüber zu erfahren, worauf Sie bei einem VPN achten sollten.",
     "viewBestVpns": "Beste VPNs ansehen",
-    "whatIsVpn": "Was ist ein VPN?"
+    "whatIsVpn": "Was ist ein VPN?",
+    "faqSection": {
+      "title": "Häufig gestellte Fragen"
+    },
+    "faq": [
+      {
+        "question": "Wie vergleichen Sie VPNs?",
+        "answer": "Wir vergleichen VPNs mit einer umfassenden Methodik, die Geschwindigkeitstests an über 50 Serverstandorten, Sicherheitsanalysen (Verschlüsselung, Leak-Tests, Datenschutzrichtlinien), Streaming-Tests mit Netflix und anderen Diensten sowie Wertbewertungen umfasst. Jedes VPN wird nach Geschwindigkeit, Sicherheit, Streaming und Gesamtwert bewertet."
+      },
+      {
+        "question": "Welche Funktionen sind beim Vergleich von VPNs am wichtigsten?",
+        "answer": "Die wichtigsten Funktionen sind: starke Verschlüsselung (AES-256), durch Audits verifizierte No-Logs-Richtlinie, Kill-Switch-Funktion, schnelle Verbindungsgeschwindigkeiten, großes Servernetzwerk, Streaming-Unterstützung für Netflix/Disney+ und reaktionsschneller Kundensupport. Preis und gleichzeitige Gerätelimits sind ebenfalls wichtige Faktoren."
+      },
+      {
+        "question": "Welches VPN ist am schnellsten für Streaming?",
+        "answer": "ExpressVPN ist in unseren Tests konstant das schnellste VPN mit 96% Geschwindigkeitserhalt, ideal für 4K-Streaming. NordVPN folgt knapp dahinter mit ausgezeichneten Geschwindigkeiten und besserem Preis-Leistungs-Verhältnis. Beide entsperren zuverlässig Netflix, Disney+ und andere Streaming-Plattformen."
+      },
+      {
+        "question": "Kann ich kostenlosen VPNs vertrauen?",
+        "answer": "Den meisten kostenlosen VPNs kann man nicht vertrauen, da sie oft Ihre Daten protokollieren und verkaufen, Werbung einblenden oder Sicherheitslücken haben. ProtonVPN ist das einzige kostenlose VPN, das wir empfehlen - es stammt von einem seriösen Unternehmen, hat keine Datenlimits und wahrt hohe Datenschutzstandards."
+      },
+      {
+        "question": "Was ist der Unterschied zwischen monatlichen und langfristigen VPN-Tarifen?",
+        "answer": "Langfristige Tarife (1-2 Jahre) bieten erhebliche Rabatte - oft 60-80% Ersparnis gegenüber dem Monatspreis. Zum Beispiel kostet NordVPN monatlich 12,99€, aber nur 2,99€/Monat bei einem 2-Jahres-Tarif. Alle Top-VPNs bieten 30-Tage-Geld-zurück-Garantien."
+      }
+    ]
   },
   "speedTest": {
     "title": "Internet Geschwindigkeitstest",
@@ -5199,6 +5258,137 @@
       "getBest": "NordVPN holen",
       "getValue": "Surfshark holen - 82% RABATT",
       "getTravel": "ExpressVPN holen"
+    }
+  },
+  "coupons": {
+    "code": "Gutscheincode",
+    "copy": "Code Kopieren",
+    "copied": "Kopiert!",
+    "verified": "Verifiziert",
+    "expiringSoon": "Läuft Bald Ab",
+    "expires": "Läuft Ab",
+    "getDeal": "Angebot Holen",
+    "noCoupons": "Keine aktiven Gutscheine verfügbar"
+  },
+  "couponsPage": {
+    "title": "VPN Gutscheine & Rabattcodes",
+    "subtitle": "Sparen Sie bis zu 83% mit verifizierten Gutscheincodes. Exklusive Angebote täglich aktualisiert.",
+    "coupons": "Gutscheine",
+    "activeCoupon": "aktiver Gutschein",
+    "activeCoupons": "aktive Gutscheine",
+    "editorChoice": "Redaktionsempfehlung",
+    "features": {
+      "verified": "Verifizierte Codes",
+      "verifiedDesc": "Alle Gutscheine getestet und funktionsfähig",
+      "savings": "Große Ersparnisse",
+      "savingsDesc": "Bis zu 83% sparen",
+      "updated": "Tägliche Updates",
+      "updatedDesc": "Frische Angebote jeden Tag",
+      "exclusive": "Exklusive Angebote",
+      "exclusiveDesc": "Sonderangebote für unsere Leser"
+    },
+    "howToUse": {
+      "title": "So verwenden Sie VPN Gutscheine",
+      "step1": "Wählen Sie Ihr VPN",
+      "step1Desc": "Wählen Sie aus unseren verifizierten VPN-Anbietern mit aktiven Rabattcodes.",
+      "step2": "Kopieren Sie den Code",
+      "step2Desc": "Klicken Sie auf die Kopierschaltfläche, um den Gutscheincode in die Zwischenablage zu speichern.",
+      "step3": "An der Kasse einlösen",
+      "step3Desc": "Fügen Sie den Code an der Kasse auf der Website des VPN-Anbieters ein, um Ihren Rabatt zu erhalten."
+    }
+  }
+,
+  "quiz": {
+    "metadata": {
+      "title": "VPN Finder Quiz - Finden Sie Ihr Perfektes VPN | ZeroToVPN",
+      "description": "Beantworten Sie 5 einfache Fragen, um das perfekte VPN für Ihre Bedürfnisse zu finden. Erhalten Sie personalisierte VPN-Empfehlungen basierend auf Ihrem Budget, Ihrer Nutzung und Ihrem Standort.",
+      "ogTitle": "Finden Sie Ihr Perfektes VPN in 5 Fragen",
+      "ogDescription": "Machen Sie unser schnelles Quiz, um das beste VPN für Streaming, Gaming, Datenschutz oder Torrenting zu entdecken. Personalisierte Empfehlungen in unter 2 Minuten.",
+      "ogImageAlt": "VPN Finder Quiz - Finden Sie Ihr perfektes VPN-Match"
+    },
+    "hero": {
+      "title": "Finden Sie Ihr Perfektes VPN",
+      "subtitle": "Beantworten Sie 5 einfache Fragen und erhalten Sie personalisierte VPN-Empfehlungen, die auf Ihre Bedürfnisse zugeschnitten sind"
+    },
+    "progress": {
+      "step": "Frage",
+      "of": "von"
+    },
+    "questions": {
+      "primaryUse": {
+        "title": "Wofür benötigen Sie hauptsächlich ein VPN?",
+        "options": {
+          "streaming": "Streaming (Netflix, Disney+, etc.)",
+          "privacy": "Datenschutz & Sicherheit",
+          "gaming": "Gaming",
+          "torrenting": "Torrenting/P2P",
+          "work": "Arbeit/Geschäftlich"
+        }
+      },
+      "budget": {
+        "title": "Was ist Ihr monatliches Budget?",
+        "options": {
+          "free": "Kostenlos (€0)",
+          "budget": "Budget (€2-4/Monat)",
+          "midrange": "Mittelklasse (€4-8/Monat)",
+          "premium": "Premium (€8+/Monat)"
+        }
+      },
+      "devices": {
+        "title": "Wie viele Geräte müssen Sie verbinden?",
+        "options": {
+          "few": "1-2 Geräte",
+          "several": "3-5 Geräte",
+          "many": "6-10 Geräte",
+          "unlimited": "Unbegrenzt Geräte"
+        }
+      },
+      "speedPriority": {
+        "title": "Wie wichtig ist Geschwindigkeit für Sie?",
+        "options": {
+          "critical": "Kritisch (Gaming, 4K Streaming)",
+          "important": "Wichtig",
+          "notPriority": "Keine Priorität"
+        }
+      },
+      "location": {
+        "title": "Wo befinden Sie sich?",
+        "options": {
+          "europe": "Europa",
+          "northAmerica": "Nordamerika",
+          "asia": "Asien",
+          "middleEast": "Naher Osten",
+          "other": "Andere"
+        }
+      }
+    },
+    "navigation": {
+      "back": "Zurück",
+      "next": "Weiter",
+      "showResults": "Ergebnisse Anzeigen"
+    },
+    "helpText": "Alle Antworten sind anonymisiert und werden nur verwendet, um Sie mit dem besten VPN zu verbinden.",
+    "results": {
+      "badge": "Ihre Ergebnisse",
+      "title": "Ihre Perfekten VPN-Matches",
+      "subtitle": "Basierend auf Ihren Antworten sind dies die Top 3 VPNs, die am besten zu Ihren Bedürfnissen passen",
+      "topMatch": "Beste Übereinstimmung",
+      "matchScore": "Match-Score",
+      "save": "Speichern",
+      "getDeal": "Deal Holen",
+      "readReview": "Bewertung Lesen",
+      "modifyAnswers": "Antworten Ändern",
+      "startOver": "Neu Starten",
+      "features": {
+        "netflix": "Netflix Unterstützung",
+        "torrenting": "Torrenting",
+        "killSwitch": "Kill Switch",
+        "noLogs": "No-Logs Richtlinie"
+      }
+    },
+    "info": {
+      "title": "Wie Wir Sie Mit VPNs Zusammenbringen",
+      "description": "Unser Quiz-Algorithmus bewertet VPN-Anbieter basierend auf Ihren spezifischen Bedürfnissen, einschließlich Geschwindigkeit, Sicherheit, Streaming-Fähigkeiten, Gerätekompatibilität und Preisklasse. Jede Empfehlung wird danach bewertet, wie gut sie zu Ihren Anforderungen passt."
     }
   }
 }

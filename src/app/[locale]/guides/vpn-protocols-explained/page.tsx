@@ -8,7 +8,6 @@ import { RelatedPages } from "@/components/seo/related-pages";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { TableOfContents } from "@/components/seo/table-of-contents";
 import {
-  Server,
   Shield,
   Zap,
   Lock,
@@ -18,16 +17,73 @@ import {
   Clock,
   BookOpen,
   Settings,
-  Code,
   History,
   Smartphone,
-  Laptop,
   Globe,
   Key,
-  AlertTriangle,
   FileKey,
   ExternalLink,
 } from "lucide-react";
+
+// Type definitions
+type DeterminesItem = {
+  title: string;
+  description: string;
+};
+
+type ProtocolStat = {
+  value: string;
+  label: string;
+};
+
+type AdvantagesDisadvantages = {
+  title: string;
+  items: string[];
+};
+
+type BestFor = {
+  title: string;
+  description: string;
+};
+
+type ProtocolSection = {
+  title: string;
+  badge: string;
+  released: string;
+  intro: string;
+  stats: ProtocolStat[];
+  advantages: AdvantagesDisadvantages;
+  disadvantages: AdvantagesDisadvantages;
+  bestFor: BestFor;
+};
+
+type OpenVpnSection = ProtocolSection & {
+  tcpVsUdp: {
+    title: string;
+    udp: { title: string; description: string };
+    tcp: { title: string; description: string };
+  };
+};
+
+type OtherProtocol = {
+  name: string;
+  badge: string;
+  description: string;
+  verdict: string;
+};
+
+type ComparisonRow = {
+  protocol: string;
+  speed: string;
+  security: string;
+  stability: string;
+  mobile: string;
+};
+
+type RecommendationItem = {
+  title: string;
+  description: string;
+};
 
 const affiliateLinks = {
   expressvpn: "https://go.zerotovpn.com/expressvpn",
@@ -67,13 +123,13 @@ export default async function VpnProtocolsExplainedPage({ params }: Props) {
   const pageUrl = locale === "en" ? `${baseUrl}/guides/vpn-protocols-explained` : `${baseUrl}/${locale}/guides/vpn-protocols-explained`;
 
   // Get sections data
-  const whatIsProtocol = t.raw("sections.whatIsProtocol") as any;
-  const wireguard = t.raw("sections.wireguard") as any;
-  const openvpn = t.raw("sections.openvpn") as any;
-  const ikev2 = t.raw("sections.ikev2") as any;
-  const others = t.raw("sections.others") as any;
-  const comparison = t.raw("sections.comparison") as any;
-  const summary = t.raw("sections.summary") as any;
+  const whatIsProtocol = t.raw("sections.whatIsProtocol") as { title: string; intro: string; determines: { title: string; items: DeterminesItem[] } };
+  const wireguard = t.raw("sections.wireguard") as ProtocolSection;
+  const openvpn = t.raw("sections.openvpn") as OpenVpnSection;
+  const ikev2 = t.raw("sections.ikev2") as ProtocolSection;
+  const others = t.raw("sections.others") as { title: string; protocols: OtherProtocol[] };
+  const comparison = t.raw("sections.comparison") as { title: string; table: { headers: string[]; rows: ComparisonRow[] }; recommendations: { title: string; items: RecommendationItem[] } };
+  const summary = t.raw("sections.summary") as { title: string; items: string[] };
 
   return (
     <>
@@ -157,7 +213,7 @@ export default async function VpnProtocolsExplainedPage({ params }: Props) {
               <div className="bg-card border rounded-xl p-6 my-6">
                 <h3 className="font-bold mb-4">{whatIsProtocol.determines.title}</h3>
                 <div className="grid md:grid-cols-2 gap-4">
-                  {whatIsProtocol.determines.items.map((item: any, index: number) => {
+                  {whatIsProtocol.determines.items.map((item, index) => {
                     const icons = [Lock, Key, Zap, Shield];
                     const colors = ["text-green-500", "text-blue-500", "text-yellow-500", "text-purple-500"];
                     const Icon = icons[index];
@@ -194,7 +250,7 @@ export default async function VpnProtocolsExplainedPage({ params }: Props) {
                 </p>
 
                 <div className="grid md:grid-cols-4 gap-3 text-center text-sm mb-4">
-                  {wireguard.stats.map((stat: any, index: number) => {
+                  {wireguard.stats.map((stat, index) => {
                     const colors = ["text-green-500", "text-green-500", "text-green-500", "text-blue-500"];
                     return (
                       <div key={index} className="p-3 bg-background rounded-lg">
@@ -256,7 +312,7 @@ export default async function VpnProtocolsExplainedPage({ params }: Props) {
                 </p>
 
                 <div className="grid md:grid-cols-4 gap-3 text-center text-sm mb-4">
-                  {openvpn.stats.map((stat: any, index: number) => {
+                  {openvpn.stats.map((stat, index) => {
                     const colors = ["text-orange-500", "text-yellow-500", "text-green-500", "text-green-500"];
                     return (
                       <div key={index} className="p-3 bg-background rounded-lg">
@@ -336,7 +392,7 @@ export default async function VpnProtocolsExplainedPage({ params }: Props) {
                 </p>
 
                 <div className="grid md:grid-cols-4 gap-3 text-center text-sm mb-4">
-                  {ikev2.stats.map((stat: any, index: number) => (
+                  {ikev2.stats.map((stat, index) => (
                     <div key={index} className="p-3 bg-background rounded-lg">
                       <div className="font-bold text-2xl text-green-500">{stat.value}</div>
                       <div className="text-xs text-muted-foreground">{stat.label}</div>
@@ -386,7 +442,7 @@ export default async function VpnProtocolsExplainedPage({ params }: Props) {
               </h2>
 
               <div className="space-y-4 my-6">
-                {others.protocols.map((protocol: any, index: number) => {
+                {others.protocols.map((protocol, index) => {
                   const badgeVariants: Record<string, "outline" | "destructive" | "secondary"> = {
                     "Outdated": "outline",
                     "Insecure": "destructive",
@@ -446,7 +502,7 @@ export default async function VpnProtocolsExplainedPage({ params }: Props) {
                     </tr>
                   </thead>
                   <tbody className="divide-y">
-                    {comparison.table.rows.map((row: any, index: number) => {
+                    {comparison.table.rows.map((row, index) => {
                       const rowClass = row.protocol === "WireGuard"
                         ? "bg-green-50/50 dark:bg-green-900/10"
                         : row.protocol === "PPTP"
@@ -512,7 +568,7 @@ export default async function VpnProtocolsExplainedPage({ params }: Props) {
               <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 my-6">
                 <h3 className="font-bold mb-3">{comparison.recommendations.title}</h3>
                 <div className="space-y-2 text-sm">
-                  {comparison.recommendations.items.map((item: any, index: number) => {
+                  {comparison.recommendations.items.map((item, index) => {
                     const icons = [Zap, Globe, Smartphone, Shield];
                     const colors = ["text-yellow-500", "text-blue-500", "text-purple-500", "text-green-500"];
                     const Icon = icons[index];

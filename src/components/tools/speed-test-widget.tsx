@@ -29,7 +29,6 @@ interface SpeedTestResult {
 type TestPhase = "idle" | "init" | "ping" | "download" | "upload" | "complete";
 
 export function SpeedTestWidget() {
-  const t = useTranslations("speedTest");
   const [phase, setPhase] = useState<TestPhase>("idle");
   const [currentSpeed, setCurrentSpeed] = useState(0);
   const [ping, setPing] = useState(0);
@@ -37,19 +36,20 @@ export function SpeedTestWidget() {
   const [downloadSpeed, setDownloadSpeed] = useState(0);
   const [uploadSpeed, setUploadSpeed] = useState(0);
   const [history, setHistory] = useState<SpeedTestResult[]>([]);
-  const [serverLocation, setServerLocation] = useState("Cloudflare CDN");
+  const serverLocation = "Cloudflare CDN";
   const abortControllerRef = useRef<AbortController | null>(null);
   const animationFrameRef = useRef<number | null>(null);
   const displaySpeedRef = useRef(0);
 
-  // Load history
+  // Load history from localStorage on mount
   useEffect(() => {
     const saved = localStorage.getItem("speedTestHistory");
     if (saved) {
       try {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setHistory(JSON.parse(saved));
-      } catch (e) {
-        console.error("Failed to load history", e);
+      } catch {
+        console.error("Failed to load history");
       }
     }
   }, []);
@@ -134,8 +134,6 @@ export function SpeedTestWidget() {
     ];
 
     const speeds: number[] = [];
-    let totalBytes = 0;
-    let totalTime = 0;
 
     for (const test of testSizes) {
       if (signal.aborted) throw new Error("Aborted");
@@ -180,8 +178,6 @@ export function SpeedTestWidget() {
         const speedMbps = (receivedBytes * 8) / (duration * 1000000);
 
         speeds.push(speedMbps);
-        totalBytes += receivedBytes;
-        totalTime += duration;
 
       } catch (e) {
         if (signal.aborted) throw e;
@@ -571,7 +567,7 @@ Tested on ZeroToVPN.com`;
               Recent Tests
             </h4>
             <div className="space-y-2 max-h-40 overflow-y-auto">
-              {history.slice(0, 5).map((test, i) => (
+              {history.slice(0, 5).map((test) => (
                 <div
                   key={test.timestamp}
                   className="flex items-center justify-between text-xs bg-slate-800/30 rounded-lg p-2"

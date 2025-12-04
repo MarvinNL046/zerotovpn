@@ -7,8 +7,11 @@ import { Button } from "@/components/ui/button";
 import { RatingStars } from "@/components/vpn/rating-stars";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { VpnComparisonTool } from "@/components/conversion/vpn-comparison-tool";
+import { PopularComparisons } from "@/components/compare/popular-comparisons";
 import { routing } from "@/i18n/routing";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
+import { FAQSchema } from "@/components/seo/faq-schema";
+import type { VpnData } from "@/lib/db/vpn-service";
 import {
   Check,
   X,
@@ -60,7 +63,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 // Structured Data for VPN Comparison List
-function ItemListSchema({ vpns }: { vpns: any[] }) {
+function ItemListSchema({ vpns }: { vpns: VpnData[] }) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -663,6 +666,9 @@ export default async function ComparePage({ params }: Props) {
         </div>
       </section>
 
+      {/* Popular Comparisons */}
+      <PopularComparisons />
+
       {/* How We Compare */}
       <section className="py-12 lg:py-16">
         <div className="container">
@@ -708,6 +714,18 @@ export default async function ComparePage({ params }: Props) {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-12 lg:py-16 bg-muted/30">
+        <div className="container">
+          <div className="max-w-3xl mx-auto">
+            <FAQSchema
+              faqs={t.raw("faq") as Array<{ question: string; answer: string }>}
+              title={t("faqSection.title")}
+            />
           </div>
         </div>
       </section>

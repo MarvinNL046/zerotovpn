@@ -8,6 +8,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { OrganizationJsonLd, WebsiteJsonLd } from "@/components/seo/json-ld";
 import { ExitIntentPopup } from "@/components/conversion/exit-intent-popup";
 import { StickyCTABar } from "@/components/conversion/sticky-cta-bar";
+import { NewsletterPopup } from "@/components/newsletter/newsletter-popup";
 import type { Metadata } from "next";
 
 type Props = {
@@ -143,6 +144,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             {/* Conversion optimization components */}
             <ExitIntentPopup />
             <StickyCTABar />
+            <NewsletterPopup />
             {/* JSON-LD Structured Data - placed in body to avoid hydration issues */}
             <OrganizationJsonLd />
             <WebsiteJsonLd />

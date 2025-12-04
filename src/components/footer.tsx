@@ -1,6 +1,7 @@
 import { Link } from "@/i18n/navigation";
 import { Shield } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { NewsletterFooter } from "@/components/newsletter/newsletter-footer";
 
 export function Footer() {
   const t = useTranslations("footer");
@@ -9,7 +10,7 @@ export function Footer() {
   return (
     <footer className="border-t bg-muted/50">
       <div className="container py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
           {/* Brand */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center space-x-2">
@@ -208,6 +209,11 @@ export function Footer() {
               </li>
               <li className="text-muted-foreground">contact@zerotovpn.com</li>
             </ul>
+          </div>
+
+          {/* Newsletter */}
+          <div>
+            <NewsletterFooter />
           </div>
         </div>
 

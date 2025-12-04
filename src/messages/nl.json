@@ -108,19 +108,47 @@
     "vpnChromebook": "VPN voor Chromebook",
     "vpnLinux": "VPN voor Linux"
   },
+  "exitIntent": {
+    "headline": "Wacht! Mis deze exclusieve aanbieding niet!",
+    "subheadline": "Ontvang onze #1 beoordeelde VPN voor een onverslaanbare prijs",
+    "off": "KORTING",
+    "specialDeal": "Tijdelijke speciale aanbieding",
+    "feature1": "{servers} ultrasnelle servers wereldwijd",
+    "feature2": "Beschikbaar in {countries} landen",
+    "feature3": "{days} dagen geld-terug-garantie",
+    "claimDeal": "Claim deze deal",
+    "dontShowAgain": "Niet meer tonen"
+  },
   "newsletter": {
-    "title": "Blijf Op De Hoogte",
-    "subtitle": "Ontvang de laatste VPN deals en beveiligingstips in je inbox.",
-    "placeholder": "Vul je e-mail in",
-    "button": "Aanmelden",
+    "title": "Blijf op de hoogte",
+    "subtitle": "Ontvang de nieuwste VPN-aanbiedingen en beveiligingstips in je inbox.",
+    "placeholder": "Voer je e-mailadres in",
+    "emailLabel": "E-mailadres",
+    "button": "Abonneren",
+    "subscribe": "Abonneren",
+    "subscribing": "Bezig met abonneren...",
     "success": "Bedankt voor je aanmelding!",
-    "privacy": "We respecteren je privacy. Afmelden kan altijd."
+    "checkEmail": "Controleer je e-mail om je abonnement te bevestigen",
+    "error": "Er is iets misgegaan. Probeer het opnieuw.",
+    "consent": "Ik ga akkoord met het ontvangen van e-mails en kan me op elk moment afmelden",
+    "consentRequired": "Ga akkoord met het ontvangen van e-mails",
+    "privacy": "We respecteren je privacy. Je kunt je op elk moment afmelden.",
+    "popupTitle": "Ontvang exclusieve VPN-aanbiedingen! 🔒",
+    "popupSubtitle": "Sluit je aan bij duizenden gebruikers die de beste VPN-deals en beveiligingstips ontvangen.",
+    "popupDescription": "Ontvang de nieuwste VPN-aanbiedingen en beveiligingstips direct in je inbox.",
+    "dontShowAgain": "Niet meer tonen",
+    "footerTitle": "Nieuwsbrief",
+    "footerSubtitle": "Ontvang exclusieve VPN-aanbiedingen en beveiligingstips",
+    "blogCtaTitle": "Mis nooit een VPN-aanbieding",
+    "blogCtaSubtitle": "Ontvang wekelijks VPN-reviews, beveiligingstips en exclusieve aanbiedingen.",
+    "privacyNote": "We respecteren je privacy. Je kunt je op elk moment uitschrijven."
   },
   "home": {
     "hero": {
       "badge": "Bijgewerkt voor 2025",
       "title": "Vind Jouw",
       "titleHighlight": "Perfecte VPN",
+      "titleAccent": "vandaag",
       "subtitle": "Van zero naar veilig in enkele minuten. Expert reviews, eerlijke vergelijkingen en exclusieve deals op de beste VPN-diensten.",
       "primaryCta": "Vergelijk VPNs",
       "secondaryCta": "Wat is een VPN?",
@@ -207,7 +235,10 @@
         "question": "Kan een VPN getraceerd worden?",
         "answer": "Kwaliteits-VPNs met een no-logs beleid kunnen niet naar jou worden getraceerd. De VPN-aanbieder slaat geen informatie op over je online activiteiten."
       }
-    ]
+    ],
+    "faqSection": {
+      "title": "Veelgestelde Vragen"
+    }
   },
   "guides": {
     "whatIsVpn": {
@@ -3002,7 +3033,8 @@
     "noLogs": "Geen Logs",
     "freeTier": "Gratis Versie",
     "getVpn": "Krijg {name}",
-    "review": "Review"
+    "review": "Review",
+    "hasCoupon": "Coupon"
   },
   "vpnReview": {
     "backToReviews": "Terug naar Reviews",
@@ -3085,6 +3117,10 @@
     },
     "userReviews": {
       "title": "Gebruikersreviews"
+    },
+    "coupons": {
+      "title": "Actieve {name} Kortingscodes & Aanbiedingen",
+      "subtitle": "Bespaar met deze geverifieerde kortingscodes"
     }
   },
   "guidesIndex": {
@@ -3643,7 +3679,32 @@
     "needHelpDeciding": "Hulp Nodig bij Kiezen?",
     "needHelpDesc": "Bekijk onze gedetailleerde reviews voor diepgaande analyse van elke VPN, of lees onze gids om meer te leren over waar je op moet letten bij een VPN.",
     "viewBestVpns": "Bekijk Beste VPNs",
-    "whatIsVpn": "Wat is een VPN?"
+    "whatIsVpn": "Wat is een VPN?",
+    "faqSection": {
+      "title": "Veelgestelde Vragen"
+    },
+    "faq": [
+      {
+        "question": "Hoe vergelijken jullie VPNs?",
+        "answer": "We vergelijken VPNs met een uitgebreide methodologie die snelheidstests op 50+ serverlocaties omvat, beveiligingsanalyse (encryptie, lektests, privacybeleid), streamingcapaciteitstests met Netflix en andere diensten, en waardebeoordeling. Elke VPN wordt beoordeeld op snelheid, beveiliging, streaming en algehele waarde."
+      },
+      {
+        "question": "Welke functies zijn het belangrijkst bij het vergelijken van VPNs?",
+        "answer": "De belangrijkste functies zijn: sterke encryptie (AES-256), geen-logs beleid geverifieerd door audits, kill switch-functionaliteit, snelle verbindingssnelheden (minimale vertraging), groot servernetwerk, streamingondersteuning voor Netflix/Disney+, en responsieve klantenservice. Prijs en limieten voor gelijktijdige apparaten zijn ook belangrijke overwegingen."
+      },
+      {
+        "question": "Welke VPN is het snelst voor streaming?",
+        "answer": "ExpressVPN is consequent de snelste VPN in onze tests met 96% snelheidsbehoud, ideaal voor 4K-streaming. NordVPN is een goede tweede met uitstekende snelheden en betere waarde. Beide deblokkeren betrouwbaar Netflix, Disney+ en andere streamingplatforms."
+      },
+      {
+        "question": "Kan ik gratis VPNs vertrouwen?",
+        "answer": "De meeste gratis VPNs zijn niet te vertrouwen omdat ze vaak je gegevens loggen en verkopen, advertenties injecteren of beveiligingslekken hebben. ProtonVPN is de enige gratis VPN die we aanbevelen - het is van een gerenommeerd bedrijf, heeft geen datalimieten en handhaaft sterke privacynormen. De gratis versie heeft echter beperkte servers en langzamere snelheden."
+      },
+      {
+        "question": "Wat is het verschil tussen maandelijkse en langetermijn VPN-abonnementen?",
+        "answer": "Langetermijnabonnementen (1-2 jaar) bieden aanzienlijke kortingen - vaak 60-80% korting op de maandprijs. NordVPN kost bijvoorbeeld €12,99/maand op een maandabonnement maar slechts €2,99/maand op een 2-jarig abonnement. Alle top-VPNs bieden 30 dagen geld-terug-garantie, zodat je langetermijnabonnementen risicovrij kunt proberen."
+      }
+    ]
   },
   "speedTest": {
     "title": "Internet Snelheidstest",
@@ -4958,6 +5019,43 @@
       "getTravel": "Verkrijg ExpressVPN"
     }
   },
+  "coupons": {
+    "code": "Kortingscode",
+    "copy": "Code Kopiëren",
+    "copied": "Gekopieerd!",
+    "verified": "Geverifieerd",
+    "expiringSoon": "Verloopt Binnenkort",
+    "expires": "Verloopt",
+    "getDeal": "Aanbieding Bekijken",
+    "noCoupons": "Geen actieve kortingscodes beschikbaar"
+  },
+  "couponsPage": {
+    "title": "VPN Kortingscodes & Aanbiedingen",
+    "subtitle": "Bespaar tot 83% met geverifieerde kortingscodes. Exclusieve deals dagelijks bijgewerkt.",
+    "coupons": "Kortingscodes",
+    "activeCoupon": "actieve kortingscode",
+    "activeCoupons": "actieve kortingscodes",
+    "editorChoice": "Redactie Keuze",
+    "features": {
+      "verified": "Geverifieerde Codes",
+      "verifiedDesc": "Alle kortingscodes getest en werkend",
+      "savings": "Grote Besparingen",
+      "savingsDesc": "Bespaar tot 83%",
+      "updated": "Dagelijkse Updates",
+      "updatedDesc": "Nieuwe deals elke dag",
+      "exclusive": "Exclusieve Deals",
+      "exclusiveDesc": "Speciale aanbiedingen voor onze lezers"
+    },
+    "howToUse": {
+      "title": "Hoe VPN Kortingscodes te Gebruiken",
+      "step1": "Kies Je VPN",
+      "step1Desc": "Selecteer uit onze geverifieerde VPN-aanbieders met actieve kortingscodes.",
+      "step2": "Kopieer de Code",
+      "step2Desc": "Klik op de kopieerknop om de kortingscode op te slaan in je klembord.",
+      "step3": "Pas Toe bij Afrekenen",
+      "step3Desc": "Plak de code bij het afrekenen op de website van de VPN-aanbieder om je korting te krijgen."
+    }
+  },
   "windowsTabletVpn": {
     "meta": {
       "title": "Beste VPN voor Windows Tablets (Surface Pro, Surface Go) 2025",
@@ -5148,6 +5246,100 @@
       "getBest": "Verkrijg NordVPN",
       "getValue": "Verkrijg Surfshark - 82% KORTING",
       "getTravel": "Verkrijg ExpressVPN"
+    }
+  }
+,
+  "quiz": {
+    "metadata": {
+      "title": "VPN Finder Quiz - Vind Jouw Perfecte VPN | ZeroToVPN",
+      "description": "Beantwoord 5 eenvoudige vragen om de perfecte VPN voor jouw behoeften te vinden. Krijg gepersonaliseerde VPN-aanbevelingen op basis van jouw budget, gebruik en locatie.",
+      "ogTitle": "Vind Jouw Perfecte VPN in 5 Vragen",
+      "ogDescription": "Doe onze snelle quiz om de beste VPN te ontdekken voor streaming, gaming, privacy of torrenting. Gepersonaliseerde aanbevelingen in minder dan 2 minuten.",
+      "ogImageAlt": "VPN Finder Quiz - Vind jouw perfecte VPN-match"
+    },
+    "hero": {
+      "title": "Vind Jouw Perfecte VPN",
+      "subtitle": "Beantwoord 5 eenvoudige vragen en krijg gepersonaliseerde VPN-aanbevelingen op maat"
+    },
+    "progress": {
+      "step": "Vraag",
+      "of": "van"
+    },
+    "questions": {
+      "primaryUse": {
+        "title": "Waarvoor heb je voornamelijk een VPN nodig?",
+        "options": {
+          "streaming": "Streaming (Netflix, Disney+, etc.)",
+          "privacy": "Privacy & Beveiliging",
+          "gaming": "Gaming",
+          "torrenting": "Torrenting/P2P",
+          "work": "Werk/Zakelijk"
+        }
+      },
+      "budget": {
+        "title": "Wat is jouw maandelijkse budget?",
+        "options": {
+          "free": "Gratis (€0)",
+          "budget": "Budget (€2-4/maand)",
+          "midrange": "Middensegment (€4-8/maand)",
+          "premium": "Premium (€8+/maand)"
+        }
+      },
+      "devices": {
+        "title": "Hoeveel apparaten moet je verbinden?",
+        "options": {
+          "few": "1-2 apparaten",
+          "several": "3-5 apparaten",
+          "many": "6-10 apparaten",
+          "unlimited": "Onbeperkt apparaten"
+        }
+      },
+      "speedPriority": {
+        "title": "Hoe belangrijk is snelheid voor jou?",
+        "options": {
+          "critical": "Cruciaal (gaming, 4K streaming)",
+          "important": "Belangrijk",
+          "notPriority": "Geen prioriteit"
+        }
+      },
+      "location": {
+        "title": "Waar ben je gevestigd?",
+        "options": {
+          "europe": "Europa",
+          "northAmerica": "Noord-Amerika",
+          "asia": "Azië",
+          "middleEast": "Midden-Oosten",
+          "other": "Anders"
+        }
+      }
+    },
+    "navigation": {
+      "back": "Terug",
+      "next": "Volgende",
+      "showResults": "Resultaten Tonen"
+    },
+    "helpText": "Alle antwoorden zijn anoniem en worden alleen gebruikt om je te matchen met de beste VPN.",
+    "results": {
+      "badge": "Jouw Resultaten",
+      "title": "Jouw Perfecte VPN-Matches",
+      "subtitle": "Op basis van jouw antwoorden zijn dit de top 3 VPN's die het beste bij jouw behoeften passen",
+      "topMatch": "Beste Match",
+      "matchScore": "Match Score",
+      "save": "Opslaan",
+      "getDeal": "Krijg Deal",
+      "readReview": "Lees Review",
+      "modifyAnswers": "Antwoorden Wijzigen",
+      "startOver": "Opnieuw Beginnen",
+      "features": {
+        "netflix": "Netflix Ondersteuning",
+        "torrenting": "Torrenting",
+        "killSwitch": "Kill Switch",
+        "noLogs": "No-Logs Beleid"
+      }
+    },
+    "info": {
+      "title": "Hoe We Je Matchen Met VPN's",
+      "description": "Ons quizalgoritme evalueert VPN-providers op basis van jouw specifieke behoeften, inclusief snelheid, beveiliging, streamingmogelijkheden, apparaatcompatibiliteit en prijsklasse. Elke aanbeveling krijgt een score op basis van hoe goed deze bij jouw vereisten past."
     }
   }
 }

@@ -1,156 +1,214 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
-import { X, Gift, Clock, Shield } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
+import { Star } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { getFeaturedVpns } from "@/lib/vpn-data";
 
-interface ExitIntentPopupProps {
-  vpnName?: string;
-  discountCode?: string;
-  discountPercent?: number;
-  affiliateUrl?: string;
-}
+const SESSION_KEY = "exitIntentShown";
+const PERMANENT_DISMISS_KEY = "exitIntentDismissed";
+const DISMISS_DURATION_MS = 30 * 24 * 60 * 60 * 1000; // 30 days
 
-export function ExitIntentPopup({
-  vpnName = "NordVPN",
-  discountCode = "ZEROTOVPN",
-  discountPercent = 68,
-  affiliateUrl = "https://go.zerotovpn.com/nordvpn",
-}: ExitIntentPopupProps) {
-  const t = useTranslations("exitPopup");
-  const [isVisible, setIsVisible] = useState(false);
+export function ExitIntentPopup() {
+  const t = useTranslations();
+  const [isOpen, setIsOpen] = useState(false);
   const [hasShown, setHasShown] = useState(false);
 
-  const handleExitIntent = useCallback(
-    (e: MouseEvent) => {
-      // Only trigger when mouse leaves through the top of the viewport
-      if (e.clientY <= 0 && !hasShown) {
-        // Check if popup was shown in this session
-        const popupShown = sessionStorage.getItem("exitPopupShown");
-        if (!popupShown) {
-          setIsVisible(true);
-          setHasShown(true);
-          sessionStorage.setItem("exitPopupShown", "true");
-        }
-      }
-    },
-    [hasShown]
-  );
-
   useEffect(() => {
-    // Check if already shown in this session
-    const popupShown = sessionStorage.getItem("exitPopupShown");
-    if (popupShown) {
+    // Check if already shown this session
+    if (typeof window === "undefined") return;
+
+    const sessionShown = sessionStorage.getItem(SESSION_KEY);
+    const permanentDismiss = localStorage.getItem(PERMANENT_DISMISS_KEY);
+
+    // Check if permanently dismissed and still within 30 days
+    if (permanentDismiss) {
+      const dismissTime = parseInt(permanentDismiss, 10);
+      const now = Date.now();
+      if (now - dismissTime < DISMISS_DURATION_MS) {
+        return; // Still within dismiss period
+      } else {
+        // Dismiss period expired, remove it
+        localStorage.removeItem(PERMANENT_DISMISS_KEY);
+      }
+    }
+
+    if (sessionShown) {
+      // Intentional setState in effect to restore session state from storage
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setHasShown(true);
       return;
     }
 
-    // Add event listener after a delay to avoid immediate triggering
+    // Exit intent detection
+    const handleMouseLeave = (e: MouseEvent) => {
+      // Only trigger if mouse is moving toward top of viewport (leaving page)
+      if (e.clientY <= 0 && !hasShown) {
+        setIsOpen(true);
+        setHasShown(true);
+        sessionStorage.setItem(SESSION_KEY, "true");
+      }
+    };
+
+    // Add event listener after a short delay to avoid triggering on page load
     const timer = setTimeout(() => {
-      document.addEventListener("mouseout", handleExitIntent);
-    }, 5000);
+      document.addEventListener("mouseleave", handleMouseLeave);
+    }, 2000);
 
     return () => {
       clearTimeout(timer);
-      document.removeEventListener("mouseout", handleExitIntent);
+      document.removeEventListener("mouseleave", handleMouseLeave);
     };
-  }, [handleExitIntent]);
+  }, [hasShown]);
 
   const handleClose = () => {
-    setIsVisible(false);
+    setIsOpen(false);
   };
 
-  const handleClaim = () => {
-    // Track the click (you can add analytics here)
-    window.open(affiliateUrl, "_blank", "noopener,noreferrer");
-    setIsVisible(false);
+  const handleDontShowAgain = () => {
+    localStorage.setItem(PERMANENT_DISMISS_KEY, Date.now().toString());
+    setIsOpen(false);
   };
 
-  if (!isVisible) return null;
+  // Get the #1 featured VPN (NordVPN)
+  const featuredVpns = getFeaturedVpns();
+  const topVpn = featuredVpns[0];
+
+  if (!topVpn) return null;
+
+  // Calculate discount percentage
+  const monthlyPrice = topVpn.priceMonthly;
+  const bestPrice = topVpn.priceTwoYear || topVpn.priceYearly;
+  const discountPercent = Math.round(((monthlyPrice - bestPrice) / monthlyPrice) * 100);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-      {/* Backdrop */}
-      <div
-        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-        onClick={handleClose}
-      />
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+      <DialogContent className="sm:max-w-[500px] max-w-[calc(100%-2rem)]">
+        <DialogHeader>
+          <DialogTitle className="text-2xl font-bold text-center">
+            {t("exitIntent.headline")}
+          </DialogTitle>
+          <DialogDescription className="text-center">
+            {t("exitIntent.subheadline")}
+          </DialogDescription>
+        </DialogHeader>
 
-      {/* Popup */}
-      <div className="relative w-full max-w-lg bg-gradient-to-br from-primary/10 via-background to-primary/5 border border-primary/20 rounded-2xl shadow-2xl animate-in fade-in zoom-in-95 duration-300">
-        {/* Close button */}
-        <button
-          onClick={handleClose}
-          className="absolute top-4 right-4 p-2 text-muted-foreground hover:text-foreground transition-colors rounded-full hover:bg-muted"
-          aria-label={t("close")}
-        >
-          <X className="h-5 w-5" />
-        </button>
+        <Card className="border-2 border-primary/20 shadow-lg">
+          <CardContent className="p-6">
+            <div className="flex flex-col gap-4">
+              {/* VPN Logo and Name */}
+              <div className="flex items-center gap-4">
+                <div className="relative h-12 w-12 flex-shrink-0">
+                  <Image
+                    src={topVpn.logo}
+                    alt={topVpn.name}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-semibold">{topVpn.name}</h3>
+                  <div className="flex items-center gap-1">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star
+                        key={i}
+                        className={`h-4 w-4 ${
+                          i < Math.floor(topVpn.overallRating)
+                            ? "fill-yellow-400 text-yellow-400"
+                            : "text-gray-300"
+                        }`}
+                      />
+                    ))}
+                    <span className="ml-1 text-sm text-muted-foreground">
+                      {topVpn.overallRating}
+                    </span>
+                  </div>
+                </div>
+              </div>
 
-        {/* Content */}
-        <div className="p-6 sm:p-8 text-center">
-          {/* Icon */}
-          <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-            <Gift className="h-8 w-8 text-primary" />
-          </div>
+              {/* Discount Badge */}
+              <div className="flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-primary/20 to-primary/10 p-4">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-primary">
+                    {discountPercent}% {t("exitIntent.off")}
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    {t("exitIntent.specialDeal")}
+                  </div>
+                </div>
+              </div>
 
-          {/* Headline */}
-          <h2 className="text-2xl sm:text-3xl font-bold mb-2">
-            {t("waitTitle")}
-          </h2>
-          <p className="text-muted-foreground mb-6">
-            {t("specialOffer")}
-          </p>
+              {/* Features */}
+              <ul className="space-y-2 text-sm">
+                <li className="flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  {t("exitIntent.feature1", {
+                    servers: topVpn.servers.toLocaleString(),
+                  })}
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  {t("exitIntent.feature2", {
+                    countries: topVpn.countries,
+                  })}
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  {t("exitIntent.feature3", {
+                    days: topVpn.moneyBackDays,
+                  })}
+                </li>
+              </ul>
 
-          {/* Discount box */}
-          <div className="bg-primary/10 border-2 border-dashed border-primary/30 rounded-xl p-4 mb-6">
-            <div className="text-5xl font-black text-primary mb-1">
-              {discountPercent}% OFF
+              {/* Price */}
+              <div className="text-center">
+                <div className="text-sm text-muted-foreground line-through">
+                  ${monthlyPrice.toFixed(2)}{t("comparison.perMonth")}
+                </div>
+                <div className="text-2xl font-bold text-primary">
+                  ${bestPrice.toFixed(2)}{t("comparison.perMonth")}
+                </div>
+              </div>
+
+              {/* CTA Button */}
+              <Button
+                size="lg"
+                className="w-full text-lg font-semibold"
+                asChild
+              >
+                <a
+                  href={topVpn.affiliateUrl}
+                  target="_blank"
+                  rel="noopener noreferrer sponsored"
+                  onClick={handleClose}
+                >
+                  {t("exitIntent.claimDeal")}
+                </a>
+              </Button>
             </div>
-            <div className="text-lg font-semibold">
-              {vpnName}
-            </div>
-            <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mt-2">
-              <Clock className="h-4 w-4" />
-              {t("limitedTime")}
-            </div>
-          </div>
+          </CardContent>
+        </Card>
 
-          {/* Discount code */}
-          <div className="mb-6">
-            <p className="text-sm text-muted-foreground mb-2">{t("useCode")}</p>
-            <div className="inline-block bg-muted px-4 py-2 rounded-lg font-mono text-lg font-bold tracking-wider">
-              {discountCode}
-            </div>
-          </div>
-
-          {/* CTA Button */}
-          <Button
-            size="lg"
-            className="w-full sm:w-auto px-8 py-6 text-lg font-bold"
-            onClick={handleClaim}
-          >
-            {t("claimDeal")}
-          </Button>
-
-          {/* Trust badges */}
-          <div className="flex items-center justify-center gap-4 mt-6 text-sm text-muted-foreground">
-            <div className="flex items-center gap-1">
-              <Shield className="h-4 w-4" />
-              {t("moneyBack")}
-            </div>
-          </div>
-
-          {/* No thanks link */}
+        {/* Don't show again link */}
+        <div className="text-center">
           <button
-            onClick={handleClose}
-            className="mt-4 text-sm text-muted-foreground hover:text-foreground transition-colors underline"
+            onClick={handleDontShowAgain}
+            className="text-sm text-muted-foreground hover:text-foreground underline-offset-4 hover:underline"
           >
-            {t("noThanks")}
+            {t("exitIntent.dontShowAgain")}
           </button>
         </div>
-      </div>
-    </div>
+      </DialogContent>
+    </Dialog>
   );
 }

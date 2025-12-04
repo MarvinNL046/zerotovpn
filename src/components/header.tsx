@@ -40,15 +40,6 @@ export function Header() {
     { href: "/best/vpn-linux", label: t("vpnLinux"), icon: Monitor },
   ];
 
-  const navItems = [
-    { href: "/", label: t("home"), highlight: false, icon: null },
-    { href: "/reviews", label: t("reviews"), highlight: false, icon: null },
-    { href: "/countries", label: t("countries"), highlight: true, icon: Globe },
-    { href: "/deals", label: t("deals"), highlight: true, icon: Tag },
-    { href: "/compare", label: t("compare"), highlight: false, icon: null },
-    { href: "/guides", label: t("guides"), highlight: false, icon: null },
-  ];
-
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
@@ -84,6 +75,7 @@ export function Header() {
             {t("reviews")}
           </Link>
 
+          {/* HIGHLIGHTED ITEMS GROUP - Best VPNs, Countries, Deals */}
           {/* Best VPNs - Dropdown */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -102,43 +94,6 @@ export function Header() {
             </DropdownMenuTrigger>
             <DropdownMenuContent align="center" className="w-48">
               {bestVpnItems.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <DropdownMenuItem key={item.href} asChild>
-                    <Link
-                      href={item.href}
-                      className="flex items-center gap-2 cursor-pointer"
-                    >
-                      <Icon className="h-4 w-4" />
-                      {item.label}
-                    </Link>
-                  </DropdownMenuItem>
-                );
-              })}
-            </DropdownMenuContent>
-          </DropdownMenu>
-
-          {/* Devices - Dropdown */}
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <button
-                className={cn(
-                  "text-sm font-medium transition-colors hover:text-primary inline-flex items-center gap-1",
-                  pathname.startsWith("/best/vpn-laptop") ||
-                  pathname.startsWith("/best/vpn-windows") ||
-                  pathname.startsWith("/best/vpn-macos") ||
-                  pathname.startsWith("/best/vpn-chromebook") ||
-                  pathname.startsWith("/best/vpn-linux")
-                    ? "text-primary"
-                    : "text-muted-foreground"
-                )}
-              >
-                {t("devices")}
-                <ChevronDown className="h-3.5 w-3.5" />
-              </button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="center" className="w-48">
-              {deviceItems.map((item) => {
                 const Icon = item.icon;
                 return (
                   <DropdownMenuItem key={item.href} asChild>
@@ -182,6 +137,43 @@ export function Header() {
             <Tag className="h-3.5 w-3.5 fill-current" />
             {t("deals")}
           </Link>
+
+          {/* Devices - Dropdown (regular) */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button
+                className={cn(
+                  "text-sm font-medium transition-colors hover:text-primary inline-flex items-center gap-1",
+                  pathname.startsWith("/best/vpn-laptop") ||
+                  pathname.startsWith("/best/vpn-windows") ||
+                  pathname.startsWith("/best/vpn-macos") ||
+                  pathname.startsWith("/best/vpn-chromebook") ||
+                  pathname.startsWith("/best/vpn-linux")
+                    ? "text-primary"
+                    : "text-muted-foreground"
+                )}
+              >
+                {t("devices")}
+                <ChevronDown className="h-3.5 w-3.5" />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="center" className="w-48">
+              {deviceItems.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <DropdownMenuItem key={item.href} asChild>
+                    <Link
+                      href={item.href}
+                      className="flex items-center gap-2 cursor-pointer"
+                    >
+                      <Icon className="h-4 w-4" />
+                      {item.label}
+                    </Link>
+                  </DropdownMenuItem>
+                );
+              })}
+            </DropdownMenuContent>
+          </DropdownMenu>
 
           {/* Compare & Guides - regular links */}
           <Link

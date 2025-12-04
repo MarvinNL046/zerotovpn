@@ -1,27 +1,25 @@
 import { NextResponse } from "next/server";
-import prisma from "@/lib/prisma";
+import { getDb, vpnProviders as vpnProvidersTable } from "@/lib/db";
 import { vpnProviders } from "@/lib/vpn-data";
+import { count } from "drizzle-orm";
 
 // POST /api/admin/seed - Seed the database with VPN data
 export async function POST() {
   try {
-    // Check if database is available
-    if (!prisma) {
-      return NextResponse.json(
-        { error: "Database not configured", details: "DATABASE_URL not set" },
-        { status: 503 }
-      );
-    }
+    const db = getDb();
 
     // Check if we already have data
-    const existingCount = await prisma.vpnProvider.count();
+    const existingResult = await db
+      .select({ count: count() })
+      .from(vpnProvidersTable);
+    const existingCount = existingResult[0]?.count ?? 0;
 
     if (existingCount > 0) {
       return NextResponse.json(
         {
           message: "Database already has VPN data",
           count: existingCount,
-          seeded: false
+          seeded: false,
         },
         { status: 200 }
       );
@@ -30,8 +28,9 @@ export async function POST() {
     // Seed VPN providers
     const results = [];
     for (const vpn of vpnProviders) {
-      const created = await prisma.vpnProvider.create({
-        data: {
+      const created = await db
+        .insert(vpnProvidersTable)
+        .values({
           name: vpn.name,
           slug: vpn.slug,
           logo: vpn.logo,
@@ -41,9 +40,9 @@ export async function POST() {
           ogImage: vpn.ogImage,
           website: vpn.website,
           affiliateUrl: vpn.affiliateUrl,
-          priceMonthly: vpn.priceMonthly,
-          priceYearly: vpn.priceYearly,
-          priceTwoYear: vpn.priceTwoYear ?? null,
+          priceMonthly: String(vpn.priceMonthly),
+          priceYearly: String(vpn.priceYearly),
+          priceTwoYear: vpn.priceTwoYear ? String(vpn.priceTwoYear) : null,
           moneyBackDays: vpn.moneyBackDays,
           freeTier: vpn.freeTier,
           servers: vpn.servers,
@@ -58,16 +57,16 @@ export async function POST() {
           noLogs: vpn.noLogs,
           netflixSupport: vpn.netflixSupport,
           torrentSupport: vpn.torrentSupport,
-          overallRating: vpn.overallRating,
+          overallRating: String(vpn.overallRating),
           editorChoice: vpn.editorChoice,
           shortDescription: vpn.shortDescription,
           pros: vpn.pros,
           cons: vpn.cons,
           featured: vpn.featured,
           sortOrder: vpn.sortOrder,
-        },
-      });
-      results.push(created.name);
+        })
+        .returning();
+      results.push(created[0].name);
     }
 
     return NextResponse.json({
@@ -88,27 +87,26 @@ export async function POST() {
 // GET /api/admin/seed - Check seed status
 export async function GET() {
   try {
-    // Check if database is available
-    if (!prisma) {
-      return NextResponse.json({
-        count: 0,
-        isEmpty: true,
-        staticDataCount: vpnProviders.length,
-        databaseAvailable: false,
-      });
-    }
+    const db = getDb();
+    const result = await db
+      .select({ count: count() })
+      .from(vpnProvidersTable);
+    const dbCount = result[0]?.count ?? 0;
 
-    const count = await prisma.vpnProvider.count();
     return NextResponse.json({
-      count,
-      isEmpty: count === 0,
+      count: dbCount,
+      isEmpty: dbCount === 0,
       staticDataCount: vpnProviders.length,
+      databaseAvailable: true,
     });
   } catch (error) {
     console.error("Error checking seed status:", error);
-    return NextResponse.json(
-      { error: "Failed to check seed status" },
-      { status: 500 }
-    );
+    return NextResponse.json({
+      count: 0,
+      isEmpty: true,
+      staticDataCount: vpnProviders.length,
+      databaseAvailable: false,
+      error: String(error),
+    });
   }
 }

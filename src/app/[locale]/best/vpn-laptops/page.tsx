@@ -1,14 +1,13 @@
 import { setRequestLocale } from "next-intl/server";
 import { Metadata } from "next";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Badge, type BadgeVariant } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { RatingStars } from "@/components/vpn/rating-stars";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
-import { getVpnBySlug } from "@/lib/vpn-data-layer";
+import { getVpnBySlug, type VpnProvider } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
 import {
   Laptop,
@@ -19,7 +18,6 @@ import {
   Zap,
   CheckCircle,
   ArrowRight,
-  Server,
   Lock,
   Crown,
 } from "lucide-react";
@@ -69,8 +67,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+// Type for laptop VPN items
+type LaptopVpnItem = {
+  vpn: VpnProvider | null;
+  badge: string;
+  badgeColor: BadgeVariant;
+  batteryImpact: string;
+  appSize: string;
+  autoConnect: string;
+  killSwitch: string;
+  specialFeatures: string[];
+  price: string;
+};
+
 // Structured Data for Laptop VPNs ItemList
-function ItemListSchema({ laptopVpns }: { laptopVpns: any[] }) {
+function ItemListSchema({ laptopVpns }: { laptopVpns: LaptopVpnItem[] }) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -102,11 +113,11 @@ export default async function LaptopVpnPage({ params }: Props) {
   const surfshark = await getVpnBySlug("surfshark");
 
   // Laptop-specific data
-  const laptopVpns = [
+  const laptopVpns: LaptopVpnItem[] = [
     {
       vpn: nordvpn,
       badge: "Best Overall",
-      badgeColor: "yellow",
+      badgeColor: "yellow" as const,
       batteryImpact: "Low (~5%)",
       appSize: "65 MB",
       autoConnect: "Yes",
@@ -117,7 +128,7 @@ export default async function LaptopVpnPage({ params }: Props) {
     {
       vpn: expressvpn,
       badge: "Best Speed",
-      badgeColor: "blue",
+      badgeColor: "blue" as const,
       batteryImpact: "Very Low (~3%)",
       appSize: "58 MB",
       autoConnect: "Yes",
@@ -128,7 +139,7 @@ export default async function LaptopVpnPage({ params }: Props) {
     {
       vpn: surfshark,
       badge: "Best Budget",
-      badgeColor: "green",
+      badgeColor: "green" as const,
       batteryImpact: "Low (~4%)",
       appSize: "48 MB",
       autoConnect: "Yes",
@@ -1549,7 +1560,7 @@ export default async function LaptopVpnPage({ params }: Props) {
                   <div className="space-y-2">
                     <h3 className="text-2xl font-bold">{item.vpn?.name}</h3>
                     <Badge
-                      variant={item.badgeColor as any}
+                      variant={item.badgeColor}
                       className="text-xs"
                     >
                       {item.badge}

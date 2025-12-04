@@ -15,7 +15,6 @@ import {
   XCircle,
   AlertTriangle,
   Crown,
-  Clock,
   Server,
   Wifi,
   Battery,

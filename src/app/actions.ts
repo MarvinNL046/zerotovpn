@@ -23,19 +23,18 @@ interface UserReview {
   created_at: Date;
 }
 
-interface Subscriber {
-  id: string;
-  email: string;
-  language: string;
-  source: string | null;
-  confirmed: boolean;
-  created_at: Date;
-}
-
 // ==================== USER REVIEWS ====================
 
 // Get approved reviews for a VPN
-export async function getApprovedReviews(vpnSlug: string, page = 1, limit = 10) {
+export async function getApprovedReviews(vpnSlug: string, page = 1, limit = 10): Promise<{
+  reviews: UserReview[];
+  pagination: {
+    page: number;
+    limit: number;
+    total: number;
+    totalPages: number;
+  };
+}> {
   const offset = (page - 1) * limit;
 
   const reviews = await sql`
@@ -46,12 +45,12 @@ export async function getApprovedReviews(vpnSlug: string, page = 1, limit = 10) 
     WHERE vpn_slug = ${vpnSlug} AND approved = true
     ORDER BY featured DESC, created_at DESC
     LIMIT ${limit} OFFSET ${offset}
-  `;
+  ` as UserReview[];
 
   const countResult = await sql`
     SELECT COUNT(*) as total FROM "UserReview"
     WHERE vpn_slug = ${vpnSlug} AND approved = true
-  `;
+  ` as { total: string | number }[];
 
   const total = Number(countResult[0]?.total || 0);
 
@@ -67,7 +66,7 @@ export async function getApprovedReviews(vpnSlug: string, page = 1, limit = 10) 
 }
 
 // Submit a new user review
-export async function submitReview(formData: FormData) {
+export async function submitReview(formData: FormData): Promise<{ success: boolean; reviewId?: string; error?: string }> {
   const vpnSlug = formData.get("vpnSlug") as string;
   const authorName = formData.get("authorName") as string;
   const authorEmail = formData.get("authorEmail") as string;
@@ -132,7 +131,7 @@ export async function submitReview(formData: FormData) {
 }
 
 // Vote on a review (helpful/unhelpful)
-export async function voteOnReview(reviewId: string, isHelpful: boolean) {
+export async function voteOnReview(reviewId: string, isHelpful: boolean): Promise<{ success: boolean; error?: string }> {
   try {
     if (isHelpful) {
       await sql`
@@ -157,7 +156,7 @@ export async function voteOnReview(reviewId: string, isHelpful: boolean) {
 // ==================== SUBSCRIBERS ====================
 
 // Subscribe to newsletter
-export async function subscribeToNewsletter(formData: FormData) {
+export async function subscribeToNewsletter(formData: FormData): Promise<{ success: boolean; message?: string; error?: string }> {
   const email = formData.get("email") as string;
   const language = formData.get("language") as string || "en";
   const source = formData.get("source") as string || "homepage";
@@ -201,7 +200,7 @@ export async function trackClick(
   page: string,
   country?: string,
   referrer?: string
-) {
+): Promise<{ success: boolean }> {
   try {
     // First get the VPN provider ID
     const vpn = await sql`
@@ -235,32 +234,29 @@ export async function getAdminReviews(
     page?: number;
     limit?: number;
   } = {}
-) {
+): Promise<{
+  reviews: UserReview[];
+  pagination: {
+    page: number;
+    limit: number;
+    total: number;
+    totalPages: number;
+  };
+}> {
   const { approved, vpnSlug, page = 1, limit = 20 } = filters;
   const offset = (page - 1) * limit;
-
-  let whereClause = "WHERE 1=1";
-  const params: unknown[] = [];
-
-  if (approved !== undefined) {
-    whereClause += ` AND approved = ${approved}`;
-  }
-
-  if (vpnSlug) {
-    whereClause += ` AND vpn_slug = '${vpnSlug}'`;
-  }
 
   const reviews = await sql`
     SELECT * FROM "UserReview"
     ${approved !== undefined ? sql`WHERE approved = ${approved}` : sql``}
     ORDER BY created_at DESC
     LIMIT ${limit} OFFSET ${offset}
-  `;
+  ` as UserReview[];
 
   const countResult = await sql`
     SELECT COUNT(*) as total FROM "UserReview"
     ${approved !== undefined ? sql`WHERE approved = ${approved}` : sql``}
-  `;
+  ` as { total: string | number }[];
 
   const total = Number(countResult[0]?.total || 0);
 
@@ -276,7 +272,7 @@ export async function getAdminReviews(
 }
 
 // Approve or reject a review
-export async function moderateReview(reviewId: string, approved: boolean) {
+export async function moderateReview(reviewId: string, approved: boolean): Promise<{ success: boolean; error?: string }> {
   try {
     await sql`
       UPDATE "UserReview"
@@ -293,7 +289,7 @@ export async function moderateReview(reviewId: string, approved: boolean) {
 }
 
 // Delete a review
-export async function deleteReview(reviewId: string) {
+export async function deleteReview(reviewId: string): Promise<{ success: boolean; error?: string }> {
   try {
     await sql`DELETE FROM "UserReview" WHERE id = ${reviewId}`;
     revalidatePath("/admin/reviews");
@@ -305,7 +301,7 @@ export async function deleteReview(reviewId: string) {
 }
 
 // Toggle featured status
-export async function toggleFeatured(reviewId: string, featured: boolean) {
+export async function toggleFeatured(reviewId: string, featured: boolean): Promise<{ success: boolean; error?: string }> {
   try {
     await sql`
       UPDATE "UserReview"
@@ -322,7 +318,11 @@ export async function toggleFeatured(reviewId: string, featured: boolean) {
 }
 
 // Get dashboard stats
-export async function getDashboardStats() {
+export async function getDashboardStats(): Promise<{
+  reviews: { total: number; pending: number; thisWeek: number };
+  subscribers: { total: number; thisWeek: number };
+  clicks: { total: number; thisWeek: number };
+}> {
   // Return empty stats during build time
   if (process.env.NODE_ENV === "production" && !process.env.DATABASE_URL) {
     return {

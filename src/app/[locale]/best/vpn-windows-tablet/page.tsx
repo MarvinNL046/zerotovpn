@@ -3,10 +3,8 @@ import { getTranslations } from "next-intl/server";
 import { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { RatingStars } from "@/components/vpn/rating-stars";
-import { Link } from "@/i18n/navigation";
 import {
   Shield,
   Zap,
@@ -17,10 +15,8 @@ import {
   Crown,
   Monitor,
   Server,
-  Wifi,
   Lock,
   Globe,
-  ArrowRight,
   Laptop,
   Settings,
   Users,

@@ -108,19 +108,47 @@
     "vpnChromebook": "Chromebook VPN",
     "vpnLinux": "Linux VPN"
   },
+  "exitIntent": {
+    "headline": "等等！不要错过这个独家优惠！",
+    "subheadline": "以超值价格获取我们排名第一的VPN",
+    "off": "折扣",
+    "specialDeal": "限时特惠",
+    "feature1": "全球{servers}台超高速服务器",
+    "feature2": "覆盖{countries}个国家",
+    "feature3": "{days}天退款保证",
+    "claimDeal": "立即领取",
+    "dontShowAgain": "不再显示"
+  },
   "newsletter": {
-    "title": "保持更新",
-    "subtitle": "获取最新VPN优惠和安全提示。",
+    "title": "获取最新资讯",
+    "subtitle": "将最新的VPN优惠和安全提示直接发送到您的收件箱。",
     "placeholder": "输入您的邮箱",
+    "emailLabel": "邮箱地址",
     "button": "订阅",
-    "success": "感谢订阅！",
-    "privacy": "我们尊重您的隐私。随时取消订阅。"
+    "subscribe": "订阅",
+    "subscribing": "正在订阅...",
+    "success": "感谢您的订阅！",
+    "checkEmail": "请检查您的邮箱以确认订阅",
+    "error": "发生错误，请重试。",
+    "consent": "我同意接收邮件，并可随时取消订阅",
+    "consentRequired": "请同意接收邮件",
+    "privacy": "我们尊重您的隐私，您可以随时取消订阅。",
+    "popupTitle": "获取独家VPN优惠！ 🔒",
+    "popupSubtitle": "加入数千名用户，获取最优惠的VPN交易和安全提示。",
+    "popupDescription": "将最新的VPN优惠和安全提示直接发送到您的收件箱。",
+    "dontShowAgain": "不再显示",
+    "footerTitle": "订阅通讯",
+    "footerSubtitle": "获取独家VPN优惠和安全提示",
+    "blogCtaTitle": "不错过任何VPN优惠",
+    "blogCtaSubtitle": "每周获取VPN评测、安全提示和独家优惠。",
+    "privacyNote": "我们尊重您的隐私，您可以随时取消订阅。"
   },
   "home": {
     "hero": {
       "badge": "2025年更新",
       "title": "找到您的",
       "titleHighlight": "完美VPN",
+      "titleAccent": "今天",
       "subtitle": "几分钟内从零到安全。专家评测、诚实比较和顶级VPN服务的独家优惠。",
       "primaryCta": "比较VPN",
       "secondaryCta": "什么是VPN？",
@@ -207,7 +235,10 @@
         "question": "VPN可以被追踪吗？",
         "answer": "具有无日志政策的优质VPN无法追溯到您。VPN提供商不会存储任何关于您在线活动的信息。"
       }
-    ]
+    ],
+    "faqSection": {
+      "title": "常见问题"
+    }
   },
   "guides": {
     "whatIsVpn": {
@@ -3003,7 +3034,8 @@
     "noLogs": "无日志",
     "freeTier": "免费套餐",
     "getVpn": "获取{name}",
-    "review": "评测"
+    "review": "评测",
+    "hasCoupon": "优惠券"
   },
   "vpnReview": {
     "backToReviews": "返回评测",
@@ -3086,6 +3118,10 @@
     },
     "userReviews": {
       "title": "用户评测"
+    },
+    "coupons": {
+      "title": "{name}有效优惠券和折扣",
+      "subtitle": "使用这些验证过的折扣码省钱"
     }
   },
   "guidesIndex": {
@@ -3644,7 +3680,32 @@
     "needHelpDeciding": "需要帮助决定？",
     "needHelpDesc": "查看我们的详细评测，深入分析每个VPN，或阅读我们的指南，了解选择VPN时应该注意什么。",
     "viewBestVpns": "查看最佳VPN",
-    "whatIsVpn": "什么是VPN？"
+    "whatIsVpn": "什么是VPN？",
+    "faqSection": {
+      "title": "常见问题"
+    },
+    "faq": [
+      {
+        "question": "你们如何比较VPN？",
+        "answer": "我们使用全面的方法比较VPN，包括在50多个服务器位置进行速度测试、安全分析（加密、泄漏测试、隐私政策）、Netflix和其他服务的流媒体测试，以及价值评估。每个VPN都在速度、安全性、流媒体和整体价值方面进行评分。"
+      },
+      {
+        "question": "比较VPN时哪些功能最重要？",
+        "answer": "最重要的功能包括：强加密（AES-256）、经审计验证的无日志政策、终止开关功能、快速连接速度、大型服务器网络、Netflix/Disney+流媒体支持以及响应迅速的客户支持。价格和同时连接设备数量也是关键考虑因素。"
+      },
+      {
+        "question": "哪个VPN最适合流媒体？",
+        "answer": "ExpressVPN在我们的测试中始终是最快的VPN，速度保持率达96%，非常适合4K流媒体。NordVPN紧随其后，速度出色且性价比更高。两者都能可靠地解锁Netflix、Disney+和其他流媒体平台。"
+      },
+      {
+        "question": "我可以信任免费VPN吗？",
+        "answer": "大多数免费VPN不值得信任，因为它们经常记录和出售您的数据、注入广告或存在安全漏洞。ProtonVPN是我们唯一推荐的免费VPN - 它来自一家信誉良好的公司，没有数据限制，并保持高隐私标准。"
+      },
+      {
+        "question": "月付和长期VPN套餐有什么区别？",
+        "answer": "长期套餐（1-2年）提供显著折扣 - 通常比月付价格便宜60-80%。例如，NordVPN月付12.99美元，但2年套餐只需2.99美元/月。所有顶级VPN都提供30天退款保证。"
+      }
+    ]
   },
   "speedTest": {
     "title": "网络速度测试",
@@ -5149,6 +5210,137 @@
       "getBest": "获取NordVPN",
       "getValue": "获取Surfshark - 82%折扣",
       "getTravel": "获取ExpressVPN"
+    }
+  },
+  "coupons": {
+    "code": "优惠券代码",
+    "copy": "复制代码",
+    "copied": "已复制！",
+    "verified": "已验证",
+    "expiringSoon": "即将到期",
+    "expires": "到期",
+    "getDeal": "获取优惠",
+    "noCoupons": "暂无可用优惠券"
+  },
+  "couponsPage": {
+    "title": "VPN优惠券和折扣码",
+    "subtitle": "使用验证过的优惠券代码节省高达83%。每日更新独家优惠。",
+    "coupons": "优惠券",
+    "activeCoupon": "有效优惠券",
+    "activeCoupons": "有效优惠券",
+    "editorChoice": "编辑推荐",
+    "features": {
+      "verified": "已验证代码",
+      "verifiedDesc": "所有优惠券均已测试并可用",
+      "savings": "大幅节省",
+      "savingsDesc": "节省高达83%",
+      "updated": "每日更新",
+      "updatedDesc": "每天都有新优惠",
+      "exclusive": "独家优惠",
+      "exclusiveDesc": "为读者提供的特别优惠"
+    },
+    "howToUse": {
+      "title": "如何使用VPN优惠券",
+      "step1": "选择您的VPN",
+      "step1Desc": "从我们验证过的VPN提供商中选择，他们有有效的折扣码。",
+      "step2": "复制代码",
+      "step2Desc": "点击复制按钮将优惠券代码保存到剪贴板。",
+      "step3": "结账时应用",
+      "step3Desc": "在VPN提供商网站结账时粘贴代码以获得折扣。"
+    }
+  }
+,
+  "quiz": {
+    "metadata": {
+      "title": "VPN查找器测验 - 找到您的完美VPN | ZeroToVPN",
+      "description": "回答5个简单问题，找到适合您需求的完美VPN。根据您的预算、使用情况和位置获得个性化VPN推荐。",
+      "ogTitle": "通过5个问题找到您的完美VPN",
+      "ogDescription": "参加我们的快速测验，发现最适合流媒体、游戏、隐私或种子下载的VPN。不到2分钟即可获得个性化推荐。",
+      "ogImageAlt": "VPN查找器测验 - 找到您的完美VPN匹配"
+    },
+    "hero": {
+      "title": "找到您的完美VPN",
+      "subtitle": "回答5个简单问题，获得为您量身定制的个性化VPN推荐"
+    },
+    "progress": {
+      "step": "问题",
+      "of": "共"
+    },
+    "questions": {
+      "primaryUse": {
+        "title": "您主要需要VPN做什么？",
+        "options": {
+          "streaming": "流媒体（Netflix、Disney+等）",
+          "privacy": "隐私与安全",
+          "gaming": "游戏",
+          "torrenting": "种子下载/P2P",
+          "work": "工作/商务"
+        }
+      },
+      "budget": {
+        "title": "您的月度预算是多少？",
+        "options": {
+          "free": "免费（€0）",
+          "budget": "预算型（€2-4/月）",
+          "midrange": "中档（€4-8/月）",
+          "premium": "高级（€8+/月）"
+        }
+      },
+      "devices": {
+        "title": "您需要连接多少台设备？",
+        "options": {
+          "few": "1-2台设备",
+          "several": "3-5台设备",
+          "many": "6-10台设备",
+          "unlimited": "无限设备"
+        }
+      },
+      "speedPriority": {
+        "title": "速度对您有多重要？",
+        "options": {
+          "critical": "关键（游戏、4K流媒体）",
+          "important": "重要",
+          "notPriority": "不是优先考虑"
+        }
+      },
+      "location": {
+        "title": "您位于哪里？",
+        "options": {
+          "europe": "欧洲",
+          "northAmerica": "北美",
+          "asia": "亚洲",
+          "middleEast": "中东",
+          "other": "其他"
+        }
+      }
+    },
+    "navigation": {
+      "back": "返回",
+      "next": "下一步",
+      "showResults": "显示结果"
+    },
+    "helpText": "所有答案都是匿名的，仅用于为您匹配最佳VPN。",
+    "results": {
+      "badge": "您的结果",
+      "title": "您的完美VPN匹配",
+      "subtitle": "根据您的答案，这里是最符合您需求的前3名VPN",
+      "topMatch": "最佳匹配",
+      "matchScore": "匹配分数",
+      "save": "保存",
+      "getDeal": "获取优惠",
+      "readReview": "阅读评测",
+      "modifyAnswers": "修改答案",
+      "startOver": "重新开始",
+      "features": {
+        "netflix": "Netflix支持",
+        "torrenting": "种子下载",
+        "killSwitch": "终止开关",
+        "noLogs": "无日志政策"
+      }
+    },
+    "info": {
+      "title": "我们如何为您匹配VPN",
+      "description": "我们的测验算法根据您的具体需求评估VPN提供商，包括速度、安全性、流媒体能力、设备兼容性和价格范围。每个推荐都根据与您要求的匹配程度进行评分。"
     }
   }
 }

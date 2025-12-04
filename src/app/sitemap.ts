@@ -24,6 +24,13 @@ const staticPages = [
   { path: "/best/vpn-android-tablet", priority: 0.85, changeFreq: "weekly" as const },
   { path: "/best/vpn-windows-tablet", priority: 0.85, changeFreq: "weekly" as const },
 
+  // Best VPN pages - Desktop devices (priority 0.85)
+  { path: "/best/vpn-laptops", priority: 0.85, changeFreq: "weekly" as const },
+  { path: "/best/vpn-linux", priority: 0.85, changeFreq: "weekly" as const },
+  { path: "/best/vpn-macos", priority: 0.85, changeFreq: "weekly" as const },
+  { path: "/best/vpn-windows", priority: 0.85, changeFreq: "weekly" as const },
+  { path: "/best/vpn-chromebook", priority: 0.85, changeFreq: "weekly" as const },
+
   // Best VPN pages - Countries (priority 0.85)
   { path: "/best/vpn-china", priority: 0.85, changeFreq: "weekly" as const },
   { path: "/best/vpn-russia", priority: 0.85, changeFreq: "weekly" as const },
@@ -33,8 +40,12 @@ const staticPages = [
   // Comparison (priority 0.85)
   { path: "/compare", priority: 0.85, changeFreq: "weekly" as const },
 
-  // Deals (priority 0.85)
+  // Deals & Promotions (priority 0.85)
   { path: "/deals", priority: 0.85, changeFreq: "daily" as const },
+  { path: "/coupons", priority: 0.85, changeFreq: "daily" as const },
+
+  // Interactive tools (priority 0.8)
+  { path: "/quiz", priority: 0.8, changeFreq: "weekly" as const },
 
   // Countries section (priority 0.8)
   { path: "/countries", priority: 0.8, changeFreq: "weekly" as const },
@@ -130,6 +141,64 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         lastModified: currentDate,
         changeFrequency: "monthly",
         priority: 0.8,
+        alternates: {
+          languages: alternates,
+        },
+      });
+    });
+  });
+
+  // Add top comparison pages for each locale
+  const topComparisons = [
+    // Top tier vs each other
+    ['nordvpn', 'surfshark'],
+    ['nordvpn', 'expressvpn'],
+    ['surfshark', 'expressvpn'],
+    ['nordvpn', 'cyberghost'],
+    ['surfshark', 'cyberghost'],
+    ['expressvpn', 'cyberghost'],
+
+    // Top tier vs ProtonVPN
+    ['nordvpn', 'protonvpn'],
+    ['surfshark', 'protonvpn'],
+    ['expressvpn', 'protonvpn'],
+
+    // Top tier vs PIA and Mullvad
+    ['nordvpn', 'private-internet-access'],
+    ['surfshark', 'private-internet-access'],
+    ['nordvpn', 'mullvad'],
+    ['expressvpn', 'mullvad'],
+
+    // Other popular comparisons
+    ['cyberghost', 'protonvpn'],
+    ['protonvpn', 'mullvad'],
+    ['ipvanish', 'vyprvpn'],
+    ['tunnelbear', 'windscribe'],
+    ['hotspotshield', 'strongvpn'],
+    ['purevpn', 'atlasvpn'],
+    ['privatevpn', 'torguard'],
+  ];
+
+  topComparisons.forEach(([slug1, slug2]) => {
+    locales.forEach((locale) => {
+      const prefix = locale === "en" ? "" : `/${locale}`;
+      const path = `/compare/${slug1}-vs-${slug2}`;
+      const url = `${baseUrl}${prefix}${path}`;
+
+      // Generate alternates for all languages
+      const alternates: Record<string, string> = {
+        "x-default": `${baseUrl}${path}`
+      };
+      locales.forEach((l) => {
+        const altPrefix = l === "en" ? "" : `/${l}`;
+        alternates[l] = `${baseUrl}${altPrefix}${path}`;
+      });
+
+      routes.push({
+        url,
+        lastModified: currentDate,
+        changeFrequency: "weekly",
+        priority: 0.7,
         alternates: {
           languages: alternates,
         },

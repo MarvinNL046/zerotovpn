@@ -1,14 +1,13 @@
 import { setRequestLocale } from "next-intl/server";
 import { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { RatingStars } from "@/components/vpn/rating-stars";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
-import { getVpnBySlug } from "@/lib/vpn-data-layer";
+import { getVpnBySlug, type VpnProvider } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
 import {
   Shield,
@@ -16,11 +15,9 @@ import {
   Chrome,
   CheckCircle,
   Lock,
-  Download,
   Globe,
   Monitor,
   Smartphone,
-  Wifi,
   ArrowRight,
   Server,
 } from "lucide-react";
@@ -71,7 +68,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 // Structured Data for Chromebook VPNs ItemList
-function ItemListSchema({ chromebookVpns }: { chromebookVpns: any[] }) {
+function ItemListSchema({ chromebookVpns }: { chromebookVpns: { vpn: VpnProvider | null }[] }) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "ItemList",

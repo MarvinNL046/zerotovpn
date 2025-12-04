@@ -8,7 +8,7 @@ import { RatingStars } from "@/components/vpn/rating-stars";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
-import { getVpnBySlug } from "@/lib/vpn-data-layer";
+import { getVpnBySlug, type VpnProvider } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
 import {
   Monitor,
@@ -17,18 +17,35 @@ import {
   Zap,
   CheckCircle,
   Lock,
-  Clock,
-  ArrowRight,
-  Server,
   Globe,
   Crown,
   Target,
-  Activity,
-  Wifi,
+  Clock,
+  ArrowRight,
+  type LucideIcon,
 } from "lucide-react";
 
 type Props = {
   params: Promise<{ locale: string }>;
+};
+
+type WhyUsePoint = {
+  title: string;
+  desc: string;
+  icon: LucideIcon;
+};
+
+type Protocol = {
+  name: string;
+  based: string;
+  speed: string;
+  cpuUsage: string;
+  pros: string[];
+};
+
+type FAQ = {
+  question: string;
+  answer: string;
 };
 
 const baseUrl = "https://zerotovpn.com";
@@ -73,7 +90,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 // Structured Data for Windows VPNs ItemList
-function ItemListSchema({ windowsVpns }: { windowsVpns: any[] }) {
+function ItemListSchema({ windowsVpns }: { windowsVpns: { vpn: VpnProvider | null }[] }) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -1468,7 +1485,7 @@ export default async function WindowsVpnPage({ params }: Props) {
           <div className="container">
             <h2 className="text-3xl font-bold text-center mb-12">{t.whyUseVpn}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {t.whyUsePoints.map((point, index) => {
+              {(t.whyUsePoints as WhyUsePoint[]).map((point, index) => {
                 const Icon = point.icon;
                 return (
                   <Card key={index} className="border-2">
@@ -1495,7 +1512,7 @@ export default async function WindowsVpnPage({ params }: Props) {
               {t.protocolComparison}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              {t.protocols.map((protocol, index) => (
+              {(t.protocols as Protocol[]).map((protocol, index) => (
                 <Card key={index}>
                   <CardContent className="pt-6 space-y-3">
                     <h3 className="font-bold text-lg">{protocol.name}</h3>
@@ -1648,7 +1665,7 @@ export default async function WindowsVpnPage({ params }: Props) {
             <h2 className="text-3xl font-bold text-center mb-12">{t.faqTitle}</h2>
             <FAQSchema faqs={t.faqs} />
             <div className="space-y-6">
-              {t.faqs.map((faq, index) => (
+              {(t.faqs as FAQ[]).map((faq, index) => (
                 <Card key={index}>
                   <CardContent className="pt-6 space-y-3">
                     <h3 className="font-bold text-lg">{faq.question}</h3>

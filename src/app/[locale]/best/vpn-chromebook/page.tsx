@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { RatingStars } from "@/components/vpn/rating-stars";
+import { VpnLogo } from "@/components/ui/vpn-logo";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
@@ -1459,13 +1460,7 @@ export default async function ChromebookVpnPage({ params }: Props) {
                       </Badge>
                     )}
                     <div className="flex items-center gap-4 mb-4">
-                      {item.vpn?.logo && (
-                        <img
-                          src={item.vpn.logo}
-                          alt={item.vpn.name}
-                          className="w-16 h-16 object-contain"
-                        />
-                      )}
+                      {item.vpn && <VpnLogo name={item.vpn.name} size="lg" />}
                       <div>
                         <h3 className="text-xl font-bold">{item.vpn?.name}</h3>
                         <RatingStars rating={item.vpn?.overallRating || 0} />

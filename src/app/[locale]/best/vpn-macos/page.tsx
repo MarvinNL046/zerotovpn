@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { RatingStars } from "@/components/vpn/rating-stars";
+import { VpnLogo } from "@/components/ui/vpn-logo";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
@@ -1896,11 +1897,7 @@ export default async function MacOSVpnPage({ params }: Props) {
                 <CardContent className="p-6">
                   <div className="flex flex-col md:flex-row gap-6">
                     <div className="flex-shrink-0">
-                      <img
-                        src={item.vpn?.logo || ""}
-                        alt={item.vpn?.name || ""}
-                        className="w-24 h-24 object-contain"
-                      />
+                      {item.vpn && <VpnLogo name={item.vpn.name} size="lg" />}
                     </div>
                     <div className="flex-grow space-y-4">
                       <div>

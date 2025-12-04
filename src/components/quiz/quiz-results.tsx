@@ -10,8 +10,8 @@ import type { VpnData } from "@/lib/db/vpn-service";
 import type { QuizAnswers } from "./quiz-wizard";
 import { ArrowLeft, RefreshCw, ExternalLink, Star, Check } from "lucide-react";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 import { Link } from "@/i18n/navigation";
+import { VpnLogo } from "@/components/ui/vpn-logo";
 
 type QuizResultsProps = {
   answers: QuizAnswers;
@@ -159,13 +159,7 @@ export function QuizResults({
                 {/* VPN Logo */}
                 <div className="flex flex-col items-center md:items-start gap-4">
                   <div className="relative w-48 h-24 bg-white dark:bg-gray-800 rounded-lg p-4 flex items-center justify-center">
-                    <Image
-                      src={vpn.logo || "/logos/default.svg"}
-                      alt={vpn.name}
-                      width={150}
-                      height={60}
-                      className="object-contain"
-                    />
+                    <VpnLogo name={vpn.name} size="lg" />
                   </div>
                   <div className="text-center md:text-left">
                     <div className="flex items-center gap-1 justify-center md:justify-start">

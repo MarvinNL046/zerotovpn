@@ -7,7 +7,7 @@ import { getVpnBySlug } from "@/lib/vpn-data-layer";
 import { Ticket, TrendingDown, Clock, Shield } from "lucide-react";
 import { routing } from "@/i18n/routing";
 import type { Metadata } from "next";
-import Image from "next/image";
+import { VpnLogo } from "@/components/ui/vpn-logo";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -173,16 +173,7 @@ export default async function CouponsPage({ params }: Props) {
                 <Card>
                   <CardHeader>
                     <div className="flex items-center gap-4">
-                      {vpn.logo && (
-                        <div className="relative w-16 h-16">
-                          <Image
-                            src={vpn.logo}
-                            alt={`${vpn.name} logo`}
-                            fill
-                            className="object-contain"
-                          />
-                        </div>
-                      )}
+                      <VpnLogo name={vpn.name} size="lg" />
                       <div>
                         <CardTitle className="text-2xl">
                           {vpn.name} {t("coupons")}

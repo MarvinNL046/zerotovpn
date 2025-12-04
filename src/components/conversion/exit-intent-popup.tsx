@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 import { Star } from "lucide-react";
+import { VpnLogo } from "@/components/ui/vpn-logo";
 import {
   Dialog,
   DialogContent,
@@ -108,14 +108,7 @@ export function ExitIntentPopup() {
             <div className="flex flex-col gap-4">
               {/* VPN Logo and Name */}
               <div className="flex items-center gap-4">
-                <div className="relative h-12 w-12 flex-shrink-0">
-                  <Image
-                    src={topVpn.logo}
-                    alt={topVpn.name}
-                    fill
-                    className="object-contain"
-                  />
-                </div>
+                <VpnLogo name={topVpn.name} size="md" />
                 <div className="flex-1">
                   <h3 className="text-lg font-semibold">{topVpn.name}</h3>
                   <div className="flex items-center gap-1">

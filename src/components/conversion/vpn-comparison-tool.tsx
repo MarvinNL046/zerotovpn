@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import Image from "next/image";
 import { X, Plus, Check, Minus, Crown, Shield, Zap, Globe, Server, Monitor } from "lucide-react";
+import { VpnLogo } from "@/components/ui/vpn-logo";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
@@ -161,19 +161,7 @@ export function VpnComparisonTool({ vpns, maxCompare = 4 }: VpnComparisonToolPro
               >
                 <X className="h-4 w-4" />
               </button>
-              {vpn.logo ? (
-                <Image
-                  src={vpn.logo}
-                  alt={`${vpn.name} VPN logo`}
-                  width={80}
-                  height={40}
-                  className="mx-auto h-10 object-contain"
-                />
-              ) : (
-                <div className="mx-auto w-20 h-10 bg-muted rounded flex items-center justify-center">
-                  <Shield className="h-6 w-6 text-muted-foreground" />
-                </div>
-              )}
+              <VpnLogo name={vpn.name} size="md" className="mx-auto" />
               <p className="mt-2 font-semibold text-sm">{vpn.name}</p>
               <RatingStars rating={vpn.overallRating} size="sm" />
             </div>
@@ -190,17 +178,7 @@ export function VpnComparisonTool({ vpns, maxCompare = 4 }: VpnComparisonToolPro
                         onClick={() => addVpn(vpn)}
                         className="w-full text-left p-2 rounded hover:bg-muted transition-colors flex items-center gap-2"
                       >
-                        {vpn.logo ? (
-                          <Image
-                            src={vpn.logo}
-                            alt={`${vpn.name} VPN logo`}
-                            width={40}
-                            height={20}
-                            className="h-5 object-contain"
-                          />
-                        ) : (
-                          <Shield className="h-5 w-5 text-muted-foreground" />
-                        )}
+                        <VpnLogo name={vpn.name} size="sm" />
                         <span className="text-sm">{vpn.name}</span>
                       </button>
                     ))}

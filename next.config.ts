@@ -1,5 +1,6 @@
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
+// Deploy trigger: 2025-12-04
 
 const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 

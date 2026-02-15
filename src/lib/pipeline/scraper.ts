@@ -126,7 +126,7 @@ export async function scrapeUrl(url: string): Promise<{ content: string; provide
   );
 }
 
-// VPN pricing page URLs
+// VPN pricing page URLs — all 38 providers
 const VPN_PRICING_URLS: Record<string, string> = {
   nordvpn: "https://nordvpn.com/pricing/",
   surfshark: "https://surfshark.com/pricing",
@@ -136,6 +136,36 @@ const VPN_PRICING_URLS: Record<string, string> = {
   "private-internet-access": "https://www.privateinternetaccess.com/buy-vpn-online",
   mullvad: "https://mullvad.net/pricing",
   ipvanish: "https://www.ipvanish.com/pricing/",
+  vyprvpn: "https://www.vyprvpn.com/buy-vpn",
+  tunnelbear: "https://www.tunnelbear.com/pricing",
+  windscribe: "https://windscribe.com/upgrade",
+  "hotspot-shield": "https://www.hotspotshield.com/pricing/",
+  strongvpn: "https://strongvpn.com/pricing/",
+  purevpn: "https://www.purevpn.com/order",
+  "atlas-vpn": "https://atlasvpn.com/pricing",
+  privatevpn: "https://privatevpn.com/prices",
+  torguard: "https://torguard.net/pricing.php",
+  airvpn: "https://airvpn.org/plans/",
+  ivpn: "https://www.ivpn.net/pricing/",
+  "mozilla-vpn": "https://vpn.mozilla.org/products/vpn/",
+  "hide-me": "https://hide.me/en/pricing",
+  zenmate: "https://zenmate.com/pricing",
+  privadovpn: "https://privadovpn.com/pricing/",
+  hma: "https://www.hidemyass.com/pricing",
+  astrill: "https://www.astrill.com/pricing",
+  "perfect-privacy": "https://www.perfect-privacy.com/en/order",
+  "goose-vpn": "https://goosevpn.com/pricing",
+  "trust-zone": "https://trust.zone/pricing",
+  fastestvpn: "https://fastestvpn.com/buy-vpn",
+  ovpn: "https://www.ovpn.com/en/pricing",
+  cactusvpn: "https://www.cactusvpn.com/pricing/",
+  betternet: "https://www.betternet.co/pricing",
+  speedify: "https://speedify.com/pricing/",
+  "vpn-unlimited": "https://www.vpnunlimitedapp.com/pricing",
+  nordlayer: "https://nordlayer.com/pricing/",
+  "perimeter-81": "https://www.perimeter81.com/pricing",
+  "urban-vpn": "https://www.urban-vpn.com/pricing",
+  "x-vpn": "https://xvpn.io/pricing",
 };
 
 // Scrape pricing data for a specific VPN
@@ -215,17 +245,15 @@ export async function scrapeAllVpnData(): Promise<ScrapedPricing[]> {
 // Extract VPN brand mentions from scraped content
 function extractVpnMentions(content: string): string[] {
   const vpnNames = [
-    "NordVPN",
-    "Surfshark",
-    "ExpressVPN",
-    "CyberGhost",
-    "ProtonVPN",
-    "Private Internet Access",
-    "PIA",
-    "Mullvad",
-    "IPVanish",
-    "TunnelBear",
-    "Windscribe",
+    "NordVPN", "Surfshark", "ExpressVPN", "CyberGhost", "ProtonVPN",
+    "Private Internet Access", "PIA", "Mullvad", "IPVanish",
+    "VyprVPN", "TunnelBear", "Windscribe", "Hotspot Shield",
+    "StrongVPN", "PureVPN", "Atlas VPN", "PrivateVPN", "TorGuard",
+    "AirVPN", "IVPN", "Mozilla VPN", "Hide.me", "ZenMate",
+    "PrivadoVPN", "HMA", "Hide My Ass", "Astrill", "Perfect Privacy",
+    "Goose VPN", "Trust.Zone", "FastestVPN", "OVPN", "CactusVPN",
+    "Betternet", "Speedify", "VPN Unlimited", "NordLayer", "Perimeter 81",
+    "Urban VPN", "X-VPN",
   ];
 
   return vpnNames.filter((name) =>

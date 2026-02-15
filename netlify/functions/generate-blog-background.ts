@@ -93,11 +93,11 @@ interface CountryInfo {
 
 // High-priority countries for country-specific blog posts (restricted + high-traffic)
 const COUNTRY_DATA: CountryInfo[] = [
-  { slug: "iran", name: "Iran", status: "restricted", internetFreedomScore: 16, population: "87.9M", blockedServices: ["Social media", "News sites", "Messaging apps", "VPN websites", "Streaming platforms"], recommendedVpns: ["NordVPN (obfuscated servers)", "ExpressVPN", "Mullvad"] },
-  { slug: "china", name: "China", status: "restricted", internetFreedomScore: 9, population: "1.4B", blockedServices: ["Google", "Facebook", "Twitter/X", "YouTube", "WhatsApp", "Instagram", "Wikipedia", "Most Western news"], recommendedVpns: ["ExpressVPN", "NordVPN (obfuscated)", "Surfshark"] },
-  { slug: "russia", name: "Russia", status: "restricted", internetFreedomScore: 21, population: "144M", blockedServices: ["Facebook", "Instagram", "Twitter/X", "Independent news", "VPN websites"], recommendedVpns: ["NordVPN (obfuscated)", "ExpressVPN", "ProtonVPN"] },
-  { slug: "uae", name: "United Arab Emirates", status: "restricted", internetFreedomScore: 30, population: "10M", blockedServices: ["VoIP (Skype, FaceTime)", "Dating apps", "Gambling sites", "Some news sites"], recommendedVpns: ["ExpressVPN", "NordVPN", "Surfshark"] },
-  { slug: "turkey", name: "Turkey", status: "legal-restricted", internetFreedomScore: 32, population: "85M", blockedServices: ["Wikipedia (intermittent)", "Social media (during events)", "Some news sites", "VPN websites"], recommendedVpns: ["ExpressVPN", "NordVPN", "ProtonVPN"] },
+  { slug: "iran", name: "Iran", status: "restricted", internetFreedomScore: 16, population: "87.9M", blockedServices: ["Social media", "News sites", "Messaging apps", "VPN websites", "Streaming platforms"], recommendedVpns: ["NordVPN (obfuscated servers)", "ExpressVPN", "Mullvad", "Astrill", "Windscribe"] },
+  { slug: "china", name: "China", status: "restricted", internetFreedomScore: 9, population: "1.4B", blockedServices: ["Google", "Facebook", "Twitter/X", "YouTube", "WhatsApp", "Instagram", "Wikipedia", "Most Western news"], recommendedVpns: ["ExpressVPN", "Astrill", "NordVPN (obfuscated)", "Surfshark", "VyprVPN"] },
+  { slug: "russia", name: "Russia", status: "restricted", internetFreedomScore: 21, population: "144M", blockedServices: ["Facebook", "Instagram", "Twitter/X", "Independent news", "VPN websites"], recommendedVpns: ["NordVPN (obfuscated)", "ExpressVPN", "ProtonVPN", "Windscribe", "Mullvad"] },
+  { slug: "uae", name: "United Arab Emirates", status: "restricted", internetFreedomScore: 30, population: "10M", blockedServices: ["VoIP (Skype, FaceTime)", "Dating apps", "Gambling sites", "Some news sites"], recommendedVpns: ["ExpressVPN", "NordVPN", "Surfshark", "PureVPN", "CyberGhost"] },
+  { slug: "turkey", name: "Turkey", status: "legal-restricted", internetFreedomScore: 32, population: "85M", blockedServices: ["Wikipedia (intermittent)", "Social media (during events)", "Some news sites", "VPN websites"], recommendedVpns: ["ExpressVPN", "NordVPN", "ProtonVPN", "Windscribe", "Hotspot Shield"] },
   { slug: "saudi-arabia", name: "Saudi Arabia", status: "restricted", internetFreedomScore: 24, population: "36M", blockedServices: ["VoIP services", "Dating sites", "Gambling", "Political opposition sites", "LGBTQ+ content"], recommendedVpns: ["ExpressVPN", "NordVPN", "Surfshark"] },
   { slug: "egypt", name: "Egypt", status: "restricted", internetFreedomScore: 25, population: "106M", blockedServices: ["News websites", "Human rights sites", "VPN websites", "VoIP services"], recommendedVpns: ["ExpressVPN", "NordVPN", "Surfshark"] },
   { slug: "vietnam", name: "Vietnam", status: "restricted", internetFreedomScore: 22, population: "100M", blockedServices: ["Facebook (intermittent)", "Political content", "Independent news", "Some blogs"], recommendedVpns: ["ExpressVPN", "NordVPN", "Surfshark"] },
@@ -238,6 +238,36 @@ const VPN_LOGOS: Record<string, { file: string; displayName: string }> = {
   mullvad: { file: "/logos/mullvad.svg", displayName: "Mullvad" },
   ipvanish: { file: "/logos/ipvanish.svg", displayName: "IPVanish" },
   "private-internet-access": { file: "/logos/private-internet-access.svg", displayName: "Private Internet Access" },
+  vyprvpn: { file: "/logos/vyprvpn.svg", displayName: "VyprVPN" },
+  tunnelbear: { file: "/logos/tunnelbear.svg", displayName: "TunnelBear" },
+  windscribe: { file: "/logos/windscribe.svg", displayName: "Windscribe" },
+  "hotspot-shield": { file: "/logos/hotspot-shield.svg", displayName: "Hotspot Shield" },
+  strongvpn: { file: "/logos/strongvpn.png", displayName: "StrongVPN" },
+  purevpn: { file: "/logos/purevpn.png", displayName: "PureVPN" },
+  "atlas-vpn": { file: "/logos/atlas-vpn.svg", displayName: "Atlas VPN" },
+  privatevpn: { file: "/logos/privatevpn.svg", displayName: "PrivateVPN" },
+  torguard: { file: "/logos/torguard.svg", displayName: "TorGuard" },
+  airvpn: { file: "/logos/airvpn.png", displayName: "AirVPN" },
+  ivpn: { file: "/logos/ivpn.svg", displayName: "IVPN" },
+  "mozilla-vpn": { file: "/logos/mozilla-vpn.svg", displayName: "Mozilla VPN" },
+  "hide-me": { file: "/logos/hide-me.svg", displayName: "Hide.me" },
+  zenmate: { file: "/logos/zenmate.svg", displayName: "ZenMate" },
+  privadovpn: { file: "/logos/privadovpn.svg", displayName: "PrivadoVPN" },
+  hma: { file: "/logos/hma.svg", displayName: "HMA" },
+  astrill: { file: "/logos/astrill.svg", displayName: "Astrill" },
+  "perfect-privacy": { file: "/logos/perfect-privacy.svg", displayName: "Perfect Privacy" },
+  "goose-vpn": { file: "/logos/goose-vpn.png", displayName: "Goose VPN" },
+  "trust-zone": { file: "/logos/trust-zone.png", displayName: "Trust.Zone" },
+  fastestvpn: { file: "/logos/fastestvpn.svg", displayName: "FastestVPN" },
+  ovpn: { file: "/logos/ovpn.svg", displayName: "OVPN" },
+  cactusvpn: { file: "/logos/cactusvpn.png", displayName: "CactusVPN" },
+  betternet: { file: "/logos/betternet.svg", displayName: "Betternet" },
+  speedify: { file: "/logos/speedify.png", displayName: "Speedify" },
+  "vpn-unlimited": { file: "/logos/vpn-unlimited.png", displayName: "VPN Unlimited" },
+  nordlayer: { file: "/logos/nordlayer.svg", displayName: "NordLayer" },
+  "perimeter-81": { file: "/logos/perimeter-81.svg", displayName: "Perimeter 81" },
+  "urban-vpn": { file: "/logos/urban-vpn.svg", displayName: "Urban VPN" },
+  "x-vpn": { file: "/logos/x-vpn.png", displayName: "X-VPN" },
 };
 
 // Inject VPN logos into blog content HTML.
@@ -447,7 +477,10 @@ Respond with ONLY the blog post title — nothing else. No quotes, no explanatio
     }
   }
 
-  const topicPrompt = `You are a senior VPN content strategist for ZeroToVPN.com, a VPN comparison and review website.
+  // All VPN names for topic generation variety
+  const allVpnNames = Object.values(VPN_LOGOS).map((v) => v.displayName);
+
+  const topicPrompt = `You are a senior VPN content strategist for ZeroToVPN.com, a VPN comparison and review website that covers 38+ VPN providers.
 
 Pick ONE compelling blog post topic that will rank well on Google and drive organic traffic.
 
@@ -460,7 +493,16 @@ ${existingTitles.map((t) => `  - ${t}`).join("\n")}
 
 ${scrapeContext ? `Recent VPN industry data for inspiration:\n${scrapeContext}\n` : ""}
 
-Topic categories to rotate between: reviews, comparisons (VPN vs VPN), how-to guides, best-of lists, security news analysis, protocol deep-dives, use-case guides (streaming, gaming, travel, torrenting), myth-busting, deal roundups.
+IMPORTANT: We cover ALL of these VPN providers, not just the top 5. Include lesser-known VPNs in your topics too:
+${allVpnNames.join(", ")}
+
+Topic categories to rotate between:
+- Individual VPN reviews (especially lesser-known ones like Windscribe, TunnelBear, IVPN, Astrill, TorGuard)
+- Head-to-head comparisons (VPN vs VPN — e.g., "Mullvad vs IVPN", "Windscribe vs ProtonVPN")
+- "Best VPN for X" guides (streaming, gaming, travel, torrenting, privacy, business)
+- How-to guides, protocol deep-dives, security news analysis
+- Budget VPN roundups, free VPN alternatives, myth-busting, deal roundups
+- Niche use cases: best VPN for students, for small business, for Kodi, for Linux
 
 Respond with ONLY the blog post title — nothing else. No quotes, no explanation.`;
 
@@ -940,6 +982,17 @@ const handler: Handler = async (event) => {
         "nordvpn": "nordvpn", "expressvpn": "expressvpn", "surfshark": "surfshark",
         "cyberghost": "cyberghost", "protonvpn": "protonvpn", "mullvad": "mullvad",
         "ipvanish": "ipvanish", "private internet access": "private-internet-access",
+        "vyprvpn": "vyprvpn", "tunnelbear": "tunnelbear", "windscribe": "windscribe",
+        "hotspot shield": "hotspot-shield", "strongvpn": "strongvpn", "purevpn": "purevpn",
+        "atlas vpn": "atlas-vpn", "privatevpn": "privatevpn", "torguard": "torguard",
+        "airvpn": "airvpn", "ivpn": "ivpn", "mozilla vpn": "mozilla-vpn",
+        "hide.me": "hide-me", "zenmate": "zenmate", "privadovpn": "privadovpn",
+        "hma": "hma", "hide my ass": "hma", "astrill": "astrill",
+        "perfect privacy": "perfect-privacy", "goose vpn": "goose-vpn",
+        "trust.zone": "trust-zone", "fastestvpn": "fastestvpn", "ovpn": "ovpn",
+        "cactusvpn": "cactusvpn", "betternet": "betternet", "speedify": "speedify",
+        "vpn unlimited": "vpn-unlimited", "nordlayer": "nordlayer",
+        "perimeter 81": "perimeter-81", "urban vpn": "urban-vpn", "x-vpn": "x-vpn",
       };
       const recommendedSlugs = detectedCountry.recommendedVpns
         .map((name) => {
@@ -978,8 +1031,9 @@ const handler: Handler = async (event) => {
     } else {
       // For non-country posts, try to find relevant pricing data based on VPN names in topic
       const topicLower = topic.toLowerCase();
-      const vpnSlugsInTopic = ["nordvpn", "surfshark", "expressvpn", "cyberghost", "protonvpn", "mullvad", "ipvanish", "private-internet-access"]
-        .filter((slug) => topicLower.includes(slug.replace("-", " ")) || topicLower.includes(slug));
+      const allVpnSlugs = Object.keys(VPN_LOGOS);
+      const vpnSlugsInTopic = allVpnSlugs
+        .filter((slug) => topicLower.includes(slug.replace(/-/g, " ")) || topicLower.includes(slug));
 
       if (vpnSlugsInTopic.length > 0) {
         // Topic mentions specific VPNs — fetch their pricing data

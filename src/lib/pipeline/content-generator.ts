@@ -65,34 +65,68 @@ export async function generateBlogPostImages(
   await replaceInfographicPlaceholders(post, onProgress);
 }
 
-// Auto-select a topic based on available scrape data
-export function autoSelectTopic(
-  scrapeData: Array<{ type: string; result?: string | null }>
-): string {
-  const hasNews = scrapeData.some((d) => d.type === "news" && d.result);
-  const hasPricing = scrapeData.some((d) => d.type === "pricing" && d.result);
+// Auto-select a topic dynamically using AI — avoids duplicates by checking existing posts
+export async function autoSelectTopic(
+  scrapeData: Array<{ type: string; result?: string | null }>,
+  existingTitles?: string[]
+): Promise<string> {
+  const { getDb, blogPosts } = await import("@/lib/db");
+  const { eq } = await import("drizzle-orm");
 
-  if (hasPricing) {
-    return "VPN Price Comparison Update: Best Deals This Month";
+  // Get existing titles from DB if not provided
+  let titles = existingTitles;
+  if (!titles) {
+    const db = getDb();
+    const existingPosts = await db
+      .select({ title: blogPosts.title })
+      .from(blogPosts)
+      .where(eq(blogPosts.language, "en"));
+    titles = existingPosts.map((p) => p.title);
   }
-  if (hasNews) {
-    return "This Week in VPN: Latest News and Security Updates";
+
+  const scrapeContext = scrapeData
+    .map((s) => s.result)
+    .filter(Boolean)
+    .join("\n")
+    .slice(0, 2000);
+
+  const now = new Date();
+  const month = now.toLocaleString("en", { month: "long" });
+  const year = now.getFullYear();
+
+  const topicPrompt = `You are a senior VPN content strategist for ZeroToVPN.com, a VPN comparison and review website.
+
+Pick ONE compelling blog post topic that will rank well on Google and drive organic traffic.
+
+The topic should be:
+- About VPNs, online privacy, cybersecurity, or related subjects
+- Specific and searchable (not too broad, not too niche)
+- Timely for ${month} ${year}
+- Different from ALL of these already-published titles:
+${titles.map((t) => `  - ${t}`).join("\n") || "  (none yet)"}
+
+${scrapeContext ? `Recent industry data for inspiration:\n${scrapeContext}\n` : ""}
+
+Topic categories to rotate between: reviews, comparisons (VPN vs VPN), how-to guides, best-of lists, security news analysis, protocol deep-dives, use-case guides (streaming, gaming, travel, torrenting), myth-busting, deal roundups.
+
+Respond with ONLY the blog post title — nothing else. No quotes, no explanation.`;
+
+  try {
+    const topicResponse = await generateContent(topicPrompt, {
+      model: "claude-haiku",
+      maxTokens: 100,
+      temperature: 0.9,
+    });
+    const topic = topicResponse.trim().replace(/^["']|["']$/g, "");
+    if (topic && topic.length > 10 && topic.length < 120) {
+      return topic;
+    }
+  } catch (err) {
+    console.warn("AI topic selection failed, using fallback:", err);
   }
 
-  // Rotating default topics
-  const defaultTopics = [
-    "Best Free VPNs That Actually Work in 2026",
-    "VPN Speed Test Results: Which VPN Is Fastest?",
-    "How to Choose the Right VPN for Streaming",
-    "Top 5 VPNs for Privacy-Conscious Users",
-    "VPN Security Features Explained: What Really Matters",
-  ];
-
-  const weekOfYear = Math.floor(
-    (Date.now() - new Date(new Date().getFullYear(), 0, 1).getTime()) /
-      (7 * 24 * 60 * 60 * 1000)
-  );
-  return defaultTopics[weekOfYear % defaultTopics.length];
+  // Fallback with date to ensure uniqueness
+  return `VPN Guide and Tips - ${month} ${year}`;
 }
 
 // Replace INFOGRAPHIC_1 and INFOGRAPHIC_2 placeholders with Gemini-generated images
@@ -116,11 +150,11 @@ async function replaceInfographicPlaceholders(
 
     try {
       onProgress?.(`Generating infographic ${index}...`);
-      const prompt = `Create a clean, professional infographic for a VPN blog article.
-The infographic should visualize: ${altText}
+      const prompt = `Create a clean, professional infographic-style illustration for a VPN blog article.
+The illustration should visualize: ${altText}
 Style: modern flat design, clean data visualization, professional color palette (blues, greens, white).
-Use icons, charts, or diagrams. Landscape format (16:9).
-Do NOT include any readable text — use abstract shapes, icons, and visual metaphors only.`;
+Use icons, charts, diagrams, abstract shapes, and visual metaphors. Landscape format (16:9).
+CRITICAL RULE: The image must contain ZERO text, ZERO letters, ZERO numbers, ZERO words, ZERO labels, ZERO watermarks, ZERO captions. No characters of any language or alphabet whatsoever. Only use icons, shapes, colors, and visual elements to convey meaning.`;
 
       const image = await generateImage(prompt);
       const dataUrl = toDataUrl(image);

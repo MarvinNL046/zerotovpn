@@ -93,7 +93,7 @@ async function handleStart(
 
   const topic =
     !rawTopic || rawTopic === "auto"
-      ? autoSelectTopic(recentScrapes)
+      ? await autoSelectTopic(recentScrapes)
       : rawTopic;
 
   // Create job in contentQueue

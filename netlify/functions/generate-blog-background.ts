@@ -5,7 +5,7 @@
 import type { Handler } from "@netlify/functions";
 import { neon } from "@neondatabase/serverless";
 import { drizzle } from "drizzle-orm/neon-http";
-import { eq, desc } from "drizzle-orm";
+import { eq, and, desc } from "drizzle-orm";
 import {
   pgTable,
   text,
@@ -152,22 +152,66 @@ async function generateAI(prompt: string, model: AiModel): Promise<string> {
     : callOpenAI(prompt, 16384, 0.7);
 }
 
-function autoSelectTopic(scrapeData: Array<{ type: string; result: string | null }>): string {
-  const hasPricing = scrapeData.some((d) => d.type === "pricing" && d.result);
-  const hasNews = scrapeData.some((d) => d.type === "news" && d.result);
-  if (hasPricing) return "VPN Price Comparison Update: Best Deals This Month";
-  if (hasNews) return "This Week in VPN: Latest News and Security Updates";
-  const topics = [
-    "Best Free VPNs That Actually Work in 2026",
-    "VPN Speed Test Results: Which VPN Is Fastest?",
-    "How to Choose the Right VPN for Streaming",
-    "Top 5 VPNs for Privacy-Conscious Users",
-    "VPN Security Features Explained: What Really Matters",
+async function autoSelectTopic(
+  db: ReturnType<typeof getDb>,
+  scrapeData: Array<{ type: string; result: string | null }>,
+  model: AiModel
+): Promise<string> {
+  // Get existing post titles to avoid duplicate topics
+  const existingPosts = await db
+    .select({ title: blogPosts.title, slug: blogPosts.slug })
+    .from(blogPosts)
+    .where(eq(blogPosts.language, "en"));
+
+  const existingTitles = existingPosts.map((p) => p.title);
+  const scrapeContext = scrapeData
+    .map((s) => s.result)
+    .filter(Boolean)
+    .join("\n")
+    .slice(0, 2000);
+
+  const now = new Date();
+  const month = now.toLocaleString("en", { month: "long" });
+  const year = now.getFullYear();
+
+  const topicPrompt = `You are a senior VPN content strategist for ZeroToVPN.com, a VPN comparison and review website.
+
+Pick ONE compelling blog post topic that will rank well on Google and drive organic traffic.
+
+The topic should be:
+- About VPNs, online privacy, cybersecurity, or related subjects
+- Specific and searchable (not too broad, not too niche)
+- Timely for ${month} ${year}
+- Different from ALL of these already-published titles:
+${existingTitles.map((t) => `  - ${t}`).join("\n")}
+
+${scrapeContext ? `Recent VPN industry data for inspiration:\n${scrapeContext}\n` : ""}
+
+Topic categories to rotate between: reviews, comparisons (VPN vs VPN), how-to guides, best-of lists, security news analysis, protocol deep-dives, use-case guides (streaming, gaming, travel, torrenting), myth-busting, deal roundups.
+
+Respond with ONLY the blog post title — nothing else. No quotes, no explanation.`;
+
+  try {
+    const topicResponse = await generateAI(topicPrompt, model);
+    const topic = topicResponse.trim().replace(/^["']|["']$/g, "");
+    if (topic && topic.length > 10 && topic.length < 120) {
+      console.log("[bg-generate] AI selected topic:", topic);
+      return topic;
+    }
+  } catch (err) {
+    console.warn("[bg-generate] AI topic selection failed, using fallback:", err);
+  }
+
+  // Fallback: simple rotation with date uniqueness
+  const fallbackTopics = [
+    "Best VPN Deals and Discounts",
+    "VPN Speed Comparison: Real-World Test Results",
+    "Complete Guide to VPN Privacy and Security",
+    "Top VPNs for Streaming: Netflix, Disney+, and More",
+    "VPN Protocols Compared: Which One Should You Use?",
   ];
-  const week = Math.floor(
-    (Date.now() - new Date(new Date().getFullYear(), 0, 1).getTime()) / (7 * 24 * 60 * 60 * 1000)
-  );
-  return topics[week % topics.length];
+  const week = Math.floor((Date.now() - new Date(year, 0, 1).getTime()) / (7 * 24 * 60 * 60 * 1000));
+  return `${fallbackTopics[week % fallbackTopics.length]} - ${month} ${year}`;
 }
 
 function detectPostType(topic: string): "news" | "comparison" | "deal" | "guide" {
@@ -511,7 +555,7 @@ const handler: Handler = async (event) => {
       .orderBy(desc(scrapeJobs.createdAt))
       .limit(5);
 
-    const topic = !rawTopic || rawTopic === "auto" ? autoSelectTopic(recentScrapes) : rawTopic;
+    const topic = !rawTopic || rawTopic === "auto" ? await autoSelectTopic(db, recentScrapes, model) : rawTopic;
     console.log("[bg-generate] Topic:", topic, "Model:", model);
 
     const scrapeContext = recentScrapes.map((s) => s.result).filter(Boolean).join("\n\n").slice(0, 4000);
@@ -525,11 +569,24 @@ const handler: Handler = async (event) => {
 
     const parsed = parsePost(rawResponse, postType);
 
+    // Ensure slug is unique (append date suffix if needed)
+    let finalSlug = parsed.slug;
+    const [existingPost] = await db
+      .select({ id: blogPosts.id })
+      .from(blogPosts)
+      .where(and(eq(blogPosts.slug, finalSlug), eq(blogPosts.language, "en")))
+      .limit(1);
+    if (existingPost) {
+      const now = new Date();
+      finalSlug = `${parsed.slug}-${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}`;
+      console.log(`[bg-generate] Slug "${parsed.slug}" exists, using "${finalSlug}"`);
+    }
+
     // Save text-only post to DB first (so we have a record even if image gen fails)
     const [post] = await db
       .insert(blogPosts)
       .values({
-        slug: parsed.slug,
+        slug: finalSlug,
         language: "en",
         title: parsed.title,
         excerpt: parsed.excerpt,

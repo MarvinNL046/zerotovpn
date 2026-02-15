@@ -28,62 +28,141 @@ on:
           - "true"
 
 jobs:
-  generate:
+  # Step 1: Generate blog post text via AI (~20-40s)
+  generate-text:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 5
+    outputs:
+      post_id: ${{ steps.generate.outputs.post_id }}
+      slug: ${{ steps.generate.outputs.slug }}
+      title: ${{ steps.generate.outputs.title }}
 
     steps:
-      - name: Generate blog post
+      - name: Generate blog post text
+        id: generate
         run: |
           TOPIC="${{ github.event.inputs.topic || 'auto' }}"
           MODEL="${{ github.event.inputs.model || 'claude-haiku' }}"
-          PUBLISH="${{ github.event.inputs.publish || 'false' }}"
 
-          echo "Generating blog post..."
+          echo "Generating blog post text..."
           echo "  Topic: $TOPIC"
           echo "  Model: $MODEL"
-          echo "  Publish: $PUBLISH"
 
-          # Use streaming (-N) to receive progress updates and prevent CDN timeout
-          HTTP_CODE=$(curl -s -N -o /tmp/generate-output.txt -w "%{http_code}" -X POST \
+          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST \
             "${{ secrets.SITE_URL }}/api/pipeline/generate" \
             -H "Content-Type: application/json" \
             -H "x-pipeline-key: ${{ secrets.PIPELINE_SECRET }}" \
-            -d "{\"type\": \"blog-post\", \"topic\": \"$TOPIC\", \"model\": \"$MODEL\", \"publish\": $PUBLISH}" \
-            --max-time 300)
+            -d "{\"type\": \"blog-post\", \"phase\": \"text\", \"topic\": \"$TOPIC\", \"model\": \"$MODEL\"}" \
+            --max-time 120)
 
-          echo "HTTP Status: $HTTP_CODE"
-          echo "--- Stream output ---"
-          cat /tmp/generate-output.txt
-          echo ""
-          echo "--- End output ---"
+          HTTP_CODE=$(echo "$RESPONSE" | tail -1)
+          BODY=$(echo "$RESPONSE" | sed '$d')
 
-          # Check HTTP status
+          echo "Status: $HTTP_CODE"
+          echo "$BODY"
+
           if [ "$HTTP_CODE" -ge 400 ]; then
-            echo "::error::Blog generation HTTP error: $HTTP_CODE"
+            echo "::error::Text generation failed with $HTTP_CODE"
             exit 1
           fi
 
-          # Check if the stream contains an error step
-          if grep -q '"step":"error"' /tmp/generate-output.txt; then
-            ERROR=$(grep '"step":"error"' /tmp/generate-output.txt)
-            echo "::error::Blog generation failed: $ERROR"
+          # Extract postId from JSON response
+          POST_ID=$(echo "$BODY" | jq -r '.postId // empty')
+          SLUG=$(echo "$BODY" | jq -r '.slug // empty')
+          TITLE=$(echo "$BODY" | jq -r '.title // empty')
+
+          if [ -z "$POST_ID" ]; then
+            echo "::error::No postId in response"
             exit 1
           fi
 
-          # Check if the stream completed successfully
-          if grep -q '"step":"completed"' /tmp/generate-output.txt; then
-            RESULT=$(grep '"step":"completed"' /tmp/generate-output.txt)
-            echo "Blog post generated successfully!"
-            echo "$RESULT"
-          else
-            echo "::warning::Blog generation stream ended without completion signal"
-            exit 1
-          fi
+          echo "post_id=$POST_ID" >> "$GITHUB_OUTPUT"
+          echo "slug=$SLUG" >> "$GITHUB_OUTPUT"
+          echo "title=$TITLE" >> "$GITHUB_OUTPUT"
+          echo "Text generated: $TITLE (ID: $POST_ID)"
 
-      - name: Check pipeline status
-        if: always()
+  # Step 2: Generate images for the post (~30-60s)
+  generate-images:
+    runs-on: ubuntu-latest
+    needs: generate-text
+    timeout-minutes: 5
+
+    steps:
+      - name: Generate images for post
         run: |
+          POST_ID="${{ needs.generate-text.outputs.post_id }}"
+          echo "Generating images for post $POST_ID..."
+
+          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST \
+            "${{ secrets.SITE_URL }}/api/pipeline/generate" \
+            -H "Content-Type: application/json" \
+            -H "x-pipeline-key: ${{ secrets.PIPELINE_SECRET }}" \
+            -d "{\"type\": \"blog-post\", \"phase\": \"images\", \"postId\": \"$POST_ID\"}" \
+            --max-time 180)
+
+          HTTP_CODE=$(echo "$RESPONSE" | tail -1)
+          BODY=$(echo "$RESPONSE" | sed '$d')
+
+          echo "Status: $HTTP_CODE"
+          echo "$BODY"
+
+          if [ "$HTTP_CODE" -ge 500 ]; then
+            echo "::warning::Image generation failed with $HTTP_CODE (post will be published without images)"
+          elif [ "$HTTP_CODE" -ge 400 ]; then
+            echo "::warning::Image generation returned $HTTP_CODE"
+          else
+            echo "Images generated successfully!"
+          fi
+
+  # Step 3: Publish the post (~2s)
+  publish-post:
+    runs-on: ubuntu-latest
+    needs: [generate-text, generate-images]
+    if: github.event.inputs.publish == 'true' || github.event_name == 'schedule'
+    timeout-minutes: 2
+
+    steps:
+      - name: Publish blog post
+        run: |
+          POST_ID="${{ needs.generate-text.outputs.post_id }}"
+          echo "Publishing post $POST_ID..."
+
+          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST \
+            "${{ secrets.SITE_URL }}/api/pipeline/generate" \
+            -H "Content-Type: application/json" \
+            -H "x-pipeline-key: ${{ secrets.PIPELINE_SECRET }}" \
+            -d "{\"type\": \"blog-post\", \"phase\": \"publish\", \"postId\": \"$POST_ID\"}" \
+            --max-time 30)
+
+          HTTP_CODE=$(echo "$RESPONSE" | tail -1)
+          BODY=$(echo "$RESPONSE" | sed '$d')
+
+          echo "Status: $HTTP_CODE"
+          echo "$BODY"
+
+          if [ "$HTTP_CODE" -ge 400 ]; then
+            echo "::error::Publish failed with $HTTP_CODE"
+            exit 1
+          fi
+
+          SLUG=$(echo "$BODY" | jq -r '.slug // empty')
+          TITLE=$(echo "$BODY" | jq -r '.title // empty')
+          echo "Published: $TITLE"
+          echo "URL: ${{ secrets.SITE_URL }}/blog/$SLUG"
+
+  # Health check
+  health-check:
+    runs-on: ubuntu-latest
+    needs: [generate-text, generate-images]
+    if: always()
+    timeout-minutes: 2
+
+    steps:
+      - name: Check pipeline status
+        run: |
+          echo "Post: ${{ needs.generate-text.outputs.title }}"
+          echo "Slug: ${{ needs.generate-text.outputs.slug }}"
+          echo "---"
           curl -s "${{ secrets.SITE_URL }}/api/pipeline/status" \
             -H "x-pipeline-key: ${{ secrets.PIPELINE_SECRET }}" \
             --max-time 30 | head -c 1000

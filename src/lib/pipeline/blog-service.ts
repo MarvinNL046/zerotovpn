@@ -66,6 +66,17 @@ export async function getPostBySlug(
   return null;
 }
 
+// Get a post by ID (any status)
+export async function getPostById(id: string): Promise<BlogPost | null> {
+  const db = getDb();
+  const [post] = await db
+    .select()
+    .from(blogPosts)
+    .where(eq(blogPosts.id, id))
+    .limit(1);
+  return post ?? null;
+}
+
 // Get a post by slug regardless of published status (for admin/preview)
 export async function getPostBySlugAdmin(
   slug: string,

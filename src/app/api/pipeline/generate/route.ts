@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { after } from "next/server";
 import { desc, eq } from "drizzle-orm";
-import { getDb, scrapeJobs, blogPosts, contentQueue } from "@/lib/db";
+import { getDb, scrapeJobs, blogPosts } from "@/lib/db";
 import {
   generateBlogPostText,
   generateBlogPostImages,
@@ -18,12 +17,10 @@ function validatePipelineKey(request: NextRequest): boolean {
   return key === process.env.PIPELINE_SECRET;
 }
 
-// Uses fire-and-forget pattern with `after()` to avoid Netlify CDN timeout:
-//
-// phase "text"    → Creates job, returns jobId immediately, generates in background
-// phase "status"  → Poll job status (pending → processing → completed/failed)
-// phase "images"  → Generate images for an existing postId (sync, ~20s per image)
-// phase "publish" → Publish an existing postId (sync, ~2s)
+// Split into phases — each phase completes in <20s to stay within CDN timeout:
+// phase "text"    → Generate AI text (~15-20s), save as draft → { postId }
+// phase "images"  → Generate images for postId (~15-20s) → { updated: true }
+// phase "publish" → Publish postId (~2s) → { published: true }
 
 export async function POST(request: NextRequest) {
   if (!validatePipelineKey(request)) {
@@ -35,14 +32,12 @@ export async function POST(request: NextRequest) {
     const {
       type,
       phase = "text",
-      jobId,
       postId,
       topic: rawTopic,
       model = "claude-haiku",
     } = body as {
       type: string;
-      phase?: "text" | "status" | "images" | "publish";
-      jobId?: string;
+      phase?: "text" | "images" | "publish";
       postId?: string;
       topic?: string;
       model?: AiModel;
@@ -56,11 +51,11 @@ export async function POST(request: NextRequest) {
     }
 
     switch (phase) {
-      case "status":
-        return handleStatusPhase(jobId);
       case "images":
+        if (!postId) return NextResponse.json({ error: "postId required" }, { status: 400 });
         return handleImagesPhase(postId);
       case "publish":
+        if (!postId) return NextResponse.json({ error: "postId required" }, { status: 400 });
         return handlePublishPhase(postId);
       case "text":
       default:
@@ -78,11 +73,9 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// Phase 1: Create job → return immediately → generate in background via after()
+// Phase 1: Generate blog post text via AI, save as draft (~15-20s)
 async function handleTextPhase(rawTopic: string | undefined, model: AiModel) {
   const db = getDb();
-
-  // Resolve topic
   const recentScrapes = await db
     .select()
     .from(scrapeJobs)
@@ -101,127 +94,36 @@ async function handleTextPhase(rawTopic: string | undefined, model: AiModel) {
     .join("\n\n")
     .slice(0, 4000);
 
-  // Create a job in contentQueue
-  const [job] = await db
-    .insert(contentQueue)
-    .values({
-      type: "blog-post",
-      status: "pending",
-      priority: 0,
-      input: JSON.stringify({ topic, scrapeContext: scrapeContext || null }),
-      aiModel: model,
-    })
-    .returning();
+  const generated = await generateBlogPostText(topic, scrapeContext || null, model);
 
-  // Run generation in the background AFTER response is sent
-  after(async () => {
-    try {
-      // Mark as processing
-      await db
-        .update(contentQueue)
-        .set({ status: "processing", attempts: job.attempts + 1 })
-        .where(eq(contentQueue.id, job.id));
-
-      // Generate text
-      const generated = await generateBlogPostText(topic, scrapeContext || null, model as AiModel);
-
-      // Save blog post
-      const post = await createPost({
-        slug: generated.slug,
-        language: "en",
-        title: generated.title,
-        excerpt: generated.excerpt,
-        content: generated.content,
-        metaTitle: generated.metaTitle,
-        metaDescription: generated.metaDescription,
-        category: generated.category,
-        tags: generated.tags,
-        featuredImage: null,
-        aiModel: model,
-        aiPrompt: topic,
-        sourceData: scrapeContext || null,
-        published: false,
-      });
-
-      // Mark job as completed
-      await db
-        .update(contentQueue)
-        .set({
-          status: "completed",
-          output: JSON.stringify({
-            postId: post.id,
-            slug: post.slug,
-            title: post.title,
-          }),
-          processedAt: new Date(),
-        })
-        .where(eq(contentQueue.id, job.id));
-
-      console.log(`Blog post generated: "${post.title}" (${post.id})`);
-    } catch (error) {
-      console.error("Background generation failed:", error);
-      await db
-        .update(contentQueue)
-        .set({
-          status: "failed",
-          error: error instanceof Error ? error.message : "Unknown error",
-          processedAt: new Date(),
-        })
-        .where(eq(contentQueue.id, job.id));
-    }
+  const post = await createPost({
+    slug: generated.slug,
+    language: "en",
+    title: generated.title,
+    excerpt: generated.excerpt,
+    content: generated.content,
+    metaTitle: generated.metaTitle,
+    metaDescription: generated.metaDescription,
+    category: generated.category,
+    tags: generated.tags,
+    featuredImage: null,
+    aiModel: model,
+    aiPrompt: topic,
+    sourceData: scrapeContext || null,
+    published: false,
   });
 
-  // Return immediately — generation runs in background
   return NextResponse.json({
-    jobId: job.id,
+    postId: post.id,
+    slug: post.slug,
+    title: post.title,
     topic,
-    status: "pending",
-    message: "Generation started. Poll with phase=status&jobId=... to check progress.",
+    status: "draft",
   });
 }
 
-// Poll job status
-async function handleStatusPhase(jobId: string | undefined) {
-  if (!jobId) {
-    return NextResponse.json({ error: "jobId is required" }, { status: 400 });
-  }
-
-  const db = getDb();
-  const [job] = await db
-    .select()
-    .from(contentQueue)
-    .where(eq(contentQueue.id, jobId))
-    .limit(1);
-
-  if (!job) {
-    return NextResponse.json({ error: "Job not found" }, { status: 404 });
-  }
-
-  const result: Record<string, unknown> = {
-    jobId: job.id,
-    status: job.status,
-  };
-
-  if (job.status === "completed" && job.output) {
-    const output = JSON.parse(job.output);
-    result.postId = output.postId;
-    result.slug = output.slug;
-    result.title = output.title;
-  }
-
-  if (job.status === "failed") {
-    result.error = job.error;
-  }
-
-  return NextResponse.json(result);
-}
-
-// Generate images for an existing draft post
-async function handleImagesPhase(postId: string | undefined) {
-  if (!postId) {
-    return NextResponse.json({ error: "postId is required" }, { status: 400 });
-  }
-
+// Phase 2: Generate images for an existing draft post (~15-20s)
+async function handleImagesPhase(postId: string) {
   const db = getDb();
   const [post] = await db
     .select()
@@ -263,12 +165,8 @@ async function handleImagesPhase(postId: string | undefined) {
   });
 }
 
-// Publish an existing draft post
-async function handlePublishPhase(postId: string | undefined) {
-  if (!postId) {
-    return NextResponse.json({ error: "postId is required" }, { status: 400 });
-  }
-
+// Phase 3: Publish an existing draft post (~2s)
+async function handlePublishPhase(postId: string) {
   const post = await getPostById(postId);
   if (!post) {
     return NextResponse.json({ error: "Post not found" }, { status: 404 });

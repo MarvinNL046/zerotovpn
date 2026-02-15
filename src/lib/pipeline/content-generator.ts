@@ -37,7 +37,7 @@ export async function generateBlogPostText(
 
   const rawResponse = await generateContent(prompt, {
     model,
-    maxTokens: 16384,
+    maxTokens: 4096,
     temperature: 0.7,
   });
 
@@ -169,14 +169,14 @@ CONTENT STRUCTURE (follow this EXACT structure — modeled after high-performing
    </tbody></table>
    Include 5-7 rows covering the main points of the article.
 
-3. NUMBERED H2 SECTIONS: Use 10-11 numbered H2 headings like:
+3. NUMBERED H2 SECTIONS: Use 5-6 numbered H2 headings like:
    <h2>1. Section Title Here</h2>
    Each H2 section should have:
    - 2 intro paragraphs with <strong>bold keywords</strong> on first mention
    - TWO H3 subheadings, each with a specific angle and 1-2 paragraphs
    - At least half the sections should include a bullet list (<ul><li>) with 3-5 practical points, each starting with a <strong>bold label</strong>
 
-4. DID YOU KNOW CALLOUTS: Add 2-3 throughout the article:
+4. DID YOU KNOW CALLOUTS: Add 1-2 throughout the article:
    <p><strong>Did You Know?</strong></p>
    <p><strong>The actual fact with a stat here.</strong></p>
    <p>Source: <a href="https://source-url.com">Source Name</a></p>
@@ -230,22 +230,12 @@ Use ONLY these trusted VPN industry sources for stats and claims:
 - AV-TEST VPN testing: https://www.av-test.org/en/
 Pick 3-5 that match the topic. Use descriptive anchor text, not "click here".
 
-INFOGRAPHIC IMAGE PLACEHOLDERS (critical — include exactly 2 per article):
-Place these HTML blocks between sections to mark where infographic images will be generated:
-
+INFOGRAPHIC IMAGE PLACEHOLDER (include exactly 1 per article):
 After section 3, add:
 <img src="INFOGRAPHIC_1" alt="Infographic of [describe key visual: e.g., '5 key benefits of using a VPN for streaming with comparison data']." />
-<p><em>A visual guide to [describe what the infographic shows]. Following these steps can [describe the benefit].</em></p>
+<p><em>A visual guide to [describe what the infographic shows].</em></p>
 
-After section 7, add:
-<img src="INFOGRAPHIC_2" alt="Infographic showing [describe visual: e.g., 'VPN speed comparison across 6 providers with bar chart data']." />
-<p><em>[Descriptive caption explaining what the infographic visualizes and its key takeaway].</em></p>
-
-Rules for image placeholders:
-- Use descriptive, specific alt text (not generic like "VPN image")
-- Always include an italic caption below using <em> tags
-- The caption should explain what the visual shows and why it matters
-- Use src="INFOGRAPHIC_1" and src="INFOGRAPHIC_2" exactly — they will be replaced with generated images
+Rules: Use descriptive alt text, include an italic caption, use src="INFOGRAPHIC_1" exactly.
 
 E-E-A-T SIGNALS (critical for Google rankings — weave these throughout):
 - EXPERIENCE: Reference hands-on testing (e.g., "In our testing...", "When we benchmarked...", "Our team measured...")
@@ -259,7 +249,7 @@ FORMATTING RULES:
 - Bold VPN names and key terms on first mention in each section
 - Use <strong> for emphasis, never <b>
 - All links use full absolute URLs (https://zerotovpn.com/...)
-- Target 1800-2500 words for comprehensive SEO coverage
+- Target 800-1200 words for focused, high-quality SEO content
 - Write in authoritative but accessible tone — expert but not jargon-heavy
 - Include specific data points (prices, server counts, speeds, percentages)
 - Every stat or claim must be attributable to a real source

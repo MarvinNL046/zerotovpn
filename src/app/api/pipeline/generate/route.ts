@@ -81,6 +81,7 @@ export async function POST(request: NextRequest) {
       metaDescription: generated.metaDescription,
       category: generated.category,
       tags: generated.tags,
+      featuredImage: generated.featuredImage ?? null,
       aiModel: model,
       aiPrompt: topic,
       sourceData: scrapeContext || null,

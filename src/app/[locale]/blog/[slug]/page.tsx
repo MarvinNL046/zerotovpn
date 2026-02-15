@@ -96,6 +96,17 @@ export default async function DynamicBlogPost({ params }: Props) {
           <p className="text-xl text-muted-foreground">{post.excerpt}</p>
         </div>
 
+        {/* Featured Image */}
+        {post.featuredImage && (
+          <div className="mb-8 rounded-xl overflow-hidden shadow-lg">
+            <img
+              src={post.featuredImage}
+              alt={post.title}
+              className="w-full h-auto object-cover max-h-[400px]"
+            />
+          </div>
+        )}
+
         {/* Tags */}
         {post.tags && post.tags.length > 0 && (
           <div className="flex flex-wrap gap-2 mb-8">

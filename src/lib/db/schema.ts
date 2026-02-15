@@ -292,6 +292,7 @@ export const blogPosts = pgTable(
     tags: text("tags").array(),
     aiModel: text("aiModel"), // "claude-haiku" | "gpt-5-nano"
     aiPrompt: text("aiPrompt"),
+    featuredImage: text("featuredImage"), // data URL or external URL
     sourceData: text("sourceData"), // JSON - scrape data used as input
     published: boolean("published").default(false).notNull(),
     publishedAt: timestamp("publishedAt"),

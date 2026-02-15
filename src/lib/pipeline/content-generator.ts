@@ -1,4 +1,5 @@
 import { generateContent, type AiModel } from "./ai-provider";
+import { generateBlogImage, toDataUrl } from "./image-generator";
 
 export interface GeneratedPost {
   title: string;
@@ -9,6 +10,7 @@ export interface GeneratedPost {
   metaDescription: string;
   category: "news" | "guide" | "comparison" | "deal";
   tags: string[];
+  featuredImage?: string; // data URL of generated image
 }
 
 type PostType = "news" | "comparison" | "deal" | "guide";
@@ -28,7 +30,17 @@ export async function generateBlogPost(
     temperature: 0.7,
   });
 
-  return parseGeneratedPost(rawResponse, postType);
+  const post = parseGeneratedPost(rawResponse, postType);
+
+  // Generate featured image via Gemini (non-blocking — post still works without it)
+  try {
+    const image = await generateBlogImage(post.title, post.category);
+    post.featuredImage = toDataUrl(image);
+  } catch (error) {
+    console.warn("Failed to generate featured image:", error);
+  }
+
+  return post;
 }
 
 // Auto-select a topic based on available scrape data

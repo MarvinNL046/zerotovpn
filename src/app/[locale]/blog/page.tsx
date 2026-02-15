@@ -132,6 +132,7 @@ export default async function BlogPage({ params }: Props) {
     readTime: string;
     title: string;
     excerpt: string;
+    featuredImage: string | null;
     isDynamic: true;
   }> = [];
 
@@ -145,6 +146,7 @@ export default async function BlogPage({ params }: Props) {
       readTime: `${Math.max(1, Math.ceil(post.content.length / 1500))} min`,
       title: post.title,
       excerpt: post.excerpt,
+      featuredImage: post.featuredImage,
       isDynamic: true as const,
     }));
   } catch {
@@ -153,7 +155,7 @@ export default async function BlogPage({ params }: Props) {
 
   // Merge static + dynamic, static posts first
   const allPosts = [
-    ...blogPosts.map((p) => ({ ...p, isDynamic: false as const, title: "", excerpt: "" })),
+    ...blogPosts.map((p) => ({ ...p, isDynamic: false as const, title: "", excerpt: "", featuredImage: null })),
     ...dynamicPosts,
   ];
 
@@ -219,7 +221,7 @@ export default async function BlogPage({ params }: Props) {
               <Card className="overflow-hidden hover:shadow-lg transition-shadow border-primary/20">
                 <CardContent className="p-0">
                   <div className="grid md:grid-cols-2 gap-6">
-                    {/* Image placeholder */}
+                    {/* Image */}
                     <div
                       className={cn(
                         "aspect-video md:aspect-auto flex items-center justify-center relative overflow-hidden",
@@ -232,23 +234,33 @@ export default async function BlogPage({ params }: Props) {
                         ]?.bgPattern
                       )}
                     >
-                      <div className="absolute inset-0 bg-grid-white/5" />
-                      {(() => {
-                        const FeaturedIcon =
-                          categoryConfig[
-                            featuredPost.category as keyof typeof categoryConfig
-                          ]?.icon || TrendingUp;
-                        return (
-                          <FeaturedIcon
-                            className={cn(
-                              "h-20 w-20 relative z-10",
+                      {featuredPost.featuredImage ? (
+                        <img
+                          src={featuredPost.featuredImage}
+                          alt={featuredPost.isDynamic ? featuredPost.title : ""}
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <>
+                          <div className="absolute inset-0 bg-grid-white/5" />
+                          {(() => {
+                            const FeaturedIcon =
                               categoryConfig[
                                 featuredPost.category as keyof typeof categoryConfig
-                              ]?.iconColor || "text-primary/40"
-                            )}
-                          />
-                        );
-                      })()}
+                              ]?.icon || TrendingUp;
+                            return (
+                              <FeaturedIcon
+                                className={cn(
+                                  "h-20 w-20 relative z-10",
+                                  categoryConfig[
+                                    featuredPost.category as keyof typeof categoryConfig
+                                  ]?.iconColor || "text-primary/40"
+                                )}
+                              />
+                            );
+                          })()}
+                        </>
+                      )}
                     </div>
                     {/* Content */}
                     <div className="p-6 md:p-8 flex flex-col justify-center">
@@ -317,7 +329,7 @@ export default async function BlogPage({ params }: Props) {
                 <Link key={post.slug} href={`/blog/${post.slug}`}>
                   <Card className="h-full hover:shadow-lg transition-all hover:border-primary/50 group">
                     <CardContent className="p-0">
-                      {/* Image placeholder */}
+                      {/* Image */}
                       <div
                         className={cn(
                           "aspect-video flex items-center justify-center border-b relative overflow-hidden",
@@ -327,13 +339,23 @@ export default async function BlogPage({ params }: Props) {
                           "group-hover:scale-105 transition-transform duration-300"
                         )}
                       >
-                        <div className="absolute inset-0 bg-grid-white/5" />
-                        <CategoryIcon
-                          className={cn(
-                            "h-14 w-14 relative z-10",
-                            config?.iconColor || "text-muted-foreground/40"
-                          )}
-                        />
+                        {post.featuredImage ? (
+                          <img
+                            src={post.featuredImage}
+                            alt={postTitle}
+                            className="w-full h-full object-cover"
+                          />
+                        ) : (
+                          <>
+                            <div className="absolute inset-0 bg-grid-white/5" />
+                            <CategoryIcon
+                              className={cn(
+                                "h-14 w-14 relative z-10",
+                                config?.iconColor || "text-muted-foreground/40"
+                              )}
+                            />
+                          </>
+                        )}
                       </div>
                       {/* Content */}
                       <div className="p-6">

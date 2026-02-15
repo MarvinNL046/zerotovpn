@@ -6,6 +6,7 @@ import {
   autoSelectTopic,
 } from "@/lib/pipeline/content-generator";
 import { createPost, publishPost } from "@/lib/pipeline/blog-service";
+import { sendPostPublishedNotification } from "@/lib/resend";
 import type { AiModel } from "@/lib/pipeline/ai-provider";
 
 function validatePipelineKey(request: NextRequest): boolean {
@@ -91,6 +92,14 @@ export async function POST(request: NextRequest) {
     // Optionally publish immediately
     if (publish) {
       await publishPost(post.id);
+
+      // Send email notification (non-blocking)
+      sendPostPublishedNotification({
+        title: post.title,
+        slug: post.slug,
+        category: generated.category,
+        excerpt: generated.excerpt,
+      }).catch((err) => console.warn("Notification email failed:", err));
     }
 
     return NextResponse.json({

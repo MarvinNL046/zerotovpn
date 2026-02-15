@@ -1,5 +1,5 @@
 import { generateContent, type AiModel } from "./ai-provider";
-import { generateBlogImage, toDataUrl } from "./image-generator";
+import { generateBlogImage, generateImage, toDataUrl } from "./image-generator";
 
 export interface GeneratedPost {
   title: string;
@@ -26,7 +26,7 @@ export async function generateBlogPost(
 
   const rawResponse = await generateContent(prompt, {
     model,
-    maxTokens: 4096,
+    maxTokens: 16384,
     temperature: 0.7,
   });
 
@@ -39,6 +39,9 @@ export async function generateBlogPost(
   } catch (error) {
     console.warn("Failed to generate featured image:", error);
   }
+
+  // Generate infographic images and replace placeholders in content
+  await replaceInfographicPlaceholders(post);
 
   return post;
 }
@@ -73,6 +76,43 @@ export function autoSelectTopic(
   return defaultTopics[weekOfYear % defaultTopics.length];
 }
 
+// Replace INFOGRAPHIC_1 and INFOGRAPHIC_2 placeholders with Gemini-generated images
+async function replaceInfographicPlaceholders(post: GeneratedPost): Promise<void> {
+  const placeholders = [
+    { src: "INFOGRAPHIC_1", index: 1 },
+    { src: "INFOGRAPHIC_2", index: 2 },
+  ];
+
+  for (const { src, index } of placeholders) {
+    if (!post.content.includes(`src="${src}"`)) continue;
+
+    // Extract the alt text from the placeholder to use as prompt
+    const altMatch = post.content.match(
+      new RegExp(`src="${src}"\\s+alt="([^"]*)"`)
+    );
+    const altText = altMatch?.[1] || `Infographic for ${post.title} - part ${index}`;
+
+    try {
+      const prompt = `Create a clean, professional infographic for a VPN blog article.
+The infographic should visualize: ${altText}
+Style: modern flat design, clean data visualization, professional color palette (blues, greens, white).
+Use icons, charts, or diagrams. Landscape format (16:9).
+Do NOT include any readable text — use abstract shapes, icons, and visual metaphors only.`;
+
+      const image = await generateImage(prompt);
+      const dataUrl = toDataUrl(image);
+      post.content = post.content.replace(`src="${src}"`, `src="${dataUrl}"`);
+    } catch (error) {
+      console.warn(`Failed to generate infographic ${index}:`, error);
+      // Remove the broken placeholder img tag entirely
+      post.content = post.content.replace(
+        new RegExp(`<img\\s+src="${src}"[^>]*/>`, "g"),
+        ""
+      );
+    }
+  }
+}
+
 function detectPostType(topic: string): PostType {
   const lower = topic.toLowerCase();
   if (lower.includes("deal") || lower.includes("discount") || lower.includes("price") || lower.includes("coupon")) {
@@ -104,12 +144,12 @@ CONTENT STRUCTURE (follow this EXACT structure — modeled after high-performing
    </tbody></table>
    Include 5-7 rows covering the main points of the article.
 
-3. NUMBERED H2 SECTIONS: Use 8-11 numbered H2 headings like:
+3. NUMBERED H2 SECTIONS: Use 10-11 numbered H2 headings like:
    <h2>1. Section Title Here</h2>
    Each H2 section should have:
-   - 2-3 intro paragraphs with <strong>bold keywords</strong> on first mention
-   - An H3 subheading with a specific angle
-   - A bullet list (<ul><li>) with 3-5 practical points, each starting with a <strong>bold label</strong>
+   - 2 intro paragraphs with <strong>bold keywords</strong> on first mention
+   - TWO H3 subheadings, each with a specific angle and 1-2 paragraphs
+   - At least half the sections should include a bullet list (<ul><li>) with 3-5 practical points, each starting with a <strong>bold label</strong>
 
 4. DID YOU KNOW CALLOUTS: Add 2-3 throughout the article:
    <p><strong>Did You Know?</strong></p>
@@ -165,9 +205,22 @@ Use ONLY these trusted VPN industry sources for stats and claims:
 - AV-TEST VPN testing: https://www.av-test.org/en/
 Pick 3-5 that match the topic. Use descriptive anchor text, not "click here".
 
-IMAGE ALT TEXT HINTS (for AI image generation):
-- After section 3, add: <!-- IMAGE: descriptive scene for featured image -->
-- After section 6, add: <!-- IMAGE: descriptive scene for mid-article image -->
+INFOGRAPHIC IMAGE PLACEHOLDERS (critical — include exactly 2 per article):
+Place these HTML blocks between sections to mark where infographic images will be generated:
+
+After section 3, add:
+<img src="INFOGRAPHIC_1" alt="Infographic of [describe key visual: e.g., '5 key benefits of using a VPN for streaming with comparison data']." />
+<p><em>A visual guide to [describe what the infographic shows]. Following these steps can [describe the benefit].</em></p>
+
+After section 7, add:
+<img src="INFOGRAPHIC_2" alt="Infographic showing [describe visual: e.g., 'VPN speed comparison across 6 providers with bar chart data']." />
+<p><em>[Descriptive caption explaining what the infographic visualizes and its key takeaway].</em></p>
+
+Rules for image placeholders:
+- Use descriptive, specific alt text (not generic like "VPN image")
+- Always include an italic caption below using <em> tags
+- The caption should explain what the visual shows and why it matters
+- Use src="INFOGRAPHIC_1" and src="INFOGRAPHIC_2" exactly — they will be replaced with generated images
 
 FORMATTING RULES:
 - Bold VPN names and key terms on first mention in each section
@@ -218,8 +271,12 @@ function parseGeneratedPost(
   let jsonStr = rawResponse.trim();
 
   // Remove markdown code block wrappers if present
-  if (jsonStr.startsWith("```")) {
-    jsonStr = jsonStr.replace(/^```(?:json)?\n?/, "").replace(/\n?```$/, "");
+  jsonStr = jsonStr.replace(/^```(?:json)?\s*\n?/, "").replace(/\n?\s*```\s*$/, "");
+
+  // Try to find a JSON object in the response (handles leading/trailing text)
+  const jsonMatch = jsonStr.match(/\{[\s\S]*\}/);
+  if (jsonMatch) {
+    jsonStr = jsonMatch[0];
   }
 
   try {
@@ -228,23 +285,46 @@ function parseGeneratedPost(
     return {
       title: parsed.title || "Untitled Post",
       slug: parsed.slug || slugify(parsed.title || "untitled"),
-      excerpt: parsed.excerpt || "",
+      excerpt: (parsed.excerpt || "").slice(0, 160),
       content: parsed.content || "",
-      metaTitle: parsed.metaTitle || parsed.title || "",
-      metaDescription: parsed.metaDescription || parsed.excerpt || "",
+      metaTitle: (parsed.metaTitle || parsed.title || "").slice(0, 60),
+      metaDescription: (parsed.metaDescription || parsed.excerpt || "").slice(0, 155),
       category: postType,
       tags: Array.isArray(parsed.tags) ? parsed.tags : [],
     };
   } catch {
-    // If JSON parsing fails, treat the whole response as content
-    const title = rawResponse.match(/^#\s+(.+)/m)?.[1] || "Generated Post";
+    // If JSON parsing fails completely, try to extract fields manually
+    const titleMatch = rawResponse.match(/"title"\s*:\s*"([^"]+)"/);
+    const slugMatch = rawResponse.match(/"slug"\s*:\s*"([^"]+)"/);
+    const excerptMatch = rawResponse.match(/"excerpt"\s*:\s*"([^"]+)"/);
+    const contentMatch = rawResponse.match(/"content"\s*:\s*"([\s\S]*?)(?:"\s*,\s*"meta|"\s*,\s*"tags|"\s*\})/);
+
+    if (titleMatch && contentMatch) {
+      // Partial JSON recovery - unescape the content string
+      const content = contentMatch[1].replace(/\\n/g, "\n").replace(/\\"/g, '"').replace(/\\\\/g, "\\");
+      const title = titleMatch[1];
+      return {
+        title,
+        slug: slugMatch?.[1] || slugify(title),
+        excerpt: (excerptMatch?.[1] || content.slice(0, 155)).slice(0, 160),
+        content,
+        metaTitle: title.slice(0, 60),
+        metaDescription: (excerptMatch?.[1] || content.slice(0, 155)).slice(0, 155),
+        category: postType,
+        tags: [],
+      };
+    }
+
+    // Last resort: treat the whole response as HTML content
+    const title = rawResponse.match(/<h1[^>]*>([^<]+)<\/h1>/)?.[1] ||
+      rawResponse.match(/^#\s+(.+)/m)?.[1] || "Generated Post";
     return {
       title,
       slug: slugify(title),
-      excerpt: rawResponse.slice(0, 155),
+      excerpt: rawResponse.replace(/<[^>]+>/g, "").slice(0, 155),
       content: rawResponse,
-      metaTitle: title,
-      metaDescription: rawResponse.slice(0, 155),
+      metaTitle: title.slice(0, 60),
+      metaDescription: rawResponse.replace(/<[^>]+>/g, "").slice(0, 155),
       category: postType,
       tags: [],
     };

@@ -345,6 +345,76 @@ export function getWelcomeEmailSubject(language: string): string {
   return (welcomeEmailTranslations[language] || welcomeEmailTranslations.en).subject;
 }
 
+// Send notification when a blog post is published
+export async function sendPostPublishedNotification({
+  title,
+  slug,
+  category,
+  excerpt,
+}: {
+  title: string;
+  slug: string;
+  category: string;
+  excerpt: string;
+}) {
+  const adminEmail = "marvinsmit1988@gmail.com";
+  const postUrl = `https://zerotovpn.com/blog/${slug}`;
+
+  const html = `
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"></head>
+<body style="margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background-color:#0f172a;">
+  <table role="presentation" style="width:100%;border-collapse:collapse;background-color:#0f172a;">
+    <tr><td align="center" style="padding:40px 20px;">
+      <table role="presentation" style="max-width:600px;width:100%;border-collapse:collapse;">
+        <tr><td align="center" style="padding:0 0 24px;">
+          <span style="font-size:24px;font-weight:bold;color:#fff;">Zero<span style="color:#3b82f6;">To</span>VPN</span>
+        </td></tr>
+        <tr><td>
+          <table role="presentation" style="width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;">
+            <tr><td style="padding:32px 32px 0;text-align:center;background:linear-gradient(135deg,#22c55e,#16a34a);color:#fff;">
+              <div style="font-size:40px;margin-bottom:12px;">&#9989;</div>
+              <h1 style="margin:0 0 8px;font-size:22px;">New Blog Post Published</h1>
+              <p style="margin:0 0 24px;opacity:0.9;font-size:14px;">Your pipeline just generated &amp; published a new post</p>
+            </td></tr>
+            <tr><td style="padding:32px;">
+              <p style="margin:0 0 8px;color:#6b7280;font-size:12px;text-transform:uppercase;letter-spacing:1px;">${category}</p>
+              <h2 style="margin:0 0 12px;color:#111;font-size:20px;">${title}</h2>
+              <p style="margin:0 0 24px;color:#374151;font-size:14px;line-height:1.6;">${excerpt}</p>
+              <table role="presentation" style="width:100%;"><tr><td align="center">
+                <a href="${postUrl}" style="display:inline-block;padding:14px 32px;background:#3b82f6;color:#fff;text-decoration:none;font-weight:700;border-radius:8px;font-size:14px;">View Post &rarr;</a>
+              </td></tr></table>
+            </td></tr>
+          </table>
+        </td></tr>
+        <tr><td style="padding:24px 0;text-align:center;">
+          <p style="margin:0;color:#6b7280;font-size:11px;">&copy; ${new Date().getFullYear()} ZeroToVPN Pipeline</p>
+        </td></tr>
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>`.trim();
+
+  try {
+    const { data, error } = await resend.emails.send({
+      from: EMAIL_FROM,
+      to: adminEmail,
+      subject: `[ZeroToVPN] New post published: ${title}`,
+      html,
+    });
+
+    if (error) {
+      console.error("Failed to send post notification:", error);
+    }
+
+    return data;
+  } catch (err) {
+    console.error("Post notification email error:", err);
+  }
+}
+
 // Send welcome email
 export async function sendWelcomeEmail({ email, language }: NewsletterWelcomeEmailProps) {
   const html = generateWelcomeEmailHtml({ email, language });

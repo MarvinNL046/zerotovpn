@@ -108,25 +108,28 @@ async function handleStart(
     })
     .returning();
 
-  // Fire-and-forget: trigger the Netlify Background Function
+  // Trigger the Netlify Background Function (must await to prevent serverless teardown)
   const siteUrl = process.env.SITE_URL || process.env.URL || "";
   const pipelineKey = process.env.PIPELINE_SECRET || "";
 
-  fetch(`${siteUrl}/.netlify/functions/generate-blog-background`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "x-pipeline-key": pipelineKey,
-    },
-    body: JSON.stringify({
-      topic,
-      model,
-      publish,
-      jobId: job.id,
-    }),
-  }).catch((err) => {
-    console.error("Failed to trigger background function:", err);
-  });
+  try {
+    const bgRes = await fetch(`${siteUrl}/.netlify/functions/generate-blog-background`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-pipeline-key": pipelineKey,
+      },
+      body: JSON.stringify({
+        topic,
+        model,
+        publish,
+        jobId: job.id,
+      }),
+    });
+    console.log(`[generate] Background function triggered: ${bgRes.status}`);
+  } catch (err) {
+    console.error("[generate] Failed to trigger background function:", err);
+  }
 
   return NextResponse.json({
     jobId: job.id,

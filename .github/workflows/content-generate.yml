@@ -53,7 +53,7 @@ jobs:
             -H "Content-Type: application/json" \
             -H "x-pipeline-key: ${{ secrets.PIPELINE_SECRET }}" \
             -d "{\"type\": \"blog-post\", \"phase\": \"text\", \"topic\": \"$TOPIC\", \"model\": \"$MODEL\"}" \
-            --max-time 120)
+            --http1.1 --max-time 120)
 
           HTTP_CODE=$(echo "$RESPONSE" | tail -1)
           BODY=$(echo "$RESPONSE" | sed '$d')
@@ -98,7 +98,7 @@ jobs:
             -H "Content-Type: application/json" \
             -H "x-pipeline-key: ${{ secrets.PIPELINE_SECRET }}" \
             -d "{\"type\": \"blog-post\", \"phase\": \"images\", \"postId\": \"$POST_ID\"}" \
-            --max-time 180)
+            --http1.1 --max-time 180)
 
           HTTP_CODE=$(echo "$RESPONSE" | tail -1)
           BODY=$(echo "$RESPONSE" | sed '$d')
@@ -132,7 +132,7 @@ jobs:
             -H "Content-Type: application/json" \
             -H "x-pipeline-key: ${{ secrets.PIPELINE_SECRET }}" \
             -d "{\"type\": \"blog-post\", \"phase\": \"publish\", \"postId\": \"$POST_ID\"}" \
-            --max-time 30)
+            --http1.1 --max-time 30)
 
           HTTP_CODE=$(echo "$RESPONSE" | tail -1)
           BODY=$(echo "$RESPONSE" | sed '$d')

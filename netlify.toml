@@ -8,3 +8,10 @@
 # Enable Next.js plugin for dynamic routes and SSR
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+# Extend function timeout for pipeline API routes (AI generation + image)
+[functions]
+  external_node_modules = ["@neondatabase/serverless"]
+
+[functions."___netlify-server-handler"]
+  timeout = 60

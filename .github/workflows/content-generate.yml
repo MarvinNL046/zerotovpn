@@ -28,77 +28,102 @@ on:
           - "true"
 
 jobs:
-  # Step 1: Generate blog post text via AI (~20-40s)
+  # Step 1: Start text generation (returns immediately, runs in background)
   generate-text:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     outputs:
-      post_id: ${{ steps.generate.outputs.post_id }}
-      slug: ${{ steps.generate.outputs.slug }}
-      title: ${{ steps.generate.outputs.title }}
+      job_id: ${{ steps.start.outputs.job_id }}
+      post_id: ${{ steps.poll.outputs.post_id }}
+      slug: ${{ steps.poll.outputs.slug }}
+      title: ${{ steps.poll.outputs.title }}
 
     steps:
-      - name: Generate blog post text
-        id: generate
+      - name: Start text generation
+        id: start
         run: |
           TOPIC="${{ github.event.inputs.topic || 'auto' }}"
           MODEL="${{ github.event.inputs.model || 'claude-haiku' }}"
 
-          echo "Generating blog post text..."
+          echo "Starting blog post generation..."
           echo "  Topic: $TOPIC"
           echo "  Model: $MODEL"
 
-          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST \
+          RESPONSE=$(curl -s --http1.1 -X POST \
             "${{ secrets.SITE_URL }}/api/pipeline/generate" \
             -H "Content-Type: application/json" \
             -H "x-pipeline-key: ${{ secrets.PIPELINE_SECRET }}" \
             -d "{\"type\": \"blog-post\", \"phase\": \"text\", \"topic\": \"$TOPIC\", \"model\": \"$MODEL\"}" \
-            --http1.1 --max-time 120)
+            --max-time 30)
 
-          HTTP_CODE=$(echo "$RESPONSE" | tail -1)
-          BODY=$(echo "$RESPONSE" | sed '$d')
+          echo "Response: $RESPONSE"
 
-          echo "Status: $HTTP_CODE"
-          echo "$BODY"
-
-          if [ "$HTTP_CODE" -ge 400 ]; then
-            echo "::error::Text generation failed with $HTTP_CODE"
+          JOB_ID=$(echo "$RESPONSE" | jq -r '.jobId // empty')
+          if [ -z "$JOB_ID" ]; then
+            echo "::error::No jobId in response"
             exit 1
           fi
 
-          # Extract postId from JSON response
-          POST_ID=$(echo "$BODY" | jq -r '.postId // empty')
-          SLUG=$(echo "$BODY" | jq -r '.slug // empty')
-          TITLE=$(echo "$BODY" | jq -r '.title // empty')
+          echo "job_id=$JOB_ID" >> "$GITHUB_OUTPUT"
+          echo "Job started: $JOB_ID"
 
-          if [ -z "$POST_ID" ]; then
-            echo "::error::No postId in response"
-            exit 1
-          fi
+      - name: Poll for completion
+        id: poll
+        run: |
+          JOB_ID="${{ steps.start.outputs.job_id }}"
+          echo "Polling job $JOB_ID..."
 
-          echo "post_id=$POST_ID" >> "$GITHUB_OUTPUT"
-          echo "slug=$SLUG" >> "$GITHUB_OUTPUT"
-          echo "title=$TITLE" >> "$GITHUB_OUTPUT"
-          echo "Text generated: $TITLE (ID: $POST_ID)"
+          for i in $(seq 1 24); do
+            sleep 10
 
-  # Step 2: Generate images for the post (~30-60s)
+            RESPONSE=$(curl -s --http1.1 -X POST \
+              "${{ secrets.SITE_URL }}/api/pipeline/generate" \
+              -H "Content-Type: application/json" \
+              -H "x-pipeline-key: ${{ secrets.PIPELINE_SECRET }}" \
+              -d "{\"type\": \"blog-post\", \"phase\": \"status\", \"jobId\": \"$JOB_ID\"}" \
+              --max-time 15)
+
+            STATUS=$(echo "$RESPONSE" | jq -r '.status // empty')
+            echo "Attempt $i: status=$STATUS"
+
+            if [ "$STATUS" = "completed" ]; then
+              POST_ID=$(echo "$RESPONSE" | jq -r '.postId // empty')
+              SLUG=$(echo "$RESPONSE" | jq -r '.slug // empty')
+              TITLE=$(echo "$RESPONSE" | jq -r '.title // empty')
+
+              echo "post_id=$POST_ID" >> "$GITHUB_OUTPUT"
+              echo "slug=$SLUG" >> "$GITHUB_OUTPUT"
+              echo "title=$TITLE" >> "$GITHUB_OUTPUT"
+              echo "Text generated: $TITLE (ID: $POST_ID)"
+              exit 0
+            elif [ "$STATUS" = "failed" ]; then
+              ERROR=$(echo "$RESPONSE" | jq -r '.error // "unknown"')
+              echo "::error::Generation failed: $ERROR"
+              exit 1
+            fi
+          done
+
+          echo "::error::Generation timed out after 4 minutes"
+          exit 1
+
+  # Step 2: Generate images for the post
   generate-images:
     runs-on: ubuntu-latest
     needs: generate-text
     timeout-minutes: 5
 
     steps:
-      - name: Generate images for post
+      - name: Generate featured image
         run: |
           POST_ID="${{ needs.generate-text.outputs.post_id }}"
           echo "Generating images for post $POST_ID..."
 
-          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST \
+          RESPONSE=$(curl -s --http1.1 -w "\n%{http_code}" -X POST \
             "${{ secrets.SITE_URL }}/api/pipeline/generate" \
             -H "Content-Type: application/json" \
             -H "x-pipeline-key: ${{ secrets.PIPELINE_SECRET }}" \
             -d "{\"type\": \"blog-post\", \"phase\": \"images\", \"postId\": \"$POST_ID\"}" \
-            --http1.1 --max-time 180)
+            --max-time 120)
 
           HTTP_CODE=$(echo "$RESPONSE" | tail -1)
           BODY=$(echo "$RESPONSE" | sed '$d')
@@ -107,14 +132,10 @@ jobs:
           echo "$BODY"
 
           if [ "$HTTP_CODE" -ge 500 ]; then
-            echo "::warning::Image generation failed with $HTTP_CODE (post will be published without images)"
-          elif [ "$HTTP_CODE" -ge 400 ]; then
-            echo "::warning::Image generation returned $HTTP_CODE"
-          else
-            echo "Images generated successfully!"
+            echo "::warning::Image generation failed ($HTTP_CODE) — post will publish without images"
           fi
 
-  # Step 3: Publish the post (~2s)
+  # Step 3: Publish the post
   publish-post:
     runs-on: ubuntu-latest
     needs: [generate-text, generate-images]
@@ -127,42 +148,41 @@ jobs:
           POST_ID="${{ needs.generate-text.outputs.post_id }}"
           echo "Publishing post $POST_ID..."
 
-          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST \
+          RESPONSE=$(curl -s --http1.1 -X POST \
             "${{ secrets.SITE_URL }}/api/pipeline/generate" \
             -H "Content-Type: application/json" \
             -H "x-pipeline-key: ${{ secrets.PIPELINE_SECRET }}" \
             -d "{\"type\": \"blog-post\", \"phase\": \"publish\", \"postId\": \"$POST_ID\"}" \
-            --http1.1 --max-time 30)
+            --max-time 30)
 
-          HTTP_CODE=$(echo "$RESPONSE" | tail -1)
-          BODY=$(echo "$RESPONSE" | sed '$d')
+          echo "$RESPONSE"
 
-          echo "Status: $HTTP_CODE"
-          echo "$BODY"
+          SLUG=$(echo "$RESPONSE" | jq -r '.slug // empty')
+          TITLE=$(echo "$RESPONSE" | jq -r '.title // empty')
+          PUBLISHED=$(echo "$RESPONSE" | jq -r '.published // false')
 
-          if [ "$HTTP_CODE" -ge 400 ]; then
-            echo "::error::Publish failed with $HTTP_CODE"
+          if [ "$PUBLISHED" = "true" ]; then
+            echo "Published: $TITLE"
+            echo "URL: ${{ secrets.SITE_URL }}/blog/$SLUG"
+          else
+            echo "::error::Publish failed"
             exit 1
           fi
-
-          SLUG=$(echo "$BODY" | jq -r '.slug // empty')
-          TITLE=$(echo "$BODY" | jq -r '.title // empty')
-          echo "Published: $TITLE"
-          echo "URL: ${{ secrets.SITE_URL }}/blog/$SLUG"
 
   # Health check
   health-check:
     runs-on: ubuntu-latest
-    needs: [generate-text, generate-images]
+    needs: [generate-text]
     if: always()
     timeout-minutes: 2
 
     steps:
-      - name: Check pipeline status
+      - name: Summary
         run: |
-          echo "Post: ${{ needs.generate-text.outputs.title }}"
+          echo "Title: ${{ needs.generate-text.outputs.title }}"
           echo "Slug: ${{ needs.generate-text.outputs.slug }}"
+          echo "Post ID: ${{ needs.generate-text.outputs.post_id }}"
           echo "---"
-          curl -s "${{ secrets.SITE_URL }}/api/pipeline/status" \
+          curl -s --http1.1 "${{ secrets.SITE_URL }}/api/pipeline/status" \
             -H "x-pipeline-key: ${{ secrets.PIPELINE_SECRET }}" \
             --max-time 30 | head -c 1000

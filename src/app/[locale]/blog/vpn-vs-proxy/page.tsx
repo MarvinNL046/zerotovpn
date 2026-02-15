@@ -26,7 +26,7 @@ type Props = {
 };
 
 const baseUrl = "https://zerotovpn.com";
-const publishDate = "2026-11-27";
+const publishDate = "2026-01-10";
 const slug = "vpn-vs-proxy";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -162,7 +162,7 @@ export default async function VpnVsProxyPage({ params }: Props) {
                 <Shield className="h-4 w-4 text-primary" />
                 <span>{t("author")}</span>
               </div>
-              <FactCheckedBadge lastUpdated="November 27, 2026" />
+              <FactCheckedBadge lastUpdated="January 10, 2026" />
             </div>
           </div>
         </section>

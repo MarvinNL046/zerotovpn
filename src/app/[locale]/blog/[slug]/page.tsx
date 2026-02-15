@@ -136,18 +136,21 @@ export default async function DynamicBlogPost({ params }: Props) {
         <div
           className="blog-content prose prose-lg dark:prose-invert max-w-none
             prose-headings:font-bold prose-headings:tracking-tight
-            prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h2:border-b prose-h2:pb-2 prose-h2:border-border
-            prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3
+            prose-h1:hidden
+            prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4 prose-h2:border-b prose-h2:pb-2 prose-h2:border-border
+            prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
             prose-a:text-primary prose-a:no-underline hover:prose-a:underline
             prose-img:rounded-xl prose-img:shadow-lg prose-img:mx-auto
-            prose-blockquote:border-primary prose-blockquote:bg-muted/50 prose-blockquote:py-1 prose-blockquote:px-4 prose-blockquote:rounded-r-lg
+            prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:bg-primary/5 prose-blockquote:py-4 prose-blockquote:px-6 prose-blockquote:rounded-r-lg prose-blockquote:not-italic prose-blockquote:my-8
             prose-table:border prose-table:border-border prose-table:rounded-lg prose-table:overflow-hidden
             prose-thead:bg-primary/10 prose-th:p-3 prose-th:text-left prose-th:font-semibold prose-th:border-b prose-th:border-border
             prose-td:p-3 prose-td:border-b prose-td:border-border/50
             prose-tr:hover:bg-muted/30 prose-tr:transition-colors
-            prose-li:marker:text-primary
+            prose-li:marker:text-primary prose-li:my-1
+            prose-ul:my-4 prose-ol:my-4
             prose-strong:text-foreground
-            prose-p:leading-relaxed"
+            prose-p:leading-relaxed prose-p:my-4
+            prose-hr:my-10 prose-hr:border-border"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
         <style dangerouslySetInnerHTML={{ __html: `
@@ -157,6 +160,9 @@ export default async function DynamicBlogPost({ params }: Props) {
           .blog-content table td, .blog-content table th { padding: 0.75rem 1rem; border-bottom: 1px solid hsl(var(--border)); }
           .blog-content table tr:last-child td { border-bottom: none; }
           .blog-content table tr:hover { background: hsl(var(--muted) / 0.4); }
+          .blog-content blockquote { font-style: normal; }
+          .blog-content blockquote p:first-child { margin-top: 0; }
+          .blog-content blockquote p:last-child { margin-bottom: 0; }
         ` }} />
 
         {/* E-E-A-T: Sources & References */}

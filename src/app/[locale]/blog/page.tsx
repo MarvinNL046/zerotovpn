@@ -75,14 +75,14 @@ const blogPosts = [
     slug: "is-vpn-legal",
     category: "security",
     featured: false,
-    date: "2026-11-28",
+    date: "2026-01-15",
     readTime: "8 min",
   },
   {
     slug: "vpn-vs-proxy",
     category: "tips",
     featured: false,
-    date: "2026-11-27",
+    date: "2026-01-10",
     readTime: "6 min",
   },
 ];
@@ -172,7 +172,20 @@ export default async function BlogPage({ params }: Props) {
   }> = [];
 
   try {
+    // Fetch locale-specific posts first, then English fallback for non-English locales
     const dbPosts = await getAllPublishedPosts(locale);
+    const seenSlugs = new Set(dbPosts.map((p) => p.slug));
+
+    // Add English posts that don't have a translation in the current locale
+    if (locale !== "en") {
+      const enPosts = await getAllPublishedPosts("en");
+      for (const enPost of enPosts) {
+        if (!seenSlugs.has(enPost.slug)) {
+          dbPosts.push(enPost);
+        }
+      }
+    }
+
     dynamicPosts = dbPosts.map((post) => ({
       slug: post.slug,
       category: post.category,

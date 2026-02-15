@@ -25,7 +25,7 @@ type Props = {
 };
 
 const baseUrl = "https://zerotovpn.com";
-const publishDate = "2026-11-28";
+const publishDate = "2026-01-15";
 const slug = "is-vpn-legal";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -152,7 +152,7 @@ export default async function VpnLegalityPage({ params }: Props) {
               <p className="text-xl text-muted-foreground mb-6">
                 {t("excerpt")}
               </p>
-              <FactCheckedBadge lastUpdated="November 28, 2026" />
+              <FactCheckedBadge lastUpdated="January 15, 2026" />
             </div>
           </div>
         </section>

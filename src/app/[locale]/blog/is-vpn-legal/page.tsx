@@ -7,6 +7,7 @@ import { ArticleJsonLd } from "@/components/structured-data";
 import { Link } from "@/i18n/navigation";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
+import { AuthorBox, FactCheckedBadge } from "@/components/blog/author-box";
 import {
   Calendar,
   Clock,
@@ -63,7 +64,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: descriptions[locale] || descriptions.en,
       type: "article",
       publishedTime: publishDate,
-      authors: ["ZeroToVPN Team"],
+      authors: ["ZeroToVPN Expert Team"],
     },
   };
 }
@@ -151,10 +152,7 @@ export default async function VpnLegalityPage({ params }: Props) {
               <p className="text-xl text-muted-foreground mb-6">
                 {t("excerpt")}
               </p>
-              <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                <Globe className="h-4 w-4 text-primary" />
-                <span>{t("author")}</span>
-              </div>
+              <FactCheckedBadge lastUpdated="November 28, 2026" />
             </div>
           </div>
         </section>
@@ -360,6 +358,15 @@ export default async function VpnLegalityPage({ params }: Props) {
                 <p>{t("conclusion.paragraph1")}</p>
                 <p>{t("conclusion.paragraph2")}</p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* E-E-A-T: Author Box */}
+        <section className="py-8">
+          <div className="container">
+            <div className="max-w-4xl mx-auto">
+              <AuthorBox />
             </div>
           </div>
         </section>

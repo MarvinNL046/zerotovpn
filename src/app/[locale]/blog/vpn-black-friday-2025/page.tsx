@@ -9,6 +9,7 @@ import { ArticleJsonLd } from "@/components/structured-data";
 import { getVpnBySlug } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
 import { RelatedPages } from "@/components/seo/related-pages";
+import { AuthorBox, FactCheckedBadge } from "@/components/blog/author-box";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { routing } from "@/i18n/routing";
 import {
@@ -80,7 +81,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: descriptions[locale] || descriptions.en,
       type: "article",
       publishedTime: publishDate,
-      authors: ["ZeroToVPN Team"],
+      authors: ["ZeroToVPN Expert Team"],
     },
   };
 }
@@ -194,6 +195,7 @@ export default async function BlackFridayDealsPage({ params }: Props) {
                 <Sparkles className="h-4 w-4 text-primary" />
                 <span>{t("author")}</span>
               </div>
+              <FactCheckedBadge lastUpdated="November 29, 2026" />
             </div>
           </div>
         </section>
@@ -335,6 +337,15 @@ export default async function BlackFridayDealsPage({ params }: Props) {
                   <Link href="/compare">{t("conclusion.cta2")}</Link>
                 </Button>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* E-E-A-T: Author Box */}
+        <section className="py-8">
+          <div className="container">
+            <div className="max-w-4xl mx-auto">
+              <AuthorBox />
             </div>
           </div>
         </section>

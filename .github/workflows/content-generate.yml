@@ -1,9 +1,9 @@
-name: Weekly Blog Post Generation
+name: Daily Blog Post Generation
 
 on:
   schedule:
-    # Every Monday at 08:00 UTC
-    - cron: "0 8 * * 1"
+    # Every day at 08:00 UTC
+    - cron: "0 8 * * *"
   workflow_dispatch: # Allow manual trigger with options
     inputs:
       topic:

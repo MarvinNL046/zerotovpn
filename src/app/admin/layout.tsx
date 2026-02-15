@@ -30,10 +30,11 @@ function AdminLoading() {
   );
 }
 
-const ALLOWED_ADMIN_EMAILS = [
-  "marvinsmit1988@gmail.com",
-  "info@staycoolairco.nl",
-];
+const ALLOWED_ADMIN_EMAILS = (
+  process.env.NEXT_PUBLIC_ADMIN_EMAILS || "marvinsmit1988@gmail.com,info@staycoolairco.nl"
+)
+  .split(",")
+  .map((e) => e.trim().toLowerCase());
 
 function AdminContent({ children }: { children: React.ReactNode }) {
   const user = useUser();

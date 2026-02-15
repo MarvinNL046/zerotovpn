@@ -1,4 +1,4 @@
-export type AiModel = "claude-haiku" | "gpt-4o-mini";
+export type AiModel = "claude-haiku" | "gpt-5-nano";
 
 interface GenerateOptions {
   model: AiModel;
@@ -99,7 +99,7 @@ async function callOpenAI(
       Authorization: `Bearer ${apiKey}`,
     },
     body: JSON.stringify({
-      model: "gpt-4o-mini",
+      model: "gpt-5-nano-2025-08-07",
       max_tokens: maxTokens,
       temperature,
       messages: [{ role: "user", content: prompt }],

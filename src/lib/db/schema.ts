@@ -290,7 +290,7 @@ export const blogPosts = pgTable(
     metaDescription: text("metaDescription"),
     category: text("category").notNull(), // "news" | "guide" | "comparison" | "deal"
     tags: text("tags").array(),
-    aiModel: text("aiModel"), // "claude-haiku" | "gpt-4o-mini"
+    aiModel: text("aiModel"), // "claude-haiku" | "gpt-5-nano"
     aiPrompt: text("aiPrompt"),
     sourceData: text("sourceData"), // JSON - scrape data used as input
     published: boolean("published").default(false).notNull(),
@@ -318,7 +318,7 @@ export const contentQueue = pgTable(
     priority: integer("priority").default(0).notNull(),
     input: text("input").notNull(), // JSON - topic, keywords, scrape data
     output: text("output"), // JSON result
-    aiModel: text("aiModel").notNull(), // "claude-haiku" | "gpt-4o-mini"
+    aiModel: text("aiModel").notNull(), // "claude-haiku" | "gpt-5-nano"
     error: text("error"),
     attempts: integer("attempts").default(0).notNull(),
     maxAttempts: integer("maxAttempts").default(3).notNull(),

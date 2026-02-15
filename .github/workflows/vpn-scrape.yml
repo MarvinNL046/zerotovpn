@@ -11,29 +11,45 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
+    strategy:
+      max-parallel: 2
+      matrix:
+        vpn:
+          - nordvpn
+          - surfshark
+          - expressvpn
+          - cyberghost
+          - protonvpn
+          - private-internet-access
+          - mullvad
+          - ipvanish
+
     steps:
-      - name: Scrape all VPN pricing data
+      - name: Scrape ${{ matrix.vpn }} pricing
         run: |
-          echo "Starting VPN data scrape..."
+          echo "Scraping ${{ matrix.vpn }}..."
           RESPONSE=$(curl -s -w "\n%{http_code}" -X POST \
             "${{ secrets.SITE_URL }}/api/pipeline/scrape" \
             -H "Content-Type: application/json" \
             -H "x-pipeline-key: ${{ secrets.PIPELINE_SECRET }}" \
-            -d '{"type": "vpn-data"}' \
-            --max-time 180)
+            -d '{"type": "pricing", "vpnSlug": "${{ matrix.vpn }}"}' \
+            --max-time 60)
 
           HTTP_CODE=$(echo "$RESPONSE" | tail -1)
           BODY=$(echo "$RESPONSE" | sed '$d')
 
           echo "Status: $HTTP_CODE"
-          echo "$BODY" | head -c 500
+          echo "$BODY" | head -c 300
 
           if [ "$HTTP_CODE" -ge 500 ]; then
-            echo "::error::VPN data scrape failed with $HTTP_CODE"
-          elif [ "$HTTP_CODE" -ge 400 ]; then
-            echo "::warning::VPN data scrape returned $HTTP_CODE"
+            echo "::error::${{ matrix.vpn }} scrape failed with $HTTP_CODE"
           fi
 
+  scrape-news:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
       - name: Scrape VPN news
         run: |
           echo "Starting VPN news scrape..."
@@ -42,7 +58,7 @@ jobs:
             -H "Content-Type: application/json" \
             -H "x-pipeline-key: ${{ secrets.PIPELINE_SECRET }}" \
             -d '{"type": "news"}' \
-            --max-time 180)
+            --max-time 120)
 
           HTTP_CODE=$(echo "$RESPONSE" | tail -1)
           BODY=$(echo "$RESPONSE" | sed '$d')
@@ -52,10 +68,13 @@ jobs:
 
           if [ "$HTTP_CODE" -ge 500 ]; then
             echo "::error::VPN news scrape failed with $HTTP_CODE"
-          elif [ "$HTTP_CODE" -ge 400 ]; then
-            echo "::warning::VPN news scrape returned $HTTP_CODE"
           fi
 
+  sync-links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+
+    steps:
       - name: Sync affiliate links
         run: |
           echo "Syncing Short.io affiliate links..."
@@ -76,6 +95,13 @@ jobs:
             echo "::warning::Affiliate link sync returned $HTTP_CODE"
           fi
 
+  health-check:
+    runs-on: ubuntu-latest
+    needs: [scrape-and-sync, scrape-news, sync-links]
+    if: always()
+    timeout-minutes: 2
+
+    steps:
       - name: Check pipeline health
         run: |
           echo "Checking pipeline health..."

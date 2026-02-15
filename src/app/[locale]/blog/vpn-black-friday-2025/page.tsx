@@ -27,22 +27,22 @@ type Props = {
 };
 
 const baseUrl = "https://zerotovpn.com";
-const publishDate = "2025-11-29";
-const slug = "vpn-black-friday-2025";
+const publishDate = "2026-11-29";
+const slug = "vpn-black-friday-2026";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
   const titles: Record<string, string> = {
-    en: "Black Friday VPN Deals 2025: Up to 88% Off | ZeroToVPN",
-    nl: "Black Friday VPN-deals 2025: Tot 88% korting | ZeroToVPN",
-    de: "Black Friday VPN-Angebote 2025: Bis zu 88% Rabatt | ZeroToVPN",
-    es: "Ofertas VPN Black Friday 2025: Hasta 88% de descuento | ZeroToVPN",
-    fr: "Offres VPN Black Friday 2025: Jusqu'à 88% de réduction | ZeroToVPN",
-    zh: "黑色星期五VPN优惠2025：最高88%折扣 | ZeroToVPN",
-    ja: "ブラックフライデーVPN セール 2025：最大88%オフ | ZeroToVPN",
-    ko: "블랙 프라이데이 VPN 할인 2025: 최대 88% 할인 | ZeroToVPN",
-    th: "VPN Black Friday Deals 2025: ลดสูงสุด 88% | ZeroToVPN",
+    en: "Black Friday VPN Deals 2026: Up to 88% Off | ZeroToVPN",
+    nl: "Black Friday VPN-deals 2026: Tot 88% korting | ZeroToVPN",
+    de: "Black Friday VPN-Angebote 2026: Bis zu 88% Rabatt | ZeroToVPN",
+    es: "Ofertas VPN Black Friday 2026: Hasta 88% de descuento | ZeroToVPN",
+    fr: "Offres VPN Black Friday 2026: Jusqu'à 88% de réduction | ZeroToVPN",
+    zh: "黑色星期五VPN优惠2026：最高88%折扣 | ZeroToVPN",
+    ja: "ブラックフライデーVPN セール 2026：最大88%オフ | ZeroToVPN",
+    ko: "블랙 프라이데이 VPN 할인 2026: 최대 88% 할인 | ZeroToVPN",
+    th: "VPN Black Friday Deals 2026: ลดสูงสุด 88% | ZeroToVPN",
   };
 
   const descriptions: Record<string, string> = {
@@ -156,7 +156,7 @@ export default async function BlackFridayDealsPage({ params }: Props) {
           <BreadcrumbSchema
             items={[
               { name: "Blog", href: "/blog" },
-              { name: "Black Friday 2025", href: "/blog/vpn-black-friday-2025" }
+              { name: "Black Friday 2026", href: "/blog/vpn-black-friday-2026" }
             ]}
           />
         </div>
@@ -395,7 +395,7 @@ export default async function BlackFridayDealsPage({ params }: Props) {
               <RelatedPages
                 title="Related Articles"
                 pages={[
-                  { title: "Best VPNs 2025", description: "Our top-rated VPN services", href: "/best/best-vpn", icon: "trophy" },
+                  { title: "Best VPNs 2026", description: "Our top-rated VPN services", href: "/best/best-vpn", icon: "trophy" },
                   { title: "VPN Deals", description: "Current discounts and offers", href: "/deals", icon: "tag" },
                   { title: "Is VPN Legal?", description: "VPN legality around the world", href: "/blog/is-vpn-legal", icon: "shield" },
                   { title: "Best Free VPNs", description: "Top free VPN options", href: "/best/free-vpn", icon: "gift" }

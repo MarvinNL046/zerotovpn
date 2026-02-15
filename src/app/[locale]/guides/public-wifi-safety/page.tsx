@@ -45,7 +45,7 @@ const baseUrl = "https://zerotovpn.com";
 export async function generateMetadata(): Promise<Metadata> {
   return {
     metadataBase: new URL(baseUrl),
-    title: "Public WiFi Safety: How to Stay Secure on Open Networks (2025) - ZeroToVPN",
+    title: "Public WiFi Safety: How to Stay Secure on Open Networks (2026) - ZeroToVPN",
     description:
       "Learn about public WiFi risks and how to protect yourself. Discover essential security tips for using WiFi at cafes, airports, hotels, and other public places.",
     robots: {
@@ -53,7 +53,7 @@ export async function generateMetadata(): Promise<Metadata> {
       follow: true,
     },
     openGraph: {
-      title: "Public WiFi Safety: How to Stay Secure on Open Networks (2025)",
+      title: "Public WiFi Safety: How to Stay Secure on Open Networks (2026)",
       description:
         "Learn about public WiFi risks and how to protect yourself. Essential security tips for cafes, airports, and hotels.",
       type: "article",
@@ -71,11 +71,11 @@ export default async function PublicWifiSafetyPage({ params }: Props) {
   return (
     <>
       <ArticleJsonLd
-        title="Public WiFi Safety: How to Stay Secure on Open Networks (2025)"
+        title="Public WiFi Safety: How to Stay Secure on Open Networks (2026)"
         description="Learn about public WiFi risks and how to protect yourself. Discover essential security tips for using WiFi at cafes, airports, hotels, and other public places."
         url={pageUrl}
-        datePublished="2025-01-01"
-        dateModified="2025-11-28"
+        datePublished="2026-01-01"
+        dateModified="2026-11-28"
       />
       <BreadcrumbJsonLd
         items={[
@@ -527,7 +527,7 @@ export default async function PublicWifiSafetyPage({ params }: Props) {
                 { title: "VPN for Travel", description: "Stay secure while traveling", href: "/guides/vpn-for-travel", icon: "globe" },
                 { title: "VPN on Mobile", description: "Secure your smartphone", href: "/guides/vpn-on-mobile", icon: "smartphone" },
                 { title: "VPN Privacy Guide", description: "Maximize online privacy", href: "/guides/vpn-privacy-guide", icon: "shield" },
-                { title: "Best VPNs 2025", description: "Top-rated secure VPNs", href: "/best/best-vpn", icon: "trophy" }
+                { title: "Best VPNs 2026", description: "Top-rated secure VPNs", href: "/best/best-vpn", icon: "trophy" }
               ]}
             />
           </div>

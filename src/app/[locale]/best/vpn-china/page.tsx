@@ -47,15 +47,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
   const titles: Record<string, string> = {
-    en: "Best VPN for China 2025: Bypass the Great Firewall | ZeroToVPN",
-    nl: "Beste VPN voor China 2025: Omzeil de Great Firewall | ZeroToVPN",
-    de: "Beste VPN für China 2025: Umgehen Sie die Great Firewall | ZeroToVPN",
-    es: "Mejor VPN para China 2025: Evita la Gran Muralla de Fuego | ZeroToVPN",
-    fr: "Meilleur VPN pour la Chine 2025 : Contourner le Grand Pare-feu | ZeroToVPN",
-    zh: "2025年中国VPN推荐：翻墙VPN最好用的选择 | ZeroToVPN",
-    ja: "中国向けベストVPN 2025：グレートファイアウォールを回避 | ZeroToVPN",
-    ko: "중국 최고의 VPN 2025: 만리방화벽 우회하기 | ZeroToVPN",
-    th: "VPN ที่ดีที่สุดสำหรับจีน 2025: ข้ามกำแพงไฟวอลล์ใหญ่ | ZeroToVPN",
+    en: "Best VPN for China 2026: Bypass the Great Firewall | ZeroToVPN",
+    nl: "Beste VPN voor China 2026: Omzeil de Great Firewall | ZeroToVPN",
+    de: "Beste VPN für China 2026: Umgehen Sie die Great Firewall | ZeroToVPN",
+    es: "Mejor VPN para China 2026: Evita la Gran Muralla de Fuego | ZeroToVPN",
+    fr: "Meilleur VPN pour la Chine 2026 : Contourner le Grand Pare-feu | ZeroToVPN",
+    zh: "2026年中国VPN推荐：翻墙VPN最好用的选择 | ZeroToVPN",
+    ja: "中国向けベストVPN 2026：グレートファイアウォールを回避 | ZeroToVPN",
+    ko: "중국 최고의 VPN 2026: 만리방화벽 우회하기 | ZeroToVPN",
+    th: "VPN ที่ดีที่สุดสำหรับจีน 2026: ข้ามกำแพงไฟวอลล์ใหญ่ | ZeroToVPN",
   };
 
   const descriptions: Record<string, string> = {
@@ -87,7 +87,7 @@ function ArticleSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "Best VPN for China 2025: Bypass the Great Firewall",
+    headline: "Best VPN for China 2026: Bypass the Great Firewall",
     description: "Comprehensive guide to VPNs that work in China with expert recommendations and testing results",
     author: {
       "@type": "Organization",
@@ -101,8 +101,8 @@ function ArticleSchema() {
         url: "https://zerotovpn.com/logo.png",
       },
     },
-    datePublished: "2025-01-01",
-    dateModified: "2025-01-01",
+    datePublished: "2026-01-01",
+    dateModified: "2026-01-01",
   };
 
   return (
@@ -176,8 +176,8 @@ export default async function VpnChinaPage({ params }: Props) {
   // Content translations
   const content = {
     en: {
-      badge: "Updated January 2025",
-      title: "Best VPN for China 2025",
+      badge: "Updated January 2026",
+      title: "Best VPN for China 2026",
       subtitle: "The Great Firewall is one of the most sophisticated censorship systems in the world. Here are the VPNs that actually work in China based on real-world testing.",
 
       // Why You Need VPN section
@@ -193,7 +193,7 @@ export default async function VpnChinaPage({ params }: Props) {
       ],
 
       // VPNs That Work section
-      vpnsWorkTitle: "VPNs That Work in China (2025)",
+      vpnsWorkTitle: "VPNs That Work in China (2026)",
       vpnsWorkSubtitle: "These VPNs have been tested and confirmed working in mainland China",
       whyItWorks: "Why it works:",
       reliability: "Reliability:",
@@ -276,11 +276,11 @@ export default async function VpnChinaPage({ params }: Props) {
       ctaTitle: "Get Your VPN Before Traveling to China",
       ctaSubtitle: "Don't wait until you're there. Set up your VPN now to stay connected.",
       viewAllVpns: "View All VPN Reviews",
-      lastUpdated: "Last updated: January 2025",
+      lastUpdated: "Last updated: January 2026",
     },
     nl: {
-      badge: "Bijgewerkt januari 2025",
-      title: "Beste VPN voor China 2025",
+      badge: "Bijgewerkt januari 2026",
+      title: "Beste VPN voor China 2026",
       subtitle: "De Great Firewall is een van de meest geavanceerde censuur systemen ter wereld. Dit zijn de VPNs die daadwerkelijk werken in China, gebaseerd op praktijktesten.",
 
       // Why You Need VPN section
@@ -296,7 +296,7 @@ export default async function VpnChinaPage({ params }: Props) {
       ],
 
       // VPNs That Work section
-      vpnsWorkTitle: "VPNs Die Werken in China (2025)",
+      vpnsWorkTitle: "VPNs Die Werken in China (2026)",
       vpnsWorkSubtitle: "Deze VPNs zijn getest en bevestigd werkend in China",
       whyItWorks: "Waarom het werkt:",
       reliability: "Betrouwbaarheid:",
@@ -379,11 +379,11 @@ export default async function VpnChinaPage({ params }: Props) {
       ctaTitle: "Regel Je VPN Voor Je Naar China Reist",
       ctaSubtitle: "Wacht niet tot je daar bent. Stel nu je VPN in om verbonden te blijven.",
       viewAllVpns: "Bekijk Alle VPN Reviews",
-      lastUpdated: "Laatst bijgewerkt: januari 2025",
+      lastUpdated: "Laatst bijgewerkt: januari 2026",
     },
     de: {
-      badge: "Aktualisiert Januar 2025",
-      title: "Beste VPN für China 2025",
+      badge: "Aktualisiert Januar 2026",
+      title: "Beste VPN für China 2026",
       subtitle: "Die Great Firewall ist eines der ausgefeiltesten Zensursysteme der Welt. Dies sind die VPNs, die tatsächlich in China funktionieren, basierend auf realen Tests.",
 
       // Why You Need VPN section
@@ -399,7 +399,7 @@ export default async function VpnChinaPage({ params }: Props) {
       ],
 
       // VPNs That Work section
-      vpnsWorkTitle: "VPNs, die in China Funktionieren (2025)",
+      vpnsWorkTitle: "VPNs, die in China Funktionieren (2026)",
       vpnsWorkSubtitle: "Diese VPNs wurden getestet und funktionieren nachweislich in Festlandchina",
       whyItWorks: "Warum es funktioniert:",
       reliability: "Zuverlässigkeit:",
@@ -482,11 +482,11 @@ export default async function VpnChinaPage({ params }: Props) {
       ctaTitle: "Holen Sie Sich Ihr VPN vor der Reise nach China",
       ctaSubtitle: "Warten Sie nicht, bis Sie dort sind. Richten Sie jetzt Ihr VPN ein, um verbunden zu bleiben.",
       viewAllVpns: "Alle VPN-Bewertungen Ansehen",
-      lastUpdated: "Zuletzt aktualisiert: Januar 2025",
+      lastUpdated: "Zuletzt aktualisiert: Januar 2026",
     },
     es: {
-      badge: "Actualizado enero 2025",
-      title: "Mejor VPN para China 2025",
+      badge: "Actualizado enero 2026",
+      title: "Mejor VPN para China 2026",
       subtitle: "La Gran Muralla de Fuego es uno de los sistemas de censura más sofisticados del mundo. Estos son los VPNs que realmente funcionan en China basados en pruebas reales.",
 
       // Why You Need VPN section
@@ -502,7 +502,7 @@ export default async function VpnChinaPage({ params }: Props) {
       ],
 
       // VPNs That Work section
-      vpnsWorkTitle: "VPNs que Funcionan en China (2025)",
+      vpnsWorkTitle: "VPNs que Funcionan en China (2026)",
       vpnsWorkSubtitle: "Estos VPNs han sido probados y confirmados funcionando en China continental",
       whyItWorks: "Por qué funciona:",
       reliability: "Fiabilidad:",
@@ -585,11 +585,11 @@ export default async function VpnChinaPage({ params }: Props) {
       ctaTitle: "Obtén Tu VPN Antes de Viajar a China",
       ctaSubtitle: "No esperes hasta estar allí. Configura tu VPN ahora para mantenerte conectado.",
       viewAllVpns: "Ver Todas las Reseñas de VPN",
-      lastUpdated: "Última actualización: enero 2025",
+      lastUpdated: "Última actualización: enero 2026",
     },
     fr: {
-      badge: "Mis à jour janvier 2025",
-      title: "Meilleur VPN pour la Chine 2025",
+      badge: "Mis à jour janvier 2026",
+      title: "Meilleur VPN pour la Chine 2026",
       subtitle: "Le Grand Pare-feu est l'un des systèmes de censure les plus sophistiqués au monde. Voici les VPNs qui fonctionnent réellement en Chine basés sur des tests réels.",
 
       // Why You Need VPN section
@@ -605,7 +605,7 @@ export default async function VpnChinaPage({ params }: Props) {
       ],
 
       // VPNs That Work section
-      vpnsWorkTitle: "VPNs qui Fonctionnent en Chine (2025)",
+      vpnsWorkTitle: "VPNs qui Fonctionnent en Chine (2026)",
       vpnsWorkSubtitle: "Ces VPNs ont été testés et confirmés fonctionnant en Chine continentale",
       whyItWorks: "Pourquoi ça fonctionne:",
       reliability: "Fiabilité:",
@@ -688,11 +688,11 @@ export default async function VpnChinaPage({ params }: Props) {
       ctaTitle: "Obtenez Votre VPN Avant de Voyager en Chine",
       ctaSubtitle: "N'attendez pas d'être sur place. Configurez votre VPN maintenant pour rester connecté.",
       viewAllVpns: "Voir Toutes les Critiques de VPN",
-      lastUpdated: "Dernière mise à jour: janvier 2025",
+      lastUpdated: "Dernière mise à jour: janvier 2026",
     },
     zh: {
-      badge: "2025年1月更新",
-      title: "2025年中国VPN推荐",
+      badge: "2026年1月更新",
+      title: "2026年中国VPN推荐",
       subtitle: "防火长城是世界上最复杂的审查系统之一。以下是经过实际测试，在中国真正可用的翻墙VPN。",
 
       // Why You Need VPN section
@@ -708,7 +708,7 @@ export default async function VpnChinaPage({ params }: Props) {
       ],
 
       // VPNs That Work section
-      vpnsWorkTitle: "在中国可以使用的VPN（2025）",
+      vpnsWorkTitle: "在中国可以使用的VPN（2026）",
       vpnsWorkSubtitle: "这些VPN已经过测试，确认在中国大陆可用",
       whyItWorks: "为什么有效：",
       reliability: "可靠性：",
@@ -791,11 +791,11 @@ export default async function VpnChinaPage({ params }: Props) {
       ctaTitle: "前往中国之前获取您的VPN",
       ctaSubtitle: "不要等到到达后才准备。现在就设置您的VPN以保持连接。",
       viewAllVpns: "查看所有VPN评测",
-      lastUpdated: "最后更新：2025年1月",
+      lastUpdated: "最后更新：2026年1月",
     },
     ja: {
-      badge: "2025年1月更新",
-      title: "中国向けベストVPN 2025",
+      badge: "2026年1月更新",
+      title: "中国向けベストVPN 2026",
       subtitle: "グレートファイアウォールは世界で最も洗練された検閲システムの一つです。実際のテストに基づいて、中国で実際に機能するVPNをご紹介します。",
 
       // Why You Need VPN section
@@ -811,7 +811,7 @@ export default async function VpnChinaPage({ params }: Props) {
       ],
 
       // VPNs That Work section
-      vpnsWorkTitle: "中国で機能するVPN（2025）",
+      vpnsWorkTitle: "中国で機能するVPN（2026）",
       vpnsWorkSubtitle: "これらのVPNはテスト済みで、中国本土で機能することが確認されています",
       whyItWorks: "機能する理由：",
       reliability: "信頼性：",
@@ -894,11 +894,11 @@ export default async function VpnChinaPage({ params }: Props) {
       ctaTitle: "中国への旅行前にVPNを入手",
       ctaSubtitle: "到着してから準備するのではなく、今すぐVPNを設定して接続を維持してください。",
       viewAllVpns: "すべてのVPNレビューを見る",
-      lastUpdated: "最終更新：2025年1月",
+      lastUpdated: "最終更新：2026年1月",
     },
     ko: {
-      badge: "2025년 1월 업데이트",
-      title: "중국 최고의 VPN 2025",
+      badge: "2026년 1월 업데이트",
+      title: "중국 최고의 VPN 2026",
       subtitle: "만리방화벽은 세계에서 가장 정교한 검열 시스템 중 하나입니다. 실제 테스트를 기반으로 중국에서 실제로 작동하는 VPN을 소개합니다.",
 
       // Why You Need VPN section
@@ -914,7 +914,7 @@ export default async function VpnChinaPage({ params }: Props) {
       ],
 
       // VPNs That Work section
-      vpnsWorkTitle: "중국에서 작동하는 VPN（2025）",
+      vpnsWorkTitle: "중국에서 작동하는 VPN（2026）",
       vpnsWorkSubtitle: "이 VPN들은 테스트를 거쳐 중국 본토에서 작동하는 것으로 확인되었습니다",
       whyItWorks: "작동하는 이유：",
       reliability: "신뢰성：",
@@ -997,11 +997,11 @@ export default async function VpnChinaPage({ params }: Props) {
       ctaTitle: "중국 여행 전에 VPN 받기",
       ctaSubtitle: "도착할 때까지 기다리지 마십시오. 지금 VPN을 설정하여 연결 상태를 유지하십시오.",
       viewAllVpns: "모든 VPN 리뷰 보기",
-      lastUpdated: "마지막 업데이트: 2025년 1월",
+      lastUpdated: "마지막 업데이트: 2026년 1월",
     },
     th: {
-      badge: "อัปเดตมกราคม 2025",
-      title: "VPN ที่ดีที่สุดสำหรับจีน 2025",
+      badge: "อัปเดตมกราคม 2026",
+      title: "VPN ที่ดีที่สุดสำหรับจีน 2026",
       subtitle: "กำแพงไฟวอลล์ใหญ่เป็นหนึ่งในระบบเซ็นเซอร์ที่ซับซ้อนที่สุดในโลก นี่คือ VPN ที่ใช้งานได้จริงในจีนตามการทดสอบจริง",
 
       // Why You Need VPN section
@@ -1017,7 +1017,7 @@ export default async function VpnChinaPage({ params }: Props) {
       ],
 
       // VPNs That Work section
-      vpnsWorkTitle: "VPN ที่ใช้งานได้ในจีน (2025)",
+      vpnsWorkTitle: "VPN ที่ใช้งานได้ในจีน (2026)",
       vpnsWorkSubtitle: "VPN เหล่านี้ได้รับการทดสอบและยืนยันว่าใช้งานได้ในจีนแผ่นดินใหญ่",
       whyItWorks: "ทำไมถึงใช้ได้：",
       reliability: "ความน่าเชื่อถือ：",
@@ -1100,7 +1100,7 @@ export default async function VpnChinaPage({ params }: Props) {
       ctaTitle: "รับ VPN ของคุณก่อนเดินทางไปจีน",
       ctaSubtitle: "อย่ารอจนกว่าคุณจะอยู่ที่นั่น ตั้งค่า VPN ของคุณตอนนี้เพื่อรักษาการเชื่อมต่อ",
       viewAllVpns: "ดูรีวิว VPN ทั้งหมด",
-      lastUpdated: "อัปเดตล่าสุด: มกราคม 2025",
+      lastUpdated: "อัปเดตล่าสุด: มกราคม 2026",
     },
   };
 
@@ -1433,7 +1433,7 @@ export default async function VpnChinaPage({ params }: Props) {
             { title: "Best VPN for Russia", description: "VPNs that work reliably in Russia", href: "/best/vpn-russia", icon: "globe" },
             { title: "Best VPN for UAE", description: "VPNs for Dubai and the Emirates", href: "/best/vpn-uae", icon: "globe" },
             { title: "Best VPN for Iran", description: "Top VPNs for bypassing Iranian censorship", href: "/best/vpn-iran", icon: "globe" },
-            { title: "Best VPNs 2025", description: "Our top-rated VPN services", href: "/best/best-vpn", icon: "trophy" },
+            { title: "Best VPNs 2026", description: "Our top-rated VPN services", href: "/best/best-vpn", icon: "trophy" },
             { title: "Best Mobile VPN", description: "VPNs optimized for mobile devices", href: "/best/vpn-mobile", icon: "smartphone" }
           ]}
         />

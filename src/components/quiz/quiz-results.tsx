@@ -237,7 +237,7 @@ export function QuizResults({
                         <a
                           href={vpn.affiliateUrl}
                           target="_blank"
-                          rel="noopener noreferrer"
+                          rel="sponsored noopener noreferrer"
                         >
                           {t("results.getDeal")}
                           <ExternalLink className="ml-2 h-4 w-4" />

@@ -68,7 +68,7 @@ export function ArticleJsonLd({
   title,
   description,
   url,
-  datePublished = "2025-01-01",
+  datePublished = "2026-01-01",
   dateModified,
   image = "https://zerotovpn.com/og-image.png",
 }: ArticleJsonLdProps) {

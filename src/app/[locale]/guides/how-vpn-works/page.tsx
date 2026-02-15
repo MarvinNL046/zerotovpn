@@ -37,7 +37,7 @@ const baseUrl = "https://zerotovpn.com";
 export async function generateMetadata(): Promise<Metadata> {
   return {
     metadataBase: new URL(baseUrl),
-    title: "How Does a VPN Work? Technical Guide 2025 - ZeroToVPN",
+    title: "How Does a VPN Work? Technical Guide 2026 - ZeroToVPN",
     description:
       "Understand the technical details behind VPN technology. Learn about encryption, tunneling protocols, and how VPNs protect your data step by step.",
     robots: {
@@ -45,7 +45,7 @@ export async function generateMetadata(): Promise<Metadata> {
       follow: true,
     },
     openGraph: {
-      title: "How Does a VPN Work? Technical Guide 2025",
+      title: "How Does a VPN Work? Technical Guide 2026",
       description:
         "Understand the technical details behind VPN technology. Learn about encryption, tunneling protocols, and how VPNs protect your data.",
       type: "article",
@@ -64,11 +64,11 @@ export default async function HowVpnWorksPage({ params }: Props) {
   return (
     <>
       <ArticleJsonLd
-        title="How Does a VPN Work? Technical Guide 2025"
+        title="How Does a VPN Work? Technical Guide 2026"
         description="Understand the technical details behind VPN technology. Learn about encryption, tunneling protocols, and how VPNs protect your data step by step."
         url={pageUrl}
-        datePublished="2025-01-01"
-        dateModified="2025-11-28"
+        datePublished="2026-01-01"
+        dateModified="2026-11-28"
       />
       <BreadcrumbJsonLd
         items={[

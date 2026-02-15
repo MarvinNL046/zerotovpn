@@ -33,27 +33,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
   const titles: Record<string, string> = {
-    en: "Best VPN for Iran 2025: Bypass Censorship & Stay Safe | ZeroToVPN",
-    nl: "Beste VPN voor Iran 2025: Omzeil Censuur & Blijf Veilig | ZeroToVPN",
-    de: "Beste VPN für Iran 2025: Zensur umgehen & sicher bleiben | ZeroToVPN",
-    es: "Mejor VPN para Irán 2025: Evita la Censura y Mantente Seguro | ZeroToVPN",
-    fr: "Meilleur VPN pour l'Iran 2025: Contourner la Censure | ZeroToVPN",
-    zh: "伊朗最佳VPN 2025：绕过审查，保持安全 | ZeroToVPN",
-    ja: "イラン最適なVPN 2025：検閲回避と安全確保 | ZeroToVPN",
-    ko: "이란 최고의 VPN 2025: 검열 우회 및 안전 유지 | ZeroToVPN",
-    th: "VPN ที่ดีที่สุดสำหรับอิหร่าน 2025: หลีกเลี่ยงการเซ็นเซอร์และความปลอดภัย | ZeroToVPN",
+    en: "Best VPN for Iran 2026: 4 That Actually Bypass DPI (Tested) | ZeroToVPN",
+    nl: "Beste VPN voor Iran 2026: 4 Die DPI Daadwerkelijk Omzeilen (Getest) | ZeroToVPN",
+    de: "Bestes VPN für Iran 2026: 4 Die DPI Wirklich Umgehen (Getestet) | ZeroToVPN",
+    es: "Mejor VPN para Irán 2026: 4 Que Realmente Evitan DPI (Probados) | ZeroToVPN",
+    fr: "Meilleur VPN pour l'Iran 2026: 4 Qui Contournent le DPI (Testés) | ZeroToVPN",
+    zh: "伊朗最佳VPN 2026：4款真正绕过DPI的VPN（已测试） | ZeroToVPN",
+    ja: "イラン向けベストVPN 2026：DPIを実際に回避する4選（テスト済み） | ZeroToVPN",
+    ko: "이란 최고의 VPN 2026: DPI를 실제로 우회하는 4개 (테스트 완료) | ZeroToVPN",
+    th: "VPN ที่ดีที่สุดสำหรับอิหร่าน 2026: 4 ตัวที่ข้าม DPI ได้จริง (ทดสอบแล้ว) | ZeroToVPN",
   };
 
   const descriptions: Record<string, string> = {
-    en: "Iran has one of the world's strictest censorship systems. Find VPNs that actually work to bypass Deep Packet Inspection (DPI) and access blocked services like Telegram, Instagram, and YouTube.",
-    nl: "Iran heeft een van de strengste censuur systemen ter wereld. Vind VPNs die daadwerkelijk werken om Deep Packet Inspection (DPI) te omzeilen.",
-    de: "Iran hat eines der strengsten Zensursysteme der Welt. Finden Sie VPNs, die tatsächlich funktionieren, um Deep Packet Inspection (DPI) zu umgehen.",
-    es: "Irán tiene uno de los sistemas de censura más estrictos del mundo. Encuentra VPN que realmente funcionan para eludir la inspección profunda de paquetes (DPI).",
-    fr: "L'Iran a l'un des systèmes de censure les plus stricts au monde. Trouvez des VPN qui fonctionnent vraiment pour contourner l'inspection approfondie des paquets (DPI).",
-    zh: "伊朗拥有世界上最严格的审查系统之一。找到真正有效的VPN，绕过深度包检测（DPI）并访问Telegram、Instagram和YouTube等被封锁服务。",
-    ja: "イランは世界で最も厳格な検閲システムの1つを持っています。Deep Packet Inspection（DPI）を回避し、Telegram、Instagram、YouTubeなどのブロックされたサービスにアクセスできる実際に機能するVPNを見つけてください。",
-    ko: "이란은 세계에서 가장 엄격한 검열 시스템 중 하나를 보유하고 있습니다. Deep Packet Inspection (DPI)을 우회하고 Telegram, Instagram, YouTube 등 차단된 서비스에 액세스할 수 있는 실제 작동하는 VPN을 찾아보세요.",
-    th: "อิหร่านมีระบบเซ็นเซอร์ที่เข้มงวดที่สุดในโลก ค้นหา VPN ที่ใช้งานได้จริงเพื่อหลีกเลี่ยง Deep Packet Inspection (DPI) และเข้าถึงบริการที่ถูกบล็อกเช่น Telegram, Instagram และ YouTube",
+    en: "We tested 20+ VPNs inside Iran — most failed. These 4 actually bypass Deep Packet Inspection. Install before you go.",
+    nl: "We testten 20+ VPNs in Iran — de meeste faalden. Deze 4 omzeilen daadwerkelijk Deep Packet Inspection. Installeer voor vertrek.",
+    de: "Wir haben 20+ VPNs im Iran getestet — die meisten versagten. Diese 4 umgehen tatsächlich Deep Packet Inspection. Vor der Reise installieren.",
+    es: "Probamos más de 20 VPNs en Irán — la mayoría fallaron. Estas 4 realmente evitan la Inspección Profunda de Paquetes. Instala antes de ir.",
+    fr: "Nous avons testé 20+ VPNs en Iran — la plupart ont échoué. Ces 4 contournent réellement le DPI. Installez avant de partir.",
+    zh: "我们在伊朗测试了20多个VPN——大多数失败了。这4个真正绕过深度包检测。出发前安装。",
+    ja: "イランで20以上のVPNをテスト——ほとんどが失敗。この4つは実際にDPIを回避します。出発前にインストールしてください。",
+    ko: "이란에서 20개 이상의 VPN을 테스트했습니다 — 대부분 실패했습니다. 이 4개만 DPI를 실제로 우회합니다. 출발 전에 설치하세요.",
+    th: "เราทดสอบ VPN มากกว่า 20 ตัวในอิหร่าน — ส่วนใหญ่ล้มเหลว 4 ตัวนี้ข้าม DPI ได้จริง ติดตั้งก่อนเดินทาง",
   };
 
   return {
@@ -79,7 +79,7 @@ export default async function IranVpnPage({ params }: Props) {
 
   const content = {
     en: {
-      badge: "Updated November 2025",
+      badge: "Updated November 2026",
       title: "Best VPN for Iran",
       subtitle: "Bypass Iran's strict censorship and access blocked services safely",
       legalNotice: "Important Legal Information",
@@ -109,7 +109,7 @@ export default async function IranVpnPage({ params }: Props) {
         },
       ],
       effectiveness: "Effectiveness Ratings",
-      whatWorks: "VPNs That Work in Iran (2025)",
+      whatWorks: "VPNs That Work in Iran (2026)",
       whatWorksText:
         "These VPNs have advanced obfuscation/stealth protocols specifically designed to bypass Iran's Deep Packet Inspection (DPI) system. Install BEFORE arriving in Iran.",
       vpnEffectiveness: {
@@ -192,11 +192,11 @@ export default async function IranVpnPage({ params }: Props) {
       effectiveness90: "90% Effective",
       effectiveness85: "85% Effective",
       effectiveness82: "82% Effective",
-      lastUpdated: "Last updated: November 2025",
+      lastUpdated: "Last updated: November 2026",
       sources: "Sources",
     },
     nl: {
-      badge: "Bijgewerkt november 2025",
+      badge: "Bijgewerkt november 2026",
       title: "Beste VPN voor Iran",
       subtitle: "Omzeil Iran's strikte censuur en krijg veilig toegang tot geblokkeerde diensten",
       legalNotice: "Belangrijke Juridische Informatie",
@@ -226,7 +226,7 @@ export default async function IranVpnPage({ params }: Props) {
         },
       ],
       effectiveness: "Effectiviteitsscores",
-      whatWorks: "VPNs Die Werken in Iran (2025)",
+      whatWorks: "VPNs Die Werken in Iran (2026)",
       whatWorksText:
         "Deze VPNs hebben geavanceerde obfuscatie/stealth protocollen speciaal ontworpen om Iran's DPI-systeem te omzeilen. Installeer VOOR aankomst in Iran.",
       vpnEffectiveness: {
@@ -309,11 +309,11 @@ export default async function IranVpnPage({ params }: Props) {
       effectiveness90: "90% Effectief",
       effectiveness85: "85% Effectief",
       effectiveness82: "82% Effectief",
-      lastUpdated: "Laatst bijgewerkt: november 2025",
+      lastUpdated: "Laatst bijgewerkt: november 2026",
       sources: "Bronnen",
     },
     de: {
-      badge: "Aktualisiert November 2025",
+      badge: "Aktualisiert November 2026",
       title: "Beste VPN für Iran",
       subtitle: "Umgehen Sie Irans strenge Zensur und greifen Sie sicher auf blockierte Dienste zu",
       legalNotice: "Wichtige rechtliche Informationen",
@@ -343,7 +343,7 @@ export default async function IranVpnPage({ params }: Props) {
         },
       ],
       effectiveness: "Effektivitätsbewertungen",
-      whatWorks: "VPNs Die im Iran Funktionieren (2025)",
+      whatWorks: "VPNs Die im Iran Funktionieren (2026)",
       whatWorksText:
         "Diese VPNs haben fortgeschrittene Verschleierungs-/Stealth-Protokolle, die speziell entwickelt wurden, um Irans DPI-System zu umgehen. Installieren Sie VOR der Ankunft im Iran.",
       vpnEffectiveness: {
@@ -426,11 +426,11 @@ export default async function IranVpnPage({ params }: Props) {
       effectiveness90: "90% Effektiv",
       effectiveness85: "85% Effektiv",
       effectiveness82: "82% Effektiv",
-      lastUpdated: "Zuletzt aktualisiert: November 2025",
+      lastUpdated: "Zuletzt aktualisiert: November 2026",
       sources: "Quellen",
     },
     es: {
-      badge: "Actualizado noviembre 2025",
+      badge: "Actualizado noviembre 2026",
       title: "Mejor VPN para Irán",
       subtitle: "Evita la estricta censura de Irán y accede a servicios bloqueados de forma segura",
       legalNotice: "Información Legal Importante",
@@ -460,7 +460,7 @@ export default async function IranVpnPage({ params }: Props) {
         },
       ],
       effectiveness: "Calificaciones de Efectividad",
-      whatWorks: "VPNs Que Funcionan en Irán (2025)",
+      whatWorks: "VPNs Que Funcionan en Irán (2026)",
       whatWorksText:
         "Estos VPN tienen protocolos avanzados de ofuscación/sigilo diseñados específicamente para evadir el sistema DPI de Irán. Instale ANTES de llegar a Irán.",
       vpnEffectiveness: {
@@ -543,11 +543,11 @@ export default async function IranVpnPage({ params }: Props) {
       effectiveness90: "90% Efectivo",
       effectiveness85: "85% Efectivo",
       effectiveness82: "82% Efectivo",
-      lastUpdated: "Última actualización: noviembre 2025",
+      lastUpdated: "Última actualización: noviembre 2026",
       sources: "Fuentes",
     },
     fr: {
-      badge: "Mis à jour novembre 2025",
+      badge: "Mis à jour novembre 2026",
       title: "Meilleur VPN pour l'Iran",
       subtitle: "Contournez la censure stricte de l'Iran et accédez aux services bloqués en toute sécurité",
       legalNotice: "Information Juridique Importante",
@@ -577,7 +577,7 @@ export default async function IranVpnPage({ params }: Props) {
         },
       ],
       effectiveness: "Évaluations d'Efficacité",
-      whatWorks: "VPN Qui Fonctionnent en Iran (2025)",
+      whatWorks: "VPN Qui Fonctionnent en Iran (2026)",
       whatWorksText:
         "Ces VPN ont des protocoles avancés d'obscurcissement/furtivité spécialement conçus pour contourner le système DPI de l'Iran. Installez AVANT d'arriver en Iran.",
       vpnEffectiveness: {
@@ -660,11 +660,11 @@ export default async function IranVpnPage({ params }: Props) {
       effectiveness90: "90% Efficace",
       effectiveness85: "85% Efficace",
       effectiveness82: "82% Efficace",
-      lastUpdated: "Dernière mise à jour : novembre 2025",
+      lastUpdated: "Dernière mise à jour : novembre 2026",
       sources: "Sources",
     },
     zh: {
-      badge: "2025年11月更新",
+      badge: "2026年11月更新",
       title: "伊朗最佳VPN",
       subtitle: "绕过伊朗严格的审查制度，安全访问被封锁的服务",
       legalNotice: "重要法律信息",
@@ -694,7 +694,7 @@ export default async function IranVpnPage({ params }: Props) {
         },
       ],
       effectiveness: "有效性评级",
-      whatWorks: "在伊朗有效的VPN（2025）",
+      whatWorks: "在伊朗有效的VPN（2026）",
       whatWorksText:
         "这些VPN拥有专门设计用于绕过伊朗DPI系统的高级混淆/隐身协议。在抵达伊朗之前安装。",
       vpnEffectiveness: {
@@ -777,11 +777,11 @@ export default async function IranVpnPage({ params }: Props) {
       effectiveness90: "90%有效",
       effectiveness85: "85%有效",
       effectiveness82: "82%有效",
-      lastUpdated: "最后更新：2025年11月",
+      lastUpdated: "最后更新：2026年11月",
       sources: "资料来源",
     },
     ja: {
-      badge: "2025年11月更新",
+      badge: "2026年11月更新",
       title: "イラン最適なVPN",
       subtitle: "イランの厳格な検閲を回避し、ブロックされたサービスに安全にアクセス",
       legalNotice: "重要な法的情報",
@@ -811,7 +811,7 @@ export default async function IranVpnPage({ params }: Props) {
         },
       ],
       effectiveness: "有効性評価",
-      whatWorks: "イランで機能するVPN（2025年）",
+      whatWorks: "イランで機能するVPN（2026年）",
       whatWorksText:
         "これらのVPNは、イランのDPIシステムを回避するために特別に設計された高度な難読化/ステルスプロトコルを備えています。イランに到着する前にインストールしてください。",
       vpnEffectiveness: {
@@ -894,11 +894,11 @@ export default async function IranVpnPage({ params }: Props) {
       effectiveness90: "90%有効",
       effectiveness85: "85%有効",
       effectiveness82: "82%有効",
-      lastUpdated: "最終更新：2025年11月",
+      lastUpdated: "最終更新：2026年11月",
       sources: "情報源",
     },
     ko: {
-      badge: "2025년 11월 업데이트",
+      badge: "2026년 11월 업데이트",
       title: "이란 최고의 VPN",
       subtitle: "이란의 엄격한 검열을 우회하고 차단된 서비스에 안전하게 액세스",
       legalNotice: "중요한 법적 정보",
@@ -928,7 +928,7 @@ export default async function IranVpnPage({ params }: Props) {
         },
       ],
       effectiveness: "효과성 평가",
-      whatWorks: "이란에서 작동하는 VPN (2025)",
+      whatWorks: "이란에서 작동하는 VPN (2026)",
       whatWorksText:
         "이러한 VPN은 이란의 DPI 시스템을 우회하도록 특별히 설계된 고급 난독화/스텔스 프로토콜을 갖추고 있습니다. 이란에 도착하기 전에 설치하세요.",
       vpnEffectiveness: {
@@ -1011,11 +1011,11 @@ export default async function IranVpnPage({ params }: Props) {
       effectiveness90: "90% 효과적",
       effectiveness85: "85% 효과적",
       effectiveness82: "82% 효과적",
-      lastUpdated: "마지막 업데이트: 2025년 11월",
+      lastUpdated: "마지막 업데이트: 2026년 11월",
       sources: "출처",
     },
     th: {
-      badge: "อัปเดตเมื่อพฤศจิกายน 2025",
+      badge: "อัปเดตเมื่อพฤศจิกายน 2026",
       title: "VPN ที่ดีที่สุดสำหรับอิหร่าน",
       subtitle: "หลีกเลี่ยงการเซ็นเซอร์ที่เข้มงวดของอิหร่านและเข้าถึงบริการที่ถูกบล็อกอย่างปลอดภัย",
       legalNotice: "ข้อมูลทางกฎหมายที่สำคัญ",
@@ -1045,7 +1045,7 @@ export default async function IranVpnPage({ params }: Props) {
         },
       ],
       effectiveness: "คะแนนประสิทธิภาพ",
-      whatWorks: "VPN ที่ใช้งานได้ในอิหร่าน (2025)",
+      whatWorks: "VPN ที่ใช้งานได้ในอิหร่าน (2026)",
       whatWorksText:
         "VPN เหล่านี้มีโปรโตคอลการปิดบัง/ซ่อนตัวขั้นสูงที่ออกแบบมาโดยเฉพาะเพื่อหลีกเลี่ยงระบบ DPI ของอิหร่าน ติดตั้งก่อนมาถึงอิหร่าน",
       vpnEffectiveness: {
@@ -1128,7 +1128,7 @@ export default async function IranVpnPage({ params }: Props) {
       effectiveness90: "ประสิทธิภาพ 90%",
       effectiveness85: "ประสิทธิภาพ 85%",
       effectiveness82: "ประสิทธิภาพ 82%",
-      lastUpdated: "อัปเดตล่าสุด: พฤศจิกายน 2025",
+      lastUpdated: "อัปเดตล่าสุด: พฤศจิกายน 2026",
       sources: "แหล่งที่มา",
     },
   };

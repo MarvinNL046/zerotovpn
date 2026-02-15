@@ -48,7 +48,7 @@ const baseUrl = "https://zerotovpn.com";
 export async function generateMetadata(): Promise<Metadata> {
   return {
     metadataBase: new URL(baseUrl),
-    title: "VPN for Torrenting: Stay Safe While Downloading (2025 Guide) - ZeroToVPN",
+    title: "VPN for Torrenting: Stay Safe While Downloading (2026 Guide) - ZeroToVPN",
     description:
       "Learn how to use a VPN for safe torrenting. Understand P2P-friendly VPNs, kill switches, and leak protection to download securely and anonymously.",
     robots: {
@@ -56,7 +56,7 @@ export async function generateMetadata(): Promise<Metadata> {
       follow: true,
     },
     openGraph: {
-      title: "VPN for Torrenting: Stay Safe While Downloading (2025)",
+      title: "VPN for Torrenting: Stay Safe While Downloading (2026)",
       description:
         "Learn how to use a VPN for safe torrenting with P2P-friendly servers and essential security features.",
       type: "article",
@@ -76,8 +76,8 @@ export default async function VpnForTorrentingPage({ params }: Props) {
         title={t("meta.title")}
         description={t("meta.description")}
         url={pageUrl}
-        datePublished="2025-01-01"
-        dateModified="2025-11-28"
+        datePublished="2026-01-01"
+        dateModified="2026-11-28"
       />
       <BreadcrumbJsonLd
         items={[
@@ -493,7 +493,7 @@ export default async function VpnForTorrentingPage({ params }: Props) {
                 { title: "VPN Privacy Guide", description: "No-logs policies explained", href: "/guides/vpn-privacy-guide", icon: "shield" },
                 { title: "VPN Speed Guide", description: "Optimize for fast downloads", href: "/guides/vpn-speed-guide", icon: "zap" },
                 { title: "Public WiFi Safety", description: "Secure connections everywhere", href: "/guides/public-wifi-safety", icon: "wifi" },
-                { title: "Best VPNs 2025", description: "Top-rated P2P-friendly VPNs", href: "/best/best-vpn", icon: "trophy" }
+                { title: "Best VPNs 2026", description: "Top-rated P2P-friendly VPNs", href: "/best/best-vpn", icon: "trophy" }
               ]}
             />
           </div>

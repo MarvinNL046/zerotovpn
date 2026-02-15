@@ -26,7 +26,7 @@ export default async function PrivacyPolicyPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const lastUpdated = "November 28, 2025";
+  const lastUpdated = "November 28, 2026";
 
   return (
     <div className="flex flex-col">

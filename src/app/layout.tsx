@@ -28,6 +28,11 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="theme-color" content="#3b82f6" />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX"
+          crossOrigin="anonymous"
+        />
       </head>
       <body className="min-h-screen bg-background font-sans antialiased">
         <StackProvider app={stackServerApp}>

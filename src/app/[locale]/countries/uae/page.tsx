@@ -35,15 +35,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
   const titles: Record<string, string> = {
-    en: "Best VPN for UAE & Dubai 2025: Legal Guide & Top Picks | ZeroToVPN",
-    nl: "Beste VPN voor VAE & Dubai 2025: Juridische Gids & Top Keuzes | ZeroToVPN",
-    de: "Beste VPN für VAE & Dubai 2025: Rechtlicher Leitfaden | ZeroToVPN",
-    es: "Mejor VPN para EAU y Dubái 2025: Guía Legal y Mejores Opciones | ZeroToVPN",
-    fr: "Meilleur VPN pour EAU et Dubaï 2025: Guide Juridique | ZeroToVPN",
-    zh: "阿联酋和迪拜最佳VPN 2025：法律指南及推荐 | ZeroToVPN",
-    ja: "UAE・ドバイに最適なVPN 2025：法的ガイドとおすすめ | ZeroToVPN",
-    ko: "UAE 및 두바이 최고의 VPN 2025: 법적 가이드 및 추천 | ZeroToVPN",
-    th: "VPN ที่ดีที่สุดสำหรับ UAE และดูไบ 2025: คู่มือกฎหมายและแนะนำ | ZeroToVPN",
+    en: "Best VPN for UAE & Dubai 2026: Legal Guide & Top Picks | ZeroToVPN",
+    nl: "Beste VPN voor VAE & Dubai 2026: Juridische Gids & Top Keuzes | ZeroToVPN",
+    de: "Beste VPN für VAE & Dubai 2026: Rechtlicher Leitfaden | ZeroToVPN",
+    es: "Mejor VPN para EAU y Dubái 2026: Guía Legal y Mejores Opciones | ZeroToVPN",
+    fr: "Meilleur VPN pour EAU et Dubaï 2026: Guide Juridique | ZeroToVPN",
+    zh: "阿联酋和迪拜最佳VPN 2026：法律指南及推荐 | ZeroToVPN",
+    ja: "UAE・ドバイに最適なVPN 2026：法的ガイドとおすすめ | ZeroToVPN",
+    ko: "UAE 및 두바이 최고의 VPN 2026: 법적 가이드 및 추천 | ZeroToVPN",
+    th: "VPN ที่ดีที่สุดสำหรับ UAE และดูไบ 2026: คู่มือกฎหมายและแนะนำ | ZeroToVPN",
   };
 
   const descriptions: Record<string, string> = {
@@ -81,7 +81,7 @@ export default async function UAEVpnPage({ params }: Props) {
 
   const content = {
     en: {
-      badge: "Updated November 2025",
+      badge: "Updated November 2026",
       title: "Best VPN for UAE & Dubai",
       subtitle: "Navigate UAE's VPN regulations safely and access restricted content",
       legalNotice: "Important Legal Information",
@@ -116,7 +116,7 @@ export default async function UAEVpnPage({ params }: Props) {
         { amount: "AED 2,000,000", desc: "Maximum fine for serious violations" },
         { amount: "Imprisonment", desc: "Possible for criminal activities" },
       ],
-      whatWorks: "Recommended VPNs for UAE (2025)",
+      whatWorks: "Recommended VPNs for UAE (2026)",
       whatWorksText:
         "These VPNs offer obfuscated servers that work in the UAE's restrictive environment. Choose providers based outside the UAE with strong no-logs policies.",
       notWorking: "VPNs That Don't Work in UAE",
@@ -188,11 +188,11 @@ export default async function UAEVpnPage({ params }: Props) {
       getVpn: "Get VPN",
       worksInUAE: "Works in UAE",
       obfuscation: "Obfuscation",
-      lastUpdated: "Last updated: November 2025",
+      lastUpdated: "Last updated: November 2026",
       sources: "Sources",
     },
     nl: {
-      badge: "Bijgewerkt november 2025",
+      badge: "Bijgewerkt november 2026",
       title: "Beste VPN voor VAE & Dubai",
       subtitle: "Navigeer veilig door de VAE VPN-regelgeving",
       legalNotice: "Belangrijke Juridische Informatie",
@@ -227,7 +227,7 @@ export default async function UAEVpnPage({ params }: Props) {
         { amount: "AED 2.000.000", desc: "Maximale boete voor ernstige overtredingen" },
         { amount: "Gevangenisstraf", desc: "Mogelijk voor criminele activiteiten" },
       ],
-      whatWorks: "Aanbevolen VPNs voor VAE (2025)",
+      whatWorks: "Aanbevolen VPNs voor VAE (2026)",
       whatWorksText:
         "Deze VPNs bieden obfuscated servers die werken in de VAE. Kies providers buiten de VAE met sterke no-logs policies.",
       notWorking: "VPNs Die Niet Werken in VAE",
@@ -299,11 +299,11 @@ export default async function UAEVpnPage({ params }: Props) {
       getVpn: "Download VPN",
       worksInUAE: "Werkt in VAE",
       obfuscation: "Obfuscatie",
-      lastUpdated: "Laatst bijgewerkt: november 2025",
+      lastUpdated: "Laatst bijgewerkt: november 2026",
       sources: "Bronnen",
     },
     de: {
-      badge: "Aktualisiert November 2025",
+      badge: "Aktualisiert November 2026",
       title: "Beste VPN für VAE & Dubai",
       subtitle: "Sicher durch die VAE VPN-Vorschriften navigieren und auf eingeschränkte Inhalte zugreifen",
       legalNotice: "Wichtige rechtliche Informationen",
@@ -338,7 +338,7 @@ export default async function UAEVpnPage({ params }: Props) {
         { amount: "AED 2.000.000", desc: "Höchststrafe für schwere Verstöße" },
         { amount: "Gefängnis", desc: "Möglich bei kriminellen Aktivitäten" },
       ],
-      whatWorks: "Empfohlene VPNs für VAE (2025)",
+      whatWorks: "Empfohlene VPNs für VAE (2026)",
       whatWorksText:
         "Diese VPNs bieten verschleierte Server, die in der restriktiven Umgebung der VAE funktionieren. Wählen Sie Anbieter außerhalb der VAE mit strengen No-Logs-Richtlinien.",
       notWorking: "VPNs Die in den VAE Nicht Funktionieren",
@@ -410,11 +410,11 @@ export default async function UAEVpnPage({ params }: Props) {
       getVpn: "VPN holen",
       worksInUAE: "Funktioniert in VAE",
       obfuscation: "Verschleierung",
-      lastUpdated: "Zuletzt aktualisiert: November 2025",
+      lastUpdated: "Zuletzt aktualisiert: November 2026",
       sources: "Quellen",
     },
     es: {
-      badge: "Actualizado noviembre 2025",
+      badge: "Actualizado noviembre 2026",
       title: "Mejor VPN para EAU y Dubái",
       subtitle: "Navega de forma segura por las regulaciones VPN de EAU y accede a contenido restringido",
       legalNotice: "Información Legal Importante",
@@ -449,7 +449,7 @@ export default async function UAEVpnPage({ params }: Props) {
         { amount: "AED 2.000.000", desc: "Multa máxima por violaciones graves" },
         { amount: "Prisión", desc: "Posible para actividades criminales" },
       ],
-      whatWorks: "VPNs Recomendados para EAU (2025)",
+      whatWorks: "VPNs Recomendados para EAU (2026)",
       whatWorksText:
         "Estos VPN ofrecen servidores ofuscados que funcionan en el entorno restrictivo de los EAU. Elige proveedores fuera de los EAU con políticas estrictas de no registros.",
       notWorking: "VPNs Que No Funcionan en EAU",
@@ -521,11 +521,11 @@ export default async function UAEVpnPage({ params }: Props) {
       getVpn: "Obtener VPN",
       worksInUAE: "Funciona en EAU",
       obfuscation: "Ofuscación",
-      lastUpdated: "Última actualización: noviembre 2025",
+      lastUpdated: "Última actualización: noviembre 2026",
       sources: "Fuentes",
     },
     fr: {
-      badge: "Mis à jour novembre 2025",
+      badge: "Mis à jour novembre 2026",
       title: "Meilleur VPN pour EAU et Dubaï",
       subtitle: "Naviguez en toute sécurité dans les réglementations VPN des EAU et accédez au contenu restreint",
       legalNotice: "Information Juridique Importante",
@@ -560,7 +560,7 @@ export default async function UAEVpnPage({ params }: Props) {
         { amount: "AED 2 000 000", desc: "Amende maximale pour violations graves" },
         { amount: "Prison", desc: "Possible pour activités criminelles" },
       ],
-      whatWorks: "VPN Recommandés pour les EAU (2025)",
+      whatWorks: "VPN Recommandés pour les EAU (2026)",
       whatWorksText:
         "Ces VPN offrent des serveurs obscurcis qui fonctionnent dans l'environnement restrictif des EAU. Choisissez des fournisseurs basés hors des EAU avec des politiques strictes de non-journalisation.",
       notWorking: "VPN Qui Ne Fonctionnent Pas aux EAU",
@@ -632,11 +632,11 @@ export default async function UAEVpnPage({ params }: Props) {
       getVpn: "Obtenir VPN",
       worksInUAE: "Fonctionne aux EAU",
       obfuscation: "Obscurcissement",
-      lastUpdated: "Dernière mise à jour : novembre 2025",
+      lastUpdated: "Dernière mise à jour : novembre 2026",
       sources: "Sources",
     },
     zh: {
-      badge: "2025年11月更新",
+      badge: "2026年11月更新",
       title: "阿联酋和迪拜最佳VPN",
       subtitle: "安全地遵守阿联酋VPN法规并访问受限内容",
       legalNotice: "重要法律信息",
@@ -671,7 +671,7 @@ export default async function UAEVpnPage({ params }: Props) {
         { amount: "200万迪拉姆", desc: "严重违规最高罚款" },
         { amount: "监禁", desc: "犯罪活动可能面临" },
       ],
-      whatWorks: "推荐的阿联酋VPN（2025）",
+      whatWorks: "推荐的阿联酋VPN（2026）",
       whatWorksText:
         "这些VPN提供混淆服务器，可在阿联酋的限制性环境中使用。选择位于阿联酋境外且有严格无日志政策的供应商。",
       notWorking: "在阿联酋不可用的VPN",
@@ -743,11 +743,11 @@ export default async function UAEVpnPage({ params }: Props) {
       getVpn: "获取VPN",
       worksInUAE: "在阿联酋可用",
       obfuscation: "混淆",
-      lastUpdated: "最后更新：2025年11月",
+      lastUpdated: "最后更新：2026年11月",
       sources: "资料来源",
     },
     ja: {
-      badge: "2025年11月更新",
+      badge: "2026年11月更新",
       title: "UAEとドバイに最適なVPN",
       subtitle: "UAEのVPN規制を安全にナビゲートし、制限されたコンテンツにアクセス",
       legalNotice: "重要な法的情報",
@@ -782,7 +782,7 @@ export default async function UAEVpnPage({ params }: Props) {
         { amount: "200万ディルハム", desc: "重大な違反の最高罰金" },
         { amount: "懲役", desc: "犯罪活動の可能性あり" },
       ],
-      whatWorks: "UAEに推奨されるVPN（2025年）",
+      whatWorks: "UAEに推奨されるVPN（2026年）",
       whatWorksText:
         "これらのVPNは、UAEの制限的な環境で動作する難読化サーバーを提供しています。厳格なノーログポリシーを持つUAE外のプロバイダーを選択してください。",
       notWorking: "UAEで機能しないVPN",
@@ -854,11 +854,11 @@ export default async function UAEVpnPage({ params }: Props) {
       getVpn: "VPNを入手",
       worksInUAE: "UAEで動作",
       obfuscation: "難読化",
-      lastUpdated: "最終更新：2025年11月",
+      lastUpdated: "最終更新：2026年11月",
       sources: "情報源",
     },
     ko: {
-      badge: "2025년 11월 업데이트",
+      badge: "2026년 11월 업데이트",
       title: "UAE 및 두바이 최고의 VPN",
       subtitle: "UAE의 VPN 규정을 안전하게 탐색하고 제한된 콘텐츠에 액세스",
       legalNotice: "중요한 법적 정보",
@@ -893,7 +893,7 @@ export default async function UAEVpnPage({ params }: Props) {
         { amount: "200만 디르함", desc: "심각한 위반 최대 벌금" },
         { amount: "징역형", desc: "범죄 활동 가능성" },
       ],
-      whatWorks: "UAE 추천 VPN (2025)",
+      whatWorks: "UAE 추천 VPN (2026)",
       whatWorksText:
         "이러한 VPN은 UAE의 제한적인 환경에서 작동하는 난독화 서버를 제공합니다. 엄격한 무로그 정책을 가진 UAE 외부의 제공업체를 선택하세요.",
       notWorking: "UAE에서 작동하지 않는 VPN",
@@ -965,11 +965,11 @@ export default async function UAEVpnPage({ params }: Props) {
       getVpn: "VPN 받기",
       worksInUAE: "UAE에서 작동",
       obfuscation: "난독화",
-      lastUpdated: "마지막 업데이트: 2025년 11월",
+      lastUpdated: "마지막 업데이트: 2026년 11월",
       sources: "출처",
     },
     th: {
-      badge: "อัปเดตเมื่อพฤศจิกายน 2025",
+      badge: "อัปเดตเมื่อพฤศจิกายน 2026",
       title: "VPN ที่ดีที่สุดสำหรับ UAE และดูไบ",
       subtitle: "นำทางกฎระเบียบ VPN ของ UAE อย่างปลอดภัยและเข้าถึงเนื้อหาที่ถูกจำกัด",
       legalNotice: "ข้อมูลทางกฎหมายที่สำคัญ",
@@ -1004,7 +1004,7 @@ export default async function UAEVpnPage({ params }: Props) {
         { amount: "2,000,000 ดิรแฮม", desc: "ค่าปรับสูงสุดสำหรับการละเมิดร้ายแรง" },
         { amount: "จำคุก", desc: "เป็นไปได้สำหรับกิจกรรมทางอาชญากรรม" },
       ],
-      whatWorks: "VPN ที่แนะนำสำหรับ UAE (2025)",
+      whatWorks: "VPN ที่แนะนำสำหรับ UAE (2026)",
       whatWorksText:
         "VPN เหล่านี้นำเสนอเซิร์ฟเวอร์ที่ซ่อนตัวที่ทำงานในสภาพแวดล้อมที่จำกัดของ UAE เลือกผู้ให้บริการที่อยู่นอก UAE ที่มีนโยบายไม่เก็บบันทึกที่เข้มงวด",
       notWorking: "VPN ที่ใช้ไม่ได้ใน UAE",
@@ -1076,7 +1076,7 @@ export default async function UAEVpnPage({ params }: Props) {
       getVpn: "รับ VPN",
       worksInUAE: "ใช้งานได้ใน UAE",
       obfuscation: "การซ่อนตัว",
-      lastUpdated: "อัปเดตล่าสุด: พฤศจิกายน 2025",
+      lastUpdated: "อัปเดตล่าสุด: พฤศจิกายน 2026",
       sources: "แหล่งที่มา",
     },
   };

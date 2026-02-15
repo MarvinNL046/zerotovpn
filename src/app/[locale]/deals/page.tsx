@@ -26,27 +26,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
   const titles: Record<string, string> = {
-    en: "VPN Deals & Coupons 2025: Save Up to 87% | ZeroToVPN",
-    nl: "VPN Deals & Kortingscodes 2025: Bespaar tot 87% | ZeroToVPN",
-    de: "VPN-Angebote & Gutscheine 2025: Sparen Sie bis zu 87% | ZeroToVPN",
-    es: "Ofertas y Cupones VPN 2025: Ahorra hasta 87% | ZeroToVPN",
-    fr: "Offres VPN & Coupons 2025: Économisez jusqu'à 87% | ZeroToVPN",
-    zh: "VPN优惠与折扣码2025：节省高达87% | ZeroToVPN",
-    ja: "VPNセール＆クーポン2025：最大87％オフ | ZeroToVPN",
-    ko: "VPN 할인 및 쿠폰 2025: 최대 87% 절약 | ZeroToVPN",
-    th: "ดีล VPN และคูปอง 2025: ประหยัดสูงสุด 87% | ZeroToVPN",
+    en: "VPN Deals & Coupons 2026: Save Up to 87% | ZeroToVPN",
+    nl: "VPN Deals & Kortingscodes 2026: Bespaar tot 87% | ZeroToVPN",
+    de: "VPN-Angebote & Gutscheine 2026: Sparen Sie bis zu 87% | ZeroToVPN",
+    es: "Ofertas y Cupones VPN 2026: Ahorra hasta 87% | ZeroToVPN",
+    fr: "Offres VPN & Coupons 2026: Économisez jusqu'à 87% | ZeroToVPN",
+    zh: "VPN优惠与折扣码2026：节省高达87% | ZeroToVPN",
+    ja: "VPNセール＆クーポン2026：最大87％オフ | ZeroToVPN",
+    ko: "VPN 할인 및 쿠폰 2026: 최대 87% 절약 | ZeroToVPN",
+    th: "ดีล VPN และคูปอง 2026: ประหยัดสูงสุด 87% | ZeroToVPN",
   };
 
   const descriptions: Record<string, string> = {
-    en: "Exclusive VPN deals and coupons for 2025. Save up to 87% on premium VPN services. Limited-time offers with money-back guarantees.",
-    nl: "Exclusieve VPN-deals en kortingscodes voor 2025. Bespaar tot 87% op premium VPN-diensten. Tijdelijke aanbiedingen met geld-terug-garantie.",
-    de: "Exklusive VPN-Angebote und Gutscheine für 2025. Sparen Sie bis zu 87% bei Premium-VPN-Diensten. Zeitlich begrenzte Angebote mit Geld-zurück-Garantie.",
-    es: "Ofertas y cupones VPN exclusivos para 2025. Ahorra hasta 87% en servicios VPN premium. Ofertas limitadas con garantía de devolución.",
-    fr: "Offres VPN exclusives et coupons pour 2025. Économisez jusqu'à 87% sur les services VPN premium. Offres limitées avec garantie satisfait ou remboursé.",
-    zh: "2025年独家VPN优惠和折扣码。高级VPN服务节省高达87%。限时优惠，支持退款保证。",
-    ja: "2025年限定VPNセールとクーポン。プレミアムVPNサービスが最大87％オフ。返金保証付きの期間限定オファー。",
-    ko: "2025년 독점 VPN 할인 및 쿠폰. 프리미엄 VPN 서비스에서 최대 87% 절약. 환불 보장이 있는 기간 한정 혜택.",
-    th: "ดีล VPN และคูปองพิเศษสำหรับปี 2025 ประหยัดสูงสุด 87% สำหรับบริการ VPN พรีเมียม ข้อเสนอจำกัดเวลาพร้อมการรับประกันคืนเงิน",
+    en: "Exclusive VPN deals and coupons for 2026. Save up to 87% on premium VPN services. Limited-time offers with money-back guarantees.",
+    nl: "Exclusieve VPN-deals en kortingscodes voor 2026. Bespaar tot 87% op premium VPN-diensten. Tijdelijke aanbiedingen met geld-terug-garantie.",
+    de: "Exklusive VPN-Angebote und Gutscheine für 2026. Sparen Sie bis zu 87% bei Premium-VPN-Diensten. Zeitlich begrenzte Angebote mit Geld-zurück-Garantie.",
+    es: "Ofertas y cupones VPN exclusivos para 2026. Ahorra hasta 87% en servicios VPN premium. Ofertas limitadas con garantía de devolución.",
+    fr: "Offres VPN exclusives et coupons pour 2026. Économisez jusqu'à 87% sur les services VPN premium. Offres limitées avec garantie satisfait ou remboursé.",
+    zh: "2026年独家VPN优惠和折扣码。高级VPN服务节省高达87%。限时优惠，支持退款保证。",
+    ja: "2026年限定VPNセールとクーポン。プレミアムVPNサービスが最大87％オフ。返金保証付きの期間限定オファー。",
+    ko: "2026년 독점 VPN 할인 및 쿠폰. 프리미엄 VPN 서비스에서 최대 87% 절약. 환불 보장이 있는 기간 한정 혜택.",
+    th: "ดีล VPN และคูปองพิเศษสำหรับปี 2026 ประหยัดสูงสุด 87% สำหรับบริการ VPN พรีเมียม ข้อเสนอจำกัดเวลาพร้อมการรับประกันคืนเงิน",
   };
 
   return {
@@ -66,10 +66,10 @@ function DealsSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "SpecialAnnouncement",
-    name: "VPN Deals & Coupons 2025",
+    name: "VPN Deals & Coupons 2026",
     description: "Exclusive VPN deals and coupons with savings up to 87%",
-    datePosted: "2025-11-29",
-    expires: "2025-12-31",
+    datePosted: "2026-11-29",
+    expires: "2026-12-31",
   };
 
   return (
@@ -93,7 +93,7 @@ const deals = [
     features: ["Unlimited devices", "Ad blocker", "24/7 support"],
     coupon: "SHARKGIFT",
     affiliateUrl: "https://go.zerotovpn.com/surfshark",
-    expiresAt: new Date("2025-12-31T23:59:59"),
+    expiresAt: new Date("2026-12-31T23:59:59"),
   },
   {
     name: "NordVPN",
@@ -107,7 +107,7 @@ const deals = [
     features: ["10 devices", "Threat Protection", "Dark Web Monitor"],
     coupon: null,
     affiliateUrl: "https://go.zerotovpn.com/nordvpn",
-    expiresAt: new Date("2025-12-31T23:59:59"),
+    expiresAt: new Date("2026-12-31T23:59:59"),
   },
   {
     name: "ExpressVPN",
@@ -121,7 +121,7 @@ const deals = [
     features: ["12 devices", "Password manager", "Router app"],
     coupon: null,
     affiliateUrl: "https://go.zerotovpn.com/expressvpn",
-    expiresAt: new Date("2025-12-31T23:59:59"),
+    expiresAt: new Date("2026-12-31T23:59:59"),
   },
   {
     name: "CyberGhost",
@@ -135,7 +135,7 @@ const deals = [
     features: ["7 devices", "Dedicated streaming servers", "45-day guarantee"],
     coupon: null,
     affiliateUrl: "https://go.zerotovpn.com/cyberghost",
-    expiresAt: new Date("2025-12-31T23:59:59"),
+    expiresAt: new Date("2026-12-31T23:59:59"),
   },
 ];
 
@@ -190,7 +190,7 @@ export default async function DealsPage({ params }: Props) {
   > = {
     en: {
       hero: {
-        title: "VPN Deals & Coupons 2025",
+        title: "VPN Deals & Coupons 2026",
         subtitle:
           "Exclusive discounts on premium VPN services. Save up to 87% with our verified deals and coupon codes.",
         urgency: "Limited-time offers - Don't miss out!",
@@ -276,7 +276,7 @@ export default async function DealsPage({ params }: Props) {
     },
     nl: {
       hero: {
-        title: "VPN Deals & Kortingscodes 2025",
+        title: "VPN Deals & Kortingscodes 2026",
         subtitle:
           "Exclusieve kortingen op premium VPN-diensten. Bespaar tot 87% met onze geverifieerde deals en kortingscodes.",
         urgency: "Tijdelijke aanbiedingen - Mis het niet!",
@@ -362,7 +362,7 @@ export default async function DealsPage({ params }: Props) {
     },
     de: {
       hero: {
-        title: "VPN-Angebote & Gutscheine 2025",
+        title: "VPN-Angebote & Gutscheine 2026",
         subtitle:
           "Exklusive Rabatte auf Premium-VPN-Dienste. Sparen Sie bis zu 87% mit unseren verifizierten Angeboten und Gutscheincodes.",
         urgency: "Zeitlich begrenzte Angebote - Verpassen Sie es nicht!",
@@ -448,7 +448,7 @@ export default async function DealsPage({ params }: Props) {
     },
     es: {
       hero: {
-        title: "Ofertas y Cupones VPN 2025",
+        title: "Ofertas y Cupones VPN 2026",
         subtitle:
           "Descuentos exclusivos en servicios VPN premium. Ahorra hasta 87% con nuestras ofertas verificadas y códigos de cupón.",
         urgency: "¡Ofertas por tiempo limitado - No te lo pierdas!",
@@ -534,7 +534,7 @@ export default async function DealsPage({ params }: Props) {
     },
     fr: {
       hero: {
-        title: "Offres VPN & Coupons 2025",
+        title: "Offres VPN & Coupons 2026",
         subtitle:
           "Remises exclusives sur les services VPN premium. Économisez jusqu'à 87% avec nos offres vérifiées et codes promo.",
         urgency: "Offres à durée limitée - Ne manquez pas ça!",
@@ -620,7 +620,7 @@ export default async function DealsPage({ params }: Props) {
     },
     zh: {
       hero: {
-        title: "VPN优惠与折扣码2025",
+        title: "VPN优惠与折扣码2026",
         subtitle: "高级VPN服务独家折扣。使用我们验证过的优惠和折扣码节省高达87%。",
         urgency: "限时优惠 - 不要错过！",
         timerLabel: "优惠结束倒计时",
@@ -697,7 +697,7 @@ export default async function DealsPage({ params }: Props) {
     },
     ja: {
       hero: {
-        title: "VPNセール＆クーポン2025",
+        title: "VPNセール＆クーポン2026",
         subtitle: "プレミアムVPNサービスの独占割引。検証済みのセールとクーポンコードで最大87％節約。",
         urgency: "期間限定オファー - お見逃しなく！",
         timerLabel: "セール終了まで",
@@ -782,7 +782,7 @@ export default async function DealsPage({ params }: Props) {
     },
     ko: {
       hero: {
-        title: "VPN 할인 및 쿠폰 2025",
+        title: "VPN 할인 및 쿠폰 2026",
         subtitle: "프리미엄 VPN 서비스 독점 할인. 검증된 할인 및 쿠폰 코드로 최대 87% 절약하세요.",
         urgency: "기간 한정 혜택 - 놓치지 마세요!",
         timerLabel: "할인 종료까지",
@@ -859,7 +859,7 @@ export default async function DealsPage({ params }: Props) {
     },
     th: {
       hero: {
-        title: "ดีล VPN และคูปอง 2025",
+        title: "ดีล VPN และคูปอง 2026",
         subtitle: "ส่วนลดพิเศษสำหรับบริการ VPN พรีเมียม ประหยัดสูงสุด 87% ด้วยดีลและรหัสคูปองที่ตรวจสอบแล้วของเรา",
         urgency: "ข้อเสนอจำกัดเวลา - อย่าพลาด!",
         timerLabel: "ดีลสิ้นสุดใน",
@@ -976,7 +976,7 @@ export default async function DealsPage({ params }: Props) {
             {/* Countdown Timer */}
             <div className="mt-8 inline-block">
               <CountdownTimer
-                endDate={new Date("2025-12-31T23:59:59")}
+                endDate={new Date("2026-12-31T23:59:59")}
                 variant="full"
                 label={t.hero.timerLabel}
                 className="bg-card/50 backdrop-blur-sm p-6 rounded-2xl border shadow-lg"

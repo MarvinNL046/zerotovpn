@@ -25,15 +25,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const canonicalUrl = `${baseUrl}${prefix}/coupons`;
 
   const titles: Record<string, string> = {
-    en: "VPN Coupons & Discount Codes 2025 - Save Up To 83% OFF",
-    nl: "VPN Kortingscodes 2025 - Bespaar tot 83%",
-    de: "VPN Gutscheine 2025 - Sparen Sie bis zu 83%",
-    es: "Cupones VPN 2025 - Ahorra hasta 83%",
-    fr: "Codes Promo VPN 2025 - Économisez jusqu'à 83%",
-    zh: "VPN优惠券2025 - 节省高达83%",
-    ja: "VPNクーポン2025 - 最大83%割引",
-    ko: "VPN 쿠폰 2025 - 최대 83% 할인",
-    th: "คูปอง VPN 2025 - ประหยัดสูงสุด 83%",
+    en: "VPN Coupons & Discount Codes 2026 - Save Up To 83% OFF",
+    nl: "VPN Kortingscodes 2026 - Bespaar tot 83%",
+    de: "VPN Gutscheine 2026 - Sparen Sie bis zu 83%",
+    es: "Cupones VPN 2026 - Ahorra hasta 83%",
+    fr: "Codes Promo VPN 2026 - Économisez jusqu'à 83%",
+    zh: "VPN优惠券2026 - 节省高达83%",
+    ja: "VPNクーポン2026 - 最大83%割引",
+    ko: "VPN 쿠폰 2026 - 최대 83% 할인",
+    th: "คูปอง VPN 2026 - ประหยัดสูงสุด 83%",
   };
 
   const descriptions: Record<string, string> = {

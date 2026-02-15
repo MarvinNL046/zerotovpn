@@ -32,15 +32,38 @@ const baseUrl = "https://zerotovpn.com";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "freeVpn" });
+
+  const titles: Record<string, string> = {
+    en: "Best Free VPN 2026: 4 Safe Options (No Hidden Costs) | ZeroToVPN",
+    nl: "Beste Gratis VPN 2026: 4 Veilige Opties (Geen Verborgen Kosten) | ZeroToVPN",
+    de: "Bestes Gratis VPN 2026: 4 Sichere Optionen (Keine Versteckten Kosten) | ZeroToVPN",
+    es: "Mejor VPN Gratis 2026: 4 Opciones Seguras (Sin Costos Ocultos) | ZeroToVPN",
+    fr: "Meilleur VPN Gratuit 2026: 4 Options Sûres (Sans Frais Cachés) | ZeroToVPN",
+    zh: "2026年最佳免费VPN：4个安全选择（无隐藏费用） | ZeroToVPN",
+    ja: "ベスト無料VPN 2026：安全な4つの選択肢（隠れた費用なし） | ZeroToVPN",
+    ko: "최고의 무료 VPN 2026: 4가지 안전한 옵션 (숨겨진 비용 없음) | ZeroToVPN",
+    th: "VPN ฟรีที่ดีที่สุด 2026: 4 ตัวเลือกปลอดภัย (ไม่มีค่าใช้จ่ายแอบแฝง) | ZeroToVPN",
+  };
+
+  const descriptions: Record<string, string> = {
+    en: "99% of free VPNs sell your data. We found 4 that are truly free, safe, and fast enough to actually use. No credit card required.",
+    nl: "99% van de gratis VPNs verkoopt je data. We vonden 4 die echt gratis, veilig en snel genoeg zijn om te gebruiken. Geen creditcard nodig.",
+    de: "99% der kostenlosen VPNs verkaufen Ihre Daten. Wir haben 4 gefunden, die wirklich kostenlos, sicher und schnell genug sind. Keine Kreditkarte nötig.",
+    es: "El 99% de las VPNs gratis venden tus datos. Encontramos 4 que son realmente gratis, seguras y lo suficientemente rápidas. Sin tarjeta de crédito.",
+    fr: "99% des VPNs gratuits vendent vos données. Nous en avons trouvé 4 vraiment gratuits, sûrs et assez rapides. Pas de carte bancaire requise.",
+    zh: "99%的免费VPN出售您的数据。我们找到4个真正免费、安全且足够快的VPN。无需信用卡。",
+    ja: "無料VPNの99%はデータを販売しています。本当に無料で安全、実用的な速度の4つを見つけました。クレジットカード不要。",
+    ko: "무료 VPN의 99%가 데이터를 판매합니다. 진짜 무료이고 안전하며 실제로 사용할 만큼 빠른 4개를 찾았습니다. 신용카드 필요 없음.",
+    th: "99% ของ VPN ฟรีขายข้อมูลของคุณ เราพบ 4 ตัวที่ฟรีจริง ปลอดภัย และเร็วพอใช้งานได้จริง ไม่ต้องใช้บัตรเครดิต",
+  };
 
   return {
     metadataBase: new URL(baseUrl),
-    title: t("meta.title"),
-    description: t("meta.description"),
+    title: titles[locale] || titles.en,
+    description: descriptions[locale] || descriptions.en,
     openGraph: {
-      title: t("meta.title"),
-      description: t("meta.description"),
+      title: titles[locale] || titles.en,
+      description: descriptions[locale] || descriptions.en,
       type: "article",
     },
   };
@@ -51,7 +74,7 @@ function FreeVpnListSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Best Free VPN Services 2025",
+    name: "Best Free VPN Services 2026",
     description: "Expert-tested free VPN services with comparison of data limits, features, and security",
     numberOfItems: 4,
     itemListElement: [

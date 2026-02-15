@@ -65,7 +65,7 @@ function WindowsTabletVpnListSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Best VPN for Windows Tablets 2025",
+    name: "Best VPN for Windows Tablets 2026",
     description: "Expert-tested VPN services for Windows tablets including Surface Pro and Surface Go with full Windows features",
     numberOfItems: 3,
     itemListElement: [

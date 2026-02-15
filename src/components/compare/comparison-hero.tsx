@@ -16,7 +16,7 @@ export function ComparisonHero({ vpn1, vpn2, overallWinner }: ComparisonHeroProp
           {/* Badge */}
           <div className="flex justify-center mb-6">
             <Badge variant="secondary" className="px-4 py-1.5 text-sm">
-              VPN Comparison 2025
+              VPN Comparison 2026
             </Badge>
           </div>
 

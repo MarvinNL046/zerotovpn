@@ -48,7 +48,7 @@ const baseUrl = "https://zerotovpn.com";
 export async function generateMetadata(): Promise<Metadata> {
   return {
     metadataBase: new URL(baseUrl),
-    title: "VPN Privacy Guide: No-Logs Policies & Jurisdiction Explained (2025) - ZeroToVPN",
+    title: "VPN Privacy Guide: No-Logs Policies & Jurisdiction Explained (2026) - ZeroToVPN",
     description:
       "Understand what makes a VPN truly private. Learn about no-logs policies, jurisdiction, independent audits, and how to evaluate VPN privacy claims.",
     robots: {
@@ -56,7 +56,7 @@ export async function generateMetadata(): Promise<Metadata> {
       follow: true,
     },
     openGraph: {
-      title: "VPN Privacy Guide: No-Logs Policies & Jurisdiction (2025)",
+      title: "VPN Privacy Guide: No-Logs Policies & Jurisdiction (2026)",
       description:
         "Understand what makes a VPN truly private. Learn about no-logs policies, jurisdiction, and independent audits.",
       type: "article",
@@ -73,11 +73,11 @@ export default async function VpnPrivacyGuidePage({ params }: Props) {
   return (
     <>
       <ArticleJsonLd
-        title="VPN Privacy Guide: No-Logs Policies & Jurisdiction Explained (2025)"
+        title="VPN Privacy Guide: No-Logs Policies & Jurisdiction Explained (2026)"
         description="Understand what makes a VPN truly private. Learn about no-logs policies, jurisdiction, independent audits, and how to evaluate VPN privacy claims."
         url={pageUrl}
-        datePublished="2025-01-01"
-        dateModified="2025-11-28"
+        datePublished="2026-01-01"
+        dateModified="2026-11-28"
       />
       <BreadcrumbJsonLd
         items={[
@@ -514,7 +514,7 @@ export default async function VpnPrivacyGuidePage({ params }: Props) {
                 { title: "What is a VPN?", description: "Understanding VPN basics", href: "/guides/what-is-vpn", icon: "shield" },
                 { title: "How VPNs Work", description: "VPN encryption explained", href: "/guides/how-vpn-works", icon: "lock" },
                 { title: "VPN for Torrenting", description: "Anonymous downloading", href: "/guides/vpn-for-torrenting", icon: "download" },
-                { title: "Best VPNs 2025", description: "Privacy-focused VPN recommendations", href: "/best/best-vpn", icon: "trophy" }
+                { title: "Best VPNs 2026", description: "Privacy-focused VPN recommendations", href: "/best/best-vpn", icon: "trophy" }
               ]}
             />
           </div>

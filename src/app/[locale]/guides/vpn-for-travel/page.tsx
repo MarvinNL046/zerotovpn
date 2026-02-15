@@ -96,7 +96,7 @@ const baseUrl = "https://zerotovpn.com";
 export async function generateMetadata(): Promise<Metadata> {
   return {
     metadataBase: new URL(baseUrl),
-    title: "VPN for Travel: Essential Guide to Staying Connected Abroad (2025) - ZeroToVPN",
+    title: "VPN for Travel: Essential Guide to Staying Connected Abroad (2026) - ZeroToVPN",
     description:
       "Learn why you need a VPN when traveling. Access home content, bypass censorship, protect on hotel WiFi, and find deals. Complete travel VPN guide.",
     robots: {
@@ -104,7 +104,7 @@ export async function generateMetadata(): Promise<Metadata> {
       follow: true,
     },
     openGraph: {
-      title: "VPN for Travel: Essential Guide to Staying Connected Abroad (2025)",
+      title: "VPN for Travel: Essential Guide to Staying Connected Abroad (2026)",
       description:
         "Learn why you need a VPN when traveling. Access home content, bypass censorship, and stay secure.",
       type: "article",
@@ -137,11 +137,11 @@ export default async function VpnForTravelPage({ params }: Props) {
   return (
     <>
       <ArticleJsonLd
-        title="VPN for Travel: Essential Guide to Staying Connected Abroad (2025)"
+        title="VPN for Travel: Essential Guide to Staying Connected Abroad (2026)"
         description="Learn why you need a VPN when traveling. Access home content, bypass censorship, protect on hotel WiFi, and find deals. Complete travel VPN guide."
         url={pageUrl}
-        datePublished="2025-01-01"
-        dateModified="2025-11-28"
+        datePublished="2026-01-01"
+        dateModified="2026-11-28"
       />
       <BreadcrumbJsonLd
         items={[
@@ -635,7 +635,7 @@ export default async function VpnForTravelPage({ params }: Props) {
                 { title: "Public WiFi Safety", description: "Stay secure on hotel and airport WiFi", href: "/guides/public-wifi-safety", icon: "wifi" },
                 { title: "VPN on Mobile", description: "Setup VPN on iPhone and Android", href: "/guides/vpn-on-mobile", icon: "smartphone" },
                 { title: "VPN for Streaming", description: "Access home content while abroad", href: "/guides/vpn-for-streaming", icon: "play" },
-                { title: "Best VPNs 2025", description: "Top-rated travel VPNs", href: "/best/best-vpn", icon: "trophy" }
+                { title: "Best VPNs 2026", description: "Top-rated travel VPNs", href: "/best/best-vpn", icon: "trophy" }
               ]}
             />
           </div>

@@ -77,7 +77,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     metadataBase: new URL(baseUrl),
-    title: `${vpn1.name} vs ${vpn2.name}: Which is Better in 2025? - ZeroToVPN`,
+    title: `${vpn1.name} vs ${vpn2.name}: Which is Better in 2026? - ZeroToVPN`,
     description: `Compare ${vpn1.name} and ${vpn2.name} side by side. See the differences in speed, security, pricing, features, and more to choose the best VPN for your needs.`,
     alternates: {
       canonical: canonicalUrl,
@@ -88,7 +88,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       follow: true,
     },
     openGraph: {
-      title: `${vpn1.name} vs ${vpn2.name}: VPN Comparison 2025`,
+      title: `${vpn1.name} vs ${vpn2.name}: VPN Comparison 2026`,
       description: `Detailed comparison of ${vpn1.name} and ${vpn2.name}. Find out which VPN is faster, more secure, and offers better value.`,
       url: canonicalUrl,
       type: "article",
@@ -451,7 +451,7 @@ export default async function ComparisonPage({ params }: Props) {
                   <Link href="/compare">View All Comparisons</Link>
                 </Button>
                 <Button variant="outline" asChild>
-                  <Link href="/best/best-vpn">See Best VPNs 2025</Link>
+                  <Link href="/best/best-vpn">See Best VPNs 2026</Link>
                 </Button>
               </div>
             </div>

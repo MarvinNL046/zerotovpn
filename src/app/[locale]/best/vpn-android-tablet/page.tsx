@@ -66,7 +66,7 @@ function AndroidTabletVpnListSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Best VPN for Android Tablets 2025",
+    name: "Best VPN for Android Tablets 2026",
     description: "Expert-tested VPN apps for Android tablets with split tunneling, APK sideloading, and optimized performance for Samsung, Lenovo, and Xiaomi tablets",
     numberOfItems: 3,
     itemListElement: [

@@ -34,27 +34,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
   const titles: Record<string, string> = {
-    en: "Best VPN for macOS 2025: Native Apps, M1/M2 Optimized | ZeroToVPN",
-    nl: "Beste VPN voor macOS 2025: Native Apps, M1/M2 Geoptimaliseerd | ZeroToVPN",
-    de: "Beste VPN für macOS 2025: Native Apps, M1/M2 Optimiert | ZeroToVPN",
-    es: "Mejor VPN para macOS 2025: Apps Nativas, Optimizado M1/M2 | ZeroToVPN",
-    fr: "Meilleur VPN pour macOS 2025: Apps Natives, Optimisé M1/M2 | ZeroToVPN",
-    zh: "2025年最佳macOS VPN：原生应用，M1/M2优化 | ZeroToVPN",
-    janswer: "macOS用ベストVPN 2025：ネイティブアプリ、M1/M2最適化 | ZeroToVPN",
-    ko: "2025년 최고의 macOS VPN: 네이티브 앱, M1/M2 최적화 | ZeroToVPN",
-    th: "VPN ที่ดีที่สุดสำหรับ macOS 2025: แอปเนทีฟ, ปรับให้เหมาะกับ M1/M2 | ZeroToVPN",
+    en: "Best VPN for macOS 2026: Native Apps, M1/M2 Optimized | ZeroToVPN",
+    nl: "Beste VPN voor macOS 2026: Native Apps, M1/M2 Geoptimaliseerd | ZeroToVPN",
+    de: "Beste VPN für macOS 2026: Native Apps, M1/M2 Optimiert | ZeroToVPN",
+    es: "Mejor VPN para macOS 2026: Apps Nativas, Optimizado M1/M2 | ZeroToVPN",
+    fr: "Meilleur VPN pour macOS 2026: Apps Natives, Optimisé M1/M2 | ZeroToVPN",
+    zh: "2026年最佳macOS VPN：原生应用，M1/M2优化 | ZeroToVPN",
+    janswer: "macOS用ベストVPN 2026：ネイティブアプリ、M1/M2最適化 | ZeroToVPN",
+    ko: "2026년 최고의 macOS VPN: 네이티브 앱, M1/M2 최적화 | ZeroToVPN",
+    th: "VPN ที่ดีที่สุดสำหรับ macOS 2026: แอปเนทีฟ, ปรับให้เหมาะกับ M1/M2 | ZeroToVPN",
   };
 
   const descriptions: Record<string, string> = {
-    en: "Find the best VPN for macOS 2025. Native apps optimized for M1/M2 chips, Safari extensions, and seamless iCloud integration. Tested on Ventura, Sonoma & Sequoia.",
-    nl: "Vind de beste VPN voor macOS 2025. Native apps geoptimaliseerd voor M1/M2 chips, Safari extensies en naadloze iCloud integratie. Getest op Ventura, Sonoma & Sequoia.",
-    de: "Finden Sie das beste VPN für macOS 2025. Native Apps optimiert für M1/M2 Chips, Safari-Erweiterungen und nahtlose iCloud-Integration. Getestet auf Ventura, Sonoma & Sequoia.",
-    es: "Encuentra la mejor VPN para macOS 2025. Apps nativas optimizadas para chips M1/M2, extensiones de Safari e integración perfecta con iCloud. Probado en Ventura, Sonoma y Sequoia.",
-    fr: "Trouvez le meilleur VPN pour macOS 2025. Applications natives optimisées pour les puces M1/M2, extensions Safari et intégration transparente iCloud. Testé sur Ventura, Sonoma & Sequoia.",
-    zh: "找到2025年最佳macOS VPN。针对M1/M2芯片优化的原生应用，Safari扩展和无缝iCloud集成。在Ventura、Sonoma和Sequoia上测试。",
-    janswer: "macOS用最高のVPNを見つけよう2025。M1/M2チップに最適化されたネイティブアプリ、Safari拡張機能、シームレスなiCloud統合。Ventura、Sonoma、Seqouiaでテスト済み。",
-    ko: "2025년 최고의 macOS VPN을 찾으세요. M1/M2 칩에 최적화된 네이티브 앱, Safari 확장 프로그램 및 원활한 iCloud 통합. Ventura, Sonoma 및 Sequoia에서 테스트됨.",
-    th: "ค้นหา VPN ที่ดีที่สุดสำหรับ macOS 2025 แอปเนทีฟที่ปรับให้เหมาะกับชิป M1/M2, ส่วนขยาย Safari และการผสานรวม iCloud อย่างราบรื่น ทดสอบบน Ventura, Sonoma และ Sequoia",
+    en: "Find the best VPN for macOS 2026. Native apps optimized for M1/M2 chips, Safari extensions, and seamless iCloud integration. Tested on Ventura, Sonoma & Sequoia.",
+    nl: "Vind de beste VPN voor macOS 2026. Native apps geoptimaliseerd voor M1/M2 chips, Safari extensies en naadloze iCloud integratie. Getest op Ventura, Sonoma & Sequoia.",
+    de: "Finden Sie das beste VPN für macOS 2026. Native Apps optimiert für M1/M2 Chips, Safari-Erweiterungen und nahtlose iCloud-Integration. Getestet auf Ventura, Sonoma & Sequoia.",
+    es: "Encuentra la mejor VPN para macOS 2026. Apps nativas optimizadas para chips M1/M2, extensiones de Safari e integración perfecta con iCloud. Probado en Ventura, Sonoma y Sequoia.",
+    fr: "Trouvez le meilleur VPN pour macOS 2026. Applications natives optimisées pour les puces M1/M2, extensions Safari et intégration transparente iCloud. Testé sur Ventura, Sonoma & Sequoia.",
+    zh: "找到2026年最佳macOS VPN。针对M1/M2芯片优化的原生应用，Safari扩展和无缝iCloud集成。在Ventura、Sonoma和Sequoia上测试。",
+    janswer: "macOS用最高のVPNを見つけよう2026。M1/M2チップに最適化されたネイティブアプリ、Safari拡張機能、シームレスなiCloud統合。Ventura、Sonoma、Seqouiaでテスト済み。",
+    ko: "2026년 최고의 macOS VPN을 찾으세요. M1/M2 칩에 최적화된 네이티브 앱, Safari 확장 프로그램 및 원활한 iCloud 통합. Ventura, Sonoma 및 Sequoia에서 테스트됨.",
+    th: "ค้นหา VPN ที่ดีที่สุดสำหรับ macOS 2026 แอปเนทีฟที่ปรับให้เหมาะกับชิป M1/M2, ส่วนขยาย Safari และการผสานรวม iCloud อย่างราบรื่น ทดสอบบน Ventura, Sonoma และ Sequoia",
   };
 
   return {
@@ -74,7 +74,7 @@ function ItemListSchema({ macosVpns }: { macosVpns: { vpn: VpnProvider | null }[
   const schema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Best macOS VPN Services 2025",
+    name: "Best macOS VPN Services 2026",
     numberOfItems: macosVpns.length,
     itemListElement: macosVpns.map((item, index) => ({
       "@type": "ListItem",
@@ -159,8 +159,8 @@ export default async function MacOSVpnPage({ params }: Props) {
   // Content translations
   const content = {
     en: {
-      badge: "Updated November 2025",
-      title: "Best VPN for macOS in 2025",
+      badge: "Updated November 2026",
+      title: "Best VPN for macOS in 2026",
       subtitle:
         "We tested 30+ VPNs on macOS Ventura, Sonoma, and Sequoia. These native apps are optimized for Apple Silicon (M1/M2/M3) with seamless macOS integration.",
       topPicks: "Top macOS VPNs",
@@ -341,11 +341,11 @@ export default async function MacOSVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "View All VPN Reviews",
-      lastUpdated: "Last updated: November 2025",
+      lastUpdated: "Last updated: November 2026",
     },
     nl: {
-      badge: "Bijgewerkt november 2025",
-      title: "Beste VPN voor macOS in 2025",
+      badge: "Bijgewerkt november 2026",
+      title: "Beste VPN voor macOS in 2026",
       subtitle:
         "We hebben 30+ VPNs getest op macOS Ventura, Sonoma en Sequoia. Deze native apps zijn geoptimaliseerd voor Apple Silicon (M1/M2/M3) met naadloze macOS integratie.",
       topPicks: "Top macOS VPNs",
@@ -526,11 +526,11 @@ export default async function MacOSVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Bekijk Alle VPN Reviews",
-      lastUpdated: "Laatst bijgewerkt: november 2025",
+      lastUpdated: "Laatst bijgewerkt: november 2026",
     },
     de: {
-      badge: "Aktualisiert November 2025",
-      title: "Beste VPN für macOS in 2025",
+      badge: "Aktualisiert November 2026",
+      title: "Beste VPN für macOS in 2026",
       subtitle:
         "Wir haben über 30 VPNs auf macOS Ventura, Sonoma und Sequoia getestet. Diese nativen Apps sind für Apple Silicon (M1/M2/M3) mit nahtloser macOS-Integration optimiert.",
       topPicks: "Top macOS VPNs",
@@ -711,11 +711,11 @@ export default async function MacOSVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Alle VPN-Bewertungen Anzeigen",
-      lastUpdated: "Zuletzt aktualisiert: November 2025",
+      lastUpdated: "Zuletzt aktualisiert: November 2026",
     },
     es: {
-      badge: "Actualizado noviembre 2025",
-      title: "Mejor VPN para macOS en 2025",
+      badge: "Actualizado noviembre 2026",
+      title: "Mejor VPN para macOS en 2026",
       subtitle:
         "Probamos más de 30 VPNs en macOS Ventura, Sonoma y Sequoia. Estas apps nativas están optimizadas para Apple Silicon (M1/M2/M3) con integración perfecta de macOS.",
       topPicks: "Mejores VPNs para macOS",
@@ -896,11 +896,11 @@ export default async function MacOSVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Ver Todas Las Reseñas De VPN",
-      lastUpdated: "Última actualización: noviembre 2025",
+      lastUpdated: "Última actualización: noviembre 2026",
     },
     fr: {
-      badge: "Mis à jour novembre 2025",
-      title: "Meilleur VPN pour macOS en 2025",
+      badge: "Mis à jour novembre 2026",
+      title: "Meilleur VPN pour macOS en 2026",
       subtitle:
         "Nous avons testé plus de 30 VPNs sur macOS Ventura, Sonoma et Sequoia. Ces applications natives sont optimisées pour Apple Silicon (M1/M2/M3) avec une intégration transparente de macOS.",
       topPicks: "Meilleurs VPNs macOS",
@@ -1081,11 +1081,11 @@ export default async function MacOSVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Voir Toutes Les Évaluations VPN",
-      lastUpdated: "Dernière mise à jour: novembre 2025",
+      lastUpdated: "Dernière mise à jour: novembre 2026",
     },
     zh: {
-      badge: "更新于2025年11月",
-      title: "2025年最佳macOS VPN",
+      badge: "更新于2026年11月",
+      title: "2026年最佳macOS VPN",
       subtitle:
         "我们在macOS Ventura、Sonoma和Sequoia上测试了30多个VPN。这些原生应用针对Apple Silicon（M1/M2/M3）进行了优化，并与macOS无缝集成。",
       topPicks: "顶级macOS VPN",
@@ -1265,11 +1265,11 @@ export default async function MacOSVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "查看所有VPN评论",
-      lastUpdated: "最后更新：2025年11月",
+      lastUpdated: "最后更新：2026年11月",
     },
     ja: {
-      badge: "2025年11月更新",
-      title: "2025年macOS用ベストVPN",
+      badge: "2026年11月更新",
+      title: "2026年macOS用ベストVPN",
       subtitle:
         "macOS Ventura、Sonoma、Sequoiaで30以上のVPNをテストしました。これらのネイティブアプリはApple Silicon（M1/M2/M3）に最適化され、macOSとシームレスに統合されています。",
       topPicks: "トップmacOS VPN",
@@ -1450,11 +1450,11 @@ export default async function MacOSVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "すべてのVPNレビューを見る",
-      lastUpdated: "最終更新：2025年11月",
+      lastUpdated: "最終更新：2026年11月",
     },
     ko: {
-      badge: "2025년 11월 업데이트",
-      title: "2025년 macOS용 최고의 VPN",
+      badge: "2026년 11월 업데이트",
+      title: "2026년 macOS용 최고의 VPN",
       subtitle:
         "macOS Ventura, Sonoma, Sequoia에서 30개 이상의 VPN을 테스트했습니다. 이 네이티브 앱은 Apple Silicon(M1/M2/M3)에 최적화되어 있으며 macOS와 완벽하게 통합됩니다.",
       topPicks: "최고의 macOS VPN",
@@ -1635,11 +1635,11 @@ export default async function MacOSVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "모든 VPN 리뷰 보기",
-      lastUpdated: "마지막 업데이트: 2025년 11월",
+      lastUpdated: "마지막 업데이트: 2026년 11월",
     },
     th: {
-      badge: "อัปเดตพฤศจิกายน 2025",
-      title: "VPN ที่ดีที่สุดสำหรับ macOS ในปี 2025",
+      badge: "อัปเดตพฤศจิกายน 2026",
+      title: "VPN ที่ดีที่สุดสำหรับ macOS ในปี 2026",
       subtitle:
         "เราได้ทดสอบ VPN มากกว่า 30 รายการบน macOS Ventura, Sonoma และ Sequoia แอปเนทีฟเหล่านี้ได้รับการปรับให้เหมาะกับ Apple Silicon (M1/M2/M3) พร้อมการผสานรวม macOS อย่างราบรื่น",
       topPicks: "VPN macOS ชั้นนำ",
@@ -1820,7 +1820,7 @@ export default async function MacOSVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "ดูรีวิว VPN ทั้งหมด",
-      lastUpdated: "อัปเดตล่าสุด: พฤศจิกายน 2025",
+      lastUpdated: "อัปเดตล่าสุด: พฤศจิกายน 2026",
     },
   };
 
@@ -1866,7 +1866,7 @@ export default async function MacOSVpnPage({ params }: Props) {
       <BreadcrumbSchema
         items={[
           { name: "Best VPN Guides", href: "/best" },
-          { name: "Best VPN for macOS 2025", href: "/best/vpn-macos" },
+          { name: "Best VPN for macOS 2026", href: "/best/vpn-macos" },
         ]}
       />
       <FAQSchema faqs={t.faqs} />

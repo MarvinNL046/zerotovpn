@@ -57,7 +57,7 @@ export function VpnReviewSchema({ vpn }: { vpn: VpnProvider }) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Review",
-    name: `${vpn.name} Review 2025`,
+    name: `${vpn.name} Review 2026`,
     reviewBody: vpn.shortDescription,
     author: {
       "@type": "Organization",
@@ -162,7 +162,7 @@ export function ComparisonTableSchema({ vpns }: { vpns: VpnProvider[] }) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Best VPNs of 2025",
+    name: "Best VPNs of 2026",
     description: "Comparison of the best VPN services tested and reviewed by experts",
     numberOfItems: vpns.length,
     itemListElement: vpns.map((vpn, index) => ({

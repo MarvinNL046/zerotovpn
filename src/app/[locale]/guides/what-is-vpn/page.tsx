@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     metadataBase: new URL(baseUrl),
-    title: "What is a VPN? Complete Beginner's Guide 2025 - ZeroToVPN",
+    title: "What is a VPN? Complete Beginner's Guide 2026 - ZeroToVPN",
     description:
       "Learn what a VPN is, how it works, and why you need one. Our comprehensive beginner's guide explains VPN technology in simple terms.",
     alternates: {
@@ -63,7 +63,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       follow: true,
     },
     openGraph: {
-      title: "What is a VPN? Complete Beginner's Guide 2025",
+      title: "What is a VPN? Complete Beginner's Guide 2026",
       description:
         "Learn what a VPN is, how it works, and why you need one. Our comprehensive beginner's guide explains VPN technology in simple terms.",
       type: "article",
@@ -80,11 +80,11 @@ export default async function WhatIsVpnPage({ params }: Props) {
   return (
     <>
       <ArticleJsonLd
-        title="What is a VPN? Complete Beginner's Guide 2025"
+        title="What is a VPN? Complete Beginner's Guide 2026"
         description="Learn what a VPN is, how it works, and why you need one. Our comprehensive beginner's guide explains VPN technology in simple terms."
         url={pageUrl}
-        datePublished="2025-01-01"
-        dateModified="2025-11-28"
+        datePublished="2026-01-01"
+        dateModified="2026-11-28"
       />
       <BreadcrumbJsonLd
         items={[
@@ -395,7 +395,7 @@ export default async function WhatIsVpnPage({ params }: Props) {
               pages={[
                 { title: "How VPNs Work", description: "Technical deep-dive into VPN technology", href: "/guides/how-vpn-works", icon: "zap" },
                 { title: "VPN Protocols Explained", description: "Compare WireGuard, OpenVPN, and more", href: "/guides/vpn-protocols-explained", icon: "lock" },
-                { title: "Best VPNs 2025", description: "Our top-rated VPN recommendations", href: "/best/best-vpn", icon: "trophy" },
+                { title: "Best VPNs 2026", description: "Our top-rated VPN recommendations", href: "/best/best-vpn", icon: "trophy" },
                 { title: "VPN Privacy Guide", description: "Maximize your online privacy", href: "/guides/vpn-privacy-guide", icon: "shield" }
               ]}
             />

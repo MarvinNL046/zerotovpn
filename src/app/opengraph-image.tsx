@@ -76,7 +76,7 @@ export default async function OgImage() {
               marginBottom: 16,
             }}
           >
-            Best VPN Reviews & Comparisons 2025
+            Best VPN Reviews & Comparisons 2026
           </span>
           <span
             style={{

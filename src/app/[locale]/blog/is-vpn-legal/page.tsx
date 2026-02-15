@@ -24,34 +24,34 @@ type Props = {
 };
 
 const baseUrl = "https://zerotovpn.com";
-const publishDate = "2025-11-28";
+const publishDate = "2026-11-28";
 const slug = "is-vpn-legal";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
   const titles: Record<string, string> = {
-    en: "Is Using a VPN Legal? Country-by-Country Guide 2025 | ZeroToVPN",
-    nl: "Is het gebruik van een VPN legaal? Land-voor-land gids 2025 | ZeroToVPN",
-    de: "Ist die Verwendung eines VPN legal? Länderführer 2025 | ZeroToVPN",
-    es: "¿Es legal usar una VPN? Guía por país 2025 | ZeroToVPN",
-    fr: "L'utilisation d'un VPN est-elle légale? Guide par pays 2025 | ZeroToVPN",
-    zh: "使用VPN合法吗？2025年各国指南 | ZeroToVPN",
-    ja: "VPNの使用は合法ですか？国別ガイド2025 | ZeroToVPN",
-    ko: "VPN 사용은 합법인가요? 국가별 가이드 2025 | ZeroToVPN",
-    th: "การใช้ VPN ถูกกฎหมายหรือไม่? คู่มือแยกตามประเทศ 2025 | ZeroToVPN",
+    en: "Is Using a VPN Legal? Country-by-Country Guide 2026 | ZeroToVPN",
+    nl: "Is het gebruik van een VPN legaal? Land-voor-land gids 2026 | ZeroToVPN",
+    de: "Ist die Verwendung eines VPN legal? Länderführer 2026 | ZeroToVPN",
+    es: "¿Es legal usar una VPN? Guía por país 2026 | ZeroToVPN",
+    fr: "L'utilisation d'un VPN est-elle légale? Guide par pays 2026 | ZeroToVPN",
+    zh: "使用VPN合法吗？2026年各国指南 | ZeroToVPN",
+    ja: "VPNの使用は合法ですか？国別ガイド2026 | ZeroToVPN",
+    ko: "VPN 사용은 합법인가요? 국가별 가이드 2026 | ZeroToVPN",
+    th: "การใช้ VPN ถูกกฎหมายหรือไม่? คู่มือแยกตามประเทศ 2026 | ZeroToVPN",
   };
 
   const descriptions: Record<string, string> = {
-    en: "Complete guide to VPN legality worldwide. Learn which countries ban or restrict VPNs, and where you can use them safely. Updated for 2025.",
-    nl: "Volledige gids over VPN-legaliteit wereldwijd. Leer welke landen VPN's verbieden of beperken, en waar je ze veilig kunt gebruiken. Bijgewerkt voor 2025.",
-    de: "Vollständiger Leitfaden zur VPN-Legalität weltweit. Erfahren Sie, welche Länder VPNs verbieten oder einschränken und wo Sie sie sicher verwenden können. Aktualisiert für 2025.",
-    es: "Guía completa sobre la legalidad de las VPN en todo el mundo. Descubre qué países prohíben o restringen las VPN y dónde puedes usarlas de forma segura. Actualizado para 2025.",
-    fr: "Guide complet sur la légalité des VPN dans le monde. Découvrez quels pays interdisent ou restreignent les VPN et où vous pouvez les utiliser en toute sécurité. Mis à jour pour 2025.",
-    zh: "全球VPN合法性完整指南。了解哪些国家禁止或限制VPN，以及在哪里可以安全使用。2025年更新。",
-    ja: "世界中のVPN合法性に関する完全ガイド。VPNを禁止または制限している国と、安全に使用できる場所を学びましょう。2025年更新。",
-    ko: "전 세계 VPN 합법성에 대한 완전한 가이드. VPN을 금지하거나 제한하는 국가와 안전하게 사용할 수 있는 곳을 알아보세요. 2025년 업데이트.",
-    th: "คู่มือครบวงจรเกี่ยวกับความถูกต้องตามกฎหมายของ VPN ทั่วโลก เรียนรู้ว่าประเทศใดห้ามหรือจำกัด VPN และที่ไหนที่คุณสามารถใช้ได้อย่างปลอดภัย อัปเดตสำหรับปี 2025",
+    en: "Complete guide to VPN legality worldwide. Learn which countries ban or restrict VPNs, and where you can use them safely. Updated for 2026.",
+    nl: "Volledige gids over VPN-legaliteit wereldwijd. Leer welke landen VPN's verbieden of beperken, en waar je ze veilig kunt gebruiken. Bijgewerkt voor 2026.",
+    de: "Vollständiger Leitfaden zur VPN-Legalität weltweit. Erfahren Sie, welche Länder VPNs verbieten oder einschränken und wo Sie sie sicher verwenden können. Aktualisiert für 2026.",
+    es: "Guía completa sobre la legalidad de las VPN en todo el mundo. Descubre qué países prohíben o restringen las VPN y dónde puedes usarlas de forma segura. Actualizado para 2026.",
+    fr: "Guide complet sur la légalité des VPN dans le monde. Découvrez quels pays interdisent ou restreignent les VPN et où vous pouvez les utiliser en toute sécurité. Mis à jour pour 2026.",
+    zh: "全球VPN合法性完整指南。了解哪些国家禁止或限制VPN，以及在哪里可以安全使用。2026年更新。",
+    ja: "世界中のVPN合法性に関する完全ガイド。VPNを禁止または制限している国と、安全に使用できる場所を学びましょう。2026年更新。",
+    ko: "전 세계 VPN 합법성에 대한 완전한 가이드. VPN을 금지하거나 제한하는 국가와 안전하게 사용할 수 있는 곳을 알아보세요. 2026년 업데이트.",
+    th: "คู่มือครบวงจรเกี่ยวกับความถูกต้องตามกฎหมายของ VPN ทั่วโลก เรียนรู้ว่าประเทศใดห้ามหรือจำกัด VPN และที่ไหนที่คุณสามารถใช้ได้อย่างปลอดภัย อัปเดตสำหรับปี 2026",
   };
 
   return {
@@ -370,7 +370,7 @@ export default async function VpnLegalityPage({ params }: Props) {
             <div className="max-w-4xl mx-auto">
               <h2 className="text-2xl font-bold mb-6">{t("related.title")}</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Link href="/blog/vpn-black-friday-2025">
+                <Link href="/blog/vpn-black-friday-2026">
                   <Card className="hover:shadow-lg transition-shadow h-full">
                     <CardContent className="p-6">
                       <Badge variant="secondary" className="mb-3">

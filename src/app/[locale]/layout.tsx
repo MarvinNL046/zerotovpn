@@ -24,15 +24,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
   const titles: Record<string, string> = {
-    en: "ZeroToVPN - Best VPN Reviews & Comparisons 2025",
-    nl: "ZeroToVPN - Beste VPN Reviews & Vergelijkingen 2025",
-    de: "ZeroToVPN - Beste VPN Tests & Vergleiche 2025",
-    es: "ZeroToVPN - Mejores Reseñas y Comparaciones de VPN 2025",
-    fr: "ZeroToVPN - Meilleurs Avis et Comparaisons VPN 2025",
-    zh: "ZeroToVPN - 2025年最佳VPN评测与比较",
-    ja: "ZeroToVPN - 2025年ベストVPNレビュー＆比較",
-    ko: "ZeroToVPN - 2025년 최고의 VPN 리뷰 및 비교",
-    th: "ZeroToVPN - รีวิวและเปรียบเทียบ VPN ที่ดีที่สุด 2025",
+    en: "ZeroToVPN - Best VPN Reviews & Comparisons 2026",
+    nl: "ZeroToVPN - Beste VPN Reviews & Vergelijkingen 2026",
+    de: "ZeroToVPN - Beste VPN Tests & Vergleiche 2026",
+    es: "ZeroToVPN - Mejores Reseñas y Comparaciones de VPN 2026",
+    fr: "ZeroToVPN - Meilleurs Avis et Comparaisons VPN 2026",
+    zh: "ZeroToVPN - 2026年最佳VPN评测与比较",
+    ja: "ZeroToVPN - 2026年ベストVPNレビュー＆比較",
+    ko: "ZeroToVPN - 2026년 최고의 VPN 리뷰 및 비교",
+    th: "ZeroToVPN - รีวิวและเปรียบเทียบ VPN ที่ดีที่สุด 2026",
   };
 
   const descriptions: Record<string, string> = {

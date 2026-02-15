@@ -33,15 +33,38 @@ const baseUrl = "https://zerotovpn.com";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "androidVpn" });
+
+  const titles: Record<string, string> = {
+    en: "Best VPN for Android 2026: Top 5 Apps Tested on Samsung & Pixel | ZeroToVPN",
+    nl: "Beste VPN voor Android 2026: Top 5 Apps Getest op Samsung & Pixel | ZeroToVPN",
+    de: "Bestes VPN für Android 2026: Top 5 Apps auf Samsung & Pixel Getestet | ZeroToVPN",
+    es: "Mejor VPN para Android 2026: Top 5 Apps Probadas en Samsung y Pixel | ZeroToVPN",
+    fr: "Meilleur VPN pour Android 2026: Top 5 Apps Testées sur Samsung et Pixel | ZeroToVPN",
+    zh: "2026年最佳Android VPN：在三星和Pixel上测试的5款应用 | ZeroToVPN",
+    ja: "Android向けベストVPN 2026：SamsungとPixelでテスト済みトップ5アプリ | ZeroToVPN",
+    ko: "2026년 안드로이드 최고의 VPN: 삼성 & 픽셀에서 테스트한 상위 5개 앱 | ZeroToVPN",
+    th: "VPN ที่ดีที่สุดสำหรับ Android 2026: 5 แอปที่ทดสอบบน Samsung และ Pixel | ZeroToVPN",
+  };
+
+  const descriptions: Record<string, string> = {
+    en: "We installed 25+ VPN apps on Android — most drain battery and leak data. These 5 passed our kill switch, speed, and security tests.",
+    nl: "We installeerden 25+ VPN-apps op Android — de meeste vreten batterij en lekken data. Deze 5 slaagden voor onze kill switch-, snelheids- en beveiligingstests.",
+    de: "Wir haben 25+ VPN-Apps auf Android installiert — die meisten verbrauchen Akku und leaken Daten. Diese 5 bestanden unsere Kill-Switch-, Geschwindigkeits- und Sicherheitstests.",
+    es: "Instalamos más de 25 apps VPN en Android — la mayoría agotan la batería y filtran datos. Estas 5 pasaron nuestras pruebas de kill switch, velocidad y seguridad.",
+    fr: "Nous avons installé 25+ apps VPN sur Android — la plupart vident la batterie et fuient des données. Ces 5 ont passé nos tests de kill switch, vitesse et sécurité.",
+    zh: "我们在Android上安装了25多个VPN应用——大多数耗电且泄露数据。这5个通过了我们的终止开关、速度和安全测试。",
+    ja: "Androidに25以上のVPNアプリをインストール——ほとんどがバッテリーを消耗しデータを漏洩。この5つがキルスイッチ、速度、セキュリティテストに合格しました。",
+    ko: "Android에 25개 이상의 VPN 앱을 설치했습니다 — 대부분 배터리를 소모하고 데이터를 유출합니다. 이 5개가 킬 스위치, 속도, 보안 테스트를 통과했습니다.",
+    th: "เราติดตั้งแอป VPN มากกว่า 25 ตัวบน Android — ส่วนใหญ่กินแบตและรั่วไหลข้อมูล 5 ตัวนี้ผ่านการทดสอบ kill switch ความเร็ว และความปลอดภัย",
+  };
 
   return {
     metadataBase: new URL(baseUrl),
-    title: t("meta.title"),
-    description: t("meta.description"),
+    title: titles[locale] || titles.en,
+    description: descriptions[locale] || descriptions.en,
     openGraph: {
-      title: t("meta.title"),
-      description: t("meta.description"),
+      title: titles[locale] || titles.en,
+      description: descriptions[locale] || descriptions.en,
       type: "article",
     },
   };
@@ -66,7 +89,7 @@ function AndroidVpnListSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Best VPN for Android 2025",
+    name: "Best VPN for Android 2026",
     description: "Expert-tested VPN apps for Android with ratings, features, and performance comparison",
     numberOfItems: 3,
     itemListElement: [

@@ -33,27 +33,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
   const titles: Record<string, string> = {
-    en: "Best VPN for Chromebook 2025: Easy Setup, Android Support | ZeroToVPN",
-    nl: "Beste VPN voor Chromebook 2025: Eenvoudige Installatie, Android Ondersteuning | ZeroToVPN",
-    de: "Beste VPN für Chromebook 2025: Einfache Einrichtung, Android-Unterstützung | ZeroToVPN",
-    es: "Mejor VPN para Chromebook 2025: Configuración Fácil, Soporte Android | ZeroToVPN",
-    fr: "Meilleur VPN pour Chromebook 2025: Configuration Facile, Support Android | ZeroToVPN",
-    zh: "2025年最佳Chromebook VPN：简易设置，Android支持 | ZeroToVPN",
-    janswer: "Chromebook用ベストVPN 2025：簡単設定、Android対応 | ZeroToVPN",
-    ko: "2025년 최고의 크롬북 VPN: 간편한 설정, 안드로이드 지원 | ZeroToVPN",
-    th: "VPN ที่ดีที่สุดสำหรับ Chromebook 2025: ตั้งค่าง่าย, รองรับ Android | ZeroToVPN",
+    en: "Best VPN for Chromebook 2026: 5 That Actually Work (Tested) | ZeroToVPN",
+    nl: "Beste VPN voor Chromebook 2026: 5 Die Echt Werken (Getest) | ZeroToVPN",
+    de: "Bestes VPN für Chromebook 2026: 5 Die Wirklich Funktionieren (Getestet) | ZeroToVPN",
+    es: "Mejor VPN para Chromebook 2026: 5 Que Realmente Funcionan (Probados) | ZeroToVPN",
+    fr: "Meilleur VPN pour Chromebook 2026: 5 Qui Fonctionnent Vraiment (Testés) | ZeroToVPN",
+    zh: "2026年最佳Chromebook VPN：5款真正有效的VPN（已测试） | ZeroToVPN",
+    janswer: "Chromebook向けベストVPN 2026：実際に動作する5選（テスト済み） | ZeroToVPN",
+    ko: "2026년 최고의 크롬북 VPN: 실제로 작동하는 5개 (테스트 완료) | ZeroToVPN",
+    th: "VPN ที่ดีที่สุดสำหรับ Chromebook 2026: 5 ตัวที่ใช้งานได้จริง (ทดสอบแล้ว) | ZeroToVPN",
   };
 
   const descriptions: Record<string, string> = {
-    en: "Find the best VPN for Chromebook in 2025. We tested 35+ VPNs for Android app support, Chrome extensions, and ease of use. Secure your Chromebook today.",
-    nl: "Vind de beste VPN voor Chromebook in 2025. We hebben 35+ VPNs getest op Android app-ondersteuning, Chrome-extensies en gebruiksgemak. Beveilig je Chromebook vandaag.",
-    de: "Finden Sie das beste VPN für Chromebook in 2025. Wir haben über 35 VPNs auf Android-App-Unterstützung, Chrome-Erweiterungen und Benutzerfreundlichkeit getestet. Sichern Sie Ihr Chromebook heute.",
-    es: "Encuentra la mejor VPN para Chromebook en 2025. Probamos más de 35 VPNs para soporte de aplicaciones Android, extensiones de Chrome y facilidad de uso. Asegura tu Chromebook hoy.",
-    fr: "Trouvez le meilleur VPN pour Chromebook en 2025. Nous avons testé plus de 35 VPNs pour le support des applications Android, les extensions Chrome et la facilité d'utilisation. Sécurisez votre Chromebook aujourd'hui.",
-    zh: "找到2025年最佳Chromebook VPN。我们测试了35+个VPN的Android应用支持、Chrome扩展和易用性。立即保护您的Chromebook。",
-    janswer: "2025年最高のChromebook用VPNを見つけよう。35以上のVPNをAndroidアプリ対応、Chrome拡張機能、使いやすさでテストしました。今すぐChromebookを保護しましょう。",
-    ko: "2025년 최고의 크롬북 VPN을 찾으세요. 35개 이상의 VPN을 Android 앱 지원, Chrome 확장 프로그램, 사용 편의성 측면에서 테스트했습니다. 오늘 크롬북을 보호하세요.",
-    th: "ค้นหา VPN สำหรับ Chromebook ที่ดีที่สุดในปี 2025 เราทดสอบ VPN มากกว่า 35 รายการสำหรับการรองรับแอป Android, ส่วนขยาย Chrome และความง่ายในการใช้งาน ปกป้อง Chromebook ของคุณวันนี้",
+    en: "Most VPNs don't work properly on Chromebook. We tested 30+ — these 5 have native ChromeOS support and Android app compatibility.",
+    nl: "De meeste VPNs werken niet goed op Chromebook. We testten 30+ — deze 5 hebben native ChromeOS-ondersteuning en Android app-compatibiliteit.",
+    de: "Die meisten VPNs funktionieren auf Chromebook nicht richtig. Wir haben 30+ getestet — diese 5 haben native ChromeOS-Unterstützung und Android-App-Kompatibilität.",
+    es: "La mayoría de VPNs no funcionan bien en Chromebook. Probamos más de 30 — estas 5 tienen soporte nativo ChromeOS y compatibilidad con apps Android.",
+    fr: "La plupart des VPNs ne fonctionnent pas correctement sur Chromebook. Nous en avons testé 30+ — ces 5 ont le support natif ChromeOS et la compatibilité Android.",
+    zh: "大多数VPN在Chromebook上无法正常工作。我们测试了30多个——这5个原生支持ChromeOS并兼容Android应用。",
+    janswer: "ほとんどのVPNはChromebookで正しく動作しません。30以上をテスト——この5つはネイティブChromeOSサポートとAndroidアプリ互換性があります。",
+    ko: "대부분의 VPN은 크롬북에서 제대로 작동하지 않습니다. 30개 이상 테스트 — 이 5개는 네이티브 ChromeOS 지원과 Android 앱 호환성을 갖추고 있습니다.",
+    th: "VPN ส่วนใหญ่ทำงานไม่ถูกต้องบน Chromebook เราทดสอบ 30+ ตัว — 5 ตัวนี้รองรับ ChromeOS แบบเนทีฟและเข้ากันได้กับแอป Android",
   };
 
   return {
@@ -73,7 +73,7 @@ function ItemListSchema({ chromebookVpns }: { chromebookVpns: { vpn: VpnProvider
   const schema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Best Chromebook VPN Services 2025",
+    name: "Best Chromebook VPN Services 2026",
     numberOfItems: chromebookVpns.length,
     itemListElement: chromebookVpns.map((item, index) => ({
       "@type": "ListItem",
@@ -140,8 +140,8 @@ export default async function ChromebookVpnPage({ params }: Props) {
   // Content translations
   const content = {
     en: {
-      badge: "Updated November 2025",
-      title: "Best VPN for Chromebook in 2025",
+      badge: "Updated November 2026",
+      title: "Best VPN for Chromebook in 2026",
       subtitle:
         "We tested 35+ VPNs specifically for Chromebook compatibility. These are the best options with native Android apps, Chrome extensions, and easy setup.",
       topPicks: "Top Chromebook VPNs",
@@ -275,11 +275,11 @@ export default async function ChromebookVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "View All VPN Reviews",
-      lastUpdated: "Last updated: November 2025",
+      lastUpdated: "Last updated: November 2026",
     },
     nl: {
-      badge: "Bijgewerkt november 2025",
-      title: "Beste VPN voor Chromebook in 2025",
+      badge: "Bijgewerkt november 2026",
+      title: "Beste VPN voor Chromebook in 2026",
       subtitle:
         "We hebben 35+ VPNs specifiek getest voor Chromebook compatibiliteit. Dit zijn de beste opties met native Android apps, Chrome extensies en eenvoudige installatie.",
       topPicks: "Top Chromebook VPNs",
@@ -414,11 +414,11 @@ export default async function ChromebookVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Bekijk Alle VPN Reviews",
-      lastUpdated: "Laatst bijgewerkt: november 2025",
+      lastUpdated: "Laatst bijgewerkt: november 2026",
     },
     de: {
-      badge: "Aktualisiert November 2025",
-      title: "Beste VPN für Chromebook in 2025",
+      badge: "Aktualisiert November 2026",
+      title: "Beste VPN für Chromebook in 2026",
       subtitle:
         "Wir haben über 35 VPNs speziell auf Chromebook-Kompatibilität getestet. Dies sind die besten Optionen mit nativen Android-Apps, Chrome-Erweiterungen und einfacher Einrichtung.",
       topPicks: "Top Chromebook VPNs",
@@ -553,11 +553,11 @@ export default async function ChromebookVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Alle VPN-Bewertungen Anzeigen",
-      lastUpdated: "Zuletzt aktualisiert: November 2025",
+      lastUpdated: "Zuletzt aktualisiert: November 2026",
     },
     es: {
-      badge: "Actualizado noviembre 2025",
-      title: "Mejor VPN para Chromebook en 2025",
+      badge: "Actualizado noviembre 2026",
+      title: "Mejor VPN para Chromebook en 2026",
       subtitle:
         "Probamos más de 35 VPNs específicamente para compatibilidad con Chromebook. Estas son las mejores opciones con aplicaciones Android nativas, extensiones de Chrome y configuración fácil.",
       topPicks: "Mejores VPNs para Chromebook",
@@ -692,11 +692,11 @@ export default async function ChromebookVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Ver Todas Las Reseñas De VPN",
-      lastUpdated: "Última actualización: noviembre 2025",
+      lastUpdated: "Última actualización: noviembre 2026",
     },
     fr: {
-      badge: "Mis à jour novembre 2025",
-      title: "Meilleur VPN pour Chromebook en 2025",
+      badge: "Mis à jour novembre 2026",
+      title: "Meilleur VPN pour Chromebook en 2026",
       subtitle:
         "Nous avons testé plus de 35 VPNs spécifiquement pour la compatibilité Chromebook. Ce sont les meilleures options avec des applications Android natives, des extensions Chrome et une configuration facile.",
       topPicks: "Meilleurs VPNs Chromebook",
@@ -831,11 +831,11 @@ export default async function ChromebookVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Voir Toutes Les Critiques VPN",
-      lastUpdated: "Dernière mise à jour: novembre 2025",
+      lastUpdated: "Dernière mise à jour: novembre 2026",
     },
     zh: {
-      badge: "更新于2025年11月",
-      title: "2025年最佳Chromebook VPN",
+      badge: "更新于2026年11月",
+      title: "2026年最佳Chromebook VPN",
       subtitle:
         "我们专门测试了35+个VPN的Chromebook兼容性。这些是具有原生Android应用、Chrome扩展和简易设置的最佳选项。",
       topPicks: "顶级Chromebook VPN",
@@ -967,11 +967,11 @@ export default async function ChromebookVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "查看所有VPN评测",
-      lastUpdated: "最后更新：2025年11月",
+      lastUpdated: "最后更新：2026年11月",
     },
     ja: {
-      badge: "2025年11月更新",
-      title: "2025年最高のChromebook用VPN",
+      badge: "2026年11月更新",
+      title: "2026年最高のChromebook用VPN",
       subtitle:
         "Chromebook互換性のために35以上のVPNを専門的にテストしました。これらは、ネイティブAndroidアプリ、Chrome拡張機能、簡単なセットアップを備えた最良のオプションです。",
       topPicks: "トップChromebook VPN",
@@ -1104,11 +1104,11 @@ export default async function ChromebookVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "すべてのVPNレビューを表示",
-      lastUpdated: "最終更新：2025年11月",
+      lastUpdated: "最終更新：2026年11月",
     },
     ko: {
-      badge: "2025년 11월 업데이트",
-      title: "2025년 최고의 크롬북 VPN",
+      badge: "2026년 11월 업데이트",
+      title: "2026년 최고의 크롬북 VPN",
       subtitle:
         "크롬북 호환성을 위해 35개 이상의 VPN을 전문적으로 테스트했습니다. 네이티브 Android 앱, Chrome 확장 프로그램 및 간편한 설정을 갖춘 최고의 옵션입니다.",
       topPicks: "최고의 크롬북 VPN",
@@ -1241,11 +1241,11 @@ export default async function ChromebookVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "모든 VPN 리뷰 보기",
-      lastUpdated: "마지막 업데이트: 2025년 11월",
+      lastUpdated: "마지막 업데이트: 2026년 11월",
     },
     th: {
-      badge: "อัปเดตพฤศจิกายน 2025",
-      title: "VPN ที่ดีที่สุดสำหรับ Chromebook ในปี 2025",
+      badge: "อัปเดตพฤศจิกายน 2026",
+      title: "VPN ที่ดีที่สุดสำหรับ Chromebook ในปี 2026",
       subtitle:
         "เราทดสอบ VPN มากกว่า 35 รายการโดยเฉพาะสำหรับความเข้ากันได้กับ Chromebook นี่คือตัวเลือกที่ดีที่สุดพร้อมแอป Android ดั้งเดิม ส่วนขยาย Chrome และการตั้งค่าง่าย",
       topPicks: "VPN ชั้นนำสำหรับ Chromebook",
@@ -1378,7 +1378,7 @@ export default async function ChromebookVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "ดูบทวิจารณ์ VPN ทั้งหมด",
-      lastUpdated: "อัปเดตล่าสุด: พฤศจิกายน 2025",
+      lastUpdated: "อัปเดตล่าสุด: พฤศจิกายน 2026",
     },
   };
 

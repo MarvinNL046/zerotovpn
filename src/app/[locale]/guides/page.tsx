@@ -358,7 +358,7 @@ export default async function GuidesPage({ params }: Props) {
             pages={[
               { title: "What is a VPN?", description: "Complete beginner's guide to VPN technology", href: "/guides/what-is-vpn", icon: "shield" },
               { title: "How VPNs Work", description: "Technical deep-dive into VPN technology", href: "/guides/how-vpn-works", icon: "lock" },
-              { title: "Best VPNs 2025", description: "Our top-rated VPN recommendations", href: "/best/best-vpn", icon: "trophy" },
+              { title: "Best VPNs 2026", description: "Our top-rated VPN recommendations", href: "/best/best-vpn", icon: "trophy" },
               { title: "VPN for Streaming", description: "Access Netflix, Disney+ and more", href: "/guides/vpn-for-streaming", icon: "play" }
             ]}
           />

@@ -35,27 +35,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
   const titles: Record<string, string> = {
-    en: "Best VPN for Linux 2025: Native Apps, CLI Support | ZeroToVPN",
-    nl: "Beste VPN voor Linux 2025: Native Apps, CLI-ondersteuning | ZeroToVPN",
-    de: "Beste VPN für Linux 2025: Native Apps, CLI-Unterstützung | ZeroToVPN",
-    es: "Mejor VPN para Linux 2025: Apps Nativas, Soporte CLI | ZeroToVPN",
-    fr: "Meilleur VPN pour Linux 2025: Apps Natives, Support CLI | ZeroToVPN",
-    zh: "2025年最佳Linux VPN：原生应用，CLI支持 | ZeroToVPN",
-    janswer: "Linux用ベストVPN 2025：ネイティブアプリ、CLIサポート | ZeroToVPN",
-    ko: "2025년 최고의 리눅스 VPN: 네이티브 앱, CLI 지원 | ZeroToVPN",
-    th: "VPN ที่ดีที่สุดสำหรับ Linux 2025: แอปเนทีฟ, รองรับ CLI | ZeroToVPN",
+    en: "Best VPN for Linux 2026: Native Apps, CLI Support | ZeroToVPN",
+    nl: "Beste VPN voor Linux 2026: Native Apps, CLI-ondersteuning | ZeroToVPN",
+    de: "Beste VPN für Linux 2026: Native Apps, CLI-Unterstützung | ZeroToVPN",
+    es: "Mejor VPN para Linux 2026: Apps Nativas, Soporte CLI | ZeroToVPN",
+    fr: "Meilleur VPN pour Linux 2026: Apps Natives, Support CLI | ZeroToVPN",
+    zh: "2026年最佳Linux VPN：原生应用，CLI支持 | ZeroToVPN",
+    janswer: "Linux用ベストVPN 2026：ネイティブアプリ、CLIサポート | ZeroToVPN",
+    ko: "2026년 최고의 리눅스 VPN: 네이티브 앱, CLI 지원 | ZeroToVPN",
+    th: "VPN ที่ดีที่สุดสำหรับ Linux 2026: แอปเนทีฟ, รองรับ CLI | ZeroToVPN",
   };
 
   const descriptions: Record<string, string> = {
-    en: "Find the best Linux VPN for 2025. We tested 35+ VPNs for Ubuntu, Debian, Fedora, and more. Native apps, CLI tools, and OpenVPN configs included.",
-    nl: "Vind de beste Linux VPN voor 2025. We hebben 35+ VPNs getest voor Ubuntu, Debian, Fedora en meer. Native apps, CLI-tools en OpenVPN-configuraties inbegrepen.",
-    de: "Finden Sie das beste Linux-VPN für 2025. Wir haben über 35 VPNs für Ubuntu, Debian, Fedora und mehr getestet. Native Apps, CLI-Tools und OpenVPN-Konfigurationen inklusive.",
-    es: "Encuentra la mejor VPN para Linux de 2025. Probamos más de 35 VPNs para Ubuntu, Debian, Fedora y más. Incluye apps nativas, herramientas CLI y configs OpenVPN.",
-    fr: "Trouvez le meilleur VPN Linux pour 2025. Nous avons testé plus de 35 VPNs pour Ubuntu, Debian, Fedora et plus. Apps natives, outils CLI et configs OpenVPN inclus.",
-    zh: "找到2025年最佳Linux VPN。我们测试了35+个VPN用于Ubuntu、Debian、Fedora等。包含原生应用、CLI工具和OpenVPN配置。",
-    janswer: "2025年最高のLinux VPNを見つけよう。Ubuntu、Debian、Fedoraなど35以上のVPNをテストしました。ネイティブアプリ、CLIツール、OpenVPN設定を含みます。",
-    ko: "2025년 최고의 리눅스 VPN을 찾으세요. Ubuntu, Debian, Fedora 등 35개 이상의 VPN을 테스트했습니다. 네이티브 앱, CLI 도구 및 OpenVPN 구성 포함.",
-    th: "ค้นหา VPN Linux ที่ดีที่สุดในปี 2025 เราทดสอบ VPN มากกว่า 35 รายการสำหรับ Ubuntu, Debian, Fedora และอื่นๆ รวมแอปเนทีฟ, เครื่องมือ CLI และการกำหนดค่า OpenVPN",
+    en: "Find the best Linux VPN for 2026. We tested 35+ VPNs for Ubuntu, Debian, Fedora, and more. Native apps, CLI tools, and OpenVPN configs included.",
+    nl: "Vind de beste Linux VPN voor 2026. We hebben 35+ VPNs getest voor Ubuntu, Debian, Fedora en meer. Native apps, CLI-tools en OpenVPN-configuraties inbegrepen.",
+    de: "Finden Sie das beste Linux-VPN für 2026. Wir haben über 35 VPNs für Ubuntu, Debian, Fedora und mehr getestet. Native Apps, CLI-Tools und OpenVPN-Konfigurationen inklusive.",
+    es: "Encuentra la mejor VPN para Linux de 2026. Probamos más de 35 VPNs para Ubuntu, Debian, Fedora y más. Incluye apps nativas, herramientas CLI y configs OpenVPN.",
+    fr: "Trouvez le meilleur VPN Linux pour 2026. Nous avons testé plus de 35 VPNs pour Ubuntu, Debian, Fedora et plus. Apps natives, outils CLI et configs OpenVPN inclus.",
+    zh: "找到2026年最佳Linux VPN。我们测试了35+个VPN用于Ubuntu、Debian、Fedora等。包含原生应用、CLI工具和OpenVPN配置。",
+    janswer: "2026年最高のLinux VPNを見つけよう。Ubuntu、Debian、Fedoraなど35以上のVPNをテストしました。ネイティブアプリ、CLIツール、OpenVPN設定を含みます。",
+    ko: "2026년 최고의 리눅스 VPN을 찾으세요. Ubuntu, Debian, Fedora 등 35개 이상의 VPN을 테스트했습니다. 네이티브 앱, CLI 도구 및 OpenVPN 구성 포함.",
+    th: "ค้นหา VPN Linux ที่ดีที่สุดในปี 2026 เราทดสอบ VPN มากกว่า 35 รายการสำหรับ Ubuntu, Debian, Fedora และอื่นๆ รวมแอปเนทีฟ, เครื่องมือ CLI และการกำหนดค่า OpenVPN",
   };
 
   return {
@@ -75,7 +75,7 @@ function ItemListSchema({ linuxVpns }: { linuxVpns: { vpn: VpnProvider | null }[
   const schema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Best Linux VPN Services 2025",
+    name: "Best Linux VPN Services 2026",
     numberOfItems: linuxVpns.length,
     itemListElement: linuxVpns.map((item, index) => ({
       "@type": "ListItem",
@@ -149,8 +149,8 @@ export default async function LinuxVpnPage({ params }: Props) {
   // Content translations
   const content = {
     en: {
-      badge: "Updated November 2025",
-      title: "Best VPN for Linux in 2025",
+      badge: "Updated November 2026",
+      title: "Best VPN for Linux in 2026",
       subtitle:
         "We tested 35+ VPNs specifically for Linux compatibility. These are the best options with native apps, CLI support, and comprehensive distro coverage.",
       topPicks: "Top Linux VPNs",
@@ -294,11 +294,11 @@ export default async function LinuxVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "View All VPN Reviews",
-      lastUpdated: "Last updated: November 2025",
+      lastUpdated: "Last updated: November 2026",
     },
     nl: {
-      badge: "Bijgewerkt november 2025",
-      title: "Beste VPN voor Linux in 2025",
+      badge: "Bijgewerkt november 2026",
+      title: "Beste VPN voor Linux in 2026",
       subtitle:
         "We hebben 35+ VPNs specifiek getest voor Linux-compatibiliteit. Dit zijn de beste opties met native apps, CLI-ondersteuning en uitgebreide distro-dekking.",
       topPicks: "Top Linux VPNs",
@@ -442,11 +442,11 @@ export default async function LinuxVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Bekijk Alle VPN Reviews",
-      lastUpdated: "Laatst bijgewerkt: november 2025",
+      lastUpdated: "Laatst bijgewerkt: november 2026",
     },
     de: {
-      badge: "Aktualisiert November 2025",
-      title: "Beste VPN für Linux in 2025",
+      badge: "Aktualisiert November 2026",
+      title: "Beste VPN für Linux in 2026",
       subtitle:
         "Wir haben über 35 VPNs speziell für Linux-Kompatibilität getestet. Dies sind die besten Optionen mit nativen Apps, CLI-Unterstützung und umfassender Distro-Abdeckung.",
       topPicks: "Top Linux VPNs",
@@ -590,11 +590,11 @@ export default async function LinuxVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Alle VPN-Bewertungen Anzeigen",
-      lastUpdated: "Zuletzt aktualisiert: November 2025",
+      lastUpdated: "Zuletzt aktualisiert: November 2026",
     },
     es: {
-      badge: "Actualizado noviembre 2025",
-      title: "Mejor VPN para Linux en 2025",
+      badge: "Actualizado noviembre 2026",
+      title: "Mejor VPN para Linux en 2026",
       subtitle:
         "Probamos más de 35 VPNs específicamente para compatibilidad con Linux. Estas son las mejores opciones con apps nativas, soporte CLI y cobertura completa de distros.",
       topPicks: "Mejores VPNs para Linux",
@@ -738,11 +738,11 @@ export default async function LinuxVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Ver Todas Las Reseñas De VPN",
-      lastUpdated: "Última actualización: noviembre 2025",
+      lastUpdated: "Última actualización: noviembre 2026",
     },
     fr: {
-      badge: "Mis à jour novembre 2025",
-      title: "Meilleur VPN pour Linux en 2025",
+      badge: "Mis à jour novembre 2026",
+      title: "Meilleur VPN pour Linux en 2026",
       subtitle:
         "Nous avons testé plus de 35 VPN spécifiquement pour la compatibilité Linux. Ce sont les meilleures options avec apps natives, support CLI et couverture complète des distros.",
       topPicks: "Meilleurs VPN Linux",
@@ -886,11 +886,11 @@ export default async function LinuxVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Voir Toutes Les Critiques VPN",
-      lastUpdated: "Dernière mise à jour: novembre 2025",
+      lastUpdated: "Dernière mise à jour: novembre 2026",
     },
     zh: {
-      badge: "2025年11月更新",
-      title: "2025年最佳Linux VPN",
+      badge: "2026年11月更新",
+      title: "2026年最佳Linux VPN",
       subtitle:
         "我们专门测试了35+个VPN的Linux兼容性。这些是具有原生应用、CLI支持和全面发行版覆盖的最佳选择。",
       topPicks: "顶级Linux VPN",
@@ -1034,11 +1034,11 @@ export default async function LinuxVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "查看所有VPN评论",
-      lastUpdated: "最后更新：2025年11月",
+      lastUpdated: "最后更新：2026年11月",
     },
     ja: {
-      badge: "2025年11月更新",
-      title: "2025年最高のLinux VPN",
+      badge: "2026年11月更新",
+      title: "2026年最高のLinux VPN",
       subtitle:
         "Linux互換性に特化して35以上のVPNをテストしました。ネイティブアプリ、CLIサポート、包括的なディストリビューションカバレッジを備えた最良のオプションです。",
       topPicks: "トップLinux VPN",
@@ -1182,11 +1182,11 @@ export default async function LinuxVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "すべてのVPNレビューを表示",
-      lastUpdated: "最終更新：2025年11月",
+      lastUpdated: "最終更新：2026年11月",
     },
     ko: {
-      badge: "2025년 11월 업데이트",
-      title: "2025년 최고의 리눅스 VPN",
+      badge: "2026년 11월 업데이트",
+      title: "2026년 최고의 리눅스 VPN",
       subtitle:
         "Linux 호환성을 위해 35개 이상의 VPN을 테스트했습니다. 네이티브 앱, CLI 지원 및 포괄적인 배포판 적용 범위를 갖춘 최고의 옵션입니다.",
       topPicks: "최고의 리눅스 VPN",
@@ -1330,11 +1330,11 @@ export default async function LinuxVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "모든 VPN 리뷰 보기",
-      lastUpdated: "마지막 업데이트: 2025년 11월",
+      lastUpdated: "마지막 업데이트: 2026년 11월",
     },
     th: {
-      badge: "อัปเดตพฤศจิกายน 2025",
-      title: "VPN ที่ดีที่สุดสำหรับ Linux ในปี 2025",
+      badge: "อัปเดตพฤศจิกายน 2026",
+      title: "VPN ที่ดีที่สุดสำหรับ Linux ในปี 2026",
       subtitle:
         "เราทดสอบ VPN มากกว่า 35 รายการโดยเฉพาะสำหรับความเข้ากันได้กับ Linux นี่คือตัวเลือกที่ดีที่สุดพร้อมแอปเนทีฟ, การรองรับ CLI และการครอบคลุมดิสโทรอย่างครอบคลุม",
       topPicks: "VPN Linux ชั้นนำ",
@@ -1478,7 +1478,7 @@ export default async function LinuxVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "ดูรีวิว VPN ทั้งหมด",
-      lastUpdated: "อัปเดตล่าสุด: พฤศจิกายน 2025",
+      lastUpdated: "อัปเดตล่าสุด: พฤศจิกายน 2026",
     },
   };
 

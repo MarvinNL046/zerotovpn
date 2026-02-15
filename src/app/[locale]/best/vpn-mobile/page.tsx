@@ -67,7 +67,7 @@ function MobileVpnListSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Best Mobile VPN Services 2025",
+    name: "Best Mobile VPN Services 2026",
     description: "Expert-tested mobile VPN services for iPhone and Android with comparison of features, battery usage, and performance",
     numberOfItems: 3,
     itemListElement: [

@@ -64,7 +64,7 @@ function IpadVpnListSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Best VPN for iPad (iPadOS) 2025",
+    name: "Best VPN for iPad (iPadOS) 2026",
     description: "Expert-tested VPN apps for iPad with iPadOS optimization, multitasking support, and large-screen interface",
     numberOfItems: 3,
     itemListElement: [

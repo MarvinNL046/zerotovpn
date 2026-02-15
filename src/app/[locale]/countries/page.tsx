@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "@/i18n/navigation";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
+import { getAllDynamicCountries } from "@/lib/country-data";
 import {
   Globe,
   Clock,
@@ -24,27 +25,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
   const titles: Record<string, string> = {
-    en: "VPN by Country 2025: Find VPNs That Work in Your Location | ZeroToVPN",
-    nl: "VPN per Land 2025: Vind VPNs Die Werken in Jouw Locatie | ZeroToVPN",
-    de: "VPN nach Land 2025: Finden Sie VPNs für Ihren Standort | ZeroToVPN",
-    es: "VPN por País 2025: Encuentra VPNs que Funcionan en tu Ubicación | ZeroToVPN",
-    fr: "VPN par Pays 2025: Trouvez des VPN qui Fonctionnent dans Votre Pays | ZeroToVPN",
-    zh: "2025年按国家/地区选择VPN：找到适合您所在位置的VPN | ZeroToVPN",
-    ja: "国別VPN 2025：あなたの地域で使えるVPNを見つける | ZeroToVPN",
-    ko: "국가별 VPN 2025: 당신의 위치에서 작동하는 VPN 찾기 | ZeroToVPN",
-    th: "VPN ตามประเทศ 2025: ค้นหา VPN ที่ใช้งานได้ในพื้นที่ของคุณ | ZeroToVPN",
+    en: "VPN by Country 2026: Find VPNs That Work in Your Location | ZeroToVPN",
+    nl: "VPN per Land 2026: Vind VPNs Die Werken in Jouw Locatie | ZeroToVPN",
+    de: "VPN nach Land 2026: Finden Sie VPNs für Ihren Standort | ZeroToVPN",
+    es: "VPN por País 2026: Encuentra VPNs que Funcionan en tu Ubicación | ZeroToVPN",
+    fr: "VPN par Pays 2026: Trouvez des VPN qui Fonctionnent dans Votre Pays | ZeroToVPN",
+    zh: "2026年按国家/地区选择VPN：找到适合您所在位置的VPN | ZeroToVPN",
+    ja: "国別VPN 2026：あなたの地域で使えるVPNを見つける | ZeroToVPN",
+    ko: "국가별 VPN 2026: 당신의 위치에서 작동하는 VPN 찾기 | ZeroToVPN",
+    th: "VPN ตามประเทศ 2026: ค้นหา VPN ที่ใช้งานได้ในพื้นที่ของคุณ | ZeroToVPN",
   };
 
   const descriptions: Record<string, string> = {
-    en: "Find the best VPN for your country. Expert guides for China, Russia, UAE, Turkey, Netherlands and more. Research-backed recommendations.",
-    nl: "Vind de beste VPN voor jouw land. Expert gidsen voor China, Rusland, VAE, Turkije, Nederland en meer.",
-    de: "Finden Sie das beste VPN für Ihr Land. Expertenleitfäden für China, Russland, VAE, Türkei, Niederlande und mehr.",
-    es: "Encuentra el mejor VPN para tu país. Guías expertas para China, Rusia, EAU, Turquía, Países Bajos y más.",
-    fr: "Trouvez le meilleur VPN pour votre pays. Guides experts pour la Chine, la Russie, les EAU, la Turquie, les Pays-Bas et plus.",
-    zh: "为您的国家/地区找到最佳VPN。专家指南涵盖中国、俄罗斯、阿联酋、土耳其、荷兰等。基于研究的推荐。",
-    ja: "あなたの国に最適なVPNを見つけましょう。中国、ロシア、UAE、トルコ、オランダなどの専門家ガイド。研究に基づく推奨。",
-    ko: "귀하의 국가에 가장 적합한 VPN을 찾으세요. 중국, 러시아, UAE, 터키, 네덜란드 등에 대한 전문가 가이드. 연구 기반 권장 사항.",
-    th: "ค้นหา VPN ที่ดีที่สุดสำหรับประเทศของคุณ คู่มือผู้เชี่ยวชาญสำหรับจีน รัสเซีย สหรัฐอาหรับเอมิเรตส์ ตุรกี เนเธอร์แลนด์ และอื่นๆ คำแนะนำที่ได้รับการสนับสนุนจากการวิจัย",
+    en: "Find the best VPN for your country. Expert guides for 50+ countries including USA, UK, Germany, Japan, Australia, Brazil, and more. Research-backed recommendations.",
+    nl: "Vind de beste VPN voor jouw land. Expert gidsen voor 50+ landen waaronder VS, VK, Duitsland, Japan, Australië, Brazilië en meer.",
+    de: "Finden Sie das beste VPN für Ihr Land. Expertenleitfäden für 50+ Länder einschließlich USA, UK, Deutschland, Japan, Australien, Brasilien und mehr.",
+    es: "Encuentra el mejor VPN para tu país. Guías expertas para 50+ países incluyendo EE.UU., Reino Unido, Alemania, Japón, Australia, Brasil y más.",
+    fr: "Trouvez le meilleur VPN pour votre pays. Guides experts pour 50+ pays dont les USA, le Royaume-Uni, l'Allemagne, le Japon, l'Australie, le Brésil et plus.",
+    zh: "为您的国家/地区找到最佳VPN。50+国家的专家指南，包括美国、英国、德国、日本、澳大利亚、巴西等。基于研究的推荐。",
+    ja: "あなたの国に最適なVPNを見つけましょう。アメリカ、イギリス、ドイツ、日本、オーストラリア、ブラジルなど50ヶ国以上の専門家ガイド。研究に基づく推奨。",
+    ko: "귀하의 국가에 가장 적합한 VPN을 찾으세요. 미국, 영국, 독일, 일본, 호주, 브라질 등 50개 이상의 국가에 대한 전문가 가이드. 연구 기반 권장 사항.",
+    th: "ค้นหา VPN ที่ดีที่สุดสำหรับประเทศของคุณ คู่มือผู้เชี่ยวชาญสำหรับ 50+ ประเทศ รวมถึงสหรัฐอเมริกา สหราชอาณาจักร เยอรมนี ญี่ปุ่น ออสเตรเลีย บราซิล และอื่นๆ คำแนะนำที่ได้รับการสนับสนุนจากการวิจัย",
   };
 
   return {
@@ -229,11 +230,179 @@ const countries = [
       th: "อิสระทางอินเทอร์เน็ตสูง สมาชิก 14 Eyes แนะนำ VPN สำหรับความเป็นส่วนตัวและการสตรีมทีวีดัตช์ในต่างประเทศ"
     },
   },
+  {
+    slug: "india",
+    flag: "🇮🇳",
+    name: { en: "India", nl: "India", de: "Indien", es: "India", fr: "Inde", zh: "印度", ja: "インド", ko: "인도", th: "อินเดีย" },
+    status: "legal-restricted",
+    statusText: {
+      en: "Legal but monitored",
+      nl: "Legaal maar gemonitord",
+      de: "Legal aber überwacht",
+      es: "Legal pero monitoreado",
+      fr: "Légal mais surveillé",
+      zh: "合法但受监控",
+      ja: "合法だが監視あり",
+      ko: "합법이지만 모니터링됨",
+      th: "ถูกกฎหมายแต่มีการเฝ้าระวัง"
+    },
+    description: {
+      en: "VPNs legal but CERT-In data retention rules drove providers to remove Indian servers. Internet shutdowns common.",
+      nl: "VPNs legaal maar CERT-In dataretentieregels dwongen providers Indiase servers te verwijderen. Internetafsluitingen komen vaak voor.",
+      de: "VPNs legal, aber CERT-In-Datenspeicherungsregeln zwangen Anbieter, indische Server zu entfernen. Internet-Abschaltungen häufig.",
+      es: "VPNs legales pero las reglas de retención de datos de CERT-In obligaron a los proveedores a eliminar servidores indios.",
+      fr: "VPN légaux mais les règles de rétention de données du CERT-In ont poussé les fournisseurs à retirer leurs serveurs indiens.",
+      zh: "VPN合法，但CERT-In数据保留规则迫使提供商移除印度服务器。互联网关闭事件频繁。",
+      ja: "VPNは合法ですが、CERT-Inのデータ保持規則によりプロバイダーがインドのサーバーを撤去。インターネット遮断が頻繁。",
+      ko: "VPN은 합법이지만 CERT-In 데이터 보존 규정으로 인해 제공업체가 인도 서버를 제거했습니다. 인터넷 차단이 빈번합니다.",
+      th: "VPN ถูกกฎหมายแต่กฎการเก็บรักษาข้อมูลของ CERT-In ทำให้ผู้ให้บริการถอนเซิร์ฟเวอร์อินเดียออก การปิดอินเทอร์เน็ตเกิดขึ้นบ่อย"
+    },
+  },
+  {
+    slug: "pakistan",
+    flag: "🇵🇰",
+    name: { en: "Pakistan", nl: "Pakistan", de: "Pakistan", es: "Pakistán", fr: "Pakistan", zh: "巴基斯坦", ja: "パキスタン", ko: "파키스탄", th: "ปากีสถาน" },
+    status: "legal-blocked",
+    statusText: {
+      en: "Legal, many sites blocked",
+      nl: "Legaal, veel sites geblokkeerd",
+      de: "Legal, viele Seiten gesperrt",
+      es: "Legal, muchos sitios bloqueados",
+      fr: "Légal, nombreux sites bloqués",
+      zh: "合法，但许多网站被封锁",
+      ja: "合法だが多くのサイトがブロック",
+      ko: "합법, 많은 사이트 차단됨",
+      th: "ถูกกฎหมาย แต่หลายเว็บถูกบลอก"
+    },
+    description: {
+      en: "PTA blocks social media during unrest. VPN use legal but ISP-level throttling common. YouTube was blocked for years.",
+      nl: "PTA blokkeert sociale media tijdens onrust. VPN-gebruik legaal maar ISP-throttling komt vaak voor.",
+      de: "PTA blockiert soziale Medien bei Unruhen. VPN-Nutzung legal, aber ISP-Drosselung häufig.",
+      es: "La PTA bloquea redes sociales durante disturbios. Uso de VPN legal pero la limitación por ISP es común.",
+      fr: "La PTA bloque les réseaux sociaux lors de troubles. Utilisation de VPN légale mais limitation par les FAI fréquente.",
+      zh: "PTA在动荡期间封锁社交媒体。VPN使用合法，但ISP级别的限速很常见。YouTube曾被封锁多年。",
+      ja: "PTAは騒乱時にソーシャルメディアをブロックします。VPNの使用は合法ですが、ISPレベルのスロットリングが一般的です。",
+      ko: "PTA는 소요 시 소셜 미디어를 차단합니다. VPN 사용은 합법이지만 ISP 수준의 스로틀링이 일반적입니다.",
+      th: "PTA บลอกโซเชียลมีเดียในช่วงความไม่สงบ การใช้ VPN ถูกกฎหมายแต่ ISP มักจำกัดความเร็ว YouTube เคยถูกบลอกหลายปี"
+    },
+  },
+  {
+    slug: "egypt",
+    flag: "🇪🇬",
+    name: { en: "Egypt", nl: "Egypte", de: "Ägypten", es: "Egipto", fr: "Égypte", zh: "埃及", ja: "エジプト", ko: "이집트", th: "อียิปต์" },
+    status: "legal-restricted",
+    statusText: {
+      en: "Legal but regulated",
+      nl: "Legaal maar gereguleerd",
+      de: "Legal aber reguliert",
+      es: "Legal pero regulado",
+      fr: "Légal mais réglementé",
+      zh: "合法但受监管",
+      ja: "合法だが規制あり",
+      ko: "합법이지만 규제됨",
+      th: "ถูกกฎหมายแต่มีการควบคุม"
+    },
+    description: {
+      en: "500+ websites blocked. VoIP services restricted by telecoms. VPN use legal but some protocols blocked.",
+      nl: "500+ websites geblokkeerd. VoIP-diensten beperkt door telecoms. VPN-gebruik legaal maar sommige protocollen geblokkeerd.",
+      de: "500+ Websites blockiert. VoIP-Dienste von Telekommunikationsunternehmen eingeschränkt. VPN-Nutzung legal, aber einige Protokolle blockiert.",
+      es: "500+ sitios web bloqueados. Servicios VoIP restringidos por telecoms. Uso de VPN legal pero algunos protocolos bloqueados.",
+      fr: "500+ sites web bloqués. Services VoIP restreints par les télécoms. Utilisation de VPN légale mais certains protocoles bloqués.",
+      zh: "500+网站被封锁。电信运营商限制VoIP服务。VPN使用合法，但某些协议被封锁。",
+      ja: "500以上のウェブサイトがブロック。通信会社によりVoIPサービスが制限。VPNの使用は合法だが一部のプロトコルがブロック。",
+      ko: "500개 이상의 웹사이트가 차단됩니다. 통신사에 의해 VoIP 서비스가 제한됩니다. VPN 사용은 합법이지만 일부 프로토콜이 차단됩니다.",
+      th: "เว็บไซต์กว่า 500 แห่งถูกบลอก บริการ VoIP ถูกจำกัดโดยบริษัทโทรคมนาคม การใช้ VPN ถูกกฎหมายแต่บางโปรโตคอลถูกบลอก"
+    },
+  },
+  {
+    slug: "indonesia",
+    flag: "🇮🇩",
+    name: { en: "Indonesia", nl: "Indonesië", de: "Indonesien", es: "Indonesia", fr: "Indonésie", zh: "印度尼西亚", ja: "インドネシア", ko: "인도네시아", th: "อินโดนีเซีย" },
+    status: "legal-blocked",
+    statusText: {
+      en: "Legal, content blocked",
+      nl: "Legaal, content geblokkeerd",
+      de: "Legal, Inhalte gesperrt",
+      es: "Legal, contenido bloqueado",
+      fr: "Légal, contenu bloqué",
+      zh: "合法，但内容被封锁",
+      ja: "合法だがコンテンツがブロック",
+      ko: "합법, 콘텐츠 차단됨",
+      th: "ถูกกฎหมาย เนื้อหาถูกบลอก"
+    },
+    description: {
+      en: "Reddit, Vimeo blocked since 2014. Trust Positive system filters content. VPN use fully legal and widely used.",
+      nl: "Reddit, Vimeo geblokkeerd sinds 2014. Trust Positive systeem filtert content. VPN-gebruik volledig legaal en wijdverbreid.",
+      de: "Reddit, Vimeo seit 2014 blockiert. Trust Positive System filtert Inhalte. VPN-Nutzung vollständig legal und weit verbreitet.",
+      es: "Reddit, Vimeo bloqueados desde 2014. Sistema Trust Positive filtra contenido. Uso de VPN totalmente legal y ampliamente utilizado.",
+      fr: "Reddit, Vimeo bloqués depuis 2014. Le système Trust Positive filtre le contenu. Utilisation de VPN totalement légale et largement répandue.",
+      zh: "Reddit、Vimeo自2014年起被封锁。Trust Positive系统过滤内容。VPN使用完全合法且广泛使用。",
+      ja: "Reddit、Vimeoは2014年以降ブロックされています。Trust Positiveシステムがコンテンツをフィルタリング。VPNの使用は完全に合法で広く使用されています。",
+      ko: "Reddit, Vimeo가 2014년부터 차단되었습니다. Trust Positive 시스템이 콘텐츠를 필터링합니다. VPN 사용은 완전히 합법이며 널리 사용됩니다.",
+      th: "Reddit, Vimeo ถูกบลอกตั้งแต่ปี 2014 ระบบ Trust Positive กรองเนื้อหา การใช้ VPN ถูกกฎหมายอย่างสมบูรณ์และใช้กันอย่างแพร่หลาย"
+    },
+  },
+  {
+    slug: "saudi-arabia",
+    flag: "🇸🇦",
+    name: { en: "Saudi Arabia", nl: "Saoedi-Arabië", de: "Saudi-Arabien", es: "Arabia Saudita", fr: "Arabie Saoudite", zh: "沙特阿拉伯", ja: "サウジアラビア", ko: "사우디아라비아", th: "ซาอุดีอาระเบีย" },
+    status: "legal-restricted",
+    statusText: {
+      en: "Legal but filtered",
+      nl: "Legaal maar gefilterd",
+      de: "Legal aber gefiltert",
+      es: "Legal pero filtrado",
+      fr: "Légal mais filtré",
+      zh: "合法但受过滤",
+      ja: "合法だがフィルタリングあり",
+      ko: "합법이지만 필터링됨",
+      th: "ถูกกฎหมายแต่มีการกรอง"
+    },
+    description: {
+      en: "CITC filters 400,000+ websites. VoIP restrictions apply. VPN use legal for legitimate purposes but penalties for misuse.",
+      nl: "CITC filtert 400.000+ websites. VoIP-beperkingen van toepassing. VPN-gebruik legaal voor legitieme doeleinden.",
+      de: "CITC filtert 400.000+ Websites. VoIP-Einschränkungen gelten. VPN-Nutzung legal für legitime Zwecke.",
+      es: "CITC filtra 400.000+ sitios web. Se aplican restricciones de VoIP. Uso de VPN legal para fines legítimos.",
+      fr: "La CITC filtre plus de 400 000 sites web. Les restrictions VoIP s'appliquent. Utilisation de VPN légale pour des fins légitimes.",
+      zh: "CITC过滤40万+网站。VoIP限制适用。VPN用于合法目的是合法的，但滥用会受到处罚。",
+      ja: "CITCが40万以上のウェブサイトをフィルタリング。VoIP制限が適用。正当な目的でのVPN使用は合法ですが、不正使用には罰則があります。",
+      ko: "CITC가 40만 개 이상의 웹사이트를 필터링합니다. VoIP 제한이 적용됩니다. 합법적 목적의 VPN 사용은 합법이지만 오용 시 처벌됩니다.",
+      th: "CITC กรองเว็บไซต์กว่า 400,000 แห่ง มีข้อจำกัด VoIP การใช้ VPN ถูกกฎหมายสำหรับวัตถุประสงค์ที่ถูกต้องแต่มีบทลงโทษสำหรับการใช้งานผิด"
+    },
+  },
+  {
+    slug: "vietnam",
+    flag: "🇻🇳",
+    name: { en: "Vietnam", nl: "Vietnam", de: "Vietnam", es: "Vietnam", fr: "Vietnam", zh: "越南", ja: "ベトナム", ko: "베트남", th: "เวียดนาม" },
+    status: "restricted",
+    statusText: {
+      en: "Restricted",
+      nl: "Beperkt",
+      de: "Eingeschränkt",
+      es: "Restringido",
+      fr: "Restreint",
+      zh: "受限",
+      ja: "制限あり",
+      ko: "제한됨",
+      th: "ถูกจำกัด"
+    },
+    description: {
+      en: "2018 Cybersecurity Law requires data localization. Facebook periodically blocked. Journalists targeted. VPN use in a gray area.",
+      nl: "Cybersecuritywet van 2018 vereist datalokalisatie. Facebook periodiek geblokkeerd. Journalisten als doelwit.",
+      de: "Cybersicherheitsgesetz 2018 erfordert Datenlokalisierung. Facebook zeitweise blockiert. Journalisten ins Visier genommen.",
+      es: "La Ley de Ciberseguridad de 2018 requiere localización de datos. Facebook bloqueado periódicamente. Periodistas perseguidos.",
+      fr: "La loi sur la cybersécurité de 2018 exige la localisation des données. Facebook périodiquement bloqué. Journalistes ciblés.",
+      zh: "2018年网络安全法要求数据本地化。Facebook间歇性被封锁。记者成为目标。VPN使用处于灰色地带。",
+      ja: "2018年サイバーセキュリティ法がデータの現地化を要求。Facebookが定期的にブロック。ジャーナリストが標的に。VPN使用はグレーゾーン。",
+      ko: "2018년 사이버보안법으로 데이터 현지화가 요구됩니다. Facebook이 주기적으로 차단됩니다. 기자들이 표적이 됩니다. VPN 사용은 회색 지대입니다.",
+      th: "กฎหมายความปลอดภัยทางไซเบอร์ปี 2018 ต้องการการจัดเก็บข้อมูลในประเทศ Facebook ถูกบลอกเป็นระยะ นักข่าวถูกกำหนดเป้าหมาย การใช้ VPN อยู่ในพื้นที่สีเทา"
+    },
+  },
 ];
 
 const content = {
   en: {
-    badge: "Updated November 2025",
+    badge: "Updated February 2026",
     title: "VPN Guides by Country",
     subtitle: "Find VPNs that work in your location with our research-backed country guides",
     intro: "Internet freedom varies dramatically by country. Some nations heavily restrict VPN access, while others embrace online privacy. Our guides help you find VPNs that actually work.",
@@ -242,11 +411,10 @@ const content = {
     legalLabel: "Legal",
     regulatedLabel: "Regulated",
     viewGuide: "View Guide",
-    moreCountries: "More Country Guides Coming Soon",
-    moreCountriesText: "We're researching VPN situations in more countries including India, Pakistan, Vietnam, and Saudi Arabia.",
+    moreCountries: "More Country Guides",
   },
   nl: {
-    badge: "Bijgewerkt november 2025",
+    badge: "Bijgewerkt februari 2026",
     title: "VPN Gidsen per Land",
     subtitle: "Vind VPNs die werken in jouw locatie met onze onderzoeksgebaseerde landgidsen",
     intro: "Internetvrijheid varieert enorm per land. Sommige landen beperken VPN-toegang zwaar, anderen omarmen online privacy. Onze gidsen helpen je VPNs te vinden die echt werken.",
@@ -255,11 +423,10 @@ const content = {
     legalLabel: "Legaal",
     regulatedLabel: "Gereguleerd",
     viewGuide: "Bekijk Gids",
-    moreCountries: "Meer Landgidsen Binnenkort",
-    moreCountriesText: "We onderzoeken VPN-situaties in meer landen waaronder India, Pakistan, Vietnam en Saoedi-Arabië.",
+    moreCountries: "Meer Landgidsen",
   },
   de: {
-    badge: "Aktualisiert November 2025",
+    badge: "Aktualisiert Februar 2026",
     title: "VPN-Länderführer",
     subtitle: "Finden Sie VPNs, die an Ihrem Standort funktionieren, mit unseren forschungsbasierten Länderführern",
     intro: "Internetfreiheit variiert dramatisch von Land zu Land. Einige Nationen schränken den VPN-Zugang stark ein, während andere Online-Privatsphäre begrüßen. Unsere Leitfäden helfen Ihnen, VPNs zu finden, die tatsächlich funktionieren.",
@@ -268,11 +435,10 @@ const content = {
     legalLabel: "Legal",
     regulatedLabel: "Reguliert",
     viewGuide: "Leitfaden anzeigen",
-    moreCountries: "Weitere Länderführer folgen bald",
-    moreCountriesText: "Wir erforschen VPN-Situationen in weiteren Ländern einschließlich Indien, Pakistan, Vietnam und Saudi-Arabien.",
+    moreCountries: "Weitere Länderführer",
   },
   es: {
-    badge: "Actualizado noviembre 2025",
+    badge: "Actualizado febrero 2026",
     title: "Guías de VPN por País",
     subtitle: "Encuentra VPNs que funcionen en tu ubicación con nuestras guías de países basadas en investigación",
     intro: "La libertad de internet varía dramáticamente según el país. Algunas naciones restringen fuertemente el acceso a VPN, mientras que otras adoptan la privacidad en línea. Nuestras guías te ayudan a encontrar VPNs que realmente funcionan.",
@@ -281,11 +447,10 @@ const content = {
     legalLabel: "Legal",
     regulatedLabel: "Regulado",
     viewGuide: "Ver Guía",
-    moreCountries: "Más Guías de Países Próximamente",
-    moreCountriesText: "Estamos investigando situaciones de VPN en más países incluyendo India, Pakistán, Vietnam y Arabia Saudita.",
+    moreCountries: "Más Guías de Países",
   },
   fr: {
-    badge: "Mis à jour novembre 2025",
+    badge: "Mis à jour février 2026",
     title: "Guides VPN par Pays",
     subtitle: "Trouvez des VPN qui fonctionnent dans votre pays avec nos guides basés sur la recherche",
     intro: "La liberté d'internet varie considérablement selon les pays. Certaines nations restreignent fortement l'accès aux VPN, tandis que d'autres adoptent la confidentialité en ligne. Nos guides vous aident à trouver des VPN qui fonctionnent réellement.",
@@ -294,11 +459,10 @@ const content = {
     legalLabel: "Légal",
     regulatedLabel: "Réglementé",
     viewGuide: "Voir le Guide",
-    moreCountries: "Plus de Guides de Pays Bientôt",
-    moreCountriesText: "Nous recherchons les situations VPN dans d'autres pays, notamment l'Inde, le Pakistan, le Vietnam et l'Arabie Saoudite.",
+    moreCountries: "Plus de Guides de Pays",
   },
   zh: {
-    badge: "2025年11月更新",
+    badge: "2026年2月更新",
     title: "按国家/地区划分的VPN指南",
     subtitle: "通过我们基于研究的国家/地区指南，找到适合您所在位置的VPN",
     intro: "互联网自由因国家/地区而异。一些国家严格限制VPN访问，而另一些国家则拥抱在线隐私。我们的指南帮助您找到真正有效的VPN。",
@@ -307,11 +471,10 @@ const content = {
     legalLabel: "合法",
     regulatedLabel: "受监管",
     viewGuide: "查看指南",
-    moreCountries: "更多国家/地区指南即将推出",
-    moreCountriesText: "我们正在研究更多国家/地区的VPN情况，包括印度、巴基斯坦、越南和沙特阿拉伯。",
+    moreCountries: "更多国家/地区指南",
   },
   ja: {
-    badge: "2025年11月更新",
+    badge: "2026年2月更新",
     title: "国別VPNガイド",
     subtitle: "研究に基づいた国別ガイドで、あなたの地域で使えるVPNを見つけましょう",
     intro: "インターネットの自由は国によって大きく異なります。VPNアクセスを厳しく制限する国もあれば、オンラインプライバシーを受け入れる国もあります。私たちのガイドは、実際に機能するVPNを見つけるのに役立ちます。",
@@ -320,11 +483,10 @@ const content = {
     legalLabel: "合法",
     regulatedLabel: "規制あり",
     viewGuide: "ガイドを見る",
-    moreCountries: "さらに多くの国別ガイドが近日公開",
-    moreCountriesText: "インド、パキスタン、ベトナム、サウジアラビアなど、さらに多くの国のVPN状況を調査中です。",
+    moreCountries: "その他の国別ガイド",
   },
   ko: {
-    badge: "2025년 11월 업데이트",
+    badge: "2026년 2월 업데이트",
     title: "국가별 VPN 가이드",
     subtitle: "연구 기반 국가 가이드로 귀하의 위치에서 작동하는 VPN을 찾으세요",
     intro: "인터넷 자유는 국가마다 크게 다릅니다. 일부 국가는 VPN 접속을 엄격히 제한하는 반면, 다른 국가는 온라인 프라이버시를 수용합니다. 우리의 가이드는 실제로 작동하는 VPN을 찾는 데 도움이 됩니다.",
@@ -333,11 +495,10 @@ const content = {
     legalLabel: "합법",
     regulatedLabel: "규제됨",
     viewGuide: "가이드 보기",
-    moreCountries: "더 많은 국가 가이드 곧 공개",
-    moreCountriesText: "인도, 파키스탄, 베트남, 사우디아라비아를 포함한 더 많은 국가의 VPN 상황을 조사하고 있습니다.",
+    moreCountries: "더 많은 국가 가이드",
   },
   th: {
-    badge: "อัปเดตพฤศจิกายน 2025",
+    badge: "อัปเดตกุมภาพันธ์ 2026",
     title: "คู่มือ VPN ตามประเทศ",
     subtitle: "ค้นหา VPN ที่ใช้งานได้ในพื้นที่ของคุณด้วยคู่มือประเทศที่ได้รับการสนับสนุนจากการวิจัยของเรา",
     intro: "อิสรภาพทางอินเทอร์เน็ตแตกต่างกันอย่างมากในแต่ละประเทศ บางประเทศจำกัดการเข้าถึง VPN อย่างหนัก ในขณะที่ประเทศอื่นๆ รับเอาความเป็นส่วนตัวออนไลน์ คู่มือของเราช่วยคุณค้นหา VPN ที่ใช้งานได้จริง",
@@ -346,8 +507,7 @@ const content = {
     legalLabel: "ถูกกฎหมาย",
     regulatedLabel: "มีการควบคุม",
     viewGuide: "ดูคู่มือ",
-    moreCountries: "คู่มือประเทศเพิ่มเติมเร็วๆ นี้",
-    moreCountriesText: "เรากำลังศึกษาสถานการณ์ VPN ในประเทศเพิ่มเติม รวมถึงอินเดีย ปากีสถาน เวียดนาม และซาอุดีอาระเบีย",
+    moreCountries: "คู่มือประเทศเพิ่มเติม",
   },
 };
 
@@ -466,18 +626,35 @@ export default async function CountriesPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Coming Soon */}
+      {/* More Countries (Dynamic) */}
       <section className="py-16 bg-muted/30">
         <div className="container">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-2xl font-bold mb-4">{t.moreCountries}</h2>
-            <p className="text-muted-foreground">{t.moreCountriesText}</p>
-            <div className="flex justify-center gap-4 mt-6">
-              <span className="text-3xl opacity-50">🇮🇳</span>
-              <span className="text-3xl opacity-50">🇵🇰</span>
-              <span className="text-3xl opacity-50">🇻🇳</span>
-              <span className="text-3xl opacity-50">🇸🇦</span>
-            </div>
+          <h2 className="text-3xl font-bold text-center mb-8">{t.moreCountries}</h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {getAllDynamicCountries().map((dc) => (
+              <Link
+                key={dc.slug}
+                href={`/countries/${dc.slug}`}
+                className="group"
+              >
+                <Card className="h-full hover:border-primary transition-colors">
+                  <CardContent className="p-4">
+                    <div className="flex items-center gap-3">
+                      <span className="text-3xl">{dc.flag}</span>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-semibold text-sm group-hover:text-primary transition-colors truncate">
+                          {dc.name}
+                        </h3>
+                        <p className="text-xs text-muted-foreground truncate">
+                          {dc.statusLabel}
+                        </p>
+                      </div>
+                      <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0" />
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

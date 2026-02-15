@@ -38,27 +38,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
   const titles: Record<string, string> = {
-    en: "Best VPN for Gaming 2025: Low Ping, DDoS Protection | ZeroToVPN",
-    nl: "Beste VPN voor Gaming 2025: Lage Ping, DDoS-bescherming | ZeroToVPN",
-    de: "Beste VPN für Gaming 2025: Niedrige Ping, DDoS-Schutz | ZeroToVPN",
-    es: "Mejor VPN para Gaming 2025: Ping Bajo, Protección DDoS | ZeroToVPN",
-    fr: "Meilleur VPN pour Gaming 2025: Faible Ping, Protection DDoS | ZeroToVPN",
-    zh: "2025年最佳游戏VPN：低延迟，DDoS保护 | ZeroToVPN",
-    ja: "ゲーミング用ベストVPN 2025：低Ping、DDoS保護 | ZeroToVPN",
-    ko: "2025년 최고의 게임용 VPN: 낮은 핑, DDoS 보호 | ZeroToVPN",
-    th: "VPN ที่ดีที่สุดสำหรับเกม 2025: Ping ต่ำ, ป้องกัน DDoS | ZeroToVPN",
+    en: "Best VPN for Gaming 2026: Low Ping, DDoS Protection | ZeroToVPN",
+    nl: "Beste VPN voor Gaming 2026: Lage Ping, DDoS-bescherming | ZeroToVPN",
+    de: "Beste VPN für Gaming 2026: Niedrige Ping, DDoS-Schutz | ZeroToVPN",
+    es: "Mejor VPN para Gaming 2026: Ping Bajo, Protección DDoS | ZeroToVPN",
+    fr: "Meilleur VPN pour Gaming 2026: Faible Ping, Protection DDoS | ZeroToVPN",
+    zh: "2026年最佳游戏VPN：低延迟，DDoS保护 | ZeroToVPN",
+    ja: "ゲーミング用ベストVPN 2026：低Ping、DDoS保護 | ZeroToVPN",
+    ko: "2026년 최고의 게임용 VPN: 낮은 핑, DDoS 보호 | ZeroToVPN",
+    th: "VPN ที่ดีที่สุดสำหรับเกม 2026: Ping ต่ำ, ป้องกัน DDoS | ZeroToVPN",
   };
 
   const descriptions: Record<string, string> = {
-    en: "Find the best gaming VPN for 2025. We tested 35+ VPNs for ping, speed, and DDoS protection. Reduce lag and access geo-locked games.",
-    nl: "Vind de beste gaming VPN voor 2025. We hebben 35+ VPNs getest op ping, snelheid en DDoS-bescherming. Verminder lag en krijg toegang tot geo-geblokkeerde games.",
-    de: "Finden Sie das beste Gaming-VPN für 2025. Wir haben über 35 VPNs auf Ping, Geschwindigkeit und DDoS-Schutz getestet. Reduzieren Sie Lag und greifen Sie auf geo-gesperrte Spiele zu.",
-    es: "Encuentra la mejor VPN para gaming de 2025. Probamos más de 35 VPNs en ping, velocidad y protección DDoS. Reduce el lag y accede a juegos geo-bloqueados.",
-    fr: "Trouvez le meilleur VPN gaming pour 2025. Nous avons testé plus de 35 VPNs pour le ping, la vitesse et la protection DDoS. Réduisez le lag et accédez aux jeux géo-restreints.",
-    zh: "找到2025年最佳游戏VPN。我们测试了35+个VPN的延迟、速度和DDoS保护。减少延迟并访问地区锁定的游戏。",
-    ja: "2025年最高のゲーミングVPNを見つけよう。35以上のVPNをping、速度、DDoS保護でテストしました。ラグを減らし、地域制限されたゲームにアクセス。",
-    ko: "2025년 최고의 게임용 VPN을 찾으세요. 35개 이상의 VPN을 핑, 속도, DDoS 보호 측면에서 테스트했습니다. 렉을 줄이고 지역 제한 게임에 액세스하세요.",
-    th: "ค้นหา VPN สำหรับเกมที่ดีที่สุดในปี 2025 เราทดสอบ VPN มากกว่า 35 รายการสำหรับ ping, ความเร็ว และการป้องกัน DDoS ลดแลคและเข้าถึงเกมที่ถูกล็อคตามภูมิศาสตร์",
+    en: "Find the best gaming VPN for 2026. We tested 35+ VPNs for ping, speed, and DDoS protection. Reduce lag and access geo-locked games.",
+    nl: "Vind de beste gaming VPN voor 2026. We hebben 35+ VPNs getest op ping, snelheid en DDoS-bescherming. Verminder lag en krijg toegang tot geo-geblokkeerde games.",
+    de: "Finden Sie das beste Gaming-VPN für 2026. Wir haben über 35 VPNs auf Ping, Geschwindigkeit und DDoS-Schutz getestet. Reduzieren Sie Lag und greifen Sie auf geo-gesperrte Spiele zu.",
+    es: "Encuentra la mejor VPN para gaming de 2026. Probamos más de 35 VPNs en ping, velocidad y protección DDoS. Reduce el lag y accede a juegos geo-bloqueados.",
+    fr: "Trouvez le meilleur VPN gaming pour 2026. Nous avons testé plus de 35 VPNs pour le ping, la vitesse et la protection DDoS. Réduisez le lag et accédez aux jeux géo-restreints.",
+    zh: "找到2026年最佳游戏VPN。我们测试了35+个VPN的延迟、速度和DDoS保护。减少延迟并访问地区锁定的游戏。",
+    ja: "2026年最高のゲーミングVPNを見つけよう。35以上のVPNをping、速度、DDoS保護でテストしました。ラグを減らし、地域制限されたゲームにアクセス。",
+    ko: "2026년 최고의 게임용 VPN을 찾으세요. 35개 이상의 VPN을 핑, 속도, DDoS 보호 측면에서 테스트했습니다. 렉을 줄이고 지역 제한 게임에 액세스하세요.",
+    th: "ค้นหา VPN สำหรับเกมที่ดีที่สุดในปี 2026 เราทดสอบ VPN มากกว่า 35 รายการสำหรับ ping, ความเร็ว และการป้องกัน DDoS ลดแลคและเข้าถึงเกมที่ถูกล็อคตามภูมิศาสตร์",
   };
 
   return {
@@ -78,7 +78,7 @@ function ItemListSchema({ gamingVpns }: { gamingVpns: { vpn: VpnProvider | null 
   const schema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Best Gaming VPN Services 2025",
+    name: "Best Gaming VPN Services 2026",
     numberOfItems: gamingVpns.length,
     itemListElement: gamingVpns.map((item, index) => ({
       "@type": "ListItem",
@@ -167,8 +167,8 @@ export default async function GamingVpnPage({ params }: Props) {
   // Content translations
   const content = {
     en: {
-      badge: "Updated November 2025",
-      title: "Best VPN for Gaming in 2025",
+      badge: "Updated November 2026",
+      title: "Best VPN for Gaming in 2026",
       subtitle:
         "We tested 35+ VPNs specifically for gaming performance. These are the fastest options with the lowest ping and best DDoS protection.",
       topPicks: "Top Gaming VPNs",
@@ -304,11 +304,11 @@ export default async function GamingVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "View All VPN Reviews",
-      lastUpdated: "Last updated: November 2025",
+      lastUpdated: "Last updated: November 2026",
     },
     nl: {
-      badge: "Bijgewerkt november 2025",
-      title: "Beste VPN voor Gaming in 2025",
+      badge: "Bijgewerkt november 2026",
+      title: "Beste VPN voor Gaming in 2026",
       subtitle:
         "We hebben 35+ VPNs specifiek getest voor gaming prestaties. Dit zijn de snelste opties met de laagste ping en beste DDoS-bescherming.",
       topPicks: "Top Gaming VPNs",
@@ -448,11 +448,11 @@ export default async function GamingVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Bekijk Alle VPN Reviews",
-      lastUpdated: "Laatst bijgewerkt: november 2025",
+      lastUpdated: "Laatst bijgewerkt: november 2026",
     },
     de: {
-      badge: "Aktualisiert November 2025",
-      title: "Beste VPN für Gaming in 2025",
+      badge: "Aktualisiert November 2026",
+      title: "Beste VPN für Gaming in 2026",
       subtitle:
         "Wir haben über 35 VPNs speziell für Gaming-Leistung getestet. Dies sind die schnellsten Optionen mit dem niedrigsten Ping und bestem DDoS-Schutz.",
       topPicks: "Top Gaming VPNs",
@@ -596,11 +596,11 @@ export default async function GamingVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Alle VPN-Bewertungen Anzeigen",
-      lastUpdated: "Zuletzt aktualisiert: November 2025",
+      lastUpdated: "Zuletzt aktualisiert: November 2026",
     },
     es: {
-      badge: "Actualizado noviembre 2025",
-      title: "Mejor VPN para Gaming en 2025",
+      badge: "Actualizado noviembre 2026",
+      title: "Mejor VPN para Gaming en 2026",
       subtitle:
         "Probamos más de 35 VPNs específicamente para rendimiento en gaming. Estas son las opciones más rápidas con el ping más bajo y la mejor protección DDoS.",
       topPicks: "Mejores VPNs para Gaming",
@@ -744,11 +744,11 @@ export default async function GamingVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Ver Todas Las Reseñas De VPN",
-      lastUpdated: "Última actualización: noviembre 2025",
+      lastUpdated: "Última actualización: noviembre 2026",
     },
     fr: {
-      badge: "Mis à jour novembre 2025",
-      title: "Meilleur VPN pour Gaming en 2025",
+      badge: "Mis à jour novembre 2026",
+      title: "Meilleur VPN pour Gaming en 2026",
       subtitle:
         "Nous avons testé plus de 35 VPN spécifiquement pour les performances gaming. Ce sont les options les plus rapides avec le ping le plus bas et la meilleure protection DDoS.",
       topPicks: "Meilleurs VPN Gaming",
@@ -900,11 +900,11 @@ export default async function GamingVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Voir Toutes Les Critiques VPN",
-      lastUpdated: "Dernière mise à jour: novembre 2025",
+      lastUpdated: "Dernière mise à jour: novembre 2026",
     },
     zh: {
-      badge: "更新于2025年11月",
-      title: "2025年最佳游戏VPN",
+      badge: "更新于2026年11月",
+      title: "2026年最佳游戏VPN",
       subtitle:
         "我们专门测试了35多个VPN的游戏性能。这些是延迟最低、DDoS保护最佳的最快选项。",
       topPicks: "顶级游戏VPN",
@@ -1040,11 +1040,11 @@ export default async function GamingVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "查看所有VPN评论",
-      lastUpdated: "最后更新：2025年11月",
+      lastUpdated: "最后更新：2026年11月",
     },
     ja: {
-      badge: "2025年11月更新",
-      title: "2025年最高のゲーミングVPN",
+      badge: "2026年11月更新",
+      title: "2026年最高のゲーミングVPN",
       subtitle:
         "ゲームパフォーマンスを専門に35以上のVPNをテストしました。これらは最低のpingと最高のDDoS保護を備えた最速のオプションです。",
       topPicks: "トップゲーミングVPN",
@@ -1180,11 +1180,11 @@ export default async function GamingVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "すべてのVPNレビューを表示",
-      lastUpdated: "最終更新：2025年11月",
+      lastUpdated: "最終更新：2026年11月",
     },
     ko: {
-      badge: "2025년 11월 업데이트",
-      title: "2025년 최고의 게임용 VPN",
+      badge: "2026년 11월 업데이트",
+      title: "2026년 최고의 게임용 VPN",
       subtitle:
         "게임 성능을 위해 35개 이상의 VPN을 테스트했습니다. 가장 낮은 핑과 최고의 DDoS 보호 기능을 갖춘 가장 빠른 옵션입니다.",
       topPicks: "최고의 게임용 VPN",
@@ -1320,11 +1320,11 @@ export default async function GamingVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "모든 VPN 리뷰 보기",
-      lastUpdated: "마지막 업데이트: 2025년 11월",
+      lastUpdated: "마지막 업데이트: 2026년 11월",
     },
     th: {
-      badge: "อัปเดตพฤศจิกายน 2025",
-      title: "VPN ที่ดีที่สุดสำหรับเกมในปี 2025",
+      badge: "อัปเดตพฤศจิกายน 2026",
+      title: "VPN ที่ดีที่สุดสำหรับเกมในปี 2026",
       subtitle:
         "เราทดสอบ VPN มากกว่า 35 รายการโดยเฉพาะสำหรับประสิทธิภาพการเล่นเกม นี่คือตัวเลือกที่เร็วที่สุดพร้อม ping ต่ำที่สุดและการป้องกัน DDoS ที่ดีที่สุด",
       topPicks: "VPN เกมชั้นนำ",
@@ -1472,7 +1472,7 @@ export default async function GamingVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "ดูรีวิว VPN ทั้งหมด",
-      lastUpdated: "อัปเดตล่าสุด: พฤศจิกายน 2025",
+      lastUpdated: "อัปเดตล่าสุด: พฤศจิกายน 2026",
     },
   };
 

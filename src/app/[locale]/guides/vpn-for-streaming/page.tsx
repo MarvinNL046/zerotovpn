@@ -44,7 +44,7 @@ const baseUrl = "https://zerotovpn.com";
 export async function generateMetadata(): Promise<Metadata> {
   return {
     metadataBase: new URL(baseUrl),
-    title: "Best VPN for Streaming Netflix, Disney+ & More (2025 Guide) - ZeroToVPN",
+    title: "Best VPN for Streaming Netflix, Disney+ & More (2026 Guide) - ZeroToVPN",
     description:
       "Discover how to use a VPN to access Netflix, Disney+, BBC iPlayer and more streaming services from anywhere. Find the best VPNs for streaming.",
     robots: {
@@ -52,7 +52,7 @@ export async function generateMetadata(): Promise<Metadata> {
       follow: true,
     },
     openGraph: {
-      title: "Best VPN for Streaming Netflix, Disney+ & More (2025)",
+      title: "Best VPN for Streaming Netflix, Disney+ & More (2026)",
       description:
         "Discover how to use a VPN to access Netflix, Disney+, BBC iPlayer and more streaming services from anywhere.",
       type: "article",
@@ -69,11 +69,11 @@ export default async function VpnForStreamingPage({ params }: Props) {
   return (
     <>
       <ArticleJsonLd
-        title="Best VPN for Streaming Netflix, Disney+ & More (2025 Guide)"
+        title="Best VPN for Streaming Netflix, Disney+ & More (2026 Guide)"
         description="Discover how to use a VPN to access Netflix, Disney+, BBC iPlayer and more streaming services from anywhere. Find the best VPNs for streaming."
         url={pageUrl}
-        datePublished="2025-01-01"
-        dateModified="2025-11-28"
+        datePublished="2026-01-01"
+        dateModified="2026-11-28"
       />
       <BreadcrumbJsonLd
         items={[
@@ -483,7 +483,7 @@ export default async function VpnForStreamingPage({ params }: Props) {
                 { title: "VPN Speed Guide", description: "Optimize speed for 4K streaming", href: "/guides/vpn-speed-guide", icon: "zap" },
                 { title: "Best Gaming VPNs", description: "Low-latency VPNs for gaming", href: "/best/best-gaming-vpn", icon: "gamepad" },
                 { title: "VPN for Torrenting", description: "Stay safe while downloading", href: "/guides/vpn-for-torrenting", icon: "download" },
-                { title: "Best VPNs 2025", description: "Top-rated streaming VPNs", href: "/best/best-vpn", icon: "trophy" }
+                { title: "Best VPNs 2026", description: "Top-rated streaming VPNs", href: "/best/best-vpn", icon: "trophy" }
               ]}
             />
           </div>

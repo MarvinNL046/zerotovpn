@@ -63,7 +63,7 @@ function IphoneVpnListSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Best VPN for iPhone & iOS 2025",
+    name: "Best VPN for iPhone & iOS 2026",
     description: "Expert-tested VPN apps for iPhone with native iOS support, optimal battery life, and App Store ratings",
     numberOfItems: 3,
     itemListElement: [

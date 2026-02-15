@@ -37,7 +37,7 @@ export default async function AffiliateDisclosurePage({ params }: Props) {
   setRequestLocale(locale);
 
   const vpnProviders = await getAllVpns();
-  const lastUpdated = "November 28, 2025";
+  const lastUpdated = "February 15, 2026";
 
   return (
     <div className="flex flex-col">
@@ -75,8 +75,13 @@ export default async function AffiliateDisclosurePage({ params }: Props) {
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                   <span>
-                    We earn commissions when you purchase VPN services through our
-                    links
+                    We earn commissions from purchases via the links on this site, at no extra cost to you
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <span>
+                    Some links on this website are affiliate links. This means we may earn a commission if you click on a link and make a purchase. This comes at no additional cost to you.
                   </span>
                 </li>
                 <li className="flex items-start gap-2">

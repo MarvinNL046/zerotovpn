@@ -45,15 +45,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
   const titles: Record<string, string> = {
-    en: "Best VPN for Iran 2025: Bypass Deep Packet Inspection | ZeroToVPN",
-    nl: "Beste VPN voor Iran 2025: Omzeil Deep Packet Inspection | ZeroToVPN",
-    de: "Beste VPN für Iran 2025: Umgehen Sie Deep Packet Inspection | ZeroToVPN",
-    es: "Mejor VPN para Irán 2025: Evita Inspección Profunda de Paquetes | ZeroToVPN",
-    fr: "Meilleur VPN pour Iran 2025 : Contourner l'Inspection Profonde de Paquets | ZeroToVPN",
-    zh: "2025年伊朗VPN推荐：绕过深度包检测 | ZeroToVPN",
-    ja: "イラン向けベストVPN 2025：深度パケット検査を回避 | ZeroToVPN",
-    ko: "이란 최고의 VPN 2025: 심층 패킷 검사 우회하기 | ZeroToVPN",
-    th: "VPN ที่ดีที่สุดสำหรับอิหร่าน 2025: ข้ามการตรวจสอบแพ็กเก็ตอย่างละเอียด | ZeroToVPN",
+    en: "Best VPN for Iran 2026: Bypass Deep Packet Inspection | ZeroToVPN",
+    nl: "Beste VPN voor Iran 2026: Omzeil Deep Packet Inspection | ZeroToVPN",
+    de: "Beste VPN für Iran 2026: Umgehen Sie Deep Packet Inspection | ZeroToVPN",
+    es: "Mejor VPN para Irán 2026: Evita Inspección Profunda de Paquetes | ZeroToVPN",
+    fr: "Meilleur VPN pour Iran 2026 : Contourner l'Inspection Profonde de Paquets | ZeroToVPN",
+    zh: "2026年伊朗VPN推荐：绕过深度包检测 | ZeroToVPN",
+    ja: "イラン向けベストVPN 2026：深度パケット検査を回避 | ZeroToVPN",
+    ko: "이란 최고의 VPN 2026: 심층 패킷 검사 우회하기 | ZeroToVPN",
+    th: "VPN ที่ดีที่สุดสำหรับอิหร่าน 2026: ข้ามการตรวจสอบแพ็กเก็ตอย่างละเอียด | ZeroToVPN",
   };
 
   const descriptions: Record<string, string> = {
@@ -85,7 +85,7 @@ function ArticleSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "Best VPN for Iran 2025: Bypass Deep Packet Inspection",
+    headline: "Best VPN for Iran 2026: Bypass Deep Packet Inspection",
     description: "Comprehensive guide to VPNs that work in Iran with expert recommendations and censorship bypass techniques",
     author: {
       "@type": "Organization",
@@ -99,8 +99,8 @@ function ArticleSchema() {
         url: "https://zerotovpn.com/logo.png",
       },
     },
-    datePublished: "2025-01-01",
-    dateModified: "2025-01-01",
+    datePublished: "2026-01-01",
+    dateModified: "2026-01-01",
   };
 
   return (
@@ -170,9 +170,9 @@ export default async function VpnIranPage({ params }: Props) {
   // Content translations
   const content = {
     en: {
-      badge: "Updated January 2025",
+      badge: "Updated January 2026",
       flag: "🇮🇷",
-      title: "Best VPN for Iran 2025",
+      title: "Best VPN for Iran 2026",
       subtitle: "Iran has one of the strictest internet censorship systems in the world. Here are the VPNs that still work in Iran based on real-world testing despite deep packet inspection.",
 
       // Why You Need VPN section
@@ -188,7 +188,7 @@ export default async function VpnIranPage({ params }: Props) {
       ],
 
       // VPNs That Work section
-      vpnsWorkTitle: "VPNs That Work in Iran (2025)",
+      vpnsWorkTitle: "VPNs That Work in Iran (2026)",
       vpnsWorkSubtitle: "These VPNs have been tested and confirmed working in Iran despite government DPI blocking",
       whyItWorks: "Why it works:",
       reliability: "Reliability:",
@@ -297,12 +297,12 @@ export default async function VpnIranPage({ params }: Props) {
       ctaTitle: "Get a Reliable VPN for Iran",
       ctaSubtitle: "Choose a VPN with proven obfuscation technology that works in Iran. Access Telegram, WhatsApp, Instagram, and bypass censorship.",
       viewAllVpns: "View All VPN Reviews",
-      lastUpdated: "Last updated: January 2025",
+      lastUpdated: "Last updated: January 2026",
     },
     nl: {
-      badge: "Bijgewerkt januari 2025",
+      badge: "Bijgewerkt januari 2026",
       flag: "🇮🇷",
-      title: "Beste VPN voor Iran 2025",
+      title: "Beste VPN voor Iran 2026",
       subtitle: "Iran heeft een van de strengste internetcensuursystemen ter wereld. Dit zijn de VPNs die nog steeds werken in Iran, gebaseerd op praktijktesten ondanks deep packet inspection.",
 
       whyNeedTitle: "Waarom Je Een VPN Nodig Hebt in Iran",
@@ -316,7 +316,7 @@ export default async function VpnIranPage({ params }: Props) {
         "Communicatietools (Zoom, Skype - zwaar gemonitord)",
       ],
 
-      vpnsWorkTitle: "VPNs Die Werken in Iran (2025)",
+      vpnsWorkTitle: "VPNs Die Werken in Iran (2026)",
       vpnsWorkSubtitle: "Deze VPNs zijn getest en bevestigd werkend in Iran ondanks overheids-DPI blokkering",
       whyItWorks: "Waarom het werkt:",
       reliability: "Betrouwbaarheid:",
@@ -419,12 +419,12 @@ export default async function VpnIranPage({ params }: Props) {
       ctaTitle: "Kies Een Betrouwbare VPN voor Iran",
       ctaSubtitle: "Kies een VPN met bewezen obfuscatietechnologie die werkt in Iran. Krijg toegang tot Telegram, WhatsApp, Instagram en omzeil censuur.",
       viewAllVpns: "Bekijk Alle VPN Reviews",
-      lastUpdated: "Laatst bijgewerkt: januari 2025",
+      lastUpdated: "Laatst bijgewerkt: januari 2026",
     },
     de: {
-      badge: "Aktualisiert Januar 2025",
+      badge: "Aktualisiert Januar 2026",
       flag: "🇮🇷",
-      title: "Beste VPN für Iran 2025",
+      title: "Beste VPN für Iran 2026",
       subtitle: "Iran hat eines der strengsten Internet-Zensursysteme der Welt. Dies sind die VPNs, die in Iran noch funktionieren, basierend auf realen Tests trotz Deep Packet Inspection.",
 
       whyNeedTitle: "Warum Sie ein VPN in Iran Brauchen",
@@ -438,7 +438,7 @@ export default async function VpnIranPage({ params }: Props) {
         "Kommunikationstools (Zoom, Skype - stark überwacht)",
       ],
 
-      vpnsWorkTitle: "VPNs, die in Iran Funktionieren (2025)",
+      vpnsWorkTitle: "VPNs, die in Iran Funktionieren (2026)",
       vpnsWorkSubtitle: "Diese VPNs wurden getestet und funktionieren nachweislich im Iran trotz Regierungs-DPI-Blockierung",
       whyItWorks: "Warum es funktioniert:",
       reliability: "Zuverlässigkeit:",
@@ -541,12 +541,12 @@ export default async function VpnIranPage({ params }: Props) {
       ctaTitle: "Holen Sie sich ein Zuverlässiges VPN für Iran",
       ctaSubtitle: "Wählen Sie ein VPN mit bewährter Verschleierungstechnologie, das im Iran funktioniert. Zugang zu Telegram, WhatsApp, Instagram und Umgehung der Zensur.",
       viewAllVpns: "Alle VPN-Reviews Ansehen",
-      lastUpdated: "Zuletzt aktualisiert: Januar 2025",
+      lastUpdated: "Zuletzt aktualisiert: Januar 2026",
     },
     es: {
-      badge: "Actualizado enero 2025",
+      badge: "Actualizado enero 2026",
       flag: "🇮🇷",
-      title: "Mejor VPN para Irán 2025",
+      title: "Mejor VPN para Irán 2026",
       subtitle: "Irán tiene uno de los sistemas de censura de internet más estrictos del mundo. Estas son las VPNs que aún funcionan en Irán basándose en pruebas reales a pesar de la inspección profunda de paquetes.",
 
       whyNeedTitle: "Por Qué Necesitas una VPN en Irán",
@@ -560,7 +560,7 @@ export default async function VpnIranPage({ params }: Props) {
         "Herramientas de Comunicación (Zoom, Skype - fuertemente monitoreadas)",
       ],
 
-      vpnsWorkTitle: "VPNs Que Funcionan en Irán (2025)",
+      vpnsWorkTitle: "VPNs Que Funcionan en Irán (2026)",
       vpnsWorkSubtitle: "Estas VPNs han sido probadas y confirmadas funcionando en Irán a pesar del bloqueo DPI del gobierno",
       whyItWorks: "Por qué funciona:",
       reliability: "Fiabilidad:",
@@ -663,12 +663,12 @@ export default async function VpnIranPage({ params }: Props) {
       ctaTitle: "Obtén una VPN Confiable para Irán",
       ctaSubtitle: "Elige una VPN con tecnología de ofuscación probada que funciona en Irán. Accede a Telegram, WhatsApp, Instagram y evita la censura.",
       viewAllVpns: "Ver Todas las Reseñas de VPN",
-      lastUpdated: "Última actualización: enero 2025",
+      lastUpdated: "Última actualización: enero 2026",
     },
     fr: {
-      badge: "Mis à jour janvier 2025",
+      badge: "Mis à jour janvier 2026",
       flag: "🇮🇷",
-      title: "Meilleur VPN pour l'Iran 2025",
+      title: "Meilleur VPN pour l'Iran 2026",
       subtitle: "L'Iran possède l'un des systèmes de censure Internet les plus stricts au monde. Voici les VPN qui fonctionnent encore en Iran selon des tests réels malgré l'inspection profonde de paquets.",
 
       whyNeedTitle: "Pourquoi Vous Avez Besoin d'un VPN en Iran",
@@ -682,7 +682,7 @@ export default async function VpnIranPage({ params }: Props) {
         "Outils de Communication (Zoom, Skype - fortement surveillés)",
       ],
 
-      vpnsWorkTitle: "VPN Qui Fonctionnent en Iran (2025)",
+      vpnsWorkTitle: "VPN Qui Fonctionnent en Iran (2026)",
       vpnsWorkSubtitle: "Ces VPN ont été testés et confirmés fonctionnels en Iran malgré le blocage DPI du gouvernement",
       whyItWorks: "Pourquoi ça fonctionne:",
       reliability: "Fiabilité:",
@@ -785,12 +785,12 @@ export default async function VpnIranPage({ params }: Props) {
       ctaTitle: "Obtenez un VPN Fiable pour l'Iran",
       ctaSubtitle: "Choisissez un VPN avec une technologie d'obfuscation éprouvée qui fonctionne en Iran. Accédez à Telegram, WhatsApp, Instagram et contournez la censure.",
       viewAllVpns: "Voir Tous les Avis VPN",
-      lastUpdated: "Dernière mise à jour: janvier 2025",
+      lastUpdated: "Dernière mise à jour: janvier 2026",
     },
     zh: {
-      badge: "2025年1月更新",
+      badge: "2026年1月更新",
       flag: "🇮🇷",
-      title: "2025年伊朗最佳VPN",
+      title: "2026年伊朗最佳VPN",
       subtitle: "伊朗拥有世界上最严格的互联网审查系统之一。以下是根据实际测试，尽管有深度包检测，仍能在伊朗使用的VPN。",
 
       whyNeedTitle: "为什么在伊朗需要VPN",
@@ -804,7 +804,7 @@ export default async function VpnIranPage({ params }: Props) {
         "通讯工具(Zoom、Skype - 被严密监控)",
       ],
 
-      vpnsWorkTitle: "在伊朗可用的VPN(2025)",
+      vpnsWorkTitle: "在伊朗可用的VPN(2026)",
       vpnsWorkSubtitle: "这些VPN已经过测试，确认在伊朗政府DPI封锁下仍能使用",
       whyItWorks: "为什么有效：",
       reliability: "可靠性：",
@@ -907,12 +907,12 @@ export default async function VpnIranPage({ params }: Props) {
       ctaTitle: "获取可靠的伊朗VPN",
       ctaSubtitle: "选择具有经过验证的混淆技术、在伊朗可用的VPN。访问Telegram、WhatsApp、Instagram并绕过审查。",
       viewAllVpns: "查看所有VPN评论",
-      lastUpdated: "最后更新：2025年1月",
+      lastUpdated: "最后更新：2026年1月",
     },
     ja: {
-      badge: "2025年1月更新",
+      badge: "2026年1月更新",
       flag: "🇮🇷",
-      title: "イラン向けベストVPN 2025",
+      title: "イラン向けベストVPN 2026",
       subtitle: "イランは世界で最も厳格なインターネット検閲システムの1つを持っています。これらは、深度パケット検査にもかかわらず、実際のテストに基づいてイランでまだ機能するVPNです。",
 
       whyNeedTitle: "イランでVPNが必要な理由",
@@ -926,7 +926,7 @@ export default async function VpnIranPage({ params }: Props) {
         "通信ツール(Zoom、Skype - 厳重監視)",
       ],
 
-      vpnsWorkTitle: "イランで機能するVPN(2025)",
+      vpnsWorkTitle: "イランで機能するVPN(2026)",
       vpnsWorkSubtitle: "これらのVPNはテスト済みで、政府のDPIブロックにもかかわらずイランで機能することが確認されています",
       whyItWorks: "機能する理由：",
       reliability: "信頼性：",
@@ -1029,12 +1029,12 @@ export default async function VpnIranPage({ params }: Props) {
       ctaTitle: "イラン向けの信頼性の高いVPNを入手",
       ctaSubtitle: "イランで機能する実証済みの難読化技術を備えたVPNを選択してください。Telegram、WhatsApp、Instagramにアクセスし、検閲を回避します。",
       viewAllVpns: "すべてのVPNレビューを表示",
-      lastUpdated: "最終更新：2025年1月",
+      lastUpdated: "最終更新：2026年1月",
     },
     ko: {
-      badge: "2025년 1월 업데이트",
+      badge: "2026년 1월 업데이트",
       flag: "🇮🇷",
-      title: "이란 최고의 VPN 2025",
+      title: "이란 최고의 VPN 2026",
       subtitle: "이란은 세계에서 가장 엄격한 인터넷 검열 시스템 중 하나를 가지고 있습니다. 심층 패킷 검사에도 불구하고 실제 테스트를 기반으로 이란에서 여전히 작동하는 VPN입니다.",
 
       whyNeedTitle: "이란에서 VPN이 필요한 이유",
@@ -1048,7 +1048,7 @@ export default async function VpnIranPage({ params }: Props) {
         "통신 도구 (Zoom, Skype - 엄격한 모니터링)",
       ],
 
-      vpnsWorkTitle: "이란에서 작동하는 VPN(2025)",
+      vpnsWorkTitle: "이란에서 작동하는 VPN(2026)",
       vpnsWorkSubtitle: "이러한 VPN은 테스트되었으며 정부의 DPI 차단에도 불구하고 이란에서 작동하는 것으로 확인되었습니다",
       whyItWorks: "작동하는 이유:",
       reliability: "신뢰성:",
@@ -1151,12 +1151,12 @@ export default async function VpnIranPage({ params }: Props) {
       ctaTitle: "이란을 위한 신뢰할 수 있는 VPN 받기",
       ctaSubtitle: "이란에서 작동하는 입증된 난독화 기술을 갖춘 VPN을 선택하십시오. Telegram, WhatsApp, Instagram에 액세스하고 검열을 우회하십시오.",
       viewAllVpns: "모든 VPN 리뷰 보기",
-      lastUpdated: "마지막 업데이트: 2025년 1월",
+      lastUpdated: "마지막 업데이트: 2026년 1월",
     },
     th: {
-      badge: "อัปเดตมกราคม 2025",
+      badge: "อัปเดตมกราคม 2026",
       flag: "🇮🇷",
-      title: "VPN ที่ดีที่สุดสำหรับอิหร่าน 2025",
+      title: "VPN ที่ดีที่สุดสำหรับอิหร่าน 2026",
       subtitle: "อิหร่านมีระบบเซ็นเซอร์อินเทอร์เน็ตที่เข้มงวดที่สุดในโลก นี่คือ VPN ที่ยังคงใช้งานได้ในอิหร่านตามการทดสอบจริง แม้จะมีการตรวจสอบแพ็กเก็ตอย่างละเอียด",
 
       whyNeedTitle: "ทำไมคุณถึงต้องการ VPN ในอิหร่าน",
@@ -1170,7 +1170,7 @@ export default async function VpnIranPage({ params }: Props) {
         "เครื่องมือสื่อสาร (Zoom, Skype - ถูกตรวจสอบอย่างใกล้ชิด)",
       ],
 
-      vpnsWorkTitle: "VPN ที่ใช้งานได้ในอิหร่าน (2025)",
+      vpnsWorkTitle: "VPN ที่ใช้งานได้ในอิหร่าน (2026)",
       vpnsWorkSubtitle: "VPN เหล่านี้ได้รับการทดสอบและยืนยันว่าใช้งานได้ในอิหร่านแม้จะมีการบล็อก DPI ของรัฐบาล",
       whyItWorks: "ทำไมถึงใช้งานได้:",
       reliability: "ความน่าเชื่อถือ:",
@@ -1273,7 +1273,7 @@ export default async function VpnIranPage({ params }: Props) {
       ctaTitle: "รับ VPN ที่เชื่อถือได้สำหรับอิหร่าน",
       ctaSubtitle: "เลือก VPN ที่มีเทคโนโลยีการซ่อนตัวที่พิสูจน์แล้วว่าใช้งานได้ในอิหร่าน เข้าถึง Telegram, WhatsApp, Instagram และหลีกเลี่ยงการเซ็นเซอร์",
       viewAllVpns: "ดูรีวิว VPN ทั้งหมด",
-      lastUpdated: "อัปเดตล่าสุด: มกราคม 2025",
+      lastUpdated: "อัปเดตล่าสุด: มกราคม 2026",
     },
   };
 
@@ -1607,7 +1607,7 @@ export default async function VpnIranPage({ params }: Props) {
             { title: "Best VPN for China", description: "VPNs that bypass the Great Firewall", href: "/best/vpn-china", icon: "globe" },
             { title: "Best VPN for Russia", description: "VPNs that work reliably in Russia", href: "/best/vpn-russia", icon: "globe" },
             { title: "Best VPN for UAE", description: "VPNs for Dubai and the Emirates", href: "/best/vpn-uae", icon: "globe" },
-            { title: "Best VPNs 2025", description: "Our top-rated VPN services", href: "/best/best-vpn", icon: "trophy" },
+            { title: "Best VPNs 2026", description: "Our top-rated VPN services", href: "/best/best-vpn", icon: "trophy" },
             { title: "Best Mobile VPN", description: "VPNs optimized for mobile devices", href: "/best/vpn-mobile", icon: "smartphone" }
           ]}
         />

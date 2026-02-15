@@ -110,7 +110,7 @@ const baseUrl = "https://zerotovpn.com";
 export async function generateMetadata(): Promise<Metadata> {
   return {
     metadataBase: new URL(baseUrl),
-    title: "VPN on Mobile: Complete iOS & Android Setup Guide (2025) - ZeroToVPN",
+    title: "VPN on Mobile: Complete iOS & Android Setup Guide (2026) - ZeroToVPN",
     description:
       "Learn how to set up and use a VPN on your iPhone or Android device. Step-by-step guides, best practices, and tips for mobile VPN security.",
     robots: {
@@ -118,7 +118,7 @@ export async function generateMetadata(): Promise<Metadata> {
       follow: true,
     },
     openGraph: {
-      title: "VPN on Mobile: Complete iOS & Android Setup Guide (2025)",
+      title: "VPN on Mobile: Complete iOS & Android Setup Guide (2026)",
       description:
         "Learn how to set up and use a VPN on your iPhone or Android device. Step-by-step guides and best practices.",
       type: "article",
@@ -143,11 +143,11 @@ export default async function VpnOnMobilePage({ params }: Props) {
   return (
     <>
       <ArticleJsonLd
-        title="VPN on Mobile: Complete iOS & Android Setup Guide (2025)"
+        title="VPN on Mobile: Complete iOS & Android Setup Guide (2026)"
         description="Learn how to set up and use a VPN on your iPhone or Android device. Step-by-step guides, best practices, and tips for mobile VPN security."
         url={pageUrl}
-        datePublished="2025-01-01"
-        dateModified="2025-11-28"
+        datePublished="2026-01-01"
+        dateModified="2026-11-28"
       />
       <BreadcrumbJsonLd
         items={[
@@ -571,7 +571,7 @@ export default async function VpnOnMobilePage({ params }: Props) {
                 { title: "Public WiFi Safety", description: "Secure mobile connections on public WiFi", href: "/guides/public-wifi-safety", icon: "wifi" },
                 { title: "VPN for Travel", description: "Essential travel security tips", href: "/guides/vpn-for-travel", icon: "globe" },
                 { title: "VPN Speed Guide", description: "Optimize mobile VPN performance", href: "/guides/vpn-speed-guide", icon: "zap" },
-                { title: "Best VPNs 2025", description: "Top-rated mobile VPN apps", href: "/best/best-vpn", icon: "trophy" }
+                { title: "Best VPNs 2026", description: "Top-rated mobile VPN apps", href: "/best/best-vpn", icon: "trophy" }
               ]}
             />
           </div>

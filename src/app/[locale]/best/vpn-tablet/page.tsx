@@ -69,7 +69,7 @@ function TabletVpnListSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Best Tablet VPN Services 2025",
+    name: "Best Tablet VPN Services 2026",
     description: "Expert-tested tablet VPN services for iPad, Android tablets, and Windows tablets with comparison of features and performance",
     numberOfItems: 3,
     itemListElement: [

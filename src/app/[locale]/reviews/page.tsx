@@ -24,27 +24,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   });
 
   const titles: Record<string, string> = {
-    en: "VPN Reviews 2025 - Expert Analysis & Ratings",
-    nl: "VPN Reviews 2025 - Expert Analyse & Beoordelingen",
-    de: "VPN Tests 2025 - Expertenanalyse & Bewertungen",
-    es: "Reseñas de VPN 2025 - Análisis de Expertos",
-    fr: "Avis VPN 2025 - Analyse d'Experts",
-    zh: "VPN 评测 2025 - 专家分析与评分",
-    ja: "VPN レビュー 2025 - 専門家分析",
-    ko: "VPN 리뷰 2025 - 전문가 분석 및 평가",
-    th: "รีวิว VPN 2025 - วิเคราะห์โดยผู้เชี่ยวชาญ",
+    en: "VPN Reviews 2026 - Expert Analysis & Ratings",
+    nl: "VPN Reviews 2026 - Expert Analyse & Beoordelingen",
+    de: "VPN Tests 2026 - Expertenanalyse & Bewertungen",
+    es: "Reseñas de VPN 2026 - Análisis de Expertos",
+    fr: "Avis VPN 2026 - Analyse d'Experts",
+    zh: "VPN 评测 2026 - 专家分析与评分",
+    ja: "VPN レビュー 2026 - 専門家分析",
+    ko: "VPN 리뷰 2026 - 전문가 분석 및 평가",
+    th: "รีวิว VPN 2026 - วิเคราะห์โดยผู้เชี่ยวชาญ",
   };
 
   const descriptions: Record<string, string> = {
-    en: "Read our in-depth VPN reviews 2025. We test NordVPN, Surfshark, ExpressVPN & more for speed, security, streaming, and value. Find your perfect VPN.",
-    nl: "Lees onze uitgebreide VPN reviews 2025. We testen NordVPN, Surfshark, ExpressVPN en meer op snelheid, beveiliging, streaming en waarde.",
-    de: "Lesen Sie unsere ausführlichen VPN-Tests 2025. Wir testen NordVPN, Surfshark, ExpressVPN und mehr auf Geschwindigkeit, Sicherheit und Streaming.",
-    es: "Lee nuestras reseñas detalladas de VPN 2025. Probamos NordVPN, Surfshark, ExpressVPN y más en velocidad, seguridad y streaming.",
-    fr: "Lisez nos avis VPN approfondis 2025. Nous testons NordVPN, Surfshark, ExpressVPN et plus pour la vitesse, sécurité et streaming.",
-    zh: "阅读我们的深度VPN评测2025。我们测试NordVPN、Surfshark、ExpressVPN等的速度、安全性和流媒体功能。",
-    ja: "2025年の詳細なVPNレビューをご覧ください。NordVPN、Surfshark、ExpressVPNなどの速度、セキュリティ、ストリーミングをテスト。",
-    ko: "2025년 심층 VPN 리뷰를 읽어보세요. NordVPN, Surfshark, ExpressVPN 등의 속도, 보안, 스트리밍을 테스트합니다.",
-    th: "อ่านรีวิว VPN เชิงลึกของเรา 2025 เราทดสอบ NordVPN, Surfshark, ExpressVPN และอื่นๆ ด้านความเร็ว ความปลอดภัย และสตรีมมิ่ง",
+    en: "Read our in-depth VPN reviews 2026. We test NordVPN, Surfshark, ExpressVPN & more for speed, security, streaming, and value. Find your perfect VPN.",
+    nl: "Lees onze uitgebreide VPN reviews 2026. We testen NordVPN, Surfshark, ExpressVPN en meer op snelheid, beveiliging, streaming en waarde.",
+    de: "Lesen Sie unsere ausführlichen VPN-Tests 2026. Wir testen NordVPN, Surfshark, ExpressVPN und mehr auf Geschwindigkeit, Sicherheit und Streaming.",
+    es: "Lee nuestras reseñas detalladas de VPN 2026. Probamos NordVPN, Surfshark, ExpressVPN y más en velocidad, seguridad y streaming.",
+    fr: "Lisez nos avis VPN approfondis 2026. Nous testons NordVPN, Surfshark, ExpressVPN et plus pour la vitesse, sécurité et streaming.",
+    zh: "阅读我们的深度VPN评测2026。我们测试NordVPN、Surfshark、ExpressVPN等的速度、安全性和流媒体功能。",
+    ja: "2026年の詳細なVPNレビューをご覧ください。NordVPN、Surfshark、ExpressVPNなどの速度、セキュリティ、ストリーミングをテスト。",
+    ko: "2026년 심층 VPN 리뷰를 읽어보세요. NordVPN, Surfshark, ExpressVPN 등의 속도, 보안, 스트리밍을 테스트합니다.",
+    th: "อ่านรีวิว VPN เชิงลึกของเรา 2026 เราทดสอบ NordVPN, Surfshark, ExpressVPN และอื่นๆ ด้านความเร็ว ความปลอดภัย และสตรีมมิ่ง",
   };
 
   return {
@@ -54,7 +54,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     keywords: [
       "VPN reviews",
       "VPN comparison",
-      "best VPN 2025",
+      "best VPN 2026",
       "NordVPN review",
       "Surfshark review",
       "ExpressVPN review",

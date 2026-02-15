@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 import { getAllVpns } from "@/lib/vpn-data-layer";
 import { routing } from "@/i18n/routing";
+import { getAllDynamicCountries } from "@/lib/country-data";
 
 // Auto-discovered static pages - add new pages here and they'll be in the sitemap
 const staticPages = [
@@ -31,6 +32,13 @@ const staticPages = [
   { path: "/best/vpn-windows", priority: 0.85, changeFreq: "weekly" as const },
   { path: "/best/vpn-chromebook", priority: 0.85, changeFreq: "weekly" as const },
 
+  // Best VPN pages - Use case (priority 0.9)
+  { path: "/best/vpn-netflix", priority: 0.9, changeFreq: "weekly" as const },
+  { path: "/best/vpn-streaming", priority: 0.9, changeFreq: "weekly" as const },
+  { path: "/best/vpn-torrenting", priority: 0.85, changeFreq: "weekly" as const },
+  { path: "/best/vpn-cheap", priority: 0.9, changeFreq: "weekly" as const },
+  { path: "/best/vpn-firestick", priority: 0.85, changeFreq: "weekly" as const },
+
   // Best VPN pages - Countries (priority 0.85)
   { path: "/best/vpn-china", priority: 0.85, changeFreq: "weekly" as const },
   { path: "/best/vpn-russia", priority: 0.85, changeFreq: "weekly" as const },
@@ -55,10 +63,16 @@ const staticPages = [
   { path: "/countries/iran", priority: 0.8, changeFreq: "weekly" as const },
   { path: "/countries/turkey", priority: 0.8, changeFreq: "weekly" as const },
   { path: "/countries/netherlands", priority: 0.8, changeFreq: "weekly" as const },
+  { path: "/countries/india", priority: 0.8, changeFreq: "weekly" as const },
+  { path: "/countries/pakistan", priority: 0.8, changeFreq: "weekly" as const },
+  { path: "/countries/egypt", priority: 0.8, changeFreq: "weekly" as const },
+  { path: "/countries/indonesia", priority: 0.8, changeFreq: "weekly" as const },
+  { path: "/countries/saudi-arabia", priority: 0.8, changeFreq: "weekly" as const },
+  { path: "/countries/vietnam", priority: 0.8, changeFreq: "weekly" as const },
 
   // Blog section (priority 0.8)
   { path: "/blog", priority: 0.8, changeFreq: "weekly" as const },
-  { path: "/blog/vpn-black-friday-2025", priority: 0.8, changeFreq: "weekly" as const },
+  { path: "/blog/vpn-black-friday-2026", priority: 0.8, changeFreq: "weekly" as const },
   { path: "/blog/is-vpn-legal", priority: 0.75, changeFreq: "monthly" as const },
   { path: "/blog/vpn-vs-proxy", priority: 0.75, changeFreq: "monthly" as const },
 
@@ -178,6 +192,34 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ['purevpn', 'atlasvpn'],
     ['privatevpn', 'torguard'],
   ];
+
+  // Add dynamic country pages for each locale
+  const dynamicCountries = getAllDynamicCountries();
+  dynamicCountries.forEach((country) => {
+    locales.forEach((locale) => {
+      const prefix = locale === "en" ? "" : `/${locale}`;
+      const path = `/countries/${country.slug}`;
+      const url = `${baseUrl}${prefix}${path}`;
+
+      const alternates: Record<string, string> = {
+        "x-default": `${baseUrl}${path}`
+      };
+      locales.forEach((l) => {
+        const altPrefix = l === "en" ? "" : `/${l}`;
+        alternates[l] = `${baseUrl}${altPrefix}${path}`;
+      });
+
+      routes.push({
+        url,
+        lastModified: currentDate,
+        changeFrequency: "monthly",
+        priority: 0.75,
+        alternates: {
+          languages: alternates,
+        },
+      });
+    });
+  });
 
   topComparisons.forEach(([slug1, slug2]) => {
     locales.forEach((locale) => {

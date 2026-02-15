@@ -64,24 +64,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 // Blog posts data
 const blogPosts = [
   {
-    slug: "vpn-black-friday-2025",
+    slug: "vpn-black-friday-2026",
     category: "deals",
     featured: true,
-    date: "2025-11-29",
+    date: "2026-11-29",
     readTime: "5 min",
   },
   {
     slug: "is-vpn-legal",
     category: "security",
     featured: false,
-    date: "2025-11-28",
+    date: "2026-11-28",
     readTime: "8 min",
   },
   {
     slug: "vpn-vs-proxy",
     category: "tips",
     featured: false,
-    date: "2025-11-27",
+    date: "2026-11-27",
     readTime: "6 min",
   },
 ];
@@ -349,8 +349,8 @@ export default async function BlogPage({ params }: Props) {
             <RelatedPages
               title="Explore More"
               pages={[
-                { title: "Best VPNs 2025", description: "Our top-rated VPN services", href: "/best/best-vpn", icon: "trophy" },
-                { title: "VPN Black Friday Deals", description: "Biggest discounts of the year", href: "/blog/vpn-black-friday-2025", icon: "tag" },
+                { title: "Best VPNs 2026", description: "Our top-rated VPN services", href: "/best/best-vpn", icon: "trophy" },
+                { title: "VPN Black Friday Deals", description: "Biggest discounts of the year", href: "/blog/vpn-black-friday-2026", icon: "tag" },
                 { title: "Is VPN Legal?", description: "VPN legality around the world", href: "/blog/is-vpn-legal", icon: "shield" },
                 { title: "VPN vs Proxy", description: "Differences and when to use each", href: "/blog/vpn-vs-proxy", icon: "zap" }
               ]}

@@ -251,7 +251,7 @@ export default async function ContactPage({ params }: Props) {
                         href="/best/best-vpn"
                         className="text-primary hover:underline"
                       >
-                        Best VPNs of 2025
+                        Best VPNs of 2026
                       </Link>{" "}
                       guide for personalized recommendations based on your needs.
                     </p>

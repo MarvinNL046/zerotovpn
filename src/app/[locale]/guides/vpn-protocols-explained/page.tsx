@@ -100,7 +100,7 @@ const baseUrl = "https://zerotovpn.com";
 export async function generateMetadata(): Promise<Metadata> {
   return {
     metadataBase: new URL(baseUrl),
-    title: "VPN Protocols Explained: WireGuard vs OpenVPN vs IKEv2 (2025) - ZeroToVPN",
+    title: "VPN Protocols Explained: WireGuard vs OpenVPN vs IKEv2 (2026) - ZeroToVPN",
     description:
       "Understand the differences between VPN protocols. Compare WireGuard, OpenVPN, IKEv2, and others to choose the best protocol for your needs.",
     robots: {
@@ -108,7 +108,7 @@ export async function generateMetadata(): Promise<Metadata> {
       follow: true,
     },
     openGraph: {
-      title: "VPN Protocols Explained: WireGuard vs OpenVPN vs IKEv2 (2025)",
+      title: "VPN Protocols Explained: WireGuard vs OpenVPN vs IKEv2 (2026)",
       description:
         "Understand the differences between VPN protocols and choose the best one for your needs.",
       type: "article",
@@ -134,11 +134,11 @@ export default async function VpnProtocolsExplainedPage({ params }: Props) {
   return (
     <>
       <ArticleJsonLd
-        title="VPN Protocols Explained: WireGuard vs OpenVPN vs IKEv2 (2025)"
+        title="VPN Protocols Explained: WireGuard vs OpenVPN vs IKEv2 (2026)"
         description="Understand the differences between VPN protocols. Compare WireGuard, OpenVPN, IKEv2, and others to choose the best protocol for your needs."
         url={pageUrl}
-        datePublished="2025-01-01"
-        dateModified="2025-11-28"
+        datePublished="2026-01-01"
+        dateModified="2026-11-28"
       />
       <BreadcrumbJsonLd
         items={[
@@ -610,7 +610,7 @@ export default async function VpnProtocolsExplainedPage({ params }: Props) {
                 { title: "How VPNs Work", description: "Understanding VPN encryption", href: "/guides/how-vpn-works", icon: "lock" },
                 { title: "VPN Speed Guide", description: "Protocol performance comparison", href: "/guides/vpn-speed-guide", icon: "zap" },
                 { title: "VPN on Mobile", description: "Protocol setup on iOS and Android", href: "/guides/vpn-on-mobile", icon: "smartphone" },
-                { title: "Best VPNs 2025", description: "VPNs with modern protocols", href: "/best/best-vpn", icon: "trophy" }
+                { title: "Best VPNs 2026", description: "VPNs with modern protocols", href: "/best/best-vpn", icon: "trophy" }
               ]}
             />
           </div>

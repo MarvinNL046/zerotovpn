@@ -70,27 +70,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   // Generate locale-specific descriptions
   const descriptions: Record<string, string> = {
-    en: `Complete ${vpn.name} review 2025. ${vpn.shortDescription} Speed score: ${vpn.speedScore}%, Security: ${vpn.securityScore}%. From $${vpn.priceTwoYear || vpn.priceYearly}/mo.`,
-    nl: `Volledige ${vpn.name} review 2025. ${vpn.shortDescription} Snelheid: ${vpn.speedScore}%, Beveiliging: ${vpn.securityScore}%. Vanaf $${vpn.priceTwoYear || vpn.priceYearly}/maand.`,
-    de: `Vollständiger ${vpn.name} Test 2025. ${vpn.shortDescription} Geschwindigkeit: ${vpn.speedScore}%, Sicherheit: ${vpn.securityScore}%. Ab $${vpn.priceTwoYear || vpn.priceYearly}/Monat.`,
-    es: `Reseña completa de ${vpn.name} 2025. ${vpn.shortDescription} Velocidad: ${vpn.speedScore}%, Seguridad: ${vpn.securityScore}%. Desde $${vpn.priceTwoYear || vpn.priceYearly}/mes.`,
-    fr: `Avis complet sur ${vpn.name} 2025. ${vpn.shortDescription} Vitesse: ${vpn.speedScore}%, Sécurité: ${vpn.securityScore}%. À partir de $${vpn.priceTwoYear || vpn.priceYearly}/mois.`,
-    zh: `${vpn.name} 2025完整评测。${vpn.shortDescription} 速度：${vpn.speedScore}%，安全性：${vpn.securityScore}%。每月$${vpn.priceTwoYear || vpn.priceYearly}起。`,
-    ja: `${vpn.name} 2025年完全レビュー。${vpn.shortDescription} 速度：${vpn.speedScore}%、セキュリティ：${vpn.securityScore}%。月額$${vpn.priceTwoYear || vpn.priceYearly}から。`,
-    ko: `${vpn.name} 2025 완전 리뷰. ${vpn.shortDescription} 속도: ${vpn.speedScore}%, 보안: ${vpn.securityScore}%. 월 $${vpn.priceTwoYear || vpn.priceYearly}부터.`,
-    th: `รีวิว ${vpn.name} 2025 ฉบับสมบูรณ์ ${vpn.shortDescription} ความเร็ว: ${vpn.speedScore}%, ความปลอดภัย: ${vpn.securityScore}% เริ่มต้น $${vpn.priceTwoYear || vpn.priceYearly}/เดือน`,
+    en: `Complete ${vpn.name} review 2026. ${vpn.shortDescription} Speed score: ${vpn.speedScore}%, Security: ${vpn.securityScore}%. From $${vpn.priceTwoYear || vpn.priceYearly}/mo.`,
+    nl: `Volledige ${vpn.name} review 2026. ${vpn.shortDescription} Snelheid: ${vpn.speedScore}%, Beveiliging: ${vpn.securityScore}%. Vanaf $${vpn.priceTwoYear || vpn.priceYearly}/maand.`,
+    de: `Vollständiger ${vpn.name} Test 2026. ${vpn.shortDescription} Geschwindigkeit: ${vpn.speedScore}%, Sicherheit: ${vpn.securityScore}%. Ab $${vpn.priceTwoYear || vpn.priceYearly}/Monat.`,
+    es: `Reseña completa de ${vpn.name} 2026. ${vpn.shortDescription} Velocidad: ${vpn.speedScore}%, Seguridad: ${vpn.securityScore}%. Desde $${vpn.priceTwoYear || vpn.priceYearly}/mes.`,
+    fr: `Avis complet sur ${vpn.name} 2026. ${vpn.shortDescription} Vitesse: ${vpn.speedScore}%, Sécurité: ${vpn.securityScore}%. À partir de $${vpn.priceTwoYear || vpn.priceYearly}/mois.`,
+    zh: `${vpn.name} 2026完整评测。${vpn.shortDescription} 速度：${vpn.speedScore}%，安全性：${vpn.securityScore}%。每月$${vpn.priceTwoYear || vpn.priceYearly}起。`,
+    ja: `${vpn.name} 2026年完全レビュー。${vpn.shortDescription} 速度：${vpn.speedScore}%、セキュリティ：${vpn.securityScore}%。月額$${vpn.priceTwoYear || vpn.priceYearly}から。`,
+    ko: `${vpn.name} 2026 완전 리뷰. ${vpn.shortDescription} 속도: ${vpn.speedScore}%, 보안: ${vpn.securityScore}%. 월 $${vpn.priceTwoYear || vpn.priceYearly}부터.`,
+    th: `รีวิว ${vpn.name} 2026 ฉบับสมบูรณ์ ${vpn.shortDescription} ความเร็ว: ${vpn.speedScore}%, ความปลอดภัย: ${vpn.securityScore}% เริ่มต้น $${vpn.priceTwoYear || vpn.priceYearly}/เดือน`,
   };
 
   const titles: Record<string, string> = {
-    en: `${vpn.name} Review 2025 - Honest Test & Rating`,
-    nl: `${vpn.name} Review 2025 - Eerlijke Test & Beoordeling`,
-    de: `${vpn.name} Test 2025 - Ehrlicher Test & Bewertung`,
-    es: `${vpn.name} Reseña 2025 - Prueba Honesta y Calificación`,
-    fr: `${vpn.name} Avis 2025 - Test Honnête et Note`,
-    zh: `${vpn.name} 评测 2025 - 诚实测试与评分`,
-    ja: `${vpn.name} レビュー 2025 - 正直なテストと評価`,
-    ko: `${vpn.name} 리뷰 2025 - 정직한 테스트 및 평가`,
-    th: `รีวิว ${vpn.name} 2025 - ทดสอบและให้คะแนนอย่างตรงไปตรงมา`,
+    en: `${vpn.name} Review 2026 - Honest Test & Rating`,
+    nl: `${vpn.name} Review 2026 - Eerlijke Test & Beoordeling`,
+    de: `${vpn.name} Test 2026 - Ehrlicher Test & Bewertung`,
+    es: `${vpn.name} Reseña 2026 - Prueba Honesta y Calificación`,
+    fr: `${vpn.name} Avis 2026 - Test Honnête et Note`,
+    zh: `${vpn.name} 评测 2026 - 诚实测试与评分`,
+    ja: `${vpn.name} レビュー 2026 - 正直なテストと評価`,
+    ko: `${vpn.name} 리뷰 2026 - 정직한 테스트 및 평가`,
+    th: `รีวิว ${vpn.name} 2026 - ทดสอบและให้คะแนนอย่างตรงไปตรงมา`,
   };
 
   return {
@@ -101,7 +101,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       vpn.name,
       `${vpn.name} review`,
       `${vpn.name} test`,
-      `${vpn.name} 2025`,
+      `${vpn.name} 2026`,
       "VPN review",
       "VPN test",
       "best VPN",

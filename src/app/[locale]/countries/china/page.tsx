@@ -35,27 +35,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
   const titles: Record<string, string> = {
-    en: "Best VPN for China 2025: Bypass the Great Firewall | ZeroToVPN",
-    nl: "Beste VPN voor China 2025: Omzeil de Chinese Firewall | ZeroToVPN",
-    de: "Beste VPN für China 2025: Die Große Firewall umgehen | ZeroToVPN",
-    es: "Mejor VPN para China 2025: Evita el Gran Cortafuegos | ZeroToVPN",
-    fr: "Meilleur VPN pour la Chine 2025: Contourner le Grand Pare-feu | ZeroToVPN",
-    zh: "2025年中国最佳VPN：突破防火长城 | ZeroToVPN",
-    ja: "2025年中国向けベストVPN：グレートファイアウォールを突破 | ZeroToVPN",
-    ko: "2025년 중국 최고의 VPN: 만리방화벽 우회 | ZeroToVPN",
-    th: "VPN ที่ดีที่สุดสำหรับจีน 2025: ข้ามกำแพงไฟจีน | ZeroToVPN",
+    en: "Best VPN for China 2026: Bypass the Great Firewall | ZeroToVPN",
+    nl: "Beste VPN voor China 2026: Omzeil de Chinese Firewall | ZeroToVPN",
+    de: "Beste VPN für China 2026: Die Große Firewall umgehen | ZeroToVPN",
+    es: "Mejor VPN para China 2026: Evita el Gran Cortafuegos | ZeroToVPN",
+    fr: "Meilleur VPN pour la Chine 2026: Contourner le Grand Pare-feu | ZeroToVPN",
+    zh: "2026年中国最佳VPN：突破防火长城 | ZeroToVPN",
+    ja: "2026年中国向けベストVPN：グレートファイアウォールを突破 | ZeroToVPN",
+    ko: "2026년 중국 최고의 VPN: 만리방화벽 우회 | ZeroToVPN",
+    th: "VPN ที่ดีที่สุดสำหรับจีน 2026: ข้ามกำแพงไฟจีน | ZeroToVPN",
   };
 
   const descriptions: Record<string, string> = {
-    en: "Find VPNs that actually work in China in 2025. Expert-tested solutions to bypass the Great Firewall. Download before you travel!",
-    nl: "Vind VPNs die echt werken in China in 2025. Expert-geteste oplossingen om de Chinese Firewall te omzeilen.",
-    de: "Finden Sie VPNs, die 2025 tatsächlich in China funktionieren. Expertentestete Lösungen zur Umgehung der Großen Firewall.",
-    es: "Encuentra VPNs que realmente funcionan en China en 2025. Soluciones probadas por expertos para evitar el Gran Cortafuegos.",
-    fr: "Trouvez des VPN qui fonctionnent vraiment en Chine en 2025. Solutions testées par des experts pour contourner le Grand Pare-feu.",
-    zh: "发现2025年真正在中国有效的VPN。经专家测试的突破防火长城解决方案。旅行前下载！",
-    ja: "2025年に中国で実際に機能するVPNを見つけましょう。グレートファイアウォールを突破する専門家テスト済みソリューション。",
-    ko: "2025년 중국에서 실제로 작동하는 VPN을 찾아보세요. 만리방화벽을 우회하는 전문가 테스트 솔루션.",
-    th: "ค้นหา VPN ที่ใช้งานได้จริงในจีนปี 2025 โซลูชันที่ผ่านการทดสอบจากผู้เชี่ยวชาญเพื่อข้ามกำแพงไฟจีน",
+    en: "Find VPNs that actually work in China in 2026. Expert-tested solutions to bypass the Great Firewall. Download before you travel!",
+    nl: "Vind VPNs die echt werken in China in 2026. Expert-geteste oplossingen om de Chinese Firewall te omzeilen.",
+    de: "Finden Sie VPNs, die 2026 tatsächlich in China funktionieren. Expertentestete Lösungen zur Umgehung der Großen Firewall.",
+    es: "Encuentra VPNs que realmente funcionan en China en 2026. Soluciones probadas por expertos para evitar el Gran Cortafuegos.",
+    fr: "Trouvez des VPN qui fonctionnent vraiment en Chine en 2026. Solutions testées par des experts pour contourner le Grand Pare-feu.",
+    zh: "发现2026年真正在中国有效的VPN。经专家测试的突破防火长城解决方案。旅行前下载！",
+    ja: "2026年に中国で実際に機能するVPNを見つけましょう。グレートファイアウォールを突破する専門家テスト済みソリューション。",
+    ko: "2026년 중국에서 실제로 작동하는 VPN을 찾아보세요. 만리방화벽을 우회하는 전문가 테스트 솔루션.",
+    th: "ค้นหา VPN ที่ใช้งานได้จริงในจีนปี 2026 โซลูชันที่ผ่านการทดสอบจากผู้เชี่ยวชาญเพื่อข้ามกำแพงไฟจีน",
   };
 
   return {
@@ -75,13 +75,13 @@ function CountryVpnSchema({ vpns, locale }: { vpns: VpnProvider[]; locale: strin
   const schema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "Best VPN for China 2025",
+    headline: "Best VPN for China 2026",
     description: "Expert guide to VPNs that work in China, bypassing the Great Firewall",
     author: {
       "@type": "Organization",
       name: "ZeroToVPN",
     },
-    dateModified: "2025-11-30",
+    dateModified: "2026-11-30",
     mainEntity: {
       "@type": "ItemList",
       name: "VPNs That Work in China",
@@ -127,9 +127,9 @@ export default async function ChinaVpnPage({ params }: Props) {
 
   const content = {
     en: {
-      badge: "Updated November 2025",
+      badge: "Updated November 2026",
       title: "Best VPN for China",
-      subtitle: "Bypass the Great Firewall with VPNs that actually work in 2025",
+      subtitle: "Bypass the Great Firewall with VPNs that actually work in 2026",
       criticalWarning: "Download Before You Arrive",
       criticalWarningText:
         "VPN websites and app stores are blocked in China. You MUST download and set up your VPN before entering the country.",
@@ -138,7 +138,7 @@ export default async function ChinaVpnPage({ params }: Props) {
         "VPNs are legal for foreigners to use in China, though technically regulated. There are no recorded cases of foreigners being penalized for personal VPN use. Chinese nationals face stricter enforcement.",
 
       // Top 3 that work
-      topVpns: "Top 3 VPNs That Work in China (2025)",
+      topVpns: "Top 3 VPNs That Work in China (2026)",
       topVpnsText:
         "Based on extensive testing by expats and travelers, these VPNs consistently bypass the Great Firewall with advanced obfuscation technology.",
       vpnDetails: {
@@ -248,13 +248,13 @@ export default async function ChinaVpnPage({ params }: Props) {
       stealth: "Stealth",
       sometimes: "Sometimes",
       blocked: "Blocked",
-      lastUpdated: "Last updated: November 2025",
+      lastUpdated: "Last updated: November 2026",
       sources: "Sources",
     },
     nl: {
-      badge: "Bijgewerkt november 2025",
+      badge: "Bijgewerkt november 2026",
       title: "Beste VPN voor China",
-      subtitle: "Omzeil de Grote Firewall met VPNs die echt werken in 2025",
+      subtitle: "Omzeil de Grote Firewall met VPNs die echt werken in 2026",
       criticalWarning: "Download Voordat Je Vertrekt",
       criticalWarningText:
         "VPN-websites en app stores zijn geblokkeerd in China. Je MOET je VPN downloaden en instellen voordat je het land binnenkomt.",
@@ -262,7 +262,7 @@ export default async function ChinaVpnPage({ params }: Props) {
       legalStatusText:
         "VPNs zijn legaal voor buitenlanders in China, hoewel technisch gereguleerd. Er zijn geen gevallen bekend van buitenlanders die gestraft zijn voor persoonlijk VPN-gebruik.",
 
-      topVpns: "Top 3 VPNs Die Werken in China (2025)",
+      topVpns: "Top 3 VPNs Die Werken in China (2026)",
       topVpnsText:
         "Op basis van uitgebreide tests door expats en reizigers omzeilen deze VPNs consequent de Grote Firewall met geavanceerde obfuscatie-technologie.",
       vpnDetails: {
@@ -369,13 +369,13 @@ export default async function ChinaVpnPage({ params }: Props) {
       stealth: "Stealth",
       sometimes: "Soms",
       blocked: "Geblokkeerd",
-      lastUpdated: "Laatst bijgewerkt: november 2025",
+      lastUpdated: "Laatst bijgewerkt: november 2026",
       sources: "Bronnen",
     },
     de: {
-      badge: "Aktualisiert November 2025",
+      badge: "Aktualisiert November 2026",
       title: "Beste VPN für China",
-      subtitle: "Umgehen Sie die Große Firewall mit VPNs, die 2025 wirklich funktionieren",
+      subtitle: "Umgehen Sie die Große Firewall mit VPNs, die 2026 wirklich funktionieren",
       criticalWarning: "Vor der Ankunft herunterladen",
       criticalWarningText:
         "VPN-Websites und App-Stores sind in China blockiert. Sie MÜSSEN Ihr VPN herunterladen und einrichten, BEVOR Sie in das Land einreisen.",
@@ -383,7 +383,7 @@ export default async function ChinaVpnPage({ params }: Props) {
       legalStatusText:
         "VPNs sind für Ausländer in China legal, obwohl technisch reguliert. Es gibt keine dokumentierten Fälle von Ausländern, die für die persönliche VPN-Nutzung bestraft wurden.",
 
-      topVpns: "Top 3 VPNs, die in China funktionieren (2025)",
+      topVpns: "Top 3 VPNs, die in China funktionieren (2026)",
       topVpnsText:
         "Basierend auf umfangreichen Tests von Expats und Reisenden umgehen diese VPNs konsequent die Große Firewall mit fortschrittlicher Verschleierungstechnologie.",
       vpnDetails: {
@@ -490,13 +490,13 @@ export default async function ChinaVpnPage({ params }: Props) {
       stealth: "Stealth",
       sometimes: "Manchmal",
       blocked: "Blockiert",
-      lastUpdated: "Zuletzt aktualisiert: November 2025",
+      lastUpdated: "Zuletzt aktualisiert: November 2026",
       sources: "Quellen",
     },
     es: {
-      badge: "Actualizado noviembre 2025",
+      badge: "Actualizado noviembre 2026",
       title: "Mejor VPN para China",
-      subtitle: "Evita el Gran Cortafuegos con VPNs que realmente funcionan en 2025",
+      subtitle: "Evita el Gran Cortafuegos con VPNs que realmente funcionan en 2026",
       criticalWarning: "Descarga antes de llegar",
       criticalWarningText:
         "Los sitios web de VPN y las tiendas de aplicaciones están bloqueados en China. DEBES descargar y configurar tu VPN ANTES de entrar al país.",
@@ -504,7 +504,7 @@ export default async function ChinaVpnPage({ params }: Props) {
       legalStatusText:
         "Las VPN son legales para extranjeros en China, aunque técnicamente reguladas. No hay casos registrados de extranjeros penalizados por uso personal de VPN.",
 
-      topVpns: "Top 3 VPNs que funcionan en China (2025)",
+      topVpns: "Top 3 VPNs que funcionan en China (2026)",
       topVpnsText:
         "Basado en pruebas exhaustivas de expatriados y viajeros, estas VPNs evitan consistentemente el Gran Cortafuegos con tecnología de ofuscación avanzada.",
       vpnDetails: {
@@ -611,13 +611,13 @@ export default async function ChinaVpnPage({ params }: Props) {
       stealth: "Sigiloso",
       sometimes: "A veces",
       blocked: "Bloqueado",
-      lastUpdated: "Última actualización: noviembre 2025",
+      lastUpdated: "Última actualización: noviembre 2026",
       sources: "Fuentes",
     },
     fr: {
-      badge: "Mis à jour novembre 2025",
+      badge: "Mis à jour novembre 2026",
       title: "Meilleur VPN pour la Chine",
-      subtitle: "Contournez le Grand Pare-feu avec des VPN qui fonctionnent vraiment en 2025",
+      subtitle: "Contournez le Grand Pare-feu avec des VPN qui fonctionnent vraiment en 2026",
       criticalWarning: "Téléchargez avant d'arriver",
       criticalWarningText:
         "Les sites Web VPN et les magasins d'applications sont bloqués en Chine. Vous DEVEZ télécharger et configurer votre VPN AVANT d'entrer dans le pays.",
@@ -625,7 +625,7 @@ export default async function ChinaVpnPage({ params }: Props) {
       legalStatusText:
         "Les VPN sont légaux pour les étrangers en Chine, bien que techniquement réglementés. Il n'y a aucun cas enregistré d'étrangers pénalisés pour l'utilisation personnelle de VPN.",
 
-      topVpns: "Top 3 VPN qui fonctionnent en Chine (2025)",
+      topVpns: "Top 3 VPN qui fonctionnent en Chine (2026)",
       topVpnsText:
         "Basé sur des tests approfondis par des expatriés et des voyageurs, ces VPN contournent systématiquement le Grand Pare-feu avec une technologie d'obscurcissement avancée.",
       vpnDetails: {
@@ -732,13 +732,13 @@ export default async function ChinaVpnPage({ params }: Props) {
       stealth: "Furtif",
       sometimes: "Parfois",
       blocked: "Bloqué",
-      lastUpdated: "Dernière mise à jour : novembre 2025",
+      lastUpdated: "Dernière mise à jour : novembre 2026",
       sources: "Sources",
     },
     zh: {
-      badge: "2025年11月更新",
+      badge: "2026年11月更新",
       title: "中国最佳VPN",
-      subtitle: "使用2025年真正有效的VPN突破防火长城",
+      subtitle: "使用2026年真正有效的VPN突破防火长城",
       criticalWarning: "抵达前下载",
       criticalWarningText:
         "VPN网站和应用商店在中国被封锁。您必须在进入中国之前下载并设置您的VPN。",
@@ -746,7 +746,7 @@ export default async function ChinaVpnPage({ params }: Props) {
       legalStatusText:
         "VPN对外国人来说在中国是合法的，尽管在技术上受到监管。没有外国人因个人使用VPN而受到处罚的记录案例。",
 
-      topVpns: "在中国有效的前3名VPN（2025年）",
+      topVpns: "在中国有效的前3名VPN（2026年）",
       topVpnsText:
         "基于外籍人士和旅行者的广泛测试，这些VPN通过先进的混淆技术持续突破防火长城。",
       vpnDetails: {
@@ -853,13 +853,13 @@ export default async function ChinaVpnPage({ params }: Props) {
       stealth: "隐形",
       sometimes: "有时",
       blocked: "被封锁",
-      lastUpdated: "最后更新：2025年11月",
+      lastUpdated: "最后更新：2026年11月",
       sources: "来源",
     },
     ja: {
-      badge: "2025年11月更新",
+      badge: "2026年11月更新",
       title: "中国向けベストVPN",
-      subtitle: "2025年に実際に機能するVPNでグレートファイアウォールを突破",
+      subtitle: "2026年に実際に機能するVPNでグレートファイアウォールを突破",
       criticalWarning: "到着前にダウンロード",
       criticalWarningText:
         "VPNウェブサイトとアプリストアは中国でブロックされています。入国前にVPNをダウンロードして設定する必要があります。",
@@ -867,7 +867,7 @@ export default async function ChinaVpnPage({ params }: Props) {
       legalStatusText:
         "VPNは技術的には規制されていますが、外国人が中国で使用することは合法です。個人的なVPN使用で罰せられた外国人の記録はありません。",
 
-      topVpns: "中国で機能するトップ3 VPN（2025年）",
+      topVpns: "中国で機能するトップ3 VPN（2026年）",
       topVpnsText:
         "駐在員や旅行者による広範なテストに基づき、これらのVPNは高度な難読化技術でグレートファイアウォールを一貫して突破します。",
       vpnDetails: {
@@ -974,13 +974,13 @@ export default async function ChinaVpnPage({ params }: Props) {
       stealth: "ステルス",
       sometimes: "時々",
       blocked: "ブロック",
-      lastUpdated: "最終更新：2025年11月",
+      lastUpdated: "最終更新：2026年11月",
       sources: "情報源",
     },
     ko: {
-      badge: "2025년 11월 업데이트",
+      badge: "2026년 11월 업데이트",
       title: "중국 최고의 VPN",
-      subtitle: "2025년에 실제로 작동하는 VPN으로 만리방화벽 우회",
+      subtitle: "2026년에 실제로 작동하는 VPN으로 만리방화벽 우회",
       criticalWarning: "도착 전 다운로드",
       criticalWarningText:
         "VPN 웹사이트와 앱 스토어는 중국에서 차단됩니다. 입국 전에 VPN을 다운로드하고 설정해야 합니다.",
@@ -988,7 +988,7 @@ export default async function ChinaVpnPage({ params }: Props) {
       legalStatusText:
         "VPN은 기술적으로 규제되지만 외국인이 중국에서 사용하는 것은 합법입니다. 개인적인 VPN 사용으로 처벌받은 외국인의 기록된 사례는 없습니다.",
 
-      topVpns: "중국에서 작동하는 상위 3개 VPN (2025년)",
+      topVpns: "중국에서 작동하는 상위 3개 VPN (2026년)",
       topVpnsText:
         "주재원과 여행자의 광범위한 테스트를 기반으로 이러한 VPN은 고급 난독화 기술로 만리방화벽을 지속적으로 우회합니다.",
       vpnDetails: {
@@ -1095,13 +1095,13 @@ export default async function ChinaVpnPage({ params }: Props) {
       stealth: "스텔스",
       sometimes: "때때로",
       blocked: "차단됨",
-      lastUpdated: "마지막 업데이트: 2025년 11월",
+      lastUpdated: "마지막 업데이트: 2026년 11월",
       sources: "출처",
     },
     th: {
-      badge: "อัปเดตพฤศจิกายน 2025",
+      badge: "อัปเดตพฤศจิกายน 2026",
       title: "VPN ที่ดีที่สุดสำหรับจีน",
-      subtitle: "ข้ามกำแพงไฟจีนด้วย VPN ที่ใช้งานได้จริงในปี 2025",
+      subtitle: "ข้ามกำแพงไฟจีนด้วย VPN ที่ใช้งานได้จริงในปี 2026",
       criticalWarning: "ดาวน์โหลดก่อนเดินทางมา",
       criticalWarningText:
         "เว็บไซต์ VPN และแอปสโตร์ถูกบลอกในจีน คุณต้องดาวน์โหลดและตั้งค่า VPN ก่อนเข้าประเทศ",
@@ -1109,7 +1109,7 @@ export default async function ChinaVpnPage({ params }: Props) {
       legalStatusText:
         "VPN ถูกกฎหมายสำหรับชาวต่างชาติในจีน แม้ว่าจะมีการควบคุมทางเทคนิค ไม่มีบันทึกกรณีของชาวต่างชาติที่ถูกลงโทษจากการใช้ VPN ส่วนตัว",
 
-      topVpns: "VPN อันดับต้น 3 ที่ใช้งานได้ในจีน (2025)",
+      topVpns: "VPN อันดับต้น 3 ที่ใช้งานได้ในจีน (2026)",
       topVpnsText:
         "จากการทดสอบอย่างละเอียดโดยชาวต่างชาติและนักท่องเที่ยว VPN เหล่านี้สามารถข้ามกำแพงไฟจีนได้อย่างสม่ำเสมอด้วยเทคโนโลยีการปิดบังขั้นสูง",
       vpnDetails: {
@@ -1216,7 +1216,7 @@ export default async function ChinaVpnPage({ params }: Props) {
       stealth: "ซ่อนตัว",
       sometimes: "บางครั้ง",
       blocked: "ถูกบลอก",
-      lastUpdated: "อัปเดตล่าสุด: พฤศจิกายน 2025",
+      lastUpdated: "อัปเดตล่าสุด: พฤศจิกายน 2026",
       sources: "แหล่งที่มา",
     },
   };

@@ -681,6 +681,19 @@ const handler: Handler = async (event) => {
       console.log("[bg-generate] English post published");
     }
 
+    // Mark job as completed BEFORE translations (so GitHub Actions doesn't time out)
+    if (jobId) {
+      await db
+        .update(contentQueue)
+        .set({
+          status: "completed",
+          output: JSON.stringify({ postId: post.id, slug: finalSlug, title: post.title, published: publish }),
+          processedAt: new Date(),
+        })
+        .where(eq(contentQueue.id, jobId));
+      console.log("[bg-generate] Job marked completed, starting translations...");
+    }
+
     // Get the final English content (with images) for translations
     const finalContent = updatedContent !== parsed.content ? updatedContent : parsed.content;
 
@@ -787,20 +800,7 @@ ${finalContent.slice(0, 14000)}`;
       }
     }
 
-    console.log("[bg-generate] All translations done");
-
-    // Update job
-    if (jobId) {
-      await db
-        .update(contentQueue)
-        .set({
-          status: "completed",
-          output: JSON.stringify({ postId: post.id, slug: post.slug, title: post.title, published: publish }),
-          processedAt: new Date(),
-        })
-        .where(eq(contentQueue.id, jobId));
-    }
-
+    console.log("[bg-generate] All translations done!");
     console.log("[bg-generate] Done!");
     return { statusCode: 200, body: JSON.stringify({ postId: post.id, title: post.title }) };
   } catch (error) {

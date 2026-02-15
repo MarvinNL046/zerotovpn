@@ -19,6 +19,18 @@ type Props = {
 
 const baseUrl = "https://zerotovpn.com";
 
+function formatDate(date: Date, locale: string): string {
+  const months: Record<string, string[]> = {
+    en: ["January","February","March","April","May","June","July","August","September","October","November","December"],
+    nl: ["januari","februari","maart","april","mei","juni","juli","augustus","september","oktober","november","december"],
+    de: ["Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"],
+    es: ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],
+    fr: ["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],
+  };
+  const m = months[locale] || months.en;
+  return `${m[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
   const post = await getPostBySlug(slug, locale);
@@ -53,11 +65,7 @@ export default async function DynamicBlogPost({ params }: Props) {
   }
 
   const readTime = `${Math.max(1, Math.ceil(post.content.length / 1500))} min`;
-  const lastUpdated = post.updatedAt.toLocaleDateString(locale, {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
+  const lastUpdated = formatDate(post.updatedAt, locale);
 
   return (
     <div className="flex flex-col">
@@ -87,11 +95,7 @@ export default async function DynamicBlogPost({ params }: Props) {
             {post.publishedAt && (
               <span className="text-sm text-muted-foreground flex items-center gap-1">
                 <Calendar className="h-4 w-4" />
-                {post.publishedAt.toLocaleDateString(locale, {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
+                {formatDate(post.publishedAt, locale)}
               </span>
             )}
             <span className="text-sm text-muted-foreground flex items-center gap-1">
@@ -134,36 +138,9 @@ export default async function DynamicBlogPost({ params }: Props) {
 
         {/* Article Content */}
         <div
-          className="blog-content prose prose-lg dark:prose-invert max-w-none
-            prose-headings:font-bold prose-headings:tracking-tight
-            prose-h1:hidden
-            prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4 prose-h2:border-b prose-h2:pb-2 prose-h2:border-border
-            prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
-            prose-a:text-primary prose-a:no-underline hover:prose-a:underline
-            prose-img:rounded-xl prose-img:shadow-lg prose-img:mx-auto
-            prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:bg-primary/5 prose-blockquote:py-4 prose-blockquote:px-6 prose-blockquote:rounded-r-lg prose-blockquote:not-italic prose-blockquote:my-8
-            prose-table:border prose-table:border-border prose-table:rounded-lg prose-table:overflow-hidden
-            prose-thead:bg-primary/10 prose-th:p-3 prose-th:text-left prose-th:font-semibold prose-th:border-b prose-th:border-border
-            prose-td:p-3 prose-td:border-b prose-td:border-border/50
-            prose-tr:hover:bg-muted/30 prose-tr:transition-colors
-            prose-li:marker:text-primary prose-li:my-1
-            prose-ul:my-4 prose-ol:my-4
-            prose-strong:text-foreground
-            prose-p:leading-relaxed prose-p:my-4
-            prose-hr:my-10 prose-hr:border-border"
+          className="blog-content max-w-none"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
-        <style dangerouslySetInnerHTML={{ __html: `
-          .blog-content table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; border-radius: 0.5rem; overflow: hidden; }
-          .blog-content table thead { background: hsl(var(--primary) / 0.08); }
-          .blog-content table th { font-weight: 600; text-align: left; }
-          .blog-content table td, .blog-content table th { padding: 0.75rem 1rem; border-bottom: 1px solid hsl(var(--border)); }
-          .blog-content table tr:last-child td { border-bottom: none; }
-          .blog-content table tr:hover { background: hsl(var(--muted) / 0.4); }
-          .blog-content blockquote { font-style: normal; }
-          .blog-content blockquote p:first-child { margin-top: 0; }
-          .blog-content blockquote p:last-child { margin-bottom: 0; }
-        ` }} />
 
         {/* E-E-A-T: Sources & References */}
         <SourcesSection content={post.content} />

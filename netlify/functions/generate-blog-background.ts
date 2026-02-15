@@ -364,6 +364,112 @@ function slugify(text: string): string {
   return text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 80);
 }
 
+// --- Gemini Image Generation ---
+
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+const GEMINI_IMAGE_URL =
+  "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image:generateContent";
+
+async function generateGeminiImage(prompt: string): Promise<{ base64: string; mimeType: string } | null> {
+  if (!GEMINI_API_KEY) {
+    console.warn("[bg-generate] GEMINI_API_KEY not set, skipping image generation");
+    return null;
+  }
+
+  const response = await fetch(`${GEMINI_IMAGE_URL}?key=${GEMINI_API_KEY}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      contents: [{ parts: [{ text: prompt }] }],
+      generationConfig: { responseModalities: ["IMAGE"] },
+    }),
+  });
+
+  if (!response.ok) {
+    const errBody = await response.text();
+    console.error(`[bg-generate] Gemini API error ${response.status}: ${errBody.slice(0, 300)}`);
+    return null;
+  }
+
+  const data = await response.json();
+  const parts = data.candidates?.[0]?.content?.parts;
+  if (!parts) return null;
+
+  // Gemini API may use either inline_data (snake_case) or inlineData (camelCase)
+  const imagePart = parts.find(
+    (p: { inline_data?: { mime_type: string; data: string }; inlineData?: { mimeType: string; data: string } }) =>
+      p.inline_data || p.inlineData
+  );
+
+  if (imagePart?.inlineData) {
+    return { base64: imagePart.inlineData.data, mimeType: imagePart.inlineData.mimeType || "image/png" };
+  }
+  if (imagePart?.inline_data) {
+    return { base64: imagePart.inline_data.data, mimeType: imagePart.inline_data.mime_type || "image/png" };
+  }
+  return null;
+}
+
+async function generateFeaturedImage(title: string, category: string): Promise<string | null> {
+  const styleMap: Record<string, string> = {
+    news: "modern tech news illustration, digital, clean lines, blue tones",
+    guide: "informative infographic style, step-by-step visual, friendly colors",
+    comparison: "side-by-side comparison chart visual, clean data visualization",
+    deal: "exciting promotional banner, bold colors, discount theme, savings",
+  };
+  const style = styleMap[category] || styleMap.guide;
+
+  const prompt = `Create a professional blog header image for an article titled "${title}".
+Style: ${style}.
+The image should be landscape format (16:9), modern, and suitable for a VPN comparison website called ZeroToVPN.
+Do NOT include any text in the image. Use abstract tech visuals, shields, locks, or network imagery.`;
+
+  const image = await generateGeminiImage(prompt);
+  if (!image) return null;
+  return `data:${image.mimeType};base64,${image.base64}`;
+}
+
+async function replaceInfographicPlaceholders(content: string, title: string): Promise<string> {
+  const placeholders = [
+    { src: "INFOGRAPHIC_1", index: 1 },
+    { src: "INFOGRAPHIC_2", index: 2 },
+  ];
+
+  let updatedContent = content;
+
+  for (const { src, index } of placeholders) {
+    if (!updatedContent.includes(`src="${src}"`)) continue;
+
+    // Extract alt text for the prompt
+    const altMatch = updatedContent.match(new RegExp(`src="${src}"\\s+alt="([^"]*)"`));
+    const altText = altMatch?.[1] || `Infographic for ${title} - part ${index}`;
+
+    const prompt = `Create a clean, professional infographic for a VPN blog article.
+The infographic should visualize: ${altText}
+Style: modern flat design, clean data visualization, professional color palette (blues, greens, white).
+Use icons, charts, or diagrams. Landscape format (16:9).
+Do NOT include any readable text — use abstract shapes, icons, and visual metaphors only.`;
+
+    console.log(`[bg-generate] Generating infographic ${index}...`);
+    const image = await generateGeminiImage(prompt);
+
+    if (image) {
+      const dataUrl = `data:${image.mimeType};base64,${image.base64}`;
+      updatedContent = updatedContent.replace(`src="${src}"`, `src="${dataUrl}"`);
+      console.log(`[bg-generate] Infographic ${index} done`);
+    } else {
+      // Remove broken placeholder
+      updatedContent = updatedContent.replace(
+        new RegExp(`<img\\s+src="${src}"[^>]*/>`, "g"),
+        ""
+      );
+      console.warn(`[bg-generate] Infographic ${index} failed, removed placeholder`);
+    }
+  }
+
+  return updatedContent;
+}
+
 // --- Handler (v1 format for background function support) ---
 
 const handler: Handler = async (event) => {
@@ -418,7 +524,7 @@ const handler: Handler = async (event) => {
 
     const parsed = parsePost(rawResponse, postType);
 
-    // Save to DB
+    // Save text-only post to DB first (so we have a record even if image gen fails)
     const [post] = await db
       .insert(blogPosts)
       .values({
@@ -440,6 +546,39 @@ const handler: Handler = async (event) => {
       .returning();
 
     console.log(`[bg-generate] Post saved: ${post.id} "${post.title}"`);
+
+    // Generate images via Gemini (featured + infographics)
+    let featuredImage: string | null = null;
+    let updatedContent = parsed.content;
+
+    try {
+      console.log("[bg-generate] Generating featured image...");
+      featuredImage = await generateFeaturedImage(parsed.title, parsed.category);
+      if (featuredImage) {
+        console.log("[bg-generate] Featured image done");
+      }
+    } catch (imgErr) {
+      console.warn("[bg-generate] Featured image failed:", imgErr);
+    }
+
+    try {
+      updatedContent = await replaceInfographicPlaceholders(parsed.content, parsed.title);
+    } catch (imgErr) {
+      console.warn("[bg-generate] Infographic replacement failed:", imgErr);
+    }
+
+    // Update post with images if any were generated
+    if (featuredImage || updatedContent !== parsed.content) {
+      await db
+        .update(blogPosts)
+        .set({
+          ...(featuredImage ? { featuredImage } : {}),
+          ...(updatedContent !== parsed.content ? { content: updatedContent } : {}),
+          updatedAt: new Date(),
+        })
+        .where(eq(blogPosts.id, post.id));
+      console.log("[bg-generate] Post updated with images");
+    }
 
     // Publish if requested
     if (publish) {

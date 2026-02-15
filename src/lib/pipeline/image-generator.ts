@@ -24,7 +24,7 @@ export async function generateImage(prompt: string): Promise<GeneratedImage> {
         },
       ],
       generationConfig: {
-        responseModalities: ["TEXT", "IMAGE"],
+        responseModalities: ["IMAGE"],
       },
     }),
   });
@@ -41,19 +41,20 @@ export async function generateImage(prompt: string): Promise<GeneratedImage> {
     throw new Error("No content in Gemini response");
   }
 
+  // Gemini API may use either inline_data (snake_case) or inlineData (camelCase)
   const imagePart = parts.find(
-    (p: { inline_data?: { mime_type: string; data: string } }) => p.inline_data
+    (p: { inline_data?: { mime_type: string; data: string }; inlineData?: { mimeType: string; data: string } }) =>
+      p.inline_data || p.inlineData
   );
 
-  if (!imagePart?.inline_data) {
-    throw new Error("No image generated in Gemini response");
+  if (imagePart?.inlineData) {
+    return { base64: imagePart.inlineData.data, mimeType: imagePart.inlineData.mimeType || "image/png", prompt };
+  }
+  if (imagePart?.inline_data) {
+    return { base64: imagePart.inline_data.data, mimeType: imagePart.inline_data.mime_type || "image/png", prompt };
   }
 
-  return {
-    base64: imagePart.inline_data.data,
-    mimeType: imagePart.inline_data.mime_type || "image/png",
-    prompt,
-  };
+  throw new Error("No image generated in Gemini response");
 }
 
 // Generate a blog post featured image

@@ -419,10 +419,11 @@ async function generateFeaturedImage(title: string, category: string): Promise<s
   };
   const style = styleMap[category] || styleMap.guide;
 
-  const prompt = `Create a professional blog header image for an article titled "${title}".
+  const prompt = `Create a professional blog header image for an article about: "${title}".
 Style: ${style}.
-The image should be landscape format (16:9), modern, and suitable for a VPN comparison website called ZeroToVPN.
-Do NOT include any text in the image. Use abstract tech visuals, shields, locks, or network imagery.`;
+The image should be landscape format (16:9), modern, and suitable for a VPN technology website.
+CRITICAL RULE: The image must contain ZERO text, ZERO letters, ZERO numbers, ZERO words, ZERO labels, ZERO watermarks. No characters of any language or alphabet whatsoever.
+Use only abstract tech visuals: shields, locks, network nodes, glowing circuits, digital waves, gradient backgrounds.`;
 
   const image = await generateGeminiImage(prompt);
   if (!image) return null;
@@ -444,11 +445,11 @@ async function replaceInfographicPlaceholders(content: string, title: string): P
     const altMatch = updatedContent.match(new RegExp(`src="${src}"\\s+alt="([^"]*)"`));
     const altText = altMatch?.[1] || `Infographic for ${title} - part ${index}`;
 
-    const prompt = `Create a clean, professional infographic for a VPN blog article.
-The infographic should visualize: ${altText}
+    const prompt = `Create a clean, professional infographic-style illustration for a VPN blog article.
+The illustration should visualize: ${altText}
 Style: modern flat design, clean data visualization, professional color palette (blues, greens, white).
-Use icons, charts, or diagrams. Landscape format (16:9).
-Do NOT include any readable text — use abstract shapes, icons, and visual metaphors only.`;
+Use icons, charts, diagrams, abstract shapes, and visual metaphors. Landscape format (16:9).
+CRITICAL RULE: The image must contain ZERO text, ZERO letters, ZERO numbers, ZERO words, ZERO labels, ZERO watermarks, ZERO captions. No characters of any language or alphabet whatsoever. Only use icons, shapes, colors, and visual elements to convey meaning.`;
 
     console.log(`[bg-generate] Generating infographic ${index}...`);
     const image = await generateGeminiImage(prompt);

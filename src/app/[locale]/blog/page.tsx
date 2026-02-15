@@ -17,11 +17,40 @@ import { RelatedPages } from "@/components/seo/related-pages";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { getAllPublishedPosts } from "@/lib/pipeline/blog-service";
 
+// Force dynamic rendering so new DB posts show immediately
+export const dynamic = "force-dynamic";
+
 type Props = {
   params: Promise<{ locale: string }>;
 };
 
 const baseUrl = "https://zerotovpn.com";
+
+function formatDateLong(dateStr: string, locale: string): string {
+  const date = new Date(dateStr);
+  const months: Record<string, string[]> = {
+    en: ["January","February","March","April","May","June","July","August","September","October","November","December"],
+    nl: ["januari","februari","maart","april","mei","juni","juli","augustus","september","oktober","november","december"],
+    de: ["Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"],
+    es: ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],
+    fr: ["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],
+  };
+  const m = (months[locale] || months.en);
+  return `${m[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+}
+
+function formatDateShort(dateStr: string, locale: string): string {
+  const date = new Date(dateStr);
+  const months: Record<string, string[]> = {
+    en: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+    nl: ["jan","feb","mrt","apr","mei","jun","jul","aug","sep","okt","nov","dec"],
+    de: ["Jan","Feb","Mär","Apr","Mai","Jun","Jul","Aug","Sep","Okt","Nov","Dez"],
+    es: ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],
+    fr: ["jan","fév","mar","avr","mai","jun","jul","aoû","sep","oct","nov","déc"],
+  };
+  const m = (months[locale] || months.en);
+  return `${m[date.getMonth()]} ${date.getDate()}`;
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
@@ -191,7 +220,7 @@ export default async function BlogPage({ params }: Props) {
       category: post.category,
       featured: false,
       date: post.publishedAt?.toISOString().split("T")[0] || post.createdAt.toISOString().split("T")[0],
-      readTime: `${Math.max(1, Math.ceil(post.content.length / 1500))} min`,
+      readTime: `${Math.max(1, Math.ceil(post.content.replace(/data:[^"]+/g, "").replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim().length / 1500))} min`,
       title: post.title,
       excerpt: post.excerpt,
       featuredImage: post.featuredImage,
@@ -309,14 +338,7 @@ export default async function BlogPage({ params }: Props) {
                         </Badge>
                         <span className="text-sm text-muted-foreground flex items-center gap-1">
                           <Calendar className="h-4 w-4" />
-                          {new Date(featuredPost.date).toLocaleDateString(
-                            locale,
-                            {
-                              year: "numeric",
-                              month: "long",
-                              day: "numeric",
-                            }
-                          )}
+                          {formatDateLong(featuredPost.date, locale)}
                         </span>
                       </div>
                       <h3 className="text-2xl md:text-3xl font-bold mb-3">
@@ -403,10 +425,7 @@ export default async function BlogPage({ params }: Props) {
                           </Badge>
                           <span className="text-xs text-muted-foreground flex items-center gap-1">
                             <Calendar className="h-3 w-3" />
-                            {new Date(post.date).toLocaleDateString(locale, {
-                              month: "short",
-                              day: "numeric",
-                            })}
+                            {formatDateShort(post.date, locale)}
                           </span>
                         </div>
                         <h3 className="text-lg font-bold mb-2 line-clamp-2">

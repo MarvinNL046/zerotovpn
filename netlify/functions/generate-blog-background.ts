@@ -449,7 +449,7 @@ function slugify(text: string): string {
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const GEMINI_IMAGE_URL =
-  "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image:generateContent";
+  "https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-image-preview:generateContent";
 
 async function generateGeminiImage(prompt: string): Promise<{ base64: string; mimeType: string } | null> {
   if (!GEMINI_API_KEY) {

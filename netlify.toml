@@ -11,12 +11,8 @@
 
 # Extend function timeout for pipeline API routes (AI generation + image)
 [functions]
-  external_node_modules = ["@neondatabase/serverless"]
+  external_node_modules = ["@neondatabase/serverless", "drizzle-orm"]
   directory = "netlify/functions"
 
 [functions."___netlify-server-handler"]
   timeout = 300
-
-# Background function for blog generation (up to 15 min)
-[functions."generate-blog-background"]
-  external_node_modules = ["@neondatabase/serverless", "drizzle-orm"]

@@ -1,9 +1,8 @@
-// Netlify Background Function for blog generation
-// The "-background" suffix makes Netlify return 202 immediately
-// and run this function for up to 15 minutes in the background.
-// This bypasses the CDN's ~26s timeout completely.
+// Netlify Background Function (v1 format) for blog generation.
+// The "-background" suffix + v1 Handler export makes Netlify
+// return 202 immediately and run this for up to 15 minutes.
 
-import type { Context } from "@netlify/functions";
+import type { Handler } from "@netlify/functions";
 import { neon } from "@neondatabase/serverless";
 import { drizzle } from "drizzle-orm/neon-http";
 import { eq, desc } from "drizzle-orm";
@@ -16,14 +15,12 @@ import {
   index,
 } from "drizzle-orm/pg-core";
 
-// --- Inline schema (can't import from src/ in Netlify functions) ---
+// --- Inline schema (Netlify functions can't import from src/) ---
 
 const contentQueue = pgTable(
   "ContentQueue",
   {
-    id: text("id")
-      .primaryKey()
-      .$defaultFn(() => crypto.randomUUID()),
+    id: text("id").primaryKey().$defaultFn(() => crypto.randomUUID()),
     type: text("type").notNull(),
     status: text("status").notNull().default("pending"),
     priority: integer("priority").default(0).notNull(),
@@ -42,9 +39,7 @@ const contentQueue = pgTable(
 );
 
 const scrapeJobs = pgTable("ScrapeJob", {
-  id: text("id")
-    .primaryKey()
-    .$defaultFn(() => crypto.randomUUID()),
+  id: text("id").primaryKey().$defaultFn(() => crypto.randomUUID()),
   type: text("type").notNull(),
   status: text("status").notNull().default("pending"),
   source: text("source").notNull(),
@@ -59,9 +54,7 @@ const scrapeJobs = pgTable("ScrapeJob", {
 const blogPosts = pgTable(
   "BlogPost",
   {
-    id: text("id")
-      .primaryKey()
-      .$defaultFn(() => crypto.randomUUID()),
+    id: text("id").primaryKey().$defaultFn(() => crypto.randomUUID()),
     slug: text("slug").notNull(),
     language: text("language").notNull().default("en"),
     title: text("title").notNull(),
@@ -70,10 +63,7 @@ const blogPosts = pgTable(
     metaTitle: text("metaTitle"),
     metaDescription: text("metaDescription"),
     category: text("category"),
-    tags: text("tags")
-      .array()
-      .default([])
-      .notNull(),
+    tags: text("tags").array().default([]).notNull(),
     featuredImage: text("featuredImage"),
     aiModel: text("aiModel"),
     aiPrompt: text("aiPrompt"),
@@ -85,11 +75,7 @@ const blogPosts = pgTable(
   },
   (table) => [
     index("BlogPost_slug_language_idx").on(table.slug, table.language),
-    index("BlogPost_published_idx").on(
-      table.language,
-      table.published,
-      table.category
-    ),
+    index("BlogPost_published_idx").on(table.language, table.published, table.category),
   ]
 );
 
@@ -103,11 +89,7 @@ function getDb() {
 
 type AiModel = "claude-haiku" | "gpt-5-nano";
 
-async function callClaude(
-  prompt: string,
-  maxTokens: number,
-  temperature: number
-): Promise<string> {
+async function callClaude(prompt: string, maxTokens: number, temperature: number): Promise<string> {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) throw new Error("ANTHROPIC_API_KEY not configured");
 
@@ -132,18 +114,12 @@ async function callClaude(
   }
 
   const data = await response.json();
-  const block = data.content?.find(
-    (b: { type: string }) => b.type === "text"
-  );
+  const block = data.content?.find((b: { type: string }) => b.type === "text");
   if (!block?.text) throw new Error("No text in Claude response");
   return block.text;
 }
 
-async function callOpenAI(
-  prompt: string,
-  maxTokens: number,
-  temperature: number
-): Promise<string> {
+async function callOpenAI(prompt: string, maxTokens: number, temperature: number): Promise<string> {
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) throw new Error("OPENAI_API_KEY not configured");
 
@@ -170,26 +146,17 @@ async function callOpenAI(
   return data.choices?.[0]?.message?.content || "";
 }
 
-async function generateAI(
-  prompt: string,
-  model: AiModel,
-  maxTokens = 4096,
-  temperature = 0.7
-): Promise<string> {
+async function generateAI(prompt: string, model: AiModel): Promise<string> {
   return model === "claude-haiku"
-    ? callClaude(prompt, maxTokens, temperature)
-    : callOpenAI(prompt, maxTokens, temperature);
+    ? callClaude(prompt, 16384, 0.7)
+    : callOpenAI(prompt, 16384, 0.7);
 }
 
-function autoSelectTopic(
-  scrapeData: Array<{ type: string; result: string | null }>
-): string {
+function autoSelectTopic(scrapeData: Array<{ type: string; result: string | null }>): string {
   const hasPricing = scrapeData.some((d) => d.type === "pricing" && d.result);
   const hasNews = scrapeData.some((d) => d.type === "news" && d.result);
-
   if (hasPricing) return "VPN Price Comparison Update: Best Deals This Month";
   if (hasNews) return "This Week in VPN: Latest News and Security Updates";
-
   const topics = [
     "Best Free VPNs That Actually Work in 2026",
     "VPN Speed Test Results: Which VPN Is Fastest?",
@@ -198,54 +165,61 @@ function autoSelectTopic(
     "VPN Security Features Explained: What Really Matters",
   ];
   const week = Math.floor(
-    (Date.now() - new Date(new Date().getFullYear(), 0, 1).getTime()) /
-      (7 * 24 * 60 * 60 * 1000)
+    (Date.now() - new Date(new Date().getFullYear(), 0, 1).getTime()) / (7 * 24 * 60 * 60 * 1000)
   );
   return topics[week % topics.length];
 }
 
-function detectPostType(
-  topic: string
-): "news" | "comparison" | "deal" | "guide" {
+function detectPostType(topic: string): "news" | "comparison" | "deal" | "guide" {
   const lower = topic.toLowerCase();
-  if (lower.includes("deal") || lower.includes("price") || lower.includes("discount"))
-    return "deal";
+  if (lower.includes("deal") || lower.includes("price") || lower.includes("discount")) return "deal";
   if (lower.includes("vs") || lower.includes("comparison")) return "comparison";
-  if (lower.includes("news") || lower.includes("update") || lower.includes("week in"))
-    return "news";
+  if (lower.includes("news") || lower.includes("update") || lower.includes("week in")) return "news";
   return "guide";
 }
 
-function buildPrompt(
-  topic: string,
-  postType: string,
-  scrapeData: string | null
-): string {
-  const ctx = scrapeData
-    ? `\nREFERENCE DATA:\n${scrapeData.slice(0, 3000)}\n`
-    : "";
+function buildPrompt(topic: string, postType: string, scrapeData: string | null): string {
+  const typeInstructions: Record<string, string> = {
+    news: "Write a VPN news roundup. Cover 3-4 developments with analysis.",
+    comparison: "Write a VPN comparison. Include main comparison table and per-VPN analysis.",
+    deal: "Write a VPN deals roundup. Show original vs deal price with savings percentage.",
+    guide: "Write an in-depth VPN guide with step-by-step instructions.",
+  };
 
-  return `You are a senior VPN expert writer for ZeroToVPN.com.
+  const ctx = scrapeData ? `\nREFERENCE DATA (use for accuracy):\n${scrapeData.slice(0, 3000)}\n` : "";
 
-Write a blog post about: "${topic}"
-Type: ${postType}
+  return `You are a senior VPN expert writer for ZeroToVPN.com, an independent VPN comparison site.
+Your team has tested 50+ VPN services. Write from first-hand experience.
+
+Write a comprehensive blog post about: "${topic}"
+
+${typeInstructions[postType] || typeInstructions.guide}
 
 STRUCTURE:
-1. Hook intro paragraph (2-3 sentences)
-2. Key Takeaways table (5-7 Q&A rows in HTML)
-3. 5-6 numbered H2 sections, each with 1-2 paragraphs and bullet points
-4. 1 comparison table
-5. 1 "Did You Know?" callout
-6. Conclusion with CTA
+1. Hook intro (2-3 sentences with a stat). Bold the main keyword.
+2. Key Takeaways table: <h2>Key Takeaways</h2><table> with 5-7 Q&A rows.
+3. 10-11 numbered H2 sections, each with 2 paragraphs + H3 subheadings + bullet lists.
+4. 2-3 "Did You Know?" callouts with sources.
+5. At least 1 comparison table.
+6. Conclusion with CTA and trust statement.
 
-Include 6-8 internal links to: /reviews/nordvpn, /reviews/surfshark, /reviews/expressvpn, /best/best-vpn, /best/free-vpn, /compare, /deals, /guides/what-is-vpn (use https://zerotovpn.com prefix).
-Include 2-3 external links to credible sources.
-Use <strong> for emphasis. Write 800-1200 words.
+INTERNAL LINKS (include 8-12, use https://zerotovpn.com prefix):
+/reviews/nordvpn, /reviews/surfshark, /reviews/expressvpn, /reviews/cyberghost, /reviews/protonvpn,
+/best/best-vpn, /best/free-vpn, /best/vpn-streaming, /best/vpn-cheap, /best/vpn-netflix,
+/compare, /deals, /coupons, /speed-test, /quiz,
+/guides/what-is-vpn, /guides/how-vpn-works, /guides/vpn-protocols-explained,
+/blog/is-vpn-legal, /blog/vpn-vs-proxy
+
+EXTERNAL LINKS (3-5 credible sources):
+statista.com, security.org, top10vpn.com, comparitech.com, freedomhouse.org, cisa.gov, eff.org
+
+E-E-A-T: Use "we tested", "our analysis shows", cite sources for every stat, mention downsides too.
+Target 1800-2500 words. Use <strong> for emphasis. All links use full absolute URLs.
 ${ctx}
 Respond ONLY with JSON (no markdown blocks):
 {
   "title": "Title Here",
-  "slug": "url-slug-here",
+  "slug": "url-slug",
   "excerpt": "1-2 sentence excerpt (max 160 chars)",
   "content": "Full HTML content",
   "metaTitle": "SEO title (max 60 chars)",
@@ -264,12 +238,7 @@ function parsePost(raw: string, postType: string) {
     const p = JSON.parse(json);
     return {
       title: p.title || "Untitled",
-      slug:
-        p.slug ||
-        (p.title || "post")
-          .toLowerCase()
-          .replace(/[^a-z0-9]+/g, "-")
-          .slice(0, 80),
+      slug: p.slug || slugify(p.title || "post"),
       excerpt: (p.excerpt || "").slice(0, 160),
       content: p.content || "",
       metaTitle: (p.metaTitle || p.title || "").slice(0, 60),
@@ -281,34 +250,35 @@ function parsePost(raw: string, postType: string) {
     return {
       title: "Generated Post",
       slug: "generated-post-" + Date.now(),
-      excerpt: raw.slice(0, 155),
+      excerpt: raw.replace(/<[^>]+>/g, "").slice(0, 155),
       content: raw,
       metaTitle: "Generated Post",
-      metaDescription: raw.slice(0, 155),
+      metaDescription: raw.replace(/<[^>]+>/g, "").slice(0, 155),
       category: postType,
       tags: [],
     };
   }
 }
 
-// --- Main handler ---
+function slugify(text: string): string {
+  return text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 80);
+}
 
-export default async function handler(req: Request, _context: Context) {
-  // Validate pipeline key
-  const key =
-    req.headers.get("x-pipeline-key") || req.headers.get("x-admin-key");
+// --- Handler (v1 format for background function support) ---
+
+const handler: Handler = async (event) => {
+  // Validate
+  const key = event.headers["x-pipeline-key"] || event.headers["x-admin-key"];
   if (key !== process.env.PIPELINE_SECRET) {
-    return new Response(JSON.stringify({ error: "Unauthorized" }), {
-      status: 401,
-    });
+    return { statusCode: 401, body: JSON.stringify({ error: "Unauthorized" }) };
   }
 
-  const body = await req.json();
+  const body = JSON.parse(event.body || "{}");
   const {
     topic: rawTopic,
     model = "claude-haiku",
     publish = false,
-    jobId: existingJobId,
+    jobId,
   } = body as {
     topic?: string;
     model?: AiModel;
@@ -319,9 +289,14 @@ export default async function handler(req: Request, _context: Context) {
   const db = getDb();
 
   try {
-    console.log("[bg-generate] Starting blog generation...");
+    console.log("[bg-generate] Starting, jobId:", jobId);
 
-    // Get latest scrape data
+    // Mark job as processing
+    if (jobId) {
+      await db.update(contentQueue).set({ status: "processing", attempts: 1 }).where(eq(contentQueue.id, jobId));
+    }
+
+    // Get scrape data
     const recentScrapes = await db
       .select()
       .from(scrapeJobs)
@@ -329,38 +304,21 @@ export default async function handler(req: Request, _context: Context) {
       .orderBy(desc(scrapeJobs.createdAt))
       .limit(5);
 
-    const topic =
-      !rawTopic || rawTopic === "auto"
-        ? autoSelectTopic(recentScrapes)
-        : rawTopic;
+    const topic = !rawTopic || rawTopic === "auto" ? autoSelectTopic(recentScrapes) : rawTopic;
+    console.log("[bg-generate] Topic:", topic, "Model:", model);
 
-    console.log(`[bg-generate] Topic: ${topic}, Model: ${model}`);
-
-    // Update job status if we have one
-    if (existingJobId) {
-      await db
-        .update(contentQueue)
-        .set({ status: "processing" })
-        .where(eq(contentQueue.id, existingJobId));
-    }
-
-    // Build context
-    const scrapeContext = recentScrapes
-      .map((s) => s.result)
-      .filter(Boolean)
-      .join("\n\n")
-      .slice(0, 4000);
+    const scrapeContext = recentScrapes.map((s) => s.result).filter(Boolean).join("\n\n").slice(0, 4000);
 
     // Generate text
     const postType = detectPostType(topic);
     const prompt = buildPrompt(topic, postType, scrapeContext || null);
     console.log("[bg-generate] Calling AI...");
-    const rawResponse = await generateAI(prompt, model, 4096, 0.7);
-    console.log("[bg-generate] AI response received");
+    const rawResponse = await generateAI(prompt, model);
+    console.log("[bg-generate] AI done, parsing...");
 
     const parsed = parsePost(rawResponse, postType);
 
-    // Save to database
+    // Save to DB
     const [post] = await db
       .insert(blogPosts)
       .values({
@@ -385,35 +343,28 @@ export default async function handler(req: Request, _context: Context) {
 
     // Publish if requested
     if (publish) {
-      await db
-        .update(blogPosts)
-        .set({ published: true, publishedAt: new Date() })
-        .where(eq(blogPosts.id, post.id));
-      console.log("[bg-generate] Post published");
+      await db.update(blogPosts).set({ published: true, publishedAt: new Date() }).where(eq(blogPosts.id, post.id));
+      console.log("[bg-generate] Published");
     }
 
-    // Update job if we have one
-    if (existingJobId) {
+    // Update job
+    if (jobId) {
       await db
         .update(contentQueue)
         .set({
           status: "completed",
-          output: JSON.stringify({
-            postId: post.id,
-            slug: post.slug,
-            title: post.title,
-            published: publish,
-          }),
+          output: JSON.stringify({ postId: post.id, slug: post.slug, title: post.title, published: publish }),
           processedAt: new Date(),
         })
-        .where(eq(contentQueue.id, existingJobId));
+        .where(eq(contentQueue.id, jobId));
     }
 
     console.log("[bg-generate] Done!");
+    return { statusCode: 200, body: JSON.stringify({ postId: post.id, title: post.title }) };
   } catch (error) {
     console.error("[bg-generate] Failed:", error);
 
-    if (existingJobId) {
+    if (jobId) {
       await db
         .update(contentQueue)
         .set({
@@ -421,12 +372,15 @@ export default async function handler(req: Request, _context: Context) {
           error: error instanceof Error ? error.message : "Unknown error",
           processedAt: new Date(),
         })
-        .where(eq(contentQueue.id, existingJobId))
+        .where(eq(contentQueue.id, jobId))
         .catch(() => {});
     }
-  }
-}
 
-export const config = {
-  path: "/.netlify/functions/generate-blog-background",
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: error instanceof Error ? error.message : "Unknown error" }),
+    };
+  }
 };
+
+export { handler };

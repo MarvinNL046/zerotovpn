@@ -1,39 +1,84 @@
-name: Daily VPN Data Scrape
+name: Daily VPN Data Scrape & Sync
 
 on:
   schedule:
-    # Run daily at 6:00 UTC
+    # Every day at 06:00 UTC
     - cron: "0 6 * * *"
-  workflow_dispatch: # Allow manual triggering
+  workflow_dispatch: # Allow manual trigger from GitHub Actions UI
 
 jobs:
-  scrape:
+  scrape-and-sync:
     runs-on: ubuntu-latest
-    steps:
-      - name: Scrape VPN data
-        run: |
-          curl -s -f -X POST "${{ secrets.SITE_URL }}/api/pipeline/scrape" \
-            -H "Content-Type: application/json" \
-            -H "x-pipeline-key: ${{ secrets.PIPELINE_SECRET }}" \
-            -d '{"type": "vpn-data"}'
-          echo "VPN data scrape completed"
+    timeout-minutes: 10
 
-      - name: Scrape VPN pricing
+    steps:
+      - name: Scrape all VPN pricing data
         run: |
-          curl -s -f -X POST "${{ secrets.SITE_URL }}/api/pipeline/scrape" \
+          echo "Starting VPN data scrape..."
+          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST \
+            "${{ secrets.SITE_URL }}/api/pipeline/scrape" \
             -H "Content-Type: application/json" \
             -H "x-pipeline-key: ${{ secrets.PIPELINE_SECRET }}" \
-            -d '{"type": "pricing", "vpnSlug": "nordvpn"}'
-          echo "Pricing scrape completed"
+            -d '{"type": "vpn-data"}' \
+            --max-time 180)
+
+          HTTP_CODE=$(echo "$RESPONSE" | tail -1)
+          BODY=$(echo "$RESPONSE" | sed '$d')
+
+          echo "Status: $HTTP_CODE"
+          echo "$BODY" | head -c 500
+
+          if [ "$HTTP_CODE" -ge 500 ]; then
+            echo "::error::VPN data scrape failed with $HTTP_CODE"
+          elif [ "$HTTP_CODE" -ge 400 ]; then
+            echo "::warning::VPN data scrape returned $HTTP_CODE"
+          fi
+
+      - name: Scrape VPN news
+        run: |
+          echo "Starting VPN news scrape..."
+          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST \
+            "${{ secrets.SITE_URL }}/api/pipeline/scrape" \
+            -H "Content-Type: application/json" \
+            -H "x-pipeline-key: ${{ secrets.PIPELINE_SECRET }}" \
+            -d '{"type": "news"}' \
+            --max-time 180)
+
+          HTTP_CODE=$(echo "$RESPONSE" | tail -1)
+          BODY=$(echo "$RESPONSE" | sed '$d')
+
+          echo "Status: $HTTP_CODE"
+          echo "$BODY" | head -c 500
+
+          if [ "$HTTP_CODE" -ge 500 ]; then
+            echo "::error::VPN news scrape failed with $HTTP_CODE"
+          elif [ "$HTTP_CODE" -ge 400 ]; then
+            echo "::warning::VPN news scrape returned $HTTP_CODE"
+          fi
 
       - name: Sync affiliate links
         run: |
-          curl -s -f -X POST "${{ secrets.SITE_URL }}/api/pipeline/sync-links" \
+          echo "Syncing Short.io affiliate links..."
+          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST \
+            "${{ secrets.SITE_URL }}/api/pipeline/sync-links" \
             -H "Content-Type: application/json" \
-            -H "x-pipeline-key: ${{ secrets.PIPELINE_SECRET }}"
-          echo "Affiliate link sync completed"
+            -H "x-pipeline-key: ${{ secrets.PIPELINE_SECRET }}" \
+            -d '{}' \
+            --max-time 60)
 
-      - name: Check pipeline status
+          HTTP_CODE=$(echo "$RESPONSE" | tail -1)
+          BODY=$(echo "$RESPONSE" | sed '$d')
+
+          echo "Status: $HTTP_CODE"
+          echo "$BODY"
+
+          if [ "$HTTP_CODE" -ge 400 ]; then
+            echo "::warning::Affiliate link sync returned $HTTP_CODE"
+          fi
+
+      - name: Check pipeline health
         run: |
-          curl -s -f "${{ secrets.SITE_URL }}/api/pipeline/status" \
-            -H "x-pipeline-key: ${{ secrets.PIPELINE_SECRET }}"
+          echo "Checking pipeline health..."
+          curl -s "${{ secrets.SITE_URL }}/api/pipeline/status" \
+            -H "x-pipeline-key: ${{ secrets.PIPELINE_SECRET }}" \
+            --max-time 30 | head -c 1000

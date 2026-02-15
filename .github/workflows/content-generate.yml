@@ -1,10 +1,10 @@
-name: Weekly Content Generation
+name: Weekly Blog Post Generation
 
 on:
   schedule:
-    # Run every Monday at 8:00 UTC
+    # Every Monday at 08:00 UTC
     - cron: "0 8 * * 1"
-  workflow_dispatch: # Allow manual triggering
+  workflow_dispatch: # Allow manual trigger with options
     inputs:
       topic:
         description: "Blog post topic (leave empty for auto-select)"
@@ -30,6 +30,8 @@ on:
 jobs:
   generate:
     runs-on: ubuntu-latest
+    timeout-minutes: 8
+
     steps:
       - name: Generate blog post
         run: |
@@ -37,14 +39,37 @@ jobs:
           MODEL="${{ github.event.inputs.model || 'claude-haiku' }}"
           PUBLISH="${{ github.event.inputs.publish || 'false' }}"
 
-          RESPONSE=$(curl -s -f -X POST "${{ secrets.SITE_URL }}/api/pipeline/generate" \
+          echo "Generating blog post..."
+          echo "  Topic: $TOPIC"
+          echo "  Model: $MODEL"
+          echo "  Publish: $PUBLISH"
+
+          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST \
+            "${{ secrets.SITE_URL }}/api/pipeline/generate" \
             -H "Content-Type: application/json" \
             -H "x-pipeline-key: ${{ secrets.PIPELINE_SECRET }}" \
-            -d "{\"type\": \"blog-post\", \"topic\": \"$TOPIC\", \"model\": \"$MODEL\", \"publish\": $PUBLISH}")
+            -d "{\"type\": \"blog-post\", \"topic\": \"$TOPIC\", \"model\": \"$MODEL\", \"publish\": $PUBLISH}" \
+            --max-time 300)
 
-          echo "Generation response: $RESPONSE"
+          HTTP_CODE=$(echo "$RESPONSE" | tail -1)
+          BODY=$(echo "$RESPONSE" | sed '$d')
+
+          echo "Status: $HTTP_CODE"
+          echo "$BODY"
+
+          if [ "$HTTP_CODE" -ge 500 ]; then
+            echo "::error::Blog generation failed with $HTTP_CODE"
+            exit 1
+          elif [ "$HTTP_CODE" -ge 400 ]; then
+            echo "::error::Blog generation returned $HTTP_CODE"
+            exit 1
+          fi
+
+          echo "Blog post generated successfully!"
 
       - name: Check pipeline status
+        if: always()
         run: |
-          curl -s -f "${{ secrets.SITE_URL }}/api/pipeline/status" \
-            -H "x-pipeline-key: ${{ secrets.PIPELINE_SECRET }}"
+          curl -s "${{ secrets.SITE_URL }}/api/pipeline/status" \
+            -H "x-pipeline-key: ${{ secrets.PIPELINE_SECRET }}" \
+            --max-time 30 | head -c 1000

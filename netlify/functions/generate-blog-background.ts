@@ -222,18 +222,91 @@ function detectPostType(topic: string): "news" | "comparison" | "deal" | "guide"
   return "guide";
 }
 
-function buildPrompt(topic: string, postType: string, scrapeData: string | null): string {
+// Fetch sitemap and extract English-only internal links grouped by category
+async function fetchSitemapLinks(): Promise<string> {
+  const siteUrl = process.env.SITE_URL || process.env.URL || "https://zerotovpn.com";
+  try {
+    const response = await fetch(`${siteUrl}/sitemap.xml`, { signal: AbortSignal.timeout(10000) });
+    if (!response.ok) return "";
+
+    const xml = await response.text();
+
+    // Extract all URLs from sitemap (only English — no /nl/, /de/, etc.)
+    const urlMatches = xml.match(/<loc>([^<]+)<\/loc>/g) || [];
+    const allUrls = urlMatches
+      .map((m) => m.replace(/<\/?loc>/g, ""))
+      .filter((url) => {
+        // Only English pages (no locale prefix)
+        const path = url.replace(siteUrl, "");
+        return !path.match(/^\/(nl|de|es|fr|zh|ja|ko|th)\//);
+      });
+
+    // Group by category
+    const groups: Record<string, string[]> = {};
+    for (const url of allUrls) {
+      const path = url.replace(siteUrl, "");
+      if (!path || path === "/") continue;
+      // Skip locale-only pages
+      if (path.match(/^\/(nl|de|es|fr|zh|ja|ko|th)$/)) continue;
+
+      const category = path.split("/")[1] || "other";
+      if (!groups[category]) groups[category] = [];
+      // Limit per category to keep prompt manageable
+      if (groups[category].length < 15) {
+        groups[category].push(url);
+      }
+    }
+
+    // Format as a readable list
+    let result = "";
+    for (const [category, urls] of Object.entries(groups)) {
+      if (urls.length === 0) continue;
+      result += `${category}:\n`;
+      for (const url of urls) {
+        const path = url.replace(siteUrl, "");
+        // Create human-readable anchor text from path
+        const anchor = path
+          .split("/")
+          .pop()!
+          .replace(/-/g, " ")
+          .replace(/\b\w/g, (c) => c.toUpperCase());
+        result += `- <a href="${url}">${anchor || category}</a>\n`;
+      }
+      result += "\n";
+    }
+
+    console.log(`[bg-generate] Fetched ${allUrls.length} URLs from sitemap`);
+    return result;
+  } catch (err) {
+    console.warn("[bg-generate] Failed to fetch sitemap:", err);
+    return "";
+  }
+}
+
+async function buildPrompt(topic: string, postType: string, scrapeData: string | null): Promise<string> {
+  const siteUrl = process.env.SITE_URL || process.env.URL || "https://zerotovpn.com";
+  const siteName = new URL(siteUrl).hostname.replace("www.", "").split(".")[0];
+
   const typeInstructions: Record<string, string> = {
-    news: "Write a VPN news roundup article. Cover 3-4 recent developments with analysis. Each news item gets its own numbered H2 section. Include \"Why This Matters\" subheadings.",
-    comparison: "Write a detailed VPN comparison article. The Key Takeaways table should compare the VPNs directly. Include a main comparison table and individual analysis per VPN. End with a clear winner and runner-up.",
-    deal: "Write a VPN deals roundup article. Each deal gets its own numbered H2 section. Show original price vs deal price with savings percentage. Include urgency with expiration context. Add a \"deal score\" rating.",
-    guide: "Write an in-depth VPN guide article. Start with fundamentals, progress to advanced tips. Include step-by-step instructions with numbered lists. Add practical examples and real-world scenarios.",
+    news: "Write a news roundup article. Cover 3-4 recent developments with analysis. Each news item gets its own numbered H2 section. Include \"Why This Matters\" subheadings.",
+    comparison: "Write a detailed comparison article. The Key Takeaways table should compare items directly. Include a main comparison table and individual analysis per item. End with a clear winner and runner-up.",
+    deal: "Write a deals roundup article. Each deal gets its own numbered H2 section. Show original price vs deal price with savings percentage. Include urgency with expiration context. Add a \"deal score\" rating.",
+    guide: "Write an in-depth guide article. Start with fundamentals, progress to advanced tips. Include step-by-step instructions with numbered lists. Add practical examples and real-world scenarios.",
   };
 
   const ctx = scrapeData ? `\nREFERENCE DATA (use this for accuracy — cite real numbers):\n${scrapeData.slice(0, 3000)}\n` : "";
 
-  return `You are a senior VPN expert writer for ZeroToVPN.com, an independent VPN comparison and review site run by cybersecurity professionals.
-Your team has personally tested 50+ VPN services through rigorous speed tests, security audits, and real-world usage. You write from first-hand experience.
+  // Dynamically fetch internal links from sitemap
+  const sitemapLinks = await fetchSitemapLinks();
+  const internalLinkSection = sitemapLinks
+    ? `INTERNAL LINKING (critical for SEO — include 8-12 internal links naturally, spread across sections):
+Pick from these pages on ${siteUrl} that are RELEVANT to the topic. Do NOT force irrelevant links.
+
+${sitemapLinks}`
+    : "";
+
+  return `You are a senior expert writer for ${siteUrl}, an independent comparison and review site run by industry professionals.
+Your team has personally tested 50+ services/products through rigorous benchmarks and real-world usage. You write from first-hand experience.
 
 Write a comprehensive, fact-checked blog post about: "${topic}"
 
@@ -246,7 +319,7 @@ CONTENT STRUCTURE (follow this EXACT structure — modeled after high-performing
 2. KEY TAKEAWAYS TABLE: Immediately after intro, add an HTML table with Q&A format:
    <h2>Key Takeaways</h2>
    <table><thead><tr><th>Question</th><th>Answer</th></tr></thead><tbody>
-   <tr><td><strong>Question here?</strong></td><td>Answer with <strong>bold keywords</strong> and <a href="https://zerotovpn.com/relevant-page">internal links</a>.</td></tr>
+   <tr><td><strong>Question here?</strong></td><td>Answer with <strong>bold keywords</strong> and internal links.</td></tr>
    </tbody></table>
    Include 5-7 rows covering the main points of the article.
 
@@ -262,8 +335,8 @@ CONTENT STRUCTURE (follow this EXACT structure — modeled after high-performing
 
 5. COMPARISON TABLE: Include at least one data comparison table:
    <h3>Comparison subtitle</h3>
-   <table><thead><tr><th>VPN</th><th>Feature</th><th>Price</th></tr></thead>
-   <tbody><tr><td><strong>VPN Name</strong></td><td>Details</td><td><strong>$X.XX/mo</strong></td></tr></tbody></table>
+   <table><thead><tr><th>Item</th><th>Feature</th><th>Price</th></tr></thead>
+   <tbody><tr><td><strong>Name</strong></td><td>Details</td><td><strong>$X.XX/mo</strong></td></tr></tbody></table>
 
 6. INFOGRAPHIC PLACEHOLDERS: Include exactly 2 image placeholders:
    After section 3: <img src="INFOGRAPHIC_1" alt="Infographic of [describe key visual with specific data points]." />
@@ -272,62 +345,26 @@ CONTENT STRUCTURE (follow this EXACT structure — modeled after high-performing
    <p><em>[Descriptive caption explaining the key takeaway].</em></p>
    Use src="INFOGRAPHIC_1" and src="INFOGRAPHIC_2" EXACTLY — they will be replaced with generated images.
 
-7. CONCLUSION: Final H2 "Conclusion" section with 2 paragraphs summarizing key points, a CTA linking to the relevant ZeroToVPN page, and a trust statement like "Based on our independent testing of 50+ VPN services, we stand behind these recommendations. Learn more about <a href=\\"https://zerotovpn.com/about\\">our testing methodology</a>."
+7. CONCLUSION: Final H2 "Conclusion" section with 2 paragraphs summarizing key points, a CTA linking to the relevant page on ${siteUrl}, and a trust statement referencing independent testing methodology.
 
-INTERNAL LINKING (critical for SEO — include 8-12 internal links naturally, spread across sections):
-Reviews:
-- <a href="https://zerotovpn.com/reviews/nordvpn">NordVPN review</a>
-- <a href="https://zerotovpn.com/reviews/surfshark">Surfshark review</a>
-- <a href="https://zerotovpn.com/reviews/expressvpn">ExpressVPN review</a>
-- <a href="https://zerotovpn.com/reviews/cyberghost">CyberGhost review</a>
-- <a href="https://zerotovpn.com/reviews/protonvpn">ProtonVPN review</a>
-Best-of pages:
-- <a href="https://zerotovpn.com/best/best-vpn">best VPNs of 2026</a>
-- <a href="https://zerotovpn.com/best/free-vpn">best free VPNs</a>
-- <a href="https://zerotovpn.com/best/vpn-streaming">best VPNs for streaming</a>
-- <a href="https://zerotovpn.com/best/vpn-cheap">cheapest VPNs</a>
-- <a href="https://zerotovpn.com/best/vpn-netflix">best VPNs for Netflix</a>
-Tools & pages:
-- <a href="https://zerotovpn.com/compare">VPN comparison tool</a>
-- <a href="https://zerotovpn.com/deals">current VPN deals</a>
-- <a href="https://zerotovpn.com/coupons">VPN coupon codes</a>
-- <a href="https://zerotovpn.com/speed-test">VPN speed test</a>
-- <a href="https://zerotovpn.com/quiz">VPN recommendation quiz</a>
-Guides:
-- <a href="https://zerotovpn.com/guides/what-is-vpn">what is a VPN</a>
-- <a href="https://zerotovpn.com/guides/how-vpn-works">how VPNs work</a>
-- <a href="https://zerotovpn.com/guides/vpn-protocols-explained">VPN protocols explained</a>
-- <a href="https://zerotovpn.com/guides/vpn-for-streaming">VPN streaming guide</a>
-- <a href="https://zerotovpn.com/guides/public-wifi-safety">public Wi-Fi safety</a>
-Blog:
-- <a href="https://zerotovpn.com/blog/is-vpn-legal">is using a VPN legal</a>
-- <a href="https://zerotovpn.com/blog/vpn-vs-proxy">VPN vs proxy comparison</a>
-Pick 8-12 of these that are RELEVANT to the topic. Do NOT force irrelevant links.
+${internalLinkSection}
 
-EXTERNAL LINKING (include 3-5 credible VPN-niche sources):
-- Statista VPN market data: https://www.statista.com/topics/7142/virtual-private-network-vpn-usage-worldwide/
-- Security.org VPN research: https://www.security.org/vpn/
-- Top10VPN free VPN reports: https://www.top10vpn.com/research/
-- Comparitech VPN stats: https://www.comparitech.com/vpn/
-- Freedom House internet freedom: https://freedomhouse.org/report/freedom-net
-- CISA cybersecurity guidance: https://www.cisa.gov/topics/cybersecurity-best-practices
-- EFF surveillance self-defense: https://ssd.eff.org/
-Pick 3-5 that match the topic. Use descriptive anchor text, not "click here".
+EXTERNAL LINKING: Include 3-5 credible industry sources relevant to the topic. Use descriptive anchor text, not "click here". Cite real, authoritative sources.
 
 E-E-A-T SIGNALS (critical for Google rankings — weave throughout):
 - EXPERIENCE: Reference hands-on testing ("In our testing...", "When we benchmarked...", "Our team measured...")
-- EXPERTISE: Use precise technical terms (server counts, encryption standards, protocol names)
+- EXPERTISE: Use precise technical terms and data
 - AUTHORITATIVENESS: Cite credible external sources in "Did You Know?" callouts
 - TRUSTWORTHINESS: Be balanced — mention downsides too. Include "Based on our independent testing"
 - Every stat MUST have a source. Use "we" voice for team expertise.
 
 FORMATTING RULES:
-- Bold VPN names and key terms on first mention in each section
+- Bold key terms on first mention in each section
 - Use <strong> for emphasis, never <b>
-- All links use full absolute URLs (https://zerotovpn.com/...)
+- All internal links use full absolute URLs (${siteUrl}/...)
 - Target 1800-2500 words for comprehensive SEO coverage
 - Write in authoritative but accessible tone
-- Include specific data points (prices, server counts, speeds, percentages)
+- Include specific data points (prices, specs, percentages)
 ${ctx}
 IMPORTANT: Respond ONLY with valid JSON in this exact format (no markdown code blocks, no text before or after the JSON):
 {
@@ -562,7 +599,7 @@ const handler: Handler = async (event) => {
 
     // Generate text
     const postType = detectPostType(topic);
-    const prompt = buildPrompt(topic, postType, scrapeContext || null);
+    const prompt = await buildPrompt(topic, postType, scrapeContext || null);
     console.log("[bg-generate] Calling AI...");
     const rawResponse = await generateAI(prompt, model);
     console.log("[bg-generate] AI done, parsing...");

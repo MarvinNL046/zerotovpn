@@ -33,7 +33,7 @@ export async function generateBlogPostText(
   model: AiModel
 ): Promise<GeneratedPost> {
   const postType = detectPostType(topic);
-  const prompt = buildPrompt(topic, postType, scrapeData);
+  const prompt = await buildPrompt(topic, postType, scrapeData);
 
   const rawResponse = await generateContent(prompt, {
     model,
@@ -186,11 +186,67 @@ function detectPostType(topic: string): PostType {
   return "guide";
 }
 
-function buildPrompt(
+// Fetch sitemap and extract English-only internal links grouped by category
+async function fetchSitemapLinks(): Promise<string> {
+  const siteUrl = process.env.SITE_URL || process.env.URL || "https://zerotovpn.com";
+  try {
+    const response = await fetch(`${siteUrl}/sitemap.xml`, { signal: AbortSignal.timeout(10000) });
+    if (!response.ok) return "";
+
+    const xml = await response.text();
+    const urlMatches = xml.match(/<loc>([^<]+)<\/loc>/g) || [];
+    const allUrls = urlMatches
+      .map((m) => m.replace(/<\/?loc>/g, ""))
+      .filter((url) => {
+        const path = url.replace(siteUrl, "");
+        return !path.match(/^\/(nl|de|es|fr|zh|ja|ko|th)\//);
+      });
+
+    const groups: Record<string, string[]> = {};
+    for (const url of allUrls) {
+      const path = url.replace(siteUrl, "");
+      if (!path || path === "/") continue;
+      if (path.match(/^\/(nl|de|es|fr|zh|ja|ko|th)$/)) continue;
+
+      const category = path.split("/")[1] || "other";
+      if (!groups[category]) groups[category] = [];
+      if (groups[category].length < 15) {
+        groups[category].push(url);
+      }
+    }
+
+    let result = "";
+    for (const [category, urls] of Object.entries(groups)) {
+      if (urls.length === 0) continue;
+      result += `${category}:\n`;
+      for (const url of urls) {
+        const anchor = url.split("/").pop()!.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+        result += `- <a href="${url}">${anchor || category}</a>\n`;
+      }
+      result += "\n";
+    }
+    return result;
+  } catch {
+    return "";
+  }
+}
+
+async function buildPrompt(
   topic: string,
   postType: PostType,
   scrapeData: string | null
-): string {
+): Promise<string> {
+  const siteUrl = process.env.SITE_URL || process.env.URL || "https://zerotovpn.com";
+
+  // Dynamically fetch internal links from sitemap
+  const sitemapLinks = await fetchSitemapLinks();
+  const internalLinkSection = sitemapLinks
+    ? `INTERNAL LINKING (critical for SEO — include 8-12 internal links naturally, spread across sections):
+Pick from these pages that are RELEVANT to the topic. Do NOT force irrelevant links.
+
+${sitemapLinks}`
+    : "";
+
   const styleGuide = `
 CONTENT STRUCTURE (follow this EXACT structure — modeled after high-performing blog posts):
 
@@ -199,7 +255,7 @@ CONTENT STRUCTURE (follow this EXACT structure — modeled after high-performing
 2. KEY TAKEAWAYS TABLE: Immediately after intro, add an HTML table with Q&A format:
    <h2>Key Takeaways</h2>
    <table><thead><tr><th>Question</th><th>Answer</th></tr></thead><tbody>
-   <tr><td><strong>Question here?</strong></td><td>Answer with <strong>bold keywords</strong> and <a href="https://zerotovpn.com/relevant-page">internal links</a>.</td></tr>
+   <tr><td><strong>Question here?</strong></td><td>Answer with <strong>bold keywords</strong> and internal links.</td></tr>
    </tbody></table>
    Include 5-7 rows covering the main points of the article.
 
@@ -211,92 +267,40 @@ CONTENT STRUCTURE (follow this EXACT structure — modeled after high-performing
    - At least half the sections should include a bullet list (<ul><li>) with 3-5 practical points, each starting with a <strong>bold label</strong>
 
 4. DID YOU KNOW CALLOUTS: Add 2-3 throughout the article:
-   <p><strong>Did You Know?</strong></p>
-   <p><strong>The actual fact with a stat here.</strong></p>
-   <p>Source: <a href="https://source-url.com">Source Name</a></p>
+   <blockquote><p><strong>Did You Know?</strong> The actual fact with a stat here.</p><p>Source: <a href="https://source-url.com">Source Name</a></p></blockquote>
 
 5. COMPARISON TABLE: Include at least one data comparison table:
    <h3>Comparison subtitle</h3>
-   <table><thead><tr><th>VPN</th><th>Feature</th><th>Price</th></tr></thead>
-   <tbody><tr><td><strong>VPN Name</strong></td><td>Details</td><td><strong>$X.XX/mo</strong></td></tr></tbody></table>
+   <table><thead><tr><th>Item</th><th>Feature</th><th>Price</th></tr></thead>
+   <tbody><tr><td><strong>Name</strong></td><td>Details</td><td><strong>$X.XX/mo</strong></td></tr></tbody></table>
 
-6. CONCLUSION: Final H2 "Conclusion" section with 2 paragraphs summarizing key points, a CTA linking to the relevant ZeroToVPN page, and a trust statement like "Based on our independent testing of 50+ VPN services, we stand behind these recommendations. Learn more about <a href=\"https://zerotovpn.com/about\">our testing methodology</a>."
+6. INFOGRAPHIC PLACEHOLDERS: Include exactly 2 image placeholders:
+   After section 3: <img src="INFOGRAPHIC_1" alt="Infographic of [describe key visual with specific data points]." />
+   <p><em>A visual guide to [what the infographic shows].</em></p>
+   After section 7: <img src="INFOGRAPHIC_2" alt="Infographic showing [describe visual with comparison data]." />
+   <p><em>[Descriptive caption explaining the key takeaway].</em></p>
+   Use src="INFOGRAPHIC_1" and src="INFOGRAPHIC_2" EXACTLY — they will be replaced with generated images.
 
-INTERNAL LINKING (critical for SEO — include 8-12 internal links naturally, spread across sections):
-Reviews:
-- <a href="https://zerotovpn.com/reviews/nordvpn">NordVPN review</a>
-- <a href="https://zerotovpn.com/reviews/surfshark">Surfshark review</a>
-- <a href="https://zerotovpn.com/reviews/expressvpn">ExpressVPN review</a>
-- <a href="https://zerotovpn.com/reviews/cyberghost">CyberGhost review</a>
-- <a href="https://zerotovpn.com/reviews/protonvpn">ProtonVPN review</a>
-Best-of pages:
-- <a href="https://zerotovpn.com/best/best-vpn">best VPNs of 2026</a>
-- <a href="https://zerotovpn.com/best/free-vpn">best free VPNs</a>
-- <a href="https://zerotovpn.com/best/vpn-streaming">best VPNs for streaming</a>
-- <a href="https://zerotovpn.com/best/vpn-cheap">cheapest VPNs</a>
-- <a href="https://zerotovpn.com/best/vpn-netflix">best VPNs for Netflix</a>
-Tools & pages:
-- <a href="https://zerotovpn.com/compare">VPN comparison tool</a>
-- <a href="https://zerotovpn.com/deals">current VPN deals</a>
-- <a href="https://zerotovpn.com/coupons">VPN coupon codes</a>
-- <a href="https://zerotovpn.com/speed-test">VPN speed test</a>
-- <a href="https://zerotovpn.com/quiz">VPN recommendation quiz</a>
-Guides:
-- <a href="https://zerotovpn.com/guides/what-is-vpn">what is a VPN</a>
-- <a href="https://zerotovpn.com/guides/how-vpn-works">how VPNs work</a>
-- <a href="https://zerotovpn.com/guides/vpn-protocols-explained">VPN protocols explained</a>
-- <a href="https://zerotovpn.com/guides/vpn-for-streaming">VPN streaming guide</a>
-- <a href="https://zerotovpn.com/guides/public-wifi-safety">public Wi-Fi safety</a>
-Blog:
-- <a href="https://zerotovpn.com/blog/is-vpn-legal">is using a VPN legal</a>
-- <a href="https://zerotovpn.com/blog/vpn-vs-proxy">VPN vs proxy comparison</a>
-Pick 8-12 of these that are RELEVANT to the topic. Do NOT force irrelevant links.
+7. CONCLUSION: Final H2 "Conclusion" section with 2 paragraphs summarizing key points, a CTA linking to the relevant page on ${siteUrl}, and a trust statement referencing independent testing methodology.
 
-EXTERNAL LINKING (include 3-5 credible VPN-niche sources):
-Use ONLY these trusted VPN industry sources for stats and claims:
-- Statista VPN market data: https://www.statista.com/topics/7142/virtual-private-network-vpn-usage-worldwide/
-- Security.org VPN research: https://www.security.org/vpn/
-- Top10VPN free VPN reports: https://www.top10vpn.com/research/
-- Comparitech VPN stats: https://www.comparitech.com/vpn/
-- Freedom House internet freedom: https://freedomhouse.org/report/freedom-net
-- CISA cybersecurity guidance: https://www.cisa.gov/topics/cybersecurity-best-practices
-- EFF surveillance self-defense: https://ssd.eff.org/
-- AV-TEST VPN testing: https://www.av-test.org/en/
-Pick 3-5 that match the topic. Use descriptive anchor text, not "click here".
+${internalLinkSection}
 
-INFOGRAPHIC IMAGE PLACEHOLDERS (critical — include exactly 2 per article):
-Place these HTML blocks between sections to mark where infographic images will be generated:
-
-After section 3, add:
-<img src="INFOGRAPHIC_1" alt="Infographic of [describe key visual: e.g., '5 key benefits of using a VPN for streaming with comparison data']." />
-<p><em>A visual guide to [describe what the infographic shows]. Following these steps can [describe the benefit].</em></p>
-
-After section 7, add:
-<img src="INFOGRAPHIC_2" alt="Infographic showing [describe visual: e.g., 'VPN speed comparison across 6 providers with bar chart data']." />
-<p><em>[Descriptive caption explaining what the infographic visualizes and its key takeaway].</em></p>
-
-Rules for image placeholders:
-- Use descriptive, specific alt text (not generic like "VPN image")
-- Always include an italic caption below using <em> tags
-- The caption should explain what the visual shows and why it matters
-- Use src="INFOGRAPHIC_1" and src="INFOGRAPHIC_2" exactly — they will be replaced with generated images
+EXTERNAL LINKING: Include 3-5 credible industry sources relevant to the topic. Use descriptive anchor text, not "click here". Cite real, authoritative sources.
 
 E-E-A-T SIGNALS (critical for Google rankings — weave these throughout):
 - EXPERIENCE: Reference hands-on testing (e.g., "In our testing...", "When we benchmarked...", "Our team measured...")
-- EXPERTISE: Use precise technical terms and data (server counts, encryption standards, protocol names)
-- AUTHORITATIVENESS: Cite credible external sources in "Did You Know?" callouts and comparison data
-- TRUSTWORTHINESS: Be balanced — mention downsides too, not just positives. Include phrases like "Based on our independent testing" or "According to verified data from..."
-- Every claim with a specific number MUST have a source (either in a "Did You Know?" callout or inline)
-- Use "we" voice to show team expertise: "We tested...", "Our analysis shows...", "We recommend..."
+- EXPERTISE: Use precise technical terms and data
+- AUTHORITATIVENESS: Cite credible external sources in "Did You Know?" callouts
+- TRUSTWORTHINESS: Be balanced — mention downsides too. Include "Based on our independent testing"
+- Every stat MUST have a source. Use "we" voice for team expertise.
 
 FORMATTING RULES:
-- Bold VPN names and key terms on first mention in each section
+- Bold key terms on first mention in each section
 - Use <strong> for emphasis, never <b>
-- All links use full absolute URLs (https://zerotovpn.com/...)
+- All internal links use full absolute URLs (${siteUrl}/...)
 - Target 1800-2500 words for comprehensive SEO coverage
-- Write in authoritative but accessible tone — expert but not jargon-heavy
-- Include specific data points (prices, server counts, speeds, percentages)
-- Every stat or claim must be attributable to a real source
+- Write in authoritative but accessible tone
+- Include specific data points (prices, specs, percentages)
 `;
 
   const contextSection = scrapeData

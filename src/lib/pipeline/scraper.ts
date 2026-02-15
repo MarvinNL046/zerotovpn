@@ -25,6 +25,15 @@ export interface ScrapedNews {
   vpnMentions: string[];
 }
 
+export interface ScrapedCountryData {
+  countrySlug: string;
+  countryName: string;
+  freedomReport: string | null;
+  recentNews: Array<{ title: string; summary: string; url: string }>;
+  rawContent: string;
+  scrapedAt: string;
+}
+
 // Fetch via Jina.ai Reader
 async function scrapeWithJina(url: string): Promise<string> {
   const headers: Record<string, string> = {
@@ -222,6 +231,137 @@ function extractVpnMentions(content: string): string[] {
   return vpnNames.filter((name) =>
     content.toLowerCase().includes(name.toLowerCase())
   );
+}
+
+// Country slug to name mapping for scraping
+const COUNTRY_NAMES: Record<string, string> = {
+  iran: "Iran",
+  china: "China",
+  russia: "Russia",
+  uae: "United Arab Emirates",
+  turkey: "Turkey",
+  "saudi-arabia": "Saudi Arabia",
+  egypt: "Egypt",
+  vietnam: "Vietnam",
+  pakistan: "Pakistan",
+  indonesia: "Indonesia",
+  india: "India",
+  thailand: "Thailand",
+  myanmar: "Myanmar",
+  cuba: "Cuba",
+  venezuela: "Venezuela",
+  belarus: "Belarus",
+  turkmenistan: "Turkmenistan",
+  "north-korea": "North Korea",
+  bangladesh: "Bangladesh",
+  ethiopia: "Ethiopia",
+};
+
+// Freedom House URL slug mapping (some differ from our slugs)
+const FREEDOM_HOUSE_SLUGS: Record<string, string> = {
+  uae: "united-arab-emirates",
+  "saudi-arabia": "saudi-arabia",
+  "north-korea": "north-korea",
+};
+
+// Scrape country-specific VPN/censorship data
+export async function scrapeCountryVpnData(
+  countrySlug: string
+): Promise<ScrapedCountryData> {
+  const countryName = COUNTRY_NAMES[countrySlug];
+  if (!countryName) {
+    throw new Error(`Unknown country slug: ${countrySlug}`);
+  }
+
+  const freedomHouseSlug = FREEDOM_HOUSE_SLUGS[countrySlug] || countrySlug;
+  const freedomUrl = `https://freedomhouse.org/country/${freedomHouseSlug}/freedom-net`;
+  const newsQuery = `${countryName} VPN censorship internet freedom ${new Date().getFullYear()}`;
+  const newsUrl = `https://s.jina.ai/${encodeURIComponent(newsQuery)}`;
+
+  const results = await Promise.allSettled([
+    scrapeUrl(freedomUrl),
+    scrapeCountryNews(newsUrl),
+  ]);
+
+  const freedomReport =
+    results[0].status === "fulfilled"
+      ? results[0].value.content.slice(0, 3000)
+      : null;
+
+  if (results[0].status === "rejected") {
+    console.warn(
+      `[scraper] Freedom House scrape failed for ${countrySlug}:`,
+      results[0].reason
+    );
+  }
+
+  const recentNews: ScrapedCountryData["recentNews"] = [];
+  if (results[1].status === "fulfilled") {
+    recentNews.push(...results[1].value);
+  } else {
+    console.warn(
+      `[scraper] News scrape failed for ${countrySlug}:`,
+      results[1].reason
+    );
+  }
+
+  const rawContent = [
+    freedomReport ? `FREEDOM HOUSE REPORT:\n${freedomReport}` : "",
+    recentNews.length > 0
+      ? `RECENT NEWS:\n${recentNews.map((n) => `- ${n.title}: ${n.summary}`).join("\n")}`
+      : "",
+  ]
+    .filter(Boolean)
+    .join("\n\n");
+
+  if (!freedomReport && recentNews.length === 0) {
+    throw new Error(
+      `No data could be scraped for ${countryName}. Both Freedom House and news scraping failed.`
+    );
+  }
+
+  return {
+    countrySlug,
+    countryName,
+    freedomReport,
+    recentNews,
+    rawContent,
+    scrapedAt: new Date().toISOString(),
+  };
+}
+
+// Scrape country-specific VPN news via Jina.ai search
+async function scrapeCountryNews(
+  searchUrl: string
+): Promise<Array<{ title: string; summary: string; url: string }>> {
+  const headers: Record<string, string> = {
+    Accept: "application/json",
+  };
+
+  if (JINA_API_KEY) {
+    headers["Authorization"] = `Bearer ${JINA_API_KEY}`;
+  }
+
+  const response = await fetch(searchUrl, { method: "GET", headers });
+
+  if (!response.ok) {
+    throw new Error(`Jina search failed: ${response.status}`);
+  }
+
+  const data = await response.json();
+  const items: Array<{ title: string; summary: string; url: string }> = [];
+
+  // Jina search API returns { data: [{ title, description, url, content }] }
+  const results = data.data || data.results || [];
+  for (const item of results.slice(0, 5)) {
+    items.push({
+      title: item.title || "Untitled",
+      summary: (item.description || item.content || "").slice(0, 300),
+      url: item.url || "",
+    });
+  }
+
+  return items;
 }
 
 // Save a scrape job record to the database

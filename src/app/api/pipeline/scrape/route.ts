@@ -3,6 +3,7 @@ import {
   scrapeVpnPricing,
   scrapeVpnNews,
   scrapeAllVpnData,
+  scrapeCountryVpnData,
   saveScrapeJob,
 } from "@/lib/pipeline/scraper";
 
@@ -20,9 +21,10 @@ export async function POST(request: NextRequest) {
 
   try {
     const body = await request.json();
-    const { type, vpnSlug } = body as {
-      type: "vpn-data" | "pricing" | "news";
+    const { type, vpnSlug, countrySlug } = body as {
+      type: "vpn-data" | "pricing" | "news" | "country-vpn";
       vpnSlug?: string;
+      countrySlug?: string;
     };
 
     if (!type) {
@@ -58,6 +60,17 @@ export async function POST(request: NextRequest) {
         results = await scrapeVpnNews();
         break;
       }
+      case "country-vpn": {
+        if (!countrySlug) {
+          return NextResponse.json(
+            { error: "countrySlug is required for country-vpn scrape" },
+            { status: 400 }
+          );
+        }
+        source = `country-vpn:${countrySlug}`;
+        results = await scrapeCountryVpnData(countrySlug);
+        break;
+      }
       default:
         return NextResponse.json(
           { error: `Invalid type: ${type}` },
@@ -68,7 +81,7 @@ export async function POST(request: NextRequest) {
     const jobId = await saveScrapeJob({
       type,
       source,
-      vpnSlug,
+      vpnSlug: vpnSlug || countrySlug,
       status: "completed",
       result: JSON.stringify(results),
       startedAt,

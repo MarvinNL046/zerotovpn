@@ -79,6 +79,94 @@ const blogPosts = pgTable(
   ]
 );
 
+// --- Country Data (inline, since Netlify functions can't import from src/) ---
+
+interface CountryInfo {
+  slug: string;
+  name: string;
+  status: "legal" | "legal-restricted" | "restricted";
+  internetFreedomScore: number;
+  population: string;
+  blockedServices: string[];
+  recommendedVpns: string[];
+}
+
+// High-priority countries for country-specific blog posts (restricted + high-traffic)
+const COUNTRY_DATA: CountryInfo[] = [
+  { slug: "iran", name: "Iran", status: "restricted", internetFreedomScore: 16, population: "87.9M", blockedServices: ["Social media", "News sites", "Messaging apps", "VPN websites", "Streaming platforms"], recommendedVpns: ["NordVPN (obfuscated servers)", "ExpressVPN", "Mullvad"] },
+  { slug: "china", name: "China", status: "restricted", internetFreedomScore: 9, population: "1.4B", blockedServices: ["Google", "Facebook", "Twitter/X", "YouTube", "WhatsApp", "Instagram", "Wikipedia", "Most Western news"], recommendedVpns: ["ExpressVPN", "NordVPN (obfuscated)", "Surfshark"] },
+  { slug: "russia", name: "Russia", status: "restricted", internetFreedomScore: 21, population: "144M", blockedServices: ["Facebook", "Instagram", "Twitter/X", "Independent news", "VPN websites"], recommendedVpns: ["NordVPN (obfuscated)", "ExpressVPN", "ProtonVPN"] },
+  { slug: "uae", name: "United Arab Emirates", status: "restricted", internetFreedomScore: 30, population: "10M", blockedServices: ["VoIP (Skype, FaceTime)", "Dating apps", "Gambling sites", "Some news sites"], recommendedVpns: ["ExpressVPN", "NordVPN", "Surfshark"] },
+  { slug: "turkey", name: "Turkey", status: "legal-restricted", internetFreedomScore: 32, population: "85M", blockedServices: ["Wikipedia (intermittent)", "Social media (during events)", "Some news sites", "VPN websites"], recommendedVpns: ["ExpressVPN", "NordVPN", "ProtonVPN"] },
+  { slug: "saudi-arabia", name: "Saudi Arabia", status: "restricted", internetFreedomScore: 24, population: "36M", blockedServices: ["VoIP services", "Dating sites", "Gambling", "Political opposition sites", "LGBTQ+ content"], recommendedVpns: ["ExpressVPN", "NordVPN", "Surfshark"] },
+  { slug: "egypt", name: "Egypt", status: "restricted", internetFreedomScore: 25, population: "106M", blockedServices: ["News websites", "Human rights sites", "VPN websites", "VoIP services"], recommendedVpns: ["ExpressVPN", "NordVPN", "Surfshark"] },
+  { slug: "vietnam", name: "Vietnam", status: "restricted", internetFreedomScore: 22, population: "100M", blockedServices: ["Facebook (intermittent)", "Political content", "Independent news", "Some blogs"], recommendedVpns: ["ExpressVPN", "NordVPN", "Surfshark"] },
+  { slug: "pakistan", name: "Pakistan", status: "legal-restricted", internetFreedomScore: 26, population: "230M", blockedServices: ["YouTube (historically)", "Social media (during unrest)", "Blasphemous content", "Some news sites"], recommendedVpns: ["NordVPN", "ExpressVPN", "Surfshark"] },
+  { slug: "myanmar", name: "Myanmar", status: "restricted", internetFreedomScore: 12, population: "55M", blockedServices: ["Facebook", "Twitter/X", "Instagram", "Wikipedia", "Independent news", "VPN websites"], recommendedVpns: ["ExpressVPN", "NordVPN", "Surfshark"] },
+  { slug: "indonesia", name: "Indonesia", status: "legal-restricted", internetFreedomScore: 47, population: "277M", blockedServices: ["Adult content", "Gambling sites", "Some LGBTQ+ content", "Radical content"], recommendedVpns: ["NordVPN", "ExpressVPN", "Surfshark"] },
+  { slug: "thailand", name: "Thailand", status: "legal-restricted", internetFreedomScore: 36, population: "72M", blockedServices: ["Gambling sites", "Some news outlets", "Political content", "Lese-majeste content"], recommendedVpns: ["NordVPN", "ExpressVPN", "Surfshark"] },
+  { slug: "india", name: "India", status: "legal-restricted", internetFreedomScore: 50, population: "1.4B", blockedServices: ["Social media (during shutdowns)", "TikTok", "Some Chinese apps", "VPN apps (some)"], recommendedVpns: ["NordVPN", "ExpressVPN", "Surfshark"] },
+  { slug: "bangladesh", name: "Bangladesh", status: "legal-restricted", internetFreedomScore: 40, population: "172M", blockedServices: ["Social media (during unrest)", "Some news websites", "VoIP services"], recommendedVpns: ["NordVPN", "ExpressVPN", "Surfshark"] },
+  { slug: "uzbekistan", name: "Uzbekistan", status: "restricted", internetFreedomScore: 27, population: "35M", blockedServices: ["News websites", "Social media (during unrest)", "Messaging apps", "VPN websites"], recommendedVpns: ["ExpressVPN", "NordVPN", "Surfshark"] },
+  { slug: "kazakhstan", name: "Kazakhstan", status: "restricted", internetFreedomScore: 29, population: "20M", blockedServices: ["Social media (during protests)", "Opposition news", "Messaging apps", "VPN websites"], recommendedVpns: ["ExpressVPN", "NordVPN", "Surfshark"] },
+  { slug: "hong-kong", name: "Hong Kong", status: "legal-restricted", internetFreedomScore: 45, population: "7.5M", blockedServices: ["Some pro-democracy websites (intermittent)"], recommendedVpns: ["ExpressVPN", "NordVPN", "Surfshark"] },
+  { slug: "malaysia", name: "Malaysia", status: "legal-restricted", internetFreedomScore: 39, population: "33M", blockedServices: ["Gambling sites", "Adult content", "Some political websites", "Some news outlets"], recommendedVpns: ["NordVPN", "ExpressVPN", "Surfshark"] },
+  { slug: "cuba", name: "Cuba", status: "restricted", internetFreedomScore: 20, population: "11M", blockedServices: ["Independent news", "Opposition websites", "Social media (during protests)"], recommendedVpns: ["ExpressVPN", "NordVPN", "Surfshark"] },
+  { slug: "belarus", name: "Belarus", status: "restricted", internetFreedomScore: 18, population: "9.4M", blockedServices: ["Independent news", "Opposition websites", "Social media (during protests)", "VPN websites"], recommendedVpns: ["ExpressVPN", "NordVPN", "ProtonVPN"] },
+];
+
+// Countries prioritized for blog post generation (most restricted first)
+const HIGH_PRIORITY_COUNTRY_SLUGS = COUNTRY_DATA
+  .filter((c) => c.status === "restricted" || c.status === "legal-restricted")
+  .sort((a, b) => a.internetFreedomScore - b.internetFreedomScore)
+  .map((c) => c.slug);
+
+function detectCountry(topic: string): CountryInfo | null {
+  const lower = topic.toLowerCase();
+  // Check exact name matches first, longest first to avoid "India" matching before "Indonesia"
+  const sorted = [...COUNTRY_DATA].sort((a, b) => b.name.length - a.name.length);
+  for (const country of sorted) {
+    if (lower.includes(country.name.toLowerCase())) return country;
+    if (lower.includes(country.slug.replace(/-/g, " "))) return country;
+  }
+  return null;
+}
+
+// Scrape country news directly (can't import from src/ in Netlify functions)
+async function scrapeCountryDataForBlog(
+  country: CountryInfo
+): Promise<string | null> {
+  const jinaKey = process.env.JINA_API_KEY;
+  const query = `${country.name} VPN censorship internet freedom ${new Date().getFullYear()}`;
+  const searchUrl = `https://s.jina.ai/${encodeURIComponent(query)}`;
+
+  const headers: Record<string, string> = { Accept: "application/json" };
+  if (jinaKey) headers["Authorization"] = `Bearer ${jinaKey}`;
+
+  try {
+    const response = await fetch(searchUrl, {
+      method: "GET",
+      headers,
+      signal: AbortSignal.timeout(15000),
+    });
+    if (!response.ok) return null;
+
+    const data = await response.json();
+    const results = (data.data || data.results || []).slice(0, 3);
+    if (results.length === 0) return null;
+
+    return results
+      .map(
+        (r: { title?: string; description?: string; content?: string }) =>
+          `- ${r.title || "Untitled"}: ${(r.description || r.content || "").slice(0, 200)}`
+      )
+      .join("\n");
+  } catch (err) {
+    console.warn(`[bg-generate] Country news scrape failed for ${country.name}:`, err);
+    return null;
+  }
+}
+
 // --- Helpers ---
 
 function getDb() {
@@ -164,6 +252,7 @@ async function autoSelectTopic(
     .where(eq(blogPosts.language, "en"));
 
   const existingTitles = existingPosts.map((p) => p.title);
+  const existingTitlesLower = existingTitles.map((t) => t.toLowerCase());
   const scrapeContext = scrapeData
     .map((s) => s.result)
     .filter(Boolean)
@@ -173,6 +262,73 @@ async function autoSelectTopic(
   const now = new Date();
   const month = now.toLocaleString("en", { month: "long" });
   const year = now.getFullYear();
+
+  // Determine if this should be a country-specific post (~every 3rd post)
+  const totalPosts = existingPosts.length;
+  const countryPostCount = existingTitles.filter((t) => {
+    const lower = t.toLowerCase();
+    return COUNTRY_DATA.some(
+      (c) => lower.includes(c.name.toLowerCase()) && (lower.includes("vpn") || lower.includes("bypass") || lower.includes("internet"))
+    );
+  }).length;
+
+  const shouldBeCountryPost = totalPosts > 0 && countryPostCount < Math.ceil(totalPosts / 3);
+
+  if (shouldBeCountryPost) {
+    // Find countries that don't have recent blog posts yet
+    const countriesWithoutPosts = HIGH_PRIORITY_COUNTRY_SLUGS.filter((slug) => {
+      const country = COUNTRY_DATA.find((c) => c.slug === slug);
+      if (!country) return false;
+      return !existingTitlesLower.some(
+        (t) => t.includes(country.name.toLowerCase()) && (t.includes("vpn") || t.includes("bypass") || t.includes("internet"))
+      );
+    });
+
+    if (countriesWithoutPosts.length > 0) {
+      // Pick the highest-priority country without a post
+      const countrySlug = countriesWithoutPosts[0];
+      const country = COUNTRY_DATA.find((c) => c.slug === countrySlug)!;
+
+      // Let AI pick the best angle for this country
+      const countryTopicPrompt = `You are a senior VPN content strategist for ZeroToVPN.com.
+
+Pick ONE compelling blog post title about using VPNs in ${country.name} that will rank well on Google.
+
+Country context:
+- Internet Freedom Score: ${country.internetFreedomScore}/100 (${country.status === "restricted" ? "Not Free" : "Partly Free"})
+- Blocked services: ${country.blockedServices.join(", ")}
+- Population: ${country.population}
+
+The title should be:
+- Specific to ${country.name} and VPN usage there
+- Timely for ${year}
+- Searchable (target keywords people actually search for)
+- Different from these existing titles:
+${existingTitles.slice(-20).map((t) => `  - ${t}`).join("\n")}
+
+Example formats (vary these, don't always use the same pattern):
+- "Best VPN for ${country.name} in ${year}: Bypass Blocks Safely"
+- "How to Use a VPN in ${country.name}: Complete ${year} Guide"
+- "Is VPN Legal in ${country.name}? What You Need to Know in ${year}"
+- "${country.name} Internet Censorship: How to Stay Connected with a VPN"
+
+Respond with ONLY the blog post title — nothing else. No quotes, no explanation.`;
+
+      try {
+        const topicResponse = await generateAI(countryTopicPrompt, model);
+        const topic = topicResponse.trim().replace(/^["']|["']$/g, "");
+        if (topic && topic.length > 10 && topic.length < 120) {
+          console.log(`[bg-generate] AI selected country topic (${country.name}):`, topic);
+          return topic;
+        }
+      } catch (err) {
+        console.warn("[bg-generate] AI country topic selection failed:", err);
+      }
+
+      // Fallback: deterministic country topic
+      return `Best VPN for ${country.name} in ${year}: Complete Guide to Bypass Internet Restrictions`;
+    }
+  }
 
   const topicPrompt = `You are a senior VPN content strategist for ZeroToVPN.com, a VPN comparison and review website.
 
@@ -219,6 +375,8 @@ function detectPostType(topic: string): "news" | "comparison" | "deal" | "guide"
   if (lower.includes("deal") || lower.includes("price") || lower.includes("discount")) return "deal";
   if (lower.includes("vs") || lower.includes("comparison")) return "comparison";
   if (lower.includes("news") || lower.includes("update") || lower.includes("week in")) return "news";
+  // Country-specific posts are always guides
+  if (detectCountry(topic)) return "guide";
   return "guide";
 }
 
@@ -294,6 +452,46 @@ async function buildPrompt(topic: string, postType: string, scrapeData: string |
     guide: "Write an in-depth guide article. Start with fundamentals, progress to advanced tips. Include step-by-step instructions with numbered lists. Add practical examples and real-world scenarios.",
   };
 
+  // Detect country and build country-specific context
+  const country = detectCountry(topic);
+  let countryContext = "";
+
+  if (country) {
+    console.log(`[bg-generate] Country detected: ${country.name}, enriching prompt...`);
+
+    // Scrape fresh news for this country
+    const freshNews = await scrapeCountryDataForBlog(country);
+
+    // Also check if we have scraped data from the ScrapeJob table for this country
+    const countryStatusLabel =
+      country.status === "restricted"
+        ? "Not Free"
+        : country.status === "legal-restricted"
+          ? "Partly Free"
+          : "Free";
+
+    countryContext = `
+COUNTRY REFERENCE DATA (use this data throughout the article — cite real numbers):
+Country: ${country.name}
+Internet Freedom Score: ${country.internetFreedomScore}/100 (${countryStatusLabel}) — Source: Freedom House
+VPN Status: ${country.status === "restricted" ? "Heavily restricted or blocked" : country.status === "legal-restricted" ? "Legal but monitored/restricted" : "Fully legal"}
+Blocked Services: ${country.blockedServices.join(", ")}
+Recommended VPNs: ${country.recommendedVpns.join(", ")}
+Population: ${country.population}
+Country page on site: ${siteUrl}/countries/${country.slug}
+${freshNews ? `\nRecent news and developments:\n${freshNews}` : ""}
+
+COUNTRY-SPECIFIC INSTRUCTIONS:
+- Reference the Internet Freedom Score and cite Freedom House as the source
+- List specific blocked services and explain WHY they are blocked
+- For each recommended VPN, explain WHY it works well in ${country.name} (e.g., obfuscated servers, specific protocol support)
+- Include practical setup tips specific to ${country.name} (e.g., "install VPN before arriving" for travelers)
+- Mention legal implications honestly — don't downplay risks but don't fear-monger either
+- Link to the country page: ${siteUrl}/countries/${country.slug}
+- Include a section about which VPN protocols work best in ${country.name}
+`;
+  }
+
   const ctx = scrapeData ? `\nREFERENCE DATA (use this for accuracy — cite real numbers):\n${scrapeData.slice(0, 3000)}\n` : "";
 
   // Dynamically fetch internal links from sitemap
@@ -365,7 +563,7 @@ FORMATTING RULES:
 - Target 1800-2500 words for comprehensive SEO coverage
 - Write in authoritative but accessible tone
 - Include specific data points (prices, specs, percentages)
-${ctx}
+${ctx}${countryContext}
 IMPORTANT: Respond ONLY with valid JSON in this exact format (no markdown code blocks, no text before or after the JSON):
 {
   "title": "The Blog Post Title In Title Case",

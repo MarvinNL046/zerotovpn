@@ -45,6 +45,41 @@ jobs:
             echo "::error::${{ matrix.vpn }} scrape failed with $HTTP_CODE"
           fi
 
+  scrape-countries:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    strategy:
+      max-parallel: 2
+      matrix:
+        country:
+          - iran
+          - china
+          - russia
+          - uae
+          - turkey
+
+    steps:
+      - name: Scrape ${{ matrix.country }} VPN/censorship data
+        run: |
+          echo "Scraping country data for ${{ matrix.country }}..."
+          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST \
+            "${{ secrets.SITE_URL }}/api/pipeline/scrape" \
+            -H "Content-Type: application/json" \
+            -H "x-pipeline-key: ${{ secrets.PIPELINE_SECRET }}" \
+            -d '{"type": "country-vpn", "countrySlug": "${{ matrix.country }}"}' \
+            --max-time 90)
+
+          HTTP_CODE=$(echo "$RESPONSE" | tail -1)
+          BODY=$(echo "$RESPONSE" | sed '$d')
+
+          echo "Status: $HTTP_CODE"
+          echo "$BODY" | head -c 500
+
+          if [ "$HTTP_CODE" -ge 500 ]; then
+            echo "::warning::${{ matrix.country }} country scrape failed with $HTTP_CODE"
+          fi
+
   scrape-news:
     runs-on: ubuntu-latest
     timeout-minutes: 5
@@ -97,7 +132,7 @@ jobs:
 
   health-check:
     runs-on: ubuntu-latest
-    needs: [scrape-and-sync, scrape-news, sync-links]
+    needs: [scrape-and-sync, scrape-countries, scrape-news, sync-links]
     if: always()
     timeout-minutes: 2
 

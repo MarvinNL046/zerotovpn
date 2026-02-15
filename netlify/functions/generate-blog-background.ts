@@ -675,11 +675,119 @@ const handler: Handler = async (event) => {
       console.log("[bg-generate] Post updated with images");
     }
 
-    // Publish if requested
+    // Publish English post if requested
     if (publish) {
       await db.update(blogPosts).set({ published: true, publishedAt: new Date() }).where(eq(blogPosts.id, post.id));
-      console.log("[bg-generate] Published");
+      console.log("[bg-generate] English post published");
     }
+
+    // Get the final English content (with images) for translations
+    const finalContent = updatedContent !== parsed.content ? updatedContent : parsed.content;
+
+    // Translate to all other languages
+    const targetLanguages = [
+      { code: "nl", name: "Dutch" },
+      { code: "de", name: "German" },
+      { code: "es", name: "Spanish" },
+      { code: "fr", name: "French" },
+      { code: "zh", name: "Chinese (Simplified)" },
+      { code: "ja", name: "Japanese" },
+      { code: "ko", name: "Korean" },
+      { code: "th", name: "Thai" },
+    ];
+
+    console.log(`[bg-generate] Translating to ${targetLanguages.length} languages...`);
+
+    for (const lang of targetLanguages) {
+      try {
+        // Check if translation already exists
+        const [existing] = await db
+          .select({ id: blogPosts.id })
+          .from(blogPosts)
+          .where(and(eq(blogPosts.slug, finalSlug), eq(blogPosts.language, lang.code)))
+          .limit(1);
+
+        if (existing) {
+          console.log(`[bg-generate] ${lang.code}: already exists, skipping`);
+          continue;
+        }
+
+        const translatePrompt = `Translate the following blog post metadata and content to ${lang.name}.
+
+RULES:
+- Translate ALL text naturally and fluently — not word-for-word
+- Keep ALL HTML tags, structure, and formatting exactly as-is
+- Keep ALL URLs/links unchanged (do not translate URLs)
+- Keep all <img> tags and their src/alt attributes unchanged
+- Keep technical terms (VPN, DNS, IP, etc.) in English
+- Translate the title, excerpt, metaTitle, and metaDescription too
+
+Respond ONLY with valid JSON (no markdown blocks):
+{
+  "title": "translated title",
+  "excerpt": "translated excerpt (max 160 chars)",
+  "metaTitle": "translated SEO title (max 60 chars)",
+  "metaDescription": "translated meta description (max 155 chars)",
+  "content": "translated HTML content"
+}
+
+ORIGINAL ENGLISH POST:
+Title: ${parsed.title}
+Excerpt: ${parsed.excerpt}
+MetaTitle: ${parsed.metaTitle}
+MetaDescription: ${parsed.metaDescription}
+
+Content:
+${finalContent.slice(0, 14000)}`;
+
+        const translatedRaw = await generateAI(translatePrompt, model);
+
+        // Parse translation
+        let translated;
+        try {
+          let jsonStr = translatedRaw.trim()
+            .replace(/^```(?:json)?\s*\n?/, "")
+            .replace(/\n?\s*```\s*$/, "");
+          const match = jsonStr.match(/\{[\s\S]*\}/);
+          if (match) jsonStr = match[0];
+          translated = JSON.parse(jsonStr);
+        } catch {
+          console.warn(`[bg-generate] ${lang.code}: JSON parse failed, skipping`);
+          continue;
+        }
+
+        if (!translated.title || !translated.content) {
+          console.warn(`[bg-generate] ${lang.code}: missing title/content, skipping`);
+          continue;
+        }
+
+        // Save translation (reuse same images from English post)
+        await db.insert(blogPosts).values({
+          slug: finalSlug,
+          language: lang.code,
+          title: translated.title,
+          excerpt: (translated.excerpt || parsed.excerpt).slice(0, 160),
+          content: translated.content,
+          metaTitle: (translated.metaTitle || translated.title).slice(0, 60),
+          metaDescription: (translated.metaDescription || translated.excerpt || "").slice(0, 155),
+          category: parsed.category,
+          tags: parsed.tags,
+          featuredImage: featuredImage, // Reuse English featured image
+          aiModel: model,
+          aiPrompt: `${topic} [${lang.code}]`,
+          sourceData: null,
+          published: publish,
+          publishedAt: publish ? new Date() : null,
+        });
+
+        console.log(`[bg-generate] ${lang.code}: translated and saved`);
+      } catch (langErr) {
+        console.warn(`[bg-generate] ${lang.code}: translation failed:`, langErr);
+        // Continue with other languages
+      }
+    }
+
+    console.log("[bg-generate] All translations done");
 
     // Update job
     if (jobId) {

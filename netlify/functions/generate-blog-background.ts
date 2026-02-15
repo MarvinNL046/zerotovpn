@@ -709,23 +709,23 @@ const handler: Handler = async (event) => {
       { code: "th", name: "Thai" },
     ];
 
-    console.log(`[bg-generate] Translating to ${targetLanguages.length} languages...`);
+    console.log(`[bg-generate] Translating to ${targetLanguages.length} languages (parallel batches of 4)...`);
 
-    for (const lang of targetLanguages) {
-      try {
-        // Check if translation already exists
-        const [existing] = await db
-          .select({ id: blogPosts.id })
-          .from(blogPosts)
-          .where(and(eq(blogPosts.slug, finalSlug), eq(blogPosts.language, lang.code)))
-          .limit(1);
+    // Translate a single language
+    async function translateOne(lang: { code: string; name: string }) {
+      // Check if translation already exists
+      const [existing] = await db
+        .select({ id: blogPosts.id })
+        .from(blogPosts)
+        .where(and(eq(blogPosts.slug, finalSlug), eq(blogPosts.language, lang.code)))
+        .limit(1);
 
-        if (existing) {
-          console.log(`[bg-generate] ${lang.code}: already exists, skipping`);
-          continue;
-        }
+      if (existing) {
+        console.log(`[bg-generate] ${lang.code}: already exists, skipping`);
+        return;
+      }
 
-        const translatePrompt = `Translate the following blog post metadata and content to ${lang.name}.
+      const translatePrompt = `Translate the following blog post metadata and content to ${lang.name}.
 
 RULES:
 - Translate ALL text naturally and fluently — not word-for-word
@@ -751,53 +751,57 @@ MetaTitle: ${parsed.metaTitle}
 MetaDescription: ${parsed.metaDescription}
 
 Content:
-${finalContent.slice(0, 14000)}`;
+${finalContent.slice(0, 12000)}`;
 
-        const translatedRaw = await generateAI(translatePrompt, model);
+      const translatedRaw = await generateAI(translatePrompt, model);
 
-        // Parse translation
-        let translated;
-        try {
-          let jsonStr = translatedRaw.trim()
-            .replace(/^```(?:json)?\s*\n?/, "")
-            .replace(/\n?\s*```\s*$/, "");
-          const match = jsonStr.match(/\{[\s\S]*\}/);
-          if (match) jsonStr = match[0];
-          translated = JSON.parse(jsonStr);
-        } catch {
-          console.warn(`[bg-generate] ${lang.code}: JSON parse failed, skipping`);
-          continue;
-        }
-
-        if (!translated.title || !translated.content) {
-          console.warn(`[bg-generate] ${lang.code}: missing title/content, skipping`);
-          continue;
-        }
-
-        // Save translation (reuse same images from English post)
-        await db.insert(blogPosts).values({
-          slug: finalSlug,
-          language: lang.code,
-          title: translated.title,
-          excerpt: (translated.excerpt || parsed.excerpt).slice(0, 160),
-          content: translated.content,
-          metaTitle: (translated.metaTitle || translated.title).slice(0, 60),
-          metaDescription: (translated.metaDescription || translated.excerpt || "").slice(0, 155),
-          category: parsed.category,
-          tags: parsed.tags,
-          featuredImage: featuredImage, // Reuse English featured image
-          aiModel: model,
-          aiPrompt: `${topic} [${lang.code}]`,
-          sourceData: null,
-          published: publish,
-          publishedAt: publish ? new Date() : null,
-        });
-
-        console.log(`[bg-generate] ${lang.code}: translated and saved`);
-      } catch (langErr) {
-        console.warn(`[bg-generate] ${lang.code}: translation failed:`, langErr);
-        // Continue with other languages
+      // Parse translation
+      let translated;
+      try {
+        let jsonStr = translatedRaw.trim()
+          .replace(/^```(?:json)?\s*\n?/, "")
+          .replace(/\n?\s*```\s*$/, "");
+        const match = jsonStr.match(/\{[\s\S]*\}/);
+        if (match) jsonStr = match[0];
+        translated = JSON.parse(jsonStr);
+      } catch {
+        console.warn(`[bg-generate] ${lang.code}: JSON parse failed, skipping`);
+        return;
       }
+
+      if (!translated.title || !translated.content) {
+        console.warn(`[bg-generate] ${lang.code}: missing title/content, skipping`);
+        return;
+      }
+
+      // Save translation (reuse same images from English post)
+      await db.insert(blogPosts).values({
+        slug: finalSlug,
+        language: lang.code,
+        title: translated.title,
+        excerpt: (translated.excerpt || parsed.excerpt).slice(0, 160),
+        content: translated.content,
+        metaTitle: (translated.metaTitle || translated.title).slice(0, 60),
+        metaDescription: (translated.metaDescription || translated.excerpt || "").slice(0, 155),
+        category: parsed.category,
+        tags: parsed.tags,
+        featuredImage: featuredImage, // Reuse English featured image
+        aiModel: model,
+        aiPrompt: `${topic} [${lang.code}]`,
+        sourceData: null,
+        published: publish,
+        publishedAt: publish ? new Date() : null,
+      });
+
+      console.log(`[bg-generate] ${lang.code}: translated and saved`);
+    }
+
+    // Run translations in parallel batches of 4
+    const BATCH_SIZE = 4;
+    for (let i = 0; i < targetLanguages.length; i += BATCH_SIZE) {
+      const batch = targetLanguages.slice(i, i + BATCH_SIZE);
+      console.log(`[bg-generate] Batch ${Math.floor(i / BATCH_SIZE) + 1}: ${batch.map(l => l.code).join(", ")}`);
+      await Promise.allSettled(batch.map(lang => translateOne(lang)));
     }
 
     console.log("[bg-generate] All translations done!");

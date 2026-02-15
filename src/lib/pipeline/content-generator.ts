@@ -15,8 +15,19 @@ export interface GeneratedPost {
 
 type PostType = "news" | "comparison" | "deal" | "guide";
 
-// Generate a full blog post using AI
+// Generate a full blog post using AI (text + images in one call)
 export async function generateBlogPost(
+  topic: string,
+  scrapeData: string | null,
+  model: AiModel
+): Promise<GeneratedPost> {
+  const post = await generateBlogPostText(topic, scrapeData, model);
+  await generateBlogPostImages(post);
+  return post;
+}
+
+// Generate blog post text only (no images) — fast step
+export async function generateBlogPostText(
   topic: string,
   scrapeData: string | null,
   model: AiModel
@@ -30,20 +41,28 @@ export async function generateBlogPost(
     temperature: 0.7,
   });
 
-  const post = parseGeneratedPost(rawResponse, postType);
+  return parseGeneratedPost(rawResponse, postType);
+}
 
-  // Generate featured image via Gemini (non-blocking — post still works without it)
+// Generate images for a blog post (featured + infographics) — slow step
+// Accepts optional onProgress callback for streaming progress updates
+export async function generateBlogPostImages(
+  post: GeneratedPost,
+  onProgress?: (message: string) => void
+): Promise<void> {
+  // Generate featured image via Gemini
   try {
+    onProgress?.("Generating featured image...");
     const image = await generateBlogImage(post.title, post.category);
     post.featuredImage = toDataUrl(image);
+    onProgress?.("Featured image done");
   } catch (error) {
     console.warn("Failed to generate featured image:", error);
+    onProgress?.("Featured image skipped (error)");
   }
 
   // Generate infographic images and replace placeholders in content
-  await replaceInfographicPlaceholders(post);
-
-  return post;
+  await replaceInfographicPlaceholders(post, onProgress);
 }
 
 // Auto-select a topic based on available scrape data
@@ -77,7 +96,10 @@ export function autoSelectTopic(
 }
 
 // Replace INFOGRAPHIC_1 and INFOGRAPHIC_2 placeholders with Gemini-generated images
-async function replaceInfographicPlaceholders(post: GeneratedPost): Promise<void> {
+async function replaceInfographicPlaceholders(
+  post: GeneratedPost,
+  onProgress?: (message: string) => void
+): Promise<void> {
   const placeholders = [
     { src: "INFOGRAPHIC_1", index: 1 },
     { src: "INFOGRAPHIC_2", index: 2 },
@@ -93,6 +115,7 @@ async function replaceInfographicPlaceholders(post: GeneratedPost): Promise<void
     const altText = altMatch?.[1] || `Infographic for ${post.title} - part ${index}`;
 
     try {
+      onProgress?.(`Generating infographic ${index}...`);
       const prompt = `Create a clean, professional infographic for a VPN blog article.
 The infographic should visualize: ${altText}
 Style: modern flat design, clean data visualization, professional color palette (blues, greens, white).
@@ -102,8 +125,10 @@ Do NOT include any readable text — use abstract shapes, icons, and visual meta
       const image = await generateImage(prompt);
       const dataUrl = toDataUrl(image);
       post.content = post.content.replace(`src="${src}"`, `src="${dataUrl}"`);
+      onProgress?.(`Infographic ${index} done`);
     } catch (error) {
       console.warn(`Failed to generate infographic ${index}:`, error);
+      onProgress?.(`Infographic ${index} skipped (error)`);
       // Remove the broken placeholder img tag entirely
       post.content = post.content.replace(
         new RegExp(`<img\\s+src="${src}"[^>]*/>`, "g"),

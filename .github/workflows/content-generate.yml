@@ -44,28 +44,42 @@ jobs:
           echo "  Model: $MODEL"
           echo "  Publish: $PUBLISH"
 
-          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST \
+          # Use streaming (-N) to receive progress updates and prevent CDN timeout
+          HTTP_CODE=$(curl -s -N -o /tmp/generate-output.txt -w "%{http_code}" -X POST \
             "${{ secrets.SITE_URL }}/api/pipeline/generate" \
             -H "Content-Type: application/json" \
             -H "x-pipeline-key: ${{ secrets.PIPELINE_SECRET }}" \
             -d "{\"type\": \"blog-post\", \"topic\": \"$TOPIC\", \"model\": \"$MODEL\", \"publish\": $PUBLISH}" \
             --max-time 300)
 
-          HTTP_CODE=$(echo "$RESPONSE" | tail -1)
-          BODY=$(echo "$RESPONSE" | sed '$d')
+          echo "HTTP Status: $HTTP_CODE"
+          echo "--- Stream output ---"
+          cat /tmp/generate-output.txt
+          echo ""
+          echo "--- End output ---"
 
-          echo "Status: $HTTP_CODE"
-          echo "$BODY"
-
-          if [ "$HTTP_CODE" -ge 500 ]; then
-            echo "::error::Blog generation failed with $HTTP_CODE"
-            exit 1
-          elif [ "$HTTP_CODE" -ge 400 ]; then
-            echo "::error::Blog generation returned $HTTP_CODE"
+          # Check HTTP status
+          if [ "$HTTP_CODE" -ge 400 ]; then
+            echo "::error::Blog generation HTTP error: $HTTP_CODE"
             exit 1
           fi
 
-          echo "Blog post generated successfully!"
+          # Check if the stream contains an error step
+          if grep -q '"step":"error"' /tmp/generate-output.txt; then
+            ERROR=$(grep '"step":"error"' /tmp/generate-output.txt)
+            echo "::error::Blog generation failed: $ERROR"
+            exit 1
+          fi
+
+          # Check if the stream completed successfully
+          if grep -q '"step":"completed"' /tmp/generate-output.txt; then
+            RESULT=$(grep '"step":"completed"' /tmp/generate-output.txt)
+            echo "Blog post generated successfully!"
+            echo "$RESULT"
+          else
+            echo "::warning::Blog generation stream ended without completion signal"
+            exit 1
+          fi
 
       - name: Check pipeline status
         if: always()

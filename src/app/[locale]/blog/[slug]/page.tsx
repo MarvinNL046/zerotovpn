@@ -64,7 +64,13 @@ export default async function DynamicBlogPost({ params }: Props) {
     notFound();
   }
 
-  const readTime = `${Math.max(1, Math.ceil(post.content.length / 1500))} min`;
+  // Strip base64 images and HTML tags before calculating read time
+  const textOnly = post.content
+    .replace(/data:[^"]+/g, "")
+    .replace(/<[^>]+>/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+  const readTime = `${Math.max(1, Math.ceil(textOnly.length / 1500))} min`;
   const lastUpdated = formatDate(post.updatedAt, locale);
 
   return (

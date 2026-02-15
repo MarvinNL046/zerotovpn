@@ -227,6 +227,63 @@ async function scrapeCountryDataForBlog(
   return parts.length > 0 ? parts.join("\n\n") : null;
 }
 
+// --- VPN Logo mapping (public/logos/ contains official SVGs from provider websites) ---
+
+const VPN_LOGOS: Record<string, { file: string; displayName: string }> = {
+  nordvpn: { file: "/logos/nordvpn.svg", displayName: "NordVPN" },
+  expressvpn: { file: "/logos/expressvpn.svg", displayName: "ExpressVPN" },
+  surfshark: { file: "/logos/surfshark.svg", displayName: "Surfshark" },
+  cyberghost: { file: "/logos/cyberghost.svg", displayName: "CyberGhost" },
+  protonvpn: { file: "/logos/protonvpn.svg", displayName: "ProtonVPN" },
+  mullvad: { file: "/logos/mullvad.svg", displayName: "Mullvad" },
+  ipvanish: { file: "/logos/ipvanish.svg", displayName: "IPVanish" },
+  "private-internet-access": { file: "/logos/private-internet-access.svg", displayName: "Private Internet Access" },
+};
+
+// Inject VPN logos into blog content HTML.
+// Finds the first <h2> or <h3> heading that mentions each VPN name
+// and prepends the logo image to that heading.
+function injectVpnLogos(content: string, siteUrl: string): string {
+  let updated = content;
+  const injected = new Set<string>();
+
+  for (const [slug, { file, displayName }] of Object.entries(VPN_LOGOS)) {
+    // Skip if VPN not mentioned in content
+    if (!content.toLowerCase().includes(displayName.toLowerCase())) continue;
+
+    // Find the first <h2> or <h3> that contains this VPN name
+    const headingRegex = new RegExp(
+      `(<h[23][^>]*>)((?:(?!</h[23]>).)*?${displayName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?:(?!</h[23]>).)*)(<\/h[23]>)`,
+      "i"
+    );
+
+    const match = updated.match(headingRegex);
+    if (match && !injected.has(slug)) {
+      const logoImg = `<img src="${siteUrl}${file}" alt="${displayName} logo" style="height:28px;width:auto;vertical-align:middle;margin-right:8px;display:inline-block;" />`;
+      updated = updated.replace(
+        match[0],
+        `${match[1]}${logoImg}${match[2]}${match[3]}`
+      );
+      injected.add(slug);
+    }
+
+    // Also inject into comparison table cells: find <td><strong>VPN Name</strong></td>
+    const tableCellPattern = `(<td[^>]*>\\s*<strong>)(${displayName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})(</strong>)`;
+
+    if (!injected.has(`${slug}-table`) && new RegExp(tableCellPattern, "i").test(updated)) {
+      const logoImgSmall = `<img src="${siteUrl}${file}" alt="${displayName} logo" style="height:20px;width:auto;vertical-align:middle;margin-right:6px;display:inline-block;" />`;
+      updated = updated.replace(
+        new RegExp(tableCellPattern, "gi"),
+        `$1${logoImgSmall}$2$3`
+      );
+      injected.add(`${slug}-table`);
+    }
+  }
+
+  console.log(`[bg-generate] Injected ${injected.size} VPN logos into content`);
+  return updated;
+}
+
 // --- Helpers ---
 
 function getDb() {
@@ -625,6 +682,8 @@ E-E-A-T SIGNALS (critical for Google rankings — weave throughout):
 - TRUSTWORTHINESS: Be balanced — mention downsides too. Be honest about limitations.
 - CRITICAL: Only use prices, speeds, and specs from the REFERENCE DATA provided. If no data is provided for a specific number, say "check the provider's website for current pricing" instead of making up a number. NEVER fabricate test results, percentages, or performance metrics.
 
+VPN LOGOS: Official VPN provider logos are available and will be automatically inserted into headings and comparison tables. When writing about specific VPNs, use their full names (NordVPN, ExpressVPN, Surfshark, CyberGhost, ProtonVPN, Mullvad, IPVanish, Private Internet Access) in H2/H3 headings so logos appear correctly. Give each recommended VPN its own H2 or H3 section when appropriate.
+
 FORMATTING RULES:
 - Bold key terms on first mention in each section
 - Use <strong> for emphasis, never <b>
@@ -964,6 +1023,10 @@ const handler: Handler = async (event) => {
     console.log("[bg-generate] AI done, parsing...");
 
     const parsed = parsePost(rawResponse, postType);
+
+    // Inject VPN logos into the content
+    const siteUrl = process.env.SITE_URL || process.env.URL || "https://zerotovpn.com";
+    parsed.content = injectVpnLogos(parsed.content, siteUrl);
 
     // Ensure slug is unique (append date suffix if needed)
     let finalSlug = parsed.slug;

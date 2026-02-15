@@ -25,7 +25,7 @@ export default function SettingsPage() {
     // General
     siteName: "ZeroToVPN",
     siteUrl: "https://zerotovpn.com",
-    adminEmail: "admin@zerotovpn.com",
+    adminEmail: "hello@zerotovpn.com",
 
     // Reviews
     autoApproveReviews: false,

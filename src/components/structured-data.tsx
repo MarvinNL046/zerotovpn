@@ -14,7 +14,7 @@ export function OrganizationSchema() {
     ],
     contactPoint: {
       "@type": "ContactPoint",
-      email: "contact@zerotovpn.com",
+      email: "hello@zerotovpn.com",
       contactType: "customer service",
     },
   };

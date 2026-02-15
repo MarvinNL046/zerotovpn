@@ -465,10 +465,10 @@ export default async function PrivacyPolicyPage({ params }: Props) {
                   <p className="text-muted-foreground">
                     Email:{" "}
                     <a
-                      href="mailto:privacy@zerotovpn.com"
+                      href="mailto:hello@zerotovpn.com"
                       className="text-primary hover:underline"
                     >
-                      privacy@zerotovpn.com
+                      hello@zerotovpn.com
                     </a>
                   </p>
                 </div>

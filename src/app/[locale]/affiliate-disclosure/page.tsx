@@ -367,10 +367,10 @@ export default async function AffiliateDisclosurePage({ params }: Props) {
                   <p className="text-muted-foreground">
                     Email:{" "}
                     <a
-                      href="mailto:contact@zerotovpn.com"
+                      href="mailto:hello@zerotovpn.com"
                       className="text-primary hover:underline"
                     >
-                      contact@zerotovpn.com
+                      hello@zerotovpn.com
                     </a>
                   </p>
                 </div>

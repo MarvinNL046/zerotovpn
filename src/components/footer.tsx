@@ -207,7 +207,7 @@ export function Footer() {
                   {t("contactPage")}
                 </Link>
               </li>
-              <li className="text-muted-foreground">contact@zerotovpn.com</li>
+              <li className="text-muted-foreground">hello@zerotovpn.com</li>
             </ul>
           </div>
 

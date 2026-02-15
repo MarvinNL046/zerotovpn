@@ -972,28 +972,28 @@ export default async function AboutPage({ params }: Props) {
               <p className="text-sm text-muted-foreground">
                 <strong>General inquiries:</strong>{" "}
                 <a
-                  href="mailto:contact@zerotovpn.com"
+                  href="mailto:hello@zerotovpn.com"
                   className="text-primary hover:underline"
                 >
-                  contact@zerotovpn.com
+                  hello@zerotovpn.com
                 </a>
               </p>
               <p className="text-sm text-muted-foreground">
                 <strong>Press & partnerships:</strong>{" "}
                 <a
-                  href="mailto:business@zerotovpn.com"
+                  href="mailto:hello@zerotovpn.com"
                   className="text-primary hover:underline"
                 >
-                  business@zerotovpn.com
+                  hello@zerotovpn.com
                 </a>
               </p>
               <p className="text-sm text-muted-foreground">
                 <strong>Privacy matters:</strong>{" "}
                 <a
-                  href="mailto:privacy@zerotovpn.com"
+                  href="mailto:hello@zerotovpn.com"
                   className="text-primary hover:underline"
                 >
-                  privacy@zerotovpn.com
+                  hello@zerotovpn.com
                 </a>
               </p>
             </div>

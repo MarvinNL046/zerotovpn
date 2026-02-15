@@ -438,10 +438,10 @@ export default async function TermsPage({ params }: Props) {
                   <p className="text-muted-foreground">
                     Email:{" "}
                     <a
-                      href="mailto:legal@zerotovpn.com"
+                      href="mailto:hello@zerotovpn.com"
                       className="text-primary hover:underline"
                     >
-                      legal@zerotovpn.com
+                      hello@zerotovpn.com
                     </a>
                   </p>
                 </div>

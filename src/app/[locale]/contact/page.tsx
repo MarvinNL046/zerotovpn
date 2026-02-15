@@ -72,10 +72,10 @@ export default async function ContactPage({ params }: Props) {
                   Questions about our reviews, recommendations, or anything else?
                 </p>
                 <a
-                  href="mailto:contact@zerotovpn.com"
+                  href="mailto:hello@zerotovpn.com"
                   className="text-primary hover:underline font-medium"
                 >
-                  contact@zerotovpn.com
+                  hello@zerotovpn.com
                 </a>
               </div>
 
@@ -89,10 +89,10 @@ export default async function ContactPage({ params }: Props) {
                   Questions about your data or exercising your privacy rights.
                 </p>
                 <a
-                  href="mailto:privacy@zerotovpn.com"
+                  href="mailto:hello@zerotovpn.com"
                   className="text-primary hover:underline font-medium"
                 >
-                  privacy@zerotovpn.com
+                  hello@zerotovpn.com
                 </a>
               </div>
 
@@ -106,10 +106,10 @@ export default async function ContactPage({ params }: Props) {
                   Partnership opportunities or media inquiries.
                 </p>
                 <a
-                  href="mailto:business@zerotovpn.com"
+                  href="mailto:hello@zerotovpn.com"
                   className="text-primary hover:underline font-medium"
                 >
-                  business@zerotovpn.com
+                  hello@zerotovpn.com
                 </a>
               </div>
             </div>

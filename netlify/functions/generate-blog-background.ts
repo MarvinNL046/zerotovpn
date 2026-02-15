@@ -796,12 +796,33 @@ ${finalContent.slice(0, 12000)}`;
       console.log(`[bg-generate] ${lang.code}: translated and saved`);
     }
 
-    // Run translations in parallel batches of 4
+    // Run translations in parallel batches of 4, with retry for failures
     const BATCH_SIZE = 4;
+    const failedLangs: { code: string; name: string }[] = [];
+
     for (let i = 0; i < targetLanguages.length; i += BATCH_SIZE) {
       const batch = targetLanguages.slice(i, i + BATCH_SIZE);
       console.log(`[bg-generate] Batch ${Math.floor(i / BATCH_SIZE) + 1}: ${batch.map(l => l.code).join(", ")}`);
-      await Promise.allSettled(batch.map(lang => translateOne(lang)));
+      const results = await Promise.allSettled(batch.map(lang => translateOne(lang)));
+      results.forEach((r, idx) => {
+        if (r.status === "rejected") {
+          console.warn(`[bg-generate] ${batch[idx].code}: FAILED - ${r.reason}`);
+          failedLangs.push(batch[idx]);
+        }
+      });
+    }
+
+    // Retry failed translations sequentially (with small delay to avoid rate limits)
+    if (failedLangs.length > 0) {
+      console.log(`[bg-generate] Retrying ${failedLangs.length} failed translations: ${failedLangs.map(l => l.code).join(", ")}`);
+      for (const lang of failedLangs) {
+        try {
+          await new Promise(resolve => setTimeout(resolve, 2000)); // 2s delay between retries
+          await translateOne(lang);
+        } catch (retryErr) {
+          console.warn(`[bg-generate] ${lang.code}: retry also failed - ${retryErr}`);
+        }
+      }
     }
 
     console.log("[bg-generate] All translations done!");

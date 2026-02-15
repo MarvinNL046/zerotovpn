@@ -2,6 +2,8 @@ import { getDb, scrapeJobs } from "@/lib/db";
 
 const JINA_API_KEY = process.env.JINA_API_KEY;
 const JINA_READER_URL = "https://r.jina.ai";
+const BRIGHT_DATA_API_KEY = process.env.BRIGHT_DATA_API_KEY;
+const BRIGHT_DATA_ZONE = process.env.BRIGHT_DATA_ZONE || "web_unlocker1";
 
 export interface ScrapedPricing {
   vpnSlug: string;
@@ -11,6 +13,7 @@ export interface ScrapedPricing {
   moneyBackDays?: number;
   freeTier?: boolean;
   rawContent: string;
+  scrapedWith: "jina" | "brightdata";
 }
 
 export interface ScrapedNews {
@@ -22,8 +25,8 @@ export interface ScrapedNews {
   vpnMentions: string[];
 }
 
-// Fetch a URL's content as markdown using Jina.ai Reader
-export async function scrapeUrl(url: string): Promise<string> {
+// Fetch via Jina.ai Reader
+async function scrapeWithJina(url: string): Promise<string> {
   const headers: Record<string, string> = {
     Accept: "text/markdown",
   };
@@ -44,6 +47,74 @@ export async function scrapeUrl(url: string): Promise<string> {
   }
 
   return response.text();
+}
+
+// Fetch via Bright Data Web Unlocker API
+async function scrapeWithBrightData(url: string): Promise<string> {
+  if (!BRIGHT_DATA_API_KEY) {
+    throw new Error("BRIGHT_DATA_API_KEY is not configured");
+  }
+
+  const response = await fetch(
+    "https://api.brightdata.com/request",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${BRIGHT_DATA_API_KEY}`,
+      },
+      body: JSON.stringify({
+        zone: BRIGHT_DATA_ZONE,
+        url,
+        format: "raw",
+      }),
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error(
+      `Bright Data scrape failed for ${url}: ${response.status} ${response.statusText}`
+    );
+  }
+
+  return response.text();
+}
+
+// Main scrape function: tries Jina first, falls back to Bright Data
+export async function scrapeUrl(url: string): Promise<{ content: string; provider: "jina" | "brightdata" }> {
+  // Try Jina.ai first
+  try {
+    const content = await scrapeWithJina(url);
+    if (content && content.length > 100) {
+      return { content, provider: "jina" };
+    }
+    throw new Error("Jina returned empty or too short content");
+  } catch (jinaError) {
+    console.warn(
+      `Jina.ai failed for ${url}, falling back to Bright Data:`,
+      jinaError instanceof Error ? jinaError.message : jinaError
+    );
+  }
+
+  // Fallback to Bright Data
+  if (BRIGHT_DATA_API_KEY) {
+    try {
+      const content = await scrapeWithBrightData(url);
+      return { content, provider: "brightdata" };
+    } catch (brightError) {
+      console.error(
+        `Bright Data also failed for ${url}:`,
+        brightError instanceof Error ? brightError.message : brightError
+      );
+      throw new Error(
+        `All scrapers failed for ${url}. Jina and Bright Data both returned errors.`
+      );
+    }
+  }
+
+  throw new Error(
+    `Jina.ai failed for ${url} and Bright Data is not configured (set BRIGHT_DATA_API_KEY)`
+  );
 }
 
 // VPN pricing page URLs
@@ -67,13 +138,12 @@ export async function scrapeVpnPricing(
     throw new Error(`No pricing URL configured for VPN: ${vpnSlug}`);
   }
 
-  const rawContent = await scrapeUrl(url);
+  const { content, provider } = await scrapeUrl(url);
 
   return {
     vpnSlug,
-    rawContent,
-    // Actual price extraction would need AI parsing — raw content is stored
-    // and the content-generator can parse it later
+    rawContent: content,
+    scrapedWith: provider,
   };
 }
 
@@ -90,7 +160,7 @@ export async function scrapeVpnNews(): Promise<ScrapedNews[]> {
 
   for (const sourceUrl of NEWS_SOURCES) {
     try {
-      const content = await scrapeUrl(sourceUrl);
+      const { content } = await scrapeUrl(sourceUrl);
 
       results.push({
         title: `VPN News from ${new URL(sourceUrl).hostname}`,

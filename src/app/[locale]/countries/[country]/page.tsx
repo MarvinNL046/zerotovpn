@@ -12,7 +12,6 @@ import { RelatedPages } from "@/components/seo/related-pages";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import {
   getCountryBySlug,
-  getAllDynamicCountrySlugs,
   STATIC_COUNTRY_SLUGS,
 } from "@/lib/country-data";
 import {
@@ -37,11 +36,7 @@ type Props = {
 };
 
 const baseUrl = "https://zerotovpn.com";
-
-export async function generateStaticParams() {
-  const slugs = getAllDynamicCountrySlugs();
-  return slugs.map((country) => ({ country }));
-}
+export const revalidate = 86400;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, country } = await params;

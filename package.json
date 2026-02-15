@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "npm run generate:sitemap-routes && next dev",
+    "generate:sitemap-routes": "node scripts/generate-sitemap-static-routes.mjs",
+    "prebuild": "npm run generate:sitemap-routes",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"

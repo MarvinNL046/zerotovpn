@@ -10,7 +10,7 @@ import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { UserReviewsList } from "@/components/reviews/user-reviews-list";
 import { ReviewForm } from "@/components/reviews/review-form";
 import { CouponList } from "@/components/coupons/coupon-list";
-import { getVpnBySlug, getAllVpns } from "@/lib/vpn-data-layer";
+import { getVpnBySlug } from "@/lib/vpn-data-layer";
 import { getReviewsByVpnSlug, getAverageUserRating } from "@/lib/user-reviews";
 import { getCouponsByVpnSlug } from "@/lib/coupon-data";
 import { Link } from "@/i18n/navigation";
@@ -37,18 +37,7 @@ type Props = {
 };
 
 const baseUrl = "https://zerotovpn.com";
-
-export async function generateStaticParams() {
-  const vpns = await getAllVpns();
-  const locales = routing.locales;
-
-  return locales.flatMap((locale) =>
-    vpns.map((vpn) => ({
-      locale,
-      slug: vpn.slug,
-    }))
-  );
-}
+export const revalidate = 86400;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
@@ -547,7 +536,7 @@ export default async function ReviewPage({ params }: Props) {
         </Tabs>
 
         {/* Coupon Section */}
-        <CouponSection vpn={vpn} locale={_locale} t={t} />
+        <CouponSection vpn={vpn} t={t} />
 
         {/* Verdict */}
         <Card className="mb-12 border-primary">
@@ -586,11 +575,9 @@ export default async function ReviewPage({ params }: Props) {
 // Coupon Section Component
 function CouponSection({
   vpn,
-  locale,
   t
 }: {
   vpn: { slug: string; name: string; affiliateUrl: string };
-  locale: string;
   t: (key: string, params?: Record<string, string>) => string;
 }) {
   const coupons = getCouponsByVpnSlug(vpn.slug);

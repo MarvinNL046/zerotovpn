@@ -1,7 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getAllVpns, getVpnBySlug } from "@/lib/vpn-data-layer";
+import { getVpnBySlug } from "@/lib/vpn-data-layer";
 import { ComparisonHero } from "@/components/compare/comparison-hero";
 import { ComparisonTable } from "@/components/compare/comparison-table";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
@@ -18,6 +18,7 @@ type Props = {
 };
 
 const baseUrl = "https://zerotovpn.com";
+export const revalidate = 86400;
 
 // Parse comparison slug (e.g., "nordvpn-vs-surfshark") into two VPN slugs
 function parseComparisonSlug(comparison: string): { slug1: string; slug2: string } | null {
@@ -26,23 +27,6 @@ function parseComparisonSlug(comparison: string): { slug1: string; slug2: string
     return null;
   }
   return { slug1: parts[0], slug2: parts[1] };
-}
-
-// Generate static params for all possible VPN combinations
-export async function generateStaticParams() {
-  const vpns = await getAllVpns();
-  const combinations: { comparison: string }[] = [];
-
-  // Generate all possible pairs (A vs B, but not B vs A since they're duplicates)
-  for (let i = 0; i < vpns.length; i++) {
-    for (let j = i + 1; j < vpns.length; j++) {
-      combinations.push({
-        comparison: `${vpns[i].slug}-vs-${vpns[j].slug}`,
-      });
-    }
-  }
-
-  return combinations;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

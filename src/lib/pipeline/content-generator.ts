@@ -161,7 +161,7 @@ CONTENT STRUCTURE (follow this EXACT structure — modeled after high-performing
    <table><thead><tr><th>VPN</th><th>Feature</th><th>Price</th></tr></thead>
    <tbody><tr><td><strong>VPN Name</strong></td><td>Details</td><td><strong>$X.XX/mo</strong></td></tr></tbody></table>
 
-6. CONCLUSION: Final H2 "Conclusion" section with 2 paragraphs summarizing key points and a CTA linking to the relevant ZeroToVPN page.
+6. CONCLUSION: Final H2 "Conclusion" section with 2 paragraphs summarizing key points, a CTA linking to the relevant ZeroToVPN page, and a trust statement like "Based on our independent testing of 50+ VPN services, we stand behind these recommendations. Learn more about <a href=\"https://zerotovpn.com/about\">our testing methodology</a>."
 
 INTERNAL LINKING (critical for SEO — include 8-12 internal links naturally, spread across sections):
 Reviews:
@@ -222,13 +222,22 @@ Rules for image placeholders:
 - The caption should explain what the visual shows and why it matters
 - Use src="INFOGRAPHIC_1" and src="INFOGRAPHIC_2" exactly — they will be replaced with generated images
 
+E-E-A-T SIGNALS (critical for Google rankings — weave these throughout):
+- EXPERIENCE: Reference hands-on testing (e.g., "In our testing...", "When we benchmarked...", "Our team measured...")
+- EXPERTISE: Use precise technical terms and data (server counts, encryption standards, protocol names)
+- AUTHORITATIVENESS: Cite credible external sources in "Did You Know?" callouts and comparison data
+- TRUSTWORTHINESS: Be balanced — mention downsides too, not just positives. Include phrases like "Based on our independent testing" or "According to verified data from..."
+- Every claim with a specific number MUST have a source (either in a "Did You Know?" callout or inline)
+- Use "we" voice to show team expertise: "We tested...", "Our analysis shows...", "We recommend..."
+
 FORMATTING RULES:
 - Bold VPN names and key terms on first mention in each section
 - Use <strong> for emphasis, never <b>
 - All links use full absolute URLs (https://zerotovpn.com/...)
 - Target 1800-2500 words for comprehensive SEO coverage
-- Write in authoritative but accessible tone
+- Write in authoritative but accessible tone — expert but not jargon-heavy
 - Include specific data points (prices, server counts, speeds, percentages)
+- Every stat or claim must be attributable to a real source
 `;
 
   const contextSection = scrapeData
@@ -242,9 +251,10 @@ FORMATTING RULES:
     guide: `Write an in-depth VPN guide article. Start with fundamentals, progress to advanced tips. Include step-by-step instructions with numbered lists. Add practical examples and real-world scenarios.`,
   };
 
-  return `You are a senior VPN expert writer for ZeroToVPN.com, the leading VPN comparison and review site.
+  return `You are a senior VPN expert writer for ZeroToVPN.com, an independent VPN comparison and review site run by cybersecurity professionals.
+Your team has personally tested 50+ VPN services through rigorous speed tests, security audits, and real-world usage. You write from first-hand experience.
 
-Write a comprehensive blog post about: "${topic}"
+Write a comprehensive, fact-checked blog post about: "${topic}"
 
 ${typeInstructions[postType]}
 

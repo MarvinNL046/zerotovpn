@@ -246,13 +246,12 @@ export function BreadcrumbSchema({
   );
 }
 
-// Article Schema for Blog Posts
+// Article Schema for Blog Posts (E-E-A-T optimized)
 export function ArticleJsonLd({
   title,
   description,
   datePublished,
   dateModified,
-  authorName = "ZeroToVPN Team",
   url,
   imageUrl,
 }: {
@@ -260,7 +259,6 @@ export function ArticleJsonLd({
   description: string;
   datePublished: string;
   dateModified?: string;
-  authorName?: string;
   url: string;
   imageUrl?: string;
 }) {
@@ -274,16 +272,31 @@ export function ArticleJsonLd({
     dateModified: dateModified || datePublished,
     author: {
       "@type": "Person",
-      name: authorName,
+      name: "ZeroToVPN Expert Team",
+      url: "https://zerotovpn.com/about",
+      jobTitle: "VPN Security Researchers",
+      description:
+        "Cybersecurity professionals who have tested and reviewed over 50 VPN services since 2024.",
+      sameAs: [
+        "https://twitter.com/zerotovpn",
+        "https://facebook.com/zerotovpn",
+      ],
+      worksFor: {
+        "@type": "Organization",
+        name: "ZeroToVPN",
+        url: "https://zerotovpn.com",
+      },
     },
     publisher: {
       "@type": "Organization",
       name: "ZeroToVPN",
+      url: "https://zerotovpn.com",
       logo: {
         "@type": "ImageObject",
         url: "https://zerotovpn.com/logo.png",
       },
     },
+    isAccessibleForFree: true,
     ...(imageUrl && {
       image: {
         "@type": "ImageObject",

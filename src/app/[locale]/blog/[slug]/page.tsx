@@ -7,6 +7,11 @@ import { Link } from "@/i18n/navigation";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import { getPostBySlug } from "@/lib/pipeline/blog-service";
+import {
+  AuthorBox,
+  FactCheckedBadge,
+  SourcesSection,
+} from "@/components/blog/author-box";
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
@@ -32,6 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "article",
       publishedTime: post.publishedAt?.toISOString(),
       modifiedTime: post.updatedAt.toISOString(),
+      authors: ["ZeroToVPN Expert Team"],
     },
   };
 }
@@ -47,6 +53,11 @@ export default async function DynamicBlogPost({ params }: Props) {
   }
 
   const readTime = `${Math.max(1, Math.ceil(post.content.length / 1500))} min`;
+  const lastUpdated = post.updatedAt.toLocaleDateString(locale, {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 
   return (
     <div className="flex flex-col">
@@ -93,7 +104,10 @@ export default async function DynamicBlogPost({ params }: Props) {
             {post.title}
           </h1>
 
-          <p className="text-xl text-muted-foreground">{post.excerpt}</p>
+          <p className="text-xl text-muted-foreground mb-6">{post.excerpt}</p>
+
+          {/* E-E-A-T: Fact-checked badge + author + last updated */}
+          <FactCheckedBadge lastUpdated={lastUpdated} />
         </div>
 
         {/* Featured Image */}
@@ -128,6 +142,12 @@ export default async function DynamicBlogPost({ params }: Props) {
             prose-table:border prose-th:bg-muted prose-th:p-3 prose-td:p-3"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
+
+        {/* E-E-A-T: Sources & References */}
+        <SourcesSection content={post.content} />
+
+        {/* E-E-A-T: Author Box */}
+        <AuthorBox />
       </article>
 
       {/* Structured Data */}

@@ -132,39 +132,99 @@ function detectCountry(topic: string): CountryInfo | null {
   return null;
 }
 
-// Scrape country news directly (can't import from src/ in Netlify functions)
+// Scrape country data from multiple sources (can't import from src/ in Netlify functions)
 async function scrapeCountryDataForBlog(
   country: CountryInfo
 ): Promise<string | null> {
   const jinaKey = process.env.JINA_API_KEY;
-  const query = `${country.name} VPN censorship internet freedom ${new Date().getFullYear()}`;
-  const searchUrl = `https://s.jina.ai/${encodeURIComponent(query)}`;
+  const jinaReaderUrl = "https://r.jina.ai";
+  const year = new Date().getFullYear();
 
   const headers: Record<string, string> = { Accept: "application/json" };
-  if (jinaKey) headers["Authorization"] = `Bearer ${jinaKey}`;
-
-  try {
-    const response = await fetch(searchUrl, {
-      method: "GET",
-      headers,
-      signal: AbortSignal.timeout(15000),
-    });
-    if (!response.ok) return null;
-
-    const data = await response.json();
-    const results = (data.data || data.results || []).slice(0, 3);
-    if (results.length === 0) return null;
-
-    return results
-      .map(
-        (r: { title?: string; description?: string; content?: string }) =>
-          `- ${r.title || "Untitled"}: ${(r.description || r.content || "").slice(0, 200)}`
-      )
-      .join("\n");
-  } catch (err) {
-    console.warn(`[bg-generate] Country news scrape failed for ${country.name}:`, err);
-    return null;
+  const readerHeaders: Record<string, string> = { Accept: "text/markdown" };
+  if (jinaKey) {
+    headers["Authorization"] = `Bearer ${jinaKey}`;
+    readerHeaders["Authorization"] = `Bearer ${jinaKey}`;
   }
+
+  // Scrape multiple sources in parallel
+  const sources = await Promise.allSettled([
+    // 1. Jina search: country + VPN news
+    (async () => {
+      const query = `${country.name} VPN censorship internet ${year}`;
+      const res = await fetch(`https://s.jina.ai/${encodeURIComponent(query)}`, {
+        method: "GET", headers, signal: AbortSignal.timeout(15000),
+      });
+      if (!res.ok) return null;
+      const data = await res.json();
+      const results = (data.data || data.results || []).slice(0, 4);
+      return results.length > 0
+        ? "RECENT VPN/CENSORSHIP NEWS:\n" + results
+            .map((r: { title?: string; description?: string; content?: string; url?: string }) =>
+              `- ${r.title || "Untitled"}: ${(r.description || r.content || "").slice(0, 250)}${r.url ? ` (Source: ${r.url})` : ""}`)
+            .join("\n")
+        : null;
+    })(),
+
+    // 2. Freedom House country report via Jina reader
+    (async () => {
+      const slug = country.slug === "uae" ? "united-arab-emirates" : country.slug;
+      const url = `https://freedomhouse.org/country/${slug}/freedom-net`;
+      const res = await fetch(`${jinaReaderUrl}/${url}`, {
+        method: "GET", headers: readerHeaders, signal: AbortSignal.timeout(15000),
+      });
+      if (!res.ok) return null;
+      const text = await res.text();
+      return text && text.length > 100
+        ? `FREEDOM HOUSE REPORT (${url}):\n${text.slice(0, 1500)}`
+        : null;
+    })(),
+
+    // 3. Jina search: best VPN for [country] reviews
+    (async () => {
+      const query = `best VPN for ${country.name} ${year} review`;
+      const res = await fetch(`https://s.jina.ai/${encodeURIComponent(query)}`, {
+        method: "GET", headers, signal: AbortSignal.timeout(15000),
+      });
+      if (!res.ok) return null;
+      const data = await res.json();
+      const results = (data.data || data.results || []).slice(0, 3);
+      return results.length > 0
+        ? "VPN REVIEW SOURCES:\n" + results
+            .map((r: { title?: string; description?: string; content?: string; url?: string }) =>
+              `- ${r.title || "Untitled"}: ${(r.description || r.content || "").slice(0, 250)}${r.url ? ` (Source: ${r.url})` : ""}`)
+            .join("\n")
+        : null;
+    })(),
+
+    // 4. Jina search: internet censorship / VPN legality
+    (async () => {
+      const query = `is VPN legal in ${country.name} ${year} internet censorship laws`;
+      const res = await fetch(`https://s.jina.ai/${encodeURIComponent(query)}`, {
+        method: "GET", headers, signal: AbortSignal.timeout(15000),
+      });
+      if (!res.ok) return null;
+      const data = await res.json();
+      const results = (data.data || data.results || []).slice(0, 3);
+      return results.length > 0
+        ? "VPN LEGALITY & CENSORSHIP SOURCES:\n" + results
+            .map((r: { title?: string; description?: string; content?: string; url?: string }) =>
+              `- ${r.title || "Untitled"}: ${(r.description || r.content || "").slice(0, 250)}${r.url ? ` (Source: ${r.url})` : ""}`)
+            .join("\n")
+        : null;
+    })(),
+  ]);
+
+  const parts: string[] = [];
+  for (const result of sources) {
+    if (result.status === "fulfilled" && result.value) {
+      parts.push(result.value);
+    }
+  }
+
+  console.log(`[bg-generate] Country scrape for ${country.name}: ${parts.length}/${sources.length} sources succeeded`);
+
+  return parts.length > 0 ? parts.join("\n\n") : null;
 }
 
 // --- Helpers ---
@@ -489,10 +549,19 @@ COUNTRY-SPECIFIC INSTRUCTIONS:
 - Mention legal implications honestly — don't downplay risks but don't fear-monger either
 - Link to the country page: ${siteUrl}/countries/${country.slug}
 - Include a section about which VPN protocols work best in ${country.name}
+
+CRITICAL DATA ACCURACY RULES FOR COUNTRY POSTS:
+- Use ONLY the pricing data from REFERENCE DATA / VPN PRICING DATA sections below. If pricing data is provided, use those exact numbers.
+- Do NOT invent speed test results (e.g., "45 Mbps", "95% uptime"). Instead, describe features qualitatively ("fast speeds", "reliable connection").
+- Do NOT invent feature names (e.g., "bridge servers", "stealth mode") — only mention features that are documented in the reference data or are well-known (obfuscated servers, Secure Core, etc.)
+- Do NOT claim "we tested in ${country.name}" unless test data is provided in the reference data. Instead say "based on user reports" or "according to independent reviews".
+- If you don't have a specific data point, be honest — say "check [provider]'s website for latest pricing" rather than guessing.
 `;
   }
 
-  const ctx = scrapeData ? `\nREFERENCE DATA (use this for accuracy — cite real numbers):\n${scrapeData.slice(0, 3000)}\n` : "";
+  const ctx = scrapeData
+    ? `\nREFERENCE DATA (use ONLY this data for prices, features, and specs — do NOT invent numbers):\n${scrapeData.slice(0, 5000)}\n`
+    : "\nNOTE: No scraped reference data is available. Do NOT invent specific prices, speeds, or test results. Use general descriptions and recommend readers check provider websites for current pricing.\n";
 
   // Dynamically fetch internal links from sitemap
   const sitemapLinks = await fetchSitemapLinks();
@@ -550,11 +619,11 @@ ${internalLinkSection}
 EXTERNAL LINKING: Include 3-5 credible industry sources relevant to the topic. Use descriptive anchor text, not "click here". Cite real, authoritative sources.
 
 E-E-A-T SIGNALS (critical for Google rankings — weave throughout):
-- EXPERIENCE: Reference hands-on testing ("In our testing...", "When we benchmarked...", "Our team measured...")
-- EXPERTISE: Use precise technical terms and data
+- EXPERIENCE: Reference real usage experience ("We've used...", "In practice...", "When setting up..."). Keep claims general and honest — do NOT invent specific speed numbers, uptime percentages, or benchmark results.
+- EXPERTISE: Use precise technical terms and data from the REFERENCE DATA provided
 - AUTHORITATIVENESS: Cite credible external sources in "Did You Know?" callouts
-- TRUSTWORTHINESS: Be balanced — mention downsides too. Include "Based on our independent testing"
-- Every stat MUST have a source. Use "we" voice for team expertise.
+- TRUSTWORTHINESS: Be balanced — mention downsides too. Be honest about limitations.
+- CRITICAL: Only use prices, speeds, and specs from the REFERENCE DATA provided. If no data is provided for a specific number, say "check the provider's website for current pricing" instead of making up a number. NEVER fabricate test results, percentages, or performance metrics.
 
 FORMATTING RULES:
 - Bold key terms on first mention in each section
@@ -793,7 +862,99 @@ const handler: Handler = async (event) => {
     const topic = !rawTopic || rawTopic === "auto" ? await autoSelectTopic(db, recentScrapes, model) : rawTopic;
     console.log("[bg-generate] Topic:", topic, "Model:", model);
 
-    const scrapeContext = recentScrapes.map((s) => s.result).filter(Boolean).join("\n\n").slice(0, 4000);
+    // Build scrape context — for country posts, fetch relevant pricing + country data
+    const detectedCountry = detectCountry(topic);
+    let scrapeContext: string;
+
+    if (detectedCountry) {
+      // Fetch country-specific scrape data
+      const countryScrapesPromise = db
+        .select()
+        .from(scrapeJobs)
+        .where(and(eq(scrapeJobs.status, "completed"), eq(scrapeJobs.source, `country-vpn:${detectedCountry.slug}`)))
+        .orderBy(desc(scrapeJobs.createdAt))
+        .limit(1);
+
+      // Fetch pricing data for the VPNs recommended for this country
+      // Map recommended VPN display names back to slugs
+      const vpnNameToSlug: Record<string, string> = {
+        "nordvpn": "nordvpn", "expressvpn": "expressvpn", "surfshark": "surfshark",
+        "cyberghost": "cyberghost", "protonvpn": "protonvpn", "mullvad": "mullvad",
+        "ipvanish": "ipvanish", "private internet access": "private-internet-access",
+      };
+      const recommendedSlugs = detectedCountry.recommendedVpns
+        .map((name) => {
+          const lower = name.toLowerCase().replace(/\s*\(.*\)/, "").trim();
+          return vpnNameToSlug[lower] || lower.replace(/\s+/g, "");
+        })
+        .filter(Boolean);
+
+      const pricingScrapesPromise = db
+        .select()
+        .from(scrapeJobs)
+        .where(and(eq(scrapeJobs.status, "completed"), eq(scrapeJobs.type, "pricing")))
+        .orderBy(desc(scrapeJobs.createdAt))
+        .limit(20);
+
+      const [countryScrapes, pricingScrapes] = await Promise.all([countryScrapesPromise, pricingScrapesPromise]);
+
+      // Filter pricing scrapes to only recommended VPNs (most recent per VPN)
+      const seenVpns = new Set<string>();
+      const relevantPricing = pricingScrapes.filter((s) => {
+        const slug = s.vpnSlug;
+        if (!slug || seenVpns.has(slug) || !recommendedSlugs.includes(slug)) return false;
+        seenVpns.add(slug);
+        return true;
+      });
+
+      const parts: string[] = [];
+      if (countryScrapes.length > 0 && countryScrapes[0].result) {
+        parts.push(`COUNTRY SCRAPE DATA:\n${countryScrapes[0].result.slice(0, 2000)}`);
+      }
+      if (relevantPricing.length > 0) {
+        parts.push(`VPN PRICING DATA (scraped from official websites — use these exact prices):\n${relevantPricing.map((s) => `${s.vpnSlug}: ${(s.result || "").slice(0, 800)}`).join("\n\n")}`);
+      }
+      scrapeContext = parts.join("\n\n").slice(0, 6000);
+      console.log(`[bg-generate] Country context: ${countryScrapes.length} country scrapes, ${relevantPricing.length} pricing scrapes for ${recommendedSlugs.join(", ")}`);
+    } else {
+      // For non-country posts, try to find relevant pricing data based on VPN names in topic
+      const topicLower = topic.toLowerCase();
+      const vpnSlugsInTopic = ["nordvpn", "surfshark", "expressvpn", "cyberghost", "protonvpn", "mullvad", "ipvanish", "private-internet-access"]
+        .filter((slug) => topicLower.includes(slug.replace("-", " ")) || topicLower.includes(slug));
+
+      if (vpnSlugsInTopic.length > 0) {
+        // Topic mentions specific VPNs — fetch their pricing data
+        const allPricing = await db
+          .select()
+          .from(scrapeJobs)
+          .where(and(eq(scrapeJobs.status, "completed"), eq(scrapeJobs.type, "pricing")))
+          .orderBy(desc(scrapeJobs.createdAt))
+          .limit(20);
+
+        const seenVpns = new Set<string>();
+        const relevantPricing = allPricing.filter((s) => {
+          const slug = s.vpnSlug;
+          if (!slug || seenVpns.has(slug) || !vpnSlugsInTopic.includes(slug)) return false;
+          seenVpns.add(slug);
+          return true;
+        });
+
+        if (relevantPricing.length > 0) {
+          scrapeContext = `VPN PRICING DATA (scraped from official websites — use these exact prices):\n${relevantPricing.map((s) => `${s.vpnSlug}: ${(s.result || "").slice(0, 800)}`).join("\n\n")}`.slice(0, 5000);
+        } else {
+          scrapeContext = recentScrapes.map((s) => s.result).filter(Boolean).join("\n\n").slice(0, 4000);
+        }
+      } else {
+        // General topic — include recent news + pricing mix
+        const newsData = recentScrapes.filter((s) => s.type === "news").map((s) => s.result).filter(Boolean);
+        const pricingData = recentScrapes.filter((s) => s.type === "pricing").map((s) => `${s.vpnSlug}: ${(s.result || "").slice(0, 500)}`).filter(Boolean);
+
+        const parts: string[] = [];
+        if (newsData.length > 0) parts.push(`RECENT VPN NEWS:\n${newsData.join("\n").slice(0, 2000)}`);
+        if (pricingData.length > 0) parts.push(`VPN PRICING DATA (use these exact prices):\n${pricingData.join("\n\n").slice(0, 2000)}`);
+        scrapeContext = parts.join("\n\n") || recentScrapes.map((s) => s.result).filter(Boolean).join("\n\n").slice(0, 4000);
+      }
+    }
 
     // Generate text
     const postType = detectPostType(topic);

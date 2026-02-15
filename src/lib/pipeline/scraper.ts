@@ -264,7 +264,7 @@ const FREEDOM_HOUSE_SLUGS: Record<string, string> = {
   "north-korea": "north-korea",
 };
 
-// Scrape country-specific VPN/censorship data
+// Scrape country-specific VPN/censorship data from multiple sources
 export async function scrapeCountryVpnData(
   countrySlug: string
 ): Promise<ScrapedCountryData> {
@@ -275,12 +275,20 @@ export async function scrapeCountryVpnData(
 
   const freedomHouseSlug = FREEDOM_HOUSE_SLUGS[countrySlug] || countrySlug;
   const freedomUrl = `https://freedomhouse.org/country/${freedomHouseSlug}/freedom-net`;
-  const newsQuery = `${countryName} VPN censorship internet freedom ${new Date().getFullYear()}`;
-  const newsUrl = `https://s.jina.ai/${encodeURIComponent(newsQuery)}`;
+  const year = new Date().getFullYear();
 
+  // Scrape 4 sources in parallel for comprehensive data
   const results = await Promise.allSettled([
+    // 1. Freedom House country report
     scrapeUrl(freedomUrl),
-    scrapeCountryNews(newsUrl),
+    // 2. VPN/censorship news search
+    scrapeCountryNews(`https://s.jina.ai/${encodeURIComponent(`${countryName} VPN censorship internet freedom ${year}`)}`),
+    // 3. Best VPN reviews for this country
+    scrapeCountryNews(`https://s.jina.ai/${encodeURIComponent(`best VPN for ${countryName} ${year} review`)}`)
+      .then((items) => items.map((item) => ({ ...item, title: `[Review] ${item.title}` }))),
+    // 4. VPN legality / internet laws
+    scrapeCountryNews(`https://s.jina.ai/${encodeURIComponent(`VPN legal ${countryName} ${year} internet censorship laws`)}`)
+      .then((items) => items.map((item) => ({ ...item, title: `[Legal] ${item.title}` }))),
   ]);
 
   const freedomReport =
@@ -296,27 +304,33 @@ export async function scrapeCountryVpnData(
   }
 
   const recentNews: ScrapedCountryData["recentNews"] = [];
-  if (results[1].status === "fulfilled") {
-    recentNews.push(...results[1].value);
-  } else {
-    console.warn(
-      `[scraper] News scrape failed for ${countrySlug}:`,
-      results[1].reason
-    );
+  for (let i = 1; i < results.length; i++) {
+    if (results[i].status === "fulfilled") {
+      const newsItems = (results[i] as PromiseFulfilledResult<ScrapedCountryData["recentNews"]>).value;
+      recentNews.push(...newsItems);
+    } else {
+      console.warn(
+        `[scraper] Source ${i} scrape failed for ${countrySlug}:`,
+        (results[i] as PromiseRejectedResult).reason
+      );
+    }
   }
 
   const rawContent = [
     freedomReport ? `FREEDOM HOUSE REPORT:\n${freedomReport}` : "",
     recentNews.length > 0
-      ? `RECENT NEWS:\n${recentNews.map((n) => `- ${n.title}: ${n.summary}`).join("\n")}`
+      ? `RECENT NEWS & SOURCES (${recentNews.length} items):\n${recentNews.map((n) => `- ${n.title}: ${n.summary} (${n.url})`).join("\n")}`
       : "",
   ]
     .filter(Boolean)
     .join("\n\n");
 
+  const successCount = results.filter((r) => r.status === "fulfilled").length;
+  console.log(`[scraper] ${countryName}: ${successCount}/${results.length} sources scraped, ${recentNews.length} news items`);
+
   if (!freedomReport && recentNews.length === 0) {
     throw new Error(
-      `No data could be scraped for ${countryName}. Both Freedom House and news scraping failed.`
+      `No data could be scraped for ${countryName}. All ${results.length} sources failed.`
     );
   }
 

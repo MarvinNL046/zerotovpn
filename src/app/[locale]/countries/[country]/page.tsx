@@ -16,12 +16,13 @@ import {
   STATIC_COUNTRY_SLUGS,
 } from "@/lib/country-data";
 import {
+  getCountryTranslation,
+  getCountryPageLabels,
+} from "@/lib/country-translations";
+import {
   Shield,
   CheckCircle,
-  XCircle,
-  Globe,
   Clock,
-  ArrowRight,
   Scale,
   Lock,
   Ban,
@@ -43,20 +44,25 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { country } = await params;
+  const { locale, country } = await params;
   const data = getCountryBySlug(country);
 
   if (!data) {
     return { title: "Country Not Found | ZeroToVPN" };
   }
 
+  // Use translated metadata if available
+  const translated = getCountryTranslation(country, locale);
+  const metaTitle = translated?.metaTitle || data.metaTitle;
+  const metaDescription = translated?.metaDescription || data.metaDescription;
+
   return {
     metadataBase: new URL(baseUrl),
-    title: data.metaTitle,
-    description: data.metaDescription,
+    title: metaTitle,
+    description: metaDescription,
     openGraph: {
-      title: data.metaTitle,
-      description: data.metaDescription,
+      title: metaTitle,
+      description: metaDescription,
       type: "article",
     },
   };
@@ -75,6 +81,24 @@ export default async function DynamicCountryPage({ params }: Props) {
   if (!data) {
     notFound();
   }
+
+  // Get translated content (falls back to English if not available)
+  const translated = getCountryTranslation(country, locale);
+  const labels = getCountryPageLabels(locale);
+
+  // Merge translated content with base data
+  const content = {
+    statusLabel: translated?.statusLabel || data.statusLabel,
+    heroSubtitle: translated?.heroSubtitle || data.heroSubtitle,
+    legalSummary: translated?.legalSummary || data.legalSummary,
+    whyVpn: translated?.whyVpn || data.whyVpn,
+    blockedServices: translated?.blockedServices || data.blockedServices,
+    keyFeatures: translated?.keyFeatures || data.keyFeatures,
+    tips: translated?.tips || data.tips,
+    faq: translated?.faq || data.faq,
+    metaTitle: translated?.metaTitle || data.metaTitle,
+    metaDescription: translated?.metaDescription || data.metaDescription,
+  };
 
   const allVpns = await getAllVpns();
   const recommendedVpns = allVpns.filter((vpn) =>
@@ -103,12 +127,21 @@ export default async function DynamicCountryPage({ params }: Props) {
     }
   };
 
+  // Helper to replace placeholders in label strings
+  const t = (template: string, vars: Record<string, string | number>) => {
+    let result = template;
+    for (const [key, value] of Object.entries(vars)) {
+      result = result.replace(`{${key}}`, String(value));
+    }
+    return result;
+  };
+
   // JSON-LD structured data
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: data.metaTitle,
-    description: data.metaDescription,
+    headline: content.metaTitle,
+    description: content.metaDescription,
     dateModified: "2026-02-15",
     author: {
       "@type": "Organization",
@@ -125,7 +158,7 @@ export default async function DynamicCountryPage({ params }: Props) {
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: data.faq.map((item) => ({
+    mainEntity: content.faq.map((item) => ({
       "@type": "Question",
       name: item.q,
       acceptedAnswer: {
@@ -151,7 +184,7 @@ export default async function DynamicCountryPage({ params }: Props) {
       <div className="container pt-6">
         <BreadcrumbSchema
           items={[
-            { name: "Countries", href: "/countries" },
+            { name: labels.allCountryGuides, href: "/countries" },
             { name: data.name, href: `/countries/${data.slug}` },
           ]}
         />
@@ -164,18 +197,18 @@ export default async function DynamicCountryPage({ params }: Props) {
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <Badge variant="secondary" className="px-4 py-1">
               <Clock className="h-3 w-3 mr-1" />
-              Updated February 2026
+              {labels.badge}
             </Badge>
             <div className="text-7xl mb-4">{data.flag}</div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-              Best VPN for {data.name}
+              {t(labels.bestVpnFor, { country: data.name })}
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              {data.heroSubtitle}
+              {content.heroSubtitle}
             </p>
             <Badge className={getStatusColor()}>
               {getStatusIcon()}
-              <span className="ml-1">{data.statusLabel}</span>
+              <span className="ml-1">{content.statusLabel}</span>
             </Badge>
           </div>
         </div>
@@ -191,18 +224,19 @@ export default async function DynamicCountryPage({ params }: Props) {
                   <Scale className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
                   <div>
                     <h2 className="text-2xl font-bold mb-3">
-                      VPN Legal Status in {data.name}
+                      {t(labels.legalStatusTitle, { country: data.name })}
                     </h2>
                     <p className="text-muted-foreground leading-relaxed">
-                      {data.legalSummary}
+                      {content.legalSummary}
                     </p>
                     <div className="mt-4 flex items-center gap-2">
                       {getStatusIcon()}
-                      <span className="font-medium">{data.statusLabel}</span>
+                      <span className="font-medium">{content.statusLabel}</span>
                       {data.internetFreedomScore > 0 && (
                         <span className="text-sm text-muted-foreground ml-4">
-                          Internet Freedom Score: {data.internetFreedomScore}/100
-                          (Freedom House)
+                          {t(labels.internetFreedomScore, {
+                            score: data.internetFreedomScore,
+                          })}
                         </span>
                       )}
                     </div>
@@ -219,10 +253,10 @@ export default async function DynamicCountryPage({ params }: Props) {
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-8">
-              Why You Need a VPN in {data.name}
+              {t(labels.whyTitle, { country: data.name })}
             </h2>
             <div className="grid md:grid-cols-2 gap-4">
-              {data.whyVpn.map((reason, i) => (
+              {content.whyVpn.map((reason, i) => (
                 <div
                   key={i}
                   className="flex items-start gap-3 p-4 rounded-lg bg-background border"
@@ -237,15 +271,15 @@ export default async function DynamicCountryPage({ params }: Props) {
       </section>
 
       {/* Blocked Services Section (only if there are blocked services) */}
-      {data.blockedServices.length > 0 && (
+      {content.blockedServices.length > 0 && (
         <section className="py-12">
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl font-bold text-center mb-8">
-                Blocked Services in {data.name}
+                {t(labels.blockedTitle, { country: data.name })}
               </h2>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                {data.blockedServices.map((service, i) => (
+                {content.blockedServices.map((service, i) => (
                   <div
                     key={i}
                     className="flex items-center gap-2 p-3 rounded-lg border border-red-200 dark:border-red-900 bg-red-50 dark:bg-red-950/20"
@@ -265,10 +299,10 @@ export default async function DynamicCountryPage({ params }: Props) {
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-4">
-              Best VPNs for {data.name} in 2026
+              {t(labels.bestVpnsTitle, { country: data.name })}
             </h2>
             <p className="text-center text-muted-foreground mb-8">
-              Tested and verified to work reliably in {data.name}
+              {t(labels.bestVpnsSubtitle, { country: data.name })}
             </p>
             <div className="space-y-6">
               {recommendedVpns.map((vpn, index) => {
@@ -287,7 +321,7 @@ export default async function DynamicCountryPage({ params }: Props) {
                     {index === 0 && (
                       <div className="absolute top-0 right-0">
                         <Badge className="rounded-none rounded-bl-lg bg-primary text-primary-foreground px-3 py-1">
-                          #1 Pick for {data.name}
+                          {t(labels.topPick, { country: data.name })}
                         </Badge>
                       </div>
                     )}
@@ -308,7 +342,7 @@ export default async function DynamicCountryPage({ params }: Props) {
                       <div className="flex-1 grid grid-cols-3 gap-4 text-center">
                         <div>
                           <div className="text-sm text-muted-foreground">
-                            Servers
+                            {labels.servers}
                           </div>
                           <div className="font-bold">
                             {vpn.servers.toLocaleString()}+
@@ -316,17 +350,17 @@ export default async function DynamicCountryPage({ params }: Props) {
                         </div>
                         <div>
                           <div className="text-sm text-muted-foreground">
-                            Countries
+                            {labels.countries}
                           </div>
                           <div className="font-bold">{vpn.countries}</div>
                         </div>
                         <div>
                           <div className="text-sm text-muted-foreground">
-                            Devices
+                            {labels.devices}
                           </div>
                           <div className="font-bold">
                             {vpn.maxDevices >= 100
-                              ? "Unlimited"
+                              ? labels.unlimited
                               : vpn.maxDevices}
                           </div>
                         </div>
@@ -343,7 +377,7 @@ export default async function DynamicCountryPage({ params }: Props) {
                           </div>
                           {savings > 0 && (
                             <Badge variant="secondary" className="mt-1">
-                              Save {savings}%
+                              {t(labels.save, { n: savings })}
                             </Badge>
                           )}
                         </div>
@@ -354,14 +388,14 @@ export default async function DynamicCountryPage({ params }: Props) {
                             affiliateUrl={vpn.affiliateUrl}
                             size="sm"
                           >
-                            Visit {vpn.name}
+                            {t(labels.visitVpn, { vpnName: vpn.name })}
                             <ExternalLink className="ml-1 h-3 w-3" />
                           </AffiliateButton>
                           <Link
                             href={`/reviews/${vpn.slug}`}
                             className="text-xs text-center text-primary hover:underline"
                           >
-                            Read Full Review
+                            {labels.readFullReview}
                           </Link>
                         </div>
                       </div>
@@ -372,25 +406,25 @@ export default async function DynamicCountryPage({ params }: Props) {
                       {vpn.killSwitch && (
                         <Badge variant="outline" className="text-xs">
                           <CheckCircle className="h-3 w-3 mr-1 text-green-500" />
-                          Kill Switch
+                          {labels.killSwitch}
                         </Badge>
                       )}
                       {vpn.noLogs && (
                         <Badge variant="outline" className="text-xs">
                           <CheckCircle className="h-3 w-3 mr-1 text-green-500" />
-                          No Logs
+                          {labels.noLogs}
                         </Badge>
                       )}
                       {vpn.netflixSupport && (
                         <Badge variant="outline" className="text-xs">
                           <CheckCircle className="h-3 w-3 mr-1 text-green-500" />
-                          Netflix
+                          {labels.netflix}
                         </Badge>
                       )}
                       {vpn.torrentSupport && (
                         <Badge variant="outline" className="text-xs">
                           <CheckCircle className="h-3 w-3 mr-1 text-green-500" />
-                          P2P
+                          {labels.p2p}
                         </Badge>
                       )}
                       <Badge variant="outline" className="text-xs">
@@ -411,10 +445,10 @@ export default async function DynamicCountryPage({ params }: Props) {
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-8">
-              Key VPN Features for {data.name}
+              {t(labels.featuresTitle, { country: data.name })}
             </h2>
             <div className="grid md:grid-cols-2 gap-4">
-              {data.keyFeatures.map((feature, i) => (
+              {content.keyFeatures.map((feature, i) => (
                 <div
                   key={i}
                   className="flex items-center gap-3 p-4 rounded-lg bg-background border"
@@ -433,10 +467,10 @@ export default async function DynamicCountryPage({ params }: Props) {
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-8">
-              Tips for Using a VPN in {data.name}
+              {t(labels.tipsTitle, { country: data.name })}
             </h2>
             <div className="space-y-4">
-              {data.tips.map((tip, i) => (
+              {content.tips.map((tip, i) => (
                 <div
                   key={i}
                   className="flex items-start gap-4 p-4 rounded-lg border"
@@ -457,10 +491,10 @@ export default async function DynamicCountryPage({ params }: Props) {
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-8">
-              Frequently Asked Questions
+              {labels.faqTitle}
             </h2>
             <div className="space-y-4">
-              {data.faq.map((item, i) => (
+              {content.faq.map((item, i) => (
                 <Card key={i}>
                   <CardContent className="p-6">
                     <div className="flex items-start gap-3">
@@ -482,33 +516,29 @@ export default async function DynamicCountryPage({ params }: Props) {
       <section className="py-12">
         <div className="container">
           <RelatedPages
-            title="Related Guides"
+            title={labels.relatedTitle}
             pages={[
               {
-                title: "All Country Guides",
-                description:
-                  "Browse VPN guides for all countries",
+                title: labels.allCountryGuides,
+                description: labels.allCountryGuidesDesc,
                 href: "/countries",
                 icon: "globe",
               },
               {
-                title: "Best VPN 2026",
-                description:
-                  "Top VPN providers ranked and reviewed",
+                title: labels.bestVpn2026,
+                description: labels.bestVpn2026Desc,
                 href: "/best/best-vpn",
                 icon: "trophy",
               },
               {
-                title: "VPN Comparison",
-                description:
-                  "Compare VPN providers side by side",
+                title: labels.vpnComparison,
+                description: labels.vpnComparisonDesc,
                 href: "/compare",
                 icon: "check",
               },
               {
-                title: "What is a VPN?",
-                description:
-                  "Learn how VPNs protect your privacy",
+                title: labels.whatIsVpn,
+                description: labels.whatIsVpnDesc,
                 href: "/guides/what-is-vpn",
                 icon: "shield",
               },

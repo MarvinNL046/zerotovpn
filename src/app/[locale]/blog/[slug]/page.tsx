@@ -83,7 +83,7 @@ export default async function DynamicBlogPost({ params }: Props) {
           </Link>
 
           <div className="flex items-center gap-3 mb-4">
-            <Badge variant="secondary">{post.category}</Badge>
+            <Badge variant="secondary" className="capitalize">{post.category}</Badge>
             {post.publishedAt && (
               <span className="text-sm text-muted-foreground flex items-center gap-1">
                 <Calendar className="h-4 w-4" />
@@ -134,14 +134,30 @@ export default async function DynamicBlogPost({ params }: Props) {
 
         {/* Article Content */}
         <div
-          className="prose prose-lg dark:prose-invert max-w-none
+          className="blog-content prose prose-lg dark:prose-invert max-w-none
             prose-headings:font-bold prose-headings:tracking-tight
+            prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h2:border-b prose-h2:pb-2 prose-h2:border-border
+            prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3
             prose-a:text-primary prose-a:no-underline hover:prose-a:underline
-            prose-img:rounded-lg prose-img:shadow-md
+            prose-img:rounded-xl prose-img:shadow-lg prose-img:mx-auto
             prose-blockquote:border-primary prose-blockquote:bg-muted/50 prose-blockquote:py-1 prose-blockquote:px-4 prose-blockquote:rounded-r-lg
-            prose-table:border prose-th:bg-muted prose-th:p-3 prose-td:p-3"
+            prose-table:border prose-table:border-border prose-table:rounded-lg prose-table:overflow-hidden
+            prose-thead:bg-primary/10 prose-th:p-3 prose-th:text-left prose-th:font-semibold prose-th:border-b prose-th:border-border
+            prose-td:p-3 prose-td:border-b prose-td:border-border/50
+            prose-tr:hover:bg-muted/30 prose-tr:transition-colors
+            prose-li:marker:text-primary
+            prose-strong:text-foreground
+            prose-p:leading-relaxed"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
+        <style dangerouslySetInnerHTML={{ __html: `
+          .blog-content table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; border-radius: 0.5rem; overflow: hidden; }
+          .blog-content table thead { background: hsl(var(--primary) / 0.08); }
+          .blog-content table th { font-weight: 600; text-align: left; }
+          .blog-content table td, .blog-content table th { padding: 0.75rem 1rem; border-bottom: 1px solid hsl(var(--border)); }
+          .blog-content table tr:last-child td { border-bottom: none; }
+          .blog-content table tr:hover { background: hsl(var(--muted) / 0.4); }
+        ` }} />
 
         {/* E-E-A-T: Sources & References */}
         <SourcesSection content={post.content} />

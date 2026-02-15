@@ -180,79 +180,179 @@ function detectPostType(topic: string): "news" | "comparison" | "deal" | "guide"
 
 function buildPrompt(topic: string, postType: string, scrapeData: string | null): string {
   const typeInstructions: Record<string, string> = {
-    news: "Write a VPN news roundup. Cover 3-4 developments with analysis.",
-    comparison: "Write a VPN comparison. Include main comparison table and per-VPN analysis.",
-    deal: "Write a VPN deals roundup. Show original vs deal price with savings percentage.",
-    guide: "Write an in-depth VPN guide with step-by-step instructions.",
+    news: "Write a VPN news roundup article. Cover 3-4 recent developments with analysis. Each news item gets its own numbered H2 section. Include \"Why This Matters\" subheadings.",
+    comparison: "Write a detailed VPN comparison article. The Key Takeaways table should compare the VPNs directly. Include a main comparison table and individual analysis per VPN. End with a clear winner and runner-up.",
+    deal: "Write a VPN deals roundup article. Each deal gets its own numbered H2 section. Show original price vs deal price with savings percentage. Include urgency with expiration context. Add a \"deal score\" rating.",
+    guide: "Write an in-depth VPN guide article. Start with fundamentals, progress to advanced tips. Include step-by-step instructions with numbered lists. Add practical examples and real-world scenarios.",
   };
 
-  const ctx = scrapeData ? `\nREFERENCE DATA (use for accuracy):\n${scrapeData.slice(0, 3000)}\n` : "";
+  const ctx = scrapeData ? `\nREFERENCE DATA (use this for accuracy — cite real numbers):\n${scrapeData.slice(0, 3000)}\n` : "";
 
-  return `You are a senior VPN expert writer for ZeroToVPN.com, an independent VPN comparison site.
-Your team has tested 50+ VPN services. Write from first-hand experience.
+  return `You are a senior VPN expert writer for ZeroToVPN.com, an independent VPN comparison and review site run by cybersecurity professionals.
+Your team has personally tested 50+ VPN services through rigorous speed tests, security audits, and real-world usage. You write from first-hand experience.
 
-Write a comprehensive blog post about: "${topic}"
+Write a comprehensive, fact-checked blog post about: "${topic}"
 
 ${typeInstructions[postType] || typeInstructions.guide}
 
-STRUCTURE:
-1. Hook intro (2-3 sentences with a stat). Bold the main keyword.
-2. Key Takeaways table: <h2>Key Takeaways</h2><table> with 5-7 Q&A rows.
-3. 10-11 numbered H2 sections, each with 2 paragraphs + H3 subheadings + bullet lists.
-4. 2-3 "Did You Know?" callouts with sources.
-5. At least 1 comparison table.
-6. Conclusion with CTA and trust statement.
+CONTENT STRUCTURE (follow this EXACT structure — modeled after high-performing blog posts):
 
-INTERNAL LINKS (include 8-12, use https://zerotovpn.com prefix):
-/reviews/nordvpn, /reviews/surfshark, /reviews/expressvpn, /reviews/cyberghost, /reviews/protonvpn,
-/best/best-vpn, /best/free-vpn, /best/vpn-streaming, /best/vpn-cheap, /best/vpn-netflix,
-/compare, /deals, /coupons, /speed-test, /quiz,
-/guides/what-is-vpn, /guides/how-vpn-works, /guides/vpn-protocols-explained,
-/blog/is-vpn-legal, /blog/vpn-vs-proxy
+1. OPENING: Start with a compelling intro paragraph (2-3 sentences) with a hook stat. Bold the most important keyword on first use.
 
-EXTERNAL LINKS (3-5 credible sources):
-statista.com, security.org, top10vpn.com, comparitech.com, freedomhouse.org, cisa.gov, eff.org
+2. KEY TAKEAWAYS TABLE: Immediately after intro, add an HTML table with Q&A format:
+   <h2>Key Takeaways</h2>
+   <table><thead><tr><th>Question</th><th>Answer</th></tr></thead><tbody>
+   <tr><td><strong>Question here?</strong></td><td>Answer with <strong>bold keywords</strong> and <a href="https://zerotovpn.com/relevant-page">internal links</a>.</td></tr>
+   </tbody></table>
+   Include 5-7 rows covering the main points of the article.
 
-E-E-A-T: Use "we tested", "our analysis shows", cite sources for every stat, mention downsides too.
-Target 1800-2500 words. Use <strong> for emphasis. All links use full absolute URLs.
+3. NUMBERED H2 SECTIONS: Use 10-11 numbered H2 headings like:
+   <h2>1. Section Title Here</h2>
+   Each H2 section should have:
+   - 2 intro paragraphs with <strong>bold keywords</strong> on first mention
+   - TWO H3 subheadings, each with a specific angle and 1-2 paragraphs
+   - At least half the sections should include a bullet list (<ul><li>) with 3-5 practical points, each starting with a <strong>bold label</strong>
+
+4. DID YOU KNOW CALLOUTS: Add 2-3 throughout the article:
+   <blockquote><p><strong>Did You Know?</strong> The actual fact with a stat here.</p><p>Source: <a href="https://source-url.com">Source Name</a></p></blockquote>
+
+5. COMPARISON TABLE: Include at least one data comparison table:
+   <h3>Comparison subtitle</h3>
+   <table><thead><tr><th>VPN</th><th>Feature</th><th>Price</th></tr></thead>
+   <tbody><tr><td><strong>VPN Name</strong></td><td>Details</td><td><strong>$X.XX/mo</strong></td></tr></tbody></table>
+
+6. INFOGRAPHIC PLACEHOLDERS: Include exactly 2 image placeholders:
+   After section 3: <img src="INFOGRAPHIC_1" alt="Infographic of [describe key visual with specific data points]." />
+   <p><em>A visual guide to [what the infographic shows].</em></p>
+   After section 7: <img src="INFOGRAPHIC_2" alt="Infographic showing [describe visual with comparison data]." />
+   <p><em>[Descriptive caption explaining the key takeaway].</em></p>
+   Use src="INFOGRAPHIC_1" and src="INFOGRAPHIC_2" EXACTLY — they will be replaced with generated images.
+
+7. CONCLUSION: Final H2 "Conclusion" section with 2 paragraphs summarizing key points, a CTA linking to the relevant ZeroToVPN page, and a trust statement like "Based on our independent testing of 50+ VPN services, we stand behind these recommendations. Learn more about <a href=\\"https://zerotovpn.com/about\\">our testing methodology</a>."
+
+INTERNAL LINKING (critical for SEO — include 8-12 internal links naturally, spread across sections):
+Reviews:
+- <a href="https://zerotovpn.com/reviews/nordvpn">NordVPN review</a>
+- <a href="https://zerotovpn.com/reviews/surfshark">Surfshark review</a>
+- <a href="https://zerotovpn.com/reviews/expressvpn">ExpressVPN review</a>
+- <a href="https://zerotovpn.com/reviews/cyberghost">CyberGhost review</a>
+- <a href="https://zerotovpn.com/reviews/protonvpn">ProtonVPN review</a>
+Best-of pages:
+- <a href="https://zerotovpn.com/best/best-vpn">best VPNs of 2026</a>
+- <a href="https://zerotovpn.com/best/free-vpn">best free VPNs</a>
+- <a href="https://zerotovpn.com/best/vpn-streaming">best VPNs for streaming</a>
+- <a href="https://zerotovpn.com/best/vpn-cheap">cheapest VPNs</a>
+- <a href="https://zerotovpn.com/best/vpn-netflix">best VPNs for Netflix</a>
+Tools & pages:
+- <a href="https://zerotovpn.com/compare">VPN comparison tool</a>
+- <a href="https://zerotovpn.com/deals">current VPN deals</a>
+- <a href="https://zerotovpn.com/coupons">VPN coupon codes</a>
+- <a href="https://zerotovpn.com/speed-test">VPN speed test</a>
+- <a href="https://zerotovpn.com/quiz">VPN recommendation quiz</a>
+Guides:
+- <a href="https://zerotovpn.com/guides/what-is-vpn">what is a VPN</a>
+- <a href="https://zerotovpn.com/guides/how-vpn-works">how VPNs work</a>
+- <a href="https://zerotovpn.com/guides/vpn-protocols-explained">VPN protocols explained</a>
+- <a href="https://zerotovpn.com/guides/vpn-for-streaming">VPN streaming guide</a>
+- <a href="https://zerotovpn.com/guides/public-wifi-safety">public Wi-Fi safety</a>
+Blog:
+- <a href="https://zerotovpn.com/blog/is-vpn-legal">is using a VPN legal</a>
+- <a href="https://zerotovpn.com/blog/vpn-vs-proxy">VPN vs proxy comparison</a>
+Pick 8-12 of these that are RELEVANT to the topic. Do NOT force irrelevant links.
+
+EXTERNAL LINKING (include 3-5 credible VPN-niche sources):
+- Statista VPN market data: https://www.statista.com/topics/7142/virtual-private-network-vpn-usage-worldwide/
+- Security.org VPN research: https://www.security.org/vpn/
+- Top10VPN free VPN reports: https://www.top10vpn.com/research/
+- Comparitech VPN stats: https://www.comparitech.com/vpn/
+- Freedom House internet freedom: https://freedomhouse.org/report/freedom-net
+- CISA cybersecurity guidance: https://www.cisa.gov/topics/cybersecurity-best-practices
+- EFF surveillance self-defense: https://ssd.eff.org/
+Pick 3-5 that match the topic. Use descriptive anchor text, not "click here".
+
+E-E-A-T SIGNALS (critical for Google rankings — weave throughout):
+- EXPERIENCE: Reference hands-on testing ("In our testing...", "When we benchmarked...", "Our team measured...")
+- EXPERTISE: Use precise technical terms (server counts, encryption standards, protocol names)
+- AUTHORITATIVENESS: Cite credible external sources in "Did You Know?" callouts
+- TRUSTWORTHINESS: Be balanced — mention downsides too. Include "Based on our independent testing"
+- Every stat MUST have a source. Use "we" voice for team expertise.
+
+FORMATTING RULES:
+- Bold VPN names and key terms on first mention in each section
+- Use <strong> for emphasis, never <b>
+- All links use full absolute URLs (https://zerotovpn.com/...)
+- Target 1800-2500 words for comprehensive SEO coverage
+- Write in authoritative but accessible tone
+- Include specific data points (prices, server counts, speeds, percentages)
 ${ctx}
-Respond ONLY with JSON (no markdown blocks):
+IMPORTANT: Respond ONLY with valid JSON in this exact format (no markdown code blocks, no text before or after the JSON):
 {
-  "title": "Title Here",
-  "slug": "url-slug",
-  "excerpt": "1-2 sentence excerpt (max 160 chars)",
-  "content": "Full HTML content",
-  "metaTitle": "SEO title (max 60 chars)",
-  "metaDescription": "Meta description (max 155 chars)",
-  "tags": ["tag1", "tag2", "tag3"]
+  "title": "The Blog Post Title In Title Case",
+  "slug": "url-friendly-slug-with-keywords",
+  "excerpt": "A compelling 1-2 sentence excerpt for previews (max 160 chars)",
+  "content": "The full blog post content in HTML format following the structure above",
+  "metaTitle": "SEO optimized title with primary keyword (max 60 chars)",
+  "metaDescription": "Compelling SEO meta description with CTA (max 155 chars)",
+  "tags": ["primary-keyword", "secondary-keyword", "vpn", "related-tag"]
 }`;
 }
 
 function parsePost(raw: string, postType: string) {
   let json = raw.trim();
+
+  // Remove markdown code block wrappers if present
   json = json.replace(/^```(?:json)?\s*\n?/, "").replace(/\n?\s*```\s*$/, "");
+
+  // Try to find a JSON object in the response (handles leading/trailing text)
   const match = json.match(/\{[\s\S]*\}/);
   if (match) json = match[0];
 
   try {
     const p = JSON.parse(json);
     return {
-      title: p.title || "Untitled",
-      slug: p.slug || slugify(p.title || "post"),
+      title: p.title || "Untitled Post",
+      slug: p.slug || slugify(p.title || "untitled"),
       excerpt: (p.excerpt || "").slice(0, 160),
       content: p.content || "",
       metaTitle: (p.metaTitle || p.title || "").slice(0, 60),
-      metaDescription: (p.metaDescription || "").slice(0, 155),
+      metaDescription: (p.metaDescription || p.excerpt || "").slice(0, 155),
       category: postType,
       tags: Array.isArray(p.tags) ? p.tags : [],
     };
   } catch {
+    // If JSON parsing fails, try to extract fields manually via regex
+    const titleMatch = raw.match(/"title"\s*:\s*"([^"]+)"/);
+    const slugMatch = raw.match(/"slug"\s*:\s*"([^"]+)"/);
+    const excerptMatch = raw.match(/"excerpt"\s*:\s*"([^"]+)"/);
+    const contentMatch = raw.match(/"content"\s*:\s*"([\s\S]*?)(?:"\s*,\s*"meta|"\s*,\s*"tags|"\s*\})/);
+
+    if (titleMatch && contentMatch) {
+      // Partial JSON recovery - unescape the content string
+      const content = contentMatch[1].replace(/\\n/g, "\n").replace(/\\"/g, '"').replace(/\\\\/g, "\\");
+      const title = titleMatch[1];
+      console.log("[bg-generate] JSON parse failed, recovered via regex:", title);
+      return {
+        title,
+        slug: slugMatch?.[1] || slugify(title),
+        excerpt: (excerptMatch?.[1] || content.replace(/<[^>]+>/g, "").slice(0, 155)).slice(0, 160),
+        content,
+        metaTitle: title.slice(0, 60),
+        metaDescription: (excerptMatch?.[1] || content.replace(/<[^>]+>/g, "").slice(0, 155)).slice(0, 155),
+        category: postType,
+        tags: [],
+      };
+    }
+
+    // Last resort: try to find an H1 or heading in the raw content
+    const h1Match = raw.match(/<h1[^>]*>([^<]+)<\/h1>/);
+    const title = h1Match?.[1] || raw.match(/^#\s+(.+)/m)?.[1] || "Generated Post";
+    console.error("[bg-generate] Could not parse AI response, using fallback. First 200 chars:", raw.slice(0, 200));
     return {
-      title: "Generated Post",
-      slug: "generated-post-" + Date.now(),
+      title,
+      slug: slugify(title) + "-" + Date.now(),
       excerpt: raw.replace(/<[^>]+>/g, "").slice(0, 155),
       content: raw,
-      metaTitle: "Generated Post",
+      metaTitle: title.slice(0, 60),
       metaDescription: raw.replace(/<[^>]+>/g, "").slice(0, 155),
       category: postType,
       tags: [],

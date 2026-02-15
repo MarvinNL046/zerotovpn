@@ -87,13 +87,29 @@ const blogPosts = [
   },
 ];
 
-const categoryConfig = {
+const categoryConfig: Record<string, {
+  icon: typeof TrendingUp;
+  color: string;
+  gradient: string;
+  iconColor: string;
+  bgPattern: string;
+  label: string;
+}> = {
   deals: {
     icon: TrendingUp,
     color: "text-green-600",
     gradient: "from-emerald-500/20 via-green-500/10 to-yellow-500/20",
     iconColor: "text-emerald-600",
     bgPattern: "bg-[radial-gradient(circle_at_30%_50%,rgba(16,185,129,0.15),transparent_50%)]",
+    label: "deals",
+  },
+  deal: {
+    icon: TrendingUp,
+    color: "text-green-600",
+    gradient: "from-emerald-500/20 via-green-500/10 to-yellow-500/20",
+    iconColor: "text-emerald-600",
+    bgPattern: "bg-[radial-gradient(circle_at_30%_50%,rgba(16,185,129,0.15),transparent_50%)]",
+    label: "deals",
   },
   security: {
     icon: Shield,
@@ -101,6 +117,7 @@ const categoryConfig = {
     gradient: "from-blue-500/20 via-indigo-500/10 to-purple-500/20",
     iconColor: "text-blue-600",
     bgPattern: "bg-[radial-gradient(circle_at_70%_50%,rgba(59,130,246,0.15),transparent_50%)]",
+    label: "security",
   },
   tips: {
     icon: Globe,
@@ -108,6 +125,15 @@ const categoryConfig = {
     gradient: "from-orange-500/20 via-amber-500/10 to-yellow-500/20",
     iconColor: "text-orange-600",
     bgPattern: "bg-[radial-gradient(circle_at_50%_30%,rgba(249,115,22,0.15),transparent_50%)]",
+    label: "tips",
+  },
+  guide: {
+    icon: Globe,
+    color: "text-purple-600",
+    gradient: "from-orange-500/20 via-amber-500/10 to-yellow-500/20",
+    iconColor: "text-orange-600",
+    bgPattern: "bg-[radial-gradient(circle_at_50%_30%,rgba(249,115,22,0.15),transparent_50%)]",
+    label: "tips",
   },
   news: {
     icon: Newspaper,
@@ -115,6 +141,15 @@ const categoryConfig = {
     gradient: "from-rose-500/20 via-pink-500/10 to-orange-500/20",
     iconColor: "text-rose-600",
     bgPattern: "bg-[radial-gradient(circle_at_50%_70%,rgba(244,63,94,0.15),transparent_50%)]",
+    label: "news",
+  },
+  comparison: {
+    icon: Shield,
+    color: "text-blue-600",
+    gradient: "from-blue-500/20 via-indigo-500/10 to-purple-500/20",
+    iconColor: "text-blue-600",
+    bgPattern: "bg-[radial-gradient(circle_at_70%_50%,rgba(59,130,246,0.15),transparent_50%)]",
+    label: "security",
   },
 };
 
@@ -226,12 +261,8 @@ export default async function BlogPage({ params }: Props) {
                       className={cn(
                         "aspect-video md:aspect-auto flex items-center justify-center relative overflow-hidden",
                         "bg-gradient-to-br",
-                        categoryConfig[
-                          featuredPost.category as keyof typeof categoryConfig
-                        ]?.gradient || "from-primary/20 to-primary/5",
-                        categoryConfig[
-                          featuredPost.category as keyof typeof categoryConfig
-                        ]?.bgPattern
+                        categoryConfig[featuredPost.category]?.gradient || "from-primary/20 to-primary/5",
+                        categoryConfig[featuredPost.category]?.bgPattern
                       )}
                     >
                       {featuredPost.featuredImage ? (
@@ -244,17 +275,12 @@ export default async function BlogPage({ params }: Props) {
                         <>
                           <div className="absolute inset-0 bg-grid-white/5" />
                           {(() => {
-                            const FeaturedIcon =
-                              categoryConfig[
-                                featuredPost.category as keyof typeof categoryConfig
-                              ]?.icon || TrendingUp;
+                            const FeaturedIcon = categoryConfig[featuredPost.category]?.icon || TrendingUp;
                             return (
                               <FeaturedIcon
                                 className={cn(
                                   "h-20 w-20 relative z-10",
-                                  categoryConfig[
-                                    featuredPost.category as keyof typeof categoryConfig
-                                  ]?.iconColor || "text-primary/40"
+                                  categoryConfig[featuredPost.category]?.iconColor || "text-primary/40"
                                 )}
                               />
                             );
@@ -266,7 +292,7 @@ export default async function BlogPage({ params }: Props) {
                     <div className="p-6 md:p-8 flex flex-col justify-center">
                       <div className="flex items-center gap-3 mb-4">
                         <Badge variant="default">
-                          {t(`categories.${featuredPost.category}`)}
+                          {t(`categories.${categoryConfig[featuredPost.category]?.label || featuredPost.category}`)}
                         </Badge>
                         <span className="text-sm text-muted-foreground flex items-center gap-1">
                           <Calendar className="h-4 w-4" />
@@ -313,8 +339,7 @@ export default async function BlogPage({ params }: Props) {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {otherPosts.map((post) => {
-              const config =
-                categoryConfig[post.category as keyof typeof categoryConfig];
+              const config = categoryConfig[post.category];
               const CategoryIcon = config?.icon || Newspaper;
 
               // Dynamic posts use DB title/excerpt; static posts use i18n
@@ -361,7 +386,7 @@ export default async function BlogPage({ params }: Props) {
                       <div className="p-6">
                         <div className="flex items-center gap-2 mb-3">
                           <Badge variant="secondary" className="text-xs">
-                            {t(`categories.${post.category}`)}
+                            {t(`categories.${categoryConfig[post.category]?.label || post.category}`)}
                           </Badge>
                           <span className="text-xs text-muted-foreground flex items-center gap-1">
                             <Calendar className="h-3 w-3" />

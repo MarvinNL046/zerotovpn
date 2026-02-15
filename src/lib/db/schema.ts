@@ -255,6 +255,100 @@ export const coupons = pgTable(
   ]
 );
 
+// Pipeline: Scrape job tracking
+export const scrapeJobs = pgTable(
+  "ScrapeJob",
+  {
+    id: text("id").primaryKey().$defaultFn(() => crypto.randomUUID()),
+    type: text("type").notNull(), // "vpn-data" | "pricing" | "news"
+    status: text("status").notNull().default("pending"), // "pending" | "running" | "completed" | "failed"
+    source: text("source").notNull(), // URL that was scraped
+    vpnSlug: text("vpnSlug"),
+    result: text("result"), // JSON string with scraped data
+    error: text("error"),
+    startedAt: timestamp("startedAt").notNull(),
+    completedAt: timestamp("completedAt"),
+    createdAt: timestamp("createdAt").defaultNow().notNull(),
+  },
+  (table) => [
+    index("ScrapeJob_type_status_idx").on(table.type, table.status),
+    index("ScrapeJob_createdAt_idx").on(table.createdAt),
+  ]
+);
+
+// Pipeline: Dynamic blog posts
+export const blogPosts = pgTable(
+  "BlogPost",
+  {
+    id: text("id").primaryKey().$defaultFn(() => crypto.randomUUID()),
+    slug: text("slug").notNull(),
+    language: text("language").default("en").notNull(),
+    title: text("title").notNull(),
+    excerpt: text("excerpt").notNull(),
+    content: text("content").notNull(), // Full HTML/markdown content
+    metaTitle: text("metaTitle"),
+    metaDescription: text("metaDescription"),
+    category: text("category").notNull(), // "news" | "guide" | "comparison" | "deal"
+    tags: text("tags").array(),
+    aiModel: text("aiModel"), // "claude-haiku" | "gpt-4o-mini"
+    aiPrompt: text("aiPrompt"),
+    sourceData: text("sourceData"), // JSON - scrape data used as input
+    published: boolean("published").default(false).notNull(),
+    publishedAt: timestamp("publishedAt"),
+    createdAt: timestamp("createdAt").defaultNow().notNull(),
+    updatedAt: timestamp("updatedAt").defaultNow().notNull(),
+  },
+  (table) => [
+    unique().on(table.slug, table.language),
+    index("BlogPost_language_published_category_idx").on(
+      table.language,
+      table.published,
+      table.category
+    ),
+  ]
+);
+
+// Pipeline: AI content generation queue
+export const contentQueue = pgTable(
+  "ContentQueue",
+  {
+    id: text("id").primaryKey().$defaultFn(() => crypto.randomUUID()),
+    type: text("type").notNull(), // "blog-post" | "vpn-update" | "comparison"
+    status: text("status").notNull().default("pending"), // "pending" | "processing" | "completed" | "failed"
+    priority: integer("priority").default(0).notNull(),
+    input: text("input").notNull(), // JSON - topic, keywords, scrape data
+    output: text("output"), // JSON result
+    aiModel: text("aiModel").notNull(), // "claude-haiku" | "gpt-4o-mini"
+    error: text("error"),
+    attempts: integer("attempts").default(0).notNull(),
+    maxAttempts: integer("maxAttempts").default(3).notNull(),
+    createdAt: timestamp("createdAt").defaultNow().notNull(),
+    processedAt: timestamp("processedAt"),
+  },
+  (table) => [
+    index("ContentQueue_status_priority_idx").on(table.status, table.priority),
+  ]
+);
+
+// Pipeline: Cached Short.io affiliate link data
+export const affiliateLinks = pgTable(
+  "AffiliateLink",
+  {
+    id: text("id").primaryKey().$defaultFn(() => crypto.randomUUID()),
+    shortId: text("shortId").notNull(),
+    path: text("path").notNull(), // e.g. "nordvpn"
+    originalUrl: text("originalUrl").notNull(),
+    vpnSlug: text("vpnSlug"),
+    clicks: integer("clicks").default(0).notNull(),
+    lastSyncedAt: timestamp("lastSyncedAt").notNull(),
+    createdAt: timestamp("createdAt").defaultNow().notNull(),
+  },
+  (table) => [
+    index("AffiliateLink_path_idx").on(table.path),
+    index("AffiliateLink_vpnSlug_idx").on(table.vpnSlug),
+  ]
+);
+
 // Type exports
 export type VpnProvider = typeof vpnProviders.$inferSelect;
 export type NewVpnProvider = typeof vpnProviders.$inferInsert;
@@ -270,3 +364,11 @@ export type Page = typeof pages.$inferSelect;
 export type NewPage = typeof pages.$inferInsert;
 export type Coupon = typeof coupons.$inferSelect;
 export type NewCoupon = typeof coupons.$inferInsert;
+export type ScrapeJob = typeof scrapeJobs.$inferSelect;
+export type NewScrapeJob = typeof scrapeJobs.$inferInsert;
+export type BlogPost = typeof blogPosts.$inferSelect;
+export type NewBlogPost = typeof blogPosts.$inferInsert;
+export type ContentQueueItem = typeof contentQueue.$inferSelect;
+export type NewContentQueueItem = typeof contentQueue.$inferInsert;
+export type AffiliateLink = typeof affiliateLinks.$inferSelect;
+export type NewAffiliateLink = typeof affiliateLinks.$inferInsert;

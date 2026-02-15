@@ -15,6 +15,7 @@ import {
 import { cn } from "@/lib/utils";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
+import { getAllPublishedPosts } from "@/lib/pipeline/blog-service";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -122,8 +123,42 @@ export default async function BlogPage({ params }: Props) {
   setRequestLocale(locale);
   const t = await getTranslations("blog");
 
-  const featuredPost = blogPosts.find((post) => post.featured);
-  const otherPosts = blogPosts.filter((post) => !post.featured);
+  // Fetch dynamic posts from DB (graceful fallback on error)
+  let dynamicPosts: Array<{
+    slug: string;
+    category: string;
+    featured: boolean;
+    date: string;
+    readTime: string;
+    title: string;
+    excerpt: string;
+    isDynamic: true;
+  }> = [];
+
+  try {
+    const dbPosts = await getAllPublishedPosts(locale);
+    dynamicPosts = dbPosts.map((post) => ({
+      slug: post.slug,
+      category: post.category,
+      featured: false,
+      date: post.publishedAt?.toISOString().split("T")[0] || post.createdAt.toISOString().split("T")[0],
+      readTime: `${Math.max(1, Math.ceil(post.content.length / 1500))} min`,
+      title: post.title,
+      excerpt: post.excerpt,
+      isDynamic: true as const,
+    }));
+  } catch {
+    // DB might not be available during build — continue with static posts only
+  }
+
+  // Merge static + dynamic, static posts first
+  const allPosts = [
+    ...blogPosts.map((p) => ({ ...p, isDynamic: false as const, title: "", excerpt: "" })),
+    ...dynamicPosts,
+  ];
+
+  const featuredPost = allPosts.find((post) => post.featured);
+  const otherPosts = allPosts.filter((post) => !post.featured);
 
   return (
     <div className="flex flex-col">
@@ -270,6 +305,14 @@ export default async function BlogPage({ params }: Props) {
                 categoryConfig[post.category as keyof typeof categoryConfig];
               const CategoryIcon = config?.icon || Newspaper;
 
+              // Dynamic posts use DB title/excerpt; static posts use i18n
+              const postTitle = post.isDynamic
+                ? post.title
+                : t(`posts.${post.slug}.title`);
+              const postExcerpt = post.isDynamic
+                ? post.excerpt
+                : t(`posts.${post.slug}.excerpt`);
+
               return (
                 <Link key={post.slug} href={`/blog/${post.slug}`}>
                   <Card className="h-full hover:shadow-lg transition-all hover:border-primary/50 group">
@@ -307,10 +350,10 @@ export default async function BlogPage({ params }: Props) {
                           </span>
                         </div>
                         <h3 className="text-lg font-bold mb-2 line-clamp-2">
-                          {t(`posts.${post.slug}.title`)}
+                          {postTitle}
                         </h3>
                         <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
-                          {t(`posts.${post.slug}.excerpt`)}
+                          {postExcerpt}
                         </p>
                         <div className="flex items-center justify-between text-sm">
                           <span className="flex items-center gap-1 text-muted-foreground">

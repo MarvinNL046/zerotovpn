@@ -1,0 +1,50 @@
+name: Weekly Content Generation
+
+on:
+  schedule:
+    # Run every Monday at 8:00 UTC
+    - cron: "0 8 * * 1"
+  workflow_dispatch: # Allow manual triggering
+    inputs:
+      topic:
+        description: "Blog post topic (leave empty for auto-select)"
+        required: false
+        default: "auto"
+      model:
+        description: "AI model to use"
+        required: false
+        default: "claude-haiku"
+        type: choice
+        options:
+          - claude-haiku
+          - gpt-4o-mini
+      publish:
+        description: "Publish immediately?"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate blog post
+        run: |
+          TOPIC="${{ github.event.inputs.topic || 'auto' }}"
+          MODEL="${{ github.event.inputs.model || 'claude-haiku' }}"
+          PUBLISH="${{ github.event.inputs.publish || 'false' }}"
+
+          RESPONSE=$(curl -s -f -X POST "${{ secrets.SITE_URL }}/api/pipeline/generate" \
+            -H "Content-Type: application/json" \
+            -H "x-pipeline-key: ${{ secrets.PIPELINE_SECRET }}" \
+            -d "{\"type\": \"blog-post\", \"topic\": \"$TOPIC\", \"model\": \"$MODEL\", \"publish\": $PUBLISH}")
+
+          echo "Generation response: $RESPONSE"
+
+      - name: Check pipeline status
+        run: |
+          curl -s -f "${{ secrets.SITE_URL }}/api/pipeline/status" \
+            -H "x-pipeline-key: ${{ secrets.PIPELINE_SECRET }}"

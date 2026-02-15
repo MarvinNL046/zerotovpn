@@ -2,6 +2,7 @@ import { MetadataRoute } from "next";
 import { getAllVpns } from "@/lib/vpn-data-layer";
 import { routing } from "@/i18n/routing";
 import { getAllDynamicCountries } from "@/lib/country-data";
+import { getAllPublishedSlugs } from "@/lib/pipeline/blog-service";
 
 // Auto-discovered static pages - add new pages here and they'll be in the sitemap
 const staticPages = [
@@ -247,6 +248,60 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       });
     });
   });
+
+  // Add dynamic blog posts from DB
+  try {
+    const dynamicSlugs = await getAllPublishedSlugs();
+
+    // Group slugs by slug to get available languages
+    const slugMap = new Map<string, { languages: string[]; updatedAt: Date }>();
+    for (const entry of dynamicSlugs) {
+      const existing = slugMap.get(entry.slug);
+      if (existing) {
+        existing.languages.push(entry.language);
+        if (entry.updatedAt > existing.updatedAt) {
+          existing.updatedAt = entry.updatedAt;
+        }
+      } else {
+        slugMap.set(entry.slug, {
+          languages: [entry.language],
+          updatedAt: entry.updatedAt,
+        });
+      }
+    }
+
+    for (const [slug, data] of slugMap) {
+      // Skip if this slug already exists in static pages
+      const isStatic = staticPages.some((p) => p.path === `/blog/${slug}`);
+      if (isStatic) continue;
+
+      locales.forEach((locale) => {
+        const prefix = locale === "en" ? "" : `/${locale}`;
+        const path = `/blog/${slug}`;
+        const url = `${baseUrl}${prefix}${path}`;
+
+        const alternates: Record<string, string> = {
+          "x-default": `${baseUrl}${path}`,
+        };
+        locales.forEach((l) => {
+          const altPrefix = l === "en" ? "" : `/${l}`;
+          alternates[l] = `${baseUrl}${altPrefix}${path}`;
+        });
+
+        routes.push({
+          url,
+          lastModified: data.updatedAt.toISOString(),
+          changeFrequency: "weekly",
+          priority: 0.7,
+          alternates: {
+            languages: alternates,
+          },
+        });
+      });
+    }
+  } catch {
+    // DB might not be available during build — skip dynamic posts
+  }
 
   return routes;
 }

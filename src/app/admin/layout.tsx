@@ -16,6 +16,7 @@ import {
   Shield,
   LogIn,
   Loader2,
+  Workflow,
 } from "lucide-react";
 
 function AdminLoading() {
@@ -28,6 +29,11 @@ function AdminLoading() {
     </div>
   );
 }
+
+const ALLOWED_ADMIN_EMAILS = [
+  "marvinsmit1988@gmail.com",
+  "info@staycoolairco.nl",
+];
 
 function AdminContent({ children }: { children: React.ReactNode }) {
   const user = useUser();
@@ -65,8 +71,36 @@ function AdminContent({ children }: { children: React.ReactNode }) {
     );
   }
 
+  // Block unauthorized users — only allowed emails can access admin
+  const userEmail = user.primaryEmail?.toLowerCase();
+  if (!userEmail || !ALLOWED_ADMIN_EMAILS.includes(userEmail)) {
+    return (
+      <div className="min-h-screen bg-gray-100 dark:bg-gray-900 flex items-center justify-center p-4">
+        <Card className="w-full max-w-md">
+          <CardHeader className="text-center">
+            <div className="w-16 h-16 bg-red-100 dark:bg-red-900/20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Shield className="h-8 w-8 text-red-500" />
+            </div>
+            <CardTitle className="text-2xl">Access Denied</CardTitle>
+            <p className="text-muted-foreground">
+              Your account ({userEmail}) does not have admin access.
+            </p>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <Link href="/">
+              <Button variant="outline" className="w-full">
+                Back to Site
+              </Button>
+            </Link>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
+
   const navItems = [
     { href: "/admin", label: "Dashboard", icon: LayoutDashboard },
+    { href: "/admin/pipeline", label: "Content Pipeline", icon: Workflow },
     { href: "/admin/reviews", label: "Review Moderation", icon: MessageSquare },
     { href: "/admin/clicks", label: "Click Analytics", icon: MousePointer },
     { href: "/admin/settings", label: "Settings", icon: Settings },

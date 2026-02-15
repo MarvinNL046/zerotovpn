@@ -1,0 +1,39 @@
+name: Daily VPN Data Scrape
+
+on:
+  schedule:
+    # Run daily at 6:00 UTC
+    - cron: "0 6 * * *"
+  workflow_dispatch: # Allow manual triggering
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Scrape VPN data
+        run: |
+          curl -s -f -X POST "${{ secrets.SITE_URL }}/api/pipeline/scrape" \
+            -H "Content-Type: application/json" \
+            -H "x-pipeline-key: ${{ secrets.PIPELINE_SECRET }}" \
+            -d '{"type": "vpn-data"}'
+          echo "VPN data scrape completed"
+
+      - name: Scrape VPN pricing
+        run: |
+          curl -s -f -X POST "${{ secrets.SITE_URL }}/api/pipeline/scrape" \
+            -H "Content-Type: application/json" \
+            -H "x-pipeline-key: ${{ secrets.PIPELINE_SECRET }}" \
+            -d '{"type": "pricing", "vpnSlug": "nordvpn"}'
+          echo "Pricing scrape completed"
+
+      - name: Sync affiliate links
+        run: |
+          curl -s -f -X POST "${{ secrets.SITE_URL }}/api/pipeline/sync-links" \
+            -H "Content-Type: application/json" \
+            -H "x-pipeline-key: ${{ secrets.PIPELINE_SECRET }}"
+          echo "Affiliate link sync completed"
+
+      - name: Check pipeline status
+        run: |
+          curl -s -f "${{ secrets.SITE_URL }}/api/pipeline/status" \
+            -H "x-pipeline-key: ${{ secrets.PIPELINE_SECRET }}"

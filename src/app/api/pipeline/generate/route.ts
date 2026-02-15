@@ -1,12 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { desc, eq } from "drizzle-orm";
-import { getDb, scrapeJobs, blogPosts } from "@/lib/db";
-import {
-  generateBlogPostText,
-  generateBlogPostImages,
-  autoSelectTopic,
-} from "@/lib/pipeline/content-generator";
-import { createPost, publishPost, getPostById } from "@/lib/pipeline/blog-service";
+import { getDb, scrapeJobs, blogPosts, contentQueue } from "@/lib/db";
+import { autoSelectTopic } from "@/lib/pipeline/content-generator";
+import { publishPost, getPostById } from "@/lib/pipeline/blog-service";
 import { sendPostPublishedNotification } from "@/lib/resend";
 import type { AiModel } from "@/lib/pipeline/ai-provider";
 
@@ -17,10 +13,11 @@ function validatePipelineKey(request: NextRequest): boolean {
   return key === process.env.PIPELINE_SECRET;
 }
 
-// Split into phases — each phase completes in <20s to stay within CDN timeout:
-// phase "text"    → Generate AI text (~15-20s), save as draft → { postId }
-// phase "images"  → Generate images for postId (~15-20s) → { updated: true }
-// phase "publish" → Publish postId (~2s) → { published: true }
+// Phases:
+// "start"   → Create job, trigger background function → { jobId }
+// "status"  → Poll job status → { status, postId?, error? }
+// "images"  → Generate images for postId (sync) → { updated }
+// "publish" → Publish postId (sync) → { published }
 
 export async function POST(request: NextRequest) {
   if (!validatePipelineKey(request)) {
@@ -31,16 +28,20 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const {
       type,
-      phase = "text",
+      phase = "start",
+      jobId,
       postId,
       topic: rawTopic,
       model = "claude-haiku",
+      publish = false,
     } = body as {
       type: string;
-      phase?: "text" | "images" | "publish";
+      phase?: "start" | "status" | "images" | "publish";
+      jobId?: string;
       postId?: string;
       topic?: string;
       model?: AiModel;
+      publish?: boolean;
     };
 
     if (type !== "blog-post") {
@@ -51,15 +52,15 @@ export async function POST(request: NextRequest) {
     }
 
     switch (phase) {
+      case "status":
+        return handleStatus(jobId);
       case "images":
-        if (!postId) return NextResponse.json({ error: "postId required" }, { status: 400 });
-        return handleImagesPhase(postId);
+        return handleImages(postId);
       case "publish":
-        if (!postId) return NextResponse.json({ error: "postId required" }, { status: 400 });
-        return handlePublishPhase(postId);
-      case "text":
+        return handlePublish(postId);
+      case "start":
       default:
-        return handleTextPhase(rawTopic, model);
+        return handleStart(request, rawTopic, model, publish);
     }
   } catch (error) {
     console.error("Pipeline generate error:", error);
@@ -73,9 +74,16 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// Phase 1: Generate blog post text via AI, save as draft (~15-20s)
-async function handleTextPhase(rawTopic: string | undefined, model: AiModel) {
+// Create a job and trigger the Netlify Background Function
+async function handleStart(
+  request: NextRequest,
+  rawTopic: string | undefined,
+  model: AiModel,
+  publish: boolean
+) {
   const db = getDb();
+
+  // Resolve topic
   const recentScrapes = await db
     .select()
     .from(scrapeJobs)
@@ -88,42 +96,93 @@ async function handleTextPhase(rawTopic: string | undefined, model: AiModel) {
       ? autoSelectTopic(recentScrapes)
       : rawTopic;
 
-  const scrapeContext = recentScrapes
-    .map((s) => s.result)
-    .filter(Boolean)
-    .join("\n\n")
-    .slice(0, 4000);
+  // Create job in contentQueue
+  const [job] = await db
+    .insert(contentQueue)
+    .values({
+      type: "blog-post",
+      status: "pending",
+      priority: 0,
+      input: JSON.stringify({ topic, publish }),
+      aiModel: model,
+    })
+    .returning();
 
-  const generated = await generateBlogPostText(topic, scrapeContext || null, model);
+  // Fire-and-forget: trigger the Netlify Background Function
+  const siteUrl = process.env.SITE_URL || process.env.URL || "";
+  const pipelineKey = process.env.PIPELINE_SECRET || "";
 
-  const post = await createPost({
-    slug: generated.slug,
-    language: "en",
-    title: generated.title,
-    excerpt: generated.excerpt,
-    content: generated.content,
-    metaTitle: generated.metaTitle,
-    metaDescription: generated.metaDescription,
-    category: generated.category,
-    tags: generated.tags,
-    featuredImage: null,
-    aiModel: model,
-    aiPrompt: topic,
-    sourceData: scrapeContext || null,
-    published: false,
+  fetch(`${siteUrl}/.netlify/functions/generate-blog-background`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "x-pipeline-key": pipelineKey,
+    },
+    body: JSON.stringify({
+      topic,
+      model,
+      publish,
+      jobId: job.id,
+    }),
+  }).catch((err) => {
+    console.error("Failed to trigger background function:", err);
   });
 
   return NextResponse.json({
-    postId: post.id,
-    slug: post.slug,
-    title: post.title,
+    jobId: job.id,
     topic,
-    status: "draft",
+    status: "pending",
   });
 }
 
-// Phase 2: Generate images for an existing draft post (~15-20s)
-async function handleImagesPhase(postId: string) {
+// Poll job status
+async function handleStatus(jobId: string | undefined) {
+  if (!jobId) {
+    return NextResponse.json({ error: "jobId is required" }, { status: 400 });
+  }
+
+  const db = getDb();
+  const [job] = await db
+    .select()
+    .from(contentQueue)
+    .where(eq(contentQueue.id, jobId))
+    .limit(1);
+
+  if (!job) {
+    return NextResponse.json({ error: "Job not found" }, { status: 404 });
+  }
+
+  const result: Record<string, unknown> = {
+    jobId: job.id,
+    status: job.status,
+  };
+
+  if (job.status === "completed" && job.output) {
+    const output = JSON.parse(job.output);
+    result.postId = output.postId;
+    result.slug = output.slug;
+    result.title = output.title;
+    result.published = output.published;
+  }
+
+  if (job.status === "failed") {
+    result.error = job.error;
+  }
+
+  return NextResponse.json(result);
+}
+
+// Generate images for an existing post (sync — each image ~15-20s)
+async function handleImages(postId: string | undefined) {
+  if (!postId) {
+    return NextResponse.json({ error: "postId required" }, { status: 400 });
+  }
+
+  // Dynamic import to avoid loading image gen code for other phases
+  const { generateBlogPostImages } = await import(
+    "@/lib/pipeline/content-generator"
+  );
+
   const db = getDb();
   const [post] = await db
     .select()
@@ -142,7 +201,11 @@ async function handleImagesPhase(postId: string) {
     content: post.content,
     metaTitle: post.metaTitle || "",
     metaDescription: post.metaDescription || "",
-    category: (post.category || "guide") as "news" | "guide" | "comparison" | "deal",
+    category: (post.category || "guide") as
+      | "news"
+      | "guide"
+      | "comparison"
+      | "deal",
     tags: post.tags || [],
     featuredImage: post.featuredImage ?? undefined,
   };
@@ -165,8 +228,12 @@ async function handleImagesPhase(postId: string) {
   });
 }
 
-// Phase 3: Publish an existing draft post (~2s)
-async function handlePublishPhase(postId: string) {
+// Publish a post
+async function handlePublish(postId: string | undefined) {
+  if (!postId) {
+    return NextResponse.json({ error: "postId required" }, { status: 400 });
+  }
+
   const post = await getPostById(postId);
   if (!post) {
     return NextResponse.json({ error: "Post not found" }, { status: 404 });

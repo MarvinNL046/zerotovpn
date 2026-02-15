@@ -31,7 +31,7 @@ export default async function ReviewModerationPage({
   });
 
   // Get unique VPN slugs for filter
-  const vpnSlugs = [...new Set(reviews.map((r) => r.vpn_slug))];
+  const vpnSlugs = [...new Set(reviews.map((r) => r.vpnSlug))];
 
   // Count pending reviews
   const { reviews: pendingReviews } = await getAdminReviews({

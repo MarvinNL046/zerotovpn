@@ -3,24 +3,24 @@
 import { sql } from "@/lib/neon";
 import { revalidatePath } from "next/cache";
 
-// Types
+// Types — match actual DB column names (camelCase)
 interface UserReview {
   id: string;
-  vpn_slug: string;
-  author_name: string;
-  author_email: string;
+  vpnSlug: string;
+  authorName: string;
+  authorEmail: string;
   rating: number;
   title: string;
   content: string;
-  usage_type: string | null;
-  usage_period: string | null;
-  user_pros: string[];
-  user_cons: string[];
+  usageType: string | null;
+  usagePeriod: string | null;
+  userPros: string[];
+  userCons: string[];
   approved: boolean;
   featured: boolean;
-  helpful_count: number;
-  unhelpful_count: number;
-  created_at: Date;
+  helpfulCount: number;
+  unhelpfulCount: number;
+  createdAt: Date;
 }
 
 // ==================== USER REVIEWS ====================
@@ -38,18 +38,18 @@ export async function getApprovedReviews(vpnSlug: string, page = 1, limit = 10):
   const offset = (page - 1) * limit;
 
   const reviews = await sql`
-    SELECT id, vpn_slug, author_name, rating, title, content,
-           usage_type, usage_period, user_pros, user_cons,
-           featured, helpful_count, unhelpful_count, created_at
+    SELECT id, "vpnSlug", "authorName", rating, title, content,
+           "usageType", "usagePeriod", "userPros", "userCons",
+           featured, "helpfulCount", "unhelpfulCount", "createdAt"
     FROM "UserReview"
-    WHERE vpn_slug = ${vpnSlug} AND approved = true
-    ORDER BY featured DESC, created_at DESC
+    WHERE "vpnSlug" = ${vpnSlug} AND approved = true
+    ORDER BY featured DESC, "createdAt" DESC
     LIMIT ${limit} OFFSET ${offset}
   ` as UserReview[];
 
   const countResult = await sql`
     SELECT COUNT(*) as total FROM "UserReview"
-    WHERE vpn_slug = ${vpnSlug} AND approved = true
+    WHERE "vpnSlug" = ${vpnSlug} AND approved = true
   ` as { total: string | number }[];
 
   const total = Number(countResult[0]?.total || 0);
@@ -97,9 +97,9 @@ export async function submitReview(formData: FormData): Promise<{ success: boole
   try {
     const result = await sql`
       INSERT INTO "UserReview" (
-        id, vpn_slug, author_name, author_email, rating, title, content,
-        usage_type, usage_period, user_pros, user_cons,
-        newsletter_consent, consent_date, locale, created_at, updated_at
+        id, "vpnSlug", "authorName", "authorEmail", rating, title, content,
+        "usageType", "usagePeriod", "userPros", "userCons",
+        "newsletterConsent", "consentDate", locale, "createdAt", "updatedAt"
       ) VALUES (
         gen_random_uuid()::text,
         ${vpnSlug},
@@ -136,13 +136,13 @@ export async function voteOnReview(reviewId: string, isHelpful: boolean): Promis
     if (isHelpful) {
       await sql`
         UPDATE "UserReview"
-        SET helpful_count = helpful_count + 1
+        SET "helpfulCount" = "helpfulCount" + 1
         WHERE id = ${reviewId}
       `;
     } else {
       await sql`
         UPDATE "UserReview"
-        SET unhelpful_count = unhelpful_count + 1
+        SET "unhelpfulCount" = "unhelpfulCount" + 1
         WHERE id = ${reviewId}
       `;
     }
@@ -181,7 +181,7 @@ export async function subscribeToNewsletter(formData: FormData): Promise<{ succe
     }
 
     await sql`
-      INSERT INTO "Subscriber" (id, email, language, source, created_at)
+      INSERT INTO "Subscriber" (id, email, language, source, "createdAt")
       VALUES (gen_random_uuid()::text, ${email}, ${language}, ${source}, NOW())
     `;
 
@@ -213,7 +213,7 @@ export async function trackClick(
     }
 
     await sql`
-      INSERT INTO "Click" (id, vpn_id, page, country, referrer, created_at)
+      INSERT INTO "Click" (id, "vpnId", page, country, referrer, "createdAt")
       VALUES (gen_random_uuid()::text, ${vpn[0].id}, ${page}, ${country}, ${referrer}, NOW())
     `;
 
@@ -246,29 +246,37 @@ export async function getAdminReviews(
   const { approved, vpnSlug, page = 1, limit = 20 } = filters;
   const offset = (page - 1) * limit;
 
-  const reviews = await sql`
-    SELECT * FROM "UserReview"
-    ${approved !== undefined ? sql`WHERE approved = ${approved}` : sql``}
-    ORDER BY created_at DESC
-    LIMIT ${limit} OFFSET ${offset}
-  ` as UserReview[];
+  try {
+    const reviews = await sql`
+      SELECT * FROM "UserReview"
+      ${approved !== undefined ? sql`WHERE approved = ${approved}` : sql``}
+      ORDER BY "createdAt" DESC
+      LIMIT ${limit} OFFSET ${offset}
+    ` as UserReview[];
 
-  const countResult = await sql`
-    SELECT COUNT(*) as total FROM "UserReview"
-    ${approved !== undefined ? sql`WHERE approved = ${approved}` : sql``}
-  ` as { total: string | number }[];
+    const countResult = await sql`
+      SELECT COUNT(*) as total FROM "UserReview"
+      ${approved !== undefined ? sql`WHERE approved = ${approved}` : sql``}
+    ` as { total: string | number }[];
 
-  const total = Number(countResult[0]?.total || 0);
+    const total = Number(countResult[0]?.total || 0);
 
-  return {
-    reviews,
-    pagination: {
-      page,
-      limit,
-      total,
-      totalPages: Math.ceil(total / limit),
-    },
-  };
+    return {
+      reviews,
+      pagination: {
+        page,
+        limit,
+        total,
+        totalPages: Math.ceil(total / limit),
+      },
+    };
+  } catch (error) {
+    console.error("Error getting admin reviews:", error);
+    return {
+      reviews: [],
+      pagination: { page, limit, total: 0, totalPages: 0 },
+    };
+  }
 }
 
 // Approve or reject a review
@@ -276,7 +284,7 @@ export async function moderateReview(reviewId: string, approved: boolean): Promi
   try {
     await sql`
       UPDATE "UserReview"
-      SET approved = ${approved}, updated_at = NOW()
+      SET approved = ${approved}, "updatedAt" = NOW()
       WHERE id = ${reviewId}
     `;
 
@@ -305,7 +313,7 @@ export async function toggleFeatured(reviewId: string, featured: boolean): Promi
   try {
     await sql`
       UPDATE "UserReview"
-      SET featured = ${featured}, updated_at = NOW()
+      SET featured = ${featured}, "updatedAt" = NOW()
       WHERE id = ${reviewId}
     `;
 
@@ -338,19 +346,19 @@ export async function getDashboardStats(): Promise<{
         SELECT
           COUNT(*) as total,
           COUNT(*) FILTER (WHERE approved = false) as pending,
-          COUNT(*) FILTER (WHERE created_at > NOW() - INTERVAL '7 days') as this_week
+          COUNT(*) FILTER (WHERE "createdAt" > NOW() - INTERVAL '7 days') as this_week
         FROM "UserReview"
       `,
       sql`
         SELECT
           COUNT(*) as total,
-          COUNT(*) FILTER (WHERE created_at > NOW() - INTERVAL '7 days') as this_week
+          COUNT(*) FILTER (WHERE "createdAt" > NOW() - INTERVAL '7 days') as this_week
         FROM "Subscriber"
       `,
       sql`
         SELECT
           COUNT(*) as total,
-          COUNT(*) FILTER (WHERE created_at > NOW() - INTERVAL '7 days') as this_week
+          COUNT(*) FILTER (WHERE "createdAt" > NOW() - INTERVAL '7 days') as this_week
         FROM "Click"
       `,
     ]);

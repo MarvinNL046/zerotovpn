@@ -111,9 +111,9 @@ export default async function AdminDashboard() {
                 >
                   <div className="flex-1">
                     <div className="flex items-center gap-2">
-                      <span className="font-medium">{review.author_name}</span>
+                      <span className="font-medium">{review.authorName}</span>
                       <span className="text-muted-foreground">reviewed</span>
-                      <span className="font-medium capitalize">{review.vpn_slug}</span>
+                      <span className="font-medium capitalize">{review.vpnSlug}</span>
                     </div>
                     <p className="text-sm text-muted-foreground mt-1 line-clamp-1">
                       {review.title}

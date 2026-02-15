@@ -16,24 +16,24 @@ import {
 import { moderateReview, deleteReview, toggleFeatured } from "@/app/actions";
 import { useRouter } from "next/navigation";
 
-// Type matching the database structure (snake_case)
+// Type matching the database structure (camelCase)
 interface UserReview {
   id: string;
-  vpn_slug: string;
-  author_name: string;
-  author_email: string;
+  vpnSlug: string;
+  authorName: string;
+  authorEmail: string;
   rating: number;
   title: string;
   content: string;
-  usage_type: string | null;
-  usage_period: string | null;
-  user_pros: string[] | null;
-  user_cons: string[] | null;
+  usageType: string | null;
+  usagePeriod: string | null;
+  userPros: string[] | null;
+  userCons: string[] | null;
   approved: boolean;
   featured: boolean;
-  helpful_count: number;
-  unhelpful_count: number;
-  created_at: Date;
+  helpfulCount: number;
+  unhelpfulCount: number;
+  createdAt: Date;
 }
 
 interface ReviewCardProps {
@@ -105,14 +105,14 @@ export function ReviewCard({ review }: ReviewCardProps) {
             <div className="flex flex-wrap items-center gap-2">
               <div className="flex items-center gap-2">
                 <User className="h-4 w-4 text-muted-foreground" />
-                <span className="font-medium">{review.author_name}</span>
+                <span className="font-medium">{review.authorName}</span>
               </div>
               <div className="flex items-center gap-1 text-sm text-muted-foreground">
                 <Calendar className="h-3 w-3" />
-                {formatDate(review.created_at)}
+                {formatDate(review.createdAt)}
               </div>
               <Badge variant="outline" className="capitalize">
-                {review.vpn_slug}
+                {review.vpnSlug}
               </Badge>
               {review.featured && (
                 <Badge className="bg-yellow-500">Featured</Badge>
@@ -143,9 +143,9 @@ export function ReviewCard({ review }: ReviewCardProps) {
             <p className="text-muted-foreground">{review.content}</p>
 
             {/* Pros & Cons */}
-            {((review.user_pros?.length ?? 0) > 0 || (review.user_cons?.length ?? 0) > 0) && (
+            {((review.userPros?.length ?? 0) > 0 || (review.userCons?.length ?? 0) > 0) && (
               <div className="flex flex-wrap gap-2">
-                {review.user_pros?.map((pro: string, i: number) => (
+                {review.userPros?.map((pro: string, i: number) => (
                   <Badge
                     key={`pro-${i}`}
                     variant="outline"
@@ -154,7 +154,7 @@ export function ReviewCard({ review }: ReviewCardProps) {
                     + {pro}
                   </Badge>
                 ))}
-                {review.user_cons?.map((con: string, i: number) => (
+                {review.userCons?.map((con: string, i: number) => (
                   <Badge
                     key={`con-${i}`}
                     variant="outline"
@@ -168,12 +168,12 @@ export function ReviewCard({ review }: ReviewCardProps) {
 
             {/* Meta */}
             <div className="flex items-center gap-4 text-sm text-muted-foreground">
-              <span>Email: {review.author_email}</span>
-              {review.usage_type && (
-                <span className="capitalize">Use: {review.usage_type}</span>
+              <span>Email: {review.authorEmail}</span>
+              {review.usageType && (
+                <span className="capitalize">Use: {review.usageType}</span>
               )}
-              {review.usage_period && (
-                <span>Duration: {review.usage_period}</span>
+              {review.usagePeriod && (
+                <span>Duration: {review.usagePeriod}</span>
               )}
             </div>
           </div>

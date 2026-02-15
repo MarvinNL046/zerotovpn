@@ -45,6 +45,39 @@ export interface AnalyticsData {
 }
 
 /**
+ * Get the numeric domain ID for our Short.io domain
+ */
+async function getDomainId(): Promise<number> {
+  if (!SHORTIO_API_KEY) {
+    throw new Error("SHORTIO_API_KEY is not configured");
+  }
+
+  const response = await fetch(`${SHORTIO_API_BASE}/api/domains`, {
+    method: "GET",
+    headers: {
+      Authorization: SHORTIO_API_KEY,
+      "Content-Type": "application/json",
+    },
+    next: { revalidate: 3600 }, // Cache domain ID for 1 hour
+  });
+
+  if (!response.ok) {
+    throw new Error(`Short.io API error: ${response.statusText}`);
+  }
+
+  const domains = await response.json();
+  const domain = domains.find(
+    (d: { hostname: string }) => d.hostname === SHORTIO_DOMAIN
+  );
+
+  if (!domain) {
+    throw new Error(`Domain ${SHORTIO_DOMAIN} not found in Short.io account`);
+  }
+
+  return domain.id;
+}
+
+/**
  * Get all short links from Short.io
  */
 export async function getAllLinks(): Promise<ShortLink[]> {
@@ -53,8 +86,10 @@ export async function getAllLinks(): Promise<ShortLink[]> {
   }
 
   try {
+    const domainId = await getDomainId();
+
     const response = await fetch(
-      `${SHORTIO_API_BASE}/api/links?domain_id=${SHORTIO_DOMAIN}&limit=150`,
+      `${SHORTIO_API_BASE}/api/links?domain_id=${domainId}&limit=150`,
       {
         method: "GET",
         headers: {

@@ -20,6 +20,17 @@ import {
 export default function SettingsPage() {
   const [saved, setSaved] = useState(false);
 
+  const [dbStatus, setDbStatus] = useState<"checking" | "connected" | "error">("checking");
+
+  // Check database connection on mount
+  useState(() => {
+    fetch("/api/pipeline/status", {
+      headers: { "x-admin-key": localStorage.getItem("pipeline-admin-key") || "" },
+    })
+      .then((res) => setDbStatus(res.ok ? "connected" : "error"))
+      .catch(() => setDbStatus("error"));
+  });
+
   // Settings state
   const [settings, setSettings] = useState({
     // General
@@ -37,10 +48,6 @@ export default function SettingsPage() {
     emailOnNewReview: true,
     emailOnSpam: true,
     dailyDigest: false,
-
-    // Database
-    databaseConnected: false,
-    databaseUrl: "",
   });
 
   const handleSave = () => {
@@ -249,39 +256,33 @@ export default function SettingsPage() {
           <div className="flex items-center gap-2">
             <div
               className={`w-3 h-3 rounded-full ${
-                settings.databaseConnected ? "bg-green-500" : "bg-red-500"
+                dbStatus === "connected"
+                  ? "bg-green-500"
+                  : dbStatus === "checking"
+                  ? "bg-yellow-500 animate-pulse"
+                  : "bg-red-500"
               }`}
             />
             <span className="text-sm">
-              {settings.databaseConnected ? "Connected" : "Not Connected"}
+              {dbStatus === "connected"
+                ? "Connected"
+                : dbStatus === "checking"
+                ? "Checking..."
+                : "Connection issue (check PIPELINE_SECRET)"}
             </span>
           </div>
-          <div className="space-y-2">
-            <Label htmlFor="databaseUrl">Database URL</Label>
-            <Input
-              id="databaseUrl"
-              type="password"
-              placeholder="postgresql://..."
-              value={settings.databaseUrl}
-              onChange={(e) =>
-                setSettings({ ...settings, databaseUrl: e.target.value })
-              }
-            />
-            <p className="text-xs text-muted-foreground">
-              Get your connection string from{" "}
-              <a
-                href="https://neon.tech"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary hover:underline"
-              >
-                Neon Console
-              </a>
-            </p>
-          </div>
-          <Button variant="outline" className="w-full">
-            Test Connection
-          </Button>
+          <p className="text-xs text-muted-foreground">
+            Database URL is configured via the <code className="bg-muted px-1 rounded">DATABASE_URL</code> environment variable on Netlify.
+            Manage your database at{" "}
+            <a
+              href="https://neon.tech"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline"
+            >
+              Neon Console
+            </a>
+          </p>
         </CardContent>
       </Card>
 

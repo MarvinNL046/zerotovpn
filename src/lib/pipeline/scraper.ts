@@ -154,40 +154,49 @@ const NEWS_SOURCES = [
   "https://www.cnet.com/tech/services-and-software/best-vpn-services-2026/",
 ];
 
-// Scrape VPN news from major tech outlets
+// Scrape VPN news from major tech outlets (parallel)
 export async function scrapeVpnNews(): Promise<ScrapedNews[]> {
-  const results: ScrapedNews[] = [];
-
-  for (const sourceUrl of NEWS_SOURCES) {
-    try {
+  const settled = await Promise.allSettled(
+    NEWS_SOURCES.map(async (sourceUrl) => {
       const { content } = await scrapeUrl(sourceUrl);
-
-      results.push({
+      return {
         title: `VPN News from ${new URL(sourceUrl).hostname}`,
         summary: content.slice(0, 2000),
         source: new URL(sourceUrl).hostname,
         url: sourceUrl,
         date: new Date().toISOString(),
         vpnMentions: extractVpnMentions(content),
-      });
-    } catch (error) {
-      console.error(`Failed to scrape ${sourceUrl}:`, error);
-    }
-  }
+      };
+    })
+  );
 
+  const results: ScrapedNews[] = [];
+  for (const r of settled) {
+    if (r.status === "fulfilled") results.push(r.value);
+    else console.error("News scrape failed:", r.reason);
+  }
   return results;
 }
 
-// Scrape all known VPN pricing pages
+// Scrape all known VPN pricing pages (parallel in batches of 4)
 export async function scrapeAllVpnData(): Promise<ScrapedPricing[]> {
+  const entries = Object.entries(VPN_PRICING_URLS);
   const results: ScrapedPricing[] = [];
+  const BATCH_SIZE = 4;
 
-  for (const [slug, url] of Object.entries(VPN_PRICING_URLS)) {
-    try {
-      const pricing = await scrapeVpnPricing(slug);
-      results.push(pricing);
-    } catch (error) {
-      console.error(`Failed to scrape ${slug} (${url}):`, error);
+  for (let i = 0; i < entries.length; i += BATCH_SIZE) {
+    const batch = entries.slice(i, i + BATCH_SIZE);
+
+    const settled = await Promise.allSettled(
+      batch.map(async ([slug]) => scrapeVpnPricing(slug))
+    );
+
+    for (const result of settled) {
+      if (result.status === "fulfilled") {
+        results.push(result.value);
+      } else {
+        console.error("Scrape failed:", result.reason);
+      }
     }
   }
 

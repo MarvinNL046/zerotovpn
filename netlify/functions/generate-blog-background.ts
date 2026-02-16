@@ -724,7 +724,7 @@ E-E-A-T SIGNALS (critical for Google rankings — weave throughout):
 - TRUSTWORTHINESS: Be balanced — mention downsides too. Be honest about limitations.
 - CRITICAL: Only use prices, speeds, and specs from the REFERENCE DATA provided. If no data is provided for a specific number, say "check the provider's website for current pricing" instead of making up a number. NEVER fabricate test results, percentages, or performance metrics.
 
-VPN LOGOS: Official VPN provider logos are available and will be automatically inserted into headings and comparison tables. When writing about specific VPNs, use their full names (NordVPN, ExpressVPN, Surfshark, CyberGhost, ProtonVPN, Mullvad, IPVanish, Private Internet Access) in H2/H3 headings so logos appear correctly. Give each recommended VPN its own H2 or H3 section when appropriate.
+VPN LOGOS: Official VPN provider logos are available and will be automatically inserted into headings and comparison tables. When writing about specific VPNs, use their EXACT full names (${Object.values(VPN_LOGOS).map(v => v.displayName).join(", ")}) in H2/H3 headings so logos appear correctly. Give each recommended VPN its own H2 or H3 section when appropriate.
 
 FORMATTING RULES:
 - Bold key terms on first mention in each section

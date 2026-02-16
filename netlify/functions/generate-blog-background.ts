@@ -315,6 +315,60 @@ function injectVpnLogos(content: string, siteUrl: string): string {
   return updated;
 }
 
+// Inject Short.io affiliate links into blog content HTML.
+// For each VPN mentioned, wraps the first <strong>VPNName</strong> (outside of headings/tables that already have logos)
+// in an affiliate link, and also adds a CTA link after each VPN's H2/H3 section heading.
+function injectAffiliateLinks(content: string): string {
+  const VPN_AFFILIATE: Record<string, string> = {};
+  for (const [slug, { displayName }] of Object.entries(VPN_LOGOS)) {
+    VPN_AFFILIATE[displayName] = `https://go.zerotovpn.com/${slug}`;
+  }
+
+  let updated = content;
+  const linked = new Set<string>();
+
+  for (const [displayName, affiliateUrl] of Object.entries(VPN_AFFILIATE)) {
+    const escaped = displayName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+    // Strategy 1: Wrap first <strong>VPNName</strong> that isn't already inside an <a> tag
+    // Match <strong>VPNName</strong> not preceded by <a (to avoid double-wrapping)
+    const strongPattern = new RegExp(
+      `(?<!<a[^>]*>\\s*)(<strong>)(${escaped})(</strong>)(?!\\s*</a>)`,
+      "i"
+    );
+    const strongMatch = updated.match(strongPattern);
+    if (strongMatch && !linked.has(displayName)) {
+      updated = updated.replace(
+        strongPattern,
+        `<a href="${affiliateUrl}" target="_blank" rel="noopener noreferrer nofollow" title="Visit ${displayName}">$1$2$3</a>`
+      );
+      linked.add(displayName);
+    }
+
+    // Strategy 2: Find "check the provider's website" or "Check website" near this VPN and replace with actual link
+    // Look for patterns like "Check website for current pricing" or "check the provider's website"
+    const checkWebsitePattern = new RegExp(
+      `(${escaped}[^<]{0,200}?)([Cc]heck (?:the provider'?s? website|their website|website) for (?:current |latest )?pricing(?:[^<]*?)\\.?)`,
+      "i"
+    );
+    if (checkWebsitePattern.test(updated)) {
+      updated = updated.replace(
+        checkWebsitePattern,
+        `$1<a href="${affiliateUrl}" target="_blank" rel="noopener noreferrer nofollow" title="Visit ${displayName}">Visit ${displayName} →</a>`
+      );
+    }
+  }
+
+  // Also replace any remaining generic "check the provider's website" with nothing (to avoid dead text without links)
+  updated = updated.replace(
+    /[Cc]heck (?:the )?provider'?s? website for (?:current |latest )?pricing(?:\.|)/g,
+    ""
+  );
+
+  console.log(`[bg-generate] Injected ${linked.size} affiliate links into content`);
+  return updated;
+}
+
 // --- Helpers ---
 
 function getDb() {
@@ -1153,9 +1207,10 @@ const handler: Handler = async (event) => {
 
     const parsed = parsePost(rawResponse, postType);
 
-    // Inject VPN logos into the content
+    // Inject VPN logos and affiliate links into the content
     const siteUrl = process.env.SITE_URL || process.env.URL || "https://zerotovpn.com";
     parsed.content = injectVpnLogos(parsed.content, siteUrl);
+    parsed.content = injectAffiliateLinks(parsed.content);
 
     // Ensure slug is unique (append date suffix if needed)
     let finalSlug = parsed.slug;

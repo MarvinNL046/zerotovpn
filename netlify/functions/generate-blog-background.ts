@@ -860,19 +860,93 @@ async function generateGeminiImage(prompt: string): Promise<{ base64: string; mi
 }
 
 async function generateFeaturedImage(title: string, category: string): Promise<string | null> {
-  const styleMap: Record<string, string> = {
-    news: "modern tech news illustration, digital, clean lines, blue tones",
-    guide: "informative infographic style, step-by-step visual, friendly colors",
-    comparison: "side-by-side comparison chart visual, clean data visualization",
-    deal: "exciting promotional banner, bold colors, discount theme, savings",
-  };
-  const style = styleMap[category] || styleMap.guide;
+  // Art styles - randomly pick one
+  const artStyles = [
+    "clean isometric 3D illustration",
+    "modern flat vector illustration with subtle gradients",
+    "geometric abstract composition with bold shapes",
+    "minimalist line art with selective color fills",
+    "soft watercolor-digital hybrid artwork",
+    "dramatic cinematic 3D render with depth of field",
+    "retro-futuristic neon illustration",
+    "paper cut-out layered art style with shadows",
+    "low-poly geometric artwork",
+    "duotone photographic style with graphic overlays",
+  ];
 
-  const prompt = `Create a professional blog header image for an article about: "${title}".
-Style: ${style}.
-The image should be landscape format (16:9), modern, and suitable for a VPN technology website.
-CRITICAL RULE: The image must contain ZERO text, ZERO letters, ZERO numbers, ZERO words, ZERO labels, ZERO watermarks. No characters of any language or alphabet whatsoever.
-Use only abstract tech visuals: shields, locks, network nodes, glowing circuits, digital waves, gradient backgrounds.`;
+  // Color palettes - randomly pick one
+  const colorPalettes = [
+    "deep ocean blues and teals with white accents",
+    "sunset gradient from warm orange to deep purple",
+    "forest greens and gold with dark backgrounds",
+    "cyberpunk neon pink and electric blue on dark",
+    "monochrome grayscale with a single bright teal accent",
+    "arctic white and ice blue with silver highlights",
+    "warm terracotta and sage green earth tones",
+    "rich indigo and coral on cream background",
+    "dark mode with glowing emerald green accents",
+    "pastel lavender and soft mint with white",
+  ];
+
+  // Visual subjects based on category + randomization
+  const techSubjects = [
+    "a translucent globe showing encrypted network routes across continents",
+    "an abstract digital tunnel with light at the end, representing secure connection",
+    "a modern workspace with floating holographic security panels",
+    "geometric shield shapes interlocking in a protective pattern",
+    "a bird's eye view of a glowing city grid with data flowing through streets",
+    "an abstract lock mechanism being assembled from geometric pieces",
+    "satellites orbiting earth with encrypted data beams connecting them",
+    "a person's silhouette surrounded by a protective digital aura",
+    "abstract underwater fiber optic cables glowing on the ocean floor",
+    "a split scene: chaotic open data on one side, calm encrypted flow on the other",
+    "floating islands connected by glowing bridges representing VPN tunnels",
+    "a futuristic passport or key card with holographic security layers",
+  ];
+
+  // Detect special themes from title
+  const titleLower = title.toLowerCase();
+  let themeHint = "";
+
+  if (/china|russia|iran|turkey|uae|saudi|egypt/.test(titleLower)) {
+    themeHint = "Include subtle cultural/architectural elements suggesting the region (no text or flags). ";
+  } else if (/stream|netflix|disney|hulu|entertainment/.test(titleLower)) {
+    themeHint = "Include visual elements suggesting entertainment and media streaming. ";
+  } else if (/gaming|game|ping|latency/.test(titleLower)) {
+    themeHint = "Include visual elements suggesting gaming and fast digital interaction. ";
+  } else if (/speed|fast|performance/.test(titleLower)) {
+    themeHint = "Include visual elements suggesting speed and motion (light trails, acceleration). ";
+  } else if (/privac|anonymous|track/.test(titleLower)) {
+    themeHint = "Include visual elements suggesting privacy and invisibility (masks, shadows, hidden paths). ";
+  } else if (/cheap|budget|free|deal|discount|save/.test(titleLower)) {
+    themeHint = "Include visual elements suggesting value and smart savings (coins, piggy bank shapes, gift boxes). ";
+  } else if (/travel|abroad|roam/.test(titleLower)) {
+    themeHint = "Include visual elements suggesting travel and global connectivity (suitcases, planes, maps). ";
+  } else if (/android|ios|iphone|mac|windows|phone|mobile/.test(titleLower)) {
+    themeHint = "Include visual elements of the relevant devices (phones, laptops, tablets). ";
+  }
+
+  // Category influence
+  const categoryHints: Record<string, string> = {
+    news: "Make it feel current and newsworthy, like a breaking story header. ",
+    comparison: "Show a visual sense of weighing options or side-by-side elements. ",
+    deal: "Make it feel exciting and valuable, with a sense of opportunity. ",
+    guide: "Make it feel educational and helpful, like a visual journey. ",
+  };
+
+  const style = artStyles[Math.floor(Math.random() * artStyles.length)];
+  const palette = colorPalettes[Math.floor(Math.random() * colorPalettes.length)];
+  const subject = techSubjects[Math.floor(Math.random() * techSubjects.length)];
+  const categoryHint = categoryHints[category] || categoryHints.guide;
+
+  const prompt = `Create a professional blog header image.
+Topic: "${title}"
+Visual concept: ${subject}
+Art style: ${style}
+Color palette: ${palette}
+${themeHint}${categoryHint}
+The image should be landscape format (16:9), modern, and high quality.
+CRITICAL RULE: The image must contain ZERO text, ZERO letters, ZERO numbers, ZERO words, ZERO labels, ZERO watermarks. No characters of any language or alphabet whatsoever. Only visual elements.`;
 
   const image = await generateGeminiImage(prompt);
   if (!image) return null;

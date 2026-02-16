@@ -278,8 +278,9 @@ function injectVpnLogos(content: string, siteUrl: string): string {
   const injected = new Set<string>();
 
   for (const [slug, { file, displayName }] of Object.entries(VPN_LOGOS)) {
-    // Skip if VPN not mentioned in content
-    if (!content.toLowerCase().includes(displayName.toLowerCase())) continue;
+    // Skip if VPN not mentioned in content (word boundary match to avoid "OVPN" matching inside "NordVPN" etc.)
+    const namePattern = new RegExp(`(?<![a-zA-Z])${displayName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?![a-zA-Z])`, "i");
+    if (!namePattern.test(content)) continue;
 
     // Find the first <h2> or <h3> that contains this VPN name
     const headingRegex = new RegExp(

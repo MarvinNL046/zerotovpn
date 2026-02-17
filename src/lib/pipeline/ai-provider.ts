@@ -98,10 +98,10 @@ async function callOpenAI(
       "Content-Type": "application/json",
       Authorization: `Bearer ${apiKey}`,
     },
+    // GPT-5-nano only supports default temperature (1) — omit the parameter
     body: JSON.stringify({
       model: "gpt-5-nano-2025-08-07",
       max_completion_tokens: maxTokens,
-      temperature,
       messages: [{ role: "user", content: prompt }],
     }),
   });

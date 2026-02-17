@@ -112,7 +112,7 @@ export function CouponCard({ coupon, vpnName, affiliateUrl }: CouponCardProps) {
           </div>
           {coupon.expiresAt && (
             <span className="text-xs text-muted-foreground">
-              {t("expires")}: {coupon.expiresAt.toLocaleDateString()}
+              {t("expires")}: {coupon.expiresAt.toISOString().split("T")[0]}
             </span>
           )}
         </div>

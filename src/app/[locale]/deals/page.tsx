@@ -14,6 +14,7 @@ import {
   Shield,
   Zap,
   Info,
+  KeyRound,
 } from "lucide-react";
 
 type Props = {
@@ -137,6 +138,20 @@ const deals = [
     affiliateUrl: "https://go.zerotovpn.com/cyberghost",
     expiresAt: new Date("2026-12-31T23:59:59"),
   },
+  {
+    name: "NordPass",
+    badgeKey: "passwordManager" as const,
+    badgeColor: "bg-emerald-500",
+    originalPrice: 4.99,
+    dealPrice: 1.49,
+    discount: 70,
+    months: 24,
+    total: 35.76,
+    features: ["Unlimited passwords", "Autofill", "Data breach scanner", "Cross-platform sync"],
+    coupon: null,
+    affiliateUrl: "https://go.zerotovpn.com/nordpass",
+    expiresAt: new Date("2026-06-01"),
+  },
 ];
 
 export default async function DealsPage({ params }: Props) {
@@ -170,6 +185,7 @@ export default async function DealsPage({ params }: Props) {
         mostPopular: string;
         premiumChoice: string;
         bestValue: string;
+        passwordManager: string;
       };
       features: {
         title: string;
@@ -185,6 +201,15 @@ export default async function DealsPage({ params }: Props) {
       faq: {
         title: string;
         items: Array<{ question: string; answer: string }>;
+      };
+      bundle: {
+        title: string;
+        subtitle: string;
+        vpnPlusPass: string;
+        combinedPrice: string;
+        getVpn: string;
+        getPass: string;
+        bestCombo: string;
       };
     }
   > = {
@@ -214,6 +239,7 @@ export default async function DealsPage({ params }: Props) {
         mostPopular: "Most Popular",
         premiumChoice: "Premium Choice",
         bestValue: "Best Value",
+        passwordManager: "Password Manager",
       },
       features: {
         title: "Included Features",
@@ -273,6 +299,15 @@ export default async function DealsPage({ params }: Props) {
           },
         ],
       },
+      bundle: {
+        title: "Bundle Deals",
+        subtitle: "Combine services and save even more on your online security",
+        vpnPlusPass: "VPN + Password Manager",
+        combinedPrice: "Combined from",
+        getVpn: "Get NordVPN",
+        getPass: "Get NordPass",
+        bestCombo: "Best Security Combo",
+      },
     },
     nl: {
       hero: {
@@ -300,6 +335,7 @@ export default async function DealsPage({ params }: Props) {
         mostPopular: "Meest Populair",
         premiumChoice: "Premium Keuze",
         bestValue: "Beste Waarde",
+        passwordManager: "Wachtwoordbeheerder",
       },
       features: {
         title: "Inbegrepen Functies",
@@ -359,6 +395,15 @@ export default async function DealsPage({ params }: Props) {
           },
         ],
       },
+      bundle: {
+        title: "Bundel Aanbiedingen",
+        subtitle: "Combineer diensten en bespaar nog meer op je online beveiliging",
+        vpnPlusPass: "VPN + Wachtwoordbeheerder",
+        combinedPrice: "Gecombineerd vanaf",
+        getVpn: "NordVPN Pakken",
+        getPass: "NordPass Pakken",
+        bestCombo: "Beste Beveiligingscombo",
+      },
     },
     de: {
       hero: {
@@ -386,6 +431,7 @@ export default async function DealsPage({ params }: Props) {
         mostPopular: "Am Beliebtesten",
         premiumChoice: "Premium-Wahl",
         bestValue: "Bester Wert",
+        passwordManager: "Passwort-Manager",
       },
       features: {
         title: "Enthaltene Funktionen",
@@ -445,6 +491,15 @@ export default async function DealsPage({ params }: Props) {
           },
         ],
       },
+      bundle: {
+        title: "Bundle-Angebote",
+        subtitle: "Kombinieren Sie Dienste und sparen Sie noch mehr bei Ihrer Online-Sicherheit",
+        vpnPlusPass: "VPN + Passwort-Manager",
+        combinedPrice: "Kombiniert ab",
+        getVpn: "NordVPN Holen",
+        getPass: "NordPass Holen",
+        bestCombo: "Beste Sicherheitskombi",
+      },
     },
     es: {
       hero: {
@@ -472,6 +527,7 @@ export default async function DealsPage({ params }: Props) {
         mostPopular: "Más Popular",
         premiumChoice: "Elección Premium",
         bestValue: "Mejor Valor",
+        passwordManager: "Gestor de Contraseñas",
       },
       features: {
         title: "Características Incluidas",
@@ -531,6 +587,15 @@ export default async function DealsPage({ params }: Props) {
           },
         ],
       },
+      bundle: {
+        title: "Ofertas de Paquete",
+        subtitle: "Combina servicios y ahorra aún más en tu seguridad en línea",
+        vpnPlusPass: "VPN + Gestor de Contraseñas",
+        combinedPrice: "Combinado desde",
+        getVpn: "Obtener NordVPN",
+        getPass: "Obtener NordPass",
+        bestCombo: "Mejor Combo de Seguridad",
+      },
     },
     fr: {
       hero: {
@@ -558,6 +623,7 @@ export default async function DealsPage({ params }: Props) {
         mostPopular: "Plus Populaire",
         premiumChoice: "Choix Premium",
         bestValue: "Meilleur Rapport",
+        passwordManager: "Gestionnaire de Mots de Passe",
       },
       features: {
         title: "Fonctionnalités Incluses",
@@ -617,6 +683,15 @@ export default async function DealsPage({ params }: Props) {
           },
         ],
       },
+      bundle: {
+        title: "Offres Groupées",
+        subtitle: "Combinez les services et économisez encore plus sur votre sécurité en ligne",
+        vpnPlusPass: "VPN + Gestionnaire de Mots de Passe",
+        combinedPrice: "Combiné à partir de",
+        getVpn: "Obtenir NordVPN",
+        getPass: "Obtenir NordPass",
+        bestCombo: "Meilleur Combo Sécurité",
+      },
     },
     zh: {
       hero: {
@@ -643,6 +718,7 @@ export default async function DealsPage({ params }: Props) {
         mostPopular: "最受欢迎",
         premiumChoice: "高级选择",
         bestValue: "最佳价值",
+        passwordManager: "密码管理器",
       },
       features: {
         title: "包含功能",
@@ -694,6 +770,15 @@ export default async function DealsPage({ params }: Props) {
           },
         ],
       },
+      bundle: {
+        title: "捆绑优惠",
+        subtitle: "组合服务，在线安全更省钱",
+        vpnPlusPass: "VPN + 密码管理器",
+        combinedPrice: "组合价格低至",
+        getVpn: "获取NordVPN",
+        getPass: "获取NordPass",
+        bestCombo: "最佳安全组合",
+      },
     },
     ja: {
       hero: {
@@ -720,6 +805,7 @@ export default async function DealsPage({ params }: Props) {
         mostPopular: "最も人気",
         premiumChoice: "プレミアム選択",
         bestValue: "最高の価値",
+        passwordManager: "パスワードマネージャー",
       },
       features: {
         title: "含まれる機能",
@@ -779,6 +865,15 @@ export default async function DealsPage({ params }: Props) {
           },
         ],
       },
+      bundle: {
+        title: "バンドルセール",
+        subtitle: "サービスを組み合わせてオンラインセキュリティをさらにお得に",
+        vpnPlusPass: "VPN + パスワードマネージャー",
+        combinedPrice: "セット価格",
+        getVpn: "NordVPNを入手",
+        getPass: "NordPassを入手",
+        bestCombo: "最高のセキュリティコンボ",
+      },
     },
     ko: {
       hero: {
@@ -805,6 +900,7 @@ export default async function DealsPage({ params }: Props) {
         mostPopular: "가장 인기",
         premiumChoice: "프리미엄 선택",
         bestValue: "최고 가치",
+        passwordManager: "비밀번호 관리자",
       },
       features: {
         title: "포함된 기능",
@@ -856,6 +952,15 @@ export default async function DealsPage({ params }: Props) {
           },
         ],
       },
+      bundle: {
+        title: "번들 할인",
+        subtitle: "서비스를 결합하여 온라인 보안에서 더 많이 절약하세요",
+        vpnPlusPass: "VPN + 비밀번호 관리자",
+        combinedPrice: "결합 가격",
+        getVpn: "NordVPN 받기",
+        getPass: "NordPass 받기",
+        bestCombo: "최고의 보안 조합",
+      },
     },
     th: {
       hero: {
@@ -882,6 +987,7 @@ export default async function DealsPage({ params }: Props) {
         mostPopular: "ยอดนิยมสูงสุด",
         premiumChoice: "ตัวเลือกพรีเมียม",
         bestValue: "คุ้มค่าที่สุด",
+        passwordManager: "ตัวจัดการรหัสผ่าน",
       },
       features: {
         title: "ฟีเจอร์ที่รวมอยู่",
@@ -940,6 +1046,15 @@ export default async function DealsPage({ params }: Props) {
           },
         ],
       },
+      bundle: {
+        title: "ดีลชุดรวม",
+        subtitle: "รวมบริการและประหยัดมากขึ้นสำหรับความปลอดภัยออนไลน์ของคุณ",
+        vpnPlusPass: "VPN + ตัวจัดการรหัสผ่าน",
+        combinedPrice: "ราคารวมเริ่มต้น",
+        getVpn: "รับ NordVPN",
+        getPass: "รับ NordPass",
+        bestCombo: "คอมโบความปลอดภัยที่ดีที่สุด",
+      },
     },
   };
 
@@ -982,6 +1097,120 @@ export default async function DealsPage({ params }: Props) {
                 className="bg-card/50 backdrop-blur-sm p-6 rounded-2xl border shadow-lg"
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Bundle Deals Section */}
+      <section className="py-16 bg-gradient-to-b from-background to-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-10">
+              <Badge className="bg-emerald-500 text-white border-0 mb-4 text-sm px-4 py-1">
+                {t.bundle.bestCombo}
+              </Badge>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">{t.bundle.title}</h2>
+              <p className="text-lg text-muted-foreground">{t.bundle.subtitle}</p>
+            </div>
+
+            <Card className="border-2 border-emerald-500/30 bg-gradient-to-br from-emerald-500/5 to-blue-500/5 overflow-hidden">
+              <CardContent className="p-0">
+                <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border">
+                  {/* NordVPN Side */}
+                  <div className="p-8">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center">
+                        <Shield className="h-5 w-5 text-blue-500" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold">NordVPN</h3>
+                        <p className="text-sm text-muted-foreground">VPN</p>
+                      </div>
+                    </div>
+                    <div className="flex items-baseline gap-2 mb-4">
+                      <span className="text-3xl font-bold text-primary">$2.99</span>
+                      <span className="text-muted-foreground">{t.deals.perMonth}</span>
+                    </div>
+                    <ul className="space-y-2 mb-6">
+                      <li className="flex items-center gap-2 text-sm">
+                        <CheckCircle className="h-4 w-4 text-green-500 shrink-0" />
+                        <span>10 devices</span>
+                      </li>
+                      <li className="flex items-center gap-2 text-sm">
+                        <CheckCircle className="h-4 w-4 text-green-500 shrink-0" />
+                        <span>Threat Protection</span>
+                      </li>
+                      <li className="flex items-center gap-2 text-sm">
+                        <CheckCircle className="h-4 w-4 text-green-500 shrink-0" />
+                        <span>Dark Web Monitor</span>
+                      </li>
+                    </ul>
+                    <AffiliateButton
+                      vpnId="nordvpn"
+                      vpnName="NordVPN"
+                      affiliateUrl="https://go.zerotovpn.com/nordvpn"
+                      className="w-full"
+                      size="lg"
+                    >
+                      <Shield className="h-4 w-4 mr-2" />
+                      {t.bundle.getVpn}
+                    </AffiliateButton>
+                  </div>
+
+                  {/* NordPass Side */}
+                  <div className="p-8">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center">
+                        <KeyRound className="h-5 w-5 text-emerald-500" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold">NordPass</h3>
+                        <p className="text-sm text-muted-foreground">{t.badges.passwordManager}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-baseline gap-2 mb-4">
+                      <span className="text-3xl font-bold text-primary">$1.49</span>
+                      <span className="text-muted-foreground">{t.deals.perMonth}</span>
+                    </div>
+                    <ul className="space-y-2 mb-6">
+                      <li className="flex items-center gap-2 text-sm">
+                        <CheckCircle className="h-4 w-4 text-green-500 shrink-0" />
+                        <span>Unlimited passwords</span>
+                      </li>
+                      <li className="flex items-center gap-2 text-sm">
+                        <CheckCircle className="h-4 w-4 text-green-500 shrink-0" />
+                        <span>Autofill</span>
+                      </li>
+                      <li className="flex items-center gap-2 text-sm">
+                        <CheckCircle className="h-4 w-4 text-green-500 shrink-0" />
+                        <span>Data breach scanner</span>
+                      </li>
+                    </ul>
+                    <AffiliateButton
+                      vpnId="nordpass"
+                      vpnName="NordPass"
+                      affiliateUrl="https://go.zerotovpn.com/nordpass"
+                      className="w-full"
+                      variant="outline"
+                      size="lg"
+                    >
+                      <KeyRound className="h-4 w-4 mr-2" />
+                      {t.bundle.getPass}
+                    </AffiliateButton>
+                  </div>
+                </div>
+
+                {/* Combined Price Footer */}
+                <div className="border-t bg-muted/50 p-6 text-center">
+                  <p className="text-sm text-muted-foreground mb-1">{t.bundle.vpnPlusPass}</p>
+                  <div className="flex items-center justify-center gap-2">
+                    <span className="text-sm text-muted-foreground">{t.bundle.combinedPrice}</span>
+                    <span className="text-2xl font-bold text-primary">$4.48</span>
+                    <span className="text-muted-foreground">{t.deals.perMonth}</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -1091,6 +1320,7 @@ type DealCardTranslations = {
     mostPopular: string;
     premiumChoice: string;
     bestValue: string;
+    passwordManager: string;
   };
   features: {
     title: string;
@@ -1153,10 +1383,12 @@ function DealCard({
               <p className="text-sm text-muted-foreground mb-1">
                 {deal.months} {t.deals.months}
               </p>
-              <div className="inline-flex items-center gap-1 bg-green-500/10 text-green-600 dark:text-green-400 px-3 py-1 rounded-full text-xs font-semibold">
-                <Gift className="h-3 w-3" />
-                {deal.months - 24} {t.deals.extraMonths}
-              </div>
+              {deal.months - 24 > 0 && (
+                <div className="inline-flex items-center gap-1 bg-green-500/10 text-green-600 dark:text-green-400 px-3 py-1 rounded-full text-xs font-semibold">
+                  <Gift className="h-3 w-3" />
+                  {deal.months - 24} {t.deals.extraMonths}
+                </div>
+              )}
             </div>
           </div>
         </div>

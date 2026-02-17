@@ -1,5 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 import { Metadata } from "next";
+import { getShortMonthYear } from "@/lib/seo-utils";
+import { LastUpdated } from "@/components/last-updated";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
@@ -31,21 +33,22 @@ const baseUrl = "https://zerotovpn.com";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const shortMonthYear = getShortMonthYear();
 
   const titles: Record<string, string> = {
-    en: "Best VPN for Netflix 2026: 5 That Still Unblock Every Library | ZeroToVPN",
-    nl: "Beste VPN voor Netflix 2026: 5 Die Nog Steeds Elke Bibliotheek Deblokkeren | ZeroToVPN",
-    de: "Beste VPN fur Netflix 2026: 5 Die Noch Jede Bibliothek Entsperren | ZeroToVPN",
-    es: "Mejor VPN para Netflix 2026: 5 Que Aun Desbloquean Todas las Bibliotecas | ZeroToVPN",
-    fr: "Meilleur VPN pour Netflix 2026 : 5 Qui Debloquent Encore Toutes les Bibliotheques | ZeroToVPN",
-    zh: "2026年最佳Netflix VPN：5款仍能解锁所有片库 | ZeroToVPN",
-    ja: "2026年Netflix向けベストVPN：全ライブラリをまだ解除できる5選 | ZeroToVPN",
-    ko: "2026년 넷플릭스 최고의 VPN: 모든 라이브러리를 여전히 차단 해제하는 5가지 | ZeroToVPN",
-    th: "VPN ที่ดีที่สุดสำหรับ Netflix 2026: 5 ตัวที่ยังปลดบล็อกทุกไลบรารี | ZeroToVPN",
+    en: `5 Best VPNs for Netflix (Tested ${shortMonthYear}) - Unblock Every Library | ZeroToVPN`,
+    nl: `5 Beste VPNs voor Netflix (Getest ${shortMonthYear}) - Deblokeer Elke Bibliotheek | ZeroToVPN`,
+    de: `5 Beste VPNs für Netflix (Getestet ${shortMonthYear}) - Jede Bibliothek Entsperren | ZeroToVPN`,
+    es: `5 Mejores VPNs para Netflix (Probadas ${shortMonthYear}) - Desbloquea Todas las Bibliotecas | ZeroToVPN`,
+    fr: `5 Meilleurs VPNs pour Netflix (Testés ${shortMonthYear}) - Débloquer Toutes les Bibliothèques | ZeroToVPN`,
+    zh: `5款最佳Netflix VPN (测试于 ${shortMonthYear}) - 解锁所有片库 | ZeroToVPN`,
+    ja: `Netflix向けベスト5 VPN (テスト済み ${shortMonthYear}) - 全ライブラリを解除 | ZeroToVPN`,
+    ko: `넷플릭스 최고의 VPN 5가지 (테스트됨 ${shortMonthYear}) - 모든 라이브러리 차단 해제 | ZeroToVPN`,
+    th: `5 VPN ที่ดีที่สุดสำหรับ Netflix (ทดสอบ ${shortMonthYear}) - ปลดบล็อกทุกไลบรารี | ZeroToVPN`,
   };
 
   const descriptions: Record<string, string> = {
-    en: "We tested 50+ VPNs with Netflix in 2026. Only 5 still unblock US, UK, Japan, and other libraries reliably. See speed tests, 4K support, and Smart DNS features.",
+    en: `We tested 50+ VPNs for Netflix streaming. Expert picks updated ${shortMonthYear} with speeds, prices & unblocking compared. See our honest verdict & money-back options.`,
     nl: "We testten 50+ VPNs met Netflix in 2026. Slechts 5 deblokkeren nog steeds betrouwbaar US, UK, Japan en andere bibliotheken. Bekijk snelheidstests, 4K-ondersteuning en Smart DNS.",
     de: "Wir haben 2026 uber 50 VPNs mit Netflix getestet. Nur 5 entsperren noch zuverlassig US-, UK-, Japan- und andere Bibliotheken. Geschwindigkeitstests, 4K und Smart DNS.",
     es: "Probamos mas de 50 VPNs con Netflix en 2026. Solo 5 desbloquean EE.UU., Reino Unido, Japon y otras bibliotecas de forma fiable. Tests de velocidad, soporte 4K y Smart DNS.",
@@ -741,9 +744,12 @@ export default async function VpnNetflixPage({ params }: Props) {
               <Badge variant="secondary" className="mb-4">
                 {t.badge}
               </Badge>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-red-600 to-purple-600 dark:from-red-400 dark:to-purple-400 bg-clip-text text-transparent">
+              <h1 className="text-4xl md:text-6xl font-bold mb-3 bg-gradient-to-r from-red-600 to-purple-600 dark:from-red-400 dark:to-purple-400 bg-clip-text text-transparent">
                 {t.title}
               </h1>
+              <div className="flex justify-center mb-4">
+                <LastUpdated locale={locale} />
+              </div>
               <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
                 {t.subtitle}
               </p>

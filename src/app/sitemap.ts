@@ -75,12 +75,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     for (const locale of locales) {
       const prefix = locale === "en" ? "" : `/${locale}`;
       const url = `${baseUrl}${prefix}${path}`;
+      const basePriority = opts?.priority ?? profile.priority;
+      // English pages get a +0.05 priority boost (capped at 1.0)
+      const localePriority = locale === "en"
+        ? Math.min(1.0, basePriority + 0.05)
+        : basePriority;
 
       routeMap.set(url, {
         url,
         lastModified: opts?.lastModified ?? nowIso,
         changeFrequency: opts?.changeFrequency ?? profile.changeFrequency,
-        priority: opts?.priority ?? profile.priority,
+        priority: localePriority,
         alternates: { languages: alternates },
       });
     }
@@ -93,8 +98,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // 2) Dynamic review pages.
   for (const vpn of vpns) {
+    // NordVPN review gets highest priority among review pages
+    const reviewPriority = vpn.slug === "nordvpn" ? 0.95 : 0.8;
     addLocalizedPath(`/reviews/${vpn.slug}`, {
-      priority: 0.8,
+      priority: reviewPriority,
       changeFrequency: "monthly",
     });
   }
@@ -102,8 +109,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // 3) Dynamic comparison pages: all generated combinations.
   for (let i = 0; i < vpns.length; i++) {
     for (let j = i + 1; j < vpns.length; j++) {
-      addLocalizedPath(`/compare/${vpns[i].slug}-vs-${vpns[j].slug}`, {
-        priority: 0.7,
+      const slug1 = vpns[i].slug;
+      const slug2 = vpns[j].slug;
+      // NordVPN comparison pages get higher priority (0.85 vs 0.7)
+      const isNordVpnComparison = slug1 === "nordvpn" || slug2 === "nordvpn";
+      addLocalizedPath(`/compare/${slug1}-vs-${slug2}`, {
+        priority: isNordVpnComparison ? 0.85 : 0.7,
         changeFrequency: "weekly",
       });
     }

@@ -24,6 +24,7 @@ import {
   SplitSquareVertical,
 } from "lucide-react";
 import { RelatedPages } from "@/components/seo/related-pages";
+import { LastUpdated } from "@/components/last-updated";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -158,6 +159,9 @@ export default async function AndroidTabletVpnPage({ params }: Props) {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
                 {t("hero.title")}
               </h1>
+              <div className="flex justify-center">
+                <LastUpdated locale={locale} />
+              </div>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                 {t("hero.subtitle")}
               </p>

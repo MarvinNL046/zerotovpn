@@ -37,14 +37,6 @@ export function WebsiteJsonLd() {
     url: "https://zerotovpn.com",
     description:
       "Find the perfect VPN for your needs. Expert reviews, honest comparisons, and exclusive deals.",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: "https://zerotovpn.com/reviews?q={search_term_string}",
-      },
-      "query-input": "required name=search_term_string",
-    },
   };
 
   return (

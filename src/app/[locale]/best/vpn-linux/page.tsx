@@ -1,5 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 import { Metadata } from "next";
+import { getShortMonthYear } from "@/lib/seo-utils";
+import { LastUpdated } from "@/components/last-updated";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -34,20 +36,22 @@ const baseUrl = "https://zerotovpn.com";
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
+  const shortMonthYear = getShortMonthYear();
+
   const titles: Record<string, string> = {
-    en: "Best VPN for Linux 2026: Native Apps, CLI Support | ZeroToVPN",
-    nl: "Beste VPN voor Linux 2026: Native Apps, CLI-ondersteuning | ZeroToVPN",
-    de: "Beste VPN für Linux 2026: Native Apps, CLI-Unterstützung | ZeroToVPN",
-    es: "Mejor VPN para Linux 2026: Apps Nativas, Soporte CLI | ZeroToVPN",
-    fr: "Meilleur VPN pour Linux 2026: Apps Natives, Support CLI | ZeroToVPN",
-    zh: "2026年最佳Linux VPN：原生应用，CLI支持 | ZeroToVPN",
-    janswer: "Linux用ベストVPN 2026：ネイティブアプリ、CLIサポート | ZeroToVPN",
-    ko: "2026년 최고의 리눅스 VPN: 네이티브 앱, CLI 지원 | ZeroToVPN",
-    th: "VPN ที่ดีที่สุดสำหรับ Linux 2026: แอปเนทีฟ, รองรับ CLI | ZeroToVPN",
+    en: `Best VPNs for Linux (Tested ${shortMonthYear}) - Native Apps & CLI Support | ZeroToVPN`,
+    nl: `Beste VPNs voor Linux (Getest ${shortMonthYear}) - Native Apps & CLI-ondersteuning | ZeroToVPN`,
+    de: `Beste VPNs für Linux (Getestet ${shortMonthYear}) - Native Apps & CLI-Unterstützung | ZeroToVPN`,
+    es: `Mejores VPNs para Linux (Probados ${shortMonthYear}) - Apps Nativas y Soporte CLI | ZeroToVPN`,
+    fr: `Meilleurs VPNs pour Linux (Testés ${shortMonthYear}) - Apps Natives et Support CLI | ZeroToVPN`,
+    zh: `最佳Linux VPN (测试于 ${shortMonthYear}) - 原生应用和CLI支持 | ZeroToVPN`,
+    ja: `Linux向けベストVPN (テスト済み ${shortMonthYear}) - ネイティブアプリとCLIサポート | ZeroToVPN`,
+    ko: `리눅스 최고의 VPN (테스트됨 ${shortMonthYear}) - 네이티브 앱 & CLI 지원 | ZeroToVPN`,
+    th: `VPN ที่ดีที่สุดสำหรับ Linux (ทดสอบ ${shortMonthYear}) - แอปเนทีฟและรองรับ CLI | ZeroToVPN`,
   };
 
   const descriptions: Record<string, string> = {
-    en: "Find the best Linux VPN for 2026. We tested 35+ VPNs for Ubuntu, Debian, Fedora, and more. Native apps, CLI tools, and OpenVPN configs included.",
+    en: `We tested 35+ VPNs for Linux. Expert picks updated ${shortMonthYear} with Ubuntu/Debian/Fedora support, CLI tools & speeds compared. See our honest verdict.`,
     nl: "Vind de beste Linux VPN voor 2026. We hebben 35+ VPNs getest voor Ubuntu, Debian, Fedora en meer. Native apps, CLI-tools en OpenVPN-configuraties inbegrepen.",
     de: "Finden Sie das beste Linux-VPN für 2026. Wir haben über 35 VPNs für Ubuntu, Debian, Fedora und mehr getestet. Native Apps, CLI-Tools und OpenVPN-Konfigurationen inklusive.",
     es: "Encuentra la mejor VPN para Linux de 2026. Probamos más de 35 VPNs para Ubuntu, Debian, Fedora y más. Incluye apps nativas, herramientas CLI y configs OpenVPN.",
@@ -1514,6 +1518,9 @@ export default async function LinuxVpnPage({ params }: Props) {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
                 {t.title}
               </h1>
+              <div className="flex justify-center">
+                <LastUpdated locale={locale} />
+              </div>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                 {t.subtitle}
               </p>

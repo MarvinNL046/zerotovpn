@@ -6,6 +6,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { RatingStars } from "@/components/vpn/rating-stars";
 import { Link } from "@/i18n/navigation";
+import { getShortMonthYear } from "@/lib/seo-utils";
+import { LastUpdated } from "@/components/last-updated";
 import {
   Shield,
   CheckCircle,
@@ -43,21 +45,22 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const shortMonthYear = getShortMonthYear();
 
   const titles: Record<string, string> = {
-    en: "Best VPN for Iran 2026: Bypass Deep Packet Inspection | ZeroToVPN",
-    nl: "Beste VPN voor Iran 2026: Omzeil Deep Packet Inspection | ZeroToVPN",
-    de: "Beste VPN für Iran 2026: Umgehen Sie Deep Packet Inspection | ZeroToVPN",
-    es: "Mejor VPN para Irán 2026: Evita Inspección Profunda de Paquetes | ZeroToVPN",
-    fr: "Meilleur VPN pour Iran 2026 : Contourner l'Inspection Profonde de Paquets | ZeroToVPN",
-    zh: "2026年伊朗VPN推荐：绕过深度包检测 | ZeroToVPN",
-    ja: "イラン向けベストVPN 2026：深度パケット検査を回避 | ZeroToVPN",
-    ko: "이란 최고의 VPN 2026: 심층 패킷 검사 우회하기 | ZeroToVPN",
-    th: "VPN ที่ดีที่สุดสำหรับอิหร่าน 2026: ข้ามการตรวจสอบแพ็กเก็ตอย่างละเอียด | ZeroToVPN",
+    en: `Best VPNs for Iran (Tested ${shortMonthYear}) - Bypass Deep Packet Inspection | ZeroToVPN`,
+    nl: `Beste VPNs voor Iran (Getest ${shortMonthYear}) - Omzeil Deep Packet Inspection | ZeroToVPN`,
+    de: `Beste VPNs für Iran (Getestet ${shortMonthYear}) - Deep Packet Inspection Umgehen | ZeroToVPN`,
+    es: `Mejores VPNs para Irán (Probados ${shortMonthYear}) - Evitar Inspección de Paquetes | ZeroToVPN`,
+    fr: `Meilleurs VPNs pour Iran (Testés ${shortMonthYear}) - Contourner l'Inspection de Paquets | ZeroToVPN`,
+    zh: `伊朗最佳VPN (测试于 ${shortMonthYear}) - 绕过深度包检测 | ZeroToVPN`,
+    ja: `イラン向けベストVPN (テスト済み ${shortMonthYear}) - 深度パケット検査を回避 | ZeroToVPN`,
+    ko: `이란 최고의 VPN (테스트됨 ${shortMonthYear}) - 심층 패킷 검사 우회 | ZeroToVPN`,
+    th: `VPN ที่ดีที่สุดสำหรับอิหร่าน (ทดสอบ ${shortMonthYear}) - ข้ามการตรวจสอบแพ็กเก็ต | ZeroToVPN`,
   };
 
   const descriptions: Record<string, string> = {
-    en: "Need a VPN for Iran? We tested VPNs that work despite Iran's strict censorship and deep packet inspection. See which VPNs bypass DPI blocks and access Telegram, WhatsApp, Instagram.",
+    en: `We tested VPNs for Iran in ${shortMonthYear}. Expert picks that bypass DPI & censorship verified. See which VPNs work for Telegram, WhatsApp & Instagram.`,
     nl: "VPN nodig voor Iran? We testten VPNs die werken ondanks Iran's strikte censuur en deep packet inspection. Zie welke VPNs DPI blokkades omzeilen en toegang geven tot Telegram, WhatsApp, Instagram.",
     de: "Brauchen Sie ein VPN für Iran? Wir testeten VPNs, die trotz Irans strenger Zensur und Deep Packet Inspection funktionieren. Sehen Sie, welche VPNs DPI-Blockaden umgehen.",
     es: "¿Necesitas un VPN para Irán? Probamos VPNs que funcionan a pesar de la estricta censura de Irán y la inspección profunda de paquetes. Ve qué VPNs evitan bloqueos DPI.",
@@ -1295,10 +1298,13 @@ export default async function VpnIranPage({ params }: Props) {
               <Badge className="mb-4" variant="secondary">
                 {t.badge}
               </Badge>
-              <h1 className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+              <h1 className="mb-2 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
                 <span className="mr-2">{t.flag}</span>
                 {t.title}
               </h1>
+              <div className="flex justify-center mb-4">
+                <LastUpdated locale={locale} />
+              </div>
               <p className="mx-auto max-w-2xl text-lg text-muted-foreground md:text-xl">
                 {t.subtitle}
               </p>

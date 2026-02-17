@@ -1,5 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 import { Metadata } from "next";
+import { getShortMonthYear } from "@/lib/seo-utils";
+import { LastUpdated } from "@/components/last-updated";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -52,21 +54,22 @@ const baseUrl = "https://zerotovpn.com";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const shortMonthYear = getShortMonthYear();
 
   const titles: Record<string, string> = {
-    en: "Best VPN for Windows PC 2026: Native Apps, Speed | ZeroToVPN",
-    nl: "Beste VPN voor Windows PC 2026: Native Apps, Snelheid | ZeroToVPN",
-    de: "Beste VPN für Windows PC 2026: Native Apps, Geschwindigkeit | ZeroToVPN",
-    es: "Mejor VPN para Windows PC 2026: Apps Nativas, Velocidad | ZeroToVPN",
-    fr: "Meilleur VPN pour Windows PC 2026: Apps Natives, Vitesse | ZeroToVPN",
-    zh: "2026年最佳Windows PC VPN：原生应用，速度 | ZeroToVPN",
-    janswer: "Windows PC用ベストVPN 2026：ネイティブアプリ、速度 | ZeroToVPN",
-    ko: "2026년 최고의 Windows PC VPN: 네이티브 앱, 속도 | ZeroToVPN",
-    th: "VPN ที่ดีที่สุดสำหรับ Windows PC 2026: แอปเนทีฟ, ความเร็ว | ZeroToVPN",
+    en: `Best VPNs for Windows PC (Tested ${shortMonthYear}) - Native Apps & Speed | ZeroToVPN`,
+    nl: `Beste VPNs voor Windows PC (Getest ${shortMonthYear}) - Native Apps & Snelheid | ZeroToVPN`,
+    de: `Beste VPNs für Windows PC (Getestet ${shortMonthYear}) - Native Apps & Geschwindigkeit | ZeroToVPN`,
+    es: `Mejores VPNs para Windows PC (Probados ${shortMonthYear}) - Apps Nativas y Velocidad | ZeroToVPN`,
+    fr: `Meilleurs VPNs pour Windows PC (Testés ${shortMonthYear}) - Apps Natives et Vitesse | ZeroToVPN`,
+    zh: `最佳Windows PC VPN (测试于 ${shortMonthYear}) - 原生应用和速度 | ZeroToVPN`,
+    ja: `Windows PC向けベストVPN (テスト済み ${shortMonthYear}) - ネイティブアプリと速度 | ZeroToVPN`,
+    ko: `Windows PC 최고의 VPN (테스트됨 ${shortMonthYear}) - 네이티브 앱 & 속도 | ZeroToVPN`,
+    th: `VPN ที่ดีที่สุดสำหรับ Windows PC (ทดสอบ ${shortMonthYear}) - แอปเนทีฟและความเร็ว | ZeroToVPN`,
   };
 
   const descriptions: Record<string, string> = {
-    en: "Find the best VPN for Windows PC in 2026. We tested 35+ VPNs for native Windows apps, speed, security, and system integration. Compatible with Windows 11, 10, 8, and 7.",
+    en: `We tested 35+ VPNs for Windows PC. Expert picks updated ${shortMonthYear} with speeds, native apps & security compared. 30-day money-back guarantee on all picks.`,
     nl: "Vind de beste VPN voor Windows PC in 2026. We hebben 35+ VPNs getest voor native Windows apps, snelheid, beveiliging en systeemintegratie. Compatibel met Windows 11, 10, 8 en 7.",
     de: "Finden Sie das beste VPN für Windows PC in 2026. Wir haben über 35 VPNs auf native Windows-Apps, Geschwindigkeit, Sicherheit und Systemintegration getestet. Kompatibel mit Windows 11, 10, 8 und 7.",
     es: "Encuentra la mejor VPN para Windows PC en 2026. Probamos más de 35 VPNs para apps nativas de Windows, velocidad, seguridad e integración del sistema. Compatible con Windows 11, 10, 8 y 7.",
@@ -1388,6 +1391,9 @@ export default async function WindowsVpnPage({ params }: Props) {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
                 {t.title}
               </h1>
+              <div className="flex justify-center">
+                <LastUpdated locale={locale} />
+              </div>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                 {t.subtitle}
               </p>

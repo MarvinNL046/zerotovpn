@@ -1,5 +1,6 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
+import { getShortMonthYear } from "@/lib/seo-utils";
 import { Button } from "@/components/ui/button";
 import { ComparisonTable } from "@/components/vpn/comparison-table";
 import { VpnCard } from "@/components/vpn/vpn-card";
@@ -7,8 +8,6 @@ import { getFeaturedVpns } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
 import { Shield, Zap, Globe, CheckCircle, ArrowRight, Server, Users, Clock } from "lucide-react";
 import {
-  OrganizationSchema,
-  WebsiteSchema,
   ComparisonTableSchema,
   FaqSchema,
 } from "@/components/structured-data";
@@ -27,6 +26,7 @@ const baseUrl = "https://zerotovpn.com";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const shortMonthYear = getShortMonthYear();
 
   const canonicalUrl = locale === "en" ? baseUrl : `${baseUrl}/${locale}`;
 
@@ -36,8 +36,29 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     languages[l] = l === "en" ? baseUrl : `${baseUrl}/${l}`;
   });
 
+  const isEnglish = locale === "en";
+
   return {
     metadataBase: new URL(baseUrl),
+    title: isEnglish
+      ? `Best VPN 2026: Top Picks Tested for Speed, Security & Streaming | ZeroToVPN`
+      : undefined,
+    description: isEnglish
+      ? `Best VPN 2026: We tested 38+ VPNs for speed, security & streaming. Expert rankings updated ${shortMonthYear}. Find the cheapest, fastest VPN for your needs.`
+      : `We tested 38+ VPNs for speed, security & streaming. See our expert rankings updated ${shortMonthYear}. Find the best VPN for your needs.`,
+    keywords: isEnglish
+      ? [
+          "best vpn 2026",
+          "best vpn",
+          "cheapest vpn",
+          "fastest vpn",
+          "vpn comparison",
+          "vpn review",
+          "nordvpn review",
+          "surfshark review",
+          "expressvpn review",
+        ]
+      : undefined,
     alternates: {
       canonical: canonicalUrl,
       languages: languages,
@@ -60,8 +81,6 @@ export default async function HomePage({ params }: Props) {
 
   return (
     <>
-      <OrganizationSchema />
-      <WebsiteSchema />
       <ComparisonTableSchema vpns={featuredVpns} />
       <FaqSchema faqs={faqData} />
       <div className="flex flex-col">
@@ -195,6 +214,66 @@ export default async function HomePage({ params }: Props) {
               {featuredVpns.slice(0, 3).map((vpn, index) => (
                 <VpnCard key={vpn.id} vpn={vpn} rank={index + 1} locale={locale} />
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* NordVPN Spotlight */}
+        <section className="py-12 md:py-16">
+          <div className="container max-w-4xl mx-auto">
+            <div className="relative overflow-hidden rounded-2xl border bg-gradient-to-br from-primary/5 via-background to-primary/10 p-8 md:p-12">
+              {/* Editor's Choice Badge */}
+              <div className="flex items-center gap-2 mb-4">
+                <span className="inline-flex items-center bg-primary text-primary-foreground text-sm font-bold px-3 py-1 rounded-full">
+                  &#11088; Editor&apos;s Choice 2026
+                </span>
+              </div>
+
+              <h2 className="text-2xl md:text-3xl font-bold mb-4">
+                Why We Recommend NordVPN
+              </h2>
+
+              <p className="text-muted-foreground mb-6 max-w-2xl">
+                After testing 38+ VPNs, NordVPN consistently ranks #1 for speed, security, and value.
+              </p>
+
+              {/* Key stats grid */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <div>
+                  <div className="text-2xl font-bold text-primary">7,400+</div>
+                  <div className="text-sm text-muted-foreground">Servers</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-primary">94%</div>
+                  <div className="text-sm text-muted-foreground">Speed Retention</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-primary">$2.99</div>
+                  <div className="text-sm text-muted-foreground">/month</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-primary">4.8/5</div>
+                  <div className="text-sm text-muted-foreground">Our Rating</div>
+                </div>
+              </div>
+
+              {/* CTA buttons */}
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="https://go.zerotovpn.com/nordvpn"
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  className="inline-flex items-center bg-primary text-primary-foreground font-semibold px-6 py-3 rounded-lg hover:bg-primary/90 transition"
+                >
+                  Get NordVPN Deal &rarr;
+                </a>
+                <Link
+                  href={`/${locale}/reviews/nordvpn`}
+                  className="inline-flex items-center border font-semibold px-6 py-3 rounded-lg hover:bg-muted transition"
+                >
+                  Read Full Review
+                </Link>
+              </div>
             </div>
           </div>
         </section>

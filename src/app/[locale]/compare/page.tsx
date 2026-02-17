@@ -47,11 +47,28 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     languages[l] = `${baseUrl}${p}/compare`;
   });
 
+  const isEnglish = locale === "en";
+
   return {
     metadataBase: new URL(baseUrl),
-    title: "Compare VPNs Side by Side - ZeroToVPN",
-    description:
-      "Compare the best VPN services side by side. See detailed comparisons of speed, security, pricing, features, and more to find the perfect VPN for your needs.",
+    title: isEnglish
+      ? "VPN Comparison 2026: Compare the Best VPN Services Side by Side | ZeroToVPN"
+      : "Compare VPNs Side by Side - ZeroToVPN",
+    description: isEnglish
+      ? "VPN comparison 2026: Compare speed, security, price & features of NordVPN, ExpressVPN, Surfshark & more. Find the best VPN for your needs with our side-by-side tool."
+      : "Compare the best VPN services side by side. See detailed comparisons of speed, security, pricing, features, and more to find the perfect VPN for your needs.",
+    keywords: isEnglish
+      ? [
+          "vpn comparison",
+          "vpn comparison 2026",
+          "compare vpns",
+          "best vpn 2026",
+          "nordvpn vs expressvpn",
+          "cheapest vpn",
+          "fastest vpn",
+          "vpn side by side",
+        ]
+      : undefined,
     alternates: {
       canonical: canonicalUrl,
       languages: languages,

@@ -10,6 +10,8 @@ import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { getVpnBySlug, type VpnProvider } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
+import { getShortMonthYear } from "@/lib/seo-utils";
+import { LastUpdated } from "@/components/last-updated";
 import {
   Zap,
   CheckCircle,
@@ -30,21 +32,22 @@ const baseUrl = "https://zerotovpn.com";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const shortMonthYear = getShortMonthYear();
 
   const titles: Record<string, string> = {
-    en: "Best VPN for Firestick 2026: 5 Native Apps Tested on Fire TV | ZeroToVPN",
-    nl: "Beste VPN voor Firestick 2026: 5 Native Apps Getest op Fire TV | ZeroToVPN",
-    de: "Beste VPN fur Firestick 2026: 5 Native Apps Getestet auf Fire TV | ZeroToVPN",
-    es: "Mejor VPN para Firestick 2026: 5 Apps Nativas Probadas en Fire TV | ZeroToVPN",
-    fr: "Meilleur VPN pour Firestick 2026 : 5 Apps Natives Testees sur Fire TV | ZeroToVPN",
-    zh: "2026年最佳Firestick VPN：5款原生应用Fire TV实测 | ZeroToVPN",
-    ja: "2026年Firestick向けベストVPN：Fire TVでテスト済みネイティブアプリ5選 | ZeroToVPN",
-    ko: "2026년 Firestick 최고의 VPN: Fire TV에서 테스트한 5가지 네이티브 앱 | ZeroToVPN",
-    th: "VPN ที่ดีที่สุดสำหรับ Firestick 2026: 5 แอปเนทีฟทดสอบบน Fire TV | ZeroToVPN",
+    en: `5 Best VPNs for Firestick (Tested ${shortMonthYear}) - Native Fire TV Apps | ZeroToVPN`,
+    nl: `5 Beste VPNs voor Firestick (Getest ${shortMonthYear}) - Native Fire TV Apps | ZeroToVPN`,
+    de: `5 Beste VPNs für Firestick (Getestet ${shortMonthYear}) - Native Fire TV Apps | ZeroToVPN`,
+    es: `5 Mejores VPNs para Firestick (Probadas ${shortMonthYear}) - Apps Nativas Fire TV | ZeroToVPN`,
+    fr: `5 Meilleurs VPNs pour Firestick (Testés ${shortMonthYear}) - Apps Natives Fire TV | ZeroToVPN`,
+    zh: `5款最佳Firestick VPN (测试于 ${shortMonthYear}) - Fire TV原生应用 | ZeroToVPN`,
+    ja: `Firestick向けベスト5 VPN (テスト済み ${shortMonthYear}) - Fire TVネイティブアプリ | ZeroToVPN`,
+    ko: `Firestick 최고의 VPN 5가지 (테스트됨 ${shortMonthYear}) - Fire TV 네이티브 앱 | ZeroToVPN`,
+    th: `5 VPN ที่ดีที่สุดสำหรับ Firestick (ทดสอบ ${shortMonthYear}) - แอปเนทีฟ Fire TV | ZeroToVPN`,
   };
 
   const descriptions: Record<string, string> = {
-    en: "We tested 30+ VPN apps directly on Amazon Fire TV Stick. These 5 have native apps with remote-friendly interfaces, fast streaming speeds, and reliable unblocking.",
+    en: `We tested 30+ VPNs for Firestick. Expert picks updated ${shortMonthYear} with Fire TV app quality, speeds & unblocking compared. See our honest verdict.`,
     nl: "We testten 30+ VPN apps direct op Amazon Fire TV Stick. Deze 5 hebben native apps met afstandsbediening-vriendelijke interfaces en snelle streamingsnelheden.",
     de: "Wir haben uber 30 VPN-Apps direkt auf dem Amazon Fire TV Stick getestet. Diese 5 haben native Apps mit Fernbedienungs-freundlichen Oberflachen.",
     es: "Probamos mas de 30 apps VPN directamente en Amazon Fire TV Stick. Estos 5 tienen apps nativas con interfaces amigables para el control remoto.",
@@ -387,7 +390,10 @@ export default async function VpnFirestickPage({ params }: Props) {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <Badge variant="secondary" className="mb-4">{t.badge}</Badge>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-orange-600 to-blue-600 dark:from-orange-400 dark:to-blue-400 bg-clip-text text-transparent">{t.title}</h1>
+              <h1 className="text-4xl md:text-6xl font-bold mb-3 bg-gradient-to-r from-orange-600 to-blue-600 dark:from-orange-400 dark:to-blue-400 bg-clip-text text-transparent">{t.title}</h1>
+              <div className="flex justify-center mb-4">
+                <LastUpdated locale={locale} />
+              </div>
               <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">{t.subtitle}</p>
             </div>
           </div>

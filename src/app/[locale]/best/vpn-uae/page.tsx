@@ -6,6 +6,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { RatingStars } from "@/components/vpn/rating-stars";
 import { Link } from "@/i18n/navigation";
+import { getShortMonthYear } from "@/lib/seo-utils";
+import { LastUpdated } from "@/components/last-updated";
 import {
   Shield,
   CheckCircle,
@@ -43,21 +45,22 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const shortMonthYear = getShortMonthYear();
 
   const titles: Record<string, string> = {
-    en: "Best VPN for UAE & Dubai 2026: 5 That Work With Etisalat & Du | ZeroToVPN",
-    nl: "Beste VPN voor VAE & Dubai 2026: 5 Die Werken Met Etisalat & Du | ZeroToVPN",
-    de: "Bestes VPN für VAE & Dubai 2026: 5 Die Mit Etisalat & Du Funktionieren | ZeroToVPN",
-    es: "Mejor VPN para EAU y Dubai 2026: 5 Que Funcionan Con Etisalat y Du | ZeroToVPN",
-    fr: "Meilleur VPN pour EAU et Dubai 2026: 5 Qui Marchent Avec Etisalat et Du | ZeroToVPN",
-    zh: "2026年阿联酋和迪拜最佳VPN：5款适用于Etisalat和Du的VPN | ZeroToVPN",
-    ja: "UAE・ドバイ向けベストVPN 2026：EtisalatとDuで動作する5選 | ZeroToVPN",
-    ko: "UAE & 두바이 최고의 VPN 2026: Etisalat & Du에서 작동하는 5개 | ZeroToVPN",
-    th: "VPN ที่ดีที่สุดสำหรับ UAE และดูไบ 2026: 5 ตัวที่ใช้กับ Etisalat และ Du ได้ | ZeroToVPN",
+    en: `5 Best VPNs for UAE & Dubai (Tested ${shortMonthYear}) - Work With Etisalat | ZeroToVPN`,
+    nl: `5 Beste VPNs voor VAE & Dubai (Getest ${shortMonthYear}) - Werken Met Etisalat | ZeroToVPN`,
+    de: `5 Beste VPNs für VAE & Dubai (Getestet ${shortMonthYear}) - Etisalat Kompatibel | ZeroToVPN`,
+    es: `5 Mejores VPNs para EAU y Dubai (Probadas ${shortMonthYear}) - Funcionan con Etisalat | ZeroToVPN`,
+    fr: `5 Meilleurs VPNs pour EAU et Dubai (Testés ${shortMonthYear}) - Compatibles Etisalat | ZeroToVPN`,
+    zh: `5款最佳UAE和迪拜VPN (测试于 ${shortMonthYear}) - 兼容Etisalat | ZeroToVPN`,
+    ja: `UAE・ドバイ向けベスト5 VPN (テスト済み ${shortMonthYear}) - Etisalat対応 | ZeroToVPN`,
+    ko: `UAE & 두바이 최고의 VPN 5가지 (테스트됨 ${shortMonthYear}) - Etisalat 호환 | ZeroToVPN`,
+    th: `5 VPN ที่ดีที่สุดสำหรับ UAE และดูไบ (ทดสอบ ${shortMonthYear}) - ใช้กับ Etisalat ได้ | ZeroToVPN`,
   };
 
   const descriptions: Record<string, string> = {
-    en: "Most VPNs are blocked in the UAE. We tested which ones actually work with Etisalat and Du in February 2026. VOIP calling guide included.",
+    en: `We tested VPNs for UAE & Dubai in ${shortMonthYear}. Expert picks verified with Etisalat & Du. See which VPNs actually work. VOIP calling guide included.`,
     nl: "De meeste VPNs zijn geblokkeerd in de VAE. We testten welke echt werken met Etisalat en Du in februari 2026. VOIP-bellen gids inbegrepen.",
     de: "Die meisten VPNs sind in den VAE blockiert. Wir haben getestet, welche im Februar 2026 mit Etisalat und Du funktionieren. VOIP-Anleitung inklusive.",
     es: "La mayoría de VPNs están bloqueados en EAU. Probamos cuáles funcionan con Etisalat y Du en febrero 2026. Guía de llamadas VOIP incluida.",
@@ -1260,6 +1263,9 @@ export default async function VpnUAEPage({ params }: Props) {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
                 {t.title}
               </h1>
+              <div className="flex justify-center">
+                <LastUpdated locale={locale} />
+              </div>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                 {t.subtitle}
               </p>

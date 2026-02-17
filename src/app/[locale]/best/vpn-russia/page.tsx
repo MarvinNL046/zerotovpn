@@ -6,6 +6,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { RatingStars } from "@/components/vpn/rating-stars";
 import { Link } from "@/i18n/navigation";
+import { getShortMonthYear } from "@/lib/seo-utils";
+import { LastUpdated } from "@/components/last-updated";
 import {
   Shield,
   CheckCircle,
@@ -46,21 +48,22 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const shortMonthYear = getShortMonthYear();
 
   const titles: Record<string, string> = {
-    en: "Best VPN for Russia 2026: Bypass Roskomnadzor Blocks | ZeroToVPN",
-    nl: "Beste VPN voor Rusland 2026: Omzeil Roskomnadzor Blokkades | ZeroToVPN",
-    de: "Beste VPN für Russland 2026: Umgehen Sie Roskomnadzor-Blockaden | ZeroToVPN",
-    es: "Mejor VPN para Rusia 2026: Evita los Bloqueos de Roskomnadzor | ZeroToVPN",
-    fr: "Meilleur VPN pour la Russie 2026 : Contourner les Blocages de Roskomnadzor | ZeroToVPN",
-    zh: "2026年俄罗斯VPN推荐：绕过Roskomnadzor封锁 | ZeroToVPN",
-    ja: "ロシア向けベストVPN 2026：Roskomnadzorブロックを回避 | ZeroToVPN",
-    ko: "러시아 최고의 VPN 2026: Roskomnadzor 차단 우회하기 | ZeroToVPN",
-    th: "VPN ที่ดีที่สุดสำหรับรัสเซีย 2026: ข้ามการบล็อก Roskomnadzor | ZeroToVPN",
+    en: `Best VPNs for Russia (Tested ${shortMonthYear}) - Bypass Roskomnadzor | ZeroToVPN`,
+    nl: `Beste VPNs voor Rusland (Getest ${shortMonthYear}) - Omzeil Roskomnadzor | ZeroToVPN`,
+    de: `Beste VPNs für Russland (Getestet ${shortMonthYear}) - Roskomnadzor Umgehen | ZeroToVPN`,
+    es: `Mejores VPNs para Rusia (Probadas ${shortMonthYear}) - Evitar Bloqueos | ZeroToVPN`,
+    fr: `Meilleurs VPNs pour la Russie (Testés ${shortMonthYear}) - Contourner les Blocages | ZeroToVPN`,
+    zh: `俄罗斯最佳VPN (测试于 ${shortMonthYear}) - 绕过封锁 | ZeroToVPN`,
+    ja: `ロシア向けベストVPN (テスト済み ${shortMonthYear}) - ブロック回避 | ZeroToVPN`,
+    ko: `러시아 최고의 VPN (테스트됨 ${shortMonthYear}) - 차단 우회 | ZeroToVPN`,
+    th: `VPN ที่ดีที่สุดสำหรับรัสเซีย (ทดสอบ ${shortMonthYear}) - ข้ามการบล็อก | ZeroToVPN`,
   };
 
   const descriptions: Record<string, string> = {
-    en: "Looking for a VPN that works in Russia? We tested VPNs that can bypass Roskomnadzor blocks. See which VPNs work in Russia and which don't. 197+ services blocked in 2024.",
+    en: `We tested VPNs to find the best for Russia in ${shortMonthYear}. Expert picks with Roskomnadzor bypass tested & verified. See which VPNs actually work.`,
     nl: "Op zoek naar een VPN die werkt in Rusland? We hebben VPNs getest die Roskomnadzor blokkades kunnen omzeilen. Zie welke VPNs werken in Rusland en welke niet. 197+ diensten geblokkeerd in 2024.",
     de: "Suchen Sie nach einem VPN, das in Russland funktioniert? Wir haben VPNs getestet, die Roskomnadzor-Blockaden umgehen können. Sehen Sie, welche VPNs in Russland funktionieren. 197+ Dienste 2024 blockiert.",
     es: "¿Buscas un VPN que funcione en Rusia? Probamos VPNs que pueden eludir los bloqueos de Roskomnadzor. Ve qué VPNs funcionan en Rusia. 197+ servicios bloqueados en 2024.",
@@ -1245,6 +1248,9 @@ export default async function VpnRussiaPage({ params }: Props) {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
                 {t.title}
               </h1>
+              <div className="flex justify-center">
+                <LastUpdated locale={locale} />
+              </div>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                 {t.subtitle}
               </p>

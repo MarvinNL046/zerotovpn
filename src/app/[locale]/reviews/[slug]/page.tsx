@@ -28,13 +28,110 @@ import {
   VpnReviewSchema,
   VpnProductSchema,
   BreadcrumbSchema,
+  FaqSchema,
 } from "@/components/structured-data";
 import { routing } from "@/i18n/routing";
 import type { Metadata } from "next";
+import { getShortMonthYear, getLocalizedMonthYear } from "@/lib/seo-utils";
+import { LastUpdated } from "@/components/last-updated";
+import { vpnProviders } from "@/lib/vpn-data";
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
 };
+
+// Generate a "Best For" label dynamically from VPN attributes
+function generateBestFor(vpn: {
+  editorChoice: boolean;
+  streamingScore: number;
+  speedScore: number;
+  torrentSupport: boolean;
+  netflixSupport: boolean;
+  securityScore: number;
+  noLogs: boolean;
+  priceMonthly: number;
+}): string {
+  if (vpn.editorChoice) return "All-around use";
+  if (vpn.streamingScore >= 90 && vpn.netflixSupport) return "Streaming & Netflix";
+  if (vpn.speedScore >= 90) return "Speed & gaming";
+  if (vpn.torrentSupport && vpn.noLogs) return "Torrenting & privacy";
+  if (vpn.securityScore >= 90) return "Security & privacy";
+  if (vpn.priceMonthly <= 3) return "Budget users";
+  return "Everyday privacy";
+}
+
+// Generate a short verdict sentence dynamically from VPN attributes
+function generateVerdictText(vpn: {
+  name: string;
+  overallRating: number;
+  speedScore: number;
+  streamingScore: number;
+  netflixSupport: boolean;
+  noLogs: boolean;
+  editorChoice: boolean;
+  torrentSupport: boolean;
+}): string {
+  if (vpn.editorChoice) {
+    return `${vpn.name} is our top-rated VPN, excelling across speed, security, and streaming. It is one of the best all-around choices for any user.`;
+  }
+  if (vpn.overallRating >= 4.5) {
+    const streaming = vpn.netflixSupport ? " and reliably unblocks Netflix" : "";
+    return `${vpn.name} is an excellent VPN with a ${vpn.speedScore}% speed score${streaming}. A top choice for users who want premium performance without compromise.`;
+  }
+  if (vpn.streamingScore >= 85 && vpn.netflixSupport) {
+    return `${vpn.name} is a strong pick for streaming fans, unblocking Netflix and other platforms with ease. Its ${vpn.speedScore}% speed score ensures smooth HD playback.`;
+  }
+  if (vpn.torrentSupport && vpn.noLogs) {
+    return `${vpn.name} is well-suited for privacy-focused users and torrenters. Its strict no-logs policy and dedicated P2P servers make it a reliable privacy tool.`;
+  }
+  return `${vpn.name} is a solid VPN with a ${vpn.speedScore}% speed score and ${vpn.streamingScore}% streaming score, making it a reliable choice for everyday online privacy.`;
+}
+
+// Generate FAQ items dynamically from VPN data
+function generateFaqs(vpn: {
+  name: string;
+  netflixSupport: boolean;
+  streamingScore: number;
+  priceMonthly: number;
+  priceYearly: number;
+  priceTwoYear?: number | null;
+  encryption: string;
+  killSwitch: boolean;
+  noLogs: boolean;
+  moneyBackDays: number;
+  speedScore: number;
+  servers: number;
+  countries: number;
+}): { question: string; answer: string }[] {
+  return [
+    {
+      question: `Does ${vpn.name} work with Netflix?`,
+      answer: vpn.netflixSupport
+        ? `Yes, ${vpn.name} reliably works with Netflix. With a streaming score of ${vpn.streamingScore}%, it can unblock Netflix libraries from multiple countries including the US, UK, and more.`
+        : `${vpn.name} has limited Netflix support. Its streaming score is ${vpn.streamingScore}%, so results may vary depending on the server location you choose.`,
+    },
+    {
+      question: `How much does ${vpn.name} cost in 2026?`,
+      answer: `${vpn.name} offers flexible pricing plans. The monthly plan costs $${vpn.priceMonthly}/month, the 1-year plan costs $${vpn.priceYearly}/month, and the best value${vpn.priceTwoYear ? ` 2-year plan costs $${vpn.priceTwoYear}/month` : ` 1-year plan at $${vpn.priceYearly}/month`}. All plans come with a ${vpn.moneyBackDays}-day money-back guarantee.`,
+    },
+    {
+      question: `Is ${vpn.name} safe to use?`,
+      answer: `Yes, ${vpn.name} is safe. It uses ${vpn.encryption} encryption${vpn.killSwitch ? ", includes a kill switch that cuts your internet if the VPN drops" : ""}, and ${vpn.noLogs ? "has a strict no-logs policy that has been independently audited" : "maintains a no-logs policy for your privacy"}.`,
+    },
+    {
+      question: `Does ${vpn.name} have a free trial?`,
+      answer: `${vpn.name} does not offer a free trial, but it comes with a ${vpn.moneyBackDays}-day money-back guarantee. This gives you plenty of time to test the service risk-free and get a full refund if you are not satisfied.`,
+    },
+    {
+      question: `How fast is ${vpn.name}?`,
+      answer: `${vpn.name} scores ${vpn.speedScore}% in our speed tests, which places it ${vpn.speedScore >= 90 ? "among the fastest VPNs available" : vpn.speedScore >= 75 ? "above average in speed" : "at average speed levels"}. In practice this means ${vpn.speedScore >= 90 ? "minimal impact on your connection for streaming, gaming, and large downloads" : vpn.speedScore >= 75 ? "a smooth experience for most everyday tasks including HD streaming" : "adequate performance for browsing and standard-definition streaming"}.`,
+    },
+    {
+      question: `How many servers does ${vpn.name} have?`,
+      answer: `${vpn.name} operates a network of ${vpn.servers.toLocaleString("en-US")} servers across ${vpn.countries} countries. This large network helps you find a fast nearby server and access geo-restricted content from many regions around the world.`,
+    },
+  ];
+}
 
 const baseUrl = "https://zerotovpn.com";
 export const revalidate = 86400;
@@ -57,48 +154,67 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     languages[l] = `${baseUrl}${p}/reviews/${vpn.slug}`;
   });
 
+  const shortMonthYear = getShortMonthYear();
+  const isNordVpn = vpn.slug === "nordvpn";
+
   // Generate locale-specific descriptions
   const descriptions: Record<string, string> = {
-    en: `Complete ${vpn.name} review 2026. ${vpn.shortDescription} Speed score: ${vpn.speedScore}%, Security: ${vpn.securityScore}%. From $${vpn.priceTwoYear || vpn.priceYearly}/mo.`,
-    nl: `Volledige ${vpn.name} review 2026. ${vpn.shortDescription} Snelheid: ${vpn.speedScore}%, Beveiliging: ${vpn.securityScore}%. Vanaf $${vpn.priceTwoYear || vpn.priceYearly}/maand.`,
-    de: `Vollständiger ${vpn.name} Test 2026. ${vpn.shortDescription} Geschwindigkeit: ${vpn.speedScore}%, Sicherheit: ${vpn.securityScore}%. Ab $${vpn.priceTwoYear || vpn.priceYearly}/Monat.`,
-    es: `Reseña completa de ${vpn.name} 2026. ${vpn.shortDescription} Velocidad: ${vpn.speedScore}%, Seguridad: ${vpn.securityScore}%. Desde $${vpn.priceTwoYear || vpn.priceYearly}/mes.`,
-    fr: `Avis complet sur ${vpn.name} 2026. ${vpn.shortDescription} Vitesse: ${vpn.speedScore}%, Sécurité: ${vpn.securityScore}%. À partir de $${vpn.priceTwoYear || vpn.priceYearly}/mois.`,
-    zh: `${vpn.name} 2026完整评测。${vpn.shortDescription} 速度：${vpn.speedScore}%，安全性：${vpn.securityScore}%。每月$${vpn.priceTwoYear || vpn.priceYearly}起。`,
-    ja: `${vpn.name} 2026年完全レビュー。${vpn.shortDescription} 速度：${vpn.speedScore}%、セキュリティ：${vpn.securityScore}%。月額$${vpn.priceTwoYear || vpn.priceYearly}から。`,
-    ko: `${vpn.name} 2026 완전 리뷰. ${vpn.shortDescription} 속도: ${vpn.speedScore}%, 보안: ${vpn.securityScore}%. 월 $${vpn.priceTwoYear || vpn.priceYearly}부터.`,
-    th: `รีวิว ${vpn.name} 2026 ฉบับสมบูรณ์ ${vpn.shortDescription} ความเร็ว: ${vpn.speedScore}%, ความปลอดภัย: ${vpn.securityScore}% เริ่มต้น $${vpn.priceTwoYear || vpn.priceYearly}/เดือน`,
+    en: isNordVpn
+      ? `NordVPN Review 2026: We tested NordVPN for 30+ days. Speeds, security, streaming & honest verdict. Is it still the best VPN? From $2.99/mo · ${vpn.moneyBackDays}-day guarantee.`
+      : `We tested ${vpn.name} for 30+ days. See speeds, security, streaming results & our honest verdict. Updated ${shortMonthYear}. ${vpn.moneyBackDays}-day money-back guarantee.`,
+    nl: `Volledige ${vpn.name} review ${shortMonthYear}. ${vpn.shortDescription} Snelheid: ${vpn.speedScore}%, Beveiliging: ${vpn.securityScore}%. Vanaf $${vpn.priceTwoYear || vpn.priceYearly}/maand.`,
+    de: `Vollständiger ${vpn.name} Test ${shortMonthYear}. ${vpn.shortDescription} Geschwindigkeit: ${vpn.speedScore}%, Sicherheit: ${vpn.securityScore}%. Ab $${vpn.priceTwoYear || vpn.priceYearly}/Monat.`,
+    es: `Reseña completa de ${vpn.name} ${shortMonthYear}. ${vpn.shortDescription} Velocidad: ${vpn.speedScore}%, Seguridad: ${vpn.securityScore}%. Desde $${vpn.priceTwoYear || vpn.priceYearly}/mes.`,
+    fr: `Avis complet sur ${vpn.name} ${shortMonthYear}. ${vpn.shortDescription} Vitesse: ${vpn.speedScore}%, Sécurité: ${vpn.securityScore}%. À partir de $${vpn.priceTwoYear || vpn.priceYearly}/mois.`,
+    zh: `${vpn.name} ${shortMonthYear}完整评测。${vpn.shortDescription} 速度：${vpn.speedScore}%，安全性：${vpn.securityScore}%。每月$${vpn.priceTwoYear || vpn.priceYearly}起。`,
+    ja: `${vpn.name} ${shortMonthYear}完全レビュー。${vpn.shortDescription} 速度：${vpn.speedScore}%、セキュリティ：${vpn.securityScore}%。月額$${vpn.priceTwoYear || vpn.priceYearly}から。`,
+    ko: `${vpn.name} ${shortMonthYear} 완전 리뷰. ${vpn.shortDescription} 속도: ${vpn.speedScore}%, 보안: ${vpn.securityScore}%. 월 $${vpn.priceTwoYear || vpn.priceYearly}부터.`,
+    th: `รีวิว ${vpn.name} ${shortMonthYear} ฉบับสมบูรณ์ ${vpn.shortDescription} ความเร็ว: ${vpn.speedScore}%, ความปลอดภัย: ${vpn.securityScore}% เริ่มต้น $${vpn.priceTwoYear || vpn.priceYearly}/เดือน`,
   };
 
   const titles: Record<string, string> = {
-    en: `${vpn.name} Review 2026 - Honest Test & Rating`,
-    nl: `${vpn.name} Review 2026 - Eerlijke Test & Beoordeling`,
-    de: `${vpn.name} Test 2026 - Ehrlicher Test & Bewertung`,
-    es: `${vpn.name} Reseña 2026 - Prueba Honesta y Calificación`,
-    fr: `${vpn.name} Avis 2026 - Test Honnête et Note`,
-    zh: `${vpn.name} 评测 2026 - 诚实测试与评分`,
-    ja: `${vpn.name} レビュー 2026 - 正直なテストと評価`,
-    ko: `${vpn.name} 리뷰 2026 - 정직한 테스트 및 평가`,
-    th: `รีวิว ${vpn.name} 2026 - ทดสอบและให้คะแนนอย่างตรงไปตรงมา`,
+    en: isNordVpn
+      ? `NordVPN Review 2026: Is It Still the Best VPN? (Tested) | ZeroToVPN`
+      : `${vpn.name} Review (${shortMonthYear}) - Tested & Rated | ZeroToVPN`,
+    nl: `${vpn.name} Review (${getLocalizedMonthYear("nl")}) - Eerlijke Test & Beoordeling | ZeroToVPN`,
+    de: `${vpn.name} Test (${getLocalizedMonthYear("de")}) - Ehrlicher Test & Bewertung | ZeroToVPN`,
+    es: `${vpn.name} Reseña (${getLocalizedMonthYear("es")}) - Prueba Honesta y Calificación | ZeroToVPN`,
+    fr: `${vpn.name} Avis (${getLocalizedMonthYear("fr")}) - Test Honnête et Note | ZeroToVPN`,
+    zh: `${vpn.name} 评测 (${getLocalizedMonthYear("zh")}) - 诚实测试与评分 | ZeroToVPN`,
+    ja: `${vpn.name} レビュー (${getLocalizedMonthYear("ja")}) - 正直なテストと評価 | ZeroToVPN`,
+    ko: `${vpn.name} 리뷰 (${getLocalizedMonthYear("ko")}) - 정직한 테스트 및 평가 | ZeroToVPN`,
+    th: `รีวิว ${vpn.name} (${getLocalizedMonthYear("th")}) - ทดสอบและให้คะแนนอย่างตรงไปตรงมา | ZeroToVPN`,
   };
 
   return {
     metadataBase: new URL(baseUrl),
     title: titles[locale] || titles.en,
     description: descriptions[locale] || descriptions.en,
-    keywords: [
-      vpn.name,
-      `${vpn.name} review`,
-      `${vpn.name} test`,
-      `${vpn.name} 2026`,
-      "VPN review",
-      "VPN test",
-      "best VPN",
-      `${vpn.name} price`,
-      `${vpn.name} speed`,
-      vpn.netflixSupport ? `${vpn.name} Netflix` : "",
-      vpn.torrentSupport ? `${vpn.name} torrenting` : "",
-    ].filter(Boolean),
+    keywords: isNordVpn && locale === "en"
+      ? [
+          "nordvpn review",
+          "nordvpn review 2026",
+          "nordvpn 2026",
+          "best vpn 2026",
+          "nordvpn speed test",
+          "nordvpn price",
+          "nordvpn netflix",
+          "is nordvpn worth it",
+          "nordvpn vs expressvpn",
+        ]
+      : [
+          vpn.name,
+          `${vpn.name} review`,
+          `${vpn.name} test`,
+          `${vpn.name} 2026`,
+          "VPN review",
+          "VPN test",
+          "best VPN",
+          `${vpn.name} price`,
+          `${vpn.name} speed`,
+          vpn.netflixSupport ? `${vpn.name} Netflix` : "",
+          vpn.torrentSupport ? `${vpn.name} torrenting` : "",
+        ].filter(Boolean),
     alternates: {
       canonical: canonicalUrl,
       languages: languages,
@@ -146,11 +262,14 @@ export default async function ReviewPage({ params }: Props) {
     { name: `${vpn.name} Review`, url: `${baseUrl}${prefix}/reviews/${vpn.slug}` },
   ];
 
+  const faqs = generateFaqs(vpn);
+
   return (
     <>
       <VpnReviewSchema vpn={vpn} />
       <VpnProductSchema vpn={vpn} />
       <BreadcrumbSchema items={breadcrumbs} />
+      <FaqSchema faqs={faqs} />
 
       {/* Hero Screenshot Section */}
       {vpn.screenshot && (
@@ -192,7 +311,8 @@ export default async function ReviewPage({ params }: Props) {
               )}
               {vpn.freeTier && <Badge variant="secondary">{t("freeTierAvailable")}</Badge>}
             </div>
-            <h1 className="text-4xl font-bold mb-4">{t("reviewTitle", { name: vpn.name })}</h1>
+            <h1 className="text-4xl font-bold mb-2">{t("reviewTitle", { name: vpn.name })}</h1>
+            <LastUpdated locale={_locale} className="mb-4" />
             <div className="flex items-center gap-4 mb-4">
               <RatingStars rating={vpn.overallRating} size="lg" />
               <span className="text-muted-foreground">
@@ -253,6 +373,66 @@ export default async function ReviewPage({ params }: Props) {
             </CardContent>
           </Card>
         </div>
+
+        {/* Quick Verdict Summary Box */}
+        <div className="rounded-xl border-2 border-primary/20 bg-primary/5 p-6 md:p-8 my-8">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-lg font-bold">Quick Verdict</span>
+            <span className="bg-primary text-primary-foreground text-sm font-bold px-2.5 py-0.5 rounded-full">
+              {vpn.overallRating}/5
+            </span>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+            <div>
+              <div className="text-xs text-muted-foreground uppercase tracking-wide">Best For</div>
+              <div className="font-semibold">{generateBestFor(vpn)}</div>
+            </div>
+            <div>
+              <div className="text-xs text-muted-foreground uppercase tracking-wide">Price</div>
+              <div className="font-semibold">From ${vpn.priceTwoYear ?? vpn.priceYearly}/mo</div>
+            </div>
+            <div>
+              <div className="text-xs text-muted-foreground uppercase tracking-wide">Servers</div>
+              <div className="font-semibold">{vpn.servers.toLocaleString()}+ in {vpn.countries} countries</div>
+            </div>
+            <div>
+              <div className="text-xs text-muted-foreground uppercase tracking-wide">Money-Back</div>
+              <div className="font-semibold">{vpn.moneyBackDays}-day guarantee</div>
+            </div>
+          </div>
+
+          <p className="text-muted-foreground">
+            {generateVerdictText(vpn)}
+          </p>
+        </div>
+
+        {/* NordVPN Top Pick Sidebar Card - shown on non-NordVPN review pages */}
+        {vpn.slug !== "nordvpn" && (
+          <div className="rounded-lg border bg-muted/50 p-4 mt-6 mb-8">
+            <div className="text-sm font-semibold mb-1">See Our #1 Pick</div>
+            <div className="text-lg font-bold mb-2">NordVPN</div>
+            <div className="text-sm text-muted-foreground mb-3">
+              Rated 4.8/5 · From $2.99/mo · 7,400+ servers
+            </div>
+            <div className="flex gap-2 flex-wrap">
+              <a
+                href="https://go.zerotovpn.com/nordvpn"
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                className="text-sm bg-primary text-primary-foreground px-3 py-1.5 rounded-md font-medium hover:bg-primary/90 transition"
+              >
+                Get NordVPN →
+              </a>
+              <Link
+                href={`/reviews/nordvpn`}
+                className="text-sm border px-3 py-1.5 rounded-md font-medium hover:bg-muted transition"
+              >
+                Read Review
+              </Link>
+            </div>
+          </div>
+        )}
 
         {/* Scores */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
@@ -360,7 +540,7 @@ export default async function ReviewPage({ params }: Props) {
           <TabsContent value="overview" className="mt-6">
             <Card>
               <CardContent className="pt-6 prose prose-gray max-w-none">
-                <h3>{t("overview.about", { name: vpn.name })}</h3>
+                <h3>Is {vpn.name} Worth It?</h3>
                 <p>
                   {t("overview.description", {
                     name: vpn.name,
@@ -397,7 +577,7 @@ export default async function ReviewPage({ params }: Props) {
             <Card>
               <CardContent className="pt-6">
                 <h3 className="text-xl font-semibold mb-6">
-                  {t("pricing.title", { name: vpn.name })}
+                  How Much Does {vpn.name} Cost?
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div className="border rounded-lg p-4 text-center">
@@ -440,7 +620,7 @@ export default async function ReviewPage({ params }: Props) {
             <Card>
               <CardContent className="pt-6">
                 <h3 className="text-xl font-semibold mb-6">
-                  {t("securityFeatures.title")}
+                  Is {vpn.name} Safe?
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-4">
@@ -483,7 +663,7 @@ export default async function ReviewPage({ params }: Props) {
             <Card>
               <CardContent className="pt-6">
                 <h3 className="text-xl font-semibold mb-6">
-                  {t("streamingSection.title")}
+                  Does {vpn.name} Work with Netflix?
                 </h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   <div className="flex items-center gap-2">
@@ -564,11 +744,111 @@ export default async function ReviewPage({ params }: Props) {
           </CardContent>
         </Card>
 
+        {/* FAQ Section */}
+        <FaqSection faqs={faqs} vpnName={vpn.name} />
+
+        {/* Compare with Other VPNs Section */}
+        <CompareWithOtherVpns vpn={vpn} />
+
         {/* User Reviews Section */}
         <UserReviewsSection vpn={vpn} locale={_locale} title={t("userReviews.title")} />
       </div>
       </div>
     </>
+  );
+}
+
+// Compare with Other VPNs Section Component
+function CompareWithOtherVpns({
+  vpn,
+}: {
+  vpn: { slug: string; name: string };
+}) {
+  // Pick the top 5 VPNs by sortOrder for comparisons, excluding the current VPN
+  const topVpns = vpnProviders
+    .filter((v) => v.slug !== vpn.slug)
+    .sort((a, b) => a.sortOrder - b.sortOrder)
+    .slice(0, 5);
+
+  // For NordVPN's review page, compare with top competitors (no NordVPN)
+  // For other pages, always put NordVPN first, then add 2-3 more
+  let comparisonVpns: typeof topVpns;
+  if (vpn.slug === "nordvpn") {
+    comparisonVpns = topVpns.slice(0, 4);
+  } else {
+    const nordvpn = vpnProviders.find((v) => v.slug === "nordvpn");
+    const others = topVpns.filter((v) => v.slug !== "nordvpn").slice(0, 3);
+    comparisonVpns = nordvpn ? [nordvpn, ...others] : others.slice(0, 4);
+  }
+
+  return (
+    <section className="mt-12 mb-12">
+      <h2 className="text-xl font-bold mb-4">
+        Compare {vpn.name} with Other VPNs
+      </h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        {comparisonVpns.map((otherVpn) => {
+          const slug1 = vpn.slug;
+          const slug2 = otherVpn.slug;
+          return (
+            <Link
+              key={otherVpn.slug}
+              href={`/compare/${slug1}-vs-${slug2}`}
+              className="flex items-center justify-between rounded-lg border bg-card px-4 py-3 text-sm font-medium hover:bg-muted/60 hover:border-primary/50 transition-colors"
+            >
+              <span>
+                {vpn.name} vs {otherVpn.name}
+              </span>
+              <span className="text-muted-foreground">→</span>
+            </Link>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
+// FAQ Section Component (visible accordion-style Q&A)
+function FaqSection({
+  faqs,
+  vpnName,
+}: {
+  faqs: { question: string; answer: string }[];
+  vpnName: string;
+}) {
+  return (
+    <section id="faq" className="mb-12">
+      <h2 className="text-2xl font-bold mb-6">
+        Frequently Asked Questions about {vpnName}
+      </h2>
+      <div className="divide-y divide-border rounded-lg border">
+        {faqs.map((faq, index) => (
+          <details key={index} className="group">
+            <summary className="flex cursor-pointer items-center justify-between gap-4 px-6 py-4 text-base font-medium hover:bg-muted/50 list-none">
+              {faq.question}
+              <span className="ml-4 shrink-0 text-muted-foreground transition-transform duration-200 group-open:rotate-180">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </span>
+            </summary>
+            <div className="px-6 pb-4 pt-2 text-muted-foreground">
+              {faq.answer}
+            </div>
+          </details>
+        ))}
+      </div>
+    </section>
   );
 }
 

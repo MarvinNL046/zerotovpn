@@ -1,5 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { Metadata } from "next";
+import { getShortMonthYear } from "@/lib/seo-utils";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
@@ -25,21 +26,22 @@ const baseUrl = "https://zerotovpn.com";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const shortMonthYear = getShortMonthYear();
 
   const titles: Record<string, string> = {
-    en: "VPN Deals & Coupons 2026: Save Up to 87% | ZeroToVPN",
-    nl: "VPN Deals & Kortingscodes 2026: Bespaar tot 87% | ZeroToVPN",
-    de: "VPN-Angebote & Gutscheine 2026: Sparen Sie bis zu 87% | ZeroToVPN",
-    es: "Ofertas y Cupones VPN 2026: Ahorra hasta 87% | ZeroToVPN",
-    fr: "Offres VPN & Coupons 2026: Économisez jusqu'à 87% | ZeroToVPN",
-    zh: "VPN优惠与折扣码2026：节省高达87% | ZeroToVPN",
-    ja: "VPNセール＆クーポン2026：最大87％オフ | ZeroToVPN",
-    ko: "VPN 할인 및 쿠폰 2026: 최대 87% 절약 | ZeroToVPN",
-    th: "ดีล VPN และคูปอง 2026: ประหยัดสูงสุด 87% | ZeroToVPN",
+    en: `VPN Deals & Coupons (${shortMonthYear}): Save Up to 87% | ZeroToVPN`,
+    nl: `VPN Deals & Kortingscodes (${shortMonthYear}): Bespaar tot 87% | ZeroToVPN`,
+    de: `VPN-Angebote & Gutscheine (${shortMonthYear}): Sparen Sie bis zu 87% | ZeroToVPN`,
+    es: `Ofertas y Cupones VPN (${shortMonthYear}): Ahorra hasta 87% | ZeroToVPN`,
+    fr: `Offres VPN & Coupons (${shortMonthYear}): Économisez jusqu'à 87% | ZeroToVPN`,
+    zh: `VPN优惠与折扣码 (${shortMonthYear})：节省高达87% | ZeroToVPN`,
+    ja: `VPNセール＆クーポン (${shortMonthYear})：最大87％オフ | ZeroToVPN`,
+    ko: `VPN 할인 및 쿠폰 (${shortMonthYear}): 최대 87% 절약 | ZeroToVPN`,
+    th: `ดีล VPN และคูปอง (${shortMonthYear}): ประหยัดสูงสุด 87% | ZeroToVPN`,
   };
 
   const descriptions: Record<string, string> = {
-    en: "Exclusive VPN deals and coupons for 2026. Save up to 87% on premium VPN services. Limited-time offers with money-back guarantees.",
+    en: `Exclusive VPN deals & coupons for ${shortMonthYear}. Save up to 87% on top-rated VPNs. All discounts tested & verified. 30-day money-back guarantee.`,
     nl: "Exclusieve VPN-deals en kortingscodes voor 2026. Bespaar tot 87% op premium VPN-diensten. Tijdelijke aanbiedingen met geld-terug-garantie.",
     de: "Exklusive VPN-Angebote und Gutscheine für 2026. Sparen Sie bis zu 87% bei Premium-VPN-Diensten. Zeitlich begrenzte Angebote mit Geld-zurück-Garantie.",
     es: "Ofertas y cupones VPN exclusivos para 2026. Ahorra hasta 87% en servicios VPN premium. Ofertas limitadas con garantía de devolución.",

@@ -1,5 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 import { Metadata } from "next";
+import { getShortMonthYear } from "@/lib/seo-utils";
+import { LastUpdated } from "@/components/last-updated";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -33,20 +35,22 @@ const baseUrl = "https://zerotovpn.com";
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
+  const shortMonthYear = getShortMonthYear();
+
   const titles: Record<string, string> = {
-    en: "Best VPN for macOS 2026: Native Apps, M1/M2 Optimized | ZeroToVPN",
-    nl: "Beste VPN voor macOS 2026: Native Apps, M1/M2 Geoptimaliseerd | ZeroToVPN",
-    de: "Beste VPN für macOS 2026: Native Apps, M1/M2 Optimiert | ZeroToVPN",
-    es: "Mejor VPN para macOS 2026: Apps Nativas, Optimizado M1/M2 | ZeroToVPN",
-    fr: "Meilleur VPN pour macOS 2026: Apps Natives, Optimisé M1/M2 | ZeroToVPN",
-    zh: "2026年最佳macOS VPN：原生应用，M1/M2优化 | ZeroToVPN",
-    janswer: "macOS用ベストVPN 2026：ネイティブアプリ、M1/M2最適化 | ZeroToVPN",
-    ko: "2026년 최고의 macOS VPN: 네이티브 앱, M1/M2 최적화 | ZeroToVPN",
-    th: "VPN ที่ดีที่สุดสำหรับ macOS 2026: แอปเนทีฟ, ปรับให้เหมาะกับ M1/M2 | ZeroToVPN",
+    en: `Best VPNs for macOS (Tested ${shortMonthYear}) - Native Apps, M1/M2 Optimized | ZeroToVPN`,
+    nl: `Beste VPNs voor macOS (Getest ${shortMonthYear}) - Native Apps, M1/M2 Geoptimaliseerd | ZeroToVPN`,
+    de: `Beste VPNs für macOS (Getestet ${shortMonthYear}) - Native Apps, M1/M2 Optimiert | ZeroToVPN`,
+    es: `Mejores VPNs para macOS (Probados ${shortMonthYear}) - Apps Nativas, Optimizadas M1/M2 | ZeroToVPN`,
+    fr: `Meilleurs VPNs pour macOS (Testés ${shortMonthYear}) - Apps Natives, Optimisées M1/M2 | ZeroToVPN`,
+    zh: `最佳macOS VPN (测试于 ${shortMonthYear}) - 原生应用，M1/M2优化 | ZeroToVPN`,
+    ja: `macOS向けベストVPN (テスト済み ${shortMonthYear}) - ネイティブアプリ、M1/M2最適化 | ZeroToVPN`,
+    ko: `macOS 최고의 VPN (테스트됨 ${shortMonthYear}) - 네이티브 앱, M1/M2 최적화 | ZeroToVPN`,
+    th: `VPN ที่ดีที่สุดสำหรับ macOS (ทดสอบ ${shortMonthYear}) - แอปเนทีฟ, M1/M2 เหมาะสม | ZeroToVPN`,
   };
 
   const descriptions: Record<string, string> = {
-    en: "Find the best VPN for macOS 2026. Native apps optimized for M1/M2 chips, Safari extensions, and seamless iCloud integration. Tested on Ventura, Sonoma & Sequoia.",
+    en: `We tested 35+ VPNs for macOS in ${shortMonthYear}. Expert picks with M1/M2 optimization, speeds & security compared. 30-day money-back guarantee on all picks.`,
     nl: "Vind de beste VPN voor macOS 2026. Native apps geoptimaliseerd voor M1/M2 chips, Safari extensies en naadloze iCloud integratie. Getest op Ventura, Sonoma & Sequoia.",
     de: "Finden Sie das beste VPN für macOS 2026. Native Apps optimiert für M1/M2 Chips, Safari-Erweiterungen und nahtlose iCloud-Integration. Getestet auf Ventura, Sonoma & Sequoia.",
     es: "Encuentra la mejor VPN para macOS 2026. Apps nativas optimizadas para chips M1/M2, extensiones de Safari e integración perfecta con iCloud. Probado en Ventura, Sonoma y Sequoia.",
@@ -1877,9 +1881,12 @@ export default async function MacOSVpnPage({ params }: Props) {
           <Badge variant="secondary" className="mb-4">
             {t.badge}
           </Badge>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
             {t.title}
           </h1>
+          <div className="flex justify-center mb-4">
+            <LastUpdated locale={locale} />
+          </div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             {t.subtitle}
           </p>

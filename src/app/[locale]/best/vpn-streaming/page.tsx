@@ -1,5 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 import { Metadata } from "next";
+import { getShortMonthYear } from "@/lib/seo-utils";
+import { LastUpdated } from "@/components/last-updated";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
@@ -30,21 +32,22 @@ const baseUrl = "https://zerotovpn.com";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const shortMonthYear = getShortMonthYear();
 
   const titles: Record<string, string> = {
-    en: "Best VPN for Streaming 2026: Unblock Netflix, Disney+, Hulu & More | ZeroToVPN",
-    nl: "Beste VPN voor Streaming 2026: Deblokkeer Netflix, Disney+, Hulu & Meer | ZeroToVPN",
-    de: "Beste VPN fur Streaming 2026: Netflix, Disney+, Hulu & Mehr Entsperren | ZeroToVPN",
-    es: "Mejor VPN para Streaming 2026: Desbloquea Netflix, Disney+, Hulu y Mas | ZeroToVPN",
-    fr: "Meilleur VPN pour Streaming 2026 : Debloquer Netflix, Disney+, Hulu et Plus | ZeroToVPN",
-    zh: "2026年最佳流媒体VPN：解锁Netflix、Disney+、Hulu等 | ZeroToVPN",
-    ja: "2026年ストリーミング向けベストVPN：Netflix、Disney+、Huluなどを解除 | ZeroToVPN",
-    ko: "2026년 스트리밍 최고의 VPN: Netflix, Disney+, Hulu 등 차단 해제 | ZeroToVPN",
-    th: "VPN ที่ดีที่สุดสำหรับ Streaming 2026: ปลดบล็อก Netflix, Disney+, Hulu และอื่นๆ | ZeroToVPN",
+    en: `Best VPNs for Streaming (Tested ${shortMonthYear}) - Unblock Netflix, Disney+, Hulu | ZeroToVPN`,
+    nl: `Beste VPNs voor Streaming (Getest ${shortMonthYear}) - Deblokkeer Netflix, Disney+, Hulu | ZeroToVPN`,
+    de: `Beste VPNs für Streaming (Getestet ${shortMonthYear}) - Netflix, Disney+, Hulu Entsperren | ZeroToVPN`,
+    es: `Mejores VPNs para Streaming (Probados ${shortMonthYear}) - Desbloquea Netflix, Disney+, Hulu | ZeroToVPN`,
+    fr: `Meilleurs VPNs pour Streaming (Testés ${shortMonthYear}) - Débloquer Netflix, Disney+, Hulu | ZeroToVPN`,
+    zh: `最佳流媒体VPN (测试于 ${shortMonthYear}) - 解锁Netflix、Disney+、Hulu | ZeroToVPN`,
+    ja: `ストリーミング向けベストVPN (テスト済み ${shortMonthYear}) - Netflix、Disney+、Huluを解除 | ZeroToVPN`,
+    ko: `스트리밍 최고의 VPN (테스트됨 ${shortMonthYear}) - Netflix, Disney+, Hulu 차단 해제 | ZeroToVPN`,
+    th: `VPN ที่ดีที่สุดสำหรับ Streaming (ทดสอบ ${shortMonthYear}) - ปลดบล็อก Netflix, Disney+, Hulu | ZeroToVPN`,
   };
 
   const descriptions: Record<string, string> = {
-    en: "We tested 50+ VPNs with Netflix, Disney+, BBC iPlayer, Hulu, Amazon Prime, and HBO Max. These 5 unblock the most platforms with the fastest speeds for buffer-free streaming.",
+    en: `We tested 50+ VPNs for streaming. Expert picks updated ${shortMonthYear} with Netflix, Disney+, BBC iPlayer speeds compared. See our honest verdict.`,
     nl: "We testten 50+ VPNs met Netflix, Disney+, BBC iPlayer, Hulu, Amazon Prime en HBO Max. Deze 5 deblokkeren de meeste platforms met de snelste snelheden.",
     de: "Wir haben uber 50 VPNs mit Netflix, Disney+, BBC iPlayer, Hulu, Amazon Prime und HBO Max getestet. Diese 5 entsperren die meisten Plattformen.",
     es: "Probamos mas de 50 VPNs con Netflix, Disney+, BBC iPlayer, Hulu, Amazon Prime y HBO Max. Estos 5 desbloquean mas plataformas con las velocidades mas rapidas.",
@@ -561,9 +564,12 @@ export default async function VpnStreamingPage({ params }: Props) {
               <Badge variant="secondary" className="mb-4">
                 {t.badge}
               </Badge>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-400 dark:to-blue-400 bg-clip-text text-transparent">
+              <h1 className="text-4xl md:text-6xl font-bold mb-3 bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-400 dark:to-blue-400 bg-clip-text text-transparent">
                 {t.title}
               </h1>
+              <div className="flex justify-center mb-4">
+                <LastUpdated locale={locale} />
+              </div>
               <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
                 {t.subtitle}
               </p>

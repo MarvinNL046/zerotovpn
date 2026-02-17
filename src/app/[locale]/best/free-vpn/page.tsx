@@ -1,6 +1,8 @@
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 import { Metadata } from "next";
+import { getShortMonthYear } from "@/lib/seo-utils";
+import { LastUpdated } from "@/components/last-updated";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -32,21 +34,22 @@ const baseUrl = "https://zerotovpn.com";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const shortMonthYear = getShortMonthYear();
 
   const titles: Record<string, string> = {
-    en: "Best Free VPN 2026: 4 Safe Options (No Hidden Costs) | ZeroToVPN",
-    nl: "Beste Gratis VPN 2026: 4 Veilige Opties (Geen Verborgen Kosten) | ZeroToVPN",
-    de: "Bestes Gratis VPN 2026: 4 Sichere Optionen (Keine Versteckten Kosten) | ZeroToVPN",
-    es: "Mejor VPN Gratis 2026: 4 Opciones Seguras (Sin Costos Ocultos) | ZeroToVPN",
-    fr: "Meilleur VPN Gratuit 2026: 4 Options Sûres (Sans Frais Cachés) | ZeroToVPN",
-    zh: "2026年最佳免费VPN：4个安全选择（无隐藏费用） | ZeroToVPN",
-    ja: "ベスト無料VPN 2026：安全な4つの選択肢（隠れた費用なし） | ZeroToVPN",
-    ko: "최고의 무료 VPN 2026: 4가지 안전한 옵션 (숨겨진 비용 없음) | ZeroToVPN",
-    th: "VPN ฟรีที่ดีที่สุด 2026: 4 ตัวเลือกปลอดภัย (ไม่มีค่าใช้จ่ายแอบแฝง) | ZeroToVPN",
+    en: `4 Best Free VPNs (Tested ${shortMonthYear}) - No Hidden Costs | ZeroToVPN`,
+    nl: `4 Beste Gratis VPNs (Getest ${shortMonthYear}) - Geen Verborgen Kosten | ZeroToVPN`,
+    de: `4 Beste Gratis VPNs (Getestet ${shortMonthYear}) - Keine Versteckten Kosten | ZeroToVPN`,
+    es: `4 Mejores VPNs Gratis (Probadas ${shortMonthYear}) - Sin Costos Ocultos | ZeroToVPN`,
+    fr: `4 Meilleurs VPNs Gratuits (Testés ${shortMonthYear}) - Sans Frais Cachés | ZeroToVPN`,
+    zh: `4款最佳免费VPN (测试于 ${shortMonthYear}) - 无隐藏费用 | ZeroToVPN`,
+    ja: `4つのベスト無料VPN (テスト済み ${shortMonthYear}) - 隠れた費用なし | ZeroToVPN`,
+    ko: `4가지 최고의 무료 VPN (테스트됨 ${shortMonthYear}) - 숨겨진 비용 없음 | ZeroToVPN`,
+    th: `4 VPN ฟรีที่ดีที่สุด (ทดสอบ ${shortMonthYear}) - ไม่มีค่าใช้จ่ายแอบแฝง | ZeroToVPN`,
   };
 
   const descriptions: Record<string, string> = {
-    en: "99% of free VPNs sell your data. We found 4 that are truly free, safe, and fast enough to actually use. No credit card required.",
+    en: `We tested 30+ free VPNs to find the best ones. Expert picks updated ${shortMonthYear} — only these pass our security & speed tests. No credit card required.`,
     nl: "99% van de gratis VPNs verkoopt je data. We vonden 4 die echt gratis, veilig en snel genoeg zijn om te gebruiken. Geen creditcard nodig.",
     de: "99% der kostenlosen VPNs verkaufen Ihre Daten. Wir haben 4 gefunden, die wirklich kostenlos, sicher und schnell genug sind. Keine Kreditkarte nötig.",
     es: "El 99% de las VPNs gratis venden tus datos. Encontramos 4 que son realmente gratis, seguras y lo suficientemente rápidas. Sin tarjeta de crédito.",
@@ -187,6 +190,9 @@ export default async function FreeVpnPage({ params }: Props) {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
                 {t("hero.title")}
               </h1>
+              <div className="flex justify-center">
+                <LastUpdated locale={locale} />
+              </div>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                 {t("hero.subtitle")}
               </p>

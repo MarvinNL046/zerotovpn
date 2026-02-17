@@ -1,5 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 import { Metadata } from "next";
+import { getShortMonthYear } from "@/lib/seo-utils";
+import { LastUpdated } from "@/components/last-updated";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
@@ -32,20 +34,22 @@ const baseUrl = "https://zerotovpn.com";
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
+  const shortMonthYear = getShortMonthYear();
+
   const titles: Record<string, string> = {
-    en: "Best VPN for Chromebook 2026: 5 That Actually Work (Tested) | ZeroToVPN",
-    nl: "Beste VPN voor Chromebook 2026: 5 Die Echt Werken (Getest) | ZeroToVPN",
-    de: "Bestes VPN für Chromebook 2026: 5 Die Wirklich Funktionieren (Getestet) | ZeroToVPN",
-    es: "Mejor VPN para Chromebook 2026: 5 Que Realmente Funcionan (Probados) | ZeroToVPN",
-    fr: "Meilleur VPN pour Chromebook 2026: 5 Qui Fonctionnent Vraiment (Testés) | ZeroToVPN",
-    zh: "2026年最佳Chromebook VPN：5款真正有效的VPN（已测试） | ZeroToVPN",
-    janswer: "Chromebook向けベストVPN 2026：実際に動作する5選（テスト済み） | ZeroToVPN",
-    ko: "2026년 최고의 크롬북 VPN: 실제로 작동하는 5개 (테스트 완료) | ZeroToVPN",
-    th: "VPN ที่ดีที่สุดสำหรับ Chromebook 2026: 5 ตัวที่ใช้งานได้จริง (ทดสอบแล้ว) | ZeroToVPN",
+    en: `5 Best VPNs for Chromebook (Tested ${shortMonthYear}) - Actually Work | ZeroToVPN`,
+    nl: `5 Beste VPNs voor Chromebook (Getest ${shortMonthYear}) - Werken Echt | ZeroToVPN`,
+    de: `5 Beste VPNs für Chromebook (Getestet ${shortMonthYear}) - Funktionieren Wirklich | ZeroToVPN`,
+    es: `5 Mejores VPNs para Chromebook (Probados ${shortMonthYear}) - Funcionan de Verdad | ZeroToVPN`,
+    fr: `5 Meilleurs VPNs pour Chromebook (Testés ${shortMonthYear}) - Fonctionnent Vraiment | ZeroToVPN`,
+    zh: `5款最佳Chromebook VPN (测试于 ${shortMonthYear}) - 真正有效 | ZeroToVPN`,
+    ja: `Chromebook向けベスト5 VPN (テスト済み ${shortMonthYear}) - 実際に動作する | ZeroToVPN`,
+    ko: `크롬북 최고의 VPN 5가지 (테스트됨 ${shortMonthYear}) - 실제로 작동함 | ZeroToVPN`,
+    th: `5 VPN ที่ดีที่สุดสำหรับ Chromebook (ทดสอบ ${shortMonthYear}) - ใช้งานได้จริง | ZeroToVPN`,
   };
 
   const descriptions: Record<string, string> = {
-    en: "Most VPNs don't work properly on Chromebook. We tested 30+ — these 5 have native ChromeOS support and Android app compatibility.",
+    en: `We tested 30+ VPNs for Chromebook. Expert picks updated ${shortMonthYear} with ChromeOS support & Android compatibility compared. See our honest verdict.`,
     nl: "De meeste VPNs werken niet goed op Chromebook. We testten 30+ — deze 5 hebben native ChromeOS-ondersteuning en Android app-compatibiliteit.",
     de: "Die meisten VPNs funktionieren auf Chromebook nicht richtig. Wir haben 30+ getestet — diese 5 haben native ChromeOS-Unterstützung und Android-App-Kompatibilität.",
     es: "La mayoría de VPNs no funcionan bien en Chromebook. Probamos más de 30 — estas 5 tienen soporte nativo ChromeOS y compatibilidad con apps Android.",
@@ -1425,9 +1429,12 @@ export default async function ChromebookVpnPage({ params }: Props) {
               <Badge variant="secondary" className="mb-4">
                 {t.badge}
               </Badge>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
+              <h1 className="text-4xl md:text-6xl font-bold mb-3 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
                 {t.title}
               </h1>
+              <div className="flex justify-center mb-4">
+                <LastUpdated locale={locale} />
+              </div>
               <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
                 {t.subtitle}
               </p>

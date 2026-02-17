@@ -35,6 +35,7 @@ import {
   Radio,
   Server,
 } from "lucide-react";
+import { LastUpdated } from "@/components/last-updated";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -117,9 +118,10 @@ export default async function PublicWifiSafetyPage({ params }: Props) {
               <Badge variant="secondary">{t("hero.badge")}</Badge>
               <Badge variant="outline">{t("hero.readTime")}</Badge>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-2">
               {t("hero.title")}
             </h1>
+            <LastUpdated locale={locale} className="mb-4" />
             <p className="text-xl text-muted-foreground mb-6">
               {t("hero.subtitle")}
             </p>

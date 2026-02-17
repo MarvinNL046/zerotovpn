@@ -1,5 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 import { Metadata } from "next";
+import { getShortMonthYear } from "@/lib/seo-utils";
+import { LastUpdated } from "@/components/last-updated";
 import { Badge, type BadgeVariant } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
@@ -30,21 +32,22 @@ const baseUrl = "https://zerotovpn.com";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const shortMonthYear = getShortMonthYear();
 
   const titles: Record<string, string> = {
-    en: "Best VPN for Laptops & Notebooks 2026: Lightweight & Secure | ZeroToVPN",
-    nl: "Beste VPN voor Laptops & Notebooks 2026: Lichtgewicht & Veilig | ZeroToVPN",
-    de: "Beste VPN für Laptops & Notebooks 2026: Leichtgewichtig & Sicher | ZeroToVPN",
-    es: "Mejor VPN para Portátiles y Notebooks 2026: Ligero y Seguro | ZeroToVPN",
-    fr: "Meilleur VPN pour Ordinateurs Portables 2026: Léger et Sécurisé | ZeroToVPN",
-    zh: "2026年最佳笔记本电脑VPN：轻量且安全 | ZeroToVPN",
-    janswer: "ノートパソコン用ベストVPN 2026：軽量で安全 | ZeroToVPN",
-    ko: "2026년 최고의 노트북 VPN: 가볍고 안전한 | ZeroToVPN",
-    th: "VPN ที่ดีที่สุดสำหรับแล็ปท็อป 2026: เบาและปลอดภัย | ZeroToVPN",
+    en: `Best VPNs for Laptops (Tested ${shortMonthYear}) - Lightweight & Secure | ZeroToVPN`,
+    nl: `Beste VPNs voor Laptops (Getest ${shortMonthYear}) - Lichtgewicht & Veilig | ZeroToVPN`,
+    de: `Beste VPNs für Laptops (Getestet ${shortMonthYear}) - Leichtgewichtig & Sicher | ZeroToVPN`,
+    es: `Mejores VPNs para Portátiles (Probados ${shortMonthYear}) - Ligeros y Seguros | ZeroToVPN`,
+    fr: `Meilleurs VPNs pour Ordinateurs Portables (Testés ${shortMonthYear}) - Légers et Sécurisés | ZeroToVPN`,
+    zh: `最佳笔记本电脑VPN (测试于 ${shortMonthYear}) - 轻量且安全 | ZeroToVPN`,
+    ja: `ノートパソコン向けベストVPN (テスト済み ${shortMonthYear}) - 軽量で安全 | ZeroToVPN`,
+    ko: `노트북 최고의 VPN (테스트됨 ${shortMonthYear}) - 가볍고 안전 | ZeroToVPN`,
+    th: `VPN ที่ดีที่สุดสำหรับแล็ปท็อป (ทดสอบ ${shortMonthYear}) - เบาและปลอดภัย | ZeroToVPN`,
   };
 
   const descriptions: Record<string, string> = {
-    en: "Find the best VPN for laptops in 2026. We tested 35+ VPNs for battery efficiency, WiFi security, and travel-friendly features. Protect your notebook on public networks.",
+    en: `We tested 35+ VPNs for laptops. Expert picks updated ${shortMonthYear} with battery efficiency, WiFi security & travel features compared. See our honest verdict.`,
     nl: "Vind de beste VPN voor laptops in 2026. We hebben 35+ VPNs getest op batterij-efficiëntie, WiFi-beveiliging en reisvriendelijke functies. Bescherm je notebook op openbare netwerken.",
     de: "Finden Sie das beste VPN für Laptops in 2026. Wir haben über 35 VPNs auf Batterieeffizienz, WLAN-Sicherheit und Reisefreundlichkeit getestet. Schützen Sie Ihr Notebook in öffentlichen Netzwerken.",
     es: "Encuentra la mejor VPN para portátiles en 2026. Probamos más de 35 VPNs en eficiencia de batería, seguridad WiFi y características amigables para viajes. Protege tu portátil en redes públicas.",
@@ -1539,6 +1542,9 @@ export default async function LaptopVpnPage({ params }: Props) {
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
             {t.title}
           </h1>
+          <div className="flex justify-center">
+            <LastUpdated locale={locale} />
+          </div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             {t.subtitle}
           </p>

@@ -10,6 +10,8 @@ import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { getVpnBySlug, type VpnProvider } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
+import { getShortMonthYear } from "@/lib/seo-utils";
+import { LastUpdated } from "@/components/last-updated";
 import {
   Shield,
   Zap,
@@ -36,21 +38,22 @@ const baseUrl = "https://zerotovpn.com";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const shortMonthYear = getShortMonthYear();
 
   const titles: Record<string, string> = {
-    en: "Best VPN for Gaming 2026: Low Ping, DDoS Protection | ZeroToVPN",
-    nl: "Beste VPN voor Gaming 2026: Lage Ping, DDoS-bescherming | ZeroToVPN",
-    de: "Beste VPN für Gaming 2026: Niedrige Ping, DDoS-Schutz | ZeroToVPN",
-    es: "Mejor VPN para Gaming 2026: Ping Bajo, Protección DDoS | ZeroToVPN",
-    fr: "Meilleur VPN pour Gaming 2026: Faible Ping, Protection DDoS | ZeroToVPN",
-    zh: "2026年最佳游戏VPN：低延迟，DDoS保护 | ZeroToVPN",
-    ja: "ゲーミング用ベストVPN 2026：低Ping、DDoS保護 | ZeroToVPN",
-    ko: "2026년 최고의 게임용 VPN: 낮은 핑, DDoS 보호 | ZeroToVPN",
-    th: "VPN ที่ดีที่สุดสำหรับเกม 2026: Ping ต่ำ, ป้องกัน DDoS | ZeroToVPN",
+    en: `Best VPNs for Gaming (Tested ${shortMonthYear}) - Low Ping, DDoS Protection | ZeroToVPN`,
+    nl: `Beste VPNs voor Gaming (Getest ${shortMonthYear}) - Lage Ping, DDoS-bescherming | ZeroToVPN`,
+    de: `Beste VPNs für Gaming (Getestet ${shortMonthYear}) - Niedrige Ping, DDoS-Schutz | ZeroToVPN`,
+    es: `Mejores VPNs para Gaming (Probados ${shortMonthYear}) - Ping Bajo, Protección DDoS | ZeroToVPN`,
+    fr: `Meilleurs VPNs pour Gaming (Testés ${shortMonthYear}) - Faible Ping, Protection DDoS | ZeroToVPN`,
+    zh: `最佳游戏VPN (测试于 ${shortMonthYear}) - 低延迟，DDoS保护 | ZeroToVPN`,
+    ja: `ゲーミング向けベストVPN (テスト済み ${shortMonthYear}) - 低Ping、DDoS保護 | ZeroToVPN`,
+    ko: `게임용 최고의 VPN (테스트됨 ${shortMonthYear}) - 낮은 핑, DDoS 보호 | ZeroToVPN`,
+    th: `VPN ที่ดีที่สุดสำหรับเกม (ทดสอบ ${shortMonthYear}) - Ping ต่ำ, ป้องกัน DDoS | ZeroToVPN`,
   };
 
   const descriptions: Record<string, string> = {
-    en: "Find the best gaming VPN for 2026. We tested 35+ VPNs for ping, speed, and DDoS protection. Reduce lag and access geo-locked games.",
+    en: `We tested 35+ VPNs for gaming. Expert picks updated ${shortMonthYear} with ping, speeds & DDoS protection compared. See our honest verdict & money-back options.`,
     nl: "Vind de beste gaming VPN voor 2026. We hebben 35+ VPNs getest op ping, snelheid en DDoS-bescherming. Verminder lag en krijg toegang tot geo-geblokkeerde games.",
     de: "Finden Sie das beste Gaming-VPN für 2026. Wir haben über 35 VPNs auf Ping, Geschwindigkeit und DDoS-Schutz getestet. Reduzieren Sie Lag und greifen Sie auf geo-gesperrte Spiele zu.",
     es: "Encuentra la mejor VPN para gaming de 2026. Probamos más de 35 VPNs en ping, velocidad y protección DDoS. Reduce el lag y accede a juegos geo-bloqueados.",
@@ -1509,6 +1512,9 @@ export default async function GamingVpnPage({ params }: Props) {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
                 {t.title}
               </h1>
+              <div className="flex justify-center">
+                <LastUpdated locale={locale} />
+              </div>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                 {t.subtitle}
               </p>

@@ -12,6 +12,8 @@ import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { getAllVpns, type VpnProvider } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
+import { getShortMonthYear } from "@/lib/seo-utils";
+import { LastUpdated } from "@/components/last-updated";
 import {
   Zap,
   Globe,
@@ -34,17 +36,18 @@ const baseUrl = "https://zerotovpn.com";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const shortMonthYear = getShortMonthYear();
 
   const titles: Record<string, string> = {
-    en: "Best VPN 2026: Top 6 Tested (We Picked a Clear Winner) | ZeroToVPN",
-    nl: "Beste VPN 2026: Top 6 Getest (We Kozen een Duidelijke Winnaar) | ZeroToVPN",
-    de: "Bestes VPN 2026: Top 6 Getestet (Wir Haben Einen Klaren Sieger) | ZeroToVPN",
-    es: "Mejor VPN 2026: Top 6 Probadas (Elegimos un Ganador Claro) | ZeroToVPN",
-    fr: "Meilleur VPN 2026: Top 6 Testés (Nous Avons Choisi un Gagnant) | ZeroToVPN",
+    en: `Best VPN 2026: 6 Top Picks Tested - We Picked a Clear Winner | ZeroToVPN`,
+    nl: `6 Beste VPNs (Getest ${shortMonthYear}) - We Kozen een Duidelijke Winnaar | ZeroToVPN`,
+    de: `6 Beste VPNs (Getestet ${shortMonthYear}) - Wir Haben Einen Klaren Sieger | ZeroToVPN`,
+    es: `6 Mejores VPNs (Probadas ${shortMonthYear}) - Elegimos un Ganador Claro | ZeroToVPN`,
+    fr: `6 Meilleurs VPNs (Testés ${shortMonthYear}) - Nous Avons Choisi un Gagnant | ZeroToVPN`,
   };
 
   const descriptions: Record<string, string> = {
-    en: "We tested 50+ VPNs in February 2026 — only 6 made our list. See speed tests, security audits, and which VPN we actually use daily.",
+    en: `Best VPN 2026: We tested 50+ VPNs to find the best overall. Expert picks include the fastest VPN, cheapest VPN & best for streaming. Updated ${shortMonthYear}. 30-day money-back guarantee on all picks.`,
     nl: "We testten 50+ VPNs in februari 2026 — slechts 6 haalden onze lijst. Bekijk snelheidstests, beveiligingsaudits en welke VPN we dagelijks gebruiken.",
     de: "Wir haben im Februar 2026 über 50 VPNs getestet — nur 6 schafften es auf unsere Liste. Geschwindigkeitstests, Sicherheitsaudits und welches VPN wir täglich nutzen.",
     es: "Probamos más de 50 VPNs en febrero 2026 — solo 6 entraron en nuestra lista. Pruebas de velocidad, auditorías de seguridad y qué VPN usamos a diario.",
@@ -65,6 +68,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     metadataBase: new URL(baseUrl),
     title: titles[locale] || titles.en,
     description: descriptions[locale] || descriptions.en,
+    keywords: locale === "en"
+      ? [
+          "best vpn 2026",
+          "best vpn",
+          "top vpn services",
+          "fastest vpn",
+          "cheapest vpn",
+          "vpn comparison 2026",
+          "nordvpn review",
+          "best vpn for streaming",
+          "best vpn for privacy",
+        ]
+      : undefined,
     alternates: {
       canonical: canonicalUrl,
       languages: languages,
@@ -254,6 +270,9 @@ export default async function BestVpnPage({ params }: Props) {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
                 {t.title}
               </h1>
+              <div className="flex justify-center">
+                <LastUpdated locale={locale} />
+              </div>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                 {t.subtitle}
               </p>

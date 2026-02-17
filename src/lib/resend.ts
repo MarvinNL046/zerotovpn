@@ -1,7 +1,7 @@
 import { Resend } from "resend";
 
 // Initialize Resend client
-export const resend = new Resend(process.env.RESEND_API_KEY);
+export const resend = new Resend(process.env.RESEND_API_KEY || "re_placeholder");
 
 // Email sender configuration
 export const EMAIL_FROM = "ZeroToVPN <hello@zerotovpn.com>";

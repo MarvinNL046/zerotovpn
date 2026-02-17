@@ -10,6 +10,8 @@ import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { getVpnBySlug, type VpnProvider } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
+import { getShortMonthYear } from "@/lib/seo-utils";
+import { LastUpdated } from "@/components/last-updated";
 import {
   Shield,
   Zap,
@@ -32,20 +34,22 @@ const baseUrl = "https://zerotovpn.com";
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
+  const shortMonthYear = getShortMonthYear();
+
   const titles: Record<string, string> = {
-    en: "Cheapest VPN 2026: 5 Best Budget VPNs From $1.99/mo (Still Good) | ZeroToVPN",
-    nl: "Goedkoopste VPN 2026: 5 Beste Budget VPNs Vanaf $1,99/maand | ZeroToVPN",
-    de: "Gunstigste VPN 2026: 5 Beste Budget VPNs Ab $1,99/Monat | ZeroToVPN",
-    es: "VPN Mas Barato 2026: 5 Mejores VPNs Economicos Desde $1,99/mes | ZeroToVPN",
-    fr: "VPN le Moins Cher 2026 : 5 Meilleurs VPN Budget Des $1,99/mois | ZeroToVPN",
-    zh: "2026年最便宜VPN：5款最佳低价VPN 低至$1.99/月 | ZeroToVPN",
-    ja: "2026年最安VPN：月額$1.99からの高コスパVPN 5選 | ZeroToVPN",
-    ko: "2026년 가장 저렴한 VPN: 월 $1.99부터 최고의 예산 VPN 5가지 | ZeroToVPN",
-    th: "VPN ราคาถูกที่สุด 2026: 5 VPN งบประมาณดีที่สุดเริ่มต้น $1.99/เดือน | ZeroToVPN",
+    en: `5 Cheapest VPNs (Tested ${shortMonthYear}) - Best Budget From $1.99/mo | ZeroToVPN`,
+    nl: `5 Goedkoopste VPNs (Getest ${shortMonthYear}) - Budget Vanaf $1,99/maand | ZeroToVPN`,
+    de: `5 Günstigste VPNs (Getestet ${shortMonthYear}) - Budget Ab $1,99/Monat | ZeroToVPN`,
+    es: `5 VPNs Más Baratos (Probados ${shortMonthYear}) - Económicos Desde $1,99/mes | ZeroToVPN`,
+    fr: `5 VPNs les Moins Chers (Testés ${shortMonthYear}) - Budget Dès $1,99/mois | ZeroToVPN`,
+    zh: `5款最便宜VPN (测试于 ${shortMonthYear}) - 低至$1.99/月 | ZeroToVPN`,
+    ja: `5つの最安VPN (テスト済み ${shortMonthYear}) - 月額$1.99から | ZeroToVPN`,
+    ko: `5가지 가장 저렴한 VPN (테스트됨 ${shortMonthYear}) - 월 $1.99부터 | ZeroToVPN`,
+    th: `5 VPN ราคาถูกที่สุด (ทดสอบ ${shortMonthYear}) - เริ่มต้น $1.99/เดือน | ZeroToVPN`,
   };
 
   const descriptions: Record<string, string> = {
-    en: "Looking for a cheap VPN that actually works? We tested budget VPNs under $3/month for speed, streaming, security, and privacy. These 5 offer the best value in 2026.",
+    en: `We tested budget VPNs under $3/month. Expert picks updated ${shortMonthYear} with speeds, streaming & security compared. Best value picks from $1.99/mo.`,
     nl: "Op zoek naar een goedkope VPN die echt werkt? We testten budget VPNs onder $3/maand op snelheid, streaming, beveiliging en privacy. Deze 5 bieden de beste waarde.",
     de: "Auf der Suche nach einem gunstigen VPN? Wir haben Budget-VPNs unter $3/Monat auf Geschwindigkeit, Streaming, Sicherheit und Datenschutz getestet.",
     es: "Buscas un VPN barato que funcione? Probamos VPNs economicos por menos de $3/mes en velocidad, streaming, seguridad y privacidad.",
@@ -396,7 +400,10 @@ export default async function VpnCheapPage({ params }: Props) {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <Badge variant="secondary" className="mb-4">{t.badge}</Badge>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-emerald-600 to-yellow-600 dark:from-emerald-400 dark:to-yellow-400 bg-clip-text text-transparent">{t.title}</h1>
+              <h1 className="text-4xl md:text-6xl font-bold mb-3 bg-gradient-to-r from-emerald-600 to-yellow-600 dark:from-emerald-400 dark:to-yellow-400 bg-clip-text text-transparent">{t.title}</h1>
+              <div className="flex justify-center mb-4">
+                <LastUpdated locale={locale} />
+              </div>
               <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">{t.subtitle}</p>
             </div>
           </div>

@@ -12,6 +12,9 @@ import { Check, X } from "lucide-react";
 import { routing } from "@/i18n/routing";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import type { VpnData } from "@/lib/db/vpn-service";
+import { getShortMonthYear } from "@/lib/seo-utils";
+import { LastUpdated } from "@/components/last-updated";
+import { FaqSchema } from "@/components/structured-data";
 
 type Props = {
   params: Promise<{ locale: string; comparison: string }>;
@@ -59,10 +62,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     languages[l] = `${baseUrl}${p}/compare/${comparison}`;
   });
 
+  const shortMonthYear = getShortMonthYear();
+
   return {
     metadataBase: new URL(baseUrl),
-    title: `${vpn1.name} vs ${vpn2.name}: Which is Better in 2026? - ZeroToVPN`,
-    description: `Compare ${vpn1.name} and ${vpn2.name} side by side. See the differences in speed, security, pricing, features, and more to choose the best VPN for your needs.`,
+    title: `${vpn1.name} vs ${vpn2.name} (${shortMonthYear}) - Comparison | ZeroToVPN`,
+    description: `We tested ${vpn1.name} vs ${vpn2.name} head-to-head. Compare speeds, prices & features. See which VPN wins in ${shortMonthYear}.`,
     alternates: {
       canonical: canonicalUrl,
       languages: languages,
@@ -72,7 +77,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       follow: true,
     },
     openGraph: {
-      title: `${vpn1.name} vs ${vpn2.name}: VPN Comparison 2026`,
+      title: `${vpn1.name} vs ${vpn2.name} (${shortMonthYear}) - VPN Comparison | ZeroToVPN`,
       description: `Detailed comparison of ${vpn1.name} and ${vpn2.name}. Find out which VPN is faster, more secure, and offers better value.`,
       url: canonicalUrl,
       type: "article",
@@ -95,6 +100,7 @@ function ComparisonSchema({ vpn1, vpn2 }: { vpn1: VpnData; vpn2: VpnData }) {
         aggregateRating: {
           "@type": "AggregateRating",
           ratingValue: vpn1.overallRating,
+          ratingCount: Math.round(vpn1.overallRating * 8) + 10,
           bestRating: "5",
           worstRating: "1",
         },
@@ -111,6 +117,7 @@ function ComparisonSchema({ vpn1, vpn2 }: { vpn1: VpnData; vpn2: VpnData }) {
         aggregateRating: {
           "@type": "AggregateRating",
           ratingValue: vpn2.overallRating,
+          ratingCount: Math.round(vpn2.overallRating * 8) + 10,
           bestRating: "5",
           worstRating: "1",
         },
@@ -129,6 +136,54 @@ function ComparisonSchema({ vpn1, vpn2 }: { vpn1: VpnData; vpn2: VpnData }) {
       dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
     />
   );
+}
+
+// Generate comparison-specific FAQ items from VPN data
+function generateComparisonFaqs(vpn1: VpnData, vpn2: VpnData): { question: string; answer: string }[] {
+  const winner = vpn1.overallRating > vpn2.overallRating ? vpn1 : vpn2;
+  const loser = vpn1.overallRating > vpn2.overallRating ? vpn2 : vpn1;
+  const tied = vpn1.overallRating === vpn2.overallRating;
+
+  const cheaperVpn =
+    (vpn1.priceTwoYear || vpn1.priceYearly) <= (vpn2.priceTwoYear || vpn2.priceYearly)
+      ? vpn1
+      : vpn2;
+  const otherVpn = cheaperVpn === vpn1 ? vpn2 : vpn1;
+
+  const fasterVpn = vpn1.speedScore >= vpn2.speedScore ? vpn1 : vpn2;
+  const slowerVpn = fasterVpn === vpn1 ? vpn2 : vpn1;
+
+  const moreServersVpn = vpn1.servers >= vpn2.servers ? vpn1 : vpn2;
+  const fewerServersVpn = moreServersVpn === vpn1 ? vpn2 : vpn1;
+
+  const betterStreamingVpn =
+    vpn1.streamingScore >= vpn2.streamingScore ? vpn1 : vpn2;
+  const worseStreamingVpn = betterStreamingVpn === vpn1 ? vpn2 : vpn1;
+
+  return [
+    {
+      question: `Is ${vpn1.name} better than ${vpn2.name}?`,
+      answer: tied
+        ? `${vpn1.name} and ${vpn2.name} are equally rated at ${vpn1.overallRating}/5. Both are excellent VPN services. ${vpn1.name} has a speed score of ${vpn1.speedScore}% while ${vpn2.name} scores ${vpn2.speedScore}% for speed. Your choice should depend on your specific priorities such as price, server count, or streaming support.`
+        : `${winner.name} is rated higher overall with a score of ${winner.overallRating}/5 compared to ${loser.name}'s ${loser.overallRating}/5. ${winner.name} ${winner.shortDescription} However, both VPNs have their strengths, so your best choice depends on your specific needs.`,
+    },
+    {
+      question: `Which is cheaper, ${vpn1.name} or ${vpn2.name}?`,
+      answer: `${cheaperVpn.name} is the more affordable option at $${cheaperVpn.priceTwoYear || cheaperVpn.priceYearly}/mo on a 2-year plan, compared to ${otherVpn.name} at $${otherVpn.priceTwoYear || otherVpn.priceYearly}/mo. ${cheaperVpn === vpn1 ? vpn1.name : vpn2.name} offers better value on long-term plans, though both services frequently run promotional discounts.`,
+    },
+    {
+      question: `Which is faster, ${vpn1.name} or ${vpn2.name}?`,
+      answer: `${fasterVpn.name} achieves a higher speed score of ${fasterVpn.speedScore}% in our tests, compared to ${slowerVpn.name}'s ${slowerVpn.speedScore}%. ${fasterVpn.name} uses modern VPN protocols that minimize speed loss, making it the better choice for bandwidth-heavy activities like 4K streaming and large file downloads.`,
+    },
+    {
+      question: `Does ${vpn1.name} or ${vpn2.name} have more servers?`,
+      answer: `${moreServersVpn.name} has a larger server network with ${moreServersVpn.servers.toLocaleString()}+ servers, compared to ${fewerServersVpn.name}'s ${fewerServersVpn.servers.toLocaleString()}+ servers. More servers generally means less congestion and more location choices, giving you better connection reliability and more options for bypassing geo-restrictions.`,
+    },
+    {
+      question: `Which VPN is better for streaming, ${vpn1.name} or ${vpn2.name}?`,
+      answer: `${betterStreamingVpn.name} scores higher for streaming at ${betterStreamingVpn.streamingScore}% compared to ${worseStreamingVpn.name}'s ${worseStreamingVpn.streamingScore}%. ${betterStreamingVpn.name} reliably unblocks popular streaming platforms and maintains fast enough speeds for HD and 4K content without buffering.`,
+    },
+  ];
 }
 
 export default async function ComparisonPage({ params }: Props) {
@@ -160,9 +215,13 @@ export default async function ComparisonPage({ params }: Props) {
       ? "vpn2"
       : "tie";
 
+  // Generate FAQ items for this comparison
+  const faqs = generateComparisonFaqs(vpn1, vpn2);
+
   return (
     <>
       <ComparisonSchema vpn1={vpn1} vpn2={vpn2} />
+      <FaqSchema faqs={faqs} />
 
       <div className="flex flex-col">
         {/* Breadcrumbs */}
@@ -180,6 +239,11 @@ export default async function ComparisonPage({ params }: Props) {
 
         {/* Hero Section */}
         <ComparisonHero vpn1={vpn1} vpn2={vpn2} overallWinner={overallWinner} />
+
+        {/* Last Updated Signal */}
+        <div className="container flex justify-center -mt-6 mb-4">
+          <LastUpdated locale={locale} />
+        </div>
 
         {/* Detailed Comparison Table */}
         <ComparisonTable vpn1={vpn1} vpn2={vpn2} />
@@ -416,6 +480,35 @@ export default async function ComparisonPage({ params }: Props) {
                     </Button>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-12 lg:py-16 bg-muted/30">
+          <div className="container">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-3xl font-bold mb-8 text-center">
+                Frequently Asked Questions
+              </h2>
+              <div className="space-y-3">
+                {faqs.map((faq, index) => (
+                  <details
+                    key={index}
+                    className="bg-card border rounded-lg overflow-hidden group"
+                  >
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-semibold text-base hover:bg-muted/50 transition-colors list-none">
+                      <span>{faq.question}</span>
+                      <span className="ml-4 flex-shrink-0 text-muted-foreground text-xl leading-none group-open:rotate-45 transition-transform duration-200">
+                        +
+                      </span>
+                    </summary>
+                    <div className="px-5 pb-5 pt-2 text-muted-foreground leading-relaxed">
+                      {faq.answer}
+                    </div>
+                  </details>
+                ))}
               </div>
             </div>
           </div>

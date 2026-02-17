@@ -23,6 +23,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { RelatedPages } from "@/components/seo/related-pages";
+import { LastUpdated } from "@/components/last-updated";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 
 type Props = {
@@ -181,6 +182,9 @@ export default async function MobileVpnPage({ params }: Props) {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
                 {t("hero.title")}
               </h1>
+              <div className="flex justify-center">
+                <LastUpdated locale={locale} />
+              </div>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                 {t("hero.subtitle")}
               </p>

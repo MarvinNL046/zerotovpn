@@ -1,6 +1,8 @@
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 import { Metadata } from "next";
+import { getShortMonthYear } from "@/lib/seo-utils";
+import { LastUpdated } from "@/components/last-updated";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -34,20 +36,22 @@ const baseUrl = "https://zerotovpn.com";
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
+  const shortMonthYear = getShortMonthYear();
+
   const titles: Record<string, string> = {
-    en: "Best VPN for Android 2026: Top 5 Apps Tested on Samsung & Pixel | ZeroToVPN",
-    nl: "Beste VPN voor Android 2026: Top 5 Apps Getest op Samsung & Pixel | ZeroToVPN",
-    de: "Bestes VPN für Android 2026: Top 5 Apps auf Samsung & Pixel Getestet | ZeroToVPN",
-    es: "Mejor VPN para Android 2026: Top 5 Apps Probadas en Samsung y Pixel | ZeroToVPN",
-    fr: "Meilleur VPN pour Android 2026: Top 5 Apps Testées sur Samsung et Pixel | ZeroToVPN",
-    zh: "2026年最佳Android VPN：在三星和Pixel上测试的5款应用 | ZeroToVPN",
-    ja: "Android向けベストVPN 2026：SamsungとPixelでテスト済みトップ5アプリ | ZeroToVPN",
-    ko: "2026년 안드로이드 최고의 VPN: 삼성 & 픽셀에서 테스트한 상위 5개 앱 | ZeroToVPN",
-    th: "VPN ที่ดีที่สุดสำหรับ Android 2026: 5 แอปที่ทดสอบบน Samsung และ Pixel | ZeroToVPN",
+    en: `5 Best VPNs for Android (Tested ${shortMonthYear}) - Top Apps | ZeroToVPN`,
+    nl: `5 Beste VPNs voor Android (Getest ${shortMonthYear}) - Top Apps | ZeroToVPN`,
+    de: `5 Beste VPNs für Android (Getestet ${shortMonthYear}) - Top Apps | ZeroToVPN`,
+    es: `5 Mejores VPNs para Android (Probadas ${shortMonthYear}) - Las Mejores Apps | ZeroToVPN`,
+    fr: `5 Meilleurs VPNs pour Android (Testés ${shortMonthYear}) - Meilleures Apps | ZeroToVPN`,
+    zh: `5款最佳Android VPN (测试于 ${shortMonthYear}) - 顶级应用 | ZeroToVPN`,
+    ja: `Android向けベスト5 VPN (テスト済み ${shortMonthYear}) - トップアプリ | ZeroToVPN`,
+    ko: `안드로이드 최고의 VPN 5가지 (테스트됨 ${shortMonthYear}) - 최고 앱 | ZeroToVPN`,
+    th: `5 VPN ที่ดีที่สุดสำหรับ Android (ทดสอบ ${shortMonthYear}) - แอปยอดนิยม | ZeroToVPN`,
   };
 
   const descriptions: Record<string, string> = {
-    en: "We installed 25+ VPN apps on Android — most drain battery and leak data. These 5 passed our kill switch, speed, and security tests.",
+    en: `We tested 25+ VPN apps for Android. Expert picks updated ${shortMonthYear} with battery usage, speeds & security compared. 30-day money-back guarantee on all picks.`,
     nl: "We installeerden 25+ VPN-apps op Android — de meeste vreten batterij en lekken data. Deze 5 slaagden voor onze kill switch-, snelheids- en beveiligingstests.",
     de: "Wir haben 25+ VPN-Apps auf Android installiert — die meisten verbrauchen Akku und leaken Daten. Diese 5 bestanden unsere Kill-Switch-, Geschwindigkeits- und Sicherheitstests.",
     es: "Instalamos más de 25 apps VPN en Android — la mayoría agotan la batería y filtran datos. Estas 5 pasaron nuestras pruebas de kill switch, velocidad y seguridad.",
@@ -181,6 +185,9 @@ export default async function AndroidVpnPage({ params }: Props) {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
                 {t("hero.title")}
               </h1>
+              <div className="flex justify-center">
+                <LastUpdated locale={locale} />
+              </div>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                 {t("hero.subtitle")}
               </p>

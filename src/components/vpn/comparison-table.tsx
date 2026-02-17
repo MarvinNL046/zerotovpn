@@ -40,8 +40,17 @@ export function ComparisonTable({ vpns }: ComparisonTableProps) {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {vpns.map((vpn, index) => (
-            <TableRow key={vpn.id} className="hover:bg-muted/50">
+          {vpns.map((vpn, index) => {
+            const isNordVPN = vpn.slug === "nordvpn" || vpn.name === "NordVPN";
+            return (
+            <TableRow
+              key={vpn.id}
+              className={
+                isNordVPN
+                  ? "hover:bg-muted/50 bg-primary/5 border-l-4 border-l-primary"
+                  : "hover:bg-muted/50"
+              }
+            >
               <TableCell className="font-bold text-lg">{index + 1}</TableCell>
               <TableCell>
                 <div className="flex items-center gap-3">
@@ -55,6 +64,11 @@ export function ComparisonTable({ vpns }: ComparisonTableProps) {
                         <Badge className="bg-yellow-500 text-yellow-950 text-xs">
                           {t("editorChoice")}
                         </Badge>
+                      )}
+                      {isNordVPN && (
+                        <span className="ml-2 inline-flex items-center bg-primary/10 text-primary text-xs font-semibold px-2 py-0.5 rounded-full">
+                          Editor&apos;s Pick
+                        </span>
                       )}
                     </Link>
                     <div className="text-xs text-muted-foreground">
@@ -105,7 +119,8 @@ export function ComparisonTable({ vpns }: ComparisonTableProps) {
                 </AffiliateButton>
               </TableCell>
             </TableRow>
-          ))}
+            );
+          })}
         </TableBody>
       </Table>
     </div>

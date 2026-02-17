@@ -31,11 +31,21 @@ export function VpnCard({ vpn, rank }: VpnCardProps) {
   const t = useTranslations("vpnCard");
   const hasCoupon = hasActiveCoupon(vpn.slug);
   const isTopRanked = rank === 1;
+  const isNordVPN = vpn.slug === "nordvpn" || vpn.name === "NordVPN";
 
   return (
+    <div className="relative">
+      {isNordVPN && (
+        <div className="absolute -right-2 -top-2 z-10">
+          <div className="bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full shadow-md">
+            #1 Pick
+          </div>
+        </div>
+      )}
     <Card className={cn(
       "relative overflow-hidden card-hover",
-      isTopRanked && "gradient-border"
+      isTopRanked && "gradient-border",
+      isNordVPN && "ring-2 ring-primary/50 shadow-lg"
     )}>
       {/* Screenshot Image */}
       <div className="relative h-40 w-full overflow-hidden bg-muted">
@@ -188,5 +198,6 @@ export function VpnCard({ vpn, rank }: VpnCardProps) {
         </Button>
       </CardFooter>
     </Card>
+    </div>
   );
 }

@@ -1,5 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 import { Metadata } from "next";
+import { getShortMonthYear } from "@/lib/seo-utils";
+import { LastUpdated } from "@/components/last-updated";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
@@ -31,21 +33,22 @@ const baseUrl = "https://zerotovpn.com";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const shortMonthYear = getShortMonthYear();
 
   const titles: Record<string, string> = {
-    en: "Best VPN for Torrenting 2026: 5 Fastest P2P VPNs (No Logs) | ZeroToVPN",
-    nl: "Beste VPN voor Torrenting 2026: 5 Snelste P2P VPNs (Geen Logs) | ZeroToVPN",
-    de: "Beste VPN fur Torrenting 2026: 5 Schnellste P2P VPNs (Keine Logs) | ZeroToVPN",
-    es: "Mejor VPN para Torrenting 2026: 5 VPNs P2P Mas Rapidos (Sin Registros) | ZeroToVPN",
-    fr: "Meilleur VPN pour Torrenting 2026 : 5 VPN P2P les Plus Rapides (Sans Logs) | ZeroToVPN",
-    zh: "2026年最佳种子下载VPN：5款最快的P2P VPN（无日志） | ZeroToVPN",
-    ja: "2026年トレント向けベストVPN：最速P2P VPN 5選（ノーログ） | ZeroToVPN",
-    ko: "2026년 토렌트 최고의 VPN: 가장 빠른 P2P VPN 5가지 (노로그) | ZeroToVPN",
-    th: "VPN ที่ดีที่สุดสำหรับ Torrenting 2026: 5 VPN P2P ที่เร็วที่สุด (ไม่เก็บ Log) | ZeroToVPN",
+    en: `5 Best VPNs for Torrenting (Tested ${shortMonthYear}) - Fastest P2P, No Logs | ZeroToVPN`,
+    nl: `5 Beste VPNs voor Torrenting (Getest ${shortMonthYear}) - Snelste P2P, Geen Logs | ZeroToVPN`,
+    de: `5 Beste VPNs für Torrenting (Getestet ${shortMonthYear}) - Schnellste P2P, Keine Logs | ZeroToVPN`,
+    es: `5 Mejores VPNs para Torrenting (Probados ${shortMonthYear}) - Más Rápidos P2P, Sin Logs | ZeroToVPN`,
+    fr: `5 Meilleurs VPNs pour Torrenting (Testés ${shortMonthYear}) - P2P les Plus Rapides, Sans Logs | ZeroToVPN`,
+    zh: `5款最佳种子下载VPN (测试于 ${shortMonthYear}) - 最快P2P，无日志 | ZeroToVPN`,
+    ja: `トレント向けベスト5 VPN (テスト済み ${shortMonthYear}) - 最速P2P、ノーログ | ZeroToVPN`,
+    ko: `토렌트 최고의 VPN 5가지 (테스트됨 ${shortMonthYear}) - 가장 빠른 P2P, 노로그 | ZeroToVPN`,
+    th: `5 VPN ที่ดีที่สุดสำหรับ Torrenting (ทดสอบ ${shortMonthYear}) - P2P เร็วที่สุด ไม่เก็บ Log | ZeroToVPN`,
   };
 
   const descriptions: Record<string, string> = {
-    en: "We tested 40+ VPNs for P2P torrenting. These 5 offer the fastest download speeds, verified no-logs policies, kill switches, and port forwarding for maximum privacy.",
+    en: `We tested 40+ VPNs for P2P torrenting. Expert picks updated ${shortMonthYear} with speeds, no-log policies & privacy compared. See our honest verdict.`,
     nl: "We testten 40+ VPNs voor P2P torrenting. Deze 5 bieden de snelste downloadsnelheden, geverifieerde no-logs beleid, kill switches en port forwarding.",
     de: "Wir haben uber 40 VPNs fur P2P-Torrenting getestet. Diese 5 bieten die schnellsten Downloads, verifizierte No-Logs-Richtlinien und Kill Switches.",
     es: "Probamos mas de 40 VPNs para torrenting P2P. Estos 5 ofrecen las velocidades mas rapidas, politicas sin registros verificadas y kill switches.",
@@ -454,7 +457,10 @@ export default async function VpnTorrentingPage({ params }: Props) {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <Badge variant="secondary" className="mb-4">{t.badge}</Badge>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-green-600 to-blue-600 dark:from-green-400 dark:to-blue-400 bg-clip-text text-transparent">{t.title}</h1>
+              <h1 className="text-4xl md:text-6xl font-bold mb-3 bg-gradient-to-r from-green-600 to-blue-600 dark:from-green-400 dark:to-blue-400 bg-clip-text text-transparent">{t.title}</h1>
+              <div className="flex justify-center mb-4">
+                <LastUpdated locale={locale} />
+              </div>
               <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">{t.subtitle}</p>
             </div>
           </div>

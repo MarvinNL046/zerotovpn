@@ -11,6 +11,7 @@ interface PopularComparison {
   badge?: string;
 }
 
+// NordVPN comparisons come first (most searched), then other popular comparisons
 const popularComparisons: PopularComparison[] = [
   {
     vpn1: "NordVPN",
@@ -20,17 +21,23 @@ const popularComparisons: PopularComparison[] = [
     badge: "Most Popular",
   },
   {
-    vpn1: "ExpressVPN",
-    vpn2: "NordVPN",
-    slug1: "expressvpn",
-    slug2: "nordvpn",
+    vpn1: "NordVPN",
+    vpn2: "ExpressVPN",
+    slug1: "nordvpn",
+    slug2: "expressvpn",
     badge: "Premium Showdown",
   },
   {
-    vpn1: "CyberGhost",
-    vpn2: "NordVPN",
-    slug1: "cyberghost",
-    slug2: "nordvpn",
+    vpn1: "NordVPN",
+    vpn2: "CyberGhost",
+    slug1: "nordvpn",
+    slug2: "cyberghost",
+  },
+  {
+    vpn1: "NordVPN",
+    vpn2: "ProtonVPN",
+    slug1: "nordvpn",
+    slug2: "protonvpn",
   },
   {
     vpn1: "ProtonVPN",
@@ -45,12 +52,6 @@ const popularComparisons: PopularComparison[] = [
     slug1: "surfshark",
     slug2: "expressvpn",
   },
-  {
-    vpn1: "NordVPN",
-    vpn2: "ProtonVPN",
-    slug1: "nordvpn",
-    slug2: "protonvpn",
-  },
 ];
 
 export function PopularComparisons() {
@@ -61,11 +62,11 @@ export function PopularComparisons() {
           <div className="text-center mb-10">
             <div className="flex items-center justify-center gap-2 mb-4">
               <TrendingUp className="h-5 w-5 text-primary" />
-              <Badge variant="secondary">Popular Comparisons</Badge>
+              <Badge variant="secondary">Most Popular Comparisons</Badge>
             </div>
-            <h2 className="text-3xl font-bold mb-2">Compare Top VPNs</h2>
+            <h2 className="text-3xl font-bold mb-2">NordVPN vs The Competition</h2>
             <p className="text-muted-foreground">
-              See how the most popular VPN services stack up against each other
+              See how NordVPN and other top VPN services stack up against each other
             </p>
           </div>
 

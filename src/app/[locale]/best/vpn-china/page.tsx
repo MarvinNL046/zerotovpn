@@ -6,6 +6,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { RatingStars } from "@/components/vpn/rating-stars";
 import { Link } from "@/i18n/navigation";
+import { getShortMonthYear } from "@/lib/seo-utils";
+import { LastUpdated } from "@/components/last-updated";
 import {
   Shield,
   CheckCircle,
@@ -46,20 +48,22 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
+  const shortMonthYear = getShortMonthYear();
+
   const titles: Record<string, string> = {
-    en: "Best VPN for China 2026: Bypass the Great Firewall | ZeroToVPN",
-    nl: "Beste VPN voor China 2026: Omzeil de Great Firewall | ZeroToVPN",
-    de: "Beste VPN für China 2026: Umgehen Sie die Great Firewall | ZeroToVPN",
-    es: "Mejor VPN para China 2026: Evita la Gran Muralla de Fuego | ZeroToVPN",
-    fr: "Meilleur VPN pour la Chine 2026 : Contourner le Grand Pare-feu | ZeroToVPN",
-    zh: "2026年中国VPN推荐：翻墙VPN最好用的选择 | ZeroToVPN",
-    ja: "中国向けベストVPN 2026：グレートファイアウォールを回避 | ZeroToVPN",
-    ko: "중국 최고의 VPN 2026: 만리방화벽 우회하기 | ZeroToVPN",
-    th: "VPN ที่ดีที่สุดสำหรับจีน 2026: ข้ามกำแพงไฟวอลล์ใหญ่ | ZeroToVPN",
+    en: `Best VPNs for China (Tested ${shortMonthYear}) - Bypass the Great Firewall | ZeroToVPN`,
+    nl: `Beste VPNs voor China (Getest ${shortMonthYear}) - Omzeil de Great Firewall | ZeroToVPN`,
+    de: `Beste VPNs für China (Getestet ${shortMonthYear}) - Great Firewall Umgehen | ZeroToVPN`,
+    es: `Mejores VPNs para China (Probados ${shortMonthYear}) - Evitar el Gran Cortafuegos | ZeroToVPN`,
+    fr: `Meilleurs VPNs pour la Chine (Testés ${shortMonthYear}) - Contourner le Grand Pare-feu | ZeroToVPN`,
+    zh: `中国最佳VPN推荐 (测试于 ${shortMonthYear}) - 翻墙VPN最好用的选择 | ZeroToVPN`,
+    ja: `中国向けベストVPN (テスト済み ${shortMonthYear}) - グレートファイアウォールを回避 | ZeroToVPN`,
+    ko: `중국 최고의 VPN (테스트됨 ${shortMonthYear}) - 만리방화벽 우회 | ZeroToVPN`,
+    th: `VPN ที่ดีที่สุดสำหรับจีน (ทดสอบ ${shortMonthYear}) - ข้ามกำแพงไฟวอลล์ใหญ่ | ZeroToVPN`,
   };
 
   const descriptions: Record<string, string> = {
-    en: "Looking for a VPN that works in China? We tested VPNs that can bypass the Great Firewall. See which VPNs work in China and which don't.",
+    en: `We tested VPNs to find the best for China in ${shortMonthYear}. Expert picks with Great Firewall bypass tested & verified. See our honest verdict.`,
     nl: "Op zoek naar een VPN die werkt in China? We hebben VPNs getest die de Great Firewall kunnen omzeilen. Zie welke VPNs werken in China en welke niet.",
     de: "Suchen Sie nach einem VPN, das in China funktioniert? Wir haben VPNs getestet, die die Great Firewall umgehen können. Sehen Sie, welche VPNs in China funktionieren und welche nicht.",
     es: "¿Buscas un VPN que funcione en China? Probamos VPNs que pueden eludir la Gran Muralla de Fuego. Ve qué VPNs funcionan en China y cuáles no.",
@@ -1127,6 +1131,9 @@ export default async function VpnChinaPage({ params }: Props) {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
                 {t.title}
               </h1>
+              <div className="flex justify-center">
+                <LastUpdated locale={locale} />
+              </div>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                 {t.subtitle}
               </p>

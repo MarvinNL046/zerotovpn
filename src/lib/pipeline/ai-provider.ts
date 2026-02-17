@@ -100,7 +100,7 @@ async function callOpenAI(
     },
     body: JSON.stringify({
       model: "gpt-5-nano-2025-08-07",
-      max_tokens: maxTokens,
+      max_completion_tokens: maxTokens,
       temperature,
       messages: [{ role: "user", content: prompt }],
     }),

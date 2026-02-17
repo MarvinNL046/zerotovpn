@@ -268,7 +268,7 @@ export default async function HomePage({ params }: Props) {
                   Get NordVPN Deal &rarr;
                 </a>
                 <Link
-                  href={`/${locale}/reviews/nordvpn`}
+                  href="/reviews/nordvpn"
                   className="inline-flex items-center border font-semibold px-6 py-3 rounded-lg hover:bg-muted transition"
                 >
                   Read Full Review

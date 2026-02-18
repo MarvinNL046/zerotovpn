@@ -92,6 +92,22 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/tools/what-is-my-ip"
+                  className="text-muted-foreground hover:text-primary"
+                >
+                  {t("ipChecker")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tools/dns-leak-test"
+                  className="text-muted-foreground hover:text-primary"
+                >
+                  {t("dnsLeakTest")}
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/guides/what-is-vpn"
                   className="text-muted-foreground hover:text-primary"
                 >

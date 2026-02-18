@@ -28,7 +28,10 @@
     "vpnWindows": "Windows用VPN",
     "vpnMacos": "macOS用VPN",
     "vpnChromebook": "Chromebook用VPN",
-    "vpnLinux": "Linux用VPN"
+    "vpnLinux": "Linux用VPN",
+    "tools": "ツール",
+    "ipChecker": "IP確認",
+    "dnsLeakTest": "DNSリークテスト"
   },
   "hero": {
     "title": "最適なVPNを見つけよう",
@@ -106,7 +109,9 @@
     "vpnWindows": "Windows用VPN",
     "vpnMacos": "macOS用VPN",
     "vpnChromebook": "Chromebook用VPN",
-    "vpnLinux": "Linux用VPN"
+    "vpnLinux": "Linux用VPN",
+    "ipChecker": "IP確認",
+    "dnsLeakTest": "DNSリークテスト"
   },
   "newsletter": {
     "title": "最新情報を入手",
@@ -5341,5 +5346,81 @@
       "title": "VPNとのマッチング方法",
       "description": "当社のクイズアルゴリズムは、速度、セキュリティ、ストリーミング機能、デバイス互換性、価格帯など、あなたの具体的なニーズに基づいてVPNプロバイダーを評価します。各推奨は、あなたの要件にどれだけ適合しているかに基づいてスコア化されます。"
     }
+  },
+  "ipTool": {
+    "title": "IP Address Lookup",
+    "pageTitle": "What Is My IP Address?",
+    "pageSubtitle": "Instantly see your public IP address, location, ISP, and whether you're protected by a VPN. Your IP address is visible to every website you visit.",
+    "checking": "Detecting your IP address...",
+    "yourIp": "Your IP Address",
+    "location": "Location",
+    "isp": "Internet Provider",
+    "vpnStatus": "VPN Status",
+    "protected": "Protected",
+    "notProtected": "Not Protected",
+    "protectedDesc": "Your real IP address appears to be hidden behind a VPN or proxy.",
+    "notProtectedDesc": "Your real IP address and location are visible to every website you visit. Anyone can see where you are.",
+    "copyIp": "Copy IP",
+    "copied": "Copied!",
+    "recheckBtn": "Check Again",
+    "ipv4": "IPv4",
+    "ipv6": "IPv6",
+    "timezone": "Timezone",
+    "org": "Organization",
+    "getProtected": "Get Protected Now",
+    "getProtectedDesc": "Hide your IP address and encrypt your connection with a trusted VPN.",
+    "nordvpnDeal": "Get NordVPN — 68% Off",
+    "whyHideIp": "Why Should You Hide Your IP?",
+    "whyHideIpDesc": "Your IP address reveals your approximate location, internet provider, and can be used to track your online activity. Websites, advertisers, and even hackers can use this information. A VPN masks your real IP with one from their server network.",
+    "whatIsIp": "What Is an IP Address?",
+    "whatIsIpDesc": "An IP (Internet Protocol) address is a unique numerical label assigned to every device connected to the internet. It works like a digital mailing address, allowing websites and services to send data back to your device. There are two types: IPv4 (e.g., 192.168.1.1) and IPv6 (e.g., 2001:db8::1).",
+    "howVpnHelps": "How a VPN Protects Your IP",
+    "howVpnHelpsDesc": "A VPN (Virtual Private Network) routes your internet traffic through an encrypted tunnel to a remote server. Websites see the VPN server's IP address instead of yours, making it nearly impossible to trace activity back to you.",
+    "recommendedVpns": "Best VPNs to Hide Your IP Address",
+    "faq": [
+      { "question": "Can someone find my exact location from my IP address?", "answer": "Not your exact address, but your IP reveals your city, region, and country. Combined with other data, it can narrow down your approximate location. A VPN prevents this by masking your real IP." },
+      { "question": "Is it legal to hide my IP address?", "answer": "Yes, hiding your IP address with a VPN is completely legal in most countries. VPNs are legitimate privacy tools used by millions of people and businesses worldwide." },
+      { "question": "What's the difference between IPv4 and IPv6?", "answer": "IPv4 uses 32-bit addresses (like 192.168.1.1) and is the most common format. IPv6 uses 128-bit addresses (like 2001:db8::1) and was created to handle the growing number of internet-connected devices." },
+      { "question": "Can my ISP see what I do online?", "answer": "Yes, your ISP can see which websites you visit, when you visit them, and how much data you transfer. A VPN encrypts your traffic so your ISP can only see that you're connected to a VPN server, not what you're doing." },
+      { "question": "How do I know if my VPN is working?", "answer": "Use this IP checker tool! Connect to your VPN, then check your IP address here. If it shows a different IP and location than your actual one, your VPN is working correctly." }
+    ]
+  },
+  "dnsLeakTest": {
+    "title": "DNS Leak Test",
+    "pageTitle": "DNS Leak Test — Is Your VPN Leaking?",
+    "pageSubtitle": "Check if your DNS requests are leaking outside your VPN tunnel. DNS leaks expose the websites you visit to your ISP, even when connected to a VPN.",
+    "startTest": "Start DNS Leak Test",
+    "testing": "Testing for DNS leaks...",
+    "testingStep1": "Resolving test domains...",
+    "testingStep2": "Analyzing DNS responses...",
+    "testingStep3": "Checking for leaks...",
+    "noLeaks": "No DNS Leaks Detected",
+    "noLeaksDesc": "Your DNS requests are being handled by your VPN. Your browsing activity is not visible to your ISP.",
+    "leaksFound": "DNS Leaks Detected!",
+    "leaksFoundDesc": "Your DNS requests are leaking outside your VPN tunnel. Your ISP can see which websites you visit.",
+    "noVpn": "No VPN Detected",
+    "noVpnDesc": "You don't appear to be using a VPN. Your DNS requests and browsing activity are fully visible to your ISP.",
+    "dnsServers": "DNS Servers Found",
+    "serverIp": "Server IP",
+    "serverProvider": "Provider",
+    "serverLocation": "Location",
+    "retestBtn": "Test Again",
+    "fixLeaks": "Fix DNS Leaks Now",
+    "fixLeaksDesc": "NordVPN uses its own private DNS servers and kills your connection if the VPN drops, preventing any DNS leaks.",
+    "nordvpnDeal": "Get NordVPN — Fix DNS Leaks",
+    "whatIsDns": "What Is a DNS Leak?",
+    "whatIsDnsDesc": "When you use a VPN, all your internet traffic — including DNS requests — should go through the encrypted VPN tunnel. A DNS leak occurs when your DNS queries bypass the VPN and go directly to your ISP's DNS servers. This means your ISP can still see which websites you visit, defeating the purpose of using a VPN.",
+    "whyDangerous": "Why Are DNS Leaks Dangerous?",
+    "whyDangerousDesc": "DNS leaks compromise your privacy because your ISP can log every website you visit. In countries with strict internet censorship, this could put you at risk. Even in free countries, ISPs can sell your browsing data to advertisers.",
+    "howToFix": "How to Prevent DNS Leaks",
+    "howToFixDesc": "Use a VPN with built-in DNS leak protection and a kill switch. Top VPNs like NordVPN run their own private DNS servers and automatically block DNS requests from leaving the VPN tunnel.",
+    "recommendedVpns": "Best VPNs with DNS Leak Protection",
+    "faq": [
+      { "question": "What causes DNS leaks?", "answer": "DNS leaks are usually caused by misconfigured VPN software, operating system DNS settings overriding the VPN, or using a VPN that doesn't have its own DNS servers. Windows is particularly prone to DNS leaks due to its Smart Multi-Homed Name Resolution feature." },
+      { "question": "Can I fix DNS leaks without a VPN?", "answer": "You can change your DNS servers to a privacy-focused provider like Cloudflare (1.1.1.1) or Quad9 (9.9.9.9), but this only changes who handles your DNS — your ISP can still see your traffic. A VPN encrypts everything." },
+      { "question": "Does NordVPN prevent DNS leaks?", "answer": "Yes, NordVPN runs its own private DNS servers and routes all DNS queries through the encrypted VPN tunnel. It also includes a kill switch that blocks all traffic if the VPN connection drops." },
+      { "question": "How often should I test for DNS leaks?", "answer": "Test after installing or updating your VPN, after changing network settings, and periodically (monthly) to ensure nothing has changed. Some OS updates can reset DNS settings." },
+      { "question": "What's the difference between a DNS leak and an IP leak?", "answer": "An IP leak exposes your real IP address despite using a VPN. A DNS leak exposes which websites you visit. Both compromise your privacy, but they work through different mechanisms. Use our IP checker tool to test for IP leaks." }
+    ]
   }
 }

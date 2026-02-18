@@ -8,7 +8,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Shield, Menu, X, Star, Zap, Globe, Tag, ChevronDown, Trophy, Gamepad2, Gift, Smartphone, Tablet, Laptop, Monitor, Apple } from "lucide-react";
+import { Shield, Menu, X, Star, Zap, Globe, Tag, ChevronDown, Trophy, Gamepad2, Gift, Smartphone, Tablet, Laptop, Monitor, Apple, Wrench, ShieldAlert } from "lucide-react";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { LanguageSwitcher } from "./language-switcher";
@@ -38,6 +38,12 @@ export function Header() {
     { href: "/best/vpn-macos", label: t("vpnMacos"), icon: Apple },
     { href: "/best/vpn-chromebook", label: t("vpnChromebook"), icon: Laptop },
     { href: "/best/vpn-linux", label: t("vpnLinux"), icon: Monitor },
+  ];
+
+  const toolItems = [
+    { href: "/tools/what-is-my-ip", label: t("ipChecker"), icon: Globe },
+    { href: "/tools/dns-leak-test", label: t("dnsLeakTest"), icon: ShieldAlert },
+    { href: "/speed-test", label: t("speedTest"), icon: Zap },
   ];
 
   return (
@@ -175,6 +181,39 @@ export function Header() {
             </DropdownMenuContent>
           </DropdownMenu>
 
+          {/* Tools - Dropdown (regular) */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button
+                className={cn(
+                  "text-sm font-medium transition-colors hover:text-primary inline-flex items-center gap-1",
+                  pathname.startsWith("/tools") || pathname === "/speed-test"
+                    ? "text-primary"
+                    : "text-muted-foreground"
+                )}
+              >
+                {t("tools")}
+                <ChevronDown className="h-3.5 w-3.5" />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="center" className="w-48">
+              {toolItems.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <DropdownMenuItem key={item.href} asChild>
+                    <Link
+                      href={item.href}
+                      className="flex items-center gap-2 cursor-pointer"
+                    >
+                      <Icon className="h-4 w-4" />
+                      {item.label}
+                    </Link>
+                  </DropdownMenuItem>
+                );
+              })}
+            </DropdownMenuContent>
+          </DropdownMenu>
+
           {/* Compare & Guides - regular links */}
           <Link
             href="/compare"
@@ -200,13 +239,6 @@ export function Header() {
 
         {/* Right side */}
         <div className="flex items-center gap-2">
-          <Link
-            href="/speed-test"
-            className="hidden md:flex items-center justify-center h-9 w-9 rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors"
-            title={t("speedTest")}
-          >
-            <Zap className="h-4 w-4" />
-          </Link>
           <ThemeToggle />
           <LanguageSwitcher />
 
@@ -300,6 +332,30 @@ export function Header() {
               </div>
             </div>
 
+            {/* Tools section */}
+            <div className="space-y-2">
+              <span className="text-sm font-semibold text-muted-foreground flex items-center gap-2">
+                <Wrench className="h-4 w-4" />
+                {t("tools")}
+              </span>
+              <div className="pl-6 space-y-2">
+                {toolItems.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      <Icon className="h-4 w-4" />
+                      {item.label}
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+
             {/* Highlighted items */}
             <Link
               href="/countries"
@@ -340,15 +396,6 @@ export function Header() {
               {t("guides")}
             </Link>
 
-            {/* Speed Test */}
-            <Link
-              href="/speed-test"
-              onClick={() => setMobileMenuOpen(false)}
-              className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-lg bg-gradient-to-r from-primary to-primary/80 text-primary-foreground w-fit"
-            >
-              <Zap className="h-4 w-4" />
-              {t("speedTest")}
-            </Link>
           </div>
         </nav>
       )}

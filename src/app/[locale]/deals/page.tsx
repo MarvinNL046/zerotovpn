@@ -1,6 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { Metadata } from "next";
-import { getShortMonthYear } from "@/lib/seo-utils";
+import { getShortMonthYear, generateAlternates } from "@/lib/seo-utils";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
@@ -61,6 +61,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: descriptions[locale] || descriptions.en,
       type: "website",
     },
+    alternates: generateAlternates("/deals", locale),
   };
 }
 

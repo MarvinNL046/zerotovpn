@@ -48,13 +48,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const baseUrl = "https://zerotovpn.com";
-  const canonicalUrl = locale === "en" ? baseUrl : `${baseUrl}/${locale}`;
 
-  // Generate alternates for all languages
-  const languages: Record<string, string> = { "x-default": baseUrl };
-  routing.locales.forEach((l) => {
-    languages[l] = l === "en" ? baseUrl : `${baseUrl}/${l}`;
-  });
+  // OG locale mapping (ISO 639-1 → Open Graph format)
+  const ogLocaleMap: Record<string, string> = {
+    en: "en_US", nl: "nl_NL", de: "de_DE", es: "es_ES",
+    fr: "fr_FR", zh: "zh_CN", ja: "ja_JP", ko: "ko_KR", th: "th_TH",
+  };
 
   return {
     title: {
@@ -81,22 +80,26 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     authors: [{ name: "ZeroToVPN" }],
     creator: "ZeroToVPN",
     metadataBase: new URL(baseUrl),
-    alternates: {
-      canonical: canonicalUrl,
-      languages: languages,
-    },
     openGraph: {
       type: "website",
-      locale: locale,
-      url: canonicalUrl,
+      locale: ogLocaleMap[locale] || "en_US",
       siteName: "ZeroToVPN",
       title: titles[locale] || titles.en,
       description: descriptions[locale] || descriptions.en,
+      images: [
+        {
+          url: `${baseUrl}/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: "ZeroToVPN - Best VPN Reviews & Comparisons",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: titles[locale] || titles.en,
       description: descriptions[locale] || descriptions.en,
+      images: [`${baseUrl}/opengraph-image`],
     },
     robots: {
       index: true,
@@ -137,7 +140,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         disableTransitionOnChange
       >
         <NextIntlClientProvider messages={messages}>
-          <div className="relative flex min-h-screen flex-col" lang={locale}>
+          <div className="relative flex min-h-screen flex-col">
             <Header />
             <main className="flex-1">{children}</main>
             <Footer />

@@ -32,7 +32,7 @@ import {
 } from "@/components/structured-data";
 import { routing } from "@/i18n/routing";
 import type { Metadata } from "next";
-import { getShortMonthYear, getLocalizedMonthYear } from "@/lib/seo-utils";
+import { getShortMonthYear, getLocalizedMonthYear, OG_LOCALE_MAP } from "@/lib/seo-utils";
 import { LastUpdated } from "@/components/last-updated";
 import { vpnProviders } from "@/lib/vpn-data";
 
@@ -224,7 +224,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: descriptions[locale] || descriptions.en,
       url: canonicalUrl,
       siteName: "ZeroToVPN",
-      locale: locale,
+      locale: OG_LOCALE_MAP[locale] || "en_US",
       type: "article",
       images: vpn.ogImage ? [
         {

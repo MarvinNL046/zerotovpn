@@ -25,6 +25,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { LastUpdated } from "@/components/last-updated";
+import { generateAlternates } from "@/lib/seo-utils";
 
 // Type definitions
 type DeterminesItem = {
@@ -98,7 +99,8 @@ type Props = {
 
 const baseUrl = "https://zerotovpn.com";
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
   return {
     metadataBase: new URL(baseUrl),
     title: "VPN Protocols Explained: WireGuard vs OpenVPN vs IKEv2 (2026) - ZeroToVPN",
@@ -114,6 +116,7 @@ export async function generateMetadata(): Promise<Metadata> {
         "Understand the differences between VPN protocols and choose the best one for your needs.",
       type: "article",
     },
+    alternates: generateAlternates("/guides/vpn-protocols-explained", locale),
   };
 }
 

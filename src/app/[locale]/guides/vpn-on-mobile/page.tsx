@@ -29,6 +29,7 @@ import {
   Lock,
 } from "lucide-react";
 import { LastUpdated } from "@/components/last-updated";
+import { generateAlternates } from "@/lib/seo-utils";
 
 // Type definitions
 type Benefit = {
@@ -108,7 +109,8 @@ type Props = {
 
 const baseUrl = "https://zerotovpn.com";
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
   return {
     metadataBase: new URL(baseUrl),
     title: "VPN on Mobile: Complete iOS & Android Setup Guide (2026) - ZeroToVPN",
@@ -124,6 +126,7 @@ export async function generateMetadata(): Promise<Metadata> {
         "Learn how to set up and use a VPN on your iPhone or Android device. Step-by-step guides and best practices.",
       type: "article",
     },
+    alternates: generateAlternates("/guides/vpn-on-mobile", locale),
   };
 }
 

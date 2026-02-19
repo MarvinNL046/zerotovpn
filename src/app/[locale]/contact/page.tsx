@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { generateAlternates } from "@/lib/seo-utils";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -20,7 +21,8 @@ type Props = {
 
 const baseUrl = "https://zerotovpn.com";
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
   return {
     metadataBase: new URL(baseUrl),
     title: "Contact Us - ZeroToVPN",
@@ -30,6 +32,7 @@ export async function generateMetadata(): Promise<Metadata> {
       index: true,
       follow: true,
     },
+    alternates: generateAlternates("/contact", locale),
   };
 }
 

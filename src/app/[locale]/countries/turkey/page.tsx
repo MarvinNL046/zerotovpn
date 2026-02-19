@@ -8,6 +8,7 @@ import { RatingStars } from "@/components/vpn/rating-stars";
 import { getAllVpns } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
 import { RelatedPages } from "@/components/seo/related-pages";
+import { generateAlternates } from "@/lib/seo-utils";
 import {
   Shield,
   CheckCircle,
@@ -64,6 +65,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: descriptions[locale] || descriptions.en,
       type: "article",
     },
+    alternates: generateAlternates("/countries/turkey", locale),
   };
 }
 

@@ -28,6 +28,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { LastUpdated } from "@/components/last-updated";
+import { generateAlternates } from "@/lib/seo-utils";
 
 // Affiliate links
 const affiliateLinks = {
@@ -42,7 +43,8 @@ type Props = {
 
 const baseUrl = "https://zerotovpn.com";
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
   return {
     metadataBase: new URL(baseUrl),
     title: "Best VPN for Streaming Netflix, Disney+ & More (2026 Guide) - ZeroToVPN",
@@ -58,6 +60,7 @@ export async function generateMetadata(): Promise<Metadata> {
         "Discover how to use a VPN to access Netflix, Disney+, BBC iPlayer and more streaming services from anywhere.",
       type: "article",
     },
+    alternates: generateAlternates("/guides/vpn-for-streaming", locale),
   };
 }
 

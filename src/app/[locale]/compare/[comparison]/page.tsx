@@ -12,7 +12,7 @@ import { Check, X } from "lucide-react";
 import { routing } from "@/i18n/routing";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import type { VpnData } from "@/lib/db/vpn-service";
-import { getShortMonthYear } from "@/lib/seo-utils";
+import { getShortMonthYear, OG_LOCALE_MAP } from "@/lib/seo-utils";
 import { LastUpdated } from "@/components/last-updated";
 import { FaqSchema } from "@/components/structured-data";
 
@@ -81,6 +81,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: `Detailed comparison of ${vpn1.name} and ${vpn2.name}. Find out which VPN is faster, more secure, and offers better value.`,
       url: canonicalUrl,
       type: "article",
+      locale: OG_LOCALE_MAP[locale] || "en_US",
+      siteName: "ZeroToVPN",
+      images: [
+        {
+          url: `${baseUrl}/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: `${vpn1.name} vs ${vpn2.name} Comparison`,
+        },
+      ],
     },
   };
 }

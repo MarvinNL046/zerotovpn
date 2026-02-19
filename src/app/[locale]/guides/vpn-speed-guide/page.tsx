@@ -30,6 +30,7 @@ import {
   RefreshCw,
 } from "lucide-react";
 import { LastUpdated } from "@/components/last-updated";
+import { generateAlternates } from "@/lib/seo-utils";
 
 // Type definitions
 type OptimizationTip = {
@@ -55,7 +56,8 @@ type Props = {
 
 const baseUrl = "https://zerotovpn.com";
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
   return {
     metadataBase: new URL(baseUrl),
     title: "VPN Speed Guide: How to Get the Fastest VPN Connection (2026) - ZeroToVPN",
@@ -71,6 +73,7 @@ export async function generateMetadata(): Promise<Metadata> {
         "Learn what affects VPN speed and how to optimize your connection for the best performance.",
       type: "article",
     },
+    alternates: generateAlternates("/guides/vpn-speed-guide", locale),
   };
 }
 

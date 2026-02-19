@@ -5,6 +5,7 @@ import { vpnProviders } from "@/lib/vpn-data";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { Zap, Shield, Info } from "lucide-react";
 import type { Metadata } from "next";
+import { generateAlternates } from "@/lib/seo-utils";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -17,6 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: t("pageTitle"),
     description: t("pageSubtitle"),
+    alternates: generateAlternates("/speed-test", locale),
   };
 }
 

@@ -30,6 +30,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { LastUpdated } from "@/components/last-updated";
+import { generateAlternates } from "@/lib/seo-utils";
 
 const affiliateLinks = {
   expressvpn: "https://go.zerotovpn.com/expressvpn",
@@ -46,7 +47,8 @@ type Props = {
 
 const baseUrl = "https://zerotovpn.com";
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
   return {
     metadataBase: new URL(baseUrl),
     title: "VPN for Torrenting: Stay Safe While Downloading (2026 Guide) - ZeroToVPN",
@@ -62,6 +64,7 @@ export async function generateMetadata(): Promise<Metadata> {
         "Learn how to use a VPN for safe torrenting with P2P-friendly servers and essential security features.",
       type: "article",
     },
+    alternates: generateAlternates("/guides/vpn-for-torrenting", locale),
   };
 }
 

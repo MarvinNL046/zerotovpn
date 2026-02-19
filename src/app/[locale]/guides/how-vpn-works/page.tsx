@@ -28,6 +28,7 @@ import {
   FileKey,
 } from "lucide-react";
 import { LastUpdated } from "@/components/last-updated";
+import { generateAlternates } from "@/lib/seo-utils";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -35,7 +36,8 @@ type Props = {
 
 const baseUrl = "https://zerotovpn.com";
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
   return {
     metadataBase: new URL(baseUrl),
     title: "How Does a VPN Work? Technical Guide 2026 - ZeroToVPN",
@@ -51,6 +53,7 @@ export async function generateMetadata(): Promise<Metadata> {
         "Understand the technical details behind VPN technology. Learn about encryption, tunneling protocols, and how VPNs protect your data.",
       type: "article",
     },
+    alternates: generateAlternates("/guides/how-vpn-works", locale),
   };
 }
 

@@ -18,6 +18,7 @@ import {
   getCountryTranslation,
   getCountryPageLabels,
 } from "@/lib/country-translations";
+import { generateAlternates } from "@/lib/seo-utils";
 import {
   Shield,
   CheckCircle,
@@ -60,6 +61,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: metaDescription,
       type: "article",
     },
+    alternates: generateAlternates(`/countries/${country}`, locale),
   };
 }
 

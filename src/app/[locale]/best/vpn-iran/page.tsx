@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { RatingStars } from "@/components/vpn/rating-stars";
 import { Link } from "@/i18n/navigation";
-import { getShortMonthYear } from "@/lib/seo-utils";
+import { getShortMonthYear, generateAlternates } from "@/lib/seo-utils";
 import { LastUpdated } from "@/components/last-updated";
 import {
   Shield,
@@ -80,6 +80,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: descriptions[locale] || descriptions.en,
       type: "article",
     },
+    alternates: generateAlternates("/best/vpn-iran", locale),
   };
 }
 

@@ -36,6 +36,7 @@ import {
   Server,
 } from "lucide-react";
 import { LastUpdated } from "@/components/last-updated";
+import { generateAlternates } from "@/lib/seo-utils";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -43,7 +44,8 @@ type Props = {
 
 const baseUrl = "https://zerotovpn.com";
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
   return {
     metadataBase: new URL(baseUrl),
     title: "Public WiFi Safety: How to Stay Secure on Open Networks (2026) - ZeroToVPN",
@@ -59,6 +61,7 @@ export async function generateMetadata(): Promise<Metadata> {
         "Learn about public WiFi risks and how to protect yourself. Essential security tips for cafes, airports, and hotels.",
       type: "article",
     },
+    alternates: generateAlternates("/guides/public-wifi-safety", locale),
   };
 }
 

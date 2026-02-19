@@ -1,5 +1,6 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Metadata } from "next";
+import { generateAlternates } from "@/lib/seo-utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -67,6 +68,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       publishedTime: publishDate,
       authors: ["ZeroToVPN Expert Team"],
     },
+    alternates: generateAlternates("/blog/vpn-vs-proxy", locale),
   };
 }
 

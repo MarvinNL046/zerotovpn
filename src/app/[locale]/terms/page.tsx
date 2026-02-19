@@ -1,6 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
+import { generateAlternates } from "@/lib/seo-utils";
 import {
   FileText,
   Scale,
@@ -18,7 +19,8 @@ type Props = {
 
 const baseUrl = "https://zerotovpn.com";
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
   return {
     metadataBase: new URL(baseUrl),
     title: "Terms of Service - ZeroToVPN",
@@ -28,6 +30,7 @@ export async function generateMetadata(): Promise<Metadata> {
       index: true,
       follow: true,
     },
+    alternates: generateAlternates("/terms", locale),
   };
 }
 

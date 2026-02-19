@@ -25,6 +25,7 @@ import {
 import { RelatedPages } from "@/components/seo/related-pages";
 import { LastUpdated } from "@/components/last-updated";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
+import { generateAlternates } from "@/lib/seo-utils";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -45,6 +46,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: t("meta.description"),
       type: "article",
     },
+    alternates: generateAlternates("/best/vpn-mobile", locale),
   };
 }
 

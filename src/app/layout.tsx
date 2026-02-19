@@ -1,5 +1,6 @@
 import { StackProvider, StackTheme } from "@stackframe/stack";
 import { stackServerApp } from "@/lib/stack";
+import { getLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -19,13 +20,20 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  let locale = "en";
+  try {
+    locale = await getLocale();
+  } catch {
+    // Admin routes and non-locale routes default to "en"
+  }
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <head>
         <meta name="theme-color" content="#3b82f6" />
         <script

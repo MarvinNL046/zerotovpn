@@ -7,6 +7,7 @@ import { Link } from "@/i18n/navigation";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import { getPostBySlug } from "@/lib/pipeline/blog-service";
+import { generateAlternates } from "@/lib/seo-utils";
 import {
   AuthorBox,
   FactCheckedBadge,
@@ -51,6 +52,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       modifiedTime: post.updatedAt.toISOString(),
       authors: ["ZeroToVPN Expert Team"],
     },
+    alternates: generateAlternates(`/blog/${slug}`, locale),
   };
 }
 

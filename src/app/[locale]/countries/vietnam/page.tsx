@@ -8,6 +8,7 @@ import { RatingStars } from "@/components/vpn/rating-stars";
 import { getAllVpns } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
 import { RelatedPages } from "@/components/seo/related-pages";
+import { generateAlternates } from "@/lib/seo-utils";
 import { Shield, CheckCircle, XCircle, Globe, Clock, ArrowRight, Scale, Smartphone, Lock, Ban, AlertTriangle, Eye } from "lucide-react";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -37,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ko: "베트남은 페이스북 검열을 강화하고 인터넷 활동을 모니터링하고 있습니다. 베트남에서 작동하는 VPN을 찾아보세요.",
     th: "เวียดนามเซ็นเซอร์ Facebook มากขึ้นและเฝ้าติดตามกิจกรรมอินเทอร์เน็ต ค้นหา VPN ที่ใช้งานได้ในเวียดนาม",
   };
-  return { metadataBase: new URL(baseUrl), title: titles[locale] || titles.en, description: descriptions[locale] || descriptions.en, openGraph: { title: titles[locale] || titles.en, description: descriptions[locale] || descriptions.en, type: "article" } };
+  return { metadataBase: new URL(baseUrl), title: titles[locale] || titles.en, description: descriptions[locale] || descriptions.en, openGraph: { title: titles[locale] || titles.en, description: descriptions[locale] || descriptions.en, type: "article" }, alternates: generateAlternates("/countries/vietnam", locale) };
 }
 
 export default async function VietnamVpnPage({ params }: Props) {

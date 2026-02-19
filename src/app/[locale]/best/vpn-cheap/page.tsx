@@ -10,7 +10,7 @@ import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { getVpnBySlug, type VpnProvider } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
-import { getShortMonthYear } from "@/lib/seo-utils";
+import { getShortMonthYear, generateAlternates } from "@/lib/seo-utils";
 import { LastUpdated } from "@/components/last-updated";
 import {
   Shield,
@@ -69,6 +69,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: descriptions[locale] || descriptions.en,
       type: "article",
     },
+    alternates: generateAlternates("/best/vpn-cheap", locale),
   };
 }
 

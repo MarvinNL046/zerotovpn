@@ -3,6 +3,7 @@ import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { Link } from "@/i18n/navigation";
 import { Globe, ShieldAlert, Zap, Wrench } from "lucide-react";
 import type { Metadata } from "next";
+import { generateAlternates } from "@/lib/seo-utils";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -10,11 +11,11 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  void locale;
   return {
     title: "Free VPN & Privacy Tools",
     description:
       "Free online tools to check your IP address, test for DNS leaks, and measure your internet speed. Stay safe and private online.",
+    alternates: generateAlternates("/tools", locale),
   };
 }
 

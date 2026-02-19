@@ -36,6 +36,7 @@ import {
   Building,
 } from "lucide-react";
 import { LastUpdated } from "@/components/last-updated";
+import { generateAlternates } from "@/lib/seo-utils";
 
 // Type definitions
 type Reason = {
@@ -94,7 +95,8 @@ type Props = {
 
 const baseUrl = "https://zerotovpn.com";
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
   return {
     metadataBase: new URL(baseUrl),
     title: "VPN for Travel: Essential Guide to Staying Connected Abroad (2026) - ZeroToVPN",
@@ -110,6 +112,7 @@ export async function generateMetadata(): Promise<Metadata> {
         "Learn why you need a VPN when traveling. Access home content, bypass censorship, and stay secure.",
       type: "article",
     },
+    alternates: generateAlternates("/guides/vpn-for-travel", locale),
   };
 }
 

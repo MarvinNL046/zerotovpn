@@ -129,26 +129,62 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }
 
   // 5) Dynamic blog posts from DB (skip static blog files already discovered).
+  //    Only generate entries for locales where a translation actually exists.
   try {
     const dynamicSlugs = await getAllPublishedSlugs();
-    const slugLastModifiedMap = new Map<string, Date>();
 
+    // Group by slug: { slug → { languages: Set, updatedAt: Date } }
+    const slugInfoMap = new Map<string, { languages: Set<string>; updatedAt: Date }>();
     for (const entry of dynamicSlugs) {
-      const existing = slugLastModifiedMap.get(entry.slug);
-      if (!existing || entry.updatedAt > existing) {
-        slugLastModifiedMap.set(entry.slug, entry.updatedAt);
+      const existing = slugInfoMap.get(entry.slug);
+      if (existing) {
+        existing.languages.add(entry.language);
+        if (entry.updatedAt > existing.updatedAt) {
+          existing.updatedAt = entry.updatedAt;
+        }
+      } else {
+        slugInfoMap.set(entry.slug, {
+          languages: new Set([entry.language]),
+          updatedAt: entry.updatedAt,
+        });
       }
     }
 
-    for (const [slug, updatedAt] of slugLastModifiedMap) {
+    for (const [slug, info] of slugInfoMap) {
       const path = `/blog/${slug}`;
       if (staticPathSet.has(path)) continue;
 
-      addLocalizedPath(path, {
-        priority: 0.7,
-        changeFrequency: "weekly",
-        lastModified: updatedAt.toISOString(),
-      });
+      const profile = getPageProfile(path);
+
+      // Build alternates only for locales that have a real translation (or English fallback)
+      const availableLocales = locales.filter(
+        (l) => info.languages.has(l) || l === "en"
+      );
+      const alternates: Record<string, string> = {
+        "x-default": `${baseUrl}${path}`,
+      };
+      for (const l of availableLocales) {
+        const p = l === "en" ? "" : `/${l}`;
+        alternates[l] = `${baseUrl}${p}${path}`;
+      }
+
+      // Only add entries for locales with translations
+      for (const locale of availableLocales) {
+        const prefix = locale === "en" ? "" : `/${locale}`;
+        const url = `${baseUrl}${prefix}${path}`;
+        const basePriority = 0.7;
+        const localePriority = locale === "en"
+          ? Math.min(1.0, basePriority + 0.05)
+          : basePriority;
+
+        routeMap.set(url, {
+          url,
+          lastModified: info.updatedAt.toISOString(),
+          changeFrequency: profile.changeFrequency,
+          priority: localePriority,
+          alternates: { languages: alternates },
+        });
+      }
     }
   } catch {
     // DB can be unavailable during build.

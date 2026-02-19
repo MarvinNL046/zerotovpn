@@ -30,6 +30,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { LastUpdated } from "@/components/last-updated";
+import { generateAlternates } from "@/lib/seo-utils";
 
 const affiliateLinks = {
   expressvpn: "https://go.zerotovpn.com/expressvpn",
@@ -46,7 +47,8 @@ type Props = {
 
 const baseUrl = "https://zerotovpn.com";
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
   return {
     metadataBase: new URL(baseUrl),
     title: "VPN Privacy Guide: No-Logs Policies & Jurisdiction Explained (2026) - ZeroToVPN",
@@ -62,6 +64,7 @@ export async function generateMetadata(): Promise<Metadata> {
         "Understand what makes a VPN truly private. Learn about no-logs policies, jurisdiction, and independent audits.",
       type: "article",
     },
+    alternates: generateAlternates("/guides/vpn-privacy-guide", locale),
   };
 }
 

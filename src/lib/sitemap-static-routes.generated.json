@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-17T19:22:37.293Z",
+  "generatedAt": "2026-02-19T11:54:00.475Z",
   "paths": [
     "",
     "/about",
@@ -64,6 +64,9 @@
     "/quiz",
     "/reviews",
     "/speed-test",
-    "/terms"
+    "/terms",
+    "/tools",
+    "/tools/dns-leak-test",
+    "/tools/what-is-my-ip"
   ]
 }

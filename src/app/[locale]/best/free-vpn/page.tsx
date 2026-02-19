@@ -1,7 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 import { Metadata } from "next";
-import { getShortMonthYear } from "@/lib/seo-utils";
+import { getShortMonthYear, generateAlternates } from "@/lib/seo-utils";
 import { LastUpdated } from "@/components/last-updated";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -69,6 +69,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: descriptions[locale] || descriptions.en,
       type: "article",
     },
+    alternates: generateAlternates("/best/free-vpn", locale),
   };
 }
 

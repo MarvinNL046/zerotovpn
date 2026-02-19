@@ -188,7 +188,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     metadataBase: new URL(baseUrl),
-    title: titles[locale] || titles.en,
+    title: (titles[locale] || titles.en).replace(" | ZeroToVPN", ""),
     description: descriptions[locale] || descriptions.en,
     keywords: isNordVpn && locale === "en"
       ? [

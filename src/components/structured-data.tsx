@@ -7,7 +7,12 @@ export function OrganizationSchema() {
     "@type": "Organization",
     name: "ZeroToVPN",
     url: "https://zerotovpn.com",
-    logo: "https://zerotovpn.com/logo.png",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://zerotovpn.com/logo.png",
+      width: 512,
+      height: 512,
+    },
     sameAs: [
       "https://twitter.com/zerotovpn",
       "https://facebook.com/zerotovpn",
@@ -51,6 +56,7 @@ export function VpnReviewSchema({ vpn }: { vpn: VpnProvider }) {
     "@type": "Review",
     name: `${vpn.name} Review 2026`,
     reviewBody: vpn.shortDescription,
+    datePublished: "2026-01-15",
     author: {
       "@type": "Organization",
       name: "ZeroToVPN",
@@ -124,6 +130,7 @@ export function VpnProductSchema({ vpn, ratingCount }: { vpn: VpnProvider; ratin
     },
     review: {
       "@type": "Review",
+      datePublished: "2026-01-15",
       author: {
         "@type": "Organization",
         name: "ZeroToVPN",
@@ -167,6 +174,7 @@ export function ComparisonTableSchema({ vpns }: { vpns: VpnProvider[] }) {
       item: {
         "@type": "SoftwareApplication",
         name: vpn.name,
+        url: `https://zerotovpn.com/reviews/${vpn.slug}`,
         applicationCategory: "VPN Service",
         aggregateRating: {
           "@type": "AggregateRating",

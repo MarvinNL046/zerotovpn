@@ -6,7 +6,12 @@ export function OrganizationJsonLd() {
     "@type": "Organization",
     name: "ZeroToVPN",
     url: "https://zerotovpn.com",
-    logo: "https://zerotovpn.com/logo.png",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://zerotovpn.com/logo.png",
+      width: 512,
+      height: 512,
+    },
     description:
       "Expert VPN reviews, honest comparisons, and exclusive deals on top VPN services.",
     sameAs: [
@@ -37,6 +42,14 @@ export function WebsiteJsonLd() {
     url: "https://zerotovpn.com",
     description:
       "Find the perfect VPN for your needs. Expert reviews, honest comparisons, and exclusive deals.",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: "https://zerotovpn.com/reviews?q={search_term_string}",
+      },
+      "query-input": "required name=search_term_string",
+    },
   };
 
   return (
@@ -191,18 +204,18 @@ export function ProductReviewJsonLd({
     url: url,
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: rating.toFixed(1),
-      bestRating: "10",
-      worstRating: "1",
+      ratingValue: rating,
+      bestRating: 5,
+      worstRating: 1,
       ratingCount: reviewCount,
     },
     review: {
       "@type": "Review",
       reviewRating: {
         "@type": "Rating",
-        ratingValue: rating.toFixed(1),
-        bestRating: "10",
-        worstRating: "1",
+        ratingValue: rating,
+        bestRating: 5,
+        worstRating: 1,
       },
       author: {
         "@type": "Organization",
@@ -263,18 +276,18 @@ export function SoftwareApplicationJsonLd({
     operatingSystem: operatingSystem,
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: rating.toFixed(1),
-      bestRating: "10",
-      worstRating: "1",
+      ratingValue: rating,
+      bestRating: 5,
+      worstRating: 1,
       ratingCount: reviewCount,
     },
     review: {
       "@type": "Review",
       reviewRating: {
         "@type": "Rating",
-        ratingValue: rating.toFixed(1),
-        bestRating: "10",
-        worstRating: "1",
+        ratingValue: rating,
+        bestRating: 5,
+        worstRating: 1,
       },
       author: {
         "@type": "Organization",

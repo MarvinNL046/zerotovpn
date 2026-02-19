@@ -1,5 +1,6 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
+import { generateAlternates } from "@/lib/seo-utils";
 import { Link } from "@/i18n/navigation";
 import { Badge } from "@/components/ui/badge";
 import { RelatedPages } from "@/components/seo/related-pages";
@@ -25,7 +26,8 @@ type Props = {
 
 const baseUrl = "https://zerotovpn.com";
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
   const t = await getTranslations("guidesIndex.meta");
   return {
     metadataBase: new URL(baseUrl),
@@ -35,6 +37,7 @@ export async function generateMetadata(): Promise<Metadata> {
       index: true,
       follow: true,
     },
+    alternates: generateAlternates("/guides", locale),
   };
 }
 

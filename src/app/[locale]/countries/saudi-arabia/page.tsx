@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ko: "사우디아라비아는 인터넷 콘텐츠를 강력히 필터링하고 VoIP 서비스를 차단합니다. Skype, WhatsApp 통화 차단을 해제하는 VPN을 찾아보세요.",
     th: "ซาอุดีอาระเบียกรองเนื้อหาอินเทอร์เน็ตอย่างหนักและบล็อกบริการ VoIP ค้นหา VPN ที่ปลดบล็อก Skype และ WhatsApp",
   };
-  return { metadataBase: new URL(baseUrl), title: titles[locale] || titles.en, description: descriptions[locale] || descriptions.en, openGraph: { title: titles[locale] || titles.en, description: descriptions[locale] || descriptions.en, type: "article" }, alternates: generateAlternates("/countries/saudi-arabia", locale) };
+  return { metadataBase: new URL(baseUrl), title: (titles[locale] || titles.en).replace(" | ZeroToVPN", ""), description: descriptions[locale] || descriptions.en, openGraph: { title: titles[locale] || titles.en, description: descriptions[locale] || descriptions.en, type: "article" }, alternates: generateAlternates("/countries/saudi-arabia", locale) };
 }
 
 export default async function SaudiArabiaVpnPage({ params }: Props) {

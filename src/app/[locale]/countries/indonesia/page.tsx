@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ko: "인도네시아는 Reddit, Vimeo 및 수천 개의 웹사이트를 차단합니다. VPN 사용은 합법입니다. 인도네시아 최고의 VPN을 찾아보세요.",
     th: "อินโดนีเซียบล็อก Reddit, Vimeo และเว็บไซต์หลายพันแห่ง การใช้ VPN ถูกกฎหมาย ค้นหา VPN ที่ดีที่สุดสำหรับอินโดนีเซีย",
   };
-  return { metadataBase: new URL(baseUrl), title: titles[locale] || titles.en, description: descriptions[locale] || descriptions.en, openGraph: { title: titles[locale] || titles.en, description: descriptions[locale] || descriptions.en, type: "article" }, alternates: generateAlternates("/countries/indonesia", locale) };
+  return { metadataBase: new URL(baseUrl), title: (titles[locale] || titles.en).replace(" | ZeroToVPN", ""), description: descriptions[locale] || descriptions.en, openGraph: { title: titles[locale] || titles.en, description: descriptions[locale] || descriptions.en, type: "article" }, alternates: generateAlternates("/countries/indonesia", locale) };
 }
 
 export default async function IndonesiaVpnPage({ params }: Props) {

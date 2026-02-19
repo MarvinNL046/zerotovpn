@@ -54,7 +54,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     metadataBase: new URL(baseUrl),
-    title: titles[locale] || titles.en,
+    title: (titles[locale] || titles.en).replace(" | ZeroToVPN", ""),
     description: descriptions[locale] || descriptions.en,
     openGraph: {
       title: titles[locale] || titles.en,
@@ -69,11 +69,26 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 function DealsSchema() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "SpecialAnnouncement",
+    "@type": "ItemList",
     name: "VPN Deals & Coupons 2026",
     description: "Exclusive VPN deals and coupons with savings up to 87%",
-    datePosted: "2026-11-29",
-    expires: "2026-12-31",
+    numberOfItems: deals.length,
+    itemListElement: deals.map((deal, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "Offer",
+        name: `${deal.name} VPN Deal`,
+        price: deal.dealPrice,
+        priceCurrency: "USD",
+        availability: "https://schema.org/InStock",
+        validThrough: deal.expiresAt.toISOString(),
+        seller: {
+          "@type": "Organization",
+          name: deal.name,
+        },
+      },
+    })),
   };
 
   return (

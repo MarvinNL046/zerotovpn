@@ -9,7 +9,6 @@ import { Link } from "@/i18n/navigation";
 import { Shield, Zap, Globe, CheckCircle, ArrowRight, Server, Users, Clock } from "lucide-react";
 import {
   ComparisonTableSchema,
-  FaqSchema,
 } from "@/components/structured-data";
 import { FAQSchema } from "@/components/seo/faq-schema";
 import { routing } from "@/i18n/routing";
@@ -41,7 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     metadataBase: new URL(baseUrl),
     title: isEnglish
-      ? `Best VPN 2026: Top Picks Tested for Speed, Security & Streaming | ZeroToVPN`
+      ? `Best VPN 2026: Top Picks Tested for Speed, Security & Streaming`
       : undefined,
     description: isEnglish
       ? `Best VPN 2026: We tested 38+ VPNs for speed, security & streaming. Expert rankings updated ${shortMonthYear}. Find the cheapest, fastest VPN for your needs.`
@@ -82,7 +81,6 @@ export default async function HomePage({ params }: Props) {
   return (
     <>
       <ComparisonTableSchema vpns={featuredVpns} />
-      <FaqSchema faqs={faqData} />
       <div className="flex flex-col">
         {/* Hero Section */}
         <section className="relative py-20 lg:py-32 overflow-hidden">

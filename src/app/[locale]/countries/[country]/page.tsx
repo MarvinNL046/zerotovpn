@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const data = getCountryBySlug(country);
 
   if (!data) {
-    return { title: "Country Not Found | ZeroToVPN" };
+    return { title: "Country Not Found" };
   }
 
   // Use translated metadata if available
@@ -139,6 +139,7 @@ export default async function DynamicCountryPage({ params }: Props) {
     "@type": "Article",
     headline: content.metaTitle,
     description: content.metaDescription,
+    datePublished: "2026-01-15",
     dateModified: "2026-02-15",
     author: {
       "@type": "Organization",
@@ -149,6 +150,10 @@ export default async function DynamicCountryPage({ params }: Props) {
       "@type": "Organization",
       name: "ZeroToVPN",
       url: baseUrl,
+      logo: {
+        "@type": "ImageObject",
+        url: `${baseUrl}/logo.png`,
+      },
     },
   };
 

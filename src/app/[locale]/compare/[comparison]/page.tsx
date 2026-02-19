@@ -66,7 +66,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     metadataBase: new URL(baseUrl),
-    title: `${vpn1.name} vs ${vpn2.name} (${shortMonthYear}) - Comparison | ZeroToVPN`,
+    title: `${vpn1.name} vs ${vpn2.name} (${shortMonthYear}) - Comparison`,
     description: `We tested ${vpn1.name} vs ${vpn2.name} head-to-head. Compare speeds, prices & features. See which VPN wins in ${shortMonthYear}.`,
     alternates: {
       canonical: canonicalUrl,
@@ -99,42 +99,51 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 function ComparisonSchema({ vpn1, vpn2 }: { vpn1: VpnData; vpn2: VpnData }) {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "ComparisonPage",
+    "@type": "ItemList",
     name: `${vpn1.name} vs ${vpn2.name} Comparison`,
     description: `Detailed comparison of ${vpn1.name} and ${vpn2.name} VPN services`,
-    itemReviewed: [
+    numberOfItems: 2,
+    itemListElement: [
       {
-        "@type": "SoftwareApplication",
-        name: vpn1.name,
-        applicationCategory: "SecurityApplication",
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: vpn1.overallRating,
-          ratingCount: Math.round(vpn1.overallRating * 8) + 10,
-          bestRating: "5",
-          worstRating: "1",
-        },
-        offers: {
-          "@type": "Offer",
-          price: vpn1.priceMonthly,
-          priceCurrency: "USD",
+        "@type": "ListItem",
+        position: 1,
+        item: {
+          "@type": "SoftwareApplication",
+          name: vpn1.name,
+          applicationCategory: "SecurityApplication",
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: vpn1.overallRating,
+            ratingCount: Math.round(vpn1.overallRating * 8) + 10,
+            bestRating: 5,
+            worstRating: 1,
+          },
+          offers: {
+            "@type": "Offer",
+            price: vpn1.priceMonthly,
+            priceCurrency: "USD",
+          },
         },
       },
       {
-        "@type": "SoftwareApplication",
-        name: vpn2.name,
-        applicationCategory: "SecurityApplication",
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: vpn2.overallRating,
-          ratingCount: Math.round(vpn2.overallRating * 8) + 10,
-          bestRating: "5",
-          worstRating: "1",
-        },
-        offers: {
-          "@type": "Offer",
-          price: vpn2.priceMonthly,
-          priceCurrency: "USD",
+        "@type": "ListItem",
+        position: 2,
+        item: {
+          "@type": "SoftwareApplication",
+          name: vpn2.name,
+          applicationCategory: "SecurityApplication",
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: vpn2.overallRating,
+            ratingCount: Math.round(vpn2.overallRating * 8) + 10,
+            bestRating: 5,
+            worstRating: 1,
+          },
+          offers: {
+            "@type": "Offer",
+            price: vpn2.priceMonthly,
+            priceCurrency: "USD",
+          },
         },
       },
     ],

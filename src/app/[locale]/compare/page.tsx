@@ -52,8 +52,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     metadataBase: new URL(baseUrl),
     title: isEnglish
-      ? "VPN Comparison 2026: Compare the Best VPN Services Side by Side | ZeroToVPN"
-      : "Compare VPNs Side by Side - ZeroToVPN",
+      ? "VPN Comparison 2026: Compare the Best VPN Services Side by Side"
+      : "Compare VPNs Side by Side",
     description: isEnglish
       ? "VPN comparison 2026: Compare speed, security, price & features of NordVPN, ExpressVPN, Surfshark & more. Find the best VPN for your needs with our side-by-side tool."
       : "Compare the best VPN services side by side. See detailed comparisons of speed, security, pricing, features, and more to find the perfect VPN for your needs.",

@@ -1,12 +1,12 @@
-import { eq, and, desc, asc, count } from "drizzle-orm";
+import { eq, and, desc, asc, count, sql } from "drizzle-orm";
 import { unstable_cache } from "next/cache";
 import { getDb, blogPosts, type BlogPost, type NewBlogPost } from "@/lib/db";
 
 // Lightweight type for blog index (no content/sourceData/aiPrompt)
 export type BlogPostSummary = Pick<
   BlogPost,
-  "slug" | "title" | "excerpt" | "category" | "tags" | "featuredImage" | "published" | "publishedAt" | "createdAt" | "updatedAt" | "language" | "id"
->;
+  "slug" | "title" | "excerpt" | "category" | "tags" | "published" | "publishedAt" | "createdAt" | "updatedAt" | "language" | "id"
+> & { hasFeaturedImage: boolean };
 
 // Get all published posts for a language and optional category
 export async function getAllPublishedPosts(
@@ -56,11 +56,11 @@ export async function getAllPublishedPostSummaries(
       excerpt: blogPosts.excerpt,
       category: blogPosts.category,
       tags: blogPosts.tags,
-      featuredImage: blogPosts.featuredImage,
       published: blogPosts.published,
       publishedAt: blogPosts.publishedAt,
       createdAt: blogPosts.createdAt,
       updatedAt: blogPosts.updatedAt,
+      hasFeaturedImage: sql<boolean>`"featuredImage" IS NOT NULL`.as('hasFeaturedImage'),
     })
     .from(blogPosts)
     .where(and(...conditions))

@@ -4,6 +4,7 @@ import { generateAlternates } from "@/lib/seo-utils";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "@/i18n/navigation";
+import Image from "next/image";
 import {
   Calendar,
   Clock,
@@ -198,7 +199,7 @@ export default async function BlogPage({ params }: Props) {
     readTime: string;
     title: string;
     excerpt: string;
-    featuredImage: string | null;
+    hasFeaturedImage: boolean;
     isDynamic: true;
   }> = [];
 
@@ -227,7 +228,7 @@ export default async function BlogPage({ params }: Props) {
       readTime: `${Math.max(1, Math.ceil(post.excerpt.length / 300))} min`,
       title: post.title,
       excerpt: post.excerpt,
-      featuredImage: post.featuredImage,
+      hasFeaturedImage: post.hasFeaturedImage,
       isDynamic: true as const,
     }));
   } catch {
@@ -236,7 +237,7 @@ export default async function BlogPage({ params }: Props) {
 
   // Merge static + dynamic, then sort newest first
   const allPosts = [
-    ...blogPosts.map((p) => ({ ...p, isDynamic: false as const, title: "", excerpt: "", featuredImage: null })),
+    ...blogPosts.map((p) => ({ ...p, isDynamic: false as const, title: "", excerpt: "", hasFeaturedImage: false })),
     ...dynamicPosts,
   ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
@@ -311,11 +312,14 @@ export default async function BlogPage({ params }: Props) {
                         categoryConfig[featuredPost.category]?.bgPattern
                       )}
                     >
-                      {featuredPost.featuredImage ? (
-                        <img
-                          src={featuredPost.featuredImage}
-                          alt={featuredPost.isDynamic ? featuredPost.title : ""}
-                          className="w-full h-full object-cover"
+                      {featuredPost.isDynamic && featuredPost.hasFeaturedImage ? (
+                        <Image
+                          src={`/api/blog-image/${featuredPost.slug}`}
+                          alt={featuredPost.title}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                          loading="lazy"
                         />
                       ) : (
                         <>
@@ -403,11 +407,14 @@ export default async function BlogPage({ params }: Props) {
                           "group-hover:scale-105 transition-transform duration-300"
                         )}
                       >
-                        {post.featuredImage ? (
-                          <img
-                            src={post.featuredImage}
+                        {post.isDynamic && post.hasFeaturedImage ? (
+                          <Image
+                            src={`/api/blog-image/${post.slug}`}
                             alt={postTitle}
-                            className="w-full h-full object-cover"
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                            loading="lazy"
                           />
                         ) : (
                           <>

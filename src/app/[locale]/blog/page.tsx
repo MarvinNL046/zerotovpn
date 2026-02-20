@@ -16,7 +16,7 @@ import {
 import { cn } from "@/lib/utils";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
-import { getAllPublishedPostSummaries } from "@/lib/pipeline/blog-service";
+import { getCachedPostSummaries } from "@/lib/pipeline/blog-service";
 
 // Revalidate every 10 minutes — new posts appear within 10 min without sacrificing speed
 export const revalidate = 600;
@@ -205,8 +205,8 @@ export default async function BlogPage({ params }: Props) {
   try {
     // Fetch locale + English fallback in parallel for speed
     const [localePosts, enPosts] = await Promise.all([
-      getAllPublishedPostSummaries(locale),
-      locale !== "en" ? getAllPublishedPostSummaries("en") : Promise.resolve([]),
+      getCachedPostSummaries(locale),
+      locale !== "en" ? getCachedPostSummaries("en") : Promise.resolve([]),
     ]);
 
     const dbPosts = [...localePosts];

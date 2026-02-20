@@ -1,4 +1,5 @@
 import { eq, and, desc, asc, count } from "drizzle-orm";
+import { unstable_cache } from "next/cache";
 import { getDb, blogPosts, type BlogPost, type NewBlogPost } from "@/lib/db";
 
 // Lightweight type for blog index (no content/sourceData/aiPrompt)
@@ -65,6 +66,15 @@ export async function getAllPublishedPostSummaries(
     .where(and(...conditions))
     .orderBy(desc(blogPosts.publishedAt));
 }
+
+// Cached version for blog listing page — caches results for 1 hour
+export const getCachedPostSummaries = unstable_cache(
+  async (language: string) => {
+    return getAllPublishedPostSummaries(language);
+  },
+  ["blog-post-summaries"],
+  { revalidate: 3600 }
+);
 
 // Get a single post by slug and language, with English fallback
 export async function getPostBySlug(

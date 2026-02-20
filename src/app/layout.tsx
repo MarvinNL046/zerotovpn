@@ -43,11 +43,15 @@ export default async function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-background font-sans antialiased">
-        <StackProvider app={stackServerApp}>
-          <StackTheme>
-            {children}
-          </StackTheme>
-        </StackProvider>
+        {stackServerApp ? (
+          <StackProvider app={stackServerApp as any}>
+            <StackTheme>
+              {children}
+            </StackTheme>
+          </StackProvider>
+        ) : (
+          children
+        )}
       </body>
     </html>
   );

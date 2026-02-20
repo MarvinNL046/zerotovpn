@@ -108,12 +108,12 @@ async function handleStart(
     })
     .returning();
 
-  // Trigger the Netlify Background Function (must await to prevent serverless teardown)
+  // Trigger the background generation route (fire-and-forget; Vercel Pro maxDuration=300)
   const siteUrl = process.env.SITE_URL || process.env.URL || "";
   const pipelineKey = process.env.PIPELINE_SECRET || "";
 
   try {
-    const bgRes = await fetch(`${siteUrl}/.netlify/functions/generate-blog-background`, {
+    const bgRes = await fetch(`${siteUrl}/api/pipeline/generate-background`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -1,6 +1,12 @@
 import { eq, and, desc, asc, count } from "drizzle-orm";
 import { getDb, blogPosts, type BlogPost, type NewBlogPost } from "@/lib/db";
 
+// Lightweight type for blog index (no content/sourceData/aiPrompt)
+export type BlogPostSummary = Pick<
+  BlogPost,
+  "slug" | "title" | "excerpt" | "category" | "tags" | "featuredImage" | "published" | "publishedAt" | "createdAt" | "updatedAt" | "language" | "id"
+>;
+
 // Get all published posts for a language and optional category
 export async function getAllPublishedPosts(
   language: string = "en",
@@ -19,6 +25,42 @@ export async function getAllPublishedPosts(
 
   return db
     .select()
+    .from(blogPosts)
+    .where(and(...conditions))
+    .orderBy(desc(blogPosts.publishedAt));
+}
+
+// Lightweight version for blog index page — excludes heavy content/sourceData/aiPrompt columns
+export async function getAllPublishedPostSummaries(
+  language: string = "en",
+  category?: string
+): Promise<BlogPostSummary[]> {
+  const db = getDb();
+
+  const conditions = [
+    eq(blogPosts.language, language),
+    eq(blogPosts.published, true),
+  ];
+
+  if (category) {
+    conditions.push(eq(blogPosts.category, category));
+  }
+
+  return db
+    .select({
+      id: blogPosts.id,
+      slug: blogPosts.slug,
+      language: blogPosts.language,
+      title: blogPosts.title,
+      excerpt: blogPosts.excerpt,
+      category: blogPosts.category,
+      tags: blogPosts.tags,
+      featuredImage: blogPosts.featuredImage,
+      published: blogPosts.published,
+      publishedAt: blogPosts.publishedAt,
+      createdAt: blogPosts.createdAt,
+      updatedAt: blogPosts.updatedAt,
+    })
     .from(blogPosts)
     .where(and(...conditions))
     .orderBy(desc(blogPosts.publishedAt));

@@ -16,10 +16,10 @@ import {
 import { cn } from "@/lib/utils";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
-import { getAllPublishedPosts } from "@/lib/pipeline/blog-service";
+import { getAllPublishedPostSummaries } from "@/lib/pipeline/blog-service";
 
-// Force dynamic rendering so new DB posts show immediately
-export const dynamic = "force-dynamic";
+// Revalidate every 10 minutes — new posts appear within 10 min without sacrificing speed
+export const revalidate = 600;
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -203,17 +203,19 @@ export default async function BlogPage({ params }: Props) {
   }> = [];
 
   try {
-    // Fetch locale-specific posts first, then English fallback for non-English locales
-    const dbPosts = await getAllPublishedPosts(locale);
+    // Fetch locale + English fallback in parallel for speed
+    const [localePosts, enPosts] = await Promise.all([
+      getAllPublishedPostSummaries(locale),
+      locale !== "en" ? getAllPublishedPostSummaries("en") : Promise.resolve([]),
+    ]);
+
+    const dbPosts = [...localePosts];
     const seenSlugs = new Set(dbPosts.map((p) => p.slug));
 
     // Add English posts that don't have a translation in the current locale
-    if (locale !== "en") {
-      const enPosts = await getAllPublishedPosts("en");
-      for (const enPost of enPosts) {
-        if (!seenSlugs.has(enPost.slug)) {
-          dbPosts.push(enPost);
-        }
+    for (const enPost of enPosts) {
+      if (!seenSlugs.has(enPost.slug)) {
+        dbPosts.push(enPost);
       }
     }
 
@@ -222,7 +224,7 @@ export default async function BlogPage({ params }: Props) {
       category: post.category,
       featured: false,
       date: post.publishedAt?.toISOString().split("T")[0] || post.createdAt.toISOString().split("T")[0],
-      readTime: `${Math.max(1, Math.ceil(post.content.replace(/data:[^"]+/g, "").replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim().length / 1500))} min`,
+      readTime: `${Math.max(1, Math.ceil(post.excerpt.length / 300))} min`,
       title: post.title,
       excerpt: post.excerpt,
       featuredImage: post.featuredImage,
@@ -232,11 +234,11 @@ export default async function BlogPage({ params }: Props) {
     // DB might not be available during build — continue with static posts only
   }
 
-  // Merge static + dynamic, static posts first
+  // Merge static + dynamic, then sort newest first
   const allPosts = [
     ...blogPosts.map((p) => ({ ...p, isDynamic: false as const, title: "", excerpt: "", featuredImage: null })),
     ...dynamicPosts,
-  ];
+  ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   const featuredPost = allPosts.find((post) => post.featured);
   const otherPosts = allPosts.filter((post) => !post.featured);

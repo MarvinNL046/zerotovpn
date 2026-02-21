@@ -54,10 +54,10 @@ function stddev(values: number[]): number {
 
 /**
  * Map a speed value (Mbps) to a 0–1 position using a logarithmic scale.
- * Scale markings: 0, 10, 25, 50, 100, 250, 500
+ * Scale markings: 0, 10, 50, 100, 250, 500, 1000, 2000
  */
 function speedToPosition(speed: number): number {
-  return Math.log10(Math.min(speed, 500) + 1) / Math.log10(501);
+  return Math.log10(Math.min(speed, 2000) + 1) / Math.log10(2001);
 }
 
 /** Generate a random ArrayBuffer of the given size, respecting the 65536 limit per getRandomValues call. */
@@ -77,21 +77,25 @@ function randomBytes(size: number): ArrayBuffer {
 // Speed Test Engine
 // ---------------------------------------------------------------------------
 
-/** Ping: 20 HEAD requests, returns median & jitter (stddev). */
 async function measurePing(
   signal: AbortSignal
 ): Promise<{ ping: number; jitter: number }> {
-  const url = "https://www.cloudflare.com/cdn-cgi/trace";
+  // Use a tiny download from Cloudflare's speed test endpoint for ping measurement
+  // This avoids CORS issues with HEAD requests to cloudflare.com
+  const url = "https://speed.cloudflare.com/__down?bytes=0";
   const samples: number[] = [];
 
   for (let i = 0; i < 20; i++) {
     if (signal.aborted) throw new DOMException("Aborted", "AbortError");
     const t0 = performance.now();
     try {
-      await fetch(url, { method: "HEAD", cache: "no-store", signal });
+      const res = await fetch(url, { cache: "no-store", signal });
+      // Consume response to ensure full round-trip
+      await res.text();
       samples.push(performance.now() - t0);
     } catch (e) {
       if (signal.aborted) throw e;
+      // Skip failed samples
     }
     if (i < 19) await new Promise((r) => setTimeout(r, 100));
   }
@@ -322,7 +326,7 @@ function SpeedometerGauge({ speed, phase, phaseText }: GaugeProps) {
   const filledEndAngle = ARC_START_ANGLE + position * ARC_DEGREES;
 
   // Scale markings
-  const markings = [0, 10, 25, 50, 100, 250, 500];
+  const markings = [0, 10, 50, 100, 250, 500, 1000, 2000];
 
   return (
     <div className="relative w-full max-w-xs mx-auto aspect-square">
@@ -547,7 +551,7 @@ export function SpeedTestWidget() {
   // Smooth needle animation with requestAnimationFrame
   // -------------------------------------------------------------------------
   const animateTo = useCallback((target: number) => {
-    targetSpeedRef.current = Math.min(target, 500);
+    targetSpeedRef.current = Math.min(target, 2000);
 
     const tick = () => {
       const current = displaySpeedRef.current;

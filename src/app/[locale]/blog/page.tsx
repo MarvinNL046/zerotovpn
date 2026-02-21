@@ -99,21 +99,18 @@ const blogPosts = [
   {
     slug: "vpn-black-friday-2026",
     category: "deals",
-    featured: true,
-    date: "2026-11-29",
+    date: "2025-11-29",
     readTime: "5 min",
   },
   {
     slug: "is-vpn-legal",
     category: "security",
-    featured: false,
     date: "2026-01-15",
     readTime: "8 min",
   },
   {
     slug: "vpn-vs-proxy",
     category: "tips",
-    featured: false,
     date: "2026-01-10",
     readTime: "6 min",
   },
@@ -194,7 +191,6 @@ export default async function BlogPage({ params }: Props) {
   let dynamicPosts: Array<{
     slug: string;
     category: string;
-    featured: boolean;
     date: string;
     readTime: string;
     title: string;
@@ -223,7 +219,6 @@ export default async function BlogPage({ params }: Props) {
     dynamicPosts = dbPosts.map((post) => ({
       slug: post.slug,
       category: post.category,
-      featured: false,
       date: (post.publishedAt ? new Date(post.publishedAt).toISOString().split("T")[0] : null) || new Date(post.createdAt).toISOString().split("T")[0],
       readTime: `${Math.max(1, Math.ceil(post.excerpt.length / 300))} min`,
       title: post.title,
@@ -242,8 +237,8 @@ export default async function BlogPage({ params }: Props) {
     ...dynamicPosts,
   ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
-  const featuredPost = allPosts.find((post) => post.featured);
-  const otherPosts = allPosts.filter((post) => !post.featured);
+  const featuredPost = allPosts[0]; // Already sorted newest-first
+  const otherPosts = allPosts.slice(1);
 
   return (
     <div className="flex flex-col">

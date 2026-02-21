@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 
-type PulseVariant = "success" | "warning" | "info" | "live";
+type PulseVariant = "success" | "warning" | "info" | "live" | "danger";
 
 interface PulseIndicatorProps {
   variant?: PulseVariant;
@@ -28,6 +28,11 @@ const variantStyles: Record<PulseVariant, { dot: string; ring: string; label: st
     label: "text-blue-600 dark:text-blue-400",
   },
   live: {
+    dot: "bg-red-500",
+    ring: "bg-red-400",
+    label: "text-red-600 dark:text-red-400",
+  },
+  danger: {
     dot: "bg-red-500",
     ring: "bg-red-400",
     label: "text-red-600 dark:text-red-400",

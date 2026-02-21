@@ -247,7 +247,6 @@ export default async function BlogPage({ params }: Props) {
 
   return (
     <div className="flex flex-col">
-      <span data-debug-dynamic={dynamicPosts.length} data-debug-all={allPosts.length} className="hidden" />
       {/* Breadcrumbs */}
       <div className="container pt-6">
         <BreadcrumbSchema items={[{ name: "Blog", href: "/blog" }]} />

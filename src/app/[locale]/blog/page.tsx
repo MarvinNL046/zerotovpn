@@ -346,10 +346,10 @@ export default async function BlogPage({ params }: Props) {
                         </span>
                       </div>
                       <h3 className="text-2xl md:text-3xl font-bold mb-3">
-                        {t(`posts.${featuredPost.slug}.title`)}
+                        {featuredPost.isDynamic ? featuredPost.title : t(`posts.${featuredPost.slug}.title`)}
                       </h3>
                       <p className="text-muted-foreground mb-4">
-                        {t(`posts.${featuredPost.slug}.excerpt`)}
+                        {featuredPost.isDynamic ? featuredPost.excerpt : t(`posts.${featuredPost.slug}.excerpt`)}
                       </p>
                       <div className="flex items-center gap-4 text-sm text-muted-foreground">
                         <span className="flex items-center gap-1">

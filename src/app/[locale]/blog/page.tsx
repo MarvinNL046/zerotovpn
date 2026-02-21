@@ -26,7 +26,7 @@ type Props = {
   params: Promise<{ locale: string }>;
 };
 
-const baseUrl = "https://zerotovpn.com";
+const baseUrl = "https://www.zerotovpn.com";
 
 function formatDateLong(dateStr: string, locale: string): string {
   const date = new Date(dateStr);

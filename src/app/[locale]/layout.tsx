@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     th: "ค้นหา VPN ที่สมบูรณ์แบบสำหรับความต้องการของคุณ รีวิวจากผู้เชี่ยวชาญ เปรียบเทียบอย่างตรงไปตรงมา",
   };
 
-  const baseUrl = "https://zerotovpn.com";
+  const baseUrl = "https://www.zerotovpn.com";
 
   // OG locale mapping (ISO 639-1 → Open Graph format)
   const ogLocaleMap: Record<string, string> = {

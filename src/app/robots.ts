@@ -29,7 +29,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
     ],
-    host: 'https://zerotovpn.com',
-    sitemap: 'https://zerotovpn.com/sitemap.xml',
+    host: 'https://www.zerotovpn.com',
+    sitemap: 'https://www.zerotovpn.com/sitemap.xml',
   }
 }

@@ -5,7 +5,7 @@
 
 import { routing } from "@/i18n/routing";
 
-const BASE_URL = "https://zerotovpn.com";
+const BASE_URL = "https://www.zerotovpn.com";
 
 /**
  * Generates correct canonical URL and hreflang alternates for any page path.

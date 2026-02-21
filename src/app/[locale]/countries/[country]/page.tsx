@@ -12,6 +12,7 @@ import { RelatedPages } from "@/components/seo/related-pages";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import {
   getCountryBySlug,
+  getAllDynamicCountries,
   STATIC_COUNTRY_SLUGS,
 } from "@/lib/country-data";
 import {
@@ -36,8 +37,21 @@ type Props = {
   params: Promise<{ locale: string; country: string }>;
 };
 
-const baseUrl = "https://zerotovpn.com";
+const baseUrl = "https://www.zerotovpn.com";
 export const revalidate = 86400;
+
+export async function generateStaticParams() {
+  const allCountries = getAllDynamicCountries();
+  const { routing } = await import("@/i18n/routing");
+
+  const params: Array<{ locale: string; country: string }> = [];
+  for (const locale of routing.locales) {
+    for (const c of allCountries) {
+      params.push({ locale, country: c.slug });
+    }
+  }
+  return params;
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, country } = await params;
@@ -52,9 +66,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const metaTitle = translated?.metaTitle || data.metaTitle;
   const metaDescription = translated?.metaDescription || data.metaDescription;
 
+  // Strip " | ZeroToVPN" suffix before returning: the layout template adds it automatically.
+  const cleanTitle = metaTitle.replace(/ \| ZeroToVPN$/i, "");
+
   return {
     metadataBase: new URL(baseUrl),
-    title: metaTitle,
+    title: cleanTitle,
     description: metaDescription,
     openGraph: {
       title: metaTitle,

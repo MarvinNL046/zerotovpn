@@ -18,7 +18,7 @@ type Props = {
   params: Promise<{ locale: string; slug: string }>;
 };
 
-const baseUrl = "https://zerotovpn.com";
+const baseUrl = "https://www.zerotovpn.com";
 
 function formatDate(date: Date, locale: string): string {
   const months: Record<string, string[]> = {

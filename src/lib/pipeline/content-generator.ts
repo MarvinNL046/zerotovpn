@@ -388,9 +388,14 @@ function parseGeneratedPost(
       };
     }
 
-    // Last resort: treat the whole response as HTML content
+    // Last resort: try to extract a title from HTML/markdown headings
     const title = rawResponse.match(/<h1[^>]*>([^<]+)<\/h1>/)?.[1] ||
-      rawResponse.match(/^#\s+(.+)/m)?.[1] || "Generated Post";
+      rawResponse.match(/^#\s+(.+)/m)?.[1];
+
+    if (!title) {
+      throw new Error("Failed to parse AI response: no title found in output");
+    }
+
     return {
       title,
       slug: slugify(title),

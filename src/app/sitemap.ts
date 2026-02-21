@@ -50,7 +50,7 @@ function getPageProfile(path: string): {
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = "https://zerotovpn.com";
+  const baseUrl = "https://www.zerotovpn.com";
   const locales = routing.locales;
   const nowIso = new Date().toISOString();
   const vpns = await getAllVpns();

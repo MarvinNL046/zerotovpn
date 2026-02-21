@@ -6,6 +6,8 @@ import { publishPost, getPostById } from "@/lib/pipeline/blog-service";
 import { sendPostPublishedNotification } from "@/lib/resend";
 import type { AiModel } from "@/lib/pipeline/ai-provider";
 
+export const maxDuration = 60;
+
 function validatePipelineKey(request: NextRequest): boolean {
   const key =
     request.headers.get("x-admin-key") ||
@@ -74,7 +76,7 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// Create a job and trigger the Netlify Background Function
+// Create a job and trigger the Vercel background route
 async function handleStart(
   request: NextRequest,
   rawTopic: string | undefined,
@@ -108,28 +110,27 @@ async function handleStart(
     })
     .returning();
 
-  // Trigger the background generation route (fire-and-forget; Vercel Pro maxDuration=300)
-  const siteUrl = process.env.SITE_URL || process.env.URL || "";
+  // Fire-and-forget: trigger background route without waiting for response
+  const siteUrl = process.env.SITE_URL || (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "") || "";
   const pipelineKey = process.env.PIPELINE_SECRET || "";
 
-  try {
-    const bgRes = await fetch(`${siteUrl}/api/pipeline/generate-background`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "x-pipeline-key": pipelineKey,
-      },
-      body: JSON.stringify({
-        topic,
-        model,
-        publish,
-        jobId: job.id,
-      }),
-    });
-    console.log(`[generate] Background function triggered: ${bgRes.status}`);
-  } catch (err) {
+  fetch(`${siteUrl}/api/pipeline/generate-background`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "x-pipeline-key": pipelineKey,
+    },
+    body: JSON.stringify({
+      topic,
+      model,
+      publish,
+      jobId: job.id,
+    }),
+  }).then(res => {
+    console.log(`[generate] Background function triggered: ${res.status}`);
+  }).catch(err => {
     console.error("[generate] Failed to trigger background function:", err);
-  }
+  });
 
   return NextResponse.json({
     jobId: job.id,

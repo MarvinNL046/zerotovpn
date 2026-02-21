@@ -224,7 +224,7 @@ export default async function BlogPage({ params }: Props) {
       slug: post.slug,
       category: post.category,
       featured: false,
-      date: post.publishedAt?.toISOString().split("T")[0] || post.createdAt.toISOString().split("T")[0],
+      date: (post.publishedAt ? new Date(post.publishedAt).toISOString().split("T")[0] : null) || new Date(post.createdAt).toISOString().split("T")[0],
       readTime: `${Math.max(1, Math.ceil(post.excerpt.length / 300))} min`,
       title: post.title,
       excerpt: post.excerpt,

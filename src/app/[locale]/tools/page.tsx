@@ -1,7 +1,7 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { Link } from "@/i18n/navigation";
-import { Globe, ShieldAlert, Zap, Wrench } from "lucide-react";
+import { Globe, Shield, ShieldAlert, Zap, Wrench } from "lucide-react";
 import type { Metadata } from "next";
 import { generateAlternates } from "@/lib/seo-utils";
 
@@ -98,6 +98,32 @@ export default async function ToolsPage({ params }: Props) {
             </Link>
           );
         })}
+      </div>
+
+      {/* NordVPN CTA */}
+      <div className="mt-12 rounded-2xl overflow-hidden bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-8 md:p-10">
+        <div className="flex flex-col md:flex-row items-center gap-6">
+          <div className="flex-shrink-0">
+            <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center">
+              <Shield className="h-8 w-8" />
+            </div>
+          </div>
+          <div className="flex-1 text-center md:text-left">
+            <h2 className="text-2xl font-bold mb-2">Try NordVPN Now</h2>
+            <p className="text-white/80">
+              Protect your IP, prevent DNS leaks, and browse securely. Get the #1 rated VPN with a 30-day money-back guarantee.
+            </p>
+          </div>
+          <a
+            href="https://go.zerotovpn.com/nordvpn"
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            className="inline-flex items-center gap-2 bg-white text-blue-700 font-bold px-8 py-3.5 rounded-xl hover:bg-white/90 transition-colors shrink-0 text-base shadow-lg"
+          >
+            <Shield className="h-5 w-5" />
+            Get NordVPN
+          </a>
+        </div>
       </div>
     </div>
   );

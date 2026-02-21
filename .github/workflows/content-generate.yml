@@ -2,8 +2,9 @@ name: Daily Blog Post Generation
 
 on:
   schedule:
-    # Every day at 08:00 UTC
-    - cron: "0 8 * * *"
+    - cron: "0 7 * * *"   # Morning (07:00 UTC)
+    - cron: "0 13 * * *"  # Afternoon (13:00 UTC)
+    - cron: "0 19 * * *"  # Evening (19:00 UTC)
   workflow_dispatch: # Allow manual trigger with options
     inputs:
       topic:

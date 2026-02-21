@@ -106,6 +106,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     });
   }
 
+  // 2b) Dynamic coupon pages.
+  for (const vpn of vpns) {
+    addLocalizedPath(`/coupons/${vpn.slug}`, {
+      priority: 0.8,
+      changeFrequency: "daily",
+    });
+  }
+
   // 3) Dynamic comparison pages: all generated combinations.
   for (let i = 0; i < vpns.length; i++) {
     for (let j = i + 1; j < vpns.length; j++) {

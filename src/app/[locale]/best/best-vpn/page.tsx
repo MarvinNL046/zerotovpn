@@ -584,12 +584,14 @@ export default async function BestVpnPage({ params }: Props) {
             <RelatedPages
               title="Explore More VPN Categories"
               pages={[
+                { title: "Fastest VPNs", description: "Speed-tested VPNs ranked by performance", href: "/best/fastest-vpn", icon: "zap" },
+                { title: "Best VPN for Privacy", description: "Top VPNs for maximum privacy protection", href: "/best/vpn-privacy", icon: "shield" },
                 { title: "Best Free VPNs", description: "Top free VPN options with no subscription", href: "/best/free-vpn", icon: "gift" },
                 { title: "Best VPN for Gaming", description: "Low-latency VPNs for online gaming", href: "/best/vpn-gaming", icon: "gamepad" },
                 { title: "Best VPN for China", description: "VPNs that bypass the Great Firewall", href: "/best/vpn-china", icon: "globe" },
-                { title: "Best VPN for Russia", description: "Access blocked content in Russia", href: "/best/vpn-russia", icon: "globe" },
+                { title: "Best VPN for India", description: "VPNs with virtual India servers", href: "/best/vpn-india", icon: "globe" },
+                { title: "Best VPN for Turkey", description: "Bypass DPI blocking in Turkey", href: "/best/vpn-turkey", icon: "globe" },
                 { title: "Best Mobile VPNs", description: "VPNs optimized for smartphones", href: "/best/vpn-mobile", icon: "smartphone" },
-                { title: "Best Tablet VPNs", description: "VPNs for iPad and Android tablets", href: "/best/vpn-tablet", icon: "tablet" },
               ]}
             />
           </div>

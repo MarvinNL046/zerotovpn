@@ -231,8 +231,9 @@ export default async function BlogPage({ params }: Props) {
       hasFeaturedImage: post.hasFeaturedImage,
       isDynamic: true as const,
     }));
-  } catch {
+  } catch (err) {
     // DB might not be available during build — continue with static posts only
+    console.error("[blog] DB fetch failed:", err instanceof Error ? err.message : err);
   }
 
   // Merge static + dynamic, then sort newest first
@@ -246,6 +247,7 @@ export default async function BlogPage({ params }: Props) {
 
   return (
     <div className="flex flex-col">
+      {/* DEBUG: dynamicPosts={dynamicPosts.length} allPosts={allPosts.length} */}
       {/* Breadcrumbs */}
       <div className="container pt-6">
         <BreadcrumbSchema items={[{ name: "Blog", href: "/blog" }]} />

@@ -1,6 +1,7 @@
 import { StackProvider, StackTheme } from "@stackframe/stack";
 import { stackServerApp } from "@/lib/stack";
 import { getLocale } from "next-intl/server";
+import Script from "next/script";
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -36,6 +37,18 @@ export default async function RootLayout({
     <html lang={locale} suppressHydrationWarning>
       <head>
         <meta name="theme-color" content="#3b82f6" />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-66TC4XX08D"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-66TC4XX08D');
+          `}
+        </Script>
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX"

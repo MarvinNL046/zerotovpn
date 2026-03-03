@@ -12,7 +12,6 @@ import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { getAllVpns, type VpnProvider } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
-import { getShortMonthYear } from "@/lib/seo-utils";
 import { LastUpdated } from "@/components/last-updated";
 import {
   Zap,
@@ -36,22 +35,21 @@ const baseUrl = "https://zerotovpn.com";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  const shortMonthYear = getShortMonthYear();
 
   const titles: Record<string, string> = {
-    en: `Best VPN 2026: 6 Top Picks Tested - We Picked a Clear Winner | ZeroToVPN`,
-    nl: `6 Beste VPNs (Getest ${shortMonthYear}) - We Kozen een Duidelijke Winnaar | ZeroToVPN`,
-    de: `6 Beste VPNs (Getestet ${shortMonthYear}) - Wir Haben Einen Klaren Sieger | ZeroToVPN`,
-    es: `6 Mejores VPNs (Probadas ${shortMonthYear}) - Elegimos un Ganador Claro | ZeroToVPN`,
-    fr: `6 Meilleurs VPNs (Testés ${shortMonthYear}) - Nous Avons Choisi un Gagnant | ZeroToVPN`,
+    en: "Best VPN in 2026 (Tested & Ranked for Speed, Privacy & Streaming) | ZeroToVPN",
+    nl: "Beste VPN van 2026 (Getest & Gerangschikt op Snelheid, Privacy en Streaming) | ZeroToVPN",
+    de: "Bester VPN 2026 (Unabhängig Getestet für Speed, Datenschutz und Streaming) | ZeroToVPN",
+    es: "Mejor VPN 2026 (Probado y Clasificado por Velocidad, Privacidad y Streaming) | ZeroToVPN",
+    fr: "Meilleur VPN 2026 (Tests Indépendants: Vitesse, Confidentialité et Streaming) | ZeroToVPN",
   };
 
   const descriptions: Record<string, string> = {
-    en: `Best VPN 2026: We tested 50+ VPNs to find the best overall. Expert picks include the fastest VPN, cheapest VPN & best for streaming. Updated ${shortMonthYear}. 30-day money-back guarantee on all picks.`,
-    nl: "We testten 50+ VPNs in februari 2026 — slechts 6 haalden onze lijst. Bekijk snelheidstests, beveiligingsaudits en welke VPN we dagelijks gebruiken.",
-    de: "Wir haben im Februar 2026 über 50 VPNs getestet — nur 6 schafften es auf unsere Liste. Geschwindigkeitstests, Sicherheitsaudits und welches VPN wir täglich nutzen.",
-    es: "Probamos más de 50 VPNs en febrero 2026 — solo 6 entraron en nuestra lista. Pruebas de velocidad, auditorías de seguridad y qué VPN usamos a diario.",
-    fr: "Nous avons testé plus de 50 VPNs en février 2026 — seuls 6 ont fait notre liste. Tests de vitesse, audits de sécurité et quel VPN nous utilisons au quotidien.",
+    en: "Looking for the best VPN? We independently tested speed, privacy, streaming performance and logging transparency to rank the top VPNs of 2026.",
+    nl: "Op zoek naar de beste VPN? We testten onafhankelijk snelheid, privacy, streamingprestaties en loggingtransparantie om de top VPNs van 2026 te ranken.",
+    de: "Sie suchen den besten VPN? Wir haben Speed, Datenschutz, Streaming-Leistung und Logging-Transparenz unabhängig getestet und die Top-VPNs 2026 gerankt.",
+    es: "¿Buscas el mejor VPN? Probamos de forma independiente velocidad, privacidad, streaming y transparencia de registros para clasificar los mejores VPN de 2026.",
+    fr: "Vous cherchez le meilleur VPN ? Nous avons testé indépendamment la vitesse, la confidentialité, le streaming et la transparence des logs pour classer les meilleurs VPN 2026.",
   };
 
   const prefix = locale === "en" ? "" : `/${locale}`;

@@ -41,11 +41,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const shortMonthYear = getShortMonthYear();
 
   const titles: Record<string, string> = {
-    en: `Best VPNs for Gaming (Tested ${shortMonthYear}) - Low Ping, DDoS Protection | ZeroToVPN`,
-    nl: `Beste VPNs voor Gaming (Getest ${shortMonthYear}) - Lage Ping, DDoS-bescherming | ZeroToVPN`,
-    de: `Beste VPNs für Gaming (Getestet ${shortMonthYear}) - Niedrige Ping, DDoS-Schutz | ZeroToVPN`,
-    es: `Mejores VPNs para Gaming (Probados ${shortMonthYear}) - Ping Bajo, Protección DDoS | ZeroToVPN`,
-    fr: `Meilleurs VPNs pour Gaming (Testés ${shortMonthYear}) - Faible Ping, Protection DDoS | ZeroToVPN`,
+    en: "Best VPN for Gaming (2026) - Lowest Ping & Fastest Servers Tested | ZeroToVPN",
+    nl: "Beste VPN voor Gaming 2026 - Laagste Ping & Snelste Servers Getest | ZeroToVPN",
+    de: "Bestes VPN für Gaming 2026 - Niedrigster Ping & Schnellste Server Getestet | ZeroToVPN",
+    es: "Mejor VPN para Gaming 2026 - Menor Ping y Servidores Más Rápidos Probados | ZeroToVPN",
+    fr: "Meilleur VPN Gaming 2026 - Ping le Plus Bas et Serveurs les Plus Rapides Testés | ZeroToVPN",
     zh: `最佳游戏VPN (测试于 ${shortMonthYear}) - 低延迟，DDoS保护 | ZeroToVPN`,
     ja: `ゲーミング向けベストVPN (テスト済み ${shortMonthYear}) - 低Ping、DDoS保護 | ZeroToVPN`,
     ko: `게임용 최고의 VPN (테스트됨 ${shortMonthYear}) - 낮은 핑, DDoS 보호 | ZeroToVPN`,
@@ -53,11 +53,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const descriptions: Record<string, string> = {
-    en: `We tested 35+ VPNs for gaming. Expert picks updated ${shortMonthYear} with ping, speeds & DDoS protection compared. See our honest verdict & money-back options.`,
-    nl: "Vind de beste gaming VPN voor 2026. We hebben 35+ VPNs getest op ping, snelheid en DDoS-bescherming. Verminder lag en krijg toegang tot geo-geblokkeerde games.",
-    de: "Finden Sie das beste Gaming-VPN für 2026. Wir haben über 35 VPNs auf Ping, Geschwindigkeit und DDoS-Schutz getestet. Reduzieren Sie Lag und greifen Sie auf geo-gesperrte Spiele zu.",
-    es: "Encuentra la mejor VPN para gaming de 2026. Probamos más de 35 VPNs en ping, velocidad y protección DDoS. Reduce el lag y accede a juegos geo-bloqueados.",
-    fr: "Trouvez le meilleur VPN gaming pour 2026. Nous avons testé plus de 35 VPNs pour le ping, la vitesse et la protection DDoS. Réduisez le lag et accédez aux jeux géo-restreints.",
+    en: "We tested 12 VPNs for gaming performance. See which VPN delivered the lowest ping, best stability and fastest servers in 2026.",
+    nl: "We testten 12 VPNs voor gaming performance. Bekijk welke VPN de laagste ping, beste stabiliteit en snelste servers leverde in 2026.",
+    de: "Wir haben 12 VPNs für Gaming-Performance getestet. Sehen Sie, welches VPN 2026 den niedrigsten Ping, die beste Stabilität und die schnellsten Server liefert.",
+    es: "Probamos 12 VPNs para rendimiento gaming. Descubre cuál ofrece el ping más bajo, mejor estabilidad y servidores más rápidos en 2026.",
+    fr: "Nous avons testé 12 VPNs pour le gaming. Découvrez lequel offre le ping le plus bas, la meilleure stabilité et les serveurs les plus rapides en 2026.",
     zh: "找到2026年最佳游戏VPN。我们测试了35+个VPN的延迟、速度和DDoS保护。减少延迟并访问地区锁定的游戏。",
     ja: "2026年最高のゲーミングVPNを見つけよう。35以上のVPNをping、速度、DDoS保護でテストしました。ラグを減らし、地域制限されたゲームにアクセス。",
     ko: "2026년 최고의 게임용 VPN을 찾으세요. 35개 이상의 VPN을 핑, 속도, DDoS 보호 측면에서 테스트했습니다. 렉을 줄이고 지역 제한 게임에 액세스하세요.",

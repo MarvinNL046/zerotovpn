@@ -35,11 +35,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
   const titles: Record<string, string> = {
-    en: "Best VPN for Russia 2026: Which VPNs Still Work? | ZeroToVPN",
-    nl: "Beste VPN voor Rusland 2026: Welke VPNs Werken Nog? | ZeroToVPN",
-    de: "Beste VPN für Russland 2026: Welche VPNs Funktionieren Noch? | ZeroToVPN",
-    es: "Mejor VPN para Rusia 2026: ¿Qué VPNs Todavía Funcionan? | ZeroToVPN",
-    fr: "Meilleur VPN pour la Russie 2026: Quels VPNs Fonctionnent Encore? | ZeroToVPN",
+    en: "VPN for Russia: What Works in 2026? | ZeroToVPN",
+    nl: "VPN voor Rusland: Wat Werkt in 2026? | ZeroToVPN",
+    de: "VPN für Russland: Was Funktioniert 2026? | ZeroToVPN",
+    es: "VPN para Rusia: ¿Qué Funciona en 2026? | ZeroToVPN",
+    fr: "VPN pour la Russie: Qu'est-ce Qui Fonctionne en 2026 ? | ZeroToVPN",
     zh: "2026年俄罗斯最佳VPN：哪些VPN仍然有效？| ZeroToVPN",
     ja: "2026年ロシア向けベストVPN：まだ機能するVPNは？| ZeroToVPN",
     ko: "2026년 러시아 최고의 VPN: 아직 작동하는 VPN은? | ZeroToVPN",
@@ -47,11 +47,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const descriptions: Record<string, string> = {
-    en: "Find VPNs that still work in Russia despite 197+ blocked services. Expert-tested solutions with obfuscation technology. 41% of Russians use VPNs.",
-    nl: "Vind VPNs die nog werken in Rusland ondanks 197+ geblokkeerde diensten. Expert-geteste oplossingen met obfuscatie-technologie.",
-    de: "Finden Sie VPNs, die trotz 197+ gesperrter Dienste in Russland noch funktionieren. Expertenlösungen mit Verschleierungstechnologie.",
-    es: "Encuentra VPNs que todavía funcionan en Rusia a pesar de 197+ servicios bloqueados. Soluciones probadas con tecnología de ofuscación.",
-    fr: "Trouvez des VPN qui fonctionnent encore en Russie malgré 197+ services bloqués. Solutions testées avec technologie d'obfuscation.",
+    en: "Traveling to Russia or living there? Here is what to know about VPN access, restrictions and which services still work reliably in 2026.",
+    nl: "Reis je naar Rusland of woon je daar? Dit moet je weten over VPN-toegang, beperkingen en welke diensten in 2026 nog betrouwbaar werken.",
+    de: "Reisen Sie nach Russland oder leben Sie dort? Hier erfahren Sie, was über VPN-Zugang, Einschränkungen und noch funktionierende Dienste 2026 wichtig ist.",
+    es: "¿Viajas a Rusia o vives allí? Aquí tienes lo que debes saber sobre acceso VPN, restricciones y servicios que siguen funcionando en 2026.",
+    fr: "Vous voyagez en Russie ou vous y vivez ? Voici l'essentiel sur l'accès VPN, les restrictions et les services qui fonctionnent encore en 2026.",
     zh: "寻找在俄罗斯仍然有效的VPN，尽管有197+个服务被封锁。经专家测试的混淆技术解决方案。41%的俄罗斯人使用VPN。",
     ja: "197以上のサービスがブロックされているにもかかわらず、ロシアでまだ機能するVPNを見つけてください。難読化技術を使用した専門家によってテストされたソリューション。ロシア人の41%がVPNを使用しています。",
     ko: "197개 이상의 서비스가 차단되었음에도 불구하고 러시아에서 여전히 작동하는 VPN을 찾으십시오. 난독화 기술을 사용한 전문가 테스트 솔루션. 러시아인의 41%가 VPN을 사용합니다.",

@@ -34,11 +34,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
   const titles: Record<string, string> = {
-    en: "Best VPN for Iran 2026: 4 That Actually Bypass DPI (Tested) | ZeroToVPN",
-    nl: "Beste VPN voor Iran 2026: 4 Die DPI Daadwerkelijk Omzeilen (Getest) | ZeroToVPN",
-    de: "Bestes VPN für Iran 2026: 4 Die DPI Wirklich Umgehen (Getestet) | ZeroToVPN",
-    es: "Mejor VPN para Irán 2026: 4 Que Realmente Evitan DPI (Probados) | ZeroToVPN",
-    fr: "Meilleur VPN pour l'Iran 2026: 4 Qui Contournent le DPI (Testés) | ZeroToVPN",
+    en: "Best VPN for Iran (2026) - Works During Restrictions | ZeroToVPN",
+    nl: "Beste VPN voor Iran (2026) - Werkt Tijdens Beperkingen | ZeroToVPN",
+    de: "Bestes VPN für Iran (2026) - Funktioniert Trotz Einschränkungen | ZeroToVPN",
+    es: "Mejor VPN para Irán (2026) - Funciona Durante Restricciones | ZeroToVPN",
+    fr: "Meilleur VPN pour l'Iran (2026) - Fonctionne Pendant les Restrictions | ZeroToVPN",
     zh: "伊朗最佳VPN 2026：4款真正绕过DPI的VPN（已测试） | ZeroToVPN",
     ja: "イラン向けベストVPN 2026：DPIを実際に回避する4選（テスト済み） | ZeroToVPN",
     ko: "이란 최고의 VPN 2026: DPI를 실제로 우회하는 4개 (테스트 완료) | ZeroToVPN",
@@ -46,11 +46,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const descriptions: Record<string, string> = {
-    en: "We tested 20+ VPNs inside Iran — most failed. These 4 actually bypass Deep Packet Inspection. Install before you go.",
-    nl: "We testten 20+ VPNs in Iran — de meeste faalden. Deze 4 omzeilen daadwerkelijk Deep Packet Inspection. Installeer voor vertrek.",
-    de: "Wir haben 20+ VPNs im Iran getestet — die meisten versagten. Diese 4 umgehen tatsächlich Deep Packet Inspection. Vor der Reise installieren.",
-    es: "Probamos más de 20 VPNs en Irán — la mayoría fallaron. Estas 4 realmente evitan la Inspección Profunda de Paquetes. Instala antes de ir.",
-    fr: "Nous avons testé 20+ VPNs en Iran — la plupart ont échoué. Ces 4 contournent réellement le DPI. Installez avant de partir.",
+    en: "Need a VPN that works in Iran? We tested reliability, censorship resistance and speed in 2026 to find VPNs that still connect during restrictions.",
+    nl: "VPN nodig die werkt in Iran? We testten betrouwbaarheid, censuurbestendigheid en snelheid in 2026 om VPNs te vinden die blijven werken tijdens restricties.",
+    de: "Sie brauchen ein VPN, das im Iran funktioniert? Wir haben 2026 Zuverlässigkeit, Zensurresistenz und Geschwindigkeit getestet, um funktionierende VPNs zu finden.",
+    es: "¿Necesitas un VPN que funcione en Irán? Probamos fiabilidad, resistencia a la censura y velocidad en 2026 para encontrar VPNs que siguen conectando.",
+    fr: "Besoin d'un VPN qui fonctionne en Iran ? Nous avons testé la fiabilité, la résistance à la censure et la vitesse en 2026 pour trouver ceux qui se connectent encore.",
     zh: "我们在伊朗测试了20多个VPN——大多数失败了。这4个真正绕过深度包检测。出发前安装。",
     ja: "イランで20以上のVPNをテスト——ほとんどが失敗。この4つは実際にDPIを回避します。出発前にインストールしてください。",
     ko: "이란에서 20개 이상의 VPN을 테스트했습니다 — 대부분 실패했습니다. 이 4개만 DPI를 실제로 우회합니다. 출발 전에 설치하세요.",

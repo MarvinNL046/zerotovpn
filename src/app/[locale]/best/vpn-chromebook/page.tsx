@@ -37,11 +37,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const shortMonthYear = getShortMonthYear();
 
   const titles: Record<string, string> = {
-    en: `5 Best VPNs for Chromebook (Tested ${shortMonthYear}) - Actually Work | ZeroToVPN`,
-    nl: `5 Beste VPNs voor Chromebook (Getest ${shortMonthYear}) - Werken Echt | ZeroToVPN`,
-    de: `5 Beste VPNs für Chromebook (Getestet ${shortMonthYear}) - Funktionieren Wirklich | ZeroToVPN`,
-    es: `5 Mejores VPNs para Chromebook (Probados ${shortMonthYear}) - Funcionan de Verdad | ZeroToVPN`,
-    fr: `5 Meilleurs VPNs pour Chromebook (Testés ${shortMonthYear}) - Fonctionnent Vraiment | ZeroToVPN`,
+    en: "Best VPN for Chromebook (2026) - Easy Setup & Fast Speeds | ZeroToVPN",
+    nl: "Beste VPN voor Chromebook (2026) - Eenvoudige Setup en Snelle Snelheden | ZeroToVPN",
+    de: "Bestes VPN für Chromebook (2026) - Einfache Einrichtung und Schnelle Verbindungen | ZeroToVPN",
+    es: "Mejor VPN para Chromebook (2026) - Configuración Fácil y Alta Velocidad | ZeroToVPN",
+    fr: "Meilleur VPN pour Chromebook (2026) - Installation Facile et Hautes Vitesses | ZeroToVPN",
     zh: `5款最佳Chromebook VPN (测试于 ${shortMonthYear}) - 真正有效 | ZeroToVPN`,
     ja: `Chromebook向けベスト5 VPN (テスト済み ${shortMonthYear}) - 実際に動作する | ZeroToVPN`,
     ko: `크롬북 최고의 VPN 5가지 (테스트됨 ${shortMonthYear}) - 실제로 작동함 | ZeroToVPN`,
@@ -49,13 +49,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const descriptions: Record<string, string> = {
-    en: `We tested 30+ VPNs for Chromebook. Expert picks updated ${shortMonthYear} with ChromeOS support & Android compatibility compared. See our honest verdict.`,
-    nl: "De meeste VPNs werken niet goed op Chromebook. We testten 30+ — deze 5 hebben native ChromeOS-ondersteuning en Android app-compatibiliteit.",
-    de: "Die meisten VPNs funktionieren auf Chromebook nicht richtig. Wir haben 30+ getestet — diese 5 haben native ChromeOS-Unterstützung und Android-App-Kompatibilität.",
-    es: "La mayoría de VPNs no funcionan bien en Chromebook. Probamos más de 30 — estas 5 tienen soporte nativo ChromeOS y compatibilidad con apps Android.",
-    fr: "La plupart des VPNs ne fonctionnent pas correctement sur Chromebook. Nous en avons testé 30+ — ces 5 ont le support natif ChromeOS et la compatibilité Android.",
+    en: "Looking for a VPN on Chromebook? We tested setup time, ChromeOS compatibility and speed to find the easiest and fastest options in 2026.",
+    nl: "VPN nodig op Chromebook? We testten installatietijd, ChromeOS-compatibiliteit en snelheid om de makkelijkste en snelste opties in 2026 te vinden.",
+    de: "VPN für Chromebook gesucht? Wir haben Einrichtung, ChromeOS-Kompatibilität und Geschwindigkeit getestet, um die einfachsten und schnellsten Optionen 2026 zu finden.",
+    es: "¿Buscas un VPN para Chromebook? Probamos tiempo de instalación, compatibilidad con ChromeOS y velocidad para encontrar las opciones más fáciles y rápidas en 2026.",
+    fr: "Vous cherchez un VPN pour Chromebook ? Nous avons testé l'installation, la compatibilité ChromeOS et la vitesse pour trouver les options les plus simples et rapides en 2026.",
     zh: "大多数VPN在Chromebook上无法正常工作。我们测试了30多个——这5个原生支持ChromeOS并兼容Android应用。",
-    janswer: "ほとんどのVPNはChromebookで正しく動作しません。30以上をテスト——この5つはネイティブChromeOSサポートとAndroidアプリ互換性があります。",
+    ja: "ほとんどのVPNはChromebookで正しく動作しません。30以上をテスト——この5つはネイティブChromeOSサポートとAndroidアプリ互換性があります。",
     ko: "대부분의 VPN은 크롬북에서 제대로 작동하지 않습니다. 30개 이상 테스트 — 이 5개는 네이티브 ChromeOS 지원과 Android 앱 호환성을 갖추고 있습니다.",
     th: "VPN ส่วนใหญ่ทำงานไม่ถูกต้องบน Chromebook เราทดสอบ 30+ ตัว — 5 ตัวนี้รองรับ ChromeOS แบบเนทีฟและเข้ากันได้กับแอป Android",
   };

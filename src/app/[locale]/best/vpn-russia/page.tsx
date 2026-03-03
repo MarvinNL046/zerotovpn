@@ -51,11 +51,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const shortMonthYear = getShortMonthYear();
 
   const titles: Record<string, string> = {
-    en: `Best VPNs for Russia (Tested ${shortMonthYear}) - Bypass Roskomnadzor | ZeroToVPN`,
-    nl: `Beste VPNs voor Rusland (Getest ${shortMonthYear}) - Omzeil Roskomnadzor | ZeroToVPN`,
-    de: `Beste VPNs für Russland (Getestet ${shortMonthYear}) - Roskomnadzor Umgehen | ZeroToVPN`,
-    es: `Mejores VPNs para Rusia (Probadas ${shortMonthYear}) - Evitar Bloqueos | ZeroToVPN`,
-    fr: `Meilleurs VPNs pour la Russie (Testés ${shortMonthYear}) - Contourner les Blocages | ZeroToVPN`,
+    en: "Best VPN for Russia (2026) - Works With Local Restrictions | ZeroToVPN",
+    nl: "Beste VPN voor Rusland (2026) - Werkt Met Lokale Beperkingen | ZeroToVPN",
+    de: "Bestes VPN für Russland (2026) - Funktioniert Bei Lokalen Einschränkungen | ZeroToVPN",
+    es: "Mejor VPN para Rusia (2026) - Funciona con Restricciones Locales | ZeroToVPN",
+    fr: "Meilleur VPN pour la Russie (2026) - Fonctionne Malgré les Restrictions Locales | ZeroToVPN",
     zh: `俄罗斯最佳VPN (测试于 ${shortMonthYear}) - 绕过封锁 | ZeroToVPN`,
     ja: `ロシア向けベストVPN (テスト済み ${shortMonthYear}) - ブロック回避 | ZeroToVPN`,
     ko: `러시아 최고의 VPN (테스트됨 ${shortMonthYear}) - 차단 우회 | ZeroToVPN`,
@@ -63,11 +63,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const descriptions: Record<string, string> = {
-    en: `We tested VPNs to find the best for Russia in ${shortMonthYear}. Expert picks with Roskomnadzor bypass tested & verified. See which VPNs actually work.`,
-    nl: "Op zoek naar een VPN die werkt in Rusland? We hebben VPNs getest die Roskomnadzor blokkades kunnen omzeilen. Zie welke VPNs werken in Rusland en welke niet. 197+ diensten geblokkeerd in 2024.",
-    de: "Suchen Sie nach einem VPN, das in Russland funktioniert? Wir haben VPNs getestet, die Roskomnadzor-Blockaden umgehen können. Sehen Sie, welche VPNs in Russland funktionieren. 197+ Dienste 2024 blockiert.",
-    es: "¿Buscas un VPN que funcione en Rusia? Probamos VPNs que pueden eludir los bloqueos de Roskomnadzor. Ve qué VPNs funcionan en Rusia. 197+ servicios bloqueados en 2024.",
-    fr: "Vous cherchez un VPN qui fonctionne en Russie ? Nous avons testé des VPNs capables de contourner les blocages de Roskomnadzor. Découvrez quels VPNs fonctionnent en Russie. 197+ services bloqués en 2024.",
+    en: "Compare VPNs that still work in Russia. We tested speed, censorship resistance and reliability to identify options that keep connecting in 2026.",
+    nl: "Vergelijk VPNs die nog werken in Rusland. We testten snelheid, censuurbestendigheid en betrouwbaarheid om opties te vinden die in 2026 blijven verbinden.",
+    de: "Vergleichen Sie VPNs, die in Russland noch funktionieren. Wir haben Geschwindigkeit, Zensurresistenz und Stabilität getestet, um 2026 funktionierende Optionen zu finden.",
+    es: "Compara VPNs que todavía funcionan en Rusia. Probamos velocidad, resistencia a la censura y fiabilidad para encontrar opciones que siguen conectando en 2026.",
+    fr: "Comparez les VPN qui fonctionnent encore en Russie. Nous avons testé vitesse, résistance à la censure et fiabilité pour identifier les options stables en 2026.",
     zh: "寻找在俄罗斯可以使用的VPN？我们测试了能够绕过Roskomnadzor封锁的VPN。了解哪些VPN在俄罗斯有效。2024年封锁了197+服务。",
     ja: "ロシアで使えるVPNをお探しですか？Roskomnadzorブロックを回避できるVPNをテストしました。ロシアで機能するVPNをご覧ください。2024年に197+サービスがブロック。",
     ko: "러시아에서 작동하는 VPN을 찾고 계신가요? Roskomnadzor 차단을 우회할 수 있는 VPN을 테스트했습니다. 러시아에서 작동하는 VPN을 확인하세요. 2024년 197+ 서비스 차단됨.",

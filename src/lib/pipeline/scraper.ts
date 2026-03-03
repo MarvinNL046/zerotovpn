@@ -1,9 +1,18 @@
 import { getDb, scrapeJobs } from "@/lib/db";
 
-const JINA_API_KEY = process.env.JINA_API_KEY;
 const JINA_READER_URL = "https://r.jina.ai";
-const BRIGHT_DATA_API_KEY = process.env.BRIGHT_DATA_API_KEY;
-const BRIGHT_DATA_ZONE = process.env.BRIGHT_DATA_ZONE || "web_unlocker1";
+
+function getJinaApiKey(): string {
+  return process.env.JINA_API_KEY?.trim() || "";
+}
+
+function getBrightDataApiKey(): string {
+  return process.env.BRIGHT_DATA_API_KEY?.trim() || "";
+}
+
+function getBrightDataZone(): string {
+  return process.env.BRIGHT_DATA_ZONE?.trim() || "web_unlocker1";
+}
 
 export interface ScrapedPricing {
   vpnSlug: string;
@@ -36,12 +45,13 @@ export interface ScrapedCountryData {
 
 // Fetch via Jina.ai Reader
 async function scrapeWithJina(url: string): Promise<string> {
+  const jinaApiKey = getJinaApiKey();
   const headers: Record<string, string> = {
     Accept: "text/markdown",
   };
 
-  if (JINA_API_KEY) {
-    headers["Authorization"] = `Bearer ${JINA_API_KEY}`;
+  if (jinaApiKey) {
+    headers["Authorization"] = `Bearer ${jinaApiKey}`;
   }
 
   const response = await fetch(`${JINA_READER_URL}/${url}`, {
@@ -60,7 +70,8 @@ async function scrapeWithJina(url: string): Promise<string> {
 
 // Fetch via Bright Data Web Unlocker API
 async function scrapeWithBrightData(url: string): Promise<string> {
-  if (!BRIGHT_DATA_API_KEY) {
+  const brightDataApiKey = getBrightDataApiKey();
+  if (!brightDataApiKey) {
     throw new Error("BRIGHT_DATA_API_KEY is not configured");
   }
 
@@ -70,10 +81,10 @@ async function scrapeWithBrightData(url: string): Promise<string> {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${BRIGHT_DATA_API_KEY}`,
+        Authorization: `Bearer ${brightDataApiKey}`,
       },
       body: JSON.stringify({
-        zone: BRIGHT_DATA_ZONE,
+        zone: getBrightDataZone(),
         url,
         format: "raw",
       }),
@@ -106,7 +117,7 @@ export async function scrapeUrl(url: string): Promise<{ content: string; provide
   }
 
   // Fallback to Bright Data
-  if (BRIGHT_DATA_API_KEY) {
+  if (getBrightDataApiKey()) {
     try {
       const content = await scrapeWithBrightData(url);
       return { content, provider: "brightdata" };
@@ -376,12 +387,13 @@ export async function scrapeCountryVpnData(
 async function scrapeCountryNews(
   searchUrl: string
 ): Promise<Array<{ title: string; summary: string; url: string }>> {
+  const jinaApiKey = getJinaApiKey();
   const headers: Record<string, string> = {
     Accept: "application/json",
   };
 
-  if (JINA_API_KEY) {
-    headers["Authorization"] = `Bearer ${JINA_API_KEY}`;
+  if (jinaApiKey) {
+    headers["Authorization"] = `Bearer ${jinaApiKey}`;
   }
 
   const response = await fetch(searchUrl, { method: "GET", headers });

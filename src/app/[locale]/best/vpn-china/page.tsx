@@ -24,6 +24,7 @@ import {
 import { RelatedPages } from "@/components/seo/related-pages";
 import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
+import { Go2NetworkSection } from "@/components/seo/go2-network-section";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -1433,6 +1434,8 @@ export default async function VpnChinaPage({ params }: Props) {
             </div>
           </div>
         </section>
+
+        <Go2NetworkSection locale={locale} />
 
         {/* Related Pages Section */}
         <RelatedPages

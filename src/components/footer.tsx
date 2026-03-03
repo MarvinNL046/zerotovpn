@@ -36,6 +36,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/vpn-index"
+                  className="text-muted-foreground hover:text-primary"
+                >
+                  {t("vpnIndex")}
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/best/best-vpn"
                   className="text-muted-foreground hover:text-primary"
                 >
@@ -112,6 +120,14 @@ export function Footer() {
                   className="text-muted-foreground hover:text-primary"
                 >
                   {t("whatIsVpn")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/reports/vpn-transparency-performance-index-2026"
+                  className="text-muted-foreground hover:text-primary"
+                >
+                  {t("transparencyReport")}
                 </Link>
               </li>
               <li>
@@ -198,6 +214,14 @@ export function Footer() {
                   className="text-muted-foreground hover:text-primary"
                 >
                   {t("disclosure")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/methodology"
+                  className="text-muted-foreground hover:text-primary"
+                >
+                  {t("methodology")}
                 </Link>
               </li>
             </ul>

@@ -8,7 +8,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Shield, Menu, X, Star, Zap, Globe, Tag, ChevronDown, Trophy, Gamepad2, Gift, Smartphone, Tablet, Laptop, Monitor, Apple, Wrench, ShieldAlert } from "lucide-react";
+import { Shield, Menu, X, Star, Zap, Globe, Tag, ChevronDown, Trophy, Gamepad2, Gift, Smartphone, Tablet, Laptop, Monitor, Apple, Wrench, ShieldAlert, BarChart3, FlaskConical } from "lucide-react";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { LanguageSwitcher } from "./language-switcher";
@@ -23,6 +23,7 @@ export function Header() {
   const bestVpnItems = [
     { href: "/best/best-vpn", label: t("bestVpn"), icon: Trophy },
     { href: "/best/vpn-china", label: t("vpnChina"), icon: Globe },
+    { href: "/best/vpn-thailand", label: t("vpnThailand"), icon: Globe },
     { href: "/best/vpn-russia", label: t("vpnRussia"), icon: Globe },
     { href: "/best/vpn-uae", label: t("vpnUae"), icon: Globe },
     { href: "/best/vpn-iran", label: t("vpnIran"), icon: Globe },
@@ -44,6 +45,7 @@ export function Header() {
     { href: "/tools/what-is-my-ip", label: t("ipChecker"), icon: Globe },
     { href: "/tools/dns-leak-test", label: t("dnsLeakTest"), icon: ShieldAlert },
     { href: "/speed-test", label: t("speedTest"), icon: Zap },
+    { href: "/methodology", label: t("methodology"), icon: FlaskConical },
   ];
 
   return (
@@ -79,6 +81,15 @@ export function Header() {
             )}
           >
             {t("reviews")}
+          </Link>
+          <Link
+            href="/vpn-index"
+            className={cn(
+              "text-sm font-medium transition-colors hover:text-primary",
+              pathname === "/vpn-index" ? "text-primary" : "text-muted-foreground"
+            )}
+          >
+            {t("vpnIndex")}
           </Link>
 
           {/* HIGHLIGHTED ITEMS GROUP - Best VPNs, Countries, Deals */}
@@ -187,7 +198,7 @@ export function Header() {
               <button
                 className={cn(
                   "text-sm font-medium transition-colors hover:text-primary inline-flex items-center gap-1",
-                  pathname.startsWith("/tools") || pathname === "/speed-test"
+                  pathname.startsWith("/tools") || pathname === "/speed-test" || pathname === "/methodology"
                     ? "text-primary"
                     : "text-muted-foreground"
                 )}
@@ -282,6 +293,19 @@ export function Header() {
               )}
             >
               {t("reviews")}
+            </Link>
+            <Link
+              href="/vpn-index"
+              onClick={() => setMobileMenuOpen(false)}
+              className={cn(
+                "text-sm font-medium transition-colors hover:text-primary",
+                pathname === "/vpn-index" ? "text-primary" : "text-muted-foreground"
+              )}
+            >
+              <span className="inline-flex items-center gap-2">
+                <BarChart3 className="h-4 w-4" />
+                {t("vpnIndex")}
+              </span>
             </Link>
 
             {/* Best VPNs section */}

@@ -31,7 +31,10 @@
     "vpnLinux": "Linux용 VPN",
     "tools": "도구",
     "ipChecker": "IP 확인",
-    "dnsLeakTest": "DNS 유출 테스트"
+    "dnsLeakTest": "DNS 유출 테스트",
+    "vpnIndex": "VPN Index",
+    "methodology": "Methodology",
+    "vpnThailand": "Best VPN for Thailand"
   },
   "hero": {
     "title": "완벽한 VPN을 찾아보세요",
@@ -122,7 +125,10 @@
     "vpnChromebook": "Chromebook용 VPN",
     "vpnLinux": "Linux용 VPN",
     "ipChecker": "IP 확인",
-    "dnsLeakTest": "DNS 유출 테스트"
+    "dnsLeakTest": "DNS 유출 테스트",
+    "vpnIndex": "VPN Index",
+    "methodology": "Methodology",
+    "transparencyReport": "Transparency Report 2026"
   },
   "newsletter": {
     "title": "최신 정보 받기",
@@ -5318,8 +5324,7 @@
       "step3": "결제 시 적용",
       "step3Desc": "VPN 제공업체 웹사이트의 결제 시 코드를 붙여넣어 할인을 받으세요."
     }
-  }
-,
+  },
   "quiz": {
     "metadata": {
       "title": "VPN 찾기 퀴즈 - 완벽한 VPN 찾기 | ZeroToVPN",
@@ -5444,11 +5449,26 @@
     "howVpnHelpsDesc": "A VPN (Virtual Private Network) routes your internet traffic through an encrypted tunnel to a remote server. Websites see the VPN server's IP address instead of yours, making it nearly impossible to trace activity back to you.",
     "recommendedVpns": "Best VPNs to Hide Your IP Address",
     "faq": [
-      { "question": "Can someone find my exact location from my IP address?", "answer": "Not your exact address, but your IP reveals your city, region, and country. Combined with other data, it can narrow down your approximate location. A VPN prevents this by masking your real IP." },
-      { "question": "Is it legal to hide my IP address?", "answer": "Yes, hiding your IP address with a VPN is completely legal in most countries. VPNs are legitimate privacy tools used by millions of people and businesses worldwide." },
-      { "question": "What's the difference between IPv4 and IPv6?", "answer": "IPv4 uses 32-bit addresses (like 192.168.1.1) and is the most common format. IPv6 uses 128-bit addresses (like 2001:db8::1) and was created to handle the growing number of internet-connected devices." },
-      { "question": "Can my ISP see what I do online?", "answer": "Yes, your ISP can see which websites you visit, when you visit them, and how much data you transfer. A VPN encrypts your traffic so your ISP can only see that you're connected to a VPN server, not what you're doing." },
-      { "question": "How do I know if my VPN is working?", "answer": "Use this IP checker tool! Connect to your VPN, then check your IP address here. If it shows a different IP and location than your actual one, your VPN is working correctly." }
+      {
+        "question": "Can someone find my exact location from my IP address?",
+        "answer": "Not your exact address, but your IP reveals your city, region, and country. Combined with other data, it can narrow down your approximate location. A VPN prevents this by masking your real IP."
+      },
+      {
+        "question": "Is it legal to hide my IP address?",
+        "answer": "Yes, hiding your IP address with a VPN is completely legal in most countries. VPNs are legitimate privacy tools used by millions of people and businesses worldwide."
+      },
+      {
+        "question": "What's the difference between IPv4 and IPv6?",
+        "answer": "IPv4 uses 32-bit addresses (like 192.168.1.1) and is the most common format. IPv6 uses 128-bit addresses (like 2001:db8::1) and was created to handle the growing number of internet-connected devices."
+      },
+      {
+        "question": "Can my ISP see what I do online?",
+        "answer": "Yes, your ISP can see which websites you visit, when you visit them, and how much data you transfer. A VPN encrypts your traffic so your ISP can only see that you're connected to a VPN server, not what you're doing."
+      },
+      {
+        "question": "How do I know if my VPN is working?",
+        "answer": "Use this IP checker tool! Connect to your VPN, then check your IP address here. If it shows a different IP and location than your actual one, your VPN is working correctly."
+      }
     ]
   },
   "dnsLeakTest": {
@@ -5482,11 +5502,26 @@
     "howToFixDesc": "Use a VPN with built-in DNS leak protection and a kill switch. Top VPNs like NordVPN run their own private DNS servers and automatically block DNS requests from leaving the VPN tunnel.",
     "recommendedVpns": "Best VPNs with DNS Leak Protection",
     "faq": [
-      { "question": "What causes DNS leaks?", "answer": "DNS leaks are usually caused by misconfigured VPN software, operating system DNS settings overriding the VPN, or using a VPN that doesn't have its own DNS servers. Windows is particularly prone to DNS leaks due to its Smart Multi-Homed Name Resolution feature." },
-      { "question": "Can I fix DNS leaks without a VPN?", "answer": "You can change your DNS servers to a privacy-focused provider like Cloudflare (1.1.1.1) or Quad9 (9.9.9.9), but this only changes who handles your DNS — your ISP can still see your traffic. A VPN encrypts everything." },
-      { "question": "Does NordVPN prevent DNS leaks?", "answer": "Yes, NordVPN runs its own private DNS servers and routes all DNS queries through the encrypted VPN tunnel. It also includes a kill switch that blocks all traffic if the VPN connection drops." },
-      { "question": "How often should I test for DNS leaks?", "answer": "Test after installing or updating your VPN, after changing network settings, and periodically (monthly) to ensure nothing has changed. Some OS updates can reset DNS settings." },
-      { "question": "What's the difference between a DNS leak and an IP leak?", "answer": "An IP leak exposes your real IP address despite using a VPN. A DNS leak exposes which websites you visit. Both compromise your privacy, but they work through different mechanisms. Use our IP checker tool to test for IP leaks." }
+      {
+        "question": "What causes DNS leaks?",
+        "answer": "DNS leaks are usually caused by misconfigured VPN software, operating system DNS settings overriding the VPN, or using a VPN that doesn't have its own DNS servers. Windows is particularly prone to DNS leaks due to its Smart Multi-Homed Name Resolution feature."
+      },
+      {
+        "question": "Can I fix DNS leaks without a VPN?",
+        "answer": "You can change your DNS servers to a privacy-focused provider like Cloudflare (1.1.1.1) or Quad9 (9.9.9.9), but this only changes who handles your DNS — your ISP can still see your traffic. A VPN encrypts everything."
+      },
+      {
+        "question": "Does NordVPN prevent DNS leaks?",
+        "answer": "Yes, NordVPN runs its own private DNS servers and routes all DNS queries through the encrypted VPN tunnel. It also includes a kill switch that blocks all traffic if the VPN connection drops."
+      },
+      {
+        "question": "How often should I test for DNS leaks?",
+        "answer": "Test after installing or updating your VPN, after changing network settings, and periodically (monthly) to ensure nothing has changed. Some OS updates can reset DNS settings."
+      },
+      {
+        "question": "What's the difference between a DNS leak and an IP leak?",
+        "answer": "An IP leak exposes your real IP address despite using a VPN. A DNS leak exposes which websites you visit. Both compromise your privacy, but they work through different mechanisms. Use our IP checker tool to test for IP leaks."
+      }
     ]
   }
 }

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-21T21:06:08.587Z",
+  "generatedAt": "2026-03-03T14:55:03.270Z",
   "paths": [
     "",
     "/about",
@@ -9,6 +9,7 @@
     "/best/free-vpn",
     "/best/vpn-android",
     "/best/vpn-android-tablet",
+    "/best/vpn-bali",
     "/best/vpn-cheap",
     "/best/vpn-china",
     "/best/vpn-chromebook",
@@ -24,14 +25,18 @@
     "/best/vpn-linux",
     "/best/vpn-macos",
     "/best/vpn-mobile",
+    "/best/vpn-morocco",
     "/best/vpn-netflix",
     "/best/vpn-privacy",
     "/best/vpn-russia",
     "/best/vpn-streaming",
     "/best/vpn-tablet",
+    "/best/vpn-thailand",
     "/best/vpn-torrenting",
     "/best/vpn-turkey",
     "/best/vpn-uae",
+    "/best/vpn-usa",
+    "/best/vpn-vietnam",
     "/best/vpn-windows",
     "/best/vpn-windows-tablet",
     "/blog",
@@ -66,13 +71,17 @@
     "/guides/vpn-protocols-explained",
     "/guides/vpn-speed-guide",
     "/guides/what-is-vpn",
+    "/methodology",
     "/privacy-policy",
     "/quiz",
+    "/reports",
+    "/reports/vpn-transparency-performance-index-2026",
     "/reviews",
     "/speed-test",
     "/terms",
     "/tools",
     "/tools/dns-leak-test",
-    "/tools/what-is-my-ip"
+    "/tools/what-is-my-ip",
+    "/vpn-index"
   ]
 }

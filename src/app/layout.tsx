@@ -26,6 +26,7 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  type StackProviderApp = NonNullable<React.ComponentProps<typeof StackProvider>["app"]>;
   let locale = "en";
   try {
     locale = await getLocale();
@@ -57,7 +58,7 @@ export default async function RootLayout({
       </head>
       <body className="min-h-screen bg-background font-sans antialiased">
         {stackServerApp ? (
-          <StackProvider app={stackServerApp as any}>
+          <StackProvider app={stackServerApp as unknown as StackProviderApp}>
             <StackTheme>
               {children}
             </StackTheme>

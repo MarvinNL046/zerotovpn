@@ -3,6 +3,7 @@ import { VpnCard } from "@/components/vpn/vpn-card";
 import { getAllVpns } from "@/lib/vpn-data-layer";
 import { routing } from "@/i18n/routing";
 import { BreadcrumbSchema, ComparisonTableSchema } from "@/components/structured-data";
+import { Link } from "@/i18n/navigation";
 import type { Metadata } from "next";
 
 type Props = {
@@ -105,6 +106,20 @@ export default async function ReviewsPage({ params }: Props) {
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Honest, in-depth reviews of the most popular VPN services. Each VPN
               is tested for speed, security, streaming, and overall value.
+            </p>
+            <p className="text-sm text-muted-foreground mt-4">
+              Research assets:{" "}
+              <Link href="/reports/vpn-transparency-performance-index-2026" className="text-primary hover:underline">
+                Transparency Report 2026
+              </Link>
+              {" · "}
+              <Link href="/methodology" className="text-primary hover:underline">
+                Methodology
+              </Link>
+              {" · "}
+              <Link href="/vpn-index" className="text-primary hover:underline">
+                VPN Index
+              </Link>
             </p>
           </div>
 

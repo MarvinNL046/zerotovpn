@@ -35,6 +35,7 @@ import type { Metadata } from "next";
 import { getShortMonthYear, getLocalizedMonthYear, OG_LOCALE_MAP } from "@/lib/seo-utils";
 import { LastUpdated } from "@/components/last-updated";
 import { vpnProviders } from "@/lib/vpn-data";
+import { formatAuditStatus, formatLoggingPolicy, getTransparencySnapshotForVpn } from "@/lib/vpn-transparency-data";
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
@@ -263,6 +264,7 @@ export default async function ReviewPage({ params }: Props) {
   ];
 
   const faqs = generateFaqs(vpn);
+  const transparency = await getTransparencySnapshotForVpn(vpn);
 
   return (
     <>
@@ -310,6 +312,7 @@ export default async function ReviewPage({ params }: Props) {
                 </Badge>
               )}
               {vpn.freeTier && <Badge variant="secondary">{t("freeTierAvailable")}</Badge>}
+              <Badge variant="blue">Last tested: {transparency.lastTested}</Badge>
             </div>
             <h1 className="text-4xl font-bold mb-2">{t("reviewTitle", { name: vpn.name })}</h1>
             <LastUpdated locale={_locale} className="mb-4" />
@@ -368,6 +371,29 @@ export default async function ReviewPage({ params }: Props) {
                     ${vpn.priceTwoYear || vpn.priceYearly}
                   </span>
                   <span className="text-muted-foreground">{t("quickStats.perMonth")}</span>
+                </div>
+              </div>
+              <Separator />
+              <div className="space-y-2 text-xs text-muted-foreground">
+                <div className="flex justify-between gap-3">
+                  <span>Ownership</span>
+                  <span className="text-right text-foreground">{transparency.owner}</span>
+                </div>
+                <div className="flex justify-between gap-3">
+                  <span>Jurisdiction</span>
+                  <span className="text-right text-foreground">{transparency.jurisdiction}</span>
+                </div>
+                <div className="flex justify-between gap-3">
+                  <span>Logging</span>
+                  <span className="text-right text-foreground">{formatLoggingPolicy(transparency.loggingPolicy)}</span>
+                </div>
+                <div className="flex justify-between gap-3">
+                  <span>Audit</span>
+                  <span className="text-right text-foreground">{formatAuditStatus(transparency.auditStatus)}</span>
+                </div>
+                <div className="flex justify-between gap-3">
+                  <span>Kill switch</span>
+                  <span className="text-right text-foreground">{transparency.killSwitchReliability}% reliable</span>
                 </div>
               </div>
             </CardContent>

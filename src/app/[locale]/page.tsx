@@ -6,7 +6,7 @@ import { ComparisonTable } from "@/components/vpn/comparison-table";
 import { VpnCard } from "@/components/vpn/vpn-card";
 import { getFeaturedVpns } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
-import { Shield, Zap, Globe, CheckCircle, ArrowRight, Server, Users, Clock } from "lucide-react";
+import { Shield, Zap, Globe, CheckCircle, ArrowRight, Server, Users, Clock, FlaskConical, BarChart3, FileSpreadsheet } from "lucide-react";
 import {
   ComparisonTableSchema,
 } from "@/components/structured-data";
@@ -40,22 +40,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     metadataBase: new URL(baseUrl),
     title: isEnglish
-      ? `Best VPN 2026: Top Picks Tested for Speed, Security & Streaming`
+      ? "ZeroToVPN: Independent VPN Research, Transparency & Real-World Testing"
       : undefined,
     description: isEnglish
-      ? `Best VPN 2026: We tested 38+ VPNs for speed, security & streaming. Expert rankings updated ${shortMonthYear}. Find the cheapest, fastest VPN for your needs.`
-      : `We tested 38+ VPNs for speed, security & streaming. See our expert rankings updated ${shortMonthYear}. Find the best VPN for your needs.`,
+      ? `Independent VPN research and real-world testing. See measurable rankings updated ${shortMonthYear}, full methodology, and the VPN Transparency & Performance Index 2026.`
+      : `Independent VPN research and real-world testing. See measurable rankings updated ${shortMonthYear}, full methodology, and transparency reports.`,
     keywords: isEnglish
       ? [
-          "best vpn 2026",
-          "best vpn",
-          "cheapest vpn",
-          "fastest vpn",
+          "vpn transparency report",
+          "independent vpn research",
+          "vpn testing methodology",
+          "vpn performance index 2026",
           "vpn comparison",
-          "vpn review",
-          "nordvpn review",
-          "surfshark review",
-          "expressvpn review",
+          "vpn review data",
         ]
       : undefined,
     alternates: {
@@ -180,6 +177,41 @@ export default async function HomePage({ params }: Props) {
                   {t("trustIndicators.updated.label")}
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Authority Pack */}
+        <section className="py-12 border-y bg-muted/20">
+          <div className="container">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold mb-3">The ZeroToVPN Authority Pack</h2>
+              <p className="text-muted-foreground max-w-3xl mx-auto">
+                Built for measurable, explainable, repeatable, data-driven VPN research.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <Link href="/reports/vpn-transparency-performance-index-2026" className="rounded-xl border bg-card p-6 hover:border-primary/40 transition-colors">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4">
+                  <FileSpreadsheet className="h-5 w-5" />
+                </div>
+                <h3 className="font-semibold mb-2">VPN Transparency Report 2026</h3>
+                <p className="text-sm text-muted-foreground">Full matrix with speed, latency, logging, ownership, jurisdiction, streaming, torrenting, and kill switch reliability.</p>
+              </Link>
+              <Link href="/methodology" className="rounded-xl border bg-card p-6 hover:border-primary/40 transition-colors">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4">
+                  <FlaskConical className="h-5 w-5" />
+                </div>
+                <h3 className="font-semibold mb-2">Testing Methodology</h3>
+                <p className="text-sm text-muted-foreground">Detailed protocol: test locations, baseline rules, re-test cadence, scoring weights, and affiliate safeguards.</p>
+              </Link>
+              <Link href="/vpn-index" className="rounded-xl border bg-card p-6 hover:border-primary/40 transition-colors">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4">
+                  <BarChart3 className="h-5 w-5" />
+                </div>
+                <h3 className="font-semibold mb-2">VPN Index Dashboard</h3>
+                <p className="text-sm text-muted-foreground">Scorecards and filters for budget, privacy-first, streaming, and gaming decisions.</p>
+              </Link>
             </div>
           </div>
         </section>

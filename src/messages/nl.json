@@ -31,7 +31,10 @@
     "vpnLinux": "VPN voor Linux",
     "tools": "Tools",
     "ipChecker": "IP Checker",
-    "dnsLeakTest": "DNS Lek Test"
+    "dnsLeakTest": "DNS Lek Test",
+    "vpnIndex": "VPN Index",
+    "methodology": "Methodology",
+    "vpnThailand": "Best VPN for Thailand"
   },
   "hero": {
     "title": "Vind Jouw Perfecte VPN",
@@ -111,7 +114,10 @@
     "vpnChromebook": "VPN voor Chromebook",
     "vpnLinux": "VPN voor Linux",
     "ipChecker": "IP Checker",
-    "dnsLeakTest": "DNS Lek Test"
+    "dnsLeakTest": "DNS Lek Test",
+    "vpnIndex": "VPN Index",
+    "methodology": "Methodology",
+    "transparencyReport": "Transparency Report 2026"
   },
   "exitIntent": {
     "headline": "Wacht! Mis deze exclusieve aanbieding niet!",
@@ -150,11 +156,11 @@
   },
   "home": {
     "hero": {
-      "badge": "Bijgewerkt voor 2026",
+      "badge": "Onafhankelijk onderzoek, maandelijks bijgewerkt",
       "title": "Vind Jouw",
       "titleHighlight": "Perfecte VPN",
       "titleAccent": "vandaag",
-      "subtitle": "Van zero naar veilig in enkele minuten. Expert reviews, eerlijke vergelijkingen en exclusieve deals op de beste VPN-diensten.",
+      "subtitle": "Van zero naar veilig in enkele minuten. Onafhankelijk VPN-onderzoek met transparante methodologie en real-world testdata.",
       "primaryCta": "Vergelijk VPNs",
       "secondaryCta": "Wat is een VPN?",
       "trusted": "Vertrouwd door meer dan 100.000 lezers wereldwijd"
@@ -178,8 +184,8 @@
       }
     },
     "comparison": {
-      "title": "Beste VPNs van 2026",
-      "subtitle": "Onafhankelijk getest en beoordeeld. We testen elke VPN op snelheid, beveiliging, streaming en prijs-kwaliteitverhouding."
+      "title": "VPN Transparantie & Prestatie Rankings",
+      "subtitle": "Data-gedreven rankings op basis van snelheid, latency, privacy-transparantie, streaming-consistentie en veiligheidsbetrouwbaarheid."
     },
     "topPicks": {
       "title": "Top VPN Keuzes",
@@ -5303,8 +5309,7 @@
       "getValue": "Verkrijg Surfshark - 82% KORTING",
       "getTravel": "Verkrijg ExpressVPN"
     }
-  }
-,
+  },
   "quiz": {
     "metadata": {
       "title": "VPN Finder Quiz - Vind Jouw Perfecte VPN | ZeroToVPN",
@@ -5429,11 +5434,26 @@
     "howVpnHelpsDesc": "Een VPN (Virtual Private Network) routeert je internetverkeer via een versleutelde tunnel naar een externe server. Websites zien het IP-adres van de VPN-server in plaats van het jouwe, waardoor het vrijwel onmogelijk is om activiteit naar jou te herleiden.",
     "recommendedVpns": "Beste VPNs om Je IP te Verbergen",
     "faq": [
-      { "question": "Kan iemand mijn exacte locatie vinden via mijn IP-adres?", "answer": "Niet je exacte adres, maar je IP onthult je stad, regio en land. In combinatie met andere gegevens kan het je geschatte locatie bepalen. Een VPN voorkomt dit door je echte IP te maskeren." },
-      { "question": "Is het legaal om mijn IP-adres te verbergen?", "answer": "Ja, het verbergen van je IP-adres met een VPN is volledig legaal in de meeste landen. VPNs zijn legitieme privacytools die door miljoenen mensen en bedrijven wereldwijd worden gebruikt." },
-      { "question": "Wat is het verschil tussen IPv4 en IPv6?", "answer": "IPv4 gebruikt 32-bits adressen (zoals 192.168.1.1) en is het meest voorkomende formaat. IPv6 gebruikt 128-bits adressen (zoals 2001:db8::1) en is gemaakt om het groeiende aantal internetapparaten aan te kunnen." },
-      { "question": "Kan mijn internetprovider zien wat ik online doe?", "answer": "Ja, je ISP kan zien welke websites je bezoekt, wanneer je ze bezoekt en hoeveel data je verbruikt. Een VPN versleutelt je verkeer zodat je ISP alleen kan zien dat je verbonden bent met een VPN-server, niet wat je doet." },
-      { "question": "Hoe weet ik of mijn VPN werkt?", "answer": "Gebruik deze IP-checker tool! Verbind met je VPN en controleer hier je IP-adres. Als het een ander IP-adres en locatie toont dan je werkelijke, werkt je VPN correct." }
+      {
+        "question": "Kan iemand mijn exacte locatie vinden via mijn IP-adres?",
+        "answer": "Niet je exacte adres, maar je IP onthult je stad, regio en land. In combinatie met andere gegevens kan het je geschatte locatie bepalen. Een VPN voorkomt dit door je echte IP te maskeren."
+      },
+      {
+        "question": "Is het legaal om mijn IP-adres te verbergen?",
+        "answer": "Ja, het verbergen van je IP-adres met een VPN is volledig legaal in de meeste landen. VPNs zijn legitieme privacytools die door miljoenen mensen en bedrijven wereldwijd worden gebruikt."
+      },
+      {
+        "question": "Wat is het verschil tussen IPv4 en IPv6?",
+        "answer": "IPv4 gebruikt 32-bits adressen (zoals 192.168.1.1) en is het meest voorkomende formaat. IPv6 gebruikt 128-bits adressen (zoals 2001:db8::1) en is gemaakt om het groeiende aantal internetapparaten aan te kunnen."
+      },
+      {
+        "question": "Kan mijn internetprovider zien wat ik online doe?",
+        "answer": "Ja, je ISP kan zien welke websites je bezoekt, wanneer je ze bezoekt en hoeveel data je verbruikt. Een VPN versleutelt je verkeer zodat je ISP alleen kan zien dat je verbonden bent met een VPN-server, niet wat je doet."
+      },
+      {
+        "question": "Hoe weet ik of mijn VPN werkt?",
+        "answer": "Gebruik deze IP-checker tool! Verbind met je VPN en controleer hier je IP-adres. Als het een ander IP-adres en locatie toont dan je werkelijke, werkt je VPN correct."
+      }
     ]
   },
   "dnsLeakTest": {
@@ -5467,11 +5487,26 @@
     "howToFixDesc": "Gebruik een VPN met ingebouwde DNS-lekbescherming en een kill switch. Top VPNs zoals NordVPN draaien hun eigen privé DNS-servers en blokkeren automatisch DNS-verzoeken die de VPN-tunnel proberen te verlaten.",
     "recommendedVpns": "Beste VPNs met DNS-lekbescherming",
     "faq": [
-      { "question": "Waardoor worden DNS-lekken veroorzaakt?", "answer": "DNS-lekken worden meestal veroorzaakt door verkeerd geconfigureerde VPN-software, DNS-instellingen van het besturingssysteem die de VPN overschrijven, of het gebruik van een VPN zonder eigen DNS-servers. Windows is bijzonder vatbaar voor DNS-lekken." },
-      { "question": "Kan ik DNS-lekken oplossen zonder VPN?", "answer": "Je kunt je DNS-servers wijzigen naar een privacy-gerichte provider zoals Cloudflare (1.1.1.1) of Quad9 (9.9.9.9), maar dit verandert alleen wie je DNS afhandelt — je ISP kan nog steeds je verkeer zien. Een VPN versleutelt alles." },
-      { "question": "Voorkomt NordVPN DNS-lekken?", "answer": "Ja, NordVPN draait eigen privé DNS-servers en routeert alle DNS-query's door de versleutelde VPN-tunnel. Het bevat ook een kill switch die al het verkeer blokkeert als de VPN-verbinding wegvalt." },
-      { "question": "Hoe vaak moet ik testen op DNS-lekken?", "answer": "Test na het installeren of updaten van je VPN, na het wijzigen van netwerkinstellingen, en periodiek (maandelijks) om er zeker van te zijn dat er niets is veranderd." },
-      { "question": "Wat is het verschil tussen een DNS-lek en een IP-lek?", "answer": "Een IP-lek onthult je echte IP-adres ondanks het gebruik van een VPN. Een DNS-lek onthult welke websites je bezoekt. Beide schaden je privacy, maar werken via verschillende mechanismen. Gebruik onze IP-checker tool om op IP-lekken te testen." }
+      {
+        "question": "Waardoor worden DNS-lekken veroorzaakt?",
+        "answer": "DNS-lekken worden meestal veroorzaakt door verkeerd geconfigureerde VPN-software, DNS-instellingen van het besturingssysteem die de VPN overschrijven, of het gebruik van een VPN zonder eigen DNS-servers. Windows is bijzonder vatbaar voor DNS-lekken."
+      },
+      {
+        "question": "Kan ik DNS-lekken oplossen zonder VPN?",
+        "answer": "Je kunt je DNS-servers wijzigen naar een privacy-gerichte provider zoals Cloudflare (1.1.1.1) of Quad9 (9.9.9.9), maar dit verandert alleen wie je DNS afhandelt — je ISP kan nog steeds je verkeer zien. Een VPN versleutelt alles."
+      },
+      {
+        "question": "Voorkomt NordVPN DNS-lekken?",
+        "answer": "Ja, NordVPN draait eigen privé DNS-servers en routeert alle DNS-query's door de versleutelde VPN-tunnel. Het bevat ook een kill switch die al het verkeer blokkeert als de VPN-verbinding wegvalt."
+      },
+      {
+        "question": "Hoe vaak moet ik testen op DNS-lekken?",
+        "answer": "Test na het installeren of updaten van je VPN, na het wijzigen van netwerkinstellingen, en periodiek (maandelijks) om er zeker van te zijn dat er niets is veranderd."
+      },
+      {
+        "question": "Wat is het verschil tussen een DNS-lek en een IP-lek?",
+        "answer": "Een IP-lek onthult je echte IP-adres ondanks het gebruik van een VPN. Een DNS-lek onthult welke websites je bezoekt. Beide schaden je privacy, maar werken via verschillende mechanismen. Gebruik onze IP-checker tool om op IP-lekken te testen."
+      }
     ]
   }
 }

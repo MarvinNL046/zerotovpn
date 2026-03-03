@@ -6,6 +6,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { eq, and, desc } from "drizzle-orm";
 import { getDb, blogPosts, contentQueue, scrapeJobs } from "@/lib/db";
 import { generateContent } from "@/lib/pipeline/ai-provider";
+import { ensurePipelineApiEnv } from "@/lib/pipeline/env-fallback";
+import { factCheckContentWithJina } from "@/lib/pipeline/fact-checker";
 import type { AiModel } from "@/lib/pipeline/ai-provider";
 
 export const maxDuration = 300;
@@ -929,11 +931,13 @@ export async function POST(request: NextRequest) {
     topic: rawTopic,
     model = "claude-haiku",
     publish = false,
+    factCheck = true,
     jobId,
   } = body as {
     topic?: string;
     model?: AiModel;
     publish?: boolean;
+    factCheck?: boolean;
     jobId?: string;
   };
 
@@ -1147,6 +1151,79 @@ export async function POST(request: NextRequest) {
       console.log("[bg-generate] Post updated with images");
     }
 
+    // Get the final English content (with images) for translations
+    const finalContent = updatedContent !== parsed.content ? updatedContent : parsed.content;
+    let factCheckSummary: {
+      claimCount: number;
+      supported: number;
+      contradicted: number;
+      mixed: number;
+      unclear: number;
+    } | null = null;
+
+    if (factCheck) {
+      try {
+        const envStatus = ensurePipelineApiEnv();
+        if (envStatus.missing.includes("JINA_API_KEY")) {
+          console.warn("[bg-generate] Fact-check skipped: JINA_API_KEY missing");
+        } else {
+        const startedAt = new Date();
+        const factCheckResult = await factCheckContentWithJina({
+          content: `${post.title}\n\n${finalContent}`,
+          topic: post.title,
+          maxClaims: 6,
+        });
+
+        const supported = factCheckResult.results.filter((r) => r.verdict === "supported").length;
+        const contradicted = factCheckResult.results.filter((r) => r.verdict === "contradicted").length;
+        const mixed = factCheckResult.results.filter((r) => r.verdict === "mixed").length;
+        const unclear = factCheckResult.results.filter((r) => r.verdict === "unclear").length;
+
+        factCheckSummary = {
+          claimCount: factCheckResult.claimCount,
+          supported,
+          contradicted,
+          mixed,
+          unclear,
+        };
+
+        await db.insert(scrapeJobs).values({
+          type: "fact-check",
+          status: "completed",
+          source: `blog-post:${finalSlug}`,
+          result: JSON.stringify({
+            postId: post.id,
+            slug: finalSlug,
+            ...factCheckResult,
+          }),
+          startedAt,
+          completedAt: new Date(),
+        });
+
+        console.log(
+          `[bg-generate] Fact-check done for ${finalSlug}: ${supported} supported, ${contradicted} contradicted`
+        );
+        }
+      } catch (factCheckError) {
+        console.warn("[bg-generate] Fact-check failed, continuing:", factCheckError);
+        try {
+          await db.insert(scrapeJobs).values({
+            type: "fact-check",
+            status: "failed",
+            source: `blog-post:${finalSlug}`,
+            error:
+              factCheckError instanceof Error
+                ? factCheckError.message
+                : "Unknown fact-check error",
+            startedAt: new Date(),
+            completedAt: new Date(),
+          });
+        } catch {
+          // Ignore save errors for fact-check failures.
+        }
+      }
+    }
+
     // Publish English post if requested
     if (publish) {
       await db.update(blogPosts).set({ published: true, publishedAt: new Date() }).where(eq(blogPosts.id, post.id));
@@ -1159,15 +1236,18 @@ export async function POST(request: NextRequest) {
         .update(contentQueue)
         .set({
           status: "completed",
-          output: JSON.stringify({ postId: post.id, slug: finalSlug, title: post.title, published: publish }),
+          output: JSON.stringify({
+            postId: post.id,
+            slug: finalSlug,
+            title: post.title,
+            published: publish,
+            factCheck: factCheckSummary,
+          }),
           processedAt: new Date(),
         })
         .where(eq(contentQueue.id, jobId));
       console.log("[bg-generate] Job marked completed, starting translations...");
     }
-
-    // Get the final English content (with images) for translations
-    const finalContent = updatedContent !== parsed.content ? updatedContent : parsed.content;
 
     // Translate to all other languages
     const targetLanguages = [

@@ -36,6 +36,7 @@ export async function POST(request: NextRequest) {
       topic: rawTopic,
       model = "claude-haiku",
       publish = false,
+      factCheck = true,
     } = body as {
       type: string;
       phase?: "start" | "status" | "images" | "publish";
@@ -44,6 +45,7 @@ export async function POST(request: NextRequest) {
       topic?: string;
       model?: AiModel;
       publish?: boolean;
+      factCheck?: boolean;
     };
 
     if (type !== "blog-post") {
@@ -62,7 +64,7 @@ export async function POST(request: NextRequest) {
         return handlePublish(postId);
       case "start":
       default:
-        return handleStart(request, rawTopic, model, publish);
+        return handleStart(request, rawTopic, model, publish, factCheck);
     }
   } catch (error) {
     console.error("Pipeline generate error:", error);
@@ -81,7 +83,8 @@ async function handleStart(
   request: NextRequest,
   rawTopic: string | undefined,
   model: AiModel,
-  publish: boolean
+  publish: boolean,
+  factCheck: boolean
 ) {
   const db = getDb();
 
@@ -105,7 +108,7 @@ async function handleStart(
       type: "blog-post",
       status: "pending",
       priority: 0,
-      input: JSON.stringify({ topic, publish }),
+      input: JSON.stringify({ topic, publish, factCheck }),
       aiModel: model,
     })
     .returning();
@@ -124,6 +127,7 @@ async function handleStart(
       topic,
       model,
       publish,
+      factCheck,
       jobId: job.id,
     }),
   }).then(res => {
@@ -136,6 +140,7 @@ async function handleStart(
     jobId: job.id,
     topic,
     status: "pending",
+    factCheckEnabled: factCheck,
   });
 }
 
@@ -167,6 +172,9 @@ async function handleStatus(jobId: string | undefined) {
     result.slug = output.slug;
     result.title = output.title;
     result.published = output.published;
+    if (output.factCheck) {
+      result.factCheck = output.factCheck;
+    }
   }
 
   if (job.status === "failed") {

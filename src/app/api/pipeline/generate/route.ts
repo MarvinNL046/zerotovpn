@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { desc, eq } from "drizzle-orm";
+import { and, asc, desc, eq } from "drizzle-orm";
 import { getDb, scrapeJobs, blogPosts, contentQueue } from "@/lib/db";
 import { autoSelectTopic } from "@/lib/pipeline/content-generator";
 import { publishPost, getPostById } from "@/lib/pipeline/blog-service";
@@ -102,36 +102,95 @@ async function handleStart(
 ) {
   const db = getDb();
 
-  // Resolve topic
-  const recentScrapes = await db
-    .select()
-    .from(scrapeJobs)
-    .where(eq(scrapeJobs.status, "completed"))
-    .orderBy(desc(scrapeJobs.createdAt))
-    .limit(5);
+  let topic = rawTopic && rawTopic !== "auto" ? rawTopic : "";
+  let jobId: string | null = null;
+  let topicSource: "manual" | "queue" | "auto" =
+    rawTopic && rawTopic !== "auto" ? "manual" : "auto";
 
-  const topic =
-    !rawTopic || rawTopic === "auto"
-      ? await autoSelectTopic(recentScrapes)
-      : rawTopic;
+  let resolvedPublish = publish;
+  let resolvedFactCheck = factCheck;
+  let resolvedQueueFixes = queueFixes;
+  let resolvedAutoApplyFixes = autoApplyFixes;
 
-  // Create job in contentQueue
-  const [job] = await db
-    .insert(contentQueue)
-    .values({
-      type: "blog-post",
-      status: "pending",
-      priority: 0,
-      input: JSON.stringify({
-        topic,
-        publish,
-        factCheck,
-        queueFixes,
-        autoApplyFixes,
-      }),
-      aiModel: model,
-    })
-    .returning();
+  if (!rawTopic || rawTopic === "auto") {
+    const queuedItems = await db
+      .select({
+        id: contentQueue.id,
+        input: contentQueue.input,
+      })
+      .from(contentQueue)
+      .where(
+        and(
+          eq(contentQueue.type, "blog-post"),
+          eq(contentQueue.status, "pending")
+        )
+      )
+      .orderBy(desc(contentQueue.priority), asc(contentQueue.createdAt))
+      .limit(20);
+
+    for (const item of queuedItems) {
+      let parsed: Record<string, unknown> | null = null;
+      try {
+        parsed = JSON.parse(item.input) as Record<string, unknown>;
+      } catch {
+        parsed = null;
+      }
+      if (!parsed) continue;
+
+      const queuedTopic =
+        typeof parsed.topic === "string" ? parsed.topic.trim() : "";
+      if (!queuedTopic) continue;
+
+      topic = queuedTopic;
+      jobId = item.id;
+      topicSource = "queue";
+
+      if (typeof parsed.publish === "boolean") {
+        resolvedPublish = parsed.publish;
+      }
+      if (typeof parsed.factCheck === "boolean") {
+        resolvedFactCheck = parsed.factCheck;
+      }
+      if (typeof parsed.queueFixes === "boolean") {
+        resolvedQueueFixes = parsed.queueFixes;
+      }
+      if (typeof parsed.autoApplyFixes === "boolean") {
+        resolvedAutoApplyFixes = parsed.autoApplyFixes;
+      }
+      break;
+    }
+  }
+
+  if (!topic) {
+    const recentScrapes = await db
+      .select()
+      .from(scrapeJobs)
+      .where(eq(scrapeJobs.status, "completed"))
+      .orderBy(desc(scrapeJobs.createdAt))
+      .limit(5);
+    topic = await autoSelectTopic(recentScrapes);
+    topicSource = "auto";
+  }
+
+  if (!jobId) {
+    const [job] = await db
+      .insert(contentQueue)
+      .values({
+        type: "blog-post",
+        status: "pending",
+        priority: 0,
+        input: JSON.stringify({
+          topic,
+          publish: resolvedPublish,
+          factCheck: resolvedFactCheck,
+          queueFixes: resolvedQueueFixes,
+          autoApplyFixes: resolvedAutoApplyFixes,
+        }),
+        aiModel: model,
+      })
+      .returning();
+    jobId = job.id;
+  }
 
   // Fire-and-forget: trigger background route without waiting for response
   const siteUrl = process.env.SITE_URL || (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "") || "";
@@ -146,11 +205,11 @@ async function handleStart(
     body: JSON.stringify({
       topic,
       model,
-      publish,
-      factCheck,
-      queueFixes,
-      autoApplyFixes,
-      jobId: job.id,
+      publish: resolvedPublish,
+      factCheck: resolvedFactCheck,
+      queueFixes: resolvedQueueFixes,
+      autoApplyFixes: resolvedAutoApplyFixes,
+      jobId,
     }),
   }).then(res => {
     console.log(`[generate] Background function triggered: ${res.status}`);
@@ -159,12 +218,13 @@ async function handleStart(
   });
 
   return NextResponse.json({
-    jobId: job.id,
+    jobId,
     topic,
     status: "pending",
-    factCheckEnabled: factCheck,
-    queueFixesEnabled: queueFixes,
-    autoApplyFixesEnabled: autoApplyFixes,
+    topicSource,
+    factCheckEnabled: resolvedFactCheck,
+    queueFixesEnabled: resolvedQueueFixes,
+    autoApplyFixesEnabled: resolvedAutoApplyFixes,
   });
 }
 

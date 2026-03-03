@@ -8,9 +8,12 @@ import { getDb, blogPosts, contentQueue, scrapeJobs } from "@/lib/db";
 import { generateContent } from "@/lib/pipeline/ai-provider";
 import { ensurePipelineApiEnv } from "@/lib/pipeline/env-fallback";
 import {
+  applyTextPatches,
   factCheckContentWithJina,
   generateFixSuggestions,
   type FactCheckFixSuggestion,
+  generateTextPatchesFromSuggestions,
+  type FactCheckTextPatch,
 } from "@/lib/pipeline/fact-checker";
 import type { AiModel } from "@/lib/pipeline/ai-provider";
 
@@ -937,6 +940,7 @@ export async function POST(request: NextRequest) {
     publish = false,
     factCheck = true,
     queueFixes = true,
+    autoApplyFixes = true,
     jobId,
   } = body as {
     topic?: string;
@@ -944,6 +948,7 @@ export async function POST(request: NextRequest) {
     publish?: boolean;
     factCheck?: boolean;
     queueFixes?: boolean;
+    autoApplyFixes?: boolean;
     jobId?: string;
   };
 
@@ -1158,7 +1163,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Get the final English content (with images) for translations
-    const finalContent = updatedContent !== parsed.content ? updatedContent : parsed.content;
+    let finalContent = updatedContent !== parsed.content ? updatedContent : parsed.content;
     let factCheckSummary: {
       claimCount: number;
       supported: number;
@@ -1167,6 +1172,8 @@ export async function POST(request: NextRequest) {
       unclear: number;
       fixQueueId?: string;
       fixSuggestions?: number;
+      autoAppliedPatches?: number;
+      skippedPatches?: number;
     } | null = null;
 
     if (factCheck) {
@@ -1212,7 +1219,7 @@ export async function POST(request: NextRequest) {
           `[bg-generate] Fact-check done for ${finalSlug}: ${supported} supported, ${contradicted} contradicted`
         );
 
-        if (queueFixes && (contradicted > 0 || mixed > 0)) {
+        if (contradicted > 0 || mixed > 0) {
           let fixSuggestions: FactCheckFixSuggestion[] = [];
           try {
             fixSuggestions = await generateFixSuggestions({
@@ -1229,38 +1236,95 @@ export async function POST(request: NextRequest) {
           }
 
           if (fixSuggestions.length > 0) {
-            const [fixQueueItem] = await db
-              .insert(contentQueue)
-              .values({
-                type: "fact-check-fix",
-                status: "pending",
-                priority: 9,
-                input: JSON.stringify({
-                  postId: post.id,
-                  slug: finalSlug,
-                  title: post.title,
-                  language: "en",
-                  topic: post.title,
-                  generatedAt: new Date().toISOString(),
-                  factCheck: {
-                    claimCount: factCheckResult.claimCount,
-                    supported,
-                    contradicted,
-                    mixed,
-                    unclear,
-                  },
-                  suggestions: fixSuggestions,
-                }),
-                aiModel: model,
-                attempts: 0,
-              })
-              .returning({ id: contentQueue.id });
-
-            factCheckSummary.fixQueueId = fixQueueItem.id;
             factCheckSummary.fixSuggestions = fixSuggestions.length;
-            console.log(
-              `[bg-generate] Fix queue item created: ${fixQueueItem.id} (${fixSuggestions.length} suggestions)`
-            );
+
+            let textPatches: FactCheckTextPatch[] = [];
+            let appliedPatchCount = 0;
+            let skippedPatchCount = 0;
+
+            if (autoApplyFixes) {
+              try {
+                textPatches = await generateTextPatchesFromSuggestions({
+                  topic: post.title,
+                  content: finalContent,
+                  suggestions: fixSuggestions,
+                  maxPatches: 6,
+                });
+
+                if (textPatches.length > 0) {
+                  const patchResult = applyTextPatches(finalContent, textPatches);
+                  appliedPatchCount = patchResult.appliedPatches.length;
+                  skippedPatchCount = patchResult.skippedPatches.length;
+
+                  if (appliedPatchCount > 0) {
+                    finalContent = patchResult.updatedContent;
+                    await db
+                      .update(blogPosts)
+                      .set({
+                        content: finalContent,
+                        updatedAt: new Date(),
+                      })
+                      .where(eq(blogPosts.id, post.id));
+
+                    console.log(
+                      `[bg-generate] Auto-applied ${appliedPatchCount} fact-check patches for ${finalSlug}`
+                    );
+                  }
+                }
+              } catch (patchError) {
+                console.warn(
+                  "[bg-generate] Auto-apply patch generation failed:",
+                  patchError
+                );
+              }
+            }
+
+            factCheckSummary.autoAppliedPatches = appliedPatchCount;
+            factCheckSummary.skippedPatches = skippedPatchCount;
+
+            if (queueFixes) {
+              const fixQueueStatus = autoApplyFixes ? "completed" : "pending";
+              const [fixQueueItem] = await db
+                .insert(contentQueue)
+                .values({
+                  type: "fact-check-fix",
+                  status: fixQueueStatus,
+                  priority: 9,
+                  input: JSON.stringify({
+                    postId: post.id,
+                    slug: finalSlug,
+                    title: post.title,
+                    language: "en",
+                    topic: post.title,
+                    generatedAt: new Date().toISOString(),
+                    factCheck: {
+                      claimCount: factCheckResult.claimCount,
+                      supported,
+                      contradicted,
+                      mixed,
+                      unclear,
+                    },
+                    suggestions: fixSuggestions,
+                  }),
+                  output: autoApplyFixes
+                    ? JSON.stringify({
+                        autoApplied: true,
+                        appliedPatches: appliedPatchCount,
+                        skippedPatches: skippedPatchCount,
+                        patches: textPatches,
+                      })
+                    : null,
+                  aiModel: model,
+                  attempts: autoApplyFixes ? 1 : 0,
+                  processedAt: autoApplyFixes ? new Date() : null,
+                })
+                .returning({ id: contentQueue.id });
+
+              factCheckSummary.fixQueueId = fixQueueItem.id;
+              console.log(
+                `[bg-generate] Fix queue item ${fixQueueStatus}: ${fixQueueItem.id} (${fixSuggestions.length} suggestions)`
+              );
+            }
           }
         }
         }

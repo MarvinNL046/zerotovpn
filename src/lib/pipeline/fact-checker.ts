@@ -36,6 +36,21 @@ export interface FactCheckFixSuggestion {
   sourceUrls: string[];
 }
 
+export interface FactCheckTextPatch {
+  claim: string;
+  oldText: string;
+  newText: string;
+  reason: string;
+  confidence: number;
+  sourceUrls: string[];
+}
+
+export interface ApplyTextPatchesResult {
+  updatedContent: string;
+  appliedPatches: FactCheckTextPatch[];
+  skippedPatches: Array<{ patch: FactCheckTextPatch; reason: string }>;
+}
+
 function getJinaApiKey(): string {
   return process.env.JINA_API_KEY?.trim() || "";
 }
@@ -324,4 +339,106 @@ export async function generateFixSuggestions(input: {
   }
 
   return suggestions.slice(0, maxFixes);
+}
+
+export async function generateTextPatchesFromSuggestions(input: {
+  topic: string;
+  content: string;
+  suggestions: FactCheckFixSuggestion[];
+  maxPatches?: number;
+}): Promise<FactCheckTextPatch[]> {
+  const maxPatches = Math.max(1, Math.min(10, input.maxPatches ?? 6));
+  const selectedSuggestions = input.suggestions.slice(0, maxPatches);
+  if (selectedSuggestions.length === 0) return [];
+
+  const prompt = [
+    "Create minimal text patches for an HTML article.",
+    "Return only JSON with this shape:",
+    '{ "patches": [ { "claim": "string", "oldText": "exact string from content", "newText": "replacement string", "reason": "string", "confidence": 0.0, "sourceUrls": ["https://..."] } ] }',
+    "Rules:",
+    "- oldText MUST be copied exactly from content (verbatim).",
+    "- oldText must be a short sentence or phrase, not whole sections.",
+    "- Keep HTML structure intact; do not add/remove tags.",
+    "- newText should fix factual accuracy with minimal changes.",
+    "- If unsure, skip patch creation.",
+    "",
+    `Topic: ${input.topic}`,
+    "Fix suggestions:",
+    JSON.stringify(selectedSuggestions),
+    "",
+    "HTML content:",
+    input.content.slice(0, 14000),
+  ].join("\n");
+
+  const response = await generateContent(prompt, {
+    model: "claude-haiku",
+    maxTokens: 2200,
+    temperature: 0.1,
+  });
+
+  const parsed = JSON.parse(extractJsonObject(response)) as {
+    patches?: unknown;
+  };
+  if (!Array.isArray(parsed.patches)) return [];
+
+  const patches: FactCheckTextPatch[] = [];
+  for (const row of parsed.patches) {
+    if (!row || typeof row !== "object" || Array.isArray(row)) continue;
+    const item = row as Record<string, unknown>;
+
+    const claim = typeof item.claim === "string" ? item.claim.trim() : "";
+    const oldText = typeof item.oldText === "string" ? item.oldText : "";
+    const newText = typeof item.newText === "string" ? item.newText : "";
+    const reason =
+      typeof item.reason === "string"
+        ? item.reason.trim().slice(0, 240)
+        : "Fact-check update";
+    const sourceUrls = Array.isArray(item.sourceUrls)
+      ? item.sourceUrls.filter((url): url is string => typeof url === "string").slice(0, 5)
+      : [];
+
+    if (!claim || !oldText || !newText) continue;
+    if (oldText === newText) continue;
+    if (oldText.length < 8 || oldText.length > 1200) continue;
+    if (!input.content.includes(oldText)) continue;
+
+    patches.push({
+      claim,
+      oldText,
+      newText,
+      reason,
+      confidence: clampConfidence(item.confidence),
+      sourceUrls,
+    });
+  }
+
+  return patches.slice(0, maxPatches);
+}
+
+export function applyTextPatches(
+  content: string,
+  patches: FactCheckTextPatch[]
+): ApplyTextPatchesResult {
+  let updatedContent = content;
+  const appliedPatches: FactCheckTextPatch[] = [];
+  const skippedPatches: Array<{ patch: FactCheckTextPatch; reason: string }> = [];
+
+  for (const patch of patches) {
+    if (!updatedContent.includes(patch.oldText)) {
+      skippedPatches.push({
+        patch,
+        reason: "oldText not found in content",
+      });
+      continue;
+    }
+
+    updatedContent = updatedContent.replace(patch.oldText, patch.newText);
+    appliedPatches.push(patch);
+  }
+
+  return {
+    updatedContent,
+    appliedPatches,
+    skippedPatches,
+  };
 }

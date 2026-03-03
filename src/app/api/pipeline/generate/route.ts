@@ -38,6 +38,7 @@ export async function POST(request: NextRequest) {
       publish = false,
       factCheck = true,
       queueFixes = true,
+      autoApplyFixes = true,
     } = body as {
       type: string;
       phase?: "start" | "status" | "images" | "publish";
@@ -48,6 +49,7 @@ export async function POST(request: NextRequest) {
       publish?: boolean;
       factCheck?: boolean;
       queueFixes?: boolean;
+      autoApplyFixes?: boolean;
     };
 
     if (type !== "blog-post") {
@@ -72,7 +74,8 @@ export async function POST(request: NextRequest) {
           model,
           publish,
           factCheck,
-          queueFixes
+          queueFixes,
+          autoApplyFixes
         );
     }
   } catch (error) {
@@ -94,7 +97,8 @@ async function handleStart(
   model: AiModel,
   publish: boolean,
   factCheck: boolean,
-  queueFixes: boolean
+  queueFixes: boolean,
+  autoApplyFixes: boolean
 ) {
   const db = getDb();
 
@@ -118,7 +122,13 @@ async function handleStart(
       type: "blog-post",
       status: "pending",
       priority: 0,
-      input: JSON.stringify({ topic, publish, factCheck, queueFixes }),
+      input: JSON.stringify({
+        topic,
+        publish,
+        factCheck,
+        queueFixes,
+        autoApplyFixes,
+      }),
       aiModel: model,
     })
     .returning();
@@ -139,6 +149,7 @@ async function handleStart(
       publish,
       factCheck,
       queueFixes,
+      autoApplyFixes,
       jobId: job.id,
     }),
   }).then(res => {
@@ -153,6 +164,7 @@ async function handleStart(
     status: "pending",
     factCheckEnabled: factCheck,
     queueFixesEnabled: queueFixes,
+    autoApplyFixesEnabled: autoApplyFixes,
   });
 }
 

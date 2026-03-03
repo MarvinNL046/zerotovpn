@@ -37,6 +37,7 @@ export async function POST(request: NextRequest) {
       model = "claude-haiku",
       publish = false,
       factCheck = true,
+      queueFixes = true,
     } = body as {
       type: string;
       phase?: "start" | "status" | "images" | "publish";
@@ -46,6 +47,7 @@ export async function POST(request: NextRequest) {
       model?: AiModel;
       publish?: boolean;
       factCheck?: boolean;
+      queueFixes?: boolean;
     };
 
     if (type !== "blog-post") {
@@ -64,7 +66,14 @@ export async function POST(request: NextRequest) {
         return handlePublish(postId);
       case "start":
       default:
-        return handleStart(request, rawTopic, model, publish, factCheck);
+        return handleStart(
+          request,
+          rawTopic,
+          model,
+          publish,
+          factCheck,
+          queueFixes
+        );
     }
   } catch (error) {
     console.error("Pipeline generate error:", error);
@@ -84,7 +93,8 @@ async function handleStart(
   rawTopic: string | undefined,
   model: AiModel,
   publish: boolean,
-  factCheck: boolean
+  factCheck: boolean,
+  queueFixes: boolean
 ) {
   const db = getDb();
 
@@ -108,7 +118,7 @@ async function handleStart(
       type: "blog-post",
       status: "pending",
       priority: 0,
-      input: JSON.stringify({ topic, publish, factCheck }),
+      input: JSON.stringify({ topic, publish, factCheck, queueFixes }),
       aiModel: model,
     })
     .returning();
@@ -128,6 +138,7 @@ async function handleStart(
       model,
       publish,
       factCheck,
+      queueFixes,
       jobId: job.id,
     }),
   }).then(res => {
@@ -141,6 +152,7 @@ async function handleStart(
     topic,
     status: "pending",
     factCheckEnabled: factCheck,
+    queueFixesEnabled: queueFixes,
   });
 }
 

@@ -7,7 +7,11 @@ import { eq, and, desc } from "drizzle-orm";
 import { getDb, blogPosts, contentQueue, scrapeJobs } from "@/lib/db";
 import { generateContent } from "@/lib/pipeline/ai-provider";
 import { ensurePipelineApiEnv } from "@/lib/pipeline/env-fallback";
-import { factCheckContentWithJina } from "@/lib/pipeline/fact-checker";
+import {
+  factCheckContentWithJina,
+  generateFixSuggestions,
+  type FactCheckFixSuggestion,
+} from "@/lib/pipeline/fact-checker";
 import type { AiModel } from "@/lib/pipeline/ai-provider";
 
 export const maxDuration = 300;
@@ -932,12 +936,14 @@ export async function POST(request: NextRequest) {
     model = "claude-haiku",
     publish = false,
     factCheck = true,
+    queueFixes = true,
     jobId,
   } = body as {
     topic?: string;
     model?: AiModel;
     publish?: boolean;
     factCheck?: boolean;
+    queueFixes?: boolean;
     jobId?: string;
   };
 
@@ -1159,6 +1165,8 @@ export async function POST(request: NextRequest) {
       contradicted: number;
       mixed: number;
       unclear: number;
+      fixQueueId?: string;
+      fixSuggestions?: number;
     } | null = null;
 
     if (factCheck) {
@@ -1203,6 +1211,58 @@ export async function POST(request: NextRequest) {
         console.log(
           `[bg-generate] Fact-check done for ${finalSlug}: ${supported} supported, ${contradicted} contradicted`
         );
+
+        if (queueFixes && (contradicted > 0 || mixed > 0)) {
+          let fixSuggestions: FactCheckFixSuggestion[] = [];
+          try {
+            fixSuggestions = await generateFixSuggestions({
+              topic: post.title,
+              content: finalContent,
+              results: factCheckResult.results,
+              maxFixes: 6,
+            });
+          } catch (suggestionError) {
+            console.warn(
+              "[bg-generate] Fix suggestion generation failed:",
+              suggestionError
+            );
+          }
+
+          if (fixSuggestions.length > 0) {
+            const [fixQueueItem] = await db
+              .insert(contentQueue)
+              .values({
+                type: "fact-check-fix",
+                status: "pending",
+                priority: 9,
+                input: JSON.stringify({
+                  postId: post.id,
+                  slug: finalSlug,
+                  title: post.title,
+                  language: "en",
+                  topic: post.title,
+                  generatedAt: new Date().toISOString(),
+                  factCheck: {
+                    claimCount: factCheckResult.claimCount,
+                    supported,
+                    contradicted,
+                    mixed,
+                    unclear,
+                  },
+                  suggestions: fixSuggestions,
+                }),
+                aiModel: model,
+                attempts: 0,
+              })
+              .returning({ id: contentQueue.id });
+
+            factCheckSummary.fixQueueId = fixQueueItem.id;
+            factCheckSummary.fixSuggestions = fixSuggestions.length;
+            console.log(
+              `[bg-generate] Fix queue item created: ${fixQueueItem.id} (${fixSuggestions.length} suggestions)`
+            );
+          }
+        }
         }
       } catch (factCheckError) {
         console.warn("[bg-generate] Fact-check failed, continuing:", factCheckError);

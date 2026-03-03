@@ -103,7 +103,17 @@ export default async function DynamicBlogPost({ params }: Props) {
             {post.publishedAt && (
               <span className="text-sm text-muted-foreground flex items-center gap-1">
                 <Calendar className="h-4 w-4" />
-                {formatDate(post.publishedAt, locale)}
+                Posted: {formatDate(post.publishedAt, locale)}
+              </span>
+            )}
+            <span className="text-sm text-muted-foreground flex items-center gap-1">
+              <Calendar className="h-4 w-4" />
+              Updated: {lastUpdated}
+            </span>
+            {!post.publishedAt && (
+              <span className="text-sm text-muted-foreground flex items-center gap-1">
+                <Calendar className="h-4 w-4" />
+                Posted: {formatDate(post.createdAt, locale)}
               </span>
             )}
             <span className="text-sm text-muted-foreground flex items-center gap-1">

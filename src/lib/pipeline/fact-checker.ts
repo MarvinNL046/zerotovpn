@@ -28,6 +28,14 @@ export interface FactCheckRunResult {
   results: FactCheckResultItem[];
 }
 
+export interface FactCheckFixSuggestion {
+  claim: string;
+  confidence: number;
+  recommendation: string;
+  proposedReplacement: string;
+  sourceUrls: string[];
+}
+
 function getJinaApiKey(): string {
   return process.env.JINA_API_KEY?.trim() || "";
 }
@@ -230,4 +238,90 @@ export async function factCheckContentWithJina(input: {
     claimCount: results.length,
     results,
   };
+}
+
+function pickFixCandidates(results: FactCheckResultItem[]): FactCheckResultItem[] {
+  return results.filter((item) => {
+    if (item.verdict === "contradicted" && item.confidence >= 0.55) return true;
+    if (item.verdict === "mixed" && item.confidence >= 0.65) return true;
+    return false;
+  });
+}
+
+export async function generateFixSuggestions(input: {
+  topic: string;
+  content: string;
+  results: FactCheckResultItem[];
+  maxFixes?: number;
+}): Promise<FactCheckFixSuggestion[]> {
+  const maxFixes = Math.max(1, Math.min(8, input.maxFixes ?? 5));
+  const candidates = pickFixCandidates(input.results).slice(0, maxFixes);
+  if (candidates.length === 0) return [];
+
+  const prompt = [
+    "You are preparing editorial fixes after fact-checking.",
+    "Return only JSON with this shape:",
+    '{ "suggestions": [ { "claim": "string", "confidence": 0.0, "recommendation": "string", "proposedReplacement": "string", "sourceUrls": ["https://..."] } ] }',
+    "Rules:",
+    "- recommendation: one short action sentence for editor.",
+    "- proposedReplacement: concise text that can replace or amend the original claim.",
+    "- Use only source-backed language; avoid new unsupported facts.",
+    "- sourceUrls must come from the provided sources.",
+    "",
+    `Topic: ${input.topic}`,
+    "Flagged claims:",
+    JSON.stringify(
+      candidates.map((item) => ({
+        claim: item.claim,
+        verdict: item.verdict,
+        confidence: item.confidence,
+        sources: item.sources,
+      }))
+    ),
+    "",
+    "Original content excerpt:",
+    input.content.slice(0, 12000),
+  ].join("\n");
+
+  const response = await generateContent(prompt, {
+    model: "claude-haiku",
+    maxTokens: 1600,
+    temperature: 0.1,
+  });
+
+  const parsed = JSON.parse(extractJsonObject(response)) as {
+    suggestions?: unknown;
+  };
+
+  if (!Array.isArray(parsed.suggestions)) return [];
+
+  const suggestions: FactCheckFixSuggestion[] = [];
+  for (const row of parsed.suggestions) {
+    if (!row || typeof row !== "object" || Array.isArray(row)) continue;
+    const item = row as Record<string, unknown>;
+    const claim = typeof item.claim === "string" ? item.claim.trim() : "";
+    if (!claim) continue;
+
+    const recommendation =
+      typeof item.recommendation === "string"
+        ? item.recommendation.trim().slice(0, 240)
+        : "";
+    const proposedReplacement =
+      typeof item.proposedReplacement === "string"
+        ? item.proposedReplacement.trim().slice(0, 500)
+        : "";
+    const sourceUrls = Array.isArray(item.sourceUrls)
+      ? item.sourceUrls.filter((url): url is string => typeof url === "string").slice(0, 5)
+      : [];
+
+    suggestions.push({
+      claim,
+      confidence: clampConfidence(item.confidence),
+      recommendation: recommendation || "Review this claim against the listed sources.",
+      proposedReplacement: proposedReplacement || "Revise this claim to match the cited sources.",
+      sourceUrls,
+    });
+  }
+
+  return suggestions.slice(0, maxFixes);
 }

@@ -17,19 +17,112 @@ type Props = {
 
 const baseUrl = "https://zerotovpn.com";
 
+const content: Record<string, {
+  metaTitle: string;
+  metaDescription: string;
+  ogTitle: string;
+  ogDescription: string;
+  badge: string;
+  h1: string;
+  intro: string;
+  privacyTitle: string;
+  privacyDesc: string;
+  streamingTitle: string;
+  streamingDesc: string;
+  wifiTitle: string;
+  wifiDesc: string;
+  picksTitle: string;
+  getVpn: string;
+  readReview: string;
+  researchTitle: string;
+  dataSource: string;
+  scoringRules: string;
+  methodology: string;
+  interactiveFilters: string;
+  vpnIndex: string;
+  relatedTitle: string;
+  related: { title: string; description: string; href: string; icon: string }[];
+}> = {
+  en: {
+    metaTitle: "Best VPN for USA - Privacy, Streaming & Travel",
+    metaDescription: "Independent picks for using a VPN in the United States: privacy on public networks, stable speeds, and reliable access while traveling.",
+    ogTitle: "Best VPN for USA",
+    ogDescription: "Data-driven VPN picks for US travel, privacy, and streaming use cases.",
+    badge: "USA travel intent page",
+    h1: "Best VPN for USA",
+    intro: "Whether you are in the US or traveling abroad with a need for US services, your VPN should be transparent, fast, and stable for day-to-day work, streaming, and public network security.",
+    privacyTitle: "Privacy Layer",
+    privacyDesc: "Keep traffic encrypted on open networks and add protection against passive tracking.",
+    streamingTitle: "US Streaming Access",
+    streamingDesc: "Reliable access to US libraries and stable playback performance across devices.",
+    wifiTitle: "Public WiFi Safety",
+    wifiDesc: "Essential for airport, hotel, and coworking WiFi during domestic and international travel.",
+    picksTitle: "Top VPN picks for USA",
+    getVpn: "Get",
+    readReview: "Read full review",
+    researchTitle: "How this page connects to our research stack",
+    dataSource: "Data source:",
+    scoringRules: "Scoring rules:",
+    methodology: "Methodology",
+    interactiveFilters: "Interactive filters:",
+    vpnIndex: "VPN Index dashboard",
+    relatedTitle: "Related internal guides",
+    related: [
+      { title: "Best VPN for Streaming", description: "Comparison focused on Netflix, Disney+, and streaming reliability.", href: "/best/vpn-streaming", icon: "tv" },
+      { title: "Best VPN for Netflix", description: "Detailed tests for library unlocks and playback consistency.", href: "/best/vpn-netflix", icon: "play" },
+      { title: "Best VPN for Privacy", description: "VPNs with clear ownership and stronger no-logs evidence.", href: "/best/vpn-privacy", icon: "shield" },
+      { title: "Public WiFi Safety", description: "How to stay safer on open WiFi networks.", href: "/guides/public-wifi-safety", icon: "wifi" },
+      { title: "VPN for Travel", description: "How to use VPNs while moving across countries and networks.", href: "/guides/vpn-for-travel", icon: "map" },
+      { title: "Countries", description: "Country-by-country censorship and VPN access context.", href: "/countries", icon: "location" },
+    ],
+  },
+  nl: {
+    metaTitle: "Beste VPN voor de VS - Privacy, Streaming & Reizen",
+    metaDescription: "Onafhankelijke aanbevelingen voor een VPN in de Verenigde Staten: privacy op openbare netwerken, stabiele snelheden en betrouwbare toegang onderweg.",
+    ogTitle: "Beste VPN voor de VS",
+    ogDescription: "Datagedreven VPN-aanbevelingen voor reizen naar de VS, privacy en streaming.",
+    badge: "VS reisgericht",
+    h1: "Beste VPN voor de VS",
+    intro: "Of je nu in de VS bent of in het buitenland reist met behoefte aan Amerikaanse diensten, je VPN moet transparant, snel en stabiel zijn voor dagelijks werk, streaming en beveiliging op openbare netwerken.",
+    privacyTitle: "Privacylaag",
+    privacyDesc: "Houd verkeer versleuteld op open netwerken en voeg bescherming toe tegen passieve tracking.",
+    streamingTitle: "Amerikaanse streamingtoegang",
+    streamingDesc: "Betrouwbare toegang tot Amerikaanse bibliotheken en stabiele afspeelprestaties op alle apparaten.",
+    wifiTitle: "Openbare WiFi-veiligheid",
+    wifiDesc: "Essentieel voor luchthaven-, hotel- en coworking-WiFi tijdens binnenlandse en internationale reizen.",
+    picksTitle: "Beste VPN-keuzes voor de VS",
+    getVpn: "Kies",
+    readReview: "Lees volledige review",
+    researchTitle: "Hoe deze pagina samenhangt met ons onderzoek",
+    dataSource: "Databron:",
+    scoringRules: "Beoordelingsregels:",
+    methodology: "Methodologie",
+    interactiveFilters: "Interactieve filters:",
+    vpnIndex: "VPN Index-dashboard",
+    relatedTitle: "Gerelateerde interne gidsen",
+    related: [
+      { title: "Beste VPN voor streaming", description: "Vergelijking gericht op Netflix, Disney+ en streamingbetrouwbaarheid.", href: "/best/vpn-streaming", icon: "tv" },
+      { title: "Beste VPN voor Netflix", description: "Gedetailleerde tests voor het ontgrendelen van bibliotheken en afspeelconsistentie.", href: "/best/vpn-netflix", icon: "play" },
+      { title: "Beste VPN voor privacy", description: "VPN's met duidelijk eigenaarschap en sterker no-logsbewijs.", href: "/best/vpn-privacy", icon: "shield" },
+      { title: "Openbare WiFi-veiligheid", description: "Hoe je veiliger blijft op open WiFi-netwerken.", href: "/guides/public-wifi-safety", icon: "wifi" },
+      { title: "VPN voor op reis", description: "Hoe je VPN's gebruikt tijdens reizen tussen landen en netwerken.", href: "/guides/vpn-for-travel", icon: "map" },
+      { title: "Landen", description: "Land-voor-land overzicht van censuur en VPN-toegang.", href: "/countries", icon: "location" },
+    ],
+  },
+};
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const shortMonthYear = getShortMonthYear();
+  const t = content[locale] || content.en;
   return {
     metadataBase: new URL(baseUrl),
-    title: `Best VPN for USA (${shortMonthYear}) - Privacy, Streaming & Travel`,
-    description:
-      "Independent picks for using a VPN in the United States: privacy on public networks, stable speeds, and reliable access while traveling.",
+    title: `${t.metaTitle} (${shortMonthYear})`,
+    description: t.metaDescription,
     alternates: generateAlternates("/best/vpn-usa", locale),
     openGraph: {
-      title: `Best VPN for USA (${shortMonthYear})`,
-      description:
-        "Data-driven VPN picks for US travel, privacy, and streaming use cases.",
+      title: `${t.ogTitle} (${shortMonthYear})`,
+      description: t.ogDescription,
       type: "article",
     },
   };
@@ -48,21 +141,19 @@ export default async function VpnUsaPage({ params }: Props) {
   const expressvpn = await getVpnBySlug("expressvpn");
 
   const picks = [nordvpn, surfshark, expressvpn].filter(isDefined);
+  const t = content[locale] || content.en;
 
   return (
     <div className="flex flex-col">
       <section className="py-14 lg:py-20 bg-gradient-to-br from-primary/8 via-background to-background">
         <div className="container max-w-5xl">
-          <BreadcrumbSchema items={[{ name: "Best VPN for USA", href: "/best/vpn-usa" }]} className="mb-8" />
+          <BreadcrumbSchema items={[{ name: t.h1, href: "/best/vpn-usa" }]} className="mb-8" />
           <Badge variant="blue" className="mb-4">
             <Plane className="h-3.5 w-3.5 mr-1" />
-            USA travel intent page
+            {t.badge}
           </Badge>
-          <h1 className="text-4xl lg:text-5xl font-bold tracking-tight mb-4">Best VPN for USA</h1>
-          <p className="text-lg text-muted-foreground max-w-3xl">
-            Whether you are in the US or traveling abroad with a need for US services, your VPN should
-            be transparent, fast, and stable for day-to-day work, streaming, and public network security.
-          </p>
+          <h1 className="text-4xl lg:text-5xl font-bold tracking-tight mb-4">{t.h1}</h1>
+          <p className="text-lg text-muted-foreground max-w-3xl">{t.intro}</p>
         </div>
       </section>
 
@@ -72,41 +163,35 @@ export default async function VpnUsaPage({ params }: Props) {
             <CardHeader className="pb-2">
               <CardTitle className="text-base flex items-center gap-2">
                 <Shield className="h-4 w-4 text-primary" />
-                Privacy Layer
+                {t.privacyTitle}
               </CardTitle>
             </CardHeader>
-            <CardContent className="text-sm text-muted-foreground">
-              Keep traffic encrypted on open networks and add protection against passive tracking.
-            </CardContent>
+            <CardContent className="text-sm text-muted-foreground">{t.privacyDesc}</CardContent>
           </Card>
           <Card>
             <CardHeader className="pb-2">
               <CardTitle className="text-base flex items-center gap-2">
                 <Tv className="h-4 w-4 text-primary" />
-                US Streaming Access
+                {t.streamingTitle}
               </CardTitle>
             </CardHeader>
-            <CardContent className="text-sm text-muted-foreground">
-              Reliable access to US libraries and stable playback performance across devices.
-            </CardContent>
+            <CardContent className="text-sm text-muted-foreground">{t.streamingDesc}</CardContent>
           </Card>
           <Card>
             <CardHeader className="pb-2">
               <CardTitle className="text-base flex items-center gap-2">
                 <Wifi className="h-4 w-4 text-primary" />
-                Public WiFi Safety
+                {t.wifiTitle}
               </CardTitle>
             </CardHeader>
-            <CardContent className="text-sm text-muted-foreground">
-              Essential for airport, hotel, and coworking WiFi during domestic and international travel.
-            </CardContent>
+            <CardContent className="text-sm text-muted-foreground">{t.wifiDesc}</CardContent>
           </Card>
         </div>
       </section>
 
       <section className="py-10">
         <div className="container max-w-5xl space-y-6">
-          <h2 className="text-2xl font-bold">Top VPN picks for USA</h2>
+          <h2 className="text-2xl font-bold">{t.picksTitle}</h2>
           <div className="grid gap-4 md:grid-cols-3">
             {picks.map((vpn) => (
               <Card key={vpn.id}>
@@ -120,10 +205,10 @@ export default async function VpnUsaPage({ params }: Props) {
                   <p>From ${vpn.priceTwoYear ?? vpn.priceYearly}/mo</p>
                   <div className="flex flex-wrap gap-2 pt-1">
                     <AffiliateButton vpnId={vpn.id} vpnName={vpn.name} affiliateUrl={vpn.affiliateUrl} size="sm">
-                      Get {vpn.name}
+                      {t.getVpn} {vpn.name}
                     </AffiliateButton>
                     <Link href={`/reviews/${vpn.slug}`} className="text-primary hover:underline text-xs">
-                      Read full review
+                      {t.readReview}
                     </Link>
                   </div>
                 </CardContent>
@@ -139,25 +224,25 @@ export default async function VpnUsaPage({ params }: Props) {
         <div className="container max-w-5xl space-y-6">
           <h2 className="text-2xl font-bold flex items-center gap-2">
             <Globe className="h-5 w-5 text-primary" />
-            How this page connects to our research stack
+            {t.researchTitle}
           </h2>
           <ul className="space-y-2 text-muted-foreground">
             <li>
-              Data source:{" "}
+              {t.dataSource}{" "}
               <Link href="/reports/vpn-transparency-performance-index-2026" className="text-primary hover:underline">
                 VPN Transparency &amp; Performance Index 2026
               </Link>
             </li>
             <li>
-              Scoring rules:{" "}
+              {t.scoringRules}{" "}
               <Link href="/methodology" className="text-primary hover:underline">
-                Methodology
+                {t.methodology}
               </Link>
             </li>
             <li>
-              Interactive filters:{" "}
+              {t.interactiveFilters}{" "}
               <Link href="/vpn-index" className="text-primary hover:underline">
-                VPN Index dashboard
+                {t.vpnIndex}
               </Link>
             </li>
           </ul>
@@ -166,47 +251,7 @@ export default async function VpnUsaPage({ params }: Props) {
 
       <section className="pb-12">
         <div className="container max-w-6xl">
-          <RelatedPages
-            title="Related internal guides"
-            pages={[
-              {
-                title: "Best VPN for Streaming",
-                description: "Comparison focused on Netflix, Disney+, and streaming reliability.",
-                href: "/best/vpn-streaming",
-                icon: "tv",
-              },
-              {
-                title: "Best VPN for Netflix",
-                description: "Detailed tests for library unlocks and playback consistency.",
-                href: "/best/vpn-netflix",
-                icon: "play",
-              },
-              {
-                title: "Best VPN for Privacy",
-                description: "VPNs with clear ownership and stronger no-logs evidence.",
-                href: "/best/vpn-privacy",
-                icon: "shield",
-              },
-              {
-                title: "Public WiFi Safety",
-                description: "How to stay safer on open WiFi networks.",
-                href: "/guides/public-wifi-safety",
-                icon: "wifi",
-              },
-              {
-                title: "VPN for Travel",
-                description: "How to use VPNs while moving across countries and networks.",
-                href: "/guides/vpn-for-travel",
-                icon: "map",
-              },
-              {
-                title: "Countries",
-                description: "Country-by-country censorship and VPN access context.",
-                href: "/countries",
-                icon: "location",
-              },
-            ]}
-          />
+          <RelatedPages title={t.relatedTitle} pages={t.related} />
         </div>
       </section>
     </div>

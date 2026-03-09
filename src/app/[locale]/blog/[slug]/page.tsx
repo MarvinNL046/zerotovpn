@@ -8,6 +8,8 @@ import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import { getPostBySlug } from "@/lib/pipeline/blog-service";
 import { generateAlternates } from "@/lib/seo-utils";
+import { getRelatedContent } from "@/lib/content-links";
+import { RelatedContent } from "@/components/seo/related-content";
 import {
   AuthorBox,
   FactCheckedBadge,
@@ -65,6 +67,13 @@ export default async function DynamicBlogPost({ params }: Props) {
   if (!post) {
     notFound();
   }
+
+  const relatedLinks = getRelatedContent({
+    currentHref: `/blog/${slug}`,
+    tags: post.tags || [],
+    currentType: "blog",
+    limit: 6,
+  });
 
   // Strip base64 images and HTML tags before calculating read time
   const textOnly = post.content
@@ -165,6 +174,9 @@ export default async function DynamicBlogPost({ params }: Props) {
 
         {/* E-E-A-T: Author Box */}
         <AuthorBox />
+
+        {/* Related Content */}
+        <RelatedContent links={relatedLinks} locale={locale} className="mt-12" />
       </article>
 
       {/* Structured Data */}

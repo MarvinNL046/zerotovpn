@@ -17,6 +17,8 @@ import {
 import { cn } from "@/lib/utils";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
+import { getRelatedContent } from "@/lib/content-links";
+import { RelatedContent } from "@/components/seo/related-content";
 import { getCachedPostSummaries } from "@/lib/pipeline/blog-service";
 
 // Revalidate every 10 minutes — new posts appear within 10 min without sacrificing speed
@@ -186,6 +188,13 @@ export default async function BlogPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("blog");
+
+  const relatedLinks = getRelatedContent({
+    currentHref: "/blog",
+    tags: ["general", "overview", "education"],
+    currentType: "blog",
+    limit: 6,
+  });
 
   // Fetch dynamic posts from DB (graceful fallback on error)
   let dynamicPosts: Array<{
@@ -470,6 +479,9 @@ export default async function BlogPage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {/* Related Content */}
+      <RelatedContent links={relatedLinks} locale={locale} className="mt-12" />
 
       {/* Related Pages */}
       <section className="py-12 lg:py-16 bg-muted/30">

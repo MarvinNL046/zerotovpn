@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 120,
+    "completed": 121,
     "inProgress": 0
   },
   "queue": [
@@ -968,7 +968,7 @@
       "slug": "vpn-authentication-methods-compared-2026",
       "locale": "zh",
       "enTitle": "VPN Authentication Methods Compared: Password vs. Biometric vs. Hardware Keys for 2026",
-      "status": "pending",
+      "status": "completed",
       "priority": 5
     },
     {

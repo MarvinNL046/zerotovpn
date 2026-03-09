@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 117,
+    "completed": 118,
     "inProgress": 0
   },
   "queue": [
@@ -941,7 +941,7 @@
       "slug": "does-vpn-reduce-ping-gaming-2026",
       "locale": "zh",
       "enTitle": "Does a VPN Reduce Ping in 2026? Real Gaming Test Results",
-      "status": "pending",
+      "status": "completed",
       "priority": 5
     },
     {

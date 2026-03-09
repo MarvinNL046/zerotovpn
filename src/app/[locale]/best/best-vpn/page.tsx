@@ -7,6 +7,8 @@ import { ComparisonTable } from "@/components/vpn/comparison-table";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { RatingStars } from "@/components/vpn/rating-stars";
 import { RelatedPages } from "@/components/seo/related-pages";
+import { getRelatedContent, reviewLink } from "@/lib/content-links";
+import { RelatedContent } from "@/components/seo/related-content";
 import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { getAllVpns, type VpnProvider } from "@/lib/vpn-data-layer";
@@ -239,6 +241,19 @@ export default async function BestVpnPage({ params }: Props) {
   };
 
   const t = content[locale as keyof typeof content] || content.en;
+
+  // Build related content links
+  const topVpnLinks = allVpns
+    .slice(0, 5)
+    .map((v) => reviewLink(v.slug, v.name, Number(v.overallRating)));
+
+  const relatedLinks = getRelatedContent({
+    currentHref: "/best/best-vpn",
+    tags: ["general", "overview", "ranking", "streaming", "security"],
+    currentType: "best-of",
+    limit: 6,
+    extraLinks: topVpnLinks,
+  });
 
   // Get top 3 for quick picks
   const [bestOverall, bestValue, bestSpeed] = [
@@ -575,6 +590,15 @@ export default async function BestVpnPage({ params }: Props) {
             </div>
           </div>
         </section>
+
+        {/* Related Content */}
+        <div className="container">
+          <RelatedContent
+            links={relatedLinks}
+            locale={locale}
+            className="mt-12"
+          />
+        </div>
 
         {/* Related Pages */}
         <section className="py-16 bg-muted/30">

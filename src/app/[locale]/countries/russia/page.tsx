@@ -47,8 +47,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const descriptions: Record<string, string> = {
-    en: "Traveling to Russia or living there? Here is what to know about VPN access, restrictions and which services still work reliably in 2026.",
-    nl: "Reis je naar Rusland of woon je daar? Dit moet je weten over VPN-toegang, beperkingen en welke diensten in 2026 nog betrouwbaar werken.",
+    en: "Traveling to Russia or living there? Learn which VPNs still work reliably in 2026 despite 197+ blocked services. See our expert-tested picks.",
+    nl: "Reis je naar Rusland of woon je daar? Ontdek welke VPNs in 2026 nog betrouwbaar werken. Bekijk onze expert-geteste aanbevelingen.",
     de: "Reisen Sie nach Russland oder leben Sie dort? Hier erfahren Sie, was über VPN-Zugang, Einschränkungen und noch funktionierende Dienste 2026 wichtig ist.",
     es: "¿Viajas a Rusia o vives allí? Aquí tienes lo que debes saber sobre acceso VPN, restricciones y servicios que siguen funcionando en 2026.",
     fr: "Vous voyagez en Russie ou vous y vivez ? Voici l'essentiel sur l'accès VPN, les restrictions et les services qui fonctionnent encore en 2026.",

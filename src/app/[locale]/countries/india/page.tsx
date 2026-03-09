@@ -46,8 +46,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const descriptions: Record<string, string> = {
-    en: "India's growing internet censorship and surveillance make VPNs essential. Find VPNs that protect your privacy and bypass restrictions on apps and websites blocked in India.",
-    nl: "India's groeiende internetcensuur en surveillance maken VPNs essentieel. Vind VPNs die uw privacy beschermen en beperkingen op geblokkeerde apps en websites omzeilen.",
+    en: "India's growing internet censorship and surveillance make VPNs essential. Compare our expert-tested VPNs that bypass restrictions in India.",
+    nl: "India's groeiende internetcensuur en surveillance maken VPNs essentieel. Vergelijk onze expert-geteste VPNs die restricties in India omzeilen.",
     de: "Indiens wachsende Internetzensur und Uberwachung machen VPNs unverzichtbar. Finden Sie VPNs, die Ihre Privatsphare schutzen und Beschrankungen umgehen.",
     es: "La creciente censura y vigilancia de Internet en India hacen que las VPN sean esenciales. Encuentra VPN que protejan tu privacidad y eviten restricciones.",
     fr: "La censure et la surveillance croissantes d'Internet en Inde rendent les VPN essentiels. Trouvez des VPN qui protegent votre vie privee et contournent les restrictions.",

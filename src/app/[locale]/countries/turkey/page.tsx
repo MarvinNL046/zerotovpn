@@ -45,8 +45,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const descriptions: Record<string, string> = {
-    en: "VPN use is legal in Turkey, but many VPN services are blocked. Find VPNs with obfuscation that still work in Turkey's restrictive internet environment.",
-    nl: "VPN-gebruik is legaal in Turkije, maar veel VPN-diensten zijn geblokkeerd. Vind VPNs met obfuscatie die nog werken.",
+    en: "VPN use is legal in Turkey, but many services are blocked. Find VPNs with obfuscation that still work in Turkey. See our tested picks today.",
+    nl: "VPN-gebruik is legaal in Turkije, maar veel diensten zijn geblokkeerd. Vind VPNs met obfuscatie die nog werken. Bekijk onze geteste keuzes.",
     de: "VPN-Nutzung ist in der Türkei legal, aber viele VPN-Dienste sind gesperrt. Finden Sie VPNs mit Verschleierung.",
     es: "El uso de VPN es legal en Turquía, pero muchos servicios VPN están bloqueados. Encuentra VPNs con ofuscación.",
     fr: "L'utilisation de VPN est légale en Turquie, mais de nombreux services VPN sont bloqués. Trouvez des VPN avec obfuscation.",

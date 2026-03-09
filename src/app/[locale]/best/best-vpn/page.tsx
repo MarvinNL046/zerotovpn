@@ -47,11 +47,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const descriptions: Record<string, string> = {
-    en: "Looking for the best VPN? We independently tested speed, privacy, streaming performance and logging transparency to rank the top VPNs of 2026.",
-    nl: "Op zoek naar de beste VPN? We testten onafhankelijk snelheid, privacy, streamingprestaties en loggingtransparantie om de top VPNs van 2026 te ranken.",
-    de: "Sie suchen den besten VPN? Wir haben Speed, Datenschutz, Streaming-Leistung und Logging-Transparenz unabhängig getestet und die Top-VPNs 2026 gerankt.",
-    es: "¿Buscas el mejor VPN? Probamos de forma independiente velocidad, privacidad, streaming y transparencia de registros para clasificar los mejores VPN de 2026.",
-    fr: "Vous cherchez le meilleur VPN ? Nous avons testé indépendamment la vitesse, la confidentialité, le streaming et la transparence des logs pour classer les meilleurs VPN 2026.",
+    en: "We independently tested speed, privacy, streaming and logging transparency to rank the top VPNs of 2026. Compare prices and find your perfect VPN today.",
+    nl: "We testten onafhankelijk snelheid, privacy, streaming en loggingtransparantie om de top VPNs van 2026 te ranken. Vergelijk prijzen en vind jouw ideale VPN.",
+    de: "Wir haben Speed, Datenschutz, Streaming und Logging-Transparenz unabhängig getestet. Vergleichen Sie Preise und finden Sie Ihren idealen VPN noch heute.",
+    es: "Probamos velocidad, privacidad, streaming y transparencia de registros de forma independiente. Compara precios y encuentra tu VPN ideal hoy.",
+    fr: "Nous avons testé la vitesse, la confidentialité, le streaming et la transparence des logs. Comparez les prix et trouvez votre VPN idéal aujourd'hui.",
   };
 
   const prefix = locale === "en" ? "" : `/${locale}`;

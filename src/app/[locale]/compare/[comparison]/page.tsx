@@ -69,7 +69,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     metadataBase: new URL(baseUrl),
     title: `${vpn1.name} vs ${vpn2.name} (${shortMonthYear}) - Comparison`,
-    description: `We tested ${vpn1.name} vs ${vpn2.name} head-to-head. Compare speeds, prices & features. See which VPN wins in ${shortMonthYear}.`,
+    description: `${vpn1.name} vs ${vpn2.name} tested head-to-head on speed, price & features. Find out which VPN is right for you in ${shortMonthYear}.`,
     alternates: {
       canonical: canonicalUrl,
       languages: languages,

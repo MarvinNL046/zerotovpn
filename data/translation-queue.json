@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 83,
+    "completed": 84,
     "inProgress": 0
   },
   "queue": [
@@ -455,7 +455,7 @@
       "slug": "vpn-split-tunneling-work-from-home-security-2026",
       "locale": "de",
       "enTitle": "VPN Split Tunneling Explained: How to Use It for Work-from-Home Security in 2026",
-      "status": "pending",
+      "status": "completed",
       "priority": 2
     },
     {

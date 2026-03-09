@@ -1,0 +1,2070 @@
+{
+  "locales": [
+    "nl",
+    "de",
+    "es",
+    "fr",
+    "zh",
+    "ja",
+    "ko",
+    "th"
+  ],
+  "stats": {
+    "total": 228,
+    "completed": 0,
+    "inProgress": 0
+  },
+  "queue": [
+    {
+      "id": "review-faq-translations",
+      "type": "review-faq",
+      "file": "src/app/[locale]/reviews/[slug]/page.tsx",
+      "locale": "all",
+      "status": "pending",
+      "priority": 0
+    },
+    {
+      "id": "best-page-vpn-android-tablet-nl",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-android-tablet/page.tsx",
+      "page": "vpn-android-tablet",
+      "locale": "nl",
+      "status": "pending",
+      "priority": 1
+    },
+    {
+      "id": "best-page-vpn-bali-nl",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-bali/page.tsx",
+      "page": "vpn-bali",
+      "locale": "nl",
+      "status": "pending",
+      "priority": 1
+    },
+    {
+      "id": "best-page-vpn-ipad-nl",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-ipad/page.tsx",
+      "page": "vpn-ipad",
+      "locale": "nl",
+      "status": "pending",
+      "priority": 1
+    },
+    {
+      "id": "best-page-vpn-iphone-nl",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-iphone/page.tsx",
+      "page": "vpn-iphone",
+      "locale": "nl",
+      "status": "pending",
+      "priority": 1
+    },
+    {
+      "id": "best-page-vpn-mobile-nl",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-mobile/page.tsx",
+      "page": "vpn-mobile",
+      "locale": "nl",
+      "status": "pending",
+      "priority": 1
+    },
+    {
+      "id": "best-page-vpn-morocco-nl",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-morocco/page.tsx",
+      "page": "vpn-morocco",
+      "locale": "nl",
+      "status": "pending",
+      "priority": 1
+    },
+    {
+      "id": "best-page-vpn-tablet-nl",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-tablet/page.tsx",
+      "page": "vpn-tablet",
+      "locale": "nl",
+      "status": "pending",
+      "priority": 1
+    },
+    {
+      "id": "best-page-vpn-thailand-nl",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-thailand/page.tsx",
+      "page": "vpn-thailand",
+      "locale": "nl",
+      "status": "pending",
+      "priority": 1
+    },
+    {
+      "id": "best-page-vpn-usa-nl",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-usa/page.tsx",
+      "page": "vpn-usa",
+      "locale": "nl",
+      "status": "pending",
+      "priority": 1
+    },
+    {
+      "id": "best-page-vpn-vietnam-nl",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-vietnam/page.tsx",
+      "page": "vpn-vietnam",
+      "locale": "nl",
+      "status": "pending",
+      "priority": 1
+    },
+    {
+      "id": "best-page-vpn-windows-tablet-nl",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-windows-tablet/page.tsx",
+      "page": "vpn-windows-tablet",
+      "locale": "nl",
+      "status": "pending",
+      "priority": 1
+    },
+    {
+      "id": "blog-post-best-free-vpns-2026-nl",
+      "type": "blog-post",
+      "slug": "best-free-vpns-2026",
+      "locale": "nl",
+      "enTitle": "Best Free VPNs That Actually Work in 2026",
+      "status": "pending",
+      "priority": 1
+    },
+    {
+      "id": "blog-post-vpn-authentication-methods-compared-2026-nl",
+      "type": "blog-post",
+      "slug": "vpn-authentication-methods-compared-2026",
+      "locale": "nl",
+      "enTitle": "VPN Authentication Methods Compared: Password vs. Biometric vs. Hardware Keys for 2026",
+      "status": "pending",
+      "priority": 1
+    },
+    {
+      "id": "blog-post-vpn-credentials-theft-prevention-2026-nl",
+      "type": "blog-post",
+      "slug": "vpn-credentials-theft-prevention-2026",
+      "locale": "nl",
+      "enTitle": "VPN Credentials Theft: How Hackers Target Your Login Data and What VPN Features Actually Prevent It in 2026",
+      "status": "pending",
+      "priority": 1
+    },
+    {
+      "id": "blog-post-vpn-kill-switch-vs-dns-leak-protection-2026-nl",
+      "type": "blog-post",
+      "slug": "vpn-kill-switch-vs-dns-leak-protection-2026",
+      "locale": "nl",
+      "enTitle": "VPN Kill Switch vs. DNS Leak Protection: Which Actually Protects Your Privacy Better in 2026",
+      "status": "pending",
+      "priority": 1
+    },
+    {
+      "id": "blog-post-vpn-price-comparison-best-deals-nl",
+      "type": "blog-post",
+      "slug": "vpn-price-comparison-best-deals",
+      "locale": "nl",
+      "enTitle": "VPN Price Comparison Update: Best Deals This Month",
+      "status": "pending",
+      "priority": 1
+    },
+    {
+      "id": "best-page-vpn-android-tablet-de",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-android-tablet/page.tsx",
+      "page": "vpn-android-tablet",
+      "locale": "de",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "id": "best-page-vpn-bali-de",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-bali/page.tsx",
+      "page": "vpn-bali",
+      "locale": "de",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "id": "best-page-vpn-ipad-de",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-ipad/page.tsx",
+      "page": "vpn-ipad",
+      "locale": "de",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "id": "best-page-vpn-iphone-de",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-iphone/page.tsx",
+      "page": "vpn-iphone",
+      "locale": "de",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "id": "best-page-vpn-mobile-de",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-mobile/page.tsx",
+      "page": "vpn-mobile",
+      "locale": "de",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "id": "best-page-vpn-morocco-de",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-morocco/page.tsx",
+      "page": "vpn-morocco",
+      "locale": "de",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "id": "best-page-vpn-tablet-de",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-tablet/page.tsx",
+      "page": "vpn-tablet",
+      "locale": "de",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "id": "best-page-vpn-thailand-de",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-thailand/page.tsx",
+      "page": "vpn-thailand",
+      "locale": "de",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "id": "best-page-vpn-usa-de",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-usa/page.tsx",
+      "page": "vpn-usa",
+      "locale": "de",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "id": "best-page-vpn-vietnam-de",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-vietnam/page.tsx",
+      "page": "vpn-vietnam",
+      "locale": "de",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "id": "best-page-vpn-windows-tablet-de",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-windows-tablet/page.tsx",
+      "page": "vpn-windows-tablet",
+      "locale": "de",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "id": "blog-post-best-free-vpns-2026-de",
+      "type": "blog-post",
+      "slug": "best-free-vpns-2026",
+      "locale": "de",
+      "enTitle": "Best Free VPNs That Actually Work in 2026",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "id": "blog-post-best-vpn-for-iran-2026-bypass-internet-censorship-de",
+      "type": "blog-post",
+      "slug": "best-vpn-for-iran-2026-bypass-internet-censorship",
+      "locale": "de",
+      "enTitle": "Best VPN for Iran in 2026: How to Bypass Internet Censorship Safely",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "id": "blog-post-corporate-vpn-leaks-employee-data-2026-de",
+      "type": "blog-post",
+      "slug": "corporate-vpn-leaks-employee-data-2026",
+      "locale": "de",
+      "enTitle": "VPN Leaks Beyond Your ISP: How Corporate VPN Tunnels Expose Employee Data to Employers in 2026",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "id": "blog-post-vpn-authentication-methods-compared-2026-de",
+      "type": "blog-post",
+      "slug": "vpn-authentication-methods-compared-2026",
+      "locale": "de",
+      "enTitle": "VPN Authentication Methods Compared: Password vs. Biometric vs. Hardware Keys for 2026",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "id": "blog-post-vpn-bandwidth-throttling-detect-speed-limits-de",
+      "type": "blog-post",
+      "slug": "vpn-bandwidth-throttling-detect-speed-limits",
+      "locale": "de",
+      "enTitle": "VPN Bandwidth Throttling: How to Detect If Your Provider Is Secretly Limiting Your Speeds in 2026",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "id": "blog-post-vpn-credentials-theft-prevention-2026-de",
+      "type": "blog-post",
+      "slug": "vpn-credentials-theft-prevention-2026",
+      "locale": "de",
+      "enTitle": "VPN Credentials Theft: How Hackers Target Your Login Data and What VPN Features Actually Prevent It in 2026",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "id": "blog-post-vpn-encryption-protocols-wireguard-openvpn-ikev2-2026-de",
+      "type": "blog-post",
+      "slug": "vpn-encryption-protocols-wireguard-openvpn-ikev2-2026",
+      "locale": "de",
+      "enTitle": "VPN Encryption Protocols Explained: WireGuard vs. OpenVPN vs. IKEv2 for 2026",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "id": "blog-post-vpn-freelancers-contractors-secure-client-data-invoicing-2026-de",
+      "type": "blog-post",
+      "slug": "vpn-freelancers-contractors-secure-client-data-invoicing-2026",
+      "locale": "de",
+      "enTitle": "VPN for Freelancers and Contractors: How to Secure Client Data and Invoicing Without Exposing Your Location in 2026",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "id": "blog-post-vpn-geofencing-detection-blocking-2026-de",
+      "type": "blog-post",
+      "slug": "vpn-geofencing-detection-blocking-2026",
+      "locale": "de",
+      "enTitle": "VPN Geofencing Detection: How Websites Identify and Block VPN Users in 2026 and What Actually Works",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "id": "blog-post-vpn-google-workspace-secure-remote-collaboration-2026-de",
+      "type": "blog-post",
+      "slug": "vpn-google-workspace-secure-remote-collaboration-2026",
+      "locale": "de",
+      "enTitle": "VPN for Google Workspace: How to Secure Remote Collaboration Without Breaking Company Policies in 2026",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "id": "blog-post-vpn-kill-switch-vs-dns-leak-protection-2026-de",
+      "type": "blog-post",
+      "slug": "vpn-kill-switch-vs-dns-leak-protection-2026",
+      "locale": "de",
+      "enTitle": "VPN Kill Switch vs. DNS Leak Protection: Which Actually Protects Your Privacy Better in 2026",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "id": "blog-post-vpn-library-public-computer-privacy-2026-de",
+      "type": "blog-post",
+      "slug": "vpn-library-public-computer-privacy-2026",
+      "locale": "de",
+      "enTitle": "VPN for Library and Public Computer Access: How to Protect Your Privacy on Shared Devices in 2026",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "id": "blog-post-vpn-logging-policies-decoded-2026-2026-02-de",
+      "type": "blog-post",
+      "slug": "vpn-logging-policies-decoded-2026-2026-02",
+      "locale": "de",
+      "enTitle": "VPN Logging Policies Decoded: How to Read the Fine Print and Spot Red Flags in 2026",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "id": "blog-post-vpn-logging-policies-decoded-2026-de",
+      "type": "blog-post",
+      "slug": "vpn-logging-policies-decoded-2026",
+      "locale": "de",
+      "enTitle": "VPN Logging Policies Decoded: How to Read the Fine Print and Spot Red Flags in 2026",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "id": "blog-post-vpn-payment-methods-anonymity-privacy-trails-2026-de",
+      "type": "blog-post",
+      "slug": "vpn-payment-methods-anonymity-privacy-trails-2026",
+      "locale": "de",
+      "enTitle": "VPN Payment Methods and Anonymity: Why Credit Cards, PayPal, and Crypto Leave Different Privacy Trails in 2026",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "id": "blog-post-vpn-price-comparison-best-deals-de",
+      "type": "blog-post",
+      "slug": "vpn-price-comparison-best-deals",
+      "locale": "de",
+      "enTitle": "VPN Price Comparison Update: Best Deals This Month",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "id": "blog-post-vpn-public-wifi-banking-shopping-security-2026-de",
+      "type": "blog-post",
+      "slug": "vpn-public-wifi-banking-shopping-security-2026",
+      "locale": "de",
+      "enTitle": "VPN for Public WiFi: How to Secure Banking and Shopping on Airport/Coffee Shop Networks in 2026",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "id": "blog-post-vpn-refund-policies-money-back-guarantee-comparison-2026-de",
+      "type": "blog-post",
+      "slug": "vpn-refund-policies-money-back-guarantee-comparison-2026",
+      "locale": "de",
+      "enTitle": "VPN Refund Policies Compared: Which VPNs Actually Honor Their Money-Back Guarantees in 2026",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "id": "blog-post-vpn-simultaneous-connections-how-many-devices-2026-de",
+      "type": "blog-post",
+      "slug": "vpn-simultaneous-connections-how-many-devices-2026",
+      "locale": "de",
+      "enTitle": "VPN Simultaneous Connections Explained: How Many Devices Can You Really Protect at Once in 2026",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "id": "blog-post-vpn-split-tunneling-work-from-home-security-2026-de",
+      "type": "blog-post",
+      "slug": "vpn-split-tunneling-work-from-home-security-2026",
+      "locale": "de",
+      "enTitle": "VPN Split Tunneling Explained: How to Use It for Work-from-Home Security in 2026",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "id": "blog-post-vpn-student-privacy-protect-academic-data-campus-networks-de",
+      "type": "blog-post",
+      "slug": "vpn-student-privacy-protect-academic-data-campus-networks",
+      "locale": "de",
+      "enTitle": "VPN for Student Privacy: How to Protect Your Academic Data and Online Activities on Campus Networks in 2026",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "id": "blog-post-vpn-subscription-cancellation-delete-account-data-removal-de",
+      "type": "blog-post",
+      "slug": "vpn-subscription-cancellation-delete-account-data-removal",
+      "locale": "de",
+      "enTitle": "VPN Subscription Cancellation: How to Actually Delete Your Account and Ensure Your Data Is Removed in 2026",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "id": "blog-post-who-owns-vpn-2026-ownership-breakdown-de",
+      "type": "blog-post",
+      "slug": "who-owns-vpn-2026-ownership-breakdown",
+      "locale": "de",
+      "enTitle": "Who Really Owns Your VPN? 2026 Ownership Breakdown",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "id": "best-page-vpn-android-tablet-es",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-android-tablet/page.tsx",
+      "page": "vpn-android-tablet",
+      "locale": "es",
+      "status": "pending",
+      "priority": 3
+    },
+    {
+      "id": "best-page-vpn-bali-es",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-bali/page.tsx",
+      "page": "vpn-bali",
+      "locale": "es",
+      "status": "pending",
+      "priority": 3
+    },
+    {
+      "id": "best-page-vpn-ipad-es",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-ipad/page.tsx",
+      "page": "vpn-ipad",
+      "locale": "es",
+      "status": "pending",
+      "priority": 3
+    },
+    {
+      "id": "best-page-vpn-iphone-es",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-iphone/page.tsx",
+      "page": "vpn-iphone",
+      "locale": "es",
+      "status": "pending",
+      "priority": 3
+    },
+    {
+      "id": "best-page-vpn-mobile-es",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-mobile/page.tsx",
+      "page": "vpn-mobile",
+      "locale": "es",
+      "status": "pending",
+      "priority": 3
+    },
+    {
+      "id": "best-page-vpn-morocco-es",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-morocco/page.tsx",
+      "page": "vpn-morocco",
+      "locale": "es",
+      "status": "pending",
+      "priority": 3
+    },
+    {
+      "id": "best-page-vpn-tablet-es",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-tablet/page.tsx",
+      "page": "vpn-tablet",
+      "locale": "es",
+      "status": "pending",
+      "priority": 3
+    },
+    {
+      "id": "best-page-vpn-thailand-es",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-thailand/page.tsx",
+      "page": "vpn-thailand",
+      "locale": "es",
+      "status": "pending",
+      "priority": 3
+    },
+    {
+      "id": "best-page-vpn-usa-es",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-usa/page.tsx",
+      "page": "vpn-usa",
+      "locale": "es",
+      "status": "pending",
+      "priority": 3
+    },
+    {
+      "id": "best-page-vpn-vietnam-es",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-vietnam/page.tsx",
+      "page": "vpn-vietnam",
+      "locale": "es",
+      "status": "pending",
+      "priority": 3
+    },
+    {
+      "id": "best-page-vpn-windows-tablet-es",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-windows-tablet/page.tsx",
+      "page": "vpn-windows-tablet",
+      "locale": "es",
+      "status": "pending",
+      "priority": 3
+    },
+    {
+      "id": "blog-post-best-free-vpns-2026-es",
+      "type": "blog-post",
+      "slug": "best-free-vpns-2026",
+      "locale": "es",
+      "enTitle": "Best Free VPNs That Actually Work in 2026",
+      "status": "pending",
+      "priority": 3
+    },
+    {
+      "id": "blog-post-vpn-credentials-theft-prevention-2026-es",
+      "type": "blog-post",
+      "slug": "vpn-credentials-theft-prevention-2026",
+      "locale": "es",
+      "enTitle": "VPN Credentials Theft: How Hackers Target Your Login Data and What VPN Features Actually Prevent It in 2026",
+      "status": "pending",
+      "priority": 3
+    },
+    {
+      "id": "blog-post-vpn-kill-switch-vs-dns-leak-protection-2026-es",
+      "type": "blog-post",
+      "slug": "vpn-kill-switch-vs-dns-leak-protection-2026",
+      "locale": "es",
+      "enTitle": "VPN Kill Switch vs. DNS Leak Protection: Which Actually Protects Your Privacy Better in 2026",
+      "status": "pending",
+      "priority": 3
+    },
+    {
+      "id": "blog-post-vpn-price-comparison-best-deals-2026-03-es",
+      "type": "blog-post",
+      "slug": "vpn-price-comparison-best-deals-2026-03",
+      "locale": "es",
+      "enTitle": "VPN Price Comparison Update: Best Deals This Month",
+      "status": "pending",
+      "priority": 3
+    },
+    {
+      "id": "blog-post-vpn-price-comparison-best-deals-es",
+      "type": "blog-post",
+      "slug": "vpn-price-comparison-best-deals",
+      "locale": "es",
+      "enTitle": "VPN Price Comparison Update: Best Deals This Month",
+      "status": "pending",
+      "priority": 3
+    },
+    {
+      "id": "best-page-vpn-android-tablet-fr",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-android-tablet/page.tsx",
+      "page": "vpn-android-tablet",
+      "locale": "fr",
+      "status": "pending",
+      "priority": 4
+    },
+    {
+      "id": "best-page-vpn-bali-fr",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-bali/page.tsx",
+      "page": "vpn-bali",
+      "locale": "fr",
+      "status": "pending",
+      "priority": 4
+    },
+    {
+      "id": "best-page-vpn-ipad-fr",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-ipad/page.tsx",
+      "page": "vpn-ipad",
+      "locale": "fr",
+      "status": "pending",
+      "priority": 4
+    },
+    {
+      "id": "best-page-vpn-iphone-fr",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-iphone/page.tsx",
+      "page": "vpn-iphone",
+      "locale": "fr",
+      "status": "pending",
+      "priority": 4
+    },
+    {
+      "id": "best-page-vpn-mobile-fr",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-mobile/page.tsx",
+      "page": "vpn-mobile",
+      "locale": "fr",
+      "status": "pending",
+      "priority": 4
+    },
+    {
+      "id": "best-page-vpn-morocco-fr",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-morocco/page.tsx",
+      "page": "vpn-morocco",
+      "locale": "fr",
+      "status": "pending",
+      "priority": 4
+    },
+    {
+      "id": "best-page-vpn-tablet-fr",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-tablet/page.tsx",
+      "page": "vpn-tablet",
+      "locale": "fr",
+      "status": "pending",
+      "priority": 4
+    },
+    {
+      "id": "best-page-vpn-thailand-fr",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-thailand/page.tsx",
+      "page": "vpn-thailand",
+      "locale": "fr",
+      "status": "pending",
+      "priority": 4
+    },
+    {
+      "id": "best-page-vpn-usa-fr",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-usa/page.tsx",
+      "page": "vpn-usa",
+      "locale": "fr",
+      "status": "pending",
+      "priority": 4
+    },
+    {
+      "id": "best-page-vpn-vietnam-fr",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-vietnam/page.tsx",
+      "page": "vpn-vietnam",
+      "locale": "fr",
+      "status": "pending",
+      "priority": 4
+    },
+    {
+      "id": "best-page-vpn-windows-tablet-fr",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-windows-tablet/page.tsx",
+      "page": "vpn-windows-tablet",
+      "locale": "fr",
+      "status": "pending",
+      "priority": 4
+    },
+    {
+      "id": "blog-post-best-free-vpns-2026-fr",
+      "type": "blog-post",
+      "slug": "best-free-vpns-2026",
+      "locale": "fr",
+      "enTitle": "Best Free VPNs That Actually Work in 2026",
+      "status": "pending",
+      "priority": 4
+    },
+    {
+      "id": "blog-post-vpn-credentials-theft-prevention-2026-fr",
+      "type": "blog-post",
+      "slug": "vpn-credentials-theft-prevention-2026",
+      "locale": "fr",
+      "enTitle": "VPN Credentials Theft: How Hackers Target Your Login Data and What VPN Features Actually Prevent It in 2026",
+      "status": "pending",
+      "priority": 4
+    },
+    {
+      "id": "blog-post-vpn-kill-switch-vs-dns-leak-protection-2026-fr",
+      "type": "blog-post",
+      "slug": "vpn-kill-switch-vs-dns-leak-protection-2026",
+      "locale": "fr",
+      "enTitle": "VPN Kill Switch vs. DNS Leak Protection: Which Actually Protects Your Privacy Better in 2026",
+      "status": "pending",
+      "priority": 4
+    },
+    {
+      "id": "blog-post-vpn-price-comparison-best-deals-fr",
+      "type": "blog-post",
+      "slug": "vpn-price-comparison-best-deals",
+      "locale": "fr",
+      "enTitle": "VPN Price Comparison Update: Best Deals This Month",
+      "status": "pending",
+      "priority": 4
+    },
+    {
+      "id": "blog-post-vpn-student-privacy-protect-academic-data-campus-networks-fr",
+      "type": "blog-post",
+      "slug": "vpn-student-privacy-protect-academic-data-campus-networks",
+      "locale": "fr",
+      "enTitle": "VPN for Student Privacy: How to Protect Your Academic Data and Online Activities on Campus Networks in 2026",
+      "status": "pending",
+      "priority": 4
+    },
+    {
+      "id": "best-page-best-vpn-zh",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/best-vpn/page.tsx",
+      "page": "best-vpn",
+      "locale": "zh",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "best-page-vpn-android-tablet-zh",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-android-tablet/page.tsx",
+      "page": "vpn-android-tablet",
+      "locale": "zh",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "best-page-vpn-bali-zh",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-bali/page.tsx",
+      "page": "vpn-bali",
+      "locale": "zh",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "best-page-vpn-ipad-zh",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-ipad/page.tsx",
+      "page": "vpn-ipad",
+      "locale": "zh",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "best-page-vpn-iphone-zh",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-iphone/page.tsx",
+      "page": "vpn-iphone",
+      "locale": "zh",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "best-page-vpn-mobile-zh",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-mobile/page.tsx",
+      "page": "vpn-mobile",
+      "locale": "zh",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "best-page-vpn-morocco-zh",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-morocco/page.tsx",
+      "page": "vpn-morocco",
+      "locale": "zh",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "best-page-vpn-tablet-zh",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-tablet/page.tsx",
+      "page": "vpn-tablet",
+      "locale": "zh",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "best-page-vpn-thailand-zh",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-thailand/page.tsx",
+      "page": "vpn-thailand",
+      "locale": "zh",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "best-page-vpn-usa-zh",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-usa/page.tsx",
+      "page": "vpn-usa",
+      "locale": "zh",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "best-page-vpn-vietnam-zh",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-vietnam/page.tsx",
+      "page": "vpn-vietnam",
+      "locale": "zh",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "best-page-vpn-windows-tablet-zh",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-windows-tablet/page.tsx",
+      "page": "vpn-windows-tablet",
+      "locale": "zh",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-best-free-vpn-streaming-netflix-2026-zh",
+      "type": "blog-post",
+      "slug": "best-free-vpn-streaming-netflix-2026",
+      "locale": "zh",
+      "enTitle": "Best Free VPN for Streaming Netflix in 2026",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-best-free-vpns-2026-zh",
+      "type": "blog-post",
+      "slug": "best-free-vpns-2026",
+      "locale": "zh",
+      "enTitle": "Best Free VPNs That Actually Work in 2026",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-best-vpn-for-iran-2026-bypass-internet-censorship-2026-02-zh",
+      "type": "blog-post",
+      "slug": "best-vpn-for-iran-2026-bypass-internet-censorship-2026-02",
+      "locale": "zh",
+      "enTitle": "Best VPN for Iran in 2026: How to Bypass Internet Censorship Safely",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-best-vpn-for-iran-2026-bypass-internet-censorship-zh",
+      "type": "blog-post",
+      "slug": "best-vpn-for-iran-2026-bypass-internet-censorship",
+      "locale": "zh",
+      "enTitle": "Best VPN for Iran in 2026: How to Bypass Internet Censorship Safely",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-does-vpn-reduce-ping-gaming-2026-zh",
+      "type": "blog-post",
+      "slug": "does-vpn-reduce-ping-gaming-2026",
+      "locale": "zh",
+      "enTitle": "Does a VPN Reduce Ping in 2026? Real Gaming Test Results",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-is-nordvpn-worth-it-2026-honest-retest-zh",
+      "type": "blog-post",
+      "slug": "is-nordvpn-worth-it-2026-honest-retest",
+      "locale": "zh",
+      "enTitle": "Is NordVPN Still Worth It in 2026? Honest Re-Test",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-audits-independent-security-reviews-verify-claims-2026-zh",
+      "type": "blog-post",
+      "slug": "vpn-audits-independent-security-reviews-verify-claims-2026",
+      "locale": "zh",
+      "enTitle": "VPN Audits and Independent Security Reviews: How to Verify a VPN Provider Actually Does What It Claims in 2026",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-authentication-methods-compared-2026-zh",
+      "type": "blog-post",
+      "slug": "vpn-authentication-methods-compared-2026",
+      "locale": "zh",
+      "enTitle": "VPN Authentication Methods Compared: Password vs. Biometric vs. Hardware Keys for 2026",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-automatic-reconnection-disconnecting-troubleshooting-zh",
+      "type": "blog-post",
+      "slug": "vpn-automatic-reconnection-disconnecting-troubleshooting",
+      "locale": "zh",
+      "enTitle": "VPN Automatic Reconnection: Why Your VPN Keeps Disconnecting and How to Troubleshoot It in 2026",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-bandwidth-throttling-detect-speed-limits-zh",
+      "type": "blog-post",
+      "slug": "vpn-bandwidth-throttling-detect-speed-limits",
+      "locale": "zh",
+      "enTitle": "VPN Bandwidth Throttling: How to Detect If Your Provider Is Secretly Limiting Your Speeds in 2026",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-blocks-account-bans-avoid-flagged-2026-zh",
+      "type": "blog-post",
+      "slug": "vpn-blocks-account-bans-avoid-flagged-2026",
+      "locale": "zh",
+      "enTitle": "VPN Blocks and Account Bans: How to Avoid Getting Flagged by Streaming Services, Banks, and Websites in 2026",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-browser-extensions-vs-full-apps-privacy-2026-zh",
+      "type": "blog-post",
+      "slug": "vpn-browser-extensions-vs-full-apps-privacy-2026",
+      "locale": "zh",
+      "enTitle": "VPN Browser Extensions vs. Full VPN Apps: Why Your Choice Matters for Privacy in 2026",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-connection-drops-why-disconnects-how-to-fix-2026-zh",
+      "type": "blog-post",
+      "slug": "vpn-connection-drops-why-disconnects-how-to-fix-2026",
+      "locale": "zh",
+      "enTitle": "VPN Connection Drops: Why Your VPN Disconnects and How to Fix It in 2026",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-credentials-theft-prevention-2026-zh",
+      "type": "blog-post",
+      "slug": "vpn-credentials-theft-prevention-2026",
+      "locale": "zh",
+      "enTitle": "VPN Credentials Theft: How Hackers Target Your Login Data and What VPN Features Actually Prevent It in 2026",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-cryptocurrency-trading-security-2026-zh",
+      "type": "blog-post",
+      "slug": "vpn-cryptocurrency-trading-security-2026",
+      "locale": "zh",
+      "enTitle": "VPN for Cryptocurrency Trading: How to Secure Your Exchange Accounts and Wallet Access in 2026",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-custody-laws-2026-data-handover-countries-zh",
+      "type": "blog-post",
+      "slug": "vpn-custody-laws-2026-data-handover-countries",
+      "locale": "zh",
+      "enTitle": "VPN Custody Laws in 2026: Which Countries Force VPN Providers to Hand Over User Data and How to Stay Safe",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-dns-leaks-vs-kill-switches-2026-zh",
+      "type": "blog-post",
+      "slug": "vpn-dns-leaks-vs-kill-switches-2026",
+      "locale": "zh",
+      "enTitle": "VPN DNS Leaks vs. VPN Kill Switches: Why You Might Need Both in 2026",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-encryption-protocols-wireguard-openvpn-ikev2-2026-zh",
+      "type": "blog-post",
+      "slug": "vpn-encryption-protocols-wireguard-openvpn-ikev2-2026",
+      "locale": "zh",
+      "enTitle": "VPN Encryption Protocols Explained: WireGuard vs. OpenVPN vs. IKEv2 for 2026",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-for-torrenting-safely-2026-legal-risks-protocols-zh",
+      "type": "blog-post",
+      "slug": "vpn-for-torrenting-safely-2026-legal-risks-protocols",
+      "locale": "zh",
+      "enTitle": "VPN for Torrenting Safely in 2026: Legal Risks, Best Protocols, and Which VPNs Actually Allow P2P",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-freelancers-contractors-secure-client-data-invoicing-2026-zh",
+      "type": "blog-post",
+      "slug": "vpn-freelancers-contractors-secure-client-data-invoicing-2026",
+      "locale": "zh",
+      "enTitle": "VPN for Freelancers and Contractors: How to Secure Client Data and Invoicing Without Exposing Your Location in 2026",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-geofencing-detection-blocking-2026-zh",
+      "type": "blog-post",
+      "slug": "vpn-geofencing-detection-blocking-2026",
+      "locale": "zh",
+      "enTitle": "VPN Geofencing Detection: How Websites Identify and Block VPN Users in 2026 and What Actually Works",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-google-workspace-secure-remote-collaboration-2026-zh",
+      "type": "blog-post",
+      "slug": "vpn-google-workspace-secure-remote-collaboration-2026",
+      "locale": "zh",
+      "enTitle": "VPN for Google Workspace: How to Secure Remote Collaboration Without Breaking Company Policies in 2026",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-government-data-requests-law-enforcement-resistance-2026-zh",
+      "type": "blog-post",
+      "slug": "vpn-government-data-requests-law-enforcement-resistance-2026",
+      "locale": "zh",
+      "enTitle": "VPN and Government Data Requests: How to Know If Your Provider Actually Resists Law Enforcement in 2026",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-guide-tips-february-2026-2026-02-zh",
+      "type": "blog-post",
+      "slug": "vpn-guide-tips-february-2026-2026-02",
+      "locale": "zh",
+      "enTitle": "VPN Guide and Tips - February 2026",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-guide-tips-february-2026-zh",
+      "type": "blog-post",
+      "slug": "vpn-guide-tips-february-2026",
+      "locale": "zh",
+      "enTitle": "VPN Guide and Tips - February 2026",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-guide-tips-march-2026-2026-03-zh",
+      "type": "blog-post",
+      "slug": "vpn-guide-tips-march-2026-2026-03",
+      "locale": "zh",
+      "enTitle": "VPN Guide and Tips - March 2026",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-kill-switch-vs-dns-leak-protection-2026-zh",
+      "type": "blog-post",
+      "slug": "vpn-kill-switch-vs-dns-leak-protection-2026",
+      "locale": "zh",
+      "enTitle": "VPN Kill Switch vs. DNS Leak Protection: Which Actually Protects Your Privacy Better in 2026",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-leak-testing-tools-compared-2026-zh",
+      "type": "blog-post",
+      "slug": "vpn-leak-testing-tools-compared-2026",
+      "locale": "zh",
+      "enTitle": "VPN Leak Testing Tools Compared: Which Free Online Tests Actually Work in 2026 and Which Give False Results",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-leaks-video-calls-slack-discord-teams-2026-zh",
+      "type": "blog-post",
+      "slug": "vpn-leaks-video-calls-slack-discord-teams-2026",
+      "locale": "zh",
+      "enTitle": "VPN Leaks in Video Calls: How Slack, Discord, and Microsoft Teams Expose Your Location Even With a VPN Active in 2026",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-library-public-computer-privacy-2026-zh",
+      "type": "blog-post",
+      "slug": "vpn-library-public-computer-privacy-2026",
+      "locale": "zh",
+      "enTitle": "VPN for Library and Public Computer Access: How to Protect Your Privacy on Shared Devices in 2026",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-logging-policies-decoded-2026-2026-02-zh",
+      "type": "blog-post",
+      "slug": "vpn-logging-policies-decoded-2026-2026-02",
+      "locale": "zh",
+      "enTitle": "VPN Logging Policies Decoded: How to Read the Fine Print and Spot Red Flags in 2026",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-logging-policies-decoded-2026-zh",
+      "type": "blog-post",
+      "slug": "vpn-logging-policies-decoded-2026",
+      "locale": "zh",
+      "enTitle": "VPN Logging Policies Decoded: How to Read the Fine Print and Spot Red Flags in 2026",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-logs-retention-laws-by-country-2026-zh",
+      "type": "blog-post",
+      "slug": "vpn-logs-retention-laws-by-country-2026",
+      "locale": "zh",
+      "enTitle": "VPN Logs Retention Laws by Country: How Long Your Data Is Actually Stored and Who Can Access It in 2026",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-mobile-banking-safe-travel-2026-zh",
+      "type": "blog-post",
+      "slug": "vpn-mobile-banking-safe-travel-2026",
+      "locale": "zh",
+      "enTitle": "VPN and Mobile Banking: How to Safely Access Your Bank Account While Traveling in 2026",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-not-working-netflix-fix-guide-2026-zh",
+      "type": "blog-post",
+      "slug": "vpn-not-working-netflix-fix-guide-2026",
+      "locale": "zh",
+      "enTitle": "VPN Not Working With Netflix? (2026 Fix Guide)",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-online-dating-safety-protect-personal-information-location-zh",
+      "type": "blog-post",
+      "slug": "vpn-online-dating-safety-protect-personal-information-location",
+      "locale": "zh",
+      "enTitle": "VPN for Online Dating Safety: How to Protect Your Personal Information and Location in 2026",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-payment-methods-anonymity-privacy-trails-2026-zh",
+      "type": "blog-post",
+      "slug": "vpn-payment-methods-anonymity-privacy-trails-2026",
+      "locale": "zh",
+      "enTitle": "VPN Payment Methods and Anonymity: Why Credit Cards, PayPal, and Crypto Leave Different Privacy Trails in 2026",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-price-comparison-best-deals-2026-03-zh",
+      "type": "blog-post",
+      "slug": "vpn-price-comparison-best-deals-2026-03",
+      "locale": "zh",
+      "enTitle": "VPN Price Comparison Update: Best Deals This Month",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-price-comparison-best-deals-zh",
+      "type": "blog-post",
+      "slug": "vpn-price-comparison-best-deals",
+      "locale": "zh",
+      "enTitle": "VPN Price Comparison Update: Best Deals This Month",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-public-wifi-banking-shopping-security-2026-zh",
+      "type": "blog-post",
+      "slug": "vpn-public-wifi-banking-shopping-security-2026",
+      "locale": "zh",
+      "enTitle": "VPN for Public WiFi: How to Secure Banking and Shopping on Airport/Coffee Shop Networks in 2026",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-reconnection-speed-test-2026-zh",
+      "type": "blog-post",
+      "slug": "vpn-reconnection-speed-test-2026",
+      "locale": "zh",
+      "enTitle": "VPN Reconnection Speed Test 2026: Which Providers Reconnect Fastest After Network Interruptions",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-refund-policies-money-back-guarantee-comparison-2026-zh",
+      "type": "blog-post",
+      "slug": "vpn-refund-policies-money-back-guarantee-comparison-2026",
+      "locale": "zh",
+      "enTitle": "VPN Refund Policies Compared: Which VPNs Actually Honor Their Money-Back Guarantees in 2026",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-simultaneous-connections-how-many-devices-2026-zh",
+      "type": "blog-post",
+      "slug": "vpn-simultaneous-connections-how-many-devices-2026",
+      "locale": "zh",
+      "enTitle": "VPN Simultaneous Connections Explained: How Many Devices Can You Really Protect at Once in 2026",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-smart-home-security-iot-devices-2026-zh",
+      "type": "blog-post",
+      "slug": "vpn-smart-home-security-iot-devices-2026",
+      "locale": "zh",
+      "enTitle": "VPN and Smart Home Security: How to Protect Your IoT Devices from Hackers in 2026",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-split-tunneling-gaming-reduce-lag-2026-zh",
+      "type": "blog-post",
+      "slug": "vpn-split-tunneling-gaming-reduce-lag-2026",
+      "locale": "zh",
+      "enTitle": "VPN Split Tunneling for Gaming: How to Reduce Lag While Protecting Your Personal Data in 2026",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-split-tunneling-work-from-home-security-2026-zh",
+      "type": "blog-post",
+      "slug": "vpn-split-tunneling-work-from-home-security-2026",
+      "locale": "zh",
+      "enTitle": "VPN Split Tunneling Explained: How to Use It for Work-from-Home Security in 2026",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-student-privacy-protect-academic-data-campus-networks-zh",
+      "type": "blog-post",
+      "slug": "vpn-student-privacy-protect-academic-data-campus-networks",
+      "locale": "zh",
+      "enTitle": "VPN for Student Privacy: How to Protect Your Academic Data and Online Activities on Campus Networks in 2026",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-subscription-cancellation-delete-account-data-removal-zh",
+      "type": "blog-post",
+      "slug": "vpn-subscription-cancellation-delete-account-data-removal",
+      "locale": "zh",
+      "enTitle": "VPN Subscription Cancellation: How to Actually Delete Your Account and Ensure Your Data Is Removed in 2026",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-vpn-tethering-mobile-hotspot-security-2026-zh",
+      "type": "blog-post",
+      "slug": "vpn-tethering-mobile-hotspot-security-2026",
+      "locale": "zh",
+      "enTitle": "VPN Tethering and Mobile Hotspot: How to Secure Devices Connected to Your Phone's Internet in 2026",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "blog-post-why-vpns-slow-down-internet-how-to-fix-zh",
+      "type": "blog-post",
+      "slug": "why-vpns-slow-down-internet-how-to-fix",
+      "locale": "zh",
+      "enTitle": "Why VPNs Slow Down Your Internet (And How to Fix It)",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "best-page-best-vpn-ja",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/best-vpn/page.tsx",
+      "page": "best-vpn",
+      "locale": "ja",
+      "status": "pending",
+      "priority": 6
+    },
+    {
+      "id": "best-page-vpn-android-tablet-ja",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-android-tablet/page.tsx",
+      "page": "vpn-android-tablet",
+      "locale": "ja",
+      "status": "pending",
+      "priority": 6
+    },
+    {
+      "id": "best-page-vpn-bali-ja",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-bali/page.tsx",
+      "page": "vpn-bali",
+      "locale": "ja",
+      "status": "pending",
+      "priority": 6
+    },
+    {
+      "id": "best-page-vpn-ipad-ja",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-ipad/page.tsx",
+      "page": "vpn-ipad",
+      "locale": "ja",
+      "status": "pending",
+      "priority": 6
+    },
+    {
+      "id": "best-page-vpn-iphone-ja",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-iphone/page.tsx",
+      "page": "vpn-iphone",
+      "locale": "ja",
+      "status": "pending",
+      "priority": 6
+    },
+    {
+      "id": "best-page-vpn-mobile-ja",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-mobile/page.tsx",
+      "page": "vpn-mobile",
+      "locale": "ja",
+      "status": "pending",
+      "priority": 6
+    },
+    {
+      "id": "best-page-vpn-morocco-ja",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-morocco/page.tsx",
+      "page": "vpn-morocco",
+      "locale": "ja",
+      "status": "pending",
+      "priority": 6
+    },
+    {
+      "id": "best-page-vpn-tablet-ja",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-tablet/page.tsx",
+      "page": "vpn-tablet",
+      "locale": "ja",
+      "status": "pending",
+      "priority": 6
+    },
+    {
+      "id": "best-page-vpn-thailand-ja",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-thailand/page.tsx",
+      "page": "vpn-thailand",
+      "locale": "ja",
+      "status": "pending",
+      "priority": 6
+    },
+    {
+      "id": "best-page-vpn-usa-ja",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-usa/page.tsx",
+      "page": "vpn-usa",
+      "locale": "ja",
+      "status": "pending",
+      "priority": 6
+    },
+    {
+      "id": "best-page-vpn-vietnam-ja",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-vietnam/page.tsx",
+      "page": "vpn-vietnam",
+      "locale": "ja",
+      "status": "pending",
+      "priority": 6
+    },
+    {
+      "id": "best-page-vpn-windows-tablet-ja",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-windows-tablet/page.tsx",
+      "page": "vpn-windows-tablet",
+      "locale": "ja",
+      "status": "pending",
+      "priority": 6
+    },
+    {
+      "id": "blog-post-best-free-vpns-2026-ja",
+      "type": "blog-post",
+      "slug": "best-free-vpns-2026",
+      "locale": "ja",
+      "enTitle": "Best Free VPNs That Actually Work in 2026",
+      "status": "pending",
+      "priority": 6
+    },
+    {
+      "id": "blog-post-vpn-audits-independent-security-reviews-verify-claims-2026-ja",
+      "type": "blog-post",
+      "slug": "vpn-audits-independent-security-reviews-verify-claims-2026",
+      "locale": "ja",
+      "enTitle": "VPN Audits and Independent Security Reviews: How to Verify a VPN Provider Actually Does What It Claims in 2026",
+      "status": "pending",
+      "priority": 6
+    },
+    {
+      "id": "blog-post-vpn-automatic-reconnection-disconnecting-troubleshooting-ja",
+      "type": "blog-post",
+      "slug": "vpn-automatic-reconnection-disconnecting-troubleshooting",
+      "locale": "ja",
+      "enTitle": "VPN Automatic Reconnection: Why Your VPN Keeps Disconnecting and How to Troubleshoot It in 2026",
+      "status": "pending",
+      "priority": 6
+    },
+    {
+      "id": "blog-post-vpn-bandwidth-throttling-detect-speed-limits-ja",
+      "type": "blog-post",
+      "slug": "vpn-bandwidth-throttling-detect-speed-limits",
+      "locale": "ja",
+      "enTitle": "VPN Bandwidth Throttling: How to Detect If Your Provider Is Secretly Limiting Your Speeds in 2026",
+      "status": "pending",
+      "priority": 6
+    },
+    {
+      "id": "blog-post-vpn-browser-extensions-vs-full-apps-privacy-2026-ja",
+      "type": "blog-post",
+      "slug": "vpn-browser-extensions-vs-full-apps-privacy-2026",
+      "locale": "ja",
+      "enTitle": "VPN Browser Extensions vs. Full VPN Apps: Why Your Choice Matters for Privacy in 2026",
+      "status": "pending",
+      "priority": 6
+    },
+    {
+      "id": "blog-post-vpn-credentials-theft-prevention-2026-ja",
+      "type": "blog-post",
+      "slug": "vpn-credentials-theft-prevention-2026",
+      "locale": "ja",
+      "enTitle": "VPN Credentials Theft: How Hackers Target Your Login Data and What VPN Features Actually Prevent It in 2026",
+      "status": "pending",
+      "priority": 6
+    },
+    {
+      "id": "blog-post-vpn-encryption-protocols-wireguard-openvpn-ikev2-2026-2026-02-ja",
+      "type": "blog-post",
+      "slug": "vpn-encryption-protocols-wireguard-openvpn-ikev2-2026-2026-02",
+      "locale": "ja",
+      "enTitle": "VPN Encryption Protocols Explained: WireGuard vs. OpenVPN vs. IKEv2 for 2026",
+      "status": "pending",
+      "priority": 6
+    },
+    {
+      "id": "blog-post-vpn-kill-switch-vs-dns-leak-protection-2026-ja",
+      "type": "blog-post",
+      "slug": "vpn-kill-switch-vs-dns-leak-protection-2026",
+      "locale": "ja",
+      "enTitle": "VPN Kill Switch vs. DNS Leak Protection: Which Actually Protects Your Privacy Better in 2026",
+      "status": "pending",
+      "priority": 6
+    },
+    {
+      "id": "blog-post-vpn-online-dating-safety-protect-personal-information-location-ja",
+      "type": "blog-post",
+      "slug": "vpn-online-dating-safety-protect-personal-information-location",
+      "locale": "ja",
+      "enTitle": "VPN for Online Dating Safety: How to Protect Your Personal Information and Location in 2026",
+      "status": "pending",
+      "priority": 6
+    },
+    {
+      "id": "blog-post-vpn-price-comparison-best-deals-2026-03-ja",
+      "type": "blog-post",
+      "slug": "vpn-price-comparison-best-deals-2026-03",
+      "locale": "ja",
+      "enTitle": "VPN Price Comparison Update: Best Deals This Month",
+      "status": "pending",
+      "priority": 6
+    },
+    {
+      "id": "blog-post-vpn-price-comparison-best-deals-ja",
+      "type": "blog-post",
+      "slug": "vpn-price-comparison-best-deals",
+      "locale": "ja",
+      "enTitle": "VPN Price Comparison Update: Best Deals This Month",
+      "status": "pending",
+      "priority": 6
+    },
+    {
+      "id": "blog-post-vpn-reconnection-speed-test-2026-ja",
+      "type": "blog-post",
+      "slug": "vpn-reconnection-speed-test-2026",
+      "locale": "ja",
+      "enTitle": "VPN Reconnection Speed Test 2026: Which Providers Reconnect Fastest After Network Interruptions",
+      "status": "pending",
+      "priority": 6
+    },
+    {
+      "id": "blog-post-vpn-smart-home-security-iot-devices-2026-ja",
+      "type": "blog-post",
+      "slug": "vpn-smart-home-security-iot-devices-2026",
+      "locale": "ja",
+      "enTitle": "VPN and Smart Home Security: How to Protect Your IoT Devices from Hackers in 2026",
+      "status": "pending",
+      "priority": 6
+    },
+    {
+      "id": "best-page-best-vpn-ko",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/best-vpn/page.tsx",
+      "page": "best-vpn",
+      "locale": "ko",
+      "status": "pending",
+      "priority": 7
+    },
+    {
+      "id": "best-page-vpn-android-tablet-ko",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-android-tablet/page.tsx",
+      "page": "vpn-android-tablet",
+      "locale": "ko",
+      "status": "pending",
+      "priority": 7
+    },
+    {
+      "id": "best-page-vpn-bali-ko",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-bali/page.tsx",
+      "page": "vpn-bali",
+      "locale": "ko",
+      "status": "pending",
+      "priority": 7
+    },
+    {
+      "id": "best-page-vpn-ipad-ko",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-ipad/page.tsx",
+      "page": "vpn-ipad",
+      "locale": "ko",
+      "status": "pending",
+      "priority": 7
+    },
+    {
+      "id": "best-page-vpn-iphone-ko",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-iphone/page.tsx",
+      "page": "vpn-iphone",
+      "locale": "ko",
+      "status": "pending",
+      "priority": 7
+    },
+    {
+      "id": "best-page-vpn-mobile-ko",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-mobile/page.tsx",
+      "page": "vpn-mobile",
+      "locale": "ko",
+      "status": "pending",
+      "priority": 7
+    },
+    {
+      "id": "best-page-vpn-morocco-ko",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-morocco/page.tsx",
+      "page": "vpn-morocco",
+      "locale": "ko",
+      "status": "pending",
+      "priority": 7
+    },
+    {
+      "id": "best-page-vpn-tablet-ko",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-tablet/page.tsx",
+      "page": "vpn-tablet",
+      "locale": "ko",
+      "status": "pending",
+      "priority": 7
+    },
+    {
+      "id": "best-page-vpn-thailand-ko",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-thailand/page.tsx",
+      "page": "vpn-thailand",
+      "locale": "ko",
+      "status": "pending",
+      "priority": 7
+    },
+    {
+      "id": "best-page-vpn-usa-ko",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-usa/page.tsx",
+      "page": "vpn-usa",
+      "locale": "ko",
+      "status": "pending",
+      "priority": 7
+    },
+    {
+      "id": "best-page-vpn-vietnam-ko",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-vietnam/page.tsx",
+      "page": "vpn-vietnam",
+      "locale": "ko",
+      "status": "pending",
+      "priority": 7
+    },
+    {
+      "id": "best-page-vpn-windows-tablet-ko",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-windows-tablet/page.tsx",
+      "page": "vpn-windows-tablet",
+      "locale": "ko",
+      "status": "pending",
+      "priority": 7
+    },
+    {
+      "id": "blog-post-best-free-vpns-2026-ko",
+      "type": "blog-post",
+      "slug": "best-free-vpns-2026",
+      "locale": "ko",
+      "enTitle": "Best Free VPNs That Actually Work in 2026",
+      "status": "pending",
+      "priority": 7
+    },
+    {
+      "id": "blog-post-vpn-audits-independent-security-reviews-verify-claims-2026-ko",
+      "type": "blog-post",
+      "slug": "vpn-audits-independent-security-reviews-verify-claims-2026",
+      "locale": "ko",
+      "enTitle": "VPN Audits and Independent Security Reviews: How to Verify a VPN Provider Actually Does What It Claims in 2026",
+      "status": "pending",
+      "priority": 7
+    },
+    {
+      "id": "blog-post-vpn-bandwidth-throttling-detect-speed-limits-ko",
+      "type": "blog-post",
+      "slug": "vpn-bandwidth-throttling-detect-speed-limits",
+      "locale": "ko",
+      "enTitle": "VPN Bandwidth Throttling: How to Detect If Your Provider Is Secretly Limiting Your Speeds in 2026",
+      "status": "pending",
+      "priority": 7
+    },
+    {
+      "id": "blog-post-vpn-browser-extensions-vs-full-apps-privacy-2026-ko",
+      "type": "blog-post",
+      "slug": "vpn-browser-extensions-vs-full-apps-privacy-2026",
+      "locale": "ko",
+      "enTitle": "VPN Browser Extensions vs. Full VPN Apps: Why Your Choice Matters for Privacy in 2026",
+      "status": "pending",
+      "priority": 7
+    },
+    {
+      "id": "blog-post-vpn-connection-drops-why-disconnects-how-to-fix-2026-ko",
+      "type": "blog-post",
+      "slug": "vpn-connection-drops-why-disconnects-how-to-fix-2026",
+      "locale": "ko",
+      "enTitle": "VPN Connection Drops: Why Your VPN Disconnects and How to Fix It in 2026",
+      "status": "pending",
+      "priority": 7
+    },
+    {
+      "id": "blog-post-vpn-credentials-theft-prevention-2026-ko",
+      "type": "blog-post",
+      "slug": "vpn-credentials-theft-prevention-2026",
+      "locale": "ko",
+      "enTitle": "VPN Credentials Theft: How Hackers Target Your Login Data and What VPN Features Actually Prevent It in 2026",
+      "status": "pending",
+      "priority": 7
+    },
+    {
+      "id": "blog-post-vpn-encryption-protocols-wireguard-openvpn-ikev2-2026-2026-02-ko",
+      "type": "blog-post",
+      "slug": "vpn-encryption-protocols-wireguard-openvpn-ikev2-2026-2026-02",
+      "locale": "ko",
+      "enTitle": "VPN Encryption Protocols Explained: WireGuard vs. OpenVPN vs. IKEv2 for 2026",
+      "status": "pending",
+      "priority": 7
+    },
+    {
+      "id": "blog-post-vpn-kill-switch-vs-dns-leak-protection-2026-ko",
+      "type": "blog-post",
+      "slug": "vpn-kill-switch-vs-dns-leak-protection-2026",
+      "locale": "ko",
+      "enTitle": "VPN Kill Switch vs. DNS Leak Protection: Which Actually Protects Your Privacy Better in 2026",
+      "status": "pending",
+      "priority": 7
+    },
+    {
+      "id": "blog-post-vpn-online-dating-safety-protect-personal-information-location-ko",
+      "type": "blog-post",
+      "slug": "vpn-online-dating-safety-protect-personal-information-location",
+      "locale": "ko",
+      "enTitle": "VPN for Online Dating Safety: How to Protect Your Personal Information and Location in 2026",
+      "status": "pending",
+      "priority": 7
+    },
+    {
+      "id": "blog-post-vpn-price-comparison-best-deals-2026-03-ko",
+      "type": "blog-post",
+      "slug": "vpn-price-comparison-best-deals-2026-03",
+      "locale": "ko",
+      "enTitle": "VPN Price Comparison Update: Best Deals This Month",
+      "status": "pending",
+      "priority": 7
+    },
+    {
+      "id": "blog-post-vpn-price-comparison-best-deals-ko",
+      "type": "blog-post",
+      "slug": "vpn-price-comparison-best-deals",
+      "locale": "ko",
+      "enTitle": "VPN Price Comparison Update: Best Deals This Month",
+      "status": "pending",
+      "priority": 7
+    },
+    {
+      "id": "blog-post-vpn-reconnection-speed-test-2026-ko",
+      "type": "blog-post",
+      "slug": "vpn-reconnection-speed-test-2026",
+      "locale": "ko",
+      "enTitle": "VPN Reconnection Speed Test 2026: Which Providers Reconnect Fastest After Network Interruptions",
+      "status": "pending",
+      "priority": 7
+    },
+    {
+      "id": "blog-post-vpn-smart-home-security-iot-devices-2026-ko",
+      "type": "blog-post",
+      "slug": "vpn-smart-home-security-iot-devices-2026",
+      "locale": "ko",
+      "enTitle": "VPN and Smart Home Security: How to Protect Your IoT Devices from Hackers in 2026",
+      "status": "pending",
+      "priority": 7
+    },
+    {
+      "id": "best-page-best-vpn-th",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/best-vpn/page.tsx",
+      "page": "best-vpn",
+      "locale": "th",
+      "status": "pending",
+      "priority": 8
+    },
+    {
+      "id": "best-page-vpn-android-tablet-th",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-android-tablet/page.tsx",
+      "page": "vpn-android-tablet",
+      "locale": "th",
+      "status": "pending",
+      "priority": 8
+    },
+    {
+      "id": "best-page-vpn-bali-th",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-bali/page.tsx",
+      "page": "vpn-bali",
+      "locale": "th",
+      "status": "pending",
+      "priority": 8
+    },
+    {
+      "id": "best-page-vpn-ipad-th",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-ipad/page.tsx",
+      "page": "vpn-ipad",
+      "locale": "th",
+      "status": "pending",
+      "priority": 8
+    },
+    {
+      "id": "best-page-vpn-iphone-th",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-iphone/page.tsx",
+      "page": "vpn-iphone",
+      "locale": "th",
+      "status": "pending",
+      "priority": 8
+    },
+    {
+      "id": "best-page-vpn-mobile-th",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-mobile/page.tsx",
+      "page": "vpn-mobile",
+      "locale": "th",
+      "status": "pending",
+      "priority": 8
+    },
+    {
+      "id": "best-page-vpn-morocco-th",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-morocco/page.tsx",
+      "page": "vpn-morocco",
+      "locale": "th",
+      "status": "pending",
+      "priority": 8
+    },
+    {
+      "id": "best-page-vpn-tablet-th",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-tablet/page.tsx",
+      "page": "vpn-tablet",
+      "locale": "th",
+      "status": "pending",
+      "priority": 8
+    },
+    {
+      "id": "best-page-vpn-thailand-th",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-thailand/page.tsx",
+      "page": "vpn-thailand",
+      "locale": "th",
+      "status": "pending",
+      "priority": 8
+    },
+    {
+      "id": "best-page-vpn-usa-th",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-usa/page.tsx",
+      "page": "vpn-usa",
+      "locale": "th",
+      "status": "pending",
+      "priority": 8
+    },
+    {
+      "id": "best-page-vpn-vietnam-th",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-vietnam/page.tsx",
+      "page": "vpn-vietnam",
+      "locale": "th",
+      "status": "pending",
+      "priority": 8
+    },
+    {
+      "id": "best-page-vpn-windows-tablet-th",
+      "type": "best-page",
+      "file": "src/app/[locale]/best/vpn-windows-tablet/page.tsx",
+      "page": "vpn-windows-tablet",
+      "locale": "th",
+      "status": "pending",
+      "priority": 8
+    },
+    {
+      "id": "blog-post-best-free-vpns-2026-th",
+      "type": "blog-post",
+      "slug": "best-free-vpns-2026",
+      "locale": "th",
+      "enTitle": "Best Free VPNs That Actually Work in 2026",
+      "status": "pending",
+      "priority": 8
+    },
+    {
+      "id": "blog-post-vpn-audits-independent-security-reviews-verify-claims-2026-th",
+      "type": "blog-post",
+      "slug": "vpn-audits-independent-security-reviews-verify-claims-2026",
+      "locale": "th",
+      "enTitle": "VPN Audits and Independent Security Reviews: How to Verify a VPN Provider Actually Does What It Claims in 2026",
+      "status": "pending",
+      "priority": 8
+    },
+    {
+      "id": "blog-post-vpn-authentication-methods-compared-2026-th",
+      "type": "blog-post",
+      "slug": "vpn-authentication-methods-compared-2026",
+      "locale": "th",
+      "enTitle": "VPN Authentication Methods Compared: Password vs. Biometric vs. Hardware Keys for 2026",
+      "status": "pending",
+      "priority": 8
+    },
+    {
+      "id": "blog-post-vpn-bandwidth-throttling-detect-speed-limits-th",
+      "type": "blog-post",
+      "slug": "vpn-bandwidth-throttling-detect-speed-limits",
+      "locale": "th",
+      "enTitle": "VPN Bandwidth Throttling: How to Detect If Your Provider Is Secretly Limiting Your Speeds in 2026",
+      "status": "pending",
+      "priority": 8
+    },
+    {
+      "id": "blog-post-vpn-browser-extensions-vs-full-apps-privacy-2026-th",
+      "type": "blog-post",
+      "slug": "vpn-browser-extensions-vs-full-apps-privacy-2026",
+      "locale": "th",
+      "enTitle": "VPN Browser Extensions vs. Full VPN Apps: Why Your Choice Matters for Privacy in 2026",
+      "status": "pending",
+      "priority": 8
+    },
+    {
+      "id": "blog-post-vpn-connection-drops-why-disconnects-how-to-fix-2026-th",
+      "type": "blog-post",
+      "slug": "vpn-connection-drops-why-disconnects-how-to-fix-2026",
+      "locale": "th",
+      "enTitle": "VPN Connection Drops: Why Your VPN Disconnects and How to Fix It in 2026",
+      "status": "pending",
+      "priority": 8
+    },
+    {
+      "id": "blog-post-vpn-credentials-theft-prevention-2026-th",
+      "type": "blog-post",
+      "slug": "vpn-credentials-theft-prevention-2026",
+      "locale": "th",
+      "enTitle": "VPN Credentials Theft: How Hackers Target Your Login Data and What VPN Features Actually Prevent It in 2026",
+      "status": "pending",
+      "priority": 8
+    },
+    {
+      "id": "blog-post-vpn-encryption-protocols-wireguard-openvpn-ikev2-2026-2026-02-th",
+      "type": "blog-post",
+      "slug": "vpn-encryption-protocols-wireguard-openvpn-ikev2-2026-2026-02",
+      "locale": "th",
+      "enTitle": "VPN Encryption Protocols Explained: WireGuard vs. OpenVPN vs. IKEv2 for 2026",
+      "status": "pending",
+      "priority": 8
+    },
+    {
+      "id": "blog-post-vpn-encryption-protocols-wireguard-openvpn-ikev2-2026-th",
+      "type": "blog-post",
+      "slug": "vpn-encryption-protocols-wireguard-openvpn-ikev2-2026",
+      "locale": "th",
+      "enTitle": "VPN Encryption Protocols Explained: WireGuard vs. OpenVPN vs. IKEv2 for 2026",
+      "status": "pending",
+      "priority": 8
+    },
+    {
+      "id": "blog-post-vpn-guide-tips-february-2026-th",
+      "type": "blog-post",
+      "slug": "vpn-guide-tips-february-2026",
+      "locale": "th",
+      "enTitle": "VPN Guide and Tips - February 2026",
+      "status": "pending",
+      "priority": 8
+    },
+    {
+      "id": "blog-post-vpn-kill-switch-vs-dns-leak-protection-2026-th",
+      "type": "blog-post",
+      "slug": "vpn-kill-switch-vs-dns-leak-protection-2026",
+      "locale": "th",
+      "enTitle": "VPN Kill Switch vs. DNS Leak Protection: Which Actually Protects Your Privacy Better in 2026",
+      "status": "pending",
+      "priority": 8
+    },
+    {
+      "id": "blog-post-vpn-location-spoofing-internet-speed-performance-test-2026-th",
+      "type": "blog-post",
+      "slug": "vpn-location-spoofing-internet-speed-performance-test-2026",
+      "locale": "th",
+      "enTitle": "Does VPN Location Spoofing Affect Your Internet Speed? A 2026 Performance Test Across 50+ Servers",
+      "status": "pending",
+      "priority": 8
+    },
+    {
+      "id": "blog-post-vpn-logging-policies-decoded-2026-2026-02-th",
+      "type": "blog-post",
+      "slug": "vpn-logging-policies-decoded-2026-2026-02",
+      "locale": "th",
+      "enTitle": "VPN Logging Policies Decoded: How to Read the Fine Print and Spot Red Flags in 2026",
+      "status": "pending",
+      "priority": 8
+    },
+    {
+      "id": "blog-post-vpn-logging-policies-decoded-2026-th",
+      "type": "blog-post",
+      "slug": "vpn-logging-policies-decoded-2026",
+      "locale": "th",
+      "enTitle": "VPN Logging Policies Decoded: How to Read the Fine Print and Spot Red Flags in 2026",
+      "status": "pending",
+      "priority": 8
+    },
+    {
+      "id": "blog-post-vpn-mobile-banking-safe-travel-2026-th",
+      "type": "blog-post",
+      "slug": "vpn-mobile-banking-safe-travel-2026",
+      "locale": "th",
+      "enTitle": "VPN and Mobile Banking: How to Safely Access Your Bank Account While Traveling in 2026",
+      "status": "pending",
+      "priority": 8
+    },
+    {
+      "id": "blog-post-vpn-online-dating-safety-protect-personal-information-location-th",
+      "type": "blog-post",
+      "slug": "vpn-online-dating-safety-protect-personal-information-location",
+      "locale": "th",
+      "enTitle": "VPN for Online Dating Safety: How to Protect Your Personal Information and Location in 2026",
+      "status": "pending",
+      "priority": 8
+    },
+    {
+      "id": "blog-post-vpn-price-comparison-best-deals-2026-03-th",
+      "type": "blog-post",
+      "slug": "vpn-price-comparison-best-deals-2026-03",
+      "locale": "th",
+      "enTitle": "VPN Price Comparison Update: Best Deals This Month",
+      "status": "pending",
+      "priority": 8
+    },
+    {
+      "id": "blog-post-vpn-price-comparison-best-deals-th",
+      "type": "blog-post",
+      "slug": "vpn-price-comparison-best-deals",
+      "locale": "th",
+      "enTitle": "VPN Price Comparison Update: Best Deals This Month",
+      "status": "pending",
+      "priority": 8
+    },
+    {
+      "id": "blog-post-vpn-reconnection-speed-test-2026-th",
+      "type": "blog-post",
+      "slug": "vpn-reconnection-speed-test-2026",
+      "locale": "th",
+      "enTitle": "VPN Reconnection Speed Test 2026: Which Providers Reconnect Fastest After Network Interruptions",
+      "status": "pending",
+      "priority": 8
+    },
+    {
+      "id": "blog-post-vpn-refund-policies-money-back-guarantee-comparison-2026-th",
+      "type": "blog-post",
+      "slug": "vpn-refund-policies-money-back-guarantee-comparison-2026",
+      "locale": "th",
+      "enTitle": "VPN Refund Policies Compared: Which VPNs Actually Honor Their Money-Back Guarantees in 2026",
+      "status": "pending",
+      "priority": 8
+    },
+    {
+      "id": "blog-post-vpn-smart-home-security-iot-devices-2026-th",
+      "type": "blog-post",
+      "slug": "vpn-smart-home-security-iot-devices-2026",
+      "locale": "th",
+      "enTitle": "VPN and Smart Home Security: How to Protect Your IoT Devices from Hackers in 2026",
+      "status": "pending",
+      "priority": 8
+    }
+  ]
+}

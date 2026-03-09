@@ -8,6 +8,7 @@ import { generateAlternates } from "@/lib/seo-utils";
 import { formatAuditStatus, formatLoggingPolicy, getVpnIndexRows } from "@/lib/vpn-transparency-data";
 import { getAllVpns } from "@/lib/vpn-data-layer";
 import { FileSpreadsheet, TrendingUp, ShieldCheck, Gauge, RefreshCw } from "lucide-react";
+import { DownloadPdfButton } from "@/components/ui/download-pdf-button";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -26,6 +27,7 @@ type LocaleCopy = {
   note: string;
   reports: string;
   coreAsset: string;
+  downloadPdf: string;
   headers: {
     rank: string;
     vpn: string;
@@ -77,6 +79,7 @@ const copy: Record<string, LocaleCopy> = {
     note: "Note: scoring rules and re-test cadence are documented on /methodology.",
     reports: "Reports",
     coreAsset: "Core research asset",
+    downloadPdf: "Download PDF Report",
     headers: {
       rank: "Rank",
       vpn: "VPN",
@@ -108,6 +111,7 @@ const copy: Record<string, LocaleCopy> = {
     note: "Let op: scorelogica en hertestfrequentie staan op /methodology.",
     reports: "Rapporten",
     coreAsset: "Kern onderzoeksasset",
+    downloadPdf: "Download PDF Rapport",
     headers: {
       rank: "Rang",
       vpn: "VPN",
@@ -137,6 +141,7 @@ const copy: Record<string, LocaleCopy> = {
     note: "Hinweis: Scoring-Regeln und Retest-Zyklus stehen auf /methodology.",
     reports: "Reports",
     coreAsset: "Kern-Research-Asset",
+    downloadPdf: "PDF-Bericht herunterladen",
     headers: { rank: "Rang", vpn: "VPN", score: "Score", speed: "Speed EU/US/Asien", latency: "Latenz", logging: "Logging", owner: "Owner", jurisdiction: "Jurisdiktion", audited: "Audit", streaming: "Streaming", torrent: "Torrent", killSwitch: "Kill Switch", lastTested: "Zuletzt getestet" },
   },
   es: {
@@ -152,6 +157,7 @@ const copy: Record<string, LocaleCopy> = {
     note: "Nota: reglas de score y frecuencia de retest en /methodology.",
     reports: "Informes",
     coreAsset: "Activo central",
+    downloadPdf: "Descargar informe PDF",
     headers: { rank: "Rango", vpn: "VPN", score: "Score", speed: "Velocidad EU/US/Asia", latency: "Latencia", logging: "Logs", owner: "Owner", jurisdiction: "Jurisdiccion", audited: "Auditoria", streaming: "Streaming", torrent: "Torrent", killSwitch: "Kill switch", lastTested: "Ultima prueba" },
   },
   fr: {
@@ -167,6 +173,7 @@ const copy: Record<string, LocaleCopy> = {
     note: "Note: regles de scoring et cadence de retest sur /methodology.",
     reports: "Rapports",
     coreAsset: "Actif principal",
+    downloadPdf: "Telecharger le rapport PDF",
     headers: { rank: "Rang", vpn: "VPN", score: "Score", speed: "Vitesse EU/US/Asie", latency: "Latence", logging: "Logs", owner: "Owner", jurisdiction: "Juridiction", audited: "Audit", streaming: "Streaming", torrent: "Torrent", killSwitch: "Kill switch", lastTested: "Dernier test" },
   },
   zh: {
@@ -182,6 +189,7 @@ const copy: Record<string, LocaleCopy> = {
     note: "说明：评分规则与复测节奏见 /methodology。",
     reports: "报告",
     coreAsset: "核心研究资产",
+    downloadPdf: "下载 PDF 报告",
     headers: { rank: "排名", vpn: "VPN", score: "分数", speed: "速度 EU/US/Asia", latency: "延迟", logging: "日志", owner: "所有者", jurisdiction: "司法辖区", audited: "审计", streaming: "流媒体", torrent: "种子", killSwitch: "Kill Switch", lastTested: "最后测试" },
   },
   ja: {
@@ -197,6 +205,7 @@ const copy: Record<string, LocaleCopy> = {
     note: "注: スコア式と再テスト方針は /methodology に記載。",
     reports: "レポート",
     coreAsset: "中核資産",
+    downloadPdf: "PDFレポートをダウンロード",
     headers: { rank: "順位", vpn: "VPN", score: "スコア", speed: "速度 EU/US/Asia", latency: "遅延", logging: "ログ", owner: "所有者", jurisdiction: "法域", audited: "監査", streaming: "配信", torrent: "Torrent", killSwitch: "Kill Switch", lastTested: "最終テスト" },
   },
   ko: {
@@ -212,6 +221,7 @@ const copy: Record<string, LocaleCopy> = {
     note: "참고: 점수 규칙과 재테스트 주기는 /methodology 에서 확인.",
     reports: "리포트",
     coreAsset: "핵심 자산",
+    downloadPdf: "PDF 보고서 다운로드",
     headers: { rank: "순위", vpn: "VPN", score: "점수", speed: "속도 EU/US/Asia", latency: "지연", logging: "로그", owner: "소유자", jurisdiction: "관할권", audited: "감사", streaming: "스트리밍", torrent: "토렌트", killSwitch: "킬스위치", lastTested: "마지막 테스트" },
   },
   th: {
@@ -227,6 +237,7 @@ const copy: Record<string, LocaleCopy> = {
     note: "หมายเหตุ: สูตรคะแนนและรอบทดสอบซ้ำอยู่ที่ /methodology",
     reports: "รายงาน",
     coreAsset: "สินทรัพย์หลัก",
+    downloadPdf: "ดาวน์โหลดรายงาน PDF",
     headers: { rank: "อันดับ", vpn: "VPN", score: "คะแนน", speed: "ความเร็ว EU/US/Asia", latency: "Latency", logging: "Logging", owner: "Owner", jurisdiction: "Jurisdiction", audited: "Audited", streaming: "Streaming", torrent: "Torrent", killSwitch: "Kill switch", lastTested: "Last tested" },
   },
 };
@@ -263,6 +274,7 @@ export default async function TransparencyReportPage({ params }: Props) {
             {c.intro}{" "}
             <Link href="/methodology" className="text-primary hover:underline">/methodology</Link>.
           </p>
+          <DownloadPdfButton label={c.downloadPdf} className="mt-6" />
         </div>
       </section>
 

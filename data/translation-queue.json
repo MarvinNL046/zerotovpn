@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 119,
+    "completed": 120,
     "inProgress": 0
   },
   "queue": [
@@ -959,7 +959,7 @@
       "slug": "vpn-audits-independent-security-reviews-verify-claims-2026",
       "locale": "zh",
       "enTitle": "VPN Audits and Independent Security Reviews: How to Verify a VPN Provider Actually Does What It Claims in 2026",
-      "status": "pending",
+      "status": "completed",
       "priority": 5
     },
     {

@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 80,
+    "completed": 81,
     "inProgress": 0
   },
   "queue": [
@@ -428,7 +428,7 @@
       "slug": "vpn-public-wifi-banking-shopping-security-2026",
       "locale": "de",
       "enTitle": "VPN for Public WiFi: How to Secure Banking and Shopping on Airport/Coffee Shop Networks in 2026",
-      "status": "pending",
+      "status": "completed",
       "priority": 2
     },
     {

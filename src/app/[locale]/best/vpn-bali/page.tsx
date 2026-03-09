@@ -17,19 +17,112 @@ type Props = {
 
 const baseUrl = "https://zerotovpn.com";
 
+const content: Record<string, {
+  metaTitle: string;
+  metaDescription: string;
+  ogTitle: string;
+  ogDescription: string;
+  badge: string;
+  h1: string;
+  intro: string;
+  streamingTitle: string;
+  streamingDesc: string;
+  wifiTitle: string;
+  wifiDesc: string;
+  remoteTitle: string;
+  remoteDesc: string;
+  picksTitle: string;
+  getVpn: string;
+  readReview: string;
+  researchTitle: string;
+  dataSource: string;
+  scoringRules: string;
+  methodology: string;
+  interactiveFilters: string;
+  vpnIndex: string;
+  relatedTitle: string;
+  related: { title: string; description: string; href: string; icon: string }[];
+}> = {
+  en: {
+    metaTitle: "Best VPN for Bali - Remote Work, Streaming & Public WiFi",
+    metaDescription: "Independent picks for using a VPN in Bali: safer public WiFi, stable streaming access, and privacy while traveling or working remotely.",
+    ogTitle: "Best VPN for Bali",
+    ogDescription: "Data-driven VPN picks for Bali travel, digital nomads, streaming, and privacy.",
+    badge: "Bali travel intent page",
+    h1: "Best VPN for Bali",
+    intro: "Bali is a hotspot for travelers and digital nomads. Your VPN should stay stable on cafe and villa WiFi, protect sensitive logins, and reliably unlock your usual apps and streaming libraries.",
+    streamingTitle: "Streaming Access",
+    streamingDesc: "Keep access to Netflix, Disney+, and region-locked content while on the move.",
+    wifiTitle: "Public WiFi Safety",
+    wifiDesc: "Reduce risk on airport, coworking, cafe, and hotel networks across Bali.",
+    remoteTitle: "Remote Work Reliability",
+    remoteDesc: "Reliable protocols and kill switch behavior matter for calls, admin panels, and client systems.",
+    picksTitle: "Top VPN picks for Bali",
+    getVpn: "Get",
+    readReview: "Read full review",
+    researchTitle: "How this page connects to our research stack",
+    dataSource: "Data source:",
+    scoringRules: "Scoring rules:",
+    methodology: "Methodology",
+    interactiveFilters: "Interactive filters:",
+    vpnIndex: "VPN Index dashboard",
+    relatedTitle: "Related internal guides",
+    related: [
+      { title: "VPN for Travel", description: "Practical setup for staying private while moving between countries.", href: "/guides/vpn-for-travel", icon: "map" },
+      { title: "Best VPN for Indonesia", description: "Country context and tested picks for Indonesia.", href: "/best/vpn-indonesia", icon: "globe" },
+      { title: "Best VPN for Thailand", description: "Neighboring travel-intent VPN page with tested picks.", href: "/best/vpn-thailand", icon: "globe" },
+      { title: "Best VPN for Streaming", description: "Comparisons focused on unblocking reliability and speed.", href: "/best/vpn-streaming", icon: "tv" },
+      { title: "Best Mobile VPN", description: "VPN choices optimized for phones and tablets.", href: "/best/vpn-mobile", icon: "smartphone" },
+      { title: "Countries", description: "Country-by-country censorship and VPN access context.", href: "/countries", icon: "location" },
+    ],
+  },
+  nl: {
+    metaTitle: "Beste VPN voor Bali - Thuiswerken, Streaming & Openbare WiFi",
+    metaDescription: "Onafhankelijke aanbevelingen voor een VPN op Bali: veiliger openbaar WiFi, stabiele streaming en privacy onderweg of tijdens het werken.",
+    ogTitle: "Beste VPN voor Bali",
+    ogDescription: "Datagedreven VPN-aanbevelingen voor reizen naar Bali, digitale nomaden, streaming en privacy.",
+    badge: "Bali reisgericht",
+    h1: "Beste VPN voor Bali",
+    intro: "Bali is een populaire bestemming voor reizigers en digitale nomaden. Je VPN moet stabiel blijven op café- en villa-WiFi, gevoelige inloggegevens beschermen en betrouwbaar je gebruikelijke apps en streamingdiensten ontgrendelen.",
+    streamingTitle: "Streamingtoegang",
+    streamingDesc: "Behoud toegang tot Netflix, Disney+ en regioversleutelde content terwijl je onderweg bent.",
+    wifiTitle: "Openbare WiFi-veiligheid",
+    wifiDesc: "Verminder risico's op luchthaven-, coworking-, café- en hotelnetwerken op Bali.",
+    remoteTitle: "Betrouwbaarheid voor thuiswerken",
+    remoteDesc: "Betrouwbare protocollen en kill switch-functionaliteit zijn belangrijk voor videobellen, adminpanelen en klantsystemen.",
+    picksTitle: "Beste VPN-keuzes voor Bali",
+    getVpn: "Kies",
+    readReview: "Lees volledige review",
+    researchTitle: "Hoe deze pagina samenhangt met ons onderzoek",
+    dataSource: "Databron:",
+    scoringRules: "Beoordelingsregels:",
+    methodology: "Methodologie",
+    interactiveFilters: "Interactieve filters:",
+    vpnIndex: "VPN Index-dashboard",
+    relatedTitle: "Gerelateerde interne gidsen",
+    related: [
+      { title: "VPN voor op reis", description: "Praktische instellingen om je privacy te bewaren tijdens reizen.", href: "/guides/vpn-for-travel", icon: "map" },
+      { title: "Beste VPN voor Indonesië", description: "Landcontext en geteste aanbevelingen voor Indonesië.", href: "/best/vpn-indonesia", icon: "globe" },
+      { title: "Beste VPN voor Thailand", description: "Reisgericht VPN-overzicht met geteste aanbevelingen.", href: "/best/vpn-thailand", icon: "globe" },
+      { title: "Beste VPN voor streaming", description: "Vergelijkingen gericht op ontgrendelingsbetrouwbaarheid en snelheid.", href: "/best/vpn-streaming", icon: "tv" },
+      { title: "Beste mobiele VPN", description: "VPN-keuzes geoptimaliseerd voor telefoons en tablets.", href: "/best/vpn-mobile", icon: "smartphone" },
+      { title: "Landen", description: "Land-voor-land overzicht van censuur en VPN-toegang.", href: "/countries", icon: "location" },
+    ],
+  },
+};
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const shortMonthYear = getShortMonthYear();
+  const t = content[locale] || content.en;
   return {
     metadataBase: new URL(baseUrl),
-    title: `Best VPN for Bali (${shortMonthYear}) - Remote Work, Streaming & Public WiFi`,
-    description:
-      "Independent picks for using a VPN in Bali: safer public WiFi, stable streaming access, and privacy while traveling or working remotely.",
+    title: `${t.metaTitle} (${shortMonthYear})`,
+    description: t.metaDescription,
     alternates: generateAlternates("/best/vpn-bali", locale),
     openGraph: {
-      title: `Best VPN for Bali (${shortMonthYear})`,
-      description:
-        "Data-driven VPN picks for Bali travel, digital nomads, streaming, and privacy.",
+      title: `${t.ogTitle} (${shortMonthYear})`,
+      description: t.ogDescription,
       type: "article",
     },
   };
@@ -48,21 +141,19 @@ export default async function VpnBaliPage({ params }: Props) {
   const expressvpn = await getVpnBySlug("expressvpn");
 
   const picks = [nordvpn, surfshark, expressvpn].filter(isDefined);
+  const t = content[locale] || content.en;
 
   return (
     <div className="flex flex-col">
       <section className="py-14 lg:py-20 bg-gradient-to-br from-primary/8 via-background to-background">
         <div className="container max-w-5xl">
-          <BreadcrumbSchema items={[{ name: "Best VPN for Bali", href: "/best/vpn-bali" }]} className="mb-8" />
+          <BreadcrumbSchema items={[{ name: t.h1, href: "/best/vpn-bali" }]} className="mb-8" />
           <Badge variant="blue" className="mb-4">
             <Plane className="h-3.5 w-3.5 mr-1" />
-            Bali travel intent page
+            {t.badge}
           </Badge>
-          <h1 className="text-4xl lg:text-5xl font-bold tracking-tight mb-4">Best VPN for Bali</h1>
-          <p className="text-lg text-muted-foreground max-w-3xl">
-            Bali is a hotspot for travelers and digital nomads. Your VPN should stay stable on cafe and villa
-            WiFi, protect sensitive logins, and reliably unlock your usual apps and streaming libraries.
-          </p>
+          <h1 className="text-4xl lg:text-5xl font-bold tracking-tight mb-4">{t.h1}</h1>
+          <p className="text-lg text-muted-foreground max-w-3xl">{t.intro}</p>
         </div>
       </section>
 
@@ -72,41 +163,35 @@ export default async function VpnBaliPage({ params }: Props) {
             <CardHeader className="pb-2">
               <CardTitle className="text-base flex items-center gap-2">
                 <Tv className="h-4 w-4 text-primary" />
-                Streaming Access
+                {t.streamingTitle}
               </CardTitle>
             </CardHeader>
-            <CardContent className="text-sm text-muted-foreground">
-              Keep access to Netflix, Disney+, and region-locked content while on the move.
-            </CardContent>
+            <CardContent className="text-sm text-muted-foreground">{t.streamingDesc}</CardContent>
           </Card>
           <Card>
             <CardHeader className="pb-2">
               <CardTitle className="text-base flex items-center gap-2">
                 <Wifi className="h-4 w-4 text-primary" />
-                Public WiFi Safety
+                {t.wifiTitle}
               </CardTitle>
             </CardHeader>
-            <CardContent className="text-sm text-muted-foreground">
-              Reduce risk on airport, coworking, cafe, and hotel networks across Bali.
-            </CardContent>
+            <CardContent className="text-sm text-muted-foreground">{t.wifiDesc}</CardContent>
           </Card>
           <Card>
             <CardHeader className="pb-2">
               <CardTitle className="text-base flex items-center gap-2">
                 <Laptop className="h-4 w-4 text-primary" />
-                Remote Work Reliability
+                {t.remoteTitle}
               </CardTitle>
             </CardHeader>
-            <CardContent className="text-sm text-muted-foreground">
-              Reliable protocols and kill switch behavior matter for calls, admin panels, and client systems.
-            </CardContent>
+            <CardContent className="text-sm text-muted-foreground">{t.remoteDesc}</CardContent>
           </Card>
         </div>
       </section>
 
       <section className="py-10">
         <div className="container max-w-5xl space-y-6">
-          <h2 className="text-2xl font-bold">Top VPN picks for Bali</h2>
+          <h2 className="text-2xl font-bold">{t.picksTitle}</h2>
           <div className="grid gap-4 md:grid-cols-3">
             {picks.map((vpn) => (
               <Card key={vpn.id}>
@@ -120,10 +205,10 @@ export default async function VpnBaliPage({ params }: Props) {
                   <p>From ${vpn.priceTwoYear ?? vpn.priceYearly}/mo</p>
                   <div className="flex flex-wrap gap-2 pt-1">
                     <AffiliateButton vpnId={vpn.id} vpnName={vpn.name} affiliateUrl={vpn.affiliateUrl} size="sm">
-                      Get {vpn.name}
+                      {t.getVpn} {vpn.name}
                     </AffiliateButton>
                     <Link href={`/reviews/${vpn.slug}`} className="text-primary hover:underline text-xs">
-                      Read full review
+                      {t.readReview}
                     </Link>
                   </div>
                 </CardContent>
@@ -139,25 +224,25 @@ export default async function VpnBaliPage({ params }: Props) {
         <div className="container max-w-5xl space-y-6">
           <h2 className="text-2xl font-bold flex items-center gap-2">
             <Shield className="h-5 w-5 text-primary" />
-            How this page connects to our research stack
+            {t.researchTitle}
           </h2>
           <ul className="space-y-2 text-muted-foreground">
             <li>
-              Data source:{" "}
+              {t.dataSource}{" "}
               <Link href="/reports/vpn-transparency-performance-index-2026" className="text-primary hover:underline">
                 VPN Transparency &amp; Performance Index 2026
               </Link>
             </li>
             <li>
-              Scoring rules:{" "}
+              {t.scoringRules}{" "}
               <Link href="/methodology" className="text-primary hover:underline">
-                Methodology
+                {t.methodology}
               </Link>
             </li>
             <li>
-              Interactive filters:{" "}
+              {t.interactiveFilters}{" "}
               <Link href="/vpn-index" className="text-primary hover:underline">
-                VPN Index dashboard
+                {t.vpnIndex}
               </Link>
             </li>
           </ul>
@@ -166,47 +251,7 @@ export default async function VpnBaliPage({ params }: Props) {
 
       <section className="pb-12">
         <div className="container max-w-6xl">
-          <RelatedPages
-            title="Related internal guides"
-            pages={[
-              {
-                title: "VPN for Travel",
-                description: "Practical setup for staying private while moving between countries.",
-                href: "/guides/vpn-for-travel",
-                icon: "map",
-              },
-              {
-                title: "Best VPN for Indonesia",
-                description: "Country context and tested picks for Indonesia.",
-                href: "/best/vpn-indonesia",
-                icon: "globe",
-              },
-              {
-                title: "Best VPN for Thailand",
-                description: "Neighboring travel-intent VPN page with tested picks.",
-                href: "/best/vpn-thailand",
-                icon: "globe",
-              },
-              {
-                title: "Best VPN for Streaming",
-                description: "Comparisons focused on unblocking reliability and speed.",
-                href: "/best/vpn-streaming",
-                icon: "tv",
-              },
-              {
-                title: "Best Mobile VPN",
-                description: "VPN choices optimized for phones and tablets.",
-                href: "/best/vpn-mobile",
-                icon: "smartphone",
-              },
-              {
-                title: "Countries",
-                description: "Country-by-country censorship and VPN access context.",
-                href: "/countries",
-                icon: "location",
-              },
-            ]}
-          />
+          <RelatedPages title={t.relatedTitle} pages={t.related} />
         </div>
       </section>
     </div>

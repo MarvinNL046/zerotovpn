@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 64,
+    "completed": 65,
     "inProgress": 0
   },
   "queue": [
@@ -284,7 +284,7 @@
       "slug": "best-free-vpns-2026",
       "locale": "de",
       "enTitle": "Best Free VPNs That Actually Work in 2026",
-      "status": "pending",
+      "status": "completed",
       "priority": 2
     },
     {

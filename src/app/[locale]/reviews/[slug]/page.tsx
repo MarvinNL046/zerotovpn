@@ -90,7 +90,315 @@ function generateVerdictText(vpn: {
   return `${vpn.name} is a solid VPN with a ${vpn.speedScore}% speed score and ${vpn.streamingScore}% streaming score, making it a reliable choice for everyday online privacy.`;
 }
 
-// Generate FAQ items dynamically from VPN data
+// FAQ translations per locale
+const faqTemplates: Record<string, {
+  netflix: { q: string; yesA: string; noA: string };
+  cost: { q: string; a: string };
+  safe: { q: string; a: string };
+  trial: { q: string; a: string };
+  speed: { q: string; a: string; fastest: string; aboveAvg: string; avg: string; fastestDetail: string; aboveAvgDetail: string; avgDetail: string };
+  servers: { q: string; a: string };
+}> = {
+  en: {
+    netflix: {
+      q: "Does {name} work with Netflix?",
+      yesA: "Yes, {name} reliably works with Netflix. With a streaming score of {streamingScore}%, it can unblock Netflix libraries from multiple countries including the US, UK, and more.",
+      noA: "{name} has limited Netflix support. Its streaming score is {streamingScore}%, so results may vary depending on the server location you choose.",
+    },
+    cost: {
+      q: "How much does {name} cost in 2026?",
+      a: "{name} offers flexible pricing plans. The monthly plan costs ${priceMonthly}/month, the 1-year plan costs ${priceYearly}/month, and the best value {bestPlan}. All plans come with a {moneyBackDays}-day money-back guarantee.",
+    },
+    safe: {
+      q: "Is {name} safe to use?",
+      a: "Yes, {name} is safe. It uses {encryption} encryption{killSwitchText}, and {noLogsText}.",
+    },
+    trial: {
+      q: "Does {name} have a free trial?",
+      a: "{name} does not offer a free trial, but it comes with a {moneyBackDays}-day money-back guarantee. This gives you plenty of time to test the service risk-free and get a full refund if you are not satisfied.",
+    },
+    speed: {
+      q: "How fast is {name}?",
+      a: "{name} scores {speedScore}% in our speed tests, which places it {speedRank}. In practice this means {speedDetail}.",
+      fastest: "among the fastest VPNs available",
+      aboveAvg: "above average in speed",
+      avg: "at average speed levels",
+      fastestDetail: "minimal impact on your connection for streaming, gaming, and large downloads",
+      aboveAvgDetail: "a smooth experience for most everyday tasks including HD streaming",
+      avgDetail: "adequate performance for browsing and standard-definition streaming",
+    },
+    servers: {
+      q: "How many servers does {name} have?",
+      a: "{name} operates a network of {servers} servers across {countries} countries. This large network helps you find a fast nearby server and access geo-restricted content from many regions around the world.",
+    },
+  },
+  nl: {
+    netflix: {
+      q: "Werkt {name} met Netflix?",
+      yesA: "Ja, {name} werkt betrouwbaar met Netflix. Met een streamingscore van {streamingScore}% kan het Netflix-bibliotheken uit meerdere landen deblokkeren, waaronder de VS, het VK en meer.",
+      noA: "{name} heeft beperkte Netflix-ondersteuning. De streamingscore is {streamingScore}%, dus de resultaten kunnen variëren afhankelijk van de serverlocatie die je kiest.",
+    },
+    cost: {
+      q: "Hoeveel kost {name} in 2026?",
+      a: "{name} biedt flexibele abonnementen. Het maandelijks abonnement kost ${priceMonthly}/maand, het jaarabonnement kost ${priceYearly}/maand en het voordeligste {bestPlan}. Alle abonnementen hebben een {moneyBackDays} dagen geld-terug-garantie.",
+    },
+    safe: {
+      q: "Is {name} veilig om te gebruiken?",
+      a: "Ja, {name} is veilig. Het gebruikt {encryption}-encryptie{killSwitchText} en {noLogsText}.",
+    },
+    trial: {
+      q: "Heeft {name} een gratis proefperiode?",
+      a: "{name} biedt geen gratis proefperiode, maar wel een {moneyBackDays} dagen geld-terug-garantie. Zo heb je voldoende tijd om de dienst risicovrij te testen en volledige restitutie te krijgen als je niet tevreden bent.",
+    },
+    speed: {
+      q: "Hoe snel is {name}?",
+      a: "{name} scoort {speedScore}% in onze snelheidstests, wat het {speedRank} plaatst. In de praktijk betekent dit {speedDetail}.",
+      fastest: "bij de snelste VPN's op de markt",
+      aboveAvg: "bovengemiddeld qua snelheid",
+      avg: "op een gemiddeld snelheidsniveau",
+      fastestDetail: "minimale impact op je verbinding voor streaming, gaming en grote downloads",
+      aboveAvgDetail: "een soepele ervaring voor de meeste dagelijkse taken, inclusief HD-streaming",
+      avgDetail: "voldoende prestaties voor surfen en streaming in standaardkwaliteit",
+    },
+    servers: {
+      q: "Hoeveel servers heeft {name}?",
+      a: "{name} beschikt over een netwerk van {servers} servers in {countries} landen. Dit uitgebreide netwerk helpt je een snelle server in de buurt te vinden en geo-geblokkeerde content uit vele regio's te openen.",
+    },
+  },
+  de: {
+    netflix: {
+      q: "Funktioniert {name} mit Netflix?",
+      yesA: "Ja, {name} funktioniert zuverlässig mit Netflix. Mit einem Streaming-Score von {streamingScore}% kann es Netflix-Bibliotheken aus mehreren Ländern entsperren, darunter die USA, Großbritannien und weitere.",
+      noA: "{name} bietet eingeschränkte Netflix-Unterstützung. Der Streaming-Score liegt bei {streamingScore}%, sodass die Ergebnisse je nach gewähltem Serverstandort variieren können.",
+    },
+    cost: {
+      q: "Was kostet {name} im Jahr 2026?",
+      a: "{name} bietet flexible Tarife. Das Monatsabo kostet ${priceMonthly}/Monat, das Jahresabo ${priceYearly}/Monat und das günstigste {bestPlan}. Alle Tarife beinhalten eine {moneyBackDays}-Tage-Geld-zurück-Garantie.",
+    },
+    safe: {
+      q: "Ist {name} sicher?",
+      a: "Ja, {name} ist sicher. Es verwendet {encryption}-Verschlüsselung{killSwitchText} und {noLogsText}.",
+    },
+    trial: {
+      q: "Hat {name} eine kostenlose Testversion?",
+      a: "{name} bietet keine kostenlose Testversion, dafür aber eine {moneyBackDays}-Tage-Geld-zurück-Garantie. So haben Sie genug Zeit, den Dienst risikofrei zu testen und bei Unzufriedenheit eine volle Rückerstattung zu erhalten.",
+    },
+    speed: {
+      q: "Wie schnell ist {name}?",
+      a: "{name} erreicht {speedScore}% in unseren Geschwindigkeitstests und liegt damit {speedRank}. In der Praxis bedeutet das {speedDetail}.",
+      fastest: "unter den schnellsten verfügbaren VPNs",
+      aboveAvg: "über dem Durchschnitt",
+      avg: "auf durchschnittlichem Niveau",
+      fastestDetail: "minimale Auswirkungen auf Ihre Verbindung beim Streaming, Gaming und bei großen Downloads",
+      aboveAvgDetail: "ein reibungsloses Erlebnis für die meisten alltäglichen Aufgaben einschließlich HD-Streaming",
+      avgDetail: "ausreichende Leistung zum Surfen und Streaming in Standardqualität",
+    },
+    servers: {
+      q: "Wie viele Server hat {name}?",
+      a: "{name} betreibt ein Netzwerk von {servers} Servern in {countries} Ländern. Dieses große Netzwerk hilft Ihnen, einen schnellen Server in der Nähe zu finden und geo-beschränkte Inhalte aus vielen Regionen zu erreichen.",
+    },
+  },
+  es: {
+    netflix: {
+      q: "¿Funciona {name} con Netflix?",
+      yesA: "Sí, {name} funciona de manera fiable con Netflix. Con una puntuación de streaming del {streamingScore}%, puede desbloquear catálogos de Netflix de múltiples países, incluyendo EE.UU., Reino Unido y más.",
+      noA: "{name} tiene soporte limitado para Netflix. Su puntuación de streaming es del {streamingScore}%, por lo que los resultados pueden variar según la ubicación del servidor que elijas.",
+    },
+    cost: {
+      q: "¿Cuánto cuesta {name} en 2026?",
+      a: "{name} ofrece planes flexibles. El plan mensual cuesta ${priceMonthly}/mes, el anual ${priceYearly}/mes y la mejor oferta {bestPlan}. Todos los planes incluyen una garantía de devolución de {moneyBackDays} días.",
+    },
+    safe: {
+      q: "¿Es seguro usar {name}?",
+      a: "Sí, {name} es seguro. Utiliza cifrado {encryption}{killSwitchText} y {noLogsText}.",
+    },
+    trial: {
+      q: "¿Tiene {name} prueba gratuita?",
+      a: "{name} no ofrece prueba gratuita, pero incluye una garantía de devolución de {moneyBackDays} días. Esto te da tiempo suficiente para probar el servicio sin riesgo y obtener un reembolso completo si no quedas satisfecho.",
+    },
+    speed: {
+      q: "¿Qué tan rápido es {name}?",
+      a: "{name} obtiene un {speedScore}% en nuestras pruebas de velocidad, lo que lo sitúa {speedRank}. En la práctica esto significa {speedDetail}.",
+      fastest: "entre los VPN más rápidos disponibles",
+      aboveAvg: "por encima del promedio en velocidad",
+      avg: "en niveles de velocidad promedio",
+      fastestDetail: "un impacto mínimo en tu conexión para streaming, gaming y descargas grandes",
+      aboveAvgDetail: "una experiencia fluida para la mayoría de las tareas diarias, incluyendo streaming en HD",
+      avgDetail: "un rendimiento adecuado para navegación y streaming en calidad estándar",
+    },
+    servers: {
+      q: "¿Cuántos servidores tiene {name}?",
+      a: "{name} opera una red de {servers} servidores en {countries} países. Esta amplia red te ayuda a encontrar un servidor rápido cercano y acceder a contenido con restricciones geográficas de muchas regiones.",
+    },
+  },
+  fr: {
+    netflix: {
+      q: "Est-ce que {name} fonctionne avec Netflix ?",
+      yesA: "Oui, {name} fonctionne de manière fiable avec Netflix. Avec un score de streaming de {streamingScore}%, il peut débloquer les catalogues Netflix de plusieurs pays, dont les États-Unis, le Royaume-Uni et d'autres.",
+      noA: "{name} a un support Netflix limité. Son score de streaming est de {streamingScore}%, les résultats peuvent donc varier selon l'emplacement du serveur choisi.",
+    },
+    cost: {
+      q: "Combien coûte {name} en 2026 ?",
+      a: "{name} propose des forfaits flexibles. L'abonnement mensuel coûte {priceMonthly}$/mois, l'annuel {priceYearly}$/mois et la meilleure offre {bestPlan}. Tous les forfaits incluent une garantie de remboursement de {moneyBackDays} jours.",
+    },
+    safe: {
+      q: "Est-ce que {name} est sûr ?",
+      a: "Oui, {name} est sûr. Il utilise le chiffrement {encryption}{killSwitchText} et {noLogsText}.",
+    },
+    trial: {
+      q: "Est-ce que {name} a un essai gratuit ?",
+      a: "{name} ne propose pas d'essai gratuit, mais offre une garantie de remboursement de {moneyBackDays} jours. Cela vous donne suffisamment de temps pour tester le service sans risque et obtenir un remboursement complet si vous n'êtes pas satisfait.",
+    },
+    speed: {
+      q: "Quelle est la vitesse de {name} ?",
+      a: "{name} obtient {speedScore}% dans nos tests de vitesse, ce qui le place {speedRank}. En pratique, cela signifie {speedDetail}.",
+      fastest: "parmi les VPN les plus rapides disponibles",
+      aboveAvg: "au-dessus de la moyenne en vitesse",
+      avg: "à des niveaux de vitesse moyens",
+      fastestDetail: "un impact minimal sur votre connexion pour le streaming, le gaming et les gros téléchargements",
+      aboveAvgDetail: "une expérience fluide pour la plupart des tâches quotidiennes, y compris le streaming HD",
+      avgDetail: "des performances suffisantes pour la navigation et le streaming en qualité standard",
+    },
+    servers: {
+      q: "Combien de serveurs possède {name} ?",
+      a: "{name} exploite un réseau de {servers} serveurs dans {countries} pays. Ce vaste réseau vous aide à trouver un serveur rapide à proximité et à accéder à du contenu géo-restreint du monde entier.",
+    },
+  },
+  zh: {
+    netflix: {
+      q: "{name}能用Netflix吗？",
+      yesA: "是的，{name}能稳定使用Netflix。凭借{streamingScore}%的流媒体评分，它可以解锁包括美国、英国在内的多个国家的Netflix内容库。",
+      noA: "{name}对Netflix的支持有限。其流媒体评分为{streamingScore}%，因此效果可能因所选服务器位置而异。",
+    },
+    cost: {
+      q: "{name}在2026年多少钱？",
+      a: "{name}提供灵活的订阅方案。月付方案每月${priceMonthly}，年付方案每月${priceYearly}，最超值的{bestPlan}。所有方案均享有{moneyBackDays}天退款保证。",
+    },
+    safe: {
+      q: "{name}安全吗？",
+      a: "是的，{name}非常安全。它使用{encryption}加密{killSwitchText}，并且{noLogsText}。",
+    },
+    trial: {
+      q: "{name}有免费试用吗？",
+      a: "{name}不提供免费试用，但提供{moneyBackDays}天退款保证。这给了你充足的时间来无风险地测试服务，不满意可获得全额退款。",
+    },
+    speed: {
+      q: "{name}速度怎么样？",
+      a: "{name}在我们的速度测试中得分{speedScore}%，{speedRank}。实际使用中，这意味着{speedDetail}。",
+      fastest: "位列最快VPN之列",
+      aboveAvg: "速度高于平均水平",
+      avg: "速度处于平均水平",
+      fastestDetail: "对你的连接影响极小，流媒体、游戏和大文件下载都很流畅",
+      aboveAvgDetail: "日常使用体验流畅，包括高清流媒体播放",
+      avgDetail: "能满足基本的网页浏览和标清流媒体播放需求",
+    },
+    servers: {
+      q: "{name}有多少台服务器？",
+      a: "{name}在{countries}个国家运营着{servers}台服务器。这个庞大的网络帮助你找到附近的快速服务器，并访问全球各地区的地理限制内容。",
+    },
+  },
+  ja: {
+    netflix: {
+      q: "{name}はNetflixで使えますか？",
+      yesA: "はい、{name}はNetflixで安定して動作します。ストリーミングスコア{streamingScore}%で、アメリカ、イギリスなど複数の国のNetflixライブラリのブロックを解除できます。",
+      noA: "{name}のNetflix対応は限定的です。ストリーミングスコアは{streamingScore}%で、選択するサーバーの場所によって結果が異なる場合があります。",
+    },
+    cost: {
+      q: "{name}の2026年の料金は？",
+      a: "{name}は柔軟な料金プランを提供しています。月額プランは${priceMonthly}/月、年間プランは${priceYearly}/月、最もお得な{bestPlan}。すべてのプランに{moneyBackDays}日間の返金保証が付いています。",
+    },
+    safe: {
+      q: "{name}は安全ですか？",
+      a: "はい、{name}は安全です。{encryption}暗号化を使用し{killSwitchText}、{noLogsText}。",
+    },
+    trial: {
+      q: "{name}に無料トライアルはありますか？",
+      a: "{name}には無料トライアルはありませんが、{moneyBackDays}日間の返金保証があります。リスクなくサービスをテストでき、満足できない場合は全額返金を受けられます。",
+    },
+    speed: {
+      q: "{name}の速度は？",
+      a: "{name}は速度テストで{speedScore}%を獲得し、{speedRank}に位置しています。実際の使用では{speedDetail}。",
+      fastest: "最速クラスのVPNの中",
+      aboveAvg: "平均以上の速度",
+      avg: "平均的な速度レベル",
+      fastestDetail: "ストリーミング、ゲーム、大容量ダウンロードへの影響が最小限",
+      aboveAvgDetail: "HD ストリーミングを含むほとんどの日常タスクがスムーズ",
+      avgDetail: "ブラウジングや標準画質ストリーミングに十分なパフォーマンス",
+    },
+    servers: {
+      q: "{name}のサーバー数は？",
+      a: "{name}は{countries}カ国に{servers}台のサーバーを運用しています。この大規模なネットワークにより、近くの高速サーバーを見つけ、世界中の地域制限コンテンツにアクセスできます。",
+    },
+  },
+  ko: {
+    netflix: {
+      q: "{name}은 Netflix에서 작동하나요?",
+      yesA: "네, {name}은 Netflix에서 안정적으로 작동합니다. 스트리밍 점수 {streamingScore}%로 미국, 영국 등 여러 국가의 Netflix 라이브러리를 차단 해제할 수 있습니다.",
+      noA: "{name}의 Netflix 지원은 제한적입니다. 스트리밍 점수는 {streamingScore}%이며, 선택한 서버 위치에 따라 결과가 달라질 수 있습니다.",
+    },
+    cost: {
+      q: "2026년 {name} 가격은?",
+      a: "{name}은 유연한 요금제를 제공합니다. 월간 요금제는 월 ${priceMonthly}, 연간 요금제는 월 ${priceYearly}, 최고 가성비 {bestPlan}. 모든 요금제에 {moneyBackDays}일 환불 보장이 포함됩니다.",
+    },
+    safe: {
+      q: "{name}은 안전한가요?",
+      a: "네, {name}은 안전합니다. {encryption} 암호화를 사용하며{killSwitchText}, {noLogsText}.",
+    },
+    trial: {
+      q: "{name}에 무료 체험이 있나요?",
+      a: "{name}은 무료 체험을 제공하지 않지만, {moneyBackDays}일 환불 보장을 제공합니다. 위험 부담 없이 서비스를 테스트할 충분한 시간이 있으며, 불만족 시 전액 환불받을 수 있습니다.",
+    },
+    speed: {
+      q: "{name}의 속도는?",
+      a: "{name}은 속도 테스트에서 {speedScore}%를 기록하며 {speedRank}에 위치합니다. 실제 사용 시 {speedDetail}.",
+      fastest: "가장 빠른 VPN 중 하나",
+      aboveAvg: "평균 이상의 속도",
+      avg: "평균 수준의 속도",
+      fastestDetail: "스트리밍, 게임, 대용량 다운로드에 미치는 영향이 최소한",
+      aboveAvgDetail: "HD 스트리밍을 포함한 대부분의 일상 작업에서 원활한 경험",
+      avgDetail: "웹 서핑과 표준 화질 스트리밍에 적합한 성능",
+    },
+    servers: {
+      q: "{name}의 서버 수는?",
+      a: "{name}은 {countries}개국에 {servers}대의 서버를 운영합니다. 이 방대한 네트워크로 가까운 빠른 서버를 찾고 전 세계 지역 제한 콘텐츠에 접근할 수 있습니다.",
+    },
+  },
+  th: {
+    netflix: {
+      q: "{name} ใช้กับ Netflix ได้ไหม?",
+      yesA: "ได้ {name} ใช้งานกับ Netflix ได้อย่างเสถียร ด้วยคะแนนสตรีมมิ่ง {streamingScore}% สามารถปลดบล็อกคลัง Netflix จากหลายประเทศ รวมถึงสหรัฐฯ สหราชอาณาจักร และอื่นๆ",
+      noA: "{name} รองรับ Netflix ได้จำกัด คะแนนสตรีมมิ่งอยู่ที่ {streamingScore}% ผลลัพธ์อาจแตกต่างกันขึ้นอยู่กับตำแหน่งเซิร์ฟเวอร์ที่คุณเลือก",
+    },
+    cost: {
+      q: "{name} ราคาเท่าไหร่ในปี 2026?",
+      a: "{name} มีแผนราคาที่ยืดหยุ่น แผนรายเดือน ${priceMonthly}/เดือน แผนรายปี ${priceYearly}/เดือน และแผนที่คุ้มค่าที่สุด {bestPlan} ทุกแผนมีการรับประกันคืนเงินภายใน {moneyBackDays} วัน",
+    },
+    safe: {
+      q: "{name} ปลอดภัยไหม?",
+      a: "ใช่ {name} ปลอดภัย ใช้การเข้ารหัส {encryption}{killSwitchText} และ{noLogsText}",
+    },
+    trial: {
+      q: "{name} มีทดลองใช้ฟรีไหม?",
+      a: "{name} ไม่มีทดลองใช้ฟรี แต่มีการรับประกันคืนเงินภายใน {moneyBackDays} วัน ทำให้คุณมีเวลาเพียงพอในการทดสอบบริการโดยไม่มีความเสี่ยง หากไม่พอใจสามารถขอเงินคืนได้เต็มจำนวน",
+    },
+    speed: {
+      q: "{name} เร็วแค่ไหน?",
+      a: "{name} ได้คะแนน {speedScore}% ในการทดสอบความเร็วของเรา ซึ่งอยู่ใน{speedRank} ในทางปฏิบัติหมายถึง{speedDetail}",
+      fastest: "กลุ่ม VPN ที่เร็วที่สุด",
+      aboveAvg: "ระดับเหนือค่าเฉลี่ย",
+      avg: "ระดับความเร็วปานกลาง",
+      fastestDetail: "ผลกระทบต่อการเชื่อมต่อน้อยมากสำหรับสตรีมมิ่ง เกม และดาวน์โหลดไฟล์ขนาดใหญ่",
+      aboveAvgDetail: "ประสบการณ์ใช้งานราบรื่นสำหรับงานประจำวันรวมถึงสตรีมมิ่ง HD",
+      avgDetail: "ประสิทธิภาพเพียงพอสำหรับการท่องเว็บและสตรีมมิ่งคุณภาพมาตรฐาน",
+    },
+    servers: {
+      q: "{name} มีเซิร์ฟเวอร์กี่ตัว?",
+      a: "{name} ดำเนินการเครือข่าย {servers} เซิร์ฟเวอร์ใน {countries} ประเทศ เครือข่ายขนาดใหญ่นี้ช่วยให้คุณพบเซิร์ฟเวอร์ที่เร็วใกล้ตัวและเข้าถึงเนื้อหาที่จำกัดตามภูมิภาคจากทั่วโลก",
+    },
+  },
+};
+
+// Generate FAQ items dynamically from VPN data with locale support
 function generateFaqs(vpn: {
   name: string;
   netflixSupport: boolean;
@@ -105,33 +413,50 @@ function generateFaqs(vpn: {
   speedScore: number;
   servers: number;
   countries: number;
-}): { question: string; answer: string }[] {
+}, locale: string = "en"): { question: string; answer: string }[] {
+  const t = faqTemplates[locale] || faqTemplates.en;
+
+  const fillTemplate = (tpl: string) =>
+    tpl
+      .replace(/\{name\}/g, vpn.name)
+      .replace(/\{streamingScore\}/g, String(vpn.streamingScore))
+      .replace(/\{priceMonthly\}/g, String(vpn.priceMonthly))
+      .replace(/\{priceYearly\}/g, String(vpn.priceYearly))
+      .replace(/\{encryption\}/g, vpn.encryption)
+      .replace(/\{moneyBackDays\}/g, String(vpn.moneyBackDays))
+      .replace(/\{speedScore\}/g, String(vpn.speedScore))
+      .replace(/\{servers\}/g, vpn.servers.toLocaleString(locale === "en" ? "en-US" : locale))
+      .replace(/\{countries\}/g, String(vpn.countries))
+      .replace(/\{bestPlan\}/g, vpn.priceTwoYear ? `2-year plan costs $${vpn.priceTwoYear}/month` : `1-year plan at $${vpn.priceYearly}/month`)
+      .replace(/\{killSwitchText\}/g, vpn.killSwitch ? (locale === "en" ? ", includes a kill switch that cuts your internet if the VPN drops" : locale === "nl" ? ", bevat een kill switch die je internet verbreekt als de VPN uitvalt" : locale === "de" ? ", enthält einen Kill Switch, der Ihre Internetverbindung trennt, wenn das VPN ausfällt" : locale === "es" ? ", incluye un kill switch que corta tu internet si la VPN se cae" : locale === "fr" ? ", inclut un kill switch qui coupe votre internet si le VPN se déconnecte" : locale === "zh" ? "，包含断网保护开关" : locale === "ja" ? "、VPN接続が切れた際にインターネットを遮断するキルスイッチを搭載" : locale === "ko" ? ", VPN 연결이 끊길 때 인터넷을 차단하는 킬 스위치 포함" : ", มี kill switch ที่ตัดอินเทอร์เน็ตหาก VPN หลุด") : "")
+      .replace(/\{noLogsText\}/g, vpn.noLogs ? (locale === "en" ? "has a strict no-logs policy that has been independently audited" : locale === "nl" ? "heeft een strikt no-logs-beleid dat onafhankelijk is gecontroleerd" : locale === "de" ? "hat eine strenge No-Logs-Richtlinie, die unabhängig geprüft wurde" : locale === "es" ? "tiene una estricta política de no registros verificada de forma independiente" : locale === "fr" ? "a une politique stricte de non-journalisation vérifiée de manière indépendante" : locale === "zh" ? "拥有经过独立审计的严格无日志政策" : locale === "ja" ? "独立監査済みの厳格なノーログポリシーを持っています" : locale === "ko" ? "독립적으로 감사된 엄격한 노로그 정책을 보유" : "มีนโยบายไม่เก็บบันทึกที่ผ่านการตรวจสอบอิสระ") : (locale === "en" ? "maintains a no-logs policy for your privacy" : locale === "nl" ? "hanteert een no-logs-beleid voor je privacy" : locale === "de" ? "pflegt eine No-Logs-Richtlinie für Ihre Privatsphäre" : locale === "es" ? "mantiene una política de no registros para tu privacidad" : locale === "fr" ? "maintient une politique de non-journalisation pour votre vie privée" : locale === "zh" ? "保持无日志政策以保护您的隐私" : locale === "ja" ? "プライバシーのためにノーログポリシーを維持" : locale === "ko" ? "개인정보 보호를 위한 노로그 정책 유지" : "รักษานโยบายไม่เก็บบันทึกเพื่อความเป็นส่วนตัวของคุณ"))
+      .replace(/\{speedRank\}/g, vpn.speedScore >= 90 ? t.speed.fastest : vpn.speedScore >= 75 ? t.speed.aboveAvg : t.speed.avg)
+      .replace(/\{speedDetail\}/g, vpn.speedScore >= 90 ? t.speed.fastestDetail : vpn.speedScore >= 75 ? t.speed.aboveAvgDetail : t.speed.avgDetail);
+
   return [
     {
-      question: `Does ${vpn.name} work with Netflix?`,
-      answer: vpn.netflixSupport
-        ? `Yes, ${vpn.name} reliably works with Netflix. With a streaming score of ${vpn.streamingScore}%, it can unblock Netflix libraries from multiple countries including the US, UK, and more.`
-        : `${vpn.name} has limited Netflix support. Its streaming score is ${vpn.streamingScore}%, so results may vary depending on the server location you choose.`,
+      question: fillTemplate(t.netflix.q),
+      answer: fillTemplate(vpn.netflixSupport ? t.netflix.yesA : t.netflix.noA),
     },
     {
-      question: `How much does ${vpn.name} cost in 2026?`,
-      answer: `${vpn.name} offers flexible pricing plans. The monthly plan costs $${vpn.priceMonthly}/month, the 1-year plan costs $${vpn.priceYearly}/month, and the best value${vpn.priceTwoYear ? ` 2-year plan costs $${vpn.priceTwoYear}/month` : ` 1-year plan at $${vpn.priceYearly}/month`}. All plans come with a ${vpn.moneyBackDays}-day money-back guarantee.`,
+      question: fillTemplate(t.cost.q),
+      answer: fillTemplate(t.cost.a),
     },
     {
-      question: `Is ${vpn.name} safe to use?`,
-      answer: `Yes, ${vpn.name} is safe. It uses ${vpn.encryption} encryption${vpn.killSwitch ? ", includes a kill switch that cuts your internet if the VPN drops" : ""}, and ${vpn.noLogs ? "has a strict no-logs policy that has been independently audited" : "maintains a no-logs policy for your privacy"}.`,
+      question: fillTemplate(t.safe.q),
+      answer: fillTemplate(t.safe.a),
     },
     {
-      question: `Does ${vpn.name} have a free trial?`,
-      answer: `${vpn.name} does not offer a free trial, but it comes with a ${vpn.moneyBackDays}-day money-back guarantee. This gives you plenty of time to test the service risk-free and get a full refund if you are not satisfied.`,
+      question: fillTemplate(t.trial.q),
+      answer: fillTemplate(t.trial.a),
     },
     {
-      question: `How fast is ${vpn.name}?`,
-      answer: `${vpn.name} scores ${vpn.speedScore}% in our speed tests, which places it ${vpn.speedScore >= 90 ? "among the fastest VPNs available" : vpn.speedScore >= 75 ? "above average in speed" : "at average speed levels"}. In practice this means ${vpn.speedScore >= 90 ? "minimal impact on your connection for streaming, gaming, and large downloads" : vpn.speedScore >= 75 ? "a smooth experience for most everyday tasks including HD streaming" : "adequate performance for browsing and standard-definition streaming"}.`,
+      question: fillTemplate(t.speed.q),
+      answer: fillTemplate(t.speed.a),
     },
     {
-      question: `How many servers does ${vpn.name} have?`,
-      answer: `${vpn.name} operates a network of ${vpn.servers.toLocaleString("en-US")} servers across ${vpn.countries} countries. This large network helps you find a fast nearby server and access geo-restricted content from many regions around the world.`,
+      question: fillTemplate(t.servers.q),
+      answer: fillTemplate(t.servers.a),
     },
   ];
 }
@@ -265,7 +590,7 @@ export default async function ReviewPage({ params }: Props) {
     { name: `${vpn.name} Review`, url: `${baseUrl}${prefix}/reviews/${vpn.slug}` },
   ];
 
-  const faqs = generateFaqs(vpn);
+  const faqs = generateFaqs(vpn, _locale);
   const transparency = await getTransparencySnapshotForVpn(vpn);
 
   // Build review links from other VPNs for cross-linking

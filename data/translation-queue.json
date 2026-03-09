@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 100,
+    "completed": 101,
     "inProgress": 0
   },
   "queue": [
@@ -718,7 +718,7 @@
       "file": "src/app/[locale]/best/vpn-usa/page.tsx",
       "page": "vpn-usa",
       "locale": "fr",
-      "status": "pending",
+      "status": "completed",
       "priority": 4
     },
     {

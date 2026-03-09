@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 1,
+    "completed": 49,
     "inProgress": 0
   },
   "queue": [
@@ -29,8 +29,9 @@
       "file": "src/app/[locale]/best/vpn-android-tablet/page.tsx",
       "page": "vpn-android-tablet",
       "locale": "nl",
-      "status": "pending",
-      "priority": 1
+      "status": "completed",
+      "priority": 1,
+      "note": "Uses message files - already translated"
     },
     {
       "id": "best-page-vpn-bali-nl",
@@ -47,8 +48,9 @@
       "file": "src/app/[locale]/best/vpn-ipad/page.tsx",
       "page": "vpn-ipad",
       "locale": "nl",
-      "status": "pending",
-      "priority": 1
+      "status": "completed",
+      "priority": 1,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "best-page-vpn-iphone-nl",
@@ -56,8 +58,9 @@
       "file": "src/app/[locale]/best/vpn-iphone/page.tsx",
       "page": "vpn-iphone",
       "locale": "nl",
-      "status": "pending",
-      "priority": 1
+      "status": "completed",
+      "priority": 1,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "best-page-vpn-mobile-nl",
@@ -65,8 +68,9 @@
       "file": "src/app/[locale]/best/vpn-mobile/page.tsx",
       "page": "vpn-mobile",
       "locale": "nl",
-      "status": "pending",
-      "priority": 1
+      "status": "completed",
+      "priority": 1,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "best-page-vpn-morocco-nl",
@@ -83,8 +87,9 @@
       "file": "src/app/[locale]/best/vpn-tablet/page.tsx",
       "page": "vpn-tablet",
       "locale": "nl",
-      "status": "pending",
-      "priority": 1
+      "status": "completed",
+      "priority": 1,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "best-page-vpn-thailand-nl",
@@ -119,8 +124,9 @@
       "file": "src/app/[locale]/best/vpn-windows-tablet/page.tsx",
       "page": "vpn-windows-tablet",
       "locale": "nl",
-      "status": "pending",
-      "priority": 1
+      "status": "completed",
+      "priority": 1,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "blog-post-best-free-vpns-2026-nl",
@@ -173,8 +179,9 @@
       "file": "src/app/[locale]/best/vpn-android-tablet/page.tsx",
       "page": "vpn-android-tablet",
       "locale": "de",
-      "status": "pending",
-      "priority": 2
+      "status": "completed",
+      "priority": 2,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "best-page-vpn-bali-de",
@@ -191,8 +198,9 @@
       "file": "src/app/[locale]/best/vpn-ipad/page.tsx",
       "page": "vpn-ipad",
       "locale": "de",
-      "status": "pending",
-      "priority": 2
+      "status": "completed",
+      "priority": 2,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "best-page-vpn-iphone-de",
@@ -200,8 +208,9 @@
       "file": "src/app/[locale]/best/vpn-iphone/page.tsx",
       "page": "vpn-iphone",
       "locale": "de",
-      "status": "pending",
-      "priority": 2
+      "status": "completed",
+      "priority": 2,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "best-page-vpn-mobile-de",
@@ -209,8 +218,9 @@
       "file": "src/app/[locale]/best/vpn-mobile/page.tsx",
       "page": "vpn-mobile",
       "locale": "de",
-      "status": "pending",
-      "priority": 2
+      "status": "completed",
+      "priority": 2,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "best-page-vpn-morocco-de",
@@ -227,8 +237,9 @@
       "file": "src/app/[locale]/best/vpn-tablet/page.tsx",
       "page": "vpn-tablet",
       "locale": "de",
-      "status": "pending",
-      "priority": 2
+      "status": "completed",
+      "priority": 2,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "best-page-vpn-thailand-de",
@@ -263,8 +274,9 @@
       "file": "src/app/[locale]/best/vpn-windows-tablet/page.tsx",
       "page": "vpn-windows-tablet",
       "locale": "de",
-      "status": "pending",
-      "priority": 2
+      "status": "completed",
+      "priority": 2,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "blog-post-best-free-vpns-2026-de",
@@ -479,8 +491,9 @@
       "file": "src/app/[locale]/best/vpn-android-tablet/page.tsx",
       "page": "vpn-android-tablet",
       "locale": "es",
-      "status": "pending",
-      "priority": 3
+      "status": "completed",
+      "priority": 3,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "best-page-vpn-bali-es",
@@ -497,8 +510,9 @@
       "file": "src/app/[locale]/best/vpn-ipad/page.tsx",
       "page": "vpn-ipad",
       "locale": "es",
-      "status": "pending",
-      "priority": 3
+      "status": "completed",
+      "priority": 3,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "best-page-vpn-iphone-es",
@@ -506,8 +520,9 @@
       "file": "src/app/[locale]/best/vpn-iphone/page.tsx",
       "page": "vpn-iphone",
       "locale": "es",
-      "status": "pending",
-      "priority": 3
+      "status": "completed",
+      "priority": 3,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "best-page-vpn-mobile-es",
@@ -515,8 +530,9 @@
       "file": "src/app/[locale]/best/vpn-mobile/page.tsx",
       "page": "vpn-mobile",
       "locale": "es",
-      "status": "pending",
-      "priority": 3
+      "status": "completed",
+      "priority": 3,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "best-page-vpn-morocco-es",
@@ -533,8 +549,9 @@
       "file": "src/app/[locale]/best/vpn-tablet/page.tsx",
       "page": "vpn-tablet",
       "locale": "es",
-      "status": "pending",
-      "priority": 3
+      "status": "completed",
+      "priority": 3,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "best-page-vpn-thailand-es",
@@ -569,8 +586,9 @@
       "file": "src/app/[locale]/best/vpn-windows-tablet/page.tsx",
       "page": "vpn-windows-tablet",
       "locale": "es",
-      "status": "pending",
-      "priority": 3
+      "status": "completed",
+      "priority": 3,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "blog-post-best-free-vpns-2026-es",
@@ -623,8 +641,9 @@
       "file": "src/app/[locale]/best/vpn-android-tablet/page.tsx",
       "page": "vpn-android-tablet",
       "locale": "fr",
-      "status": "pending",
-      "priority": 4
+      "status": "completed",
+      "priority": 4,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "best-page-vpn-bali-fr",
@@ -641,8 +660,9 @@
       "file": "src/app/[locale]/best/vpn-ipad/page.tsx",
       "page": "vpn-ipad",
       "locale": "fr",
-      "status": "pending",
-      "priority": 4
+      "status": "completed",
+      "priority": 4,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "best-page-vpn-iphone-fr",
@@ -650,8 +670,9 @@
       "file": "src/app/[locale]/best/vpn-iphone/page.tsx",
       "page": "vpn-iphone",
       "locale": "fr",
-      "status": "pending",
-      "priority": 4
+      "status": "completed",
+      "priority": 4,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "best-page-vpn-mobile-fr",
@@ -659,8 +680,9 @@
       "file": "src/app/[locale]/best/vpn-mobile/page.tsx",
       "page": "vpn-mobile",
       "locale": "fr",
-      "status": "pending",
-      "priority": 4
+      "status": "completed",
+      "priority": 4,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "best-page-vpn-morocco-fr",
@@ -677,8 +699,9 @@
       "file": "src/app/[locale]/best/vpn-tablet/page.tsx",
       "page": "vpn-tablet",
       "locale": "fr",
-      "status": "pending",
-      "priority": 4
+      "status": "completed",
+      "priority": 4,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "best-page-vpn-thailand-fr",
@@ -713,8 +736,9 @@
       "file": "src/app/[locale]/best/vpn-windows-tablet/page.tsx",
       "page": "vpn-windows-tablet",
       "locale": "fr",
-      "status": "pending",
-      "priority": 4
+      "status": "completed",
+      "priority": 4,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "blog-post-best-free-vpns-2026-fr",
@@ -776,8 +800,9 @@
       "file": "src/app/[locale]/best/vpn-android-tablet/page.tsx",
       "page": "vpn-android-tablet",
       "locale": "zh",
-      "status": "pending",
-      "priority": 5
+      "status": "completed",
+      "priority": 5,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "best-page-vpn-bali-zh",
@@ -794,8 +819,9 @@
       "file": "src/app/[locale]/best/vpn-ipad/page.tsx",
       "page": "vpn-ipad",
       "locale": "zh",
-      "status": "pending",
-      "priority": 5
+      "status": "completed",
+      "priority": 5,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "best-page-vpn-iphone-zh",
@@ -803,8 +829,9 @@
       "file": "src/app/[locale]/best/vpn-iphone/page.tsx",
       "page": "vpn-iphone",
       "locale": "zh",
-      "status": "pending",
-      "priority": 5
+      "status": "completed",
+      "priority": 5,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "best-page-vpn-mobile-zh",
@@ -812,8 +839,9 @@
       "file": "src/app/[locale]/best/vpn-mobile/page.tsx",
       "page": "vpn-mobile",
       "locale": "zh",
-      "status": "pending",
-      "priority": 5
+      "status": "completed",
+      "priority": 5,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "best-page-vpn-morocco-zh",
@@ -830,8 +858,9 @@
       "file": "src/app/[locale]/best/vpn-tablet/page.tsx",
       "page": "vpn-tablet",
       "locale": "zh",
-      "status": "pending",
-      "priority": 5
+      "status": "completed",
+      "priority": 5,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "best-page-vpn-thailand-zh",
@@ -866,8 +895,9 @@
       "file": "src/app/[locale]/best/vpn-windows-tablet/page.tsx",
       "page": "vpn-windows-tablet",
       "locale": "zh",
-      "status": "pending",
-      "priority": 5
+      "status": "completed",
+      "priority": 5,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "blog-post-best-free-vpn-streaming-netflix-2026-zh",
@@ -1334,8 +1364,9 @@
       "file": "src/app/[locale]/best/vpn-android-tablet/page.tsx",
       "page": "vpn-android-tablet",
       "locale": "ja",
-      "status": "pending",
-      "priority": 6
+      "status": "completed",
+      "priority": 6,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "best-page-vpn-bali-ja",
@@ -1352,8 +1383,9 @@
       "file": "src/app/[locale]/best/vpn-ipad/page.tsx",
       "page": "vpn-ipad",
       "locale": "ja",
-      "status": "pending",
-      "priority": 6
+      "status": "completed",
+      "priority": 6,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "best-page-vpn-iphone-ja",
@@ -1361,8 +1393,9 @@
       "file": "src/app/[locale]/best/vpn-iphone/page.tsx",
       "page": "vpn-iphone",
       "locale": "ja",
-      "status": "pending",
-      "priority": 6
+      "status": "completed",
+      "priority": 6,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "best-page-vpn-mobile-ja",
@@ -1370,8 +1403,9 @@
       "file": "src/app/[locale]/best/vpn-mobile/page.tsx",
       "page": "vpn-mobile",
       "locale": "ja",
-      "status": "pending",
-      "priority": 6
+      "status": "completed",
+      "priority": 6,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "best-page-vpn-morocco-ja",
@@ -1388,8 +1422,9 @@
       "file": "src/app/[locale]/best/vpn-tablet/page.tsx",
       "page": "vpn-tablet",
       "locale": "ja",
-      "status": "pending",
-      "priority": 6
+      "status": "completed",
+      "priority": 6,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "best-page-vpn-thailand-ja",
@@ -1424,8 +1459,9 @@
       "file": "src/app/[locale]/best/vpn-windows-tablet/page.tsx",
       "page": "vpn-windows-tablet",
       "locale": "ja",
-      "status": "pending",
-      "priority": 6
+      "status": "completed",
+      "priority": 6,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "blog-post-best-free-vpns-2026-ja",
@@ -1559,8 +1595,9 @@
       "file": "src/app/[locale]/best/vpn-android-tablet/page.tsx",
       "page": "vpn-android-tablet",
       "locale": "ko",
-      "status": "pending",
-      "priority": 7
+      "status": "completed",
+      "priority": 7,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "best-page-vpn-bali-ko",
@@ -1577,8 +1614,9 @@
       "file": "src/app/[locale]/best/vpn-ipad/page.tsx",
       "page": "vpn-ipad",
       "locale": "ko",
-      "status": "pending",
-      "priority": 7
+      "status": "completed",
+      "priority": 7,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "best-page-vpn-iphone-ko",
@@ -1586,8 +1624,9 @@
       "file": "src/app/[locale]/best/vpn-iphone/page.tsx",
       "page": "vpn-iphone",
       "locale": "ko",
-      "status": "pending",
-      "priority": 7
+      "status": "completed",
+      "priority": 7,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "best-page-vpn-mobile-ko",
@@ -1595,8 +1634,9 @@
       "file": "src/app/[locale]/best/vpn-mobile/page.tsx",
       "page": "vpn-mobile",
       "locale": "ko",
-      "status": "pending",
-      "priority": 7
+      "status": "completed",
+      "priority": 7,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "best-page-vpn-morocco-ko",
@@ -1613,8 +1653,9 @@
       "file": "src/app/[locale]/best/vpn-tablet/page.tsx",
       "page": "vpn-tablet",
       "locale": "ko",
-      "status": "pending",
-      "priority": 7
+      "status": "completed",
+      "priority": 7,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "best-page-vpn-thailand-ko",
@@ -1649,8 +1690,9 @@
       "file": "src/app/[locale]/best/vpn-windows-tablet/page.tsx",
       "page": "vpn-windows-tablet",
       "locale": "ko",
-      "status": "pending",
-      "priority": 7
+      "status": "completed",
+      "priority": 7,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "blog-post-best-free-vpns-2026-ko",
@@ -1784,8 +1826,9 @@
       "file": "src/app/[locale]/best/vpn-android-tablet/page.tsx",
       "page": "vpn-android-tablet",
       "locale": "th",
-      "status": "pending",
-      "priority": 8
+      "status": "completed",
+      "priority": 8,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "best-page-vpn-bali-th",
@@ -1802,8 +1845,9 @@
       "file": "src/app/[locale]/best/vpn-ipad/page.tsx",
       "page": "vpn-ipad",
       "locale": "th",
-      "status": "pending",
-      "priority": 8
+      "status": "completed",
+      "priority": 8,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "best-page-vpn-iphone-th",
@@ -1811,8 +1855,9 @@
       "file": "src/app/[locale]/best/vpn-iphone/page.tsx",
       "page": "vpn-iphone",
       "locale": "th",
-      "status": "pending",
-      "priority": 8
+      "status": "completed",
+      "priority": 8,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "best-page-vpn-mobile-th",
@@ -1820,8 +1865,9 @@
       "file": "src/app/[locale]/best/vpn-mobile/page.tsx",
       "page": "vpn-mobile",
       "locale": "th",
-      "status": "pending",
-      "priority": 8
+      "status": "completed",
+      "priority": 8,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "best-page-vpn-morocco-th",
@@ -1838,8 +1884,9 @@
       "file": "src/app/[locale]/best/vpn-tablet/page.tsx",
       "page": "vpn-tablet",
       "locale": "th",
-      "status": "pending",
-      "priority": 8
+      "status": "completed",
+      "priority": 8,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "best-page-vpn-thailand-th",
@@ -1874,8 +1921,9 @@
       "file": "src/app/[locale]/best/vpn-windows-tablet/page.tsx",
       "page": "vpn-windows-tablet",
       "locale": "th",
-      "status": "pending",
-      "priority": 8
+      "status": "completed",
+      "priority": 8,
+      "note": "Uses message files (getTranslations) - already translated"
     },
     {
       "id": "blog-post-best-free-vpns-2026-th",

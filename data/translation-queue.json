@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 66,
+    "completed": 67,
     "inProgress": 0
   },
   "queue": [
@@ -302,7 +302,7 @@
       "slug": "corporate-vpn-leaks-employee-data-2026",
       "locale": "de",
       "enTitle": "VPN Leaks Beyond Your ISP: How Corporate VPN Tunnels Expose Employee Data to Employers in 2026",
-      "status": "pending",
+      "status": "completed",
       "priority": 2
     },
     {

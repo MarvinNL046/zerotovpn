@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 104,
+    "completed": 105,
     "inProgress": 0
   },
   "queue": [
@@ -764,7 +764,7 @@
       "slug": "vpn-kill-switch-vs-dns-leak-protection-2026",
       "locale": "fr",
       "enTitle": "VPN Kill Switch vs. DNS Leak Protection: Which Actually Protects Your Privacy Better in 2026",
-      "status": "pending",
+      "status": "completed",
       "priority": 4
     },
     {

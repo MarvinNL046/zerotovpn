@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 101,
+    "completed": 102,
     "inProgress": 0
   },
   "queue": [
@@ -727,7 +727,7 @@
       "file": "src/app/[locale]/best/vpn-vietnam/page.tsx",
       "page": "vpn-vietnam",
       "locale": "fr",
-      "status": "pending",
+      "status": "completed",
       "priority": 4
     },
     {

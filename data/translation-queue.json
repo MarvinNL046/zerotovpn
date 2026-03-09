@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 79,
+    "completed": 80,
     "inProgress": 0
   },
   "queue": [
@@ -419,7 +419,7 @@
       "slug": "vpn-price-comparison-best-deals",
       "locale": "de",
       "enTitle": "VPN Price Comparison Update: Best Deals This Month",
-      "status": "pending",
+      "status": "completed",
       "priority": 2
     },
     {

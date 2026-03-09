@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 97,
+    "completed": 98,
     "inProgress": 0
   },
   "queue": [
@@ -651,7 +651,7 @@
       "file": "src/app/[locale]/best/vpn-bali/page.tsx",
       "page": "vpn-bali",
       "locale": "fr",
-      "status": "pending",
+      "status": "completed",
       "priority": 4
     },
     {

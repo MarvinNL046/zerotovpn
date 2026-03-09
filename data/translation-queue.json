@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 116,
+    "completed": 117,
     "inProgress": 0
   },
   "queue": [
@@ -932,7 +932,7 @@
       "slug": "best-vpn-for-iran-2026-bypass-internet-censorship",
       "locale": "zh",
       "enTitle": "Best VPN for Iran in 2026: How to Bypass Internet Censorship Safely",
-      "status": "pending",
+      "status": "completed",
       "priority": 5
     },
     {

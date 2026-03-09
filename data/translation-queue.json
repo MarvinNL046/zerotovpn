@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 73,
+    "completed": 74,
     "inProgress": 0
   },
   "queue": [
@@ -365,7 +365,7 @@
       "slug": "vpn-google-workspace-secure-remote-collaboration-2026",
       "locale": "de",
       "enTitle": "VPN for Google Workspace: How to Secure Remote Collaboration Without Breaking Company Policies in 2026",
-      "status": "pending",
+      "status": "completed",
       "priority": 2
     },
     {

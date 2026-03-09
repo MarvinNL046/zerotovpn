@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 118,
+    "completed": 119,
     "inProgress": 0
   },
   "queue": [
@@ -950,7 +950,7 @@
       "slug": "is-nordvpn-worth-it-2026-honest-retest",
       "locale": "zh",
       "enTitle": "Is NordVPN Still Worth It in 2026? Honest Re-Test",
-      "status": "pending",
+      "status": "completed",
       "priority": 5
     },
     {

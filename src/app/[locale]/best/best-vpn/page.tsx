@@ -44,6 +44,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     de: "Bester VPN 2026 (Unabhängig Getestet für Speed, Datenschutz und Streaming) | ZeroToVPN",
     es: "Mejor VPN 2026 (Probado y Clasificado por Velocidad, Privacidad y Streaming) | ZeroToVPN",
     fr: "Meilleur VPN 2026 (Tests Indépendants: Vitesse, Confidentialité et Streaming) | ZeroToVPN",
+    zh: "2026年最佳VPN（速度、隐私和流媒体独立测试排名）| ZeroToVPN",
   };
 
   const descriptions: Record<string, string> = {
@@ -52,6 +53,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     de: "Wir haben Speed, Datenschutz, Streaming und Logging-Transparenz unabhängig getestet. Vergleichen Sie Preise und finden Sie Ihren idealen VPN noch heute.",
     es: "Probamos velocidad, privacidad, streaming y transparencia de registros de forma independiente. Compara precios y encuentra tu VPN ideal hoy.",
     fr: "Nous avons testé la vitesse, la confidentialité, le streaming et la transparence des logs. Comparez les prix et trouvez votre VPN idéal aujourd'hui.",
+    zh: "我们独立测试了速度、隐私、流媒体和日志透明度，为您排名2026年最佳VPN。比较价格，立即找到您的理想VPN。",
   };
 
   const prefix = locale === "en" ? "" : `/${locale}`;
@@ -237,6 +239,194 @@ export default async function BestVpnPage({ params }: Props) {
       ],
       viewAllVpns: "Bekijk Alle VPN Reviews",
       lastUpdated: "Laatst bijgewerkt: november 2026",
+    },
+    de: {
+      badge: "Aktualisiert November 2026",
+      title: "Beste VPN-Dienste 2026",
+      subtitle: "Wir haben über 35 VPNs getestet, um die besten Optionen für Datenschutz, Streaming und Sicherheit zu finden. Hier sind unsere Top-Empfehlungen basierend auf umfangreichen Praxistests.",
+      quickPicks: "Schnellauswahl",
+      bestOverall: "Bester Gesamt",
+      bestValue: "Bestes Preis-Leistungs-Verhältnis",
+      bestSpeed: "Schnellster VPN",
+      topRated: "Bestbewertete VPNs",
+      topRatedSubtitle: "Unsere von Experten getesteten Rankings basierend auf Geschwindigkeit, Sicherheit und Preis-Leistung",
+      whyTrust: "Warum unseren Rankings vertrauen?",
+      trustPoints: [
+        "Über 35 VPNs in 3 Jahren getestet",
+        "Über 500 Geschwindigkeitstests durchgeführt",
+        "Unabhängige Testmethodik",
+        "Keine gesponserten Rankings",
+        "Regelmäßige Nachtests und Updates",
+        "Praxisnahe Streaming-Tests",
+      ],
+      comparisonTitle: "Vollständiger VPN-Vergleich",
+      comparisonSubtitle: "Alle Funktionen im direkten Vergleich",
+      faqTitle: "Häufig gestellte Fragen",
+      faqs: [
+        {
+          q: "Was ist der beste VPN insgesamt?",
+          a: "Basierend auf unseren Tests ist NordVPN der beste VPN insgesamt in 2026. Er bietet die beste Kombination aus Geschwindigkeit, Sicherheitsfunktionen und Streaming-Fähigkeiten zu einem wettbewerbsfähigen Preis.",
+        },
+        {
+          q: "Was ist der beste günstige VPN?",
+          a: "Surfshark bietet das beste Preis-Leistungs-Verhältnis mit Preisen ab 1,99 $/Monat im 2-Jahres-Abo, plus unbegrenzte Geräteverbindungen.",
+        },
+        {
+          q: "Was ist der schnellste VPN?",
+          a: "ExpressVPN liefert in unseren Tests konstant die schnellsten Geschwindigkeiten dank seines proprietären Lightway-Protokolls. NordVPN liegt mit exzellenter WireGuard-basierter Leistung knapp dahinter.",
+        },
+        {
+          q: "Sind kostenlose VPNs sicher?",
+          a: "Die meisten kostenlosen VPNs werden aufgrund von Datenprotokollierung und Sicherheitsbedenken nicht empfohlen. ProtonVPN ist der einzige kostenlose VPN, den wir empfehlen.",
+        },
+        {
+          q: "Brauche ich wirklich einen VPN?",
+          a: "Ein VPN ist unverzichtbar, wenn Sie Ihre Online-Privatsphäre schützen, auf geo-blockierte Inhalte zugreifen oder Ihre Verbindung in öffentlichen WLAN-Netzwerken absichern möchten.",
+        },
+      ],
+      viewAllVpns: "Alle VPN-Bewertungen ansehen",
+      lastUpdated: "Zuletzt aktualisiert: November 2026",
+    },
+    es: {
+      badge: "Actualizado noviembre 2026",
+      title: "Mejores servicios VPN en 2026",
+      subtitle: "Probamos más de 35 VPN para encontrar las mejores opciones de privacidad, streaming y seguridad. Estas son nuestras principales recomendaciones basadas en pruebas exhaustivas.",
+      quickPicks: "Selección rápida",
+      bestOverall: "Mejor en general",
+      bestValue: "Mejor relación calidad-precio",
+      bestSpeed: "VPN más rápido",
+      topRated: "VPNs mejor valorados",
+      topRatedSubtitle: "Nuestros rankings probados por expertos basados en velocidad, seguridad y valor",
+      whyTrust: "¿Por qué confiar en nuestros rankings?",
+      trustPoints: [
+        "Más de 35 VPN probados en 3 años",
+        "Más de 500 pruebas de velocidad realizadas",
+        "Metodología de pruebas independiente",
+        "Sin rankings patrocinados",
+        "Pruebas y actualizaciones periódicas",
+        "Pruebas de streaming en condiciones reales",
+      ],
+      comparisonTitle: "Comparación completa de VPN",
+      comparisonSubtitle: "Compara todas las características lado a lado",
+      faqTitle: "Preguntas frecuentes",
+      faqs: [
+        {
+          q: "¿Cuál es el mejor VPN en general?",
+          a: "Según nuestras pruebas, NordVPN es el mejor VPN en general en 2026. Ofrece la mejor combinación de velocidad, funciones de seguridad y capacidades de streaming a un precio competitivo.",
+        },
+        {
+          q: "¿Cuál es el mejor VPN barato?",
+          a: "Surfshark ofrece la mejor relación calidad-precio con precios desde $1,99/mes en el plan de 2 años, más conexiones ilimitadas de dispositivos.",
+        },
+        {
+          q: "¿Cuál es el VPN más rápido?",
+          a: "ExpressVPN ofrece consistentemente las velocidades más rápidas en nuestras pruebas, gracias a su protocolo propietario Lightway. NordVPN queda muy cerca con un excelente rendimiento basado en WireGuard.",
+        },
+        {
+          q: "¿Son seguros los VPN gratuitos?",
+          a: "La mayoría de los VPN gratuitos no son recomendables debido a problemas de registro de datos y seguridad. ProtonVPN es el único VPN gratuito que recomendamos.",
+        },
+        {
+          q: "¿Realmente necesito un VPN?",
+          a: "Un VPN es esencial si quieres proteger tu privacidad en línea, acceder a contenido con restricciones geográficas o asegurar tu conexión en redes WiFi públicas.",
+        },
+      ],
+      viewAllVpns: "Ver todas las reseñas de VPN",
+      lastUpdated: "Última actualización: noviembre 2026",
+    },
+    fr: {
+      badge: "Mis à jour novembre 2026",
+      title: "Meilleurs services VPN en 2026",
+      subtitle: "Nous avons testé plus de 35 VPN pour trouver les meilleures options en matière de confidentialité, streaming et sécurité. Voici nos meilleurs choix basés sur des tests approfondis.",
+      quickPicks: "Sélection rapide",
+      bestOverall: "Meilleur global",
+      bestValue: "Meilleur rapport qualité-prix",
+      bestSpeed: "VPN le plus rapide",
+      topRated: "VPN les mieux notés",
+      topRatedSubtitle: "Nos classements testés par des experts basés sur la vitesse, la sécurité et le rapport qualité-prix",
+      whyTrust: "Pourquoi faire confiance à nos classements ?",
+      trustPoints: [
+        "Plus de 35 VPN testés sur 3 ans",
+        "Plus de 500 tests de vitesse réalisés",
+        "Méthodologie de test indépendante",
+        "Aucun classement sponsorisé",
+        "Tests réguliers et mises à jour",
+        "Tests de streaming en conditions réelles",
+      ],
+      comparisonTitle: "Comparaison complète des VPN",
+      comparisonSubtitle: "Comparez toutes les fonctionnalités côte à côte",
+      faqTitle: "Questions fréquemment posées",
+      faqs: [
+        {
+          q: "Quel est le meilleur VPN en général ?",
+          a: "D'après nos tests, NordVPN est le meilleur VPN en général en 2026. Il offre la meilleure combinaison de vitesse, de fonctionnalités de sécurité et de capacités de streaming à un prix compétitif.",
+        },
+        {
+          q: "Quel est le meilleur VPN pas cher ?",
+          a: "Surfshark offre le meilleur rapport qualité-prix avec des prix à partir de 1,99 $/mois sur l'abonnement 2 ans, plus des connexions illimitées.",
+        },
+        {
+          q: "Quel est le VPN le plus rapide ?",
+          a: "ExpressVPN offre systématiquement les vitesses les plus rapides lors de nos tests, grâce à son protocole propriétaire Lightway. NordVPN suit de près avec d'excellentes performances basées sur WireGuard.",
+        },
+        {
+          q: "Les VPN gratuits sont-ils sûrs ?",
+          a: "La plupart des VPN gratuits ne sont pas recommandés en raison de l'enregistrement des données et de problèmes de sécurité. ProtonVPN est le seul VPN gratuit que nous recommandons.",
+        },
+        {
+          q: "Ai-je vraiment besoin d'un VPN ?",
+          a: "Un VPN est essentiel si vous souhaitez protéger votre vie privée en ligne, accéder à du contenu géo-restreint ou sécuriser votre connexion sur les réseaux WiFi publics.",
+        },
+      ],
+      viewAllVpns: "Voir tous les avis VPN",
+      lastUpdated: "Dernière mise à jour : novembre 2026",
+    },
+    zh: {
+      badge: "2026年11月更新",
+      title: "2026年最佳VPN服务",
+      subtitle: "我们测试了35款以上的VPN，为您找到隐私保护、流媒体和安全性方面的最佳选择。以下是基于全面实际测试的精选推荐。",
+      quickPicks: "精选推荐",
+      bestOverall: "综合最佳",
+      bestValue: "性价比最高",
+      bestSpeed: "速度最快",
+      topRated: "评分最高的VPN",
+      topRatedSubtitle: "基于速度、安全性和性价比的专家测试排名",
+      whyTrust: "为什么信赖我们的排名？",
+      trustPoints: [
+        "3年内测试了35款以上VPN",
+        "完成500多次速度测试",
+        "独立测试方法论",
+        "无赞助排名",
+        "定期复测和更新",
+        "真实流媒体测试",
+      ],
+      comparisonTitle: "完整VPN对比",
+      comparisonSubtitle: "并排比较所有功能",
+      faqTitle: "常见问题",
+      faqs: [
+        {
+          q: "综合来看最好的VPN是哪个？",
+          a: "根据我们的测试，NordVPN是2026年综合表现最好的VPN。它在速度、安全功能和流媒体解锁能力方面提供了最佳组合，价格也很有竞争力。",
+        },
+        {
+          q: "最便宜好用的VPN是哪个？",
+          a: "Surfshark提供最高的性价比，2年套餐价格低至1.99美元/月，还支持无限设备同时连接。",
+        },
+        {
+          q: "速度最快的VPN是哪个？",
+          a: "ExpressVPN凭借其专有的Lightway协议，在我们的测试中始终保持最快速度。NordVPN紧随其后，基于WireGuard的性能同样出色。",
+        },
+        {
+          q: "免费VPN安全吗？",
+          a: "大多数免费VPN因数据记录和安全问题不推荐使用。ProtonVPN是我们唯一推荐的免费VPN，提供值得信赖的免费套餐且无数据限制。",
+        },
+        {
+          q: "我真的需要VPN吗？",
+          a: "如果您想保护在线隐私、访问地理限制内容或在公共WiFi上确保连接安全，VPN是必不可少的。",
+        },
+      ],
+      viewAllVpns: "查看所有VPN评测",
+      lastUpdated: "最后更新：2026年11月",
     },
   };
 

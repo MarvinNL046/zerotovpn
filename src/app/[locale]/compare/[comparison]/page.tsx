@@ -15,6 +15,8 @@ import type { VpnData } from "@/lib/db/vpn-service";
 import { getShortMonthYear, OG_LOCALE_MAP } from "@/lib/seo-utils";
 import { LastUpdated } from "@/components/last-updated";
 import { FaqSchema } from "@/components/structured-data";
+import { getRelatedContent, reviewLink } from "@/lib/content-links";
+import { RelatedContent } from "@/components/seo/related-content";
 
 type Props = {
   params: Promise<{ locale: string; comparison: string }>;
@@ -236,6 +238,18 @@ export default async function ComparisonPage({ params }: Props) {
 
   // Generate FAQ items for this comparison
   const faqs = generateComparisonFaqs(vpn1, vpn2);
+
+  const relatedLinks = getRelatedContent({
+    currentHref: `/compare/${comparison}`,
+    vpnSlugs: [vpn1.slug, vpn2.slug],
+    tags: ["comparison"],
+    currentType: "comparison",
+    limit: 6,
+    extraLinks: [
+      reviewLink(vpn1.slug, vpn1.name, Number(vpn1.overallRating)),
+      reviewLink(vpn2.slug, vpn2.name, Number(vpn2.overallRating)),
+    ],
+  });
 
   return (
     <>
@@ -553,6 +567,12 @@ export default async function ComparisonPage({ params }: Props) {
             </div>
           </div>
         </section>
+
+        <RelatedContent
+          links={relatedLinks}
+          locale={locale}
+          className="mt-12"
+        />
       </div>
     </>
   );

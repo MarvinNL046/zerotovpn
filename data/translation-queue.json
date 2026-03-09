@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 56,
+    "completed": 57,
     "inProgress": 0
   },
   "queue": [
@@ -152,7 +152,7 @@
       "slug": "vpn-credentials-theft-prevention-2026",
       "locale": "nl",
       "enTitle": "VPN Credentials Theft: How Hackers Target Your Login Data and What VPN Features Actually Prevent It in 2026",
-      "status": "pending",
+      "status": "completed",
       "priority": 1
     },
     {

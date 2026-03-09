@@ -3,6 +3,10 @@
     {
       "path": "/api/cron/monthly-vpn-index-refresh",
       "schedule": "0 3 1 * *"
+    },
+    {
+      "path": "/api/pipeline/speed-report",
+      "schedule": "0 9 1 * *"
     }
   ]
 }

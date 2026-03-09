@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { Badge } from "@/components/ui/badge";
 import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { RelatedPages } from "@/components/seo/related-pages";
+import { RelatedContent } from "@/components/seo/related-content";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import {
   Plane,
@@ -37,6 +38,7 @@ import {
 } from "lucide-react";
 import { LastUpdated } from "@/components/last-updated";
 import { generateAlternates } from "@/lib/seo-utils";
+import { getRelatedContent } from "@/lib/content-links";
 
 // Type definitions
 type Reason = {
@@ -121,6 +123,13 @@ export default async function VpnForTravelPage({ params }: Props) {
   setRequestLocale(locale);
   const t = await getTranslations("guides.vpnForTravel");
   const pageUrl = locale === "en" ? `${baseUrl}/guides/vpn-for-travel` : `${baseUrl}/${locale}/guides/vpn-for-travel`;
+
+  const relatedLinks = getRelatedContent({
+    currentHref: "/guides/vpn-for-travel",
+    tags: ["travel", "geo-restriction", "censorship", "security"],
+    currentType: "guide",
+    limit: 6,
+  });
 
   const tocItems = t.raw("toc.items") as string[];
   const relatedGuides = t.raw("relatedGuides.guides") as Array<{ title: string; description: string; url: string }>;
@@ -643,6 +652,8 @@ export default async function VpnForTravelPage({ params }: Props) {
                 { title: "Best VPNs 2026", description: "Top-rated travel VPNs", href: "/best/best-vpn", icon: "trophy" }
               ]}
             />
+
+            <RelatedContent links={relatedLinks} locale={locale} className="mt-12" />
           </div>
         </div>
       </div>

@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { Badge } from "@/components/ui/badge";
 import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { RelatedPages } from "@/components/seo/related-pages";
+import { RelatedContent } from "@/components/seo/related-content";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import {
   Smartphone,
@@ -30,6 +31,7 @@ import {
 } from "lucide-react";
 import { LastUpdated } from "@/components/last-updated";
 import { generateAlternates } from "@/lib/seo-utils";
+import { getRelatedContent } from "@/lib/content-links";
 
 // Type definitions
 type Benefit = {
@@ -135,6 +137,13 @@ export default async function VpnOnMobilePage({ params }: Props) {
   setRequestLocale(locale);
   const t = await getTranslations("guides.vpnOnMobile");
   const pageUrl = locale === "en" ? `${baseUrl}/guides/vpn-on-mobile` : `${baseUrl}/${locale}/guides/vpn-on-mobile`;
+
+  const relatedLinks = getRelatedContent({
+    currentHref: "/guides/vpn-on-mobile",
+    tags: ["mobile", "ios", "android", "setup", "beginner"],
+    currentType: "guide",
+    limit: 6,
+  });
 
   const whyMobileVpn = t.raw("sections.whyMobileVpn") as { title: string; intro: string; benefits: Benefit[]; didYouKnow: string };
   const iosSetup = t.raw("sections.iosSetup") as IosSetupSection;
@@ -579,6 +588,8 @@ export default async function VpnOnMobilePage({ params }: Props) {
                 { title: "Best VPNs 2026", description: "Top-rated mobile VPN apps", href: "/best/best-vpn", icon: "trophy" }
               ]}
             />
+
+            <RelatedContent links={relatedLinks} locale={locale} className="mt-12" />
           </div>
         </div>
       </div>

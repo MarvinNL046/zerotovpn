@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { Badge } from "@/components/ui/badge";
 import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { RelatedPages } from "@/components/seo/related-pages";
+import { RelatedContent } from "@/components/seo/related-content";
 import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { HowToSchema } from "@/components/seo/howto-schema";
@@ -27,6 +28,7 @@ import {
   Cloud,
   FileKey,
 } from "lucide-react";
+import { getRelatedContent } from "@/lib/content-links";
 import { LastUpdated } from "@/components/last-updated";
 import { generateAlternates } from "@/lib/seo-utils";
 
@@ -64,6 +66,13 @@ export default async function HowVpnWorksPage({ params }: Props) {
 
   const baseUrl = "https://zerotovpn.com";
   const pageUrl = _locale === "en" ? `${baseUrl}/guides/how-vpn-works` : `${baseUrl}/${_locale}/guides/how-vpn-works`;
+
+  const relatedLinks = getRelatedContent({
+    currentHref: "/guides/how-vpn-works",
+    tags: ["technical", "encryption", "security", "protocols", "education"],
+    currentType: "guide",
+    limit: 6,
+  });
 
   return (
     <>
@@ -481,6 +490,15 @@ export default async function HowVpnWorksPage({ params }: Props) {
               {t("cta.button")}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Content */}
+      <section className="py-12 lg:py-16">
+        <div className="container">
+          <div className="max-w-3xl mx-auto">
+            <RelatedContent links={relatedLinks} locale={_locale} className="mt-12" />
           </div>
         </div>
       </section>

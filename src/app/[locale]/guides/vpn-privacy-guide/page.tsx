@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { Badge } from "@/components/ui/badge";
 import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { RelatedPages } from "@/components/seo/related-pages";
+import { RelatedContent } from "@/components/seo/related-content";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { TableOfContents } from "@/components/seo/table-of-contents";
 import {
@@ -31,6 +32,7 @@ import {
 } from "lucide-react";
 import { LastUpdated } from "@/components/last-updated";
 import { generateAlternates } from "@/lib/seo-utils";
+import { getRelatedContent } from "@/lib/content-links";
 
 const affiliateLinks = {
   expressvpn: "https://go.zerotovpn.com/expressvpn",
@@ -73,6 +75,13 @@ export default async function VpnPrivacyGuidePage({ params }: Props) {
   setRequestLocale(locale);
   const t = await getTranslations("guides.vpnPrivacyGuide");
   const pageUrl = locale === "en" ? `${baseUrl}/guides/vpn-privacy-guide` : `${baseUrl}/${locale}/guides/vpn-privacy-guide`;
+
+  const relatedLinks = getRelatedContent({
+    currentHref: "/guides/vpn-privacy-guide",
+    tags: ["privacy", "security", "general", "education"],
+    currentType: "guide",
+    limit: 6,
+  });
 
   return (
     <>
@@ -541,6 +550,15 @@ export default async function VpnPrivacyGuidePage({ params }: Props) {
               <Shield className="mr-2 h-5 w-5" />
               {t("cta.button")}
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Content */}
+      <section className="py-12 lg:py-16">
+        <div className="container">
+          <div className="max-w-3xl mx-auto">
+            <RelatedContent links={relatedLinks} locale={locale} className="mt-12" />
           </div>
         </div>
       </section>

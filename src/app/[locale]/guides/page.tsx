@@ -5,6 +5,8 @@ import { Link } from "@/i18n/navigation";
 import { Badge } from "@/components/ui/badge";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
+import { getRelatedContent } from "@/lib/content-links";
+import { RelatedContent } from "@/components/seo/related-content";
 import {
   BookOpen,
   Shield,
@@ -122,6 +124,13 @@ export default async function GuidesPage({ params }: Props) {
   setRequestLocale(locale);
 
   const t = await getTranslations("guidesIndex");
+
+  const relatedLinks = getRelatedContent({
+    currentHref: "/guides",
+    tags: ["general", "education", "beginner", "overview"],
+    currentType: "guide",
+    limit: 6,
+  });
 
   const featuredGuides = guides.filter((g) => g.featured);
   const otherGuides = guides.filter((g) => !g.featured);
@@ -365,6 +374,13 @@ export default async function GuidesPage({ params }: Props) {
               { title: "VPN for Streaming", description: "Access Netflix, Disney+ and more", href: "/guides/vpn-for-streaming", icon: "play" }
             ]}
           />
+        </div>
+      </section>
+
+      {/* Related Content */}
+      <section className="py-12 lg:py-16 bg-muted/30">
+        <div className="container">
+          <RelatedContent links={relatedLinks} locale={locale} className="mt-12" />
         </div>
       </section>
     </div>

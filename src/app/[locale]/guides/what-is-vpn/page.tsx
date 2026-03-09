@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { RelatedPages } from "@/components/seo/related-pages";
+import { RelatedContent } from "@/components/seo/related-content";
 import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { TableOfContents } from "@/components/seo/table-of-contents";
@@ -29,6 +30,7 @@ import {
   Clock,
   BookOpen,
 } from "lucide-react";
+import { getRelatedContent } from "@/lib/content-links";
 import { LastUpdated } from "@/components/last-updated";
 
 type Props = {
@@ -77,6 +79,13 @@ export default async function WhatIsVpnPage({ params }: Props) {
   setRequestLocale(locale);
   const t = await getTranslations("guides.whatIsVpn");
   const pageUrl = locale === "en" ? `${baseUrl}/guides/what-is-vpn` : `${baseUrl}/${locale}/guides/what-is-vpn`;
+
+  const relatedLinks = getRelatedContent({
+    currentHref: "/guides/what-is-vpn",
+    tags: ["beginner", "general", "overview", "education"],
+    currentType: "guide",
+    limit: 6,
+  });
 
   return (
     <>
@@ -401,6 +410,15 @@ export default async function WhatIsVpnPage({ params }: Props) {
                 { title: "VPN Privacy Guide", description: "Maximize your online privacy", href: "/guides/vpn-privacy-guide", icon: "shield" }
               ]}
             />
+          </div>
+        </div>
+      </section>
+
+      {/* Related Content */}
+      <section className="py-12 lg:py-16">
+        <div className="container">
+          <div className="max-w-3xl mx-auto">
+            <RelatedContent links={relatedLinks} locale={locale} className="mt-12" />
           </div>
         </div>
       </section>

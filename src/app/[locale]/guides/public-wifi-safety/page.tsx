@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { Badge } from "@/components/ui/badge";
 import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { RelatedPages } from "@/components/seo/related-pages";
+import { RelatedContent } from "@/components/seo/related-content";
 import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { HowToSchema } from "@/components/seo/howto-schema";
@@ -37,6 +38,7 @@ import {
 } from "lucide-react";
 import { LastUpdated } from "@/components/last-updated";
 import { generateAlternates } from "@/lib/seo-utils";
+import { getRelatedContent } from "@/lib/content-links";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -71,6 +73,13 @@ export default async function PublicWifiSafetyPage({ params }: Props) {
   const t = await getTranslations("guides.publicWifiSafety");
 
   const pageUrl = locale === "en" ? `${baseUrl}/guides/public-wifi-safety` : `${baseUrl}/${locale}/guides/public-wifi-safety`;
+
+  const relatedLinks = getRelatedContent({
+    currentHref: "/guides/public-wifi-safety",
+    tags: ["security", "wifi", "privacy", "beginner"],
+    currentType: "guide",
+    limit: 6,
+  });
 
   return (
     <>
@@ -535,6 +544,8 @@ export default async function PublicWifiSafetyPage({ params }: Props) {
                 { title: "Best VPNs 2026", description: "Top-rated secure VPNs", href: "/best/best-vpn", icon: "trophy" }
               ]}
             />
+
+            <RelatedContent links={relatedLinks} locale={locale} className="mt-12" />
           </div>
         </div>
       </div>

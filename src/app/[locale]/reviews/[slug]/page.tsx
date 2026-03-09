@@ -10,7 +10,9 @@ import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { UserReviewsList } from "@/components/reviews/user-reviews-list";
 import { ReviewForm } from "@/components/reviews/review-form";
 import { CouponList } from "@/components/coupons/coupon-list";
-import { getVpnBySlug } from "@/lib/vpn-data-layer";
+import { getVpnBySlug, getAllVpns } from "@/lib/vpn-data-layer";
+import { getRelatedContent, reviewLink } from "@/lib/content-links";
+import { RelatedContent } from "@/components/seo/related-content";
 import { getReviewsByVpnSlug, getAverageUserRating } from "@/lib/user-reviews";
 import { getCouponsByVpnSlug } from "@/lib/coupon-data";
 import { Link } from "@/i18n/navigation";
@@ -265,6 +267,29 @@ export default async function ReviewPage({ params }: Props) {
 
   const faqs = generateFaqs(vpn);
   const transparency = await getTransparencySnapshotForVpn(vpn);
+
+  // Build review links from other VPNs for cross-linking
+  const allVpns = await getAllVpns();
+  const reviewLinks = allVpns
+    .filter((v) => v.slug !== vpn.slug)
+    .slice(0, 10)
+    .map((v) => reviewLink(v.slug, v.name, Number(v.overallRating)));
+
+  const relatedLinks = getRelatedContent({
+    currentHref: `/reviews/${vpn.slug}`,
+    vpnSlugs: [vpn.slug],
+    tags: [
+      "review",
+      ...(vpn.netflixSupport ? ["streaming", "netflix"] : []),
+      ...(vpn.torrentSupport ? ["torrenting"] : []),
+      ...(vpn.freeTier ? ["free", "budget"] : []),
+      ...(vpn.speedScore >= 80 ? ["speed", "gaming"] : []),
+      ...(vpn.securityScore >= 85 ? ["security", "privacy"] : []),
+    ],
+    currentType: "review",
+    limit: 6,
+    extraLinks: reviewLinks,
+  });
 
   return (
     <>
@@ -778,6 +803,13 @@ export default async function ReviewPage({ params }: Props) {
 
         {/* User Reviews Section */}
         <UserReviewsSection vpn={vpn} locale={_locale} title={t("userReviews.title")} />
+
+        {/* Related Content */}
+        <RelatedContent
+          links={relatedLinks}
+          locale={_locale}
+          className="mt-12"
+        />
       </div>
       </div>
     </>

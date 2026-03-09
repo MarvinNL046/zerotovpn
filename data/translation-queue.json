@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 122,
+    "completed": 123,
     "inProgress": 0
   },
   "queue": [
@@ -986,7 +986,7 @@
       "slug": "vpn-bandwidth-throttling-detect-speed-limits",
       "locale": "zh",
       "enTitle": "VPN Bandwidth Throttling: How to Detect If Your Provider Is Secretly Limiting Your Speeds in 2026",
-      "status": "pending",
+      "status": "completed",
       "priority": 5
     },
     {

@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 86,
+    "completed": 87,
     "inProgress": 0
   },
   "queue": [
@@ -482,7 +482,7 @@
       "slug": "who-owns-vpn-2026-ownership-breakdown",
       "locale": "de",
       "enTitle": "Who Really Owns Your VPN? 2026 Ownership Breakdown",
-      "status": "pending",
+      "status": "completed",
       "priority": 2
     },
     {

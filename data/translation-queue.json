@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 148,
+    "completed": 149,
     "inProgress": 0
   },
   "queue": [
@@ -1220,7 +1220,7 @@
       "slug": "vpn-online-dating-safety-protect-personal-information-location",
       "locale": "zh",
       "enTitle": "VPN for Online Dating Safety: How to Protect Your Personal Information and Location in 2026",
-      "status": "pending",
+      "status": "completed",
       "priority": 5
     },
     {

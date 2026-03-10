@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 166,
+    "completed": 167,
     "inProgress": 0
   },
   "queue": [
@@ -1432,7 +1432,7 @@
       "file": "src/app/[locale]/best/vpn-thailand/page.tsx",
       "page": "vpn-thailand",
       "locale": "ja",
-      "status": "pending",
+      "status": "completed",
       "priority": 6
     },
     {

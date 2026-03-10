@@ -45,6 +45,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     es: "Mejor VPN 2026 (Probado y Clasificado por Velocidad, Privacidad y Streaming) | ZeroToVPN",
     fr: "Meilleur VPN 2026 (Tests Indépendants: Vitesse, Confidentialité et Streaming) | ZeroToVPN",
     zh: "2026年最佳VPN（速度、隐私和流媒体独立测试排名）| ZeroToVPN",
+    ja: "2026年おすすめVPN（速度・プライバシー・ストリーミングを独自テストしてランキング）| ZeroToVPN",
   };
 
   const descriptions: Record<string, string> = {
@@ -54,6 +55,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     es: "Probamos velocidad, privacidad, streaming y transparencia de registros de forma independiente. Compara precios y encuentra tu VPN ideal hoy.",
     fr: "Nous avons testé la vitesse, la confidentialité, le streaming et la transparence des logs. Comparez les prix et trouvez votre VPN idéal aujourd'hui.",
     zh: "我们独立测试了速度、隐私、流媒体和日志透明度，为您排名2026年最佳VPN。比较价格，立即找到您的理想VPN。",
+    ja: "速度、プライバシー、ストリーミング、ログの透明性を独自にテストし、2026年のトップVPNをランキングしました。料金を比較して、あなたに最適なVPNを見つけましょう。",
   };
 
   const prefix = locale === "en" ? "" : `/${locale}`;
@@ -427,6 +429,53 @@ export default async function BestVpnPage({ params }: Props) {
       ],
       viewAllVpns: "查看所有VPN评测",
       lastUpdated: "最后更新：2026年11月",
+    },
+    ja: {
+      badge: "2026年11月更新",
+      title: "2026年おすすめVPNサービス",
+      subtitle: "35以上のVPNをテストし、プライバシー、ストリーミング、セキュリティに最適なサービスを厳選しました。実際の使用テストに基づくおすすめをご紹介します。",
+      quickPicks: "おすすめピックアップ",
+      bestOverall: "総合1位",
+      bestValue: "コスパ最強",
+      bestSpeed: "最速VPN",
+      topRated: "高評価VPNランキング",
+      topRatedSubtitle: "速度・セキュリティ・コストパフォーマンスに基づく専門家テスト済みランキング",
+      whyTrust: "なぜ当サイトのランキングが信頼できるのか",
+      trustPoints: [
+        "3年間で35以上のVPNをテスト",
+        "500回以上の速度テストを実施",
+        "独自のテスト手法を採用",
+        "スポンサー付きランキングなし",
+        "定期的な再テストと更新",
+        "実際のストリーミングテスト済み",
+      ],
+      comparisonTitle: "VPN全機能比較",
+      comparisonSubtitle: "すべての機能を一覧で比較",
+      faqTitle: "よくある質問",
+      faqs: [
+        {
+          q: "総合的に最もおすすめのVPNは？",
+          a: "当サイトのテスト結果に基づくと、2026年の総合1位はNordVPNです。速度、セキュリティ機能、ストリーミング対応力のバランスが最も優れており、価格も競争力があります。",
+        },
+        {
+          q: "安くておすすめのVPNは？",
+          a: "Surfsharkが最もコストパフォーマンスに優れています。2年プランなら月額1.99ドルから利用でき、デバイス接続数も無制限です。",
+        },
+        {
+          q: "最も速いVPNは？",
+          a: "ExpressVPNは独自のLightwayプロトコルにより、当サイトのテストで常にトップクラスの速度を記録しています。NordVPNもWireGuardベースの優れたパフォーマンスで僅差の2位です。",
+        },
+        {
+          q: "無料VPNは安全ですか？",
+          a: "ほとんどの無料VPNはデータ記録やセキュリティ上の懸念があるためおすすめできません。ProtonVPNは当サイトが唯一おすすめする無料VPNで、データ制限なしの信頼できる無料プランを提供しています。",
+        },
+        {
+          q: "本当にVPNは必要ですか？",
+          a: "オンラインプライバシーの保護、地域制限コンテンツへのアクセス、公共WiFiでの接続セキュリティを確保したい場合、VPNは必須のツールです。",
+        },
+      ],
+      viewAllVpns: "すべてのVPNレビューを見る",
+      lastUpdated: "最終更新：2026年11月",
     },
   };
 

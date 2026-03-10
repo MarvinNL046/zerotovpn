@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 156,
+    "completed": 157,
     "inProgress": 0
   },
   "queue": [
@@ -1292,7 +1292,7 @@
       "slug": "vpn-smart-home-security-iot-devices-2026",
       "locale": "zh",
       "enTitle": "VPN and Smart Home Security: How to Protect Your IoT Devices from Hackers in 2026",
-      "status": "pending",
+      "status": "completed",
       "priority": 5
     },
     {

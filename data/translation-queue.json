@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 161,
+    "completed": 162,
     "inProgress": 0
   },
   "queue": [
@@ -1337,7 +1337,7 @@
       "slug": "vpn-tethering-mobile-hotspot-security-2026",
       "locale": "zh",
       "enTitle": "VPN Tethering and Mobile Hotspot: How to Secure Devices Connected to Your Phone's Internet in 2026",
-      "status": "pending",
+      "status": "completed",
       "priority": 5
     },
     {

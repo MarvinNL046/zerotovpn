@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 137,
+    "completed": 138,
     "inProgress": 0
   },
   "queue": [
@@ -1121,7 +1121,7 @@
       "slug": "vpn-guide-tips-february-2026",
       "locale": "zh",
       "enTitle": "VPN Guide and Tips - February 2026",
-      "status": "pending",
+      "status": "completed",
       "priority": 5
     },
     {

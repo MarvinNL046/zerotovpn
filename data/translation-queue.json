@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 184,
+    "completed": 185,
     "inProgress": 0
   },
   "queue": [
@@ -1644,7 +1644,7 @@
       "file": "src/app/[locale]/best/vpn-morocco/page.tsx",
       "page": "vpn-morocco",
       "locale": "ko",
-      "status": "pending",
+      "status": "completed",
       "priority": 7
     },
     {

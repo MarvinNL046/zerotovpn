@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 142,
+    "completed": 143,
     "inProgress": 0
   },
   "queue": [
@@ -1166,7 +1166,7 @@
       "slug": "vpn-library-public-computer-privacy-2026",
       "locale": "zh",
       "enTitle": "VPN for Library and Public Computer Access: How to Protect Your Privacy on Shared Devices in 2026",
-      "status": "pending",
+      "status": "completed",
       "priority": 5
     },
     {

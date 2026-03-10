@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 171,
+    "completed": 172,
     "inProgress": 0
   },
   "queue": [
@@ -1487,7 +1487,7 @@
       "slug": "vpn-automatic-reconnection-disconnecting-troubleshooting",
       "locale": "ja",
       "enTitle": "VPN Automatic Reconnection: Why Your VPN Keeps Disconnecting and How to Troubleshoot It in 2026",
-      "status": "pending",
+      "status": "completed",
       "priority": 6
     },
     {

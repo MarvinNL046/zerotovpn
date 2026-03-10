@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 132,
+    "completed": 133,
     "inProgress": 0
   },
   "queue": [
@@ -1076,7 +1076,7 @@
       "slug": "vpn-freelancers-contractors-secure-client-data-invoicing-2026",
       "locale": "zh",
       "enTitle": "VPN for Freelancers and Contractors: How to Secure Client Data and Invoicing Without Exposing Your Location in 2026",
-      "status": "pending",
+      "status": "completed",
       "priority": 5
     },
     {

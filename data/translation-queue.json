@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 133,
+    "completed": 134,
     "inProgress": 0
   },
   "queue": [
@@ -1085,7 +1085,7 @@
       "slug": "vpn-geofencing-detection-blocking-2026",
       "locale": "zh",
       "enTitle": "VPN Geofencing Detection: How Websites Identify and Block VPN Users in 2026 and What Actually Works",
-      "status": "pending",
+      "status": "completed",
       "priority": 5
     },
     {

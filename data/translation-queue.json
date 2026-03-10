@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 226,
+    "completed": 227,
     "inProgress": 0
   },
   "queue": [
@@ -2102,7 +2102,7 @@
       "slug": "vpn-refund-policies-money-back-guarantee-comparison-2026",
       "locale": "th",
       "enTitle": "VPN Refund Policies Compared: Which VPNs Actually Honor Their Money-Back Guarantees in 2026",
-      "status": "pending",
+      "status": "completed",
       "priority": 8
     },
     {

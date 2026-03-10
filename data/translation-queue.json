@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 129,
+    "completed": 130,
     "inProgress": 0
   },
   "queue": [
@@ -1049,7 +1049,7 @@
       "slug": "vpn-dns-leaks-vs-kill-switches-2026",
       "locale": "zh",
       "enTitle": "VPN DNS Leaks vs. VPN Kill Switches: Why You Might Need Both in 2026",
-      "status": "pending",
+      "status": "completed",
       "priority": 5
     },
     {

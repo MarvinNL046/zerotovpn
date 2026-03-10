@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 145,
+    "completed": 146,
     "inProgress": 0
   },
   "queue": [
@@ -1193,7 +1193,7 @@
       "slug": "vpn-logs-retention-laws-by-country-2026",
       "locale": "zh",
       "enTitle": "VPN Logs Retention Laws by Country: How Long Your Data Is Actually Stored and Who Can Access It in 2026",
-      "status": "pending",
+      "status": "completed",
       "priority": 5
     },
     {

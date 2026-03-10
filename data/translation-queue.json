@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 162,
+    "completed": 163,
     "inProgress": 0
   },
   "queue": [
@@ -1346,7 +1346,7 @@
       "slug": "why-vpns-slow-down-internet-how-to-fix",
       "locale": "zh",
       "enTitle": "Why VPNs Slow Down Your Internet (And How to Fix It)",
-      "status": "pending",
+      "status": "completed",
       "priority": 5
     },
     {

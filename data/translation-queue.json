@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 194,
+    "completed": 195,
     "inProgress": 0
   },
   "queue": [
@@ -1754,7 +1754,7 @@
       "slug": "vpn-encryption-protocols-wireguard-openvpn-ikev2-2026-2026-02",
       "locale": "ko",
       "enTitle": "VPN Encryption Protocols Explained: WireGuard vs. OpenVPN vs. IKEv2 for 2026",
-      "status": "pending",
+      "status": "completed",
       "priority": 7
     },
     {

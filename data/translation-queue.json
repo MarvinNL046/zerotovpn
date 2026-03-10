@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 182,
+    "completed": 183,
     "inProgress": 0
   },
   "queue": [
@@ -1586,7 +1586,7 @@
       "file": "src/app/[locale]/best/best-vpn/page.tsx",
       "page": "best-vpn",
       "locale": "ko",
-      "status": "pending",
+      "status": "completed",
       "priority": 7
     },
     {

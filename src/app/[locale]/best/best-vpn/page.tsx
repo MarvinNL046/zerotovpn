@@ -46,6 +46,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     fr: "Meilleur VPN 2026 (Tests Indépendants: Vitesse, Confidentialité et Streaming) | ZeroToVPN",
     zh: "2026年最佳VPN（速度、隐私和流媒体独立测试排名）| ZeroToVPN",
     ja: "2026年おすすめVPN（速度・プライバシー・ストリーミングを独自テストしてランキング）| ZeroToVPN",
+    ko: "2026년 최고의 VPN (속도, 개인정보 보호, 스트리밍 독립 테스트 순위) | ZeroToVPN",
   };
 
   const descriptions: Record<string, string> = {
@@ -56,6 +57,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     fr: "Nous avons testé la vitesse, la confidentialité, le streaming et la transparence des logs. Comparez les prix et trouvez votre VPN idéal aujourd'hui.",
     zh: "我们独立测试了速度、隐私、流媒体和日志透明度，为您排名2026年最佳VPN。比较价格，立即找到您的理想VPN。",
     ja: "速度、プライバシー、ストリーミング、ログの透明性を独自にテストし、2026年のトップVPNをランキングしました。料金を比較して、あなたに最適なVPNを見つけましょう。",
+    ko: "속도, 개인정보 보호, 스트리밍, 로깅 투명성을 독립적으로 테스트하여 2026년 최고의 VPN을 선정했습니다. 가격을 비교하고 나에게 맞는 VPN을 찾아보세요.",
   };
 
   const prefix = locale === "en" ? "" : `/${locale}`;
@@ -476,6 +478,53 @@ export default async function BestVpnPage({ params }: Props) {
       ],
       viewAllVpns: "すべてのVPNレビューを見る",
       lastUpdated: "最終更新：2026年11月",
+    },
+    ko: {
+      badge: "2026년 11월 업데이트",
+      title: "2026년 최고의 VPN 서비스",
+      subtitle: "35개 이상의 VPN을 테스트하여 개인정보 보호, 스트리밍, 보안에 가장 적합한 서비스를 선별했습니다. 실제 사용 테스트를 기반으로 한 추천 목록입니다.",
+      quickPicks: "빠른 선택",
+      bestOverall: "종합 1위",
+      bestValue: "가성비 최고",
+      bestSpeed: "최고 속도",
+      topRated: "최고 평점 VPN",
+      topRatedSubtitle: "속도, 보안, 가성비를 기준으로 전문가가 테스트한 순위",
+      whyTrust: "우리의 순위를 신뢰할 수 있는 이유",
+      trustPoints: [
+        "3년간 35개 이상의 VPN 테스트",
+        "500회 이상의 속도 테스트 실시",
+        "독립적인 테스트 방법론",
+        "스폰서 순위 없음",
+        "정기적인 재테스트 및 업데이트",
+        "실제 스트리밍 테스트 완료",
+      ],
+      comparisonTitle: "VPN 전체 비교",
+      comparisonSubtitle: "모든 기능을 한눈에 비교하세요",
+      faqTitle: "자주 묻는 질문",
+      faqs: [
+        {
+          q: "종합적으로 가장 좋은 VPN은?",
+          a: "테스트 결과, 2026년 종합 1위는 NordVPN입니다. 속도, 보안 기능, 스트리밍 지원의 균형이 가장 뛰어나며 가격 경쟁력도 갖추고 있습니다.",
+        },
+        {
+          q: "가장 저렴한 VPN은?",
+          a: "Surfshark가 가성비 면에서 가장 뛰어납니다. 2년 요금제 기준 월 $1.99부터 이용 가능하며, 기기 동시 접속 수 제한이 없습니다.",
+        },
+        {
+          q: "가장 빠른 VPN은?",
+          a: "ExpressVPN은 자체 Lightway 프로토콜 덕분에 테스트에서 항상 최고 속도를 기록합니다. NordVPN도 WireGuard 기반의 우수한 성능으로 근소한 차이의 2위입니다.",
+        },
+        {
+          q: "무료 VPN은 안전한가요?",
+          a: "대부분의 무료 VPN은 데이터 기록 및 보안 문제로 권장하지 않습니다. ProtonVPN은 저희가 유일하게 추천하는 무료 VPN으로, 데이터 제한 없는 신뢰할 수 있는 무료 요금제를 제공합니다.",
+        },
+        {
+          q: "VPN이 정말 필요한가요?",
+          a: "온라인 개인정보 보호, 지역 제한 콘텐츠 접근, 공용 WiFi에서의 연결 보안을 원한다면 VPN은 필수 도구입니다.",
+        },
+      ],
+      viewAllVpns: "모든 VPN 리뷰 보기",
+      lastUpdated: "최종 업데이트: 2026년 11월",
     },
   };
 

@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 135,
+    "completed": 136,
     "inProgress": 0
   },
   "queue": [
@@ -1103,7 +1103,7 @@
       "slug": "vpn-government-data-requests-law-enforcement-resistance-2026",
       "locale": "zh",
       "enTitle": "VPN and Government Data Requests: How to Know If Your Provider Actually Resists Law Enforcement in 2026",
-      "status": "pending",
+      "status": "completed",
       "priority": 5
     },
     {

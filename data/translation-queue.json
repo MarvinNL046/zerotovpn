@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 149,
+    "completed": 150,
     "inProgress": 0
   },
   "queue": [
@@ -1229,7 +1229,7 @@
       "slug": "vpn-payment-methods-anonymity-privacy-trails-2026",
       "locale": "zh",
       "enTitle": "VPN Payment Methods and Anonymity: Why Credit Cards, PayPal, and Crypto Leave Different Privacy Trails in 2026",
-      "status": "pending",
+      "status": "completed",
       "priority": 5
     },
     {

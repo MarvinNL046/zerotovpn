@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 199,
+    "completed": 200,
     "inProgress": 0
   },
   "queue": [
@@ -1799,7 +1799,7 @@
       "slug": "vpn-reconnection-speed-test-2026",
       "locale": "ko",
       "enTitle": "VPN Reconnection Speed Test 2026: Which Providers Reconnect Fastest After Network Interruptions",
-      "status": "pending",
+      "status": "completed",
       "priority": 7
     },
     {

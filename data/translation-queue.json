@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 146,
+    "completed": 147,
     "inProgress": 0
   },
   "queue": [
@@ -1202,7 +1202,7 @@
       "slug": "vpn-mobile-banking-safe-travel-2026",
       "locale": "zh",
       "enTitle": "VPN and Mobile Banking: How to Safely Access Your Bank Account While Traveling in 2026",
-      "status": "pending",
+      "status": "completed",
       "priority": 5
     },
     {

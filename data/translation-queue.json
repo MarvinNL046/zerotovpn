@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 144,
+    "completed": 145,
     "inProgress": 0
   },
   "queue": [
@@ -1184,7 +1184,7 @@
       "slug": "vpn-logging-policies-decoded-2026",
       "locale": "zh",
       "enTitle": "VPN Logging Policies Decoded: How to Read the Fine Print and Spot Red Flags in 2026",
-      "status": "pending",
+      "status": "completed",
       "priority": 5
     },
     {

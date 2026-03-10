@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 125,
+    "completed": 126,
     "inProgress": 0
   },
   "queue": [
@@ -1013,7 +1013,7 @@
       "slug": "vpn-connection-drops-why-disconnects-how-to-fix-2026",
       "locale": "zh",
       "enTitle": "VPN Connection Drops: Why Your VPN Disconnects and How to Fix It in 2026",
-      "status": "pending",
+      "status": "completed",
       "priority": 5
     },
     {

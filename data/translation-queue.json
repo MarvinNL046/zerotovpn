@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 173,
+    "completed": 174,
     "inProgress": 0
   },
   "queue": [
@@ -1505,7 +1505,7 @@
       "slug": "vpn-browser-extensions-vs-full-apps-privacy-2026",
       "locale": "ja",
       "enTitle": "VPN Browser Extensions vs. Full VPN Apps: Why Your Choice Matters for Privacy in 2026",
-      "status": "pending",
+      "status": "completed",
       "priority": 6
     },
     {

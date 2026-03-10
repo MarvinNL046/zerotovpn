@@ -11,7 +11,7 @@
   ],
   "stats": {
     "total": 228,
-    "completed": 127,
+    "completed": 128,
     "inProgress": 0
   },
   "queue": [
@@ -1031,7 +1031,7 @@
       "slug": "vpn-cryptocurrency-trading-security-2026",
       "locale": "zh",
       "enTitle": "VPN for Cryptocurrency Trading: How to Secure Your Exchange Accounts and Wallet Access in 2026",
-      "status": "pending",
+      "status": "completed",
       "priority": 5
     },
     {

@@ -13,9 +13,9 @@ import {
 import { FAQSchema } from "@/components/seo/faq-schema";
 import { routing } from "@/i18n/routing";
 import { HighlightedText } from "@/components/ui/highlighted-text";
-import { HeroIllustration } from "@/components/hero-illustration";
 import { MetricBadge } from "@/components/ui/metric-badge";
 import { PulseIndicator } from "@/components/ui/pulse-indicator";
+import { LazyHeroIllustration } from "@/components/lazy-hero-illustration";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -130,7 +130,7 @@ export default async function HomePage({ params }: Props) {
 
             {/* Hero Illustration - Dashboard Preview */}
             <div className="mt-16 lg:mt-24">
-              <HeroIllustration />
+              <LazyHeroIllustration />
             </div>
           </div>
         </section>

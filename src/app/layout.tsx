@@ -51,10 +51,11 @@ export default async function RootLayout({
             gtag('config', 'G-66TC4XX08D');
           `}
         </Script>
-        <script
+        <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9667530069853985"
           crossOrigin="anonymous"
+          strategy="lazyOnload"
         />
       </head>
       <body className="min-h-screen bg-background font-sans antialiased">

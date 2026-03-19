@@ -39,9 +39,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     metadataBase: new URL(baseUrl),
-    title: isEnglish
-      ? "ZeroToVPN: Independent VPN Research, Transparency & Real-World Testing"
-      : undefined,
+    title: ({
+      en: "ZeroToVPN: Independent VPN Research, Transparency & Real-World Testing",
+      nl: "ZeroToVPN: Onafhankelijk VPN Onderzoek & Real-World Tests 2026",
+      de: "ZeroToVPN: Unabhängige VPN-Forschung & Praxistests 2026",
+      es: "ZeroToVPN: Investigación VPN Independiente & Pruebas Reales 2026",
+      fr: "ZeroToVPN: Recherche VPN Indépendante & Tests Réels 2026",
+      zh: "ZeroToVPN：独立VPN研究与实测 2026",
+      ja: "ZeroToVPN：独立VPN調査＆実測テスト 2026",
+      ko: "ZeroToVPN: 독립 VPN 연구 & 실제 테스트 2026",
+      th: "ZeroToVPN: การวิจัย VPN อิสระและการทดสอบจริง 2026",
+    } as Record<string, string>)[locale] || "ZeroToVPN: Independent VPN Research, Transparency & Real-World Testing",
     description: isEnglish
       ? `Independent VPN research and real-world testing. See measurable rankings updated ${shortMonthYear}, full methodology, and the VPN Transparency & Performance Index 2026.`
       : `Independent VPN research and real-world testing. See measurable rankings updated ${shortMonthYear}, full methodology, and transparency reports.`,

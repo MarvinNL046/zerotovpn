@@ -50,7 +50,7 @@ type FAQ = {
   answer: string;
 };
 
-const baseUrl = "https://zerotovpn.com";
+const baseUrl = "https://www.zerotovpn.com";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;

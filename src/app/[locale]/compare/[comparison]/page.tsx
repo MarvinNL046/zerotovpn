@@ -22,7 +22,7 @@ type Props = {
   params: Promise<{ locale: string; comparison: string }>;
 };
 
-const baseUrl = "https://zerotovpn.com";
+const baseUrl = "https://www.zerotovpn.com";
 export const revalidate = 86400;
 
 // Parse comparison slug (e.g., "nordvpn-vs-surfshark") into two VPN slugs

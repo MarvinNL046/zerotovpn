@@ -461,7 +461,7 @@ function generateFaqs(vpn: {
   ];
 }
 
-const baseUrl = "https://zerotovpn.com";
+const baseUrl = "https://www.zerotovpn.com";
 export const revalidate = 86400;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

@@ -27,7 +27,7 @@ type Props = {
   params: Promise<{ locale: string }>;
 };
 
-const baseUrl = "https://zerotovpn.com";
+const baseUrl = "https://www.zerotovpn.com";
 const publishDate = "2026-11-29";
 const slug = "vpn-black-friday-2026";
 

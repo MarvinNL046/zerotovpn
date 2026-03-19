@@ -36,7 +36,7 @@ type Props = {
   params: Promise<{ locale: string }>;
 };
 
-const baseUrl = "https://zerotovpn.com";
+const baseUrl = "https://www.zerotovpn.com";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
@@ -64,7 +64,7 @@ export default async function HowVpnWorksPage({ params }: Props) {
   setRequestLocale(_locale);
   const t = await getTranslations("guides.howVpnWorks");
 
-  const baseUrl = "https://zerotovpn.com";
+  const baseUrl = "https://www.zerotovpn.com";
   const pageUrl = _locale === "en" ? `${baseUrl}/guides/how-vpn-works` : `${baseUrl}/${_locale}/guides/how-vpn-works`;
 
   const relatedLinks = getRelatedContent({

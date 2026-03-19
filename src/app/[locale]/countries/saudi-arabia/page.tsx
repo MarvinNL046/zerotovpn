@@ -12,7 +12,7 @@ import { generateAlternates } from "@/lib/seo-utils";
 import { Shield, CheckCircle, XCircle, Globe, Clock, ArrowRight, Scale, Smartphone, Lock, Ban, AlertTriangle, Eye } from "lucide-react";
 
 type Props = { params: Promise<{ locale: string }> };
-const baseUrl = "https://zerotovpn.com";
+const baseUrl = "https://www.zerotovpn.com";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;

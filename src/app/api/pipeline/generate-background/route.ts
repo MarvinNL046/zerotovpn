@@ -467,7 +467,7 @@ function detectPostType(topic: string): "news" | "comparison" | "deal" | "guide"
 
 // Fetch sitemap and extract English-only internal links grouped by category
 async function fetchSitemapLinks(): Promise<string> {
-  const siteUrl = process.env.SITE_URL || process.env.URL || "https://zerotovpn.com";
+  const siteUrl = process.env.SITE_URL || process.env.URL || "https://www.zerotovpn.com";
   try {
     const response = await fetch(`${siteUrl}/sitemap.xml`, { signal: AbortSignal.timeout(10000) });
     if (!response.ok) return "";
@@ -527,7 +527,7 @@ async function fetchSitemapLinks(): Promise<string> {
 }
 
 async function buildPrompt(topic: string, postType: string, scrapeData: string | null): Promise<string> {
-  const siteUrl = process.env.SITE_URL || process.env.URL || "https://zerotovpn.com";
+  const siteUrl = process.env.SITE_URL || process.env.URL || "https://www.zerotovpn.com";
   const siteName = new URL(siteUrl).hostname.replace("www.", "").split(".")[0];
 
   const typeInstructions: Record<string, string> = {
@@ -1089,7 +1089,7 @@ export async function POST(request: NextRequest) {
     const parsed = parsePost(rawResponse, postType);
 
     // Inject VPN logos and affiliate links into the content
-    const siteUrl = process.env.SITE_URL || process.env.URL || "https://zerotovpn.com";
+    const siteUrl = process.env.SITE_URL || process.env.URL || "https://www.zerotovpn.com";
     parsed.content = injectVpnLogos(parsed.content, siteUrl);
     parsed.content = injectAffiliateLinks(parsed.content);
 

@@ -81,112 +81,112 @@ export default async function IranVpnPage({ params }: Props) {
 
   const content = {
     en: {
-      badge: "Updated November 2026",
+      badge: "Updated March 2026",
       title: "Best VPN for Iran",
-      subtitle: "Bypass Iran's strict censorship and access blocked services safely",
-      legalNotice: "Important Legal Information",
+      subtitle: "Bypass Iran's censorship and access blocked services — even during internet shutdowns",
+      legalNotice: "Critical: Iran's Internet Situation in 2026",
       legalNoticeText:
-        "VPNs are NOT officially banned in Iran, but heavily restricted. The government actively blocks major VPN providers using Deep Packet Inspection (DPI). Iran has one of the strictest internet censorship systems in the world. Use obfuscation/stealth protocols to avoid detection.",
-      legalStatus: "VPN Legal Status in Iran",
+        "In February 2024, Iran's Supreme Council of Cyberspace (SCC) officially banned VPN sales and usage. Since January 8, 2026, Iran has imposed its most severe internet blackout yet — connectivity dropped to 1-3% of normal levels (Cloudflare data). The regime also enacted an 18% internet price increase in February 2026. Freedom House rates Iran's internet freedom at 11/100 (2025), among the worst globally.",
+      legalStatus: "VPN Legal Status in Iran (2026)",
       legalPoints: [
         {
-          icon: "check",
-          title: "Not Officially Banned",
-          desc: "VPNs are not explicitly illegal under Iranian law",
+          icon: "x",
+          title: "Officially Banned (Feb 2024)",
+          desc: "SCC issued a formal VPN ban; selling VPNs is prosecuted",
         },
         {
           icon: "warning",
-          title: "Heavily Restricted",
-          desc: "Government actively blocks VPN providers using DPI technology",
+          title: "DPI + Protocol Whitelisting",
+          desc: "Only DNS, HTTP, and HTTPS are forwarded; all other traffic is silently dropped",
         },
         {
           icon: "x",
-          title: "Most VPNs Blocked",
-          desc: "Popular VPN services are regularly blocked and detected",
+          title: "Total Blackouts Occur",
+          desc: "Jan 2026: connectivity dropped to 1-3% during protests (Cloudflare, NetBlocks)",
         },
         {
           icon: "eye",
-          title: "DPI Monitoring",
-          desc: "Deep Packet Inspection actively monitors and blocks VPN traffic",
+          title: "Tiered Internet Access",
+          desc: "\"White SIM cards\" give government insiders unrestricted access (exposed Nov 2025)",
         },
       ],
       effectiveness: "Effectiveness Ratings",
-      whatWorks: "VPNs That Work in Iran (2026)",
+      whatWorks: "VPNs That Still Connect in Iran (March 2026)",
       whatWorksText:
-        "These VPNs have advanced obfuscation/stealth protocols specifically designed to bypass Iran's Deep Packet Inspection (DPI) system. Install BEFORE arriving in Iran.",
+        "Only VPNs with advanced obfuscation bypass Iran's protocol whitelist. Standard WireGuard and OpenVPN are blocked in seconds. Install BEFORE arriving — VPN websites are blocked inside Iran.",
       vpnEffectiveness: {
-        expressvpn: "95% - Lightway protocol with obfuscation",
-        surfshark: "90% - Camouflage Mode + NoBorders feature",
-        protonvpn: "85% - Swiss privacy + Stealth protocol",
-        vyprvpn: "82% - Chameleon protocol for censorship",
+        expressvpn: "Lightway protocol with automatic obfuscation",
+        surfshark: "Camouflage Mode + NoBorders for restricted networks",
+        protonvpn: "Stealth protocol — performed well in independent tests",
+        vyprvpn: "Chameleon protocol wraps OpenVPN in obfuscation layer",
       },
-      notWorking: "VPNs That Don't Work in Iran",
+      notWorking: "Protocols That Are Blocked",
       notWorkingText:
-        "These VPNs are regularly blocked by Iran's censorship system and cannot bypass DPI filters:",
+        "Iran's DPI uses a strict protocol whitelist. These are detected and blocked within seconds:",
       notWorkingVpns: [
-        "NordVPN",
+        "Standard WireGuard (no obfuscation)",
+        "Standard OpenVPN (no obfuscation)",
         "IPVanish",
-        "Private Internet Access (PIA)",
         "CyberGhost",
-        "AtlasVPN",
         "Most free VPNs",
+        "Any VPN without stealth/obfuscation mode",
       ],
-      keyFeatures: "Essential Features for Iran",
+      keyFeatures: "What Actually Matters for Iran",
       features: [
         {
-          title: "Advanced Obfuscation",
-          desc: "Essential for bypassing DPI - stealth/obfuscation protocols required",
+          title: "Obfuscation is Non-Negotiable",
+          desc: "Iran whitelists only HTTPS — your VPN must disguise traffic as regular web browsing",
         },
         {
-          title: "Nearby Servers",
-          desc: "Servers in Turkey, Armenia, UAE for better speeds",
+          title: "VLESS + TLS + CDN",
+          desc: "Currently the most reliable protocol combination — under 5% detection rate per research",
         },
         {
-          title: "Regular Updates",
-          desc: "Constant protocol updates to stay ahead of blocking",
+          title: "Multiple Backup Options",
+          desc: "Servers get blocked constantly — have 2-3 VPN apps installed with manual configs",
         },
         {
-          title: "No-Logs Policy",
-          desc: "Jurisdiction outside Iran - Swiss, Panama, BVI providers",
+          title: "No-Logs Jurisdiction",
+          desc: "Choose providers based in Switzerland, Panama, or BVI — outside Iran's legal reach",
         },
       ],
-      blockedServices: "Commonly Blocked Services in Iran",
+      blockedServices: "Services Blocked in Iran",
       blocked: [
-        "Telegram (most popular messaging app)",
-        "WhatsApp",
-        "Instagram",
-        "YouTube",
+        "Telegram — most used messaging app, blocked since 2018",
+        "WhatsApp — blocked during 2022 Mahsa Amini protests, restrictions remain",
+        "Instagram — blocked since 2022",
+        "YouTube — blocked since 2009",
         "TikTok",
-        "Facebook / Twitter / X",
-        "Independent news websites",
-        "Many international streaming services",
+        "X (Twitter), Facebook",
+        "Google Play Store — restricted",
+        "Independent news sites (BBC Persian, Iran International, IranWire)",
       ],
-      tips: "Tips for Using VPN in Iran",
+      tips: "Practical Steps Before Traveling to Iran",
       tipsList: [
-        "Install VPN BEFORE arriving in Iran - VPN websites are often blocked",
-        "Download the app AND backup connection files (OpenVPN configs)",
-        "Use obfuscation/stealth mode ALWAYS - essential for DPI bypass",
-        "Keep multiple VPN options ready - servers get blocked regularly",
-        "Avoid free VPNs - security risk and easily detected by DPI",
-        "Use mobile data as backup - sometimes less restricted than home internet",
+        "Install VPN apps BEFORE entering Iran — all VPN websites and app stores are blocked inside the country",
+        "Download manual connection configs (OpenVPN .ovpn files) as backup — apps may stop working but configs often still connect",
+        "Enable obfuscation/stealth mode immediately — Iran's DPI detects standard VPN traffic in seconds",
+        "Have at least 2 different VPN providers installed — servers rotate through blocks constantly",
+        "Consider VLESS-based tools as a backup (V2Ray, Xray) — these currently have the lowest detection rates",
+        "Mobile data may work when home WiFi doesn't — ISP-level blocks vary",
       ],
       faqTitle: "Iran VPN FAQ",
       faqs: [
         {
-          q: "Is VPN use legal in Iran?",
-          a: "VPNs are technically not banned under Iranian law, but they are heavily restricted. The government actively blocks VPN providers using Deep Packet Inspection (DPI) technology. While VPN use itself is not illegal, the government makes it very difficult to use them.",
+          q: "Are VPNs legal in Iran?",
+          a: "No. As of February 2024, Iran's Supreme Council of Cyberspace officially banned VPN usage and sales. The government actively prosecutes VPN sellers. However, enforcement against individual users focuses on technical blocking rather than legal prosecution — most users experience connection drops, not arrests.",
         },
         {
-          q: "Can the government see I'm using a VPN?",
-          a: "Yes, without obfuscation/stealth protocols, Iran's DPI system can detect VPN usage. This is why obfuscation is essential - it disguises VPN traffic as regular HTTPS traffic. Always use obfuscation/stealth mode when connecting.",
+          q: "Can the government detect VPN usage?",
+          a: "Yes. Iran operates one of the world's most advanced DPI systems. It uses a protocol whitelist approach: only DNS, HTTP, and HTTPS traffic is forwarded. Standard VPN protocols (WireGuard, OpenVPN) are detected and blocked within seconds. Only obfuscated protocols that mimic regular HTTPS traffic can bypass this.",
         },
         {
-          q: "Which VPN protocol works best in Iran?",
-          a: "Obfuscated protocols work best: ExpressVPN's Lightway, Surfshark's Camouflage Mode, ProtonVPN's Stealth protocol, and VyprVPN's Chameleon. Regular OpenVPN and WireGuard are easily detected without obfuscation.",
+          q: "Which protocol works best in Iran right now?",
+          a: "As of early 2026, VLESS with TLS + WebSocket + CDN routing has the lowest detection rate (under 5% per published research). Among commercial VPNs, ProtonVPN's Stealth protocol and ExpressVPN's Lightway with obfuscation perform best. Standard WireGuard and OpenVPN do not work without obfuscation.",
         },
         {
-          q: "What happens if I'm caught using a VPN?",
-          a: "While VPNs aren't officially illegal, penalties are inconsistent. Fines are possible but enforcement varies. The main issue is technical blocking rather than legal prosecution. Most users experience connection blocking rather than legal consequences.",
+          q: "What happened in January 2026?",
+          a: "Starting January 8, 2026, during nationwide protests triggered by economic crisis, Iran imposed its most severe internet blackout in history. Connectivity dropped to 1-3% of normal levels (Cloudflare data). The blackout extended to phone networks and Starlink. Iran's Communications Minister acknowledged it cost the economy $35.7 million per day.",
         },
       ],
       getVpn: "Get VPN",
@@ -194,8 +194,8 @@ export default async function IranVpnPage({ params }: Props) {
       effectiveness90: "90% Effective",
       effectiveness85: "85% Effective",
       effectiveness82: "82% Effective",
-      lastUpdated: "Last updated: November 2026",
-      sources: "Sources",
+      lastUpdated: "Last verified: March 2026",
+      sources: "Sources & References",
     },
     nl: {
       badge: "Bijgewerkt november 2026",
@@ -1429,12 +1429,52 @@ export default async function IranVpnPage({ params }: Props) {
             <ul className="text-sm text-muted-foreground space-y-1">
               <li>
                 <a
-                  href="https://freedomhouse.org/country/iran/freedom-net/2024"
+                  href="https://freedomhouse.org/country/iran/freedom-net/2025"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-primary"
                 >
-                  Freedom House - Iran Internet Freedom Report 2024
+                  Freedom House — Iran: Freedom on the Net 2025 (score: 11/100)
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://en.wikipedia.org/wiki/2026_Internet_blackout_in_Iran"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary"
+                >
+                  Wikipedia — 2026 Internet blackout in Iran
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://carnegieendowment.org/china/research/2026/03/iran-wields-wartime-internet-access-as-a-political-tool"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary"
+                >
+                  Carnegie Endowment — Iran Wields Internet Access as a Political Tool (March 2026)
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.amnesty.org/en/latest/news/2026/01/internet-shutdown-in-iran-hides-violations-in-escalating-protests/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary"
+                >
+                  Amnesty International — Iran Internet Shutdown Hides Violations (Jan 2026)
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://arxiv.org/html/2507.14183v1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary"
+                >
+                  arXiv — Iran&apos;s Stealth Internet Blackout: A New Model of Censorship
                 </a>
               </li>
               <li>
@@ -1444,17 +1484,7 @@ export default async function IranVpnPage({ params }: Props) {
                   rel="noopener noreferrer"
                   className="hover:text-primary"
                 >
-                  NetBlocks - Iran Network Monitoring
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.accessnow.org/press-release/iran-internet-shutdowns-2024/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-primary"
-                >
-                  Access Now - Iran Digital Rights Reports
+                  NetBlocks — Iran Network Disruption Tracker
                 </a>
               </li>
             </ul>

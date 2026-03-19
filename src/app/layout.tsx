@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.zerotovpn.com"),
   title: "ZeroToVPN",
   description: "Best VPN Reviews & Comparisons",
   manifest: "/manifest.json",
@@ -52,7 +53,7 @@ export default async function RootLayout({
         </Script>
         <script
           async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9667530069853985"
           crossOrigin="anonymous"
         />
       </head>

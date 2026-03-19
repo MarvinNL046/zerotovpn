@@ -120,6 +120,12 @@
   body {
     @apply bg-background text-foreground;
   }
+  h1, h2, h3 {
+    letter-spacing: -0.025em;
+  }
+  h1 { line-height: 1.1; }
+  h2 { line-height: 1.15; }
+  h3 { line-height: 1.2; }
   button,
   [role="button"],
   a,

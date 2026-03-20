@@ -7,6 +7,7 @@ import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { OrganizationJsonLd, WebsiteJsonLd } from "@/components/seo/json-ld";
 import { LazyConversionWidgets } from "@/components/lazy-conversion-widgets";
+import { CookieConsent } from "@/components/cookie-consent";
 import type { Metadata } from "next";
 
 type Props = {
@@ -144,6 +145,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             <Footer />
             {/* Conversion optimization components */}
             <LazyConversionWidgets />
+            <CookieConsent />
             {/* JSON-LD Structured Data - placed in body to avoid hydration issues */}
             <OrganizationJsonLd />
             <WebsiteJsonLd />

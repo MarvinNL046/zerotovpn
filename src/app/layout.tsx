@@ -39,6 +39,28 @@ export default async function RootLayout({
     <html lang={locale} suppressHydrationWarning>
       <head>
         <meta name="theme-color" content="#3b82f6" />
+        <Script id="google-consent-defaults" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('consent', 'default', {
+              analytics_storage: 'denied',
+              ad_storage: 'denied',
+              ad_personalization: 'denied',
+              ad_user_data: 'denied',
+              wait_for_update: 500
+            });
+            var cc = localStorage.getItem('cookie-consent');
+            if (cc === 'accepted') {
+              gtag('consent', 'update', {
+                analytics_storage: 'granted',
+                ad_storage: 'granted',
+                ad_personalization: 'granted',
+                ad_user_data: 'granted'
+              });
+            }
+          `}
+        </Script>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-66TC4XX08D"
           strategy="afterInteractive"

@@ -10,7 +10,7 @@ import { VpnComparisonTool } from "@/components/conversion/vpn-comparison-tool";
 import { PopularComparisons } from "@/components/compare/popular-comparisons";
 import { routing } from "@/i18n/routing";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
-import { FAQSchema } from "@/components/seo/faq-schema";
+import { FAQAccordion } from "@/components/seo/faq-schema";
 import type { VpnData } from "@/lib/db/vpn-service";
 import {
   Check,
@@ -739,7 +739,7 @@ export default async function ComparePage({ params }: Props) {
       <section className="py-12 lg:py-16 bg-muted/30">
         <div className="container">
           <div className="max-w-3xl mx-auto">
-            <FAQSchema
+            <FAQAccordion
               faqs={t.raw("faq") as Array<{ question: string; answer: string }>}
               title={t("faqSection.title")}
             />

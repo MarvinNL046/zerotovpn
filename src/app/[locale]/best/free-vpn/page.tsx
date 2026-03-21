@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { RelatedPages } from "@/components/seo/related-pages";
-import { FAQSchema } from "@/components/seo/faq-schema";
+import { FAQAccordion } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { Link } from "@/i18n/navigation";
 import {
@@ -703,7 +703,7 @@ export default async function FreeVpnPage({ params }: Props) {
         <section className="py-12">
           <div className="container">
             <div className="max-w-3xl mx-auto">
-              <FAQSchema
+              <FAQAccordion
                 title="Free VPN FAQs"
                 faqs={[
                   {

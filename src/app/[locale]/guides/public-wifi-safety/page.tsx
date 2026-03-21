@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { RelatedContent } from "@/components/seo/related-content";
-import { FAQSchema } from "@/components/seo/faq-schema";
+import { FAQAccordion } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { HowToSchema } from "@/components/seo/howto-schema";
 import {
@@ -513,7 +513,7 @@ export default async function PublicWifiSafetyPage({ params }: Props) {
             </section>
 
             {/* FAQ Section */}
-            <FAQSchema
+            <FAQAccordion
               faqs={[
                 {
                   question: "Is public WiFi really dangerous?",

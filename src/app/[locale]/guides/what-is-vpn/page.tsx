@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { RelatedContent } from "@/components/seo/related-content";
-import { FAQSchema } from "@/components/seo/faq-schema";
+import { FAQAccordion } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { TableOfContents } from "@/components/seo/table-of-contents";
 import { routing } from "@/i18n/routing";
@@ -373,7 +373,7 @@ export default async function WhatIsVpnPage({ params }: Props) {
       <section className="py-12 lg:py-16 bg-muted/30">
         <div className="container">
           <div className="max-w-3xl mx-auto">
-            <FAQSchema
+            <FAQAccordion
               faqs={[
                 {
                   question: "What does VPN stand for?",

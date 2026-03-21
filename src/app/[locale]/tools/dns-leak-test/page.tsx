@@ -3,7 +3,7 @@ import { DnsLeakWidget } from "@/components/tools/dns-leak-widget";
 import { VpnCard } from "@/components/vpn/vpn-card";
 import { vpnProviders } from "@/lib/vpn-data";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
-import { FAQSchema } from "@/components/seo/faq-schema";
+import { FAQAccordion } from "@/components/seo/faq-schema";
 import { ShieldAlert, Shield, Lock, AlertTriangle } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -108,7 +108,7 @@ export default async function DnsLeakTestPage({ params }: Props) {
 
       {/* FAQ Section */}
       <div className="mb-12">
-        <FAQSchema
+        <FAQAccordion
           faqs={faqData}
           title="Frequently Asked Questions"
         />

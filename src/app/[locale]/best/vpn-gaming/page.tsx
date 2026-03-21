@@ -603,7 +603,7 @@ export default async function GamingVpnPage({ params }: Props) {
       lastUpdated: "Zuletzt aktualisiert: March 2026",
     },
     es: {
-      badge: "Actualizado noviembre 2026",
+      badge: "Actualizado marzo 2026",
       title: "Mejor VPN para Gaming en 2026",
       subtitle:
         "Probamos más de 35 VPNs específicamente para rendimiento en gaming. Estas son las opciones más rápidas con el ping más bajo y la mejor protección DDoS.",
@@ -748,10 +748,10 @@ export default async function GamingVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Ver Todas Las Reseñas De VPN",
-      lastUpdated: "Última actualización: noviembre 2026",
+      lastUpdated: "Última actualización: marzo 2026",
     },
     fr: {
-      badge: "Mis à jour novembre 2026",
+      badge: "Mis à jour mars 2026",
       title: "Meilleur VPN pour Gaming en 2026",
       subtitle:
         "Nous avons testé plus de 35 VPN spécifiquement pour les performances gaming. Ce sont les options les plus rapides avec le ping le plus bas et la meilleure protection DDoS.",
@@ -904,10 +904,10 @@ export default async function GamingVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Voir Toutes Les Critiques VPN",
-      lastUpdated: "Dernière mise à jour: novembre 2026",
+      lastUpdated: "Dernière mise à jour: mars 2026",
     },
     zh: {
-      badge: "更新于2026年11月",
+      badge: "更新于2026年3月",
       title: "2026年最佳游戏VPN",
       subtitle:
         "我们专门测试了35多个VPN的游戏性能。这些是延迟最低、DDoS保护最佳的最快选项。",
@@ -1044,10 +1044,10 @@ export default async function GamingVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "查看所有VPN评论",
-      lastUpdated: "最后更新：2026年11月",
+      lastUpdated: "最后更新：2026年3月",
     },
     ja: {
-      badge: "2026年11月更新",
+      badge: "2026年3月更新",
       title: "2026年最高のゲーミングVPN",
       subtitle:
         "ゲームパフォーマンスを専門に35以上のVPNをテストしました。これらは最低のpingと最高のDDoS保護を備えた最速のオプションです。",
@@ -1184,10 +1184,10 @@ export default async function GamingVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "すべてのVPNレビューを表示",
-      lastUpdated: "最終更新：2026年11月",
+      lastUpdated: "最終更新：2026年3月",
     },
     ko: {
-      badge: "2026년 11월 업데이트",
+      badge: "2026년 3월 업데이트",
       title: "2026년 최고의 게임용 VPN",
       subtitle:
         "게임 성능을 위해 35개 이상의 VPN을 테스트했습니다. 가장 낮은 핑과 최고의 DDoS 보호 기능을 갖춘 가장 빠른 옵션입니다.",
@@ -1324,10 +1324,10 @@ export default async function GamingVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "모든 VPN 리뷰 보기",
-      lastUpdated: "마지막 업데이트: 2026년 11월",
+      lastUpdated: "마지막 업데이트: 2026년 3월",
     },
     th: {
-      badge: "อัปเดตพฤศจิกายน 2026",
+      badge: "อัปเดตมีนาคม 2026",
       title: "VPN ที่ดีที่สุดสำหรับเกมในปี 2026",
       subtitle:
         "เราทดสอบ VPN มากกว่า 35 รายการโดยเฉพาะสำหรับประสิทธิภาพการเล่นเกม นี่คือตัวเลือกที่เร็วที่สุดพร้อม ping ต่ำที่สุดและการป้องกัน DDoS ที่ดีที่สุด",
@@ -1476,7 +1476,7 @@ export default async function GamingVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "ดูรีวิว VPN ทั้งหมด",
-      lastUpdated: "อัปเดตล่าสุด: พฤศจิกายน 2026",
+      lastUpdated: "อัปเดตล่าสุด: มีนาคม 2026",
     },
   };
 

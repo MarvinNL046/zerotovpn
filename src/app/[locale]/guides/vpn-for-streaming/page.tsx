@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { RelatedContent } from "@/components/seo/related-content";
-import { FAQSchema } from "@/components/seo/faq-schema";
+import { FAQAccordion } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { HowToSchema } from "@/components/seo/howto-schema";
 import {
@@ -463,7 +463,7 @@ export default async function VpnForStreamingPage({ params }: Props) {
       <section className="py-12 lg:py-16">
         <div className="container">
           <div className="max-w-3xl mx-auto">
-            <FAQSchema
+            <FAQAccordion
               faqs={[
                 {
                   question: "Can I watch Netflix with a VPN?",

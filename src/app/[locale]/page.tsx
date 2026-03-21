@@ -10,7 +10,7 @@ import { Shield, Zap, Globe, CheckCircle, ArrowRight, Server, Users, Clock, Flas
 import {
   ComparisonTableSchema,
 } from "@/components/structured-data";
-import { FAQSchema } from "@/components/seo/faq-schema";
+import { FAQAccordion } from "@/components/seo/faq-schema";
 import { routing } from "@/i18n/routing";
 import { HighlightedText } from "@/components/ui/highlighted-text";
 import { MetricBadge } from "@/components/ui/metric-badge";
@@ -382,7 +382,7 @@ export default async function HomePage({ params }: Props) {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-muted/30 to-transparent" />
           <div className="container relative">
             <div className="max-w-3xl mx-auto">
-              <FAQSchema
+              <FAQAccordion
                 faqs={faqData}
                 title={t("faqSection.title")}
               />

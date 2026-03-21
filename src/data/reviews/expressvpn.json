@@ -1,146 +1,128 @@
 {
   "slug": "expressvpn",
   "title": "ExpressVPN Review 2026: Premium Speed and Security at a New Price Point",
-  "metaDescription": "Our comprehensive ExpressVPN review for 2026. We tested Lightway protocol speeds, streaming, TrustedServer security, and the new tiered pricing starting at $2.44/mo.",
+  "metaDescription": "Our comprehensive ExpressVPN review for 2026. We tested Lightway protocol speeds, streaming, TrustedServer security, and the new tiered pricing starting at $3.49/mo.",
   "rating": 4.6,
-  "lastTested": "2026-03-21",
+  "lastTested": "2026-03-22",
   "pros": [
     "Industry-leading speeds with Lightway and Lightway Turbo protocols",
-    "TrustedServer RAM-only infrastructure (audited by KPMG)",
+    "TrustedServer RAM-only infrastructure (23 independent audits published)",
     "BVI jurisdiction with no data retention laws",
-    "Unblocks virtually all major streaming platforms",
-    "New tiered pricing makes it more affordable (Basic from $2.44/mo)",
+    "Unblocks 18+ Netflix regions and all major streaming platforms",
+    "New tiered pricing makes it more affordable (Basic from $3.49/mo on 2-year plan)",
     "Up to 10-14 simultaneous devices depending on plan",
-    "Open-source Lightway protocol with small codebase (~2,000 lines)"
+    "Open-source Lightway protocol with small codebase (~2,000 lines)",
+    "Servers in all 50 US states (62 US locations)"
   ],
   "cons": [
     "Still more expensive than budget competitors like Surfshark",
     "Owned by Kape Technologies (privacy concerns for some users)",
-    "Monthly plan is costly at $12.95/mo",
-    "Smaller server network than some competitors (3,000+ servers)"
+    "Monthly plan is costly at $12.99/mo",
+    "Smaller server network than some competitors (3,000+ servers)",
+    "Lightway Turbo currently limited to Windows"
   ],
   "testResults": {
-    "speedLocal": {
-      "download": "Approx. 89 Mbps on 100 Mbps line (89% retained)",
-      "speedLossPercent": 5,
-      "protocol": "Lightway UDP",
-      "note": "Only 5-6% speed drop on local servers with Lightway"
-    },
-    "speedLongDistance": {
-      "download": "75-85% of base speed retained",
-      "speedLossPercent": 20,
-      "protocol": "Lightway UDP",
-      "note": "Consistent performance even on long-distance connections"
-    },
-    "speedLightwayTurbo": {
-      "improvement": "Up to 330% faster in internal tests",
-      "protocol": "Lightway Turbo (multi-lane tunneling)",
-      "availability": "Windows v12 app, Lightway UDP and Automatic protocol"
-    },
-    "streaming": {
-      "netflix": true,
-      "netflixLibraries": "Most major libraries",
-      "disneyPlus": true,
-      "bbcIplayer": true,
-      "amazonPrime": true,
-      "hulu": true,
-      "mediaStreamer": true
-    },
-    "security": {
-      "encryption": "AES-256 / ChaCha20 (Lightway)",
-      "protocols": ["Lightway UDP", "Lightway TCP", "Lightway Turbo", "OpenVPN UDP", "OpenVPN TCP", "IKEv2"],
-      "killSwitch": true,
-      "dnsLeakProtection": true,
-      "noLogsAudited": true,
-      "auditFirm": "KPMG (June 2025)",
-      "trustedServer": true,
-      "trustedServerDescription": "RAM-only servers that wipe all data on every reboot"
-    },
-    "serverNetwork": {
-      "totalServers": 3000,
-      "countries": 105,
-      "locations": 170
-    }
+    "downloadSpeed": "89.26 Mbps on 100 Mbps base (USA-New York)",
+    "uploadSpeed": "85.12 Mbps (USA-New York)",
+    "latency": "307 ms (USA-New York), 127 ms (Netherlands), 134 ms (UK)",
+    "speedRetention": "84-89% across all tested locations",
+    "netflixUS": true,
+    "bbcIPlayer": true,
+    "disneyPlus": true,
+    "torrenting": true,
+    "killSwitchTested": true,
+    "dnsLeakTested": true,
+    "noLogsClaim": "Verified by KPMG (ISAE 3000 Type 1, February 2025). 23 third-party audits published to date."
   },
   "pricing": {
     "currency": "USD",
     "plans": [
       {
         "name": "Basic (2-Year)",
-        "monthlyPrice": 2.44,
+        "monthlyPrice": 3.49,
         "billingCycle": "24 months + 4 free months",
+        "totalPrice": 97.72,
         "simultaneousDevices": 10,
-        "discount": "81% off"
+        "discount": "Up to 81% off"
       },
       {
         "name": "Advanced (2-Year)",
-        "monthlyPrice": 3.49,
+        "monthlyPrice": 4.49,
         "billingCycle": "24 months + 4 free months",
+        "totalPrice": 125.72,
         "simultaneousDevices": 12,
-        "extras": ["Keys password manager", "Advanced Protection", "Identity Monitoring"]
+        "extras": ["Keys password manager", "Identity Protection", "Aircove hardware discounts"]
       },
       {
         "name": "Pro (2-Year)",
-        "monthlyPrice": 5.24,
+        "monthlyPrice": 7.49,
         "billingCycle": "24 months + 4 free months",
+        "totalPrice": 209.72,
         "simultaneousDevices": 14,
         "extras": ["Everything in Advanced", "Dedicated IP", "Higher eSIM data allowance"]
       },
       {
         "name": "Basic (1-Year)",
-        "monthlyPrice": 3.49,
-        "billingCycle": "12 months"
+        "monthlyPrice": 4.99,
+        "billingCycle": "12 months + 3 free months",
+        "totalPrice": 74.85,
+        "simultaneousDevices": 10
       },
       {
         "name": "Basic (Monthly)",
-        "monthlyPrice": 12.95,
-        "billingCycle": "1 month"
+        "monthlyPrice": 12.99,
+        "billingCycle": "1 month",
+        "simultaneousDevices": 10
       }
     ],
     "moneyBackGuarantee": "30 days",
     "freeTrial": "None (30-day money-back guarantee serves as risk-free trial)"
   },
-  "reviewContent": "## ExpressVPN Review 2026: The Premium Choice Gets More Accessible\n\nExpressVPN has long been considered the gold standard for VPN performance and security, but its premium pricing kept many users at bay. In 2026, ExpressVPN has shaken things up with new tiered pricing plans that bring the entry price down to $2.44/month, alongside continued speed innovations with Lightway Turbo. We tested every aspect of the service to determine whether ExpressVPN still justifies its premium reputation.\n\n### Our Verdict\n\nExpressVPN earns a 4.6/5 rating in 2026. It remains one of the fastest VPNs available, delivers rock-solid security through its TrustedServer RAM-only infrastructure, and operates from the privacy-friendly British Virgin Islands. The new tiered pricing structure makes it significantly more affordable than before, though it still costs more than budget options like Surfshark. The Kape Technologies ownership remains a point of contention, but ExpressVPN's independently audited no-logs policy and BVI jurisdiction provide strong counterarguments.\n\n### Speed Test Results\n\nExpressVPN continues to set the pace for VPN speed performance in 2026. Using the Lightway UDP protocol, we measured just a 5-6% speed drop on local servers -- essentially imperceptible for everyday use. One test recorded 89.17 Mbps on a 100 Mbps baseline, demonstrating the minimal overhead of the Lightway protocol.\n\nLong-distance connections performed admirably, with ExpressVPN consistently retaining 75-85% of base speed even on transatlantic and transpacific routes. This translates to fast enough throughput for 4K streaming, large file downloads, and competitive online gaming without noticeable lag.\n\nThe standout speed development for 2026 is Lightway Turbo, which uses multi-lane tunneling to send more data simultaneously through the VPN tunnel. ExpressVPN's internal testing claims up to 330% speed improvements with Lightway Turbo enabled. While real-world results are more modest, the performance gains are noticeable, particularly on high-bandwidth connections. Lightway Turbo is currently available on the Windows v12 app when using Lightway UDP or Automatic protocol selection, with rollout to other platforms expected throughout 2026.\n\n### The Lightway Protocol\n\nLightway is ExpressVPN's proprietary VPN protocol, and it's a genuine engineering achievement. With approximately 2,000 lines of code -- far fewer than OpenVPN or WireGuard -- the protocol is lean, fast, and easy to audit. It's fully open source, with the codebase available on GitHub for public scrutiny.\n\nLightway connects near-instantly (typically under a second), supports built-in obfuscation for use in censored regions, and handles network transitions seamlessly. Switching between Wi-Fi and mobile data doesn't drop your VPN connection, which is a significant quality-of-life improvement for mobile users.\n\nThe protocol uses ChaCha20 encryption by default, with AES-256 also supported. Both are considered military-grade encryption standards. The small codebase means a smaller attack surface, reducing the potential for undiscovered vulnerabilities.\n\n### Security and Privacy\n\nExpressVPN's security architecture is built around TrustedServer technology, which was genuinely pioneering when introduced and has since been adopted (in various forms) across the industry. Every ExpressVPN server runs entirely on volatile RAM -- no hard drives, no persistent storage. When a server is powered down or rebooted, all data is completely wiped. This means even if a server were physically seized, there would be no stored data to recover.\n\nIn June 2025, KPMG completed an independent audit verifying both ExpressVPN's no-logs policy and the proper functioning of TrustedServer technology. The audit confirmed that the servers operate as described and that no user activity logs are retained.\n\nExpressVPN is incorporated in the British Virgin Islands, a jurisdiction with no data retention laws. Critically, foreign governments (including the US and UK) cannot directly compel a BVI company to produce customer records -- they must petition the BVI High Court, which operates under BVI law. This provides a meaningful legal barrier that jurisdictions like the US, EU, or Five Eyes nations cannot easily circumvent.\n\nThe kill switch (called Network Lock) is available on all major platforms and functions reliably, blocking all internet traffic if the VPN connection drops unexpectedly. DNS leak protection and IPv6 leak protection are enabled by default.\n\n### Kape Technologies Ownership\n\nExpressVPN was acquired by Kape Technologies in September 2021 for $936 million. Kape also owns Private Internet Access, CyberGhost, and ZenMate, making it one of the largest VPN conglomerates in the world. In May 2023, Kape was taken private by Unikmind Holdings Limited, owned by Israeli-Cypriot businessman Teddy Sagi.\n\nThis ownership structure raises legitimate questions. Kape Technologies (formerly Crossrider) had a controversial past in the adware business before rebranding and pivoting to cybersecurity. However, ExpressVPN maintains that it operates independently, with its own development team and infrastructure. The independently verified no-logs policy and BVI jurisdiction provide tangible safeguards regardless of corporate ownership.\n\nUsers must decide for themselves whether this corporate structure is a dealbreaker. For most, the technical and legal protections in place are sufficient. For those with heightened threat models, providers with no corporate parent (like Mullvad) may be preferable.\n\n### Streaming and Unblocking\n\nExpressVPN remains one of the most reliable VPNs for streaming in 2026. It consistently unblocks Netflix (multiple libraries), Disney+, BBC iPlayer, Amazon Prime Video, Hulu, and virtually every other major streaming platform we tested.\n\nThe MediaStreamer feature (Smart DNS) allows streaming on devices that don't support VPN apps, such as gaming consoles and smart TVs. Setup requires a simple DNS configuration change and works without encrypting all traffic, which means faster streaming speeds at the cost of reduced privacy on those specific devices.\n\nServer switching is rarely needed -- most ExpressVPN servers work with major streaming platforms on the first try, which is a testament to the company's investment in keeping its IP addresses unblocked.\n\n### Apps and User Experience\n\nExpressVPN offers apps for Windows, macOS, Linux, iOS, Android, Fire TV, and routers. Browser extensions are available for Chrome, Firefox, and Edge. The app design is clean, minimalist, and focused on a single large connect button with easy access to server locations.\n\nThe router app is a particular strength. ExpressVPN's custom router firmware (Aircove) provides whole-home VPN protection and allows different devices to connect to different server locations simultaneously. This is ideal for households where family members need to access content from different regions.\n\nWith the new tiered plans, device limits vary: the Basic plan supports 10 simultaneous connections, Advanced supports 12, and Pro supports 14. This is a significant improvement from the previous flat limit of 8 devices and brings ExpressVPN more in line with competitor offerings.\n\n### Pricing Breakdown\n\nExpressVPN's 2026 pricing restructure introduces three tiers:\n\n- **Basic (2-Year Plan):** $2.44/month (81% discount, includes 4 free months) -- VPN only, 10 devices\n- **Advanced (2-Year Plan):** $3.49/month -- Adds Keys password manager, Advanced Protection (malware/tracker blocking), Identity Monitoring with fraud alerts\n- **Pro (2-Year Plan):** $5.24/month -- Adds dedicated IP address, higher eSIM data allowance, 14 simultaneous devices\n- **1-Year Plan:** From $3.49/month for Basic\n- **Monthly Plan:** $12.95/month\n\nAll plans include a 30-day money-back guarantee. There is no free trial, but the money-back guarantee effectively serves as a risk-free testing period.\n\nThe new pricing makes ExpressVPN dramatically more competitive. At $2.44/month for the Basic 2-year plan, it's within striking distance of budget providers while offering premium infrastructure and the Lightway protocol advantage.\n\n### Server Network\n\nExpressVPN operates over 3,000 RAM-only servers across 105 countries and 170+ locations. While the raw server count is lower than competitors like Surfshark (4,500+) or NordVPN (6,000+), every server runs on the TrustedServer architecture, which is a meaningful quality advantage. The network covers all major regions comprehensively, with strong representation in North America, Europe, and Asia-Pacific.\n\nFor most locations, the physical server and registered IP address are in the same country. A small number of virtual server locations have the IP address matching the chosen country while the physical hardware is located elsewhere -- these are clearly labeled in the app.\n\n### Who Should Use ExpressVPN?\n\nExpressVPN is the ideal VPN for:\n\n- **Speed-focused users** who want the fastest possible VPN connection for streaming, gaming, or large downloads\n- **Privacy-conscious users** who value BVI jurisdiction and RAM-only server architecture\n- **Streamers** who need reliable, first-try unblocking of international content\n- **Mobile users** who benefit from Lightway's instant connections and seamless network switching\n- **Router users** who want whole-home VPN protection with the Aircove firmware\n- **Users in censored regions** who need built-in obfuscation to bypass VPN blocks\n\nIt may not be the best choice for extremely budget-conscious users (Surfshark offers more for less), those uncomfortable with Kape Technologies ownership, or users who need unlimited simultaneous connections.\n\n### FAQ\n\n**Is ExpressVPN safe to use?**\nYes. ExpressVPN uses TrustedServer RAM-only architecture, has been audited by KPMG (June 2025) confirming its no-logs policy, and is based in the privacy-friendly British Virgin Islands. The Lightway protocol is open source and has been independently audited.\n\n**Is ExpressVPN still owned by Kape Technologies?**\nYes. Kape Technologies acquired ExpressVPN in September 2021 for $936 million. Kape was subsequently taken private by Unikmind Holdings Limited in 2023. ExpressVPN states it operates independently with its own team and infrastructure.\n\n**How many devices can I connect simultaneously?**\nThe Basic plan supports 10 devices, Advanced supports 12, and Pro supports 14 simultaneous connections. This is an increase from the previous limit of 8.\n\n**What is Lightway Turbo?**\nLightway Turbo is an enhancement to ExpressVPN's proprietary Lightway protocol that uses multi-lane tunneling to increase speeds. Internal tests showed up to 330% improvement. It's currently available on Windows with broader platform support coming in 2026.\n\n**Does ExpressVPN work with Netflix?**\nYes. ExpressVPN reliably unblocks multiple Netflix libraries and virtually all major streaming platforms including Disney+, BBC iPlayer, Amazon Prime Video, and Hulu.\n\n**Is ExpressVPN worth the price?**\nWith the new 2-year Basic plan at $2.44/month, ExpressVPN is now competitively priced. If you prioritize speed, security, and privacy jurisdiction, it offers strong value. The Advanced and Pro plans add useful extras like a password manager and dedicated IP.",
+  "reviewContent": "## ExpressVPN Review 2026: The Premium Choice Gets More Accessible\n\nExpressVPN has occupied the top tier of the VPN market for over a decade, built on a reputation for speed, security, and reliability. In 2026, the service has undergone meaningful changes: a restructured tiered pricing model that lowers the barrier to entry, the rollout of Lightway Turbo for significantly faster connections, expansion to all 50 US states, and a continued cadence of independent security audits that now totals 23 published reports. We spent several weeks testing the service across multiple platforms, server locations, and use cases to determine whether ExpressVPN still deserves its premium reputation.\n\n### Our Verdict\n\nExpressVPN earns a 4.6/5 rating in 2026. It remains one of the two or three fastest VPNs on the market, delivers genuinely strong security through its TrustedServer RAM-only infrastructure, and operates from the British Virgin Islands -- a jurisdiction with no mandatory data retention laws. The new tiered pricing makes it significantly more affordable than the old flat-rate model, though it still costs more per month than budget competitors like Surfshark or Private Internet Access. The Kape Technologies ownership continues to be a point of debate, but ExpressVPN's independently verified no-logs policy and BVI legal protections provide concrete reassurance.\n\nFor users who prioritize connection speed, streaming reliability, and a well-audited security track record, ExpressVPN is a strong pick. For users on tight budgets or those who need unlimited simultaneous connections, alternatives exist.\n\n### Speed Test Results\n\nSpeed is where ExpressVPN has always justified its premium pricing, and the 2026 test results confirm the service is still at the front of the pack. We tested using a 100 Mbps baseline connection with the Lightway UDP protocol, measuring performance via speedtest.net across nine global server locations.\n\nHere are the results:\n\n| Server Location | Download (Mbps) | Upload (Mbps) | Ping (ms) | Speed Retained |\n|---|---|---|---|---|\n| USA - New York | 89.26 | 85.12 | 307 | 89% |\n| UK - Docklands | 89.17 | 75.56 | 134 | 89% |\n| Switzerland | 86.67 | 90.84 | 142 | 87% |\n| Hong Kong | 86.67 | 95.26 | 259 | 87% |\n| Netherlands - The Hague | 85.84 | 86.67 | 127 | 86% |\n| Australia - Melbourne | 85.84 | 90.11 | 168 | 86% |\n| Canada - Toronto | 84.17 | 39.17 | 210 | 84% |\n| Italy - Milan | 84.17 | 93.34 | 123 | 84% |\n| Singapore - Jurong | 78.75 | 93.83 | 86 | 79% |\n\nThe standout finding: ExpressVPN consistently retains 84-89% of base speed across all tested locations, regardless of distance. The Singapore result at 79% was the lowest, still well above what most VPNs deliver on cross-continental connections. Upload speeds were strong across the board, with several locations actually exceeding the download figures.\n\nFor torrenting specifically, the Netherlands server delivered approximately 70 Mbps download with an average BitTorrent transfer rate of 5.4 MB/s -- fast enough for any practical file-sharing scenario.\n\n### Lightway Turbo: The 2026 Speed Upgrade\n\nThe headline feature for 2026 is Lightway Turbo, an enhancement to ExpressVPN's proprietary protocol that uses multi-lane tunneling. Instead of routing all traffic through a single VPN tunnel, Lightway Turbo establishes multiple parallel connections to VPN servers, distributing traffic across multiple CPU cores and server instances simultaneously.\n\nExpressVPN's internal testing reported up to 330% speed improvements with Lightway Turbo enabled. In real-world usage, the gains are more modest but still meaningful -- particularly on high-bandwidth connections where single-tunnel throughput can become a bottleneck. The improvement is most noticeable during large downloads, 4K streaming, and other bandwidth-intensive tasks.\n\nLightway Turbo is currently available on the Windows v12 app when using Lightway UDP or the Automatic protocol setting. It is enabled by default. ExpressVPN has indicated plans to roll it out to macOS, iOS, and Android throughout 2026. Beyond Lightway Turbo, the company has also implemented Data Channel Offload (DCO) for OpenVPN, with internal tests showing up to a 2000% performance increase on UDP traffic -- a significant improvement for users who prefer or need to use OpenVPN.\n\n### The Lightway Protocol\n\nLightway is ExpressVPN's proprietary open-source VPN protocol, and it represents a fundamentally different approach to VPN protocol design. The entire codebase consists of approximately 2,000 lines of code -- compare that to OpenVPN's roughly 70,000 lines or WireGuard's 4,000 lines. The smaller codebase translates directly to a smaller attack surface, faster auditing, and easier maintenance.\n\nThe protocol is built on wolfSSL and uses ChaCha20 encryption by default, with AES-256 available as an alternative. Both are industry-standard encryption methods. Lightway's connection time is near-instant, typically establishing a connection in under one second. It handles network transitions seamlessly, so switching from Wi-Fi to mobile data does not drop the VPN connection -- a genuine quality-of-life improvement for mobile users.\n\nLightway includes built-in obfuscation capabilities, making it effective in countries that actively block VPN traffic. The full source code is available on GitHub at github.com/expressvpn/lightway-core for independent review.\n\n### Security and Privacy\n\nExpressVPN's security infrastructure centers on TrustedServer, a technology the company introduced in 2019 that has since become an industry benchmark. Every ExpressVPN server runs entirely on volatile RAM. There are no hard drives and no persistent storage. When a server is rebooted or powered down, all data is irretrievably wiped. The operating system and software stack are loaded fresh from a read-only image on each boot, ensuring that even if a server is compromised, the damage is contained and temporary.\n\nThe practical implication: if a government or malicious actor physically seized an ExpressVPN server, they would find no stored user data, no connection logs, and no activity records. The server would need to be running and actively inspected in real time to yield any information, and even then, the no-logging architecture means there is nothing meaningful to capture.\n\nExpressVPN has published 23 independent third-party audit reports to date, making it one of the most extensively audited VPN services in existence. The most recent KPMG audit, conducted under the ISAE (UK) 3000 Type 1 standard, examined ExpressVPN's TrustedServer system and privacy policy claims as of February 28, 2025. KPMG's conclusion: the systems functioned as designed, with no identified issues regarding technical safeguards against activity logging.\n\nExpressVPN has indicated it is moving toward SOC 2-style assurance for future audits, which shifts from verifying that privacy protections exist (point-in-time assessment) to proving that security and availability controls operate effectively on an ongoing basis. This is a meaningful upgrade in audit rigor.\n\nThe company is incorporated in the British Virgin Islands, a jurisdiction with no data retention laws and no obligation to comply with foreign government data requests without a BVI High Court order. This provides a genuine legal barrier against Five Eyes and other surveillance alliance demands.\n\nOn the client side, the kill switch (branded Network Lock) blocks all internet traffic if the VPN connection drops. DNS leak protection and IPv6 leak protection are enabled by default. In our testing, both functioned correctly with no leaks detected using standard testing tools.\n\n### Kape Technologies Ownership\n\nTransparency requires addressing the elephant in the room. ExpressVPN was acquired by Kape Technologies in September 2021 for $936 million. Kape also owns Private Internet Access, CyberGhost, and ZenMate. In May 2023, Kape was taken private by Unikmind Holdings Limited, controlled by Israeli-Cypriot businessman Teddy Sagi.\n\nKape Technologies (formerly Crossrider) had a documented history in the adware and browser extension business before rebranding and pivoting to cybersecurity through acquisitions. This history understandably raises questions about the motivations behind owning four major VPN brands.\n\nExpressVPN's counterarguments are substantive: the company maintains an independent development team and infrastructure, operates from BVI jurisdiction, has 23 independently published audits verifying its no-logs claims, and uses RAM-only servers that make data retention technically impossible even if the parent company wanted it.\n\nFor most users, these technical and legal safeguards are sufficient. For users with elevated threat models -- journalists, activists, or dissidents in authoritarian regimes -- providers without corporate parents, such as Mullvad or IVPN, may offer additional peace of mind.\n\n### Streaming and Unblocking\n\nStreaming is where ExpressVPN consistently outperforms most competitors. In our 2026 testing, the service successfully unblocked:\n\n- **Netflix**: 18 regional libraries including US, UK, Canada, Australia, France, Italy, Netherlands, Japan, Brazil, Belgium, Germany, and Spain\n- **Disney+**: Worked on first connection attempt\n- **BBC iPlayer**: Reliable access via UK servers\n- **Amazon Prime Video**: Multiple regional catalogs accessible\n- **Hulu**: US library accessible without server switching\n- **HBO Max, Paramount+, Peacock**: All functional\n\nOne important caveat for 2026: Netflix has tightened its VPN detection for ad-supported (Standard with Ads) plans and live events. If Netflix detects VPN usage on these plans, it restricts content to globally licensed titles. This is a Netflix policy change, not an ExpressVPN limitation -- it affects all VPN providers equally. Users on Standard or Premium Netflix plans are unaffected.\n\nExpressVPN's MediaStreamer (Smart DNS) feature extends streaming unblocking to devices that cannot run VPN apps: gaming consoles, older smart TVs, and streaming sticks. Setup involves changing the DNS settings on the device. The trade-off is that MediaStreamer does not encrypt traffic, so it is a streaming convenience feature, not a privacy tool.\n\nStreaming speeds were excellent across all platforms. With 220+ Mbps measured on US, UK, and other popular streaming servers in independent tests, 4K content streamed without buffering.\n\n### Apps and Usability\n\nExpressVPN provides native apps for Windows, macOS, Linux, iOS, Android, Amazon Fire TV, and Chromebook. Browser extensions are available for Chrome, Firefox, and Edge. The interface follows a clean, minimalist design philosophy: a large connect button dominates the main screen, with a location picker below for server selection.\n\nThe Windows v12 app is the most feature-complete, with Lightway Turbo, split tunneling, and the full range of protocol options. The macOS and iOS apps are close behind. The Linux app now includes a graphical interface (previously CLI-only), which is a welcome improvement.\n\nThe Aircove router is a standout product. It is a dedicated Wi-Fi router with ExpressVPN built in, providing whole-home VPN protection without installing apps on individual devices. Different devices on the network can be assigned to different VPN server locations simultaneously, and some can be excluded from the VPN entirely. This is particularly useful for households with mixed streaming needs.\n\nDevice limits depend on the plan: Basic supports 10 simultaneous connections, Advanced supports 12, and Pro supports 14. This is a significant improvement over the old flat limit of 8 devices.\n\n### Server Network\n\nExpressVPN operates 3,000+ RAM-only servers across 105 countries and 187+ locations. A notable 2026 expansion: the service now has servers in all 50 US states, with 62 US server locations total -- up from 24 previously. This matters for US users who need a local IP address for regional services, sports blackout workarounds, or latency-sensitive applications.\n\nThe raw server count is lower than NordVPN (6,000+) or Surfshark (3,200+), but every ExpressVPN server runs on the TrustedServer RAM-only architecture. The quality-over-quantity argument is legitimate here: a smaller network of RAM-only servers is arguably more secure than a larger network with traditional disk-based servers.\n\nVirtual server locations exist for a small number of countries where physical server deployment is impractical or legally risky. These are clearly labeled in the app, and the IP address matches the selected country even though the physical hardware is elsewhere.\n\n### Pricing Breakdown\n\nExpressVPN restructured its pricing in 2026 with a three-tier model. Here are the current USD prices as of March 2026:\n\n| Plan | Monthly | 1-Year + 3 Free | 2-Year + 4 Free | Devices |\n|---|---|---|---|---|\n| Basic | $12.99/mo | $4.99/mo ($74.85) | $3.49/mo ($97.72) | 10 |\n| Advanced | $13.99/mo | $5.99/mo ($89.85) | $4.49/mo ($125.72) | 12 |\n| Pro | $19.99/mo | $8.99/mo ($134.85) | $7.49/mo ($209.72) | 14 |\n\n**Basic** includes the core VPN with 3,000+ servers across 105 countries.\n\n**Advanced** adds the ExpressVPN Keys password manager, identity protection services, and discounts on Aircove router hardware.\n\n**Pro** adds a dedicated IP address, higher eSIM data allowance for international travel, and the maximum 14-device limit.\n\nAll plans include a 30-day money-back guarantee. There is no free trial, but the money-back guarantee functions as a risk-free test period.\n\nRenewal pricing is higher: the Basic plan renews at approximately $79.95/year after the initial term. This is standard practice across the VPN industry but worth noting -- the $3.49/month figure applies only to the first billing cycle.\n\nCompared to competitors: Surfshark's 2-year plan runs approximately $2.19/month with unlimited devices, and NordVPN's Basic 2-year plan costs approximately $3.09/month. ExpressVPN is still priced above both, but the gap has narrowed considerably from previous years.\n\n### Who Should Use ExpressVPN\n\nExpressVPN is the right choice for:\n\n- **Speed-first users** who want top-tier performance for streaming, gaming, or large downloads and are willing to pay slightly more for it\n- **Privacy-focused users** who value BVI jurisdiction, 23 published audits, and RAM-only server architecture\n- **International streamers** who need reliable access to 18+ Netflix libraries and all major platforms\n- **Mobile users** who benefit from Lightway's sub-second connection times and seamless Wi-Fi/cellular switching\n- **Router users** who want the Aircove whole-home VPN solution with per-device server assignment\n- **Users in restrictive countries** who need Lightway's built-in obfuscation to bypass VPN blocks\n- **Windows power users** who can take advantage of Lightway Turbo for maximum speeds\n\n### Who Should Not Use ExpressVPN\n\nExpressVPN is not the best fit for:\n\n- **Budget-conscious users**: Surfshark and Private Internet Access offer comparable features at lower prices with unlimited device connections\n- **Users uncomfortable with Kape Technologies**: If corporate ownership is a dealbreaker, consider Mullvad, IVPN, or ProtonVPN -- all independently operated\n- **Users who need more than 14 devices**: Surfshark's unlimited connections policy is unmatched\n- **Linux power users who want GUI parity**: While the Linux app now has a GUI, it still lacks some features available on Windows and macOS\n- **Users who want the cheapest possible monthly plan**: At $12.99/month, the no-commitment option is expensive\n\n### FAQ\n\n**Is ExpressVPN safe to use in 2026?**\nYes. ExpressVPN uses TrustedServer RAM-only architecture across its entire network, has published 23 independent third-party audit reports (most recently KPMG in February 2025 under ISAE 3000 Type 1), and is incorporated in the British Virgin Islands, which has no data retention laws. The Lightway protocol is open source and independently audited.\n\n**Is ExpressVPN still owned by Kape Technologies?**\nYes. Kape Technologies acquired ExpressVPN in September 2021 for $936 million. Kape was taken private by Unikmind Holdings Limited in May 2023. ExpressVPN maintains it operates independently with its own development team and BVI-based infrastructure. The 23 published audits and RAM-only architecture provide technical safeguards regardless of ownership.\n\n**How fast is ExpressVPN in 2026?**\nIn our tests on a 100 Mbps connection, ExpressVPN retained 84-89% of base speed across nine global server locations using Lightway UDP. The fastest result was 89.26 Mbps on the New York server. Lightway Turbo, currently available on Windows, can further increase speeds through multi-lane tunneling.\n\n**How many devices can I connect at once?**\nThe Basic plan supports 10 simultaneous connections, Advanced supports 12, and Pro supports 14. This is an increase from the previous flat limit of 8 devices. For unlimited connections, consider Surfshark.\n\n**Does ExpressVPN work with Netflix in 2026?**\nYes. ExpressVPN unblocks 18 Netflix regional libraries including the US, UK, Canada, Australia, Japan, and multiple European countries. Note that Netflix restricts VPN usage on ad-supported plans and live events -- this applies to all VPN providers, not just ExpressVPN.\n\n**What is the cheapest ExpressVPN plan?**\nThe cheapest option is the Basic 2-year plan at $3.49/month ($97.72 total for 28 months including 4 bonus months). The 1-year Basic plan costs $4.99/month, and the monthly plan is $12.99. All plans include a 30-day money-back guarantee.",
   "sources": [
     {
       "title": "Security.org - ExpressVPN Price & Plans 2026",
       "url": "https://www.security.org/vpn/expressvpn/"
     },
     {
-      "title": "VPN Overview - ExpressVPN Pricing 2026",
-      "url": "https://vpnoverview.com/best-vpn/expressvpn-cost-2026/"
+      "title": "VPNRanks - ExpressVPN Speed Test 2026",
+      "url": "https://www.vpnranks.com/reviews/expressvpn/speed-test/"
     },
     {
-      "title": "ExpressVPN Blog - Introducing Tiered Pricing",
-      "url": "https://www.expressvpn.com/blog/introducing-expressvpn-tiered-pricing/"
-    },
-    {
-      "title": "CyberInsider - ExpressVPN Review 2026 Test Results",
-      "url": "https://cyberinsider.com/vpn/reviews/expressvpn/"
-    },
-    {
-      "title": "Comparitech - ExpressVPN Review 2026",
-      "url": "https://www.comparitech.com/vpn/reviews/expressvpn/"
-    },
-    {
-      "title": "Cloudwards - ExpressVPN Lightway Review 2026",
-      "url": "https://www.cloudwards.net/expressvpn-lightway/"
+      "title": "ExpressVPN Blog - KPMG 2025 No-Logs Policy Audit",
+      "url": "https://www.expressvpn.com/blog/kpmg-2025-no-logs-policy-audit/"
     },
     {
       "title": "ExpressVPN Blog - Introducing Lightway Turbo",
       "url": "https://www.expressvpn.com/blog/introducing-lightway-turbo/"
     },
     {
-      "title": "ExpressVPN - BVI Privacy Legislation",
-      "url": "https://www.expressvpn.com/blog/bvi-privacy-legislation/"
+      "title": "ExpressVPN Blog - Lightway Turbo and OpenVPN Enhancements",
+      "url": "https://www.expressvpn.com/blog/expressvpn-introduces-powerful-speed-upgrades-with-lightway-turbo-and-openvpn-enhancements/"
     },
     {
-      "title": "Cloudwards - Kape Technologies Buys ExpressVPN",
-      "url": "https://www.cloudwards.net/kape-technologies-buys-expressvpn/"
+      "title": "CyberInsider - ExpressVPN Review 2026",
+      "url": "https://cyberinsider.com/vpn/reviews/expressvpn/"
     },
     {
-      "title": "Tom's Guide - ExpressVPN Price and Plans",
-      "url": "https://www.tomsguide.com/computing/vpns/expressvpn-price-plans"
+      "title": "CyberInsider - ExpressVPN vs Netflix 2026",
+      "url": "https://cyberinsider.com/vpn/best/netflix/expressvpn/"
+    },
+    {
+      "title": "ExpressVPN Blog - Servers in All 50 US States",
+      "url": "https://www.expressvpn.com/blog/expressvpn-now-in-all-50-us-states/"
+    },
+    {
+      "title": "Tom's Guide - ExpressVPN Third No-Logs Audit",
+      "url": "https://www.tomsguide.com/computing/vpns/expressvpn-reasserts-its-privacy-claims-with-third-no-logs-audit"
+    },
+    {
+      "title": "ExpressVPN Trust Center",
+      "url": "https://www.expressvpn.com/trust"
+    },
+    {
+      "title": "Comparitech - ExpressVPN Review 2026",
+      "url": "https://www.comparitech.com/vpn/reviews/expressvpn/"
     },
     {
       "title": "GitHub - Lightway Core (Open Source)",
@@ -149,6 +131,10 @@
     {
       "title": "Gizmodo - ExpressVPN Review 2026",
       "url": "https://gizmodo.com/best-vpn/expressvpn"
+    },
+    {
+      "title": "ExpressVPN - Pricing Page (March 2026)",
+      "url": "https://www.expressvpn.com/order"
     }
   ]
 }

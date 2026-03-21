@@ -145,7 +145,7 @@ export default async function ChromebookVpnPage({ params }: Props) {
   // Content translations
   const content = {
     en: {
-      badge: "Updated November 2026",
+      badge: "Updated March 2026",
       title: "Best VPN for Chromebook in 2026",
       subtitle:
         "We tested 35+ VPNs specifically for Chromebook compatibility. These are the best options with native Android apps, Chrome extensions, and easy setup.",
@@ -280,10 +280,10 @@ export default async function ChromebookVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "View All VPN Reviews",
-      lastUpdated: "Last updated: November 2026",
+      lastUpdated: "Last updated: March 2026",
     },
     nl: {
-      badge: "Bijgewerkt november 2026",
+      badge: "Bijgewerkt maart 2026",
       title: "Beste VPN voor Chromebook in 2026",
       subtitle:
         "We hebben 35+ VPNs specifiek getest voor Chromebook compatibiliteit. Dit zijn de beste opties met native Android apps, Chrome extensies en eenvoudige installatie.",
@@ -419,10 +419,10 @@ export default async function ChromebookVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Bekijk Alle VPN Reviews",
-      lastUpdated: "Laatst bijgewerkt: november 2026",
+      lastUpdated: "Laatst bijgewerkt: maart 2026",
     },
     de: {
-      badge: "Aktualisiert November 2026",
+      badge: "Aktualisiert March 2026",
       title: "Beste VPN für Chromebook in 2026",
       subtitle:
         "Wir haben über 35 VPNs speziell auf Chromebook-Kompatibilität getestet. Dies sind die besten Optionen mit nativen Android-Apps, Chrome-Erweiterungen und einfacher Einrichtung.",
@@ -558,7 +558,7 @@ export default async function ChromebookVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Alle VPN-Bewertungen Anzeigen",
-      lastUpdated: "Zuletzt aktualisiert: November 2026",
+      lastUpdated: "Zuletzt aktualisiert: March 2026",
     },
     es: {
       badge: "Actualizado noviembre 2026",

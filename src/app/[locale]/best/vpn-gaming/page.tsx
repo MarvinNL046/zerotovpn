@@ -171,7 +171,7 @@ export default async function GamingVpnPage({ params }: Props) {
   // Content translations
   const content = {
     en: {
-      badge: "Updated November 2026",
+      badge: "Updated March 2026",
       title: "Best VPN for Gaming in 2026",
       subtitle:
         "We tested 35+ VPNs specifically for gaming performance. These are the fastest options with the lowest ping and best DDoS protection.",
@@ -308,10 +308,10 @@ export default async function GamingVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "View All VPN Reviews",
-      lastUpdated: "Last updated: November 2026",
+      lastUpdated: "Last updated: March 2026",
     },
     nl: {
-      badge: "Bijgewerkt november 2026",
+      badge: "Bijgewerkt maart 2026",
       title: "Beste VPN voor Gaming in 2026",
       subtitle:
         "We hebben 35+ VPNs specifiek getest voor gaming prestaties. Dit zijn de snelste opties met de laagste ping en beste DDoS-bescherming.",
@@ -452,10 +452,10 @@ export default async function GamingVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Bekijk Alle VPN Reviews",
-      lastUpdated: "Laatst bijgewerkt: november 2026",
+      lastUpdated: "Laatst bijgewerkt: maart 2026",
     },
     de: {
-      badge: "Aktualisiert November 2026",
+      badge: "Aktualisiert March 2026",
       title: "Beste VPN für Gaming in 2026",
       subtitle:
         "Wir haben über 35 VPNs speziell für Gaming-Leistung getestet. Dies sind die schnellsten Optionen mit dem niedrigsten Ping und bestem DDoS-Schutz.",
@@ -600,7 +600,7 @@ export default async function GamingVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Alle VPN-Bewertungen Anzeigen",
-      lastUpdated: "Zuletzt aktualisiert: November 2026",
+      lastUpdated: "Zuletzt aktualisiert: March 2026",
     },
     es: {
       badge: "Actualizado noviembre 2026",

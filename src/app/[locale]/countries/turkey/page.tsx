@@ -80,7 +80,7 @@ export default async function TurkeyVpnPage({ params }: Props) {
 
   const content = {
     en: {
-      badge: "Updated November 2026",
+      badge: "Updated March 2026",
       title: "Best VPN for Turkey",
       subtitle: "Stay connected despite Turkey's extensive internet censorship",
       legalStatus: "VPN Legal Status in Turkey",
@@ -164,11 +164,11 @@ export default async function TurkeyVpnPage({ params }: Props) {
       getVpn: "Get VPN",
       worksInTurkey: "Works in Turkey",
       obfuscation: "Obfuscation",
-      lastUpdated: "Last updated: November 2026",
+      lastUpdated: "Last updated: March 2026",
       sources: "Sources",
     },
     nl: {
-      badge: "Bijgewerkt november 2026",
+      badge: "Bijgewerkt maart 2026",
       title: "Beste VPN voor Turkije",
       subtitle: "Blijf verbonden ondanks Turkije's uitgebreide internetcensuur",
       legalStatus: "VPN Juridische Status in Turkije",
@@ -252,11 +252,11 @@ export default async function TurkeyVpnPage({ params }: Props) {
       getVpn: "Download VPN",
       worksInTurkey: "Werkt in Turkije",
       obfuscation: "Obfuscatie",
-      lastUpdated: "Laatst bijgewerkt: november 2026",
+      lastUpdated: "Laatst bijgewerkt: maart 2026",
       sources: "Bronnen",
     },
     de: {
-      badge: "Aktualisiert November 2026",
+      badge: "Aktualisiert March 2026",
       title: "Beste VPN für die Türkei",
       subtitle: "Bleiben Sie trotz umfangreicher Internetzensur in der Türkei verbunden",
       legalStatus: "VPN-Rechtsstatus in der Türkei",
@@ -340,7 +340,7 @@ export default async function TurkeyVpnPage({ params }: Props) {
       getVpn: "VPN erhalten",
       worksInTurkey: "Funktioniert in der Türkei",
       obfuscation: "Verschleierung",
-      lastUpdated: "Zuletzt aktualisiert: November 2026",
+      lastUpdated: "Zuletzt aktualisiert: March 2026",
       sources: "Quellen",
     },
     es: {

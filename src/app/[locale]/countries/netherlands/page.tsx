@@ -81,7 +81,7 @@ export default async function NetherlandsVpnPage({ params }: Props) {
 
   const content = {
     en: {
-      badge: "Updated November 2026",
+      badge: "Updated March 2026",
       title: "Best VPN for Netherlands",
       subtitle: "Protect your privacy, stream Dutch content abroad, and stay secure online",
       legalStatus: "VPN Status in the Netherlands",
@@ -195,12 +195,12 @@ export default async function NetherlandsVpnPage({ params }: Props) {
       getVpn: "Get VPN",
       dutchServers: "Dutch servers",
       noLogs: "No-logs policy",
-      lastUpdated: "Last updated: November 2026",
+      lastUpdated: "Last updated: March 2026",
       sources: "Sources",
       freeTierNote: "Free Tier Available",
     },
     nl: {
-      badge: "Bijgewerkt november 2026",
+      badge: "Bijgewerkt maart 2026",
       title: "Beste VPN voor Nederland",
       subtitle: "Bescherm je privacy, stream Nederlandse content in het buitenland, en blijf veilig online",
       legalStatus: "VPN Status in Nederland",
@@ -314,12 +314,12 @@ export default async function NetherlandsVpnPage({ params }: Props) {
       getVpn: "Download VPN",
       dutchServers: "Nederlandse servers",
       noLogs: "No-logs beleid",
-      lastUpdated: "Laatst bijgewerkt: november 2026",
+      lastUpdated: "Laatst bijgewerkt: maart 2026",
       sources: "Bronnen",
       freeTierNote: "Gratis Tier Beschikbaar",
     },
     de: {
-      badge: "Aktualisiert November 2026",
+      badge: "Aktualisiert March 2026",
       title: "Beste VPN für die Niederlande",
       subtitle: "Schützen Sie Ihre Privatsphäre, streamen Sie niederländische Inhalte im Ausland und bleiben Sie online sicher",
       legalStatus: "VPN-Status in den Niederlanden",
@@ -433,7 +433,7 @@ export default async function NetherlandsVpnPage({ params }: Props) {
       getVpn: "VPN Holen",
       dutchServers: "Niederländische Server",
       noLogs: "No-Logs-Richtlinie",
-      lastUpdated: "Zuletzt aktualisiert: November 2026",
+      lastUpdated: "Zuletzt aktualisiert: March 2026",
       sources: "Quellen",
       freeTierNote: "Kostenlose Stufe Verfügbar",
     },

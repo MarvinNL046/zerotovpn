@@ -153,7 +153,7 @@ export default async function BestVpnPage({ params }: Props) {
   // Content translations
   const content = {
     en: {
-      badge: "Updated November 2026",
+      badge: "Updated March 2026",
       title: "Best VPN Services in 2026",
       subtitle: "We tested 35+ VPNs to find the best options for privacy, streaming, and security. Here are our top picks based on extensive real-world testing.",
       quickPicks: "Quick Picks",
@@ -197,10 +197,10 @@ export default async function BestVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "View All VPN Reviews",
-      lastUpdated: "Last updated: November 2026",
+      lastUpdated: "Last updated: March 2026",
     },
     nl: {
-      badge: "Bijgewerkt november 2026",
+      badge: "Bijgewerkt maart 2026",
       title: "Beste VPN Diensten in 2026",
       subtitle: "We hebben 35+ VPNs getest om de beste opties voor privacy, streaming en veiligheid te vinden. Hier zijn onze topkeuzes op basis van uitgebreide tests.",
       quickPicks: "Snelle Keuzes",
@@ -244,10 +244,10 @@ export default async function BestVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Bekijk Alle VPN Reviews",
-      lastUpdated: "Laatst bijgewerkt: november 2026",
+      lastUpdated: "Laatst bijgewerkt: maart 2026",
     },
     de: {
-      badge: "Aktualisiert November 2026",
+      badge: "Aktualisiert March 2026",
       title: "Beste VPN-Dienste 2026",
       subtitle: "Wir haben über 35 VPNs getestet, um die besten Optionen für Datenschutz, Streaming und Sicherheit zu finden. Hier sind unsere Top-Empfehlungen basierend auf umfangreichen Praxistests.",
       quickPicks: "Schnellauswahl",
@@ -291,7 +291,7 @@ export default async function BestVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Alle VPN-Bewertungen ansehen",
-      lastUpdated: "Zuletzt aktualisiert: November 2026",
+      lastUpdated: "Zuletzt aktualisiert: March 2026",
     },
     es: {
       badge: "Actualizado noviembre 2026",

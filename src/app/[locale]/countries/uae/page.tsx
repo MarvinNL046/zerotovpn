@@ -83,7 +83,7 @@ export default async function UAEVpnPage({ params }: Props) {
 
   const content = {
     en: {
-      badge: "Updated November 2026",
+      badge: "Updated March 2026",
       title: "Best VPN for UAE & Dubai",
       subtitle: "Navigate UAE's VPN regulations safely and access restricted content",
       legalNotice: "Important Legal Information",
@@ -190,11 +190,11 @@ export default async function UAEVpnPage({ params }: Props) {
       getVpn: "Get VPN",
       worksInUAE: "Works in UAE",
       obfuscation: "Obfuscation",
-      lastUpdated: "Last updated: November 2026",
+      lastUpdated: "Last updated: March 2026",
       sources: "Sources",
     },
     nl: {
-      badge: "Bijgewerkt november 2026",
+      badge: "Bijgewerkt maart 2026",
       title: "Beste VPN voor VAE & Dubai",
       subtitle: "Navigeer veilig door de VAE VPN-regelgeving",
       legalNotice: "Belangrijke Juridische Informatie",
@@ -301,11 +301,11 @@ export default async function UAEVpnPage({ params }: Props) {
       getVpn: "Download VPN",
       worksInUAE: "Werkt in VAE",
       obfuscation: "Obfuscatie",
-      lastUpdated: "Laatst bijgewerkt: november 2026",
+      lastUpdated: "Laatst bijgewerkt: maart 2026",
       sources: "Bronnen",
     },
     de: {
-      badge: "Aktualisiert November 2026",
+      badge: "Aktualisiert March 2026",
       title: "Beste VPN für VAE & Dubai",
       subtitle: "Sicher durch die VAE VPN-Vorschriften navigieren und auf eingeschränkte Inhalte zugreifen",
       legalNotice: "Wichtige rechtliche Informationen",
@@ -412,7 +412,7 @@ export default async function UAEVpnPage({ params }: Props) {
       getVpn: "VPN holen",
       worksInUAE: "Funktioniert in VAE",
       obfuscation: "Verschleierung",
-      lastUpdated: "Zuletzt aktualisiert: November 2026",
+      lastUpdated: "Zuletzt aktualisiert: March 2026",
       sources: "Quellen",
     },
     es: {

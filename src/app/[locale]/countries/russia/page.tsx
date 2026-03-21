@@ -105,7 +105,7 @@ export default async function RussiaVpnPage({ params }: Props) {
 
   const content = {
     en: {
-      badge: "Updated November 2026",
+      badge: "Updated March 2026",
       title: "Best VPN for Russia",
       subtitle: "Navigate Russia's increasing internet restrictions with VPNs that still work",
       severityWarning: "Rapidly Changing Situation",
@@ -113,7 +113,7 @@ export default async function RussiaVpnPage({ params }: Props) {
         "Russia blocked 197 VPN services in 2024 alone. Laws are tightening, but 41% of Russians still use VPNs. Install before traveling and expect disruptions.",
       legalStatus: "Legal Status in Russia",
       legalStatusText:
-        "VPNs are not formally illegal, but everything around them is being criminalized. Since March 2024, sharing VPN guides is illegal. In July 2026, using a VPN to access 'extremist' content became an aggravating circumstance for crimes.",
+        "VPNs are not formally illegal, but everything around them is being criminalized. Since March 2024, sharing VPN guides is illegal. In March 2026, using a VPN to access 'extremist' content became an aggravating circumstance for crimes.",
       blockedVpns: "VPNs That Don't Work in Russia",
       blockedList: [
         "IPVanish",
@@ -197,14 +197,14 @@ export default async function RussiaVpnPage({ params }: Props) {
       readReview: "Read Review",
       mayWorkInRussia: "May work in Russia",
       obfuscation: "Obfuscation",
-      lastUpdated: "Last updated: November 2026",
+      lastUpdated: "Last updated: March 2026",
       sources: "Sources",
       disclaimer: "Important Disclaimer",
       disclaimerText:
         "The legal situation in Russia is evolving rapidly. This information is for educational purposes. Always verify current laws and exercise caution.",
     },
     nl: {
-      badge: "Bijgewerkt november 2026",
+      badge: "Bijgewerkt maart 2026",
       title: "Beste VPN voor Rusland",
       subtitle: "Navigeer door Ruslands toenemende internetbeperkingen met werkende VPNs",
       severityWarning: "Snel Veranderende Situatie",
@@ -296,14 +296,14 @@ export default async function RussiaVpnPage({ params }: Props) {
       readReview: "Lees Review",
       mayWorkInRussia: "Werkt mogelijk in Rusland",
       obfuscation: "Obfuscatie",
-      lastUpdated: "Laatst bijgewerkt: november 2026",
+      lastUpdated: "Laatst bijgewerkt: maart 2026",
       sources: "Bronnen",
       disclaimer: "Belangrijke Disclaimer",
       disclaimerText:
         "De juridische situatie in Rusland verandert snel. Deze informatie is bedoeld voor educatieve doeleinden.",
     },
     de: {
-      badge: "Aktualisiert November 2026",
+      badge: "Aktualisiert March 2026",
       title: "Beste VPN für Russland",
       subtitle: "Navigieren Sie durch Russlands zunehmende Internetbeschränkungen mit funktionierenden VPNs",
       severityWarning: "Sich schnell ändernde Situation",
@@ -395,7 +395,7 @@ export default async function RussiaVpnPage({ params }: Props) {
       readReview: "Bewertung Lesen",
       mayWorkInRussia: "Funktioniert möglicherweise in Russland",
       obfuscation: "Verschleierung",
-      lastUpdated: "Zuletzt aktualisiert: November 2026",
+      lastUpdated: "Zuletzt aktualisiert: March 2026",
       sources: "Quellen",
       disclaimer: "Wichtiger Haftungsausschluss",
       disclaimerText:

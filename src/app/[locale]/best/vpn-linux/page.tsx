@@ -154,7 +154,7 @@ export default async function LinuxVpnPage({ params }: Props) {
   // Content translations
   const content = {
     en: {
-      badge: "Updated November 2026",
+      badge: "Updated March 2026",
       title: "Best VPN for Linux in 2026",
       subtitle:
         "We tested 35+ VPNs specifically for Linux compatibility. These are the best options with native apps, CLI support, and comprehensive distro coverage.",
@@ -299,10 +299,10 @@ export default async function LinuxVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "View All VPN Reviews",
-      lastUpdated: "Last updated: November 2026",
+      lastUpdated: "Last updated: March 2026",
     },
     nl: {
-      badge: "Bijgewerkt november 2026",
+      badge: "Bijgewerkt maart 2026",
       title: "Beste VPN voor Linux in 2026",
       subtitle:
         "We hebben 35+ VPNs specifiek getest voor Linux-compatibiliteit. Dit zijn de beste opties met native apps, CLI-ondersteuning en uitgebreide distro-dekking.",
@@ -447,10 +447,10 @@ export default async function LinuxVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Bekijk Alle VPN Reviews",
-      lastUpdated: "Laatst bijgewerkt: november 2026",
+      lastUpdated: "Laatst bijgewerkt: maart 2026",
     },
     de: {
-      badge: "Aktualisiert November 2026",
+      badge: "Aktualisiert March 2026",
       title: "Beste VPN für Linux in 2026",
       subtitle:
         "Wir haben über 35 VPNs speziell für Linux-Kompatibilität getestet. Dies sind die besten Optionen mit nativen Apps, CLI-Unterstützung und umfassender Distro-Abdeckung.",
@@ -595,7 +595,7 @@ export default async function LinuxVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Alle VPN-Bewertungen Anzeigen",
-      lastUpdated: "Zuletzt aktualisiert: November 2026",
+      lastUpdated: "Zuletzt aktualisiert: March 2026",
     },
     es: {
       badge: "Actualizado noviembre 2026",

@@ -36,6 +36,7 @@ import { routing } from "@/i18n/routing";
 import type { Metadata } from "next";
 import { getShortMonthYear, getLocalizedMonthYear, OG_LOCALE_MAP } from "@/lib/seo-utils";
 import { LastUpdated } from "@/components/last-updated";
+import InlineAd from "@/components/ads/InlineAd";
 import { vpnProviders } from "@/lib/vpn-data";
 import { formatAuditStatus, formatLoggingPolicy, getTransparencySnapshotForVpn } from "@/lib/vpn-transparency-data";
 
@@ -1119,6 +1120,9 @@ export default async function ReviewPage({ params }: Props) {
             </AffiliateButton>
           </CardContent>
         </Card>
+
+        {/* Ad placement */}
+        <InlineAd />
 
         {/* FAQ Section */}
         <FaqSection faqs={faqs} vpnName={vpn.name} />

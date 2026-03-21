@@ -10,6 +10,7 @@ import { getPostBySlug } from "@/lib/pipeline/blog-service";
 import { generateAlternates } from "@/lib/seo-utils";
 import { getRelatedContent } from "@/lib/content-links";
 import { RelatedContent } from "@/components/seo/related-content";
+import InlineAd from "@/components/ads/InlineAd";
 import {
   AuthorBox,
   FactCheckedBadge,
@@ -168,6 +169,9 @@ export default async function DynamicBlogPost({ params }: Props) {
           className="blog-content max-w-none"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
+
+        {/* Ad placement */}
+        <InlineAd />
 
         {/* E-E-A-T: Sources & References */}
         <SourcesSection content={post.content} />

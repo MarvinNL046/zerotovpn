@@ -16,6 +16,7 @@ import { HighlightedText } from "@/components/ui/highlighted-text";
 import { MetricBadge } from "@/components/ui/metric-badge";
 import { PulseIndicator } from "@/components/ui/pulse-indicator";
 import { LazyHeroIllustration } from "@/components/lazy-hero-illustration";
+import InlineAd from "@/components/ads/InlineAd";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -347,6 +348,11 @@ export default async function HomePage({ params }: Props) {
             </div>
           </div>
         </section>
+
+        {/* Ad placement */}
+        <div className="container">
+          <InlineAd />
+        </div>
 
         {/* How We Test */}
         <section className="py-16 relative">

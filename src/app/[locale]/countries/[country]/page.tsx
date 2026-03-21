@@ -32,6 +32,7 @@ import {
   HelpCircle,
   ExternalLink,
 } from "lucide-react";
+import InlineAd from "@/components/ads/InlineAd";
 
 type Props = {
   params: Promise<{ locale: string; country: string }>;
@@ -458,6 +459,13 @@ export default async function DynamicCountryPage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {/* Ad placement */}
+      <div className="container">
+        <div className="max-w-4xl mx-auto">
+          <InlineAd />
+        </div>
+      </div>
 
       {/* Key Features to Look For */}
       <section className="py-12 bg-muted/30">

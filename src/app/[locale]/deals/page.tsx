@@ -5,17 +5,14 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
-import { CountdownTimer } from "@/components/ui/countdown-timer";
 import {
   Tag,
-  Clock,
   CheckCircle,
-  Gift,
-  Sparkles,
   Shield,
-  Zap,
   Info,
   KeyRound,
+  CalendarCheck,
+  Star,
 } from "lucide-react";
 
 type Props = {
@@ -82,7 +79,6 @@ function DealsSchema() {
         price: deal.dealPrice,
         priceCurrency: "USD",
         availability: "https://schema.org/InStock",
-        validThrough: deal.expiresAt.toISOString(),
         seller: {
           "@type": "Organization",
           name: deal.name,
@@ -107,12 +103,14 @@ const deals = [
     originalPrice: 12.95,
     dealPrice: 1.99,
     discount: 87,
-    months: 27, // 2 years + 3 months
+    months: 27,
     total: 53.73,
     features: ["Unlimited devices", "Ad blocker", "24/7 support"],
     coupon: "SHARKGIFT",
     affiliateUrl: "https://go.zerotovpn.com/surfshark",
-    expiresAt: new Date("2026-12-31T23:59:59"),
+    moneyBack: 30,
+    rating: 9.2,
+    devices: "Unlimited",
   },
   {
     name: "NordVPN",
@@ -126,7 +124,9 @@ const deals = [
     features: ["10 devices", "Threat Protection", "Dark Web Monitor"],
     coupon: null,
     affiliateUrl: "https://go.zerotovpn.com/nordvpn",
-    expiresAt: new Date("2026-12-31T23:59:59"),
+    moneyBack: 30,
+    rating: 9.7,
+    devices: "10",
   },
   {
     name: "ExpressVPN",
@@ -135,12 +135,14 @@ const deals = [
     originalPrice: 12.95,
     dealPrice: 2.44,
     discount: 77,
-    months: 28, // 2 years + 4 months
+    months: 28,
     total: 88,
     features: ["12 devices", "Password manager", "Router app"],
     coupon: null,
     affiliateUrl: "https://go.zerotovpn.com/expressvpn",
-    expiresAt: new Date("2026-12-31T23:59:59"),
+    moneyBack: 30,
+    rating: 9.5,
+    devices: "12",
   },
   {
     name: "CyberGhost",
@@ -154,7 +156,9 @@ const deals = [
     features: ["7 devices", "Dedicated streaming servers", "45-day guarantee"],
     coupon: null,
     affiliateUrl: "https://go.zerotovpn.com/cyberghost",
-    expiresAt: new Date("2026-12-31T23:59:59"),
+    moneyBack: 45,
+    rating: 9.0,
+    devices: "7",
   },
   {
     name: "NordPass",
@@ -165,16 +169,27 @@ const deals = [
     discount: 70,
     months: 24,
     total: 35.76,
-    features: ["Unlimited passwords", "Autofill", "Data breach scanner", "Cross-platform sync"],
+    features: [
+      "Unlimited passwords",
+      "Autofill",
+      "Data breach scanner",
+      "Cross-platform sync",
+    ],
     coupon: null,
     affiliateUrl: "https://go.zerotovpn.com/nordpass",
-    expiresAt: new Date("2026-06-01"),
+    moneyBack: 30,
+    rating: 8.8,
+    devices: "Unlimited",
   },
 ];
+
+// Only the VPN deals for the comparison table (exclude NordPass)
+const vpnDeals = deals.filter((d) => d.badgeKey !== "passwordManager");
 
 export default async function DealsPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const shortMonthYear = getShortMonthYear();
 
   const content: Record<
     string,
@@ -182,8 +197,7 @@ export default async function DealsPage({ params }: Props) {
       hero: {
         title: string;
         subtitle: string;
-        urgency: string;
-        timerLabel: string;
+        updated: string;
       };
       deals: {
         perMonth: string;
@@ -195,8 +209,6 @@ export default async function DealsPage({ params }: Props) {
         getDeal: string;
         copyCoupon: string;
         copied: string;
-        expiresLabel: string;
-        expiresSoon: string;
       };
       badges: {
         bestDeal: string;
@@ -207,6 +219,16 @@ export default async function DealsPage({ params }: Props) {
       };
       features: {
         title: string;
+      };
+      comparison: {
+        title: string;
+        vpn: string;
+        price: string;
+        savings: string;
+        devices: string;
+        moneyBack: string;
+        rating: string;
+        days: string;
       };
       tips: {
         title: string;
@@ -233,11 +255,10 @@ export default async function DealsPage({ params }: Props) {
   > = {
     en: {
       hero: {
-        title: "VPN Deals & Coupons 2026",
+        title: "Compare VPN Deals",
         subtitle:
-          "Exclusive discounts on premium VPN services. Save up to 87% with our verified deals and coupon codes.",
-        urgency: "Limited-time offers - Don't miss out!",
-        timerLabel: "Deals End In",
+          "Side-by-side comparison of verified VPN discounts. All prices checked and updated regularly.",
+        updated: `Updated ${shortMonthYear}`,
       },
       deals: {
         perMonth: "/month",
@@ -247,10 +268,8 @@ export default async function DealsPage({ params }: Props) {
         extraMonths: "months free",
         months: "months",
         getDeal: "Get This Deal",
-        copyCoupon: "Copy Coupon Code",
+        copyCoupon: "Coupon Code",
         copied: "Copied!",
-        expiresLabel: "Deal expires",
-        expiresSoon: "Soon",
       },
       badges: {
         bestDeal: "Best Deal",
@@ -260,7 +279,17 @@ export default async function DealsPage({ params }: Props) {
         passwordManager: "Password Manager",
       },
       features: {
-        title: "Included Features",
+        title: "Key Features",
+      },
+      comparison: {
+        title: "Quick Comparison",
+        vpn: "VPN",
+        price: "Price",
+        savings: "Savings",
+        devices: "Devices",
+        moneyBack: "Money-back",
+        rating: "Rating",
+        days: "days",
       },
       tips: {
         title: "Smart Deal Shopping Tips",
@@ -273,7 +302,7 @@ export default async function DealsPage({ params }: Props) {
           {
             title: "Extra Months Trick",
             description:
-              "The 'free months' are already calculated into the monthly price. A 27-month deal is really just a 2-year subscription with better pricing.",
+              'The \'free months\' are already calculated into the monthly price. A 27-month deal is really just a 2-year subscription with better pricing.',
           },
           {
             title: "Money-Back Guarantee",
@@ -319,7 +348,8 @@ export default async function DealsPage({ params }: Props) {
       },
       bundle: {
         title: "Bundle Deals",
-        subtitle: "Combine services and save even more on your online security",
+        subtitle:
+          "Combine services and save even more on your online security",
         vpnPlusPass: "VPN + Password Manager",
         combinedPrice: "Combined from",
         getVpn: "Get NordVPN",
@@ -329,11 +359,10 @@ export default async function DealsPage({ params }: Props) {
     },
     nl: {
       hero: {
-        title: "VPN Deals & Kortingscodes 2026",
+        title: "Vergelijk VPN Deals",
         subtitle:
-          "Exclusieve kortingen op premium VPN-diensten. Bespaar tot 87% met onze geverifieerde deals en kortingscodes.",
-        urgency: "Tijdelijke aanbiedingen - Mis het niet!",
-        timerLabel: "Deals Eindigen In",
+          "Zij-aan-zij vergelijking van geverifieerde VPN-kortingen. Alle prijzen regelmatig gecontroleerd en bijgewerkt.",
+        updated: `Bijgewerkt ${shortMonthYear}`,
       },
       deals: {
         perMonth: "/maand",
@@ -343,10 +372,8 @@ export default async function DealsPage({ params }: Props) {
         extraMonths: "maanden gratis",
         months: "maanden",
         getDeal: "Pak Deze Deal",
-        copyCoupon: "Kopieer Kortingscode",
+        copyCoupon: "Kortingscode",
         copied: "Gekopieerd!",
-        expiresLabel: "Deal verloopt",
-        expiresSoon: "Binnenkort",
       },
       badges: {
         bestDeal: "Beste Deal",
@@ -356,7 +383,17 @@ export default async function DealsPage({ params }: Props) {
         passwordManager: "Wachtwoordbeheerder",
       },
       features: {
-        title: "Inbegrepen Functies",
+        title: "Belangrijkste functies",
+      },
+      comparison: {
+        title: "Snelle Vergelijking",
+        vpn: "VPN",
+        price: "Prijs",
+        savings: "Besparing",
+        devices: "Apparaten",
+        moneyBack: "Geld-terug",
+        rating: "Score",
+        days: "dagen",
       },
       tips: {
         title: "Slimme Deal Shopping Tips",
@@ -407,7 +444,8 @@ export default async function DealsPage({ params }: Props) {
               "Nadat uw initiële abonnementsperiode afloopt, wordt u de standaard verlengingsprijs in rekening gebracht tenzij u annuleert. Controleer altijd de verlengingsvoorwaarden voordat u koopt.",
           },
           {
-            question: "Kan ik mijn geld terugkrijgen als ik de VPN niet leuk vind?",
+            question:
+              "Kan ik mijn geld terugkrijgen als ik de VPN niet leuk vind?",
             answer:
               "Ja! Alle VPN's die hier vermeld staan, bieden geld-terug-garanties van 30-45 dagen. Neem contact op met hun ondersteuning om een terugbetaling aan te vragen binnen de garantieperiode.",
           },
@@ -415,7 +453,8 @@ export default async function DealsPage({ params }: Props) {
       },
       bundle: {
         title: "Bundel Aanbiedingen",
-        subtitle: "Combineer diensten en bespaar nog meer op je online beveiliging",
+        subtitle:
+          "Combineer diensten en bespaar nog meer op je online beveiliging",
         vpnPlusPass: "VPN + Wachtwoordbeheerder",
         combinedPrice: "Gecombineerd vanaf",
         getVpn: "NordVPN Pakken",
@@ -425,11 +464,10 @@ export default async function DealsPage({ params }: Props) {
     },
     de: {
       hero: {
-        title: "VPN-Angebote & Gutscheine 2026",
+        title: "VPN-Angebote Vergleichen",
         subtitle:
-          "Exklusive Rabatte auf Premium-VPN-Dienste. Sparen Sie bis zu 87% mit unseren verifizierten Angeboten und Gutscheincodes.",
-        urgency: "Zeitlich begrenzte Angebote - Verpassen Sie es nicht!",
-        timerLabel: "Angebote Enden In",
+          "Gegenüberstellung verifizierter VPN-Rabatte. Alle Preise regelmäßig geprüft und aktualisiert.",
+        updated: `Aktualisiert ${shortMonthYear}`,
       },
       deals: {
         perMonth: "/Monat",
@@ -439,10 +477,8 @@ export default async function DealsPage({ params }: Props) {
         extraMonths: "Monate gratis",
         months: "Monate",
         getDeal: "Dieses Angebot holen",
-        copyCoupon: "Gutscheincode kopieren",
+        copyCoupon: "Gutscheincode",
         copied: "Kopiert!",
-        expiresLabel: "Angebot läuft ab",
-        expiresSoon: "Bald",
       },
       badges: {
         bestDeal: "Bestes Angebot",
@@ -452,7 +488,17 @@ export default async function DealsPage({ params }: Props) {
         passwordManager: "Passwort-Manager",
       },
       features: {
-        title: "Enthaltene Funktionen",
+        title: "Hauptfunktionen",
+      },
+      comparison: {
+        title: "Schnellvergleich",
+        vpn: "VPN",
+        price: "Preis",
+        savings: "Ersparnis",
+        devices: "Geräte",
+        moneyBack: "Geld-zurück",
+        rating: "Bewertung",
+        days: "Tage",
       },
       tips: {
         title: "Intelligente Deal-Shopping-Tipps",
@@ -503,7 +549,8 @@ export default async function DealsPage({ params }: Props) {
               "Nach Ablauf Ihrer anfänglichen Abonnementperiode wird Ihnen der Standardverlängerungspreis berechnet, es sei denn, Sie kündigen. Überprüfen Sie immer die Verlängerungsbedingungen vor dem Kauf.",
           },
           {
-            question: "Kann ich eine Rückerstattung erhalten, wenn mir das VPN nicht gefällt?",
+            question:
+              "Kann ich eine Rückerstattung erhalten, wenn mir das VPN nicht gefällt?",
             answer:
               "Ja! Alle hier aufgeführten VPNs bieten Geld-zurück-Garantien von 30-45 Tagen. Kontaktieren Sie deren Support, um eine Rückerstattung innerhalb der Garantiezeit anzufordern.",
           },
@@ -511,7 +558,8 @@ export default async function DealsPage({ params }: Props) {
       },
       bundle: {
         title: "Bundle-Angebote",
-        subtitle: "Kombinieren Sie Dienste und sparen Sie noch mehr bei Ihrer Online-Sicherheit",
+        subtitle:
+          "Kombinieren Sie Dienste und sparen Sie noch mehr bei Ihrer Online-Sicherheit",
         vpnPlusPass: "VPN + Passwort-Manager",
         combinedPrice: "Kombiniert ab",
         getVpn: "NordVPN Holen",
@@ -521,11 +569,10 @@ export default async function DealsPage({ params }: Props) {
     },
     es: {
       hero: {
-        title: "Ofertas y Cupones VPN 2026",
+        title: "Comparar Ofertas VPN",
         subtitle:
-          "Descuentos exclusivos en servicios VPN premium. Ahorra hasta 87% con nuestras ofertas verificadas y códigos de cupón.",
-        urgency: "¡Ofertas por tiempo limitado - No te lo pierdas!",
-        timerLabel: "Las Ofertas Terminan En",
+          "Comparación de descuentos VPN verificados. Todos los precios revisados y actualizados regularmente.",
+        updated: `Actualizado ${shortMonthYear}`,
       },
       deals: {
         perMonth: "/mes",
@@ -535,10 +582,8 @@ export default async function DealsPage({ params }: Props) {
         extraMonths: "meses gratis",
         months: "meses",
         getDeal: "Obtener Esta Oferta",
-        copyCoupon: "Copiar Código de Cupón",
-        copied: "¡Copiado!",
-        expiresLabel: "La oferta expira",
-        expiresSoon: "Pronto",
+        copyCoupon: "Código de Cupón",
+        copied: "Copiado!",
       },
       badges: {
         bestDeal: "Mejor Oferta",
@@ -548,7 +593,17 @@ export default async function DealsPage({ params }: Props) {
         passwordManager: "Gestor de Contraseñas",
       },
       features: {
-        title: "Características Incluidas",
+        title: "Características clave",
+      },
+      comparison: {
+        title: "Comparación Rápida",
+        vpn: "VPN",
+        price: "Precio",
+        savings: "Ahorro",
+        devices: "Dispositivos",
+        moneyBack: "Devolución",
+        rating: "Puntuación",
+        days: "días",
       },
       tips: {
         title: "Consejos Inteligentes para Comprar Ofertas",
@@ -607,7 +662,8 @@ export default async function DealsPage({ params }: Props) {
       },
       bundle: {
         title: "Ofertas de Paquete",
-        subtitle: "Combina servicios y ahorra aún más en tu seguridad en línea",
+        subtitle:
+          "Combina servicios y ahorra aún más en tu seguridad en línea",
         vpnPlusPass: "VPN + Gestor de Contraseñas",
         combinedPrice: "Combinado desde",
         getVpn: "Obtener NordVPN",
@@ -617,11 +673,10 @@ export default async function DealsPage({ params }: Props) {
     },
     fr: {
       hero: {
-        title: "Offres VPN & Coupons 2026",
+        title: "Comparer les Offres VPN",
         subtitle:
-          "Remises exclusives sur les services VPN premium. Économisez jusqu'à 87% avec nos offres vérifiées et codes promo.",
-        urgency: "Offres à durée limitée - Ne manquez pas ça!",
-        timerLabel: "Les Offres Se Terminent Dans",
+          "Comparaison de remises VPN vérifiées. Tous les prix vérifiés et mis à jour régulièrement.",
+        updated: `Mis à jour ${shortMonthYear}`,
       },
       deals: {
         perMonth: "/mois",
@@ -631,10 +686,8 @@ export default async function DealsPage({ params }: Props) {
         extraMonths: "mois gratuits",
         months: "mois",
         getDeal: "Obtenir Cette Offre",
-        copyCoupon: "Copier le Code Promo",
+        copyCoupon: "Code Promo",
         copied: "Copié!",
-        expiresLabel: "L'offre expire",
-        expiresSoon: "Bientôt",
       },
       badges: {
         bestDeal: "Meilleure Offre",
@@ -644,7 +697,17 @@ export default async function DealsPage({ params }: Props) {
         passwordManager: "Gestionnaire de Mots de Passe",
       },
       features: {
-        title: "Fonctionnalités Incluses",
+        title: "Fonctionnalités clés",
+      },
+      comparison: {
+        title: "Comparaison Rapide",
+        vpn: "VPN",
+        price: "Prix",
+        savings: "Économie",
+        devices: "Appareils",
+        moneyBack: "Remboursement",
+        rating: "Note",
+        days: "jours",
       },
       tips: {
         title: "Conseils d'Achat Intelligents",
@@ -690,12 +753,14 @@ export default async function DealsPage({ params }: Props) {
               "La plupart des offres sont automatiquement appliquées via nos liens d'affiliation. Lorsqu'un code promo est requis, nous l'affichons de manière bien visible sur la carte de l'offre.",
           },
           {
-            question: "Que se passe-t-il après la période promotionnelle?",
+            question:
+              "Que se passe-t-il après la période promotionnelle?",
             answer:
               "Après la fin de votre période d'abonnement initiale, vous serez facturé au prix de renouvellement standard sauf si vous annulez. Vérifiez toujours les conditions de renouvellement avant d'acheter.",
           },
           {
-            question: "Puis-je obtenir un remboursement si je n'aime pas le VPN?",
+            question:
+              "Puis-je obtenir un remboursement si je n'aime pas le VPN?",
             answer:
               "Oui! Tous les VPN listés ici offrent des garanties satisfait ou remboursé allant de 30 à 45 jours. Contactez leur support pour demander un remboursement pendant la période de garantie.",
           },
@@ -703,7 +768,8 @@ export default async function DealsPage({ params }: Props) {
       },
       bundle: {
         title: "Offres Groupées",
-        subtitle: "Combinez les services et économisez encore plus sur votre sécurité en ligne",
+        subtitle:
+          "Combinez les services et économisez encore plus sur votre sécurité en ligne",
         vpnPlusPass: "VPN + Gestionnaire de Mots de Passe",
         combinedPrice: "Combiné à partir de",
         getVpn: "Obtenir NordVPN",
@@ -713,10 +779,10 @@ export default async function DealsPage({ params }: Props) {
     },
     zh: {
       hero: {
-        title: "VPN优惠与折扣码2026",
-        subtitle: "高级VPN服务独家折扣。使用我们验证过的优惠和折扣码节省高达87%。",
-        urgency: "限时优惠 - 不要错过！",
-        timerLabel: "优惠结束倒计时",
+        title: "比较VPN优惠",
+        subtitle:
+          "经过验证的VPN折扣并排比较。所有价格定期检查和更新。",
+        updated: `更新于 ${shortMonthYear}`,
       },
       deals: {
         perMonth: "/月",
@@ -726,10 +792,8 @@ export default async function DealsPage({ params }: Props) {
         extraMonths: "个月免费",
         months: "个月",
         getDeal: "获取此优惠",
-        copyCoupon: "复制优惠码",
+        copyCoupon: "优惠码",
         copied: "已复制！",
-        expiresLabel: "优惠到期",
-        expiresSoon: "即将到期",
       },
       badges: {
         bestDeal: "最佳优惠",
@@ -739,26 +803,40 @@ export default async function DealsPage({ params }: Props) {
         passwordManager: "密码管理器",
       },
       features: {
-        title: "包含功能",
+        title: "主要功能",
+      },
+      comparison: {
+        title: "快速比较",
+        vpn: "VPN",
+        price: "价格",
+        savings: "节省",
+        devices: "设备",
+        moneyBack: "退款",
+        rating: "评分",
+        days: "天",
       },
       tips: {
         title: "智能购物技巧",
         items: [
           {
             title: "检查续订价格",
-            description: "始终检查促销期结束后您将支付的价格。许多VPN在第一年后会大幅提高价格。",
+            description:
+              "始终检查促销期结束后您将支付的价格。许多VPN在第一年后会大幅提高价格。",
           },
           {
             title: "额外月份技巧",
-            description: "免费月份已经计算在月价格中。27个月的优惠实际上只是一个价格更优惠的2年订阅。",
+            description:
+              "免费月份已经计算在月价格中。27个月的优惠实际上只是一个价格更优惠的2年订阅。",
           },
           {
             title: "退款保证",
-            description: "所有优惠都包含30-45天退款保证。在长期承诺之前无风险测试服务。",
+            description:
+              "所有优惠都包含30-45天退款保证。在长期承诺之前无风险测试服务。",
           },
           {
             title: "年度vs多年",
-            description: "多年计划提供最佳的月度价格，但前提是您确定在该期间内会使用VPN。",
+            description:
+              "多年计划提供最佳的月度价格，但前提是您确定在该期间内会使用VPN。",
           },
         ],
       },
@@ -772,19 +850,23 @@ export default async function DealsPage({ params }: Props) {
         items: [
           {
             question: "这些优惠会过期吗？",
-            answer: "是的，VPN优惠经常变化。我们定期更新此页面以提供最新优惠。所示优惠截至今天是最新的。",
+            answer:
+              "是的，VPN优惠经常变化。我们定期更新此页面以提供最新优惠。所示优惠截至今天是最新的。",
           },
           {
             question: "需要优惠码吗？",
-            answer: "大多数优惠通过我们的附属链接自动应用。当需要优惠码时，我们会在优惠卡上显著显示它。",
+            answer:
+              "大多数优惠通过我们的附属链接自动应用。当需要优惠码时，我们会在优惠卡上显著显示它。",
           },
           {
             question: "促销期结束后会怎样？",
-            answer: "初始订阅期结束后，除非您取消，否则将按标准续订价格收费。购买前始终检查续订条款。",
+            answer:
+              "初始订阅期结束后，除非您取消，否则将按标准续订价格收费。购买前始终检查续订条款。",
           },
           {
             question: "如果我不喜欢VPN可以退款吗？",
-            answer: "可以！此处列出的所有VPN都提供30-45天的退款保证。在保证期内联系他们的支持请求退款。",
+            answer:
+              "可以！此处列出的所有VPN都提供30-45天的退款保证。在保证期内联系他们的支持请求退款。",
           },
         ],
       },
@@ -800,10 +882,10 @@ export default async function DealsPage({ params }: Props) {
     },
     ja: {
       hero: {
-        title: "VPNセール＆クーポン2026",
-        subtitle: "プレミアムVPNサービスの独占割引。検証済みのセールとクーポンコードで最大87％節約。",
-        urgency: "期間限定オファー - お見逃しなく！",
-        timerLabel: "セール終了まで",
+        title: "VPNセールを比較",
+        subtitle:
+          "検証済みVPN割引の並列比較。すべての価格を定期的にチェック・更新しています。",
+        updated: `更新日 ${shortMonthYear}`,
       },
       deals: {
         perMonth: "/月",
@@ -813,10 +895,8 @@ export default async function DealsPage({ params }: Props) {
         extraMonths: "ヶ月無料",
         months: "ヶ月",
         getDeal: "このセールを入手",
-        copyCoupon: "クーポンコードをコピー",
+        copyCoupon: "クーポンコード",
         copied: "コピーしました！",
-        expiresLabel: "セール終了",
-        expiresSoon: "まもなく",
       },
       badges: {
         bestDeal: "ベストディール",
@@ -826,7 +906,17 @@ export default async function DealsPage({ params }: Props) {
         passwordManager: "パスワードマネージャー",
       },
       features: {
-        title: "含まれる機能",
+        title: "主な機能",
+      },
+      comparison: {
+        title: "クイック比較",
+        vpn: "VPN",
+        price: "価格",
+        savings: "節約",
+        devices: "デバイス",
+        moneyBack: "返金保証",
+        rating: "評価",
+        days: "日間",
       },
       tips: {
         title: "スマートなお買い物のヒント",
@@ -877,7 +967,8 @@ export default async function DealsPage({ params }: Props) {
               "初回購読期間が終了すると、キャンセルしない限り標準更新価格が請求されます。購入前に必ず更新条件を確認してください。",
           },
           {
-            question: "VPNが気に入らない場合、返金を受けられますか？",
+            question:
+              "VPNが気に入らない場合、返金を受けられますか？",
             answer:
               "はい！ここにリストされているすべてのVPNは30-45日間の返金保証を提供しています。保証期間内にサポートに連絡して返金をリクエストしてください。",
           },
@@ -885,7 +976,8 @@ export default async function DealsPage({ params }: Props) {
       },
       bundle: {
         title: "バンドルセール",
-        subtitle: "サービスを組み合わせてオンラインセキュリティをさらにお得に",
+        subtitle:
+          "サービスを組み合わせてオンラインセキュリティをさらにお得に",
         vpnPlusPass: "VPN + パスワードマネージャー",
         combinedPrice: "セット価格",
         getVpn: "NordVPNを入手",
@@ -895,10 +987,10 @@ export default async function DealsPage({ params }: Props) {
     },
     ko: {
       hero: {
-        title: "VPN 할인 및 쿠폰 2026",
-        subtitle: "프리미엄 VPN 서비스 독점 할인. 검증된 할인 및 쿠폰 코드로 최대 87% 절약하세요.",
-        urgency: "기간 한정 혜택 - 놓치지 마세요!",
-        timerLabel: "할인 종료까지",
+        title: "VPN 할인 비교",
+        subtitle:
+          "검증된 VPN 할인의 나란히 비교. 모든 가격은 정기적으로 확인 및 업데이트됩니다.",
+        updated: `업데이트됨 ${shortMonthYear}`,
       },
       deals: {
         perMonth: "/월",
@@ -908,10 +1000,8 @@ export default async function DealsPage({ params }: Props) {
         extraMonths: "개월 무료",
         months: "개월",
         getDeal: "이 할인 받기",
-        copyCoupon: "쿠폰 코드 복사",
+        copyCoupon: "쿠폰 코드",
         copied: "복사됨!",
-        expiresLabel: "할인 종료",
-        expiresSoon: "곧",
       },
       badges: {
         bestDeal: "최고 할인",
@@ -921,26 +1011,40 @@ export default async function DealsPage({ params }: Props) {
         passwordManager: "비밀번호 관리자",
       },
       features: {
-        title: "포함된 기능",
+        title: "주요 기능",
+      },
+      comparison: {
+        title: "빠른 비교",
+        vpn: "VPN",
+        price: "가격",
+        savings: "절약",
+        devices: "기기",
+        moneyBack: "환불 보장",
+        rating: "평점",
+        days: "일",
       },
       tips: {
         title: "스마트 쇼핑 팁",
         items: [
           {
             title: "갱신 가격 확인",
-            description: "프로모션 기간 종료 후 지불할 금액을 항상 확인하세요. 많은 VPN이 1년 후 가격을 크게 인상합니다.",
+            description:
+              "프로모션 기간 종료 후 지불할 금액을 항상 확인하세요. 많은 VPN이 1년 후 가격을 크게 인상합니다.",
           },
           {
             title: "추가 개월 트릭",
-            description: "'무료 개월'은 이미 월 가격에 계산되어 있습니다. 27개월 할인은 실제로 더 나은 가격의 2년 구독일 뿐입니다.",
+            description:
+              "'무료 개월'은 이미 월 가격에 계산되어 있습니다. 27개월 할인은 실제로 더 나은 가격의 2년 구독일 뿐입니다.",
           },
           {
             title: "환불 보장",
-            description: "모든 할인에는 30-45일 환불 보장이 포함됩니다. 장기 약정 전에 서비스를 위험 없이 테스트하세요.",
+            description:
+              "모든 할인에는 30-45일 환불 보장이 포함됩니다. 장기 약정 전에 서비스를 위험 없이 테스트하세요.",
           },
           {
             title: "연간 vs 다년",
-            description: "다년 플랜은 월별 가격이 가장 좋지만 해당 기간 동안 VPN을 사용할 것이 확실한 경우에만 해당됩니다.",
+            description:
+              "다년 플랜은 월별 가격이 가장 좋지만 해당 기간 동안 VPN을 사용할 것이 확실한 경우에만 해당됩니다.",
           },
         ],
       },
@@ -954,25 +1058,30 @@ export default async function DealsPage({ params }: Props) {
         items: [
           {
             question: "이 할인들은 만료되나요?",
-            answer: "예, VPN 할인은 자주 변경됩니다. 최신 혜택으로 이 페이지를 정기적으로 업데이트합니다. 표시된 할인은 오늘 기준으로 최신입니다.",
+            answer:
+              "예, VPN 할인은 자주 변경됩니다. 최신 혜택으로 이 페이지를 정기적으로 업데이트합니다. 표시된 할인은 오늘 기준으로 최신입니다.",
           },
           {
             question: "쿠폰 코드가 필요한가요?",
-            answer: "대부분의 할인은 제휴 링크를 통해 자동으로 적용됩니다. 쿠폰 코드가 필요한 경우 할인 카드에 눈에 띄게 표시됩니다.",
+            answer:
+              "대부분의 할인은 제휴 링크를 통해 자동으로 적용됩니다. 쿠폰 코드가 필요한 경우 할인 카드에 눈에 띄게 표시됩니다.",
           },
           {
             question: "프로모션 기간 후에는 어떻게 되나요?",
-            answer: "초기 구독 기간이 종료되면 취소하지 않는 한 표준 갱신 가격이 청구됩니다. 구매 전에 항상 갱신 조건을 확인하세요.",
+            answer:
+              "초기 구독 기간이 종료되면 취소하지 않는 한 표준 갱신 가격이 청구됩니다. 구매 전에 항상 갱신 조건을 확인하세요.",
           },
           {
             question: "VPN이 마음에 들지 않으면 환불받을 수 있나요?",
-            answer: "예! 여기에 나열된 모든 VPN은 30-45일의 환불 보장을 제공합니다. 보장 기간 내에 지원팀에 연락하여 환불을 요청하세요.",
+            answer:
+              "예! 여기에 나열된 모든 VPN은 30-45일의 환불 보장을 제공합니다. 보장 기간 내에 지원팀에 연락하여 환불을 요청하세요.",
           },
         ],
       },
       bundle: {
         title: "번들 할인",
-        subtitle: "서비스를 결합하여 온라인 보안에서 더 많이 절약하세요",
+        subtitle:
+          "서비스를 결합하여 온라인 보안에서 더 많이 절약하세요",
         vpnPlusPass: "VPN + 비밀번호 관리자",
         combinedPrice: "결합 가격",
         getVpn: "NordVPN 받기",
@@ -982,10 +1091,10 @@ export default async function DealsPage({ params }: Props) {
     },
     th: {
       hero: {
-        title: "ดีล VPN และคูปอง 2026",
-        subtitle: "ส่วนลดพิเศษสำหรับบริการ VPN พรีเมียม ประหยัดสูงสุด 87% ด้วยดีลและรหัสคูปองที่ตรวจสอบแล้วของเรา",
-        urgency: "ข้อเสนอจำกัดเวลา - อย่าพลาด!",
-        timerLabel: "ดีลสิ้นสุดใน",
+        title: "เปรียบเทียบดีล VPN",
+        subtitle:
+          "เปรียบเทียบส่วนลด VPN ที่ตรวจสอบแล้ว ราคาทั้งหมดตรวจสอบและอัปเดตเป็นประจำ",
+        updated: `อัปเดต ${shortMonthYear}`,
       },
       deals: {
         perMonth: "/เดือน",
@@ -995,10 +1104,8 @@ export default async function DealsPage({ params }: Props) {
         extraMonths: "เดือนฟรี",
         months: "เดือน",
         getDeal: "รับดีลนี้",
-        copyCoupon: "คัดลอกรหัสคูปอง",
+        copyCoupon: "รหัสคูปอง",
         copied: "คัดลอกแล้ว!",
-        expiresLabel: "ดีลหมดอายุ",
-        expiresSoon: "เร็วๆ นี้",
       },
       badges: {
         bestDeal: "ดีลที่ดีที่สุด",
@@ -1008,7 +1115,17 @@ export default async function DealsPage({ params }: Props) {
         passwordManager: "ตัวจัดการรหัสผ่าน",
       },
       features: {
-        title: "ฟีเจอร์ที่รวมอยู่",
+        title: "ฟีเจอร์หลัก",
+      },
+      comparison: {
+        title: "เปรียบเทียบด่วน",
+        vpn: "VPN",
+        price: "ราคา",
+        savings: "ประหยัด",
+        devices: "อุปกรณ์",
+        moneyBack: "คืนเงิน",
+        rating: "คะแนน",
+        days: "วัน",
       },
       tips: {
         title: "เคล็ดลับการช็อปปิ้งอย่างชาญฉลาด",
@@ -1045,7 +1162,8 @@ export default async function DealsPage({ params }: Props) {
         items: [
           {
             question: "ดีลเหล่านี้หมดอายุหรือไม่?",
-            answer: "ใช่ ดีล VPN เปลี่ยนแปลงบ่อย เราอัปเดตหน้านี้เป็นประจำด้วยข้อเสนอล่าสุด ดีลที่แสดงเป็นข้อมูลล่าสุดณวันนี้",
+            answer:
+              "ใช่ ดีล VPN เปลี่ยนแปลงบ่อย เราอัปเดตหน้านี้เป็นประจำด้วยข้อเสนอล่าสุด ดีลที่แสดงเป็นข้อมูลล่าสุดณวันนี้",
           },
           {
             question: "ต้องใช้รหัสคูปองหรือไม่?",
@@ -1058,7 +1176,8 @@ export default async function DealsPage({ params }: Props) {
               "หลังจากช่วงสมัครสมาชิกเริ่มต้นสิ้นสุด คุณจะถูกเรียกเก็บเงินตามราคาต่ออายุมาตรฐานเว้นแต่คุณจะยกเลิก ตรวจสอบข้อกำหนดการต่ออายุก่อนซื้อเสมอ",
           },
           {
-            question: "ฉันสามารถขอคืนเงินได้หากไม่ชอบ VPN หรือไม่?",
+            question:
+              "ฉันสามารถขอคืนเงินได้หากไม่ชอบ VPN หรือไม่?",
             answer:
               "ได้! VPN ทั้งหมดที่ระบุไว้ที่นี่มีการรับประกันคืนเงิน 30-45 วัน ติดต่อฝ่ายสนับสนุนเพื่อขอคืนเงินภายในช่วงระยะเวลารับประกัน",
           },
@@ -1066,7 +1185,8 @@ export default async function DealsPage({ params }: Props) {
       },
       bundle: {
         title: "ดีลชุดรวม",
-        subtitle: "รวมบริการและประหยัดมากขึ้นสำหรับความปลอดภัยออนไลน์ของคุณ",
+        subtitle:
+          "รวมบริการและประหยัดมากขึ้นสำหรับความปลอดภัยออนไลน์ของคุณ",
         vpnPlusPass: "VPN + ตัวจัดการรหัสผ่าน",
         combinedPrice: "ราคารวมเริ่มต้น",
         getVpn: "รับ NordVPN",
@@ -1087,69 +1207,154 @@ export default async function DealsPage({ params }: Props) {
         <BreadcrumbSchema items={[{ name: "Deals", href: "/deals" }]} />
       </div>
 
-      {/* Hero Section */}
-      <section className="bg-gradient-to-b from-primary/10 to-background py-16 md:py-24">
+      {/* Hero Section — clean, no countdown */}
+      <section className="bg-gradient-to-b from-primary/5 to-background py-12 md:py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="flex items-center justify-center gap-2 mb-6">
-              <Tag className="h-8 w-8 text-primary" />
-              <Sparkles className="h-6 w-6 text-yellow-500" />
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <Tag className="h-7 w-7 text-primary" />
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <h1 className="text-3xl md:text-5xl font-bold mb-4">
               {t.hero.title}
             </h1>
-            <p className="text-xl text-muted-foreground mb-8">
+            <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
               {t.hero.subtitle}
             </p>
-            <div className="inline-flex items-center gap-2 bg-destructive/10 text-destructive px-6 py-3 rounded-full font-semibold mb-8">
-              <Clock className="h-5 w-5" />
-              {t.hero.urgency}
-            </div>
-
-            {/* Countdown Timer */}
-            <div className="mt-8 inline-block">
-              <CountdownTimer
-                endDate={new Date("2026-12-31T23:59:59")}
-                variant="full"
-                label={t.hero.timerLabel}
-                className="bg-card/50 backdrop-blur-sm p-6 rounded-2xl border shadow-lg"
-              />
+            <div className="inline-flex items-center gap-2 text-sm text-muted-foreground bg-muted px-4 py-2 rounded-full">
+              <CalendarCheck className="h-4 w-4" />
+              {t.hero.updated}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Bundle Deals Section */}
-      <section className="py-16 bg-gradient-to-b from-background to-muted/30">
+      {/* Quick Comparison Table */}
+      <section className="py-12">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-10">
-              <Badge className="bg-emerald-500 text-white border-0 mb-4 text-sm px-4 py-1">
+            <h2 className="text-2xl font-bold mb-6">{t.comparison.title}</h2>
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse">
+                <thead>
+                  <tr className="border-b-2 border-border">
+                    <th className="text-left py-3 px-4 font-semibold text-sm">
+                      {t.comparison.vpn}
+                    </th>
+                    <th className="text-left py-3 px-4 font-semibold text-sm">
+                      {t.comparison.price}
+                    </th>
+                    <th className="text-left py-3 px-4 font-semibold text-sm">
+                      {t.comparison.savings}
+                    </th>
+                    <th className="text-left py-3 px-4 font-semibold text-sm">
+                      {t.comparison.devices}
+                    </th>
+                    <th className="text-left py-3 px-4 font-semibold text-sm">
+                      {t.comparison.moneyBack}
+                    </th>
+                    <th className="text-left py-3 px-4 font-semibold text-sm">
+                      {t.comparison.rating}
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {vpnDeals.map((deal, index) => (
+                    <tr
+                      key={index}
+                      className="border-b border-border hover:bg-muted/50 transition-colors"
+                    >
+                      <td className="py-3 px-4">
+                        <div className="flex items-center gap-2">
+                          <span className="font-semibold">{deal.name}</span>
+                          <Badge
+                            className={`${deal.badgeColor} text-white border-0 text-xs`}
+                          >
+                            {t.badges[deal.badgeKey]}
+                          </Badge>
+                        </div>
+                      </td>
+                      <td className="py-3 px-4">
+                        <span className="font-bold text-primary">
+                          ${deal.dealPrice}
+                        </span>
+                        <span className="text-muted-foreground text-sm">
+                          {t.deals.perMonth}
+                        </span>
+                      </td>
+                      <td className="py-3 px-4">
+                        <Badge variant="destructive" className="font-semibold">
+                          {deal.discount}%
+                        </Badge>
+                      </td>
+                      <td className="py-3 px-4 text-sm">{deal.devices}</td>
+                      <td className="py-3 px-4 text-sm">
+                        {deal.moneyBack} {t.comparison.days}
+                      </td>
+                      <td className="py-3 px-4">
+                        <div className="flex items-center gap-1">
+                          <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                          <span className="font-semibold text-sm">
+                            {deal.rating}
+                          </span>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Deal Cards — 2-column grid */}
+      <section className="py-12 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {deals.map((deal, index) => (
+              <DealCard key={index} deal={deal} t={t} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Bundle Section — simplified */}
+      <section className="py-12">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-8">
+              <Badge className="bg-emerald-500 text-white border-0 mb-3 text-sm px-3 py-1">
                 {t.bundle.bestCombo}
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">{t.bundle.title}</h2>
-              <p className="text-lg text-muted-foreground">{t.bundle.subtitle}</p>
+              <h2 className="text-2xl md:text-3xl font-bold mb-2">
+                {t.bundle.title}
+              </h2>
+              <p className="text-muted-foreground">{t.bundle.subtitle}</p>
             </div>
 
-            <Card className="border-2 border-emerald-500/30 bg-gradient-to-br from-emerald-500/5 to-blue-500/5 overflow-hidden">
+            <Card className="border border-emerald-500/30">
               <CardContent className="p-0">
                 <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border">
                   {/* NordVPN Side */}
-                  <div className="p-8">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center">
+                  <div className="p-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-9 h-9 rounded-full bg-blue-500/10 flex items-center justify-center">
                         <Shield className="h-5 w-5 text-blue-500" />
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold">NordVPN</h3>
-                        <p className="text-sm text-muted-foreground">VPN</p>
+                        <h3 className="text-lg font-bold">NordVPN</h3>
+                        <p className="text-xs text-muted-foreground">VPN</p>
                       </div>
                     </div>
                     <div className="flex items-baseline gap-2 mb-4">
-                      <span className="text-3xl font-bold text-primary">$2.99</span>
-                      <span className="text-muted-foreground">{t.deals.perMonth}</span>
+                      <span className="text-2xl font-bold text-primary">
+                        $2.99
+                      </span>
+                      <span className="text-sm text-muted-foreground">
+                        {t.deals.perMonth}
+                      </span>
                     </div>
-                    <ul className="space-y-2 mb-6">
+                    <ul className="space-y-1.5 mb-5">
                       <li className="flex items-center gap-2 text-sm">
                         <CheckCircle className="h-4 w-4 text-green-500 shrink-0" />
                         <span>10 devices</span>
@@ -1176,21 +1381,27 @@ export default async function DealsPage({ params }: Props) {
                   </div>
 
                   {/* NordPass Side */}
-                  <div className="p-8">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center">
+                  <div className="p-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-9 h-9 rounded-full bg-emerald-500/10 flex items-center justify-center">
                         <KeyRound className="h-5 w-5 text-emerald-500" />
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold">NordPass</h3>
-                        <p className="text-sm text-muted-foreground">{t.badges.passwordManager}</p>
+                        <h3 className="text-lg font-bold">NordPass</h3>
+                        <p className="text-xs text-muted-foreground">
+                          {t.badges.passwordManager}
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-baseline gap-2 mb-4">
-                      <span className="text-3xl font-bold text-primary">$1.49</span>
-                      <span className="text-muted-foreground">{t.deals.perMonth}</span>
+                      <span className="text-2xl font-bold text-primary">
+                        $1.49
+                      </span>
+                      <span className="text-sm text-muted-foreground">
+                        {t.deals.perMonth}
+                      </span>
                     </div>
-                    <ul className="space-y-2 mb-6">
+                    <ul className="space-y-1.5 mb-5">
                       <li className="flex items-center gap-2 text-sm">
                         <CheckCircle className="h-4 w-4 text-green-500 shrink-0" />
                         <span>Unlimited passwords</span>
@@ -1219,12 +1430,20 @@ export default async function DealsPage({ params }: Props) {
                 </div>
 
                 {/* Combined Price Footer */}
-                <div className="border-t bg-muted/50 p-6 text-center">
-                  <p className="text-sm text-muted-foreground mb-1">{t.bundle.vpnPlusPass}</p>
+                <div className="border-t bg-muted/50 p-4 text-center">
+                  <p className="text-sm text-muted-foreground mb-1">
+                    {t.bundle.vpnPlusPass}
+                  </p>
                   <div className="flex items-center justify-center gap-2">
-                    <span className="text-sm text-muted-foreground">{t.bundle.combinedPrice}</span>
-                    <span className="text-2xl font-bold text-primary">$4.48</span>
-                    <span className="text-muted-foreground">{t.deals.perMonth}</span>
+                    <span className="text-sm text-muted-foreground">
+                      {t.bundle.combinedPrice}
+                    </span>
+                    <span className="text-xl font-bold text-primary">
+                      $4.48
+                    </span>
+                    <span className="text-sm text-muted-foreground">
+                      {t.deals.perMonth}
+                    </span>
                   </div>
                 </div>
               </CardContent>
@@ -1233,36 +1452,27 @@ export default async function DealsPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Deals Grid */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {deals.map((deal, index) => (
-              <DealCard key={index} deal={deal} t={t} />
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Tips Section */}
-      <section className="py-16 bg-muted/50">
+      <section className="py-12 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="flex items-center gap-3 mb-8">
-              <Info className="h-8 w-8 text-primary" />
-              <h2 className="text-3xl font-bold">{t.tips.title}</h2>
+            <div className="flex items-center gap-3 mb-6">
+              <Info className="h-6 w-6 text-primary" />
+              <h2 className="text-2xl font-bold">{t.tips.title}</h2>
             </div>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-4">
               {t.tips.items.map((tip, index) => (
                 <Card key={index}>
-                  <CardHeader>
-                    <CardTitle className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-1" />
+                  <CardHeader className="pb-2">
+                    <CardTitle className="flex items-start gap-2 text-base">
+                      <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
                       <span>{tip.title}</span>
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground">{tip.description}</p>
+                    <p className="text-sm text-muted-foreground">
+                      {tip.description}
+                    </p>
                   </CardContent>
                 </Card>
               ))}
@@ -1272,18 +1482,18 @@ export default async function DealsPage({ params }: Props) {
       </section>
 
       {/* Guarantee Section */}
-      <section className="py-16">
+      <section className="py-12">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <Card className="border-2 border-green-500/20 bg-green-500/5">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-2xl">
-                  <Shield className="h-8 w-8 text-green-500" />
+            <Card className="border border-green-500/20 bg-green-500/5">
+              <CardHeader className="pb-2">
+                <CardTitle className="flex items-center gap-3 text-xl">
+                  <Shield className="h-6 w-6 text-green-500" />
                   {t.guarantee.title}
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-lg text-muted-foreground">
+                <p className="text-muted-foreground">
                   {t.guarantee.description}
                 </p>
               </CardContent>
@@ -1293,17 +1503,17 @@ export default async function DealsPage({ params }: Props) {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-muted/50">
+      <section className="py-12 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">
+            <h2 className="text-2xl font-bold mb-6 text-center">
               {t.faq.title}
             </h2>
-            <div className="space-y-6">
+            <div className="space-y-4">
               {t.faq.items.map((item, index) => (
                 <Card key={index}>
-                  <CardHeader>
-                    <CardTitle className="text-xl">{item.question}</CardTitle>
+                  <CardHeader className="pb-2">
+                    <CardTitle className="text-lg">{item.question}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground">{item.answer}</p>
@@ -1318,7 +1528,7 @@ export default async function DealsPage({ params }: Props) {
   );
 }
 
-// Deal Card Component types
+// Deal Card Component
 type DealCardTranslations = {
   deals: {
     perMonth: string;
@@ -1330,8 +1540,6 @@ type DealCardTranslations = {
     getDeal: string;
     copyCoupon: string;
     copied: string;
-    expiresLabel: string;
-    expiresSoon: string;
   };
   badges: {
     bestDeal: string;
@@ -1352,109 +1560,71 @@ function DealCard({
   deal: (typeof deals)[0];
   t: DealCardTranslations;
 }) {
-  // Note: Coupon copy functionality would require client component
-  // For now, coupon is displayed but not interactive
-
   return (
-    <Card className="relative overflow-hidden border-2 hover:border-primary/50 transition-colors">
+    <Card className="relative overflow-hidden hover:border-primary/40 transition-colors">
       {/* Badge */}
       <div className="absolute top-4 right-4">
-        <Badge className={`${deal.badgeColor} text-white border-0`}>
+        <Badge className={`${deal.badgeColor} text-white border-0 text-xs`}>
           {t.badges[deal.badgeKey]}
         </Badge>
       </div>
 
       <CardContent className="pt-6">
-        {/* VPN Name */}
-        <h3 className="text-2xl font-bold mb-6">{deal.name}</h3>
+        {/* VPN Name & Price */}
+        <h3 className="text-xl font-bold mb-4">{deal.name}</h3>
 
-        {/* Pricing */}
-        <div className="mb-6">
-          <div className="flex items-baseline gap-3 mb-2">
-            <span className="text-5xl font-bold text-primary">
+        <div className="mb-4">
+          <div className="flex items-baseline gap-2 mb-1">
+            <span className="text-4xl font-bold text-primary">
               ${deal.dealPrice}
             </span>
-            <span className="text-lg text-muted-foreground">
-              {t.deals.perMonth}
-            </span>
+            <span className="text-muted-foreground">{t.deals.perMonth}</span>
           </div>
-          <div className="flex items-center gap-3 text-sm text-muted-foreground">
+          <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <span className="line-through">
               {t.deals.wasPrice} ${deal.originalPrice}
             </span>
-            <Badge variant="destructive" className="font-semibold">
+            <Badge variant="destructive" className="text-xs">
               {t.deals.savePercent} {deal.discount}%
             </Badge>
           </div>
         </div>
 
-        {/* Total Cost */}
-        <div className="bg-muted rounded-lg p-4 mb-6">
-          <div className="flex justify-between items-center">
-            <div>
-              <p className="text-sm text-muted-foreground mb-1">
-                {t.deals.totalCost}
-              </p>
-              <p className="text-2xl font-bold">${deal.total}</p>
-            </div>
-            <div className="text-right">
-              <p className="text-sm text-muted-foreground mb-1">
-                {deal.months} {t.deals.months}
-              </p>
-              {deal.months - 24 > 0 && (
-                <div className="inline-flex items-center gap-1 bg-green-500/10 text-green-600 dark:text-green-400 px-3 py-1 rounded-full text-xs font-semibold">
-                  <Gift className="h-3 w-3" />
-                  {deal.months - 24} {t.deals.extraMonths}
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
+        {/* Total cost line */}
+        <p className="text-sm text-muted-foreground mb-4">
+          {t.deals.totalCost}: ${deal.total} / {deal.months} {t.deals.months}
+        </p>
 
-        {/* Features */}
-        <div className="mb-6">
-          <p className="font-semibold mb-3 text-sm">{t.features.title}</p>
-          <ul className="space-y-2">
-            {deal.features.map((feature, idx) => (
-              <li key={idx} className="flex items-center gap-2 text-sm">
-                <CheckCircle className="h-4 w-4 text-green-500 shrink-0" />
-                <span>{feature}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
+        {/* Features — 3 bullets */}
+        <ul className="space-y-1.5 mb-5">
+          {deal.features.slice(0, 3).map((feature, idx) => (
+            <li key={idx} className="flex items-center gap-2 text-sm">
+              <CheckCircle className="h-4 w-4 text-green-500 shrink-0" />
+              <span>{feature}</span>
+            </li>
+          ))}
+        </ul>
 
         {/* Coupon Code */}
         {deal.coupon && (
-          <div className="mb-6">
-            <div className="border rounded-lg p-4 text-center bg-muted">
-              <p className="text-sm text-muted-foreground mb-1">{t.deals.copyCoupon}</p>
-              <p className="text-lg font-bold font-mono">{deal.coupon}</p>
-            </div>
+          <div className="mb-4 border rounded-md p-3 text-center bg-muted/50">
+            <p className="text-xs text-muted-foreground mb-0.5">
+              {t.deals.copyCoupon}
+            </p>
+            <p className="font-bold font-mono text-sm">{deal.coupon}</p>
           </div>
         )}
 
         {/* CTA Button */}
         <AffiliateButton
-          vpnId={deal.name.toLowerCase().replace(/\s+/g, '-')}
+          vpnId={deal.name.toLowerCase().replace(/\s+/g, "-")}
           vpnName={deal.name}
           affiliateUrl={deal.affiliateUrl}
-          className="w-full text-lg py-6"
+          className="w-full"
           size="lg"
         >
-          <Zap className="h-5 w-5 mr-2" />
           {t.deals.getDeal}
         </AffiliateButton>
-
-        {/* Countdown Timer */}
-        <div className="mt-4 pt-4 border-t">
-          <CountdownTimer
-            endDate={deal.expiresAt}
-            variant="compact"
-            label={t.deals.expiresLabel}
-            className="justify-center"
-          />
-        </div>
       </CardContent>
     </Card>
   );

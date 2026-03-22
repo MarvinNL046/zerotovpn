@@ -236,12 +236,14 @@ export function Header() {
             Blog
           </Link>
 
-          {/* Deals — CTA button */}
+          {/* Deals — regular link */}
           <Link
             href="/deals"
-            className="ml-2 inline-flex items-center gap-1.5 px-4 py-2 text-sm font-semibold rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+            className={cn(
+              "px-3 py-2 text-sm font-medium rounded-lg transition-colors hover:text-primary hover:bg-muted",
+              pathname === "/deals" ? "text-primary bg-muted" : "text-muted-foreground"
+            )}
           >
-            <Tag className="h-3.5 w-3.5" />
             {t("deals")}
           </Link>
         </nav>

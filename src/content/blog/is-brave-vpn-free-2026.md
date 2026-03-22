@@ -16,6 +16,8 @@ The Brave browser itself is free and includes built-in ad blocking (Brave Shield
 
 If you searched "is Brave VPN free" hoping for a zero-cost VPN baked into Brave, the short answer is: the browser is free, but the VPN is not.
 
+![Brave VPN Pricing Page](/images/blog/brave-vpn-pricing-page.png)
+
 ## What Is Brave VPN (Powered by Guardian)?
 
 Brave partnered with Guardian, a privacy-focused security company, to build a VPN directly into the Brave browser. Rather than installing a separate VPN app, you activate the VPN from inside Brave's settings.
@@ -111,7 +113,7 @@ Here is how Brave VPN stacks up against the most popular VPN services in 2026:
 | **Double VPN** | No | Yes | Yes (Secure Core) | Yes (MultiHop) |
 | **No-log audit** | No public audit | Yes (Deloitte) | Yes | Yes |
 
-The comparison makes the value gap clear. [NordVPN](/reviews/nordvpn) offers significantly more features, servers, and platform support at roughly one-third the price on a long-term plan. [ProtonVPN's free tier](/reviews/protonvpn) offers unlimited data with no cost at all, though with limitations on speed and server access.
+The comparison makes the value gap clear. [NordVPN](/reviews/nordvpn) offers significantly more features, servers, and platform support at roughly one-third the price on a long-term plan — grab a [NordVPN coupon](/coupons/nordvpn) to lock in the best deal. [ProtonVPN's free tier](/reviews/protonvpn) offers unlimited data with no cost at all, though with limitations on speed and server access. [Surfshark](/coupons/surfshark) is another strong alternative at under $2.50/month.
 
 ## Free Alternatives Worth Considering
 
@@ -140,7 +142,7 @@ Here is who might benefit from Brave VPN:
 
 For everyone else, a dedicated VPN is the better investment. [NordVPN](/reviews/nordvpn) gives you triple the server network, streaming access, advanced security features, and platform support for Linux and routers -- all at one-third the cost on a 2-year plan. If budget is the priority, [Surfshark](/best/vpn-cheap) offers unlimited devices and strong performance at under $2.50/month.
 
-And if you just want basic privacy without paying anything, ProtonVPN's free tier or Brave's own Shields feature will serve you well.
+If you primarily use a VPN on your phone, check our [Best VPN for Mobile](/best/vpn-mobile) ranking. For maximum privacy, see our [Best VPN for Privacy](/best/vpn-privacy) guide. And if you just want basic privacy without paying anything, ProtonVPN's free tier or Brave's own Shields feature will serve you well.
 
 ## FAQ
 

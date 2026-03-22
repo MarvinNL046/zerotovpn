@@ -84,7 +84,7 @@ Not every VPN is suitable for gaming. Here's what to look for:
 | No bandwidth caps | Games use 40-100 MB/hour, but downloads and updates use far more |
 | Kill switch | Prevents IP leaks if the VPN connection drops mid-match |
 
-Our top picks for gaming are covered in detail in our [best VPN for gaming](/best/vpn-gaming) roundup. Short version: [NordVPN](/reviews/nordvpn) (fastest overall with NordLynx/WireGuard) and [ExpressVPN](/reviews/expressvpn) (most consistent international routing).
+Our top picks for gaming are covered in detail in our [Best VPN for Gaming ranking](/best/vpn-gaming). Short version: [NordVPN](/reviews/nordvpn) (fastest overall with NordLynx/WireGuard) and [ExpressVPN](/reviews/expressvpn) (most consistent international routing). See our [NordVPN vs ExpressVPN for gaming](/compare/nordvpn-vs-expressvpn) comparison for a detailed breakdown.
 
 ### Step 2: Install on Your Device
 
@@ -131,7 +131,7 @@ Run a before/after comparison:
 2. **With VPN connected:** Run the same ping test
 3. **Compare:** Look at average ping and packet loss percentage
 
-You can also use our [speed test tool](/speed-test) for a quick throughput and latency check. If the VPN adds more than 20 ms on a domestic connection, try a different server.
+You can also [test your VPN speed](/speed-test) for a quick throughput and latency check. If the VPN adds more than 20 ms on a domestic connection, try a different server.
 
 ## Best VPN Settings for Popular Games
 
@@ -234,7 +234,7 @@ Yes, in most scenarios. Here's real-world data from testing with NordVPN (WireGu
 
 The 5-10 ms added on domestic connections is imperceptible for most players. In professional-level FPS play where every millisecond matters, that overhead is worth weighing against the DDoS protection you gain.
 
-For a deeper look at how VPN routing works, see our [how does a VPN work](/guides/how-vpn-works) explainer.
+For a deeper look at how VPN routing works, see our [How does a VPN work](/guides/how-vpn-works) explainer.
 
 ## FAQ
 

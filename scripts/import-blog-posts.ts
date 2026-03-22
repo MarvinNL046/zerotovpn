@@ -1,9 +1,8 @@
 /**
  * Import markdown blog posts from src/content/blog/ into the Neon PostgreSQL database.
+ * Converts markdown to HTML before inserting (the blog template renders HTML).
  *
  * Usage: npx tsx scripts/import-blog-posts.ts
- *
- * Reads all .md files, parses frontmatter, and upserts into BlogPost table.
  */
 
 import { neon } from "@neondatabase/serverless";
@@ -13,6 +12,7 @@ import * as schema from "../src/lib/db/schema";
 import * as fs from "fs";
 import * as path from "path";
 import dotenv from "dotenv";
+import { marked } from "marked";
 
 dotenv.config({ path: ".env.local" });
 
@@ -42,12 +42,10 @@ function parseFrontmatter(content: string): { frontmatter: Frontmatter; body: st
     const key = line.slice(0, colonIdx).trim();
     let value = line.slice(colonIdx + 1).trim();
 
-    // Remove quotes
     if (value.startsWith('"') && value.endsWith('"')) {
       value = value.slice(1, -1);
     }
 
-    // Parse arrays
     if (value.startsWith("[")) {
       try {
         fm[key] = JSON.parse(value.replace(/'/g, '"'));
@@ -95,6 +93,9 @@ async function main() {
       const { frontmatter, body } = parseFrontmatter(raw);
       const slug = frontmatter.slug || file.replace(".md", "");
 
+      // Convert markdown to HTML
+      const htmlContent = await marked(body);
+
       // Check if post exists
       const existing = await db
         .select()
@@ -106,7 +107,7 @@ async function main() {
         language: "en",
         title: frontmatter.title || slug,
         excerpt: frontmatter.description || "",
-        content: body,
+        content: htmlContent,
         metaTitle: frontmatter.title,
         metaDescription: frontmatter.description,
         category: frontmatter.category || "guide",
@@ -117,20 +118,18 @@ async function main() {
       };
 
       if (existing.length > 0) {
-        // Update existing
         await db
           .update(schema.blogPosts)
           .set(postData)
           .where(and(eq(schema.blogPosts.slug, slug), eq(schema.blogPosts.language, "en")));
-        console.log(`  ✅ Updated: ${slug} (${body.split(/\s+/).length}w)`);
+        console.log(`  ✅ Updated: ${slug} (${body.split(/\s+/).length}w → HTML)`);
         updated++;
       } else {
-        // Insert new
         await db.insert(schema.blogPosts).values({
           ...postData,
           createdAt: new Date(),
         });
-        console.log(`  ✅ Imported: ${slug} (${body.split(/\s+/).length}w)`);
+        console.log(`  ✅ Imported: ${slug} (${body.split(/\s+/).length}w → HTML)`);
         imported++;
       }
     } catch (err) {

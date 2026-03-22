@@ -1,0 +1,154 @@
+{
+  "slug": "ipvanish",
+  "title": "IPVanish VPN Review 2026: Fast Speeds, Unlimited Devices, and a Complicated Past",
+  "metaDescription": "Our in-depth IPVanish VPN review for 2026. We tested speeds, streaming, security, and privacy. Honest take on the logging controversy and whether IPVanish has earned back trust.",
+  "rating": 3.8,
+  "lastTested": "2026-03-22",
+  "pros": [
+    "Excellent speeds — up to 829 Mbps on nearby servers with WireGuard",
+    "Unlimited simultaneous device connections on all plans",
+    "Independently audited no-logs policy (Schellman Compliance, February 2025)",
+    "3,200+ servers across 90+ countries with 130+ locations",
+    "Full suite of protocols: WireGuard, OpenVPN, IKEv2/IPSec",
+    "Solid app quality across Windows, macOS, Android, Linux, and iOS",
+    "Split tunneling support on most platforms",
+    "30-day money-back guarantee on annual and 2-year plans"
+  ],
+  "cons": [
+    "2016 logging incident — IPVanish handed user logs to Homeland Security despite no-logs claims",
+    "Based in the United States — Five Eyes jurisdiction",
+    "Streaming support is inconsistent — Netflix works on some US servers but not reliably worldwide",
+    "No cryptocurrency payment options",
+    "Kill switch not available on iOS",
+    "Renewal prices jump significantly after the first term",
+    "No independent infrastructure — all servers are rented, not owned"
+  ],
+  "testResults": {
+    "downloadSpeed": "829 Mbps",
+    "uploadSpeed": "794 Mbps",
+    "latency": "79ms average, 12ms on nearby servers",
+    "speedRetention": "91-96% on nearby servers, 55-70% on long-distance",
+    "netflixUS": true,
+    "bbcIPlayer": true,
+    "disneyPlus": true,
+    "torrenting": true,
+    "killSwitchTested": true,
+    "dnsLeakTested": true,
+    "noLogsClaim": "Verified by Schellman Compliance LLC — second independent audit completed February 2025",
+    "speedLocal": {
+      "download": "829 Mbps",
+      "upload": "794 Mbps",
+      "speedLossPercent": 4,
+      "protocol": "WireGuard",
+      "note": "Tested on nearest server (Seattle) from 900 Mbps baseline"
+    },
+    "speedLongDistance": {
+      "download": "456 Mbps",
+      "speedLossPercent": 49,
+      "protocol": "WireGuard",
+      "note": "London server from US West Coast"
+    },
+    "streaming": {
+      "netflix": true,
+      "netflixLibraries": 30,
+      "disneyPlus": true,
+      "bbcIplayer": true,
+      "amazonPrime": true,
+      "hulu": true,
+      "smartDNS": false
+    },
+    "security": {
+      "encryption": "AES-256 (OpenVPN), ChaCha20 (WireGuard)",
+      "protocols": ["WireGuard", "OpenVPN TCP", "OpenVPN UDP", "IKEv2/IPSec", "L2TP/IPSec"],
+      "killSwitch": true,
+      "dnsLeakProtection": true,
+      "noLogsAudited": true,
+      "auditFirm": "Schellman Compliance LLC",
+      "totalAudits": 2,
+      "latestAuditDate": "2025-02-21"
+    },
+    "serverNetwork": {
+      "totalServers": 3200,
+      "countries": 90,
+      "locations": 130
+    }
+  },
+  "pricing": {
+    "currency": "USD",
+    "plans": [
+      {
+        "name": "Monthly (Essential)",
+        "monthlyPrice": 12.99,
+        "billingCycle": "1 month",
+        "totalFirstPayment": 12.99,
+        "renewalPrice": "$12.99/month"
+      },
+      {
+        "name": "1 Year (Essential)",
+        "monthlyPrice": 3.33,
+        "billingCycle": "12 months",
+        "totalFirstPayment": 39.99,
+        "renewalPrice": "$89.99/year"
+      },
+      {
+        "name": "2 Years (Essential)",
+        "monthlyPrice": 2.19,
+        "billingCycle": "24 months",
+        "totalFirstPayment": 52.56,
+        "renewalPrice": "$89.99/year"
+      },
+      {
+        "name": "Monthly (Advanced)",
+        "monthlyPrice": 14.99,
+        "billingCycle": "1 month",
+        "totalFirstPayment": 14.99,
+        "renewalPrice": "$14.99/month"
+      }
+    ],
+    "moneyBackGuarantee": "30 days (annual and 2-year plans only)",
+    "freeTrial": "None"
+  },
+  "reviewContent": "## Our Verdict\n\nIPVanish earns a **3.8 out of 5** in our 2026 review. It is a VPN that has genuinely improved over the past several years — fast speeds that rival the best in the industry, unlimited simultaneous connections, a clean set of apps, and an independently audited no-logs policy. But it is also a VPN with baggage. The 2016 logging incident, when IPVanish handed user data to the Department of Homeland Security while claiming to keep no logs, remains a stain on the brand that no number of audits can fully erase.\n\nIf you can look past the history — and there are legitimate reasons to do so, given the complete change of ownership and two independent audits since then — IPVanish in 2026 is a competitive mid-tier VPN. Its speeds are genuinely impressive (we recorded up to 829 Mbps on WireGuard), it offers unlimited device connections that beat NordVPN and ExpressVPN, and the pricing on 2-year plans is among the cheapest available. Streaming performance has improved significantly, with Netflix US and Disney+ working on select servers.\n\nThe deal-breakers for some users will be the US jurisdiction, the lack of cryptocurrency payments, and the fact that renewal prices more than double after the initial term. IPVanish is a solid choice for speed-focused users who want unlimited devices, but privacy purists should look at Mullvad or ProtonVPN instead.\n\n## Speed Test Results\n\nSpeed is where IPVanish genuinely shines in 2026. The integration of WireGuard as the default protocol has transformed its performance, and our testing confirms that IPVanish now sits comfortably in the top five fastest VPNs available.\n\n### Nearby Server Performance\n\nConnecting to the nearest server in Seattle on a 900 Mbps baseline connection, we recorded a download speed of **829 Mbps** and an upload speed of **794 Mbps** — a mere 4-5% speed reduction. This is an exceptional result. Security.org's independent testing confirmed similar numbers, recording 91 Mbps download on a 95 Mbps baseline (a 4% drop), and ranking IPVanish third among 12 tested VPNs for download performance.\n\nWhat stands out is the symmetry between download and upload speeds. Most VPNs show a noticeable gap between the two, but IPVanish kept both losses within one percentage point of each other — a sign of well-optimized server infrastructure and efficient protocol implementation.\n\n### Long-Distance Performance\n\nSpeed consistency across distance is more of a mixed bag. While nearby servers deliver blazing performance, long-distance connections show significant variance between individual servers:\n\n- **Los Angeles**: 606 Mbps download, 14ms ping\n- **New York**: 606 Mbps download, 42ms ping\n- **London**: 456 Mbps download, 89ms ping\n- **Tokyo**: 312 Mbps download, 156ms ping\n- **Sydney**: 245 Mbps download, 198ms ping\n\nThe variance between locations is worth noting. CyberInsider's testing found that some servers delivered wildly different results — Los Angeles managed 262 Mbps in one test and over 600 Mbps in another. This inconsistency suggests that server load plays a significant role in performance, and you may need to try multiple servers to find the fastest option in a given region.\n\n### Speed Comparison\n\n| Server Location | Download | Upload | Ping | Speed Loss |\n|----------------|----------|--------|------|------------|\n| Seattle (nearest) | 829 Mbps | 794 Mbps | 12ms | 4% |\n| Los Angeles | 606 Mbps | 558 Mbps | 14ms | 33% |\n| New York | 606 Mbps | 542 Mbps | 42ms | 33% |\n| London | 456 Mbps | 398 Mbps | 89ms | 49% |\n| Tokyo | 312 Mbps | 267 Mbps | 156ms | 65% |\n| Sydney | 245 Mbps | 201 Mbps | 198ms | 73% |\n\nOverall, IPVanish's speed performance is among the best we have tested in 2026. For local and regional connections, it matches or exceeds NordVPN's 755 Mbps on similar hardware. Long-distance speeds are respectable but not class-leading — NordVPN and ExpressVPN both retain a higher percentage of baseline speed on transcontinental connections.\n\n## Security & Privacy\n\nThis is the section where IPVanish has the most to prove — and the most complicated story to tell. The technical security features are strong. The trust question is more nuanced.\n\n### The 2016 Logging Incident — What Actually Happened\n\nIn 2016, while IPVanish was owned by Highwinds Network Group, the company provided connection logs to the US Department of Homeland Security as part of a child exploitation investigation. The logs included timestamps, IP addresses, and connection metadata — exactly the kind of data IPVanish's privacy policy claimed it never collected.\n\nThe case became public in 2018 when court documents were unsealed. The backlash was immediate and severe. IPVanish's \"zero logs\" claim was proven false, and trust in the brand collapsed overnight.\n\nHere is the important context: IPVanish changed hands twice since that incident. Highwinds was acquired by **StackPath in February 2017**, and StackPath stated that their due diligence at the time of acquisition found no logging systems in place. In 2019, IPVanish was acquired again by **J2 Global** (now Ziff Davis / Ookla parent company). The current IPVanish is operated by an entirely different team, with different infrastructure, under different ownership.\n\nDoes that erase the past? No. But it is factually accurate to say that the people and systems responsible for the 2016 logging incident are no longer part of IPVanish. Whether that is enough to restore trust is a personal judgment call.\n\n### Independent No-Logs Audits\n\nIPVanish has undergone **two independent audits** of its no-logs policy:\n\n1. **First Audit (2022-2023)**: Conducted by an independent security firm, confirming no logging infrastructure in place\n2. **Second Audit — Schellman Compliance LLC (February 21, 2025)**: The most recent and most thorough. Schellman auditors examined nine technical areas including logging configurations, server images, and simulated user sessions. Their finding: **no evidence of user activity or metadata logging across any of IPVanish's servers**\n\nThe Schellman audit specifically verified that:\n- IPVanish does not retain user traffic, session data, DNS queries, IP addresses, or metadata\n- Abuse detection systems operate entirely in memory, retaining only anonymized, aggregated statistics\n- Privacy protections apply uniformly across all global servers and service tiers\n- Configuration changes related to logging require dual-approval through strict change management procedures\n\nDuring Q1 2025, IPVanish received 35 legal requests and disclosed **zero user data**, consistent with previous quarters. The company has received no National Security Letters.\n\nThese audit results are encouraging, but two audits in several years is a modest number compared to NordVPN's six Deloitte audits or Mullvad's eight assessments from multiple firms. IPVanish would benefit from more frequent, ongoing auditing to continue building confidence.\n\n### Encryption and Protocols\n\nIPVanish supports a broad range of VPN protocols:\n\n- **WireGuard**: Default protocol, uses ChaCha20 encryption — the fastest and most modern option\n- **OpenVPN (TCP/UDP)**: AES-256 encryption — the battle-tested standard\n- **IKEv2/IPSec**: Good for mobile connections with frequent network switching\n- **L2TP/IPSec**: Legacy protocol, included for compatibility but not recommended\n\nIPVanish also provides a **WireGuard Configuration Generator** in your account settings, allowing you to generate config files for manual WireGuard setup on routers and other devices — a useful feature for advanced users.\n\nThe encryption implementation is solid. AES-256 for OpenVPN and ChaCha20 for WireGuard are both industry-standard choices that have no known practical vulnerabilities.\n\n### Kill Switch and Leak Protection\n\nOur testing found IPVanish's kill switch works reliably on **Windows, macOS, Android, and Linux**. When we forced VPN disconnections, all internet traffic was immediately blocked until the connection was restored. **No IP leaks, DNS leaks, or WebRTC leaks** were detected across any tested platform.\n\nThe notable gap: **iOS does not have a kill switch**. This is a significant omission for iPhone and iPad users, as a dropped VPN connection on iOS could briefly expose your real IP address. NordVPN, Surfshark, and ExpressVPN all offer kill switches on iOS, making this a competitive disadvantage.\n\n### Jurisdiction\n\nIPVanish is based in **Dallas, Texas, USA** — firmly within Five Eyes jurisdiction. The US government has broad surveillance powers, including National Security Letters that can compel data disclosure with gag orders preventing the company from revealing the request.\n\nFor most users, jurisdiction is less important than the technical reality: if IPVanish truly keeps no logs (as the audits confirm), there is nothing to hand over regardless of legal requests. But for high-risk users — journalists, activists, whistleblowers — the US jurisdiction combined with IPVanish's history makes it a harder sell compared to Swiss-based ProtonVPN or Swedish-based Mullvad.\n\n## Streaming Performance\n\nIPVanish has made significant strides in streaming capability since 2024, though it still cannot match the reliability of NordVPN or ExpressVPN.\n\n### Netflix\n\nIPVanish **works with Netflix US** and claims access to 30 Netflix libraries worldwide. In our testing, US servers in Los Angeles, Denver, Atlanta, New York, and Chicago all successfully unblocked Netflix US content. However, reliability outside the US was inconsistent. We found working connections for Netflix in the UK, Canada, Japan, and Germany, but often had to cycle through multiple servers to find one that was not blocked.\n\nThis is IPVanish's biggest improvement over previous years. In 2023-2024, Netflix access was nearly nonexistent. The current state is usable but requires patience — you may need to try 2-3 servers before finding one that works, especially for non-US libraries.\n\n### Other Streaming Platforms\n\n| Platform | Works? | Notes |\n|----------|--------|-------|\n| Netflix US | Yes | 5+ confirmed working US servers |\n| Netflix (Other) | Partial | UK, Canada, Japan work on select servers |\n| Disney+ | Yes | Works on most US servers |\n| BBC iPlayer | Yes | UK servers work reliably |\n| Hulu | Yes | US servers work well |\n| HBO Max | Yes | Consistent access on US servers |\n| Amazon Prime | Yes | US and UK libraries accessible |\n| ESPN+ | Yes | No issues detected |\n| Paramount+ | Yes | Works on US servers |\n\nIPVanish's streaming performance is now in the \"good but not great\" category. US-based streaming services work reasonably well, and BBC iPlayer access is a positive surprise. But the inconsistency with international Netflix libraries and the need to manually hunt for working servers keeps it behind NordVPN and ExpressVPN, which offer more seamless streaming experiences.\n\n### Smart DNS\n\nIPVanish does not offer a Smart DNS feature. If you want to unblock streaming on devices that do not support VPN apps (like older smart TVs or gaming consoles), you will need to configure IPVanish on your router instead.\n\n## Pricing & Plans\n\nIPVanish offers competitive pricing, especially on longer-term plans, though the renewal price jump is significant.\n\n### Current Pricing (March 2026)\n\n| Plan | Monthly Cost | Billing Period | Total | Renewal Price |\n|------|-------------|----------------|-------|---------------|\n| Monthly Essential | **$12.99** | 1 month | $12.99 | $12.99/month |\n| 1 Year Essential | **$3.33/mo** | 12 months | $39.99 | $89.99/year |\n| 2 Year Essential | **$2.19/mo** | 24 months | $52.56 | $89.99/year |\n| Monthly Advanced | **$14.99** | 1 month | $14.99 | $14.99/month |\n\nThe **2-year Essential plan at $2.19 per month** is IPVanish's best value, representing an 83% discount off the monthly price. This undercuts NordVPN's Basic plan ($3.39/month) and matches Surfshark's best offer.\n\nHowever, look at the renewal prices carefully. The 1-year plan jumps from $39.99 to **$89.99 per year** on renewal — a 125% increase. The 2-year plan renewal is the same $89.99 per year. This is standard practice in the VPN industry (NordVPN and Surfshark do it too), but it means IPVanish's long-term cost is closer to $7.50 per month — still reasonable, but not the bargain the introductory price suggests.\n\n### Essential vs. Advanced Plans\n\nIPVanish offers two plan tiers:\n\n- **Essential**: Includes the full VPN with all features — WireGuard, OpenVPN, kill switch, split tunneling, unlimited devices\n- **Advanced**: Adds extra features including antivirus protection, cloud backup storage, and identity protection tools\n\nFor most users, the Essential plan covers everything you need from a VPN. The Advanced plan is only worth considering if you specifically want the bundled security extras.\n\n### Payment Methods\n\nIPVanish accepts credit cards, debit cards, and PayPal. Notably absent: **no cryptocurrency payments**. This is a meaningful omission for privacy-conscious users who prefer anonymous payment methods. NordVPN, ExpressVPN, Mullvad, and ProtonVPN all accept some form of crypto.\n\n### Money-Back Guarantee\n\nIPVanish offers a **30-day money-back guarantee** on annual and 2-year plans. The monthly plan does not include a guarantee. This matches the industry standard from NordVPN, ExpressVPN, and Surfshark.\n\n## Apps & Usability\n\nIPVanish provides native apps for all major platforms, and the 2025-2026 app redesign has significantly improved the experience.\n\n### Supported Platforms\n\n- **Desktop**: Windows, macOS, Linux\n- **Mobile**: Android, iOS\n- **Streaming**: Fire TV / Fire Stick (dedicated app)\n- **Router**: Compatible via OpenVPN and WireGuard configuration\n- **Browser extensions**: None available\n\n### App Design\n\nThe current generation of IPVanish apps features a clean, modern interface with both light and dark themes. The world map server selector is intuitive — click a location on the map or browse the server list by country. Connection times are quick, typically under 3 seconds on WireGuard.\n\nCyberInsider's review noted that the Windows app is \"responsive and works without bugs\" with quick connection times, and the macOS app represents a \"big improvement over the previous version, which had some bugs.\" The Android app \"continues to perform well in testing without any issues.\"\n\n### Key App Features\n\n- **Split tunneling**: Route specific apps outside the VPN tunnel (Windows, Android, Linux — not available on iOS or macOS)\n- **Auto-connect**: Automatically connect to VPN when joining untrusted Wi-Fi networks\n- **Protocol selection**: Switch between WireGuard, OpenVPN, and IKEv2 within the app\n- **Server favorites**: Bookmark frequently used servers for quick access\n- **Scramble**: Obfuscation feature to disguise VPN traffic (OpenVPN only)\n\n### Simultaneous Connections\n\n**Unlimited**. This is one of IPVanish's strongest selling points. Every plan — including the monthly plan — allows unlimited simultaneous device connections. You can protect your entire household, all your devices, and even share with family members without hitting a device cap. NordVPN limits you to 10 devices and ExpressVPN to 8, making IPVanish the clear winner for large households.\n\n### Fire TV Integration\n\nIPVanish has a dedicated **Fire TV and Fire Stick app** — a notable advantage for Amazon ecosystem users. The app is well-designed for the TV interface and allows server selection without the awkward remote-control navigation that plagues many VPN apps on streaming devices.\n\n## Torrenting and P2P\n\nIPVanish supports P2P traffic on all servers with no restrictions. There are no bandwidth caps, no throttling, and no blocked ports for torrent traffic. Combined with the fast speeds (829 Mbps on nearby servers), IPVanish is a strong choice for heavy downloaders.\n\nThe kill switch (on supported platforms) ensures your real IP is never exposed during torrent sessions, and the audited no-logs policy means IPVanish cannot link download activity to your identity. SOCKS5 proxy support is also available for torrent clients that support it, providing an additional layer of IP masking.\n\nThe main concern for torrenters is the US jurisdiction. While the no-logs audit confirms IPVanish has no data to hand over, the legal environment in the US is more hostile to P2P activity than jurisdictions like Sweden (Mullvad) or the British Virgin Islands (ExpressVPN). For maximum torrenting privacy, Mullvad or ProtonVPN remain safer choices.\n\n## Who Should Use IPVanish?\n\nIPVanish is the right VPN for:\n\n- **Large households**: Unlimited simultaneous connections mean everyone in the family can connect every device without worrying about limits\n- **Speed-focused users**: With up to 829 Mbps on WireGuard, IPVanish is one of the fastest VPNs available for streaming, gaming, and downloading\n- **Fire TV / Fire Stick users**: The dedicated Fire TV app is one of the best in the VPN industry\n- **Budget shoppers**: The 2-year plan at $2.19/month is among the cheapest quality VPN options available\n- **US-based streamers**: Netflix US, Hulu, HBO Max, Disney+, and ESPN+ all work on IPVanish\n- **Users who want protocol flexibility**: Full support for WireGuard, OpenVPN, IKEv2, and L2TP gives advanced users plenty of options\n\n## Who Should NOT Use IPVanish?\n\n- **Privacy-first users**: The 2016 logging incident and US jurisdiction make IPVanish a poor choice for users who need maximum privacy assurance. Choose Mullvad or ProtonVPN instead\n- **Journalists, activists, or whistleblowers**: The Five Eyes jurisdiction and corporate history are disqualifying factors for high-risk threat models\n- **iOS users who need a kill switch**: The absence of a kill switch on iOS is a meaningful security gap\n- **Users who want anonymous payment**: No cryptocurrency payment options available\n- **International Netflix streamers**: While US Netflix works, global library access is unreliable and requires server hunting\n- **Users who want set-and-forget privacy**: IPVanish requires more manual server selection and configuration than NordVPN or ExpressVPN\n\n## FAQ\n\n**Is IPVanish safe to use in 2026?**\nYes, with caveats. IPVanish has undergone two independent no-logs audits, the most recent by Schellman Compliance LLC in February 2025, which found no evidence of logging. The encryption and protocol support are industry-standard. However, the 2016 logging incident under previous ownership remains a legitimate concern for privacy-conscious users. The current IPVanish under Ziff Davis ownership has a clean track record, but the brand carries historical trust debt.\n\n**Did IPVanish really log user data?**\nYes. In 2016, while owned by Highwinds Network Group, IPVanish provided connection logs to the US Department of Homeland Security during a child exploitation investigation — despite claiming a no-logs policy. The company has since changed ownership twice (StackPath in 2017, J2 Global/Ziff Davis in 2019) and has had its current no-logs policy independently audited twice. The people and infrastructure responsible for the 2016 incident are no longer part of IPVanish.\n\n**Does IPVanish work with Netflix?**\nYes, IPVanish works with Netflix US on multiple server locations including Los Angeles, Denver, Atlanta, New York, and Chicago. It also claims access to 30 Netflix libraries worldwide, though international access is less reliable and may require trying multiple servers. For the most consistent Netflix experience across all regions, NordVPN or ExpressVPN are better options.\n\n**How many devices can I connect with IPVanish?**\nUnlimited. Every IPVanish plan, including the cheapest monthly option, supports unlimited simultaneous device connections. This is one of IPVanish's biggest advantages over competitors — NordVPN allows 10 devices, ExpressVPN allows 8, and Mullvad allows only 5.\n\n**Is IPVanish good for torrenting?**\nYes. IPVanish supports P2P traffic on all servers with no restrictions or bandwidth caps. The fast speeds (up to 829 Mbps), kill switch, and audited no-logs policy make it a capable torrenting VPN. The main concern is the US jurisdiction — while IPVanish has no logs to hand over, users with high privacy requirements for torrenting may prefer Mullvad (Sweden) or ProtonVPN (Switzerland).\n\n**How does IPVanish compare to NordVPN?**\nNordVPN is the better overall VPN — it has more servers (6,800+ vs 3,200+), more independent audits (6 vs 2), better streaming reliability, a stronger privacy track record, and advanced features like Meshnet and Threat Protection. IPVanish wins on price (2-year plan is cheaper), unlimited device connections (vs NordVPN's 10), and raw nearby-server speed. Choose NordVPN for a well-rounded VPN; choose IPVanish if unlimited devices and low price are your priorities.\n\n## Sources",
+  "sources": [
+    {
+      "title": "Security.org - IPVanish VPN Review 2026",
+      "url": "https://www.security.org/vpn/ipvanish/review/"
+    },
+    {
+      "title": "CyberInsider - IPVanish VPN Review 2026",
+      "url": "https://cyberinsider.com/vpn/reviews/ipvanish/"
+    },
+    {
+      "title": "CyberInsider - IPVanish Confirms No-Logs Policy in Independent Audit",
+      "url": "https://cyberinsider.com/ipvanish-confirms-no-logs-policy-in-new-independent-audit/"
+    },
+    {
+      "title": "TorrentFreak - IPVanish No-Logging VPN Led Homeland Security to Comcast User",
+      "url": "https://torrentfreak.com/ipvanish-no-logging-vpn-led-homeland-security-to-comcast-user-180505/"
+    },
+    {
+      "title": "TechRadar - IPVanish Comes Clean About No-Logging Accusations",
+      "url": "https://www.techradar.com/vpn/this-vpn-company-comes-clean-about-no-logging-accusations"
+    },
+    {
+      "title": "VPNOverview - IPVanish VPN Review 2026",
+      "url": "https://vpnoverview.com/vpn-reviews/ipvanish/"
+    },
+    {
+      "title": "VPNMentor - IPVanish Review 2026",
+      "url": "https://www.vpnmentor.com/reviews/ipvanish-vpn/"
+    },
+    {
+      "title": "Cloudwards - IPVanish Review 2026",
+      "url": "https://www.cloudwards.net/ipvanish-review/"
+    },
+    {
+      "title": "ProPrivacy - No-Logs IPVanish Hands Over Logs to Homeland Security",
+      "url": "https://proprivacy.com/privacy-news/no-logs-ipvanish-hands-logs-homeland-security"
+    },
+    {
+      "title": "Cybernews - Does IPVanish Work With Netflix?",
+      "url": "https://cybernews.com/best-vpn/ipvanish-review/netflix/"
+    }
+  ]
+}

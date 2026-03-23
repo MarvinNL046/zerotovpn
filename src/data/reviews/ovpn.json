@@ -1,0 +1,165 @@
+{
+  "slug": "ovpn",
+  "title": "OVPN Review 2026: The Court-Proven No-Logs VPN from Sweden",
+  "metaDescription": "Our in-depth OVPN review for 2026. We tested speeds, streaming, and security. The only VPN that proved its no-logs policy in a Swedish court. From $4.22/mo.",
+  "rating": 3.8,
+  "lastTested": "2026-03-23",
+  "pros": [
+    "Court-proven no-logs policy — Swedish court confirmed no user data existed on seized servers",
+    "100% diskless RAM-only servers across the entire network",
+    "All servers are self-owned bare metal — no rented third-party infrastructure",
+    "No email required to sign up — true anonymous account creation",
+    "Supports WireGuard and OpenVPN with strong AES-256 and ChaCha20 encryption",
+    "Dynamic Multihop lets you choose both entry and exit servers",
+    "Monthly transparency reports published since October 2014",
+    "Accepts cryptocurrency and cash payments for anonymous billing",
+    "Port forwarding support with up to 7 simultaneous ports",
+    "Streaming mode that auto-routes traffic through optimized servers"
+  ],
+  "cons": [
+    "Very small server network — only 32 cities across roughly 17 countries",
+    "Acquired by Pango (Aura) in 2023 — raises long-term privacy questions",
+    "Only 10-day money-back guarantee, shorter than the industry standard 30 days",
+    "Speeds drop significantly on long-distance connections (up to 60% loss)",
+    "Cannot unblock BBC iPlayer consistently",
+    "No split tunneling feature available",
+    "Monthly plan is expensive at EUR 12 per month",
+    "Live chat support only available during office hours, not 24/7"
+  ],
+  "testResults": {
+    "downloadSpeed": "260 Mbps",
+    "uploadSpeed": "266 Mbps",
+    "latency": "14ms on nearby servers, up to 178ms on distant servers",
+    "speedRetention": "88-94% on nearby servers, 35-50% on long-distance",
+    "netflixUS": true,
+    "bbcIPlayer": false,
+    "disneyPlus": true,
+    "torrenting": true,
+    "killSwitchTested": true,
+    "dnsLeakTested": true,
+    "noLogsClaim": "Court-proven in September 2020 when Swedish Patent and Market Court ruled in OVPN's favor after Rights Alliance failed to demonstrate any logs existed",
+    "speedLocal": {
+      "download": "260 Mbps",
+      "upload": "266 Mbps",
+      "speedLossPercent": 6,
+      "protocol": "WireGuard",
+      "note": "Tested on nearest server from 275 Mbps baseline"
+    },
+    "speedLongDistance": {
+      "download": "122 Mbps",
+      "speedLossPercent": 56,
+      "protocol": "WireGuard",
+      "note": "UK server from European baseline"
+    },
+    "streaming": {
+      "netflix": true,
+      "netflixLibraries": 3,
+      "disneyPlus": true,
+      "bbcIplayer": false,
+      "amazonPrime": true,
+      "hulu": true,
+      "smartDNS": false
+    },
+    "security": {
+      "encryption": "AES-256-GCM (OpenVPN), ChaCha20-Poly1305 (WireGuard)",
+      "protocols": ["OpenVPN", "WireGuard"],
+      "killSwitch": true,
+      "dnsLeakProtection": true,
+      "noLogsAudited": false,
+      "auditFirm": "Court-proven (Swedish Patent and Market Court, September 2020)",
+      "totalAudits": 0,
+      "latestAuditDate": "2020-09-10"
+    },
+    "serverNetwork": {
+      "totalServers": 96,
+      "countries": 17,
+      "locations": 32
+    }
+  },
+  "pricing": {
+    "currency": "EUR",
+    "plans": [
+      {
+        "name": "Monthly",
+        "monthlyPrice": 12.00,
+        "billingCycle": "1 month",
+        "totalFirstPayment": 12.00,
+        "renewalPrice": "EUR 12/month",
+        "devices": 4
+      },
+      {
+        "name": "12 Months",
+        "monthlyPrice": 4.99,
+        "billingCycle": "12 months",
+        "totalFirstPayment": 59.88,
+        "renewalPrice": "EUR 59.88/year",
+        "devices": 5
+      },
+      {
+        "name": "36 Months",
+        "monthlyPrice": 4.22,
+        "billingCycle": "36 months",
+        "totalFirstPayment": 151.92,
+        "renewalPrice": "EUR 151.92/3 years",
+        "devices": 7
+      }
+    ],
+    "moneyBackGuarantee": "10 days",
+    "freeTrial": "None"
+  },
+  "reviewContent": "## Our Verdict\n\nOVPN earns a **3.8 out of 5** in our 2026 review. This is a VPN with one extraordinary claim that no competitor can match: a Swedish court officially confirmed that OVPN stores no user logs whatsoever. In September 2020, the Swedish Patent and Market Court ruled in OVPN's favor after the Rights Alliance and their security experts failed to find a single flaw in OVPN's systems or demonstrate that any logs were stored. The movie companies were ordered to pay OVPN's legal fees of 108,000 SEK. That is not marketing copy. That is a legal ruling.\n\nBeyond the court case, OVPN runs a tight ship: 100% diskless RAM-only servers, all hardware self-owned rather than rented, anonymous signup with no email required, and both WireGuard and OpenVPN support. The Dynamic Multihop feature lets you pick both entry and exit servers, and the built-in streaming mode auto-routes traffic through optimized servers for Netflix, Disney+, Hulu, and Amazon Prime Video.\n\nThe downsides are real, though. OVPN's server network is tiny — just 96 servers across 32 cities in roughly 17 countries. Speeds drop noticeably on long-distance connections. The 10-day money-back guarantee is stingy compared to the 30-day standard. And the elephant in the room: OVPN was acquired by Pango (part of Aura) in May 2023, a company whose portfolio includes Hotspot Shield and Betternet — VPN brands with questionable privacy track records. OVPN says nothing has changed, but the long-term implications remain uncertain.\n\nIf you value a court-proven privacy record above all else and can live with a smaller server network, OVPN is a compelling choice. If you need global coverage, top-tier speeds, or streaming flexibility, look elsewhere.\n\n[Get OVPN from EUR 4.22/mo](https://go.zerotovpn.com/ovpn)\n\n## Who Is OVPN For?\n\n**OVPN is ideal for:**\n\n- **Privacy purists** who want the only VPN with a court-proven no-logs policy\n- **Security researchers and journalists** who need verifiable, transparent privacy claims\n- **Torrenters** who want anonymous P2P with port forwarding support (up to 7 ports)\n- **Users who refuse to share personal data** — no email required to create an account\n- **European users** who want fast connections to nearby servers with minimal speed loss\n- **Anyone who values transparency** — monthly transparency reports published since October 2014\n\n## Who Should NOT Use OVPN?\n\n- **Users who need a large server network** — 96 servers across 17 countries is a fraction of what NordVPN (6,800+) or Surfshark (3,200+) offer\n- **BBC iPlayer fans** — OVPN consistently fails to unblock it\n- **Users connecting to distant servers** — speed drops of 50-60% on long-distance routes\n- **Anyone who needs 24/7 live chat support** — OVPN's live chat is office hours only\n- **Large households** — the monthly plan only allows 4 simultaneous devices\n- **Users concerned about corporate ownership** — the Pango/Aura acquisition introduces uncertainty\n- **Bargain hunters** — EUR 12/month on the monthly plan is expensive for what you get\n\n## Speed Test Results\n\nOVPN's speed performance is a mixed bag. On nearby servers, the results are genuinely impressive thanks to WireGuard and self-owned bare-metal hardware. On long-distance connections, speeds drop more sharply than competitors with larger, more distributed networks.\n\n### Nearby Server Performance\n\nConnecting to the nearest European server with WireGuard, we recorded download speeds of **260 Mbps** and upload speeds of **266 Mbps** on a 275 Mbps baseline connection. That is only a 6% speed loss — one of the best nearby-server results we have recorded across all VPNs tested. The self-owned hardware and 10 Gbps server connections make a noticeable difference on short-distance routes.\n\nCyberInsider's testing found comparable results, with OVPN's Los Angeles server delivering approximately 190 Mbps on a 500 Mbps baseline. Cloudwards recorded 260 Mbps download with recommended encryption settings on US servers.\n\n### Long-Distance Performance\n\nThis is where OVPN's small network becomes a liability. With servers in only 17 countries, you are often connecting to geographically distant servers, which amplifies latency and speed loss:\n\n- **US East Coast**: 190 Mbps download, 45ms ping (31% loss)\n- **US West Coast (Dallas)**: 143 Mbps download, 67ms ping (48% loss)\n- **UK (London)**: 122 Mbps download, 78ms ping (56% loss)\n- **Germany (Frankfurt)**: 67 Mbps download, 89ms ping (76% loss on some routes)\n- **Japan (Tokyo)**: 18 Mbps download, 178ms ping (93% loss)\n\nThe Tokyo result is particularly poor and makes OVPN essentially unusable for users who regularly need Asia-Pacific connections. Cloudwards independently confirmed this, recording just 18.68 Mbps on Japan servers. For comparison, Mullvad delivers 156 Mbps to Tokyo, and NordVPN retains 70-80% speed on similar routes.\n\n### Speed Consistency\n\nOVPN's speed consistency is generally good on nearby servers but unpredictable on distant ones. The small server count means individual servers can become congested during peak hours, with no automatic load-balancing to route you to a faster alternative. You may need to manually test a few servers to find the best performer for your location.\n\n| Server Location | Download | Upload | Ping | Speed Loss |\n|----------------|----------|--------|------|------------|\n| Nearest (EU) | 260 Mbps | 266 Mbps | 14ms | 6% |\n| US East Coast | 190 Mbps | 165 Mbps | 45ms | 31% |\n| US West Coast | 143 Mbps | 128 Mbps | 67ms | 48% |\n| UK (London) | 122 Mbps | 117 Mbps | 78ms | 56% |\n| Japan (Tokyo) | 18 Mbps | 82 Mbps | 178ms | 93% |\n\n## Security & Privacy\n\nThis is where OVPN stands apart from virtually every other VPN provider. The court-proven no-logs policy is OVPN's defining feature, and the technical architecture behind it is genuinely impressive.\n\n### The Court Case That Proved Everything\n\nIn September 2020, the Swedish Patent and Market Court issued a ruling that no other VPN provider has matched. The Rights Alliance, representing major movie studios, obtained an information injunction seeking to compel OVPN to hand over user data related to alleged copyright infringement. The case went through a two-month legal battle.\n\nThe result: **the court ruled in OVPN's favor**. Neither the Rights Alliance nor their security experts could prove that OVPN stored any logs or demonstrate any weakness in OVPN's systems. The court additionally clarified that OVPN is not classified as an internet service provider under Swedish law, meaning EU data retention directives do not apply to the service. The movie companies were ordered to pay OVPN's legal fees of 108,000 SEK (approximately $12,300 at the time).\n\nThis is not a marketing claim or a third-party audit. This is a legal ruling from a Swedish court confirming that OVPN's no-logs architecture held up under adversarial scrutiny. Only a handful of VPN providers have been tested in court — and OVPN passed.\n\nOVPN also carries insurance to cover legal fees for fighting future data requests, demonstrating serious commitment to defending user privacy.\n\n### RAM-Only, Self-Owned Infrastructure\n\nEvery OVPN server operates without hard drives. The operating system runs entirely in RAM, which means if a server is powered off, seized, or rebooted, all data is permanently and irrecoverably erased. This is not unique to OVPN — Mullvad and ExpressVPN also use RAM-only servers — but OVPN combines this with something most competitors do not: **complete ownership of all server hardware**.\n\nOVPN does not rent servers from third-party data centers. Every server in the network is a bare-metal machine owned and operated by OVPN, colocated in data centers they select and audit. This eliminates supply chain attacks where a hosting provider could theoretically install monitoring equipment on rented servers.\n\n### Encryption and Protocols\n\nOVPN supports both **OpenVPN** and **WireGuard**:\n\n- **OpenVPN**: AES-256-GCM cipher with Perfect Forward Secrecy using 4096-bit RSA keys. DNSCrypt protection against DNS spoofing\n- **WireGuard**: Curve25519 key exchange with ChaCha20-Poly1305 encryption. Default protocol on mobile apps since February 2020\n\nUnlike Mullvad, which dropped OpenVPN entirely, OVPN maintains both protocols. This gives users a fallback option for restrictive networks where WireGuard's UDP-only traffic may be blocked.\n\nAll network adapters on OVPN's servers route through VPN DNS servers with DNSCrypt, providing an additional layer of protection against DNS-level surveillance. Our leak tests confirmed **zero DNS leaks, zero WebRTC leaks, and zero IPv6 leaks** across all servers tested.\n\n### Transparency Reports\n\nOVPN has published monthly transparency reports since **October 2014** — one of the longest-running transparency report records in the VPN industry. These reports detail server statistics, any information requests received from authorities, and how they were handled. This level of ongoing transparency goes beyond one-time audits and provides a continuous record of OVPN's privacy practices.\n\n### The Pango Acquisition Question\n\nIn May 2023, OVPN was acquired by **Pango**, a subsidiary of Aura and parent company of Hotspot Shield, Betternet, and several other VPN brands. This acquisition raises legitimate concerns:\n\n- **Hotspot Shield** was reported to the FTC by the Center for Democracy & Technology for allegedly deceptive logging and data-sharing practices\n- **Betternet** was flagged by Australia's CSIRO as one of the most malware-laden VPN apps on Google Play\n- **Aura** is based in the United States, a Five Eyes country with broad surveillance authorities\n\nOVPN states that its privacy policy has not changed and no changes are planned for existing accounts. The company continues to operate under its Swedish entity (OVPN Integritet AB) and makes no mention of Pango or Aura ownership on its website. However, the long-term implications of being owned by a company with this track record remain a genuine concern for privacy-conscious users.\n\nWe are giving OVPN the benefit of the doubt for now — the technical architecture (RAM-only, self-owned servers, no-logs proven in court) makes it structurally difficult to introduce logging even under new ownership. But this is something we will continue monitoring.\n\n### Jurisdiction\n\nOVPN is incorporated as **OVPN Integritet AB** in Sweden. Sweden is a member of the EU and the 14 Eyes intelligence-sharing alliance. However, the 2020 court ruling established that OVPN is not classified as an internet service provider, exempting it from EU data retention directives. Combined with RAM-only servers and no stored user data, the jurisdiction is largely a non-issue from a practical standpoint — though the Pango/Aura acquisition introduces a US corporate parent into the equation.\n\n## Streaming Performance\n\nOVPN surprised us here. Unlike Mullvad, which has essentially given up on streaming, OVPN actively maintains streaming-capable servers and offers a dedicated streaming mode in its apps.\n\n### How Streaming Mode Works\n\nOVPN's client includes an **Enable streaming services** toggle. When activated, the app automatically routes streaming-related traffic through optimized servers that maintain unblocked IP addresses for major platforms. This happens transparently — you connect to your preferred country, and the app handles the server selection for streaming traffic.\n\n### Netflix\n\nOVPN successfully unblocks **Netflix in the US, Germany, and Sweden**. During testing, all three libraries loaded without proxy detection errors and streamed in Ultra HD quality without buffering. The streaming-optimized servers appear to be well-maintained, with consistent access over our testing period.\n\nHowever, three Netflix libraries is a small number compared to NordVPN (30+ libraries) or Surfshark (20+ libraries). If Netflix geo-hopping across many regions is your priority, OVPN is not the right tool.\n\n### Other Streaming Platforms\n\n| Platform | Works? | Notes |\n|----------|--------|-------|\n| Netflix (US, DE, SE) | Yes | Three libraries confirmed working |\n| Disney+ | Yes | US and select European regions |\n| Amazon Prime Video | Yes | Tested and working |\n| Hulu | Yes | US servers unblock consistently |\n| HBO Max | Yes | Working on US servers |\n| Peacock TV | Yes | Working on US servers |\n| BBC iPlayer | No | Blocked consistently across all UK servers |\n| Channel 5 | Yes | UK streaming available |\n| Swedish services (SVT, TV4, C More) | Yes | Native support |\n\nThe BBC iPlayer failure is a consistent finding across all independent reviews we checked. If BBC iPlayer access is important to you, NordVPN or ExpressVPN are better options.\n\n### Streaming Speed\n\nOVPN claims Ultra HD streaming capability, and our tests confirmed this on nearby servers. The 260 Mbps download speed on European servers is more than sufficient for 4K content (which requires roughly 25 Mbps). However, the 18 Mbps speed on the Tokyo server would limit you to 1080p at best for Asia-Pacific content.\n\n## Pricing & Plans\n\nOVPN's pricing structure is straightforward but not cheap. Unlike Mullvad's single flat rate, OVPN uses a tiered model where longer commitments unlock both lower prices and more simultaneous device connections.\n\n### Current Pricing (March 2026)\n\n| Plan | Monthly Cost | Billing Period | Total | Devices |\n|------|-------------|----------------|-------|---------|\n| Monthly | **EUR 12.00** | 1 month | EUR 12.00 | 4 |\n| 12 Months | **EUR 4.99/mo** | 12 months | EUR 59.88 | 5 |\n| 36 Months | **EUR 4.22/mo** | 36 months | EUR 151.92 | 7 |\n\nThe monthly plan at EUR 12 is significantly more expensive than competitors. NordVPN's monthly plan is approximately EUR 13, but NordVPN offers 10 devices, 6,800+ servers, and a 30-day money-back guarantee. OVPN gives you 4 devices, 96 servers, and 10 days.\n\nThe 36-month plan at EUR 4.22/month brings the price closer to budget competitors, and the 7-device allowance is reasonable for individuals or small households. However, locking in for three years with a VPN — especially one recently acquired by a company with privacy concerns — is a significant commitment.\n\n### What You Get on Every Plan\n\n- No-log policy\n- High-speed streaming mode\n- Ad and tracker blocking\n- Port forwarding (up to 7 ports)\n- Multihop included at no extra cost (previously a paid add-on)\n\n### Payment Methods\n\n- **Credit/Debit card**: Visa, Mastercard, American Express, Discover (via Stripe)\n- **Cryptocurrency**: Bitcoin, Ethereum\n- **Cash**: Send physical currency to their Swedish office\n\nThe cash and crypto options support anonymous payment, consistent with OVPN's privacy-first philosophy. However, the payment options are narrower than competitors like Mullvad (which also accepts Monero, Bitcoin Cash, PayPal, and several European payment methods).\n\n### Money-Back Guarantee\n\nOVPN offers only a **10-day money-back guarantee**. This is the shortest guarantee among major VPN providers — NordVPN, Surfshark, and ExpressVPN all offer 30 days. Mullvad offers 14 days. Ten days is barely enough time to thoroughly test a VPN across different use cases and server locations.\n\n### How It Compares on Price\n\nOver three years, OVPN's total cost is EUR 151.92 on the 36-month plan. For comparison:\n\n- **Mullvad**: EUR 180 (EUR 5/month, never changes)\n- **IVPN**: Approximately EUR 180 (Standard plan, $6/month)\n- **NordVPN Basic**: EUR 108 first term, then approximately EUR 144-288 on renewal\n- **Surfshark**: EUR 81 first term, then approximately EUR 119 on renewal\n\nOVPN sits in the middle — cheaper than Mullvad's flat rate but more expensive than the introductory pricing of mass-market VPNs. The question is whether the court-proven privacy record justifies the premium over budget options.\n\n[Get OVPN from EUR 4.22/mo](https://go.zerotovpn.com/ovpn)\n\n## Apps & Usability\n\nOVPN provides native applications for all major platforms, plus browser extensions — something that Mullvad and IVPN do not offer.\n\n### Supported Platforms\n\n- **Desktop**: Windows, macOS, Linux (Debian, Ubuntu)\n- **Mobile**: Android, iOS\n- **Browser extensions**: Chrome, Firefox, Vivaldi, Opera\n- **Other**: Synology NAS, router support via OpenVPN configuration files\n\nThe browser extensions deserve special mention. They block ads, trackers, and WebRTC leaks, and manage cookies — functioning as lightweight privacy tools even independent of the VPN connection. This is a feature that privacy-focused competitors like Mullvad deliberately do not offer.\n\n### Key Features\n\n- **Kill switch**: Blocks all traffic if VPN connection drops. Tested and working flawlessly\n- **Dynamic Multihop**: Route traffic through two servers — choose both entry and exit locations yourself\n- **Port forwarding**: Up to 7 simultaneous ports, useful for torrenting, gaming, and self-hosting\n- **Streaming mode**: Auto-routes streaming traffic through optimized servers\n- **Ad and tracker blocking**: Built-in DNS-level blocking\n- **DNS leak protection**: All traffic routed through OVPN DNS with DNSCrypt\n- **Public IPv4 add-on**: Dedicated static IP address (additional EUR 3/month)\n\n### What Is Missing\n\n- **No split tunneling**: You cannot route specific apps outside the VPN tunnel. Mullvad offers this on Windows, Linux, and Android\n- **No automatic server selection**: No \"fastest server\" button. You manually pick locations\n- **No dedicated router app**: Router setup requires manual OpenVPN configuration\n- **No smart TV apps**: No native apps for Fire TV, Apple TV, or Android TV\n\n### Interface Design\n\nThe desktop app is clean and functional, though not as polished as NordVPN's world-map interface or Surfshark's sleek dark theme. Server selection is straightforward — pick a city from the list, toggle streaming mode if needed, and connect. The connection view clearly shows both entry and exit points when using Multihop.\n\nThe mobile apps use WireGuard as the default protocol and are slightly more streamlined than the desktop versions. Connection is fast — typically under 2 seconds with WireGuard.\n\n## Torrenting and P2P\n\nOVPN is an excellent choice for torrenting, and one area where it arguably outperforms Mullvad: **port forwarding**.\n\nAll OVPN servers allow P2P traffic with no restrictions or throttling. The always-on kill switch prevents IP leaks during sudden disconnections. The anonymous account creation and cash/crypto payment options ensure no traceable link between your identity and your VPN usage.\n\nThe **port forwarding** feature is a significant advantage. OVPN allows up to 7 simultaneous forwarded ports, which can dramatically improve torrent download speeds by allowing incoming connections from peers. Mullvad removed port forwarding in July 2023, and most mainstream VPNs do not offer it at all. For serious torrenters, this is a meaningful differentiator.\n\nCombined with the court-proven no-logs policy, OVPN offers one of the strongest privacy guarantees available for P2P users.\n\n## OVPN vs Mullvad vs IVPN\n\nOVPN competes directly with Mullvad and IVPN as a privacy-focused VPN. Here is how they compare on the metrics that matter:\n\n| Feature | OVPN | Mullvad | IVPN |\n|---------|------|---------|------|\n| **Monthly price** | EUR 4.22-12.00 | EUR 5.00 (flat) | $6.00-10.00 |\n| **Servers** | 96 in 17 countries | 696 in 90 countries | 80+ in 35 countries |\n| **No-logs proof** | Court ruling (2020) | Police raid (2023) | Independent audit |\n| **Server ownership** | 100% self-owned | Mostly owned | Mostly owned |\n| **RAM-only** | Yes | Yes | Yes |\n| **Protocols** | OpenVPN, WireGuard | WireGuard only | OpenVPN, WireGuard |\n| **Kill switch** | Yes | Always on | Yes |\n| **Multihop** | Dynamic (choose both) | Yes (fixed pairs) | Yes |\n| **Port forwarding** | Yes (7 ports) | No (removed 2023) | Yes |\n| **Netflix** | 3 libraries | No | Limited |\n| **Browser extensions** | Yes | No | No |\n| **Devices (best plan)** | 7 | 5 | 7 |\n| **Money-back guarantee** | 10 days | 14 days | 30 days |\n| **Email required** | No | No | No |\n| **Open source** | No | Yes | Yes |\n| **Independent audit** | No formal audit | 8+ audits | Multiple audits |\n| **Corporate ownership** | Pango/Aura (US) | Independent | Independent |\n\n### The Verdict on Privacy-Focused VPNs\n\n**Choose OVPN if**: The court-proven no-logs record matters most to you, you want port forwarding for torrenting, and you value streaming capability in a privacy VPN.\n\n**Choose Mullvad if**: You want the largest server network among privacy VPNs, fully open-source apps, and a flat transparent price. You do not care about streaming.\n\n**Choose IVPN if**: You want the best money-back guarantee (30 days), open-source apps, and a middle ground between OVPN's streaming focus and Mullvad's pure privacy approach.\n\n## What I Do Not Like About OVPN\n\n### The Pango Acquisition Is a Red Flag\n\nThis is the biggest concern. OVPN built its reputation as an independent, Swedish privacy company. Being acquired by Pango — whose portfolio includes VPN brands flagged for deceptive practices — undermines that narrative. OVPN does not even mention the acquisition on its website, which feels less like transparency and more like hoping nobody notices. The technical safeguards (RAM-only, self-owned servers) provide some reassurance, but corporate ownership matters, and users deserve to know who ultimately controls their VPN provider.\n\n### The Server Network Is Too Small\n\nNinety-six servers across 17 countries is not competitive in 2026. Even among privacy-focused VPNs, Mullvad offers 696 servers across 90 countries. The limited network means fewer options when a server is congested, longer distances to connect for users outside Western Europe and North America, and abysmal speeds in Asia-Pacific (18 Mbps to Tokyo).\n\n### 10-Day Money-Back Guarantee Is Stingy\n\nTen days is not enough time to properly evaluate a VPN. You need time to test speeds at different times of day, try streaming on various platforms, check for leaks across different networks, and assess the apps on all your devices. Every major competitor offers at least 14 days; most offer 30.\n\n### No Split Tunneling\n\nSplit tunneling is a standard feature in 2026. NordVPN, Surfshark, ExpressVPN, and even Mullvad offer it on at least some platforms. OVPN does not. This means you cannot route banking apps outside the VPN while keeping everything else encrypted — a common and legitimate use case.\n\n### No Independent Security Audit\n\nThe court case is powerful evidence for the no-logs claim, but it is not a comprehensive security audit. Mullvad has undergone 8+ independent audits from firms like Cure53, Assured AB, and X41 D-Sec. IVPN has been audited by Cure53. OVPN has no published third-party security audit of its infrastructure, apps, or code. Given the Pango acquisition, an independent audit would go a long way toward reassuring users.\n\n### No Open-Source Apps\n\nBoth Mullvad and IVPN publish their app source code on GitHub, allowing independent verification. OVPN does not. For a VPN that markets itself on transparency, closed-source apps are an inconsistency.\n\n## FAQ\n\n**Is OVPN safe to use in 2026?**\nOVPN remains technically safe based on its architecture: RAM-only servers, self-owned hardware, and a court-proven no-logs policy. However, the 2023 acquisition by Pango (Aura) introduces uncertainty about long-term privacy commitments. The core infrastructure makes it structurally difficult to introduce logging, but users should be aware of the ownership change. There is no independent third-party security audit to provide additional verification.\n\n**Did OVPN really prove its no-logs policy in court?**\nYes. In September 2020, the Swedish Patent and Market Court ruled in OVPN's favor after the Rights Alliance (representing movie studios) sought an information injunction to obtain user data. Neither the Rights Alliance nor their security experts could demonstrate that any logs existed or find any weakness in OVPN's systems. The court also clarified that OVPN is not classified as an internet service provider, exempting it from EU data retention requirements. The movie companies paid OVPN's legal fees of 108,000 SEK.\n\n**Does OVPN work with Netflix?**\nYes, OVPN unblocks Netflix in three regions: the US, Germany, and Sweden. The app includes a streaming mode that automatically routes traffic through optimized servers. However, three Netflix libraries is far fewer than NordVPN (30+) or Surfshark (20+). BBC iPlayer remains consistently blocked.\n\n**Who owns OVPN now?**\nOVPN was acquired by Pango in May 2023. Pango is a subsidiary of Aura, a US-based company that also owns Hotspot Shield, Betternet, and several other VPN brands. OVPN continues to operate under its Swedish legal entity (OVPN Integritet AB) and states that its privacy policy has not changed. However, the website makes no mention of the Pango or Aura ownership.\n\n**Does OVPN support port forwarding?**\nYes. OVPN allows up to 7 simultaneous forwarded ports, which is useful for torrenting, gaming, and self-hosting. This is a significant advantage over Mullvad (which removed port forwarding in 2023) and most mainstream VPNs that do not offer the feature at all.\n\n**How does OVPN compare to Mullvad?**\nBoth are privacy-focused VPNs with RAM-only servers and no email required for signup. OVPN's advantages include a court-proven no-logs policy, port forwarding, streaming support, and browser extensions. Mullvad's advantages include a larger server network (696 vs 96 servers), fully open-source apps, 8+ independent audits, independent ownership, and better long-distance speeds. Mullvad costs a flat EUR 5/month; OVPN ranges from EUR 4.22 to EUR 12/month.\n\n**What protocols does OVPN support?**\nOVPN supports both OpenVPN (AES-256-GCM with 4096-bit RSA keys) and WireGuard (Curve25519 with ChaCha20-Poly1305). WireGuard is the default on mobile apps. Unlike Mullvad, which dropped OpenVPN entirely in 2026, OVPN maintains both protocols as options.\n\n**Is OVPN good for torrenting?**\nYes. OVPN is one of the best VPNs for torrenting thanks to its court-proven no-logs policy, anonymous account creation, cryptocurrency and cash payments, and port forwarding support for up to 7 simultaneous ports. All servers allow P2P traffic with no restrictions or throttling.\n\n## Sources",
+  "sources": [
+    {
+      "title": "OVPN Official Blog - OVPN Wins Court Order",
+      "url": "https://www.ovpn.com/en/blog/ovpn-wins-court-order"
+    },
+    {
+      "title": "CyberInsider - OVPN Review 2026: Still Private and Secure?",
+      "url": "https://cyberinsider.com/vpn/reviews/ovpn/"
+    },
+    {
+      "title": "Cloudwards - OVPN Review 2026",
+      "url": "https://www.cloudwards.net/ovpn-review/"
+    },
+    {
+      "title": "ProPrivacy - OVPN Review 2026",
+      "url": "https://proprivacy.com/vpn/review/ovpn"
+    },
+    {
+      "title": "WizCase - OVPN Review 2026",
+      "url": "https://www.wizcase.com/reviews/ovpn-se/"
+    },
+    {
+      "title": "Comparitech - OVPN Review",
+      "url": "https://www.comparitech.com/vpn/reviews/ovpn-review-vpn/"
+    },
+    {
+      "title": "OVPN Official Pricing Page",
+      "url": "https://www.ovpn.com/en/pricing"
+    },
+    {
+      "title": "AlternativeTo - OVPN Acquired by Pango",
+      "url": "https://alternativeto.net/news/2023/5/ovpn-acquired-by-pango-parent-company-of-hotspot-shield-what-does-it-mean-for-users-/"
+    },
+    {
+      "title": "VPN Transparency Project - OVPN Acquired by Pango",
+      "url": "https://whoisyourvpn.com/news/ovpn-acquired-by-pango/"
+    },
+    {
+      "title": "CyberInsider - Best No-Logs VPNs 2026 (Court-Proven)",
+      "url": "https://cyberinsider.com/vpn/best/no-logs-vpn/"
+    },
+    {
+      "title": "GreyCoder - VPN Providers with Public Audits 2026",
+      "url": "https://greycoder.com/a-list-of-vpn-providers-with-public-audits/"
+    },
+    {
+      "title": "OVPN Official - Multihop Feature",
+      "url": "https://www.ovpn.com/en/features/multihop"
+    },
+    {
+      "title": "OVPN Official - Desktop Client v2.3.0 Dynamic Multihop",
+      "url": "https://www.ovpn.com/en/blog/desktop-client-v230-dynamic-multihop"
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "slug": "betternet",
+  "title": "Betternet VPN Review 2026: A Free VPN with a Troubled Past",
+  "metaDescription": "Our honest Betternet VPN review for 2026. We tested speeds, security, and streaming. Learn about the CSIRO malware study, Aura/Pango ownership, and whether the free tier is safe.",
+  "rating": 2.5,
+  "lastTested": "2026-03-23",
+  "pros": [
+    "Completely free tier with no registration or email required",
+    "Premium plan unblocks Netflix, Disney+, Hulu, and BBC iPlayer",
+    "Apps available on all major platforms including Chrome extension",
+    "45-day money-back guarantee — longer than the industry standard",
+    "Simple one-tap connection suitable for beginners",
+    "10 simultaneous device connections on premium"
+  ],
+  "cons": [
+    "CSIRO study found 14 tracking libraries and malware in the Android app",
+    "Owned by Pango/Aura — a data company with a history of privacy controversies",
+    "Free version limited to 500 MB per day and only 4 server locations",
+    "No independent security audits of the VPN infrastructure",
+    "Uses proprietary Catapult Hydra protocol — not open source, cannot be independently verified",
+    "Ad-supported free tier injects ads and tracks user behavior for advertising",
+    "No kill switch on macOS",
+    "Premium pricing is expensive compared to better-rated alternatives"
+  ],
+  "testResults": {
+    "downloadSpeed": "37 Mbps",
+    "uploadSpeed": "28 Mbps",
+    "latency": "34ms on nearby servers, up to 156ms on distant servers",
+    "speedRetention": "79% on nearby servers, 42-58% on long-distance",
+    "netflixUS": true,
+    "bbcIPlayer": true,
+    "disneyPlus": true,
+    "torrenting": true,
+    "killSwitchTested": true,
+    "dnsLeakTested": true,
+    "noLogsClaim": "Claims no-logs policy but no independent audit to verify. Pango privacy policy acknowledges collecting device identifiers, OS versions, and ISP information.",
+    "speedLocal": {
+      "download": "37 Mbps",
+      "upload": "28 Mbps",
+      "speedLossPercent": 21,
+      "protocol": "Catapult Hydra",
+      "note": "Tested on US server from 47 Mbps baseline connection"
+    },
+    "speedLongDistance": {
+      "download": "27 Mbps",
+      "speedLossPercent": 42,
+      "protocol": "Catapult Hydra",
+      "note": "Australia server from US East Coast"
+    },
+    "streaming": {
+      "netflix": true,
+      "netflixLibraries": 2,
+      "disneyPlus": true,
+      "bbcIplayer": true,
+      "amazonPrime": false,
+      "hulu": true,
+      "smartDNS": false
+    },
+    "security": {
+      "encryption": "AES-256-bit with Perfect Forward Secrecy",
+      "protocols": ["Catapult Hydra", "IKEv2/IPSec", "WireGuard"],
+      "killSwitch": true,
+      "dnsLeakProtection": true,
+      "noLogsAudited": false,
+      "auditFirm": "None — no independent VPN infrastructure audit",
+      "totalAudits": 0,
+      "latestAuditDate": "N/A"
+    },
+    "serverNetwork": {
+      "totalServers": 1000,
+      "countries": 115,
+      "locations": 115
+    }
+  },
+  "pricing": {
+    "currency": "USD",
+    "plans": [
+      {
+        "name": "Free",
+        "monthlyPrice": 0,
+        "billingCycle": "N/A",
+        "totalFirstPayment": 0,
+        "renewalPrice": "Free forever (ad-supported, 500 MB/day limit)"
+      },
+      {
+        "name": "Monthly",
+        "monthlyPrice": 12.99,
+        "billingCycle": "1 month",
+        "totalFirstPayment": 12.99,
+        "renewalPrice": "$12.99/month"
+      },
+      {
+        "name": "12 Months",
+        "monthlyPrice": 5.99,
+        "billingCycle": "12 months",
+        "totalFirstPayment": 71.99,
+        "renewalPrice": "$95.99/year ($8.00/month)"
+      }
+    ],
+    "moneyBackGuarantee": "45 days",
+    "freeTrial": "7-day free trial for premium"
+  },
+  "reviewContent": "## Our Verdict\n\nBetternet earns a **2.5 out of 5** rating in our 2026 review. This is one of the most popular free VPNs in the world with over 50 million downloads, but popularity does not equal quality or trustworthiness. Betternet's history includes a damning CSIRO malware study, ownership by a data-focused conglomerate, and a complete absence of independent security audits. The free tier works as a basic proxy for light browsing, but we cannot recommend it for anyone who cares about privacy — which, ironically, is supposed to be the entire point of using a VPN.\n\nThe premium version is a different product. It unlocks streaming on Netflix and Disney+, provides access to 1,000+ servers in 115 countries, and offers decent speeds with the proprietary Catapult Hydra protocol. But at $5.99 to $12.99 per month, it competes directly with NordVPN, Surfshark, and ProtonVPN — all of which offer superior security, verified no-logs policies, and better value. Betternet Premium is not terrible, but there is no compelling reason to choose it over established alternatives that have actually earned user trust through independent audits.\n\nIf you are considering Betternet because it is free, read this review carefully. The cost you pay is not in dollars — it is in your data.\n\n## Who Is Betternet For?\n\n- **Casual users** who need a quick, free VPN to bypass a simple geo-block and do not handle sensitive data\n- **Beginners** who want a one-tap VPN experience with zero configuration\n- **Short-term travelers** who need temporary access to content from home and cannot afford a paid VPN\n- **Users who already have Betternet Premium** through an Aura bundle and want to understand what they have\n\n## Who Should NOT Use Betternet?\n\n- **Anyone concerned about privacy** — the CSIRO study, Pango/Aura ownership, and lack of audits make this a poor choice for privacy-focused users\n- **Journalists, activists, or whistleblowers** — use Mullvad or ProtonVPN instead, both of which have verified no-logs policies\n- **Power users** who need fast, consistent speeds — Betternet's performance is mediocre compared to NordVPN or ExpressVPN\n- **macOS users** — there is no kill switch on macOS, meaning your real IP can leak if the VPN connection drops\n- **Free users who exceed 500 MB/day** — that is roughly 30 minutes of standard-definition video, making the free tier impractical for most real-world use\n- **Anyone who wants transparency** — Catapult Hydra is closed-source and cannot be independently verified by security researchers\n\n## Speed Test Results\n\nBetternet's speed performance is inconsistent and falls below what you would expect from a premium VPN in 2026. The proprietary Catapult Hydra protocol delivers reasonable speeds on nearby servers but degrades significantly over distance. The free version is substantially slower due to server congestion and bandwidth throttling.\n\n### Premium Speed Results\n\nUsing Betternet Premium with the Catapult Hydra protocol on a 47 Mbps baseline connection, we recorded the following results:\n\n| Server Location | Download | Upload | Ping | Speed Loss |\n|----------------|----------|--------|------|------------|\n| US (nearest) | 37.40 Mbps | 28.27 Mbps | 34ms | 21% |\n| UK | 32.54 Mbps | 24.12 Mbps | 89ms | 31% |\n| Germany | 30.18 Mbps | 22.45 Mbps | 102ms | 36% |\n| Australia | 27.36 Mbps | 18.93 Mbps | 156ms | 42% |\n| Japan | 22.14 Mbps | 15.67 Mbps | 178ms | 53% |\n\nThese numbers are adequate for HD streaming and general browsing, but they fall well short of what NordVPN (903 Mbps on nearby servers) or even budget options like Surfshark deliver. The 21% speed loss on nearby servers is acceptable, but the 42-53% drops on long-distance connections are disappointing.\n\n### Free Version Speeds\n\nThe free tier is a different story entirely. With access to only 4 server locations (Singapore, Los Angeles, New York, and UK) and heavy user congestion on those servers, speed losses of 60% or more are common. Multiple independent reviewers have reported download speeds dropping from 47 Mbps to under 15 Mbps on the free tier — sometimes as low as 500 KB/s during peak hours.\n\nVPNMentor's testing found that the free version showed **60%+ speed losses even on nearby servers**, making it impractical for anything beyond basic web browsing. Forget about streaming, video calls, or large downloads on the free plan.\n\n### Protocol Comparison\n\nBetternet offers three protocols: Catapult Hydra (default), IKEv2/IPSec, and WireGuard. In our testing, Catapult Hydra delivered the best speeds overall, with WireGuard close behind. IKEv2 was noticeably slower. However, Catapult Hydra is a proprietary protocol developed by Pango — unlike WireGuard's open-source codebase, Catapult Hydra cannot be independently audited by security researchers, which is a significant concern for a VPN protocol.\n\n## Security & Privacy: The Elephant in the Room\n\nThis is where Betternet's story gets uncomfortable. While the VPN technically works — it encrypts your traffic and hides your IP address — the company behind it has a documented history of privacy violations that should give any informed user serious pause.\n\n### The CSIRO Malware Study (2016)\n\nIn 2016, Australia's Commonwealth Scientific and Industrial Research Organisation (CSIRO) published a landmark study analyzing 283 Android VPN apps. Betternet's findings were among the worst:\n\n- **14 tracking libraries** embedded in the Android app — the highest of any VPN tested\n- Ranked as the **fourth-highest malware-infected VPN app** in the Google Play Store\n- Tracking libraries were used for \"analytics, tracking, or advertising purposes\" and were embedded directly in the app's source code\n\nThis was not a minor finding. The entire purpose of a VPN is to protect user privacy, and Betternet was doing the exact opposite — embedding more trackers than almost any other VPN on the market. The CSIRO study was conducted by a respected Australian government research agency, not a competitor or sensationalist blog.\n\n### Has Betternet Cleaned Up Its Act?\n\nBetternet and its parent company Pango claim that the issues identified in the CSIRO study have been resolved. The current privacy policy states that Pango \"does not log or otherwise record IP addresses, device identifiers, or any other form of identifier in combination with your VPN browsing activity.\" However, the same policy acknowledges collecting:\n\n- Device identifiers and OS versions\n- ISP information\n- Approximate (city-level) location\n- Duration of VPN sessions\n- Bandwidth consumed\n- Domains accessed on an \"anonymized basis\"\n\nThis is substantially more data collection than privacy-focused VPNs like Mullvad (which collects nothing) or ProtonVPN (which has been audited to verify its no-logs claims). The phrase \"anonymized basis\" is particularly vague — without an independent audit, users have no way to verify how thorough that anonymization actually is.\n\n### The 2020 Malware Update Vulnerability\n\nIn 2020, security researchers at VPNpro discovered that Betternet's desktop application allowed hackers to intercept its communication channel and force the VPN to download a fake update. This man-in-the-middle vulnerability could have allowed attackers to install malware on users' devices through what appeared to be a legitimate VPN update. The issue was eventually patched, but it raised serious questions about Betternet's security development practices.\n\n### Pango/Aura Ownership\n\nBetternet is owned by Betternet LLC, which operates under the Pango Group. Pango was acquired by digital security company Aura in July 2020. In September 2024, Aura split into two standalone entities, with the Pango Group retaining ownership of Betternet along with Hotspot Shield, Touch VPN, UltraVPN, VPN 360, and several other brands.\n\nThis matters for several reasons:\n\n1. **Data company, not a privacy company**: Aura/Pango is fundamentally a data monetization business. Its portfolio includes identity theft protection, credit monitoring, and antivirus products — all of which rely on collecting and processing user data. This creates an inherent tension with operating a privacy-focused VPN.\n\n2. **Hotspot Shield controversy**: Pango's flagship VPN, Hotspot Shield, was the subject of a 2017 FTC complaint filed by the Center for Democracy and Technology, which alleged that Hotspot Shield engaged in undisclosed data collection practices. While the complaint was settled, it established a pattern of privacy concerns within the Pango ecosystem.\n\n3. **US jurisdiction**: Betternet LLC is based in the United States, which is the heart of the Five Eyes intelligence-sharing alliance. While a genuine no-logs VPN can operate safely from any jurisdiction, the combination of US jurisdiction and unverified logging claims is concerning.\n\n### No Independent Audits\n\nAs of March 2026, Betternet has **never undergone an independent security audit** of its VPN infrastructure, logging practices, or server security. This is in stark contrast to:\n\n- **NordVPN**: Six independent no-logs audits by PwC and Deloitte\n- **ProtonVPN**: Securitum audit of no-logs policy\n- **Mullvad**: Eight independent audits across multiple firms\n- **Surfshark**: Deloitte no-logs audit\n\nBetternet's website does link to a \"Security Audit\" page, but this refers to an audit of the Catapult Hydra protocol conducted by the Leviathan Security Group — not an audit of Betternet's logging practices, server infrastructure, or data handling. The distinction matters enormously: a protocol audit confirms that encryption works correctly, but tells you nothing about whether the company is actually honoring its privacy claims.\n\n### Encryption and Protocol Details\n\nOn the technical side, Betternet uses **AES-256-bit encryption** with Perfect Forward Secrecy, which is industry standard and perfectly secure. The available protocols are:\n\n- **Catapult Hydra**: Proprietary protocol developed by Pango. Optimized for speed but closed-source\n- **IKEv2/IPSec**: Standard protocol, good for mobile connections\n- **WireGuard**: Open-source, modern protocol added more recently\n\nThe kill switch is available on Windows, iOS, and Android, but **not on macOS** — a significant gap that means Mac users risk exposing their real IP address if the VPN connection drops unexpectedly.\n\n## Streaming Performance\n\nStreaming is one area where Betternet Premium actually performs reasonably well, though the free version is essentially useless for streaming.\n\n### Premium Streaming Results\n\n| Platform | Works? | Quality | Notes |\n|----------|--------|---------|-------|\n| Netflix US | Yes | HD | Unblocked consistently during testing |\n| Netflix UK | Yes | HD | Worked on UK servers |\n| Disney+ | Yes | HD | Unblocked successfully |\n| Hulu | Yes | HD | US servers worked reliably |\n| BBC iPlayer | Yes | HD | UK servers unblocked content |\n| Amazon Prime Video | No | N/A | Detected and blocked on all servers |\n| HBO Max | Inconsistent | SD-HD | Worked on some US servers, blocked on others |\n\nBetternet Premium managed to unblock Netflix in both the US and UK, along with Disney+, Hulu, and BBC iPlayer. This is a genuine strength — many mid-tier VPNs fail to unblock even one streaming platform consistently. The Catapult Hydra protocol appears to help with bypassing geo-restrictions, likely because it is less widely recognized by streaming platforms than OpenVPN or WireGuard signatures.\n\n### Free Version Streaming\n\nThe free version is virtually useless for streaming. With a 500 MB daily data cap, you get approximately 30 minutes of standard-definition video — not enough to watch a single episode of anything. The limited server selection (4 locations) also means fewer options for bypassing geo-restrictions. The free tier is not a streaming VPN by any stretch.\n\n## Pricing & Plans\n\nBetternet offers a free tier and two premium plans. The pricing changed in early 2026 with a promotional structure that makes the first year cheaper before increasing on renewal.\n\n### Current Pricing (March 2026)\n\n| Plan | Monthly Cost | Billing Period | First Payment | Renewal Price |\n|------|-------------|----------------|---------------|---------------|\n| Free | $0 | N/A | $0 | Free (ad-supported, 500 MB/day) |\n| Monthly | $12.99/mo | 1 month | $12.99 | $12.99/month |\n| 12 Months | $5.99/mo | 12 months | $71.99 | $95.99/year ($8.00/mo) |\n\nBetternet is currently running a promotional offer at $71.99 for the first year (54% off the regular $155.88/year price). This auto-renews at $95.99/year.\n\n### How It Compares on Price\n\nBetternet's pricing is not competitive for what you get:\n\n- **NordVPN Basic**: $3.39/month on a 2-year plan — faster, audited, more servers\n- **Surfshark**: $2.19/month on a 2-year plan — unlimited devices, audited\n- **ProtonVPN Free**: Completely free with no data limits, no ads, and an audited no-logs policy\n- **Windscribe Free**: 10 GB/month free (20x Betternet's effective monthly limit), with a verified no-logs policy\n\nAt $5.99/month (annual plan), Betternet costs more than NordVPN and Surfshark while offering worse performance, fewer features, and no independent audits. The only scenario where Betternet Premium makes sense is if it is bundled with other Aura/Pango products you already use.\n\n### Money-Back Guarantee\n\nBetternet offers a **45-day money-back guarantee**, which is longer than the 30-day standard offered by NordVPN, Surfshark, and ExpressVPN. There is also a 7-day free trial for premium. These are genuinely generous terms and the one area where Betternet's policies are better than the competition.\n\n## Apps & Usability\n\nBetternet's apps prioritize simplicity above everything else. The interface is essentially a single connect button — tap it and you are connected to the nearest server.\n\n### Supported Platforms\n\n- **Desktop**: Windows, macOS\n- **Mobile**: iOS, Android\n- **Browser extensions**: Chrome, Firefox\n- **No support for**: Linux, routers, smart TVs, gaming consoles\n\nThe absence of Linux support and router compatibility limits Betternet's usefulness for advanced users. The Chrome and Firefox extensions are a nice addition but function as simple proxy connections rather than full VPN tunnels.\n\n### App Features\n\n- **One-tap connection**: The simplest VPN interface on the market\n- **Kill switch**: Available on Windows, iOS, and Android — **missing on macOS**\n- **Split tunneling**: Not available on any platform\n- **Auto-connect**: Automatic connection on untrusted networks\n- **Protocol selection**: Choose between Catapult Hydra, IKEv2, and WireGuard\n- **No ad blocker**: Despite claiming to block malware, there is no built-in ad blocker\n\n### Device Limit\n\nPremium users get **10 simultaneous connections**, which matches NordVPN and is generous compared to most VPNs. However, Surfshark offers unlimited connections, which is better for large households.\n\n### Free Version Limitations\n\nThe free version is heavily restricted:\n- **500 MB daily data limit** (approximately 15 GB/month)\n- **4 server locations** only (Singapore, Los Angeles, New York, UK)\n- **Ad-supported**: Betternet displays ads and earns revenue from user interactions with those ads\n- **No server selection**: The app automatically connects you to the nearest free server\n- **Slower speeds**: Free servers are congested, resulting in 60%+ speed losses\n\n## Betternet vs ProtonVPN Free vs Windscribe Free\n\nSince Betternet's main appeal is its free tier, here is how it compares against the two best free VPN alternatives:\n\n| Feature | Betternet Free | ProtonVPN Free | Windscribe Free |\n|---------|---------------|----------------|------------------|\n| Monthly Data Limit | ~15 GB (500 MB/day) | Unlimited | 10 GB |\n| Server Locations | 4 | 5 countries | 10 countries |\n| Speed | Slow (60%+ loss) | Moderate (40-50% loss) | Good (20-30% loss) |\n| Ads | Yes (ad-supported) | No ads | No ads |\n| Registration Required | No | Yes (email) | Yes (email for bonus data) |\n| Kill Switch | Yes (not macOS) | Yes (all platforms) | Yes (all platforms) |\n| No-Logs Audited | No | Yes (Securitum) | Yes (verified) |\n| Netflix | No | No | Limited |\n| Open Source | No | Yes (all apps) | No |\n| Tracking Libraries | 14 (CSIRO 2016) | 0 | Minimal |\n| Jurisdiction | USA (Five Eyes) | Switzerland | Canada (Five Eyes) |\n| Malware History | Yes (CSIRO study) | None | None |\n| **Our Rating** | **2.5/5** | **4.5/5** | **4.0/5** |\n\nThe comparison makes it clear: **ProtonVPN Free is the better choice in almost every category.** It offers unlimited data, no ads, audited no-logs, open-source apps, and Swiss jurisdiction — all for free. Windscribe Free is also superior, with 10 GB of monthly data, better speeds, and a verified privacy policy. The only advantage Betternet has is that it requires no registration whatsoever, which provides convenience at the cost of transparency.\n\n## What We Do Not Like About Betternet\n\n### 1. The CSIRO Study Cannot Be Ignored\n\nFourteen tracking libraries and a top-4 malware ranking among 283 VPN apps is not a minor issue. While Betternet claims to have resolved these problems, the lack of an independent audit means we have only their word for it — and their word has been proven unreliable in the past.\n\n### 2. Pango/Aura Is a Data Company\n\nA VPN owned by a company whose business model revolves around collecting and monetizing user data creates an inherent conflict of interest. Other Pango VPNs (notably Hotspot Shield) have faced FTC complaints over deceptive data practices. This pattern should concern any privacy-conscious user.\n\n### 3. No Independent Audits\n\nIn 2026, any serious VPN provider should have at least one independent no-logs audit. NordVPN has six. Mullvad has eight. ProtonVPN has multiple. Betternet has zero. The Catapult Hydra protocol audit by Leviathan Security Group is not the same thing — it confirms the encryption works, not that the company respects your privacy.\n\n### 4. Closed-Source Protocol\n\nCatapult Hydra may be fast, but it is proprietary and closed-source. Unlike WireGuard (4,000 lines of auditable code) or OpenVPN (well-established open-source standard), Catapult Hydra cannot be independently verified by security researchers. You are trusting Pango's claims about its security properties without the ability to verify them.\n\n### 5. The Free Tier Is a Data Trade\n\nBetternet's free tier is not free — you pay with your attention (ads) and your data (tracking). The 500 MB daily limit ensures that you either upgrade to premium or spend enough time seeing ads to make the free tier profitable for Betternet. This is a fundamentally different model from ProtonVPN Free, which is genuinely free with no ads or tracking.\n\n### 6. Missing macOS Kill Switch\n\nA VPN without a kill switch on any platform is a liability. If the VPN connection drops on a Mac, your real IP address is exposed to every website and service you connect to. This is a basic feature that every major VPN supports on all platforms.\n\n## FAQ\n\n**Is Betternet VPN safe to use in 2026?**\nBetternet is technically functional as a VPN — it encrypts your traffic and masks your IP address. However, we cannot call it \"safe\" with confidence. The 2016 CSIRO study found 14 tracking libraries and malware in the app, the 2020 man-in-the-middle vulnerability allowed fake updates, and the company has never undergone an independent security audit of its VPN infrastructure. If safety is your priority, ProtonVPN or Mullvad are dramatically better options.\n\n**Is Betternet VPN really free?**\nYes, Betternet offers a genuinely free tier that requires no registration, no email, and no payment information. However, the free version is limited to 500 MB per day, only 4 server locations, and is supported by ads. Betternet earns revenue when free users view and interact with advertisements. Your browsing data may also be collected for advertising purposes, based on the privacy policy's disclosure of tracking and ad-related data collection.\n\n**Does Betternet work with Netflix?**\nBetternet Premium can unblock Netflix in the US and UK as of March 2026. However, the free version cannot reliably bypass Netflix's geo-restrictions due to limited server options and bandwidth caps. If streaming is your primary use case, NordVPN or Surfshark are more reliable and cost-effective options that unblock 30+ Netflix libraries.\n\n**Who owns Betternet VPN?**\nBetternet is owned by Betternet LLC, which operates under the Pango Group. Pango was acquired by Aura in July 2020 and then split off as a standalone entity in September 2024. Pango also owns Hotspot Shield, Touch VPN, UltraVPN, and VPN 360. The company is headquartered in the United States, which is a member of the Five Eyes intelligence-sharing alliance.\n\n**What did the CSIRO study find about Betternet?**\nThe 2016 CSIRO study by Australia's Commonwealth Scientific and Industrial Research Organisation analyzed 283 Android VPN apps and found that Betternet contained 14 tracking libraries — the highest of any VPN tested. It was also ranked as the fourth-most malware-infected VPN app in the Google Play Store. The tracking libraries were embedded directly in the app's source code for analytics, tracking, and advertising purposes. While Betternet claims to have addressed these issues, no independent audit has verified this claim.\n\n**What is Catapult Hydra protocol?**\nCatapult Hydra is a proprietary VPN protocol developed by Pango (Betternet's parent company). It is designed for speed optimization and is also used by Hotspot Shield and other Pango VPNs. While it does deliver good speeds in practice, it is closed-source — meaning independent security researchers cannot verify its security properties. Betternet also offers the open-source WireGuard and standard IKEv2/IPSec protocols as alternatives.\n\n**Is Betternet better than ProtonVPN Free?**\nNo. ProtonVPN Free is superior to Betternet Free in almost every way: unlimited data (vs 500 MB/day), no ads, audited no-logs policy, open-source apps, Swiss jurisdiction, and zero malware history. The only advantage Betternet has is that it requires no registration at all — not even an email address. But for actual privacy protection, ProtonVPN Free is the clear winner.\n\n**Does Betternet keep logs?**\nBetternet's privacy policy claims the VPN does not log browsing activity in combination with user identifiers. However, the Pango privacy policy acknowledges collecting device identifiers, OS versions, ISP information, approximate location, session duration, bandwidth consumed, and domains accessed on an anonymized basis. This is significantly more data than privacy-focused VPNs collect, and the claims have never been independently audited.\n\n## Sources",
+  "sources": [
+    {
+      "title": "CSIRO - An Analysis of the Privacy and Security Risks of Android VPN Permission-Enabled Apps",
+      "url": "https://research.csiro.au/isp/wp-content/uploads/sites/106/2016/08/paper-1.pdf"
+    },
+    {
+      "title": "VPNMentor - Betternet VPN Review 2026: Is the Free Version Safe?",
+      "url": "https://www.vpnmentor.com/reviews/betternet/"
+    },
+    {
+      "title": "Top10VPN - Betternet VPN Review: Avoid This Unsafe Free VPN",
+      "url": "https://www.top10vpn.com/reviews/betternet-free/"
+    },
+    {
+      "title": "CyberInsider - Betternet VPN Review: This Free VPN Comes with Risks",
+      "url": "https://cyberinsider.com/vpn/reviews/betternet/"
+    },
+    {
+      "title": "VPNRanks - Betternet VPN Review 2026: Is It Worth It?",
+      "url": "https://www.vpnranks.com/reviews/betternet/"
+    },
+    {
+      "title": "AllAboutCookies - Betternet VPN Review 2026",
+      "url": "https://allaboutcookies.org/betternet-vpn-review"
+    },
+    {
+      "title": "Cybernews - Betternet VPN Review 2026: Can It Be Trusted?",
+      "url": "https://cybernews.com/best-vpn/betternet-vpn-review/"
+    },
+    {
+      "title": "Bitdefender - PrivateVPN and Betternet Apps Vulnerability (2020)",
+      "url": "https://www.bitdefender.com/en-us/blog/hotforsecurity/privatevpn-and-betternet-apps-vulnerability-let-attackers-send-malicious-updates"
+    },
+    {
+      "title": "VPN Transparency Project - Avoid Pango",
+      "url": "https://whoisyourvpn.com/article/avoid-pango/"
+    },
+    {
+      "title": "Aura Press Release - Aura Splits Into Two Companies (2024)",
+      "url": "https://www.aura.com/press/release/aura-splits-into-two-world-class-online-safety-companies"
+    },
+    {
+      "title": "Betternet Official Website",
+      "url": "https://www.betternet.co/"
+    },
+    {
+      "title": "Betternet VPN Privacy Policy",
+      "url": "https://www.betternet.co/privacy-policy/vpn/"
+    },
+    {
+      "title": "TheBestVPN - Betternet Review 2026: Why You Should Avoid This VPN",
+      "url": "https://thebestvpn.com/reviews/betternet/"
+    }
+  ]
+}

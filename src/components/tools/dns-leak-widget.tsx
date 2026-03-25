@@ -10,6 +10,7 @@ import {
   ChevronRight
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { getVpnAffiliateUrl } from "@/lib/vpn-links";
 
 interface DnsServer {
   ip: string;
@@ -344,7 +345,7 @@ export function DnsLeakWidget() {
                 <p className="text-white/80 text-sm">{t("fixLeaksDesc")}</p>
               </div>
               <a
-                href="https://go.zerotovpn.com/nordvpn"
+                href={getVpnAffiliateUrl("nordvpn")}
                 target="_blank"
                 rel="noopener noreferrer nofollow"
                 className="inline-flex items-center gap-2 bg-white text-blue-700 font-bold px-6 py-3 rounded-lg hover:bg-white/90 transition-colors shrink-0 text-sm md:text-base"

@@ -38,6 +38,7 @@ import { getShortMonthYear, getLocalizedMonthYear, OG_LOCALE_MAP } from "@/lib/s
 import { LastUpdated } from "@/components/last-updated";
 import InlineAd from "@/components/ads/InlineAd";
 import { vpnProviders } from "@/lib/vpn-data";
+import { getVpnAffiliateUrl } from "@/lib/vpn-links";
 import { formatAuditStatus, formatLoggingPolicy, getTransparencySnapshotForVpn } from "@/lib/vpn-transparency-data";
 
 type Props = {
@@ -794,7 +795,7 @@ export default async function ReviewPage({ params }: Props) {
             </div>
             <div className="flex gap-2 flex-wrap">
               <a
-                href="https://go.zerotovpn.com/nordvpn"
+                href={getVpnAffiliateUrl("nordvpn")}
                 target="_blank"
                 rel="noopener noreferrer nofollow"
                 className="text-sm bg-primary text-primary-foreground px-3 py-1.5 rounded-md font-medium hover:bg-primary/90 transition"

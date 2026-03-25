@@ -22,6 +22,7 @@ import {
 import { RelatedPages } from "@/components/seo/related-pages";
 import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
+import { getVpnAffiliateUrl } from "@/lib/vpn-links";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -124,7 +125,7 @@ export default async function VpnUAEPage({ params }: Props) {
     {
       name: "ExpressVPN",
       slug: "expressvpn",
-      affiliateUrl: "https://go.zerotovpn.com/expressvpn",
+      affiliateUrl: getVpnAffiliateUrl("expressvpn"),
       rating: 4.8,
       price: "$6.67",
       features: ["Lightway protocol", "Obfuscation", "Most stable in UAE", "Used by expats"],
@@ -134,7 +135,7 @@ export default async function VpnUAEPage({ params }: Props) {
     {
       name: "NordVPN",
       slug: "nordvpn",
-      affiliateUrl: "https://go.zerotovpn.com/nordvpn",
+      affiliateUrl: getVpnAffiliateUrl("nordvpn"),
       rating: 4.6,
       price: "$3.49",
       features: ["Obfuscated servers", "Great speeds", "Works well in UAE", "Affordable"],
@@ -144,7 +145,7 @@ export default async function VpnUAEPage({ params }: Props) {
     {
       name: "Surfshark",
       slug: "surfshark",
-      affiliateUrl: "https://go.zerotovpn.com/surfshark",
+      affiliateUrl: getVpnAffiliateUrl("surfshark"),
       rating: 4.3,
       price: "$2.49",
       features: ["Camouflage Mode", "NoBorders mode", "Unlimited devices", "Best value"],

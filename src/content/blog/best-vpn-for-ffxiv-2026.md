@@ -30,7 +30,7 @@ For players on the Japanese data centers (Elemental, Gaia, Mana, Meteor), connec
 
 **Price:** From $3.49/month on the 2-year plan.
 
-[Get NordVPN for FFXIV](https://go.zerotovpn.com/nordvpn)
+[Get NordVPN for FFXIV](https://nordvpn.com)
 
 ### 2. ExpressVPN — Best for Cross-Region Play
 

@@ -12,6 +12,7 @@ import { routing } from "@/i18n/routing";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { FAQAccordion } from "@/components/seo/faq-schema";
 import type { VpnData } from "@/lib/db/vpn-service";
+import { getVpnAffiliateUrl } from "@/lib/vpn-links";
 import {
   Check,
   X,
@@ -558,7 +559,7 @@ export default async function ComparePage({ params }: Props) {
               <AffiliateButton
                 vpnId="nordvpn"
                 vpnName="NordVPN"
-                affiliateUrl="https://go.zerotovpn.com/nordvpn"
+                affiliateUrl={getVpnAffiliateUrl("nordvpn")}
                 className="w-full"
               >
                 Get NordVPN
@@ -581,7 +582,7 @@ export default async function ComparePage({ params }: Props) {
               <AffiliateButton
                 vpnId="surfshark"
                 vpnName="Surfshark"
-                affiliateUrl="https://go.zerotovpn.com/surfshark"
+                affiliateUrl={getVpnAffiliateUrl("surfshark")}
                 className="w-full"
               >
                 Get Surfshark
@@ -604,7 +605,7 @@ export default async function ComparePage({ params }: Props) {
               <AffiliateButton
                 vpnId="expressvpn"
                 vpnName="ExpressVPN"
-                affiliateUrl="https://go.zerotovpn.com/expressvpn"
+                affiliateUrl={getVpnAffiliateUrl("expressvpn")}
                 className="w-full"
               >
                 Get ExpressVPN
@@ -627,7 +628,7 @@ export default async function ComparePage({ params }: Props) {
               <AffiliateButton
                 vpnId="protonvpn"
                 vpnName="ProtonVPN"
-                affiliateUrl="https://go.zerotovpn.com/protonvpn"
+                affiliateUrl={getVpnAffiliateUrl("protonvpn")}
                 className="w-full"
               >
                 Get ProtonVPN
@@ -650,7 +651,7 @@ export default async function ComparePage({ params }: Props) {
               <AffiliateButton
                 vpnId="pia"
                 vpnName="Private Internet Access"
-                affiliateUrl="https://go.zerotovpn.com/pia"
+                affiliateUrl={getVpnAffiliateUrl("private-internet-access")}
                 className="w-full"
               >
                 Get PIA
@@ -673,7 +674,7 @@ export default async function ComparePage({ params }: Props) {
               <AffiliateButton
                 vpnId="protonvpn"
                 vpnName="ProtonVPN"
-                affiliateUrl="https://go.zerotovpn.com/protonvpn"
+                affiliateUrl={getVpnAffiliateUrl("protonvpn")}
                 className="w-full"
               >
                 {t("tryFree")}

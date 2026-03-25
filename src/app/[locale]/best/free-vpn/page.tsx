@@ -11,6 +11,7 @@ import { RelatedPages } from "@/components/seo/related-pages";
 import { FAQAccordion } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { Link } from "@/i18n/navigation";
+import { getVpnAffiliateUrl } from "@/lib/vpn-links";
 import {
   Shield,
   CheckCircle,
@@ -342,7 +343,7 @@ export default async function FreeVpnPage({ params }: Props) {
                   <AffiliateButton
                     vpnId="protonvpn"
                     vpnName="ProtonVPN"
-                    affiliateUrl="https://go.zerotovpn.com/protonvpn"
+                    affiliateUrl={getVpnAffiliateUrl("protonvpn")}
                     size="lg"
                   >
                     {t("reviews.getButton")} ProtonVPN
@@ -419,7 +420,7 @@ export default async function FreeVpnPage({ params }: Props) {
                   <AffiliateButton
                     vpnId="windscribe"
                     vpnName="Windscribe"
-                    affiliateUrl="https://go.zerotovpn.com/windscribe"
+                    affiliateUrl={getVpnAffiliateUrl("windscribe")}
                     size="lg"
                   >
                     {t("reviews.getButton")} Windscribe
@@ -496,7 +497,7 @@ export default async function FreeVpnPage({ params }: Props) {
                   <AffiliateButton
                     vpnId="hideme"
                     vpnName="Hide.me"
-                    affiliateUrl="https://go.zerotovpn.com/hideme"
+                    affiliateUrl={getVpnAffiliateUrl("hideme")}
                     size="lg"
                   >
                     {t("reviews.getButton")} Hide.me
@@ -573,7 +574,7 @@ export default async function FreeVpnPage({ params }: Props) {
                   <AffiliateButton
                     vpnId="tunnelbear"
                     vpnName="TunnelBear"
-                    affiliateUrl="https://go.zerotovpn.com/tunnelbear"
+                    affiliateUrl={getVpnAffiliateUrl("tunnelbear")}
                     size="lg"
                   >
                     {t("reviews.getButton")} TunnelBear
@@ -648,7 +649,7 @@ export default async function FreeVpnPage({ params }: Props) {
                     <AffiliateButton
                       vpnId="nordvpn"
                       vpnName="NordVPN"
-                      affiliateUrl="https://go.zerotovpn.com/nordvpn"
+                      affiliateUrl={getVpnAffiliateUrl("nordvpn")}
                       className="w-full"
                     >
                       {t("upgrade.getButton")} NordVPN
@@ -680,7 +681,7 @@ export default async function FreeVpnPage({ params }: Props) {
                     <AffiliateButton
                       vpnId="surfshark"
                       vpnName="Surfshark"
-                      affiliateUrl="https://go.zerotovpn.com/surfshark"
+                      affiliateUrl={getVpnAffiliateUrl("surfshark")}
                       className="w-full"
                     >
                       {t("upgrade.getButton")} Surfshark

@@ -31,7 +31,7 @@ NordVPN consistently gave us the lowest ping increases during testing. On NA-Eas
 
 **Price:** From $3.49/month on the 2-year plan.
 
-[Get NordVPN for Fortnite](https://go.zerotovpn.com/nordvpn)
+[Get NordVPN for Fortnite](https://nordvpn.com)
 
 ### 2. Surfshark — Best for Multi-Device Gamers
 

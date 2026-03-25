@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Shield, ShieldAlert, MapPin, Wifi, X } from "lucide-react";
+import { getVpnAffiliateUrl } from "@/lib/vpn-links";
 
 interface IpData {
   ip: string;
@@ -84,7 +85,7 @@ export function SecurityBanner() {
         {/* CTA + dismiss */}
         <div className="flex items-center gap-3 shrink-0">
           <a
-            href="https://go.zerotovpn.com/nordvpn"
+            href={getVpnAffiliateUrl("nordvpn")}
             target="_blank"
             rel="noopener noreferrer sponsored"
             className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-white text-red-600 text-sm font-bold rounded-lg hover:bg-white/90 transition-colors shadow-sm"

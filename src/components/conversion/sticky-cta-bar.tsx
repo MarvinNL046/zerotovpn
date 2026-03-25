@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { X, Zap, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
+import { getVpnAffiliateUrl } from "@/lib/vpn-links";
 
 interface StickyCTABarProps {
   vpnName?: string;
@@ -15,7 +16,7 @@ interface StickyCTABarProps {
 export function StickyCTABar({
   vpnName = "NordVPN",
   discountPercent = 68,
-  affiliateUrl = "https://go.zerotovpn.com/nordvpn",
+  affiliateUrl = getVpnAffiliateUrl("nordvpn"),
   position = "bottom",
 }: StickyCTABarProps) {
   const t = useTranslations("stickyBar");

@@ -33,14 +33,15 @@ import {
 import { LastUpdated } from "@/components/last-updated";
 import { generateAlternates } from "@/lib/seo-utils";
 import { getRelatedContent } from "@/lib/content-links";
+import { getVpnAffiliateUrl } from "@/lib/vpn-links";
 
 const affiliateLinks = {
-  expressvpn: "https://go.zerotovpn.com/expressvpn",
-  nordvpn: "https://go.zerotovpn.com/nordvpn",
-  surfshark: "https://go.zerotovpn.com/surfshark",
-  cyberghost: "https://go.zerotovpn.com/cyberghost",
-  protonvpn: "https://go.zerotovpn.com/protonvpn",
-  pia: "https://go.zerotovpn.com/pia",
+  expressvpn: getVpnAffiliateUrl("expressvpn"),
+  nordvpn: getVpnAffiliateUrl("nordvpn"),
+  surfshark: getVpnAffiliateUrl("surfshark"),
+  cyberghost: getVpnAffiliateUrl("cyberghost"),
+  protonvpn: getVpnAffiliateUrl("protonvpn"),
+  pia: getVpnAffiliateUrl("pia"),
 };
 
 type Props = {

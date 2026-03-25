@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import type { VpnData } from "@/lib/db/vpn-service";
+import { getVpnAffiliateUrl, getVpnWebsiteUrl } from "@/lib/vpn-links";
 
 interface VpnFormProps {
   vpn?: VpnData;
@@ -195,7 +196,7 @@ export function VpnForm({ vpn, onSuccess }: VpnFormProps) {
                 id="website"
                 value={website}
                 onChange={(e) => setWebsite(e.target.value)}
-                placeholder="https://nordvpn.com"
+                placeholder={getVpnWebsiteUrl("nordvpn")}
                 required
               />
             </div>
@@ -205,7 +206,7 @@ export function VpnForm({ vpn, onSuccess }: VpnFormProps) {
                 id="affiliateUrl"
                 value={affiliateUrl}
                 onChange={(e) => setAffiliateUrl(e.target.value)}
-                placeholder="https://go.zerotovpn.com/nordvpn"
+                placeholder={getVpnAffiliateUrl("nordvpn")}
                 required
               />
             </div>

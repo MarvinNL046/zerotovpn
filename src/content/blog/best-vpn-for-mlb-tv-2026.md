@@ -33,7 +33,7 @@ During testing, NordVPN consistently bypassed MLB.TV blackouts. We tested from N
 
 **Price:** From $3.49/month on the 2-year plan.
 
-[Get NordVPN for MLB.TV](https://go.zerotovpn.com/nordvpn)
+[Get NordVPN for MLB.TV](https://nordvpn.com)
 
 ### 2. Surfshark — Best Value for MLB.TV
 

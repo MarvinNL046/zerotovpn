@@ -17,6 +17,7 @@ import { MetricBadge } from "@/components/ui/metric-badge";
 import { PulseIndicator } from "@/components/ui/pulse-indicator";
 import { LazyHeroIllustration } from "@/components/lazy-hero-illustration";
 import InlineAd from "@/components/ads/InlineAd";
+import { getVpnAffiliateUrl } from "@/lib/vpn-links";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -299,7 +300,7 @@ export default async function HomePage({ params }: Props) {
               {/* CTA buttons */}
               <div className="flex flex-wrap gap-3">
                 <a
-                  href="https://go.zerotovpn.com/nordvpn"
+                  href={getVpnAffiliateUrl("nordvpn")}
                   target="_blank"
                   rel="noopener noreferrer nofollow"
                   className="inline-flex items-center bg-primary text-primary-foreground font-semibold px-6 py-3 rounded-lg hover:bg-primary/90 transition"

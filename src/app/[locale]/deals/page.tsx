@@ -14,6 +14,7 @@ import {
   CalendarCheck,
   Star,
 } from "lucide-react";
+import { getVpnAffiliateUrl } from "@/lib/vpn-links";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -107,7 +108,7 @@ const deals = [
     total: 53.73,
     features: ["Unlimited devices", "Ad blocker", "24/7 support"],
     coupon: "SHARKGIFT",
-    affiliateUrl: "https://go.zerotovpn.com/surfshark",
+    affiliateUrl: getVpnAffiliateUrl("surfshark"),
     moneyBack: 30,
     rating: 9.2,
     devices: "Unlimited",
@@ -123,7 +124,7 @@ const deals = [
     total: 80.73,
     features: ["10 devices", "Threat Protection", "Dark Web Monitor"],
     coupon: null,
-    affiliateUrl: "https://go.zerotovpn.com/nordvpn",
+    affiliateUrl: getVpnAffiliateUrl("nordvpn"),
     moneyBack: 30,
     rating: 9.7,
     devices: "10",
@@ -139,7 +140,7 @@ const deals = [
     total: 88,
     features: ["12 devices", "Password manager", "Router app"],
     coupon: null,
-    affiliateUrl: "https://go.zerotovpn.com/expressvpn",
+    affiliateUrl: getVpnAffiliateUrl("expressvpn"),
     moneyBack: 30,
     rating: 9.5,
     devices: "12",
@@ -155,7 +156,7 @@ const deals = [
     total: 56.94,
     features: ["7 devices", "Dedicated streaming servers", "45-day guarantee"],
     coupon: null,
-    affiliateUrl: "https://go.zerotovpn.com/cyberghost",
+    affiliateUrl: getVpnAffiliateUrl("cyberghost"),
     moneyBack: 45,
     rating: 9.0,
     devices: "7",
@@ -176,7 +177,7 @@ const deals = [
       "Cross-platform sync",
     ],
     coupon: null,
-    affiliateUrl: "https://go.zerotovpn.com/nordpass",
+    affiliateUrl: getVpnAffiliateUrl("nordpass"),
     moneyBack: 30,
     rating: 8.8,
     devices: "Unlimited",
@@ -1371,7 +1372,7 @@ export default async function DealsPage({ params }: Props) {
                     <AffiliateButton
                       vpnId="nordvpn"
                       vpnName="NordVPN"
-                      affiliateUrl="https://go.zerotovpn.com/nordvpn"
+                      affiliateUrl={getVpnAffiliateUrl("nordvpn")}
                       className="w-full"
                       size="lg"
                     >
@@ -1418,7 +1419,7 @@ export default async function DealsPage({ params }: Props) {
                     <AffiliateButton
                       vpnId="nordpass"
                       vpnName="NordPass"
-                      affiliateUrl="https://go.zerotovpn.com/nordpass"
+                      affiliateUrl={getVpnAffiliateUrl("nordpass")}
                       className="w-full"
                       variant="outline"
                       size="lg"

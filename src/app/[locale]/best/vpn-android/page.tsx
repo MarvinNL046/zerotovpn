@@ -26,6 +26,7 @@ import {
   Download,
 } from "lucide-react";
 import { RelatedPages } from "@/components/seo/related-pages";
+import { getVpnAffiliateUrl } from "@/lib/vpn-links";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -393,7 +394,7 @@ export default async function AndroidVpnPage({ params }: Props) {
                   <AffiliateButton
                     vpnId="nordvpn"
                     vpnName="NordVPN"
-                    affiliateUrl="https://go.zerotovpn.com/nordvpn"
+                    affiliateUrl={getVpnAffiliateUrl("nordvpn")}
                     size="lg"
                   >
                     {t("reviews.getButton")} NordVPN
@@ -473,7 +474,7 @@ export default async function AndroidVpnPage({ params }: Props) {
                   <AffiliateButton
                     vpnId="surfshark"
                     vpnName="Surfshark"
-                    affiliateUrl="https://go.zerotovpn.com/surfshark"
+                    affiliateUrl={getVpnAffiliateUrl("surfshark")}
                     size="lg"
                   >
                     {t("reviews.getButton")} Surfshark
@@ -553,7 +554,7 @@ export default async function AndroidVpnPage({ params }: Props) {
                   <AffiliateButton
                     vpnId="expressvpn"
                     vpnName="ExpressVPN"
-                    affiliateUrl="https://go.zerotovpn.com/expressvpn"
+                    affiliateUrl={getVpnAffiliateUrl("expressvpn")}
                     size="lg"
                   >
                     {t("reviews.getButton")} ExpressVPN
@@ -802,7 +803,7 @@ export default async function AndroidVpnPage({ params }: Props) {
                 <AffiliateButton
                   vpnId="nordvpn"
                   vpnName="NordVPN"
-                  affiliateUrl="https://go.zerotovpn.com/nordvpn"
+                  affiliateUrl={getVpnAffiliateUrl("nordvpn")}
                   size="lg"
                 >
                   {t("conclusion.tryNordvpn")}

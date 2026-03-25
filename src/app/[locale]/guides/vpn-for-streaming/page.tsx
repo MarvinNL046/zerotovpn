@@ -31,12 +31,13 @@ import {
 import { getRelatedContent } from "@/lib/content-links";
 import { LastUpdated } from "@/components/last-updated";
 import { generateAlternates } from "@/lib/seo-utils";
+import { getVpnAffiliateUrl } from "@/lib/vpn-links";
 
 // Affiliate links
 const affiliateLinks = {
-  expressvpn: "https://go.zerotovpn.com/expressvpn",
-  nordvpn: "https://go.zerotovpn.com/nordvpn",
-  surfshark: "https://go.zerotovpn.com/surfshark",
+  expressvpn: getVpnAffiliateUrl("expressvpn"),
+  nordvpn: getVpnAffiliateUrl("nordvpn"),
+  surfshark: getVpnAffiliateUrl("surfshark"),
 };
 
 type Props = {

@@ -1,4 +1,5 @@
 import { getDb, scrapeJobs } from "@/lib/db";
+import { getVpnPricingUrl } from "@/lib/vpn-links";
 
 const JINA_READER_URL = "https://r.jina.ai";
 
@@ -139,7 +140,7 @@ export async function scrapeUrl(url: string): Promise<{ content: string; provide
 
 // VPN pricing page URLs — all 38 providers
 const VPN_PRICING_URLS: Record<string, string> = {
-  nordvpn: "https://nordvpn.com/pricing/",
+  nordvpn: getVpnPricingUrl("nordvpn"),
   surfshark: "https://surfshark.com/pricing",
   expressvpn: "https://www.expressvpn.com/order",
   cyberghost: "https://www.cyberghostvpn.com/buy/cyberghost-vpn-4",

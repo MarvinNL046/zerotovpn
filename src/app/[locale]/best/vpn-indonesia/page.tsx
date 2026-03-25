@@ -24,6 +24,7 @@ import {
 import { RelatedPages } from "@/components/seo/related-pages";
 import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
+import { getVpnAffiliateUrl } from "@/lib/vpn-links";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -127,7 +128,7 @@ export default async function VpnIndonesiaPage({ params }: Props) {
     {
       name: "NordVPN",
       slug: "nordvpn",
-      affiliateUrl: "https://go.zerotovpn.com/nordvpn",
+      affiliateUrl: getVpnAffiliateUrl("nordvpn"),
       rating: 4.9,
       price: "$3.09",
       features: ["Indonesia servers", "NordLynx protocol", "Threat Protection", "No-logs policy"],
@@ -137,7 +138,7 @@ export default async function VpnIndonesiaPage({ params }: Props) {
     {
       name: "Surfshark",
       slug: "surfshark",
-      affiliateUrl: "https://go.zerotovpn.com/surfshark",
+      affiliateUrl: getVpnAffiliateUrl("surfshark"),
       rating: 4.7,
       price: "$2.19",
       features: ["Indonesia servers", "Unlimited devices", "CleanWeb", "Camouflage mode"],
@@ -147,7 +148,7 @@ export default async function VpnIndonesiaPage({ params }: Props) {
     {
       name: "ExpressVPN",
       slug: "expressvpn",
-      affiliateUrl: "https://go.zerotovpn.com/expressvpn",
+      affiliateUrl: getVpnAffiliateUrl("expressvpn"),
       rating: 4.8,
       price: "$6.67",
       features: ["Indonesia servers", "Lightway protocol", "Split tunneling", "MediaStreamer"],
@@ -157,7 +158,7 @@ export default async function VpnIndonesiaPage({ params }: Props) {
     {
       name: "CyberGhost",
       slug: "cyberghost",
-      affiliateUrl: "https://go.zerotovpn.com/cyberghost",
+      affiliateUrl: getVpnAffiliateUrl("cyberghost"),
       rating: 4.5,
       price: "$2.19",
       features: ["Indonesia servers", "45-day guarantee", "Streaming optimized", "NoSpy servers"],
@@ -167,7 +168,7 @@ export default async function VpnIndonesiaPage({ params }: Props) {
     {
       name: "ProtonVPN",
       slug: "protonvpn",
-      affiliateUrl: "https://go.zerotovpn.com/protonvpn",
+      affiliateUrl: getVpnAffiliateUrl("protonvpn"),
       rating: 4.6,
       price: "$4.49",
       features: ["Free tier", "Swiss privacy", "NetShield", "Open source"],

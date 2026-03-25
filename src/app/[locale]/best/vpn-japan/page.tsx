@@ -23,6 +23,7 @@ import { RelatedPages } from "@/components/seo/related-pages";
 import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { Go2NetworkSection } from "@/components/seo/go2-network-section";
+import { getVpnAffiliateUrl } from "@/lib/vpn-links";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -126,7 +127,7 @@ export default async function VpnJapanPage({ params }: Props) {
     {
       name: "NordVPN",
       slug: "nordvpn",
-      affiliateUrl: "https://go.zerotovpn.com/nordvpn",
+      affiliateUrl: getVpnAffiliateUrl("nordvpn"),
       rating: 4.9,
       price: "$3.09",
       features: ["80+ Japan servers", "NordLynx protocol", "Threat Protection", "No-logs policy"],
@@ -136,7 +137,7 @@ export default async function VpnJapanPage({ params }: Props) {
     {
       name: "ExpressVPN",
       slug: "expressvpn",
-      affiliateUrl: "https://go.zerotovpn.com/expressvpn",
+      affiliateUrl: getVpnAffiliateUrl("expressvpn"),
       rating: 4.8,
       price: "$6.67",
       features: ["Japan servers (Tokyo, Yokohama)", "Lightway protocol", "MediaStreamer", "24/7 support"],
@@ -146,7 +147,7 @@ export default async function VpnJapanPage({ params }: Props) {
     {
       name: "Surfshark",
       slug: "surfshark",
-      affiliateUrl: "https://go.zerotovpn.com/surfshark",
+      affiliateUrl: getVpnAffiliateUrl("surfshark"),
       rating: 4.7,
       price: "$2.19",
       features: ["Japan servers", "Unlimited devices", "CleanWeb", "Smart DNS"],
@@ -156,7 +157,7 @@ export default async function VpnJapanPage({ params }: Props) {
     {
       name: "ProtonVPN",
       slug: "protonvpn",
-      affiliateUrl: "https://go.zerotovpn.com/protonvpn",
+      affiliateUrl: getVpnAffiliateUrl("protonvpn"),
       rating: 4.6,
       price: "$4.49",
       features: ["Japan servers", "Free tier", "Secure Core", "Open source"],
@@ -166,7 +167,7 @@ export default async function VpnJapanPage({ params }: Props) {
     {
       name: "CyberGhost",
       slug: "cyberghost",
-      affiliateUrl: "https://go.zerotovpn.com/cyberghost",
+      affiliateUrl: getVpnAffiliateUrl("cyberghost"),
       rating: 4.5,
       price: "$2.19",
       features: ["Japan streaming servers", "45-day guarantee", "Dedicated IP option", "NoSpy servers"],

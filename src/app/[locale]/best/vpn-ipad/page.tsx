@@ -24,6 +24,7 @@ import {
 import { RelatedPages } from "@/components/seo/related-pages";
 import { LastUpdated } from "@/components/last-updated";
 import { generateAlternates } from "@/lib/seo-utils";
+import { getVpnAffiliateUrl } from "@/lib/vpn-links";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -373,7 +374,7 @@ export default async function IpadVpnPage({ params }: Props) {
                   <AffiliateButton
                     vpnId="nordvpn"
                     vpnName="NordVPN"
-                    affiliateUrl="https://go.zerotovpn.com/nordvpn"
+                    affiliateUrl={getVpnAffiliateUrl("nordvpn")}
                     size="lg"
                   >
                     {t("reviews.getButton")} NordVPN
@@ -456,7 +457,7 @@ export default async function IpadVpnPage({ params }: Props) {
                   <AffiliateButton
                     vpnId="surfshark"
                     vpnName="Surfshark"
-                    affiliateUrl="https://go.zerotovpn.com/surfshark"
+                    affiliateUrl={getVpnAffiliateUrl("surfshark")}
                     size="lg"
                   >
                     {t("reviews.getButton")} Surfshark
@@ -539,7 +540,7 @@ export default async function IpadVpnPage({ params }: Props) {
                   <AffiliateButton
                     vpnId="expressvpn"
                     vpnName="ExpressVPN"
-                    affiliateUrl="https://go.zerotovpn.com/expressvpn"
+                    affiliateUrl={getVpnAffiliateUrl("expressvpn")}
                     size="lg"
                   >
                     {t("reviews.getButton")} ExpressVPN
@@ -794,7 +795,7 @@ export default async function IpadVpnPage({ params }: Props) {
                     <AffiliateButton
                       vpnId="nordvpn"
                       vpnName="NordVPN"
-                      affiliateUrl="https://go.zerotovpn.com/nordvpn"
+                      affiliateUrl={getVpnAffiliateUrl("nordvpn")}
                     >
                       {t("conclusion.getBest")}
                     </AffiliateButton>
@@ -815,7 +816,7 @@ export default async function IpadVpnPage({ params }: Props) {
                     <AffiliateButton
                       vpnId="surfshark"
                       vpnName="Surfshark"
-                      affiliateUrl="https://go.zerotovpn.com/surfshark"
+                      affiliateUrl={getVpnAffiliateUrl("surfshark")}
                     >
                       {t("conclusion.getValue")}
                     </AffiliateButton>
@@ -836,7 +837,7 @@ export default async function IpadVpnPage({ params }: Props) {
                     <AffiliateButton
                       vpnId="expressvpn"
                       vpnName="ExpressVPN"
-                      affiliateUrl="https://go.zerotovpn.com/expressvpn"
+                      affiliateUrl={getVpnAffiliateUrl("expressvpn")}
                     >
                       {t("conclusion.getTravel")}
                     </AffiliateButton>

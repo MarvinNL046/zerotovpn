@@ -4,6 +4,7 @@ import { Link } from "@/i18n/navigation";
 import { Globe, Shield, ShieldAlert, Zap, Wrench } from "lucide-react";
 import type { Metadata } from "next";
 import { generateAlternates } from "@/lib/seo-utils";
+import { getVpnAffiliateUrl } from "@/lib/vpn-links";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -115,7 +116,7 @@ export default async function ToolsPage({ params }: Props) {
             </p>
           </div>
           <a
-            href="https://go.zerotovpn.com/nordvpn"
+            href={getVpnAffiliateUrl("nordvpn")}
             target="_blank"
             rel="noopener noreferrer nofollow"
             className="inline-flex items-center gap-2 bg-white text-blue-700 font-bold px-8 py-3.5 rounded-xl hover:bg-white/90 transition-colors shrink-0 text-base shadow-lg"

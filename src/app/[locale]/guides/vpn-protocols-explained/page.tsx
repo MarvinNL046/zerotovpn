@@ -106,17 +106,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   return {
     metadataBase: new URL(baseUrl),
-    title: "VPN Protocols Explained (WireGuard vs OpenVPN vs IKEv2): Which Is Best? - ZeroToVPN",
+    title: "VPN Protocols Explained: WireGuard vs OpenVPN vs IKEv2 (2026)",
     description:
-      "Not sure which VPN protocol to choose? Here is a simple breakdown of WireGuard, OpenVPN and IKEv2 across speed, security and real-world use.",
+      "WireGuard vs OpenVPN vs IKEv2 — which VPN protocol is fastest and most secure in 2026? We tested all three for speed, stability and real-world use.",
     robots: {
       index: true,
       follow: true,
     },
     openGraph: {
-      title: "VPN Protocols Explained (WireGuard vs OpenVPN vs IKEv2): Which Is Best?",
+      title: "VPN Protocols Explained: WireGuard vs OpenVPN vs IKEv2 (2026)",
       description:
-        "Simple breakdown of WireGuard, OpenVPN and IKEv2 across speed, security and real-world use.",
+        "WireGuard vs OpenVPN vs IKEv2 — which VPN protocol is fastest and most secure in 2026? We tested all three for speed, stability and real-world use.",
       type: "article",
     },
     alternates: generateAlternates("/guides/vpn-protocols-explained", locale),

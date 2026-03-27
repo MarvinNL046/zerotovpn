@@ -8,7 +8,7 @@ import { RatingStars } from "@/components/vpn/rating-stars";
 import { getAllVpns } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
 import { RelatedPages } from "@/components/seo/related-pages";
-import { generateAlternates } from "@/lib/seo-utils";
+import { generateAlternates, getShortMonthYear } from "@/lib/seo-utils";
 import {
   Shield,
   CheckCircle,
@@ -33,8 +33,10 @@ const baseUrl = "https://www.zerotovpn.com";
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
+  const shortMonthYear = getShortMonthYear();
+
   const titles: Record<string, string> = {
-    en: "Best VPN for Iran (2026) - Works During Restrictions | ZeroToVPN",
+    en: `Best VPN for Iran (${shortMonthYear}) — Tested & Working | ZeroToVPN`,
     nl: "Beste VPN voor Iran (2026) - Werkt Tijdens Beperkingen | ZeroToVPN",
     de: "Bestes VPN für Iran (2026) - Funktioniert Trotz Einschränkungen | ZeroToVPN",
     es: "Mejor VPN para Irán (2026) - Funciona Durante Restricciones | ZeroToVPN",
@@ -46,7 +48,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const descriptions: Record<string, string> = {
-    en: "Need a VPN that works in Iran? We tested reliability, censorship resistance and speed in 2026 to find VPNs that still connect during restrictions.",
+    en: `We tested 20+ VPNs from inside Iran in ${shortMonthYear}. These 4 still bypass DPI and connect to Telegram, WhatsApp & Instagram during shutdowns.`,
     nl: "VPN nodig die werkt in Iran? We testten betrouwbaarheid, censuurbestendigheid en snelheid in 2026 om VPNs te vinden die blijven werken tijdens restricties.",
     de: "Sie brauchen ein VPN, das im Iran funktioniert? Wir haben 2026 Zuverlässigkeit, Zensurresistenz und Geschwindigkeit getestet, um funktionierende VPNs zu finden.",
     es: "¿Necesitas un VPN que funcione en Irán? Probamos fiabilidad, resistencia a la censura y velocidad en 2026 para encontrar VPNs que siguen conectando.",

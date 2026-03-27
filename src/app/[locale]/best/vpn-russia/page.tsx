@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const shortMonthYear = getShortMonthYear();
 
   const titles: Record<string, string> = {
-    en: "Best VPN for Russia (2026) - Works With Local Restrictions | ZeroToVPN",
+    en: "Best VPN for Russia (2026) — Tested During DPI Blocks | ZeroToVPN",
     nl: "Beste VPN voor Rusland (2026) - Werkt Met Lokale Beperkingen | ZeroToVPN",
     de: "Bestes VPN für Russland (2026) - Funktioniert Bei Lokalen Einschränkungen | ZeroToVPN",
     es: "Mejor VPN para Rusia (2026) - Funciona con Restricciones Locales | ZeroToVPN",
@@ -64,7 +64,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const descriptions: Record<string, string> = {
-    en: "Compare VPNs that still work in Russia. We tested speed, censorship resistance and reliability to identify options that keep connecting in 2026.",
+    en: "We tested 10+ VPNs during Russia's 2026 DPI blocks. See which bypassed Roskomnadzor restrictions with obfuscated protocols — and which failed.",
     nl: "Vergelijk VPNs die nog werken in Rusland. We testten snelheid, censuurbestendigheid en betrouwbaarheid om opties te vinden die in 2026 blijven verbinden.",
     de: "Vergleichen Sie VPNs, die in Russland noch funktionieren. Wir haben Geschwindigkeit, Zensurresistenz und Stabilität getestet, um 2026 funktionierende Optionen zu finden.",
     es: "Compara VPNs que todavía funcionan en Rusia. Probamos velocidad, resistencia a la censura y fiabilidad para encontrar opciones que siguen conectando en 2026.",

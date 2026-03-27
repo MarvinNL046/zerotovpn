@@ -23,6 +23,8 @@ import { RelatedPages } from "@/components/seo/related-pages";
 import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { getVpnAffiliateUrl } from "@/lib/vpn-links";
+import { getAllVpns } from "@/lib/vpn-data-layer";
+import { ComparisonTableSchema } from "@/components/structured-data";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -119,6 +121,12 @@ function ArticleSchema() {
 export default async function VpnIranPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  // Fetch VPN data for structured data schema
+  const allVpns = await getAllVpns();
+  const iranVpns = allVpns.filter((vpn) =>
+    ["expressvpn", "surfshark", "protonvpn", "vyprvpn"].includes(vpn.slug)
+  );
 
   // VPN data for Iran
   const workingVpns = [
@@ -1287,6 +1295,7 @@ export default async function VpnIranPage({ params }: Props) {
   return (
     <>
       <ArticleSchema />
+      <ComparisonTableSchema vpns={iranVpns} />
 
       <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
         {/* Hero Section */}

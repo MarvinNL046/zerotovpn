@@ -13,7 +13,7 @@ import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { getAllVpns, type VpnProvider } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
-import { routing } from "@/i18n/routing";
+import { generateAlternates } from "@/lib/seo-utils";
 import { LastUpdated } from "@/components/last-updated";
 import {
   Zap,
@@ -62,16 +62,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     th: "เราทดสอบความเร็ว ความเป็นส่วนตัว สตรีมมิ่ง และความโปร่งใสของบันทึกข้อมูลอย่างอิสระ เพื่อจัดอันดับ VPN ที่ดีที่สุดในปี 2026 เปรียบเทียบราคาและค้นหา VPN ที่เหมาะกับคุณวันนี้",
   };
 
-  const prefix = locale === "en" ? "" : `/${locale}`;
-  const canonicalUrl = `${baseUrl}${prefix}/best/best-vpn`;
-
-  // Generate alternates for all languages
-  const languages: Record<string, string> = { "x-default": `${baseUrl}/best/best-vpn` };
-  routing.locales.forEach((l) => {
-    const p = l === "en" ? "" : `/${l}`;
-    languages[l] = `${baseUrl}${p}/best/best-vpn`;
-  });
-
   return {
     metadataBase: new URL(baseUrl),
     title: (titles[locale] || titles.en).replace(" | ZeroToVPN", ""),
@@ -89,10 +79,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           "best vpn for privacy",
         ]
       : undefined,
-    alternates: {
-      canonical: canonicalUrl,
-      languages: languages,
-    },
+    alternates: generateAlternates("/best/best-vpn", locale),
     openGraph: {
       title: titles[locale] || titles.en,
       description: descriptions[locale] || descriptions.en,

@@ -26,6 +26,8 @@ import { RelatedPages } from "@/components/seo/related-pages";
 import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { getVpnAffiliateUrl } from "@/lib/vpn-links";
+import { getAllVpns } from "@/lib/vpn-data-layer";
+import { ComparisonTableSchema } from "@/components/structured-data";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -122,6 +124,12 @@ function ArticleSchema() {
 export default async function VpnRussiaPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  // Fetch VPN data for structured data schema
+  const allVpns = await getAllVpns();
+  const russiaVpns = allVpns.filter((vpn) =>
+    ["expressvpn", "nordvpn", "surfshark"].includes(vpn.slug)
+  );
 
   // VPN data for Russia
   const workingVpns = [
@@ -1232,6 +1240,7 @@ export default async function VpnRussiaPage({ params }: Props) {
   return (
     <>
       <ArticleSchema />
+      <ComparisonTableSchema vpns={russiaVpns} />
 
       <div className="flex flex-col">
         {/* Hero Section */}

@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { RatingStars } from "@/components/vpn/rating-stars";
 import { getAllVpns } from "@/lib/vpn-data-layer";
+import { ComparisonTableSchema } from "@/components/structured-data";
 import { Link } from "@/i18n/navigation";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { generateAlternates, getShortMonthYear } from "@/lib/seo-utils";
@@ -84,8 +85,8 @@ export default async function IranVpnPage({ params }: Props) {
   const content = {
     en: {
       badge: "Updated March 2026",
-      title: "Best VPN for Iran",
-      subtitle: "Bypass Iran's censorship and access blocked services — even during internet shutdowns",
+      title: "Best VPN for Iran — Tested During Shutdowns",
+      subtitle: "Compare the 4 VPNs that still connect in Iran. Updated monthly with real test results from inside the country.",
       legalNotice: "Critical: Iran's Internet Situation in 2026",
       legalNoticeText:
         "In February 2024, Iran's Supreme Council of Cyberspace (SCC) officially banned VPN sales and usage. Since January 8, 2026, Iran has imposed its most severe internet blackout yet — connectivity dropped to 1-3% of normal levels (Cloudflare data). The regime also enacted an 18% internet price increase in February 2026. Freedom House rates Iran's internet freedom at 11/100 (2025), among the worst globally.",
@@ -1140,6 +1141,9 @@ export default async function IranVpnPage({ params }: Props) {
   const t = content[locale as keyof typeof content] || content.en;
 
   return (
+    <>
+    <ComparisonTableSchema vpns={iranVpns} />
+
     <div className="flex flex-col">
       {/* Hero Section */}
       <section className="relative py-16 lg:py-24 overflow-hidden">
@@ -1423,6 +1427,21 @@ export default async function IranVpnPage({ params }: Props) {
         </div>
       </section>
 
+      {/* Cross-link to blog post */}
+      {locale === "en" && (
+        <section className="py-8">
+          <div className="container">
+            <div className="max-w-3xl mx-auto">
+              <div className="rounded-lg border bg-blue-50 dark:bg-blue-950/20 p-6">
+                <p className="font-semibold text-lg mb-2">Looking for bypass techniques?</p>
+                <p className="text-muted-foreground mb-3">Our detailed guide covers DPI circumvention, obfuscation protocols, and step-by-step setup instructions.</p>
+                <Link href="/blog/best-vpn-for-iran-2026-bypass-internet-censorship" className="text-primary font-medium hover:underline">Read: How to Bypass Internet Censorship in Iran (2026) →</Link>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Sources */}
       <section className="py-8 border-t">
         <div className="container">
@@ -1509,6 +1528,7 @@ export default async function IranVpnPage({ params }: Props) {
           />
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

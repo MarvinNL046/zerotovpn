@@ -157,16 +157,79 @@ https://go.zerotovpn.com/{vpn-slug}
 
 Admin routes are excluded from i18n middleware. The admin layout handles its own authentication via localStorage.
 
-## Pending Work
+## VPN Review Quality Blueprint
 
-1. **Database Connection**: Connect to Neon PostgreSQL and migrate from mock data
-2. **Reviews API**: Connect `/api/reviews` to database
-3. **Short.io Integration**: API integration for click analytics in admin
-4. **Email System**: Newsletter functionality for collected emails
+Current review pages are THIN CONTENT — just structured data rendered as a template. They need to be rewritten as comprehensive, EEAT-worthy articles.
+
+### Review Content Requirements
+- **2,500-4,000 words** per review — real article, not template filler
+- **Playwright screenshots** of actual VPN app + pricing page (ALWAYS IN ENGLISH, not NL)
+- **WebSearch + WebFetch** for real speed test data, audit dates, pricing
+- **Source links** cited at bottom of every review
+- **NO AI slop/fluff** — write like a journalist who actually tested the product
+- **One review at a time** — thorough, not batch
+
+### Review Article Structure
+1. **Quick Verdict** — summary box with rating, price, best for
+2. **Who Is It For / Not For** — audience segmentation
+3. **Speed Test Results** — real numbers (mbps), comparison table vs competitors
+4. **Security & Privacy** — encryption, audit details (who, when), jurisdiction, protocols
+5. **Streaming Performance** — Netflix US, BBC iPlayer, Disney+ (tested results)
+6. **Pricing & Plans** — table with all tiers, renewal prices, money-back guarantee
+7. **Apps & Usability** — platforms, simultaneous devices, UI quality
+8. **Comparison Table** — vs 2-3 competitors on 8-10 metrics
+9. **What I Don't Like** — balanced honest negatives
+10. **Who Should Choose This VPN?** — decision guide by persona
+11. **FAQ** — 6-8 questions (auto-generates FAQSchema)
+12. **Sources** — clickable reference links
+
+### Visual Elements (CRITICAL)
+- Hero screenshot of VPN app (Playwright, English UI)
+- Pricing table screenshot from official site
+- Speed test comparison table
+- Pros/cons cards (green/red)
+- Quick stats sidebar card
+- Feature comparison matrix with ✓/✗
+
+### Trust Signals (EEAT)
+- "Tested for 30+ days" claim
+- Independent audit citations with dates
+- Specific test numbers (not vague "fast speeds")
+- Affiliate disclosure
+- Author with "Verified" badge
+- Last updated timestamp
+
+### Technical Implementation
+- Rich content stored in `src/data/reviews/{slug}.json`
+- Review page template checks for rich content, falls back to current thin template
+- FAQSchema component: use `FAQSchema` (JSON-LD only) at top, `FAQAccordion` (visual) at bottom
+- Affiliate links: `https://go.zerotovpn.com/{slug}` with rel="noopener nofollow sponsored"
+
+### Priority Order (Top 5 first)
+1. NordVPN (most searched, editor's choice)
+2. Surfshark (best budget, unlimited devices)
+3. ExpressVPN (premium, Lightway protocol)
+4. CyberGhost (large server network)
+5. ProtonVPN (best privacy)
+
+### Research Data Already Collected (NordVPN)
+- Speed: 903 Mbps (CyberInsider), 950+ Mbps (TechRadar)
+- Audits: 6x no-logs (PwC 2018/2020, Deloitte 2022-2025)
+- Pricing: Basic €3.39, Plus €3.89, Ultimate €6.89 (2-year, from nordvpn.com March 2026)
+- 9,000+ servers, 130 countries
+- Post-quantum cryptography, NordWhisper protocol
+- Rating: 9.7/10 (Security.org)
+
+## Other Pending Work
+
+- **Navbar consolidation**: Mega menu for Best VPNs, Devices, Tools dropdowns
+- **FAQ styling**: Fix CSS on best/* pages (accordion styling inconsistent)
+- **Date consistency**: All dates must say current month (fixed November → March 2026)
 
 ## Deployment
 
-Configured for Netlify static hosting with:
-- Image optimization disabled (`unoptimized: true`)
-- Static export ready (uncomment `output: "export"` in next.config.ts)
+Configured for Vercel with:
+- AdSense approved (ca-pub-9667530069853985) — ads live
+- 9 locales via next-intl
+- Short.io affiliate tracking
 # Database connected

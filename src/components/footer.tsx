@@ -8,28 +8,28 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t bg-muted/50">
+    <footer className="bg-slate-900 text-white">
       <div className="container py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
           {/* Brand */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center space-x-2">
-              <Shield className="h-6 w-6 text-primary" />
+              <Shield className="h-6 w-6 text-orange-400" />
               <span className="font-bold text-xl">
-                Zero<span className="text-primary">To</span>VPN
+                Zero<span className="text-orange-400">To</span>VPN
               </span>
             </Link>
-            <p className="text-sm text-muted-foreground">{t("aboutText")}</p>
+            <p className="text-sm text-slate-400">{t("aboutText")}</p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold mb-4">{t("links")}</h4>
+            <h4 className="text-white font-semibold mb-4">{t("links")}</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
                   href="/reviews"
-                  className="text-muted-foreground hover:text-primary"
+                  className="text-slate-400 hover:text-orange-400"
                 >
                   {t("reviews")}
                 </Link>
@@ -37,7 +37,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/vpn-index"
-                  className="text-muted-foreground hover:text-primary"
+                  className="text-slate-400 hover:text-orange-400"
                 >
                   {t("vpnIndex")}
                 </Link>
@@ -45,7 +45,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/best/best-vpn"
-                  className="text-muted-foreground hover:text-primary"
+                  className="text-slate-400 hover:text-orange-400"
                 >
                   {t("bestVpns")}
                 </Link>
@@ -53,7 +53,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/deals"
-                  className="text-muted-foreground hover:text-primary"
+                  className="text-slate-400 hover:text-orange-400"
                 >
                   {t("deals")}
                 </Link>
@@ -61,7 +61,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/best/free-vpn"
-                  className="text-muted-foreground hover:text-primary"
+                  className="text-slate-400 hover:text-orange-400"
                 >
                   {t("freeVpn")}
                 </Link>
@@ -69,7 +69,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/best/vpn-gaming"
-                  className="text-muted-foreground hover:text-primary"
+                  className="text-slate-400 hover:text-orange-400"
                 >
                   {t("gamingVpn")}
                 </Link>
@@ -77,7 +77,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/compare"
-                  className="text-muted-foreground hover:text-primary"
+                  className="text-slate-400 hover:text-orange-400"
                 >
                   {t("compare")}
                 </Link>
@@ -85,7 +85,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/countries"
-                  className="text-muted-foreground hover:text-primary"
+                  className="text-slate-400 hover:text-orange-400"
                 >
                   {t("countries")}
                 </Link>
@@ -93,7 +93,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/speed-test"
-                  className="text-muted-foreground hover:text-primary"
+                  className="text-slate-400 hover:text-orange-400"
                 >
                   {t("speedTest")}
                 </Link>
@@ -101,7 +101,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/tools/what-is-my-ip"
-                  className="text-muted-foreground hover:text-primary"
+                  className="text-slate-400 hover:text-orange-400"
                 >
                   {t("ipChecker")}
                 </Link>
@@ -109,7 +109,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/tools/dns-leak-test"
-                  className="text-muted-foreground hover:text-primary"
+                  className="text-slate-400 hover:text-orange-400"
                 >
                   {t("dnsLeakTest")}
                 </Link>
@@ -117,7 +117,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/guides/what-is-vpn"
-                  className="text-muted-foreground hover:text-primary"
+                  className="text-slate-400 hover:text-orange-400"
                 >
                   {t("whatIsVpn")}
                 </Link>
@@ -125,7 +125,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/reports/vpn-transparency-performance-index-2026"
-                  className="text-muted-foreground hover:text-primary"
+                  className="text-slate-400 hover:text-orange-400"
                 >
                   {t("transparencyReport")}
                 </Link>
@@ -133,7 +133,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/blog"
-                  className="text-muted-foreground hover:text-primary"
+                  className="text-slate-400 hover:text-orange-400"
                 >
                   {t("blog")}
                 </Link>
@@ -143,12 +143,12 @@ export function Footer() {
 
           {/* Devices */}
           <div>
-            <h4 className="font-semibold mb-4">{t("devices")}</h4>
+            <h4 className="text-white font-semibold mb-4">{t("devices")}</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
                   href="/best/vpn-laptops"
-                  className="text-muted-foreground hover:text-primary"
+                  className="text-slate-400 hover:text-orange-400"
                 >
                   {t("vpnLaptops")}
                 </Link>
@@ -156,7 +156,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/best/vpn-windows"
-                  className="text-muted-foreground hover:text-primary"
+                  className="text-slate-400 hover:text-orange-400"
                 >
                   {t("vpnWindows")}
                 </Link>
@@ -164,7 +164,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/best/vpn-macos"
-                  className="text-muted-foreground hover:text-primary"
+                  className="text-slate-400 hover:text-orange-400"
                 >
                   {t("vpnMacos")}
                 </Link>
@@ -172,7 +172,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/best/vpn-chromebook"
-                  className="text-muted-foreground hover:text-primary"
+                  className="text-slate-400 hover:text-orange-400"
                 >
                   {t("vpnChromebook")}
                 </Link>
@@ -180,7 +180,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/best/vpn-linux"
-                  className="text-muted-foreground hover:text-primary"
+                  className="text-slate-400 hover:text-orange-400"
                 >
                   {t("vpnLinux")}
                 </Link>
@@ -190,12 +190,12 @@ export function Footer() {
 
           {/* Legal */}
           <div>
-            <h4 className="font-semibold mb-4">{t("legal")}</h4>
+            <h4 className="text-white font-semibold mb-4">{t("legal")}</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
                   href="/privacy-policy"
-                  className="text-muted-foreground hover:text-primary"
+                  className="text-slate-400 hover:text-orange-400"
                 >
                   {t("privacy")}
                 </Link>
@@ -203,7 +203,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/terms"
-                  className="text-muted-foreground hover:text-primary"
+                  className="text-slate-400 hover:text-orange-400"
                 >
                   {t("terms")}
                 </Link>
@@ -211,7 +211,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/affiliate-disclosure"
-                  className="text-muted-foreground hover:text-primary"
+                  className="text-slate-400 hover:text-orange-400"
                 >
                   {t("disclosure")}
                 </Link>
@@ -219,7 +219,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/methodology"
-                  className="text-muted-foreground hover:text-primary"
+                  className="text-slate-400 hover:text-orange-400"
                 >
                   {t("methodology")}
                 </Link>
@@ -229,12 +229,12 @@ export function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="font-semibold mb-4">{t("company")}</h4>
+            <h4 className="text-white font-semibold mb-4">{t("company")}</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
                   href="/about"
-                  className="text-muted-foreground hover:text-primary"
+                  className="text-slate-400 hover:text-orange-400"
                 >
                   {t("about")}
                 </Link>
@@ -242,12 +242,12 @@ export function Footer() {
               <li>
                 <Link
                   href="/contact"
-                  className="text-muted-foreground hover:text-primary"
+                  className="text-slate-400 hover:text-orange-400"
                 >
                   {t("contactPage")}
                 </Link>
               </li>
-              <li className="text-muted-foreground">hello@zerotovpn.com</li>
+              <li className="text-slate-400">hello@zerotovpn.com</li>
             </ul>
           </div>
 
@@ -258,11 +258,11 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="border-t mt-8 pt-8 space-y-4">
-          <p className="text-xs text-muted-foreground text-center">
+        <div className="border-t border-slate-700/50 mt-8 pt-8 space-y-4">
+          <p className="text-xs text-slate-500 text-center">
             {t("disclaimer")}
           </p>
-          <p className="text-sm text-muted-foreground text-center">
+          <p className="text-sm text-slate-500 text-center">
             {t("copyright", { year: currentYear })}
           </p>
         </div>

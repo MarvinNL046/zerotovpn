@@ -63,7 +63,7 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-slate-200/50 dark:border-slate-700/50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg">
       <div className="container flex h-16 items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
@@ -265,7 +265,7 @@ export function Header() {
 
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <nav className="lg:hidden border-t bg-background max-h-[80vh] overflow-y-auto">
+        <nav className="lg:hidden border-t bg-white/95 dark:bg-slate-900/95 backdrop-blur-lg max-h-[80vh] overflow-y-auto">
           <div className="container py-4 space-y-4">
             {/* Main links */}
             <Link href="/reviews" onClick={() => setMobileMenuOpen(false)}

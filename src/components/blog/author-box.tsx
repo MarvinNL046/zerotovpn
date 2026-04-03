@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Shield, CheckCircle, ExternalLink } from "lucide-react";
 
 // ZeroToVPN expert author info — used across all blog posts for E-E-A-T
@@ -23,9 +24,13 @@ export function AuthorBox() {
     <div className="border rounded-xl p-6 bg-muted/30 mt-12">
       <div className="flex items-start gap-4">
         {/* Avatar */}
-        <div className="shrink-0 w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
-          <Shield className="h-8 w-8 text-primary" />
-        </div>
+        <Image
+          src="/images/team/marvin.webp"
+          alt={AUTHOR.name}
+          width={64}
+          height={64}
+          className="shrink-0 w-16 h-16 rounded-full object-cover"
+        />
 
         <div className="flex-1 min-w-0">
           {/* Name & Role */}

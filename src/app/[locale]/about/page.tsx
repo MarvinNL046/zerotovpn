@@ -498,9 +498,13 @@ export default async function AboutPage({ params }: Props) {
             <Card className="mb-8">
               <CardContent className="pt-2">
                 <div className="flex items-start gap-5">
-                  <div className="shrink-0 w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Shield className="h-10 w-10 text-primary" />
-                  </div>
+                  <img
+                    src="/images/team/marvin.webp"
+                    alt="ZeroToVPN Expert Team"
+                    width={80}
+                    height={80}
+                    className="shrink-0 w-20 h-20 rounded-full object-cover"
+                  />
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 flex-wrap">
                       <h3 className="font-bold text-xl">

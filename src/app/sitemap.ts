@@ -13,9 +13,6 @@ function getPageProfile(path: string): {
   changeFrequency: ChangeFrequency;
 } {
   if (path === "") return { priority: 1.0, changeFrequency: "weekly" };
-  if (path === "/deals" || path === "/coupons") {
-    return { priority: 0.85, changeFrequency: "daily" };
-  }
   if (path.startsWith("/reviews")) {
     return { priority: 0.9, changeFrequency: "weekly" };
   }
@@ -103,14 +100,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     addLocalizedPath(`/reviews/${vpn.slug}`, {
       priority: reviewPriority,
       changeFrequency: "monthly",
-    });
-  }
-
-  // 2b) Dynamic coupon pages.
-  for (const vpn of vpns) {
-    addLocalizedPath(`/coupons/${vpn.slug}`, {
-      priority: 0.8,
-      changeFrequency: "daily",
     });
   }
 

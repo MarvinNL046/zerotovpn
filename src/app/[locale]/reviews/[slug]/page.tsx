@@ -9,12 +9,10 @@ import { RatingStars } from "@/components/vpn/rating-stars";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { UserReviewsList } from "@/components/reviews/user-reviews-list";
 import { ReviewForm } from "@/components/reviews/review-form";
-import { CouponList } from "@/components/coupons/coupon-list";
 import { getVpnBySlug, getAllVpns } from "@/lib/vpn-data-layer";
 import { getRelatedContent, reviewLink } from "@/lib/content-links";
 import { RelatedContent } from "@/components/seo/related-content";
 import { getReviewsByVpnSlug, getAverageUserRating } from "@/lib/user-reviews";
-import { getCouponsByVpnSlug } from "@/lib/coupon-data";
 import { Link } from "@/i18n/navigation";
 import {
   Shield,
@@ -24,7 +22,6 @@ import {
   ArrowLeft,
   Tv,
   MessageSquare,
-  Ticket,
 } from "lucide-react";
 import {
   VpnReviewSchema,
@@ -1100,9 +1097,6 @@ export default async function ReviewPage({ params }: Props) {
           </TabsContent>
         </Tabs>
 
-        {/* Coupon Section */}
-        <CouponSection vpn={vpn} t={t} />
-
         {/* Verdict */}
         <Card className="mb-12 border border-orange-200 dark:border-orange-900/40 rounded-xl hover:shadow-lg transition-all">
           <CardHeader>
@@ -1247,46 +1241,6 @@ function FaqSection({
           </details>
         ))}
       </div>
-    </section>
-  );
-}
-
-// Coupon Section Component
-function CouponSection({
-  vpn,
-  t
-}: {
-  vpn: { slug: string; name: string; affiliateUrl: string };
-  t: (key: string, params?: Record<string, string>) => string;
-}) {
-  const coupons = getCouponsByVpnSlug(vpn.slug);
-
-  if (coupons.length === 0) {
-    return null;
-  }
-
-  return (
-    <section id="coupons" className="mb-12">
-      <Card className="border-orange-200 bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-950/20 dark:to-red-950/20">
-        <CardHeader>
-          <div className="flex items-center gap-3">
-            <Ticket className="h-6 w-6 text-orange-600" />
-            <CardTitle className="text-2xl">
-              {t("coupons.title", { name: vpn.name })}
-            </CardTitle>
-          </div>
-          <p className="text-muted-foreground">
-            {t("coupons.subtitle")}
-          </p>
-        </CardHeader>
-        <CardContent>
-          <CouponList
-            coupons={coupons}
-            vpnName={vpn.name}
-            affiliateUrl={vpn.affiliateUrl}
-          />
-        </CardContent>
-      </Card>
     </section>
   );
 }

@@ -3,7 +3,7 @@
 import { Link, usePathname } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 import {
-  Shield, Menu, X, Star, Zap, Globe, Tag, ChevronDown, Trophy, Gamepad2,
+  Shield, Menu, X, Star, Zap, Globe, ChevronDown, Trophy, Gamepad2,
   Gift, Smartphone, Laptop, Monitor, Apple, Wrench, ShieldAlert, BarChart3,
   FlaskConical, BookOpen, ArrowLeftRight, Newspaper, FileText,
 } from "lucide-react";
@@ -236,16 +236,6 @@ export function Header() {
             Blog
           </Link>
 
-          {/* Deals — regular link */}
-          <Link
-            href="/deals"
-            className={cn(
-              "px-3 py-2 text-sm font-medium rounded-lg transition-colors hover:text-primary hover:bg-muted",
-              pathname === "/deals" ? "text-primary bg-muted" : "text-muted-foreground"
-            )}
-          >
-            {t("deals")}
-          </Link>
         </nav>
 
         {/* Right side */}
@@ -342,12 +332,6 @@ export function Header() {
               </div>
             </div>
 
-            {/* CTA */}
-            <Link href="/deals" onClick={() => setMobileMenuOpen(false)}
-              className="block w-full text-center py-3 text-sm font-semibold rounded-lg bg-primary text-primary-foreground">
-              <Tag className="h-4 w-4 inline mr-2" />
-              {t("deals")}
-            </Link>
           </div>
         </nav>
       )}

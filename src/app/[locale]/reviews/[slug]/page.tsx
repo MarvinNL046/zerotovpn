@@ -37,6 +37,7 @@ import type { Metadata } from "next";
 import { getShortMonthYear, getLocalizedMonthYear, OG_LOCALE_MAP } from "@/lib/seo-utils";
 import { LastUpdated } from "@/components/last-updated";
 import InlineAd from "@/components/ads/InlineAd";
+import { AuthorBio } from "@/components/author-bio";
 import { vpnProviders } from "@/lib/vpn-data";
 import { getVpnAffiliateUrl } from "@/lib/vpn-links";
 import { formatAuditStatus, formatLoggingPolicy, getTransparencySnapshotForVpn } from "@/lib/vpn-transparency-data";
@@ -1140,6 +1141,9 @@ export default async function ReviewPage({ params }: Props) {
 
         {/* User Reviews Section */}
         <UserReviewsSection vpn={vpn} locale={_locale} title={t("userReviews.title")} />
+
+        {/* Author Bio */}
+        <AuthorBio />
 
         {/* Related Content */}
         <RelatedContent

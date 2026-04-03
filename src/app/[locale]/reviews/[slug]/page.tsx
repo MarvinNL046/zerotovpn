@@ -625,170 +625,176 @@ export default async function ReviewPage({ params }: Props) {
       <BreadcrumbSchema items={breadcrumbs} />
       <FaqSchema faqs={faqs} />
 
-      {/* Hero Screenshot Section */}
-      {vpn.screenshot && (
-        <section className="relative h-64 md:h-80 lg:h-96 w-full overflow-hidden">
-          <Image
-            src={vpn.screenshot}
-            alt={`${vpn.name} website screenshot`}
-            fill
-            className="object-cover object-top"
-            priority
-            sizes="100vw"
-          />
-          {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
-        </section>
-      )}
+      {/* Hero Section — dark gradient */}
+      <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
+        {/* Screenshot strip */}
+        {vpn.screenshot && (
+          <div className="relative h-48 md:h-64 w-full overflow-hidden">
+            <Image
+              src={vpn.screenshot}
+              alt={`${vpn.name} website screenshot`}
+              fill
+              className="object-cover object-top opacity-40"
+              priority
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 to-slate-900" />
+          </div>
+        )}
 
-      <div className="py-8">
-      <div className="container">
-        {/* Breadcrumb */}
-        <div className="mb-6">
-          <Link
-            href="/reviews"
-            className="text-sm text-muted-foreground hover:text-primary inline-flex items-center gap-2"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            {t("backToReviews")}
-          </Link>
-        </div>
-
-        {/* Header */}
-        <div className="flex flex-col lg:flex-row gap-8 mb-12">
-          <div className="flex-1">
-            <div className="flex items-center gap-3 mb-4">
-              {vpn.editorChoice && (
-                <Badge className="bg-yellow-500 text-yellow-950">
-                  {t("editorChoice")}
-                </Badge>
-              )}
-              {vpn.freeTier && <Badge variant="secondary">{t("freeTierAvailable")}</Badge>}
-              <Badge variant="blue">Last tested: {transparency.lastTested}</Badge>
-            </div>
-            <h1 className="text-4xl font-bold mb-2">{t("reviewTitle", { name: vpn.name })}</h1>
-            <LastUpdated locale={_locale} className="mb-4" />
-            <div className="flex items-center gap-4 mb-4">
-              <RatingStars rating={vpn.overallRating} size="lg" />
-              <span className="text-muted-foreground">
-                {t("basedOnTesting")}
-              </span>
-            </div>
-            <p className="text-lg text-muted-foreground mb-6">
-              {vpn.shortDescription}
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <AffiliateButton
-                vpnId={vpn.id}
-                vpnName={vpn.name}
-                affiliateUrl={vpn.affiliateUrl}
-                size="lg"
-              >
-                {t("getVpnPrice", { name: vpn.name, price: String(vpn.priceTwoYear || vpn.priceYearly) })}
-              </AffiliateButton>
-            </div>
+        <div className="container py-8 pb-12">
+          {/* Breadcrumb */}
+          <div className="mb-6">
+            <Link
+              href="/reviews"
+              className="text-sm text-slate-400 hover:text-orange-500 inline-flex items-center gap-2 transition-colors"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              {t("backToReviews")}
+            </Link>
           </div>
 
-          {/* Quick Stats Card */}
-          <Card className="lg:w-80">
-            <CardHeader>
-              <CardTitle className="text-lg">{t("quickStats.title")}</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="flex justify-between">
-                <span className="text-muted-foreground">{t("quickStats.servers")}</span>
-                <span className="font-semibold">
-                  {vpn.servers.toLocaleString()}
+          <div className="flex flex-col lg:flex-row gap-8">
+            {/* Left: title + meta */}
+            <div className="flex-1">
+              <div className="flex flex-wrap items-center gap-3 mb-4">
+                {vpn.editorChoice && (
+                  <span className="bg-yellow-500 text-yellow-950 text-xs font-bold px-2.5 py-1 rounded-full">
+                    {t("editorChoice")}
+                  </span>
+                )}
+                {vpn.freeTier && (
+                  <span className="bg-slate-700 text-slate-200 text-xs font-medium px-2.5 py-1 rounded-full">
+                    {t("freeTierAvailable")}
+                  </span>
+                )}
+                <span className="bg-slate-700 text-slate-300 text-xs font-medium px-2.5 py-1 rounded-full">
+                  Last tested: {transparency.lastTested}
                 </span>
               </div>
+
+              <h1 className="text-3xl sm:text-4xl font-bold text-white mb-2">
+                {t("reviewTitle", { name: vpn.name })}
+              </h1>
+              <LastUpdated locale={_locale} className="mb-4 text-slate-400" />
+
+              <div className="flex items-center gap-3 mb-4">
+                <RatingStars rating={vpn.overallRating} size="lg" />
+                <span className="bg-orange-500 text-white font-bold px-3 py-1 rounded-full text-sm">
+                  {vpn.overallRating}/5
+                </span>
+                <span className="text-slate-400 text-sm">{t("basedOnTesting")}</span>
+              </div>
+
+              <p className="text-lg text-slate-300 mb-6">{vpn.shortDescription}</p>
+
+              {/* Key Takeaways */}
+              <div className="border-l-4 border-orange-500 bg-slate-800/50 p-4 rounded-r-lg mb-6">
+                <div className="text-sm font-semibold text-orange-400 uppercase tracking-wide mb-2">
+                  Quick Verdict
+                </div>
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  {generateVerdictText(vpn)}
+                </p>
+              </div>
+
+              <div className="flex flex-wrap gap-4">
+                <AffiliateButton
+                  vpnId={vpn.id}
+                  vpnName={vpn.name}
+                  affiliateUrl={vpn.affiliateUrl}
+                  size="lg"
+                  className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6 py-3 font-semibold shadow-lg shadow-orange-500/25"
+                >
+                  {t("getVpnPrice", { name: vpn.name, price: String(vpn.priceTwoYear || vpn.priceYearly) })}
+                </AffiliateButton>
+              </div>
+            </div>
+
+            {/* Quick Stats Card — dark styled */}
+            <div className="lg:w-80 bg-slate-800/70 border border-slate-700 rounded-xl p-6 space-y-4">
+              <h2 className="text-lg font-bold text-white">{t("quickStats.title")}</h2>
               <div className="flex justify-between">
-                <span className="text-muted-foreground">{t("quickStats.countries")}</span>
-                <span className="font-semibold">{vpn.countries}</span>
+                <span className="text-slate-400">{t("quickStats.servers")}</span>
+                <span className="font-semibold text-white">{vpn.servers.toLocaleString()}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-muted-foreground">{t("quickStats.devices")}</span>
-                <span className="font-semibold">
+                <span className="text-slate-400">{t("quickStats.countries")}</span>
+                <span className="font-semibold text-white">{vpn.countries}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-slate-400">{t("quickStats.devices")}</span>
+                <span className="font-semibold text-white">
                   {vpn.maxDevices >= 999 ? t("quickStats.unlimited") : vpn.maxDevices}
                 </span>
               </div>
               <div className="flex justify-between">
-                <span className="text-muted-foreground">{t("quickStats.moneyBack")}</span>
-                <span className="font-semibold">{t("quickStats.days", { count: vpn.moneyBackDays })}</span>
+                <span className="text-slate-400">{t("quickStats.moneyBack")}</span>
+                <span className="font-semibold text-white">{t("quickStats.days", { count: vpn.moneyBackDays })}</span>
               </div>
-              <Separator />
-              <div className="flex justify-between items-center">
-                <span className="text-muted-foreground">{t("quickStats.startingAt")}</span>
+              <div className="border-t border-slate-700 pt-4 flex justify-between items-center">
+                <span className="text-slate-400">{t("quickStats.startingAt")}</span>
                 <div className="text-right">
-                  <span className="text-2xl font-bold text-primary">
+                  <span className="text-2xl font-bold text-orange-400">
                     ${vpn.priceTwoYear || vpn.priceYearly}
                   </span>
-                  <span className="text-muted-foreground">{t("quickStats.perMonth")}</span>
+                  <span className="text-slate-400 text-sm">{t("quickStats.perMonth")}</span>
                 </div>
               </div>
-              <Separator />
-              <div className="space-y-2 text-xs text-muted-foreground">
+              <div className="border-t border-slate-700 pt-4 space-y-2 text-xs text-slate-400">
                 <div className="flex justify-between gap-3">
                   <span>Ownership</span>
-                  <span className="text-right text-foreground">{transparency.owner}</span>
+                  <span className="text-right text-slate-200">{transparency.owner}</span>
                 </div>
                 <div className="flex justify-between gap-3">
                   <span>Jurisdiction</span>
-                  <span className="text-right text-foreground">{transparency.jurisdiction}</span>
+                  <span className="text-right text-slate-200">{transparency.jurisdiction}</span>
                 </div>
                 <div className="flex justify-between gap-3">
                   <span>Logging</span>
-                  <span className="text-right text-foreground">{formatLoggingPolicy(transparency.loggingPolicy)}</span>
+                  <span className="text-right text-slate-200">{formatLoggingPolicy(transparency.loggingPolicy)}</span>
                 </div>
                 <div className="flex justify-between gap-3">
                   <span>Audit</span>
-                  <span className="text-right text-foreground">{formatAuditStatus(transparency.auditStatus)}</span>
+                  <span className="text-right text-slate-200">{formatAuditStatus(transparency.auditStatus)}</span>
                 </div>
                 <div className="flex justify-between gap-3">
                   <span>Kill switch</span>
-                  <span className="text-right text-foreground">{transparency.killSwitchReliability}% reliable</span>
+                  <span className="text-right text-slate-200">{transparency.killSwitchReliability}% reliable</span>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </div>
+      </section>
 
-        {/* Quick Verdict Summary Box */}
-        <div className="rounded-xl border-2 border-primary/20 bg-primary/5 p-6 md:p-8 my-8">
-          <div className="flex items-center gap-2 mb-4">
-            <span className="text-lg font-bold">Quick Verdict</span>
-            <span className="bg-primary text-primary-foreground text-sm font-bold px-2.5 py-0.5 rounded-full">
-              {vpn.overallRating}/5
-            </span>
+      <div className="py-8">
+      <div className="container">
+
+        {/* Quick Stats summary bar */}
+        <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-4 md:p-6 my-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div>
+            <div className="text-xs text-muted-foreground uppercase tracking-wide">Best For</div>
+            <div className="font-semibold">{generateBestFor(vpn)}</div>
           </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
-            <div>
-              <div className="text-xs text-muted-foreground uppercase tracking-wide">Best For</div>
-              <div className="font-semibold">{generateBestFor(vpn)}</div>
-            </div>
-            <div>
-              <div className="text-xs text-muted-foreground uppercase tracking-wide">Price</div>
-              <div className="font-semibold">From ${vpn.priceTwoYear ?? vpn.priceYearly}/mo</div>
-            </div>
-            <div>
-              <div className="text-xs text-muted-foreground uppercase tracking-wide">Servers</div>
-              <div className="font-semibold">{vpn.servers.toLocaleString()}+ in {vpn.countries} countries</div>
-            </div>
-            <div>
-              <div className="text-xs text-muted-foreground uppercase tracking-wide">Money-Back</div>
-              <div className="font-semibold">{vpn.moneyBackDays}-day guarantee</div>
-            </div>
+          <div>
+            <div className="text-xs text-muted-foreground uppercase tracking-wide">Price</div>
+            <div className="font-semibold">From ${vpn.priceTwoYear ?? vpn.priceYearly}/mo</div>
           </div>
-
-          <p className="text-muted-foreground">
-            {generateVerdictText(vpn)}
-          </p>
+          <div>
+            <div className="text-xs text-muted-foreground uppercase tracking-wide">Servers</div>
+            <div className="font-semibold">{vpn.servers.toLocaleString()}+ in {vpn.countries} countries</div>
+          </div>
+          <div>
+            <div className="text-xs text-muted-foreground uppercase tracking-wide">Money-Back</div>
+            <div className="font-semibold">{vpn.moneyBackDays}-day guarantee</div>
+          </div>
         </div>
 
         {/* NordVPN Top Pick Sidebar Card - shown on non-NordVPN review pages */}
         {vpn.slug !== "nordvpn" && (
-          <div className="rounded-lg border bg-muted/50 p-4 mt-6 mb-8">
-            <div className="text-sm font-semibold mb-1">See Our #1 Pick</div>
+          <div className="rounded-xl border border-orange-200 dark:border-orange-900/40 bg-orange-50 dark:bg-orange-950/20 p-4 mt-6 mb-8">
+            <div className="text-sm font-semibold text-orange-600 dark:text-orange-400 mb-1">See Our #1 Pick</div>
             <div className="text-lg font-bold mb-2">NordVPN</div>
             <div className="text-sm text-muted-foreground mb-3">
               Rated 4.8/5 · From $2.99/mo · 7,400+ servers
@@ -798,13 +804,13 @@ export default async function ReviewPage({ params }: Props) {
                 href={getVpnAffiliateUrl("nordvpn")}
                 target="_blank"
                 rel="noopener noreferrer nofollow"
-                className="text-sm bg-primary text-primary-foreground px-3 py-1.5 rounded-md font-medium hover:bg-primary/90 transition"
+                className="text-sm bg-orange-500 hover:bg-orange-600 text-white rounded-full px-4 py-1.5 font-medium shadow-sm shadow-orange-500/25 transition"
               >
                 Get NordVPN →
               </a>
               <Link
                 href={`/reviews/nordvpn`}
-                className="text-sm border px-3 py-1.5 rounded-md font-medium hover:bg-muted transition"
+                className="text-sm border border-slate-300 dark:border-slate-600 px-4 py-1.5 rounded-full font-medium hover:bg-muted transition"
               >
                 Read Review
               </Link>
@@ -814,33 +820,33 @@ export default async function ReviewPage({ params }: Props) {
 
         {/* Scores */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          <Card>
+          <Card className="border border-slate-200 dark:border-slate-700 rounded-xl hover:shadow-lg transition-all">
             <CardContent className="pt-6">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
-                  <Zap className="h-5 w-5 text-yellow-500" />
-                  <span className="font-semibold">{t("scores.speed")}</span>
+                  <Zap className="h-5 w-5 text-orange-500" />
+                  <span className="font-semibold text-slate-900 dark:text-white">{t("scores.speed")}</span>
                 </div>
                 <span className="text-2xl font-bold">{vpn.speedScore}%</span>
               </div>
-              <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+              <div className="h-2 bg-gray-200 dark:bg-slate-700 rounded-full overflow-hidden">
                 <div
-                  className="h-full bg-yellow-500 rounded-full"
+                  className="h-full bg-orange-500 rounded-full"
                   style={{ width: `${vpn.speedScore}%` }}
                 />
               </div>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="border border-slate-200 dark:border-slate-700 rounded-xl hover:shadow-lg transition-all">
             <CardContent className="pt-6">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
                   <Shield className="h-5 w-5 text-blue-500" />
-                  <span className="font-semibold">{t("scores.security")}</span>
+                  <span className="font-semibold text-slate-900 dark:text-white">{t("scores.security")}</span>
                 </div>
                 <span className="text-2xl font-bold">{vpn.securityScore}%</span>
               </div>
-              <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+              <div className="h-2 bg-gray-200 dark:bg-slate-700 rounded-full overflow-hidden">
                 <div
                   className="h-full bg-blue-500 rounded-full"
                   style={{ width: `${vpn.securityScore}%` }}
@@ -848,16 +854,16 @@ export default async function ReviewPage({ params }: Props) {
               </div>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="border border-slate-200 dark:border-slate-700 rounded-xl hover:shadow-lg transition-all">
             <CardContent className="pt-6">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
                   <Tv className="h-5 w-5 text-purple-500" />
-                  <span className="font-semibold">{t("scores.streaming")}</span>
+                  <span className="font-semibold text-slate-900 dark:text-white">{t("scores.streaming")}</span>
                 </div>
                 <span className="text-2xl font-bold">{vpn.streamingScore}%</span>
               </div>
-              <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+              <div className="h-2 bg-gray-200 dark:bg-slate-700 rounded-full overflow-hidden">
                 <div
                   className="h-full bg-purple-500 rounded-full"
                   style={{ width: `${vpn.streamingScore}%` }}
@@ -869,10 +875,10 @@ export default async function ReviewPage({ params }: Props) {
 
         {/* Pros & Cons */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-          <Card>
+          <Card className="border-l-4 border-l-green-500 border border-slate-200 dark:border-slate-700 rounded-xl hover:shadow-lg transition-all">
             <CardHeader>
-              <CardTitle className="text-green-600 flex items-center gap-2">
-                <Check className="h-5 w-5" />
+              <CardTitle className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                <Check className="h-5 w-5 text-green-500" />
                 {t("prosAndCons.pros")}
               </CardTitle>
             </CardHeader>
@@ -887,10 +893,10 @@ export default async function ReviewPage({ params }: Props) {
               </ul>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="border-l-4 border-l-red-500 border border-slate-200 dark:border-slate-700 rounded-xl hover:shadow-lg transition-all">
             <CardHeader>
-              <CardTitle className="text-red-600 flex items-center gap-2">
-                <X className="h-5 w-5" />
+              <CardTitle className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                <X className="h-5 w-5 text-red-500" />
                 {t("prosAndCons.cons")}
               </CardTitle>
             </CardHeader>
@@ -916,7 +922,7 @@ export default async function ReviewPage({ params }: Props) {
             <TabsTrigger value="streaming">{t("tabs.streaming")}</TabsTrigger>
           </TabsList>
           <TabsContent value="overview" className="mt-6">
-            <Card>
+            <Card className="border border-slate-200 dark:border-slate-700 rounded-xl hover:shadow-lg transition-all">
               <CardContent className="pt-6 prose prose-gray max-w-none">
                 <h3>Is {vpn.name} Worth It?</h3>
                 <p>
@@ -952,31 +958,31 @@ export default async function ReviewPage({ params }: Props) {
             </Card>
           </TabsContent>
           <TabsContent value="pricing" className="mt-6">
-            <Card>
+            <Card className="border border-slate-200 dark:border-slate-700 rounded-xl hover:shadow-lg transition-all">
               <CardContent className="pt-6">
-                <h3 className="text-xl font-semibold mb-6">
+                <h3 className="text-xl font-semibold mb-6 text-slate-900 dark:text-white">
                   How Much Does {vpn.name} Cost?
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="border rounded-lg p-4 text-center">
+                  <div className="border border-slate-200 dark:border-slate-700 rounded-xl p-4 text-center">
                     <div className="text-sm text-muted-foreground mb-2">
                       {t("pricing.monthly")}
                     </div>
                     <div className="text-3xl font-bold">${vpn.priceMonthly}</div>
                     <div className="text-sm text-muted-foreground">{t("quickStats.perMonth")}</div>
                   </div>
-                  <div className="border rounded-lg p-4 text-center border-primary bg-primary/5">
+                  <div className="border-2 border-orange-500 rounded-xl p-4 text-center bg-orange-50 dark:bg-orange-950/20">
                     <div className="text-sm text-muted-foreground mb-2">
                       {t("pricing.yearly")}
                     </div>
-                    <div className="text-3xl font-bold text-primary">
+                    <div className="text-3xl font-bold text-orange-500">
                       ${vpn.priceYearly}
                     </div>
                     <div className="text-sm text-muted-foreground">{t("quickStats.perMonth")}</div>
-                    <Badge className="mt-2">{t("pricing.mostPopular")}</Badge>
+                    <Badge className="mt-2 bg-orange-500 text-white">{t("pricing.mostPopular")}</Badge>
                   </div>
                   {vpn.priceTwoYear && (
-                    <div className="border rounded-lg p-4 text-center">
+                    <div className="border border-slate-200 dark:border-slate-700 rounded-xl p-4 text-center">
                       <div className="text-sm text-muted-foreground mb-2">
                         {t("pricing.twoYears")}
                       </div>
@@ -995,9 +1001,9 @@ export default async function ReviewPage({ params }: Props) {
             </Card>
           </TabsContent>
           <TabsContent value="security" className="mt-6">
-            <Card>
+            <Card className="border border-slate-200 dark:border-slate-700 rounded-xl hover:shadow-lg transition-all">
               <CardContent className="pt-6">
-                <h3 className="text-xl font-semibold mb-6">
+                <h3 className="text-xl font-semibold mb-6 text-slate-900 dark:text-white">
                   Is {vpn.name} Safe?
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -1038,9 +1044,9 @@ export default async function ReviewPage({ params }: Props) {
             </Card>
           </TabsContent>
           <TabsContent value="streaming" className="mt-6">
-            <Card>
+            <Card className="border border-slate-200 dark:border-slate-700 rounded-xl hover:shadow-lg transition-all">
               <CardContent className="pt-6">
-                <h3 className="text-xl font-semibold mb-6">
+                <h3 className="text-xl font-semibold mb-6 text-slate-900 dark:text-white">
                   Does {vpn.name} Work with Netflix?
                 </h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -1097,9 +1103,9 @@ export default async function ReviewPage({ params }: Props) {
         <CouponSection vpn={vpn} t={t} />
 
         {/* Verdict */}
-        <Card className="mb-12 border-primary">
+        <Card className="mb-12 border border-orange-200 dark:border-orange-900/40 rounded-xl hover:shadow-lg transition-all">
           <CardHeader>
-            <CardTitle>{t("verdict.title")}</CardTitle>
+            <CardTitle className="text-2xl font-bold text-slate-900 dark:text-white">{t("verdict.title")}</CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-lg mb-6">
@@ -1116,6 +1122,7 @@ export default async function ReviewPage({ params }: Props) {
               vpnName={vpn.name}
               affiliateUrl={vpn.affiliateUrl}
               size="lg"
+              className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6 py-3 font-semibold shadow-lg shadow-orange-500/25"
             >
               {t("verdict.getVpnNow", { name: vpn.name, price: String(vpn.priceTwoYear || vpn.priceYearly) })}
             </AffiliateButton>
@@ -1171,7 +1178,7 @@ function CompareWithOtherVpns({
 
   return (
     <section className="mt-12 mb-12">
-      <h2 className="text-xl font-bold mb-4">
+      <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
         Compare {vpn.name} with Other VPNs
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -1182,12 +1189,12 @@ function CompareWithOtherVpns({
             <Link
               key={otherVpn.slug}
               href={`/compare/${slug1}-vs-${slug2}`}
-              className="flex items-center justify-between rounded-lg border bg-card px-4 py-3 text-sm font-medium hover:bg-muted/60 hover:border-primary/50 transition-colors"
+              className="group flex items-center justify-between rounded-xl border border-slate-200 dark:border-slate-700 bg-card px-4 py-3 text-sm font-medium hover:shadow-lg hover:scale-[1.02] hover:-translate-y-0.5 transition-all duration-200 hover:border-orange-300 dark:hover:border-orange-700"
             >
-              <span>
+              <span className="group-hover:text-orange-500 transition-colors">
                 {vpn.name} vs {otherVpn.name}
               </span>
-              <span className="text-muted-foreground">→</span>
+              <span className="text-muted-foreground group-hover:text-orange-500 transition-colors">→</span>
             </Link>
           );
         })}
@@ -1206,15 +1213,15 @@ function FaqSection({
 }) {
   return (
     <section id="faq" className="mb-12">
-      <h2 className="text-2xl font-bold mb-6">
+      <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
         Frequently Asked Questions about {vpnName}
       </h2>
-      <div className="divide-y divide-border rounded-lg border">
+      <div className="divide-y divide-border rounded-xl border border-slate-200 dark:border-slate-700">
         {faqs.map((faq, index) => (
           <details key={index} className="group">
             <summary className="flex cursor-pointer items-center justify-between gap-4 px-6 py-4 text-base font-medium hover:bg-muted/50 list-none">
               {faq.question}
-              <span className="ml-4 shrink-0 text-muted-foreground transition-transform duration-200 group-open:rotate-180">
+              <span className="ml-4 shrink-0 text-orange-500 transition-transform duration-200 group-open:rotate-180">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -1288,8 +1295,8 @@ function UserReviewsSection({ vpn, locale, title }: { vpn: { slug: string; name:
   return (
     <section id="user-reviews" className="space-y-8">
       <div className="flex items-center gap-3">
-        <MessageSquare className="h-6 w-6 text-primary" />
-        <h2 className="text-2xl font-bold">{title}</h2>
+        <MessageSquare className="h-6 w-6 text-orange-500" />
+        <h2 className="text-2xl font-bold text-slate-900 dark:text-white">{title}</h2>
       </div>
 
       {/* Review Form */}

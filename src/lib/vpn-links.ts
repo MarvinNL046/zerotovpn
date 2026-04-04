@@ -1,7 +1,7 @@
 export const VPN_LINKS = {
   nordvpn: {
     website: "https://nordvpn.com",
-    affiliateUrl: "https://nordvpn.com",
+    affiliateUrl: "https://go.zerotovpn.com/nordvpn",
   },
   surfshark: {
     website: "https://surfshark.com",

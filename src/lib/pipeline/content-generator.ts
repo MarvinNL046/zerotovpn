@@ -293,6 +293,37 @@ E-E-A-T SIGNALS (critical for Google rankings — weave these throughout):
 - AUTHORITATIVENESS: Cite credible external sources in "Did You Know?" callouts
 - TRUSTWORTHINESS: Be balanced — mention downsides too. Include "Based on our independent testing"
 - Every stat MUST have a source. Use "we" voice for team expertise.
+- Include at least 1 detailed real-world use case scenario (e.g., "We tested this VPN while traveling in China for 2 weeks and here's what happened...")
+- Include a "Who is this VPN actually for?" section based on real usage patterns
+- Include a "When NOT to use this VPN" section — be honest about limitations
+- Do NOT use vague experience signals without concrete details — always follow with specifics (speeds, locations, dates, outcomes)
+
+SEARCH INTENT OPTIMIZATION:
+- Identify if the topic is informational, commercial, or comparison intent
+- Adjust tone accordingly:
+  - Informational → educational, explain concepts clearly, help readers understand privacy/security
+  - Commercial → persuasive with honest pros/cons, help readers make a purchase decision
+  - Comparison → clear decision guidance, define winner for each use case (streaming, torrenting, privacy, speed), include verdict table
+- Match the depth of content to what the searcher actually needs — don't pad informational posts with sales copy
+
+CONVERSION OPTIMIZATION:
+- Include a clear "Verdict" section: who should use this VPN, who shouldn't, and your top recommendation
+- Include "Best alternative for [use case]" recommendations (e.g., "Best free alternative: ...", "Best for streaming: ...", "Best for privacy: ...")
+- Add subtle call-to-actions naturally (e.g., "try the 30-day money-back guarantee", "compare with X", "check current deal")
+- Do NOT be salesy — be helpful and honest, readers trust authentic recommendations over hype
+
+TOPICAL AUTHORITY:
+- Position the article within the broader VPN and online privacy ecosystem
+- Reference related categories (protocols, streaming, torrenting, gaming, travel, security)
+- Include at least 2 "alternative VPN" mentions with links to their reviews
+- Show awareness of the competitive landscape — don't review VPNs in isolation
+- Connect to broader privacy topics when relevant (data breaches, surveillance, censorship)
+
+UNIQUENESS REQUIREMENT:
+- Include at least one contrarian or non-obvious insight (e.g., "Everyone recommends X for streaming, but actually Y unblocks more libraries because...")
+- Highlight something most other VPN review sites miss — a hidden setting, an underrated feature, a surprising speed test result
+- Avoid generic statements that could apply to any VPN — be specific and opinionated
+- If reviewing a popular VPN, acknowledge what everyone already says and then go deeper
 
 FORMATTING RULES:
 - Bold key terms on first mention in each section

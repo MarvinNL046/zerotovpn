@@ -1,6 +1,7 @@
 import { Link } from "@/i18n/navigation";
 import { Shield } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { NewsletterFooter } from "@/components/newsletter/newsletter-footer";
 
 export function Footer() {
   const t = useTranslations("footer");
@@ -242,6 +243,10 @@ export function Footer() {
             </ul>
           </div>
 
+          {/* Newsletter */}
+          <div>
+            <NewsletterFooter />
+          </div>
         </div>
 
         {/* Bottom */}

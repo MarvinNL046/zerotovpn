@@ -2,6 +2,18 @@ import { neon } from "@neondatabase/serverless";
 import { drizzle } from "drizzle-orm/neon-http";
 import * as schema from "./schema";
 
+function ensurePooler(url: string): string {
+  try {
+    const u = new URL(url);
+    if (!u.hostname.includes("-pooler")) {
+      u.hostname = u.hostname.replace(/^([^.]+)\./, "$1-pooler.");
+    }
+    return u.toString();
+  } catch {
+    return url;
+  }
+}
+
 // Lazy initialization to avoid build-time errors
 let _db: ReturnType<typeof drizzle<typeof schema>> | null = null;
 
@@ -14,7 +26,7 @@ export function getDb() {
     throw new Error("DATABASE_URL environment variable is not set");
   }
 
-  const sql = neon(databaseUrl);
+  const sql = neon(ensurePooler(databaseUrl));
   _db = drizzle(sql, { schema });
 
   return _db;

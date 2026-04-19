@@ -186,6 +186,46 @@ export default async function BestVpnForDigitalNomadsPage({ params }: Props) {
         </div>
       </section>
 
+      <section className="py-10 border-t bg-muted/20">
+        <div className="container max-w-5xl space-y-4">
+          <h2 className="text-2xl font-bold flex items-center gap-2">
+            <Globe className="h-5 w-5 text-primary" />
+            Beyond VPN — nomad life essentials
+          </h2>
+          <p className="text-muted-foreground">
+            A VPN is one tool in the nomad stack. For the rest of the financial and lifestyle picture, we maintain sister editorial sites:
+          </p>
+          <ul className="grid gap-2 md:grid-cols-2 text-sm">
+            <li>
+              <a
+                href="https://zerotostocks.com/blog/how-to-start-investing-in-etfs-as-a-european"
+                target="_blank"
+                rel="noopener"
+                className="text-primary hover:underline font-medium"
+              >
+                How to start investing in ETFs as a European →
+              </a>{" "}
+              <span className="text-muted-foreground">
+                Sister site on UCITS ETFs and EU brokers — relevant for nomads investing across jurisdictions.
+              </span>
+            </li>
+            <li>
+              <a
+                href="https://zerotoinsurance.com/blog/best-pet-insurance-2026"
+                target="_blank"
+                rel="noopener"
+                className="text-primary hover:underline font-medium"
+              >
+                Best pet insurance 2026 →
+              </a>{" "}
+              <span className="text-muted-foreground">
+                For nomads traveling with pets: honest provider comparisons and coverage gotchas.
+              </span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
       <section className="pb-12">
         <div className="container max-w-6xl">
           <RelatedPages

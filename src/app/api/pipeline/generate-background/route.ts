@@ -3,7 +3,7 @@
 // supports up to 300s execution time via maxDuration).
 
 import { NextRequest, NextResponse } from "next/server";
-import { eq, and, desc } from "drizzle-orm";
+import { eq, and, desc, like, sql } from "drizzle-orm";
 import { getDb, blogPosts, contentQueue, scrapeJobs } from "@/lib/db";
 import { generateContent } from "@/lib/pipeline/ai-provider";
 import { ensurePipelineApiEnv } from "@/lib/pipeline/env-fallback";
@@ -744,7 +744,7 @@ function parsePost(raw: string, postType: string) {
 // whereas the blog pipeline prefers graceful null returns so a missing image doesn't abort the whole job.
 
 const GEMINI_IMAGE_URL =
-  "https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-image-preview:generateContent";
+  "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-image-preview:generateContent";
 
 async function generateGeminiImage(prompt: string): Promise<{ base64: string; mimeType: string } | null> {
   const geminiKey = process.env.GEMINI_API_KEY;
@@ -1093,16 +1093,22 @@ export async function POST(request: NextRequest) {
     parsed.content = injectVpnLogos(parsed.content, siteUrl);
     parsed.content = injectAffiliateLinks(parsed.content);
 
-    // Ensure slug is unique (append date suffix if needed)
+    // Ensure slug is unique (append incrementing suffix if needed)
     let finalSlug = parsed.slug;
-    const [existingPost] = await db
-      .select({ id: blogPosts.id })
+    const existingSlugs = await db
+      .select({ slug: blogPosts.slug })
       .from(blogPosts)
-      .where(and(eq(blogPosts.slug, finalSlug), eq(blogPosts.language, "en")))
-      .limit(1);
-    if (existingPost) {
+      .where(and(like(blogPosts.slug, `${parsed.slug}%`), eq(blogPosts.language, "en")));
+    if (existingSlugs.length > 0) {
+      const taken = new Set(existingSlugs.map((r) => r.slug));
       const now = new Date();
-      finalSlug = `${parsed.slug}-${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}`;
+      const dateSuffix = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}`;
+      finalSlug = `${parsed.slug}-${dateSuffix}`;
+      let counter = 2;
+      while (taken.has(finalSlug)) {
+        finalSlug = `${parsed.slug}-${dateSuffix}-${counter}`;
+        counter++;
+      }
       console.log(`[bg-generate] Slug "${parsed.slug}" exists, using "${finalSlug}"`);
     }
 

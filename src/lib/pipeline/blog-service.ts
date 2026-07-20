@@ -76,7 +76,12 @@ export const getCachedPostSummaries = unstable_cache(
   async (language: string) => {
     return getAllPublishedPostSummaries(language);
   },
-  ["blog-post-summaries"],
+  // Sleutel meeverhoogd toen featuredImageUrl aan de samenvatting werd
+  // toegevoegd. Vercels datacache blijft over deploys heen bestaan, dus zonder
+  // nieuwe sleutel bleef de lijstpagina een uur lang oude samenvattingen
+  // serveren (zonder Blob-URL) en viel hij terug op /api/blog-image.
+  // Verhoog dit nummer bij elke wijziging aan de vorm van de samenvatting.
+  ["blog-post-summaries-v2"],
   { revalidate: 3600 }
 );
 

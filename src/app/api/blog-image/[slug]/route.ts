@@ -8,9 +8,15 @@ export async function GET(
 ) {
   const { slug } = await params;
 
+  // LEGACY-ROUTE. Afbeeldingen staan nu in Vercel Blob en de pagina's linken
+  // daar rechtstreeks naartoe. Deze route bestaat nog voor oude links en voor
+  // posts die (nog) geen Blob-URL hebben.
   const db = getDb();
   const [post] = await db
-    .select({ featuredImage: blogPosts.featuredImage })
+    .select({
+      featuredImage: blogPosts.featuredImage,
+      featuredImageUrl: blogPosts.featuredImageUrl,
+    })
     .from(blogPosts)
     .where(
       and(
@@ -19,6 +25,12 @@ export async function GET(
       )
     )
     .limit(1);
+
+  // Bestaat er een Blob-URL, stuur daar dan permanent heen in plaats van de
+  // afbeelding zelf door deze functie te pompen.
+  if (post?.featuredImageUrl) {
+    return NextResponse.redirect(post.featuredImageUrl, 308);
+  }
 
   if (!post?.featuredImage) {
     return new NextResponse(null, { status: 404 });

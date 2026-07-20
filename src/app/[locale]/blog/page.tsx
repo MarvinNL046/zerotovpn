@@ -205,6 +205,7 @@ export default async function BlogPage({ params }: Props) {
     title: string;
     excerpt: string;
     hasFeaturedImage: boolean;
+    featuredImageUrl: string | null;
     isDynamic: true;
   }> = [];
 
@@ -233,6 +234,7 @@ export default async function BlogPage({ params }: Props) {
       title: post.title,
       excerpt: post.excerpt,
       hasFeaturedImage: post.hasFeaturedImage,
+      featuredImageUrl: post.featuredImageUrl ?? null,
       isDynamic: true as const,
     }));
   } catch (err) {
@@ -242,7 +244,7 @@ export default async function BlogPage({ params }: Props) {
 
   // Merge static + dynamic, then sort newest first
   const allPosts = [
-    ...blogPosts.map((p) => ({ ...p, isDynamic: false as const, title: "", excerpt: "", hasFeaturedImage: false })),
+    ...blogPosts.map((p) => ({ ...p, isDynamic: false as const, title: "", excerpt: "", hasFeaturedImage: false, featuredImageUrl: null })),
     ...dynamicPosts,
   ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
@@ -319,7 +321,9 @@ export default async function BlogPage({ params }: Props) {
                     >
                       {featuredPost.isDynamic && featuredPost.hasFeaturedImage ? (
                         <Image
-                          src={`/api/blog-image/${featuredPost.slug}`}
+                          // Blob-URL rechtstreeks; /api/blog-image deed per
+                          // afbeelding een database-query en hield de compute wakker.
+                          src={featuredPost.featuredImageUrl || `/api/blog-image/${featuredPost.slug}`}
                           alt={featuredPost.title}
                           fill
                           className="object-cover"
@@ -414,7 +418,7 @@ export default async function BlogPage({ params }: Props) {
                       >
                         {post.isDynamic && post.hasFeaturedImage ? (
                           <Image
-                            src={`/api/blog-image/${post.slug}`}
+                            src={post.featuredImageUrl || `/api/blog-image/${post.slug}`}
                             alt={postTitle}
                             fill
                             className="object-cover"

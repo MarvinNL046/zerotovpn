@@ -292,7 +292,8 @@ export const blogPosts = pgTable(
     tags: text("tags").array(),
     aiModel: text("aiModel"), // "claude-haiku" | "gpt-5-nano"
     aiPrompt: text("aiPrompt"),
-    featuredImage: text("featuredImage"), // data URL or external URL
+    featuredImage: text("featuredImage"), // LEGACY: base64 data URL — wordt uitgefaseerd
+    featuredImageUrl: text("featuredImageUrl"), // Vercel Blob URL (WebP) — dit is de bron
     sourceData: text("sourceData"), // JSON - scrape data used as input
     published: boolean("published").default(false).notNull(),
     publishedAt: timestamp("publishedAt"),

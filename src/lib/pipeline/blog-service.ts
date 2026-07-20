@@ -6,7 +6,7 @@ import { getDb, blogPosts, type BlogPost, type NewBlogPost } from "@/lib/db";
 export type BlogPostSummary = Pick<
   BlogPost,
   "slug" | "title" | "excerpt" | "category" | "tags" | "published" | "publishedAt" | "createdAt" | "updatedAt" | "language" | "id"
-> & { hasFeaturedImage: boolean };
+> & { hasFeaturedImage: boolean; featuredImageUrl: string | null };
 
 // Get all published posts for a language and optional category
 export async function getAllPublishedPosts(
@@ -60,7 +60,11 @@ export async function getAllPublishedPostSummaries(
       publishedAt: blogPosts.publishedAt,
       createdAt: blogPosts.createdAt,
       updatedAt: blogPosts.updatedAt,
-      hasFeaturedImage: sql<boolean>`"featuredImage" IS NOT NULL`.as('hasFeaturedImage'),
+      // featuredImageUrl is een korte Blob-URL en mag dus wél mee in de lijst.
+      // De oude featuredImage-kolom bleef hier bewust buiten: die bevat base64
+      // van gemiddeld 700 kB per post.
+      featuredImageUrl: blogPosts.featuredImageUrl,
+      hasFeaturedImage: sql<boolean>`("featuredImageUrl" IS NOT NULL OR "featuredImage" IS NOT NULL)`.as('hasFeaturedImage'),
     })
     .from(blogPosts)
     .where(and(...conditions))

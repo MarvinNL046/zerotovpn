@@ -143,10 +143,13 @@ export default async function DynamicBlogPost({ params }: Props) {
         </div>
 
         {/* Featured Image */}
-        {post.featuredImage && (
+        {(post.featuredImageUrl || post.featuredImage) && (
           <div className="mb-8 rounded-xl overflow-hidden shadow-lg">
+            {/* Blob-URL heeft voorrang; de oude base64 blijft als vangnet tot
+                de featuredImage-kolom is opgeschoond. Die inlinede ~1 MB aan
+                base64 in de HTML van elke blogpagina. */}
             <img
-              src={post.featuredImage}
+              src={post.featuredImageUrl || post.featuredImage!}
               alt={post.title}
               className="w-full h-auto object-cover max-h-[400px]"
             />

@@ -1,5 +1,15 @@
 import { eq, asc, count } from "drizzle-orm";
+import { unstable_cache, revalidateTag } from "next/cache";
 import { getDb, vpnProviders, type VpnProvider } from "./index";
+
+// De VpnProvider-tabel is ~38 rijen die zelden wijzigen, maar homepage,
+// /reviews en tientallen /best- en /countries-pagina's lazen hem bij ELK
+// verzoek live uit Postgres. Onder normaal verkeer (~elke minuut een render)
+// hield dat de Neon-compute 24/7 wakker. De leesfuncties cachen we daarom een
+// uur onder één tag; admin-mutaties invalideren die tag zodat bewerkingen
+// meteen zichtbaar blijven.
+const VPN_CACHE_TAG = "vpn-providers";
+const VPN_CACHE_TTL = 3600; // seconden
 
 // Type for VPN data that matches the frontend interface
 export interface VpnData {
@@ -80,25 +90,33 @@ function toVpnData(vpn: VpnProvider): VpnData {
 }
 
 // Get all VPNs sorted by sortOrder
-export async function getAllVpnsFromDb(): Promise<VpnData[]> {
-  const db = getDb();
-  const vpns = await db
-    .select()
-    .from(vpnProviders)
-    .orderBy(asc(vpnProviders.sortOrder));
-  return vpns.map(toVpnData);
-}
+export const getAllVpnsFromDb = unstable_cache(
+  async (): Promise<VpnData[]> => {
+    const db = getDb();
+    const vpns = await db
+      .select()
+      .from(vpnProviders)
+      .orderBy(asc(vpnProviders.sortOrder));
+    return vpns.map(toVpnData);
+  },
+  ["all-vpns"],
+  { tags: [VPN_CACHE_TAG], revalidate: VPN_CACHE_TTL },
+);
 
 // Get featured VPNs
-export async function getFeaturedVpnsFromDb(): Promise<VpnData[]> {
-  const db = getDb();
-  const vpns = await db
-    .select()
-    .from(vpnProviders)
-    .where(eq(vpnProviders.featured, true))
-    .orderBy(asc(vpnProviders.sortOrder));
-  return vpns.map(toVpnData);
-}
+export const getFeaturedVpnsFromDb = unstable_cache(
+  async (): Promise<VpnData[]> => {
+    const db = getDb();
+    const vpns = await db
+      .select()
+      .from(vpnProviders)
+      .where(eq(vpnProviders.featured, true))
+      .orderBy(asc(vpnProviders.sortOrder));
+    return vpns.map(toVpnData);
+  },
+  ["featured-vpns"],
+  { tags: [VPN_CACHE_TAG], revalidate: VPN_CACHE_TTL },
+);
 
 // Get VPN by slug
 export async function getVpnBySlugFromDb(slug: string): Promise<VpnData | null> {
@@ -168,6 +186,7 @@ export async function createVpn(data: VpnCreateInput): Promise<VpnData> {
       sortOrder: data.sortOrder,
     })
     .returning();
+  revalidateTag(VPN_CACHE_TAG, { expire: 0 });
   return toVpnData(result[0]);
 }
 
@@ -219,6 +238,7 @@ export async function updateVpn(id: string, data: VpnUpdateInput): Promise<VpnDa
     .set(updateData)
     .where(eq(vpnProviders.id, id))
     .returning();
+  revalidateTag(VPN_CACHE_TAG, { expire: 0 });
   return toVpnData(result[0]);
 }
 
@@ -226,6 +246,7 @@ export async function updateVpn(id: string, data: VpnUpdateInput): Promise<VpnDa
 export async function deleteVpn(id: string): Promise<void> {
   const db = getDb();
   await db.delete(vpnProviders).where(eq(vpnProviders.id, id));
+  revalidateTag(VPN_CACHE_TAG, { expire: 0 });
 }
 
 // Get VPN count

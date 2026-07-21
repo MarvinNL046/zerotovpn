@@ -25,6 +25,27 @@ type Props = {
 const baseUrl = "https://www.zerotovpn.com";
 export const revalidate = 86400;
 
+// De enige vergelijkingen die de site linkt/crawlt (content-links.ts +
+// PopularComparisons). Vooraf renderen zodat crawlers Postgres niet raken;
+// een handmatig getypte andere combinatie rendert on-demand (ISR).
+const LINKED_COMPARISONS = [
+  "nordvpn-vs-surfshark",
+  "nordvpn-vs-expressvpn",
+  "nordvpn-vs-cyberghost",
+  "nordvpn-vs-protonvpn",
+  "surfshark-vs-expressvpn",
+  "surfshark-vs-cyberghost",
+  "surfshark-vs-protonvpn",
+  "expressvpn-vs-cyberghost",
+  "protonvpn-vs-mullvad",
+];
+
+export function generateStaticParams() {
+  return routing.locales.flatMap((locale) =>
+    LINKED_COMPARISONS.map((comparison) => ({ locale, comparison }))
+  );
+}
+
 // Parse comparison slug (e.g., "nordvpn-vs-surfshark") into two VPN slugs
 function parseComparisonSlug(comparison: string): { slug1: string; slug2: string } | null {
   const parts = comparison.split("-vs-");

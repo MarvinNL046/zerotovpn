@@ -118,16 +118,23 @@ export const getFeaturedVpnsFromDb = unstable_cache(
   { tags: [VPN_CACHE_TAG], revalidate: VPN_CACHE_TTL },
 );
 
-// Get VPN by slug
-export async function getVpnBySlugFromDb(slug: string): Promise<VpnData | null> {
-  const db = getDb();
-  const vpns = await db
-    .select()
-    .from(vpnProviders)
-    .where(eq(vpnProviders.slug, slug))
-    .limit(1);
-  return vpns[0] ? toVpnData(vpns[0]) : null;
-}
+// Get VPN by slug. Ook gecachet: reviews/[slug], compare/[comparison] en
+// countries/[country] zoeken VPN's op slug op. Er zijn maar ~38 VPN-records,
+// dus zodra die warm zijn pullen crawlers van willekeurig veel verschillende
+// review-/vergelijk-URL's allemaal uit de cache i.p.v. Postgres.
+export const getVpnBySlugFromDb = unstable_cache(
+  async (slug: string): Promise<VpnData | null> => {
+    const db = getDb();
+    const vpns = await db
+      .select()
+      .from(vpnProviders)
+      .where(eq(vpnProviders.slug, slug))
+      .limit(1);
+    return vpns[0] ? toVpnData(vpns[0]) : null;
+  },
+  ["vpn-by-slug"],
+  { tags: [VPN_CACHE_TAG], revalidate: VPN_CACHE_TTL },
+);
 
 // Get VPN by ID
 export async function getVpnByIdFromDb(id: string): Promise<VpnData | null> {

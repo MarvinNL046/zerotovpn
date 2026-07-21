@@ -43,6 +43,16 @@ type Props = {
   params: Promise<{ locale: string; slug: string }>;
 };
 
+// Pre-render alle VPN-reviewpagina's bij het bouwen, in elke taal. Zonder dit
+// werd elke review-URL on-demand gerenderd en query'de getVpnBySlug live
+// Postgres, wat de Neon-compute wakker hield. Nu serveert runtime statische HTML.
+export async function generateStaticParams() {
+  const vpns = await getAllVpns();
+  return routing.locales.flatMap((locale) =>
+    vpns.map((vpn) => ({ locale, slug: vpn.slug }))
+  );
+}
+
 // Generate a "Best For" label dynamically from VPN attributes
 function generateBestFor(vpn: {
   editorChoice: boolean;

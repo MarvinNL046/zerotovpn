@@ -6,7 +6,8 @@ import { ArticleJsonLd } from "@/components/structured-data";
 import { Link } from "@/i18n/navigation";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
-import { getPostBySlug } from "@/lib/pipeline/blog-service";
+import { getPostBySlug, getAllPublishedSlugs } from "@/lib/pipeline/blog-service";
+import { routing } from "@/i18n/routing";
 import { generateAlternates } from "@/lib/seo-utils";
 import { getRelatedContent } from "@/lib/content-links";
 import { RelatedContent } from "@/components/seo/related-content";
@@ -22,6 +23,24 @@ type Props = {
 };
 
 const baseUrl = "https://www.zerotovpn.com";
+
+// Pre-render alle gepubliceerde blogposts bij het bouwen, in elke taal (met
+// Engelse fallback). Zonder dit werd elke blog-URL on-demand gerenderd en
+// query'de een crawler door 511 posts telkens live Postgres — wat de
+// Neon-compute wakker hield. Nu serveert runtime statische HTML.
+// dynamicParams blijft standaard true: nieuw gegenereerde posts renderen bij
+// het eerste bezoek (ISR) en verschijnen zonder rebuild.
+export async function generateStaticParams() {
+  const posts = await getAllPublishedSlugs();
+  const slugs = [...new Set(posts.map((p) => p.slug))];
+  return routing.locales.flatMap((locale) =>
+    slugs.map((slug) => ({ locale, slug }))
+  );
+}
+
+// Eens per dag revalideren zodat inhoudelijke wijzigingen doorkomen zonder de
+// database vaker dan nodig te raken (de datalaag cachet bovendien al 1 uur).
+export const revalidate = 86400;
 
 function formatDate(date: Date, locale: string): string {
   const months: Record<string, string[]> = {

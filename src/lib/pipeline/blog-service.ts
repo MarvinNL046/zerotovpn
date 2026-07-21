@@ -1,6 +1,13 @@
 import { eq, and, desc, asc, count, sql } from "drizzle-orm";
-import { unstable_cache } from "next/cache";
+import { unstable_cache, revalidateTag } from "next/cache";
 import { getDb, blogPosts, type BlogPost, type NewBlogPost } from "@/lib/db";
+
+// Blogposts wijzigen alleen als de pipeline er nieuwe genereert (een paar keer
+// per dag). Toch werd elke bezoeker van /blog/[slug] live tegen Postgres
+// gequeryd — twee keer zelfs (metadata + body) — wat samen met de VPN-pagina's
+// de Neon-compute wakker hield. Lees-queries cachen we daarom onder deze tag;
+// createPost/updatePost invalideren hem zodat nieuwe posts direct verschijnen.
+const BLOG_CACHE_TAG = "blog-posts";
 
 // Lightweight type for blog index (no content/sourceData/aiPrompt)
 export type BlogPostSummary = Pick<
@@ -82,14 +89,15 @@ export const getCachedPostSummaries = unstable_cache(
   // serveren (zonder Blob-URL) en viel hij terug op /api/blog-image.
   // Verhoog dit nummer bij elke wijziging aan de vorm van de samenvatting.
   ["blog-post-summaries-v2"],
-  { revalidate: 3600 }
+  { tags: [BLOG_CACHE_TAG], revalidate: 3600 }
 );
 
 // Get a single post by slug and language, with English fallback
-export async function getPostBySlug(
-  slug: string,
-  language: string = "en"
-): Promise<BlogPost | null> {
+export const getPostBySlug = unstable_cache(
+  async (
+    slug: string,
+    language: string = "en"
+  ): Promise<BlogPost | null> => {
   const db = getDb();
 
   // Try requested language first
@@ -125,7 +133,10 @@ export async function getPostBySlug(
   }
 
   return null;
-}
+  },
+  ["blog-post-by-slug"],
+  { tags: [BLOG_CACHE_TAG], revalidate: 3600 }
+);
 
 // Get a post by ID (any status)
 export async function getPostById(id: string): Promise<BlogPost | null> {
@@ -165,6 +176,7 @@ export async function createPost(
     .values(data)
     .returning();
 
+  revalidateTag(BLOG_CACHE_TAG, { expire: 0 });
   return post;
 }
 
@@ -181,6 +193,7 @@ export async function updatePost(
     .where(eq(blogPosts.id, id))
     .returning();
 
+  revalidateTag(BLOG_CACHE_TAG, { expire: 0 });
   return post;
 }
 

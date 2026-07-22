@@ -93,7 +93,7 @@ export const getCachedPostSummaries = unstable_cache(
 );
 
 // Get a single post by slug and language, with English fallback
-export const getPostBySlug = unstable_cache(
+const getPostBySlugCached = unstable_cache(
   async (
     slug: string,
     language: string = "en"
@@ -137,6 +137,25 @@ export const getPostBySlug = unstable_cache(
   ["blog-post-by-slug"],
   { tags: [BLOG_CACHE_TAG], revalidate: 3600 }
 );
+
+// unstable_cache serialiseert het resultaat naar JSON en terug, waardoor
+// Date-velden (publishedAt/createdAt/updatedAt) STRINGS worden bij een
+// cache-hit. De blog-detailpagina roept .getMonth()/.toISOString() op die
+// velden aan en crashte daardoor met een 500. Rehydrateer de datums terug
+// naar Date na de cache.
+export async function getPostBySlug(
+  slug: string,
+  language: string = "en",
+): Promise<BlogPost | null> {
+  const post = await getPostBySlugCached(slug, language);
+  if (!post) return null;
+  return {
+    ...post,
+    createdAt: post.createdAt ? new Date(post.createdAt) : post.createdAt,
+    updatedAt: post.updatedAt ? new Date(post.updatedAt) : post.updatedAt,
+    publishedAt: post.publishedAt ? new Date(post.publishedAt) : post.publishedAt,
+  };
+}
 
 // Get a post by ID (any status)
 export async function getPostById(id: string): Promise<BlogPost | null> {

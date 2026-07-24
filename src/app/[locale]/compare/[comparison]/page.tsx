@@ -17,6 +17,9 @@ import { LastUpdated } from "@/components/last-updated";
 import { FaqSchema } from "@/components/structured-data";
 import { getRelatedContent, reviewLink } from "@/lib/content-links";
 import { RelatedContent } from "@/components/seo/related-content";
+import { Section, SectionHeading } from "@/components/layout/section";
+import { ProsConsCard } from "@/components/vpn/pros-cons-card";
+import { AffiliateDisclosure } from "@/components/vpn/affiliate-disclosure";
 // Gedeeld met de sitemap, zodat we nooit meer adverteren dan we linken.
 import { LINKED_COMPARISONS } from "@/lib/linked-comparisons";
 
@@ -121,13 +124,9 @@ function ComparisonSchema({ vpn1, vpn2 }: { vpn1: VpnData; vpn2: VpnData }) {
           "@type": "SoftwareApplication",
           name: vpn1.name,
           applicationCategory: "SecurityApplication",
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: vpn1.overallRating,
-            ratingCount: Math.round(vpn1.overallRating * 8) + 10,
-            bestRating: 5,
-            worstRating: 1,
-          },
+          // Geen aggregateRating: het aantal beoordelingen werd hier verzonnen
+          // met rating*8+10, net als in structured-data.tsx. Dat meldt Google
+          // beoordelingen die niet bestaan.
           offers: {
             "@type": "Offer",
             price: vpn1.priceMonthly,
@@ -142,13 +141,7 @@ function ComparisonSchema({ vpn1, vpn2 }: { vpn1: VpnData; vpn2: VpnData }) {
           "@type": "SoftwareApplication",
           name: vpn2.name,
           applicationCategory: "SecurityApplication",
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: vpn2.overallRating,
-            ratingCount: Math.round(vpn2.overallRating * 8) + 10,
-            bestRating: 5,
-            worstRating: 1,
-          },
+          // Zie hierboven: geen verzonnen aggregateRating.
           offers: {
             "@type": "Offer",
             price: vpn2.priceMonthly,
@@ -289,86 +282,18 @@ export default async function ComparisonPage({ params }: Props) {
         {/* Detailed Comparison Table */}
         <ComparisonTable vpn1={vpn1} vpn2={vpn2} />
 
-        {/* Pros and Cons Section */}
-        <section className="py-12 lg:py-16 bg-muted/30">
-          <div className="container">
-            <h2 className="text-3xl font-bold mb-8 text-center">
-              Pros and Cons
-            </h2>
-
-            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              {/* VPN 1 Pros/Cons */}
-              <div className="bg-card border rounded-xl p-6">
-                <h3 className="text-2xl font-bold mb-6">{vpn1.name}</h3>
-
-                <div className="mb-6">
-                  <div className="flex items-center gap-2 mb-3">
-                    <Check className="h-5 w-5 text-green-500" />
-                    <h4 className="font-semibold text-lg">Pros</h4>
-                  </div>
-                  <ul className="space-y-2">
-                    {vpn1.pros.map((pro, index) => (
-                      <li key={index} className="flex items-start gap-2">
-                        <Check className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-                        <span className="text-sm">{pro}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div>
-                  <div className="flex items-center gap-2 mb-3">
-                    <X className="h-5 w-5 text-red-400" />
-                    <h4 className="font-semibold text-lg">Cons</h4>
-                  </div>
-                  <ul className="space-y-2">
-                    {vpn1.cons.map((con, index) => (
-                      <li key={index} className="flex items-start gap-2">
-                        <X className="h-4 w-4 text-red-400 mt-0.5 flex-shrink-0" />
-                        <span className="text-sm">{con}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-
-              {/* VPN 2 Pros/Cons */}
-              <div className="bg-card border rounded-xl p-6">
-                <h3 className="text-2xl font-bold mb-6">{vpn2.name}</h3>
-
-                <div className="mb-6">
-                  <div className="flex items-center gap-2 mb-3">
-                    <Check className="h-5 w-5 text-green-500" />
-                    <h4 className="font-semibold text-lg">Pros</h4>
-                  </div>
-                  <ul className="space-y-2">
-                    {vpn2.pros.map((pro, index) => (
-                      <li key={index} className="flex items-start gap-2">
-                        <Check className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-                        <span className="text-sm">{pro}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div>
-                  <div className="flex items-center gap-2 mb-3">
-                    <X className="h-5 w-5 text-red-400" />
-                    <h4 className="font-semibold text-lg">Cons</h4>
-                  </div>
-                  <ul className="space-y-2">
-                    {vpn2.cons.map((con, index) => (
-                      <li key={index} className="flex items-start gap-2">
-                        <X className="h-4 w-4 text-red-400 mt-0.5 flex-shrink-0" />
-                        <span className="text-sm">{con}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
+        {/* Pros and Cons */}
+        <Section muted className="!py-12 lg:!py-16">
+          <SectionHeading
+            title="Pros and Cons"
+            align="center"
+            className="mb-8"
+          />
+          <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-2">
+            <ProsConsCard name={vpn1.name} pros={vpn1.pros} cons={vpn1.cons} />
+            <ProsConsCard name={vpn2.name} pros={vpn2.pros} cons={vpn2.cons} />
           </div>
-        </section>
+        </Section>
 
         {/* Final Verdict */}
         <section className="py-12 lg:py-16">
@@ -463,6 +388,7 @@ export default async function ComparisonPage({ params }: Props) {
               </div>
 
               {/* CTA Buttons */}
+              <AffiliateDisclosure className="mb-4" />
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="bg-card border rounded-lg p-6">
                   <div className="flex items-center justify-between mb-4">

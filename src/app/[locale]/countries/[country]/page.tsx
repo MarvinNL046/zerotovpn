@@ -20,6 +20,7 @@ import {
   getCountryPageLabels,
 } from "@/lib/country-translations";
 import { generateAlternates } from "@/lib/seo-utils";
+import { AffiliateDisclosure } from "@/components/vpn/affiliate-disclosure";
 import {
   Shield,
   CheckCircle,
@@ -321,10 +322,12 @@ export default async function DynamicCountryPage({ params }: Props) {
             <h2 className="text-3xl font-bold text-center mb-4">
               {t(labels.bestVpnsTitle, { country: data.name })}
             </h2>
-            <p className="text-center text-muted-foreground mb-8">
+            <p className="text-center text-muted-foreground mb-4">
               {t(labels.bestVpnsSubtitle, { country: data.name })}
             </p>
-            <div className="space-y-6">
+            {/* Disclosure vóór de eerste affiliate-knop, niet pas in de footer. */}
+            <AffiliateDisclosure className="mb-8 justify-center" />
+            <div className="flex flex-col gap-6">
               {recommendedVpns.map((vpn, index) => {
                 const bestPrice = vpn.priceTwoYear || vpn.priceYearly;
                 const savings = Math.round(
@@ -360,11 +363,14 @@ export default async function DynamicCountryPage({ params }: Props) {
 
                       {/* Key Stats */}
                       <div className="flex-1 grid grid-cols-3 gap-4 text-center">
+                        {/* .metric = IBM Plex Mono met tabular-nums, zodat de
+                            getallen tussen de VPN-rijen recht onder elkaar
+                            staan in plaats van te dansen per regel. */}
                         <div>
                           <div className="text-sm text-muted-foreground">
                             {labels.servers}
                           </div>
-                          <div className="font-bold">
+                          <div className="metric font-bold">
                             {vpn.servers.toLocaleString()}+
                           </div>
                         </div>
@@ -372,13 +378,13 @@ export default async function DynamicCountryPage({ params }: Props) {
                           <div className="text-sm text-muted-foreground">
                             {labels.countries}
                           </div>
-                          <div className="font-bold">{vpn.countries}</div>
+                          <div className="metric font-bold">{vpn.countries}</div>
                         </div>
                         <div>
                           <div className="text-sm text-muted-foreground">
                             {labels.devices}
                           </div>
-                          <div className="font-bold">
+                          <div className="metric font-bold">
                             {vpn.maxDevices >= 100
                               ? labels.unlimited
                               : vpn.maxDevices}
@@ -389,10 +395,10 @@ export default async function DynamicCountryPage({ params }: Props) {
                       {/* Pricing & CTA */}
                       <div className="flex flex-col items-center gap-2 flex-shrink-0">
                         <div className="text-center">
-                          <div className="text-sm text-muted-foreground line-through">
+                          <div className="metric text-sm text-muted-foreground line-through">
                             ${vpn.priceMonthly.toFixed(2)}/mo
                           </div>
-                          <div className="text-2xl font-bold text-primary">
+                          <div className="metric text-2xl font-bold text-primary">
                             ${bestPrice.toFixed(2)}/mo
                           </div>
                           {savings > 0 && (

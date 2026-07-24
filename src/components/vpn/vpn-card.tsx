@@ -85,7 +85,7 @@ export function VpnCard({ vpn, rank }: VpnCardProps) {
           </div>
           <div className="text-right">
             <div className="text-sm text-muted-foreground">{t("from")}</div>
-            <div className="text-3xl font-bold text-primary">
+            <div className="metric text-3xl font-bold text-primary">
               ${vpn.priceTwoYear || vpn.priceYearly}
             </div>
             <div className="text-xs text-muted-foreground">{t("perMonth")}</div>
@@ -101,17 +101,17 @@ export function VpnCard({ vpn, rank }: VpnCardProps) {
         <div className="grid grid-cols-3 gap-4 text-center">
           <div>
             <Server className="h-5 w-5 mx-auto text-muted-foreground" />
-            <div className="font-bold">{vpn.servers.toLocaleString()}</div>
+            <div className="metric font-bold">{vpn.servers.toLocaleString()}</div>
             <div className="text-xs text-muted-foreground">{t("servers")}</div>
           </div>
           <div>
             <Globe className="h-5 w-5 mx-auto text-muted-foreground" />
-            <div className="font-bold">{vpn.countries}</div>
+            <div className="metric font-bold">{vpn.countries}</div>
             <div className="text-xs text-muted-foreground">{t("countries")}</div>
           </div>
           <div>
             <Monitor className="h-5 w-5 mx-auto text-muted-foreground" />
-            <div className="font-bold">
+            <div className="metric font-bold">
               {vpn.maxDevices >= 999 ? "∞" : vpn.maxDevices}
             </div>
             <div className="text-xs text-muted-foreground">{t("devices")}</div>
@@ -125,13 +125,13 @@ export function VpnCard({ vpn, rank }: VpnCardProps) {
               <Zap className="h-4 w-4" /> {t("speed")}
             </span>
             <div className="flex items-center gap-2">
-              <div className="w-24 h-2 bg-gray-200 rounded-full overflow-hidden">
+              <div className="w-24 h-2 bg-muted rounded-full overflow-hidden">
                 <div
                   className="h-full bg-green-500 rounded-full"
                   style={{ width: `${vpn.speedScore}%` }}
                 />
               </div>
-              <span className="text-xs font-medium w-8">{vpn.speedScore}%</span>
+              <span className="metric text-xs font-medium w-8">{vpn.speedScore}%</span>
             </div>
           </div>
           <div className="flex items-center justify-between text-sm">
@@ -139,13 +139,13 @@ export function VpnCard({ vpn, rank }: VpnCardProps) {
               <Shield className="h-4 w-4" /> {t("security")}
             </span>
             <div className="flex items-center gap-2">
-              <div className="w-24 h-2 bg-gray-200 rounded-full overflow-hidden">
+              <div className="w-24 h-2 bg-muted rounded-full overflow-hidden">
                 <div
                   className="h-full bg-blue-500 rounded-full"
                   style={{ width: `${vpn.securityScore}%` }}
                 />
               </div>
-              <span className="text-xs font-medium w-8">{vpn.securityScore}%</span>
+              <span className="metric text-xs font-medium w-8">{vpn.securityScore}%</span>
             </div>
           </div>
         </div>

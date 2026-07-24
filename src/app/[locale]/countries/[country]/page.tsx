@@ -21,6 +21,7 @@ import {
 } from "@/lib/country-translations";
 import { generateAlternates } from "@/lib/seo-utils";
 import { AffiliateDisclosure } from "@/components/vpn/affiliate-disclosure";
+import { RankedVpnRow } from "@/components/vpn/ranked-vpn-row";
 import {
   Shield,
   CheckCircle,
@@ -328,139 +329,110 @@ export default async function DynamicCountryPage({ params }: Props) {
             {/* Disclosure vóór de eerste affiliate-knop, niet pas in de footer. */}
             <AffiliateDisclosure className="mb-8 justify-center" />
             <div className="flex flex-col gap-6">
-              {recommendedVpns.map((vpn, index) => {
-                const bestPrice = vpn.priceTwoYear || vpn.priceYearly;
-                const savings = Math.round(
-                  ((vpn.priceMonthly - bestPrice) / vpn.priceMonthly) * 100
-                );
-
-                return (
-                  <Card
-                    key={vpn.id}
-                    className={`p-6 relative overflow-hidden ${
-                      index === 0 ? "border-2 border-primary" : ""
-                    }`}
-                  >
-                    {index === 0 && (
-                      <div className="absolute top-0 right-0">
-                        <Badge className="rounded-none rounded-bl-lg bg-primary text-primary-foreground px-3 py-1">
-                          {t(labels.topPick, { country: data.name })}
-                        </Badge>
-                      </div>
-                    )}
-
-                    <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
-                      {/* VPN Info */}
-                      <div className="flex items-center gap-4 flex-shrink-0">
-                        <div className="bg-white dark:bg-gray-800 rounded-lg p-3">
-                          <VpnLogo name={vpn.name} size="lg" />
-                        </div>
-                        <div>
-                          <h3 className="text-xl font-bold">{vpn.name}</h3>
-                          <RatingStars rating={vpn.overallRating} size="sm" />
-                        </div>
-                      </div>
-
-                      {/* Key Stats */}
-                      <div className="flex-1 grid grid-cols-3 gap-4 text-center">
-                        {/* .metric = IBM Plex Mono met tabular-nums, zodat de
-                            getallen tussen de VPN-rijen recht onder elkaar
-                            staan in plaats van te dansen per regel. */}
-                        <div>
-                          <div className="text-sm text-muted-foreground">
-                            {labels.servers}
-                          </div>
-                          <div className="metric font-bold">
-                            {vpn.servers.toLocaleString()}+
-                          </div>
-                        </div>
-                        <div>
-                          <div className="text-sm text-muted-foreground">
-                            {labels.countries}
-                          </div>
-                          <div className="metric font-bold">{vpn.countries}</div>
-                        </div>
-                        <div>
-                          <div className="text-sm text-muted-foreground">
-                            {labels.devices}
-                          </div>
-                          <div className="metric font-bold">
-                            {vpn.maxDevices >= 100
-                              ? labels.unlimited
-                              : vpn.maxDevices}
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Pricing & CTA */}
-                      <div className="flex flex-col items-center gap-2 flex-shrink-0">
-                        <div className="text-center">
-                          <div className="metric text-sm text-muted-foreground line-through">
-                            ${vpn.priceMonthly.toFixed(2)}/mo
-                          </div>
-                          <div className="metric text-2xl font-bold text-primary">
-                            ${bestPrice.toFixed(2)}/mo
-                          </div>
-                          {savings > 0 && (
-                            <Badge variant="secondary" className="mt-1">
-                              {t(labels.save, { n: savings })}
-                            </Badge>
-                          )}
-                        </div>
-                        <div className="flex flex-col gap-2 w-full">
-                          <AffiliateButton
-                            vpnId={vpn.id}
-                            vpnName={vpn.name}
-                            affiliateUrl={vpn.affiliateUrl}
-                            size="sm"
-                          >
-                            {t(labels.visitVpn, { vpnName: vpn.name })}
-                            <ExternalLink className="ml-1 h-3 w-3" />
-                          </AffiliateButton>
-                          <Link
-                            href={`/reviews/${vpn.slug}`}
-                            className="text-xs text-center text-primary hover:underline"
-                          >
-                            {labels.readFullReview}
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Features row */}
-                    <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t">
-                      {vpn.killSwitch && (
-                        <Badge variant="outline" className="text-xs">
-                          <CheckCircle className="h-3 w-3 mr-1 text-green-500" />
-                          {labels.killSwitch}
-                        </Badge>
-                      )}
-                      {vpn.noLogs && (
-                        <Badge variant="outline" className="text-xs">
-                          <CheckCircle className="h-3 w-3 mr-1 text-green-500" />
-                          {labels.noLogs}
-                        </Badge>
-                      )}
-                      {vpn.netflixSupport && (
-                        <Badge variant="outline" className="text-xs">
-                          <CheckCircle className="h-3 w-3 mr-1 text-green-500" />
-                          {labels.netflix}
-                        </Badge>
-                      )}
-                      {vpn.torrentSupport && (
-                        <Badge variant="outline" className="text-xs">
-                          <CheckCircle className="h-3 w-3 mr-1 text-green-500" />
-                          {labels.p2p}
-                        </Badge>
-                      )}
+              {recommendedVpns.map((vpn, index) => (
+                <RankedVpnRow
+                  key={vpn.id}
+                  name={vpn.name}
+                  slug={vpn.slug}
+                  vpnId={vpn.id}
+                  affiliateUrl={vpn.affiliateUrl}
+                  rating={vpn.overallRating}
+                  rank={index + 1}
+                  highlight={index === 0}
+                  badge={
+                    index === 0
+                      ? t(labels.topPick, { country: data.name })
+                      : undefined
+                  }
+                  price={`$${(vpn.priceTwoYear || vpn.priceYearly).toFixed(2)}/mo`}
+                  stats={[
+                    { label: labels.servers, value: `${vpn.servers.toLocaleString()}+` },
+                    { label: labels.countries, value: vpn.countries },
+                    {
+                      label: labels.devices,
+                      value: vpn.maxDevices >= 100 ? labels.unlimited : vpn.maxDevices,
+                    },
+                  ]}
+                  labels={{
+                    cta: t(labels.visitVpn, { vpnName: vpn.name }),
+                    review: labels.readFullReview,
+                  }}
+                >
+                  {/* Pagina-specifiek: welke kenmerken er in dit land toe doen */}
+                  <div className="flex flex-wrap gap-2">
+                    {vpn.killSwitch && (
                       <Badge variant="outline" className="text-xs">
-                        <Lock className="h-3 w-3 mr-1" />
-                        {vpn.encryption}
+                        <CheckCircle className="mr-1 size-3 text-green-600 dark:text-green-500" />
+                        {labels.killSwitch}
                       </Badge>
-                    </div>
-                  </Card>
-                );
-              })}
+                    )}
+                    {vpn.noLogs && (
+                      <Badge variant="outline" className="text-xs">
+                        <CheckCircle className="mr-1 size-3 text-green-600 dark:text-green-500" />
+                        {labels.noLogs}
+                      </Badge>
+                    )}
+                    {vpn.netflixSupport && (
+                      <Badge variant="outline" className="text-xs">
+                        <CheckCircle className="mr-1 size-3 text-green-600 dark:text-green-500" />
+                        {labels.netflix}
+                      </Badge>
+                    )}
+                    {vpn.torrentSupport && (
+                      <Badge variant="outline" className="text-xs">
+                        <CheckCircle className="mr-1 size-3 text-green-600 dark:text-green-500" />
+                        {labels.p2p}
+                      </Badge>
+                    )}
+                    <Badge variant="outline" className="text-xs">
+                      <Lock className="mr-1 size-3" />
+                      {vpn.encryption}
+                    </Badge>
+                  </div>
+                </RankedVpnRow>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Blocked Services Section (only if there are blocked services) */}
+      {content.blockedServices.length > 0 && (
+        <section className="py-12">
+          <div className="container">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl font-bold text-center mb-8">
+                {t(labels.blockedTitle, { country: data.name })}
+              </h2>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                {content.blockedServices.map((service, i) => (
+                  <div
+                    key={i}
+                    className="flex items-center gap-2 p-3 rounded-lg border border-red-200 dark:border-red-900 bg-red-50 dark:bg-red-950/20"
+                  >
+                    <Ban className="h-4 w-4 text-red-500 flex-shrink-0" />
+                    <span className="text-sm">{service}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Recommended VPNs Section */}
+      <section className="py-16">
+        <div className="container">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-4">
+              {t(labels.bestVpnsTitle, { country: data.name })}
+            </h2>
+            <p className="text-center text-muted-foreground mb-4">
+              {t(labels.bestVpnsSubtitle, { country: data.name })}
+            </p>
+            {/* Disclosure vóór de eerste affiliate-knop, niet pas in de footer. */}
+            <AffiliateDisclosure className="mb-8 justify-center" />
+            <div className="flex flex-col gap-6">
             </div>
           </div>
         </div>

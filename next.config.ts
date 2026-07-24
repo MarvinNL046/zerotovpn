@@ -14,6 +14,12 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // Blogcontent leeft als JSON-bestanden in src/data (Neon is uitgefaseerd).
+  // blog-service leest ze met fs; neem ze op in de serverless bundle zodat
+  // ook niet-voorgerenderde slugs (dynamicParams) op Vercel blijven werken.
+  outputFileTracingIncludes: {
+    "/**": ["./src/data/posts/**/*"],
+  },
 };
 
 export default withNextIntl(nextConfig);

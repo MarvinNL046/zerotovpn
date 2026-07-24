@@ -1,5 +1,4 @@
-import { and, desc, eq, inArray } from "drizzle-orm";
-import { getDb, scrapeJobs } from "@/lib/db";
+import scrapeOverrideJobs from "@/data/scrape-overrides.json";
 import type { VpnProvider } from "@/lib/vpn-data-layer";
 
 export type LoggingPolicyGrade = "strict-no-logs" | "minimal-operational-logs" | "unclear";
@@ -378,43 +377,24 @@ async function getPipelineOverrides(): Promise<Record<string, SnapshotOverride>>
   }
 
   try {
-    const db = getDb();
-    const jobs = await db
-      .select({
-        result: scrapeJobs.result,
-        completedAt: scrapeJobs.completedAt,
-        createdAt: scrapeJobs.createdAt,
-      })
-      .from(scrapeJobs)
-      .where(
-        and(
-          eq(scrapeJobs.status, "completed"),
-          inArray(scrapeJobs.type, ["vpn-data", "pricing"])
-        )
-      )
-      .orderBy(desc(scrapeJobs.createdAt))
-      .limit(40);
+    // Bevroren snapshot van de laatste 40 completed scrape-jobs (zelfde
+    // selectie als de oude Postgres-query), meegenomen bij de
+    // Neon-uitfasering. Nieuwe metingen komen binnen via een commit aan
+    // src/data/scrape-overrides.json.
+    const jobs = scrapeOverrideJobs as Array<{
+      completedAt: string | null;
+      createdAt: string;
+      items: unknown[];
+    }>;
 
     const merged: Record<string, SnapshotOverride> = {};
 
     for (const job of jobs) {
-      if (!job.result) continue;
+      const fallbackDate = new Date(job.completedAt ?? job.createdAt)
+        .toISOString()
+        .slice(0, 10);
 
-      let parsed: unknown;
-      try {
-        parsed = JSON.parse(job.result);
-      } catch {
-        continue;
-      }
-
-      const fallbackDate = (job.completedAt ?? job.createdAt).toISOString().slice(0, 10);
-      const items = Array.isArray(parsed)
-        ? parsed
-        : parsed && typeof parsed === "object" && Array.isArray((parsed as Record<string, unknown>).results)
-          ? ((parsed as Record<string, unknown>).results as unknown[])
-          : [parsed];
-
-      for (const item of items) {
+      for (const item of job.items) {
         if (!item || typeof item !== "object" || Array.isArray(item)) continue;
         const normalized = parseOverrideItem(item as Record<string, unknown>, fallbackDate);
         if (!normalized) continue;

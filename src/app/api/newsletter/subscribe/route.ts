@@ -1,7 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
-import { db, subscribers } from "@/lib/db";
-import { eq } from "drizzle-orm";
 import { sendWelcomeEmail } from "@/lib/resend";
+
+// Nieuwsbrief-inschrijvingen gaan sinds de Neon-uitfasering naar de
+// gedeelde wetry-sites-leads Convex-backend (zelfde plek als de andere
+// content-sites). Deze route houdt de rate-limit, validatie en welkomstmail
+// en stuurt de inschrijving server-side door.
+const SITES_LEADS_URL =
+  process.env.SITES_LEADS_URL ?? "https://beaming-ermine-172.convex.site";
 
 // Rate limiting map (in production, use Redis or similar)
 const rateLimitMap = new Map<string, number[]>();
@@ -9,7 +14,6 @@ const RATE_LIMIT_WINDOW_MS = 60000; // 1 minute
 const MAX_REQUESTS_PER_WINDOW = 5;
 
 function getRateLimitKey(request: NextRequest): string {
-  // Use IP address for rate limiting
   const forwarded = request.headers.get("x-forwarded-for");
   const ip = forwarded ? forwarded.split(",")[0] : "unknown";
   return ip;
@@ -18,24 +22,15 @@ function getRateLimitKey(request: NextRequest): string {
 function isRateLimited(key: string): boolean {
   const now = Date.now();
   const requests = rateLimitMap.get(key) || [];
-
-  // Filter out old requests outside the window
   const recentRequests = requests.filter(
     (timestamp) => now - timestamp < RATE_LIMIT_WINDOW_MS
   );
-
-  // Update the map
   rateLimitMap.set(key, recentRequests);
-
-  // Check if rate limited
   if (recentRequests.length >= MAX_REQUESTS_PER_WINDOW) {
     return true;
   }
-
-  // Add current request
   recentRequests.push(now);
   rateLimitMap.set(key, recentRequests);
-
   return false;
 }
 
@@ -78,50 +73,47 @@ export async function POST(request: NextRequest) {
     const validLanguages = ["en", "nl", "de", "es", "fr", "zh", "ja", "ko", "th"];
     const normalizedLanguage = validLanguages.includes(language) ? language : "en";
 
-    // Check if email already exists
-    const existingSubscriber = await db
-      .select()
-      .from(subscribers)
-      .where(eq(subscribers.email, normalizedEmail))
-      .limit(1);
+    // Doorsturen naar de gedeelde subscribers-backend. "already_subscribed"
+    // geeft daar ook ok:true terug, dus e-mail-enumeratie blijft onmogelijk.
+    const res = await fetch(`${SITES_LEADS_URL}/subscribe`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        site: "zerotovpn",
+        email: normalizedEmail,
+        locale: normalizedLanguage,
+        source: typeof source === "string" ? source : "website",
+      }),
+    });
 
-    if (existingSubscriber.length > 0) {
-      // Don't reveal that email exists (prevent email enumeration)
+    if (!res.ok) {
+      console.error("Subscribe-backend gaf status", res.status);
       return NextResponse.json(
-        {
-          success: true,
-          message: "Successfully subscribed!"
-        },
-        { status: 200 }
+        { error: "An error occurred. Please try again later." },
+        { status: 500 }
       );
     }
 
-    // Insert new subscriber
-    await db.insert(subscribers).values({
-      email: normalizedEmail,
-      language: normalizedLanguage,
-      source,
-      confirmed: false,
-      createdAt: new Date(),
-    });
+    const result = (await res.json()) as { status?: string };
+    const isNew = result.status !== "already_subscribed";
 
-    // Send welcome email (non-blocking - don't wait for it)
-    sendWelcomeEmail({
-      email: normalizedEmail,
-      language: normalizedLanguage,
-    }).catch((error) => {
-      // Log error but don't fail the subscription
-      console.error("Failed to send welcome email:", error);
-    });
+    // Send welcome email (non-blocking — alleen bij een nieuwe inschrijving)
+    if (isNew) {
+      sendWelcomeEmail({
+        email: normalizedEmail,
+        language: normalizedLanguage,
+      }).catch((error) => {
+        console.error("Failed to send welcome email:", error);
+      });
+    }
 
     return NextResponse.json(
       {
         success: true,
-        message: "Successfully subscribed!"
+        message: "Successfully subscribed!",
       },
-      { status: 201 }
+      { status: isNew ? 201 : 200 }
     );
-
   } catch (error) {
     console.error("Newsletter subscription error:", error);
 

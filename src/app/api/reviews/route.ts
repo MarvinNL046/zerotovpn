@@ -1,6 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import { headers } from "next/headers";
-import { sql } from "@/lib/neon";
+
+// Bezoekersreviews gaan sinds de Neon-uitfasering naar de gedeelde
+// wetry-sites-leads Convex-backend. Deze route valideert zoals voorheen en
+// stuurt server-side door; reviews komen daar binnen als "pending".
+const SITES_LEADS_URL =
+  process.env.SITES_LEADS_URL ?? "https://beaming-ermine-172.convex.site";
 
 export async function POST(request: NextRequest) {
   try {
@@ -45,61 +50,49 @@ export async function POST(request: NextRequest) {
 
     // Get request metadata
     const headersList = await headers();
-    const ipAddress = headersList.get("x-forwarded-for") ||
-                      headersList.get("x-real-ip") ||
-                      "unknown";
+    const ipAddress =
+      headersList.get("x-forwarded-for") ||
+      headersList.get("x-real-ip") ||
+      "unknown";
     const userAgent = headersList.get("user-agent") || "unknown";
 
-    // Prepare data
-    const cleanPros = userPros.slice(0, 5).map((p: string) => p.slice(0, 100));
-    const cleanCons = userCons.slice(0, 5).map((c: string) => c.slice(0, 100));
-
-    // Create review in database using Neon
-    const result = await sql`
-      INSERT INTO "UserReview" (
-        id, vpn_slug, author_name, author_email, rating, title, content,
-        usage_type, usage_period, user_pros, user_cons, locale,
-        ip_address, user_agent, newsletter_consent, consent_date,
-        verified, approved, helpful_count, unhelpful_count,
-        created_at, updated_at
-      ) VALUES (
-        gen_random_uuid()::text,
-        ${vpnSlug},
-        ${authorName.slice(0, 50)},
-        ${authorEmail.toLowerCase()},
-        ${rating},
-        ${title.slice(0, 100)},
-        ${content.slice(0, 2000)},
-        ${usageType || null},
-        ${usagePeriod || null},
-        ${cleanPros},
-        ${cleanCons},
-        ${locale},
-        ${ipAddress},
-        ${userAgent},
-        ${newsletterConsent},
-        ${newsletterConsent ? new Date() : null},
-        false,
-        false,
-        0,
-        0,
-        NOW(),
-        NOW()
-      )
-      RETURNING id
-    `;
-
-    console.log("New review submitted:", {
-      id: result[0]?.id,
-      vpnSlug,
-      rating,
-      authorName,
+    const res = await fetch(`${SITES_LEADS_URL}/reviews`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        site: "zerotovpn",
+        subjectSlug: vpnSlug,
+        rating,
+        title: String(title).slice(0, 100),
+        content: String(content).slice(0, 2000),
+        authorName: String(authorName).slice(0, 50),
+        authorEmail: String(authorEmail).toLowerCase(),
+        usageType: usageType || undefined,
+        usagePeriod: usagePeriod || undefined,
+        pros: Array.isArray(userPros) ? userPros : undefined,
+        cons: Array.isArray(userCons) ? userCons : undefined,
+        locale,
+        newsletterConsent: newsletterConsent === true,
+        ip: ipAddress,
+        userAgent,
+      }),
     });
+
+    if (!res.ok) {
+      console.error("Review-backend gaf status", res.status);
+      return NextResponse.json(
+        { error: "Failed to submit review" },
+        { status: 500 }
+      );
+    }
+
+    const result = (await res.json()) as { id?: string };
 
     return NextResponse.json({
       success: true,
-      message: "Review submitted successfully. It will be visible after moderation.",
-      reviewId: result[0]?.id,
+      message:
+        "Review submitted successfully. It will be visible after moderation.",
+      reviewId: result.id,
     });
   } catch (error) {
     console.error("Error submitting review:", error);
@@ -117,7 +110,6 @@ export async function GET(request: NextRequest) {
     const page = parseInt(searchParams.get("page") || "1", 10);
     const limit = parseInt(searchParams.get("limit") || "10", 10);
 
-    // Public access - only return approved reviews
     if (!vpnSlug) {
       return NextResponse.json(
         { error: "vpnSlug parameter is required" },
@@ -125,7 +117,6 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    // Validate pagination parameters
     if (page < 1 || limit < 1 || limit > 100) {
       return NextResponse.json(
         { error: "Invalid pagination parameters" },
@@ -133,33 +124,58 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    const offset = (page - 1) * limit;
+    const res = await fetch(
+      `${SITES_LEADS_URL}/reviews?site=zerotovpn&slug=${encodeURIComponent(vpnSlug)}&limit=${limit}`,
+      { next: { revalidate: 300 } }
+    );
+    if (!res.ok) {
+      return NextResponse.json(
+        { error: "Failed to fetch reviews" },
+        { status: 500 }
+      );
+    }
+    const data = (await res.json()) as {
+      reviews: Array<{
+        id: string;
+        rating: number;
+        title: string | null;
+        content: string | null;
+        authorName: string;
+        usageType: string | null;
+        usagePeriod: string | null;
+        pros: string[];
+        cons: string[];
+        locale: string | null;
+        createdAt: number;
+      }>;
+    };
 
-    // Fetch approved reviews with pagination using Neon
-    const reviews = await sql`
-      SELECT id, vpn_slug, author_name, rating, title, content,
-             usage_type, usage_period, user_pros, user_cons,
-             verified, featured, helpful_count, unhelpful_count,
-             locale, created_at
-      FROM "UserReview"
-      WHERE vpn_slug = ${vpnSlug} AND approved = true
-      ORDER BY created_at DESC
-      LIMIT ${limit} OFFSET ${offset}
-    `;
-
-    const countResult = await sql`
-      SELECT COUNT(*) as total FROM "UserReview"
-      WHERE vpn_slug = ${vpnSlug} AND approved = true
-    `;
-
-    const total = Number(countResult[0]?.total || 0);
+    // Zelfde veldnamen als de oude Postgres-respons zodat de UI niets merkt.
+    const reviews = data.reviews.map((r) => ({
+      id: r.id,
+      vpn_slug: vpnSlug,
+      author_name: r.authorName,
+      rating: r.rating,
+      title: r.title,
+      content: r.content,
+      usage_type: r.usageType,
+      usage_period: r.usagePeriod,
+      user_pros: r.pros,
+      user_cons: r.cons,
+      verified: false,
+      featured: false,
+      helpful_count: 0,
+      unhelpful_count: 0,
+      locale: r.locale,
+      created_at: new Date(r.createdAt).toISOString(),
+    }));
 
     return NextResponse.json({
       reviews,
-      total,
+      total: reviews.length,
       page,
       limit,
-      totalPages: Math.ceil(total / limit),
+      totalPages: 1,
     });
   } catch (error) {
     console.error("Error fetching reviews:", error);

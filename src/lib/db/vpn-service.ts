@@ -1,15 +1,8 @@
-import { eq, asc, count } from "drizzle-orm";
-import { unstable_cache, revalidateTag } from "next/cache";
-import { getDb, vpnProviders, type VpnProvider } from "./index";
-
-// De VpnProvider-tabel is ~38 rijen die zelden wijzigen, maar homepage,
-// /reviews en tientallen /best- en /countries-pagina's lazen hem bij ELK
-// verzoek live uit Postgres. Onder normaal verkeer (~elke minuut een render)
-// hield dat de Neon-compute 24/7 wakker. De leesfuncties cachen we daarom een
-// uur onder één tag; admin-mutaties invalideren die tag zodat bewerkingen
-// meteen zichtbaar blijven.
-const VPN_CACHE_TAG = "vpn-providers";
-const VPN_CACHE_TTL = 3600; // seconden
+// VPN-data komt sinds de Neon-uitfasering uit een statische JSON in het repo
+// (src/data/vpns.json, 38 providers). Wijzigingen gaan via een commit — de
+// oude admin-UI en de live Postgres-reads zijn verdwenen, en daarmee ook de
+// unstable_cache-laag die de Neon-compute wakker moest houden.
+import vpnsRaw from "@/data/vpns.json";
 
 // Type for VPN data that matches the frontend interface
 export interface VpnData {
@@ -49,216 +42,59 @@ export interface VpnData {
   sortOrder: number;
 }
 
-// Convert Drizzle VpnProvider to frontend VpnData
-function toVpnData(vpn: VpnProvider): VpnData {
+// De JSON bevat de rauwe Postgres-export: numeric-kolommen zijn strings.
+type RawVpn = Omit<
+  VpnData,
+  | "priceMonthly"
+  | "priceYearly"
+  | "priceTwoYear"
+  | "overallRating"
+  | "protocols"
+  | "pros"
+  | "cons"
+> & {
+  priceMonthly: string | number;
+  priceYearly: string | number;
+  priceTwoYear: string | number | null;
+  overallRating: string | number;
+  protocols: string[] | null;
+  pros: string[] | null;
+  cons: string[] | null;
+};
+
+function toVpnData(vpn: RawVpn): VpnData {
   return {
-    id: vpn.id,
-    name: vpn.name,
-    slug: vpn.slug,
-    logo: vpn.logo,
-    screenshot: vpn.screenshot,
-    thumbnailImage: vpn.thumbnailImage,
-    cardImage: vpn.cardImage,
-    ogImage: vpn.ogImage,
-    website: vpn.website,
-    affiliateUrl: vpn.affiliateUrl,
+    ...vpn,
     priceMonthly: Number(vpn.priceMonthly),
     priceYearly: Number(vpn.priceYearly),
     priceTwoYear: vpn.priceTwoYear ? Number(vpn.priceTwoYear) : null,
-    moneyBackDays: vpn.moneyBackDays,
-    freeTier: vpn.freeTier,
-    servers: vpn.servers,
-    countries: vpn.countries,
-    maxDevices: vpn.maxDevices,
-    speedScore: vpn.speedScore,
-    securityScore: vpn.securityScore,
-    streamingScore: vpn.streamingScore,
-    protocols: vpn.protocols ?? [],
-    encryption: vpn.encryption,
-    killSwitch: vpn.killSwitch,
-    noLogs: vpn.noLogs,
-    netflixSupport: vpn.netflixSupport,
-    torrentSupport: vpn.torrentSupport,
     overallRating: Number(vpn.overallRating),
-    editorChoice: vpn.editorChoice,
-    shortDescription: vpn.shortDescription,
+    protocols: vpn.protocols ?? [],
     pros: vpn.pros ?? [],
     cons: vpn.cons ?? [],
-    featured: vpn.featured,
-    sortOrder: vpn.sortOrder,
   };
 }
 
+const ALL_VPNS: VpnData[] = (vpnsRaw as unknown as RawVpn[])
+  .map(toVpnData)
+  .sort((a, b) => a.sortOrder - b.sortOrder);
+
 // Get all VPNs sorted by sortOrder
-export const getAllVpnsFromDb = unstable_cache(
-  async (): Promise<VpnData[]> => {
-    const db = getDb();
-    const vpns = await db
-      .select()
-      .from(vpnProviders)
-      .orderBy(asc(vpnProviders.sortOrder));
-    return vpns.map(toVpnData);
-  },
-  ["all-vpns"],
-  { tags: [VPN_CACHE_TAG], revalidate: VPN_CACHE_TTL },
-);
-
-// Get featured VPNs
-export const getFeaturedVpnsFromDb = unstable_cache(
-  async (): Promise<VpnData[]> => {
-    const db = getDb();
-    const vpns = await db
-      .select()
-      .from(vpnProviders)
-      .where(eq(vpnProviders.featured, true))
-      .orderBy(asc(vpnProviders.sortOrder));
-    return vpns.map(toVpnData);
-  },
-  ["featured-vpns"],
-  { tags: [VPN_CACHE_TAG], revalidate: VPN_CACHE_TTL },
-);
-
-// Get VPN by slug. Ook gecachet: reviews/[slug], compare/[comparison] en
-// countries/[country] zoeken VPN's op slug op. Er zijn maar ~38 VPN-records,
-// dus zodra die warm zijn pullen crawlers van willekeurig veel verschillende
-// review-/vergelijk-URL's allemaal uit de cache i.p.v. Postgres.
-export const getVpnBySlugFromDb = unstable_cache(
-  async (slug: string): Promise<VpnData | null> => {
-    const db = getDb();
-    const vpns = await db
-      .select()
-      .from(vpnProviders)
-      .where(eq(vpnProviders.slug, slug))
-      .limit(1);
-    return vpns[0] ? toVpnData(vpns[0]) : null;
-  },
-  ["vpn-by-slug"],
-  { tags: [VPN_CACHE_TAG], revalidate: VPN_CACHE_TTL },
-);
-
-// Get VPN by ID
-export async function getVpnByIdFromDb(id: string): Promise<VpnData | null> {
-  const db = getDb();
-  const vpns = await db
-    .select()
-    .from(vpnProviders)
-    .where(eq(vpnProviders.id, id))
-    .limit(1);
-  return vpns[0] ? toVpnData(vpns[0]) : null;
+export async function getAllVpnsFromDb(): Promise<VpnData[]> {
+  return ALL_VPNS;
 }
 
-// Admin functions for CRUD operations
-
-export type VpnCreateInput = Omit<VpnData, "id">;
-export type VpnUpdateInput = Partial<VpnCreateInput>;
-
-// Create VPN
-export async function createVpn(data: VpnCreateInput): Promise<VpnData> {
-  const db = getDb();
-  const result = await db
-    .insert(vpnProviders)
-    .values({
-      name: data.name,
-      slug: data.slug,
-      logo: data.logo,
-      screenshot: data.screenshot,
-      thumbnailImage: data.thumbnailImage,
-      cardImage: data.cardImage,
-      ogImage: data.ogImage,
-      website: data.website,
-      affiliateUrl: data.affiliateUrl,
-      priceMonthly: String(data.priceMonthly),
-      priceYearly: String(data.priceYearly),
-      priceTwoYear: data.priceTwoYear ? String(data.priceTwoYear) : null,
-      moneyBackDays: data.moneyBackDays,
-      freeTier: data.freeTier,
-      servers: data.servers,
-      countries: data.countries,
-      maxDevices: data.maxDevices,
-      speedScore: data.speedScore,
-      securityScore: data.securityScore,
-      streamingScore: data.streamingScore,
-      protocols: data.protocols,
-      encryption: data.encryption,
-      killSwitch: data.killSwitch,
-      noLogs: data.noLogs,
-      netflixSupport: data.netflixSupport,
-      torrentSupport: data.torrentSupport,
-      overallRating: String(data.overallRating),
-      editorChoice: data.editorChoice,
-      shortDescription: data.shortDescription,
-      pros: data.pros,
-      cons: data.cons,
-      featured: data.featured,
-      sortOrder: data.sortOrder,
-    })
-    .returning();
-  revalidateTag(VPN_CACHE_TAG, { expire: 0 });
-  return toVpnData(result[0]);
+// Featured VPNs (homepage e.d.)
+export async function getFeaturedVpnsFromDb(): Promise<VpnData[]> {
+  return ALL_VPNS.filter((v) => v.featured);
 }
 
-// Update VPN
-export async function updateVpn(id: string, data: VpnUpdateInput): Promise<VpnData> {
-  const db = getDb();
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const updateData: Record<string, any> = {};
-
-  // Only include fields that are provided
-  if (data.name !== undefined) updateData.name = data.name;
-  if (data.slug !== undefined) updateData.slug = data.slug;
-  if (data.logo !== undefined) updateData.logo = data.logo;
-  if (data.screenshot !== undefined) updateData.screenshot = data.screenshot;
-  if (data.thumbnailImage !== undefined) updateData.thumbnailImage = data.thumbnailImage;
-  if (data.cardImage !== undefined) updateData.cardImage = data.cardImage;
-  if (data.ogImage !== undefined) updateData.ogImage = data.ogImage;
-  if (data.website !== undefined) updateData.website = data.website;
-  if (data.affiliateUrl !== undefined) updateData.affiliateUrl = data.affiliateUrl;
-  if (data.priceMonthly !== undefined) updateData.priceMonthly = String(data.priceMonthly);
-  if (data.priceYearly !== undefined) updateData.priceYearly = String(data.priceYearly);
-  if (data.priceTwoYear !== undefined) updateData.priceTwoYear = data.priceTwoYear ? String(data.priceTwoYear) : null;
-  if (data.moneyBackDays !== undefined) updateData.moneyBackDays = data.moneyBackDays;
-  if (data.freeTier !== undefined) updateData.freeTier = data.freeTier;
-  if (data.servers !== undefined) updateData.servers = data.servers;
-  if (data.countries !== undefined) updateData.countries = data.countries;
-  if (data.maxDevices !== undefined) updateData.maxDevices = data.maxDevices;
-  if (data.speedScore !== undefined) updateData.speedScore = data.speedScore;
-  if (data.securityScore !== undefined) updateData.securityScore = data.securityScore;
-  if (data.streamingScore !== undefined) updateData.streamingScore = data.streamingScore;
-  if (data.protocols !== undefined) updateData.protocols = data.protocols;
-  if (data.encryption !== undefined) updateData.encryption = data.encryption;
-  if (data.killSwitch !== undefined) updateData.killSwitch = data.killSwitch;
-  if (data.noLogs !== undefined) updateData.noLogs = data.noLogs;
-  if (data.netflixSupport !== undefined) updateData.netflixSupport = data.netflixSupport;
-  if (data.torrentSupport !== undefined) updateData.torrentSupport = data.torrentSupport;
-  if (data.overallRating !== undefined) updateData.overallRating = String(data.overallRating);
-  if (data.editorChoice !== undefined) updateData.editorChoice = data.editorChoice;
-  if (data.shortDescription !== undefined) updateData.shortDescription = data.shortDescription;
-  if (data.pros !== undefined) updateData.pros = data.pros;
-  if (data.cons !== undefined) updateData.cons = data.cons;
-  if (data.featured !== undefined) updateData.featured = data.featured;
-  if (data.sortOrder !== undefined) updateData.sortOrder = data.sortOrder;
-
-  updateData.updatedAt = new Date();
-
-  const result = await db
-    .update(vpnProviders)
-    .set(updateData)
-    .where(eq(vpnProviders.id, id))
-    .returning();
-  revalidateTag(VPN_CACHE_TAG, { expire: 0 });
-  return toVpnData(result[0]);
+// Eén VPN op slug (reviews/[slug], compare/[comparison], countries/[country])
+export async function getVpnBySlugFromDb(slug: string): Promise<VpnData | null> {
+  return ALL_VPNS.find((v) => v.slug === slug) ?? null;
 }
 
-// Delete VPN
-export async function deleteVpn(id: string): Promise<void> {
-  const db = getDb();
-  await db.delete(vpnProviders).where(eq(vpnProviders.id, id));
-  revalidateTag(VPN_CACHE_TAG, { expire: 0 });
-}
-
-// Get VPN count
+// Totaal aantal providers
 export async function getVpnCount(): Promise<number> {
-  const db = getDb();
-  const result = await db.select({ count: count() }).from(vpnProviders);
-  return result[0]?.count ?? 0;
+  return ALL_VPNS.length;
 }

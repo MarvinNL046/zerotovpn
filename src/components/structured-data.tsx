@@ -1,4 +1,5 @@
 import type { VpnProvider } from "@/lib/vpn-data-layer";
+import { BASE_URL } from "@/lib/seo-utils";
 
 // Organization Schema for the website
 export function OrganizationSchema() {
@@ -6,10 +7,10 @@ export function OrganizationSchema() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "ZeroToVPN",
-    url: "https://zerotovpn.com",
+    url: "https://www.zerotovpn.com",
     logo: {
       "@type": "ImageObject",
-      url: "https://zerotovpn.com/logo.png",
+      url: "https://www.zerotovpn.com/logo.png",
       width: 512,
       height: 512,
     },
@@ -38,7 +39,7 @@ export function WebsiteSchema() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "ZeroToVPN",
-    url: "https://zerotovpn.com",
+    url: "https://www.zerotovpn.com",
   };
 
   return (
@@ -50,13 +51,21 @@ export function WebsiteSchema() {
 }
 
 // VPN Review Schema
-export function VpnReviewSchema({ vpn }: { vpn: VpnProvider }) {
+export function VpnReviewSchema({
+  vpn,
+  datePublished,
+}: {
+  vpn: VpnProvider;
+  datePublished?: string;
+}) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Review",
     name: `${vpn.name} Review 2026`,
     reviewBody: vpn.shortDescription,
-    datePublished: "2026-01-15",
+    // Was hardgecodeerd op "2026-01-15" voor élke VPN. Liever geen datum dan
+    // een onjuiste: Google gebruikt 'm om versheid te beoordelen.
+    ...(datePublished ? { datePublished } : {}),
     author: {
       "@type": "Organization",
       name: "ZeroToVPN",
@@ -108,10 +117,15 @@ export function VpnReviewSchema({ vpn }: { vpn: VpnProvider }) {
 }
 
 // Product Schema for VPN
-export function VpnProductSchema({ vpn, ratingCount }: { vpn: VpnProvider; ratingCount?: number }) {
-  // Use provided ratingCount, or derive a reasonable default (1 editorial + user reviews estimate)
-  const totalRatingCount = ratingCount ?? Math.round(vpn.overallRating * 8) + 10;
-
+export function VpnProductSchema({
+  vpn,
+  ratingCount,
+  datePublished,
+}: {
+  vpn: VpnProvider;
+  ratingCount?: number;
+  datePublished?: string;
+}) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -121,16 +135,25 @@ export function VpnProductSchema({ vpn, ratingCount }: { vpn: VpnProvider; ratin
       "@type": "Brand",
       name: vpn.name,
     },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: vpn.overallRating,
-      ratingCount: totalRatingCount,
-      bestRating: 5,
-      worstRating: 1,
-    },
+    // aggregateRating alleen bij een ECHT aantal beoordelingen. Voorheen werd
+    // dat afgeleid met `rating * 8 + 10`, wat Google tientallen beoordelingen
+    // meldde die niet bestaan — dat valt onder het spambeleid voor
+    // gestructureerde data. Zonder echt aantal publiceren we alleen het
+    // redactionele oordeel hieronder als Review.
+    ...(ratingCount && ratingCount > 0
+      ? {
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: vpn.overallRating,
+            ratingCount,
+            bestRating: 5,
+            worstRating: 1,
+          },
+        }
+      : {}),
     review: {
       "@type": "Review",
-      datePublished: "2026-01-15",
+      ...(datePublished ? { datePublished } : {}),
       author: {
         "@type": "Organization",
         name: "ZeroToVPN",
@@ -174,15 +197,9 @@ export function ComparisonTableSchema({ vpns }: { vpns: VpnProvider[] }) {
       item: {
         "@type": "SoftwareApplication",
         name: vpn.name,
-        url: `https://zerotovpn.com/reviews/${vpn.slug}`,
+        url: `${BASE_URL}/reviews/${vpn.slug}`,
         applicationCategory: "VPN Service",
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: vpn.overallRating,
-          ratingCount: Math.round(vpn.overallRating * 8) + 10,
-          bestRating: 5,
-          worstRating: 1,
-        },
+        // Geen verzonnen aggregateRating — zie VpnProductSchema hierboven.
         offers: {
           "@type": "Offer",
           price: vpn.priceTwoYear || vpn.priceYearly,
@@ -279,7 +296,7 @@ export function ArticleJsonLd({
     author: {
       "@type": "Person",
       name: "ZeroToVPN Expert Team",
-      url: "https://zerotovpn.com/about",
+      url: "https://www.zerotovpn.com/about",
       jobTitle: "VPN Security Researchers",
       description:
         "Cybersecurity professionals who have tested and reviewed over 50 VPN services since 2024.",
@@ -290,16 +307,16 @@ export function ArticleJsonLd({
       worksFor: {
         "@type": "Organization",
         name: "ZeroToVPN",
-        url: "https://zerotovpn.com",
+        url: "https://www.zerotovpn.com",
       },
     },
     publisher: {
       "@type": "Organization",
       name: "ZeroToVPN",
-      url: "https://zerotovpn.com",
+      url: "https://www.zerotovpn.com",
       logo: {
         "@type": "ImageObject",
-        url: "https://zerotovpn.com/logo.png",
+        url: "https://www.zerotovpn.com/logo.png",
       },
     },
     isAccessibleForFree: true,

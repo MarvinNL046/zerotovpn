@@ -5,10 +5,10 @@ export function OrganizationJsonLd() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "ZeroToVPN",
-    url: "https://zerotovpn.com",
+    url: "https://www.zerotovpn.com",
     logo: {
       "@type": "ImageObject",
-      url: "https://zerotovpn.com/logo.png",
+      url: "https://www.zerotovpn.com/logo.png",
       width: 512,
       height: 512,
     },
@@ -22,7 +22,7 @@ export function OrganizationJsonLd() {
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer support",
-      url: "https://zerotovpn.com/contact",
+      url: "https://www.zerotovpn.com/contact",
     },
   };
 
@@ -39,14 +39,14 @@ export function WebsiteJsonLd() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "ZeroToVPN",
-    url: "https://zerotovpn.com",
+    url: "https://www.zerotovpn.com",
     description:
       "Find the perfect VPN for your needs. Expert reviews, honest comparisons, and exclusive deals.",
     potentialAction: {
       "@type": "SearchAction",
       target: {
         "@type": "EntryPoint",
-        urlTemplate: "https://zerotovpn.com/reviews?q={search_term_string}",
+        urlTemplate: "https://www.zerotovpn.com/reviews?q={search_term_string}",
       },
       "query-input": "required name=search_term_string",
     },
@@ -75,7 +75,7 @@ export function ArticleJsonLd({
   url,
   datePublished = "2026-01-01",
   dateModified,
-  image = "https://zerotovpn.com/og-image.png",
+  image = "https://www.zerotovpn.com/og-image.png",
 }: ArticleJsonLdProps) {
   const schema = {
     "@context": "https://schema.org",
@@ -89,15 +89,15 @@ export function ArticleJsonLd({
     author: {
       "@type": "Organization",
       name: "ZeroToVPN",
-      url: "https://zerotovpn.com",
+      url: "https://www.zerotovpn.com",
     },
     publisher: {
       "@type": "Organization",
       name: "ZeroToVPN",
-      url: "https://zerotovpn.com",
+      url: "https://www.zerotovpn.com",
       logo: {
         "@type": "ImageObject",
-        url: "https://zerotovpn.com/logo.png",
+        url: "https://www.zerotovpn.com/logo.png",
       },
     },
     mainEntityOfPage: {

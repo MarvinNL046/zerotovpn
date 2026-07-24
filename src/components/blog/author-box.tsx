@@ -12,7 +12,7 @@ export const AUTHOR = {
     "No sponsored rankings",
   ],
   avatar: "/images/zerotovpn-team.svg",
-  url: "https://zerotovpn.com/about",
+  url: "https://www.zerotovpn.com/about",
   sameAs: [
     "https://twitter.com/zerotovpn",
     "https://facebook.com/zerotovpn",

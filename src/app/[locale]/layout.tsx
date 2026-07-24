@@ -112,9 +112,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         "max-snippet": -1,
       },
     },
-    verification: {
-      google: "your-google-verification-code",
-    },
+    // Geen verification-tag: hier stond een placeholder ("your-google-
+    // verification-code") die als onjuiste meta-tag werd uitgeleverd. De
+    // property is al geverifieerd via DNS (sc-domain), dus een tag is
+    // overbodig — liever niets dan iets onjuists.
   };
 }
 

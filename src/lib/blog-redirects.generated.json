@@ -1,0 +1,692 @@
+[
+  {
+    "source": "/blog/vpn-guide-tips-may-2026-2026-05-34",
+    "destination": "/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-may-2026-2026-05-34",
+    "destination": "/:locale/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-may-2026-2026-05-33",
+    "destination": "/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-may-2026-2026-05-33",
+    "destination": "/:locale/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-may-2026-2026-05-32",
+    "destination": "/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-may-2026-2026-05-32",
+    "destination": "/:locale/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-may-2026-2026-05-31",
+    "destination": "/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-may-2026-2026-05-31",
+    "destination": "/:locale/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-may-2026-2026-05-30",
+    "destination": "/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-may-2026-2026-05-30",
+    "destination": "/:locale/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-may-2026-2026-05-29",
+    "destination": "/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-may-2026-2026-05-29",
+    "destination": "/:locale/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-may-2026-2026-05-28",
+    "destination": "/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-may-2026-2026-05-28",
+    "destination": "/:locale/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-may-2026-2026-05-27",
+    "destination": "/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-may-2026-2026-05-27",
+    "destination": "/:locale/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-may-2026-2026-05-26",
+    "destination": "/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-may-2026-2026-05-26",
+    "destination": "/:locale/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-may-2026-2026-05-25",
+    "destination": "/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-may-2026-2026-05-25",
+    "destination": "/:locale/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-may-2026-2026-05-24",
+    "destination": "/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-may-2026-2026-05-24",
+    "destination": "/:locale/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-may-2026-2026-05-23",
+    "destination": "/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-may-2026-2026-05-23",
+    "destination": "/:locale/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-may-2026-2026-05-22",
+    "destination": "/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-may-2026-2026-05-22",
+    "destination": "/:locale/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-may-2026-2026-05-21",
+    "destination": "/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-may-2026-2026-05-21",
+    "destination": "/:locale/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-may-2026-2026-05-20",
+    "destination": "/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-may-2026-2026-05-20",
+    "destination": "/:locale/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-may-2026-2026-05-19",
+    "destination": "/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-may-2026-2026-05-19",
+    "destination": "/:locale/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-may-2026-2026-05-18",
+    "destination": "/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-may-2026-2026-05-18",
+    "destination": "/:locale/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-may-2026-2026-05-17",
+    "destination": "/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-may-2026-2026-05-17",
+    "destination": "/:locale/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-may-2026-2026-05-16",
+    "destination": "/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-may-2026-2026-05-16",
+    "destination": "/:locale/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-may-2026-2026-05-15",
+    "destination": "/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-may-2026-2026-05-15",
+    "destination": "/:locale/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-may-2026-2026-05-14",
+    "destination": "/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-may-2026-2026-05-14",
+    "destination": "/:locale/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-may-2026-2026-05-13",
+    "destination": "/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-may-2026-2026-05-13",
+    "destination": "/:locale/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-may-2026-2026-05-12",
+    "destination": "/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-may-2026-2026-05-12",
+    "destination": "/:locale/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-may-2026-2026-05-11",
+    "destination": "/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-may-2026-2026-05-11",
+    "destination": "/:locale/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-may-2026-2026-05-10",
+    "destination": "/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-may-2026-2026-05-10",
+    "destination": "/:locale/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-may-2026-2026-05-9",
+    "destination": "/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-may-2026-2026-05-9",
+    "destination": "/:locale/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-may-2026-2026-05-8",
+    "destination": "/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-may-2026-2026-05-8",
+    "destination": "/:locale/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-may-2026-2026-05-7",
+    "destination": "/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-may-2026-2026-05-7",
+    "destination": "/:locale/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-may-2026-2026-05-6",
+    "destination": "/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-may-2026-2026-05-6",
+    "destination": "/:locale/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-may-2026-2026-05-5",
+    "destination": "/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-may-2026-2026-05-5",
+    "destination": "/:locale/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-may-2026-2026-05-4",
+    "destination": "/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-may-2026-2026-05-4",
+    "destination": "/:locale/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-may-2026-2026-05-3",
+    "destination": "/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-may-2026-2026-05-3",
+    "destination": "/:locale/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-may-2026-2026-05-2",
+    "destination": "/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-may-2026-2026-05-2",
+    "destination": "/:locale/blog/vpn-guide-tips-may-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-june-2026-2026-06-9",
+    "destination": "/blog/vpn-guide-tips-june-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-june-2026-2026-06-9",
+    "destination": "/:locale/blog/vpn-guide-tips-june-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-june-2026-2026-06-8",
+    "destination": "/blog/vpn-guide-tips-june-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-june-2026-2026-06-8",
+    "destination": "/:locale/blog/vpn-guide-tips-june-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-june-2026-2026-06-7",
+    "destination": "/blog/vpn-guide-tips-june-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-june-2026-2026-06-7",
+    "destination": "/:locale/blog/vpn-guide-tips-june-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-june-2026-2026-06-6",
+    "destination": "/blog/vpn-guide-tips-june-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-june-2026-2026-06-6",
+    "destination": "/:locale/blog/vpn-guide-tips-june-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-june-2026-2026-06-5",
+    "destination": "/blog/vpn-guide-tips-june-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-june-2026-2026-06-5",
+    "destination": "/:locale/blog/vpn-guide-tips-june-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-june-2026-2026-06-4",
+    "destination": "/blog/vpn-guide-tips-june-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-june-2026-2026-06-4",
+    "destination": "/:locale/blog/vpn-guide-tips-june-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-june-2026-2026-06-3",
+    "destination": "/blog/vpn-guide-tips-june-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-june-2026-2026-06-3",
+    "destination": "/:locale/blog/vpn-guide-tips-june-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-june-2026-2026-06-2",
+    "destination": "/blog/vpn-guide-tips-june-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-june-2026-2026-06-2",
+    "destination": "/:locale/blog/vpn-guide-tips-june-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-june-2026-2026-06",
+    "destination": "/blog/vpn-guide-tips-june-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-june-2026-2026-06",
+    "destination": "/:locale/blog/vpn-guide-tips-june-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-april-2026-2026-04-2",
+    "destination": "/blog/vpn-guide-tips-april-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-april-2026-2026-04-2",
+    "destination": "/:locale/blog/vpn-guide-tips-april-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-april-2026-2026-04",
+    "destination": "/blog/vpn-guide-tips-april-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-april-2026-2026-04",
+    "destination": "/:locale/blog/vpn-guide-tips-april-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-social-security-number-protection-identity-theft-2026-06",
+    "destination": "/blog/vpn-social-security-number-protection-identity-theft",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-social-security-number-protection-identity-theft-2026-06",
+    "destination": "/:locale/blog/vpn-social-security-number-protection-identity-theft",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-residential-proxy-detection-2026-2026-06",
+    "destination": "/blog/vpn-residential-proxy-detection-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-residential-proxy-detection-2026-2026-06",
+    "destination": "/:locale/blog/vpn-residential-proxy-detection-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-browser-fingerprinting-tracking-2026-2026-06",
+    "destination": "/blog/vpn-browser-fingerprinting-tracking-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-browser-fingerprinting-tracking-2026-2026-06",
+    "destination": "/:locale/blog/vpn-browser-fingerprinting-tracking-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-facial-recognition-bypass-ai-identification-2026-2026-06",
+    "destination": "/blog/vpn-facial-recognition-bypass-ai-identification-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-facial-recognition-bypass-ai-identification-2026-2026-06",
+    "destination": "/:locale/blog/vpn-facial-recognition-bypass-ai-identification-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-chatgpt-privacy-data-leaks-2026-2026-05",
+    "destination": "/blog/vpn-chatgpt-privacy-data-leaks-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-chatgpt-privacy-data-leaks-2026-2026-05",
+    "destination": "/:locale/blog/vpn-chatgpt-privacy-data-leaks-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-background-app-refresh-location-leak-ios-android-2026-2026-05",
+    "destination": "/blog/vpn-background-app-refresh-location-leak-ios-android-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-background-app-refresh-location-leak-ios-android-2026-2026-05",
+    "destination": "/:locale/blog/vpn-background-app-refresh-location-leak-ios-android-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-deepfake-video-calls-verification-2026-2026-05",
+    "destination": "/blog/vpn-deepfake-video-calls-verification-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-deepfake-video-calls-verification-2026-2026-05",
+    "destination": "/:locale/blog/vpn-deepfake-video-calls-verification-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-mortgage-applications-lender-detection-2026-2026-05",
+    "destination": "/blog/vpn-mortgage-applications-lender-detection-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-mortgage-applications-lender-detection-2026-2026-05",
+    "destination": "/:locale/blog/vpn-mortgage-applications-lender-detection-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-car-wifi-hotspots-secure-connected-vehicle-2026-05",
+    "destination": "/blog/vpn-car-wifi-hotspots-secure-connected-vehicle",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-car-wifi-hotspots-secure-connected-vehicle-2026-05",
+    "destination": "/:locale/blog/vpn-car-wifi-hotspots-secure-connected-vehicle",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-hotel-room-keys-keycard-cloning-security-2026-2026-05",
+    "destination": "/blog/vpn-hotel-room-keys-keycard-cloning-security-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-hotel-room-keys-keycard-cloning-security-2026-2026-05",
+    "destination": "/:locale/blog/vpn-hotel-room-keys-keycard-cloning-security-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-school-wifi-student-data-protection-2026-2026-05",
+    "destination": "/blog/vpn-school-wifi-student-data-protection-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-school-wifi-student-data-protection-2026-2026-05",
+    "destination": "/:locale/blog/vpn-school-wifi-student-data-protection-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-hotel-wifi-protect-credit-card-passport-2026-2026-04",
+    "destination": "/blog/vpn-hotel-wifi-protect-credit-card-passport-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-hotel-wifi-protect-credit-card-passport-2026-2026-04",
+    "destination": "/:locale/blog/vpn-hotel-wifi-protect-credit-card-passport-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-contactless-payments-apple-pay-google-pay-crypto-wallets-2026-2026-04",
+    "destination": "/blog/vpn-contactless-payments-apple-pay-google-pay-crypto-wallets-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-contactless-payments-apple-pay-google-pay-crypto-wallets-2026-2026-04",
+    "destination": "/:locale/blog/vpn-contactless-payments-apple-pay-google-pay-crypto-wallets-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-connection-pooling-vs-dedicated-ips-2026-2026-03",
+    "destination": "/blog/vpn-connection-pooling-vs-dedicated-ips-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-connection-pooling-vs-dedicated-ips-2026-2026-03",
+    "destination": "/:locale/blog/vpn-connection-pooling-vs-dedicated-ips-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-connection-pooling-vs-dedicated-ips-anonymity-2026-2026-03",
+    "destination": "/blog/vpn-connection-pooling-vs-dedicated-ips-anonymity-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-connection-pooling-vs-dedicated-ips-anonymity-2026-2026-03",
+    "destination": "/:locale/blog/vpn-connection-pooling-vs-dedicated-ips-anonymity-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-custody-laws-2026-data-handover-countries-2026-03",
+    "destination": "/blog/vpn-custody-laws-2026-data-handover-countries",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-custody-laws-2026-data-handover-countries-2026-03",
+    "destination": "/:locale/blog/vpn-custody-laws-2026-data-handover-countries",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-march-2026-2026-03",
+    "destination": "/blog/vpn-guide-tips-march-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-march-2026-2026-03",
+    "destination": "/:locale/blog/vpn-guide-tips-march-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-price-comparison-best-deals-2026-03",
+    "destination": "/blog/vpn-price-comparison-best-deals",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-price-comparison-best-deals-2026-03",
+    "destination": "/:locale/blog/vpn-price-comparison-best-deals",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-guide-tips-february-2026-2026-02",
+    "destination": "/blog/vpn-guide-tips-february-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-guide-tips-february-2026-2026-02",
+    "destination": "/:locale/blog/vpn-guide-tips-february-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/best-vpn-for-iran-2026-bypass-internet-censorship-2026-02",
+    "destination": "/blog/best-vpn-for-iran-2026-bypass-internet-censorship",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/best-vpn-for-iran-2026-bypass-internet-censorship-2026-02",
+    "destination": "/:locale/blog/best-vpn-for-iran-2026-bypass-internet-censorship",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-encryption-protocols-wireguard-openvpn-ikev2-2026-2026-02",
+    "destination": "/blog/vpn-encryption-protocols-wireguard-openvpn-ikev2-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-encryption-protocols-wireguard-openvpn-ikev2-2026-2026-02",
+    "destination": "/:locale/blog/vpn-encryption-protocols-wireguard-openvpn-ikev2-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-logging-policies-decoded-2026-2026-02",
+    "destination": "/blog/vpn-logging-policies-decoded-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-logging-policies-decoded-2026-2026-02",
+    "destination": "/:locale/blog/vpn-logging-policies-decoded-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-ai-model-training-prevent-data-harvesting-llms-2026",
+    "destination": "/blog/vpn-ai-model-training-prevent-data-harvesting-llm-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-ai-model-training-prevent-data-harvesting-llms-2026",
+    "destination": "/:locale/blog/vpn-ai-model-training-prevent-data-harvesting-llm-2026",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-data-breaches-2026-hacked-providers-privacy",
+    "destination": "/blog/vpn-data-breaches-2026-which-vpns-hacked",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-data-breaches-2026-hacked-providers-privacy",
+    "destination": "/:locale/blog/vpn-data-breaches-2026-which-vpns-hacked",
+    "permanent": true
+  },
+  {
+    "source": "/blog/vpn-location-spoofing-internet-speed-2026-performance-test",
+    "destination": "/blog/vpn-location-spoofing-internet-speed-performance-test-2026",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-location-spoofing-internet-speed-2026-performance-test",
+    "destination": "/:locale/blog/vpn-location-spoofing-internet-speed-performance-test-2026",
+    "permanent": true
+  }
+]

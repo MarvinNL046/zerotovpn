@@ -4,6 +4,7 @@ import { routing } from "@/i18n/routing";
 import { getAllDynamicCountries } from "@/lib/country-data";
 import { getAllPublishedSlugs } from "@/lib/pipeline/blog-service";
 import discoveredStaticRoutes from "@/lib/sitemap-static-routes.generated.json";
+import { LINKED_COMPARISONS } from "@/lib/linked-comparisons";
 
 type SitemapEntry = MetadataRoute.Sitemap[number];
 type ChangeFrequency = NonNullable<SitemapEntry["changeFrequency"]>;
@@ -103,18 +104,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     });
   }
 
-  // 3) Dynamic comparison pages: all generated combinations.
-  for (let i = 0; i < vpns.length; i++) {
-    for (let j = i + 1; j < vpns.length; j++) {
-      const slug1 = vpns[i].slug;
-      const slug2 = vpns[j].slug;
-      // NordVPN comparison pages get higher priority (0.85 vs 0.7)
-      const isNordVpnComparison = slug1 === "nordvpn" || slug2 === "nordvpn";
-      addLocalizedPath(`/compare/${slug1}-vs-${slug2}`, {
-        priority: isNordVpnComparison ? 0.85 : 0.7,
-        changeFrequency: "weekly",
-      });
-    }
+  // 3) Comparison pages: alleen de combinaties die we ook echt linken en
+  //    voorrenderen. Alle 703 paarsgewijze combinaties adverteren leverde
+  //    ~6.300 URL's op waarvan er 9 bereikbaar waren vanaf de site.
+  for (const comparison of LINKED_COMPARISONS) {
+    const isNordVpnComparison = comparison.includes("nordvpn");
+    addLocalizedPath(`/compare/${comparison}`, {
+      priority: isNordVpnComparison ? 0.85 : 0.7,
+      changeFrequency: "weekly",
+    });
   }
 
   // 4) Dynamic country pages.

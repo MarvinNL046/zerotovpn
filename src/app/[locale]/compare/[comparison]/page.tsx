@@ -17,6 +17,8 @@ import { LastUpdated } from "@/components/last-updated";
 import { FaqSchema } from "@/components/structured-data";
 import { getRelatedContent, reviewLink } from "@/lib/content-links";
 import { RelatedContent } from "@/components/seo/related-content";
+// Gedeeld met de sitemap, zodat we nooit meer adverteren dan we linken.
+import { LINKED_COMPARISONS } from "@/lib/linked-comparisons";
 
 type Props = {
   params: Promise<{ locale: string; comparison: string }>;
@@ -24,21 +26,6 @@ type Props = {
 
 const baseUrl = "https://www.zerotovpn.com";
 export const revalidate = 86400;
-
-// De enige vergelijkingen die de site linkt/crawlt (content-links.ts +
-// PopularComparisons). Vooraf renderen zodat crawlers Postgres niet raken;
-// een handmatig getypte andere combinatie rendert on-demand (ISR).
-const LINKED_COMPARISONS = [
-  "nordvpn-vs-surfshark",
-  "nordvpn-vs-expressvpn",
-  "nordvpn-vs-cyberghost",
-  "nordvpn-vs-protonvpn",
-  "surfshark-vs-expressvpn",
-  "surfshark-vs-cyberghost",
-  "surfshark-vs-protonvpn",
-  "expressvpn-vs-cyberghost",
-  "protonvpn-vs-mullvad",
-];
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>

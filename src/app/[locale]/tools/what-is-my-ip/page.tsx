@@ -6,6 +6,7 @@ import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { FAQAccordion } from "@/components/seo/faq-schema";
 import { Globe, Shield, Eye, Wifi } from "lucide-react";
 import type { Metadata } from "next";
+import { generateAlternates } from "@/lib/seo-utils";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -18,9 +19,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: t("pageTitle"),
     description: t("pageSubtitle"),
-    alternates: {
-      canonical: `https://zerotovpn.com/${locale}/tools/what-is-my-ip`,
-    },
+    // Canonicaliseerde naar de apex (307) én naar /en/…, een pad dat onder
+    // localePrefix "as-needed" niet bestaat. generateAlternates doet het goed
+    // en levert meteen de hreflang-set die hier ontbrak.
+    alternates: generateAlternates("/tools/what-is-my-ip", locale),
   };
 }
 

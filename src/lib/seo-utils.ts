@@ -5,7 +5,9 @@
 
 import { routing } from "@/i18n/routing";
 
-const BASE_URL = "https://www.zerotovpn.com";
+// Altijd www: de apex stuurt met een 307 door, dus een apex-URL in een
+// canonical, breadcrumb of JSON-LD laat elke crawler op een omleiding landen.
+export const BASE_URL = "https://www.zerotovpn.com";
 
 /**
  * Generates correct canonical URL and hreflang alternates for any page path.

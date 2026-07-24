@@ -27,6 +27,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
+import { generateAlternates } from "@/lib/seo-utils";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -34,7 +35,8 @@ type Props = {
 
 const baseUrl = "https://www.zerotovpn.com";
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
   return {
     metadataBase: new URL(baseUrl),
     title: "About ZeroToVPN | Our Testing Methodology",
@@ -44,9 +46,9 @@ export async function generateMetadata(): Promise<Metadata> {
       index: true,
       follow: true,
     },
-    alternates: {
-      canonical: `${baseUrl}/about`,
-    },
+    // Was hardgecodeerd op de Engelse URL, waardoor alle 9 taalvarianten
+    // naar /about zelf-canonicaliseerden en de vertalingen uit de index vielen.
+    alternates: generateAlternates("/about", locale),
     openGraph: {
       title: "About ZeroToVPN | Our Testing Methodology",
       description:

@@ -84,10 +84,18 @@ export function SecurityBanner() {
 
         {/* CTA + dismiss */}
         <div className="flex items-center gap-3 shrink-0">
+          {/* Deze banner staat boven élke pagina, dus dit is de eerste
+              affiliate-link die een bezoeker ziet — nog vóór de disclosure in
+              de hero. Vandaar het zichtbare "Advertentie"-label: de FTC vraagt
+              om een melding die je ziet vóór je klikt. `nofollow` ontbrak,
+              waardoor we op elke pagina PageRank naar de adverteerder lekten. */}
+          <span className="hidden sm:inline text-[11px] font-medium uppercase tracking-wider text-white/80">
+            Ad
+          </span>
           <a
             href={getVpnAffiliateUrl("nordvpn")}
             target="_blank"
-            rel="noopener noreferrer sponsored"
+            rel="noopener noreferrer sponsored nofollow"
             className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-white text-red-600 text-sm font-bold rounded-lg hover:bg-white/90 transition-colors shadow-sm"
           >
             <Shield className="h-4 w-4" />

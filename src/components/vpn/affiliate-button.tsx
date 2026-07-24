@@ -13,6 +13,36 @@ interface AffiliateButtonProps {
   children?: React.ReactNode;
 }
 
+// Stuurt de klik naar /api/click zonder de navigatie op te houden.
+// sendBeacon is hier het juiste gereedschap: de browser levert het verzoek af
+// terwijl de pagina al aan het weg-navigeren is.
+function trackClick(vpnId: string) {
+  const payload = JSON.stringify({
+    vpnId,
+    page: window.location.pathname,
+    referrer: document.referrer,
+  });
+
+  try {
+    if (navigator.sendBeacon) {
+      navigator.sendBeacon(
+        "/api/click",
+        new Blob([payload], { type: "application/json" }),
+      );
+      return;
+    }
+    // Oudere browsers: keepalive zorgt dat het verzoek de unload overleeft.
+    void fetch("/api/click", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: payload,
+      keepalive: true,
+    }).catch(() => {});
+  } catch {
+    // Meten mag nooit een klik kosten.
+  }
+}
+
 export function AffiliateButton({
   vpnId,
   vpnName,
@@ -22,40 +52,26 @@ export function AffiliateButton({
   className,
   children,
 }: AffiliateButtonProps) {
-  const handleClick = async () => {
-    // Track the click
-    try {
-      await fetch("/api/click", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          vpnId,
-          page: window.location.pathname,
-          referrer: document.referrer,
-        }),
-      });
-    } catch (error) {
-      // Silently fail - don't block the user
-      console.error("Failed to track click:", error);
-    }
-
-    // Open affiliate link in new tab
-    window.open(affiliateUrl, "_blank", "noopener,noreferrer");
-  };
-
+  // Dit was een <button> met window.open() ná een await fetch(). Twee problemen:
+  // de link had geen href — dus onzichtbaar voor crawlers, geen rel-attributen,
+  // niet te middenklikken of te kopiëren — en window.open() viel door de await
+  // buiten het klik-gebaar, waardoor popup-blokkers 'm konden tegenhouden.
+  // Nu is het een echte link: de browser navigeert zelf, meten gebeurt ernaast.
   return (
-    <Button
-      variant={variant}
-      size={size}
-      onClick={handleClick}
-      className={className}
-    >
-      {children || (
-        <>
-          Visit {vpnName}
-          <ExternalLink className="ml-2 h-4 w-4" />
-        </>
-      )}
+    <Button asChild variant={variant} size={size} className={className}>
+      <a
+        href={affiliateUrl}
+        target="_blank"
+        rel="noopener noreferrer sponsored nofollow"
+        onClick={() => trackClick(vpnId)}
+      >
+        {children || (
+          <>
+            Visit {vpnName}
+            <ExternalLink className="ml-2 h-4 w-4" />
+          </>
+        )}
+      </a>
     </Button>
   );
 }

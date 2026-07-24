@@ -233,7 +233,7 @@ export function IpLookupWidget() {
               <a
                 href={getVpnAffiliateUrl("nordvpn")}
                 target="_blank"
-                rel="noopener noreferrer nofollow"
+                rel="noopener noreferrer sponsored nofollow"
                 className="inline-flex items-center gap-2 bg-white text-blue-700 font-bold px-6 py-3 rounded-lg hover:bg-white/90 transition-colors shrink-0 text-sm md:text-base"
                 onClick={() => {
                   fetch("/api/click", {

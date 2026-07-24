@@ -118,7 +118,7 @@ export default async function ToolsPage({ params }: Props) {
           <a
             href={getVpnAffiliateUrl("nordvpn")}
             target="_blank"
-            rel="noopener noreferrer nofollow"
+            rel="noopener noreferrer sponsored nofollow"
             className="inline-flex items-center gap-2 bg-white text-blue-700 font-bold px-8 py-3.5 rounded-xl hover:bg-white/90 transition-colors shrink-0 text-base shadow-lg"
           >
             <Shield className="h-5 w-5" />

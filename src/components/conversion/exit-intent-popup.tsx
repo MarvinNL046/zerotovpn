@@ -182,7 +182,7 @@ export function ExitIntentPopup() {
                 <a
                   href={topVpn.affiliateUrl}
                   target="_blank"
-                  rel="sponsored noopener noreferrer"
+                  rel="sponsored nofollow noopener noreferrer"
                   onClick={handleClose}
                 >
                   {t("exitIntent.claimDeal")}

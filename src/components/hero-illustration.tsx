@@ -115,7 +115,7 @@ export function HeroIllustration({ className }: HeroIllustrationProps) {
                   <a
                     href={getVpnAffiliateUrl("nordvpn")}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener noreferrer sponsored nofollow"
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary text-primary-foreground text-xs font-semibold rounded-lg hover:bg-primary/90 transition-colors"
                   >
                     <Shield className="h-3 w-3" />

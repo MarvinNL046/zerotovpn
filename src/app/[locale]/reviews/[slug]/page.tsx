@@ -7,6 +7,7 @@ import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { RatingStars } from "@/components/vpn/rating-stars";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
+import { AffiliateDisclosure } from "@/components/vpn/affiliate-disclosure";
 import { UserReviewsList } from "@/components/reviews/user-reviews-list";
 import { ReviewForm } from "@/components/reviews/review-form";
 import { getVpnBySlug, getAllVpns } from "@/lib/vpn-data-layer";
@@ -717,6 +718,11 @@ export default async function ReviewPage({ params }: Props) {
                   {t("getVpnPrice", { name: vpn.name, price: String(vpn.priceTwoYear || vpn.priceYearly) })}
                 </AffiliateButton>
               </div>
+
+              {/* Disclosure hoort bij de knop, niet 1.200 regels lager in de
+                  footer: de FTC vraagt om een melding die de lezer ziet vóór
+                  hij op de affiliate-link klikt. */}
+              <AffiliateDisclosure tone="onDark" className="max-w-xl" />
             </div>
 
             {/* Quick Stats Card — dark styled */}
@@ -811,7 +817,7 @@ export default async function ReviewPage({ params }: Props) {
               <a
                 href={getVpnAffiliateUrl("nordvpn")}
                 target="_blank"
-                rel="noopener noreferrer nofollow"
+                rel="noopener noreferrer sponsored nofollow"
                 className="text-sm bg-orange-500 hover:bg-orange-600 text-white rounded-full px-4 py-1.5 font-medium shadow-sm shadow-orange-500/25 transition"
               >
                 Get NordVPN →

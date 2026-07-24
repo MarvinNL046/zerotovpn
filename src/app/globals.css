@@ -6,8 +6,10 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Gezet door next/font in src/app/layout.tsx. Verwees hiervoor naar
+     --font-geist-sans/-mono, variabelen die nergens gedefinieerd werden. */
+  --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -601,6 +603,67 @@
   margin-right: auto;
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Designsysteem — semantische klassen
+   ─────────────────────────────────────────────────────────────────────────
+   De site had tokens en losse primitives, maar geen laag ertussen: elke
+   pagina schreef `<section className="py-16 lg:py-24"><div class="container">`
+   opnieuw uit. 133 paginabestanden, ~590 regels per stuk. Deze klassen (plus
+   de componenten in src/components/layout) zijn die ontbrekende laag, zodat
+   ritme en typografie op één plek staan in plaats van 133.
+
+   Greppable met opzet: `grep -c section-shell src/app` laat zien hoever de
+   uitrol is.
+   ───────────────────────────────────────────────────────────────────────── */
+@layer components {
+  .section-shell {
+    padding-block: 4rem;
+  }
+  @media (min-width: 1024px) {
+    .section-shell {
+      padding-block: 6rem;
+    }
+  }
+
+  /* Kleine bovenkop boven een sectietitel ("Onafhankelijk getest"). */
+  .section-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--primary);
+  }
+
+  .section-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+  @media (min-width: 1024px) {
+    .section-title {
+      font-size: 2.5rem;
+    }
+  }
+
+  .section-lead {
+    max-width: 65ch;
+    color: var(--muted-foreground);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+  }
+
+  /* Meetwaarden: snelheden, prijzen, scores. Vaste cijferbreedte zodat
+     kolommen in vergelijkingstabellen recht onder elkaar staan — precies
+     waar deze site het van moet hebben. */
+  .metric {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum";
+  }
 }
 
 @media (min-width: 640px) {

@@ -7,7 +7,7 @@ import {
   Gift, Smartphone, Laptop, Monitor, Apple, Wrench, ShieldAlert, BarChart3,
   FlaskConical, BookOpen, ArrowLeftRight, Newspaper, FileText,
 } from "lucide-react";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useId } from "react";
 import { useTranslations } from "next-intl";
 import { LanguageSwitcher } from "./language-switcher";
 import { ThemeToggle } from "./theme-toggle";
@@ -26,6 +26,8 @@ function MegaMenu({
   onToggle: () => void;
 }) {
   const menuRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const panelId = `megamenu-${useId()}`;
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -33,18 +35,38 @@ function MegaMenu({
         if (isOpen) onToggle();
       }
     }
+    // Het menu sloot alleen op een muisklik buiten het menu, dus wie met het
+    // toetsenbord navigeerde zat eraan vast. Escape sluit nu en geeft de focus
+    // terug aan de knop die het opende.
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape" && isOpen) {
+        onToggle();
+        triggerRef.current?.focus();
+      }
+    }
     document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
   }, [isOpen, onToggle]);
 
   return (
     <div className="relative" ref={menuRef}>
-      <button onClick={onToggle} className="inline-flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary text-muted-foreground">
+      <button
+        ref={triggerRef}
+        onClick={onToggle}
+        aria-expanded={isOpen}
+        aria-haspopup="true"
+        aria-controls={panelId}
+        className="inline-flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary text-muted-foreground"
+      >
         {trigger}
-        <ChevronDown className={cn("h-3.5 w-3.5 transition-transform", isOpen && "rotate-180")} />
+        <ChevronDown className={cn("h-3.5 w-3.5 transition-transform", isOpen && "rotate-180")} aria-hidden="true" />
       </button>
       {isOpen && (
-        <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-background border rounded-xl shadow-xl p-5 z-50 min-w-[480px]">
+        <div id={panelId} className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-background border rounded-xl shadow-xl p-5 z-50 min-w-[480px]">
           {children}
         </div>
       )}

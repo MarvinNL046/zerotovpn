@@ -250,11 +250,15 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-slate-700/50 mt-8 pt-8 space-y-4">
-          <p className="text-xs text-slate-500 text-center">
+        {/* De affiliate-disclosure stond in text-slate-500 op bg-slate-900:
+            ongeveer 3,6:1 contrast, onder de AA-drempel van 4,5:1 — juist bij
+            de tekst die volgens de FTC leesbaar móét zijn. slate-400 haalt ~6:1.
+            En text-xs maakte 'm nog kleiner dan de copyright eronder. */}
+        <div className="border-t border-slate-700/50 mt-8 pt-8 flex flex-col gap-4">
+          <p className="text-sm text-slate-300 text-center">
             {t("disclaimer")}
           </p>
-          <p className="text-sm text-slate-500 text-center">
+          <p className="text-sm text-slate-400 text-center">
             {t("copyright", { year: currentYear })}
           </p>
         </div>

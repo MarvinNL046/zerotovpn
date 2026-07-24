@@ -142,9 +142,20 @@ export default async function LocaleLayout({ children, params }: Props) {
       >
         <NextIntlClientProvider messages={messages}>
           <div className="relative flex min-h-screen flex-col">
+            {/* Toetsenbord- en schermlezergebruikers moesten eerst door de
+                banner en het volledige mega-menu heen voordat ze bij de
+                inhoud kwamen. Alleen zichtbaar zodra hij focus krijgt. */}
+            <a
+              href="#main"
+              className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
+            >
+              Skip to content
+            </a>
             <SecurityBanner />
             <Header />
-            <main className="flex-1">{children}</main>
+            <main id="main" className="flex-1">
+              {children}
+            </main>
             <Footer />
             {/* Conversion optimization components */}
             <LazyConversionWidgets />

@@ -16,6 +16,14 @@ export interface VpnProvider {
   priceMonthly: number;
   priceYearly: number;
   priceTwoYear?: number;
+  /**
+   * Wanneer deze prijzen voor het laatst bij de bron zijn nagekeken (ISO-datum),
+   * en waar. Zonder deze twee velden kan niemand zien of een prijs van vorige
+   * week of van vorig jaar is — en op een vergelijkingssite is een verkeerde
+   * prijs schadelijker dan een verouderd font. Ontbreekt = nooit geverifieerd.
+   */
+  priceLastVerified?: string;
+  priceSource?: string;
   moneyBackDays: number;
   freeTier: boolean;
   servers: number;
@@ -53,7 +61,9 @@ export const vpnProviders: VpnProvider[] = [
     affiliateUrl: getVpnAffiliateUrl("nordvpn"),
     priceMonthly: 12.99,
     priceYearly: 4.99,
-    priceTwoYear: 2.99,
+    priceTwoYear: 3.09,
+    priceLastVerified: "2026-07-25",
+    priceSource: "https://cybernews.com/best-vpn/nordvpn-review/nordvpn-cost/",
     moneyBackDays: 30,
     freeTier: false,
     servers: 7400,
@@ -99,7 +109,9 @@ export const vpnProviders: VpnProvider[] = [
     affiliateUrl: getVpnAffiliateUrl("surfshark"),
     priceMonthly: 15.45,
     priceYearly: 3.19,
-    priceTwoYear: 1.99,
+    priceTwoYear: 2.49,
+    priceLastVerified: "2026-07-25",
+    priceSource: "https://cybernews.com/best-vpn/surfshark-review/surfshark-cost/",
     moneyBackDays: 30,
     freeTier: false,
     servers: 4500,
@@ -143,8 +155,11 @@ export const vpnProviders: VpnProvider[] = [
     ogImage: "/vpn-images/expressvpn-og.webp",
     website: getVpnWebsiteUrl("expressvpn"),
     affiliateUrl: getVpnAffiliateUrl("expressvpn"),
-    priceMonthly: 12.95,
-    priceYearly: 8.32,
+    priceMonthly: 12.99,
+    priceYearly: 4.99,
+    priceTwoYear: 3.49,
+    priceLastVerified: "2026-07-25",
+    priceSource: "https://www.security.org/vpn/expressvpn/",
     moneyBackDays: 30,
     freeTier: false,
     servers: 3000,
@@ -236,7 +251,9 @@ export const vpnProviders: VpnProvider[] = [
     affiliateUrl: getVpnAffiliateUrl("protonvpn"),
     priceMonthly: 9.99,
     priceYearly: 4.99,
-    priceTwoYear: 2.49,
+    priceTwoYear: 2.99,
+    priceLastVerified: "2026-07-25",
+    priceSource: "https://vpnpro.com/best-vpn-services/proton-vpn-pricing-2026/",
     moneyBackDays: 30,
     freeTier: true,
     servers: 15000,

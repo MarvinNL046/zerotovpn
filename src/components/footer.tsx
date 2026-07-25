@@ -76,6 +76,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/best/vpn-port-forwarding"
+                  className="text-slate-400 hover:text-orange-400"
+                >
+                  {t("portForwarding")}
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/best/vpn-gaming"
                   className="text-slate-400 hover:text-orange-400"
                 >

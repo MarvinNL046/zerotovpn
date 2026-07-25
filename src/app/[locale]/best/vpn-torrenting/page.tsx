@@ -442,7 +442,8 @@ export default async function VpnTorrentingPage({ params }: Props) {
   const t = content[locale as keyof typeof content] || content.en;
 
   const relatedPages = [
-    { title: "Best Cheap VPN", description: "Budget VPNs from $1.99/mo with P2P support.", href: "/best/vpn-cheap", icon: "price" as const },
+    { title: "VPNs with port forwarding", description: "Who still offers it, and what you actually get.", href: "/best/vpn-port-forwarding" },
+            { title: "Best Cheap VPN", description: "Budget VPNs from $1.99/mo with P2P support.", href: "/best/vpn-cheap", icon: "price" as const },
     { title: "Best VPN for Streaming", description: "VPNs that unblock Netflix, Disney+, and more.", href: "/best/vpn-streaming", icon: "play" as const },
     { title: "Best Free VPN", description: "Free VPNs with limited P2P support.", href: "/best/free-vpn", icon: "gift" as const },
   ];

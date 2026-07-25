@@ -536,7 +536,7 @@ export default async function FreeVpnPage({ params }: Props) {
                   },
                   {
                     question: "Which free VPN is best for streaming?",
-                    answer: "ProtonVPN Free and Windscribe Free are the only free VPNs that work with some streaming services. However, both have significant limitations - ProtonVPN Free only allows 1 device and has slower speeds, while Windscribe limits you to 10GB/month. For reliable streaming access to Netflix, Hulu, and other platforms, you'll need a paid VPN like NordVPN ($2.99/month) or Surfshark ($1.99/month)."
+                    answer: `ProtonVPN Free and Windscribe Free are the only free VPNs that work with some streaming services. However, both have significant limitations - ProtonVPN Free only allows 1 device and has slower speeds, while Windscribe limits you to 10GB/month. For reliable streaming access to Netflix, Hulu, and other platforms, you'll need a paid VPN like NordVPN ($${getVpnById("nordvpn")!.priceTwoYear}/month) or Surfshark ($${getVpnById("surfshark")!.priceTwoYear}/month).`
                   },
                   {
                     question: "Do free VPNs sell your data?",

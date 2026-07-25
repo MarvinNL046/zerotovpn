@@ -160,6 +160,8 @@ export default async function IranVpnPage({ params }: Props) {
         "X (Twitter), Facebook",
         "Google Play Store — restricted",
         "Independent news sites (BBC Persian, Iran International, IranWire)",
+        "Gmail and Google services — throttled rather than fully blocked",
+        "Zoom, Skype — heavily monitored",
       ],
       tips: "Practical Steps Before Traveling to Iran",
       tipsList: [
@@ -169,6 +171,8 @@ export default async function IranVpnPage({ params }: Props) {
         "Have at least 2 different VPN providers installed — servers rotate through blocks constantly",
         "Consider VLESS-based tools as a backup (V2Ray, Xray) — these currently have the lowest detection rates",
         "Mobile data may work when home WiFi doesn't — ISP-level blocks vary",
+        "Save mirror download URLs before travelling — ExpressVPN and others host copies of their site for when the main domain is blocked",
+        "Connect to nearby servers (Turkey, Dubai, Armenia) — these give the best speed and stability from Iran",
       ],
       faqTitle: "Iran VPN FAQ",
       faqs: [
@@ -277,6 +281,8 @@ export default async function IranVpnPage({ params }: Props) {
         "X (Twitter), Facebook",
         "Google Play Store — beperkt",
         "Onafhankelijke nieuwssites (BBC Persian, Iran International, IranWire)",
+        "Gmail en Google-diensten — afgeknepen in plaats van volledig geblokkeerd",
+        "Zoom, Skype — zwaar gemonitord",
       ],
       tips: "Praktische Stappen Voor Reizen naar Iran",
       tipsList: [
@@ -286,6 +292,8 @@ export default async function IranVpnPage({ params }: Props) {
         "Heb minstens 2 verschillende VPN-providers geïnstalleerd — servers roteren door blokkades",
         "Overweeg VLESS-tools als backup (V2Ray, Xray) — deze hebben momenteel de laagste detectieratio's",
         "Mobiele data werkt soms wanneer WiFi niet werkt — ISP-blokkades variëren",
+        "Bewaar mirror-download-URL's vóór vertrek — ExpressVPN en anderen hosten kopieën van hun site voor wanneer het hoofddomein geblokkeerd is",
+        "Verbind met nabije servers (Turkije, Dubai, Armenië) — die geven de beste snelheid en stabiliteit vanuit Iran",
       ],
       faqTitle: "Iran VPN FAQ",
       faqs: [
@@ -394,6 +402,8 @@ export default async function IranVpnPage({ params }: Props) {
         "X (Twitter), Facebook",
         "Google Play Store — eingeschränkt",
         "Unabhängige Nachrichtenseiten (BBC Persian, Iran International, IranWire)",
+        "Gmail und Google-Dienste — gedrosselt statt vollständig blockiert",
+        "Zoom, Skype — stark überwacht",
       ],
       tips: "Praktische Schritte Vor der Reise in den Iran",
       tipsList: [
@@ -403,6 +413,8 @@ export default async function IranVpnPage({ params }: Props) {
         "Haben Sie mindestens 2 verschiedene VPN-Anbieter installiert — Server rotieren ständig durch Blockaden",
         "Erwägen Sie VLESS-basierte Tools als Backup (V2Ray, Xray) — diese haben derzeit die niedrigsten Erkennungsraten",
         "Mobile Daten können funktionieren, wenn Heim-WiFi nicht geht — ISP-Blockaden variieren",
+        "Mirror-Download-URLs vor der Reise speichern — ExpressVPN und andere hosten Kopien ihrer Website, wenn die Hauptdomain blockiert ist",
+        "Mit nahegelegenen Servern verbinden (Türkei, Dubai, Armenien) — diese bieten die beste Geschwindigkeit und Stabilität aus dem Iran",
       ],
       faqTitle: "Iran VPN FAQ",
       faqs: [
@@ -511,6 +523,8 @@ export default async function IranVpnPage({ params }: Props) {
         "X (Twitter), Facebook",
         "Google Play Store — restringido",
         "Sitios de noticias independientes (BBC Persian, Iran International, IranWire)",
+        "Gmail y servicios de Google — limitados en lugar de bloqueados por completo",
+        "Zoom, Skype — fuertemente monitorizados",
       ],
       tips: "Pasos Prácticos Antes de Viajar a Irán",
       tipsList: [
@@ -520,6 +534,8 @@ export default async function IranVpnPage({ params }: Props) {
         "Tenga al menos 2 proveedores VPN diferentes instalados — los servidores rotan constantemente por bloqueos",
         "Considere herramientas basadas en VLESS como respaldo (V2Ray, Xray) — actualmente tienen las tasas de detección más bajas",
         "Los datos móviles pueden funcionar cuando el WiFi del hogar no — los bloqueos por ISP varían",
+        "Guarda las URL de descarga espejo antes de viajar — ExpressVPN y otros alojan copias de su sitio para cuando el dominio principal está bloqueado",
+        "Conéctate a servidores cercanos (Turquía, Dubái, Armenia) — ofrecen la mejor velocidad y estabilidad desde Irán",
       ],
       faqTitle: "FAQ VPN Irán",
       faqs: [
@@ -628,6 +644,8 @@ export default async function IranVpnPage({ params }: Props) {
         "X (Twitter), Facebook",
         "Google Play Store — restreint",
         "Sites d'actualités indépendants (BBC Persian, Iran International, IranWire)",
+        "Gmail et les services Google — bridés plutôt que totalement bloqués",
+        "Zoom, Skype — fortement surveillés",
       ],
       tips: "Étapes Pratiques Avant de Voyager en Iran",
       tipsList: [
@@ -637,6 +655,8 @@ export default async function IranVpnPage({ params }: Props) {
         "Ayez au moins 2 fournisseurs VPN différents installés — les serveurs tournent constamment à travers les blocages",
         "Envisagez des outils basés sur VLESS en secours (V2Ray, Xray) — ceux-ci ont actuellement les taux de détection les plus bas",
         "Les données mobiles peuvent fonctionner quand le WiFi domestique ne fonctionne pas — les blocages par FAI varient",
+        "Enregistrez les URL de téléchargement miroir avant de partir — ExpressVPN et d'autres hébergent des copies de leur site lorsque le domaine principal est bloqué",
+        "Connectez-vous à des serveurs proches (Turquie, Dubaï, Arménie) — ils offrent la meilleure vitesse et stabilité depuis l'Iran",
       ],
       faqTitle: "FAQ VPN Iran",
       faqs: [
@@ -745,6 +765,8 @@ export default async function IranVpnPage({ params }: Props) {
         "X (Twitter)、Facebook",
         "Google Play Store——受限",
         "独立新闻网站（BBC波斯语、Iran International、IranWire）",
+        "Gmail 和 Google 服务 — 被限速而非完全封锁",
+        "Zoom、Skype — 受到严密监控",
       ],
       tips: "前往伊朗前的实际步骤",
       tipsList: [
@@ -754,6 +776,8 @@ export default async function IranVpnPage({ params }: Props) {
         "至少安装2个不同的VPN提供商——服务器不断轮换被封锁",
         "考虑基于VLESS的工具作为备份（V2Ray、Xray）——目前检测率最低",
         "移动数据在家庭WiFi不可用时可能有效——ISP级别的封锁各有不同",
+        "出发前保存镜像下载网址 — ExpressVPN 等提供商在主域名被封时会托管站点副本",
+        "连接邻近服务器（土耳其、迪拜、亚美尼亚）— 从伊朗访问速度最快、最稳定",
       ],
       faqTitle: "伊朗VPN常见问题",
       faqs: [
@@ -862,6 +886,8 @@ export default async function IranVpnPage({ params }: Props) {
         "X (Twitter)、Facebook",
         "Google Play Store——制限あり",
         "独立系ニュースサイト（BBCペルシャ語、Iran International、IranWire）",
+        "Gmail と Google サービス — 完全な遮断ではなく速度制限",
+        "Zoom、Skype — 厳重に監視されている",
       ],
       tips: "イラン渡航前の実践的ステップ",
       tipsList: [
@@ -871,6 +897,8 @@ export default async function IranVpnPage({ params }: Props) {
         "少なくとも2つの異なるVPNプロバイダーをインストール——サーバーは絶えずブロックをローテーション",
         "バックアップとしてVLESSベースのツール（V2Ray、Xray）を検討——現在最も低い検出率",
         "自宅WiFiが使えない時はモバイルデータが機能することも——ISPレベルのブロックは異なる",
+        "出発前にミラーダウンロードURLを保存する — ExpressVPN などは主要ドメインが遮断された際に備えてサイトの複製を用意している",
+        "近隣のサーバーに接続する（トルコ、ドバイ、アルメニア）— イランからは速度と安定性が最も良い",
       ],
       faqTitle: "イランVPN FAQ",
       faqs: [
@@ -979,6 +1007,8 @@ export default async function IranVpnPage({ params }: Props) {
         "X (Twitter), Facebook",
         "Google Play Store — 제한됨",
         "독립 뉴스 사이트 (BBC 페르시아어, Iran International, IranWire)",
+        "Gmail 및 Google 서비스 — 완전 차단이 아닌 속도 제한",
+        "Zoom, Skype — 강도 높은 감시 대상",
       ],
       tips: "이란 여행 전 실질적인 준비 단계",
       tipsList: [
@@ -988,6 +1018,8 @@ export default async function IranVpnPage({ params }: Props) {
         "최소 2개의 다른 VPN 제공업체를 설치 — 서버는 끊임없이 차단을 순환",
         "백업으로 VLESS 기반 도구 (V2Ray, Xray) 고려 — 현재 가장 낮은 탐지율",
         "가정 WiFi가 안 될 때 모바일 데이터가 작동할 수 있음 — ISP 수준 차단이 다름",
+        "출발 전에 미러 다운로드 주소를 저장하세요 — ExpressVPN 등은 기본 도메인이 차단될 때를 대비해 사이트 사본을 운영합니다",
+        "가까운 서버에 연결하세요(터키, 두바이, 아르메니아) — 이란에서 속도와 안정성이 가장 좋습니다",
       ],
       faqTitle: "이란 VPN FAQ",
       faqs: [
@@ -1096,6 +1128,8 @@ export default async function IranVpnPage({ params }: Props) {
         "X (Twitter), Facebook",
         "Google Play Store — ถูกจำกัด",
         "เว็บข่าวอิสระ (BBC Persian, Iran International, IranWire)",
+        "Gmail และบริการของ Google — ถูกจำกัดความเร็วแทนการบล็อกทั้งหมด",
+        "Zoom, Skype — ถูกเฝ้าติดตามอย่างเข้มงวด",
       ],
       tips: "ขั้นตอนปฏิบัติก่อนเดินทางไปอิหร่าน",
       tipsList: [
@@ -1105,6 +1139,8 @@ export default async function IranVpnPage({ params }: Props) {
         "ติดตั้งผู้ให้บริการ VPN อย่างน้อย 2 รายที่แตกต่างกัน — เซิร์ฟเวอร์หมุนเวียนผ่านการบล็อกอย่างต่อเนื่อง",
         "พิจารณาเครื่องมือที่ใช้ VLESS เป็นสำรอง (V2Ray, Xray) — ปัจจุบันมีอัตราการตรวจจับต่ำที่สุด",
         "ข้อมูลมือถืออาจใช้ได้เมื่อ WiFi ที่บ้านไม่ทำงาน — การบล็อกระดับ ISP แตกต่างกัน",
+        "บันทึก URL ดาวน์โหลดสำรองก่อนเดินทาง — ExpressVPN และรายอื่นมีสำเนาเว็บไซต์ไว้เมื่อโดเมนหลักถูกบล็อก",
+        "เชื่อมต่อกับเซิร์ฟเวอร์ใกล้เคียง (ตุรกี ดูไบ อาร์เมเนีย) — ให้ความเร็วและความเสถียรดีที่สุดจากอิหร่าน",
       ],
       faqTitle: "คำถามที่พบบ่อย VPN อิหร่าน",
       faqs: [

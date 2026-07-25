@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
+import { VpnFeatureCard, type VpnFeatureCardAccent } from "@/components/vpn/vpn-feature-card";
 import { RatingStars } from "@/components/vpn/rating-stars";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { FAQSchema } from "@/components/seo/faq-schema";
@@ -1412,75 +1413,31 @@ export default async function WindowsVpnPage({ params }: Props) {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {windowsVpns.map((item, index) =>
                 item.vpn ? (
-                  <Card
+                  <VpnFeatureCard
                     key={index}
-                    className={`relative border-2 border-${item.badgeColor}-500/50 bg-gradient-to-b from-${item.badgeColor}-500/5 to-transparent`}
-                  >
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                      <Badge
-                        className={
-                          badgeColors[item.badgeColor as keyof typeof badgeColors]
-                        }
-                      >
-                        {item.badgeColor === "yellow" && (
-                          <Crown className="h-3 w-3 mr-1" />
-                        )}
-                        {item.badgeColor === "blue" && (
-                          <Zap className="h-3 w-3 mr-1" />
-                        )}
-                        {item.badgeColor === "green" && (
-                          <Target className="h-3 w-3 mr-1" />
-                        )}
-                        {item.badge}
-                      </Badge>
-                    </div>
-                    <CardContent className="pt-8 space-y-4">
-                      <div className="text-center">
-                        <h3 className="text-2xl font-bold mb-2">
-                          {item.vpn.name}
-                        </h3>
-                        <RatingStars rating={item.vpn.overallRating} size="md" />
-                      </div>
-
-                      <div className="space-y-2 text-sm">
-                        <div className="flex justify-between items-center">
-                          <span className="text-muted-foreground">Protocol:</span>
-                          <span className="font-medium">{item.protocol}</span>
-                        </div>
-                        <div className="flex justify-between items-center">
-                          <span className="text-muted-foreground">Windows:</span>
-                          <span className="font-medium">{item.compatibility}</span>
-                        </div>
-                        <div className="flex justify-between items-center">
-                          <span className="text-muted-foreground">App Size:</span>
-                          <span className="font-medium">{item.appSize}</span>
-                        </div>
-                      </div>
-
-                      <div className="space-y-1">
-                        {item.features.map((feature, i) => (
-                          <div key={i} className="flex items-center gap-2 text-sm">
-                            <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
-                            <span>{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-
-                      <div className="text-center pt-4 border-t">
-                        <div className="text-3xl font-bold text-primary mb-3">
-                          {item.price}
-                        </div>
-                        <AffiliateButton
-                          vpnId={item.vpn.id}
-                          vpnName={item.vpn.name}
-                          affiliateUrl={item.vpn.affiliateUrl}
-                          className="w-full"
-                        >
-                          {t.getVpnButton} {item.vpn.name}
-                        </AffiliateButton>
-                      </div>
-                    </CardContent>
-                  </Card>
+                    name={item.vpn.name}
+                    vpnId={item.vpn.id}
+                    affiliateUrl={item.vpn.affiliateUrl}
+                    rating={item.vpn.overallRating}
+                    accent={item.badgeColor as VpnFeatureCardAccent}
+                    badge={item.badge}
+                    badgeClassName={badgeColors[item.badgeColor as keyof typeof badgeColors]}
+                    badgeIcon={
+                      <>
+                      {item.badgeColor === "yellow" && <Crown className="mr-1 size-3" aria-hidden="true" />}
+                      {item.badgeColor === "blue" && <Zap className="mr-1 size-3" aria-hidden="true" />}
+                      {item.badgeColor === "green" && <Target className="mr-1 size-3" aria-hidden="true" />}
+                      </>
+                    }
+                    rows={[
+                    { label: "Protocol:", value: item.protocol },
+                    { label: "Windows:", value: item.compatibility },
+                    { label: "App Size:", value: item.appSize, mono: true },
+                    ]}
+                    features={item.features}
+                    price={item.price}
+                    labels={{ cta: `${t.getVpnButton} ${item.vpn.name}` }}
+                  />
                 ) : null
               )}
             </div>

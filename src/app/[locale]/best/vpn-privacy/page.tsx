@@ -3,8 +3,10 @@ import { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { AffiliateButton } from "@/components/vpn/affiliate-button";
-import { RatingStars } from "@/components/vpn/rating-stars";
+import {
+  VpnFeatureCard,
+  type VpnFeatureCardAccent,
+} from "@/components/vpn/vpn-feature-card";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
@@ -1292,118 +1294,63 @@ export default async function PrivacyVpnPage({ params }: Props) {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {privacyVpns.map((item, index) =>
                 item.vpn ? (
-                  <Card
+                  <VpnFeatureCard
                     key={index}
-                    className={`relative border-2 border-${item.badgeColor}-500/50 bg-gradient-to-b from-${item.badgeColor}-500/5 to-transparent`}
-                  >
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                      <Badge
-                        className={
-                          badgeColors[item.badgeColor as keyof typeof badgeColors]
-                        }
-                      >
-                        {item.badgeColor === "yellow" && (
-                          <Crown className="h-3 w-3 mr-1" />
-                        )}
-                        {item.badgeColor === "blue" && (
-                          <Globe className="h-3 w-3 mr-1" />
-                        )}
-                        {item.badgeColor === "green" && (
-                          <FileCheck className="h-3 w-3 mr-1" />
-                        )}
-                        {item.badgeColor === "purple" && (
-                          <UserX className="h-3 w-3 mr-1" />
-                        )}
-                        {item.badgeColor === "orange" && (
-                          <Server className="h-3 w-3 mr-1" />
-                        )}
-                        {item.badge}
-                      </Badge>
-                    </div>
-                    <CardContent className="pt-8 space-y-4">
-                      <div className="text-center">
-                        <h3 className="text-2xl font-bold mb-2">
-                          {item.vpn.name}
-                        </h3>
-                        <RatingStars rating={item.vpn.overallRating} size="md" />
-                      </div>
-
-                      <div className="space-y-2 text-sm">
-                        <div className="flex justify-between items-center">
-                          <span className="text-muted-foreground">Jurisdiction:</span>
-                          <span className="font-medium">{item.jurisdiction}</span>
-                        </div>
-                        <div className="flex justify-between items-center">
-                          <span className="text-muted-foreground">Audit:</span>
-                          <span className="font-medium text-green-600">
-                            {item.noLogsAudit}
-                          </span>
-                        </div>
-                        <div className="flex justify-between items-center">
-                          <span className="text-muted-foreground">Servers:</span>
-                          <span className="font-medium">{item.servers}</span>
-                        </div>
-                        <div className="flex justify-between items-center">
-                          <span className="text-muted-foreground">Countries:</span>
-                          <span className="font-medium">{item.countries}</span>
-                        </div>
-                        <div className="flex justify-between items-center">
-                          <span className="text-muted-foreground">Devices:</span>
-                          <span className="font-medium">{item.devices}</span>
-                        </div>
-                      </div>
-
+                    name={item.vpn.name}
+                    vpnId={item.vpn.id}
+                    affiliateUrl={item.vpn.affiliateUrl}
+                    rating={item.vpn.overallRating}
+                    accent={item.badgeColor as VpnFeatureCardAccent}
+                    badge={item.badge}
+                    badgeClassName={badgeColors[item.badgeColor as keyof typeof badgeColors]}
+                    badgeIcon={
+                      <>
+                      {item.badgeColor === "yellow" && <Crown className="mr-1 size-3" aria-hidden="true" />}
+                      {item.badgeColor === "blue" && <Globe className="mr-1 size-3" aria-hidden="true" />}
+                      {item.badgeColor === "green" && <FileCheck className="mr-1 size-3" aria-hidden="true" />}
+                      {item.badgeColor === "purple" && <UserX className="mr-1 size-3" aria-hidden="true" />}
+                      {item.badgeColor === "orange" && <Server className="mr-1 size-3" aria-hidden="true" />}
+                      </>
+                    }
+                    rows={[
+                    { label: "Jurisdiction:", value: item.jurisdiction },
+                    { label: "Audit:", value: item.noLogsAudit, valueClassName: "text-green-600 dark:text-green-500" },
+                    { label: "Servers:", value: item.servers },
+                    { label: "Countries:", value: item.countries },
+                    { label: "Devices:", value: item.devices },
+                    ]}
+                    extra={
                       <div className="flex flex-wrap gap-2">
                         {item.openSource && (
-                          <Badge variant="outline" className="text-xs gap-1">
-                            <Eye className="h-3 w-3" />
+                          <Badge variant="outline" className="gap-1 text-xs">
+                            <Eye className="size-3" aria-hidden="true" />
                             Open Source
                           </Badge>
                         )}
                         {item.acceptsCrypto && (
-                          <Badge variant="outline" className="text-xs gap-1">
-                            <CreditCard className="h-3 w-3" />
+                          <Badge variant="outline" className="gap-1 text-xs">
+                            <CreditCard className="size-3" aria-hidden="true" />
                             Crypto
                           </Badge>
                         )}
                         {item.ramOnlyServers && (
-                          <Badge variant="outline" className="text-xs gap-1">
-                            <Server className="h-3 w-3" />
+                          <Badge variant="outline" className="gap-1 text-xs">
+                            <Server className="size-3" aria-hidden="true" />
                             RAM-Only
                           </Badge>
                         )}
                         {item.killSwitchDefault && (
-                          <Badge variant="outline" className="text-xs gap-1">
-                            <Lock className="h-3 w-3" />
+                          <Badge variant="outline" className="gap-1 text-xs">
+                            <Lock className="size-3" aria-hidden="true" />
                             Kill Switch
                           </Badge>
                         )}
                       </div>
-
-                      <div className="space-y-1">
-                        {item.specialFeatures.map((feature, i) => (
-                          <div key={i} className="flex items-center gap-2 text-sm">
-                            <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
-                            <span>{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-
-                      <div className="text-center pt-4 border-t">
-                        <div className="text-3xl font-bold text-primary mb-3">
-                          {item.price}
-                        </div>
-                        <AffiliateButton
-                          vpnId={item.vpn.id}
-                          vpnName={item.vpn.name}
-                          affiliateUrl={item.vpn.affiliateUrl}
-                          className="w-full"
-                        >
-                          {t.getVpnButton} {item.vpn.name}
-                        </AffiliateButton>
-                      </div>
-                    </CardContent>
-                  </Card>
+                    }
+                    features={item.specialFeatures}
+                    price={item.price}
+                    labels={{ cta: `${t.getVpnButton} ${item.vpn.name}` }}
+                  />
                 ) : null
               )}
             </div>

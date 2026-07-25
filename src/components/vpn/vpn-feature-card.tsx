@@ -41,6 +41,7 @@ export function VpnFeatureCard({
   badgeClassName,
   badgeIcon,
   rows,
+  extra,
   features,
   price,
   labels,
@@ -64,6 +65,9 @@ export function VpnFeatureCard({
     valueClassName?: string;
     mono?: boolean;
   }>;
+  /** Vrije inhoud tussen de regels en de kenmerkenlijst. /best/vpn-privacy
+   *  toont daar een rij eigenschapsbadges (Open Source, Crypto, RAM-Only). */
+  extra?: React.ReactNode;
   features: string[];
   price: React.ReactNode;
   labels: { cta: string };
@@ -105,6 +109,8 @@ export function VpnFeatureCard({
             </div>
           ))}
         </div>
+
+        {extra}
 
         <div className="flex flex-col gap-1">
           {features.map((feature) => (

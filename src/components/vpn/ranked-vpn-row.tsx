@@ -33,7 +33,9 @@ export function RankedVpnRow({
   rating,
   rank,
   rankPrefix,
+  rankClassName,
   logo = false,
+  afterName,
   afterRating,
   badge,
   price,
@@ -58,7 +60,12 @@ export function RankedVpnRow({
   /** Voorvoegsel voor het rangnummer. De landenpagina's schreven "#1"; de
    *  /best-pagina's alleen "1". Beide blijven zoals ze waren. */
   rankPrefix?: string;
+  /** Kleur van het rangnummer. /countries/china zet het groen als signaal dat
+   *  deze VPN's daar werken. */
+  rankClassName?: string;
   logo?: boolean;
+  /** Naast de naam, bv. de gratis-versie-badge op /countries/netherlands. */
+  afterName?: React.ReactNode;
   /** Onder de sterren, bv. de effectiviteitsbadge van de landenpagina's
    *  ("Werkt betrouwbaar in Egypte"). */
   afterRating?: React.ReactNode;
@@ -106,7 +113,12 @@ export function RankedVpnRow({
       <div className="flex flex-col items-start gap-6 md:flex-row md:items-center">
         <div className="flex shrink-0 items-center gap-4">
           {rank != null && (
-            <span className="metric text-2xl font-bold text-muted-foreground">
+            <span
+              className={cn(
+                "metric text-2xl font-bold",
+                rankClassName ?? "text-muted-foreground",
+              )}
+            >
               {rankPrefix}
               {rank}
             </span>
@@ -117,7 +129,10 @@ export function RankedVpnRow({
             </div>
           )}
           <div className="flex flex-col items-start gap-1">
-            <h3 className="text-xl font-bold">{name}</h3>
+            <div className="flex items-center gap-2">
+              <h3 className="text-xl font-bold">{name}</h3>
+              {afterName}
+            </div>
             {rating != null && <RatingStars rating={rating} size="sm" />}
             {afterRating}
           </div>

@@ -1,4 +1,27 @@
 {
+  "specs": {
+    "protocol": "프로토콜",
+    "devices": "기기",
+    "speed": "속도",
+    "countries": "국가",
+    "servers": "서버",
+    "splitTunnel": "스플릿 터널링",
+    "security": "보안",
+    "killSwitch": "킬 스위치",
+    "price": "가격",
+    "performance": "성능",
+    "travel": "여행",
+    "tabletUi": "태블릿 UI",
+    "mobileStability": "모바일 안정성",
+    "gpsSpoofing": "GPS 위치 변경",
+    "yes": "예",
+    "no": "아니오",
+    "unlimited": "무제한",
+    "excellent": "우수",
+    "best": "최고",
+    "optimized": "최적화됨",
+    "lightweight": "가벼움"
+  },
   "metadata": {
     "title": "ZeroToVPN - 2026년 최고의 VPN 리뷰 및 비교",
     "description": "당신의 필요에 맞는 완벽한 VPN을 찾아보세요. 전문가 리뷰, 솔직한 비교, 독점 혜택."

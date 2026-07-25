@@ -172,6 +172,8 @@ export default async function IpadVpnPage({ params }: Props) {
 
   const t = await getTranslations("ipadVpn");
 
+  const s = await getTranslations("specs");
+
   // Cijfer en prijs komen uit vpn-data, niet uit deze pagina: ze stonden
   // hier los uitgeschreven en waren daardoor gaan afwijken van de rest
   // van de site. De score is afgeleid van datzelfde cijfer.
@@ -191,10 +193,10 @@ export default async function IpadVpnPage({ params }: Props) {
       showRating: false,
       description: <>{t("reviews.nordvpn.description")}</>,
       stats: [
-        { icon: <Zap className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>Protocol</>, value: <>NordLynx</> },
-        { icon: <Split className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>Split Tunnel</>, value: <>Yes</>, valueClassName: "text-green-600" },
-        { icon: <Server className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>Servers</>, value: <>6400+</> },
-        { icon: <Monitor className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>Devices</>, value: <>10</> },
+        { icon: <Zap className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{s("protocol")}</>, value: <>NordLynx</> },
+        { icon: <Split className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{s("splitTunnel")}</>, value: <>{s("yes")}</>, valueClassName: "text-green-600" },
+        { icon: <Server className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{s("servers")}</>, value: <>6400+</> },
+        { icon: <Monitor className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{s("devices")}</>, value: <>10</> },
       ],
       pros: t.raw("reviews.nordvpn.pros") as string[],
       cons: t.raw("reviews.nordvpn.cons") as string[],
@@ -215,10 +217,10 @@ export default async function IpadVpnPage({ params }: Props) {
       showRating: false,
       description: <>{t("reviews.surfshark.description")}</>,
       stats: [
-        { icon: <Zap className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>Protocol</>, value: <>WireGuard</> },
-        { icon: <Split className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>Split Tunnel</>, value: <>Yes</>, valueClassName: "text-green-600" },
-        { icon: <Server className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>Servers</>, value: <>3200+</> },
-        { icon: <Monitor className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>Devices</>, value: <>Unlimited</> },
+        { icon: <Zap className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{s("protocol")}</>, value: <>WireGuard</> },
+        { icon: <Split className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{s("splitTunnel")}</>, value: <>{s("yes")}</>, valueClassName: "text-green-600" },
+        { icon: <Server className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{s("servers")}</>, value: <>3200+</> },
+        { icon: <Monitor className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{s("devices")}</>, value: <>{s("unlimited")}</> },
       ],
       pros: t.raw("reviews.surfshark.pros") as string[],
       cons: t.raw("reviews.surfshark.cons") as string[],
@@ -239,10 +241,10 @@ export default async function IpadVpnPage({ params }: Props) {
       showRating: false,
       description: <>{t("reviews.expressvpn.description")}</>,
       stats: [
-        { icon: <Zap className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>Protocol</>, value: <>Lightway</> },
-        { icon: <Split className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>Split Tunnel</>, value: <>No</>, valueClassName: "text-orange-600" },
-        { icon: <Server className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>Servers</>, value: <>3000+</> },
-        { icon: <Monitor className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>Devices</>, value: <>8</> },
+        { icon: <Zap className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{s("protocol")}</>, value: <>Lightway</> },
+        { icon: <Split className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{s("splitTunnel")}</>, value: <>{s("no")}</>, valueClassName: "text-orange-600" },
+        { icon: <Server className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{s("servers")}</>, value: <>3000+</> },
+        { icon: <Monitor className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{s("devices")}</>, value: <>8</> },
       ],
       pros: t.raw("reviews.expressvpn.pros") as string[],
       cons: t.raw("reviews.expressvpn.cons") as string[],

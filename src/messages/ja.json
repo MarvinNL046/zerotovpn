@@ -1,4 +1,27 @@
 {
+  "specs": {
+    "protocol": "プロトコル",
+    "devices": "デバイス",
+    "speed": "速度",
+    "countries": "国数",
+    "servers": "サーバー",
+    "splitTunnel": "スプリットトンネル",
+    "security": "セキュリティ",
+    "killSwitch": "キルスイッチ",
+    "price": "価格",
+    "performance": "パフォーマンス",
+    "travel": "旅行",
+    "tabletUi": "タブレットUI",
+    "mobileStability": "モバイル安定性",
+    "gpsSpoofing": "GPS偽装",
+    "yes": "はい",
+    "no": "いいえ",
+    "unlimited": "無制限",
+    "excellent": "優秀",
+    "best": "最良",
+    "optimized": "最適化済み",
+    "lightweight": "軽量"
+  },
   "metadata": {
     "title": "ZeroToVPN - 2026年ベストVPNレビュー＆比較",
     "description": "あなたのニーズに最適なVPNを見つけましょう。専門家レビュー、正直な比較、限定特典。"

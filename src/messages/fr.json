@@ -1,4 +1,27 @@
 {
+  "specs": {
+    "protocol": "Protocole",
+    "devices": "Appareils",
+    "speed": "Vitesse",
+    "countries": "Pays",
+    "servers": "Serveurs",
+    "splitTunnel": "Tunnel divisé",
+    "security": "Sécurité",
+    "killSwitch": "Kill switch",
+    "price": "Prix",
+    "performance": "Performance",
+    "travel": "Voyage",
+    "tabletUi": "Interface tablette",
+    "mobileStability": "Stabilité mobile",
+    "gpsSpoofing": "Usurpation GPS",
+    "yes": "Oui",
+    "no": "Non",
+    "unlimited": "Illimité",
+    "excellent": "Excellent",
+    "best": "Meilleur",
+    "optimized": "Optimisé",
+    "lightweight": "Léger"
+  },
   "metadata": {
     "title": "ZeroToVPN - Meilleurs Avis et Comparaisons VPN 2026",
     "description": "Trouvez le VPN parfait pour vos besoins. Avis d'experts, comparaisons honnêtes et offres exclusives."

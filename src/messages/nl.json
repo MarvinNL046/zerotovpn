@@ -1,4 +1,27 @@
 {
+  "specs": {
+    "protocol": "Protocol",
+    "devices": "Apparaten",
+    "speed": "Snelheid",
+    "countries": "Landen",
+    "servers": "Servers",
+    "splitTunnel": "Split tunneling",
+    "security": "Beveiliging",
+    "killSwitch": "Kill switch",
+    "price": "Prijs",
+    "performance": "Prestaties",
+    "travel": "Reizen",
+    "tabletUi": "Tablet-interface",
+    "mobileStability": "Mobiele stabiliteit",
+    "gpsSpoofing": "GPS-spoofing",
+    "yes": "Ja",
+    "no": "Nee",
+    "unlimited": "Onbeperkt",
+    "excellent": "Uitstekend",
+    "best": "Beste",
+    "optimized": "Geoptimaliseerd",
+    "lightweight": "Lichtgewicht"
+  },
   "metadata": {
     "title": "ZeroToVPN - Beste VPN Reviews & Vergelijkingen 2026",
     "description": "Vind de perfecte VPN voor jouw behoeften. Expert reviews, eerlijke vergelijkingen en exclusieve deals."

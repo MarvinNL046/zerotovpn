@@ -1,4 +1,27 @@
 {
+  "specs": {
+    "protocol": "协议",
+    "devices": "设备",
+    "speed": "速度",
+    "countries": "国家",
+    "servers": "服务器",
+    "splitTunnel": "分流隧道",
+    "security": "安全性",
+    "killSwitch": "网络终止开关",
+    "price": "价格",
+    "performance": "性能",
+    "travel": "旅行",
+    "tabletUi": "平板界面",
+    "mobileStability": "移动端稳定性",
+    "gpsSpoofing": "GPS 位置伪装",
+    "yes": "是",
+    "no": "否",
+    "unlimited": "无限制",
+    "excellent": "出色",
+    "best": "最佳",
+    "optimized": "已优化",
+    "lightweight": "轻量"
+  },
   "metadata": {
     "title": "ZeroToVPN - 2026年最佳VPN评测与比较",
     "description": "找到适合您需求的完美VPN。专家评测、诚实比较和独家优惠。"

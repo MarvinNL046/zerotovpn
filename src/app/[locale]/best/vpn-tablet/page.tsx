@@ -176,6 +176,8 @@ export default async function TabletVpnPage({ params }: Props) {
 
   const t = await getTranslations("tabletVpn");
 
+  const s = await getTranslations("specs");
+
   // Cijfer en prijs komen uit vpn-data, niet uit deze pagina: ze stonden
   // hier los uitgeschreven en waren daardoor gaan afwijken van de rest
   // van de site. De score is afgeleid van datzelfde cijfer.
@@ -197,7 +199,7 @@ export default async function TabletVpnPage({ params }: Props) {
       stats: [
         { icon: <Tablet className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{t("reviews.devices")}</>, value: <>10</> },
         { icon: <Zap className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{t("reviews.speed")}</>, value: <>94/100</>, valueClassName: "text-green-600" },
-        { icon: <Shield className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>Security</>, value: <>95/100</>, valueClassName: "text-green-600" },
+        { icon: <Shield className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{s("security")}</>, value: <>95/100</>, valueClassName: "text-green-600" },
         { icon: <Server className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{t("reviews.servers")}</>, value: <>7,400+</> },
       ],
       pros: t.raw("reviews.nordvpn.pros") as string[],
@@ -221,8 +223,8 @@ export default async function TabletVpnPage({ params }: Props) {
       stats: [
         { icon: <Tablet className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{t("reviews.devices")}</>, value: <>{t("reviews.unlimited")}</>, valueClassName: "text-green-600" },
         { icon: <Zap className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{t("reviews.speed")}</>, value: <>90/100</> },
-        { icon: <Shield className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>Security</>, value: <>95/100</>, valueClassName: "text-green-600" },
-        { icon: <Globe className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>Price</>, value: <>${getVpnById("surfshark")!.priceTwoYear}/mo</>, valueClassName: "text-green-600" },
+        { icon: <Shield className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{s("security")}</>, value: <>95/100</>, valueClassName: "text-green-600" },
+        { icon: <Globe className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{s("price")}</>, value: <>${getVpnById("surfshark")!.priceTwoYear}/mo</>, valueClassName: "text-green-600" },
       ],
       pros: t.raw("reviews.surfshark.pros") as string[],
       cons: t.raw("reviews.surfshark.cons") as string[],
@@ -246,7 +248,7 @@ export default async function TabletVpnPage({ params }: Props) {
         { icon: <Tablet className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{t("reviews.devices")}</>, value: <>8</> },
         { icon: <Zap className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{t("reviews.speed")}</>, value: <>96/100</>, valueClassName: "text-green-600" },
         { icon: <Globe className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{t("reviews.countries")}</>, value: <>105</> },
-        { icon: <Plane className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>Travel</>, value: <>Best</>, valueClassName: "text-green-600" },
+        { icon: <Plane className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{s("travel")}</>, value: <>{s("best")}</>, valueClassName: "text-green-600" },
       ],
       pros: t.raw("reviews.expressvpn.pros") as string[],
       cons: t.raw("reviews.expressvpn.cons") as string[],

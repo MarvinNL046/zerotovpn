@@ -1,4 +1,27 @@
 {
+  "specs": {
+    "protocol": "Protocolo",
+    "devices": "Dispositivos",
+    "speed": "Velocidad",
+    "countries": "Países",
+    "servers": "Servidores",
+    "splitTunnel": "Túnel dividido",
+    "security": "Seguridad",
+    "killSwitch": "Kill switch",
+    "price": "Precio",
+    "performance": "Rendimiento",
+    "travel": "Viajes",
+    "tabletUi": "Interfaz de tableta",
+    "mobileStability": "Estabilidad móvil",
+    "gpsSpoofing": "Suplantación de GPS",
+    "yes": "Sí",
+    "no": "No",
+    "unlimited": "Ilimitado",
+    "excellent": "Excelente",
+    "best": "Mejor",
+    "optimized": "Optimizado",
+    "lightweight": "Ligero"
+  },
   "metadata": {
     "title": "ZeroToVPN - Mejores Reseñas y Comparaciones VPN 2026",
     "description": "Encuentra la VPN perfecta para tus necesidades. Reseñas de expertos, comparaciones honestas y ofertas exclusivas."

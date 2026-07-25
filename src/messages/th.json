@@ -1,4 +1,27 @@
 {
+  "specs": {
+    "protocol": "โปรโตคอล",
+    "devices": "อุปกรณ์",
+    "speed": "ความเร็ว",
+    "countries": "ประเทศ",
+    "servers": "เซิร์ฟเวอร์",
+    "splitTunnel": "Split Tunnel",
+    "security": "ความปลอดภัย",
+    "killSwitch": "Kill Switch",
+    "price": "ราคา",
+    "performance": "ประสิทธิภาพ",
+    "travel": "การเดินทาง",
+    "tabletUi": "อินเทอร์เฟซแท็บเล็ต",
+    "mobileStability": "ความเสถียรบนมือถือ",
+    "gpsSpoofing": "การปลอมตำแหน่ง GPS",
+    "yes": "ใช่",
+    "no": "ไม่",
+    "unlimited": "ไม่จำกัด",
+    "excellent": "ยอดเยี่ยม",
+    "best": "ดีที่สุด",
+    "optimized": "ปรับแต่งแล้ว",
+    "lightweight": "น้ำหนักเบา"
+  },
   "metadata": {
     "title": "ZeroToVPN - รีวิวและเปรียบเทียบ VPN ที่ดีที่สุด 2026",
     "description": "ค้นหา VPN ที่สมบูรณ์แบบสำหรับความต้องการของคุณ รีวิวจากผู้เชี่ยวชาญ เปรียบเทียบอย่างตรงไปตรงมา และข้อเสนอพิเศษ"

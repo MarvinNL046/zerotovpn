@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "npm run generate:sitemap-routes && next dev",
     "generate:sitemap-routes": "node scripts/generate-sitemap-static-routes.mjs",
-    "prebuild": "npm run generate:sitemap-routes",
+    "check:vpn-data": "node scripts/check-vpn-data-sync.mjs",
+    "prebuild": "npm run check:vpn-data && npm run generate:sitemap-routes",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"

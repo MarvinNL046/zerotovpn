@@ -1869,7 +1869,7 @@ export default async function GamingVpnPage({ params }: Props) {
                 { title: "Best Free VPNs", description: "Top free VPN options with no subscription", href: "/best/free-vpn", icon: "gift" },
                 { title: "Best VPN for Streaming", description: "Unblock Netflix, Hulu, and more", href: "/guides/vpn-streaming", icon: "play" },
                 { title: "Best Mobile VPNs", description: "VPNs optimized for smartphones", href: "/best/vpn-mobile", icon: "smartphone" },
-                { title: "Best VPN for China", description: "VPNs that bypass the Great Firewall", href: "/best/vpn-china", icon: "globe" },
+                { title: "Best VPN for China", description: "VPNs that bypass the Great Firewall", href: "/countries/china", icon: "globe" },
                 { title: "VPN Setup Guides", description: "Learn how to configure your VPN", href: "/guides", icon: "map" },
               ]}
             />

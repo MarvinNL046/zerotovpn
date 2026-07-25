@@ -147,12 +147,12 @@ export default async function BestVpnForDigitalNomadsPage({ params }: Props) {
             For location-specific context and linking opportunities, use these pages:
           </p>
           <ul className="grid gap-2 md:grid-cols-2 text-sm">
-            <li><Link href="/best/vpn-thailand" className="text-primary hover:underline">Best VPN for Thailand</Link></li>
+            <li><Link href="/countries/thailand" className="text-primary hover:underline">Best VPN for Thailand</Link></li>
             <li><Link href="/best/vpn-bali" className="text-primary hover:underline">Best VPN for Bali</Link></li>
-            <li><Link href="/best/vpn-vietnam" className="text-primary hover:underline">Best VPN for Vietnam</Link></li>
+            <li><Link href="/countries/vietnam" className="text-primary hover:underline">Best VPN for Vietnam</Link></li>
             <li><Link href="/best/vpn-usa" className="text-primary hover:underline">Best VPN for USA</Link></li>
-            <li><Link href="/best/vpn-japan" className="text-primary hover:underline">Best VPN for Japan</Link></li>
-            <li><Link href="/best/vpn-india" className="text-primary hover:underline">Best VPN for India</Link></li>
+            <li><Link href="/countries/japan" className="text-primary hover:underline">Best VPN for Japan</Link></li>
+            <li><Link href="/countries/india" className="text-primary hover:underline">Best VPN for India</Link></li>
           </ul>
         </div>
       </section>

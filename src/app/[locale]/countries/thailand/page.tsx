@@ -137,6 +137,7 @@ export default async function ThailandVpnPage({ params }: Props) {
         "WireGuard protocol offers the best speeds in the region",
         "Use split tunneling for local Thai apps like LINE and banking",
         "Connect to nearby servers for streaming Thai content abroad",
+        "Netflix and Disney+ show a different catalogue in Thailand — connect to your home country's server for your usual library",
       ],
       faqTitle: "Thailand VPN FAQ",
       faqs: [
@@ -224,6 +225,7 @@ export default async function ThailandVpnPage({ params }: Props) {
         "WireGuard-protocol biedt de beste snelheden in de regio",
         "Gebruik split tunneling voor lokale Thaise apps zoals LINE en bankieren",
         "Verbind met nabije servers voor het streamen van Thaise inhoud in het buitenland",
+        "Netflix en Disney+ tonen in Thailand een ander aanbod — verbind met een server in je eigen land voor je gebruikelijke bibliotheek",
       ],
       faqTitle: "Thailand VPN FAQ",
       faqs: [
@@ -311,6 +313,7 @@ export default async function ThailandVpnPage({ params }: Props) {
         "WireGuard-Protokoll bietet die besten Geschwindigkeiten in der Region",
         "Verwenden Sie Split-Tunneling für lokale Thai-Apps wie LINE und Banking",
         "Verbinden Sie sich mit nahen Servern zum Streamen thailändischer Inhalte im Ausland",
+        "Netflix und Disney+ zeigen in Thailand einen anderen Katalog — verbinden Sie sich mit einem Server in Ihrem Heimatland",
       ],
       faqTitle: "Thailand VPN FAQ",
       faqs: [
@@ -398,6 +401,7 @@ export default async function ThailandVpnPage({ params }: Props) {
         "El protocolo WireGuard ofrece las mejores velocidades en la región",
         "Usa split tunneling para apps locales tailandesas como LINE y banca",
         "Conéctate a servidores cercanos para streaming de contenido tailandés en el extranjero",
+        "Netflix y Disney+ muestran un catálogo distinto en Tailandia — conéctate a un servidor de tu país para tu biblioteca habitual",
       ],
       faqTitle: "FAQ VPN Tailandia",
       faqs: [
@@ -485,6 +489,7 @@ export default async function ThailandVpnPage({ params }: Props) {
         "Le protocole WireGuard offre les meilleures vitesses dans la région",
         "Utilisez le split tunneling pour les apps thaïlandaises locales comme LINE et la banque",
         "Connectez-vous aux serveurs proches pour le streaming de contenu thaïlandais à l'étranger",
+        "Netflix et Disney+ proposent un catalogue différent en Thaïlande — connectez-vous à un serveur de votre pays d'origine",
       ],
       faqTitle: "FAQ VPN Thaïlande",
       faqs: [
@@ -572,6 +577,7 @@ export default async function ThailandVpnPage({ params }: Props) {
         "WireGuard协议在该地区提供最佳速度",
         "使用分流隧道处理本地泰国应用程序如LINE和银行",
         "连接到附近的服务器以在国外流媒体泰国内容",
+        "Netflix 和 Disney+ 在泰国的片库不同 — 连接你所在国家的服务器以获得平常的内容",
       ],
       faqTitle: "泰国VPN常见问题",
       faqs: [
@@ -659,6 +665,7 @@ export default async function ThailandVpnPage({ params }: Props) {
         "WireGuardプロトコルが地域で最高の速度を提供",
         "LINEやバンキングなどのローカルタイアプリにはスプリットトンネリングを使用",
         "海外からタイのコンテンツをストリーミングするには近くのサーバーに接続",
+        "Netflix と Disney+ はタイでは配信作品が異なる — 自国のサーバーに接続すると普段のライブラリになる",
       ],
       faqTitle: "タイVPN FAQ",
       faqs: [
@@ -746,6 +753,7 @@ export default async function ThailandVpnPage({ params }: Props) {
         "WireGuard 프로토콜이 지역에서 최고의 속도를 제공합니다",
         "LINE 및 뱅킹과 같은 현지 태국 앱에는 분할 터널링을 사용하세요",
         "해외에서 태국 콘텐츠를 스트리밍하려면 가까운 서버에 연결하세요",
+        "Netflix와 Disney+는 태국에서 다른 카탈로그를 제공합니다 — 자국 서버에 연결하면 평소 라이브러리를 볼 수 있습니다",
       ],
       faqTitle: "태국 VPN FAQ",
       faqs: [
@@ -833,6 +841,7 @@ export default async function ThailandVpnPage({ params }: Props) {
         "โปรโตคอล WireGuard ให้ความเร็วที่ดีที่สุดในภูมิภาค",
         "ใช้ split tunneling สำหรับแอปไทยท้องถิ่นเช่น LINE และธนาคาร",
         "เชื่อมต่อกับเซิร์ฟเวอร์ใกล้เคียงเพื่อสตรีมเนื้อหาไทยในต่างประเทศ",
+        "Netflix และ Disney+ มีคลังรายการต่างออกไปในไทย — เชื่อมต่อเซิร์ฟเวอร์ประเทศบ้านเกิดเพื่อดูคลังเดิม",
       ],
       faqTitle: "คำถามที่พบบ่อยเกี่ยวกับ VPN ประเทศไทย",
       faqs: [

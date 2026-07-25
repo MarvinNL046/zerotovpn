@@ -181,6 +181,7 @@ export default async function ChinaVpnPage({ params }: Props) {
         "翻墙VPN Pro (Great Firewall VPN Pro)",
         "快喵VPN (Fast Cat VPN)",
         "Any free VPN from Chinese app stores",
+        "TurboVPN, VPN Master, SuperVPN, Thunder VPN — heavily advertised abroad, but they log and share activity",
       ],
       chineseVpnWarningNote:
         "These apps are unreliable, track your data, and may report your activity to authorities. Always use international VPN services from trusted providers.",
@@ -302,6 +303,7 @@ export default async function ChinaVpnPage({ params }: Props) {
         "翻墙VPN Pro (Great Firewall VPN Pro)",
         "快喵VPN (Fast Cat VPN)",
         "Gratis VPNs van Chinese app stores",
+        "TurboVPN, VPN Master, SuperVPN, Thunder VPN — veel aangeprezen in het buitenland, maar ze loggen en delen je activiteit",
       ],
       chineseVpnWarningNote:
         "Deze apps zijn onbetrouwbaar, volgen je data en kunnen je activiteit rapporteren aan autoriteiten. Gebruik altijd internationale VPN-diensten van vertrouwde providers.",
@@ -423,6 +425,7 @@ export default async function ChinaVpnPage({ params }: Props) {
         "翻墙VPN Pro (Great Firewall VPN Pro)",
         "快喵VPN (Fast Cat VPN)",
         "Kostenlose VPNs aus chinesischen App-Stores",
+        "TurboVPN, VPN Master, SuperVPN, Thunder VPN — im Ausland stark beworben, protokollieren und teilen aber Ihre Aktivität",
       ],
       chineseVpnWarningNote:
         "Diese Apps sind unzuverlässig, verfolgen Ihre Daten und können Ihre Aktivitäten an Behörden melden. Verwenden Sie immer internationale VPN-Dienste vertrauenswürdiger Anbieter.",
@@ -544,6 +547,7 @@ export default async function ChinaVpnPage({ params }: Props) {
         "翻墙VPN Pro (Great Firewall VPN Pro)",
         "快喵VPN (Fast Cat VPN)",
         "VPN gratuitas de tiendas de aplicaciones chinas",
+        "TurboVPN, VPN Master, SuperVPN, Thunder VPN — muy promocionadas fuera de China, pero registran y comparten tu actividad",
       ],
       chineseVpnWarningNote:
         "Estas aplicaciones son poco confiables, rastrean tus datos y pueden reportar tu actividad a las autoridades. Siempre usa servicios VPN internacionales de proveedores confiables.",
@@ -665,6 +669,7 @@ export default async function ChinaVpnPage({ params }: Props) {
         "翻墙VPN Pro (Great Firewall VPN Pro)",
         "快喵VPN (Fast Cat VPN)",
         "VPN gratuits des magasins d'applications chinois",
+        "TurboVPN, VPN Master, SuperVPN, Thunder VPN — très promues à l'étranger, mais elles enregistrent et partagent votre activité",
       ],
       chineseVpnWarningNote:
         "Ces applications sont peu fiables, suivent vos données et peuvent signaler votre activité aux autorités. Utilisez toujours des services VPN internationaux de fournisseurs de confiance.",
@@ -786,6 +791,7 @@ export default async function ChinaVpnPage({ params }: Props) {
         "翻墙VPN Pro",
         "快喵VPN",
         "中国应用商店的免费VPN",
+        "TurboVPN、VPN Master、SuperVPN、Thunder VPN — 在海外宣传广泛，但会记录并共享你的活动",
       ],
       chineseVpnWarningNote:
         "这些应用不可靠，跟踪您的数据，可能向当局报告您的活动。始终使用来自可信提供商的国际VPN服务。",
@@ -907,6 +913,7 @@ export default async function ChinaVpnPage({ params }: Props) {
         "翻墙VPN Pro (Great Firewall VPN Pro)",
         "快喵VPN (Fast Cat VPN)",
         "中国のアプリストアの無料VPN",
+        "TurboVPN、VPN Master、SuperVPN、Thunder VPN — 海外で盛んに宣伝されているが、利用履歴を記録し共有する",
       ],
       chineseVpnWarningNote:
         "これらのアプリは信頼性が低く、データを追跡し、当局に活動を報告する可能性があります。常に信頼できるプロバイダーの国際VPNサービスを使用してください。",
@@ -1028,6 +1035,7 @@ export default async function ChinaVpnPage({ params }: Props) {
         "翻墙VPN Pro (Great Firewall VPN Pro)",
         "快喵VPN (Fast Cat VPN)",
         "중국 앱 스토어의 무료 VPN",
+        "TurboVPN, VPN Master, SuperVPN, Thunder VPN — 해외에서 널리 광고되지만 활동 기록을 남기고 공유합니다",
       ],
       chineseVpnWarningNote:
         "이러한 앱은 신뢰할 수 없고 데이터를 추적하며 당국에 활동을 보고할 수 있습니다. 항상 신뢰할 수 있는 제공업체의 국제 VPN 서비스를 사용하십시오.",
@@ -1149,6 +1157,7 @@ export default async function ChinaVpnPage({ params }: Props) {
         "翻墙VPN Pro (Great Firewall VPN Pro)",
         "快喵VPN (Fast Cat VPN)",
         "VPN ฟรีจากแอปสโตร์จีน",
+        "TurboVPN, VPN Master, SuperVPN, Thunder VPN — โฆษณาหนักในต่างประเทศ แต่เก็บและแบ่งปันข้อมูลการใช้งาน",
       ],
       chineseVpnWarningNote:
         "แอปเหล่านี้ไม่น่าเชื่อถือ ติดตามข้อมูลของคุณ และอาจรายงานกิจกรรมของคุณต่อเจ้าหน้าที่ ใช้บริการ VPN ระหว่างประเทศจากผู้ให้บริการที่เชื่อถือได้เสมอ",
@@ -1604,7 +1613,7 @@ export default async function ChinaVpnPage({ params }: Props) {
             <RelatedPages
               title="Related Guides"
               pages={[
-                { title: "Best VPN for China", description: "Top VPNs that bypass the Great Firewall", href: "/best/vpn-china", icon: "trophy" },
+                { title: "Best VPN for China", description: "Top VPNs that bypass the Great Firewall", href: "/countries/china", icon: "trophy" },
                 { title: "VPN Guide: Russia", description: "Internet restrictions and VPN use in Russia", href: "/countries/russia", icon: "globe" },
                 { title: "VPN Guide: Iran", description: "Overcome strict DPI censorship in Iran", href: "/countries/iran", icon: "globe" },
                 { title: "What is a VPN?", description: "Learn how VPNs protect your privacy", href: "/guides/what-is-vpn", icon: "shield" }

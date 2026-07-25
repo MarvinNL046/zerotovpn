@@ -160,6 +160,7 @@ export default async function RussiaVpnPage({ params }: Props) {
         "YouTube (significantly throttled)",
         "Various foreign media outlets",
         "Opposition websites",
+        "Independent news outlets — Meduza, Radio Free Europe/Radio Liberty, BBC Russian (blocked since 2022)",
       ],
       tips: "Critical Tips for Russia",
       tipsList: [
@@ -259,6 +260,7 @@ export default async function RussiaVpnPage({ params }: Props) {
         "YouTube (sterk vertraagd)",
         "Diverse buitenlandse media",
         "Oppositie websites",
+        "Onafhankelijke nieuwsmedia — Meduza, Radio Free Europe/Radio Liberty, BBC Russisch (geblokkeerd sinds 2022)",
       ],
       tips: "Kritieke Tips voor Rusland",
       tipsList: [
@@ -358,6 +360,7 @@ export default async function RussiaVpnPage({ params }: Props) {
         "YouTube (erheblich gedrosselt)",
         "Verschiedene ausländische Medien",
         "Oppositionswebsites",
+        "Unabhängige Nachrichtenmedien — Meduza, Radio Free Europe/Radio Liberty, BBC Russisch (seit 2022 blockiert)",
       ],
       tips: "Wichtige Tipps für Russland",
       tipsList: [
@@ -457,6 +460,7 @@ export default async function RussiaVpnPage({ params }: Props) {
         "YouTube (significativamente limitado)",
         "Varios medios extranjeros",
         "Sitios web de la oposición",
+        "Medios independientes — Meduza, Radio Free Europe/Radio Liberty, BBC Ruso (bloqueados desde 2022)",
       ],
       tips: "Consejos Críticos para Rusia",
       tipsList: [
@@ -556,6 +560,7 @@ export default async function RussiaVpnPage({ params }: Props) {
         "YouTube (considérablement ralenti)",
         "Divers médias étrangers",
         "Sites web de l'opposition",
+        "Médias indépendants — Meduza, Radio Free Europe/Radio Liberty, BBC Russe (bloqués depuis 2022)",
       ],
       tips: "Conseils Critiques pour la Russie",
       tipsList: [
@@ -655,6 +660,7 @@ export default async function RussiaVpnPage({ params }: Props) {
         "YouTube（显著受限）",
         "各种外国媒体",
         "反对派网站",
+        "独立新闻媒体 — Meduza、自由欧洲电台/自由电台、BBC 俄语（2022 年起被封锁）",
       ],
       tips: "俄罗斯的关键提示",
       tipsList: [
@@ -754,6 +760,7 @@ export default async function RussiaVpnPage({ params }: Props) {
         "YouTube（大幅に制限）",
         "さまざまな外国メディア",
         "野党ウェブサイト",
+        "独立系ニュース — Meduza、ラジオ・フリー・ヨーロッパ／ラジオ・リバティ、BBCロシア語（2022年から遮断）",
       ],
       tips: "ロシアの重要なヒント",
       tipsList: [
@@ -853,6 +860,7 @@ export default async function RussiaVpnPage({ params }: Props) {
         "YouTube (현저히 제한됨)",
         "다양한 외국 미디어",
         "야당 웹사이트",
+        "독립 언론 — Meduza, 자유유럽방송/자유방송, BBC 러시아어 (2022년부터 차단)",
       ],
       tips: "러시아의 중요한 팁",
       tipsList: [
@@ -952,6 +960,7 @@ export default async function RussiaVpnPage({ params }: Props) {
         "YouTube (ถูกจำกัดอย่างมาก)",
         "สื่อต่างประเทศต่าง ๆ",
         "เว็บไซต์ฝ่ายค้าน",
+        "สื่ออิสระ — Meduza, Radio Free Europe/Radio Liberty, BBC ภาษารัสเซีย (ถูกบล็อกตั้งแต่ปี 2022)",
       ],
       tips: "เคล็ดลับสำคัญสำหรับรัสเซีย",
       tipsList: [

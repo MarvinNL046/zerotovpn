@@ -667,7 +667,7 @@ export default async function CountriesPage({ params }: Props) {
           <RelatedPages
             title="Related Guides"
             pages={[
-              { title: "Best VPN for China", description: "Top VPNs that bypass the Great Firewall", href: "/best/vpn-china", icon: "trophy" },
+              { title: "Best VPN for China", description: "Top VPNs that bypass the Great Firewall", href: "/countries/china", icon: "trophy" },
               { title: "What is a VPN?", description: "Learn how VPNs protect your privacy", href: "/guides/what-is-vpn", icon: "shield" },
               { title: "VPN Comparison", description: "Compare all VPN providers side-by-side", href: "/compare", icon: "check" },
               { title: "All VPN Reviews", description: "In-depth reviews of top VPN services", href: "/reviews", icon: "star" }

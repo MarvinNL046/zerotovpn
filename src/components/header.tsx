@@ -141,11 +141,11 @@ export function Header() {
                 <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">By Country</p>
                 <div className="space-y-1">
                   {[
-                    { href: "/best/vpn-china", label: t("vpnChina") },
-                    { href: "/best/vpn-russia", label: t("vpnRussia") },
-                    { href: "/best/vpn-uae", label: t("vpnUae") },
+                    { href: "/countries/china", label: t("vpnChina") },
+                    { href: "/countries/russia", label: t("vpnRussia") },
+                    { href: "/countries/uae", label: t("vpnUae") },
                     { href: "/countries/iran", label: t("vpnIran") },
-                    { href: "/best/vpn-thailand", label: t("vpnThailand") },
+                    { href: "/countries/thailand", label: t("vpnThailand") },
                   ].map(item => (
                     <Link key={item.href} href={item.href} onClick={() => setOpenMenu(null)}
                       className="flex items-center gap-2 px-2 py-1.5 text-sm rounded-md hover:bg-muted transition-colors">
@@ -300,8 +300,8 @@ export function Header() {
                   { href: "/best/free-vpn", label: t("freeVpn") },
                   { href: "/best/vpn-gaming", label: t("vpnGaming") },
                   { href: "/best/vpn-streaming", label: "Streaming" },
-                  { href: "/best/vpn-china", label: t("vpnChina") },
-                  { href: "/best/vpn-russia", label: t("vpnRussia") },
+                  { href: "/countries/china", label: t("vpnChina") },
+                  { href: "/countries/russia", label: t("vpnRussia") },
                   { href: "/countries", label: "All Countries →" },
                 ].map(item => (
                   <Link key={item.href} href={item.href} onClick={() => setMobileMenuOpen(false)}

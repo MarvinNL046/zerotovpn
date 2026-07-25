@@ -936,9 +936,9 @@ export default async function BestVpnPage({ params }: Props) {
                 { title: "Best VPN for Privacy", description: "Top VPNs for maximum privacy protection", href: "/best/vpn-privacy", icon: "shield" },
                 { title: "Best Free VPNs", description: "Top free VPN options with no subscription", href: "/best/free-vpn", icon: "gift" },
                 { title: "Best VPN for Gaming", description: "Low-latency VPNs for online gaming", href: "/best/vpn-gaming", icon: "gamepad" },
-                { title: "Best VPN for China", description: "VPNs that bypass the Great Firewall", href: "/best/vpn-china", icon: "globe" },
-                { title: "Best VPN for India", description: "VPNs with virtual India servers", href: "/best/vpn-india", icon: "globe" },
-                { title: "Best VPN for Turkey", description: "Bypass DPI blocking in Turkey", href: "/best/vpn-turkey", icon: "globe" },
+                { title: "Best VPN for China", description: "VPNs that bypass the Great Firewall", href: "/countries/china", icon: "globe" },
+                { title: "Best VPN for India", description: "VPNs with virtual India servers", href: "/countries/india", icon: "globe" },
+                { title: "Best VPN for Turkey", description: "Bypass DPI blocking in Turkey", href: "/countries/turkey", icon: "globe" },
                 { title: "Best Mobile VPNs", description: "VPNs optimized for smartphones", href: "/best/vpn-mobile", icon: "smartphone" },
               ]}
             />

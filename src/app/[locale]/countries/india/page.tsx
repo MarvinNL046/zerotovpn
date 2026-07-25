@@ -164,6 +164,7 @@ export default async function IndiaVpnPage({ params }: Props) {
         "Keep your VPN updated - providers regularly update to maintain connectivity during shutdowns",
         "Use split tunneling to route only sensitive traffic through VPN for better speeds on Indian networks",
         "Select servers in Singapore or UAE for best speeds when connecting from India",
+        "Indian streaming services (JioHotstar, SonyLIV, ZEE5) are geo-restricted outside India — connect to an Indian server to watch",
       ],
       faqTitle: "India VPN FAQ",
       faqs: [
@@ -281,6 +282,7 @@ export default async function IndiaVpnPage({ params }: Props) {
         "Houd je VPN bijgewerkt - providers updaten regelmatig om connectiviteit te behouden tijdens shutdowns",
         "Gebruik split tunneling om alleen gevoelig verkeer via VPN te routeren voor betere snelheden",
         "Selecteer servers in Singapore of VAE voor de beste snelheden bij verbinding vanuit India",
+        "Indiase streamingdiensten (JioHotstar, SonyLIV, ZEE5) zijn buiten India geo-geblokkeerd — verbind met een Indiase server om te kijken",
       ],
       faqTitle: "India VPN FAQ",
       faqs: [
@@ -398,6 +400,7 @@ export default async function IndiaVpnPage({ params }: Props) {
         "Halten Sie Ihr VPN aktuell - Anbieter aktualisieren regelmaßig fur Konnektivitat wahrend Abschaltungen",
         "Verwenden Sie Split-Tunneling fur bessere Geschwindigkeiten in indischen Netzwerken",
         "Wahlen Sie Server in Singapur oder VAE fur beste Geschwindigkeiten aus Indien",
+        "Indische Streamingdienste (JioHotstar, SonyLIV, ZEE5) sind außerhalb Indiens geosperrt — verbinden Sie sich mit einem indischen Server",
       ],
       faqTitle: "Indien VPN FAQ",
       faqs: [
@@ -515,6 +518,7 @@ export default async function IndiaVpnPage({ params }: Props) {
         "Manten tu VPN actualizado - los proveedores actualizan regularmente para mantener conectividad",
         "Usa split tunneling para enrutar solo trafico sensible a traves del VPN",
         "Selecciona servidores en Singapur o EAU para mejores velocidades desde India",
+        "Los servicios de streaming indios (JioHotstar, SonyLIV, ZEE5) están geobloqueados fuera de India — conéctate a un servidor indio",
       ],
       faqTitle: "FAQ VPN India",
       faqs: [
@@ -632,6 +636,7 @@ export default async function IndiaVpnPage({ params }: Props) {
         "Gardez votre VPN a jour - les fournisseurs mettent regulierement a jour pour maintenir la connectivite",
         "Utilisez le split tunneling pour router uniquement le trafic sensible via le VPN",
         "Selectionnez des serveurs a Singapour ou aux EAU pour les meilleures vitesses depuis l'Inde",
+        "Les services de streaming indiens (JioHotstar, SonyLIV, ZEE5) sont géobloqués hors d'Inde — connectez-vous à un serveur indien",
       ],
       faqTitle: "FAQ VPN Inde",
       faqs: [
@@ -696,7 +701,7 @@ export default async function IndiaVpnPage({ params }: Props) {
       blockedServices: "印度常见被封锁服务",
       blocked: ["TikTok（自2020年起被禁，连同200+中国应用）", "敏感时期的某些新闻网站", "VoIP服务（部分电信运营商限制）", "抗议和民间动乱期间的社交媒体", "PUBG Mobile（曾被禁止，限制后回归）", "色情网站（ISP级别封锁）", "各种中国应用和服务", "种子和文件共享网站"],
       tips: "在印度使用VPN的技巧",
-      tipsList: ["选择具有虚拟印度服务器的VPN，在无数据保留顾虑的情况下获取印度IP", "启用终止开关功能以防止印度频繁的互联网关闭", "在公共Wi-Fi网络上使用VPN - 这是印度监控的常见目标", "保持VPN更新 - 提供商定期更新以维持关闭期间的连接", "使用分流隧道仅通过VPN路由敏感流量以获得更好的速度", "从印度连接时选择新加坡或阿联酋的服务器以获得最佳速度"],
+      tipsList: ["选择具有虚拟印度服务器的VPN，在无数据保留顾虑的情况下获取印度IP", "启用终止开关功能以防止印度频繁的互联网关闭", "在公共Wi-Fi网络上使用VPN - 这是印度监控的常见目标", "保持VPN更新 - 提供商定期更新以维持关闭期间的连接", "使用分流隧道仅通过VPN路由敏感流量以获得更好的速度", "从印度连接时选择新加坡或阿联酋的服务器以获得最佳速度", "印度流媒体服务（JioHotstar、SonyLIV、ZEE5）在印度境外受地区限制 — 连接印度服务器才能观看"],
       faqTitle: "印度VPN常见问题",
       faqs: [
         { q: "VPN在印度合法吗？", a: "是的，VPN在印度完全合法。没有法律禁止VPN使用。然而，2022年CERT-In指令要求在印度运营服务器的VPN提供商保留用户日志5年。许多顶级提供商已从印度撤出物理服务器。" },
@@ -748,7 +753,7 @@ export default async function IndiaVpnPage({ params }: Props) {
       blockedServices: "インドでよくブロックされるサービス",
       blocked: ["TikTok（2020年以降禁止、200以上の中国アプリとともに）", "センシティブな時期の特定のニュースサイト", "VoIPサービス（一部の通信事業者が制限）", "抗議やデモ中のソーシャルメディア", "PUBG Mobile（禁止されたが制限付きで復帰）", "ポルノサイト（ISPレベルのブロック）", "様々な中国のアプリとサービス", "トレントおよびファイル共有サイト"],
       tips: "インドでのVPN使用のヒント",
-      tipsList: ["データ保持の懸念なしにインドIPを取得するため、仮想インドサーバーを持つVPNを選択", "インドの頻繁なインターネット遮断から保護するためキルスイッチ機能を有効に", "インドで監視の一般的な標的である公共Wi-Fiネットワークでは常にVPNを使用", "VPNを最新に保つ - プロバイダーは遮断中の接続維持のため定期的に更新", "インドネットワークでの速度向上のためスプリットトンネリングを使用", "インドからの接続時はシンガポールまたはUAEのサーバーを選択"],
+      tipsList: ["データ保持の懸念なしにインドIPを取得するため、仮想インドサーバーを持つVPNを選択", "インドの頻繁なインターネット遮断から保護するためキルスイッチ機能を有効に", "インドで監視の一般的な標的である公共Wi-Fiネットワークでは常にVPNを使用", "VPNを最新に保つ - プロバイダーは遮断中の接続維持のため定期的に更新", "インドネットワークでの速度向上のためスプリットトンネリングを使用", "インドからの接続時はシンガポールまたはUAEのサーバーを選択", "インドの動画配信（JioHotstar、SonyLIV、ZEE5）はインド国外では地域制限がある — インドのサーバーに接続する"],
       faqTitle: "インドVPN FAQ",
       faqs: [
         { q: "インドでVPN使用は合法ですか？", a: "はい、VPNはインドで完全に合法です。VPN使用を禁止する法律はありません。ただし、2022年のCERT-In指令により、インドにサーバーを持つVPNプロバイダーはユーザーログを5年間保持する必要があります。" },
@@ -800,7 +805,7 @@ export default async function IndiaVpnPage({ params }: Props) {
       blockedServices: "인도에서 일반적으로 차단되는 서비스",
       blocked: ["TikTok (2020년부터 금지, 200개 이상의 중국 앱과 함께)", "민감한 시기의 특정 뉴스 웹사이트", "VoIP 서비스 (일부 통신사가 제한)", "시위 및 시민 불안 중 소셜 미디어", "PUBG Mobile (금지되었다가 제한 조건으로 복귀)", "포르노 웹사이트 (ISP 수준 차단)", "다양한 중국 앱 및 서비스", "토렌트 및 파일 공유 웹사이트"],
       tips: "인도에서 VPN 사용 팁",
-      tipsList: ["데이터 보존 걱정 없이 인도 IP를 얻기 위해 가상 인도 서버가 있는 VPN 선택", "인도의 빈번한 인터넷 차단으로부터 보호하기 위해 킬 스위치 기능 활성화", "인도에서 감시의 일반적 대상인 공공 Wi-Fi 네트워크에서 VPN 사용", "VPN을 최신 상태로 유지 - 제공업체는 차단 중 연결 유지를 위해 정기적으로 업데이트", "인도 네트워크에서 더 나은 속도를 위해 스플릿 터널링 사용", "인도에서 연결할 때 싱가포르 또는 UAE 서버 선택"],
+      tipsList: ["데이터 보존 걱정 없이 인도 IP를 얻기 위해 가상 인도 서버가 있는 VPN 선택", "인도의 빈번한 인터넷 차단으로부터 보호하기 위해 킬 스위치 기능 활성화", "인도에서 감시의 일반적 대상인 공공 Wi-Fi 네트워크에서 VPN 사용", "VPN을 최신 상태로 유지 - 제공업체는 차단 중 연결 유지를 위해 정기적으로 업데이트", "인도 네트워크에서 더 나은 속도를 위해 스플릿 터널링 사용", "인도에서 연결할 때 싱가포르 또는 UAE 서버 선택", "인도 스트리밍 서비스(JioHotstar, SonyLIV, ZEE5)는 인도 밖에서 지역 제한됩니다 — 인도 서버에 연결하세요"],
       faqTitle: "인도 VPN FAQ",
       faqs: [
         { q: "인도에서 VPN 사용이 합법인가요?", a: "예, VPN은 인도에서 완전히 합법입니다. VPN 사용을 금지하는 법률은 없습니다. 그러나 2022년 CERT-In 지침은 인도에 서버를 가진 VPN 제공업체가 사용자 로그를 5년간 유지하도록 요구합니다." },
@@ -852,7 +857,7 @@ export default async function IndiaVpnPage({ params }: Props) {
       blockedServices: "บริการที่ถูกบล็อกโดยทั่วไปในอินเดีย",
       blocked: ["TikTok (ถูกแบนตั้งแต่ปี 2020 พร้อมกับแอปจีนกว่า 200 แอป)", "เว็บไซต์ข่าวบางแห่งในช่วงเวลาที่อ่อนไหว", "บริการ VoIP (ถูกจำกัดโดยผู้ให้บริการโทรคมนาคมบางราย)", "โซเชียลมีเดียระหว่างการประท้วงและความไม่สงบ", "PUBG Mobile (เคยถูกแบน กลับมาพร้อมข้อจำกัด)", "เว็บไซต์ลามก (บล็อกระดับ ISP)", "แอปและบริการจีนต่างๆ", "เว็บไซต์ทอร์เรนต์และแชร์ไฟล์"],
       tips: "เคล็ดลับสำหรับการใช้ VPN ในอินเดีย",
-      tipsList: ["เลือก VPN ที่มีเซิร์ฟเวอร์อินเดียเสมือนเพื่อรับ IP อินเดียโดยไม่ต้องกังวลเรื่องการเก็บรักษาข้อมูล", "เปิดใช้งานฟีเจอร์ kill switch เพื่อป้องกันการปิดอินเทอร์เน็ตที่เกิดขึ้นบ่อยของอินเดีย", "ใช้ VPN บนเครือข่าย Wi-Fi สาธารณะ ซึ่งเป็นเป้าหมายทั่วไปของการเฝ้าระวังในอินเดีย", "อัปเดต VPN ของคุณ - ผู้ให้บริการอัปเดตเป็นประจำเพื่อรักษาการเชื่อมต่อระหว่างการปิด", "ใช้ split tunneling เพื่อส่งเฉพาะทราฟฟิกที่อ่อนไหวผ่าน VPN", "เลือกเซิร์ฟเวอร์ในสิงคโปร์หรือ UAE เพื่อความเร็วที่ดีที่สุดจากอินเดีย"],
+      tipsList: ["เลือก VPN ที่มีเซิร์ฟเวอร์อินเดียเสมือนเพื่อรับ IP อินเดียโดยไม่ต้องกังวลเรื่องการเก็บรักษาข้อมูล", "เปิดใช้งานฟีเจอร์ kill switch เพื่อป้องกันการปิดอินเทอร์เน็ตที่เกิดขึ้นบ่อยของอินเดีย", "ใช้ VPN บนเครือข่าย Wi-Fi สาธารณะ ซึ่งเป็นเป้าหมายทั่วไปของการเฝ้าระวังในอินเดีย", "อัปเดต VPN ของคุณ - ผู้ให้บริการอัปเดตเป็นประจำเพื่อรักษาการเชื่อมต่อระหว่างการปิด", "ใช้ split tunneling เพื่อส่งเฉพาะทราฟฟิกที่อ่อนไหวผ่าน VPN", "เลือกเซิร์ฟเวอร์ในสิงคโปร์หรือ UAE เพื่อความเร็วที่ดีที่สุดจากอินเดีย", "บริการสตรีมมิงอินเดีย (JioHotstar, SonyLIV, ZEE5) ถูกจำกัดพื้นที่นอกอินเดีย — เชื่อมต่อเซิร์ฟเวอร์อินเดียเพื่อรับชม"],
       faqTitle: "คำถามที่พบบ่อย VPN อินเดีย",
       faqs: [
         { q: "VPN ถูกกฎหมายในอินเดียหรือไม่?", a: "ใช่ VPN ถูกกฎหมายอย่างสมบูรณ์ในอินเดีย ไม่มีกฎหมายห้ามการใช้ VPN อย่างไรก็ตาม คำสั่ง CERT-In ปี 2022 กำหนดให้ผู้ให้บริการ VPN ที่มีเซิร์ฟเวอร์ในอินเดียเก็บบันทึกผู้ใช้ 5 ปี" },

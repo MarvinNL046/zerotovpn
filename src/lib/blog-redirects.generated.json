@@ -698,5 +698,95 @@
     "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/best/vpn-iran",
     "destination": "/:locale/countries/iran",
     "permanent": true
+  },
+  {
+    "source": "/best/vpn-china",
+    "destination": "/countries/china",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/best/vpn-china",
+    "destination": "/:locale/countries/china",
+    "permanent": true
+  },
+  {
+    "source": "/best/vpn-india",
+    "destination": "/countries/india",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/best/vpn-india",
+    "destination": "/:locale/countries/india",
+    "permanent": true
+  },
+  {
+    "source": "/best/vpn-indonesia",
+    "destination": "/countries/indonesia",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/best/vpn-indonesia",
+    "destination": "/:locale/countries/indonesia",
+    "permanent": true
+  },
+  {
+    "source": "/best/vpn-japan",
+    "destination": "/countries/japan",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/best/vpn-japan",
+    "destination": "/:locale/countries/japan",
+    "permanent": true
+  },
+  {
+    "source": "/best/vpn-russia",
+    "destination": "/countries/russia",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/best/vpn-russia",
+    "destination": "/:locale/countries/russia",
+    "permanent": true
+  },
+  {
+    "source": "/best/vpn-thailand",
+    "destination": "/countries/thailand",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/best/vpn-thailand",
+    "destination": "/:locale/countries/thailand",
+    "permanent": true
+  },
+  {
+    "source": "/best/vpn-turkey",
+    "destination": "/countries/turkey",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/best/vpn-turkey",
+    "destination": "/:locale/countries/turkey",
+    "permanent": true
+  },
+  {
+    "source": "/best/vpn-uae",
+    "destination": "/countries/uae",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/best/vpn-uae",
+    "destination": "/:locale/countries/uae",
+    "permanent": true
+  },
+  {
+    "source": "/best/vpn-vietnam",
+    "destination": "/countries/vietnam",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/best/vpn-vietnam",
+    "destination": "/:locale/countries/vietnam",
+    "permanent": true
   }
 ]

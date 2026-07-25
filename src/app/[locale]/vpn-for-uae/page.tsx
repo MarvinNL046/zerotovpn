@@ -4,7 +4,7 @@ type Props = {
   params: Promise<{ locale: string }>;
 };
 
-const DESTINATION = "/best/vpn-uae";
+const DESTINATION = "/countries/uae";
 
 export default async function LegacyRedirectPage({ params }: Props) {
   const { locale } = await params;

@@ -301,7 +301,7 @@ export const bestOfPages: ContentLink[] = [
       "VPNs that still work in China — bypass the Great Firewall safely.",
     descriptionNl:
       "VPN's die nog werken in China — omzeil de Great Firewall op een veilige manier.",
-    href: "/best/vpn-china",
+    href: "/countries/china",
     tags: ["china", "censorship", "geo-restriction"],
     icon: "globe",
   },
@@ -313,7 +313,7 @@ export const bestOfPages: ContentLink[] = [
       "VPNs that bypass Russian internet restrictions and protect your privacy.",
     descriptionNl:
       "VPN's die Russische internetbeperkingen omzeilen en je privacy beschermen.",
-    href: "/best/vpn-russia",
+    href: "/countries/russia",
     tags: ["russia", "censorship", "geo-restriction"],
     icon: "globe",
   },
@@ -325,7 +325,7 @@ export const bestOfPages: ContentLink[] = [
       "VPNs that work in the UAE and Dubai — unblock VoIP calls and restricted content.",
     descriptionNl:
       "VPN's die werken in de VAE en Dubai — deblokkeer VoIP-gesprekken en beperkte inhoud.",
-    href: "/best/vpn-uae",
+    href: "/countries/uae",
     tags: ["uae", "censorship", "middle-east"],
     icon: "globe",
   },
@@ -349,7 +349,7 @@ export const bestOfPages: ContentLink[] = [
       "VPNs that unblock social media and restricted websites in Turkey.",
     descriptionNl:
       "VPN's die sociale media en beperkte websites in Turkije deblokkeren.",
-    href: "/best/vpn-turkey",
+    href: "/countries/turkey",
     tags: ["turkey", "censorship", "geo-restriction"],
     icon: "globe",
   },
@@ -361,7 +361,7 @@ export const bestOfPages: ContentLink[] = [
       "VPNs with fast servers for India — protect your privacy and access global content.",
     descriptionNl:
       "VPN's met snelle servers voor India — bescherm je privacy en krijg toegang tot wereldwijde inhoud.",
-    href: "/best/vpn-india",
+    href: "/countries/india",
     tags: ["india", "asia", "privacy"],
     icon: "globe",
   },
@@ -373,7 +373,7 @@ export const bestOfPages: ContentLink[] = [
       "Fast VPNs with Japanese servers for streaming, gaming, and privacy in Japan.",
     descriptionNl:
       "Snelle VPN's met Japanse servers voor streaming, gaming en privacy in Japan.",
-    href: "/best/vpn-japan",
+    href: "/countries/japan",
     tags: ["japan", "asia", "streaming", "gaming"],
     icon: "globe",
   },
@@ -397,7 +397,7 @@ export const bestOfPages: ContentLink[] = [
       "VPNs that work well in Indonesia — fast connections and access to blocked content.",
     descriptionNl:
       "VPN's die goed werken in Indonesië — snelle verbindingen en toegang tot geblokkeerde inhoud.",
-    href: "/best/vpn-indonesia",
+    href: "/countries/indonesia",
     tags: ["indonesia", "asia", "geo-restriction"],
     icon: "globe",
   },
@@ -421,7 +421,7 @@ export const bestOfPages: ContentLink[] = [
       "VPNs for Thailand — bypass local restrictions and stay secure on public Wi-Fi.",
     descriptionNl:
       "VPN's voor Thailand — omzeil lokale beperkingen en blijf veilig op openbare wifi.",
-    href: "/best/vpn-thailand",
+    href: "/countries/thailand",
     tags: ["thailand", "asia", "travel"],
     icon: "globe",
   },
@@ -433,7 +433,7 @@ export const bestOfPages: ContentLink[] = [
       "VPNs that bypass internet restrictions in Vietnam and protect your online privacy.",
     descriptionNl:
       "VPN's die internetbeperkingen in Vietnam omzeilen en je online privacy beschermen.",
-    href: "/best/vpn-vietnam",
+    href: "/countries/vietnam",
     tags: ["vietnam", "asia", "censorship"],
     icon: "globe",
   },

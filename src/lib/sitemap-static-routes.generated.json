@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-25T14:47:23.230Z",
+  "generatedAt": "2026-07-25T14:56:36.275Z",
   "paths": [
     "",
     "/about",
@@ -76,6 +76,7 @@
     "/guides/vpn-speed-guide",
     "/guides/what-is-vpn",
     "/how-we-test",
+    "/is-nordvpn-safe",
     "/methodology",
     "/privacy-policy",
     "/quiz",

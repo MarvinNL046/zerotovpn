@@ -36,6 +36,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/is-nordvpn-safe"
+                  className="text-slate-400 hover:text-orange-400"
+                >
+                  {t("isNordvpnSafe")}
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/vpn-index"
                   className="text-slate-400 hover:text-orange-400"
                 >

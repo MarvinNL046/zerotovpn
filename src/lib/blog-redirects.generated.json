@@ -688,5 +688,15 @@
     "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-location-spoofing-internet-speed-2026-performance-test",
     "destination": "/:locale/blog/vpn-location-spoofing-internet-speed-performance-test-2026",
     "permanent": true
+  },
+  {
+    "source": "/best/vpn-iran",
+    "destination": "/countries/iran",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/best/vpn-iran",
+    "destination": "/:locale/countries/iran",
+    "permanent": true
   }
 ]

@@ -337,7 +337,7 @@ export const bestOfPages: ContentLink[] = [
       "VPNs with obfuscation technology that work in Iran to bypass heavy censorship.",
     descriptionNl:
       "VPN's met obfuscatietechnologie die werken in Iran om zware censuur te omzeilen.",
-    href: "/best/vpn-iran",
+    href: "/countries/iran",
     tags: ["iran", "censorship", "geo-restriction"],
     icon: "globe",
   },

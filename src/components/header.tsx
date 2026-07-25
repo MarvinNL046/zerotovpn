@@ -144,7 +144,7 @@ export function Header() {
                     { href: "/best/vpn-china", label: t("vpnChina") },
                     { href: "/best/vpn-russia", label: t("vpnRussia") },
                     { href: "/best/vpn-uae", label: t("vpnUae") },
-                    { href: "/best/vpn-iran", label: t("vpnIran") },
+                    { href: "/countries/iran", label: t("vpnIran") },
                     { href: "/best/vpn-thailand", label: t("vpnThailand") },
                   ].map(item => (
                     <Link key={item.href} href={item.href} onClick={() => setOpenMenu(null)}

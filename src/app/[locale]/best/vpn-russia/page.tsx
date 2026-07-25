@@ -1544,7 +1544,7 @@ export default async function VpnRussiaPage({ params }: Props) {
           pages={[
             { title: "Best VPN for China", description: "VPNs that bypass the Great Firewall", href: "/best/vpn-china", icon: "globe" },
             { title: "Best VPN for UAE", description: "VPNs for Dubai and the Emirates", href: "/best/vpn-uae", icon: "globe" },
-            { title: "Best VPN for Iran", description: "Top VPNs for bypassing Iranian censorship", href: "/best/vpn-iran", icon: "globe" },
+            { title: "Best VPN for Iran", description: "Top VPNs for bypassing Iranian censorship", href: "/countries/iran", icon: "globe" },
             { title: "Best VPNs 2026", description: "Our top-rated VPN services", href: "/best/best-vpn", icon: "trophy" },
             { title: "Best Mobile VPN", description: "VPNs optimized for mobile devices", href: "/best/vpn-mobile", icon: "smartphone" }
           ]}

@@ -115,7 +115,7 @@ export default async function VpnStreamingPage({ params }: Props) {
       speedPercent: 92,
       devices: "10",
       smartDns: true,
-      price: "$2.99/mo",
+      price: "$3.09/mo",
     },
     {
       vpn: expressvpn,
@@ -126,7 +126,7 @@ export default async function VpnStreamingPage({ params }: Props) {
       speedPercent: 95,
       devices: "14",
       smartDns: true,
-      price: "$2.44/mo",
+      price: "$3.49/mo",
     },
     {
       vpn: surfshark,
@@ -137,7 +137,7 @@ export default async function VpnStreamingPage({ params }: Props) {
       speedPercent: 88,
       devices: "Unlimited",
       smartDns: true,
-      price: "$1.99/mo",
+      price: "$2.49/mo",
     },
     {
       vpn: cyberghost,
@@ -159,7 +159,7 @@ export default async function VpnStreamingPage({ params }: Props) {
       speedPercent: 78,
       devices: "10",
       smartDns: false,
-      price: "$3.99/mo",
+      price: "$2.99/mo",
     },
   ];
 

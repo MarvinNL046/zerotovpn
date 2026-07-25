@@ -143,7 +143,7 @@ export default async function PrivacyVpnPage({ params }: Props) {
       servers: "15,000+",
       countries: "120",
       devices: "10",
-      price: "$4.99/mo",
+      price: "$2.99/mo",
       specialFeatures: ["Swiss privacy laws", "Open source apps", "Secure Core servers"],
     },
     {
@@ -160,7 +160,7 @@ export default async function PrivacyVpnPage({ params }: Props) {
       servers: "7,400+",
       countries: "118",
       devices: "10",
-      price: "$2.99/mo",
+      price: "$3.09/mo",
       specialFeatures: ["PwC no-logs audit", "Threat Protection", "Double VPN"],
     },
     {
@@ -177,7 +177,7 @@ export default async function PrivacyVpnPage({ params }: Props) {
       servers: "4,500+",
       countries: "100",
       devices: "Unlimited",
-      price: "$1.99/mo",
+      price: "$2.49/mo",
       specialFeatures: ["Unlimited devices", "Camouflage mode", "CleanWeb ad blocker"],
     },
     {
@@ -194,7 +194,7 @@ export default async function PrivacyVpnPage({ params }: Props) {
       servers: "3,000+",
       countries: "105",
       devices: "8",
-      price: "$6.67/mo",
+      price: "$3.49/mo",
       specialFeatures: ["TrustedServer RAM-only", "No-activity logs", "Lightway protocol"],
     },
   ];

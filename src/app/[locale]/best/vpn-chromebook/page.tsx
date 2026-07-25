@@ -116,7 +116,7 @@ export default async function ChromebookVpnPage({ params }: Props) {
       linuxApp: "Yes",
       devices: "10",
       specialFeatures: ["Android App", "Chrome Extension", "Linux Support"],
-      price: "$2.99/mo",
+      price: "$3.09/mo",
     },
     {
       vpn: expressvpn,
@@ -127,7 +127,7 @@ export default async function ChromebookVpnPage({ params }: Props) {
       linuxApp: "Yes",
       devices: "14",
       specialFeatures: ["Lightway Protocol", "Split Tunneling", "24/7 Support"],
-      price: "$2.44/mo",
+      price: "$3.49/mo",
     },
     {
       vpn: surfshark,
@@ -138,7 +138,7 @@ export default async function ChromebookVpnPage({ params }: Props) {
       linuxApp: "Yes",
       devices: "Unlimited",
       specialFeatures: ["Unlimited Devices", "CleanWeb", "Whitelister"],
-      price: "$1.99/mo",
+      price: "$2.49/mo",
     },
   ];
 

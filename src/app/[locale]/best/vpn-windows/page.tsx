@@ -135,7 +135,7 @@ export default async function WindowsVpnPage({ params }: Props) {
       compatibility: "Win 11/10/8/7",
       appSize: "~25MB",
       features: ["Auto-connect", "Kill Switch", "Split Tunneling"],
-      price: "$2.99/mo",
+      price: "$3.09/mo",
     },
     {
       vpn: expressvpn,
@@ -145,7 +145,7 @@ export default async function WindowsVpnPage({ params }: Props) {
       compatibility: "Win 11/10/8/7",
       appSize: "~40MB",
       features: ["Fastest Protocol", "Network Lock", "Startup Options"],
-      price: "$2.44/mo",
+      price: "$3.49/mo",
     },
     {
       vpn: surfshark,
@@ -155,7 +155,7 @@ export default async function WindowsVpnPage({ params }: Props) {
       compatibility: "Win 11/10/8/7",
       appSize: "~30MB",
       features: ["Unlimited Devices", "CleanWeb", "Camouflage Mode"],
-      price: "$1.99/mo",
+      price: "$2.49/mo",
     },
   ];
 

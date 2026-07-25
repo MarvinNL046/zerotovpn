@@ -123,7 +123,7 @@ export default async function MacOSVpnPage({ params }: Props) {
         "Menubar Widget",
         "Keychain Integration",
       ],
-      price: "$2.99/mo",
+      price: "$3.09/mo",
     },
     {
       vpn: expressvpn,
@@ -140,7 +140,7 @@ export default async function MacOSVpnPage({ params }: Props) {
         "Shortcuts Support",
         "iCloud Keychain",
       ],
-      price: "$2.44/mo",
+      price: "$3.49/mo",
     },
     {
       vpn: surfshark,
@@ -157,7 +157,7 @@ export default async function MacOSVpnPage({ params }: Props) {
         "Auto-Connect",
         "Light & Dark Theme",
       ],
-      price: "$1.99/mo",
+      price: "$2.49/mo",
     },
   ];
 

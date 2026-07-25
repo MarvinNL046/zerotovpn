@@ -122,7 +122,7 @@ export default async function FastestVpnPage({ params }: Props) {
       countries: expressvpn?.countries ?? 105,
       speedScore: expressvpn?.speedScore ?? 96,
       speedFeatures: ["Lightway Protocol", "TrustedServer Technology", "Speed-Optimized Apps"],
-      price: "$6.67/mo",
+      price: "$3.49/mo",
     },
     {
       vpn: nordvpn,
@@ -133,7 +133,7 @@ export default async function FastestVpnPage({ params }: Props) {
       countries: nordvpn?.countries ?? 118,
       speedScore: nordvpn?.speedScore ?? 94,
       speedFeatures: ["NordLynx Protocol", "7,400+ Servers", "Smart Server Selection"],
-      price: "$2.99/mo",
+      price: "$3.09/mo",
     },
     {
       vpn: surfshark,
@@ -144,7 +144,7 @@ export default async function FastestVpnPage({ params }: Props) {
       countries: surfshark?.countries ?? 100,
       speedScore: surfshark?.speedScore ?? 90,
       speedFeatures: ["WireGuard Protocol", "Unlimited Devices", "NoBorders Mode"],
-      price: "$1.99/mo",
+      price: "$2.49/mo",
     },
     {
       vpn: protonvpn,
@@ -155,7 +155,7 @@ export default async function FastestVpnPage({ params }: Props) {
       countries: protonvpn?.countries ?? 120,
       speedScore: protonvpn?.speedScore ?? 88,
       speedFeatures: ["VPN Accelerator", "15,000+ Servers", "Swiss Privacy"],
-      price: "$4.99/mo",
+      price: "$2.99/mo",
     },
     {
       vpn: cyberghost,

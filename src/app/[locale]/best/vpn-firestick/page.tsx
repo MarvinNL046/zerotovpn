@@ -114,7 +114,7 @@ export default async function VpnFirestickPage({ params }: Props) {
       speed: "92 Mbps",
       supports4K: true,
       appRating: "4.3",
-      price: "$2.99/mo",
+      price: "$3.09/mo",
     },
     {
       vpn: expressvpn,
@@ -126,7 +126,7 @@ export default async function VpnFirestickPage({ params }: Props) {
       speed: "95 Mbps",
       supports4K: true,
       appRating: "4.4",
-      price: "$2.44/mo",
+      price: "$3.49/mo",
     },
     {
       vpn: surfshark,
@@ -138,7 +138,7 @@ export default async function VpnFirestickPage({ params }: Props) {
       speed: "88 Mbps",
       supports4K: true,
       appRating: "4.1",
-      price: "$1.99/mo",
+      price: "$2.49/mo",
     },
     {
       vpn: cyberghost,

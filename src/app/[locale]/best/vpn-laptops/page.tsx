@@ -127,7 +127,7 @@ export default async function LaptopVpnPage({ params }: Props) {
       autoConnect: "Yes",
       killSwitch: "Yes",
       specialFeatures: ["Auto-connect on WiFi", "Split Tunneling", "Battery Saver Mode"],
-      price: "$2.99/mo",
+      price: "$3.09/mo",
     },
     {
       vpn: expressvpn,
@@ -138,7 +138,7 @@ export default async function LaptopVpnPage({ params }: Props) {
       autoConnect: "Yes",
       killSwitch: "Yes",
       specialFeatures: ["Lightway Protocol", "Network Lock", "Fastest Speeds"],
-      price: "$2.44/mo",
+      price: "$3.49/mo",
     },
     {
       vpn: surfshark,
@@ -149,7 +149,7 @@ export default async function LaptopVpnPage({ params }: Props) {
       autoConnect: "Yes",
       killSwitch: "Yes",
       specialFeatures: ["Unlimited Devices", "CleanWeb", "MultiHop"],
-      price: "$1.99/mo",
+      price: "$2.49/mo",
     },
   ];
 

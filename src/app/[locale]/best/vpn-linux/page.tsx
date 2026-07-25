@@ -117,7 +117,7 @@ export default async function LinuxVpnPage({ params }: Props) {
       distros: "Ubuntu, Debian, Fedora, Mint",
       protocol: "NordLynx (WireGuard)",
       specialFeatures: ["Native Linux App", "Kill Switch", "Auto-Connect"],
-      price: "$2.99/mo",
+      price: "$3.09/mo",
     },
     {
       vpn: expressvpn,
@@ -127,7 +127,7 @@ export default async function LinuxVpnPage({ params }: Props) {
       distros: "Ubuntu, Debian, Fedora, Arch",
       protocol: "Lightway",
       specialFeatures: ["Terminal Control", "Split Tunneling", "Network Lock"],
-      price: "$2.44/mo",
+      price: "$3.49/mo",
     },
     {
       vpn: surfshark,
@@ -137,7 +137,7 @@ export default async function LinuxVpnPage({ params }: Props) {
       distros: "Ubuntu, Debian, Mint",
       protocol: "WireGuard",
       specialFeatures: ["Unlimited Devices", "CleanWeb", "MultiHop"],
-      price: "$1.99/mo",
+      price: "$2.49/mo",
     },
   ];
 

@@ -35,7 +35,9 @@ export function RankedVpnRow({
   logo = false,
   badge,
   price,
+  priceClassName,
   stats = [],
+  middle,
   labels,
   highlight = false,
   children,
@@ -55,7 +57,19 @@ export function RankedVpnRow({
   /** Al opgemaakt, want de helft van de pagina's bewaart een string als
    *  "$2.99/mo" en de andere helft rekent met priceTwoYear. */
   price: React.ReactNode;
+  /** Accentkleur van de prijs; verschilt per paginathema (rood op /vpn-netflix,
+   *  oranje elders). */
+  priceClassName?: string;
+  /** Eenvoudige label-boven-waarde cellen. */
   stats?: Array<{ label: string; value: React.ReactNode }>;
+  /**
+   * Vrij middendeel, voor pagina's die geen label/waarde-raster tonen maar
+   * bijvoorbeeld icoon-met-tekst of vinkjes. Vervangt `stats` als het gezet is.
+   * Dit slot bestaat omdat de inventarisatie liet zien dat vrijwel geen twee
+   * lijstpagina's dezelfde cellen tonen — dat forceren in één vorm zou de
+   * pagina's slechter maken, niet consistenter.
+   */
+  middle?: React.ReactNode;
   labels: { cta: string; review?: string };
   highlight?: boolean;
   children?: React.ReactNode;
@@ -93,7 +107,10 @@ export function RankedVpnRow({
           </div>
         </div>
 
-        {stats.length > 0 && (
+        {middle ? (
+          <div className="flex-1">{middle}</div>
+        ) : (
+          stats.length > 0 && (
           // .metric = IBM Plex Mono met tabular-nums, zodat de waarden tussen
           // de rijen uitlijnen in plaats van per regel te verspringen.
           <div
@@ -108,11 +125,19 @@ export function RankedVpnRow({
                 <div className="metric font-bold">{stat.value}</div>
               </div>
             ))}
-          </div>
+            </div>
+          )
         )}
 
         <div className="flex shrink-0 flex-col items-center gap-2">
-          <div className="metric text-2xl font-bold text-primary">{price}</div>
+          <div
+            className={cn(
+              "metric text-2xl font-bold",
+              priceClassName ?? "text-primary",
+            )}
+          >
+            {price}
+          </div>
           <div className="flex w-full flex-col gap-2">
             <AffiliateButton
               vpnId={vpnId}

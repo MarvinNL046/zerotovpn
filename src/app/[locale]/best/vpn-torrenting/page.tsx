@@ -116,7 +116,7 @@ export default async function VpnTorrentingPage({ params }: Props) {
       socks5Proxy: true,
       speed: "94 Mbps avg",
       speedPercent: 94,
-      price: "$2.99/mo",
+      price: "$3.09/mo",
     },
     {
       vpn: expressvpn,
@@ -129,7 +129,7 @@ export default async function VpnTorrentingPage({ params }: Props) {
       socks5Proxy: false,
       speed: "96 Mbps avg",
       speedPercent: 96,
-      price: "$2.44/mo",
+      price: "$3.49/mo",
     },
     {
       vpn: surfshark,
@@ -142,7 +142,7 @@ export default async function VpnTorrentingPage({ params }: Props) {
       socks5Proxy: false,
       speed: "89 Mbps avg",
       speedPercent: 89,
-      price: "$1.99/mo",
+      price: "$2.49/mo",
     },
     {
       vpn: protonvpn,
@@ -155,7 +155,7 @@ export default async function VpnTorrentingPage({ params }: Props) {
       socks5Proxy: false,
       speed: "80 Mbps avg",
       speedPercent: 80,
-      price: "$3.99/mo",
+      price: "$2.99/mo",
     },
     {
       vpn: cyberghost,

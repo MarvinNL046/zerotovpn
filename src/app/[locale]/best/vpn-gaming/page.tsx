@@ -121,7 +121,7 @@ export default async function GamingVpnPage({ params }: Props) {
       devices: "10",
       countries: "127",
       specialFeatures: ["Smart Ping List", "DDoS Protection", "Live Latency"],
-      price: "$2.99/mo",
+      price: "$3.09/mo",
     },
     {
       vpn: expressvpn,
@@ -132,7 +132,7 @@ export default async function GamingVpnPage({ params }: Props) {
       devices: "14",
       countries: "105",
       specialFeatures: ["Router App", "PlayStation/Xbox", "MediaStreamer"],
-      price: "$2.44/mo",
+      price: "$3.49/mo",
     },
     {
       vpn: surfshark,
@@ -143,7 +143,7 @@ export default async function GamingVpnPage({ params }: Props) {
       devices: "Unlimited",
       countries: "100",
       specialFeatures: ["IP Rotator", "GPS Override", "Unlimited Devices"],
-      price: "$1.99/mo",
+      price: "$2.49/mo",
     },
     {
       vpn: pia,

@@ -55,6 +55,18 @@ export const bestOfPages: ContentLink[] = [
   },
   {
     type: "best-of",
+    title: "VPNs With a Real Free Trial",
+    titleNl: "VPN's met een échte gratis proefperiode",
+    description:
+      "Which providers let you test without paying first — checked on their own pages, not copied from other lists.",
+    descriptionNl:
+      "Welke aanbieders je écht laten proberen zonder eerst te betalen — nagelezen op hun eigen pagina's.",
+    href: "/best/vpn-free-trial",
+    tags: ["free", "trial", "budget", "pricing"],
+    icon: "gift",
+  },
+  {
+    type: "best-of",
     title: "Fastest VPNs",
     titleNl: "Snelste VPN's",
     description:

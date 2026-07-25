@@ -122,6 +122,7 @@ export function Header() {
                   {[
                     { href: "/best/best-vpn", label: t("bestVpn"), icon: Trophy },
                     { href: "/best/free-vpn", label: t("freeVpn"), icon: Gift },
+                    { href: "/best/vpn-free-trial", label: t("vpnFreeTrial"), icon: Gift },
                     { href: "/best/vpn-gaming", label: t("vpnGaming"), icon: Gamepad2 },
                     { href: "/best/vpn-streaming", label: "Streaming", icon: Monitor },
                     { href: "/best/vpn-torrenting", label: "Torrenting", icon: Zap },
@@ -298,6 +299,7 @@ export function Header() {
                 {[
                   { href: "/best/best-vpn", label: t("bestVpn") },
                   { href: "/best/free-vpn", label: t("freeVpn") },
+                  { href: "/best/vpn-free-trial", label: t("vpnFreeTrial") },
                   { href: "/best/vpn-gaming", label: t("vpnGaming") },
                   { href: "/best/vpn-streaming", label: "Streaming" },
                   { href: "/countries/china", label: t("vpnChina") },

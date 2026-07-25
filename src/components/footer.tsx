@@ -60,6 +60,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/best/vpn-free-trial"
+                  className="text-slate-400 hover:text-orange-400"
+                >
+                  {t("vpnFreeTrial")}
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/best/vpn-gaming"
                   className="text-slate-400 hover:text-orange-400"
                 >

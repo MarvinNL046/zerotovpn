@@ -106,12 +106,14 @@ function ItemListSchema({ vpns }: { vpns: VpnProvider[] }) {
         name: vpn.name,
         description: vpn.shortDescription,
         brand: { "@type": "Brand", name: vpn.name },
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: vpn.overallRating,
-          bestRating: 5,
-          worstRating: 1,
-          ratingCount: 100 + index * 50,
+        review: {
+          "@type": "Review",
+          author: { "@type": "Organization", name: "ZeroToVPN" },
+          reviewRating: {
+            "@type": "Rating",
+            ratingValue: vpn.overallRating,
+            bestRating: 5,
+          },
         },
         offers: {
           "@type": "Offer",

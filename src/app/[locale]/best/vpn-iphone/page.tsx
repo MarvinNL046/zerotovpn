@@ -85,11 +85,14 @@ function IphoneVpnListSchema() {
           name: "ExpressVPN",
           description: "Best overall iPhone VPN with Lightway protocol and 4.7 App Store rating",
           brand: { "@type": "Brand", name: "ExpressVPN" },
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "4.7",
-            bestRating: "5",
-            ratingCount: "580000",
+          review: {
+            "@type": "Review",
+            author: { "@type": "Organization", name: "ZeroToVPN" },
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: "4.7",
+              bestRating: "5",
+            },
           },
           offers: {
             "@type": "Offer",
@@ -108,11 +111,14 @@ function IphoneVpnListSchema() {
           name: "NordVPN",
           description: "Best value iPhone VPN with NordLynx protocol and Siri Shortcuts",
           brand: { "@type": "Brand", name: "NordVPN" },
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "4.8",
-            bestRating: "5",
-            ratingCount: "360000",
+          review: {
+            "@type": "Review",
+            author: { "@type": "Organization", name: "ZeroToVPN" },
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: "4.8",
+              bestRating: "5",
+            },
           },
           offers: {
             "@type": "Offer",
@@ -131,11 +137,14 @@ function IphoneVpnListSchema() {
           name: "Surfshark",
           description: "Best budget iPhone VPN with unlimited devices and clean iOS design",
           brand: { "@type": "Brand", name: "Surfshark" },
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "4.6",
-            bestRating: "5",
-            ratingCount: "180000",
+          review: {
+            "@type": "Review",
+            author: { "@type": "Organization", name: "ZeroToVPN" },
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: "4.6",
+              bestRating: "5",
+            },
           },
           offers: {
             "@type": "Offer",

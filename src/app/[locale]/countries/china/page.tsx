@@ -90,10 +90,14 @@ function CountryVpnSchema({ vpns, locale }: { vpns: VpnProvider[]; locale: strin
         item: {
           "@type": "Product",
           name: vpn.name,
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: vpn.overallRating,
-            bestRating: 5,
+          review: {
+            "@type": "Review",
+            author: { "@type": "Organization", name: "ZeroToVPN" },
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: vpn.overallRating,
+              bestRating: 5,
+            },
           },
         },
       })),

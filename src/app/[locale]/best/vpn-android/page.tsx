@@ -113,12 +113,14 @@ function AndroidVpnListSchema() {
           name: "NordVPN for Android",
           description: "Best Android VPN app with NordLynx protocol, split tunneling, and 95% rating",
           brand: { "@type": "Brand", name: "NordVPN" },
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "9.6",
-            bestRating: "10",
-            worstRating: "1",
-            ratingCount: "12847",
+          review: {
+            "@type": "Review",
+            author: { "@type": "Organization", name: "ZeroToVPN" },
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: "9.6",
+              bestRating: "10",
+            },
           },
         },
       },
@@ -131,12 +133,14 @@ function AndroidVpnListSchema() {
           name: "Surfshark for Android",
           description: "Unlimited devices with GPS spoofing, Camouflage mode, and 94% rating",
           brand: { "@type": "Brand", name: "Surfshark" },
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "9.2",
-            bestRating: "10",
-            worstRating: "1",
-            ratingCount: "9532",
+          review: {
+            "@type": "Review",
+            author: { "@type": "Organization", name: "ZeroToVPN" },
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: "9.2",
+              bestRating: "10",
+            },
           },
         },
       },
@@ -149,12 +153,14 @@ function AndroidVpnListSchema() {
           name: "ExpressVPN for Android",
           description: "Stable connection with Lightway protocol, 94 countries, and 93% rating",
           brand: { "@type": "Brand", name: "ExpressVPN" },
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "9.4",
-            bestRating: "10",
-            worstRating: "1",
-            ratingCount: "11204",
+          review: {
+            "@type": "Review",
+            author: { "@type": "Organization", name: "ZeroToVPN" },
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: "9.4",
+              bestRating: "10",
+            },
           },
         },
       },

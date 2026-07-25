@@ -96,11 +96,14 @@ function TabletVpnListSchema() {
             priceCurrency: "USD",
             availability: "https://schema.org/InStock",
           },
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "4.8",
-            bestRating: "5",
-            worstRating: "1",
+          review: {
+            "@type": "Review",
+            author: { "@type": "Organization", name: "ZeroToVPN" },
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: "4.8",
+              bestRating: "5",
+            },
           },
         },
       },
@@ -119,11 +122,14 @@ function TabletVpnListSchema() {
             priceCurrency: "USD",
             availability: "https://schema.org/InStock",
           },
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "4.6",
-            bestRating: "5",
-            worstRating: "1",
+          review: {
+            "@type": "Review",
+            author: { "@type": "Organization", name: "ZeroToVPN" },
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: "4.6",
+              bestRating: "5",
+            },
           },
         },
       },
@@ -142,11 +148,14 @@ function TabletVpnListSchema() {
             priceCurrency: "USD",
             availability: "https://schema.org/InStock",
           },
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "4.70",
-            bestRating: "5",
-            worstRating: "1",
+          review: {
+            "@type": "Review",
+            author: { "@type": "Organization", name: "ZeroToVPN" },
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: "4.70",
+              bestRating: "5",
+            },
           },
         },
       },

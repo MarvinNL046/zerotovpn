@@ -86,11 +86,14 @@ function IpadVpnListSchema() {
           name: "NordVPN",
           description: "Best iPad VPN with optimized interface, NordLynx protocol, and split tunneling",
           brand: { "@type": "Brand", name: "NordVPN" },
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "4.8",
-            bestRating: "5",
-            ratingCount: "360000",
+          review: {
+            "@type": "Review",
+            author: { "@type": "Organization", name: "ZeroToVPN" },
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: "4.8",
+              bestRating: "5",
+            },
           },
           offers: {
             "@type": "Offer",
@@ -109,11 +112,14 @@ function IpadVpnListSchema() {
           name: "Surfshark",
           description: "Best value iPad VPN with unlimited devices and Family Sharing support",
           brand: { "@type": "Brand", name: "Surfshark" },
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "4.6",
-            bestRating: "5",
-            ratingCount: "180000",
+          review: {
+            "@type": "Review",
+            author: { "@type": "Organization", name: "ZeroToVPN" },
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: "4.6",
+              bestRating: "5",
+            },
           },
           offers: {
             "@type": "Offer",
@@ -132,11 +138,14 @@ function IpadVpnListSchema() {
           name: "ExpressVPN",
           description: "Most stable iPad VPN for travel and restricted countries",
           brand: { "@type": "Brand", name: "ExpressVPN" },
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "4.7",
-            bestRating: "5",
-            ratingCount: "580000",
+          review: {
+            "@type": "Review",
+            author: { "@type": "Organization", name: "ZeroToVPN" },
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: "4.7",
+              bestRating: "5",
+            },
           },
           offers: {
             "@type": "Offer",

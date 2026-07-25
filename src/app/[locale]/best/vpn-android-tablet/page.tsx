@@ -88,12 +88,14 @@ function AndroidTabletVpnListSchema() {
           name: "NordVPN for Android Tablets",
           description: "Fastest VPN for Android tablets with NordLynx protocol, tablet-optimized UI, and 95% rating",
           brand: { "@type": "Brand", name: "NordVPN" },
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "9.6",
-            bestRating: "10",
-            worstRating: "1",
-            ratingCount: "12847",
+          review: {
+            "@type": "Review",
+            author: { "@type": "Organization", name: "ZeroToVPN" },
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: "9.6",
+              bestRating: "10",
+            },
           },
         },
       },
@@ -106,12 +108,14 @@ function AndroidTabletVpnListSchema() {
           name: "Surfshark for Android Tablets",
           description: "Lightest Android tablet VPN app with GPS spoofing, unlimited devices, and 94% rating",
           brand: { "@type": "Brand", name: "Surfshark" },
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "9.2",
-            bestRating: "10",
-            worstRating: "1",
-            ratingCount: "9532",
+          review: {
+            "@type": "Review",
+            author: { "@type": "Organization", name: "ZeroToVPN" },
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: "9.2",
+              bestRating: "10",
+            },
           },
         },
       },
@@ -124,12 +128,14 @@ function AndroidTabletVpnListSchema() {
           name: "ExpressVPN for Android Tablets",
           description: "Best travel VPN for Android tablets with stable 4G/5G connection and 93% rating",
           brand: { "@type": "Brand", name: "ExpressVPN" },
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "9.4",
-            bestRating: "10",
-            worstRating: "1",
-            ratingCount: "11204",
+          review: {
+            "@type": "Review",
+            author: { "@type": "Organization", name: "ZeroToVPN" },
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: "9.4",
+              bestRating: "10",
+            },
           },
         },
       },

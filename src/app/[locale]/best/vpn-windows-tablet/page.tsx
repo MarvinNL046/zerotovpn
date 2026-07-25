@@ -4,7 +4,11 @@ import { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
-import { RatingStars } from "@/components/vpn/rating-stars";
+import {
+  VpnReviewCard,
+  type VpnReviewScoreKind,
+} from "@/components/vpn/vpn-review-card";
+import { getVpnById } from "@/lib/vpn-data";
 import {
   Shield,
   Zap,
@@ -159,6 +163,84 @@ export default async function WindowsTabletVpnPage({ params }: Props) {
 
   const t = await getTranslations("windowsTabletVpn");
 
+  // Cijfer en prijs komen uit vpn-data, niet uit deze pagina: ze stonden
+  // hier los uitgeschreven en waren daardoor gaan afwijken van de rest
+  // van de site. De score is afgeleid van datzelfde cijfer.
+  const reviewCards = [
+    {
+      vpn: getVpnById("nordvpn")!,
+      name: "NordVPN",
+      accent: "blue" as const,
+      badge: t("reviews.nordvpn.badge"),
+      badgeClassName: "bg-blue-500 text-white",
+      badgeIcon: <Crown className="mr-1 size-3" aria-hidden="true" />,
+      affiliateUrl: getVpnAffiliateUrl("nordvpn"),
+      score: "percent" as VpnReviewScoreKind | undefined,
+      scoreIcon: undefined,
+      scoreLiteral: undefined,
+      scoreClassName: "bg-blue-50 text-blue-700 border-blue-200",
+      showRating: true,
+      description: <>{t("reviews.nordvpn.description")}</>,
+      stats: [
+        { icon: <Tablet className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>Devices</>, value: <>10</> },
+        { icon: <Zap className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>Speed</>, value: <>94/100</>, valueClassName: "text-green-600" },
+        { icon: <Server className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>Servers</>, value: <>7,400+</> },
+        { icon: <Shield className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>Protocol</>, value: <>NordLynx</> },
+      ],
+      pros: t.raw("reviews.nordvpn.pros") as string[],
+      cons: t.raw("reviews.nordvpn.cons") as string[],
+      cta: <>{t("reviews.getButton")} NordVPN</>,
+    },
+    {
+      vpn: getVpnById("surfshark")!,
+      name: "Surfshark",
+      accent: undefined,
+      badge: undefined,
+      badgeClassName: undefined,
+      badgeIcon: undefined,
+      affiliateUrl: getVpnAffiliateUrl("surfshark"),
+      score: "percent" as VpnReviewScoreKind | undefined,
+      scoreIcon: undefined,
+      scoreLiteral: undefined,
+      scoreClassName: "bg-green-50 text-green-700 border-green-200",
+      showRating: true,
+      description: <>{t("reviews.surfshark.description")}</>,
+      stats: [
+        { icon: <Tablet className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>Devices</>, value: <>Unlimited</>, valueClassName: "text-green-600" },
+        { icon: <Zap className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>Speed</>, value: <>90/100</> },
+        { icon: <Monitor className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>Performance</>, value: <>Lightweight</>, valueClassName: "text-green-600" },
+        { icon: <Shield className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>Protocol</>, value: <>WireGuard</> },
+      ],
+      pros: t.raw("reviews.surfshark.pros") as string[],
+      cons: t.raw("reviews.surfshark.cons") as string[],
+      cta: <>{t("reviews.getButton")} Surfshark - 82% OFF</>,
+    },
+    {
+      vpn: getVpnById("expressvpn")!,
+      name: "ExpressVPN",
+      accent: undefined,
+      badge: undefined,
+      badgeClassName: undefined,
+      badgeIcon: undefined,
+      affiliateUrl: getVpnAffiliateUrl("expressvpn"),
+      score: "percent" as VpnReviewScoreKind | undefined,
+      scoreIcon: undefined,
+      scoreLiteral: undefined,
+      scoreClassName: "bg-purple-50 text-purple-700 border-purple-200",
+      showRating: true,
+      description: <>{t("reviews.expressvpn.description")}</>,
+      stats: [
+        { icon: <Tablet className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>Devices</>, value: <>8</> },
+        { icon: <Zap className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>Speed</>, value: <>96/100</>, valueClassName: "text-green-600" },
+        { icon: <Globe className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>Countries</>, value: <>105</> },
+        { icon: <Shield className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>Protocol</>, value: <>Lightway</> },
+      ],
+      pros: t.raw("reviews.expressvpn.pros") as string[],
+      cons: t.raw("reviews.expressvpn.cons") as string[],
+      cta: <>{t("reviews.getButton")} ExpressVPN</>,
+    },
+  ];
+
   return (
     <>
       <WindowsTabletVpnListSchema />
@@ -227,265 +309,35 @@ export default async function WindowsTabletVpnPage({ params }: Props) {
 
             <div className="space-y-8 max-w-5xl mx-auto">
               {/* NordVPN */}
-              <Card className="border-2 border-blue-500/50">
-                <div className="absolute -top-3 left-8">
-                  <Badge className="bg-blue-500 text-white">
-                    <Crown className="h-3 w-3 mr-1" />
-                    {t("reviews.nordvpn.badge")}
-                  </Badge>
-                </div>
-                <CardHeader>
-                  <div className="flex items-center justify-between">
-                    <CardTitle className="text-2xl flex items-center gap-3">
-                      1. NordVPN
-                      <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
-                        95%
-                      </Badge>
-                    </CardTitle>
-                    <RatingStars rating={4.65} />
-                  </div>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <p className="text-muted-foreground">{t("reviews.nordvpn.description")}</p>
-
-                  {/* Stats Grid */}
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div className="flex items-center gap-2">
-                      <Tablet className="h-4 w-4 text-muted-foreground" />
-                      <div>
-                        <div className="text-sm text-muted-foreground">Devices</div>
-                        <div className="font-semibold">10</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Zap className="h-4 w-4 text-muted-foreground" />
-                      <div>
-                        <div className="text-sm text-muted-foreground">Speed</div>
-                        <div className="font-semibold text-green-600">94/100</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Server className="h-4 w-4 text-muted-foreground" />
-                      <div>
-                        <div className="text-sm text-muted-foreground">Servers</div>
-                        <div className="font-semibold">7,400+</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Shield className="h-4 w-4 text-muted-foreground" />
-                      <div>
-                        <div className="text-sm text-muted-foreground">Protocol</div>
-                        <div className="font-semibold">NordLynx</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Pros & Cons */}
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="font-semibold mb-3 text-green-600">{t("reviews.pros")}</h4>
-                      <ul className="space-y-2">
-                        {(t.raw("reviews.nordvpn.pros") as string[]).map((pro, i) => (
-                          <li key={i} className="flex items-start gap-2 text-sm">
-                            <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0 mt-0.5" />
-                            <span>{pro}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-3 text-orange-600">{t("reviews.cons")}</h4>
-                      <ul className="space-y-2">
-                        {(t.raw("reviews.nordvpn.cons") as string[]).map((con, i) => (
-                          <li key={i} className="flex items-start gap-2 text-sm">
-                            <XCircle className="h-4 w-4 text-orange-500 flex-shrink-0 mt-0.5" />
-                            <span>{con}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  <AffiliateButton
-                    vpnId="nordvpn"
-                    vpnName="NordVPN"
-                    affiliateUrl={getVpnAffiliateUrl("nordvpn")}
-                    size="lg"
-                  >
-                    {t("reviews.getButton")} NordVPN
-                  </AffiliateButton>
-                </CardContent>
-              </Card>
-
-              {/* Surfshark */}
-              <Card>
-                <CardHeader>
-                  <div className="flex items-center justify-between">
-                    <CardTitle className="text-2xl flex items-center gap-3">
-                      2. Surfshark
-                      <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
-                        93%
-                      </Badge>
-                    </CardTitle>
-                    <RatingStars rating={4.75} />
-                  </div>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <p className="text-muted-foreground">{t("reviews.surfshark.description")}</p>
-
-                  {/* Stats Grid */}
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div className="flex items-center gap-2">
-                      <Tablet className="h-4 w-4 text-muted-foreground" />
-                      <div>
-                        <div className="text-sm text-muted-foreground">Devices</div>
-                        <div className="font-semibold text-green-600">Unlimited</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Zap className="h-4 w-4 text-muted-foreground" />
-                      <div>
-                        <div className="text-sm text-muted-foreground">Speed</div>
-                        <div className="font-semibold">90/100</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Monitor className="h-4 w-4 text-muted-foreground" />
-                      <div>
-                        <div className="text-sm text-muted-foreground">Performance</div>
-                        <div className="font-semibold text-green-600">Lightweight</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Shield className="h-4 w-4 text-muted-foreground" />
-                      <div>
-                        <div className="text-sm text-muted-foreground">Protocol</div>
-                        <div className="font-semibold">WireGuard</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Pros & Cons */}
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="font-semibold mb-3 text-green-600">{t("reviews.pros")}</h4>
-                      <ul className="space-y-2">
-                        {(t.raw("reviews.surfshark.pros") as string[]).map((pro, i) => (
-                          <li key={i} className="flex items-start gap-2 text-sm">
-                            <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0 mt-0.5" />
-                            <span>{pro}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-3 text-orange-600">{t("reviews.cons")}</h4>
-                      <ul className="space-y-2">
-                        {(t.raw("reviews.surfshark.cons") as string[]).map((con, i) => (
-                          <li key={i} className="flex items-start gap-2 text-sm">
-                            <XCircle className="h-4 w-4 text-orange-500 flex-shrink-0 mt-0.5" />
-                            <span>{con}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  <AffiliateButton
-                    vpnId="surfshark"
-                    vpnName="Surfshark"
-                    affiliateUrl={getVpnAffiliateUrl("surfshark")}
-                    size="lg"
-                  >
-                    {t("reviews.getButton")} Surfshark - 82% OFF
-                  </AffiliateButton>
-                </CardContent>
-              </Card>
-
-              {/* ExpressVPN */}
-              <Card>
-                <CardHeader>
-                  <div className="flex items-center justify-between">
-                    <CardTitle className="text-2xl flex items-center gap-3">
-                      3. ExpressVPN
-                      <Badge variant="outline" className="bg-purple-50 text-purple-700 border-purple-200">
-                        94%
-                      </Badge>
-                    </CardTitle>
-                    <RatingStars rating={4.70} />
-                  </div>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <p className="text-muted-foreground">{t("reviews.expressvpn.description")}</p>
-
-                  {/* Stats Grid */}
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div className="flex items-center gap-2">
-                      <Tablet className="h-4 w-4 text-muted-foreground" />
-                      <div>
-                        <div className="text-sm text-muted-foreground">Devices</div>
-                        <div className="font-semibold">8</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Zap className="h-4 w-4 text-muted-foreground" />
-                      <div>
-                        <div className="text-sm text-muted-foreground">Speed</div>
-                        <div className="font-semibold text-green-600">96/100</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Globe className="h-4 w-4 text-muted-foreground" />
-                      <div>
-                        <div className="text-sm text-muted-foreground">Countries</div>
-                        <div className="font-semibold">105</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Shield className="h-4 w-4 text-muted-foreground" />
-                      <div>
-                        <div className="text-sm text-muted-foreground">Protocol</div>
-                        <div className="font-semibold">Lightway</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Pros & Cons */}
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="font-semibold mb-3 text-green-600">{t("reviews.pros")}</h4>
-                      <ul className="space-y-2">
-                        {(t.raw("reviews.expressvpn.pros") as string[]).map((pro, i) => (
-                          <li key={i} className="flex items-start gap-2 text-sm">
-                            <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0 mt-0.5" />
-                            <span>{pro}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-3 text-orange-600">{t("reviews.cons")}</h4>
-                      <ul className="space-y-2">
-                        {(t.raw("reviews.expressvpn.cons") as string[]).map((con, i) => (
-                          <li key={i} className="flex items-start gap-2 text-sm">
-                            <XCircle className="h-4 w-4 text-orange-500 flex-shrink-0 mt-0.5" />
-                            <span>{con}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  <AffiliateButton
-                    vpnId="expressvpn"
-                    vpnName="ExpressVPN"
-                    affiliateUrl={getVpnAffiliateUrl("expressvpn")}
-                    size="lg"
-                  >
-                    {t("reviews.getButton")} ExpressVPN
-                  </AffiliateButton>
-                </CardContent>
-              </Card>
+              {reviewCards.map((card, index) => (
+                <VpnReviewCard
+                  key={card.vpn.id}
+                  rank={index + 1}
+                  name={card.name}
+                  vpnId={card.vpn.id}
+                  affiliateUrl={card.affiliateUrl}
+                  accent={card.accent}
+                  badge={card.badge}
+                  badgeClassName={card.badgeClassName}
+                  badgeIcon={card.badgeIcon}
+                  score={
+                    card.score === "percent"
+                      ? `${Math.round(card.vpn.overallRating * 20)}%`
+                      : card.score === "outOfFive"
+                        ? `${card.vpn.overallRating}/5`
+                        : card.scoreLiteral
+                  }
+                  scoreIcon={card.scoreIcon}
+                  scoreMono={card.score !== "literal"}
+                  scoreClassName={card.scoreClassName}
+                  rating={card.showRating ? card.vpn.overallRating : undefined}
+                  description={card.description}
+                  stats={card.stats}
+                  pros={card.pros}
+                  cons={card.cons}
+                  labels={{ pros: <>{t("reviews.pros")}</>, cons: <>{t("reviews.cons")}</>, cta: card.cta }}
+                />
+              ))}
             </div>
           </div>
         </section>

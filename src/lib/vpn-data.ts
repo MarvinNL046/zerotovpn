@@ -1819,6 +1819,13 @@ export function getVpnBySlug(slug: string): VpnProvider | undefined {
   return vpnProviders.find((vpn) => vpn.slug === slug);
 }
 
+/** Let op: id en slug lopen bij 14 providers uiteen (hideme/hide-me,
+ *  pia/private-internet-access, …). Klik-tracking gebruikt het id, dus
+ *  pagina's die daarmee werken moeten hier opzoeken en niet op slug. */
+export function getVpnById(id: string): VpnProvider | undefined {
+  return vpnProviders.find((vpn) => vpn.id === id);
+}
+
 export function getFeaturedVpns(): VpnProvider[] {
   return vpnProviders.filter((vpn) => vpn.featured).sort((a, b) => a.sortOrder - b.sortOrder);
 }

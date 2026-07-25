@@ -7,6 +7,11 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
+import {
+  VpnReviewCard,
+  type VpnReviewScoreKind,
+} from "@/components/vpn/vpn-review-card";
+import { getVpnById } from "@/lib/vpn-data";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { FAQAccordion } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
@@ -168,6 +173,108 @@ export default async function FreeVpnPage({ params }: Props) {
 
   const t = await getTranslations("freeVpn");
 
+  // Cijfer en prijs komen uit vpn-data, niet uit deze pagina: ze stonden
+  // hier los uitgeschreven en waren daardoor gaan afwijken van de rest
+  // van de site. De score is afgeleid van datzelfde cijfer.
+  const reviewCards = [
+    {
+      vpn: getVpnById("protonvpn")!,
+      name: "ProtonVPN Free",
+      accent: "green" as const,
+      badge: t("reviews.protonvpn.badge"),
+      badgeClassName: "bg-green-500 text-green-950",
+      badgeIcon: <Crown className="mr-1 size-3" aria-hidden="true" />,
+      affiliateUrl: getVpnAffiliateUrl("protonvpn"),
+      score: "literal" as VpnReviewScoreKind | undefined,
+      scoreIcon: undefined,
+      scoreLiteral: <>{t("reviews.protonvpn.unlimitedData")}</>,
+      scoreClassName: "bg-green-50 text-green-700 border-green-200",
+      showRating: false,
+      description: <>{t("reviews.protonvpn.description")}</>,
+      stats: [
+        { icon: <Database className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{t("reviews.dataLimit")}</>, value: <>{t("reviews.unlimited")}</>, valueClassName: "text-green-600" },
+        { icon: <Server className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{t("reviews.servers")}</>, value: <>5 {t("reviews.countries")}</> },
+        { icon: <Monitor className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{t("reviews.devices")}</>, value: <>1</> },
+        { icon: <Shield className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{t("reviews.logs")}</>, value: <>{t("reviews.noLogs")}</>, valueClassName: "text-green-600" },
+      ],
+      pros: t.raw("reviews.protonvpn.pros") as string[],
+      cons: t.raw("reviews.protonvpn.cons") as string[],
+      cta: <>{t("reviews.getButton")} ProtonVPN</>,
+    },
+    {
+      vpn: getVpnById("windscribe")!,
+      name: "Windscribe Free",
+      accent: undefined,
+      badge: undefined,
+      badgeClassName: undefined,
+      badgeIcon: undefined,
+      affiliateUrl: getVpnAffiliateUrl("windscribe"),
+      score: undefined as VpnReviewScoreKind | undefined,
+      scoreIcon: undefined,
+      scoreLiteral: undefined,
+      scoreClassName: undefined,
+      showRating: false,
+      description: <>{t("reviews.windscribe.description")}</>,
+      stats: [
+        { icon: <Database className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{t("reviews.dataLimit")}</>, value: <>10GB/{t("reviews.month")}</> },
+        { icon: <Server className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{t("reviews.servers")}</>, value: <>10 {t("reviews.countries")}</> },
+        { icon: <Monitor className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{t("reviews.devices")}</>, value: <>{t("reviews.unlimited")}</> },
+        { icon: <Wifi className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{t("reviews.adBlocker")}</>, value: <>{t("reviews.included")}</>, valueClassName: "text-green-600" },
+      ],
+      pros: t.raw("reviews.windscribe.pros") as string[],
+      cons: t.raw("reviews.windscribe.cons") as string[],
+      cta: <>{t("reviews.getButton")} Windscribe</>,
+    },
+    {
+      vpn: getVpnById("hideme")!,
+      name: "Hide.me Free",
+      accent: undefined,
+      badge: undefined,
+      badgeClassName: undefined,
+      badgeIcon: undefined,
+      affiliateUrl: getVpnAffiliateUrl("hideme"),
+      score: undefined as VpnReviewScoreKind | undefined,
+      scoreIcon: undefined,
+      scoreLiteral: undefined,
+      scoreClassName: undefined,
+      showRating: false,
+      description: <>{t("reviews.hideme.description")}</>,
+      stats: [
+        { icon: <Database className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{t("reviews.dataLimit")}</>, value: <>10GB/{t("reviews.month")}</> },
+        { icon: <Server className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{t("reviews.servers")}</>, value: <>5 {t("reviews.locations")}</> },
+        { icon: <Monitor className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{t("reviews.devices")}</>, value: <>1</> },
+        { icon: <Shield className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{t("reviews.logs")}</>, value: <>{t("reviews.noLogs")}</>, valueClassName: "text-green-600" },
+      ],
+      pros: t.raw("reviews.hideme.pros") as string[],
+      cons: t.raw("reviews.hideme.cons") as string[],
+      cta: <>{t("reviews.getButton")} Hide.me</>,
+    },
+    {
+      vpn: getVpnById("tunnelbear")!,
+      name: "TunnelBear Free",
+      accent: undefined,
+      badge: undefined,
+      badgeClassName: undefined,
+      badgeIcon: undefined,
+      affiliateUrl: getVpnAffiliateUrl("tunnelbear"),
+      score: undefined as VpnReviewScoreKind | undefined,
+      scoreIcon: undefined,
+      scoreLiteral: undefined,
+      scoreClassName: undefined,
+      showRating: false,
+      description: <>{t("reviews.tunnelbear.description")}</>,
+      stats: [
+        { icon: <Database className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{t("reviews.dataLimit")}</>, value: <>2GB/{t("reviews.month")}</>, valueClassName: "text-orange-600" },
+        { icon: <Server className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{t("reviews.servers")}</>, value: <>49 {t("reviews.countries")}</> },
+        { icon: <Monitor className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{t("reviews.devices")}</>, value: <>{t("reviews.unlimited")}</> },
+        { icon: <Shield className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{t("reviews.audited")}</>, value: <>{t("reviews.yes")}</>, valueClassName: "text-green-600" },
+      ],
+      pros: t.raw("reviews.tunnelbear.pros") as string[],
+      cons: t.raw("reviews.tunnelbear.cons") as string[],
+      cta: <>{t("reviews.getButton")} TunnelBear</>,
+    },
+  ];
+
   return (
     <>
       <FreeVpnListSchema />
@@ -264,323 +371,35 @@ export default async function FreeVpnPage({ params }: Props) {
 
             <div className="space-y-8 max-w-5xl mx-auto">
               {/* ProtonVPN */}
-              <Card className="border-2 border-green-500/50">
-                <div className="absolute -top-3 left-8">
-                  <Badge className="bg-green-500 text-green-950">
-                    <Crown className="h-3 w-3 mr-1" />
-                    {t("reviews.protonvpn.badge")}
-                  </Badge>
-                </div>
-                <CardHeader>
-                  <CardTitle className="text-2xl flex items-center gap-3">
-                    1. ProtonVPN Free
-                    <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
-                      {t("reviews.protonvpn.unlimitedData")}
-                    </Badge>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <p className="text-muted-foreground">{t("reviews.protonvpn.description")}</p>
-
-                  {/* Stats Grid */}
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div className="flex items-center gap-2">
-                      <Database className="h-4 w-4 text-muted-foreground" />
-                      <div>
-                        <div className="text-sm text-muted-foreground">{t("reviews.dataLimit")}</div>
-                        <div className="font-semibold text-green-600">{t("reviews.unlimited")}</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Server className="h-4 w-4 text-muted-foreground" />
-                      <div>
-                        <div className="text-sm text-muted-foreground">{t("reviews.servers")}</div>
-                        <div className="font-semibold">5 {t("reviews.countries")}</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Monitor className="h-4 w-4 text-muted-foreground" />
-                      <div>
-                        <div className="text-sm text-muted-foreground">{t("reviews.devices")}</div>
-                        <div className="font-semibold">1</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Shield className="h-4 w-4 text-muted-foreground" />
-                      <div>
-                        <div className="text-sm text-muted-foreground">{t("reviews.logs")}</div>
-                        <div className="font-semibold text-green-600">{t("reviews.noLogs")}</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Pros & Cons */}
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="font-semibold mb-3 text-green-600">{t("reviews.pros")}</h4>
-                      <ul className="space-y-2">
-                        {(t.raw("reviews.protonvpn.pros") as string[]).map((pro, i) => (
-                          <li key={i} className="flex items-start gap-2 text-sm">
-                            <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0 mt-0.5" />
-                            <span>{pro}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-3 text-orange-600">{t("reviews.cons")}</h4>
-                      <ul className="space-y-2">
-                        {(t.raw("reviews.protonvpn.cons") as string[]).map((con, i) => (
-                          <li key={i} className="flex items-start gap-2 text-sm">
-                            <XCircle className="h-4 w-4 text-orange-500 flex-shrink-0 mt-0.5" />
-                            <span>{con}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  <AffiliateButton
-                    vpnId="protonvpn"
-                    vpnName="ProtonVPN"
-                    affiliateUrl={getVpnAffiliateUrl("protonvpn")}
-                    size="lg"
-                  >
-                    {t("reviews.getButton")} ProtonVPN
-                  </AffiliateButton>
-                </CardContent>
-              </Card>
-
-              {/* Windscribe */}
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-2xl">2. Windscribe Free</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <p className="text-muted-foreground">{t("reviews.windscribe.description")}</p>
-
-                  {/* Stats Grid */}
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div className="flex items-center gap-2">
-                      <Database className="h-4 w-4 text-muted-foreground" />
-                      <div>
-                        <div className="text-sm text-muted-foreground">{t("reviews.dataLimit")}</div>
-                        <div className="font-semibold">10GB/{t("reviews.month")}</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Server className="h-4 w-4 text-muted-foreground" />
-                      <div>
-                        <div className="text-sm text-muted-foreground">{t("reviews.servers")}</div>
-                        <div className="font-semibold">10 {t("reviews.countries")}</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Monitor className="h-4 w-4 text-muted-foreground" />
-                      <div>
-                        <div className="text-sm text-muted-foreground">{t("reviews.devices")}</div>
-                        <div className="font-semibold">{t("reviews.unlimited")}</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Wifi className="h-4 w-4 text-muted-foreground" />
-                      <div>
-                        <div className="text-sm text-muted-foreground">{t("reviews.adBlocker")}</div>
-                        <div className="font-semibold text-green-600">{t("reviews.included")}</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Pros & Cons */}
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="font-semibold mb-3 text-green-600">{t("reviews.pros")}</h4>
-                      <ul className="space-y-2">
-                        {(t.raw("reviews.windscribe.pros") as string[]).map((pro, i) => (
-                          <li key={i} className="flex items-start gap-2 text-sm">
-                            <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0 mt-0.5" />
-                            <span>{pro}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-3 text-orange-600">{t("reviews.cons")}</h4>
-                      <ul className="space-y-2">
-                        {(t.raw("reviews.windscribe.cons") as string[]).map((con, i) => (
-                          <li key={i} className="flex items-start gap-2 text-sm">
-                            <XCircle className="h-4 w-4 text-orange-500 flex-shrink-0 mt-0.5" />
-                            <span>{con}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  <AffiliateButton
-                    vpnId="windscribe"
-                    vpnName="Windscribe"
-                    affiliateUrl={getVpnAffiliateUrl("windscribe")}
-                    size="lg"
-                  >
-                    {t("reviews.getButton")} Windscribe
-                  </AffiliateButton>
-                </CardContent>
-              </Card>
-
-              {/* Hide.me */}
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-2xl">3. Hide.me Free</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <p className="text-muted-foreground">{t("reviews.hideme.description")}</p>
-
-                  {/* Stats Grid */}
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div className="flex items-center gap-2">
-                      <Database className="h-4 w-4 text-muted-foreground" />
-                      <div>
-                        <div className="text-sm text-muted-foreground">{t("reviews.dataLimit")}</div>
-                        <div className="font-semibold">10GB/{t("reviews.month")}</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Server className="h-4 w-4 text-muted-foreground" />
-                      <div>
-                        <div className="text-sm text-muted-foreground">{t("reviews.servers")}</div>
-                        <div className="font-semibold">5 {t("reviews.locations")}</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Monitor className="h-4 w-4 text-muted-foreground" />
-                      <div>
-                        <div className="text-sm text-muted-foreground">{t("reviews.devices")}</div>
-                        <div className="font-semibold">1</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Shield className="h-4 w-4 text-muted-foreground" />
-                      <div>
-                        <div className="text-sm text-muted-foreground">{t("reviews.logs")}</div>
-                        <div className="font-semibold text-green-600">{t("reviews.noLogs")}</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Pros & Cons */}
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="font-semibold mb-3 text-green-600">{t("reviews.pros")}</h4>
-                      <ul className="space-y-2">
-                        {(t.raw("reviews.hideme.pros") as string[]).map((pro, i) => (
-                          <li key={i} className="flex items-start gap-2 text-sm">
-                            <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0 mt-0.5" />
-                            <span>{pro}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-3 text-orange-600">{t("reviews.cons")}</h4>
-                      <ul className="space-y-2">
-                        {(t.raw("reviews.hideme.cons") as string[]).map((con, i) => (
-                          <li key={i} className="flex items-start gap-2 text-sm">
-                            <XCircle className="h-4 w-4 text-orange-500 flex-shrink-0 mt-0.5" />
-                            <span>{con}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  <AffiliateButton
-                    vpnId="hideme"
-                    vpnName="Hide.me"
-                    affiliateUrl={getVpnAffiliateUrl("hideme")}
-                    size="lg"
-                  >
-                    {t("reviews.getButton")} Hide.me
-                  </AffiliateButton>
-                </CardContent>
-              </Card>
-
-              {/* TunnelBear */}
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-2xl">4. TunnelBear Free</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <p className="text-muted-foreground">{t("reviews.tunnelbear.description")}</p>
-
-                  {/* Stats Grid */}
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div className="flex items-center gap-2">
-                      <Database className="h-4 w-4 text-muted-foreground" />
-                      <div>
-                        <div className="text-sm text-muted-foreground">{t("reviews.dataLimit")}</div>
-                        <div className="font-semibold text-orange-600">2GB/{t("reviews.month")}</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Server className="h-4 w-4 text-muted-foreground" />
-                      <div>
-                        <div className="text-sm text-muted-foreground">{t("reviews.servers")}</div>
-                        <div className="font-semibold">49 {t("reviews.countries")}</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Monitor className="h-4 w-4 text-muted-foreground" />
-                      <div>
-                        <div className="text-sm text-muted-foreground">{t("reviews.devices")}</div>
-                        <div className="font-semibold">{t("reviews.unlimited")}</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Shield className="h-4 w-4 text-muted-foreground" />
-                      <div>
-                        <div className="text-sm text-muted-foreground">{t("reviews.audited")}</div>
-                        <div className="font-semibold text-green-600">{t("reviews.yes")}</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Pros & Cons */}
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="font-semibold mb-3 text-green-600">{t("reviews.pros")}</h4>
-                      <ul className="space-y-2">
-                        {(t.raw("reviews.tunnelbear.pros") as string[]).map((pro, i) => (
-                          <li key={i} className="flex items-start gap-2 text-sm">
-                            <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0 mt-0.5" />
-                            <span>{pro}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-3 text-orange-600">{t("reviews.cons")}</h4>
-                      <ul className="space-y-2">
-                        {(t.raw("reviews.tunnelbear.cons") as string[]).map((con, i) => (
-                          <li key={i} className="flex items-start gap-2 text-sm">
-                            <XCircle className="h-4 w-4 text-orange-500 flex-shrink-0 mt-0.5" />
-                            <span>{con}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  <AffiliateButton
-                    vpnId="tunnelbear"
-                    vpnName="TunnelBear"
-                    affiliateUrl={getVpnAffiliateUrl("tunnelbear")}
-                    size="lg"
-                  >
-                    {t("reviews.getButton")} TunnelBear
-                  </AffiliateButton>
-                </CardContent>
-              </Card>
+              {reviewCards.map((card, index) => (
+                <VpnReviewCard
+                  key={card.vpn.id}
+                  rank={index + 1}
+                  name={card.name}
+                  vpnId={card.vpn.id}
+                  affiliateUrl={card.affiliateUrl}
+                  accent={card.accent}
+                  badge={card.badge}
+                  badgeClassName={card.badgeClassName}
+                  badgeIcon={card.badgeIcon}
+                  score={
+                    card.score === "percent"
+                      ? `${Math.round(card.vpn.overallRating * 20)}%`
+                      : card.score === "outOfFive"
+                        ? `${card.vpn.overallRating}/5`
+                        : card.scoreLiteral
+                  }
+                  scoreIcon={card.scoreIcon}
+                  scoreMono={card.score !== "literal"}
+                  scoreClassName={card.scoreClassName}
+                  rating={card.showRating ? card.vpn.overallRating : undefined}
+                  description={card.description}
+                  stats={card.stats}
+                  pros={card.pros}
+                  cons={card.cons}
+                  labels={{ pros: <>{t("reviews.pros")}</>, cons: <>{t("reviews.cons")}</>, cta: card.cta }}
+                />
+              ))}
             </div>
           </div>
         </section>
@@ -635,7 +454,7 @@ export default async function FreeVpnPage({ params }: Props) {
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div className="text-center">
-                      <div className="text-4xl font-bold text-primary">$2.99</div>
+                      <div className="text-4xl font-bold text-primary">${getVpnById("nordvpn")!.priceTwoYear}</div>
                       <div className="text-sm text-muted-foreground">/{t("upgrade.month")}</div>
                     </div>
                     <ul className="space-y-2 text-sm">
@@ -667,7 +486,7 @@ export default async function FreeVpnPage({ params }: Props) {
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div className="text-center">
-                      <div className="text-4xl font-bold text-primary">$1.99</div>
+                      <div className="text-4xl font-bold text-primary">${getVpnById("surfshark")!.priceTwoYear}</div>
                       <div className="text-sm text-muted-foreground">/{t("upgrade.month")}</div>
                     </div>
                     <ul className="space-y-2 text-sm">
@@ -725,7 +544,7 @@ export default async function FreeVpnPage({ params }: Props) {
                   },
                   {
                     question: "Should I use a free VPN or pay for one?",
-                    answer: "For serious privacy, security, and unrestricted access, paying for a VPN is strongly recommended. Premium VPNs like Surfshark ($1.99/month) or NordVPN ($2.99/month) offer unlimited data, faster speeds, better security, streaming access, and customer support. Free VPNs are only suitable for light, occasional use. If budget is a concern, premium VPNs often have sales and money-back guarantees, making them very affordable."
+                    answer: `For serious privacy, security, and unrestricted access, paying for a VPN is strongly recommended. Premium VPNs like Surfshark ($${getVpnById("surfshark")!.priceTwoYear}/month) or NordVPN ($${getVpnById("nordvpn")!.priceTwoYear}/month) offer unlimited data, faster speeds, better security, streaming access, and customer support. Free VPNs are only suitable for light, occasional use. If budget is a concern, premium VPNs often have sales and money-back guarantees, making them very affordable.`
                   }
                 ]}
               />

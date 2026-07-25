@@ -168,7 +168,7 @@ export default async function BestVpnPage({ params }: Props) {
         },
         {
           q: "What is the best cheap VPN?",
-          a: "Surfshark offers the best value for money with prices starting at $1.99/month on the 2-year plan, plus unlimited device connections.",
+          a: "Surfshark offers the best value for money with prices starting at $2.49/month on the 2-year plan, plus unlimited device connections.",
         },
         {
           q: "What is the fastest VPN?",
@@ -497,7 +497,7 @@ export default async function BestVpnPage({ params }: Props) {
         },
         {
           q: "가장 저렴한 VPN은?",
-          a: "Surfshark가 가성비 면에서 가장 뛰어납니다. 2년 요금제 기준 월 $1.99부터 이용 가능하며, 기기 동시 접속 수 제한이 없습니다.",
+          a: "Surfshark가 가성비 면에서 가장 뛰어납니다. 2년 요금제 기준 월 $2.49부터 이용 가능하며, 기기 동시 접속 수 제한이 없습니다.",
         },
         {
           q: "가장 빠른 VPN은?",
@@ -544,7 +544,7 @@ export default async function BestVpnPage({ params }: Props) {
         },
         {
           q: "VPN ราคาถูกที่ดีที่สุดคือตัวไหน?",
-          a: "Surfshark มอบความคุ้มค่าสูงสุด ราคาเริ่มต้นที่ $1.99/เดือนสำหรับแพ็กเกจ 2 ปี พร้อมเชื่อมต่ออุปกรณ์ได้ไม่จำกัด",
+          a: "Surfshark มอบความคุ้มค่าสูงสุด ราคาเริ่มต้นที่ $2.49/เดือนสำหรับแพ็กเกจ 2 ปี พร้อมเชื่อมต่ออุปกรณ์ได้ไม่จำกัด",
         },
         {
           q: "VPN ที่เร็วที่สุดคือตัวไหน?",
@@ -868,7 +868,7 @@ export default async function BestVpnPage({ params }: Props) {
                 faqs={[
                   {
                     question: "What is the best VPN in 2026?",
-                    answer: "Based on our extensive testing, NordVPN is the best VPN in 2026. It offers the best combination of speed (up to 6,730 Mbps), security features (AES-256 encryption, kill switch, no-logs policy), and streaming capabilities at a competitive price of $2.99/month. With 7,000+ servers in 127 countries and excellent 24/7 support, it's our top choice for most users."
+                    answer: "Based on our extensive testing, NordVPN is the best VPN in 2026. It offers the best combination of speed (up to 6,730 Mbps), security features (AES-256 encryption, kill switch, no-logs policy), and streaming capabilities at a competitive price of $3.09/month. With 7,000+ servers in 127 countries and excellent 24/7 support, it's our top choice for most users."
                   },
                   {
                     question: "Are VPNs legal to use?",
@@ -876,7 +876,7 @@ export default async function BestVpnPage({ params }: Props) {
                   },
                   {
                     question: "How much does a good VPN cost?",
-                    answer: "Quality VPNs typically cost between $2-12 per month. Budget options like Surfshark start at $1.99/month on 2-year plans. Mid-range options like NordVPN cost around $2.99/month, while premium services like ExpressVPN are about $6.67/month. Longer subscriptions (1-2 years) offer significant discounts compared to monthly plans. All top VPNs offer 30-day money-back guarantees."
+                    answer: "Quality VPNs typically cost between $2-12 per month. Budget options like Surfshark start at $2.49/month on 2-year plans. Mid-range options like NordVPN cost around $3.09/month, while premium services like ExpressVPN are about $3.49/month. Longer subscriptions (1-2 years) offer significant discounts compared to monthly plans. All top VPNs offer 30-day money-back guarantees."
                   },
                   {
                     question: "Can a VPN slow down my internet?",

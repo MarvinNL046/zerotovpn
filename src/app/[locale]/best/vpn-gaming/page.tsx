@@ -155,7 +155,7 @@ export default async function GamingVpnPage({ params }: Props) {
       devices: "10",
       countries: "91",
       specialFeatures: ["Port Forwarding", "Game Hosting", "MACE Ad Blocker"],
-      price: "$2.03/mo",
+      price: `$${pia?.priceTwoYear ?? 2.19}/mo`,
     },
   ];
 
@@ -1816,7 +1816,7 @@ export default async function GamingVpnPage({ params }: Props) {
                   },
                   {
                     question: "Which VPN is fastest for gaming?",
-                    answer: "ExpressVPN and NordVPN are the fastest VPNs for gaming, both averaging around 8ms added latency. ExpressVPN uses its proprietary Lightway protocol which is optimized for speed and quick reconnections, making it ideal for console gaming. NordVPN uses NordLynx (based on WireGuard) which offers excellent speeds with smart server selection. For budget-conscious gamers, Surfshark delivers impressive speeds at $1.99/month with unlimited simultaneous connections."
+                    answer: "ExpressVPN and NordVPN are the fastest VPNs for gaming, both averaging around 8ms added latency. ExpressVPN uses its proprietary Lightway protocol which is optimized for speed and quick reconnections, making it ideal for console gaming. NordVPN uses NordLynx (based on WireGuard) which offers excellent speeds with smart server selection. For budget-conscious gamers, Surfshark delivers impressive speeds at $2.49/month with unlimited simultaneous connections."
                   },
                   {
                     question: "Can I use a VPN on PlayStation or Xbox?",

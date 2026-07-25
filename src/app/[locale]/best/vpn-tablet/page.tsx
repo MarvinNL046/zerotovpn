@@ -92,13 +92,13 @@ function TabletVpnListSchema() {
           brand: { "@type": "Brand", name: "NordVPN" },
           offers: {
             "@type": "Offer",
-            price: 2.99,
+            price: 3.09,
             priceCurrency: "USD",
             availability: "https://schema.org/InStock",
           },
           aggregateRating: {
             "@type": "AggregateRating",
-            ratingValue: "4.65",
+            ratingValue: "4.8",
             bestRating: "5",
             worstRating: "1",
           },
@@ -115,13 +115,13 @@ function TabletVpnListSchema() {
           brand: { "@type": "Brand", name: "Surfshark" },
           offers: {
             "@type": "Offer",
-            price: 1.99,
+            price: 2.49,
             priceCurrency: "USD",
             availability: "https://schema.org/InStock",
           },
           aggregateRating: {
             "@type": "AggregateRating",
-            ratingValue: "4.75",
+            ratingValue: "4.6",
             bestRating: "5",
             worstRating: "1",
           },
@@ -138,7 +138,7 @@ function TabletVpnListSchema() {
           brand: { "@type": "Brand", name: "ExpressVPN" },
           offers: {
             "@type": "Offer",
-            price: 8.32,
+            price: 3.49,
             priceCurrency: "USD",
             availability: "https://schema.org/InStock",
           },

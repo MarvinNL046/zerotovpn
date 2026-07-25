@@ -26,6 +26,7 @@ import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { Go2NetworkSection } from "@/components/seo/go2-network-section";
 import { getVpnAffiliateUrl } from "@/lib/vpn-links";
+import { getVpnById } from "@/lib/vpn-data";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -171,7 +172,7 @@ export default async function VpnIndiaPage({ params }: Props) {
       slug: "cyberghost",
       affiliateUrl: getVpnAffiliateUrl("cyberghost"),
       rating: 4.5,
-      price: "$2.19",
+      price: `$${getVpnById("cyberghost")?.priceTwoYear ?? 2.03}`,
       features: ["Streaming servers", "NoSpy servers", "45-day guarantee", "Large network"],
       whyWorks: "dedicated streaming servers optimized for Indian content platforms when accessed from abroad",
       reliability: 90,

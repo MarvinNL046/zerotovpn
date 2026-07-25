@@ -272,7 +272,7 @@ export default async function ChromebookVpnPage({ params }: Props) {
         },
         {
           question: "Can I use a free VPN on Chromebook?",
-          answer: "While free VPNs work on Chromebook, we don't recommend them. They often have data limits, slower speeds, and may sell your data. Premium VPNs like Surfshark cost only $1.99/month and offer much better protection.",
+          answer: "While free VPNs work on Chromebook, we don't recommend them. They often have data limits, slower speeds, and may sell your data. Premium VPNs like Surfshark cost only $2.49/month and offer much better protection.",
         },
         {
           question: "Will a VPN slow down my Chromebook?",
@@ -689,7 +689,7 @@ export default async function ChromebookVpnPage({ params }: Props) {
         },
         {
           question: "¿Puedo usar una VPN gratuita en Chromebook?",
-          answer: "Aunque las VPNs gratuitas funcionan en Chromebook, no las recomendamos. A menudo tienen límites de datos, velocidades más lentas y pueden vender tus datos. Las VPNs premium como Surfshark cuestan solo $1.99/mes y ofrecen mucha mejor protección.",
+          answer: "Aunque las VPNs gratuitas funcionan en Chromebook, no las recomendamos. A menudo tienen límites de datos, velocidades más lentas y pueden vender tus datos. Las VPNs premium como Surfshark cuestan solo $2.49/mes y ofrecen mucha mejor protección.",
         },
         {
           question: "¿Una VPN ralentizará mi Chromebook?",
@@ -1238,7 +1238,7 @@ export default async function ChromebookVpnPage({ params }: Props) {
         },
         {
           question: "크롬북에서 무료 VPN을 사용할 수 있습니까?",
-          answer: "무료 VPN은 크롬북에서 작동하지만 권장하지 않습니다. 종종 데이터 제한이 있고 속도가 느리며 데이터를 판매할 수 있습니다. Surfshark와 같은 프리미엄 VPN은 월 $1.99에 불과하며 훨씬 나은 보호를 제공합니다.",
+          answer: "무료 VPN은 크롬북에서 작동하지만 권장하지 않습니다. 종종 데이터 제한이 있고 속도가 느리며 데이터를 판매할 수 있습니다. Surfshark와 같은 프리미엄 VPN은 월 $2.49에 불과하며 훨씬 나은 보호를 제공합니다.",
         },
         {
           question: "VPN이 크롬북을 느리게 합니까?",
@@ -1375,7 +1375,7 @@ export default async function ChromebookVpnPage({ params }: Props) {
         },
         {
           question: "ฉันสามารถใช้ VPN ฟรีบน Chromebook ได้หรือไม่?",
-          answer: "แม้ว่า VPN ฟรีจะทำงานบน Chromebook แต่เราไม่แนะนำ พวกเขามักมีข้อจำกัดข้อมูล ความเร็วช้า และอาจขายข้อมูลของคุณ VPN พรีเมียมเช่น Surfshark มีราคาเพียง $1.99/เดือนและให้การปกป้องที่ดีกว่ามาก",
+          answer: "แม้ว่า VPN ฟรีจะทำงานบน Chromebook แต่เราไม่แนะนำ พวกเขามักมีข้อจำกัดข้อมูล ความเร็วช้า และอาจขายข้อมูลของคุณ VPN พรีเมียมเช่น Surfshark มีราคาเพียง $2.49/เดือนและให้การปกป้องที่ดีกว่ามาก",
         },
         {
           question: "VPN จะทำให้ Chromebook ของฉันช้าลงหรือไม่?",

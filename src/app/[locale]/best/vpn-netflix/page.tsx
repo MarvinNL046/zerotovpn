@@ -148,7 +148,7 @@ export default async function VpnNetflixPage({ params }: Props) {
       smartDns: false,
       speed: "82 Mbps avg",
       speedPercent: 82,
-      price: "$2.19/mo",
+      price: `$${cyberghost?.priceTwoYear ?? 2.03}/mo`,
     },
     {
       vpn: protonvpn,

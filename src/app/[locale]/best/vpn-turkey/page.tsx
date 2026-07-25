@@ -26,6 +26,7 @@ import { RelatedPages } from "@/components/seo/related-pages";
 import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { getVpnAffiliateUrl } from "@/lib/vpn-links";
+import { getVpnById } from "@/lib/vpn-data";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -171,7 +172,7 @@ export default async function VpnTurkeyPage({ params }: Props) {
       slug: "mullvad",
       affiliateUrl: getVpnAffiliateUrl("mullvad"),
       rating: 4.4,
-      price: "$5.44",
+      price: `$${getVpnById("mullvad")?.priceTwoYear ?? 5.00}`,
       features: ["WireGuard", "Anonymous accounts", "No email required", "Cash payments"],
       whyWorks: "maximum anonymity with no account data stored",
       reliability: 85,

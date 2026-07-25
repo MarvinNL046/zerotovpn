@@ -90,7 +90,7 @@ function AndroidTabletVpnListSchema() {
           brand: { "@type": "Brand", name: "NordVPN" },
           aggregateRating: {
             "@type": "AggregateRating",
-            ratingValue: "9.5",
+            ratingValue: "9.6",
             bestRating: "10",
             worstRating: "1",
             ratingCount: "12847",
@@ -108,7 +108,7 @@ function AndroidTabletVpnListSchema() {
           brand: { "@type": "Brand", name: "Surfshark" },
           aggregateRating: {
             "@type": "AggregateRating",
-            ratingValue: "9.4",
+            ratingValue: "9.2",
             bestRating: "10",
             worstRating: "1",
             ratingCount: "9532",
@@ -126,7 +126,7 @@ function AndroidTabletVpnListSchema() {
           brand: { "@type": "Brand", name: "ExpressVPN" },
           aggregateRating: {
             "@type": "AggregateRating",
-            ratingValue: "9.3",
+            ratingValue: "9.4",
             bestRating: "10",
             worstRating: "1",
             ratingCount: "11204",

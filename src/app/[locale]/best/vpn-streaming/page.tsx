@@ -149,7 +149,7 @@ export default async function VpnStreamingPage({ params }: Props) {
       speedPercent: 82,
       devices: "7",
       smartDns: false,
-      price: "$2.19/mo",
+      price: `$${cyberghost?.priceTwoYear ?? 2.03}/mo`,
     },
     {
       vpn: protonvpn,
@@ -200,7 +200,7 @@ export default async function VpnStreamingPage({ params }: Props) {
         },
         {
           question: "Can I use a free VPN for streaming?",
-          answer: "Most free VPNs cannot unblock streaming services. They lack the resources to maintain working servers against Netflix and Disney+ detection. The few that work have severe data limits (usually 500MB-2GB/month) and slow speeds. Surfshark at $1.99/month is a much better option.",
+          answer: "Most free VPNs cannot unblock streaming services. They lack the resources to maintain working servers against Netflix and Disney+ detection. The few that work have severe data limits (usually 500MB-2GB/month) and slow speeds. Surfshark at $2.49/month is a much better option.",
         },
         {
           question: "How do I stream on a Smart TV with a VPN?",
@@ -332,7 +332,7 @@ export default async function VpnStreamingPage({ params }: Props) {
       faqs: [
         { question: "Que VPN funciona con mas servicios de streaming?", answer: "NordVPN y ExpressVPN funcionan con las 6 principales plataformas: Netflix, Disney+, BBC iPlayer, Hulu, Prime Video y HBO Max." },
         { question: "Un VPN ralentizara mi streaming?", answer: "Los VPNs premium modernos causan una perdida minima. NordVPN mantiene el 92% y ExpressVPN el 95% de la velocidad original." },
-        { question: "Puedo usar un VPN gratis para streaming?", answer: "La mayoria de los VPNs gratis no pueden desbloquear servicios de streaming. Surfshark a $1.99/mes es mucho mejor." },
+        { question: "Puedo usar un VPN gratis para streaming?", answer: "La mayoria de los VPNs gratis no pueden desbloquear servicios de streaming. Surfshark a $2.49/mes es mucho mejor." },
         { question: "Como hago streaming en una Smart TV con VPN?", answer: "Tres opciones: 1) Smart DNS, 2) App VPN en Android TV/Fire TV, 3) VPN en el router." },
         { question: "Por que Disney+ bloquea VPNs?", answer: "Como Netflix, Disney+ bloquea VPNs por acuerdos de licencia regionales." },
       ],
@@ -404,7 +404,7 @@ export default async function VpnStreamingPage({ params }: Props) {
       faqs: [
         { question: "哪款VPN支持最多的流媒体服务？", answer: "NordVPN和ExpressVPN支持所有6个主要平台：Netflix、Disney+、BBC iPlayer、Hulu、Prime Video和HBO Max。" },
         { question: "VPN会减慢流媒体速度吗？", answer: "现代优质VPN造成的速度损失极小。NordVPN保持92%，ExpressVPN保持95%的原始速度。" },
-        { question: "可以用免费VPN进行流媒体吗？", answer: "大多数免费VPN无法解锁流媒体服务。Surfshark每月仅$1.99是更好的选择。" },
+        { question: "可以用免费VPN进行流媒体吗？", answer: "大多数免费VPN无法解锁流媒体服务。Surfshark每月仅$2.49是更好的选择。" },
         { question: "如何在智能电视上使用VPN流媒体？", answer: "三种选择：1) Smart DNS，2) 在Android TV/Fire TV上安装VPN应用，3) 在路由器上设置VPN。" },
         { question: "Disney+为什么封锁VPN？", answer: "与Netflix一样，Disney+因地区许可协议而封锁VPN。" },
       ],
@@ -440,7 +440,7 @@ export default async function VpnStreamingPage({ params }: Props) {
       faqs: [
         { question: "どのVPNが最も多くのストリーミングサービスで動作しますか？", answer: "NordVPNとExpressVPNは6つの主要プラットフォームすべてで動作します。" },
         { question: "VPNはストリーミングを遅くしますか？", answer: "最新のプレミアムVPNは速度損失が最小限です。NordVPNは92%、ExpressVPNは95%の速度を維持。" },
-        { question: "無料VPNでストリーミングできますか？", answer: "ほとんどの無料VPNはストリーミングサービスを解除できません。月額$1.99のSurfsharkがはるかに良い選択です。" },
+        { question: "無料VPNでストリーミングできますか？", answer: "ほとんどの無料VPNはストリーミングサービスを解除できません。月額$2.49のSurfsharkがはるかに良い選択です。" },
         { question: "スマートTVでVPNを使ってストリーミングするには？", answer: "3つの方法：1) Smart DNS、2) Android TV/Fire TVにVPNアプリをインストール、3) ルーターにVPNを設定。" },
         { question: "Disney+はなぜVPNをブロックしますか？", answer: "Netflixと同様、Disney+は地域ライセンス契約によりVPNをブロックしています。" },
       ],
@@ -476,7 +476,7 @@ export default async function VpnStreamingPage({ params }: Props) {
       faqs: [
         { question: "어떤 VPN이 가장 많은 스트리밍 서비스와 작동하나요?", answer: "NordVPN과 ExpressVPN은 6개 주요 플랫폼 모두에서 작동합니다." },
         { question: "VPN이 스트리밍을 느리게 하나요?", answer: "현대 프리미엄 VPN은 속도 손실이 최소입니다. NordVPN은 92%, ExpressVPN은 95%의 속도를 유지합니다." },
-        { question: "무료 VPN으로 스트리밍할 수 있나요?", answer: "대부분의 무료 VPN은 스트리밍 서비스를 차단 해제할 수 없습니다. 월 $1.99의 Surfshark가 훨씬 나은 선택입니다." },
+        { question: "무료 VPN으로 스트리밍할 수 있나요?", answer: "대부분의 무료 VPN은 스트리밍 서비스를 차단 해제할 수 없습니다. 월 $2.49의 Surfshark가 훨씬 나은 선택입니다." },
         { question: "스마트 TV에서 VPN으로 스트리밍하는 방법은?", answer: "3가지 방법: 1) Smart DNS, 2) Android TV/Fire TV에 VPN 앱 설치, 3) 라우터에 VPN 설정." },
         { question: "Disney+는 왜 VPN을 차단하나요?", answer: "Netflix와 마찬가지로 Disney+는 지역 라이선스 계약으로 인해 VPN을 차단합니다." },
       ],
@@ -512,7 +512,7 @@ export default async function VpnStreamingPage({ params }: Props) {
       faqs: [
         { question: "VPN ตัวไหนใช้ได้กับบริการสตรีมมิ่งมากที่สุด?", answer: "NordVPN และ ExpressVPN ใช้ได้กับแพลตฟอร์มหลักทั้ง 6 แห่ง" },
         { question: "VPN จะทำให้สตรีมมิ่งช้าลงหรือไม่?", answer: "VPN พรีเมียมสมัยใหม่ทำให้ความเร็วลดลงน้อยมาก NordVPN รักษาความเร็ว 92% และ ExpressVPN 95%" },
-        { question: "ใช้ VPN ฟรีสำหรับสตรีมมิ่งได้ไหม?", answer: "VPN ฟรีส่วนใหญ่ไม่สามารถปลดบล็อกบริการสตรีมมิ่ง Surfshark ที่ $1.99/เดือน เป็นตัวเลือกที่ดีกว่ามาก" },
+        { question: "ใช้ VPN ฟรีสำหรับสตรีมมิ่งได้ไหม?", answer: "VPN ฟรีส่วนใหญ่ไม่สามารถปลดบล็อกบริการสตรีมมิ่ง Surfshark ที่ $2.49/เดือน เป็นตัวเลือกที่ดีกว่ามาก" },
         { question: "สตรีมบน Smart TV ด้วย VPN ได้อย่างไร?", answer: "3 วิธี: 1) Smart DNS, 2) ติดตั้งแอป VPN บน Android TV/Fire TV, 3) ตั้งค่า VPN บนเราเตอร์" },
         { question: "ทำไม Disney+ ถึงบล็อก VPN?", answer: "เช่นเดียวกับ Netflix Disney+ บล็อก VPN เนื่องจากข้อตกลงใบอนุญาตระดับภูมิภาค" },
       ],

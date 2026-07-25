@@ -169,7 +169,7 @@ export default async function VpnTorrentingPage({ params }: Props) {
       socks5Proxy: false,
       speed: "83 Mbps avg",
       speedPercent: 83,
-      price: "$2.19/mo",
+      price: `$${cyberghost?.priceTwoYear ?? 2.03}/mo`,
     },
   ];
 

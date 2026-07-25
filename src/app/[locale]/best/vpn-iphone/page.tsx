@@ -93,7 +93,7 @@ function IphoneVpnListSchema() {
           },
           offers: {
             "@type": "Offer",
-            price: 6.67,
+            price: 3.49,
             priceCurrency: "USD",
             availability: "https://schema.org/InStock",
           },
@@ -110,13 +110,13 @@ function IphoneVpnListSchema() {
           brand: { "@type": "Brand", name: "NordVPN" },
           aggregateRating: {
             "@type": "AggregateRating",
-            ratingValue: "4.6",
+            ratingValue: "4.8",
             bestRating: "5",
             ratingCount: "360000",
           },
           offers: {
             "@type": "Offer",
-            price: 3.39,
+            price: 3.09,
             priceCurrency: "USD",
             availability: "https://schema.org/InStock",
           },
@@ -133,13 +133,13 @@ function IphoneVpnListSchema() {
           brand: { "@type": "Brand", name: "Surfshark" },
           aggregateRating: {
             "@type": "AggregateRating",
-            ratingValue: "4.5",
+            ratingValue: "4.6",
             bestRating: "5",
             ratingCount: "180000",
           },
           offers: {
             "@type": "Offer",
-            price: 2.19,
+            price: 2.49,
             priceCurrency: "USD",
             availability: "https://schema.org/InStock",
           },

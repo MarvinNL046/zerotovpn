@@ -151,7 +151,7 @@ export default async function VpnFirestickPage({ params }: Props) {
       speed: "82 Mbps",
       supports4K: true,
       appRating: "4.0",
-      price: "$2.19/mo",
+      price: `$${cyberghost?.priceTwoYear ?? 2.03}/mo`,
     },
     {
       vpn: ipvanish,
@@ -163,7 +163,7 @@ export default async function VpnFirestickPage({ params }: Props) {
       speed: "75 Mbps",
       supports4K: true,
       appRating: "4.2",
-      price: "$2.49/mo",
+      price: `$${ipvanish?.priceTwoYear ?? 3.99}/mo`,
     },
   ];
 
@@ -199,7 +199,7 @@ export default async function VpnFirestickPage({ params }: Props) {
         },
         {
           question: "Can I use a free VPN on Fire Stick?",
-          answer: "We do not recommend free VPNs for Fire Stick. Most lack native Fire TV apps, have slow speeds that cause buffering, and data caps that make streaming impossible (2GB = about 1 hour of HD video). Surfshark at $1.99/month with unlimited streaming is a much better option.",
+          answer: "We do not recommend free VPNs for Fire Stick. Most lack native Fire TV apps, have slow speeds that cause buffering, and data caps that make streaming impossible (2GB = about 1 hour of HD video). Surfshark at $2.49/month with unlimited streaming is a much better option.",
         },
         {
           question: "What is split tunneling on Fire Stick?",
@@ -272,7 +272,7 @@ export default async function VpnFirestickPage({ params }: Props) {
       faqs: [
         { question: "Necesito hacer sideload?", answer: "No. Los 5 VPNs tienen apps nativas en Amazon Appstore." },
         { question: "Un VPN ralentizara mi streaming?", answer: "Retraso minimo. ExpressVPN mantiene 95%, NordVPN 92%." },
-        { question: "Puedo usar un VPN gratis?", answer: "No recomendado. Surfshark a $1.99/mes es mejor." },
+        { question: "Puedo usar un VPN gratis?", answer: "No recomendado. Surfshark a $2.49/mes es mejor." },
         { question: "Que es split tunneling?", answer: "Permite elegir que apps usan el VPN." },
         { question: "Que modelos son compatibles?", answer: "Todos los modelos actuales de Fire TV Stick." },
       ],
@@ -309,7 +309,7 @@ export default async function VpnFirestickPage({ params }: Props) {
       faqs: [
         { question: "需要旁加载VPN吗？", answer: "不需要。所有5个VPN都有Amazon Appstore原生应用。" },
         { question: "VPN会降低速度吗？", answer: "极小的影响。ExpressVPN保持95%，NordVPN保持92%。" },
-        { question: "可以用免费VPN吗？", answer: "不推荐。Surfshark $1.99/月是更好的选择。" },
+        { question: "可以用免费VPN吗？", answer: "不推荐。Surfshark $2.49/月是更好的选择。" },
         { question: "什么是拆分隧道？", answer: "选择哪些应用使用VPN。" },
         { question: "哪些型号兼容？", answer: "所有当前Fire TV Stick型号。" },
       ],
@@ -327,7 +327,7 @@ export default async function VpnFirestickPage({ params }: Props) {
       faqs: [
         { question: "サイドロードが必要？", answer: "いいえ。5つすべてのVPNにAmazon Appstoreネイティブアプリがあります。" },
         { question: "VPNで速度低下する？", answer: "最小限。ExpressVPN 95%、NordVPN 92%維持。" },
-        { question: "無料VPNは使える？", answer: "非推奨。Surfshark月額$1.99がはるかに良い。" },
+        { question: "無料VPNは使える？", answer: "非推奨。Surfshark月額$2.49がはるかに良い。" },
         { question: "スプリットトンネリングとは？", answer: "どのアプリがVPNを使うか選択できます。" },
         { question: "対応モデルは？", answer: "すべての現行Fire TV Stickモデル。" },
       ],
@@ -345,7 +345,7 @@ export default async function VpnFirestickPage({ params }: Props) {
       faqs: [
         { question: "사이드로드가 필요한가요?", answer: "아니요. 5개 VPN 모두 Amazon Appstore 네이티브 앱이 있습니다." },
         { question: "VPN이 스트리밍을 느리게 하나요?", answer: "최소한의 영향. ExpressVPN 95%, NordVPN 92% 속도 유지." },
-        { question: "무료 VPN을 사용할 수 있나요?", answer: "추천하지 않습니다. Surfshark 월 $1.99가 훨씬 낫습니다." },
+        { question: "무료 VPN을 사용할 수 있나요?", answer: "추천하지 않습니다. Surfshark 월 $2.49가 훨씬 낫습니다." },
         { question: "스플릿 터널링이란?", answer: "어떤 앱이 VPN을 사용할지 선택할 수 있습니다." },
         { question: "어떤 모델이 호환되나요?", answer: "모든 현재 Fire TV Stick 모델." },
       ],
@@ -363,7 +363,7 @@ export default async function VpnFirestickPage({ params }: Props) {
       faqs: [
         { question: "ต้อง sideload VPN ไหม?", answer: "ไม่ VPN ทั้ง 5 ตัวมีแอปเนทีฟบน Amazon Appstore" },
         { question: "VPN จะทำให้สตรีมมิ่งช้าลงไหม?", answer: "ช้าลงน้อยมาก ExpressVPN รักษาความเร็ว 95% NordVPN 92%" },
-        { question: "ใช้ VPN ฟรีได้ไหม?", answer: "ไม่แนะนำ Surfshark ที่ $1.99/เดือน ดีกว่ามาก" },
+        { question: "ใช้ VPN ฟรีได้ไหม?", answer: "ไม่แนะนำ Surfshark ที่ $2.49/เดือน ดีกว่ามาก" },
         { question: "Split tunneling คืออะไร?", answer: "เลือกได้ว่าแอปไหนใช้ VPN" },
         { question: "รุ่นไหนรองรับ?", answer: "ทุกรุ่น Fire TV Stick ปัจจุบัน" },
       ],

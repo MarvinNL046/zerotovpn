@@ -198,7 +198,6 @@ export default async function IranVpnPage({ params }: Props) {
       effectiveness90: "90% Effective",
       effectiveness85: "85% Effective",
       effectiveness82: "82% Effective",
-      lastUpdated: "Last verified: March 2026",
       sources: "Sources & References",
     },
     nl: {
@@ -319,7 +318,6 @@ export default async function IranVpnPage({ params }: Props) {
       effectiveness90: "90% Effectief",
       effectiveness85: "85% Effectief",
       effectiveness82: "82% Effectief",
-      lastUpdated: "Laatst geverifieerd: maart 2026",
       sources: "Bronnen & Referenties",
     },
     de: {
@@ -440,7 +438,6 @@ export default async function IranVpnPage({ params }: Props) {
       effectiveness90: "90% Effektiv",
       effectiveness85: "85% Effektiv",
       effectiveness82: "82% Effektiv",
-      lastUpdated: "Zuletzt verifiziert: März 2026",
       sources: "Quellen & Referenzen",
     },
     es: {
@@ -561,7 +558,6 @@ export default async function IranVpnPage({ params }: Props) {
       effectiveness90: "90% Efectivo",
       effectiveness85: "85% Efectivo",
       effectiveness82: "82% Efectivo",
-      lastUpdated: "Última verificación: marzo 2026",
       sources: "Fuentes y Referencias",
     },
     fr: {
@@ -682,7 +678,6 @@ export default async function IranVpnPage({ params }: Props) {
       effectiveness90: "90% Efficace",
       effectiveness85: "85% Efficace",
       effectiveness82: "82% Efficace",
-      lastUpdated: "Dernière vérification : mars 2026",
       sources: "Sources & Références",
     },
     zh: {
@@ -803,7 +798,6 @@ export default async function IranVpnPage({ params }: Props) {
       effectiveness90: "90%有效",
       effectiveness85: "85%有效",
       effectiveness82: "82%有效",
-      lastUpdated: "最后验证：2026年3月",
       sources: "来源与参考资料",
     },
     ja: {
@@ -924,7 +918,6 @@ export default async function IranVpnPage({ params }: Props) {
       effectiveness90: "90%有効",
       effectiveness85: "85%有効",
       effectiveness82: "82%有効",
-      lastUpdated: "最終検証：2026年3月",
       sources: "出典・参考資料",
     },
     ko: {
@@ -1045,7 +1038,6 @@ export default async function IranVpnPage({ params }: Props) {
       effectiveness90: "90% 효과적",
       effectiveness85: "85% 효과적",
       effectiveness82: "82% 효과적",
-      lastUpdated: "마지막 검증: 2026년 3월",
       sources: "출처 및 참고자료",
     },
     th: {
@@ -1166,7 +1158,6 @@ export default async function IranVpnPage({ params }: Props) {
       effectiveness90: "ประสิทธิภาพ 90%",
       effectiveness85: "ประสิทธิภาพ 85%",
       effectiveness82: "ประสิทธิภาพ 82%",
-      lastUpdated: "ตรวจสอบล่าสุด: มีนาคม 2026",
       sources: "แหล่งที่มาและเอกสารอ้างอิง",
     },
   };
@@ -1519,7 +1510,6 @@ export default async function IranVpnPage({ params }: Props) {
                 </a>
               </li>
             </ul>
-            <p className="text-xs text-muted-foreground mt-4">{t.lastUpdated}</p>
           </div>
         </div>
       </section>

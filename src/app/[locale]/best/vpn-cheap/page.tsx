@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
+import { RankedVpnRow } from "@/components/vpn/ranked-vpn-row";
 import { RatingStars } from "@/components/vpn/rating-stars";
 import { VpnLogo } from "@/components/ui/vpn-logo";
 import { RelatedPages } from "@/components/seo/related-pages";
@@ -110,7 +111,7 @@ export default async function VpnCheapPage({ params }: Props) {
       vpn: surfshark,
       badge: "Best Value",
       badgeColor: "green",
-      monthlyPrice: "$1.99",
+      monthlyPrice: "$2.49",
       planLength: "2 years",
       devices: "Unlimited",
       servers: "3,200+",
@@ -149,7 +150,7 @@ export default async function VpnCheapPage({ params }: Props) {
       vpn: nordvpn,
       badge: "Best Overall",
       badgeColor: "yellow",
-      monthlyPrice: "$2.99",
+      monthlyPrice: "$3.09",
       planLength: "2 years",
       devices: "10",
       servers: "6,000+",
@@ -162,7 +163,7 @@ export default async function VpnCheapPage({ params }: Props) {
       vpn: protonvpn,
       badge: "Best Free Tier",
       badgeColor: "red",
-      monthlyPrice: "$3.99",
+      monthlyPrice: "$2.99",
       planLength: "2 years",
       devices: "10",
       servers: "2,900+",
@@ -416,35 +417,31 @@ export default async function VpnCheapPage({ params }: Props) {
             <h2 className="text-3xl font-bold mb-12 text-center">{t.topPicks}</h2>
             <div className="space-y-6 max-w-4xl mx-auto">
               {cheapVpns.map((item, index) => (
-                <Card key={index} className="relative overflow-hidden hover:shadow-xl transition-shadow">
-                  <CardContent className="p-6">
-                    <div className="flex flex-col md:flex-row md:items-center gap-6">
-                      <div className="flex items-center gap-4 md:min-w-[200px]">
-                        <span className="text-3xl font-bold text-gray-300 dark:text-gray-600">#{index + 1}</span>
-                        {item.vpn && <VpnLogo name={item.vpn.name} size="lg" />}
-                        <div>
-                          <h3 className="text-xl font-bold">{item.vpn?.name}</h3>
-                          <RatingStars rating={item.vpn?.overallRating || 0} />
-                        </div>
-                      </div>
-                      <div className="flex-1 grid grid-cols-2 md:grid-cols-3 gap-3">
-                        <div className="flex items-center gap-2 text-sm"><DollarSign className="w-4 h-4 text-green-500" /><span>{item.monthlyPrice}/mo</span></div>
-                        <div className="flex items-center gap-2 text-sm"><Monitor className="w-4 h-4 text-blue-500" /><span>{item.devices} devices</span></div>
-                        <div className="flex items-center gap-2 text-sm"><Server className="w-4 h-4 text-purple-500" /><span>{item.servers}</span></div>
-                        <div className="flex items-center gap-2 text-sm"><Zap className="w-4 h-4 text-yellow-500" /><span>{item.speed}</span></div>
-                        <div className="flex items-center gap-2 text-sm"><Globe className="w-4 h-4 text-blue-500" /><span>{item.moneyBack}</span></div>
-                      </div>
-                      <div className="flex flex-col items-center gap-2 md:min-w-[160px]">
-                        <p className="text-3xl font-bold text-emerald-600 dark:text-emerald-400">{item.monthlyPrice}</p>
-                        <span className="text-xs text-gray-500">{item.planLength} plan</span>
-                        <AffiliateButton vpnId={item.vpn?.slug || ""} vpnName={item.vpn?.name || ""} affiliateUrl={item.vpn?.affiliateUrl || ""} className="gap-2 w-full">
-                          {t.getVpnButton} {item.vpn?.name}<ArrowRight className="w-4 h-4" />
-                        </AffiliateButton>
-                      </div>
+                <RankedVpnRow
+                  key={index}
+                  name={item.vpn?.name || ""}
+                  vpnId={item.vpn?.slug || ""}
+                  affiliateUrl={item.vpn?.affiliateUrl || ""}
+                  rating={item.vpn?.overallRating}
+                  rank={index + 1}
+                  logo
+                  badge={item.badge}
+                  price={item.monthlyPrice}
+                  priceClassName="text-3xl text-emerald-600 dark:text-emerald-400"
+                  priceNote={`${item.planLength} plan`}
+                  labels={{ cta: `${t.getVpnButton} ${item.vpn?.name ?? ""}` }}
+                  middle={
+                    <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
+                      <>
+                      <div className="flex items-center gap-2 text-sm"><DollarSign className="size-4 text-green-600" aria-hidden="true" /><span>{item.monthlyPrice}/mo</span></div>
+                      <div className="flex items-center gap-2 text-sm"><Monitor className="size-4 text-blue-500" aria-hidden="true" /><span>{item.devices} devices</span></div>
+                      <div className="flex items-center gap-2 text-sm"><Server className="size-4 text-purple-500" aria-hidden="true" /><span>{item.servers}</span></div>
+                      <div className="flex items-center gap-2 text-sm"><Zap className="size-4 text-yellow-500" aria-hidden="true" /><span>{item.speed}</span></div>
+                      <div className="flex items-center gap-2 text-sm"><Globe className="size-4 text-blue-500" aria-hidden="true" /><span>{item.moneyBack}</span></div>
+                    </>
                     </div>
-                    {item.badge && <Badge className={`absolute top-4 right-4 ${item.badgeColor === "yellow" ? "bg-yellow-500" : item.badgeColor === "blue" ? "bg-blue-500" : item.badgeColor === "green" ? "bg-green-500" : item.badgeColor === "purple" ? "bg-purple-500" : "bg-red-500"} text-white`}>{item.badge}</Badge>}
-                  </CardContent>
-                </Card>
+                  }
+                />
               ))}
             </div>
           </div>

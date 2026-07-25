@@ -5,6 +5,7 @@ import { LastUpdated } from "@/components/last-updated";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
+import { RankedVpnRow } from "@/components/vpn/ranked-vpn-row";
 import { RatingStars } from "@/components/vpn/rating-stars";
 import { VpnLogo } from "@/components/ui/vpn-logo";
 import { RelatedPages } from "@/components/seo/related-pages";
@@ -584,59 +585,35 @@ export default async function VpnStreamingPage({ params }: Props) {
             <h2 className="text-3xl font-bold mb-12 text-center">{t.topPicks}</h2>
             <div className="space-y-6 max-w-4xl mx-auto">
               {streamingVpns.map((item, index) => (
-                <Card key={index} className="relative overflow-hidden hover:shadow-xl transition-shadow">
-                  <CardContent className="p-6">
-                    <div className="flex flex-col md:flex-row md:items-center gap-6">
-                      <div className="flex items-center gap-4 md:min-w-[200px]">
-                        <span className="text-3xl font-bold text-gray-300 dark:text-gray-600">#{index + 1}</span>
-                        {item.vpn && <VpnLogo name={item.vpn.name} size="lg" />}
-                        <div>
-                          <h3 className="text-xl font-bold">{item.vpn?.name}</h3>
-                          <RatingStars rating={item.vpn?.overallRating || 0} />
-                        </div>
+                <RankedVpnRow
+                  key={index}
+                  name={item.vpn?.name || ""}
+                  vpnId={item.vpn?.slug || ""}
+                  affiliateUrl={item.vpn?.affiliateUrl || ""}
+                  rating={item.vpn?.overallRating}
+                  rank={index + 1}
+                  logo
+                  badge={item.badge}
+                  price={item.price}
+                  priceClassName="text-2xl text-purple-600 dark:text-purple-400"
+                  labels={{ cta: `${t.getVpnButton} ${item.vpn?.name ?? ""}` }}
+                  middle={
+                    <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
+                      <>
+                      <div className="flex items-center gap-2 text-sm">
+                        <Tv className="size-4 text-purple-500" aria-hidden="true" />
+                        <span>{Object.values(item.platforms).filter(Boolean).length}/6 platforms</span>
                       </div>
-                      <div className="flex-1 grid grid-cols-2 md:grid-cols-3 gap-3">
-                        <div className="flex items-center gap-2 text-sm">
-                          <Tv className="w-4 h-4 text-purple-500" />
-                          <span>{Object.values(item.platforms).filter(Boolean).length}/6 platforms</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-sm">
-                          <Zap className="w-4 h-4 text-yellow-500" />
-                          <span>{item.speed}</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-sm">
-                          <Monitor className="w-4 h-4 text-blue-500" />
-                          <span>{item.devices} devices</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-sm">
-                          {item.smartDns ? (
-                            <CheckCircle className="w-4 h-4 text-green-500" />
-                          ) : (
-                            <XCircle className="w-4 h-4 text-gray-400" />
-                          )}
-                          <span>Smart DNS</span>
-                        </div>
+                      <div className="flex items-center gap-2 text-sm"><Zap className="size-4 text-yellow-500" aria-hidden="true" /><span>{item.speed}</span></div>
+                      <div className="flex items-center gap-2 text-sm"><Monitor className="size-4 text-blue-500" aria-hidden="true" /><span>{item.devices} devices</span></div>
+                      <div className="flex items-center gap-2 text-sm">
+                        {item.smartDns ? <CheckCircle className="size-4 text-green-600" aria-hidden="true" /> : <XCircle className="size-4 text-muted-foreground" aria-hidden="true" />}
+                        <span>Smart DNS</span>
                       </div>
-                      <div className="flex flex-col items-center gap-2 md:min-w-[160px]">
-                        <p className="text-2xl font-bold text-purple-600 dark:text-purple-400">{item.price}</p>
-                        <AffiliateButton
-                          vpnId={item.vpn?.slug || ""}
-                          vpnName={item.vpn?.name || ""}
-                          affiliateUrl={item.vpn?.affiliateUrl || ""}
-                          className="gap-2 w-full"
-                        >
-                          {t.getVpnButton} {item.vpn?.name}
-                          <ArrowRight className="w-4 h-4" />
-                        </AffiliateButton>
-                      </div>
+                    </>
                     </div>
-                    {item.badge && (
-                      <Badge className={`absolute top-4 right-4 ${item.badgeColor === "yellow" ? "bg-yellow-500" : item.badgeColor === "blue" ? "bg-blue-500" : item.badgeColor === "green" ? "bg-green-500" : item.badgeColor === "purple" ? "bg-purple-500" : "bg-red-500"} text-white`}>
-                        {item.badge}
-                      </Badge>
-                    )}
-                  </CardContent>
-                </Card>
+                  }
+                />
               ))}
             </div>
           </div>

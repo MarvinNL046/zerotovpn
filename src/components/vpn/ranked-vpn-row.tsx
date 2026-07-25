@@ -35,6 +35,7 @@ export function RankedVpnRow({
   logo = false,
   badge,
   price,
+  priceNote,
   priceClassName,
   stats = [],
   middle,
@@ -57,6 +58,8 @@ export function RankedVpnRow({
   /** Al opgemaakt, want de helft van de pagina's bewaart een string als
    *  "$2.99/mo" en de andere helft rekent met priceTwoYear. */
   price: React.ReactNode;
+  /** Kleine regel onder de prijs, bv. "2-year plan" op /best/vpn-cheap. */
+  priceNote?: React.ReactNode;
   /** Accentkleur van de prijs; verschilt per paginathema (rood op /vpn-netflix,
    *  oranje elders). */
   priceClassName?: string;
@@ -138,6 +141,9 @@ export function RankedVpnRow({
           >
             {price}
           </div>
+          {priceNote && (
+            <span className="text-xs text-muted-foreground">{priceNote}</span>
+          )}
           <div className="flex w-full flex-col gap-2">
             <AffiliateButton
               vpnId={vpnId}

@@ -32,7 +32,9 @@ export function RankedVpnRow({
   affiliateUrl,
   rating,
   rank,
+  rankPrefix,
   logo = false,
+  afterRating,
   badge,
   price,
   priceNote,
@@ -53,7 +55,13 @@ export function RankedVpnRow({
   affiliateUrl: string;
   rating?: number;
   rank?: number;
+  /** Voorvoegsel voor het rangnummer. De landenpagina's schreven "#1"; de
+   *  /best-pagina's alleen "1". Beide blijven zoals ze waren. */
+  rankPrefix?: string;
   logo?: boolean;
+  /** Onder de sterren, bv. de effectiviteitsbadge van de landenpagina's
+   *  ("Werkt betrouwbaar in Egypte"). */
+  afterRating?: React.ReactNode;
   /** Onderscheidingslabel rechtsboven, bv. "Beste voor streaming". */
   badge?: React.ReactNode;
   /** Al opgemaakt, want de helft van de pagina's bewaart een string als
@@ -99,6 +107,7 @@ export function RankedVpnRow({
         <div className="flex shrink-0 items-center gap-4">
           {rank != null && (
             <span className="metric text-2xl font-bold text-muted-foreground">
+              {rankPrefix}
               {rank}
             </span>
           )}
@@ -107,9 +116,10 @@ export function RankedVpnRow({
               <VpnLogo name={name} size="lg" />
             </div>
           )}
-          <div>
+          <div className="flex flex-col items-start gap-1">
             <h3 className="text-xl font-bold">{name}</h3>
             {rating != null && <RatingStars rating={rating} size="sm" />}
+            {afterRating}
           </div>
         </div>
 

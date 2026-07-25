@@ -1,12 +1,9 @@
 import { setRequestLocale } from "next-intl/server";
 import { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { AffiliateButton } from "@/components/vpn/affiliate-button";
-import { RatingStars } from "@/components/vpn/rating-stars";
+import { RankedVpnRow } from "@/components/vpn/ranked-vpn-row";
 import { getAllVpns } from "@/lib/vpn-data-layer";
-import { Link } from "@/i18n/navigation";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { generateAlternates } from "@/lib/seo-utils";
 import {
@@ -16,10 +13,8 @@ import {
   Globe,
   Clock,
   ArrowRight,
-  Scale,
   Smartphone,
   Lock,
-  Ban,
   AlertTriangle,
   Eye,
 } from "lucide-react";
@@ -630,57 +625,51 @@ export default async function PakistanVpnPage({ params }: Props) {
               const effectivenessKey = vpn.slug as keyof typeof t.vpnEffectiveness;
               const effectiveness = t.vpnEffectiveness[effectivenessKey];
               return (
-                <Card key={vpn.id} className="overflow-hidden">
-                  <CardContent className="p-6">
-                    <div className="flex flex-col lg:flex-row lg:items-center gap-6">
-                      <div className="flex items-center gap-4">
-                        <div className="text-4xl font-bold text-muted-foreground">#{index + 1}</div>
-                        <div className="space-y-1">
-                          <h3 className="text-2xl font-bold">{vpn.name}</h3>
-                          <RatingStars rating={vpn.overallRating} size="sm" />
-                          <Badge variant="secondary" className="text-xs">{effectiveness}</Badge>
-                        </div>
+                <RankedVpnRow
+                  key={vpn.id}
+                  name={vpn.name}
+                  slug={vpn.slug}
+                  vpnId={vpn.id}
+                  affiliateUrl={vpn.affiliateUrl}
+                  rating={vpn.overallRating}
+                  rank={index + 1}
+                  rankPrefix="#"
+                  afterRating={
+                    <Badge variant="secondary" className="text-xs">
+                      {effectiveness}
+                    </Badge>
+                  }
+                  price={
+                    <>
+                      ${vpn.priceTwoYear || vpn.priceYearly}
+                      <span className="text-sm font-normal text-muted-foreground">/mo</span>
+                    </>
+                  }
+                  labels={{ cta: t.getVpn, review: vpn.name }}
+                  reviewIcon={<ArrowRight className="size-4" aria-hidden="true" />}
+                  middle={
+                    <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+                      <div className="flex items-center gap-2">
+                        <CheckCircle className="size-5 text-green-600 dark:text-green-500" aria-hidden="true" />
+                        <span className="text-sm">{index === 0 && t.effectiveness94} {index === 1 && t.effectiveness91} {index === 2 && t.effectiveness89} {index === 3 && t.effectiveness86}</span>
                       </div>
-                      <div className="flex-1 grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <div className="flex items-center gap-2">
-                          <CheckCircle className="h-5 w-5 text-green-500" />
-                          <span className="text-sm">
-                            {index === 0 && t.effectiveness94}
-                            {index === 1 && t.effectiveness91}
-                            {index === 2 && t.effectiveness89}
-                            {index === 3 && t.effectiveness86}
-                          </span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <Lock className="h-5 w-5 text-blue-500" />
-                          <span className="text-sm">Obfuscation</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <Globe className="h-5 w-5 text-purple-500" />
-                          <span className="text-sm">{vpn.countries} countries</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <Smartphone className="h-5 w-5 text-orange-500" />
-                          <span className="text-sm">{vpn.maxDevices >= 999 ? "Unlimited" : vpn.maxDevices} devices</span>
-                        </div>
+                      <div className="flex items-center gap-2">
+                        <Lock className="size-5 text-blue-500" aria-hidden="true" />
+                        <span className="text-sm">Obfuscation</span>
                       </div>
-                      <div className="flex flex-col sm:flex-row lg:flex-col gap-3 lg:w-48">
-                        <div className="text-center lg:text-right">
-                          <div className="text-3xl font-bold text-primary">
-                            ${vpn.priceTwoYear || vpn.priceYearly}
-                            <span className="text-sm font-normal text-muted-foreground">/mo</span>
-                          </div>
-                        </div>
-                        <div className="flex gap-2">
-                          <AffiliateButton vpnId={vpn.id} vpnName={vpn.name} affiliateUrl={vpn.affiliateUrl} className="flex-1">{t.getVpn}</AffiliateButton>
-                          <Button variant="outline" asChild>
-                            <Link href={`/reviews/${vpn.slug}`}><ArrowRight className="h-4 w-4" /></Link>
-                          </Button>
-                        </div>
+                      <div className="flex items-center gap-2">
+                        <Globe className="size-5 text-purple-500" aria-hidden="true" />
+                        <span className="text-sm">{vpn.countries} countries</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Smartphone className="size-5 text-orange-500" aria-hidden="true" />
+                        <span className="text-sm">
+                          {vpn.maxDevices >= 999 ? "Unlimited" : vpn.maxDevices} devices
+                        </span>
                       </div>
                     </div>
-                  </CardContent>
-                </Card>
+                  }
+                />
               );
             })}
           </div>

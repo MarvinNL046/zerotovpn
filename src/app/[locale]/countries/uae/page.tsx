@@ -1,13 +1,9 @@
 import { setRequestLocale } from "next-intl/server";
 import { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { RankedVpnRow } from "@/components/vpn/ranked-vpn-row";
-import { RatingStars } from "@/components/vpn/rating-stars";
 import { getAllVpns } from "@/lib/vpn-data-layer";
-import { Link } from "@/i18n/navigation";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { generateAlternates } from "@/lib/seo-utils";
 import {
@@ -18,11 +14,9 @@ import {
   Globe,
   Clock,
   ArrowRight,
-  Info,
   Scale,
   Smartphone,
   Lock,
-  Phone,
   Building,
   DollarSign,
 } from "lucide-react";
@@ -1197,6 +1191,7 @@ export default async function UAEVpnPage({ params }: Props) {
                 affiliateUrl={vpn.affiliateUrl}
                 rating={vpn.overallRating}
                 rank={index + 1}
+                rankPrefix="#"
                 price={
                   <>
                     ${vpn.priceTwoYear || vpn.priceYearly}

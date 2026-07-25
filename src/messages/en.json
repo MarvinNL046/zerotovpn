@@ -3820,6 +3820,8 @@
     "addFirstVpn": "Add Your First VPN"
   },
   "comparePage": {
+    "allComparisons": "All VPN comparisons",
+    "allComparisonsIntro": "Every head-to-head we maintain, including the less obvious pairings.",
     "badge": "Updated November 2026",
     "title": "Compare VPNs Side by Side",
     "subtitle": "See how the top VPN services stack up against each other. Compare speeds, security features, pricing, and more.",

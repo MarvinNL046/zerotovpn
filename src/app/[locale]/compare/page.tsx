@@ -8,6 +8,7 @@ import { RatingStars } from "@/components/vpn/rating-stars";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { VpnComparisonTool } from "@/components/conversion/vpn-comparison-tool";
 import { PopularComparisons } from "@/components/compare/popular-comparisons";
+import { ProvenComparisons } from "@/components/compare/proven-comparisons";
 import { routing } from "@/i18n/routing";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { FAQAccordion } from "@/components/seo/faq-schema";
@@ -686,6 +687,12 @@ export default async function ComparePage({ params }: Props) {
 
       {/* Popular Comparisons */}
       <PopularComparisons />
+
+      {/* Alle vergelijkingen die op gemeten prestatie in de sitemap staan */}
+      <ProvenComparisons
+        title={t("allComparisons")}
+        intro={t("allComparisonsIntro")}
+      />
 
       {/* How We Compare */}
       <section className="py-12 lg:py-16">

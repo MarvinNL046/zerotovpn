@@ -3645,6 +3645,8 @@
     "addFirstVpn": "첫 번째 VPN 추가"
   },
   "comparePage": {
+    "allComparisons": "모든 VPN 비교",
+    "allComparisonsIntro": "저희가 관리하는 모든 비교입니다. 덜 알려진 조합도 포함합니다.",
     "badge": "2026년 11월 업데이트",
     "title": "VPN 나란히 비교",
     "subtitle": "최고의 VPN 서비스가 어떻게 비교되는지 확인하세요. 속도, 보안 기능, 가격 등을 비교합니다.",

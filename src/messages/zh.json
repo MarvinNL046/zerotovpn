@@ -3631,6 +3631,8 @@
     "addFirstVpn": "添加第一个VPN"
   },
   "comparePage": {
+    "allComparisons": "全部 VPN 对比",
+    "allComparisonsIntro": "我们维护的所有对比，包括不那么常见的组合。",
     "badge": "2026年11月更新",
     "title": "并排比较VPN",
     "subtitle": "了解顶级VPN服务如何相互比较。比较速度、安全功能、价格等。",

@@ -3630,6 +3630,8 @@
     "addFirstVpn": "最初のVPNを追加"
   },
   "comparePage": {
+    "allComparisons": "すべてのVPN比較",
+    "allComparisonsIntro": "当サイトが維持しているすべての比較。あまり知られていない組み合わせも含みます。",
     "badge": "2026年11月更新",
     "title": "VPNを並べて比較",
     "subtitle": "トップVPNサービスがどのように比較されるかをご覧ください。速度、セキュリティ機能、価格などを比較します。",

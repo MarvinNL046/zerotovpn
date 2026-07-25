@@ -788,5 +788,25 @@
     "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/best/vpn-vietnam",
     "destination": "/:locale/countries/vietnam",
     "permanent": true
+  },
+  {
+    "source": "/compare/x-vpn-vs-expressvpn",
+    "destination": "/compare/expressvpn-vs-x-vpn",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/compare/x-vpn-vs-expressvpn",
+    "destination": "/:locale/compare/expressvpn-vs-x-vpn",
+    "permanent": true
+  },
+  {
+    "source": "/compare/x-vpn-vs-nordvpn",
+    "destination": "/compare/nordvpn-vs-x-vpn",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/compare/x-vpn-vs-nordvpn",
+    "destination": "/:locale/compare/nordvpn-vs-x-vpn",
+    "permanent": true
   }
 ]

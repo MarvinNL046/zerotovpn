@@ -5434,108 +5434,108 @@
     }
   },
   "ipTool": {
-    "title": "IP Address Lookup",
-    "pageTitle": "What Is My IP Address?",
-    "pageSubtitle": "Instantly see your public IP address, location, ISP, and whether you're protected by a VPN. Your IP address is visible to every website you visit.",
-    "checking": "Detecting your IP address...",
-    "yourIp": "Your IP Address",
-    "location": "Location",
-    "isp": "Internet Provider",
-    "vpnStatus": "VPN Status",
-    "protected": "Protected",
-    "notProtected": "Not Protected",
-    "protectedDesc": "Your real IP address appears to be hidden behind a VPN or proxy.",
-    "notProtectedDesc": "Your real IP address and location are visible to every website you visit. Anyone can see where you are.",
-    "copyIp": "Copy IP",
-    "copied": "Copied!",
-    "recheckBtn": "Check Again",
+    "title": "IP 地址查询",
+    "pageTitle": "我的 IP 地址是多少？",
+    "pageSubtitle": "立即查看你的公网 IP 地址、所在位置、运营商，以及是否有 VPN 在保护你。你打开的每一个网站都能看到这个 IP。",
+    "checking": "正在检测你的 IP 地址……",
+    "yourIp": "你的 IP 地址",
+    "location": "位置",
+    "isp": "网络运营商",
+    "vpnStatus": "VPN 状态",
+    "protected": "已保护",
+    "notProtected": "未保护",
+    "protectedDesc": "你的真实 IP 地址似乎已被 VPN 或代理隐藏。",
+    "notProtectedDesc": "你打开的每个网站都能看到你的真实 IP 和位置，谁都知道你在哪里。",
+    "copyIp": "复制 IP",
+    "copied": "已复制！",
+    "recheckBtn": "重新检测",
     "ipv4": "IPv4",
     "ipv6": "IPv6",
-    "timezone": "Timezone",
-    "org": "Organization",
-    "getProtected": "Get Protected Now",
-    "getProtectedDesc": "Hide your IP address and encrypt your connection with a trusted VPN.",
-    "nordvpnDeal": "Get NordVPN — 68% Off",
-    "whyHideIp": "Why Should You Hide Your IP?",
-    "whyHideIpDesc": "Your IP address reveals your approximate location, internet provider, and can be used to track your online activity. Websites, advertisers, and even hackers can use this information. A VPN masks your real IP with one from their server network.",
-    "whatIsIp": "What Is an IP Address?",
-    "whatIsIpDesc": "An IP (Internet Protocol) address is a unique numerical label assigned to every device connected to the internet. It works like a digital mailing address, allowing websites and services to send data back to your device. There are two types: IPv4 (e.g., 192.168.1.1) and IPv6 (e.g., 2001:db8::1).",
-    "howVpnHelps": "How a VPN Protects Your IP",
-    "howVpnHelpsDesc": "A VPN (Virtual Private Network) routes your internet traffic through an encrypted tunnel to a remote server. Websites see the VPN server's IP address instead of yours, making it nearly impossible to trace activity back to you.",
-    "recommendedVpns": "Best VPNs to Hide Your IP Address",
+    "timezone": "时区",
+    "org": "所属机构",
+    "getProtected": "立即获得保护",
+    "getProtectedDesc": "用可靠的 VPN 隐藏 IP 地址并加密你的连接。",
+    "nordvpnDeal": "选择 NordVPN — 立减 68%",
+    "whyHideIp": "为什么要隐藏 IP 地址？",
+    "whyHideIpDesc": "你的 IP 地址会暴露大致位置和网络运营商，还能被用来追踪你的上网行为。网站、广告商，甚至不怀好意的人都会利用这些信息。VPN 会用服务器网络中的地址替换你的真实 IP。",
+    "whatIsIp": "什么是 IP 地址？",
+    "whatIsIpDesc": "IP（Internet Protocol）地址是分配给每台联网设备的唯一编号，作用相当于数字世界的通信地址：网站和各类服务靠它把数据送回你的设备。IP 地址分两种：IPv4（例如 192.168.1.1）和 IPv6（例如 2001:db8::1）。",
+    "howVpnHelps": "VPN 如何保护你的 IP",
+    "howVpnHelpsDesc": "VPN（虚拟专用网络）会把你的网络流量经加密隧道送往远端服务器。网站看到的是那台服务器的 IP，而不是你的，因此几乎无法把上网行为追溯到你本人。",
+    "recommendedVpns": "隐藏 IP 地址的最佳 VPN",
     "faq": [
       {
-        "question": "Can someone find my exact location from my IP address?",
-        "answer": "Not your exact address, but your IP reveals your city, region, and country. Combined with other data, it can narrow down your approximate location. A VPN prevents this by masking your real IP."
+        "question": "别人能通过我的 IP 找到我的准确位置吗？",
+        "answer": "找不到具体住址，但 IP 会暴露你所在的城市、地区和国家。再结合其他数据，范围就能进一步缩小。使用 VPN 隐藏真实 IP 可以避免这一点。"
       },
       {
-        "question": "Is it legal to hide my IP address?",
-        "answer": "Yes, hiding your IP address with a VPN is completely legal in most countries. VPNs are legitimate privacy tools used by millions of people and businesses worldwide."
+        "question": "隐藏 IP 地址合法吗？",
+        "answer": "合法。在大多数国家，用 VPN 隐藏 IP 地址完全合法。VPN 是正规的隐私工具，全球有数以百万计的个人和企业在使用。"
       },
       {
-        "question": "What's the difference between IPv4 and IPv6?",
-        "answer": "IPv4 uses 32-bit addresses (like 192.168.1.1) and is the most common format. IPv6 uses 128-bit addresses (like 2001:db8::1) and was created to handle the growing number of internet-connected devices."
+        "question": "IPv4 和 IPv6 有什么区别？",
+        "answer": "IPv4 使用 32 位地址（如 192.168.1.1），是目前最常见的格式；IPv6 使用 128 位地址（如 2001:db8::1），是为了应对越来越多的联网设备而设计的。"
       },
       {
-        "question": "Can my ISP see what I do online?",
-        "answer": "Yes, your ISP can see which websites you visit, when you visit them, and how much data you transfer. A VPN encrypts your traffic so your ISP can only see that you're connected to a VPN server, not what you're doing."
+        "question": "运营商能看到我在网上做什么吗？",
+        "answer": "能。运营商可以看到你访问了哪些网站、什么时候访问、传输了多少数据。使用 VPN 后流量会被加密，运营商只知道你连上了一台 VPN 服务器，看不到你在做什么。"
       },
       {
-        "question": "How do I know if my VPN is working?",
-        "answer": "Use this IP checker tool! Connect to your VPN, then check your IP address here. If it shows a different IP and location than your actual one, your VPN is working correctly."
+        "question": "怎么知道我的 VPN 是否生效？",
+        "answer": "用这个 IP 检测工具就行：先连上 VPN，再回到这里查看 IP 地址。如果显示的 IP 和位置与你实际的不同，说明 VPN 正常工作。"
       }
     ]
   },
   "dnsLeakTest": {
-    "title": "DNS Leak Test",
-    "pageTitle": "DNS Leak Test — Is Your VPN Leaking?",
-    "pageSubtitle": "Check if your DNS requests are leaking outside your VPN tunnel. DNS leaks expose the websites you visit to your ISP, even when connected to a VPN.",
-    "startTest": "Start DNS Leak Test",
-    "testing": "Testing for DNS leaks...",
-    "testingStep1": "Resolving test domains...",
-    "testingStep2": "Analyzing DNS responses...",
-    "testingStep3": "Checking for leaks...",
-    "noLeaks": "No DNS Leaks Detected",
-    "noLeaksDesc": "Your DNS requests are being handled by your VPN. Your browsing activity is not visible to your ISP.",
-    "leaksFound": "DNS Leaks Detected!",
-    "leaksFoundDesc": "Your DNS requests are leaking outside your VPN tunnel. Your ISP can see which websites you visit.",
-    "noVpn": "No VPN Detected",
-    "noVpnDesc": "You don't appear to be using a VPN. Your DNS requests and browsing activity are fully visible to your ISP.",
-    "dnsServers": "DNS Servers Found",
-    "serverIp": "Server IP",
-    "serverProvider": "Provider",
-    "serverLocation": "Location",
-    "retestBtn": "Test Again",
-    "fixLeaks": "Fix DNS Leaks Now",
-    "fixLeaksDesc": "NordVPN uses its own private DNS servers and kills your connection if the VPN drops, preventing any DNS leaks.",
-    "nordvpnDeal": "Get NordVPN — Fix DNS Leaks",
-    "whatIsDns": "What Is a DNS Leak?",
-    "whatIsDnsDesc": "When you use a VPN, all your internet traffic — including DNS requests — should go through the encrypted VPN tunnel. A DNS leak occurs when your DNS queries bypass the VPN and go directly to your ISP's DNS servers. This means your ISP can still see which websites you visit, defeating the purpose of using a VPN.",
-    "whyDangerous": "Why Are DNS Leaks Dangerous?",
-    "whyDangerousDesc": "DNS leaks compromise your privacy because your ISP can log every website you visit. In countries with strict internet censorship, this could put you at risk. Even in free countries, ISPs can sell your browsing data to advertisers.",
-    "howToFix": "How to Prevent DNS Leaks",
-    "howToFixDesc": "Use a VPN with built-in DNS leak protection and a kill switch. Top VPNs like NordVPN run their own private DNS servers and automatically block DNS requests from leaving the VPN tunnel.",
-    "recommendedVpns": "Best VPNs with DNS Leak Protection",
+    "title": "DNS 泄漏检测",
+    "pageTitle": "DNS 泄漏检测 — 你的 VPN 在泄漏吗？",
+    "pageSubtitle": "检测你的 DNS 请求是否跑出了 VPN 隧道。一旦发生 DNS 泄漏，即使连着 VPN，运营商也能看到你访问了哪些网站。",
+    "startTest": "开始 DNS 泄漏检测",
+    "testing": "正在检测 DNS 泄漏……",
+    "testingStep1": "正在解析测试域名……",
+    "testingStep2": "正在分析 DNS 响应……",
+    "testingStep3": "正在检查是否泄漏……",
+    "noLeaks": "未发现 DNS 泄漏",
+    "noLeaksDesc": "你的 DNS 请求由 VPN 处理。运营商看不到你浏览了哪些网站。",
+    "leaksFound": "发现 DNS 泄漏！",
+    "leaksFoundDesc": "你的 DNS 请求跑出了 VPN 隧道。运营商可以看到你访问了哪些网站。",
+    "noVpn": "未检测到 VPN",
+    "noVpnDesc": "你似乎没有使用 VPN。你的 DNS 请求和浏览记录，运营商都看得一清二楚。",
+    "dnsServers": "检测到的 DNS 服务器",
+    "serverIp": "服务器 IP",
+    "serverProvider": "服务商",
+    "serverLocation": "位置",
+    "retestBtn": "重新检测",
+    "fixLeaks": "立即修复 DNS 泄漏",
+    "fixLeaksDesc": "NordVPN 使用自己的私有 DNS 服务器，一旦 VPN 掉线就切断网络连接，因此不会出现 DNS 泄漏。",
+    "nordvpnDeal": "选择 NordVPN，杜绝 DNS 泄漏",
+    "whatIsDns": "什么是 DNS 泄漏？",
+    "whatIsDnsDesc": "使用 VPN 时，你的全部网络流量都应该走加密隧道，DNS 请求也不例外。如果这些请求绕过 VPN，直接发给运营商的 DNS 服务器，就发生了 DNS 泄漏。这时运营商依然知道你访问了哪些网站，而这正是你用 VPN 想要避免的。",
+    "whyDangerous": "DNS 泄漏为什么危险？",
+    "whyDangerousDesc": "发生 DNS 泄漏时，运营商可以记录你打开的每一个网站。在网络审查严格的国家，这可能给你带来风险。即便在其他地方，运营商也可能把这些浏览数据卖给广告商。",
+    "howToFix": "如何防止 DNS 泄漏",
+    "howToFixDesc": "选择带 DNS 泄漏防护和 kill switch 的 VPN。像 NordVPN 这样的头部服务自建 DNS 服务器，会自动拦截任何想要离开隧道的 DNS 请求。",
+    "recommendedVpns": "具备 DNS 泄漏防护的最佳 VPN",
     "faq": [
       {
-        "question": "What causes DNS leaks?",
-        "answer": "DNS leaks are usually caused by misconfigured VPN software, operating system DNS settings overriding the VPN, or using a VPN that doesn't have its own DNS servers. Windows is particularly prone to DNS leaks due to its Smart Multi-Homed Name Resolution feature."
+        "question": "DNS 泄漏是怎么造成的？",
+        "answer": "多数是 VPN 软件设置不当、操作系统的 DNS 设置覆盖了 VPN，或者用了没有自建 DNS 服务器的 VPN。Windows 尤其容易泄漏，因为它的 Smart Multi-Homed Name Resolution 功能会同时向多个网络发起查询。"
       },
       {
-        "question": "Can I fix DNS leaks without a VPN?",
-        "answer": "You can change your DNS servers to a privacy-focused provider like Cloudflare (1.1.1.1) or Quad9 (9.9.9.9), but this only changes who handles your DNS — your ISP can still see your traffic. A VPN encrypts everything."
+        "question": "不用 VPN 能修复 DNS 泄漏吗？",
+        "answer": "你可以把 DNS 换成注重隐私的服务商，比如 Cloudflare（1.1.1.1）或 Quad9（9.9.9.9）。但这只是换了谁来处理你的 DNS 请求，运营商照样看得到你的流量。VPN 才会把一切都加密。"
       },
       {
-        "question": "Does NordVPN prevent DNS leaks?",
-        "answer": "Yes, NordVPN runs its own private DNS servers and routes all DNS queries through the encrypted VPN tunnel. It also includes a kill switch that blocks all traffic if the VPN connection drops."
+        "question": "NordVPN 能防止 DNS 泄漏吗？",
+        "answer": "可以。NordVPN 自建私有 DNS 服务器，所有 DNS 请求都走加密隧道。它还带有 kill switch，VPN 一旦断开就切断全部流量。"
       },
       {
-        "question": "How often should I test for DNS leaks?",
-        "answer": "Test after installing or updating your VPN, after changing network settings, and periodically (monthly) to ensure nothing has changed. Some OS updates can reset DNS settings."
+        "question": "多久检测一次 DNS 泄漏比较好？",
+        "answer": "安装或更新 VPN 之后、改动网络设置之后都要测一次，平时每月测一次即可。有些系统更新会把 DNS 设置重置。"
       },
       {
-        "question": "What's the difference between a DNS leak and an IP leak?",
-        "answer": "An IP leak exposes your real IP address despite using a VPN. A DNS leak exposes which websites you visit. Both compromise your privacy, but they work through different mechanisms. Use our IP checker tool to test for IP leaks."
+        "question": "DNS 泄漏和 IP 泄漏有什么区别？",
+        "answer": "IP 泄漏是指用着 VPN 却暴露了真实 IP 地址；DNS 泄漏暴露的是你访问了哪些网站。两者都损害隐私，但原理不同。想检测 IP 泄漏，可以用我们的 IP 检测工具。"
       }
     ]
   }

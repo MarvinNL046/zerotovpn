@@ -5482,108 +5482,108 @@
     }
   },
   "ipTool": {
-    "title": "IP Address Lookup",
-    "pageTitle": "What Is My IP Address?",
-    "pageSubtitle": "Instantly see your public IP address, location, ISP, and whether you're protected by a VPN. Your IP address is visible to every website you visit.",
-    "checking": "Detecting your IP address...",
-    "yourIp": "Your IP Address",
-    "location": "Location",
-    "isp": "Internet Provider",
-    "vpnStatus": "VPN Status",
-    "protected": "Protected",
-    "notProtected": "Not Protected",
-    "protectedDesc": "Your real IP address appears to be hidden behind a VPN or proxy.",
-    "notProtectedDesc": "Your real IP address and location are visible to every website you visit. Anyone can see where you are.",
-    "copyIp": "Copy IP",
-    "copied": "Copied!",
-    "recheckBtn": "Check Again",
+    "title": "IP-Adresse abfragen",
+    "pageTitle": "Wie lautet meine IP-Adresse?",
+    "pageSubtitle": "Sehen Sie sofort Ihre öffentliche IP-Adresse, Ihren Standort, Ihren Anbieter und ob ein VPN Sie schützt. Ihre IP-Adresse sieht jede Webseite, die Sie öffnen.",
+    "checking": "Ihre IP-Adresse wird ermittelt …",
+    "yourIp": "Ihre IP-Adresse",
+    "location": "Standort",
+    "isp": "Internetanbieter",
+    "vpnStatus": "VPN-Status",
+    "protected": "Geschützt",
+    "notProtected": "Nicht geschützt",
+    "protectedDesc": "Ihre echte IP-Adresse ist offenbar hinter einem VPN oder Proxy verborgen.",
+    "notProtectedDesc": "Ihre echte IP-Adresse und Ihr Standort sind für jede besuchte Webseite sichtbar. Jeder kann sehen, wo Sie sind.",
+    "copyIp": "IP kopieren",
+    "copied": "Kopiert!",
+    "recheckBtn": "Erneut prüfen",
     "ipv4": "IPv4",
     "ipv6": "IPv6",
-    "timezone": "Timezone",
-    "org": "Organization",
-    "getProtected": "Get Protected Now",
-    "getProtectedDesc": "Hide your IP address and encrypt your connection with a trusted VPN.",
-    "nordvpnDeal": "Get NordVPN — 68% Off",
-    "whyHideIp": "Why Should You Hide Your IP?",
-    "whyHideIpDesc": "Your IP address reveals your approximate location, internet provider, and can be used to track your online activity. Websites, advertisers, and even hackers can use this information. A VPN masks your real IP with one from their server network.",
-    "whatIsIp": "What Is an IP Address?",
-    "whatIsIpDesc": "An IP (Internet Protocol) address is a unique numerical label assigned to every device connected to the internet. It works like a digital mailing address, allowing websites and services to send data back to your device. There are two types: IPv4 (e.g., 192.168.1.1) and IPv6 (e.g., 2001:db8::1).",
-    "howVpnHelps": "How a VPN Protects Your IP",
-    "howVpnHelpsDesc": "A VPN (Virtual Private Network) routes your internet traffic through an encrypted tunnel to a remote server. Websites see the VPN server's IP address instead of yours, making it nearly impossible to trace activity back to you.",
-    "recommendedVpns": "Best VPNs to Hide Your IP Address",
+    "timezone": "Zeitzone",
+    "org": "Organisation",
+    "getProtected": "Jetzt schützen",
+    "getProtectedDesc": "Verbergen Sie Ihre IP-Adresse und verschlüsseln Sie Ihre Verbindung mit einem zuverlässigen VPN.",
+    "nordvpnDeal": "NordVPN holen — 68 % Rabatt",
+    "whyHideIp": "Warum sollten Sie Ihre IP verbergen?",
+    "whyHideIpDesc": "Ihre IP-Adresse verrät Ihren ungefähren Standort und Ihren Internetanbieter, und sie lässt sich nutzen, um Ihr Verhalten im Netz zu verfolgen. Webseiten, Werbefirmen und auch Kriminelle greifen darauf zurück. Ein VPN ersetzt Ihre echte IP durch eine aus seinem Servernetz.",
+    "whatIsIp": "Was ist eine IP-Adresse?",
+    "whatIsIpDesc": "Eine IP-Adresse (Internet Protocol) ist eine eindeutige Nummer, die jedes Gerät im Internet bekommt. Sie funktioniert wie eine digitale Postanschrift: Webseiten und Dienste wissen dadurch, wohin sie Daten zurückschicken müssen. Es gibt zwei Varianten: IPv4 (z. B. 192.168.1.1) und IPv6 (z. B. 2001:db8::1).",
+    "howVpnHelps": "So schützt ein VPN Ihre IP",
+    "howVpnHelpsDesc": "Ein VPN (Virtual Private Network) leitet Ihren Datenverkehr durch einen verschlüsselten Tunnel zu einem entfernten Server. Webseiten sehen dann die IP-Adresse dieses Servers statt Ihrer eigenen. Ihre Aktivität lässt sich so kaum noch zu Ihnen zurückverfolgen.",
+    "recommendedVpns": "Die besten VPNs, um Ihre IP-Adresse zu verbergen",
     "faq": [
       {
-        "question": "Can someone find my exact location from my IP address?",
-        "answer": "Not your exact address, but your IP reveals your city, region, and country. Combined with other data, it can narrow down your approximate location. A VPN prevents this by masking your real IP."
+        "question": "Kann jemand über meine IP-Adresse meinen genauen Standort finden?",
+        "answer": "Ihre genaue Anschrift nicht, aber Ihre IP verrät Stadt, Region und Land. Zusammen mit anderen Daten lässt sich der Bereich weiter eingrenzen. Ein VPN verhindert das, indem es Ihre echte IP verbirgt."
       },
       {
-        "question": "Is it legal to hide my IP address?",
-        "answer": "Yes, hiding your IP address with a VPN is completely legal in most countries. VPNs are legitimate privacy tools used by millions of people and businesses worldwide."
+        "question": "Ist es legal, meine IP-Adresse zu verbergen?",
+        "answer": "Ja, in den meisten Ländern ist es völlig legal, die IP-Adresse per VPN zu verbergen. VPNs sind normale Datenschutzwerkzeuge, die weltweit von Millionen Menschen und Unternehmen genutzt werden."
       },
       {
-        "question": "What's the difference between IPv4 and IPv6?",
-        "answer": "IPv4 uses 32-bit addresses (like 192.168.1.1) and is the most common format. IPv6 uses 128-bit addresses (like 2001:db8::1) and was created to handle the growing number of internet-connected devices."
+        "question": "Was ist der Unterschied zwischen IPv4 und IPv6?",
+        "answer": "IPv4 nutzt 32-Bit-Adressen (etwa 192.168.1.1) und ist das gängigste Format. IPv6 nutzt 128-Bit-Adressen (etwa 2001:db8::1) und wurde eingeführt, weil immer mehr Geräte ins Internet gehen."
       },
       {
-        "question": "Can my ISP see what I do online?",
-        "answer": "Yes, your ISP can see which websites you visit, when you visit them, and how much data you transfer. A VPN encrypts your traffic so your ISP can only see that you're connected to a VPN server, not what you're doing."
+        "question": "Sieht mein Internetanbieter, was ich online mache?",
+        "answer": "Ja. Ihr Anbieter sieht, welche Webseiten Sie wann besuchen und wie viele Daten Sie übertragen. Ein VPN verschlüsselt Ihren Verkehr, sodass er nur noch erkennt, dass Sie mit einem VPN-Server verbunden sind — nicht aber, was Sie tun."
       },
       {
-        "question": "How do I know if my VPN is working?",
-        "answer": "Use this IP checker tool! Connect to your VPN, then check your IP address here. If it shows a different IP and location than your actual one, your VPN is working correctly."
+        "question": "Woran erkenne ich, ob mein VPN funktioniert?",
+        "answer": "Mit genau diesem Tool: Verbinden Sie sich mit Ihrem VPN und prüfen Sie hier Ihre IP-Adresse. Zeigt sie eine andere IP und einen anderen Standort als Ihren echten, arbeitet Ihr VPN korrekt."
       }
     ]
   },
   "dnsLeakTest": {
-    "title": "DNS Leak Test",
-    "pageTitle": "DNS Leak Test — Is Your VPN Leaking?",
-    "pageSubtitle": "Check if your DNS requests are leaking outside your VPN tunnel. DNS leaks expose the websites you visit to your ISP, even when connected to a VPN.",
-    "startTest": "Start DNS Leak Test",
-    "testing": "Testing for DNS leaks...",
-    "testingStep1": "Resolving test domains...",
-    "testingStep2": "Analyzing DNS responses...",
-    "testingStep3": "Checking for leaks...",
-    "noLeaks": "No DNS Leaks Detected",
-    "noLeaksDesc": "Your DNS requests are being handled by your VPN. Your browsing activity is not visible to your ISP.",
-    "leaksFound": "DNS Leaks Detected!",
-    "leaksFoundDesc": "Your DNS requests are leaking outside your VPN tunnel. Your ISP can see which websites you visit.",
-    "noVpn": "No VPN Detected",
-    "noVpnDesc": "You don't appear to be using a VPN. Your DNS requests and browsing activity are fully visible to your ISP.",
-    "dnsServers": "DNS Servers Found",
-    "serverIp": "Server IP",
-    "serverProvider": "Provider",
-    "serverLocation": "Location",
-    "retestBtn": "Test Again",
-    "fixLeaks": "Fix DNS Leaks Now",
-    "fixLeaksDesc": "NordVPN uses its own private DNS servers and kills your connection if the VPN drops, preventing any DNS leaks.",
-    "nordvpnDeal": "Get NordVPN — Fix DNS Leaks",
-    "whatIsDns": "What Is a DNS Leak?",
-    "whatIsDnsDesc": "When you use a VPN, all your internet traffic — including DNS requests — should go through the encrypted VPN tunnel. A DNS leak occurs when your DNS queries bypass the VPN and go directly to your ISP's DNS servers. This means your ISP can still see which websites you visit, defeating the purpose of using a VPN.",
-    "whyDangerous": "Why Are DNS Leaks Dangerous?",
-    "whyDangerousDesc": "DNS leaks compromise your privacy because your ISP can log every website you visit. In countries with strict internet censorship, this could put you at risk. Even in free countries, ISPs can sell your browsing data to advertisers.",
-    "howToFix": "How to Prevent DNS Leaks",
-    "howToFixDesc": "Use a VPN with built-in DNS leak protection and a kill switch. Top VPNs like NordVPN run their own private DNS servers and automatically block DNS requests from leaving the VPN tunnel.",
-    "recommendedVpns": "Best VPNs with DNS Leak Protection",
+    "title": "DNS-Leak-Test",
+    "pageTitle": "DNS-Leak-Test — verrät Ihr VPN Sie?",
+    "pageSubtitle": "Prüfen Sie, ob Ihre DNS-Anfragen den VPN-Tunnel verlassen. Bei einem DNS-Leak sieht Ihr Internetanbieter, welche Webseiten Sie besuchen — auch mit VPN.",
+    "startTest": "DNS-Leak-Test starten",
+    "testing": "Test auf DNS-Lecks läuft …",
+    "testingStep1": "Test-Domains werden aufgelöst …",
+    "testingStep2": "DNS-Antworten werden geprüft …",
+    "testingStep3": "Suche nach Lecks …",
+    "noLeaks": "Keine DNS-Lecks gefunden",
+    "noLeaksDesc": "Ihre DNS-Anfragen laufen über Ihr VPN. Ihr Internetanbieter sieht nicht, welche Seiten Sie besuchen.",
+    "leaksFound": "DNS-Lecks gefunden!",
+    "leaksFoundDesc": "Ihre DNS-Anfragen verlassen den VPN-Tunnel. Ihr Internetanbieter sieht, welche Webseiten Sie besuchen.",
+    "noVpn": "Kein VPN erkannt",
+    "noVpnDesc": "Sie scheinen kein VPN zu nutzen. Ihr Internetanbieter sieht Ihre DNS-Anfragen und jede Seite, die Sie besuchen.",
+    "dnsServers": "Gefundene DNS-Server",
+    "serverIp": "Server-IP",
+    "serverProvider": "Anbieter",
+    "serverLocation": "Standort",
+    "retestBtn": "Erneut testen",
+    "fixLeaks": "DNS-Lecks jetzt beheben",
+    "fixLeaksDesc": "NordVPN nutzt eigene private DNS-Server und trennt Ihre Verbindung, sobald das VPN ausfällt. So entsteht kein DNS-Leck.",
+    "nordvpnDeal": "NordVPN holen — DNS-Lecks beheben",
+    "whatIsDns": "Was ist ein DNS-Leck?",
+    "whatIsDnsDesc": "Wenn Sie ein VPN nutzen, soll Ihr gesamter Datenverkehr durch den verschlüsselten Tunnel laufen — auch die DNS-Anfragen. Ein DNS-Leck entsteht, wenn diese Anfragen am VPN vorbeigehen und direkt bei den DNS-Servern Ihres Internetanbieters landen. Dann sieht Ihr Anbieter weiterhin, welche Webseiten Sie besuchen. Genau das soll ein VPN verhindern.",
+    "whyDangerous": "Warum sind DNS-Lecks gefährlich?",
+    "whyDangerousDesc": "Bei einem DNS-Leck kann Ihr Internetanbieter jede besuchte Webseite mitschreiben. In Ländern mit strenger Zensur kann Sie das in Gefahr bringen. Und auch sonst verkaufen Anbieter solche Daten an Werbefirmen.",
+    "howToFix": "So verhindern Sie DNS-Lecks",
+    "howToFixDesc": "Nutzen Sie ein VPN mit DNS-Leck-Schutz und Kill Switch. Gute Anbieter wie NordVPN betreiben eigene DNS-Server und blockieren automatisch jede DNS-Anfrage, die den Tunnel verlassen will.",
+    "recommendedVpns": "Die besten VPNs mit DNS-Leck-Schutz",
     "faq": [
       {
-        "question": "What causes DNS leaks?",
-        "answer": "DNS leaks are usually caused by misconfigured VPN software, operating system DNS settings overriding the VPN, or using a VPN that doesn't have its own DNS servers. Windows is particularly prone to DNS leaks due to its Smart Multi-Homed Name Resolution feature."
+        "question": "Wodurch entstehen DNS-Lecks?",
+        "answer": "Meist durch falsch eingestellte VPN-Software, durch DNS-Einstellungen des Betriebssystems, die das VPN übergehen, oder durch ein VPN ohne eigene DNS-Server. Windows ist besonders anfällig, weil es mehrere Netzwerkwege gleichzeitig abfragt (Smart Multi-Homed Name Resolution)."
       },
       {
-        "question": "Can I fix DNS leaks without a VPN?",
-        "answer": "You can change your DNS servers to a privacy-focused provider like Cloudflare (1.1.1.1) or Quad9 (9.9.9.9), but this only changes who handles your DNS — your ISP can still see your traffic. A VPN encrypts everything."
+        "question": "Kann ich DNS-Lecks auch ohne VPN beheben?",
+        "answer": "Sie können einen datenschutzfreundlichen DNS-Anbieter einstellen, etwa Cloudflare (1.1.1.1) oder Quad9 (9.9.9.9). Das ändert aber nur, wer Ihre DNS-Anfragen bearbeitet — Ihr Internetanbieter sieht Ihren Datenverkehr weiterhin. Ein VPN verschlüsselt alles."
       },
       {
-        "question": "Does NordVPN prevent DNS leaks?",
-        "answer": "Yes, NordVPN runs its own private DNS servers and routes all DNS queries through the encrypted VPN tunnel. It also includes a kill switch that blocks all traffic if the VPN connection drops."
+        "question": "Verhindert NordVPN DNS-Lecks?",
+        "answer": "Ja. NordVPN betreibt eigene private DNS-Server und leitet alle DNS-Anfragen durch den verschlüsselten Tunnel. Dazu kommt ein Kill Switch, der den gesamten Verkehr stoppt, wenn die VPN-Verbindung abbricht."
       },
       {
-        "question": "How often should I test for DNS leaks?",
-        "answer": "Test after installing or updating your VPN, after changing network settings, and periodically (monthly) to ensure nothing has changed. Some OS updates can reset DNS settings."
+        "question": "Wie oft sollte ich auf DNS-Lecks testen?",
+        "answer": "Testen Sie nach jeder Installation oder Aktualisierung Ihres VPNs, nach Änderungen an den Netzwerkeinstellungen und ansonsten etwa einmal im Monat. Manche System-Updates setzen die DNS-Einstellungen zurück."
       },
       {
-        "question": "What's the difference between a DNS leak and an IP leak?",
-        "answer": "An IP leak exposes your real IP address despite using a VPN. A DNS leak exposes which websites you visit. Both compromise your privacy, but they work through different mechanisms. Use our IP checker tool to test for IP leaks."
+        "question": "Was ist der Unterschied zwischen einem DNS-Leck und einem IP-Leck?",
+        "answer": "Ein IP-Leck verrät Ihre echte IP-Adresse, obwohl ein VPN läuft. Ein DNS-Leck verrät, welche Webseiten Sie besuchen. Beides schadet Ihrer Privatsphäre, funktioniert aber unterschiedlich. Mit unserem IP-Checker testen Sie auf IP-Lecks."
       }
     ]
   }

@@ -58,7 +58,7 @@
     "dnsLeakTest": "Test de Fugas DNS",
     "vpnIndex": "VPN Index",
     "methodology": "Methodology",
-    "vpnThailand": "Best VPN for Thailand"
+    "vpnThailand": "Mejor VPN para Tailandia"
   },
   "hero": {
     "title": "Encuentra tu VPN perfecta",
@@ -2416,19 +2416,19 @@
             "items": [
               {
                 "title": "Encryption Method",
-                "description": "How your data is scrambled to prevent interception"
+                "description": "Cómo se cifran tus datos para que nadie pueda interceptarlos"
               },
               {
                 "title": "Authentication",
-                "description": "How your identity is verified with the VPN server"
+                "description": "Cómo se comprueba tu identidad ante el servidor VPN"
               },
               {
                 "title": "Speed & Efficiency",
-                "description": "How fast data moves through the VPN tunnel"
+                "description": "Con qué rapidez viajan los datos por el túnel VPN"
               },
               {
                 "title": "Security Level",
-                "description": "How resistant the connection is to attacks"
+                "description": "Hasta qué punto resiste la conexión a los ataques"
               }
             ]
           }

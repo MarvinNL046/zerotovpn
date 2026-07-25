@@ -58,7 +58,7 @@
     "dnsLeakTest": "DNSリークテスト",
     "vpnIndex": "VPN Index",
     "methodology": "Methodology",
-    "vpnThailand": "Best VPN for Thailand"
+    "vpnThailand": "タイ向けベストVPN"
   },
   "hero": {
     "title": "最適なVPNを見つけよう",
@@ -119,7 +119,7 @@
     "company": "会社情報",
     "about": "会社概要",
     "contactPage": "お問い合わせ",
-    "copyright": "© {year} ZeroToVPN. All rights reserved.",
+    "copyright": "© {year} ZeroToVPN. 無断転載を禁じます。",
     "disclaimer": "リンク経由で購入された場合、追加費用なしでコミッションを受け取る場合があります。",
     "deals": "VPNセール",
     "freeVpn": "無料VPN",

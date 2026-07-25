@@ -58,7 +58,7 @@
     "dnsLeakTest": "ทดสอบ DNS Leak",
     "vpnIndex": "VPN Index",
     "methodology": "Methodology",
-    "vpnThailand": "Best VPN for Thailand"
+    "vpnThailand": "VPN ที่ดีที่สุดสำหรับประเทศไทย"
   },
   "hero": {
     "title": "ค้นหา VPN ที่สมบูรณ์แบบของคุณ",
@@ -573,7 +573,7 @@
               "description": "ตรวจสอบให้แน่ใจว่าคำค้นหา DNS ผ่านอุโมงค์ VPN ไม่ใช่เซิร์ฟเวอร์ DNS ของ ISP ที่อาจเปิดเผยประวัติการเข้าชมของคุณ"
             },
             {
-              "name": "Perfect Forward Secrecy",
+              "name": "การรักษาความลับแบบส่งต่อ (Perfect Forward Secrecy)",
               "icon": "Lock",
               "description": "สร้างกุญแจเข้ารหัสที่ไม่ซ้ำกันสำหรับแต่ละเซสชัน แม้ว่ากุญแจหนึ่งจะถูกบุกรุก เซสชันที่ผ่านมายังคงปลอดภัย"
             },
@@ -1917,7 +1917,7 @@
               "features": [
                 "โปรโตคอล Lightway ที่ปรับให้เหมาะสมสำหรับมือถือ",
                 "แอป iOS และ Android ที่ยอดเยี่ยม",
-                "Network Lock kill switch"
+                "Network Lock ซึ่งเป็น kill switch"
               ]
             },
             {
@@ -2434,7 +2434,7 @@
             ]
           },
           "tcpVsUdp": {
-            "title": "OpenVPN TCP vs UDP",
+            "title": "OpenVPN TCP กับ UDP ต่างกันอย่างไร",
             "udp": {
               "title": "UDP (แนะนำ)",
               "description": "เร็วกว่า, ดีกว่าสำหรับสตรีมมิ่งและการใช้งานทั่วไป ค่าเริ่มต้นสำหรับ VPN ส่วนใหญ่"
@@ -4234,7 +4234,7 @@
           "อุปกรณ์ไม่จำกัด",
           "แอพเบา",
           "ราคาดีที่สุด",
-          "GPS spoofing (Android)"
+          "การปลอมตำแหน่ง GPS (Android)"
         ],
         "cons": [
           "เซิร์ฟเวอร์น้อยกว่า",
@@ -4246,7 +4246,7 @@
         "pros": [
           "NordLynx - ความเร็วที่เร็วที่สุด",
           "แอพที่ได้รับการจัดอันดับสูงสุด",
-          "Split tunneling (Android)",
+          "สปลิตทันเนลลิง (Android)",
           "Threat Protection"
         ],
         "cons": [
@@ -4300,11 +4300,11 @@
         "features": [
           "Split tunneling",
           "การติดตั้ง APK",
-          "Always-on VPN",
+          "VPN แบบเปิดตลอดเวลา",
           "DNS แบบกำหนดเอง",
           "Kill switch",
           "วิดเจ็ต",
-          "GPS spoofing (Surfshark)"
+          "การปลอมตำแหน่ง GPS (Surfshark)"
         ],
         "readMore": "VPN ที่ดีที่สุดสำหรับ Android →"
       }
@@ -4555,7 +4555,7 @@
         "title": "การรองรับโปรโตคอล",
         "description": "รองรับ IKEv2 แบบ Native พร้อม WireGuard และ Lightway สำหรับประสิทธิภาพ iOS ที่เหมาะสม",
         "list": [
-          "IKEv2 (native iOS)",
+          "IKEv2 (รองรับใน iOS โดยตรง)",
           "WireGuard",
           "Lightway (ExpressVPN)",
           "NordLynx (NordVPN)",
@@ -4575,7 +4575,7 @@
         "title": "การรวมตัวกับ iOS",
         "description": "Siri Shortcuts, วิดเจ็ต และแอป Apple Watch สำหรับการควบคุมที่ราบรื่น",
         "features": [
-          "Siri Shortcuts (NordVPN, Surfshark)",
+          "คำสั่งลัด Siri (NordVPN, Surfshark)",
           "วิดเจ็ต iOS",
           "แอป Apple Watch (ExpressVPN, NordVPN)",
           "การรวมตัวกับ Keychain"
@@ -4738,7 +4738,7 @@
         "description": "แบ่งปันการสมัครสมาชิก VPN กับสมาชิกในครอบครัวสูงสุด 6 คนผ่าน Apple Family Sharing"
       },
       "privacyLabels": {
-        "title": "Apple Privacy Labels",
+        "title": "ฉลากความเป็นส่วนตัวของ Apple",
         "description": "VPN ที่แนะนำทั้งหมดมี Apple privacy labels โปร่งใสใน App Store"
       },
       "multitasking": {
@@ -4919,7 +4919,7 @@
         "description": "การตั้งค่า DNS ขั้นสูงและการป้องกัน kill switch อัตโนมัติ"
       },
       "alwaysOn": {
-        "title": "Always-On VPN",
+        "title": "VPN แบบเปิดตลอดเวลา",
         "description": "Always-on VPN ของ Android รักษาความปลอดภัยให้คุณโดยอัตโนมัติ"
       },
       "widgets": {
@@ -5129,7 +5129,7 @@
         "features": [
           "อินเทอร์เฟซเหมาะสำหรับ iPadOS",
           "เข้ากันได้กับ Family Sharing",
-          "Apple privacy labels",
+          "ฉลากความเป็นส่วนตัวของ Apple",
           "รองรับ Multitasking",
           "บูรณาการ iCloud Keychain"
         ],
@@ -5143,7 +5143,7 @@
           "APK sideloading ใช้ได้",
           "การตั้งค่า DNS แบบกำหนดเอง",
           "วิดเจ็ตหน้าจอหลัก",
-          "Always-on VPN"
+          "VPN แบบเปิดตลอดเวลา"
         ],
         "readMore": "VPN ที่ดีที่สุดสำหรับแท็บเล็ต Android →"
       },

@@ -40,6 +40,7 @@ export function RankedVpnRow({
   stats = [],
   middle,
   labels,
+  reviewIcon,
   highlight = false,
   children,
   className,
@@ -74,6 +75,8 @@ export function RankedVpnRow({
    */
   middle?: React.ReactNode;
   labels: { cta: string; review?: string };
+  /** Rendert de reviewlink als icoonknop in plaats van als tekstlink. */
+  reviewIcon?: React.ReactNode;
   highlight?: boolean;
   children?: React.ReactNode;
   className?: string;
@@ -153,14 +156,26 @@ export function RankedVpnRow({
             >
               {labels.cta}
             </AffiliateButton>
-            {labels.review && slug && (
+            {reviewIcon && slug ? (
+              // Icoon-only reviewlink zoals op de landenpagina's. Die stond daar
+              // als <Link><ArrowRight/></Link> zónder tekst of label, dus een
+              // schermlezer kondigde 'm aan als naamloze link. De VPN-naam als
+              // toegankelijke naam is taalneutraal en zegt waar je heen gaat.
+              <Link
+                href={`/reviews/${slug}`}
+                aria-label={labels.review ?? name}
+                className="inline-flex items-center justify-center rounded-md border px-3 py-2 hover:bg-accent"
+              >
+                {reviewIcon}
+              </Link>
+            ) : labels.review && slug ? (
               <Link
                 href={`/reviews/${slug}`}
                 className="text-center text-xs text-primary hover:underline"
               >
                 {labels.review}
               </Link>
-            )}
+            ) : null}
           </div>
         </div>
       </div>

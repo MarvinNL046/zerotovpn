@@ -1354,7 +1354,7 @@ export default async function ChinaVpnPage({ params }: Props) {
                           </div>
                           <div className="flex items-center gap-2">
                             <Smartphone className="h-5 w-5 text-orange-500" />
-                            <span className="text-sm">{vpn.maxDevices} devices</span>
+                            <span className="text-sm">{vpn.maxDevices >= 999 ? "Unlimited" : vpn.maxDevices} devices</span>
                           </div>
                         </div>
                       </div>

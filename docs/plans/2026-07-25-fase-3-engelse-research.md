@@ -218,3 +218,82 @@ zijn dat er minder dan twaalf.
 Zoekvolume per kernterm ontbreekt: de volume-endpoints gaven voor deze termen
 niets terug. De cijfers die er wel zijn komen uit keyword-ideas en staan
 hierboven met bron vermeld.
+
+---
+
+## Naschrift, 25 juli — de land-duplicaten zijn geen duplicaten
+
+Bij het samenvoegen van de tien landen die zowel `/best/vpn-X` als
+`/countries/X` hebben, bleek de aanname onder deze hele exercitie fout.
+
+### Wat ik verwachtte
+
+Twee pagina's over hetzelfde land, dus één is overbodig. Kies de sterkste op
+Search Console, leid de andere om, klaar. Zo is Iran gedaan.
+
+### Wat het werkelijk is
+
+Het zijn twee verschillende invalshoeken die toevallig hetzelfde land delen:
+
+- `/countries/X` — de situatie in het land: juridische status, censuur,
+  blackouts, wat er geblokkeerd is
+- `/best/vpn-X` — de keuzegids: aanbieders, streamingdiensten, vergelijking
+
+Ze concurreren in de zoekresultaten, maar de inhoud overlapt nauwelijks. Een
+telling van onderwerpen die alléén op de te verwijderen pagina staan:
+
+| Land | Uniek op `/best/vpn-X` | Op `/countries/X` |
+|---|---|---:|
+| india | JioHotstar (63 vermeldingen) | 0 |
+| russia | Meduza, Radio Free Europe, geblokkeerde nieuwssites | 0 |
+| thailand | Netflix (27), Disney+ (9), streaming (65) | 0 |
+| vietnam | streaming (57) | 0 |
+| china | NoBorders, Lightway, niet-werkende gratis VPN's | 0 |
+
+De blijvende pagina dekt in **geen enkel** geval die onderwerpen. Omleiden zou
+dus geen duplicaat opruimen maar inhoud vernietigen.
+
+### Wat dat betekent voor Iran, dat al gedaan is
+
+Ook daar is inhoud verdwenen, al minder dramatisch. De verwijderde pagina had
+mirror-downloadsites (in vier talen), een uitleg over deep packet inspection
+(27 vermeldingen) en specifieke instructies voor Gmail en Skype. En de dekking
+van de apps waar het in Iran om draait is dunner geworden:
+
+| | verwijderde pagina | blijvende pagina |
+|---|---:|---:|
+| Instagram | 49 | 10 |
+| Telegram | 58 | 10 |
+| WhatsApp | 58 | 10 |
+
+De blijvende pagina noemt ze nog wel, maar oppervlakkiger. De redirect zelf is
+juist — `/countries/iran` is met 3.032 vertoningen en 14 klikken duidelijk de
+sterkere URL — maar de inhoud had eerst overgezet moeten worden.
+
+### Wat er dan wél moet gebeuren
+
+Per land één samenvoeging op inhoud, niet op URL:
+
+1. Bepaal de blijvende URL op Search Console-data (staat hieronder).
+2. Zet de unieke secties van de andere pagina over.
+3. Pas daarna verwijderen en omleiden.
+
+Dat zijn negen redactionele klussen, geen negen redirects. De richting per land,
+op vertoningen @ positie (25 apr – 22 jul 2026):
+
+| Land | `/countries/X` | `/best/vpn-X` | Blijft |
+|---|---|---|---|
+| russia | 3579 @22,2 — 10 klikken | 291 @18,5 — 2 | countries |
+| turkey | 632 @28,4 | 257 @11,7 | countries (volume) |
+| china | 143 @44,2 | 35 @40,9 | countries |
+| india | 79 @40,5 | niet in GSC | countries |
+| vietnam | 66 @9,2 | 37 @56,4 | countries |
+| thailand | 50 @22,6 | 36 @57,5 | countries |
+| uae | 38 @30,0 | 349 @57,8 | best (volume) |
+| indonesia | 65 @13,9 | 662 @14,4 | best |
+| japan | 11 @59,1 | 244 @52,8 | best |
+
+Bij indonesia, japan en uae wijst de data naar `/best/vpn-X`. Dat botst met de
+landen-hub, die 22 statische plus 36 dynamische landen onder `/countries/`
+heeft. Die drie horen op termijn ook naar `/countries/` — maar dan pas ná het
+overzetten van de inhoud, want daar zit de rijkste tekst.

@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
+import { VpnReliabilityRow } from "@/components/vpn/vpn-reliability-row";
 import { RatingStars } from "@/components/vpn/rating-stars";
 import { Link } from "@/i18n/navigation";
 import { getShortMonthYear, generateAlternates } from "@/lib/seo-utils";
@@ -1302,78 +1303,25 @@ export default async function VpnRussiaPage({ params }: Props) {
 
             <div className="max-w-4xl mx-auto space-y-6">
               {workingVpns.map((vpn, index) => (
-                <Card key={vpn.slug} className="overflow-hidden">
-                  <CardContent className="p-6">
-                    <div className="flex flex-col lg:flex-row lg:items-center gap-6">
-                      {/* VPN Info */}
-                      <div className="flex-1 space-y-4">
-                        <div className="flex items-center gap-3">
-                          <span className="text-3xl font-bold text-muted-foreground">
-                            #{index + 1}
-                          </span>
-                          <h3 className="text-2xl font-bold">{vpn.name}</h3>
-                        </div>
-
-                        <RatingStars rating={vpn.rating} size="lg" showValue />
-
-                        {/* Why it works */}
-                        <div className="flex items-start gap-2 p-3 bg-green-50 dark:bg-green-950/20 rounded-lg border border-green-200 dark:border-green-800">
-                          <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                          <div>
-                            <div className="font-semibold text-green-900 dark:text-green-100">
-                              {t.whyItWorks}
-                            </div>
-                            <div className="text-sm text-green-700 dark:text-green-300">
-                              {vpn.whyWorks}
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Reliability */}
-                        <div className="flex items-center gap-3">
-                          <span className="text-sm font-medium">{t.reliability}</span>
-                          <div className="flex-1 h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                            <div
-                              className="h-full bg-green-500 transition-all"
-                              style={{ width: `${vpn.reliability}%` }}
-                            />
-                          </div>
-                          <span className="text-sm font-bold">{vpn.reliability}%</span>
-                        </div>
-
-                        {/* Features */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                          {vpn.features.map((feature, i) => (
-                            <div key={i} className="flex items-center gap-2 text-sm">
-                              <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
-                              <span>{feature}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Price & CTA */}
-                      <div className="lg:w-64 flex-shrink-0 space-y-4 lg:text-center lg:border-l lg:pl-6">
-                        <div>
-                          <div className="text-sm text-muted-foreground">{t.startingAt}</div>
-                          <div className="text-4xl font-bold text-primary">
-                            {vpn.price}
-                          </div>
-                          <div className="text-sm text-muted-foreground">{t.perMonth}</div>
-                        </div>
-                        <AffiliateButton
-                          vpnId={vpn.slug}
-                          vpnName={vpn.name}
-                          affiliateUrl={vpn.affiliateUrl}
-                          className="w-full"
-                          size="lg"
-                        >
-                          {t.getVpn} {vpn.name}
-                        </AffiliateButton>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                <VpnReliabilityRow
+                  key={vpn.slug}
+                  name={vpn.name}
+                  slug={vpn.slug}
+                  affiliateUrl={vpn.affiliateUrl}
+                  rating={vpn.rating}
+                  rank={index + 1}
+                  whyWorks={vpn.whyWorks}
+                  reliability={vpn.reliability}
+                  features={vpn.features}
+                  price={vpn.price}
+                  labels={{
+                    whyItWorks: t.whyItWorks,
+                    reliability: t.reliability,
+                    startingAt: t.startingAt,
+                    perMonth: t.perMonth,
+                    cta: `${t.getVpn} ${vpn.name}`,
+                  }}
+                />
               ))}
             </div>
           </div>

@@ -4097,9 +4097,9 @@
         "title": "여행에 가장 적합",
         "description": "ExpressVPN은 중국이나 아랍에미리트처럼 제한이 심한 나라에서도 안정적으로 작동합니다."
       },
-      "getBest": "Surfshark 82% 할인받기",
-      "getFastest": "NordVPN 30일 무료로 써 보기",
-      "getTravel": "ExpressVPN 49% 할인받기"
+      "getBest": "Surfshark {discount}% 할인받기",
+      "getFastest": "NordVPN 사용해 보기 – {days}일 환불 보장",
+      "getTravel": "ExpressVPN {discount}% 할인받기"
     }
   },
   "iphoneVpn": {
@@ -4548,7 +4548,7 @@
         "pros": [
           "무제한 기기",
           "가족 공유 호환",
-          "최고의 가격 (82% 할인)",
+          "최고의 가격",
           "CleanWeb 광고 차단기",
           "가벼운 앱"
         ],
@@ -4664,7 +4664,7 @@
       "title": "iPad용 최고의 VPN 받기",
       "description": "iPad를 보호하고 이 최고 등급 VPN으로 전 세계 콘텐츠를 잠금 해제하세요.",
       "getBest": "iPad용 NordVPN 받기",
-      "getValue": "Surfshark 받기 - 82% 할인",
+      "getValue": "Surfshark 받기 - {discount}% 할인",
       "getTravel": "ExpressVPN 받기"
     }
   },
@@ -4862,7 +4862,7 @@
       "title": "Android 태블릿 VPN 선택",
       "description": "오늘 Android 태블릿을 위한 최고의 보호를 받으세요.",
       "getBest": "NordVPN 받기",
-      "getValue": "Surfshark 받기 - 82% 할인",
+      "getValue": "Surfshark 받기 - {discount}% 할인",
       "getTravel": "ExpressVPN 받기"
     }
   },
@@ -4942,7 +4942,7 @@
         "pros": [
           "무제한 기기 - 가족에게 적합",
           "가장 가벼운 앱 - 오래된 태블릿에 완벽",
-          "82% 할인으로 최고의 가격",
+          "최고의 가격",
           "CleanWeb이 광고 및 맬웨어 차단",
           "Android에서 GPS 스푸핑"
         ],
@@ -5121,7 +5121,7 @@
         "description": "중국, UAE에서 작동, 가장 안정적"
       },
       "getBest": "NordVPN 받기",
-      "getValue": "Surfshark 받기 - 82% 할인",
+      "getValue": "Surfshark 받기 - {discount}% 할인",
       "getTravel": "ExpressVPN 받기"
     }
   },
@@ -5313,7 +5313,7 @@
       "title": "Windows 태블릿용 최고의 VPN 선택",
       "description": "이 최고 등급 VPN으로 Surface Pro 또는 Surface Go를 보호하세요.",
       "getBest": "NordVPN 받기",
-      "getValue": "Surfshark 받기 - 82% 할인",
+      "getValue": "Surfshark 받기 - {discount}% 할인",
       "getTravel": "ExpressVPN 받기"
     }
   },
@@ -5338,7 +5338,7 @@
       "verified": "검증된 코드",
       "verifiedDesc": "모든 쿠폰 테스트 및 작동 확인",
       "savings": "대폭 할인",
-      "savingsDesc": "최대 83% 절약",
+      "savingsDesc": "최대 {discount}% 절약",
       "updated": "매일 업데이트",
       "updatedDesc": "매일 새로운 혜택",
       "exclusive": "독점 혜택",
@@ -5469,7 +5469,7 @@
     "org": "소속 기관",
     "getProtected": "지금 보호받기",
     "getProtectedDesc": "믿을 만한 VPN으로 IP 주소를 가리고 연결을 암호화하세요.",
-    "nordvpnDeal": "NordVPN 68% 할인받기",
+    "nordvpnDeal": "NordVPN {discount}% 할인받기",
     "whyHideIp": "IP 주소를 왜 가려야 하나요?",
     "whyHideIpDesc": "IP 주소는 대략적인 위치와 이용 중인 통신사를 드러내며, 온라인 활동을 추적하는 데도 쓰입니다. 웹사이트와 광고 회사는 물론 악의적인 사람도 이 정보를 이용합니다. VPN은 실제 IP를 서버망의 주소로 바꿔 줍니다.",
     "whatIsIp": "IP 주소란 무엇인가요?",

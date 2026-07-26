@@ -4272,9 +4272,9 @@
         "title": "Best for Travel",
         "description": "ExpressVPN works reliably in restrictive countries like China and UAE."
       },
-      "getBest": "Get Surfshark – 82% OFF",
-      "getFastest": "Try NordVPN – 30 Days Free",
-      "getTravel": "Get ExpressVPN – 49% OFF"
+      "getBest": "Get Surfshark – {discount}% OFF",
+      "getFastest": "Try NordVPN – {days}-day money-back guarantee",
+      "getTravel": "Get ExpressVPN – {discount}% OFF"
     }
   },
   "iphoneVpn": {
@@ -4531,7 +4531,7 @@
         "pros": [
           "Unlimited devices",
           "Family Sharing compatible",
-          "Best price (82% off)",
+          "Best price",
           "CleanWeb ad blocker",
           "Lightweight app"
         ],
@@ -4647,7 +4647,7 @@
       "title": "Get the Best VPN for Your iPad",
       "description": "Protect your iPad and unlock worldwide content with these top-rated VPNs.",
       "getBest": "Get NordVPN for iPad",
-      "getValue": "Get Surfshark - 82% OFF",
+      "getValue": "Get Surfshark - {discount}% OFF",
       "getTravel": "Get ExpressVPN"
     }
   },
@@ -4845,7 +4845,7 @@
       "title": "Choose Your Android Tablet VPN",
       "description": "Get the best protection for your Android tablet today.",
       "getBest": "Get NordVPN",
-      "getValue": "Get Surfshark - 82% OFF",
+      "getValue": "Get Surfshark - {discount}% OFF",
       "getTravel": "Get ExpressVPN"
     }
   },
@@ -4925,7 +4925,7 @@
         "pros": [
           "Unlimited devices - great for families",
           "Lightest app - perfect for older tablets",
-          "Best price with 82% discount",
+          "Best price",
           "CleanWeb blocks ads & malware",
           "GPS spoofing on Android"
         ],
@@ -5104,7 +5104,7 @@
         "description": "Works in China, UAE, most reliable"
       },
       "getBest": "Get NordVPN",
-      "getValue": "Get Surfshark - 82% OFF",
+      "getValue": "Get Surfshark - {discount}% OFF",
       "getTravel": "Get ExpressVPN"
     }
   },
@@ -5296,7 +5296,7 @@
       "title": "Choose the Best VPN for Your Windows Tablet",
       "description": "Protect your Surface Pro or Surface Go with these top-rated VPNs.",
       "getBest": "Get NordVPN",
-      "getValue": "Get Surfshark - 82% OFF",
+      "getValue": "Get Surfshark - {discount}% OFF",
       "getTravel": "Get ExpressVPN"
     }
   },
@@ -5321,7 +5321,7 @@
       "verified": "Verified Codes",
       "verifiedDesc": "All coupons tested and working",
       "savings": "Big Savings",
-      "savingsDesc": "Save up to 83% OFF",
+      "savingsDesc": "Save up to {discount}% OFF",
       "updated": "Daily Updates",
       "updatedDesc": "Fresh deals every day",
       "exclusive": "Exclusive Deals",
@@ -5452,7 +5452,7 @@
     "org": "Organization",
     "getProtected": "Get Protected Now",
     "getProtectedDesc": "Hide your IP address and encrypt your connection with a trusted VPN.",
-    "nordvpnDeal": "Get NordVPN — 68% Off",
+    "nordvpnDeal": "Get NordVPN — {discount}% Off",
     "whyHideIp": "Why Should You Hide Your IP?",
     "whyHideIpDesc": "Your IP address reveals your approximate location, internet provider, and can be used to track your online activity. Websites, advertisers, and even hackers can use this information. A VPN masks your real IP with one from their server network.",
     "whatIsIp": "What Is an IP Address?",

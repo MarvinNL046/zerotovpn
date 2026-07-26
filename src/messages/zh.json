@@ -4275,9 +4275,9 @@
         "title": "最适合旅行",
         "description": "ExpressVPN在中国和阿联酋等限制性国家可靠运行。"
       },
-      "getBest": "获取Surfshark – 82%折扣",
-      "getFastest": "试用NordVPN – 30天免费",
-      "getTravel": "获取ExpressVPN – 49%折扣"
+      "getBest": "获取Surfshark – {discount}%折扣",
+      "getFastest": "试用 NordVPN – {days} 天退款保证",
+      "getTravel": "获取ExpressVPN – {discount}%折扣"
     }
   },
   "iphoneVpn": {
@@ -4534,7 +4534,7 @@
         "pros": [
           "无限设备",
           "家庭共享兼容",
-          "最优价格（82%折扣）",
+          "最优价格",
           "CleanWeb广告拦截器",
           "轻量级应用"
         ],
@@ -4650,7 +4650,7 @@
       "title": "为您的iPad获取最佳VPN",
       "description": "使用这些顶级VPN保护您的iPad并解锁全球内容。",
       "getBest": "获取NordVPN用于iPad",
-      "getValue": "获取Surfshark - 82%折扣",
+      "getValue": "获取Surfshark - {discount}%折扣",
       "getTravel": "获取ExpressVPN"
     }
   },
@@ -4848,7 +4848,7 @@
       "title": "选择您的Android平板VPN",
       "description": "立即为您的Android平板获取最佳保护。",
       "getBest": "获取NordVPN",
-      "getValue": "获取Surfshark - 82%折扣",
+      "getValue": "获取Surfshark - {discount}%折扣",
       "getTravel": "获取ExpressVPN"
     }
   },
@@ -4928,7 +4928,7 @@
         "pros": [
           "无限设备 - 非常适合家庭",
           "最轻应用 - 完美适合旧平板",
-          "82%折扣的最优价格",
+          "最优价格",
           "CleanWeb拦截广告和恶意软件",
           "Android上的GPS欺骗"
         ],
@@ -5107,7 +5107,7 @@
         "description": "在中国、阿联酋可用，最可靠"
       },
       "getBest": "获取NordVPN",
-      "getValue": "获取Surfshark - 82%折扣",
+      "getValue": "获取Surfshark - {discount}%折扣",
       "getTravel": "获取ExpressVPN"
     }
   },
@@ -5299,7 +5299,7 @@
       "title": "为您的Windows平板选择最佳VPN",
       "description": "使用这些顶级VPN保护您的Surface Pro或Surface Go。",
       "getBest": "获取NordVPN",
-      "getValue": "获取Surfshark - 82%折扣",
+      "getValue": "获取Surfshark - {discount}%折扣",
       "getTravel": "获取ExpressVPN"
     }
   },
@@ -5324,7 +5324,7 @@
       "verified": "已验证代码",
       "verifiedDesc": "所有优惠券均已测试并可用",
       "savings": "大幅节省",
-      "savingsDesc": "节省高达83%",
+      "savingsDesc": "节省高达{discount}%",
       "updated": "每日更新",
       "updatedDesc": "每天都有新优惠",
       "exclusive": "独家优惠",
@@ -5455,7 +5455,7 @@
     "org": "所属机构",
     "getProtected": "立即获得保护",
     "getProtectedDesc": "用可靠的 VPN 隐藏 IP 地址并加密你的连接。",
-    "nordvpnDeal": "选择 NordVPN — 立减 68%",
+    "nordvpnDeal": "选择 NordVPN — 立减 {discount}%",
     "whyHideIp": "为什么要隐藏 IP 地址？",
     "whyHideIpDesc": "你的 IP 地址会暴露大致位置和网络运营商，还能被用来追踪你的上网行为。网站、广告商，甚至不怀好意的人都会利用这些信息。VPN 会用服务器网络中的地址替换你的真实 IP。",
     "whatIsIp": "什么是 IP 地址？",

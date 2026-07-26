@@ -4323,9 +4323,9 @@
         "title": "Beste für Reisen",
         "description": "ExpressVPN funktioniert zuverlässig in restriktiven Ländern wie China und den VAE."
       },
-      "getBest": "Surfshark erhalten – 82% RABATT",
-      "getFastest": "NordVPN testen – 30 Tage kostenlos",
-      "getTravel": "ExpressVPN erhalten – 49% RABATT"
+      "getBest": "Surfshark erhalten – {discount}% RABATT",
+      "getFastest": "NordVPN testen – {days} Tage Geld-zurück-Garantie",
+      "getTravel": "ExpressVPN erhalten – {discount}% RABATT"
     }
   },
   "iphoneVpn": {
@@ -4582,7 +4582,7 @@
         "pros": [
           "Unbegrenzte Geräte",
           "Familienfreigabe-kompatibel",
-          "Bester Preis (82% Rabatt)",
+          "Bester Preis",
           "CleanWeb-Werbeblocker",
           "Leichte App"
         ],
@@ -4698,7 +4698,7 @@
       "title": "Holen Sie sich das beste VPN für Ihr iPad",
       "description": "Schützen Sie Ihr iPad und schalten Sie weltweite Inhalte mit diesen top-bewerteten VPNs frei.",
       "getBest": "NordVPN für iPad holen",
-      "getValue": "Surfshark holen - 82% RABATT",
+      "getValue": "Surfshark holen - {discount}% RABATT",
       "getTravel": "ExpressVPN holen"
     }
   },
@@ -4896,7 +4896,7 @@
       "title": "Wählen Sie Ihr Android-Tablet-VPN",
       "description": "Holen Sie sich noch heute den besten Schutz für Ihr Android-Tablet.",
       "getBest": "NordVPN holen",
-      "getValue": "Surfshark holen - 82% RABATT",
+      "getValue": "Surfshark holen - {discount}% RABATT",
       "getTravel": "ExpressVPN holen"
     }
   },
@@ -4976,7 +4976,7 @@
         "pros": [
           "Unbegrenzte Geräte - großartig für Familien",
           "Leichteste App - perfekt für ältere Tablets",
-          "Bester Preis mit 82% Rabatt",
+          "Bester Preis",
           "CleanWeb blockiert Werbung & Malware",
           "GPS-Spoofing auf Android"
         ],
@@ -5155,7 +5155,7 @@
         "description": "Funktioniert in China, VAE, am zuverlässigsten"
       },
       "getBest": "NordVPN holen",
-      "getValue": "Surfshark holen - 82% RABATT",
+      "getValue": "Surfshark holen - {discount}% RABATT",
       "getTravel": "ExpressVPN holen"
     }
   },
@@ -5347,7 +5347,7 @@
       "title": "Wählen Sie das beste VPN für Ihr Windows-Tablet",
       "description": "Schützen Sie Ihr Surface Pro oder Surface Go mit diesen top-bewerteten VPNs.",
       "getBest": "NordVPN holen",
-      "getValue": "Surfshark holen - 82% RABATT",
+      "getValue": "Surfshark holen - {discount}% RABATT",
       "getTravel": "ExpressVPN holen"
     }
   },
@@ -5372,7 +5372,7 @@
       "verified": "Verifizierte Codes",
       "verifiedDesc": "Alle Gutscheine getestet und funktionsfähig",
       "savings": "Große Ersparnisse",
-      "savingsDesc": "Bis zu 83% sparen",
+      "savingsDesc": "Bis zu {discount}% sparen",
       "updated": "Tägliche Updates",
       "updatedDesc": "Frische Angebote jeden Tag",
       "exclusive": "Exklusive Angebote",
@@ -5503,7 +5503,7 @@
     "org": "Organisation",
     "getProtected": "Jetzt schützen",
     "getProtectedDesc": "Verbergen Sie Ihre IP-Adresse und verschlüsseln Sie Ihre Verbindung mit einem zuverlässigen VPN.",
-    "nordvpnDeal": "NordVPN holen — 68 % Rabatt",
+    "nordvpnDeal": "NordVPN holen — {discount} % Rabatt",
     "whyHideIp": "Warum sollten Sie Ihre IP verbergen?",
     "whyHideIpDesc": "Ihre IP-Adresse verrät Ihren ungefähren Standort und Ihren Internetanbieter, und sie lässt sich nutzen, um Ihr Verhalten im Netz zu verfolgen. Webseiten, Werbefirmen und auch Kriminelle greifen darauf zurück. Ein VPN ersetzt Ihre echte IP durch eine aus seinem Servernetz.",
     "whatIsIp": "Was ist eine IP-Adresse?",

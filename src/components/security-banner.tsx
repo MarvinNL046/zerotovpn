@@ -12,7 +12,7 @@ interface IpData {
   org?: string;
 }
 
-export function SecurityBanner() {
+export function SecurityBanner({ nordvpnDiscount }: { nordvpnDiscount: number }) {
   const [ipData, setIpData] = useState<IpData | null>(null);
   const [dismissed, setDismissed] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -99,7 +99,7 @@ export function SecurityBanner() {
             className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-white text-red-600 text-sm font-bold rounded-lg hover:bg-white/90 transition-colors shadow-sm"
           >
             <Shield className="h-4 w-4" />
-            Protect Now — 68% Off
+            Protect Now — {nordvpnDiscount}% Off
           </a>
           <button
             onClick={handleDismiss}

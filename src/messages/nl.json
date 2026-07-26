@@ -4274,9 +4274,9 @@
         "title": "Beste voor Reizen",
         "description": "ExpressVPN werkt betrouwbaar in restrictieve landen zoals China en VAE."
       },
-      "getBest": "Surfshark Krijgen – 82% KORTING",
-      "getFastest": "NordVPN Proberen – 30 Dagen Gratis",
-      "getTravel": "ExpressVPN Krijgen – 49% KORTING"
+      "getBest": "Surfshark Krijgen – {discount}% KORTING",
+      "getFastest": "NordVPN proberen – {days} dagen geld terug",
+      "getTravel": "ExpressVPN Krijgen – {discount}% KORTING"
     }
   },
   "iphoneVpn": {
@@ -4533,7 +4533,7 @@
         "pros": [
           "Onbeperkt aantal apparaten",
           "Family Sharing compatibel",
-          "Beste prijs (82% korting)",
+          "Beste prijs",
           "CleanWeb adblocker",
           "Lichtgewicht app"
         ],
@@ -4649,7 +4649,7 @@
       "title": "Verkrijg de Beste VPN voor Je iPad",
       "description": "Bescherm je iPad en ontgrendel wereldwijde content met deze top-beoordeelde VPN's.",
       "getBest": "Verkrijg NordVPN voor iPad",
-      "getValue": "Verkrijg Surfshark - 82% KORTING",
+      "getValue": "Verkrijg Surfshark - {discount}% KORTING",
       "getTravel": "Verkrijg ExpressVPN"
     }
   },
@@ -4847,7 +4847,7 @@
       "title": "Kies Je Android Tablet VPN",
       "description": "Verkrijg vandaag de beste bescherming voor je Android tablet.",
       "getBest": "Verkrijg NordVPN",
-      "getValue": "Verkrijg Surfshark - 82% KORTING",
+      "getValue": "Verkrijg Surfshark - {discount}% KORTING",
       "getTravel": "Verkrijg ExpressVPN"
     }
   },
@@ -4927,7 +4927,7 @@
         "pros": [
           "Onbeperkt aantal apparaten - geweldig voor gezinnen",
           "Lichtste app - perfect voor oudere tablets",
-          "Beste prijs met 82% korting",
+          "Beste prijs",
           "CleanWeb blokkeert ads & malware",
           "GPS spoofing op Android"
         ],
@@ -5106,7 +5106,7 @@
         "description": "Werkt in China, VAE, meest betrouwbaar"
       },
       "getBest": "Verkrijg NordVPN",
-      "getValue": "Verkrijg Surfshark - 82% KORTING",
+      "getValue": "Verkrijg Surfshark - {discount}% KORTING",
       "getTravel": "Verkrijg ExpressVPN"
     }
   },
@@ -5131,7 +5131,7 @@
       "verified": "Geverifieerde Codes",
       "verifiedDesc": "Alle kortingscodes getest en werkend",
       "savings": "Grote Besparingen",
-      "savingsDesc": "Bespaar tot 83%",
+      "savingsDesc": "Bespaar tot {discount}%",
       "updated": "Dagelijkse Updates",
       "updatedDesc": "Nieuwe deals elke dag",
       "exclusive": "Exclusieve Deals",
@@ -5335,7 +5335,7 @@
       "title": "Kies de Beste VPN voor Je Windows Tablet",
       "description": "Bescherm je Surface Pro of Surface Go met deze top-beoordeelde VPN's.",
       "getBest": "Verkrijg NordVPN",
-      "getValue": "Verkrijg Surfshark - 82% KORTING",
+      "getValue": "Verkrijg Surfshark - {discount}% KORTING",
       "getTravel": "Verkrijg ExpressVPN"
     }
   },
@@ -5454,7 +5454,7 @@
     "org": "Organisatie",
     "getProtected": "Word Nu Beschermd",
     "getProtectedDesc": "Verberg je IP-adres en versleutel je verbinding met een betrouwbare VPN.",
-    "nordvpnDeal": "NordVPN — 68% Korting",
+    "nordvpnDeal": "NordVPN — {discount}% Korting",
     "whyHideIp": "Waarom Je IP Verbergen?",
     "whyHideIpDesc": "Je IP-adres onthult je geschatte locatie, internetprovider en kan worden gebruikt om je online activiteit te volgen. Websites, adverteerders en zelfs hackers kunnen deze informatie gebruiken. Een VPN maskeert je echte IP met een IP van hun servernetwerk.",
     "whatIsIp": "Wat Is een IP-adres?",

@@ -4628,9 +4628,9 @@
         "title": "Mejor para Viajes",
         "description": "ExpressVPN funciona de manera confiable en países restrictivos como China y EAU."
       },
-      "getBest": "Obtener Surfshark – 82% de DESCUENTO",
-      "getFastest": "Probar NordVPN – 30 Días Gratis",
-      "getTravel": "Obtener ExpressVPN – 49% de DESCUENTO"
+      "getBest": "Obtener Surfshark – {discount}% de DESCUENTO",
+      "getFastest": "Probar NordVPN – garantía de reembolso de {days} días",
+      "getTravel": "Obtener ExpressVPN – {discount}% de DESCUENTO"
     }
   },
   "iphoneVpn": {
@@ -4887,7 +4887,7 @@
         "pros": [
           "Dispositivos ilimitados",
           "Compatible con Compartir en Familia",
-          "Mejor precio (82% de descuento)",
+          "Mejor precio",
           "Bloqueador de anuncios CleanWeb",
           "Aplicación ligera"
         ],
@@ -5003,7 +5003,7 @@
       "title": "Obtén la Mejor VPN para Tu iPad",
       "description": "Protege tu iPad y desbloquea contenido mundial con estas VPNs mejor calificadas.",
       "getBest": "Obtener NordVPN para iPad",
-      "getValue": "Obtener Surfshark - 82% DE DESCUENTO",
+      "getValue": "Obtener Surfshark - {discount}% DE DESCUENTO",
       "getTravel": "Obtener ExpressVPN"
     }
   },
@@ -5201,7 +5201,7 @@
       "title": "Elige Tu VPN para Tablet Android",
       "description": "Obtén la mejor protección para tu tablet Android hoy.",
       "getBest": "Obtener NordVPN",
-      "getValue": "Obtener Surfshark - 82% DE DESCUENTO",
+      "getValue": "Obtener Surfshark - {discount}% DE DESCUENTO",
       "getTravel": "Obtener ExpressVPN"
     }
   },
@@ -5281,7 +5281,7 @@
         "pros": [
           "Dispositivos ilimitados - ideal para familias",
           "Aplicación más ligera - perfecta para tablets antiguas",
-          "Mejor precio con 82% de descuento",
+          "Mejor precio",
           "CleanWeb bloquea anuncios y malware",
           "Suplantación de GPS en Android"
         ],
@@ -5460,7 +5460,7 @@
         "description": "Funciona en China, EAU, más confiable"
       },
       "getBest": "Obtener NordVPN",
-      "getValue": "Obtener Surfshark - 82% DE DESCUENTO",
+      "getValue": "Obtener Surfshark - {discount}% DE DESCUENTO",
       "getTravel": "Obtener ExpressVPN"
     }
   },
@@ -5652,7 +5652,7 @@
       "title": "Elige la Mejor VPN para Tu Tablet Windows",
       "description": "Protege tu Surface Pro o Surface Go con estas VPNs mejor calificadas.",
       "getBest": "Obtener NordVPN",
-      "getValue": "Obtener Surfshark - 82% DE DESCUENTO",
+      "getValue": "Obtener Surfshark - {discount}% DE DESCUENTO",
       "getTravel": "Obtener ExpressVPN"
     }
   },
@@ -5677,7 +5677,7 @@
       "verified": "Códigos Verificados",
       "verifiedDesc": "Todos los cupones probados y funcionando",
       "savings": "Grandes Ahorros",
-      "savingsDesc": "Ahorra hasta un 83%",
+      "savingsDesc": "Ahorra hasta un {discount}%",
       "updated": "Actualizaciones Diarias",
       "updatedDesc": "Ofertas frescas cada día",
       "exclusive": "Ofertas Exclusivas",
@@ -5808,7 +5808,7 @@
     "org": "Organización",
     "getProtected": "Protégete ahora",
     "getProtectedDesc": "Oculta tu dirección IP y cifra tu conexión con una VPN de confianza.",
-    "nordvpnDeal": "Consigue NordVPN con un 68 % de descuento",
+    "nordvpnDeal": "Consigue NordVPN con un {discount} % de descuento",
     "whyHideIp": "¿Por qué conviene ocultar tu IP?",
     "whyHideIpDesc": "Tu dirección IP revela tu ubicación aproximada y tu proveedor de internet, y sirve para seguir lo que haces en la red. La usan las webs, los anunciantes e incluso los delincuentes. Una VPN sustituye tu IP real por una de su red de servidores.",
     "whatIsIp": "¿Qué es una dirección IP?",

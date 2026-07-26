@@ -31,6 +31,7 @@ import { LastUpdated } from "@/components/last-updated";
 import { generateAlternates } from "@/lib/seo-utils";
 import { getVpnAffiliateUrl } from "@/lib/vpn-links";
 
+import { getRequiredDiscountPercent } from "@/lib/vpn-discount";
 type Props = {
   params: Promise<{ locale: string }>;
 };
@@ -667,7 +668,7 @@ export default async function IpadVpnPage({ params }: Props) {
                       vpnName="NordVPN"
                       affiliateUrl={getVpnAffiliateUrl("nordvpn")}
                     >
-                      {t("conclusion.getBest")}
+                      {t("conclusion.getBest", { discount: getRequiredDiscountPercent("surfshark") })}
                     </AffiliateButton>
                   </CardContent>
                 </Card>
@@ -688,7 +689,7 @@ export default async function IpadVpnPage({ params }: Props) {
                       vpnName="Surfshark"
                       affiliateUrl={getVpnAffiliateUrl("surfshark")}
                     >
-                      {t("conclusion.getValue")}
+                      {t("conclusion.getValue", { discount: getRequiredDiscountPercent("surfshark") })}
                     </AffiliateButton>
                   </CardContent>
                 </Card>
@@ -709,7 +710,7 @@ export default async function IpadVpnPage({ params }: Props) {
                       vpnName="ExpressVPN"
                       affiliateUrl={getVpnAffiliateUrl("expressvpn")}
                     >
-                      {t("conclusion.getTravel")}
+                      {t("conclusion.getTravel", { discount: getRequiredDiscountPercent("expressvpn") })}
                     </AffiliateButton>
                   </CardContent>
                 </Card>

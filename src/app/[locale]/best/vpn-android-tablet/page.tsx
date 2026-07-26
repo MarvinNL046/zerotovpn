@@ -33,6 +33,7 @@ import { LastUpdated } from "@/components/last-updated";
 import { generateAlternates } from "@/lib/seo-utils";
 import { getVpnAffiliateUrl } from "@/lib/vpn-links";
 
+import { getRequiredDiscountPercent } from "@/lib/vpn-discount";
 type Props = {
   params: Promise<{ locale: string }>;
 };
@@ -716,7 +717,7 @@ export default async function AndroidTabletVpnPage({ params }: Props) {
                   affiliateUrl={getVpnAffiliateUrl("nordvpn")}
                   size="lg"
                 >
-                  {t("conclusion.getBest")}
+                  {t("conclusion.getBest", { discount: getRequiredDiscountPercent("surfshark") })}
                 </AffiliateButton>
                 <AffiliateButton
                   vpnId="surfshark"
@@ -725,7 +726,7 @@ export default async function AndroidTabletVpnPage({ params }: Props) {
                   size="lg"
                   variant="outline"
                 >
-                  {t("conclusion.getValue")}
+                  {t("conclusion.getValue", { discount: getRequiredDiscountPercent("surfshark") })}
                 </AffiliateButton>
               </div>
             </div>

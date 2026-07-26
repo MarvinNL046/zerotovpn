@@ -11,6 +11,7 @@ import { LazyConversionWidgets } from "@/components/lazy-conversion-widgets";
 import { CookieConsent } from "@/components/cookie-consent";
 import type { Metadata } from "next";
 
+import { getRequiredDiscountPercent } from "@/lib/vpn-discount";
 type Props = {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
@@ -151,7 +152,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             >
               Skip to content
             </a>
-            <SecurityBanner />
+            <SecurityBanner nordvpnDiscount={getRequiredDiscountPercent("nordvpn")} />
             <Header />
             <main id="main" className="flex-1">
               {children}

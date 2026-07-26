@@ -4443,9 +4443,9 @@
         "title": "ดีที่สุดสำหรับการเดินทาง",
         "description": "ExpressVPN ใช้งานได้อย่างเชื่อถือได้ในประเทศที่มีข้อจำกัดอย่างจีนและยูเออี"
       },
-      "getBest": "รับ Surfshark – ลด 82%",
-      "getFastest": "ทดลอง NordVPN – 30 วันฟรี",
-      "getTravel": "รับ ExpressVPN – ลด 49%"
+      "getBest": "รับ Surfshark – ลด {discount}%",
+      "getFastest": "ทดลอง NordVPN – รับประกันคืนเงิน {days} วัน",
+      "getTravel": "รับ ExpressVPN – ลด {discount}%"
     }
   },
   "iphoneVpn": {
@@ -4702,7 +4702,7 @@
         "pros": [
           "อุปกรณ์ไม่จำกัด",
           "เข้ากันได้กับ Family Sharing",
-          "ราคาดีที่สุด (ส่วนลด 82%)",
+          "ราคาดีที่สุด",
           "CleanWeb บล็อกโฆษณา",
           "แอปน้ำหนักเบา"
         ],
@@ -4818,7 +4818,7 @@
       "title": "รับ VPN ที่ดีที่สุดสำหรับ iPad ของคุณ",
       "description": "ป้องกัน iPad ของคุณและปลดล็อกเนื้อหาทั่วโลกด้วย VPN ชั้นนำเหล่านี้",
       "getBest": "รับ NordVPN สำหรับ iPad",
-      "getValue": "รับ Surfshark - ส่วนลด 82%",
+      "getValue": "รับ Surfshark - ส่วนลด {discount}%",
       "getTravel": "รับ ExpressVPN"
     }
   },
@@ -5016,7 +5016,7 @@
       "title": "เลือก VPN สำหรับแท็บเล็ต Android ของคุณ",
       "description": "รับการป้องกันที่ดีที่สุดสำหรับแท็บเล็ต Android ของคุณวันนี้",
       "getBest": "รับ NordVPN",
-      "getValue": "รับ Surfshark - ส่วนลด 82%",
+      "getValue": "รับ Surfshark - ส่วนลด {discount}%",
       "getTravel": "รับ ExpressVPN"
     }
   },
@@ -5096,7 +5096,7 @@
         "pros": [
           "อุปกรณ์ไม่จำกัด - เหมาะสำหรับครอบครัว",
           "แอปเบาที่สุด - เหมาะสำหรับแท็บเล็ตรุ่นเก่า",
-          "ราคาดีที่สุดด้วยส่วนลด 82%",
+          "ราคาดีที่สุด",
           "CleanWeb บล็อกโฆษณาและมัลแวร์",
           "GPS spoofing บน Android"
         ],
@@ -5275,7 +5275,7 @@
         "description": "ใช้งานได้ในจีน, UAE, เชื่อถือได้มากที่สุด"
       },
       "getBest": "รับ NordVPN",
-      "getValue": "รับ Surfshark - ส่วนลด 82%",
+      "getValue": "รับ Surfshark - ส่วนลด {discount}%",
       "getTravel": "รับ ExpressVPN"
     }
   },
@@ -5467,7 +5467,7 @@
       "title": "เลือก VPN ที่ดีที่สุดสำหรับแท็บเล็ต Windows ของคุณ",
       "description": "ป้องกัน Surface Pro หรือ Surface Go ของคุณด้วย VPN ชั้นนำเหล่านี้",
       "getBest": "รับ NordVPN",
-      "getValue": "รับ Surfshark - ส่วนลด 82%",
+      "getValue": "รับ Surfshark - ส่วนลด {discount}%",
       "getTravel": "รับ ExpressVPN"
     }
   },
@@ -5492,7 +5492,7 @@
       "verified": "รหัสที่ตรวจสอบแล้ว",
       "verifiedDesc": "คูปองทั้งหมดผ่านการทดสอบและใช้งานได้",
       "savings": "ประหยัดมาก",
-      "savingsDesc": "ประหยัดสูงสุด 83%",
+      "savingsDesc": "ประหยัดสูงสุด {discount}%",
       "updated": "อัปเดตทุกวัน",
       "updatedDesc": "ข้อเสนอใหม่ทุกวัน",
       "exclusive": "ข้อเสนอพิเศษ",
@@ -5623,7 +5623,7 @@
     "org": "องค์กร",
     "getProtected": "ปกป้องตัวเองตอนนี้",
     "getProtectedDesc": "ซ่อนที่อยู่ IP และเข้ารหัสการเชื่อมต่อของคุณด้วย VPN ที่ไว้ใจได้",
-    "nordvpnDeal": "รับ NordVPN ลด 68%",
+    "nordvpnDeal": "รับ NordVPN ลด {discount}%",
     "whyHideIp": "ทำไมจึงควรซ่อนที่อยู่ IP",
     "whyHideIpDesc": "ที่อยู่ IP บอกตำแหน่งคร่าว ๆ ของคุณและผู้ให้บริการอินเทอร์เน็ตที่คุณใช้ อีกทั้งยังใช้ติดตามพฤติกรรมออนไลน์ได้ ทั้งเว็บไซต์ บริษัทโฆษณา และผู้ไม่หวังดีต่างใช้ข้อมูลนี้ VPN จะเปลี่ยน IP จริงของคุณเป็นที่อยู่จากเครือข่ายเซิร์ฟเวอร์ของผู้ให้บริการ",
     "whatIsIp": "ที่อยู่ IP คืออะไร",

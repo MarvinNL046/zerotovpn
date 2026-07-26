@@ -4274,9 +4274,9 @@
         "title": "旅行に最適",
         "description": "ExpressVPNは中国やUAEなどの制限の厳しい国でも確実に動作します。"
       },
-      "getBest": "Surfsharkを入手 - 82% OFF",
-      "getFastest": "NordVPNを試す - 30日間無料",
-      "getTravel": "ExpressVPNを入手 - 49% OFF"
+      "getBest": "Surfsharkを入手 - {discount}% OFF",
+      "getFastest": "NordVPN を試す – {days}日間返金保証",
+      "getTravel": "ExpressVPNを入手 - {discount}% OFF"
     }
   },
   "iphoneVpn": {
@@ -4543,7 +4543,7 @@
         "pros": [
           "無制限デバイス - 家族に最適",
           "最軽量アプリ - 古いタブレットに最適",
-          "82%割引で最高の価格",
+          "最安値",
           "CleanWebが広告・マルウェアをブロック",
           "AndroidでGPSスプーフィング"
         ],
@@ -4722,7 +4722,7 @@
         "description": "中国、UAEで動作、最も信頼性が高い"
       },
       "getBest": "NordVPNを入手",
-      "getValue": "Surfsharkを入手 - 82% OFF",
+      "getValue": "Surfsharkを入手 - {discount}% OFF",
       "getTravel": "ExpressVPNを入手"
     }
   },
@@ -4792,7 +4792,7 @@
         "pros": [
           "無制限デバイス",
           "ファミリー共有対応",
-          "最高価格（82%オフ）",
+          "最安値",
           "CleanWeb広告ブロッカー",
           "軽量アプリ"
         ],
@@ -4908,7 +4908,7 @@
       "title": "iPadに最適なVPNを入手",
       "description": "これらのトップ評価VPNでiPadを保護し、世界中のコンテンツをブロック解除しましょう。",
       "getBest": "iPad向けNordVPNを入手",
-      "getValue": "Surfsharkを入手 - 82% OFF",
+      "getValue": "Surfsharkを入手 - {discount}% OFF",
       "getTravel": "ExpressVPNを入手"
     }
   },
@@ -5106,7 +5106,7 @@
       "title": "AndroidタブレットVPNを選択",
       "description": "今すぐAndroidタブレットに最高の保護を獲得しましょう。",
       "getBest": "NordVPNを入手",
-      "getValue": "Surfsharkを入手 - 82% OFF",
+      "getValue": "Surfsharkを入手 - {discount}% OFF",
       "getTravel": "ExpressVPNを入手"
     }
   },
@@ -5298,7 +5298,7 @@
       "title": "Windowsタブレットに最適なVPNを選択",
       "description": "これらのトップ評価VPNでSurface ProまたはSurface Goを保護しましょう。",
       "getBest": "NordVPNを入手",
-      "getValue": "Surfsharkを入手 - 82% OFF",
+      "getValue": "Surfsharkを入手 - {discount}% OFF",
       "getTravel": "ExpressVPNを入手"
     }
   },
@@ -5323,7 +5323,7 @@
       "verified": "検証済みコード",
       "verifiedDesc": "すべてのクーポンがテスト済みで動作確認済み",
       "savings": "大幅節約",
-      "savingsDesc": "最大83%オフ",
+      "savingsDesc": "最大{discount}%オフ",
       "updated": "毎日更新",
       "updatedDesc": "毎日新しいセール",
       "exclusive": "限定セール",
@@ -5454,7 +5454,7 @@
     "org": "組織",
     "getProtected": "今すぐ保護する",
     "getProtectedDesc": "信頼できる VPN で IP アドレスを隠し、通信を暗号化しましょう。",
-    "nordvpnDeal": "NordVPN を 68% オフで購入",
+    "nordvpnDeal": "NordVPN を {discount}% オフで購入",
     "whyHideIp": "なぜ IP アドレスを隠すべきなのか",
     "whyHideIpDesc": "IP アドレスからは、おおよその所在地と契約しているプロバイダがわかります。オンラインでの行動を追跡する手がかりにもなります。サイトや広告会社、悪意のある第三者もこの情報を使います。VPN を使うと、本当の IP がサーバー網のアドレスに置き換わります。",
     "whatIsIp": "IP アドレスとは？",

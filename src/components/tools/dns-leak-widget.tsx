@@ -47,7 +47,7 @@ function countryFlag(code: string): string {
   );
 }
 
-export function DnsLeakWidget() {
+export function DnsLeakWidget({ nordvpnDiscount }: { nordvpnDiscount: number }) {
   const t = useTranslations("dnsLeakTest");
   const [status, setStatus] = useState<TestStatus>("idle");
   const [step, setStep] = useState<TestStep>(0);
@@ -357,7 +357,7 @@ export function DnsLeakWidget() {
                   }).catch(() => {});
                 }}
               >
-                {t("nordvpnDeal")}
+                {t("nordvpnDeal", { discount: nordvpnDiscount })}
                 <ChevronRight className="h-4 w-4" />
               </a>
             </div>

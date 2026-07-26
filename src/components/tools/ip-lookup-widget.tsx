@@ -39,7 +39,7 @@ function countryFlag(code: string): string {
   );
 }
 
-export function IpLookupWidget() {
+export function IpLookupWidget({ nordvpnDiscount }: { nordvpnDiscount: number }) {
   const t = useTranslations("ipTool");
   const [ipInfo, setIpInfo] = useState<IpInfo | null>(null);
   const [loading, setLoading] = useState(true);
@@ -243,7 +243,7 @@ export function IpLookupWidget() {
                   }).catch(() => {});
                 }}
               >
-                {t("nordvpnDeal")}
+                {t("nordvpnDeal", { discount: nordvpnDiscount })}
               </a>
             </div>
           </CardContent>

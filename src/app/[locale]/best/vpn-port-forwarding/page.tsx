@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const descriptions: Record<string, string> = {
-    en: "Three of the big providers support port forwarding, four do not, and one removed it in 2023 — which most lists have not noticed. Checked at the source, with what each one actually gives you.",
+    en: "Three big providers support port forwarding, four do not, and one dropped it in 2023 — which most lists missed. Checked at the source, with what you get.",
     nl: "Drie grote aanbieders ondersteunen port forwarding, vier niet, en één heeft het in 2023 verwijderd — wat de meeste lijstjes gemist hebben. Bij de bron nagelezen, met wat je per aanbieder echt krijgt.",
     de: "Drei große Anbieter unterstützen Portweiterleitung, vier nicht, und einer hat sie 2023 entfernt — was die meisten Listen übersehen haben. An der Quelle geprüft.",
     es: "Tres grandes proveedores admiten reenvío de puertos, cuatro no, y uno lo eliminó en 2023 — algo que casi ninguna lista ha notado. Verificado en la fuente.",

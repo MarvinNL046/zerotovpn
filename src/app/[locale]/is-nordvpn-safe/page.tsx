@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const descriptions: Record<string, string> = {
-    en: "We rank NordVPN first on most of our lists and earn a commission from it. So here is every criticism we could find, with a verdict on each: which are fair, which need context, and which are internet rumour.",
+    en: "We rank NordVPN first on most lists and earn commission from it. So here is every criticism we found, with a verdict: fair, needs context, or rumour.",
     nl: "Wij zetten NordVPN op de meeste lijsten op één en verdienen er commissie aan. Daarom hier elk kritiekpunt dat we konden vinden, met een oordeel: wat klopt, wat vraagt om context, en wat is internetgerucht.",
     de: "Wir setzen NordVPN in den meisten Listen auf Platz eins und verdienen daran mit. Deshalb hier jeder Kritikpunkt mit Bewertung: was stimmt, was braucht Kontext, was ist Gerücht.",
     es: "Colocamos NordVPN en primer lugar en casi todas nuestras listas y ganamos comisión. Por eso: cada crítica con un veredicto — cuál es justa, cuál necesita contexto y cuál es rumor.",

@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const descriptions: Record<string, string> = {
-    en: "Egypt blocks VoIP services like WhatsApp and FaceTime calls, and censors hundreds of websites. Find VPNs that work in Egypt to unblock calls and access restricted content.",
+    en: "Egypt blocks VoIP like WhatsApp and FaceTime, and censors hundreds of sites. These VPNs still work there to unblock calls and restricted content.",
     nl: "Egypte blokkeert VoIP-diensten zoals WhatsApp- en FaceTime-gesprekken en censureert honderden websites. Vind VPNs die werken in Egypte.",
     de: "Agypten blockiert VoIP-Dienste wie WhatsApp- und FaceTime-Anrufe und zensiert Hunderte von Websites. Finden Sie VPNs, die in Agypten funktionieren.",
     es: "Egipto bloquea servicios VoIP como llamadas de WhatsApp y FaceTime, y censura cientos de sitios web. Encuentra VPN que funcionen en Egipto.",

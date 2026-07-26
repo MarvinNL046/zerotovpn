@@ -53,7 +53,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     metadataBase: new URL(baseUrl),
     title: { absolute: titelMetMerk("VPN Transparency & Performance Index 2026") },
     description:
-      "Independent report across 3 regions with measurable metrics: speed, latency, logging policy, ownership, jurisdiction, streaming unlock, torrent support, and kill switch reliability.",
+      "Independent report across three regions with measurable metrics: speed, latency, logging, ownership, jurisdiction, streaming and kill switch.",
     alternates: generateAlternates("/reports/vpn-transparency-performance-index-2026", locale),
     openGraph: {
       locale: OG_LOCALE_MAP[locale] ?? "en_US",

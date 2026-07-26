@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const descriptions: Record<string, string> = {
-    en: "Pakistan increasingly censors the internet, blocking social media during protests and restricting VPN traffic. Find VPNs that reliably work in Pakistan to access blocked content safely.",
+    en: "Pakistan censors the internet, blocks social media during protests and throttles VPN traffic. These VPNs still work there to reach blocked content.",
     nl: "Pakistan censureert het internet steeds meer, blokkeert sociale media tijdens protesten en beperkt VPN-verkeer. Vind VPNs die betrouwbaar werken in Pakistan.",
     de: "Pakistan zensiert das Internet zunehmend. Finden Sie VPNs, die in Pakistan zuverlassig funktionieren, um sicher auf blockierte Inhalte zuzugreifen.",
     es: "Pakistan censura cada vez mas el internet. Encuentra VPN que funcionen de manera confiable en Pakistan para acceder a contenido bloqueado de forma segura.",

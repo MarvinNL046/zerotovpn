@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     th: "VPN ที่ดีที่สุดสำหรับซาอุดีอาระเบีย 2026: ปลดบล็อก VoIP และเนื้อหาที่ถูกจำกัด | ZeroToVPN",
   };
   const descriptions: Record<string, string> = {
-    en: "Saudi Arabia heavily filters internet content and blocks VoIP services. Find VPNs that work to unblock Skype, WhatsApp calls, and access restricted websites safely.",
+    en: "Saudi Arabia filters heavily and blocks VoIP. These VPNs still work to unblock Skype and WhatsApp calls and reach restricted websites.",
     nl: "Saudi-Arabie filtert internetinhoud en blokkeert VoIP-diensten zwaar. Vind VPNs die werken om Skype en WhatsApp-gesprekken te deblokkeren.",
     de: "Saudi-Arabien filtert Internetinhalte und blockiert VoIP-Dienste stark. Finden Sie VPNs zum Entsperren von Skype und WhatsApp-Anrufen.",
     es: "Arabia Saudita filtra fuertemente el contenido de internet y bloquea servicios VoIP. Encuentra VPN para desbloquear Skype y llamadas WhatsApp.",

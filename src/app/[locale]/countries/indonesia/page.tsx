@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     th: "VPN ที่ดีที่สุดสำหรับอินโดนีเซีย 2026: เข้าถึง Reddit, Vimeo และไซต์ที่ถูกบล็อก | ZeroToVPN",
   };
   const descriptions: Record<string, string> = {
-    en: "Indonesia blocks Reddit, Vimeo, and thousands of websites. VPN usage is legal. Find the best VPNs to access blocked content and protect your privacy in Indonesia.",
+    en: "Indonesia blocks Reddit, Vimeo and thousands of sites, but VPN use is legal. These VPNs reach blocked content and protect your privacy there.",
     nl: "Indonesie blokkeert Reddit, Vimeo en duizenden websites. VPN-gebruik is legaal. Vind de beste VPNs voor Indonesie.",
     de: "Indonesien blockiert Reddit, Vimeo und Tausende von Websites. VPN-Nutzung ist legal. Finden Sie die besten VPNs fur Indonesien.",
     es: "Indonesia bloquea Reddit, Vimeo y miles de sitios web. El uso de VPN es legal. Encuentra los mejores VPN para Indonesia.",

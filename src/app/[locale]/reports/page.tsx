@@ -27,7 +27,7 @@ const copy: Record<string, { badge: string; title: string; subtitle: string; car
   en: {
     badge: "Research library",
     title: "VPN Research Reports",
-    subtitle: "Public report assets that support rankings and review conclusions.",
+    subtitle: "Our public VPN research reports: the data and the method behind the rankings, including the transparency and performance index for 2026.",
     cardBody: "Core asset with measurable metrics across speed, latency, logging, ownership, jurisdiction, streaming unlock, torrent policy, and kill switch reliability.",
     open: "Open report",
     reports: "Reports",

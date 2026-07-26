@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const descriptions: Record<string, string> = {
-    en: "Find the best VPN for your country. Expert guides for 50+ countries including USA, UK, Germany, Japan, Australia, Brazil, and more. Research-backed recommendations.",
+    en: "Find the best VPN for your country. Guides for 50+ countries including the USA, UK, Germany, Japan, Australia and Brazil.",
     nl: "Vind de beste VPN voor jouw land. Expert gidsen voor 50+ landen waaronder VS, VK, Duitsland, Japan, Australië, Brazilië en meer.",
     de: "Finden Sie das beste VPN für Ihr Land. Expertenleitfäden für 50+ Länder einschließlich USA, UK, Deutschland, Japan, Australien, Brasilien und mehr.",
     es: "Encuentra el mejor VPN para tu país. Guías expertas para 50+ países incluyendo EE.UU., Reino Unido, Alemania, Japón, Australia, Brasil y más.",

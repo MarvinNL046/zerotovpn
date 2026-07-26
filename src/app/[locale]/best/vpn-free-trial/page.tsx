@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const descriptions: Record<string, string> = {
-    en: "Most VPN free trials are money-back guarantees in disguise. We checked every claim on the provider's own page: who gives you a trial, how long, and whether you must hand over card details first.",
+    en: "Most VPN free trials are money-back guarantees in disguise. We checked each provider's own page: who gives a trial, how long, and whether a card is needed.",
     nl: "De meeste 'gratis proefperiodes' zijn een geld-terug-garantie in vermomming. We controleerden elke claim op de pagina van de aanbieder zelf: wie geeft echt een proefperiode, hoe lang, en moet je eerst betaalgegevens invullen?",
     de: "Die meisten VPN-Testphasen sind verkappte Geld-zurück-Garantien. Wir haben jede Angabe auf der Seite des Anbieters geprüft: Wer bietet wirklich eine Testphase, wie lange, und sind Zahlungsdaten nötig?",
     es: "La mayoría de las pruebas gratuitas son garantías de devolución disfrazadas. Verificamos cada dato en la página del proveedor: quién ofrece prueba real, cuántos días y si exigen datos de pago.",

@@ -1,4 +1,5 @@
 import { setRequestLocale } from "next-intl/server";
+import { getLocalizedMonthYear } from "@/lib/seo-utils";
 import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
@@ -123,7 +124,7 @@ export default async function WhatIsVpnPage({ params }: Props) {
             <div className="flex items-center gap-4 text-sm text-muted-foreground">
               <div className="flex items-center gap-1">
                 <Clock className="h-4 w-4" />
-                {t("hero.updated")}
+                {t("hero.updated", { month: getLocalizedMonthYear(locale) })}
               </div>
               <div className="flex items-center gap-1">
                 <BookOpen className="h-4 w-4" />

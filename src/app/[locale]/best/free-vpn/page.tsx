@@ -1,4 +1,5 @@
 import { setRequestLocale } from "next-intl/server";
+import { getLocalizedMonthYear } from "@/lib/seo-utils";
 import { getTranslations } from "next-intl/server";
 import { Metadata } from "next";
 import { getShortMonthYear, generateAlternates } from "@/lib/seo-utils";
@@ -294,7 +295,7 @@ export default async function FreeVpnPage({ params }: Props) {
             <div className="max-w-4xl mx-auto text-center space-y-6">
               <Badge variant="secondary" className="px-4 py-1">
                 <Clock className="h-3 w-3 mr-1" />
-                {t("hero.badge")}
+                {t("hero.badge", { month: getLocalizedMonthYear(locale) })}
               </Badge>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
                 {t("hero.title")}

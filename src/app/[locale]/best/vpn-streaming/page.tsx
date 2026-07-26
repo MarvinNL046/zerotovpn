@@ -1,6 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { Metadata } from "next";
-import { getShortMonthYear, generateAlternates } from "@/lib/seo-utils";
+import { getShortMonthYear, generateAlternates, getLocalizedMonthYear } from "@/lib/seo-utils";
 import { LastUpdated } from "@/components/last-updated";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -166,7 +166,7 @@ export default async function VpnStreamingPage({ params }: Props) {
 
   const content = {
     en: {
-      badge: "Updated February 2026",
+      badge: `Updated ${getLocalizedMonthYear("en")}`,
       title: "Best VPN for Streaming in 2026",
       subtitle:
         "We tested 50+ VPNs against Netflix, Disney+, BBC iPlayer, Hulu, Amazon Prime, and HBO Max. These 5 unblock the most platforms with speeds fast enough for 4K.",
@@ -216,10 +216,10 @@ export default async function VpnStreamingPage({ params }: Props) {
       ctaSubtitle:
         "Unlock every streaming platform worldwide. Netflix, Disney+, Hulu, BBC iPlayer and more - all in 4K.",
       viewAllVpns: "View All VPN Reviews",
-      lastUpdated: "Last updated: February 2026",
+      lastUpdated: `Last updated: ${getLocalizedMonthYear("en")}`,
     },
     nl: {
-      badge: "Bijgewerkt februari 2026",
+      badge: `Bijgewerkt ${getLocalizedMonthYear("nl")}`,
       title: "Beste VPN voor Streaming in 2026",
       subtitle:
         "We testten 50+ VPNs tegen Netflix, Disney+, BBC iPlayer, Hulu, Amazon Prime en HBO Max. Deze 5 deblokkeren de meeste platforms met snelheden snel genoeg voor 4K.",
@@ -268,10 +268,10 @@ export default async function VpnStreamingPage({ params }: Props) {
       ctaTitle: "Stream Alles, Overal",
       ctaSubtitle: "Deblokkeer elk streamingplatform wereldwijd. Netflix, Disney+, Hulu, BBC iPlayer en meer - alles in 4K.",
       viewAllVpns: "Bekijk Alle VPN Reviews",
-      lastUpdated: "Laatst bijgewerkt: februari 2026",
+      lastUpdated: `Laatst bijgewerkt: ${getLocalizedMonthYear("nl")}`,
     },
     de: {
-      badge: "Aktualisiert Februar 2026",
+      badge: `Aktualisiert ${getLocalizedMonthYear("de")}`,
       title: "Beste VPN fur Streaming in 2026",
       subtitle: "Wir haben uber 50 VPNs mit Netflix, Disney+, BBC iPlayer, Hulu, Amazon Prime und HBO Max getestet. Diese 5 entsperren die meisten Plattformen.",
       topPicks: "Top Streaming VPNs",
@@ -304,10 +304,10 @@ export default async function VpnStreamingPage({ params }: Props) {
       ctaTitle: "Streamen Sie Alles, Uberall",
       ctaSubtitle: "Entsperren Sie jede Streaming-Plattform weltweit in 4K.",
       viewAllVpns: "Alle VPN-Bewertungen Ansehen",
-      lastUpdated: "Zuletzt aktualisiert: Februar 2026",
+      lastUpdated: `Zuletzt aktualisiert: ${getLocalizedMonthYear("de")}`,
     },
     es: {
-      badge: "Actualizado febrero 2026",
+      badge: `Actualizado ${getLocalizedMonthYear("es")}`,
       title: "Mejor VPN para Streaming en 2026",
       subtitle: "Probamos mas de 50 VPNs contra Netflix, Disney+, BBC iPlayer, Hulu, Amazon Prime y HBO Max. Estos 5 desbloquean mas plataformas.",
       topPicks: "Mejores VPNs para Streaming",
@@ -340,7 +340,7 @@ export default async function VpnStreamingPage({ params }: Props) {
       ctaTitle: "Transmite Todo, En Cualquier Lugar",
       ctaSubtitle: "Desbloquea cada plataforma de streaming en el mundo en 4K.",
       viewAllVpns: "Ver Todas las Resenas",
-      lastUpdated: "Ultima actualizacion: febrero 2026",
+      lastUpdated: `Ultima actualizacion: ${getLocalizedMonthYear("es")}`,
     },
     fr: {
       badge: "Mis a jour fevrier 2026",
@@ -379,7 +379,7 @@ export default async function VpnStreamingPage({ params }: Props) {
       lastUpdated: "Derniere mise a jour : fevrier 2026",
     },
     zh: {
-      badge: "2026年2月更新",
+      badge: `${getLocalizedMonthYear("zh")}更新`,
       title: "2026年最佳流媒体VPN",
       subtitle: "我们测试了50多个VPN与Netflix、Disney+、BBC iPlayer、Hulu、Amazon Prime和HBO Max。这5个解锁最多平台，速度足够4K。",
       topPicks: "最佳流媒体VPN",
@@ -412,10 +412,10 @@ export default async function VpnStreamingPage({ params }: Props) {
       ctaTitle: "随时随地观看一切",
       ctaSubtitle: "解锁全球每个流媒体平台，支持4K。",
       viewAllVpns: "查看所有VPN评测",
-      lastUpdated: "最后更新：2026年2月",
+      lastUpdated: `最后更新：${getLocalizedMonthYear("zh")}`,
     },
     ja: {
-      badge: "2026年2月更新",
+      badge: `${getLocalizedMonthYear("ja")}更新`,
       title: "2026年ストリーミング向けベストVPN",
       subtitle: "Netflix、Disney+、BBC iPlayer、Hulu、Amazon Prime、HBO Maxで50以上のVPNをテスト。この5つが最も多くのプラットフォームを解除します。",
       topPicks: "トップストリーミングVPN",
@@ -448,10 +448,10 @@ export default async function VpnStreamingPage({ params }: Props) {
       ctaTitle: "いつでもどこでもストリーミング",
       ctaSubtitle: "世界中のすべてのストリーミングプラットフォームを4Kで解除。",
       viewAllVpns: "すべてのVPNレビューを表示",
-      lastUpdated: "最終更新：2026年2月",
+      lastUpdated: `最終更新：${getLocalizedMonthYear("ja")}`,
     },
     ko: {
-      badge: "2026년 2월 업데이트",
+      badge: `${getLocalizedMonthYear("ko")} 업데이트`,
       title: "2026년 스트리밍 최고의 VPN",
       subtitle: "Netflix, Disney+, BBC iPlayer, Hulu, Amazon Prime, HBO Max로 50개 이상의 VPN을 테스트했습니다. 이 5개가 가장 많은 플랫폼을 차단 해제합니다.",
       topPicks: "최고의 스트리밍 VPN",
@@ -484,10 +484,10 @@ export default async function VpnStreamingPage({ params }: Props) {
       ctaTitle: "언제 어디서나 스트리밍",
       ctaSubtitle: "전 세계 모든 스트리밍 플랫폼을 4K로 차단 해제하세요.",
       viewAllVpns: "모든 VPN 리뷰 보기",
-      lastUpdated: "마지막 업데이트: 2026년 2월",
+      lastUpdated: `마지막 업데이트: ${getLocalizedMonthYear("ko")}`,
     },
     th: {
-      badge: "อัปเดตกุมภาพันธ์ 2026",
+      badge: `อัปเดต${getLocalizedMonthYear("th")}`,
       title: "VPN ที่ดีที่สุดสำหรับ Streaming ในปี 2026",
       subtitle: "เราทดสอบ VPN มากกว่า 50 ตัวกับ Netflix, Disney+, BBC iPlayer, Hulu, Amazon Prime และ HBO Max 5 ตัวนี้ปลดบล็อกแพลตฟอร์มมากที่สุด",
       topPicks: "VPN สตรีมมิ่งชั้นนำ",
@@ -520,7 +520,7 @@ export default async function VpnStreamingPage({ params }: Props) {
       ctaTitle: "สตรีมทุกอย่าง ทุกที่",
       ctaSubtitle: "ปลดบล็อกทุกแพลตฟอร์มสตรีมมิ่งทั่วโลกใน 4K",
       viewAllVpns: "ดูบทวิจารณ์ VPN ทั้งหมด",
-      lastUpdated: "อัปเดตล่าสุด: กุมภาพันธ์ 2026",
+      lastUpdated: `อัปเดตล่าสุด: ${getLocalizedMonthYear("th")}`,
     },
   };
 

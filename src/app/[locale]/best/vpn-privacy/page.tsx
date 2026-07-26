@@ -12,7 +12,7 @@ import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { getVpnBySlug, type VpnProvider } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
-import { getShortMonthYear, generateAlternates } from "@/lib/seo-utils";
+import { getShortMonthYear, generateAlternates, getLocalizedMonthYear } from "@/lib/seo-utils";
 import { LastUpdated } from "@/components/last-updated";
 import {
   Shield,
@@ -204,7 +204,7 @@ export default async function PrivacyVpnPage({ params }: Props) {
   // Content translations
   const content = {
     en: {
-      badge: "Updated February 2026",
+      badge: `Updated ${getLocalizedMonthYear("en")}`,
       title: "Best VPNs for Privacy in 2026",
       subtitle:
         "We tested 35+ VPNs specifically for privacy protection. These are the most private options with verified no-logs policies, strong jurisdictions, and independent audits.",
@@ -316,10 +316,10 @@ export default async function PrivacyVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "View All VPN Reviews",
-      lastUpdated: "Last updated: February 2026",
+      lastUpdated: `Last updated: ${getLocalizedMonthYear("en")}`,
     },
     nl: {
-      badge: "Bijgewerkt februari 2026",
+      badge: `Bijgewerkt ${getLocalizedMonthYear("nl")}`,
       title: "Beste VPN voor Privacy in 2026",
       subtitle:
         "We hebben 35+ VPNs specifiek getest op privacybescherming. Dit zijn de meest private opties met geverifieerde no-logs beleid, sterke jurisdicties en onafhankelijke audits.",
@@ -431,10 +431,10 @@ export default async function PrivacyVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Bekijk Alle VPN Reviews",
-      lastUpdated: "Laatst bijgewerkt: februari 2026",
+      lastUpdated: `Laatst bijgewerkt: ${getLocalizedMonthYear("nl")}`,
     },
     de: {
-      badge: "Aktualisiert Februar 2026",
+      badge: `Aktualisiert ${getLocalizedMonthYear("de")}`,
       title: "Beste VPN für Privatsphäre in 2026",
       subtitle:
         "Wir haben über 35 VPNs speziell auf Datenschutz getestet. Dies sind die privatsten Optionen mit verifizierten No-Logs-Richtlinien, starken Jurisdiktionen und unabhängigen Audits.",
@@ -546,10 +546,10 @@ export default async function PrivacyVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Alle VPN-Bewertungen Anzeigen",
-      lastUpdated: "Zuletzt aktualisiert: Februar 2026",
+      lastUpdated: `Zuletzt aktualisiert: ${getLocalizedMonthYear("de")}`,
     },
     es: {
-      badge: "Actualizado febrero 2026",
+      badge: `Actualizado ${getLocalizedMonthYear("es")}`,
       title: "Mejor VPN para Privacidad en 2026",
       subtitle:
         "Probamos más de 35 VPNs específicamente para protección de privacidad. Estas son las opciones más privadas con políticas sin registros verificadas, jurisdicciones sólidas y auditorías independientes.",
@@ -661,10 +661,10 @@ export default async function PrivacyVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Ver Todas Las Reseñas De VPN",
-      lastUpdated: "Última actualización: febrero 2026",
+      lastUpdated: `Última actualización: ${getLocalizedMonthYear("es")}`,
     },
     fr: {
-      badge: "Mis à jour février 2026",
+      badge: `Mis à jour ${getLocalizedMonthYear("fr")}`,
       title: "Meilleurs VPNs pour la Vie Privée en 2026",
       subtitle:
         "Nous avons testé plus de 35 VPNs spécifiquement pour la protection de la vie privée. Ce sont les options les plus privées avec des politiques sans logs vérifiées, des juridictions solides et des audits indépendants.",
@@ -776,10 +776,10 @@ export default async function PrivacyVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Voir Tous Les Avis VPN",
-      lastUpdated: "Dernière mise à jour: février 2026",
+      lastUpdated: `Dernière mise à jour: ${getLocalizedMonthYear("fr")}`,
     },
     zh: {
-      badge: "2026年2月更新",
+      badge: `${getLocalizedMonthYear("zh")}更新`,
       title: "2026年最佳隐私VPN",
       subtitle:
         "我们专门针对隐私保护测试了35多个VPN。这些是经过验证的无日志政策、强大司法管辖区和独立审计的最私密选项。",
@@ -891,10 +891,10 @@ export default async function PrivacyVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "查看所有VPN评测",
-      lastUpdated: "最后更新：2026年2月",
+      lastUpdated: `最后更新：${getLocalizedMonthYear("zh")}`,
     },
     ja: {
-      badge: "2026年2月更新",
+      badge: `${getLocalizedMonthYear("ja")}更新`,
       title: "2026年プライバシー向けベストVPN",
       subtitle:
         "プライバシー保護のために35以上のVPNをテストしました。これらは、確認済みのノーログポリシー、強力な管轄区域、独立した監査を持つ最もプライベートな選択肢です。",
@@ -1006,10 +1006,10 @@ export default async function PrivacyVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "すべてのVPNレビューを表示",
-      lastUpdated: "最終更新：2026年2月",
+      lastUpdated: `最終更新：${getLocalizedMonthYear("ja")}`,
     },
     ko: {
-      badge: "2026년 2월 업데이트",
+      badge: `${getLocalizedMonthYear("ko")} 업데이트`,
       title: "2026년 개인정보 보호를 위한 최고의 VPN",
       subtitle:
         "개인정보 보호를 위해 35개 이상의 VPN을 테스트했습니다. 검증된 로그 없음 정책, 강력한 관할권 및 독립 감사를 갖춘 가장 비공개적인 옵션들입니다.",
@@ -1121,10 +1121,10 @@ export default async function PrivacyVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "모든 VPN 리뷰 보기",
-      lastUpdated: "마지막 업데이트: 2026년 2월",
+      lastUpdated: `마지막 업데이트: ${getLocalizedMonthYear("ko")}`,
     },
     th: {
-      badge: "อัปเดตกุมภาพันธ์ 2026",
+      badge: `อัปเดต${getLocalizedMonthYear("th")}`,
       title: "VPN ที่ดีที่สุดสำหรับความเป็นส่วนตัวในปี 2026",
       subtitle:
         "เราทดสอบ VPN มากกว่า 35 รายการสำหรับการปกป้องความเป็นส่วนตัว นี่คือตัวเลือกที่เป็นส่วนตัวที่สุดพร้อมนโยบายไม่มีบันทึกที่ตรวจสอบแล้ว เขตอำนาจศาลที่แข็งแกร่ง และการตรวจสอบอิสระ",
@@ -1236,7 +1236,7 @@ export default async function PrivacyVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "ดูรีวิว VPN ทั้งหมด",
-      lastUpdated: "อัปเดตล่าสุด: กุมภาพันธ์ 2026",
+      lastUpdated: `อัปเดตล่าสุด: ${getLocalizedMonthYear("th")}`,
     },
   };
 

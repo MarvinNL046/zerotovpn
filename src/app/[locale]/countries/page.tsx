@@ -1,6 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { Metadata } from "next";
-import { generateAlternates } from "@/lib/seo-utils";
+import { generateAlternates, getLocalizedMonthYear } from "@/lib/seo-utils";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "@/i18n/navigation";
@@ -404,7 +404,7 @@ const countries = [
 
 const content = {
   en: {
-    badge: "Updated February 2026",
+    badge: `Updated ${getLocalizedMonthYear("th")}`,
     title: "VPN Guides by Country",
     subtitle: "Find VPNs that work in your location with our research-backed country guides",
     intro: "Internet freedom varies dramatically by country. Some nations heavily restrict VPN access, while others embrace online privacy. Our guides help you find VPNs that actually work.",
@@ -416,7 +416,7 @@ const content = {
     moreCountries: "More Country Guides",
   },
   nl: {
-    badge: "Bijgewerkt februari 2026",
+    badge: `Bijgewerkt ${getLocalizedMonthYear("th")}`,
     title: "VPN Gidsen per Land",
     subtitle: "Vind VPNs die werken in jouw locatie met onze onderzoeksgebaseerde landgidsen",
     intro: "Internetvrijheid varieert enorm per land. Sommige landen beperken VPN-toegang zwaar, anderen omarmen online privacy. Onze gidsen helpen je VPNs te vinden die echt werken.",
@@ -428,7 +428,7 @@ const content = {
     moreCountries: "Meer Landgidsen",
   },
   de: {
-    badge: "Aktualisiert Februar 2026",
+    badge: `Aktualisiert ${getLocalizedMonthYear("th")}`,
     title: "VPN-Länderführer",
     subtitle: "Finden Sie VPNs, die an Ihrem Standort funktionieren, mit unseren forschungsbasierten Länderführern",
     intro: "Internetfreiheit variiert dramatisch von Land zu Land. Einige Nationen schränken den VPN-Zugang stark ein, während andere Online-Privatsphäre begrüßen. Unsere Leitfäden helfen Ihnen, VPNs zu finden, die tatsächlich funktionieren.",
@@ -440,7 +440,7 @@ const content = {
     moreCountries: "Weitere Länderführer",
   },
   es: {
-    badge: "Actualizado febrero 2026",
+    badge: `Actualizado ${getLocalizedMonthYear("th")}`,
     title: "Guías de VPN por País",
     subtitle: "Encuentra VPNs que funcionen en tu ubicación con nuestras guías de países basadas en investigación",
     intro: "La libertad de internet varía dramáticamente según el país. Algunas naciones restringen fuertemente el acceso a VPN, mientras que otras adoptan la privacidad en línea. Nuestras guías te ayudan a encontrar VPNs que realmente funcionan.",
@@ -452,7 +452,7 @@ const content = {
     moreCountries: "Más Guías de Países",
   },
   fr: {
-    badge: "Mis à jour février 2026",
+    badge: `Mis à jour ${getLocalizedMonthYear("th")}`,
     title: "Guides VPN par Pays",
     subtitle: "Trouvez des VPN qui fonctionnent dans votre pays avec nos guides basés sur la recherche",
     intro: "La liberté d'internet varie considérablement selon les pays. Certaines nations restreignent fortement l'accès aux VPN, tandis que d'autres adoptent la confidentialité en ligne. Nos guides vous aident à trouver des VPN qui fonctionnent réellement.",
@@ -464,7 +464,7 @@ const content = {
     moreCountries: "Plus de Guides de Pays",
   },
   zh: {
-    badge: "2026年2月更新",
+    badge: `${getLocalizedMonthYear("th")}更新`,
     title: "按国家/地区划分的VPN指南",
     subtitle: "通过我们基于研究的国家/地区指南，找到适合您所在位置的VPN",
     intro: "互联网自由因国家/地区而异。一些国家严格限制VPN访问，而另一些国家则拥抱在线隐私。我们的指南帮助您找到真正有效的VPN。",
@@ -476,7 +476,7 @@ const content = {
     moreCountries: "更多国家/地区指南",
   },
   ja: {
-    badge: "2026年2月更新",
+    badge: `${getLocalizedMonthYear("th")}更新`,
     title: "国別VPNガイド",
     subtitle: "研究に基づいた国別ガイドで、あなたの地域で使えるVPNを見つけましょう",
     intro: "インターネットの自由は国によって大きく異なります。VPNアクセスを厳しく制限する国もあれば、オンラインプライバシーを受け入れる国もあります。私たちのガイドは、実際に機能するVPNを見つけるのに役立ちます。",
@@ -488,7 +488,7 @@ const content = {
     moreCountries: "その他の国別ガイド",
   },
   ko: {
-    badge: "2026년 2월 업데이트",
+    badge: `${getLocalizedMonthYear("th")} 업데이트`,
     title: "국가별 VPN 가이드",
     subtitle: "연구 기반 국가 가이드로 귀하의 위치에서 작동하는 VPN을 찾으세요",
     intro: "인터넷 자유는 국가마다 크게 다릅니다. 일부 국가는 VPN 접속을 엄격히 제한하는 반면, 다른 국가는 온라인 프라이버시를 수용합니다. 우리의 가이드는 실제로 작동하는 VPN을 찾는 데 도움이 됩니다.",
@@ -500,7 +500,7 @@ const content = {
     moreCountries: "더 많은 국가 가이드",
   },
   th: {
-    badge: "อัปเดตกุมภาพันธ์ 2026",
+    badge: `อัปเดต${getLocalizedMonthYear("th")}`,
     title: "คู่มือ VPN ตามประเทศ",
     subtitle: "ค้นหา VPN ที่ใช้งานได้ในพื้นที่ของคุณด้วยคู่มือประเทศที่ได้รับการสนับสนุนจากการวิจัยของเรา",
     intro: "อิสรภาพทางอินเทอร์เน็ตแตกต่างกันอย่างมากในแต่ละประเทศ บางประเทศจำกัดการเข้าถึง VPN อย่างหนัก ในขณะที่ประเทศอื่นๆ รับเอาความเป็นส่วนตัวออนไลน์ คู่มือของเราช่วยคุณค้นหา VPN ที่ใช้งานได้จริง",

@@ -11,7 +11,7 @@ import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { getVpnBySlug, type VpnProvider } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
-import { getShortMonthYear, generateAlternates } from "@/lib/seo-utils";
+import { getShortMonthYear, generateAlternates, getLocalizedMonthYear } from "@/lib/seo-utils";
 import { LastUpdated } from "@/components/last-updated";
 import {
   Shield,
@@ -176,7 +176,7 @@ export default async function VpnCheapPage({ params }: Props) {
 
   const content = {
     en: {
-      badge: "Updated February 2026",
+      badge: `Updated ${getLocalizedMonthYear("en")}`,
       title: "Cheapest VPNs in 2026",
       subtitle:
         "You do not need to spend $10+/month on a VPN. These 5 budget options start at just $1.99/month and still deliver excellent speeds, streaming support, and strong security.",
@@ -229,10 +229,10 @@ export default async function VpnCheapPage({ params }: Props) {
       ctaTitle: "Get Premium VPN Protection for Less",
       ctaSubtitle: "No need to overpay. These budget VPNs deliver the same encryption, speed, and streaming access as expensive alternatives.",
       viewAllVpns: "View All VPN Reviews",
-      lastUpdated: "Last updated: February 2026",
+      lastUpdated: `Last updated: ${getLocalizedMonthYear("en")}`,
     },
     nl: {
-      badge: "Bijgewerkt februari 2026", title: "Goedkoopste VPNs in 2026",
+      badge: `Bijgewerkt ${getLocalizedMonthYear("nl")}`, title: "Goedkoopste VPNs in 2026",
       subtitle: "Je hoeft geen $10+/maand uit te geven aan een VPN. Deze 5 budgetopties beginnen bij slechts $1,99/maand en leveren uitstekende snelheden, streaming ondersteuning en sterke beveiliging.",
       topPicks: "Top Budget VPNs", priceTitle: "Prijsvergelijking", priceDesc: "Alle prijzen zijn voor het goedkoopste beschikbare abonnement (meestal 2-3 jaar).",
       tableHeaders: { vpn: "VPN", price: "Prijs/ma", plan: "Plan", devices: "Apparaten", servers: "Servers", streaming: "Streaming", torrenting: "P2P", moneyBack: "Restitutie" },
@@ -249,10 +249,10 @@ export default async function VpnCheapPage({ params }: Props) {
         { question: "Moet ik een gratis VPN nemen?", answer: "We raden gratis VPNs niet aan. Ze hebben meestal strenge datalimieten en trage snelheden. Surfshark voor $1,99/maand is een veel betere investering." },
       ],
       getVpnButton: "Krijg", ctaTitle: "Premium VPN Bescherming voor Minder", ctaSubtitle: "Niet te veel betalen. Deze budget VPNs leveren dezelfde encryptie en streaming.",
-      viewAllVpns: "Bekijk Alle VPN Reviews", lastUpdated: "Laatst bijgewerkt: februari 2026",
+      viewAllVpns: "Bekijk Alle VPN Reviews", lastUpdated: `Laatst bijgewerkt: ${getLocalizedMonthYear("nl")}`,
     },
     de: {
-      badge: "Aktualisiert Februar 2026", title: "Gunstigste VPNs in 2026",
+      badge: `Aktualisiert ${getLocalizedMonthYear("de")}`, title: "Gunstigste VPNs in 2026",
       subtitle: "Sie mussen kein $10+/Monat fur ein VPN ausgeben. Diese 5 Budget-Optionen starten bei nur $1,99/Monat.",
       topPicks: "Top Budget VPNs", priceTitle: "Preisvergleich", priceDesc: "Alle Preise gelten fur den gunstigsten Plan (meist 2-3 Jahre).",
       tableHeaders: { vpn: "VPN", price: "Preis/Mo", plan: "Plan", devices: "Gerate", servers: "Server", streaming: "Streaming", torrenting: "P2P", moneyBack: "Erstattung" },
@@ -268,10 +268,10 @@ export default async function VpnCheapPage({ params }: Props) {
         { question: "Sollte ich ein kostenloses VPN nehmen?", answer: "Nicht empfohlen. Surfshark fur $1,99/Monat ist viel besser." },
       ],
       getVpnButton: "Holen", ctaTitle: "Premium VPN-Schutz Fur Weniger", ctaSubtitle: "Nicht zu viel bezahlen.",
-      viewAllVpns: "Alle Bewertungen", lastUpdated: "Zuletzt aktualisiert: Februar 2026",
+      viewAllVpns: "Alle Bewertungen", lastUpdated: `Zuletzt aktualisiert: ${getLocalizedMonthYear("de")}`,
     },
     es: {
-      badge: "Actualizado febrero 2026", title: "VPNs Mas Baratos en 2026",
+      badge: `Actualizado ${getLocalizedMonthYear("es")}`, title: "VPNs Mas Baratos en 2026",
       subtitle: "No necesitas gastar $10+/mes en un VPN. Estas 5 opciones economicas comienzan desde $1,99/mes.",
       topPicks: "Mejores VPNs Economicos", priceTitle: "Comparacion de Precios", priceDesc: "Precios mostrados para el plan mas barato (2-3 anos).",
       tableHeaders: { vpn: "VPN", price: "Precio/mes", plan: "Plan", devices: "Dispositivos", servers: "Servidores", streaming: "Streaming", torrenting: "P2P", moneyBack: "Reembolso" },
@@ -287,7 +287,7 @@ export default async function VpnCheapPage({ params }: Props) {
         { question: "Deberia usar un VPN gratis?", answer: "No recomendado. Surfshark a $1,99/mes es mucho mejor." },
       ],
       getVpnButton: "Obtener", ctaTitle: "Proteccion VPN Premium por Menos", ctaSubtitle: "No pagues de mas.",
-      viewAllVpns: "Ver Todas las Resenas", lastUpdated: "Ultima actualizacion: febrero 2026",
+      viewAllVpns: "Ver Todas las Resenas", lastUpdated: `Ultima actualizacion: ${getLocalizedMonthYear("es")}`,
     },
     fr: {
       badge: "Mis a jour fevrier 2026", title: "VPN les Moins Chers en 2026",
@@ -309,7 +309,7 @@ export default async function VpnCheapPage({ params }: Props) {
       viewAllVpns: "Voir Tous les Avis", lastUpdated: "Derniere mise a jour : fevrier 2026",
     },
     zh: {
-      badge: "2026年2月更新", title: "2026年最便宜的VPN", subtitle: "你不需要每月花$10+购买VPN。这5个预算选项从$1.99/月起。",
+      badge: `${getLocalizedMonthYear("zh")}更新`, title: "2026年最便宜的VPN", subtitle: "你不需要每月花$10+购买VPN。这5个预算选项从$1.99/月起。",
       topPicks: "最佳预算VPN", priceTitle: "价格比较", priceDesc: "所有价格为最便宜方案（通常2-3年）。",
       tableHeaders: { vpn: "VPN", price: "价格/月", plan: "方案", devices: "设备", servers: "服务器", streaming: "流媒体", torrenting: "P2P", moneyBack: "退款" },
       tradeoffTitle: "便宜vs高级：你得到什么和失去什么", tradeoffGet: ["AES-256加密", "Kill Switch和DNS泄漏保护", "无日志政策（已审计）", "流媒体支持", "P2P支持", "所有平台应用"],
@@ -324,10 +324,10 @@ export default async function VpnCheapPage({ params }: Props) {
         { question: "应该用免费VPN吗？", answer: "不推荐。Surfshark $2.49/月是更好的投资。" },
       ],
       getVpnButton: "获取", ctaTitle: "花更少获得高级VPN保护", ctaSubtitle: "无需多付。",
-      viewAllVpns: "查看所有VPN评测", lastUpdated: "最后更新：2026年2月",
+      viewAllVpns: "查看所有VPN评测", lastUpdated: `最后更新：${getLocalizedMonthYear("zh")}`,
     },
     ja: {
-      badge: "2026年2月更新", title: "2026年最安VPN", subtitle: "VPNに月額$10+も払う必要はありません。この5つの低価格オプションは月額$1.99から。",
+      badge: `${getLocalizedMonthYear("ja")}更新`, title: "2026年最安VPN", subtitle: "VPNに月額$10+も払う必要はありません。この5つの低価格オプションは月額$1.99から。",
       topPicks: "トップ低価格VPN", priceTitle: "価格比較", priceDesc: "すべての価格は最安プラン（通常2-3年）のものです。",
       tableHeaders: { vpn: "VPN", price: "価格/月", plan: "プラン", devices: "デバイス", servers: "サーバー", streaming: "ストリーミング", torrenting: "P2P", moneyBack: "返金" },
       tradeoffTitle: "低価格vs高級：何を得て何を失うか", tradeoffGet: ["AES-256暗号化", "キルスイッチとDNSリーク保護", "ノーログポリシー（監査済み）", "ストリーミング対応", "P2P対応", "全プラットフォーム対応"],
@@ -342,10 +342,10 @@ export default async function VpnCheapPage({ params }: Props) {
         { question: "無料VPNを使うべき？", answer: "非推奨。Surfshark月額$2.49が良い投資。" },
       ],
       getVpnButton: "取得", ctaTitle: "より少ないコストでプレミアムVPN保護", ctaSubtitle: "払いすぎる必要はありません。",
-      viewAllVpns: "すべてのVPNレビュー", lastUpdated: "最終更新：2026年2月",
+      viewAllVpns: "すべてのVPNレビュー", lastUpdated: `最終更新：${getLocalizedMonthYear("ja")}`,
     },
     ko: {
-      badge: "2026년 2월 업데이트", title: "2026년 가장 저렴한 VPN", subtitle: "VPN에 월 $10+ 이상 쓸 필요 없습니다. 이 5가지 예산 옵션은 월 $1.99부터 시작합니다.",
+      badge: `${getLocalizedMonthYear("ko")} 업데이트`, title: "2026년 가장 저렴한 VPN", subtitle: "VPN에 월 $10+ 이상 쓸 필요 없습니다. 이 5가지 예산 옵션은 월 $1.99부터 시작합니다.",
       topPicks: "최고의 예산 VPN", priceTitle: "가격 비교", priceDesc: "모든 가격은 가장 저렴한 플랜(보통 2-3년)입니다.",
       tableHeaders: { vpn: "VPN", price: "가격/월", plan: "플랜", devices: "기기", servers: "서버", streaming: "스트리밍", torrenting: "P2P", moneyBack: "환불" },
       tradeoffTitle: "저렴 vs 프리미엄", tradeoffGet: ["AES-256 암호화", "킬 스위치 및 DNS 유출 보호", "노로그 정책 (감사됨)", "스트리밍 지원", "P2P 지원", "모든 플랫폼 앱"],
@@ -360,10 +360,10 @@ export default async function VpnCheapPage({ params }: Props) {
         { question: "무료 VPN을 사용해야 하나요?", answer: "추천하지 않습니다. Surfshark 월 $2.49가 훨씬 나은 투자입니다." },
       ],
       getVpnButton: "받기", ctaTitle: "더 적은 비용으로 프리미엄 VPN 보호", ctaSubtitle: "과도한 비용을 지불할 필요 없습니다.",
-      viewAllVpns: "모든 VPN 리뷰 보기", lastUpdated: "마지막 업데이트: 2026년 2월",
+      viewAllVpns: "모든 VPN 리뷰 보기", lastUpdated: `마지막 업데이트: ${getLocalizedMonthYear("ko")}`,
     },
     th: {
-      badge: "อัปเดตกุมภาพันธ์ 2026", title: "VPN ราคาถูกที่สุดในปี 2026", subtitle: "ไม่ต้องจ่าย $10+/เดือนสำหรับ VPN ตัวเลือก 5 ตัวนี้เริ่มต้นเพียง $1.99/เดือน",
+      badge: `อัปเดต${getLocalizedMonthYear("th")}`, title: "VPN ราคาถูกที่สุดในปี 2026", subtitle: "ไม่ต้องจ่าย $10+/เดือนสำหรับ VPN ตัวเลือก 5 ตัวนี้เริ่มต้นเพียง $1.99/เดือน",
       topPicks: "VPN งบประมาณชั้นนำ", priceTitle: "เปรียบเทียบราคา", priceDesc: "ราคาทั้งหมดสำหรับแผนที่ถูกที่สุด (2-3 ปี)",
       tableHeaders: { vpn: "VPN", price: "ราคา/เดือน", plan: "แผน", devices: "อุปกรณ์", servers: "เซิร์ฟเวอร์", streaming: "สตรีมมิ่ง", torrenting: "P2P", moneyBack: "คืนเงิน" },
       tradeoffTitle: "ถูก vs พรีเมียม", tradeoffGet: ["เข้ารหัส AES-256", "Kill switch และป้องกัน DNS leak", "นโยบายไม่เก็บ log (ตรวจสอบแล้ว)", "รองรับสตรีมมิ่ง", "รองรับ P2P", "แอปสำหรับทุกแพลตฟอร์ม"],
@@ -378,7 +378,7 @@ export default async function VpnCheapPage({ params }: Props) {
         { question: "ควรใช้ VPN ฟรีไหม?", answer: "ไม่แนะนำ Surfshark ที่ $2.49/เดือนเป็นการลงทุนที่ดีกว่า" },
       ],
       getVpnButton: "รับ", ctaTitle: "การปกป้อง VPN พรีเมียมในราคาที่น้อยกว่า", ctaSubtitle: "ไม่ต้องจ่ายเกิน",
-      viewAllVpns: "ดูบทวิจารณ์ VPN ทั้งหมด", lastUpdated: "อัปเดตล่าสุด: กุมภาพันธ์ 2026",
+      viewAllVpns: "ดูบทวิจารณ์ VPN ทั้งหมด", lastUpdated: `อัปเดตล่าสุด: ${getLocalizedMonthYear("th")}`,
     },
   };
 

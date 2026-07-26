@@ -1,6 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { Metadata } from "next";
-import { getShortMonthYear, generateAlternates } from "@/lib/seo-utils";
+import { getShortMonthYear, generateAlternates, getLocalizedMonthYear } from "@/lib/seo-utils";
 import { LastUpdated } from "@/components/last-updated";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -163,7 +163,7 @@ export default async function WindowsVpnPage({ params }: Props) {
   // Content translations
   const content = {
     en: {
-      badge: "Updated March 2026",
+      badge: `Updated ${getLocalizedMonthYear("en")}`,
       title: "Best VPN for Windows PC in 2026",
       subtitle:
         "We tested 35+ VPNs specifically for Windows compatibility. These are the best options with native Windows apps, excellent performance, and seamless system integration.",
@@ -293,10 +293,10 @@ export default async function WindowsVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "View All VPN Reviews",
-      lastUpdated: "Last updated: March 2026",
+      lastUpdated: `Last updated: ${getLocalizedMonthYear("en")}`,
     },
     nl: {
-      badge: "Bijgewerkt maart 2026",
+      badge: `Bijgewerkt ${getLocalizedMonthYear("nl")}`,
       title: "Beste VPN voor Windows PC in 2026",
       subtitle:
         "We hebben 35+ VPNs specifiek getest voor Windows compatibiliteit. Dit zijn de beste opties met native Windows apps, uitstekende prestaties en naadloze systeemintegratie.",
@@ -426,10 +426,10 @@ export default async function WindowsVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Bekijk Alle VPN Reviews",
-      lastUpdated: "Laatst bijgewerkt: maart 2026",
+      lastUpdated: `Laatst bijgewerkt: ${getLocalizedMonthYear("nl")}`,
     },
     de: {
-      badge: "Aktualisiert March 2026",
+      badge: `Aktualisiert ${getLocalizedMonthYear("de")}`,
       title: "Beste VPN für Windows PC in 2026",
       subtitle:
         "Wir haben über 35 VPNs speziell auf Windows-Kompatibilität getestet. Dies sind die besten Optionen mit nativen Windows-Apps, hervorragender Leistung und nahtloser Systemintegration.",
@@ -559,10 +559,10 @@ export default async function WindowsVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Alle VPN-Bewertungen Anzeigen",
-      lastUpdated: "Zuletzt aktualisiert: March 2026",
+      lastUpdated: `Zuletzt aktualisiert: ${getLocalizedMonthYear("de")}`,
     },
     es: {
-      badge: "Actualizado marzo 2026",
+      badge: `Actualizado ${getLocalizedMonthYear("es")}`,
       title: "Mejor VPN para Windows PC en 2026",
       subtitle:
         "Probamos más de 35 VPNs específicamente para compatibilidad con Windows. Estas son las mejores opciones con apps nativas de Windows, excelente rendimiento e integración perfecta del sistema.",
@@ -692,10 +692,10 @@ export default async function WindowsVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Ver Todas Las Reseñas De VPN",
-      lastUpdated: "Última actualización: marzo 2026",
+      lastUpdated: `Última actualización: ${getLocalizedMonthYear("es")}`,
     },
     fr: {
-      badge: "Mis à jour mars 2026",
+      badge: `Mis à jour ${getLocalizedMonthYear("fr")}`,
       title: "Meilleur VPN pour Windows PC en 2026",
       subtitle:
         "Nous avons testé plus de 35 VPN spécifiquement pour la compatibilité Windows. Ce sont les meilleures options avec des apps natives Windows, d'excellentes performances et une intégration système transparente.",
@@ -825,10 +825,10 @@ export default async function WindowsVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Voir Toutes Les Critiques VPN",
-      lastUpdated: "Dernière mise à jour: mars 2026",
+      lastUpdated: `Dernière mise à jour: ${getLocalizedMonthYear("fr")}`,
     },
     zh: {
-      badge: "更新于2026年3月",
+      badge: `更新于${getLocalizedMonthYear("zh")}`,
       title: "2026年最佳Windows PC VPN",
       subtitle:
         "我们专门测试了35+个VPN的Windows兼容性。这些是具有原生Windows应用、卓越性能和无缝系统集成的最佳选择。",
@@ -958,10 +958,10 @@ export default async function WindowsVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "查看所有VPN评论",
-      lastUpdated: "最后更新：2026年3月",
+      lastUpdated: `最后更新：${getLocalizedMonthYear("zh")}`,
     },
     ja: {
-      badge: "2026年3月更新",
+      badge: `${getLocalizedMonthYear("ja")}更新`,
       title: "2026年最高のWindows PC用VPN",
       subtitle:
         "Windows互換性のために35以上のVPNを専門的にテストしました。ネイティブWindowsアプリ、優れたパフォーマンス、シームレスなシステム統合を備えた最良のオプションです。",
@@ -1091,10 +1091,10 @@ export default async function WindowsVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "すべてのVPNレビューを表示",
-      lastUpdated: "最終更新：2026年3月",
+      lastUpdated: `最終更新：${getLocalizedMonthYear("ja")}`,
     },
     ko: {
-      badge: "2026년 3월 업데이트",
+      badge: `${getLocalizedMonthYear("ko")} 업데이트`,
       title: "2026년 최고의 Windows PC VPN",
       subtitle:
         "Windows 호환성을 위해 35개 이상의 VPN을 전문적으로 테스트했습니다. 네이티브 Windows 앱, 우수한 성능 및 원활한 시스템 통합을 갖춘 최고의 옵션입니다.",
@@ -1224,10 +1224,10 @@ export default async function WindowsVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "모든 VPN 리뷰 보기",
-      lastUpdated: "마지막 업데이트: 2026년 3월",
+      lastUpdated: `마지막 업데이트: ${getLocalizedMonthYear("ko")}`,
     },
     th: {
-      badge: "อัปเดต มีนาคม 2026",
+      badge: `อัปเดต ${getLocalizedMonthYear("th")}`,
       title: "VPN ที่ดีที่สุดสำหรับ Windows PC ในปี 2026",
       subtitle:
         "เราทดสอบ VPN มากกว่า 35 รายการโดยเฉพาะสำหรับความเข้ากันได้กับ Windows นี่คือตัวเลือกที่ดีที่สุดพร้อมแอปเนทีฟ Windows, ประสิทธิภาพที่ยอดเยี่ยม และการรวมระบบที่ราบรื่น",
@@ -1357,7 +1357,7 @@ export default async function WindowsVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "ดูรีวิว VPN ทั้งหมด",
-      lastUpdated: "อัปเดตล่าสุด: มีนาคม 2026",
+      lastUpdated: `อัปเดตล่าสุด: ${getLocalizedMonthYear("th")}`,
     },
   };
 

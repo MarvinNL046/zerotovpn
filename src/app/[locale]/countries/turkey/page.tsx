@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { RankedVpnRow } from "@/components/vpn/ranked-vpn-row";
 import { getAllVpns } from "@/lib/vpn-data-layer";
 import { RelatedPages } from "@/components/seo/related-pages";
-import { generateAlternates } from "@/lib/seo-utils";
+import { generateAlternates, getLocalizedMonthYear } from "@/lib/seo-utils";
 import {
   Shield,
   CheckCircle,
@@ -77,7 +77,7 @@ export default async function TurkeyVpnPage({ params }: Props) {
 
   const content = {
     en: {
-      badge: "Updated March 2026",
+      badge: `Updated ${getLocalizedMonthYear("en")}`,
       title: "Best VPN for Turkey",
       subtitle: "Stay connected despite Turkey's extensive internet censorship",
       legalStatus: "VPN Legal Status in Turkey",
@@ -161,11 +161,11 @@ export default async function TurkeyVpnPage({ params }: Props) {
       getVpn: "Get VPN",
       worksInTurkey: "Works in Turkey",
       obfuscation: "Obfuscation",
-      lastUpdated: "Last updated: March 2026",
+      lastUpdated: `Last updated: ${getLocalizedMonthYear("en")}`,
       sources: "Sources",
     },
     nl: {
-      badge: "Bijgewerkt maart 2026",
+      badge: `Bijgewerkt ${getLocalizedMonthYear("nl")}`,
       title: "Beste VPN voor Turkije",
       subtitle: "Blijf verbonden ondanks Turkije's uitgebreide internetcensuur",
       legalStatus: "VPN Juridische Status in Turkije",
@@ -249,11 +249,11 @@ export default async function TurkeyVpnPage({ params }: Props) {
       getVpn: "Download VPN",
       worksInTurkey: "Werkt in Turkije",
       obfuscation: "Obfuscatie",
-      lastUpdated: "Laatst bijgewerkt: maart 2026",
+      lastUpdated: `Laatst bijgewerkt: ${getLocalizedMonthYear("nl")}`,
       sources: "Bronnen",
     },
     de: {
-      badge: "Aktualisiert March 2026",
+      badge: `Aktualisiert ${getLocalizedMonthYear("de")}`,
       title: "Beste VPN für die Türkei",
       subtitle: "Bleiben Sie trotz umfangreicher Internetzensur in der Türkei verbunden",
       legalStatus: "VPN-Rechtsstatus in der Türkei",
@@ -337,11 +337,11 @@ export default async function TurkeyVpnPage({ params }: Props) {
       getVpn: "VPN erhalten",
       worksInTurkey: "Funktioniert in der Türkei",
       obfuscation: "Verschleierung",
-      lastUpdated: "Zuletzt aktualisiert: March 2026",
+      lastUpdated: `Zuletzt aktualisiert: ${getLocalizedMonthYear("de")}`,
       sources: "Quellen",
     },
     es: {
-      badge: "Actualizado marzo 2026",
+      badge: `Actualizado ${getLocalizedMonthYear("es")}`,
       title: "Mejor VPN para Turquía",
       subtitle: "Mantente conectado a pesar de la extensa censura de internet en Turquía",
       legalStatus: "Estado legal de VPN en Turquía",
@@ -425,11 +425,11 @@ export default async function TurkeyVpnPage({ params }: Props) {
       getVpn: "Obtener VPN",
       worksInTurkey: "Funciona en Turquía",
       obfuscation: "Ofuscación",
-      lastUpdated: "Última actualización: marzo 2026",
+      lastUpdated: `Última actualización: ${getLocalizedMonthYear("es")}`,
       sources: "Fuentes",
     },
     fr: {
-      badge: "Mis à jour mars 2026",
+      badge: `Mis à jour ${getLocalizedMonthYear("fr")}`,
       title: "Meilleur VPN pour la Turquie",
       subtitle: "Restez connecté malgré la censure internet extensive de la Turquie",
       legalStatus: "Statut légal du VPN en Turquie",
@@ -513,11 +513,11 @@ export default async function TurkeyVpnPage({ params }: Props) {
       getVpn: "Obtenir VPN",
       worksInTurkey: "Fonctionne en Turquie",
       obfuscation: "Obfuscation",
-      lastUpdated: "Dernière mise à jour : mars 2026",
+      lastUpdated: `Dernière mise à jour : ${getLocalizedMonthYear("fr")}`,
       sources: "Sources",
     },
     zh: {
-      badge: "更新于2026年3月",
+      badge: `更新于${getLocalizedMonthYear("zh")}`,
       title: "土耳其最佳VPN",
       subtitle: "尽管土耳其有广泛的互联网审查，仍保持连接",
       legalStatus: "土耳其VPN法律状态",
@@ -601,11 +601,11 @@ export default async function TurkeyVpnPage({ params }: Props) {
       getVpn: "获取VPN",
       worksInTurkey: "在土耳其可用",
       obfuscation: "混淆",
-      lastUpdated: "最后更新：2026年3月",
+      lastUpdated: `最后更新：${getLocalizedMonthYear("zh")}`,
       sources: "来源",
     },
     ja: {
-      badge: "2026年3月更新",
+      badge: `${getLocalizedMonthYear("ja")}更新`,
       title: "トルコに最適なVPN",
       subtitle: "トルコの広範なインターネット検閲にもかかわらず接続を維持",
       legalStatus: "トルコのVPN法的地位",
@@ -689,11 +689,11 @@ export default async function TurkeyVpnPage({ params }: Props) {
       getVpn: "VPNを取得",
       worksInTurkey: "トルコで機能",
       obfuscation: "難読化",
-      lastUpdated: "最終更新：2026年3月",
+      lastUpdated: `最終更新：${getLocalizedMonthYear("ja")}`,
       sources: "情報源",
     },
     ko: {
-      badge: "2026년 3월 업데이트",
+      badge: `${getLocalizedMonthYear("ko")} 업데이트`,
       title: "터키 최고의 VPN",
       subtitle: "터키의 광범위한 인터넷 검열에도 불구하고 연결 유지",
       legalStatus: "터키의 VPN 법적 지위",
@@ -777,11 +777,11 @@ export default async function TurkeyVpnPage({ params }: Props) {
       getVpn: "VPN 받기",
       worksInTurkey: "터키에서 작동",
       obfuscation: "난독화",
-      lastUpdated: "마지막 업데이트: 2026년 3월",
+      lastUpdated: `마지막 업데이트: ${getLocalizedMonthYear("ko")}`,
       sources: "출처",
     },
     th: {
-      badge: "อัปเดตมีนาคม 2026",
+      badge: `อัปเดต${getLocalizedMonthYear("th")}`,
       title: "VPN ที่ดีที่สุดสำหรับตุรกี",
       subtitle: "เชื่อมต่อต่อไปแม้จะมีการเซ็นเซอร์อินเทอร์เน็ตอย่างกว้างขวางในตุรกี",
       legalStatus: "สถานะทางกฎหมายของ VPN ในตุรกี",
@@ -865,7 +865,7 @@ export default async function TurkeyVpnPage({ params }: Props) {
       getVpn: "รับ VPN",
       worksInTurkey: "ใช้งานได้ในตุรกี",
       obfuscation: "การปิดบัง",
-      lastUpdated: "อัปเดตล่าสุด: มีนาคม 2026",
+      lastUpdated: `อัปเดตล่าสุด: ${getLocalizedMonthYear("th")}`,
       sources: "แหล่งที่มา",
     },
   };

@@ -1,7 +1,8 @@
 import { CountryPageLabels, TranslatedCountryContent } from "./types";
 
+import { getLocalizedMonthYear } from "@/lib/seo-utils";
 export const nlLabels: CountryPageLabels = {
-  badge: "Bijgewerkt februari 2026",
+  badge: `Bijgewerkt ${getLocalizedMonthYear("nl")}`,
   bestVpnFor: "Beste VPN voor {country}",
   legalStatusTitle: "Juridische status van VPN in {country}",
   internetFreedomScore: "Internetvrijheidsscore: {score}/100 (Freedom House)",

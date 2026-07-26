@@ -1,6 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { Metadata } from "next";
-import { getShortMonthYear, generateAlternates } from "@/lib/seo-utils";
+import { getShortMonthYear, generateAlternates, getLocalizedMonthYear } from "@/lib/seo-utils";
 import { LastUpdated } from "@/components/last-updated";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -165,7 +165,7 @@ export default async function VpnNetflixPage({ params }: Props) {
 
   const content = {
     en: {
-      badge: "Updated February 2026",
+      badge: `Updated ${getLocalizedMonthYear("en")}`,
       title: "Best VPN for Netflix in 2026",
       subtitle:
         "Netflix actively blocks VPNs, but these 5 still unblock US, UK, Japan, and other libraries in our latest tests. We verify weekly so you never lose access.",
@@ -222,10 +222,10 @@ export default async function VpnNetflixPage({ params }: Props) {
       ctaSubtitle:
         "Access every Netflix library worldwide with a reliable VPN. 4K streaming, zero buffering.",
       viewAllVpns: "View All VPN Reviews",
-      lastUpdated: "Last updated: February 2026",
+      lastUpdated: `Last updated: ${getLocalizedMonthYear("en")}`,
     },
     nl: {
-      badge: "Bijgewerkt februari 2026",
+      badge: `Bijgewerkt ${getLocalizedMonthYear("nl")}`,
       title: "Beste VPN voor Netflix in 2026",
       subtitle:
         "Netflix blokkeert actief VPNs, maar deze 5 deblokkeren nog steeds US, UK, Japan en andere bibliotheken in onze laatste tests. We controleren wekelijks zodat je nooit je toegang verliest.",
@@ -282,10 +282,10 @@ export default async function VpnNetflixPage({ params }: Props) {
       ctaSubtitle:
         "Krijg toegang tot elke Netflix bibliotheek wereldwijd met een betrouwbare VPN. 4K streaming, geen buffering.",
       viewAllVpns: "Bekijk Alle VPN Reviews",
-      lastUpdated: "Laatst bijgewerkt: februari 2026",
+      lastUpdated: `Laatst bijgewerkt: ${getLocalizedMonthYear("nl")}`,
     },
     de: {
-      badge: "Aktualisiert Februar 2026",
+      badge: `Aktualisiert ${getLocalizedMonthYear("de")}`,
       title: "Beste VPN fur Netflix in 2026",
       subtitle:
         "Netflix blockiert aktiv VPNs, aber diese 5 entsperren in unseren neuesten Tests immer noch US-, UK-, Japan- und andere Bibliotheken. Wir uberprufen wochentlich.",
@@ -342,10 +342,10 @@ export default async function VpnNetflixPage({ params }: Props) {
       ctaSubtitle:
         "Greifen Sie weltweit auf jede Netflix-Bibliothek zu. 4K-Streaming, kein Puffern.",
       viewAllVpns: "Alle VPN-Bewertungen Ansehen",
-      lastUpdated: "Zuletzt aktualisiert: Februar 2026",
+      lastUpdated: `Zuletzt aktualisiert: ${getLocalizedMonthYear("de")}`,
     },
     es: {
-      badge: "Actualizado febrero 2026",
+      badge: `Actualizado ${getLocalizedMonthYear("es")}`,
       title: "Mejor VPN para Netflix en 2026",
       subtitle:
         "Netflix bloquea activamente los VPNs, pero estos 5 aun desbloquean las bibliotecas de EE.UU., Reino Unido, Japon y mas en nuestras ultimas pruebas.",
@@ -402,7 +402,7 @@ export default async function VpnNetflixPage({ params }: Props) {
       ctaSubtitle:
         "Accede a cada biblioteca de Netflix en todo el mundo con un VPN confiable. Streaming 4K, cero buffering.",
       viewAllVpns: "Ver Todas las Resenas de VPN",
-      lastUpdated: "Ultima actualizacion: febrero 2026",
+      lastUpdated: `Ultima actualizacion: ${getLocalizedMonthYear("es")}`,
     },
     fr: {
       badge: "Mis a jour fevrier 2026",
@@ -465,7 +465,7 @@ export default async function VpnNetflixPage({ params }: Props) {
       lastUpdated: "Derniere mise a jour : fevrier 2026",
     },
     zh: {
-      badge: "2026年2月更新",
+      badge: `${getLocalizedMonthYear("zh")}更新`,
       title: "2026年最佳Netflix VPN",
       subtitle:
         "Netflix积极封锁VPN，但在我们最新的测试中，这5款仍能解锁美国、英国、日本等片库。我们每周验证，确保您不会失去访问权限。",
@@ -521,10 +521,10 @@ export default async function VpnNetflixPage({ params }: Props) {
       ctaTitle: "无限制畅享Netflix",
       ctaSubtitle: "使用可靠的VPN访问全球每个Netflix片库。4K流媒体，零缓冲。",
       viewAllVpns: "查看所有VPN评测",
-      lastUpdated: "最后更新：2026年2月",
+      lastUpdated: `最后更新：${getLocalizedMonthYear("zh")}`,
     },
     ja: {
-      badge: "2026年2月更新",
+      badge: `${getLocalizedMonthYear("ja")}更新`,
       title: "2026年Netflix向けベストVPN",
       subtitle:
         "Netflixは積極的にVPNをブロックしていますが、最新テストではこの5つが米国、英国、日本などのライブラリをまだ解除できます。毎週検証しています。",
@@ -580,10 +580,10 @@ export default async function VpnNetflixPage({ params }: Props) {
       ctaTitle: "制限なしでNetflixをストリーミング",
       ctaSubtitle: "信頼性の高いVPNで世界中のNetflixライブラリにアクセス。4Kストリーミング、バッファリングなし。",
       viewAllVpns: "すべてのVPNレビューを表示",
-      lastUpdated: "最終更新：2026年2月",
+      lastUpdated: `最終更新：${getLocalizedMonthYear("ja")}`,
     },
     ko: {
-      badge: "2026년 2월 업데이트",
+      badge: `${getLocalizedMonthYear("ko")} 업데이트`,
       title: "2026년 넷플릭스 최고의 VPN",
       subtitle:
         "넷플릭스는 적극적으로 VPN을 차단하지만, 최신 테스트에서 이 5개는 여전히 미국, 영국, 일본 등의 라이브러리를 차단 해제합니다. 매주 검증합니다.",
@@ -639,10 +639,10 @@ export default async function VpnNetflixPage({ params }: Props) {
       ctaTitle: "제한 없이 넷플릭스 스트리밍",
       ctaSubtitle: "신뢰할 수 있는 VPN으로 전 세계 모든 넷플릭스 라이브러리에 액세스하세요. 4K 스트리밍, 버퍼링 제로.",
       viewAllVpns: "모든 VPN 리뷰 보기",
-      lastUpdated: "마지막 업데이트: 2026년 2월",
+      lastUpdated: `마지막 업데이트: ${getLocalizedMonthYear("ko")}`,
     },
     th: {
-      badge: "อัปเดตกุมภาพันธ์ 2026",
+      badge: `อัปเดต${getLocalizedMonthYear("th")}`,
       title: "VPN ที่ดีที่สุดสำหรับ Netflix ในปี 2026",
       subtitle:
         "Netflix บล็อก VPN อย่างแข็งขัน แต่ 5 ตัวนี้ยังคงปลดบล็อกไลบรารี US, UK, Japan และอื่นๆ ในการทดสอบล่าสุดของเรา เราตรวจสอบทุกสัปดาห์",
@@ -698,7 +698,7 @@ export default async function VpnNetflixPage({ params }: Props) {
       ctaTitle: "เริ่มดู Netflix อย่างไร้ขีดจำกัด",
       ctaSubtitle: "เข้าถึงทุกไลบรารี Netflix ทั่วโลกด้วย VPN ที่เชื่อถือได้ 4K streaming ไม่มีบัฟเฟอร์",
       viewAllVpns: "ดูบทวิจารณ์ VPN ทั้งหมด",
-      lastUpdated: "อัปเดตล่าสุด: กุมภาพันธ์ 2026",
+      lastUpdated: `อัปเดตล่าสุด: ${getLocalizedMonthYear("th")}`,
     },
   };
 

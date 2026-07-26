@@ -1,6 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { Metadata } from "next";
-import { getShortMonthYear, generateAlternates } from "@/lib/seo-utils";
+import { getShortMonthYear, generateAlternates, getLocalizedMonthYear } from "@/lib/seo-utils";
 import { LastUpdated } from "@/components/last-updated";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -164,7 +164,7 @@ export default async function MacOSVpnPage({ params }: Props) {
   // Content translations
   const content = {
     en: {
-      badge: "Updated March 2026",
+      badge: `Updated ${getLocalizedMonthYear("en")}`,
       title: "Best VPN for macOS in 2026",
       subtitle:
         "We tested 30+ VPNs on macOS Ventura, Sonoma, and Sequoia. These native apps are optimized for Apple Silicon (M1/M2/M3) with seamless macOS integration.",
@@ -346,10 +346,10 @@ export default async function MacOSVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "View All VPN Reviews",
-      lastUpdated: "Last updated: March 2026",
+      lastUpdated: `Last updated: ${getLocalizedMonthYear("en")}`,
     },
     nl: {
-      badge: "Bijgewerkt maart 2026",
+      badge: `Bijgewerkt ${getLocalizedMonthYear("nl")}`,
       title: "Beste VPN voor macOS in 2026",
       subtitle:
         "We hebben 30+ VPNs getest op macOS Ventura, Sonoma en Sequoia. Deze native apps zijn geoptimaliseerd voor Apple Silicon (M1/M2/M3) met naadloze macOS integratie.",
@@ -531,10 +531,10 @@ export default async function MacOSVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Bekijk Alle VPN Reviews",
-      lastUpdated: "Laatst bijgewerkt: maart 2026",
+      lastUpdated: `Laatst bijgewerkt: ${getLocalizedMonthYear("nl")}`,
     },
     de: {
-      badge: "Aktualisiert March 2026",
+      badge: `Aktualisiert ${getLocalizedMonthYear("de")}`,
       title: "Beste VPN für macOS in 2026",
       subtitle:
         "Wir haben über 30 VPNs auf macOS Ventura, Sonoma und Sequoia getestet. Diese nativen Apps sind für Apple Silicon (M1/M2/M3) mit nahtloser macOS-Integration optimiert.",
@@ -716,10 +716,10 @@ export default async function MacOSVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Alle VPN-Bewertungen Anzeigen",
-      lastUpdated: "Zuletzt aktualisiert: March 2026",
+      lastUpdated: `Zuletzt aktualisiert: ${getLocalizedMonthYear("de")}`,
     },
     es: {
-      badge: "Actualizado marzo 2026",
+      badge: `Actualizado ${getLocalizedMonthYear("es")}`,
       title: "Mejor VPN para macOS en 2026",
       subtitle:
         "Probamos más de 30 VPNs en macOS Ventura, Sonoma y Sequoia. Estas apps nativas están optimizadas para Apple Silicon (M1/M2/M3) con integración perfecta de macOS.",
@@ -901,10 +901,10 @@ export default async function MacOSVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Ver Todas Las Reseñas De VPN",
-      lastUpdated: "Última actualización: marzo 2026",
+      lastUpdated: `Última actualización: ${getLocalizedMonthYear("es")}`,
     },
     fr: {
-      badge: "Mis à jour mars 2026",
+      badge: `Mis à jour ${getLocalizedMonthYear("fr")}`,
       title: "Meilleur VPN pour macOS en 2026",
       subtitle:
         "Nous avons testé plus de 30 VPNs sur macOS Ventura, Sonoma et Sequoia. Ces applications natives sont optimisées pour Apple Silicon (M1/M2/M3) avec une intégration transparente de macOS.",
@@ -1086,10 +1086,10 @@ export default async function MacOSVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Voir Toutes Les Évaluations VPN",
-      lastUpdated: "Dernière mise à jour: mars 2026",
+      lastUpdated: `Dernière mise à jour: ${getLocalizedMonthYear("fr")}`,
     },
     zh: {
-      badge: "更新于2026年3月",
+      badge: `更新于${getLocalizedMonthYear("zh")}`,
       title: "2026年最佳macOS VPN",
       subtitle:
         "我们在macOS Ventura、Sonoma和Sequoia上测试了30多个VPN。这些原生应用针对Apple Silicon（M1/M2/M3）进行了优化，并与macOS无缝集成。",
@@ -1270,10 +1270,10 @@ export default async function MacOSVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "查看所有VPN评论",
-      lastUpdated: "最后更新：2026年3月",
+      lastUpdated: `最后更新：${getLocalizedMonthYear("zh")}`,
     },
     ja: {
-      badge: "2026年3月更新",
+      badge: `${getLocalizedMonthYear("ja")}更新`,
       title: "2026年macOS用ベストVPN",
       subtitle:
         "macOS Ventura、Sonoma、Sequoiaで30以上のVPNをテストしました。これらのネイティブアプリはApple Silicon（M1/M2/M3）に最適化され、macOSとシームレスに統合されています。",
@@ -1455,10 +1455,10 @@ export default async function MacOSVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "すべてのVPNレビューを見る",
-      lastUpdated: "最終更新：2026年3月",
+      lastUpdated: `最終更新：${getLocalizedMonthYear("ja")}`,
     },
     ko: {
-      badge: "2026년 3월 업데이트",
+      badge: `${getLocalizedMonthYear("ko")} 업데이트`,
       title: "2026년 macOS용 최고의 VPN",
       subtitle:
         "macOS Ventura, Sonoma, Sequoia에서 30개 이상의 VPN을 테스트했습니다. 이 네이티브 앱은 Apple Silicon(M1/M2/M3)에 최적화되어 있으며 macOS와 완벽하게 통합됩니다.",
@@ -1640,10 +1640,10 @@ export default async function MacOSVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "모든 VPN 리뷰 보기",
-      lastUpdated: "마지막 업데이트: 2026년 3월",
+      lastUpdated: `마지막 업데이트: ${getLocalizedMonthYear("ko")}`,
     },
     th: {
-      badge: "อัปเดตมีนาคม 2026",
+      badge: `อัปเดต${getLocalizedMonthYear("th")}`,
       title: "VPN ที่ดีที่สุดสำหรับ macOS ในปี 2026",
       subtitle:
         "เราได้ทดสอบ VPN มากกว่า 30 รายการบน macOS Ventura, Sonoma และ Sequoia แอปเนทีฟเหล่านี้ได้รับการปรับให้เหมาะกับ Apple Silicon (M1/M2/M3) พร้อมการผสานรวม macOS อย่างราบรื่น",
@@ -1825,7 +1825,7 @@ export default async function MacOSVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "ดูรีวิว VPN ทั้งหมด",
-      lastUpdated: "อัปเดตล่าสุด: มีนาคม 2026",
+      lastUpdated: `อัปเดตล่าสุด: ${getLocalizedMonthYear("th")}`,
     },
   };
 

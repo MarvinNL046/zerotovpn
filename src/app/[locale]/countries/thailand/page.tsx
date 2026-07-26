@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { RankedVpnRow } from "@/components/vpn/ranked-vpn-row";
 import { getAllVpns } from "@/lib/vpn-data-layer";
 import { RelatedPages } from "@/components/seo/related-pages";
-import { generateAlternates } from "@/lib/seo-utils";
+import { generateAlternates, getLocalizedMonthYear } from "@/lib/seo-utils";
 import {
   Shield,
   CheckCircle,
@@ -77,7 +77,7 @@ export default async function ThailandVpnPage({ params }: Props) {
 
   const content = {
     en: {
-      badge: "Updated March 2026",
+      badge: `Updated ${getLocalizedMonthYear("en")}`,
       title: "Best VPN for Thailand",
       subtitle: "Bypass content blocks and protect your privacy in Thailand",
       legalStatus: "VPN Legal Status in Thailand",
@@ -161,11 +161,11 @@ export default async function ThailandVpnPage({ params }: Props) {
       getVpn: "Get VPN",
       worksInCountry: "Works in Thailand",
       obfuscation: "Strong Encryption",
-      lastUpdated: "Last updated: March 2026",
+      lastUpdated: `Last updated: ${getLocalizedMonthYear("en")}`,
       sources: "Sources",
     },
     nl: {
-      badge: "Bijgewerkt maart 2026",
+      badge: `Bijgewerkt ${getLocalizedMonthYear("nl")}`,
       title: "Beste VPN voor Thailand",
       subtitle: "Omzeil inhoudsblokkades en bescherm je privacy in Thailand",
       legalStatus: "VPN Juridische Status in Thailand",
@@ -249,11 +249,11 @@ export default async function ThailandVpnPage({ params }: Props) {
       getVpn: "Download VPN",
       worksInCountry: "Werkt in Thailand",
       obfuscation: "Sterke Versleuteling",
-      lastUpdated: "Laatst bijgewerkt: maart 2026",
+      lastUpdated: `Laatst bijgewerkt: ${getLocalizedMonthYear("nl")}`,
       sources: "Bronnen",
     },
     de: {
-      badge: "Aktualisiert März 2026",
+      badge: `Aktualisiert ${getLocalizedMonthYear("de")}`,
       title: "Beste VPN für Thailand",
       subtitle: "Umgehen Sie Inhaltssperren und schützen Sie Ihre Privatsphäre in Thailand",
       legalStatus: "VPN-Rechtsstatus in Thailand",
@@ -337,11 +337,11 @@ export default async function ThailandVpnPage({ params }: Props) {
       getVpn: "VPN erhalten",
       worksInCountry: "Funktioniert in Thailand",
       obfuscation: "Starke Verschlüsselung",
-      lastUpdated: "Zuletzt aktualisiert: März 2026",
+      lastUpdated: `Zuletzt aktualisiert: ${getLocalizedMonthYear("de")}`,
       sources: "Quellen",
     },
     es: {
-      badge: "Actualizado marzo 2026",
+      badge: `Actualizado ${getLocalizedMonthYear("es")}`,
       title: "Mejor VPN para Tailandia",
       subtitle: "Evita bloqueos de contenido y protege tu privacidad en Tailandia",
       legalStatus: "Estado legal de VPN en Tailandia",
@@ -425,11 +425,11 @@ export default async function ThailandVpnPage({ params }: Props) {
       getVpn: "Obtener VPN",
       worksInCountry: "Funciona en Tailandia",
       obfuscation: "Cifrado Fuerte",
-      lastUpdated: "Última actualización: marzo 2026",
+      lastUpdated: `Última actualización: ${getLocalizedMonthYear("es")}`,
       sources: "Fuentes",
     },
     fr: {
-      badge: "Mis à jour mars 2026",
+      badge: `Mis à jour ${getLocalizedMonthYear("fr")}`,
       title: "Meilleur VPN pour la Thaïlande",
       subtitle: "Contournez les blocages et protégez votre vie privée en Thaïlande",
       legalStatus: "Statut légal du VPN en Thaïlande",
@@ -513,11 +513,11 @@ export default async function ThailandVpnPage({ params }: Props) {
       getVpn: "Obtenir VPN",
       worksInCountry: "Fonctionne en Thaïlande",
       obfuscation: "Chiffrement Fort",
-      lastUpdated: "Dernière mise à jour : mars 2026",
+      lastUpdated: `Dernière mise à jour : ${getLocalizedMonthYear("fr")}`,
       sources: "Sources",
     },
     zh: {
-      badge: "更新于2026年3月",
+      badge: `更新于${getLocalizedMonthYear("zh")}`,
       title: "泰国最佳VPN",
       subtitle: "绕过内容封锁，保护您在泰国的隐私",
       legalStatus: "泰国VPN法律状态",
@@ -601,11 +601,11 @@ export default async function ThailandVpnPage({ params }: Props) {
       getVpn: "获取VPN",
       worksInCountry: "在泰国可用",
       obfuscation: "强加密",
-      lastUpdated: "最后更新：2026年3月",
+      lastUpdated: `最后更新：${getLocalizedMonthYear("zh")}`,
       sources: "来源",
     },
     ja: {
-      badge: "2026年3月更新",
+      badge: `${getLocalizedMonthYear("ja")}更新`,
       title: "タイに最適なVPN",
       subtitle: "タイでコンテンツブロックを回避してプライバシーを保護",
       legalStatus: "タイのVPN法的地位",
@@ -689,11 +689,11 @@ export default async function ThailandVpnPage({ params }: Props) {
       getVpn: "VPNを取得",
       worksInCountry: "タイで機能",
       obfuscation: "強力な暗号化",
-      lastUpdated: "最終更新：2026年3月",
+      lastUpdated: `最終更新：${getLocalizedMonthYear("ja")}`,
       sources: "情報源",
     },
     ko: {
-      badge: "2026년 3월 업데이트",
+      badge: `${getLocalizedMonthYear("ko")} 업데이트`,
       title: "태국 최고의 VPN",
       subtitle: "태국에서 콘텐츠 차단을 우회하고 개인정보를 보호하세요",
       legalStatus: "태국의 VPN 법적 지위",
@@ -777,11 +777,11 @@ export default async function ThailandVpnPage({ params }: Props) {
       getVpn: "VPN 받기",
       worksInCountry: "태국에서 작동",
       obfuscation: "강력한 암호화",
-      lastUpdated: "마지막 업데이트: 2026년 3월",
+      lastUpdated: `마지막 업데이트: ${getLocalizedMonthYear("ko")}`,
       sources: "출처",
     },
     th: {
-      badge: "อัปเดตมีนาคม 2026",
+      badge: `อัปเดต${getLocalizedMonthYear("th")}`,
       title: "VPN ที่ดีที่สุดสำหรับประเทศไทย",
       subtitle: "หลีกเลี่ยงการบล็อกเนื้อหาและปกป้องความเป็นส่วนตัวของคุณในประเทศไทย",
       legalStatus: "สถานะทางกฎหมายของ VPN ในประเทศไทย",
@@ -865,7 +865,7 @@ export default async function ThailandVpnPage({ params }: Props) {
       getVpn: "รับ VPN",
       worksInCountry: "ใช้งานได้ในประเทศไทย",
       obfuscation: "การเข้ารหัสที่แข็งแกร่ง",
-      lastUpdated: "อัปเดตล่าสุด: มีนาคม 2026",
+      lastUpdated: `อัปเดตล่าสุด: ${getLocalizedMonthYear("th")}`,
       sources: "แหล่งที่มา",
     },
   };

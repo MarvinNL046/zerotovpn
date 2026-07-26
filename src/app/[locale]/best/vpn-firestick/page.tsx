@@ -11,7 +11,7 @@ import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { getVpnBySlug, type VpnProvider } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
-import { getShortMonthYear, generateAlternates } from "@/lib/seo-utils";
+import { getShortMonthYear, generateAlternates, getLocalizedMonthYear } from "@/lib/seo-utils";
 import { LastUpdated } from "@/components/last-updated";
 import {
   Zap,
@@ -169,7 +169,7 @@ export default async function VpnFirestickPage({ params }: Props) {
 
   const content = {
     en: {
-      badge: "Updated February 2026",
+      badge: `Updated ${getLocalizedMonthYear("en")}`,
       title: "Best VPN for Firestick in 2026",
       subtitle:
         "We installed and tested 30+ VPN apps directly on Amazon Fire TV Stick. These 5 have the best native apps with remote-friendly interfaces, fast speeds for 4K streaming, and reliable unblocking of Netflix, Disney+, and more.",
@@ -214,10 +214,10 @@ export default async function VpnFirestickPage({ params }: Props) {
       ctaTitle: "Stream Anything on Your Fire Stick",
       ctaSubtitle: "Install a VPN in 2 minutes and unlock Netflix, Disney+, BBC iPlayer and thousands more shows on your Fire TV.",
       viewAllVpns: "View All VPN Reviews",
-      lastUpdated: "Last updated: February 2026",
+      lastUpdated: `Last updated: ${getLocalizedMonthYear("en")}`,
     },
     nl: {
-      badge: "Bijgewerkt februari 2026", title: "Beste VPN voor Firestick in 2026",
+      badge: `Bijgewerkt ${getLocalizedMonthYear("nl")}`, title: "Beste VPN voor Firestick in 2026",
       subtitle: "We installeerden en testten 30+ VPN apps direct op Amazon Fire TV Stick. Deze 5 hebben de beste native apps met afstandsbediening-vriendelijke interfaces.",
       topPicks: "Top Firestick VPNs", appTitle: "Fire TV App Vergelijking", appDesc: "Alle 5 VPNs hebben native Amazon Appstore apps.",
       tableHeaders: { vpn: "VPN", nativeApp: "Native App", remote: "Remote-Vriendelijk", split: "Split Tunnel", speed: "Snelheid", fourK: "4K", rating: "App Rating" },
@@ -239,10 +239,10 @@ export default async function VpnFirestickPage({ params }: Props) {
         { question: "Welke Fire Stick modellen ondersteunen VPN apps?", answer: "Alle huidige modellen inclusief Lite, 4K, 4K Max en Fire TV Cube." },
       ],
       getVpnButton: "Krijg", ctaTitle: "Stream Alles Op Je Fire Stick", ctaSubtitle: "Installeer een VPN in 2 minuten en deblokkeer Netflix, Disney+ en meer.",
-      viewAllVpns: "Bekijk Alle VPN Reviews", lastUpdated: "Laatst bijgewerkt: februari 2026",
+      viewAllVpns: "Bekijk Alle VPN Reviews", lastUpdated: `Laatst bijgewerkt: ${getLocalizedMonthYear("nl")}`,
     },
     de: {
-      badge: "Aktualisiert Februar 2026", title: "Beste VPN fur Firestick in 2026",
+      badge: `Aktualisiert ${getLocalizedMonthYear("de")}`, title: "Beste VPN fur Firestick in 2026",
       subtitle: "Wir haben uber 30 VPN-Apps direkt auf dem Amazon Fire TV Stick installiert und getestet.",
       topPicks: "Top Firestick VPNs", appTitle: "Fire TV App-Vergleich", appDesc: "Alle 5 VPNs haben native Amazon Appstore-Apps.",
       tableHeaders: { vpn: "VPN", nativeApp: "Native App", remote: "Fernbedienungs-freundlich", split: "Split Tunnel", speed: "Geschwindigkeit", fourK: "4K", rating: "App-Bewertung" },
@@ -258,10 +258,10 @@ export default async function VpnFirestickPage({ params }: Props) {
         { question: "Welche Fire Stick Modelle werden unterstutzt?", answer: "Alle aktuellen Modelle." },
       ],
       getVpnButton: "Holen", ctaTitle: "Alles Auf Ihrem Fire Stick Streamen", ctaSubtitle: "Installieren Sie ein VPN in 2 Minuten.",
-      viewAllVpns: "Alle Bewertungen", lastUpdated: "Zuletzt aktualisiert: Februar 2026",
+      viewAllVpns: "Alle Bewertungen", lastUpdated: `Zuletzt aktualisiert: ${getLocalizedMonthYear("de")}`,
     },
     es: {
-      badge: "Actualizado febrero 2026", title: "Mejor VPN para Firestick en 2026",
+      badge: `Actualizado ${getLocalizedMonthYear("es")}`, title: "Mejor VPN para Firestick en 2026",
       subtitle: "Instalamos y probamos mas de 30 apps VPN directamente en Amazon Fire TV Stick.",
       topPicks: "Mejores VPNs para Firestick", appTitle: "Comparacion de Apps Fire TV", appDesc: "Los 5 VPNs tienen apps nativas en Amazon Appstore.",
       tableHeaders: { vpn: "VPN", nativeApp: "App Nativa", remote: "Control Remoto", split: "Split Tunnel", speed: "Velocidad", fourK: "4K", rating: "Rating" },
@@ -277,7 +277,7 @@ export default async function VpnFirestickPage({ params }: Props) {
         { question: "Que modelos son compatibles?", answer: "Todos los modelos actuales de Fire TV Stick." },
       ],
       getVpnButton: "Obtener", ctaTitle: "Transmite Todo en Tu Fire Stick", ctaSubtitle: "Instala un VPN en 2 minutos.",
-      viewAllVpns: "Ver Todas las Resenas", lastUpdated: "Ultima actualizacion: febrero 2026",
+      viewAllVpns: "Ver Todas las Resenas", lastUpdated: `Ultima actualizacion: ${getLocalizedMonthYear("es")}`,
     },
     fr: {
       badge: "Mis a jour fevrier 2026", title: "Meilleur VPN pour Firestick en 2026",
@@ -299,7 +299,7 @@ export default async function VpnFirestickPage({ params }: Props) {
       viewAllVpns: "Voir Tous les Avis", lastUpdated: "Derniere mise a jour : fevrier 2026",
     },
     zh: {
-      badge: "2026年2月更新", title: "2026年最佳Firestick VPN", subtitle: "我们直接在Amazon Fire TV Stick上安装并测试了30多个VPN应用。",
+      badge: `${getLocalizedMonthYear("zh")}更新`, title: "2026年最佳Firestick VPN", subtitle: "我们直接在Amazon Fire TV Stick上安装并测试了30多个VPN应用。",
       topPicks: "最佳Firestick VPN", appTitle: "Fire TV应用比较", appDesc: "所有5个VPN都有原生Amazon Appstore应用。",
       tableHeaders: { vpn: "VPN", nativeApp: "原生应用", remote: "遥控器友好", split: "拆分隧道", speed: "速度", fourK: "4K", rating: "评分" },
       installTitle: "如何在Fire Stick上安装VPN",
@@ -314,10 +314,10 @@ export default async function VpnFirestickPage({ params }: Props) {
         { question: "哪些型号兼容？", answer: "所有当前Fire TV Stick型号。" },
       ],
       getVpnButton: "获取", ctaTitle: "在Fire Stick上流媒体一切", ctaSubtitle: "2分钟安装VPN。",
-      viewAllVpns: "查看所有VPN评测", lastUpdated: "最后更新：2026年2月",
+      viewAllVpns: "查看所有VPN评测", lastUpdated: `最后更新：${getLocalizedMonthYear("zh")}`,
     },
     ja: {
-      badge: "2026年2月更新", title: "2026年Firestick向けベストVPN", subtitle: "Amazon Fire TV Stickで30以上のVPNアプリを直接インストールしてテスト。",
+      badge: `${getLocalizedMonthYear("ja")}更新`, title: "2026年Firestick向けベストVPN", subtitle: "Amazon Fire TV Stickで30以上のVPNアプリを直接インストールしてテスト。",
       topPicks: "トップFirestick VPN", appTitle: "Fire TVアプリ比較", appDesc: "5つすべてのVPNにAmazon Appstoreネイティブアプリあり。",
       tableHeaders: { vpn: "VPN", nativeApp: "ネイティブアプリ", remote: "リモコン対応", split: "スプリットトンネル", speed: "速度", fourK: "4K", rating: "評価" },
       installTitle: "Fire StickにVPNをインストールする方法",
@@ -332,10 +332,10 @@ export default async function VpnFirestickPage({ params }: Props) {
         { question: "対応モデルは？", answer: "すべての現行Fire TV Stickモデル。" },
       ],
       getVpnButton: "取得", ctaTitle: "Fire Stickですべてをストリーミング", ctaSubtitle: "2分でVPNをインストール。",
-      viewAllVpns: "すべてのVPNレビュー", lastUpdated: "最終更新：2026年2月",
+      viewAllVpns: "すべてのVPNレビュー", lastUpdated: `最終更新：${getLocalizedMonthYear("ja")}`,
     },
     ko: {
-      badge: "2026년 2월 업데이트", title: "2026년 Firestick 최고의 VPN", subtitle: "Amazon Fire TV Stick에서 30개 이상의 VPN 앱을 직접 설치하고 테스트했습니다.",
+      badge: `${getLocalizedMonthYear("ko")} 업데이트`, title: "2026년 Firestick 최고의 VPN", subtitle: "Amazon Fire TV Stick에서 30개 이상의 VPN 앱을 직접 설치하고 테스트했습니다.",
       topPicks: "최고의 Firestick VPN", appTitle: "Fire TV 앱 비교", appDesc: "5개 VPN 모두 Amazon Appstore 네이티브 앱 보유.",
       tableHeaders: { vpn: "VPN", nativeApp: "네이티브 앱", remote: "리모컨 친화적", split: "스플릿 터널", speed: "속도", fourK: "4K", rating: "앱 평점" },
       installTitle: "Fire Stick에 VPN 설치하는 방법",
@@ -350,10 +350,10 @@ export default async function VpnFirestickPage({ params }: Props) {
         { question: "어떤 모델이 호환되나요?", answer: "모든 현재 Fire TV Stick 모델." },
       ],
       getVpnButton: "받기", ctaTitle: "Fire Stick에서 모든 것을 스트리밍", ctaSubtitle: "2분 안에 VPN을 설치하세요.",
-      viewAllVpns: "모든 VPN 리뷰 보기", lastUpdated: "마지막 업데이트: 2026년 2월",
+      viewAllVpns: "모든 VPN 리뷰 보기", lastUpdated: `마지막 업데이트: ${getLocalizedMonthYear("ko")}`,
     },
     th: {
-      badge: "อัปเดตกุมภาพันธ์ 2026", title: "VPN ที่ดีที่สุดสำหรับ Firestick ในปี 2026", subtitle: "เราติดตั้งและทดสอบแอป VPN มากกว่า 30 ตัวบน Amazon Fire TV Stick โดยตรง",
+      badge: `อัปเดต${getLocalizedMonthYear("th")}`, title: "VPN ที่ดีที่สุดสำหรับ Firestick ในปี 2026", subtitle: "เราติดตั้งและทดสอบแอป VPN มากกว่า 30 ตัวบน Amazon Fire TV Stick โดยตรง",
       topPicks: "VPN ชั้นนำสำหรับ Firestick", appTitle: "เปรียบเทียบแอป Fire TV", appDesc: "VPN ทั้ง 5 ตัวมีแอปเนทีฟบน Amazon Appstore",
       tableHeaders: { vpn: "VPN", nativeApp: "แอปเนทีฟ", remote: "รีโมทเฟรนด์ลี่", split: "Split Tunnel", speed: "ความเร็ว", fourK: "4K", rating: "คะแนนแอป" },
       installTitle: "วิธีติดตั้ง VPN บน Fire Stick",
@@ -368,7 +368,7 @@ export default async function VpnFirestickPage({ params }: Props) {
         { question: "รุ่นไหนรองรับ?", answer: "ทุกรุ่น Fire TV Stick ปัจจุบัน" },
       ],
       getVpnButton: "รับ", ctaTitle: "สตรีมทุกอย่างบน Fire Stick", ctaSubtitle: "ติดตั้ง VPN ใน 2 นาที",
-      viewAllVpns: "ดูบทวิจารณ์ VPN ทั้งหมด", lastUpdated: "อัปเดตล่าสุด: กุมภาพันธ์ 2026",
+      viewAllVpns: "ดูบทวิจารณ์ VPN ทั้งหมด", lastUpdated: `อัปเดตล่าสุด: ${getLocalizedMonthYear("th")}`,
     },
   };
 

@@ -67,10 +67,13 @@ export function getShortMonthYear(): string {
  * translations are needed.
  *
  * Examples:
- *  - "en" → "February 2026"
- *  - "nl" → "februari 2026"
- *  - "de" → "Februar 2026"
- *  - "ja" → "2月 2026"
+ *  - "en" → "July 2026"
+ *  - "nl" → "juli 2026"
+ *  - "de" → "Juli 2026"
+ *  - "es" → "julio de 2026"
+ *  - "ja" → "2026年7月"
+ *  - "ko" → "2026년 7월"
+ *  - "th" → "กรกฎาคม 2026"
  *
  * Supported locales: en, nl, de, es, fr, zh, ja, ko, th
  */
@@ -78,18 +81,21 @@ export function getLocalizedMonthYear(locale: string): string {
   const now = new Date();
 
   // Map our internal locale codes to BCP-47 tags understood by Intl.
-  // Most are identity mappings; we only need to handle the edge cases.
+  //
+  // Thai needs -u-ca-gregory expliciet: het Thaise gebied gebruikt standaard
+  // de boeddhistische jaartelling, en dan wordt 2026 gerenderd als 2569.
   const bcp47Map: Record<string, string> = {
     zh: "zh-CN",
+    th: "th-TH-u-ca-gregory",
   };
 
   const bcp47Locale = bcp47Map[locale] ?? locale;
 
-  const monthName = new Intl.DateTimeFormat(bcp47Locale, { month: "long" }).format(now);
-  const year = now.getFullYear();
-
-  // Some locales (Japanese, Korean, Chinese) traditionally place the year
-  // before the month in date expressions, but for our SEO title tags we
-  // always want a consistent "month year" reading order.
-  return `${monthName} ${year}`;
+  // Jaar en maand in één opmaakopdracht, niet zelf aan elkaar plakken. Intl
+  // kiest dan per taal de juiste volgorde en voegwoorden: "julio de 2026" in
+  // het Spaans, "2026年7月" in het Chinees en Japans.
+  return new Intl.DateTimeFormat(bcp47Locale, {
+    year: "numeric",
+    month: "long",
+  }).format(now);
 }

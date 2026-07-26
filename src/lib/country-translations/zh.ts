@@ -1,7 +1,8 @@
 import { TranslatedCountryContent, CountryPageLabels } from "./types";
 
+import { getLocalizedMonthYear } from "@/lib/seo-utils";
 export const zhLabels: CountryPageLabels = {
-  badge: "2026年2月更新",
+  badge: `${getLocalizedMonthYear("zh")}更新`,
   bestVpnFor: "{country}最佳VPN",
   legalStatusTitle: "{country}的VPN法律状态",
   internetFreedomScore: "互联网自由评分：{score}/100（自由之家）",

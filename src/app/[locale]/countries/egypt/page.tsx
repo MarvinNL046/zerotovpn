@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { RankedVpnRow } from "@/components/vpn/ranked-vpn-row";
 import { getAllVpns } from "@/lib/vpn-data-layer";
 import { RelatedPages } from "@/components/seo/related-pages";
-import { generateAlternates } from "@/lib/seo-utils";
+import { generateAlternates, getLocalizedMonthYear } from "@/lib/seo-utils";
 import {
   Shield,
   CheckCircle,
@@ -72,7 +72,7 @@ export default async function EgyptVpnPage({ params }: Props) {
 
   const content = {
     en: {
-      badge: "Updated February 2026",
+      badge: `Updated ${getLocalizedMonthYear("en")}`,
       title: "Best VPN for Egypt",
       subtitle: "Unblock VoIP calls and access censored content in Egypt safely",
       legalNotice: "Important Legal Information",
@@ -135,11 +135,11 @@ export default async function EgyptVpnPage({ params }: Props) {
       effectiveness92: "92% Effective",
       effectiveness89: "89% Effective",
       effectiveness85: "85% Effective",
-      lastUpdated: "Last updated: February 2026",
+      lastUpdated: `Last updated: ${getLocalizedMonthYear("en")}`,
       sources: "Sources",
     },
     nl: {
-      badge: "Bijgewerkt februari 2026",
+      badge: `Bijgewerkt ${getLocalizedMonthYear("nl")}`,
       title: "Beste VPN voor Egypte",
       subtitle: "Deblokkeer VoIP-gesprekken en krijg toegang tot gecensureerde inhoud in Egypte",
       legalNotice: "Belangrijke Juridische Informatie",
@@ -186,11 +186,11 @@ export default async function EgyptVpnPage({ params }: Props) {
       effectiveness92: "92% Effectief",
       effectiveness89: "89% Effectief",
       effectiveness85: "85% Effectief",
-      lastUpdated: "Laatst bijgewerkt: februari 2026",
+      lastUpdated: `Laatst bijgewerkt: ${getLocalizedMonthYear("nl")}`,
       sources: "Bronnen",
     },
     de: {
-      badge: "Aktualisiert Februar 2026", title: "Beste VPN fur Agypten", subtitle: "Entsperren Sie VoIP-Anrufe und greifen Sie sicher auf zensierte Inhalte in Agypten zu",
+      badge: `Aktualisiert ${getLocalizedMonthYear("de")}`, title: "Beste VPN fur Agypten", subtitle: "Entsperren Sie VoIP-Anrufe und greifen Sie sicher auf zensierte Inhalte in Agypten zu",
       legalNotice: "Wichtige rechtliche Informationen", legalNoticeText: "VPNs sind in Agypten nicht ausdrucklich illegal, aber die Regierung blockiert VoIP-Dienste uber Telekommunikationsanbieter. Uber 500 Websites sind blockiert.",
       legalStatus: "VPN Rechtsstatus in Agypten",
       legalPoints: [
@@ -219,10 +219,10 @@ export default async function EgyptVpnPage({ params }: Props) {
         { q: "Kann ich WhatsApp-Anrufe mit einem VPN in Agypten fuhren?", a: "Ja, ein gutes VPN mit Verschleierung kann WhatsApp-Anrufe in Agypten zuverlassig entsperren." },
         { q: "Wie viele Websites sind in Agypten blockiert?", a: "Uber 500 Websites sind blockiert, darunter Nachrichtenoutlets und Menschenrechtsorganisationen." },
       ],
-      getVpn: "VPN holen", effectiveness94: "94% Effektiv", effectiveness92: "92% Effektiv", effectiveness89: "89% Effektiv", effectiveness85: "85% Effektiv", lastUpdated: "Zuletzt aktualisiert: Februar 2026", sources: "Quellen",
+      getVpn: "VPN holen", effectiveness94: "94% Effektiv", effectiveness92: "92% Effektiv", effectiveness89: "89% Effektiv", effectiveness85: "85% Effektiv", lastUpdated: `Zuletzt aktualisiert: ${getLocalizedMonthYear("de")}`, sources: "Quellen",
     },
     es: {
-      badge: "Actualizado febrero 2026", title: "Mejor VPN para Egipto", subtitle: "Desbloquea llamadas VoIP y accede a contenido censurado en Egipto de forma segura",
+      badge: `Actualizado ${getLocalizedMonthYear("es")}`, title: "Mejor VPN para Egipto", subtitle: "Desbloquea llamadas VoIP y accede a contenido censurado en Egipto de forma segura",
       legalNotice: "Informacion Legal Importante", legalNoticeText: "Las VPN no son explicitamente ilegales en Egipto, pero el gobierno bloquea servicios VoIP a traves de operadores de telecomunicaciones. Mas de 500 sitios web estan bloqueados.",
       legalStatus: "Estado Legal del VPN en Egipto",
       legalPoints: [
@@ -251,7 +251,7 @@ export default async function EgyptVpnPage({ params }: Props) {
         { q: "Puedo hacer llamadas WhatsApp con VPN en Egipto?", a: "Si, un buen VPN con ofuscacion puede desbloquear confiablemente llamadas WhatsApp en Egipto." },
         { q: "Cuantos sitios web estan bloqueados en Egipto?", a: "Mas de 500 sitios web estan bloqueados, incluyendo medios de noticias y organizaciones de derechos humanos." },
       ],
-      getVpn: "Obtener VPN", effectiveness94: "94% Efectivo", effectiveness92: "92% Efectivo", effectiveness89: "89% Efectivo", effectiveness85: "85% Efectivo", lastUpdated: "Ultima actualizacion: febrero 2026", sources: "Fuentes",
+      getVpn: "Obtener VPN", effectiveness94: "94% Efectivo", effectiveness92: "92% Efectivo", effectiveness89: "89% Efectivo", effectiveness85: "85% Efectivo", lastUpdated: `Ultima actualizacion: ${getLocalizedMonthYear("es")}`, sources: "Fuentes",
     },
     fr: {
       badge: "Mis a jour fevrier 2026", title: "Meilleur VPN pour l'Egypte", subtitle: "Debloquez les appels VoIP et accedez au contenu censure en Egypte en toute securite",
@@ -286,7 +286,7 @@ export default async function EgyptVpnPage({ params }: Props) {
       getVpn: "Obtenir VPN", effectiveness94: "94% Efficace", effectiveness92: "92% Efficace", effectiveness89: "89% Efficace", effectiveness85: "85% Efficace", lastUpdated: "Derniere mise a jour : fevrier 2026", sources: "Sources",
     },
     zh: {
-      badge: "2026年2月更新", title: "埃及最佳VPN", subtitle: "在埃及安全解锁VoIP通话和访问审查内容",
+      badge: `${getLocalizedMonthYear("zh")}更新`, title: "埃及最佳VPN", subtitle: "在埃及安全解锁VoIP通话和访问审查内容",
       legalNotice: "重要法律信息", legalNoticeText: "VPN在埃及不是明确违法的，但政府通过电信运营商封锁VoIP服务以保护国有电信收入。超过500个网站被封锁。",
       legalStatus: "埃及VPN法律地位",
       legalPoints: [
@@ -315,10 +315,10 @@ export default async function EgyptVpnPage({ params }: Props) {
         { q: "我可以在埃及用VPN打WhatsApp电话吗？", a: "是的，具有混淆功能的好VPN可以在埃及可靠地解锁WhatsApp通话。" },
         { q: "埃及有多少网站被封锁？", a: "超过500个网站被封锁，包括新闻媒体和人权组织。" },
       ],
-      getVpn: "获取VPN", effectiveness94: "94%有效", effectiveness92: "92%有效", effectiveness89: "89%有效", effectiveness85: "85%有效", lastUpdated: "最后更新：2026年2月", sources: "资料来源",
+      getVpn: "获取VPN", effectiveness94: "94%有效", effectiveness92: "92%有效", effectiveness89: "89%有效", effectiveness85: "85%有效", lastUpdated: `最后更新：${getLocalizedMonthYear("zh")}`, sources: "资料来源",
     },
     ja: {
-      badge: "2026年2月更新", title: "エジプト向けベストVPN", subtitle: "エジプトで安全にVoIP通話のブロックを解除し検閲コンテンツにアクセス",
+      badge: `${getLocalizedMonthYear("ja")}更新`, title: "エジプト向けベストVPN", subtitle: "エジプトで安全にVoIP通話のブロックを解除し検閲コンテンツにアクセス",
       legalNotice: "重要な法的情報", legalNoticeText: "VPNはエジプトで明示的に違法ではありませんが、政府は通信事業者を通じてVoIPサービスをブロックしています。500以上のウェブサイトがブロックされています。",
       legalStatus: "エジプトにおけるVPNの法的地位",
       legalPoints: [
@@ -347,10 +347,10 @@ export default async function EgyptVpnPage({ params }: Props) {
         { q: "エジプトでVPNを使ってWhatsApp通話できますか？", a: "はい、難読化機能を持つ良いVPNでWhatsApp通話を確実にブロック解除できます。" },
         { q: "エジプトではいくつのウェブサイトがブロックされていますか？", a: "500以上のウェブサイトがブロックされています。" },
       ],
-      getVpn: "VPNを入手", effectiveness94: "94%有効", effectiveness92: "92%有効", effectiveness89: "89%有効", effectiveness85: "85%有効", lastUpdated: "最終更新：2026年2月", sources: "情報源",
+      getVpn: "VPNを入手", effectiveness94: "94%有効", effectiveness92: "92%有効", effectiveness89: "89%有効", effectiveness85: "85%有効", lastUpdated: `最終更新：${getLocalizedMonthYear("ja")}`, sources: "情報源",
     },
     ko: {
-      badge: "2026년 2월 업데이트", title: "이집트 최고의 VPN", subtitle: "이집트에서 안전하게 VoIP 통화 차단 해제 및 검열 콘텐츠 접속",
+      badge: `${getLocalizedMonthYear("ko")} 업데이트`, title: "이집트 최고의 VPN", subtitle: "이집트에서 안전하게 VoIP 통화 차단 해제 및 검열 콘텐츠 접속",
       legalNotice: "중요한 법적 정보", legalNoticeText: "VPN은 이집트에서 명시적으로 불법이 아니지만, 정부는 통신사를 통해 VoIP 서비스를 차단합니다. 500개 이상의 웹사이트가 차단되어 있습니다.",
       legalStatus: "이집트 VPN 법적 지위",
       legalPoints: [
@@ -379,10 +379,10 @@ export default async function EgyptVpnPage({ params }: Props) {
         { q: "이집트에서 VPN으로 WhatsApp 통화를 할 수 있나요?", a: "예, 난독화 기능이 있는 좋은 VPN으로 이집트에서 WhatsApp 통화를 안정적으로 차단 해제할 수 있습니다." },
         { q: "이집트에서 몇 개의 웹사이트가 차단되어 있나요?", a: "500개 이상의 웹사이트가 차단되어 있습니다." },
       ],
-      getVpn: "VPN 받기", effectiveness94: "94% 효과적", effectiveness92: "92% 효과적", effectiveness89: "89% 효과적", effectiveness85: "85% 효과적", lastUpdated: "마지막 업데이트: 2026년 2월", sources: "출처",
+      getVpn: "VPN 받기", effectiveness94: "94% 효과적", effectiveness92: "92% 효과적", effectiveness89: "89% 효과적", effectiveness85: "85% 효과적", lastUpdated: `마지막 업데이트: ${getLocalizedMonthYear("ko")}`, sources: "출처",
     },
     th: {
-      badge: "อัปเดตเมื่อกุมภาพันธ์ 2026", title: "VPN ที่ดีที่สุดสำหรับอียิปต์", subtitle: "ปลดบล็อกการโทร VoIP และเข้าถึงเนื้อหาที่ถูกเซ็นเซอร์ในอียิปต์อย่างปลอดภัย",
+      badge: `อัปเดตเมื่อ${getLocalizedMonthYear("th")}`, title: "VPN ที่ดีที่สุดสำหรับอียิปต์", subtitle: "ปลดบล็อกการโทร VoIP และเข้าถึงเนื้อหาที่ถูกเซ็นเซอร์ในอียิปต์อย่างปลอดภัย",
       legalNotice: "ข้อมูลทางกฎหมายที่สำคัญ", legalNoticeText: "VPN ไม่ผิดกฎหมายอย่างชัดเจนในอียิปต์ แต่รัฐบาลบล็อกบริการ VoIP ผ่านผู้ให้บริการโทรคมนาคม เว็บไซต์กว่า 500 แห่งถูกบล็อก",
       legalStatus: "สถานะทางกฎหมายของ VPN ในอียิปต์",
       legalPoints: [
@@ -411,7 +411,7 @@ export default async function EgyptVpnPage({ params }: Props) {
         { q: "ฉันสามารถโทร WhatsApp ด้วย VPN ในอียิปต์ได้หรือไม่?", a: "ได้ VPN ที่ดีพร้อมการปิดบังสามารถปลดบล็อกการโทร WhatsApp ในอียิปต์ได้อย่างน่าเชื่อถือ" },
         { q: "มีเว็บไซต์กี่แห่งที่ถูกบล็อกในอียิปต์?", a: "เว็บไซต์กว่า 500 แห่งถูกบล็อก" },
       ],
-      getVpn: "รับ VPN", effectiveness94: "ประสิทธิภาพ 94%", effectiveness92: "ประสิทธิภาพ 92%", effectiveness89: "ประสิทธิภาพ 89%", effectiveness85: "ประสิทธิภาพ 85%", lastUpdated: "อัปเดตล่าสุด: กุมภาพันธ์ 2026", sources: "แหล่งที่มา",
+      getVpn: "รับ VPN", effectiveness94: "ประสิทธิภาพ 94%", effectiveness92: "ประสิทธิภาพ 92%", effectiveness89: "ประสิทธิภาพ 89%", effectiveness85: "ประสิทธิภาพ 85%", lastUpdated: `อัปเดตล่าสุด: ${getLocalizedMonthYear("th")}`, sources: "แหล่งที่มา",
     },
   };
 

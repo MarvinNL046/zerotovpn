@@ -1,7 +1,8 @@
 import { CountryPageLabels, TranslatedCountryContent } from "./types";
 
+import { getLocalizedMonthYear } from "@/lib/seo-utils";
 export const thLabels: CountryPageLabels = {
-  badge: "อัปเดตเดือนกุมภาพันธ์ 2026",
+  badge: `อัปเดตเดือน${getLocalizedMonthYear("th")}`,
   bestVpnFor: "VPN ที่ดีที่สุดสำหรับ{country}",
   legalStatusTitle: "สถานะทางกฎหมายของ VPN ใน{country}",
   internetFreedomScore: "คะแนนเสรีภาพอินเทอร์เน็ต: {score}/100 (Freedom House)",

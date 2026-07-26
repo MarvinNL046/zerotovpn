@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { RankedVpnRow } from "@/components/vpn/ranked-vpn-row";
 import { getAllVpns } from "@/lib/vpn-data-layer";
 import { RelatedPages } from "@/components/seo/related-pages";
-import { generateAlternates } from "@/lib/seo-utils";
+import { generateAlternates, getLocalizedMonthYear } from "@/lib/seo-utils";
 import {
   Shield,
   CheckCircle,
@@ -76,7 +76,7 @@ export default async function JapanVpnPage({ params }: Props) {
 
   const content = {
     en: {
-      badge: "Updated March 2026",
+      badge: `Updated ${getLocalizedMonthYear("en")}`,
       title: "Best VPN for Japan",
       subtitle: "Stream Japanese content worldwide and protect your privacy",
       legalStatus: "VPN Legal Status in Japan",
@@ -112,11 +112,11 @@ export default async function JapanVpnPage({ params }: Props) {
       getVpn: "Get VPN",
       worksInCountry: "Works in Japan",
       obfuscation: "Fast Streaming",
-      lastUpdated: "Last updated: March 2026",
+      lastUpdated: `Last updated: ${getLocalizedMonthYear("en")}`,
       sources: "Sources",
     },
     nl: {
-      badge: "Bijgewerkt maart 2026",
+      badge: `Bijgewerkt ${getLocalizedMonthYear("nl")}`,
       title: "Beste VPN voor Japan",
       subtitle: "Stream Japanse inhoud wereldwijd en bescherm je privacy",
       legalStatus: "VPN Juridische Status in Japan",
@@ -152,11 +152,11 @@ export default async function JapanVpnPage({ params }: Props) {
       getVpn: "Download VPN",
       worksInCountry: "Werkt in Japan",
       obfuscation: "Snel Streamen",
-      lastUpdated: "Laatst bijgewerkt: maart 2026",
+      lastUpdated: `Laatst bijgewerkt: ${getLocalizedMonthYear("nl")}`,
       sources: "Bronnen",
     },
     de: {
-      badge: "Aktualisiert März 2026",
+      badge: `Aktualisiert ${getLocalizedMonthYear("de")}`,
       title: "Beste VPN für Japan",
       subtitle: "Streamen Sie japanische Inhalte weltweit und schützen Sie Ihre Privatsphäre",
       legalStatus: "VPN-Rechtsstatus in Japan",
@@ -192,11 +192,11 @@ export default async function JapanVpnPage({ params }: Props) {
       getVpn: "VPN erhalten",
       worksInCountry: "Funktioniert in Japan",
       obfuscation: "Schnelles Streaming",
-      lastUpdated: "Zuletzt aktualisiert: März 2026",
+      lastUpdated: `Zuletzt aktualisiert: ${getLocalizedMonthYear("de")}`,
       sources: "Quellen",
     },
     es: {
-      badge: "Actualizado marzo 2026",
+      badge: `Actualizado ${getLocalizedMonthYear("es")}`,
       title: "Mejor VPN para Japón",
       subtitle: "Transmite contenido japonés en todo el mundo y protege tu privacidad",
       legalStatus: "Estado legal de VPN en Japón",
@@ -232,11 +232,11 @@ export default async function JapanVpnPage({ params }: Props) {
       getVpn: "Obtener VPN",
       worksInCountry: "Funciona en Japón",
       obfuscation: "Streaming Rápido",
-      lastUpdated: "Última actualización: marzo 2026",
+      lastUpdated: `Última actualización: ${getLocalizedMonthYear("es")}`,
       sources: "Fuentes",
     },
     fr: {
-      badge: "Mis à jour mars 2026",
+      badge: `Mis à jour ${getLocalizedMonthYear("fr")}`,
       title: "Meilleur VPN pour le Japon",
       subtitle: "Streamez du contenu japonais dans le monde entier et protégez votre vie privée",
       legalStatus: "Statut légal du VPN au Japon",
@@ -272,11 +272,11 @@ export default async function JapanVpnPage({ params }: Props) {
       getVpn: "Obtenir VPN",
       worksInCountry: "Fonctionne au Japon",
       obfuscation: "Streaming Rapide",
-      lastUpdated: "Dernière mise à jour : mars 2026",
+      lastUpdated: `Dernière mise à jour : ${getLocalizedMonthYear("fr")}`,
       sources: "Sources",
     },
     zh: {
-      badge: "更新于2026年3月",
+      badge: `更新于${getLocalizedMonthYear("zh")}`,
       title: "日本最佳VPN",
       subtitle: "在全球流媒体日本内容并保护您的隐私",
       legalStatus: "日本VPN法律状态",
@@ -312,11 +312,11 @@ export default async function JapanVpnPage({ params }: Props) {
       getVpn: "获取VPN",
       worksInCountry: "在日本可用",
       obfuscation: "快速流媒体",
-      lastUpdated: "最后更新：2026年3月",
+      lastUpdated: `最后更新：${getLocalizedMonthYear("zh")}`,
       sources: "来源",
     },
     ja: {
-      badge: "2026年3月更新",
+      badge: `${getLocalizedMonthYear("ja")}更新`,
       title: "日本に最適なVPN",
       subtitle: "世界中で日本のコンテンツをストリーミングしてプライバシーを保護",
       legalStatus: "日本のVPN法的地位",
@@ -352,11 +352,11 @@ export default async function JapanVpnPage({ params }: Props) {
       getVpn: "VPNを取得",
       worksInCountry: "日本で機能",
       obfuscation: "高速ストリーミング",
-      lastUpdated: "最終更新：2026年3月",
+      lastUpdated: `最終更新：${getLocalizedMonthYear("ja")}`,
       sources: "情報源",
     },
     ko: {
-      badge: "2026년 3월 업데이트",
+      badge: `${getLocalizedMonthYear("ko")} 업데이트`,
       title: "일본 최고의 VPN",
       subtitle: "전 세계에서 일본 콘텐츠를 스트리밍하고 개인정보를 보호하세요",
       legalStatus: "일본의 VPN 법적 지위",
@@ -392,11 +392,11 @@ export default async function JapanVpnPage({ params }: Props) {
       getVpn: "VPN 받기",
       worksInCountry: "일본에서 작동",
       obfuscation: "빠른 스트리밍",
-      lastUpdated: "마지막 업데이트: 2026년 3월",
+      lastUpdated: `마지막 업데이트: ${getLocalizedMonthYear("ko")}`,
       sources: "출처",
     },
     th: {
-      badge: "อัปเดตมีนาคม 2026",
+      badge: `อัปเดต${getLocalizedMonthYear("th")}`,
       title: "VPN ที่ดีที่สุดสำหรับญี่ปุ่น",
       subtitle: "สตรีมเนื้อหาญี่ปุ่นทั่วโลกและปกป้องความเป็นส่วนตัว",
       legalStatus: "สถานะทางกฎหมายของ VPN ในญี่ปุ่น",
@@ -432,7 +432,7 @@ export default async function JapanVpnPage({ params }: Props) {
       getVpn: "รับ VPN",
       worksInCountry: "ใช้งานได้ในญี่ปุ่น",
       obfuscation: "สตรีมมิ่งที่รวดเร็ว",
-      lastUpdated: "อัปเดตล่าสุด: มีนาคม 2026",
+      lastUpdated: `อัปเดตล่าสุด: ${getLocalizedMonthYear("th")}`,
       sources: "แหล่งที่มา",
     },
   };

@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { RankedVpnRow } from "@/components/vpn/ranked-vpn-row";
 import { getAllVpns } from "@/lib/vpn-data-layer";
 import { RelatedPages } from "@/components/seo/related-pages";
-import { generateAlternates } from "@/lib/seo-utils";
+import { generateAlternates, getLocalizedMonthYear } from "@/lib/seo-utils";
 import {
   Shield,
   CheckCircle,
@@ -77,7 +77,7 @@ export default async function GermanyVpnPage({ params }: Props) {
 
   const content = {
     en: {
-      badge: "Updated March 2026",
+      badge: `Updated ${getLocalizedMonthYear("en")}`,
       title: "Best VPN for Germany",
       subtitle: "Avoid copyright Abmahnung letters and protect your digital privacy",
       legalStatus: "VPN Legal Status in Germany",
@@ -113,11 +113,11 @@ export default async function GermanyVpnPage({ params }: Props) {
       getVpn: "Get VPN",
       worksInCountry: "Works in Germany",
       obfuscation: "P2P Protected",
-      lastUpdated: "Last updated: March 2026",
+      lastUpdated: `Last updated: ${getLocalizedMonthYear("en")}`,
       sources: "Sources",
     },
     nl: {
-      badge: "Bijgewerkt maart 2026",
+      badge: `Bijgewerkt ${getLocalizedMonthYear("nl")}`,
       title: "Best VPN for Germany",
       subtitle: "Avoid copyright Abmahnung letters and protect your digital privacy",
       legalStatus: "VPN Legal Status in Germany",
@@ -153,11 +153,11 @@ export default async function GermanyVpnPage({ params }: Props) {
       getVpn: "Download VPN",
       worksInCountry: "Werkt in Germany",
       obfuscation: "P2P Protected",
-      lastUpdated: "Laatst bijgewerkt: maart 2026",
+      lastUpdated: `Laatst bijgewerkt: ${getLocalizedMonthYear("nl")}`,
       sources: "Bronnen",
     },
     de: {
-      badge: "Aktualisiert März 2026",
+      badge: `Aktualisiert ${getLocalizedMonthYear("de")}`,
       title: "Best VPN for Germany",
       subtitle: "Avoid copyright Abmahnung letters and protect your digital privacy",
       legalStatus: "VPN Legal Status in Germany",
@@ -193,11 +193,11 @@ export default async function GermanyVpnPage({ params }: Props) {
       getVpn: "VPN erhalten",
       worksInCountry: "Funktioniert in Germany",
       obfuscation: "P2P Protected",
-      lastUpdated: "Zuletzt aktualisiert: März 2026",
+      lastUpdated: `Zuletzt aktualisiert: ${getLocalizedMonthYear("de")}`,
       sources: "Quellen",
     },
     es: {
-      badge: "Actualizado marzo 2026",
+      badge: `Actualizado ${getLocalizedMonthYear("es")}`,
       title: "Best VPN for Germany",
       subtitle: "Avoid copyright Abmahnung letters and protect your digital privacy",
       legalStatus: "VPN Legal Status in Germany",
@@ -233,11 +233,11 @@ export default async function GermanyVpnPage({ params }: Props) {
       getVpn: "Obtener VPN",
       worksInCountry: "Funciona en Germany",
       obfuscation: "P2P Protected",
-      lastUpdated: "Última actualización: marzo 2026",
+      lastUpdated: `Última actualización: ${getLocalizedMonthYear("es")}`,
       sources: "Fuentes",
     },
     fr: {
-      badge: "Mis à jour mars 2026",
+      badge: `Mis à jour ${getLocalizedMonthYear("fr")}`,
       title: "Best VPN for Germany",
       subtitle: "Avoid copyright Abmahnung letters and protect your digital privacy",
       legalStatus: "VPN Legal Status in Germany",
@@ -273,11 +273,11 @@ export default async function GermanyVpnPage({ params }: Props) {
       getVpn: "Obtenir VPN",
       worksInCountry: "Fonctionne en Germany",
       obfuscation: "P2P Protected",
-      lastUpdated: "Dernière mise à jour : mars 2026",
+      lastUpdated: `Dernière mise à jour : ${getLocalizedMonthYear("fr")}`,
       sources: "Sources",
     },
     zh: {
-      badge: "更新于2026年3月",
+      badge: `更新于${getLocalizedMonthYear("zh")}`,
       title: "Best VPN for Germany",
       subtitle: "Avoid copyright Abmahnung letters and protect your digital privacy",
       legalStatus: "VPN Legal Status in Germany",
@@ -313,11 +313,11 @@ export default async function GermanyVpnPage({ params }: Props) {
       getVpn: "获取VPN",
       worksInCountry: "在Germany可用",
       obfuscation: "P2P Protected",
-      lastUpdated: "最后更新：2026年3月",
+      lastUpdated: `最后更新：${getLocalizedMonthYear("zh")}`,
       sources: "来源",
     },
     ja: {
-      badge: "2026年3月更新",
+      badge: `${getLocalizedMonthYear("ja")}更新`,
       title: "Best VPN for Germany",
       subtitle: "Avoid copyright Abmahnung letters and protect your digital privacy",
       legalStatus: "VPN Legal Status in Germany",
@@ -353,11 +353,11 @@ export default async function GermanyVpnPage({ params }: Props) {
       getVpn: "VPNを取得",
       worksInCountry: "Germanyで機能",
       obfuscation: "P2P Protected",
-      lastUpdated: "最終更新：2026年3月",
+      lastUpdated: `最終更新：${getLocalizedMonthYear("ja")}`,
       sources: "情報源",
     },
     ko: {
-      badge: "2026년 3월 업데이트",
+      badge: `${getLocalizedMonthYear("ko")} 업데이트`,
       title: "Best VPN for Germany",
       subtitle: "Avoid copyright Abmahnung letters and protect your digital privacy",
       legalStatus: "VPN Legal Status in Germany",
@@ -393,11 +393,11 @@ export default async function GermanyVpnPage({ params }: Props) {
       getVpn: "VPN 받기",
       worksInCountry: "Germany에서 작동",
       obfuscation: "P2P Protected",
-      lastUpdated: "마지막 업데이트: 2026년 3월",
+      lastUpdated: `마지막 업데이트: ${getLocalizedMonthYear("ko")}`,
       sources: "출처",
     },
     th: {
-      badge: "อัปเดตมีนาคม 2026",
+      badge: `อัปเดต${getLocalizedMonthYear("th")}`,
       title: "Best VPN for Germany",
       subtitle: "Avoid copyright Abmahnung letters and protect your digital privacy",
       legalStatus: "VPN Legal Status in Germany",
@@ -433,7 +433,7 @@ export default async function GermanyVpnPage({ params }: Props) {
       getVpn: "รับ VPN",
       worksInCountry: "ใช้งานได้ในGermany",
       obfuscation: "P2P Protected",
-      lastUpdated: "อัปเดตล่าสุด: มีนาคม 2026",
+      lastUpdated: `อัปเดตล่าสุด: ${getLocalizedMonthYear("th")}`,
       sources: "แหล่งที่มา",
     },
   };

@@ -1,6 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { Metadata } from "next";
-import { getShortMonthYear, generateAlternates } from "@/lib/seo-utils";
+import { getShortMonthYear, generateAlternates, getLocalizedMonthYear } from "@/lib/seo-utils";
 import { LastUpdated } from "@/components/last-updated";
 import { Badge, type BadgeVariant } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -156,7 +156,7 @@ export default async function LaptopVpnPage({ params }: Props) {
   // Content translations
   const content = {
     en: {
-      badge: "Updated March 2026",
+      badge: `Updated ${getLocalizedMonthYear("en")}`,
       title: "Best VPN for Laptops & Notebooks in 2026",
       subtitle:
         "We tested 35+ VPNs specifically for laptop use. These are the best options for battery life, WiFi security, and mobile productivity.",
@@ -301,10 +301,10 @@ export default async function LaptopVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "View All VPN Reviews",
-      lastUpdated: "Last updated: March 2026",
+      lastUpdated: `Last updated: ${getLocalizedMonthYear("en")}`,
     },
     nl: {
-      badge: "Bijgewerkt maart 2026",
+      badge: `Bijgewerkt ${getLocalizedMonthYear("nl")}`,
       title: "Beste VPN voor Laptops & Notebooks in 2026",
       subtitle:
         "We hebben 35+ VPNs specifiek getest voor laptopgebruik. Dit zijn de beste opties voor batterijduur, WiFi-beveiliging en mobiele productiviteit.",
@@ -449,10 +449,10 @@ export default async function LaptopVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Bekijk Alle VPN Reviews",
-      lastUpdated: "Laatst bijgewerkt: maart 2026",
+      lastUpdated: `Laatst bijgewerkt: ${getLocalizedMonthYear("nl")}`,
     },
     de: {
-      badge: "Aktualisiert March 2026",
+      badge: `Aktualisiert ${getLocalizedMonthYear("de")}`,
       title: "Beste VPN für Laptops & Notebooks in 2026",
       subtitle:
         "Wir haben über 35 VPNs speziell für Laptop-Nutzung getestet. Dies sind die besten Optionen für Akkulaufzeit, WLAN-Sicherheit und mobile Produktivität.",
@@ -597,10 +597,10 @@ export default async function LaptopVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Alle VPN-Bewertungen Anzeigen",
-      lastUpdated: "Zuletzt aktualisiert: March 2026",
+      lastUpdated: `Zuletzt aktualisiert: ${getLocalizedMonthYear("de")}`,
     },
     es: {
-      badge: "Actualizado marzo 2026",
+      badge: `Actualizado ${getLocalizedMonthYear("es")}`,
       title: "Mejor VPN para Portátiles y Notebooks en 2026",
       subtitle:
         "Probamos más de 35 VPNs específicamente para uso en portátiles. Estas son las mejores opciones para duración de batería, seguridad WiFi y productividad móvil.",
@@ -745,10 +745,10 @@ export default async function LaptopVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Ver Todas Las Reseñas De VPN",
-      lastUpdated: "Última actualización: marzo 2026",
+      lastUpdated: `Última actualización: ${getLocalizedMonthYear("es")}`,
     },
     fr: {
-      badge: "Mis à jour mars 2026",
+      badge: `Mis à jour ${getLocalizedMonthYear("fr")}`,
       title: "Meilleur VPN pour Ordinateurs Portables en 2026",
       subtitle:
         "Nous avons testé plus de 35 VPN spécifiquement pour l'utilisation sur ordinateur portable. Ce sont les meilleures options pour autonomie de batterie, sécurité WiFi et productivité mobile.",
@@ -893,10 +893,10 @@ export default async function LaptopVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Voir Toutes Les Critiques VPN",
-      lastUpdated: "Dernière mise à jour: mars 2026",
+      lastUpdated: `Dernière mise à jour: ${getLocalizedMonthYear("fr")}`,
     },
     zh: {
-      badge: "更新于2026年3月",
+      badge: `更新于${getLocalizedMonthYear("zh")}`,
       title: "2026年最佳笔记本电脑VPN",
       subtitle:
         "我们专门为笔记本电脑使用测试了35+个VPN。这些是电池寿命、WiFi安全性和移动生产力的最佳选择。",
@@ -1041,10 +1041,10 @@ export default async function LaptopVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "查看所有VPN评论",
-      lastUpdated: "最后更新：2026年3月",
+      lastUpdated: `最后更新：${getLocalizedMonthYear("zh")}`,
     },
     ja: {
-      badge: "2026年3月更新",
+      badge: `${getLocalizedMonthYear("ja")}更新`,
       title: "2026年ノートパソコン用ベストVPN",
       subtitle:
         "35以上のVPNをノートパソコン使用に特化してテストしました。バッテリー寿命、WiFiセキュリティ、モバイル生産性のベストオプションです。",
@@ -1189,10 +1189,10 @@ export default async function LaptopVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "すべてのVPNレビューを表示",
-      lastUpdated: "最終更新：2026年3月",
+      lastUpdated: `最終更新：${getLocalizedMonthYear("ja")}`,
     },
     ko: {
-      badge: "2026년 3월 업데이트",
+      badge: `${getLocalizedMonthYear("ko")} 업데이트`,
       title: "2026년 노트북용 최고의 VPN",
       subtitle:
         "노트북 사용을 위해 35개 이상의 VPN을 테스트했습니다. 배터리 수명, WiFi 보안 및 모바일 생산성을 위한 최고의 옵션입니다.",
@@ -1337,10 +1337,10 @@ export default async function LaptopVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "모든 VPN 리뷰 보기",
-      lastUpdated: "마지막 업데이트: 2026년 3월",
+      lastUpdated: `마지막 업데이트: ${getLocalizedMonthYear("ko")}`,
     },
     th: {
-      badge: "อัปเดตมีนาคม 2026",
+      badge: `อัปเดต${getLocalizedMonthYear("th")}`,
       title: "VPN ที่ดีที่สุดสำหรับแล็ปท็อปในปี 2026",
       subtitle:
         "เราทดสอบ VPN มากกว่า 35 รายการโดยเฉพาะสำหรับการใช้งานแล็ปท็อป นี่คือตัวเลือกที่ดีที่สุดสำหรับอายุการใช้งานแบตเตอรี่ ความปลอดภัย WiFi และประสิทธิภาพการทำงานบนมือถือ",
@@ -1485,7 +1485,7 @@ export default async function LaptopVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "ดูรีวิว VPN ทั้งหมด",
-      lastUpdated: "อัปเดตล่าสุด: มีนาคม 2026",
+      lastUpdated: `อัปเดตล่าสุด: ${getLocalizedMonthYear("th")}`,
     },
   };
 

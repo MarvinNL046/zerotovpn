@@ -7,7 +7,7 @@ import { getAllVpns } from "@/lib/vpn-data-layer";
 import { ComparisonTableSchema } from "@/components/structured-data";
 import { Link } from "@/i18n/navigation";
 import { RelatedPages } from "@/components/seo/related-pages";
-import { generateAlternates, getShortMonthYear } from "@/lib/seo-utils";
+import { generateAlternates, getShortMonthYear, getLocalizedMonthYear } from "@/lib/seo-utils";
 import {
   Shield,
   CheckCircle,
@@ -81,7 +81,7 @@ export default async function IranVpnPage({ params }: Props) {
 
   const content = {
     en: {
-      badge: "Updated March 2026",
+      badge: `Updated ${getLocalizedMonthYear("en")}`,
       title: "Best VPN for Iran — Tested During Shutdowns",
       subtitle: "Compare the 4 VPNs that still connect in Iran. Updated monthly with real test results from inside the country.",
       legalNotice: "Critical: Iran's Internet Situation in 2026",
@@ -111,7 +111,7 @@ export default async function IranVpnPage({ params }: Props) {
         },
       ],
       effectiveness: "Effectiveness Ratings",
-      whatWorks: "VPNs That Still Connect in Iran (March 2026)",
+      whatWorks: `VPNs That Still Connect in Iran (${getLocalizedMonthYear("en")})`,
       whatWorksText:
         "Only VPNs with advanced obfuscation bypass Iran's protocol whitelist. Standard WireGuard and OpenVPN are blocked in seconds. Install BEFORE arriving — VPN websites are blocked inside Iran.",
       vpnEffectiveness: {
@@ -201,7 +201,7 @@ export default async function IranVpnPage({ params }: Props) {
       sources: "Sources & References",
     },
     nl: {
-      badge: "Bijgewerkt maart 2026",
+      badge: `Bijgewerkt ${getLocalizedMonthYear("nl")}`,
       title: "Beste VPN voor Iran",
       subtitle: "Omzeil Iran's censuur en krijg toegang tot geblokkeerde diensten — ook tijdens internet shutdowns",
       legalNotice: "Kritiek: Iran's Internetsituatie in 2026",
@@ -231,7 +231,7 @@ export default async function IranVpnPage({ params }: Props) {
         },
       ],
       effectiveness: "Effectiviteitsscores",
-      whatWorks: "VPNs Die Nog Verbinden in Iran (maart 2026)",
+      whatWorks: `VPNs Die Nog Verbinden in Iran (${getLocalizedMonthYear("nl")})`,
       whatWorksText:
         "Alleen VPNs met geavanceerde obfuscatie omzeilen Iran's protocol-whitelist. Standaard WireGuard en OpenVPN worden binnen seconden geblokkeerd. Installeer VOOR aankomst — VPN-websites zijn geblokkeerd in Iran.",
       vpnEffectiveness: {
@@ -321,7 +321,7 @@ export default async function IranVpnPage({ params }: Props) {
       sources: "Bronnen & Referenties",
     },
     de: {
-      badge: "Aktualisiert März 2026",
+      badge: `Aktualisiert ${getLocalizedMonthYear("de")}`,
       title: "Beste VPN für Iran",
       subtitle: "Umgehen Sie Irans Zensur und greifen Sie auf blockierte Dienste zu — auch während Internet-Shutdowns",
       legalNotice: "Kritisch: Irans Internetsituation 2026",
@@ -351,7 +351,7 @@ export default async function IranVpnPage({ params }: Props) {
         },
       ],
       effectiveness: "Effektivitätsbewertungen",
-      whatWorks: "VPNs Die im Iran Noch Verbinden (März 2026)",
+      whatWorks: `VPNs Die im Iran Noch Verbinden (${getLocalizedMonthYear("de")})`,
       whatWorksText:
         "Nur VPNs mit fortgeschrittener Verschleierung umgehen Irans Protokoll-Whitelist. Standard-WireGuard und -OpenVPN werden innerhalb von Sekunden blockiert. Installieren Sie VOR der Ankunft — VPN-Websites sind im Iran blockiert.",
       vpnEffectiveness: {
@@ -441,7 +441,7 @@ export default async function IranVpnPage({ params }: Props) {
       sources: "Quellen & Referenzen",
     },
     es: {
-      badge: "Actualizado marzo 2026",
+      badge: `Actualizado ${getLocalizedMonthYear("es")}`,
       title: "Mejor VPN para Irán",
       subtitle: "Evita la censura de Irán y accede a servicios bloqueados — incluso durante apagones de internet",
       legalNotice: "Crítico: Situación de Internet en Irán en 2026",
@@ -561,7 +561,7 @@ export default async function IranVpnPage({ params }: Props) {
       sources: "Fuentes y Referencias",
     },
     fr: {
-      badge: "Mis à jour mars 2026",
+      badge: `Mis à jour ${getLocalizedMonthYear("fr")}`,
       title: "Meilleur VPN pour l'Iran",
       subtitle: "Contournez la censure iranienne et accédez aux services bloqués — même pendant les coupures internet",
       legalNotice: "Critique : Situation Internet en Iran en 2026",
@@ -681,7 +681,7 @@ export default async function IranVpnPage({ params }: Props) {
       sources: "Sources & Références",
     },
     zh: {
-      badge: "2026年3月更新",
+      badge: `${getLocalizedMonthYear("zh")}更新`,
       title: "伊朗最佳VPN",
       subtitle: "绕过伊朗的审查制度，访问被封锁的服务——即使在互联网关闭期间",
       legalNotice: "关键：2026年伊朗互联网状况",
@@ -711,7 +711,7 @@ export default async function IranVpnPage({ params }: Props) {
         },
       ],
       effectiveness: "有效性评级",
-      whatWorks: "在伊朗仍能连接的VPN（2026年3月）",
+      whatWorks: `在伊朗仍能连接的VPN（${getLocalizedMonthYear("zh")}）`,
       whatWorksText:
         "只有具备高级混淆功能的VPN才能绕过伊朗的协议白名单。标准WireGuard和OpenVPN在几秒内即被封锁。请在抵达前安装——VPN网站在伊朗境内被封锁。",
       vpnEffectiveness: {
@@ -801,7 +801,7 @@ export default async function IranVpnPage({ params }: Props) {
       sources: "来源与参考资料",
     },
     ja: {
-      badge: "2026年3月更新",
+      badge: `${getLocalizedMonthYear("ja")}更新`,
       title: "イラン最適なVPN",
       subtitle: "イランの検閲を回避し、ブロックされたサービスにアクセス——インターネット遮断中でも",
       legalNotice: "重要：2026年イランのインターネット状況",
@@ -831,7 +831,7 @@ export default async function IranVpnPage({ params }: Props) {
         },
       ],
       effectiveness: "有効性評価",
-      whatWorks: "イランでまだ接続できるVPN（2026年3月）",
+      whatWorks: `イランでまだ接続できるVPN（${getLocalizedMonthYear("ja")}）`,
       whatWorksText:
         "高度な難読化を備えたVPNのみがイランのプロトコルホワイトリストを回避できます。標準のWireGuardとOpenVPNは数秒でブロックされます。到着前にインストールしてください——VPNウェブサイトはイラン国内でブロックされています。",
       vpnEffectiveness: {
@@ -921,7 +921,7 @@ export default async function IranVpnPage({ params }: Props) {
       sources: "出典・参考資料",
     },
     ko: {
-      badge: "2026년 3월 업데이트",
+      badge: `${getLocalizedMonthYear("ko")} 업데이트`,
       title: "이란 최고의 VPN",
       subtitle: "이란의 검열을 우회하고 차단된 서비스에 액세스 — 인터넷 차단 중에도",
       legalNotice: "중요: 2026년 이란 인터넷 상황",
@@ -951,7 +951,7 @@ export default async function IranVpnPage({ params }: Props) {
         },
       ],
       effectiveness: "효과성 평가",
-      whatWorks: "이란에서 아직 연결되는 VPN (2026년 3월)",
+      whatWorks: `이란에서 아직 연결되는 VPN (${getLocalizedMonthYear("ko")})`,
       whatWorksText:
         "고급 난독화를 갖춘 VPN만이 이란의 프로토콜 화이트리스트를 우회합니다. 표준 WireGuard와 OpenVPN은 몇 초 안에 차단됩니다. 도착 전에 설치하세요 — VPN 웹사이트는 이란 내에서 차단됩니다.",
       vpnEffectiveness: {
@@ -1041,7 +1041,7 @@ export default async function IranVpnPage({ params }: Props) {
       sources: "출처 및 참고자료",
     },
     th: {
-      badge: "อัปเดตเมื่อมีนาคม 2026",
+      badge: `อัปเดตเมื่อ${getLocalizedMonthYear("th")}`,
       title: "VPN ที่ดีที่สุดสำหรับอิหร่าน",
       subtitle: "หลีกเลี่ยงการเซ็นเซอร์ของอิหร่านและเข้าถึงบริการที่ถูกบล็อก — แม้ในช่วงอินเทอร์เน็ตถูกตัด",
       legalNotice: "สำคัญ: สถานการณ์อินเทอร์เน็ตอิหร่านในปี 2026",
@@ -1071,7 +1071,7 @@ export default async function IranVpnPage({ params }: Props) {
         },
       ],
       effectiveness: "คะแนนประสิทธิภาพ",
-      whatWorks: "VPN ที่ยังเชื่อมต่อได้ในอิหร่าน (มีนาคม 2026)",
+      whatWorks: `VPN ที่ยังเชื่อมต่อได้ในอิหร่าน (${getLocalizedMonthYear("th")})`,
       whatWorksText:
         "เฉพาะ VPN ที่มีการปิดบังขั้นสูงเท่านั้นที่สามารถผ่านรายการโปรโตคอลที่อนุญาตของอิหร่าน WireGuard และ OpenVPN มาตรฐานถูกบล็อกภายในไม่กี่วินาที ติดตั้งก่อนเดินทาง — เว็บไซต์ VPN ถูกบล็อกภายในอิหร่าน",
       vpnEffectiveness: {

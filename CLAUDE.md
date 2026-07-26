@@ -224,7 +224,14 @@ Current review pages are THIN CONTENT — just structured data rendered as a tem
 
 - **Navbar consolidation**: Mega menu for Best VPNs, Devices, Tools dropdowns
 - **FAQ styling**: Fix CSS on best/* pages (accordion styling inconsistent)
-- **Date consistency**: All dates must say current month (fixed November → March 2026)
+- **Date consistency**: DONE — "updated" dates are no longer hardcoded. Use
+  `getLocalizedMonthYear(locale)` from `src/lib/seo-utils.ts` for any freshness
+  claim (badge, lastUpdated, meta title); in translation files use a `{month}`
+  placeholder and pass the helper's value at the call site. The helper picks the
+  right order and wording per language ("julio de 2026", "2026年7月") and forces
+  the Gregorian calendar for Thai, which otherwise renders 2026 as 2569.
+  Never hardcode a month again — it silently rots. Real dates (audits, laws,
+  outages, revision logs) stay hardcoded: those are facts, not freshness.
 
 ## Deployment
 

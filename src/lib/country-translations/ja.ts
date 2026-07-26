@@ -1,7 +1,8 @@
 import { CountryPageLabels, TranslatedCountryContent } from "./types";
 
+import { getLocalizedMonthYear } from "@/lib/seo-utils";
 export const jaLabels: CountryPageLabels = {
-  badge: "2026年2月更新",
+  badge: `${getLocalizedMonthYear("ja")}更新`,
   bestVpnFor: "{country}におすすめのVPN",
   legalStatusTitle: "{country}におけるVPNの法的状況",
   internetFreedomScore: "インターネット自由度スコア: {score}/100 (Freedom House)",

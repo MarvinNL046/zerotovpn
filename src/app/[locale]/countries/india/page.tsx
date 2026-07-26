@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { RankedVpnRow } from "@/components/vpn/ranked-vpn-row";
 import { getAllVpns } from "@/lib/vpn-data-layer";
 import { RelatedPages } from "@/components/seo/related-pages";
-import { generateAlternates } from "@/lib/seo-utils";
+import { generateAlternates, getLocalizedMonthYear } from "@/lib/seo-utils";
 import {
   Shield,
   CheckCircle,
@@ -76,7 +76,7 @@ export default async function IndiaVpnPage({ params }: Props) {
 
   const content = {
     en: {
-      badge: "Updated February 2026",
+      badge: `Updated ${getLocalizedMonthYear("en")}`,
       title: "Best VPN for India",
       subtitle: "Protect your privacy and bypass growing internet restrictions in India",
       legalNotice: "Important Legal Information",
@@ -190,11 +190,11 @@ export default async function IndiaVpnPage({ params }: Props) {
       effectiveness93: "93% Effective",
       effectiveness91: "91% Effective",
       effectiveness88: "88% Effective",
-      lastUpdated: "Last updated: February 2026",
+      lastUpdated: `Last updated: ${getLocalizedMonthYear("en")}`,
       sources: "Sources",
     },
     nl: {
-      badge: "Bijgewerkt februari 2026",
+      badge: `Bijgewerkt ${getLocalizedMonthYear("nl")}`,
       title: "Beste VPN voor India",
       subtitle: "Bescherm je privacy en omzeil groeiende internetbeperkingen in India",
       legalNotice: "Belangrijke Juridische Informatie",
@@ -308,11 +308,11 @@ export default async function IndiaVpnPage({ params }: Props) {
       effectiveness93: "93% Effectief",
       effectiveness91: "91% Effectief",
       effectiveness88: "88% Effectief",
-      lastUpdated: "Laatst bijgewerkt: februari 2026",
+      lastUpdated: `Laatst bijgewerkt: ${getLocalizedMonthYear("nl")}`,
       sources: "Bronnen",
     },
     de: {
-      badge: "Aktualisiert Februar 2026",
+      badge: `Aktualisiert ${getLocalizedMonthYear("de")}`,
       title: "Beste VPN fur Indien",
       subtitle: "Schutzen Sie Ihre Privatsphare und umgehen Sie wachsende Internetbeschrankungen in Indien",
       legalNotice: "Wichtige rechtliche Informationen",
@@ -426,11 +426,11 @@ export default async function IndiaVpnPage({ params }: Props) {
       effectiveness93: "93% Effektiv",
       effectiveness91: "91% Effektiv",
       effectiveness88: "88% Effektiv",
-      lastUpdated: "Zuletzt aktualisiert: Februar 2026",
+      lastUpdated: `Zuletzt aktualisiert: ${getLocalizedMonthYear("de")}`,
       sources: "Quellen",
     },
     es: {
-      badge: "Actualizado febrero 2026",
+      badge: `Actualizado ${getLocalizedMonthYear("es")}`,
       title: "Mejor VPN para India",
       subtitle: "Protege tu privacidad y evita las crecientes restricciones de internet en India",
       legalNotice: "Informacion Legal Importante",
@@ -544,7 +544,7 @@ export default async function IndiaVpnPage({ params }: Props) {
       effectiveness93: "93% Efectivo",
       effectiveness91: "91% Efectivo",
       effectiveness88: "88% Efectivo",
-      lastUpdated: "Ultima actualizacion: febrero 2026",
+      lastUpdated: `Ultima actualizacion: ${getLocalizedMonthYear("es")}`,
       sources: "Fuentes",
     },
     fr: {
@@ -666,7 +666,7 @@ export default async function IndiaVpnPage({ params }: Props) {
       sources: "Sources",
     },
     zh: {
-      badge: "2026年2月更新",
+      badge: `${getLocalizedMonthYear("zh")}更新`,
       title: "印度最佳VPN",
       subtitle: "保护您的隐私并绕过印度日益增长的互联网限制",
       legalNotice: "重要法律信息",
@@ -714,11 +714,11 @@ export default async function IndiaVpnPage({ params }: Props) {
       effectiveness93: "93%有效",
       effectiveness91: "91%有效",
       effectiveness88: "88%有效",
-      lastUpdated: "最后更新：2026年2月",
+      lastUpdated: `最后更新：${getLocalizedMonthYear("zh")}`,
       sources: "资料来源",
     },
     ja: {
-      badge: "2026年2月更新",
+      badge: `${getLocalizedMonthYear("ja")}更新`,
       title: "インド向けベストVPN",
       subtitle: "インドで増加するインターネット制限からプライバシーを保護",
       legalNotice: "重要な法的情報",
@@ -766,11 +766,11 @@ export default async function IndiaVpnPage({ params }: Props) {
       effectiveness93: "93%有効",
       effectiveness91: "91%有効",
       effectiveness88: "88%有効",
-      lastUpdated: "最終更新：2026年2月",
+      lastUpdated: `最終更新：${getLocalizedMonthYear("ja")}`,
       sources: "情報源",
     },
     ko: {
-      badge: "2026년 2월 업데이트",
+      badge: `${getLocalizedMonthYear("ko")} 업데이트`,
       title: "인도 최고의 VPN",
       subtitle: "인도에서 증가하는 인터넷 제한으로부터 개인정보를 보호하세요",
       legalNotice: "중요한 법적 정보",
@@ -818,11 +818,11 @@ export default async function IndiaVpnPage({ params }: Props) {
       effectiveness93: "93% 효과적",
       effectiveness91: "91% 효과적",
       effectiveness88: "88% 효과적",
-      lastUpdated: "마지막 업데이트: 2026년 2월",
+      lastUpdated: `마지막 업데이트: ${getLocalizedMonthYear("ko")}`,
       sources: "출처",
     },
     th: {
-      badge: "อัปเดตเมื่อกุมภาพันธ์ 2026",
+      badge: `อัปเดตเมื่อ${getLocalizedMonthYear("th")}`,
       title: "VPN ที่ดีที่สุดสำหรับอินเดีย",
       subtitle: "ปกป้องความเป็นส่วนตัวของคุณและหลีกเลี่ยงข้อจำกัดอินเทอร์เน็ตที่เพิ่มขึ้นในอินเดีย",
       legalNotice: "ข้อมูลทางกฎหมายที่สำคัญ",
@@ -870,7 +870,7 @@ export default async function IndiaVpnPage({ params }: Props) {
       effectiveness93: "ประสิทธิภาพ 93%",
       effectiveness91: "ประสิทธิภาพ 91%",
       effectiveness88: "ประสิทธิภาพ 88%",
-      lastUpdated: "อัปเดตล่าสุด: กุมภาพันธ์ 2026",
+      lastUpdated: `อัปเดตล่าสุด: ${getLocalizedMonthYear("th")}`,
       sources: "แหล่งที่มา",
     },
   };

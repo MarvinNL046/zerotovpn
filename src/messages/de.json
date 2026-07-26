@@ -190,7 +190,7 @@
         "readTime": "8 Min. Lesezeit",
         "title": "Was ist ein VPN?",
         "subtitle": "Ein Virtual Private Network (VPN) ist ein leistungsstarkes Tool, das Ihre Internetverbindung verschlüsselt und Ihre IP-Adresse verbirgt, um Ihre Privatsphäre und Sicherheit online zu schützen. In diesem Leitfaden erklären wir Ihnen alles, was Sie über VPNs wissen müssen, in einfachen Worten.",
-        "updated": "Aktualisiert November 2026",
+        "updated": "Aktualisiert {month}",
         "level": "Einsteigerfreundlich"
       },
       "toc": {
@@ -390,7 +390,7 @@
         "readTime": "10 Min. Lesezeit",
         "title": "Wie funktioniert ein VPN?",
         "subtitle": "Haben Sie sich jemals gefragt, was passiert, wenn Sie auf \"Verbinden\" in Ihrem VPN klicken? Dieser Leitfaden erklärt die technische Magie hinter VPN-Technologie und erläutert Verschlüsselung, Tunneling-Protokolle und Datenschutz in klaren, verständlichen Begriffen.",
-        "updated": "Aktualisiert November 2026",
+        "updated": "Aktualisiert {month}",
         "level": "Mittleres Niveau"
       },
       "toc": {
@@ -623,7 +623,7 @@
         "readTime": "7 Min. Lesezeit",
         "title": "Bestes VPN für Streaming",
         "subtitle": "Möchten Sie Netflix US von Europa aus schauen? BBC iPlayer im Ausland nutzen? Ein VPN kann Streaming-Inhalte aus der ganzen Welt freischalten. Dieser Leitfaden deckt alles ab, was Sie über VPNs und Streaming wissen müssen.",
-        "updated": "Aktualisiert November 2026",
+        "updated": "Aktualisiert {month}",
         "level": "Praktischer Leitfaden"
       },
       "toc": {
@@ -921,7 +921,7 @@
         "readTime": "8 Min. Lesezeit",
         "title": "VPN für Torrenting",
         "subtitle": "Torrenting ohne Schutz macht Ihre IP-Adresse für Tausende von Peers sichtbar. Erfahren Sie, wie ein VPN Sie beim Herunterladen schützt und welche Funktionen Sie bei einem P2P-freundlichen VPN beachten sollten.",
-        "updated": "Aktualisiert November 2026",
+        "updated": "Aktualisiert {month}",
         "level": "Datenschutz-Leitfaden"
       },
       "toc": {
@@ -1196,7 +1196,7 @@
         "readTime": "10 Min. Lesezeit",
         "title": "VPN für Reisen Leitfaden",
         "subtitle": "Reisen Sie ins Ausland? Ein VPN ist genauso wichtig wie Ihr Reisepass. Erfahren Sie, wie Sie auf Inhalte von zu Hause zugreifen, im Hotel-WLAN sicher bleiben, Zensur umgehen und sogar bei Buchungen Geld sparen können.",
-        "updated": "Aktualisiert November 2026",
+        "updated": "Aktualisiert {month}",
         "level": "Reise-Essentials"
       },
       "toc": {
@@ -1549,7 +1549,7 @@
         "readTime": "9 Min. Lesezeit",
         "title": "VPN auf Mobilgeräten",
         "subtitle": "Ihr Smartphone begleitet Sie überallhin - und Ihr VPN-Schutz sollte es auch. Erfahren Sie, wie Sie ein VPN auf iOS und Android für maximale Sicherheit und Komfort einrichten und optimieren.",
-        "updated": "Aktualisiert November 2026",
+        "updated": "Aktualisiert {month}",
         "level": "Mobil-Einrichtungs-Leitfaden"
       },
       "toc": {
@@ -1852,7 +1852,7 @@
         "readTime": "10 Min. Lesezeit",
         "title": "VPN-Datenschutz-Leitfaden",
         "subtitle": "Nicht alle VPNs sind gleich, wenn es um Datenschutz geht. Erfahren Sie, was \"No-Logs\" wirklich bedeutet, warum die Jurisdiktion wichtig ist und wie Sie feststellen können, ob ein VPN Ihre Privatsphäre wirklich schützt.",
-        "updated": "Aktualisiert November 2026",
+        "updated": "Aktualisiert {month}",
         "level": "Datenschutz-Tiefgang"
       },
       "toc": {
@@ -2160,7 +2160,7 @@
         "readTime": "12 Min. Lesezeit",
         "title": "VPN-Protokolle erklärt",
         "subtitle": "WireGuard, OpenVPN, IKEv2 - was bedeuten diese Begriffe und welches sollten Sie verwenden? Dieser Leitfaden erklärt VPN-Protokolle in verständlicher Sprache, damit Sie die richtige Wahl treffen können.",
-        "updated": "Aktualisiert November 2026",
+        "updated": "Aktualisiert {month}",
         "level": "Technischer Leitfaden"
       },
       "toc": {
@@ -2506,7 +2506,7 @@
         "readTime": "6 Min. Lesezeit",
         "title": "VPN-Geschwindigkeits-Leitfaden",
         "subtitle": "Verlangsamt Ihr VPN Ihr Internet? Erfahren Sie, welche Faktoren die VPN-Geschwindigkeit beeinflussen und entdecken Sie bewährte Tipps zur Optimierung Ihrer Verbindung für Streaming, Gaming und alltägliches Surfen.",
-        "updated": "Aktualisiert November 2026",
+        "updated": "Aktualisiert {month}",
         "level": "Praktischer Leitfaden"
       },
       "toc": {
@@ -2772,7 +2772,7 @@
         "readTime": "8 Min. Lesezeit",
         "title": "Sicherheits-Leitfaden für öffentliches WLAN",
         "subtitle": "Kostenloses WLAN ist praktisch, birgt aber ernsthafte Risiken. Erfahren Sie, wie Hacker öffentliche Netzwerke ausnutzen und welche unverzichtbaren Schritte Sie unternehmen sollten, um Ihre Daten in Cafés, Flughäfen, Hotels und darüber hinaus zu schützen.",
-        "updated": "Aktualisiert November 2026",
+        "updated": "Aktualisiert {month}",
         "level": "Sicherheits-Essentials"
       },
       "toc": {
@@ -3325,11 +3325,11 @@
   },
   "freeVpn": {
     "meta": {
-      "title": "Beste Kostenlose VPN November 2026: Top 4 Getestet (mit ECHTEN Datenlimits) - ZeroToVPN",
+      "title": "Beste Kostenlose VPN {month}: Top 4 Getestet (mit ECHTEN Datenlimits) - ZeroToVPN",
       "description": "Suchen Sie ein wirklich kostenloses VPN? Wir haben 20+ kostenlose VPNs getestet. ProtonVPN bietet unbegrenzte Daten, Windscribe gibt 10GB/Monat. Erfahren Sie, welche kostenlosen VPNs sicher sind."
     },
     "hero": {
-      "badge": "Aktualisiert November 2026",
+      "badge": "Aktualisiert {month}",
       "title": "Beste Kostenlose VPN-Dienste 2026",
       "subtitle": "Wir haben 20+ kostenlose VPNs getestet, um die sichersten Optionen mit den besten Datenlimits zu finden. Das funktioniert wirklich (und was nicht)."
     },
@@ -3708,7 +3708,7 @@
   "comparePage": {
     "allComparisons": "Alle VPN-Vergleiche",
     "allComparisonsIntro": "Jeder Vergleich, den wir pflegen — auch die weniger naheliegenden Paare.",
-    "badge": "Aktualisiert November 2026",
+    "badge": "Aktualisiert {month}",
     "title": "VPNs im Direktvergleich",
     "subtitle": "Sehen Sie, wie die besten VPN-Dienste im Vergleich abschneiden. Vergleichen Sie Geschwindigkeiten, Sicherheitsfunktionen, Preise und mehr.",
     "fullComparisonTable": "Vollständige Vergleichstabelle",
@@ -3885,11 +3885,11 @@
   },
   "androidVpn": {
     "meta": {
-      "title": "Bestes VPN für Android November 2026: Top 3 getestete Apps – ZeroToVPN",
+      "title": "Bestes VPN für Android {month}: Top 3 getestete Apps – ZeroToVPN",
       "description": "Suchen Sie das beste VPN für Android? Wir haben 15+ Android-VPN-Apps getestet. NordVPN (95%), Surfshark (94%) und ExpressVPN (93%) sind die Top-Auswahl für Geschwindigkeit, Sicherheit und Funktionen wie Split-Tunneling."
     },
     "hero": {
-      "badge": "Aktualisiert November 2026",
+      "badge": "Aktualisiert {month}",
       "title": "Bestes VPN für Android – 2026 Guide",
       "subtitle": "Wir haben 15+ VPN-Apps für Android getestet, um die besten Optionen für Geschwindigkeit, Sicherheit und Android-spezifische Funktionen zu finden. Hier ist, was am besten auf Ihrem Android-Smartphone oder -Tablet funktioniert."
     },
@@ -4077,7 +4077,7 @@
   },
   "mobileVpn": {
     "meta": {
-      "title": "Beste Mobile VPN (iPhone & Android) November 2026 – ZeroToVPN",
+      "title": "Beste Mobile VPN (iPhone & Android) {month} – ZeroToVPN",
       "description": "Finden Sie das beste mobile VPN für Ihr iPhone oder Android. Wir haben 15+ VPN-Apps getestet. Surfshark, NordVPN und ExpressVPN sind die Top-Auswahl für mobile Sicherheit."
     },
     "hero": {
@@ -4330,7 +4330,7 @@
   },
   "iphoneVpn": {
     "meta": {
-      "title": "Bestes VPN für iPhone & iOS November 2026 – ZeroToVPN",
+      "title": "Bestes VPN für iPhone & iOS {month} – ZeroToVPN",
       "description": "Finden Sie das beste VPN für iPhone und iOS. Wir haben 15+ VPN-Apps getestet. ExpressVPN, NordVPN und Surfshark sind die Top-Auswahl für iOS-Sicherheit und Privatsphäre."
     },
     "hero": {

@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { RankedVpnRow } from "@/components/vpn/ranked-vpn-row";
 import { getAllVpns, type VpnProvider } from "@/lib/vpn-data-layer";
 import { RelatedPages } from "@/components/seo/related-pages";
-import { generateAlternates } from "@/lib/seo-utils";
+import { generateAlternates, getLocalizedMonthYear } from "@/lib/seo-utils";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import {
   Shield,
@@ -130,7 +130,7 @@ export default async function ChinaVpnPage({ params }: Props) {
 
   const content = {
     en: {
-      badge: "Updated March 2026",
+      badge: `Updated ${getLocalizedMonthYear("en")}`,
       title: "Best VPN for China",
       subtitle: "Bypass the Great Firewall with VPNs that actually work in 2026",
       criticalWarning: "Download Before You Arrive",
@@ -252,11 +252,11 @@ export default async function ChinaVpnPage({ params }: Props) {
       stealth: "Stealth",
       sometimes: "Sometimes",
       blocked: "Blocked",
-      lastUpdated: "Last updated: March 2026",
+      lastUpdated: `Last updated: ${getLocalizedMonthYear("en")}`,
       sources: "Sources",
     },
     nl: {
-      badge: "Bijgewerkt maart 2026",
+      badge: `Bijgewerkt ${getLocalizedMonthYear("nl")}`,
       title: "Beste VPN voor China",
       subtitle: "Omzeil de Grote Firewall met VPNs die echt werken in 2026",
       criticalWarning: "Download Voordat Je Vertrekt",
@@ -374,11 +374,11 @@ export default async function ChinaVpnPage({ params }: Props) {
       stealth: "Stealth",
       sometimes: "Soms",
       blocked: "Geblokkeerd",
-      lastUpdated: "Laatst bijgewerkt: maart 2026",
+      lastUpdated: `Laatst bijgewerkt: ${getLocalizedMonthYear("nl")}`,
       sources: "Bronnen",
     },
     de: {
-      badge: "Aktualisiert March 2026",
+      badge: `Aktualisiert ${getLocalizedMonthYear("de")}`,
       title: "Beste VPN für China",
       subtitle: "Umgehen Sie die Große Firewall mit VPNs, die 2026 wirklich funktionieren",
       criticalWarning: "Vor der Ankunft herunterladen",
@@ -496,11 +496,11 @@ export default async function ChinaVpnPage({ params }: Props) {
       stealth: "Stealth",
       sometimes: "Manchmal",
       blocked: "Blockiert",
-      lastUpdated: "Zuletzt aktualisiert: March 2026",
+      lastUpdated: `Zuletzt aktualisiert: ${getLocalizedMonthYear("de")}`,
       sources: "Quellen",
     },
     es: {
-      badge: "Actualizado marzo 2026",
+      badge: `Actualizado ${getLocalizedMonthYear("es")}`,
       title: "Mejor VPN para China",
       subtitle: "Evita el Gran Cortafuegos con VPNs que realmente funcionan en 2026",
       criticalWarning: "Descarga antes de llegar",
@@ -618,11 +618,11 @@ export default async function ChinaVpnPage({ params }: Props) {
       stealth: "Sigiloso",
       sometimes: "A veces",
       blocked: "Bloqueado",
-      lastUpdated: "Última actualización: marzo 2026",
+      lastUpdated: `Última actualización: ${getLocalizedMonthYear("es")}`,
       sources: "Fuentes",
     },
     fr: {
-      badge: "Mis à jour mars 2026",
+      badge: `Mis à jour ${getLocalizedMonthYear("fr")}`,
       title: "Meilleur VPN pour la Chine",
       subtitle: "Contournez le Grand Pare-feu avec des VPN qui fonctionnent vraiment en 2026",
       criticalWarning: "Téléchargez avant d'arriver",
@@ -740,11 +740,11 @@ export default async function ChinaVpnPage({ params }: Props) {
       stealth: "Furtif",
       sometimes: "Parfois",
       blocked: "Bloqué",
-      lastUpdated: "Dernière mise à jour : mars 2026",
+      lastUpdated: `Dernière mise à jour : ${getLocalizedMonthYear("fr")}`,
       sources: "Sources",
     },
     zh: {
-      badge: "2026年3月更新",
+      badge: `${getLocalizedMonthYear("zh")}更新`,
       title: "中国最佳VPN",
       subtitle: "使用2026年真正有效的VPN突破防火长城",
       criticalWarning: "抵达前下载",
@@ -862,11 +862,11 @@ export default async function ChinaVpnPage({ params }: Props) {
       stealth: "隐形",
       sometimes: "有时",
       blocked: "被封锁",
-      lastUpdated: "最后更新：2026年3月",
+      lastUpdated: `最后更新：${getLocalizedMonthYear("zh")}`,
       sources: "来源",
     },
     ja: {
-      badge: "2026年3月更新",
+      badge: `${getLocalizedMonthYear("ja")}更新`,
       title: "中国向けベストVPN",
       subtitle: "2026年に実際に機能するVPNでグレートファイアウォールを突破",
       criticalWarning: "到着前にダウンロード",
@@ -984,11 +984,11 @@ export default async function ChinaVpnPage({ params }: Props) {
       stealth: "ステルス",
       sometimes: "時々",
       blocked: "ブロック",
-      lastUpdated: "最終更新：2026年3月",
+      lastUpdated: `最終更新：${getLocalizedMonthYear("ja")}`,
       sources: "情報源",
     },
     ko: {
-      badge: "2026년 3월 업데이트",
+      badge: `${getLocalizedMonthYear("ko")} 업데이트`,
       title: "중국 최고의 VPN",
       subtitle: "2026년에 실제로 작동하는 VPN으로 만리방화벽 우회",
       criticalWarning: "도착 전 다운로드",
@@ -1106,11 +1106,11 @@ export default async function ChinaVpnPage({ params }: Props) {
       stealth: "스텔스",
       sometimes: "때때로",
       blocked: "차단됨",
-      lastUpdated: "마지막 업데이트: 2026년 3월",
+      lastUpdated: `마지막 업데이트: ${getLocalizedMonthYear("ko")}`,
       sources: "출처",
     },
     th: {
-      badge: "อัปเดตมีนาคม 2026",
+      badge: `อัปเดต${getLocalizedMonthYear("th")}`,
       title: "VPN ที่ดีที่สุดสำหรับจีน",
       subtitle: "ข้ามกำแพงไฟจีนด้วย VPN ที่ใช้งานได้จริงในปี 2026",
       criticalWarning: "ดาวน์โหลดก่อนเดินทางมา",
@@ -1228,7 +1228,7 @@ export default async function ChinaVpnPage({ params }: Props) {
       stealth: "ซ่อนตัว",
       sometimes: "บางครั้ง",
       blocked: "ถูกบลอก",
-      lastUpdated: "อัปเดตล่าสุด: มีนาคม 2026",
+      lastUpdated: `อัปเดตล่าสุด: ${getLocalizedMonthYear("th")}`,
       sources: "แหล่งที่มา",
     },
   };

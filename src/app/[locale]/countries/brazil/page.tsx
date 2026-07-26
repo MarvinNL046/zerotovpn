@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { RankedVpnRow } from "@/components/vpn/ranked-vpn-row";
 import { getAllVpns } from "@/lib/vpn-data-layer";
 import { RelatedPages } from "@/components/seo/related-pages";
-import { generateAlternates } from "@/lib/seo-utils";
+import { generateAlternates, getLocalizedMonthYear } from "@/lib/seo-utils";
 import {
   Shield,
   CheckCircle,
@@ -77,7 +77,7 @@ export default async function BrazilVpnPage({ params }: Props) {
 
   const content = {
     en: {
-      badge: "Updated March 2026",
+      badge: `Updated ${getLocalizedMonthYear("en")}`,
       title: "Best VPN for Brazil",
       subtitle: "Stay connected during WhatsApp blocks and protect your privacy",
       legalStatus: "VPN Legal Status in Brazil",
@@ -113,11 +113,11 @@ export default async function BrazilVpnPage({ params }: Props) {
       getVpn: "Get VPN",
       worksInCountry: "Works in Brazil",
       obfuscation: "App Protection",
-      lastUpdated: "Last updated: March 2026",
+      lastUpdated: `Last updated: ${getLocalizedMonthYear("en")}`,
       sources: "Sources",
     },
     nl: {
-      badge: "Bijgewerkt maart 2026",
+      badge: `Bijgewerkt ${getLocalizedMonthYear("nl")}`,
       title: "Beste VPN voor Brazilië",
       subtitle: "Blijf verbonden tijdens WhatsApp-blokkades en bescherm je privacy",
       legalStatus: "VPN Juridische Status in Brazilië",
@@ -153,11 +153,11 @@ export default async function BrazilVpnPage({ params }: Props) {
       getVpn: "Download VPN",
       worksInCountry: "Werkt in Brazilië",
       obfuscation: "App-Bescherming",
-      lastUpdated: "Laatst bijgewerkt: maart 2026",
+      lastUpdated: `Laatst bijgewerkt: ${getLocalizedMonthYear("nl")}`,
       sources: "Bronnen",
     },
     de: {
-      badge: "Aktualisiert März 2026",
+      badge: `Aktualisiert ${getLocalizedMonthYear("de")}`,
       title: "Beste VPN für Brasilien",
       subtitle: "Bleiben Sie während WhatsApp-Sperren verbunden und schützen Sie Ihre Privatsphäre",
       legalStatus: "VPN-Rechtsstatus in Brasilien",
@@ -193,11 +193,11 @@ export default async function BrazilVpnPage({ params }: Props) {
       getVpn: "VPN erhalten",
       worksInCountry: "Funktioniert in Brasilien",
       obfuscation: "App-Schutz",
-      lastUpdated: "Zuletzt aktualisiert: März 2026",
+      lastUpdated: `Zuletzt aktualisiert: ${getLocalizedMonthYear("de")}`,
       sources: "Quellen",
     },
     es: {
-      badge: "Actualizado marzo 2026",
+      badge: `Actualizado ${getLocalizedMonthYear("es")}`,
       title: "Mejor VPN para Brasil",
       subtitle: "Mantente conectado durante bloqueos de WhatsApp y protege tu privacidad",
       legalStatus: "Estado legal de VPN en Brasil",
@@ -233,11 +233,11 @@ export default async function BrazilVpnPage({ params }: Props) {
       getVpn: "Obtener VPN",
       worksInCountry: "Funciona en Brasil",
       obfuscation: "Protección de Apps",
-      lastUpdated: "Última actualización: marzo 2026",
+      lastUpdated: `Última actualización: ${getLocalizedMonthYear("es")}`,
       sources: "Fuentes",
     },
     fr: {
-      badge: "Mis à jour mars 2026",
+      badge: `Mis à jour ${getLocalizedMonthYear("fr")}`,
       title: "Meilleur VPN pour le Brésil",
       subtitle: "Restez connecté pendant les blocages WhatsApp et protégez votre vie privée",
       legalStatus: "Statut légal du VPN au Brésil",
@@ -273,11 +273,11 @@ export default async function BrazilVpnPage({ params }: Props) {
       getVpn: "Obtenir VPN",
       worksInCountry: "Fonctionne au Brésil",
       obfuscation: "Protection Apps",
-      lastUpdated: "Dernière mise à jour : mars 2026",
+      lastUpdated: `Dernière mise à jour : ${getLocalizedMonthYear("fr")}`,
       sources: "Sources",
     },
     zh: {
-      badge: "更新于2026年3月",
+      badge: `更新于${getLocalizedMonthYear("zh")}`,
       title: "巴西最佳VPN",
       subtitle: "在WhatsApp被封锁期间保持连接并保护您的隐私",
       legalStatus: "巴西VPN法律状态",
@@ -313,11 +313,11 @@ export default async function BrazilVpnPage({ params }: Props) {
       getVpn: "获取VPN",
       worksInCountry: "在巴西可用",
       obfuscation: "应用保护",
-      lastUpdated: "最后更新：2026年3月",
+      lastUpdated: `最后更新：${getLocalizedMonthYear("zh")}`,
       sources: "来源",
     },
     ja: {
-      badge: "2026年3月更新",
+      badge: `${getLocalizedMonthYear("ja")}更新`,
       title: "ブラジルに最適なVPN",
       subtitle: "WhatsAppブロック中も接続を維持しプライバシーを保護",
       legalStatus: "ブラジルのVPN法的地位",
@@ -353,11 +353,11 @@ export default async function BrazilVpnPage({ params }: Props) {
       getVpn: "VPNを取得",
       worksInCountry: "ブラジルで機能",
       obfuscation: "アプリ保護",
-      lastUpdated: "最終更新：2026年3月",
+      lastUpdated: `最終更新：${getLocalizedMonthYear("ja")}`,
       sources: "情報源",
     },
     ko: {
-      badge: "2026년 3월 업데이트",
+      badge: `${getLocalizedMonthYear("ko")} 업데이트`,
       title: "브라질 최고의 VPN",
       subtitle: "WhatsApp 차단 중에도 연결을 유지하고 개인정보를 보호하세요",
       legalStatus: "브라질의 VPN 법적 지위",
@@ -393,11 +393,11 @@ export default async function BrazilVpnPage({ params }: Props) {
       getVpn: "VPN 받기",
       worksInCountry: "브라질에서 작동",
       obfuscation: "앱 보호",
-      lastUpdated: "마지막 업데이트: 2026년 3월",
+      lastUpdated: `마지막 업데이트: ${getLocalizedMonthYear("ko")}`,
       sources: "출처",
     },
     th: {
-      badge: "อัปเดตมีนาคม 2026",
+      badge: `อัปเดต${getLocalizedMonthYear("th")}`,
       title: "VPN ที่ดีที่สุดสำหรับบราซิล",
       subtitle: "เชื่อมต่อต่อไปในช่วงที่ WhatsApp ถูกบล็อกและปกป้องความเป็นส่วนตัว",
       legalStatus: "สถานะทางกฎหมายของ VPN ในบราซิล",
@@ -433,7 +433,7 @@ export default async function BrazilVpnPage({ params }: Props) {
       getVpn: "รับ VPN",
       worksInCountry: "ใช้งานได้ในบราซิล",
       obfuscation: "การป้องกันแอป",
-      lastUpdated: "อัปเดตล่าสุด: มีนาคม 2026",
+      lastUpdated: `อัปเดตล่าสุด: ${getLocalizedMonthYear("th")}`,
       sources: "แหล่งที่มา",
     },
   };

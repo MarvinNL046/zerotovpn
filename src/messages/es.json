@@ -4013,7 +4013,7 @@
   "comparePage": {
     "allComparisons": "Todas las comparativas de VPN",
     "allComparisonsIntro": "Cada comparativa que mantenemos, incluidas las combinaciones menos obvias.",
-    "badge": "Actualizado noviembre 2026",
+    "badge": "Actualizado {month}",
     "title": "Compara VPNs Lado a Lado",
     "subtitle": "Descubre cómo se comparan los mejores servicios VPN entre sí. Compara velocidades, características de seguridad, precios y más.",
     "fullComparisonTable": "Tabla de Comparación Completa",

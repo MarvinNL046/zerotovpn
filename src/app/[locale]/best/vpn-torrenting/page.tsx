@@ -1,6 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { Metadata } from "next";
-import { getShortMonthYear, generateAlternates } from "@/lib/seo-utils";
+import { getShortMonthYear, generateAlternates, getLocalizedMonthYear } from "@/lib/seo-utils";
 import { LastUpdated } from "@/components/last-updated";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -175,7 +175,7 @@ export default async function VpnTorrentingPage({ params }: Props) {
 
   const content = {
     en: {
-      badge: "Updated February 2026",
+      badge: `Updated ${getLocalizedMonthYear("en")}`,
       title: "Best VPN for Torrenting in 2026",
       subtitle:
         "We tested 40+ VPNs for P2P download speeds, no-logs verification, kill switch reliability, and torrent-specific features. These 5 keep you safe and fast.",
@@ -227,10 +227,10 @@ export default async function VpnTorrentingPage({ params }: Props) {
       ctaTitle: "Torrent Safely and Fast",
       ctaSubtitle: "Protect your privacy with a verified no-logs VPN. Fast P2P speeds, kill switch, and full anonymity.",
       viewAllVpns: "View All VPN Reviews",
-      lastUpdated: "Last updated: February 2026",
+      lastUpdated: `Last updated: ${getLocalizedMonthYear("en")}`,
     },
     nl: {
-      badge: "Bijgewerkt februari 2026",
+      badge: `Bijgewerkt ${getLocalizedMonthYear("nl")}`,
       title: "Beste VPN voor Torrenting in 2026",
       subtitle: "We testten 40+ VPNs voor P2P downloadsnelheden, no-logs verificatie en kill switch betrouwbaarheid. Deze 5 houden je veilig en snel.",
       disclaimer: "Juridische disclaimer: Deze gids is alleen voor legaal torrenting. Het downloaden van auteursrechtelijk beschermd materiaal zonder toestemming is illegaal. Gebruik VPNs om je privacy te beschermen, niet om piraterij te faciliteren.",
@@ -259,10 +259,10 @@ export default async function VpnTorrentingPage({ params }: Props) {
       ctaTitle: "Torrent Veilig en Snel",
       ctaSubtitle: "Bescherm je privacy met een geverifieerde no-logs VPN.",
       viewAllVpns: "Bekijk Alle VPN Reviews",
-      lastUpdated: "Laatst bijgewerkt: februari 2026",
+      lastUpdated: `Laatst bijgewerkt: ${getLocalizedMonthYear("nl")}`,
     },
     de: {
-      badge: "Aktualisiert Februar 2026",
+      badge: `Aktualisiert ${getLocalizedMonthYear("de")}`,
       title: "Beste VPN fur Torrenting in 2026",
       subtitle: "Wir haben uber 40 VPNs fur P2P-Geschwindigkeiten, No-Logs-Verifizierung und Kill-Switch-Zuverlassigkeit getestet.",
       disclaimer: "Rechtlicher Hinweis: Dieser Leitfaden ist nur fur legales Torrenting. Das Herunterladen von urheberrechtlich geschutztem Material ohne Erlaubnis ist illegal.",
@@ -291,10 +291,10 @@ export default async function VpnTorrentingPage({ params }: Props) {
       ctaTitle: "Sicher und Schnell Torrenten",
       ctaSubtitle: "Schutzen Sie Ihre Privatsphare mit einem verifizierten No-Logs VPN.",
       viewAllVpns: "Alle VPN-Bewertungen",
-      lastUpdated: "Zuletzt aktualisiert: Februar 2026",
+      lastUpdated: `Zuletzt aktualisiert: ${getLocalizedMonthYear("de")}`,
     },
     es: {
-      badge: "Actualizado febrero 2026", title: "Mejor VPN para Torrenting en 2026",
+      badge: `Actualizado ${getLocalizedMonthYear("es")}`, title: "Mejor VPN para Torrenting en 2026",
       subtitle: "Probamos mas de 40 VPNs para velocidades P2P, politicas sin registros y kill switches.", disclaimer: "Aviso legal: Esta guia es solo para torrenting legal. Descargar material con derechos de autor sin permiso es ilegal.",
       topPicks: "Mejores VPNs para Torrenting", featureTitle: "Comparacion de Funciones P2P", featureDesc: "Funciones clave de seguridad para torrenting seguro.",
       tableHeaders: { vpn: "VPN", p2pServers: "Servidores P2P", killSwitch: "Kill Switch", noLogs: "Sin Logs", portForwarding: "Port Forward", socks5: "SOCKS5" },
@@ -315,7 +315,7 @@ export default async function VpnTorrentingPage({ params }: Props) {
         { question: "Que es port forwarding?", answer: "Permite conexiones entrantes mejorando velocidades. Solo ProtonVPN lo ofrece." },
       ],
       getVpnButton: "Obtener", ctaTitle: "Torrenting Seguro y Rapido", ctaSubtitle: "Protege tu privacidad con un VPN sin registros verificado.",
-      viewAllVpns: "Ver Todas las Resenas", lastUpdated: "Ultima actualizacion: febrero 2026",
+      viewAllVpns: "Ver Todas las Resenas", lastUpdated: `Ultima actualizacion: ${getLocalizedMonthYear("es")}`,
     },
     fr: {
       badge: "Mis a jour fevrier 2026", title: "Meilleur VPN pour Torrenting en 2026",
@@ -342,7 +342,7 @@ export default async function VpnTorrentingPage({ params }: Props) {
       viewAllVpns: "Voir Tous les Avis", lastUpdated: "Derniere mise a jour : fevrier 2026",
     },
     zh: {
-      badge: "2026年2月更新", title: "2026年最佳种子下载VPN", subtitle: "我们测试了40多个VPN的P2P下载速度、无日志验证和Kill Switch可靠性。",
+      badge: `${getLocalizedMonthYear("zh")}更新`, title: "2026年最佳种子下载VPN", subtitle: "我们测试了40多个VPN的P2P下载速度、无日志验证和Kill Switch可靠性。",
       disclaimer: "法律声明：本指南仅适用于合法种子下载。未经许可下载受版权保护的材料是违法的。",
       topPicks: "最佳种子下载VPN", featureTitle: "P2P功能比较", featureDesc: "安全种子下载的关键安全和性能功能。",
       tableHeaders: { vpn: "VPN", p2pServers: "P2P服务器", killSwitch: "Kill Switch", noLogs: "无日志", portForwarding: "端口转发", socks5: "SOCKS5" },
@@ -363,10 +363,10 @@ export default async function VpnTorrentingPage({ params }: Props) {
         { question: "什么是端口转发？", answer: "允许传入连接以提高速度。仅ProtonVPN提供此功能。" },
       ],
       getVpnButton: "获取", ctaTitle: "安全快速地下载种子", ctaSubtitle: "使用经验证的无日志VPN保护您的隐私。",
-      viewAllVpns: "查看所有VPN评测", lastUpdated: "最后更新：2026年2月",
+      viewAllVpns: "查看所有VPN评测", lastUpdated: `最后更新：${getLocalizedMonthYear("zh")}`,
     },
     ja: {
-      badge: "2026年2月更新", title: "2026年トレント向けベストVPN", subtitle: "P2Pダウンロード速度、ノーログ検証、キルスイッチの信頼性について40以上のVPNをテスト。",
+      badge: `${getLocalizedMonthYear("ja")}更新`, title: "2026年トレント向けベストVPN", subtitle: "P2Pダウンロード速度、ノーログ検証、キルスイッチの信頼性について40以上のVPNをテスト。",
       disclaimer: "法的免責事項：このガイドは合法的なトレントのみを対象としています。許可なく著作権で保護された素材をダウンロードすることは違法です。",
       topPicks: "トップトレントVPN", featureTitle: "P2P機能比較", featureDesc: "安全なトレントのための主要なセキュリティとパフォーマンス機能。",
       tableHeaders: { vpn: "VPN", p2pServers: "P2Pサーバー", killSwitch: "キルスイッチ", noLogs: "ノーログ", portForwarding: "ポート転送", socks5: "SOCKS5" },
@@ -387,10 +387,10 @@ export default async function VpnTorrentingPage({ params }: Props) {
         { question: "ポートフォワーディングとは？", answer: "着信接続を許可して速度を向上させます。ProtonVPNのみが提供。" },
       ],
       getVpnButton: "取得", ctaTitle: "安全に高速でトレント", ctaSubtitle: "検証済みノーログVPNでプライバシーを保護。",
-      viewAllVpns: "すべてのVPNレビュー", lastUpdated: "最終更新：2026年2月",
+      viewAllVpns: "すべてのVPNレビュー", lastUpdated: `最終更新：${getLocalizedMonthYear("ja")}`,
     },
     ko: {
-      badge: "2026년 2월 업데이트", title: "2026년 토렌트 최고의 VPN", subtitle: "P2P 다운로드 속도, 노로그 검증, 킬 스위치 신뢰성에 대해 40개 이상의 VPN을 테스트했습니다.",
+      badge: `${getLocalizedMonthYear("ko")} 업데이트`, title: "2026년 토렌트 최고의 VPN", subtitle: "P2P 다운로드 속도, 노로그 검증, 킬 스위치 신뢰성에 대해 40개 이상의 VPN을 테스트했습니다.",
       disclaimer: "법적 고지: 이 가이드는 합법적인 토렌트만을 위한 것입니다. 허가 없이 저작권이 있는 자료를 다운로드하는 것은 불법입니다.",
       topPicks: "최고의 토렌트 VPN", featureTitle: "P2P 기능 비교", featureDesc: "안전한 토렌트를 위한 주요 보안 및 성능 기능.",
       tableHeaders: { vpn: "VPN", p2pServers: "P2P 서버", killSwitch: "킬 스위치", noLogs: "노로그", portForwarding: "포트 포워딩", socks5: "SOCKS5" },
@@ -411,10 +411,10 @@ export default async function VpnTorrentingPage({ params }: Props) {
         { question: "포트 포워딩이란?", answer: "들어오는 연결을 허용하여 속도를 개선합니다. ProtonVPN만 제공합니다." },
       ],
       getVpnButton: "받기", ctaTitle: "안전하고 빠르게 토렌트", ctaSubtitle: "검증된 노로그 VPN으로 개인정보를 보호하세요.",
-      viewAllVpns: "모든 VPN 리뷰 보기", lastUpdated: "마지막 업데이트: 2026년 2월",
+      viewAllVpns: "모든 VPN 리뷰 보기", lastUpdated: `마지막 업데이트: ${getLocalizedMonthYear("ko")}`,
     },
     th: {
-      badge: "อัปเดตกุมภาพันธ์ 2026", title: "VPN ที่ดีที่สุดสำหรับ Torrenting ในปี 2026", subtitle: "เราทดสอบ VPN มากกว่า 40 ตัวสำหรับความเร็ว P2P นโยบายไม่เก็บ log และ kill switch",
+      badge: `อัปเดต${getLocalizedMonthYear("th")}`, title: "VPN ที่ดีที่สุดสำหรับ Torrenting ในปี 2026", subtitle: "เราทดสอบ VPN มากกว่า 40 ตัวสำหรับความเร็ว P2P นโยบายไม่เก็บ log และ kill switch",
       disclaimer: "ข้อจำกัดความรับผิดชอบทางกฎหมาย: คู่มือนี้สำหรับการ torrent ที่ถูกกฎหมายเท่านั้น การดาวน์โหลดเนื้อหาที่มีลิขสิทธิ์โดยไม่ได้รับอนุญาตเป็นสิ่งผิดกฎหมาย",
       topPicks: "VPN ชั้นนำสำหรับ Torrenting", featureTitle: "เปรียบเทียบฟีเจอร์ P2P", featureDesc: "ฟีเจอร์ความปลอดภัยสำคัญสำหรับ torrenting อย่างปลอดภัย",
       tableHeaders: { vpn: "VPN", p2pServers: "เซิร์ฟเวอร์ P2P", killSwitch: "Kill Switch", noLogs: "ไม่เก็บ Log", portForwarding: "Port Forward", socks5: "SOCKS5" },
@@ -435,7 +435,7 @@ export default async function VpnTorrentingPage({ params }: Props) {
         { question: "Port forwarding คืออะไร?", answer: "อนุญาตการเชื่อมต่อขาเข้าเพื่อปรับปรุงความเร็ว มีเพียง ProtonVPN เท่านั้นที่ให้บริการ" },
       ],
       getVpnButton: "รับ", ctaTitle: "Torrent อย่างปลอดภัยและเร็ว", ctaSubtitle: "ปกป้องความเป็นส่วนตัวด้วย VPN ไม่เก็บ log ที่ตรวจสอบแล้ว",
-      viewAllVpns: "ดูบทวิจารณ์ VPN ทั้งหมด", lastUpdated: "อัปเดตล่าสุด: กุมภาพันธ์ 2026",
+      viewAllVpns: "ดูบทวิจารณ์ VPN ทั้งหมด", lastUpdated: `อัปเดตล่าสุด: ${getLocalizedMonthYear("th")}`,
     },
   };
 

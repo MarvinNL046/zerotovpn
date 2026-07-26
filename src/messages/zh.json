@@ -289,7 +289,7 @@
         "readTime": "8分钟阅读",
         "title": "什么是VPN?",
         "subtitle": "虚拟专用网络(VPN)是一种强大的工具,它可以加密您的互联网连接并隐藏您的IP地址,保护您的在线隐私和安全。在本指南中,我们将用简单的语言解释您需要了解的关于VPN的所有内容。",
-        "updated": "更新于2026年11月",
+        "updated": "更新于{month}",
         "level": "初学者友好"
       },
       "toc": {
@@ -489,7 +489,7 @@
         "readTime": "10分钟阅读",
         "title": "VPN如何工作?",
         "subtitle": "曾经想知道当您在VPN上点击「连接」时会发生什么吗?本指南分解了VPN技术背后的技术魔法,用清晰易懂的语言解释加密、隧道协议和数据保护。",
-        "updated": "更新于2026年11月",
+        "updated": "更新于{month}",
         "level": "中级水平"
       },
       "toc": {
@@ -722,7 +722,7 @@
         "readTime": "7分钟阅读",
         "title": "最佳流媒体VPN",
         "subtitle": "想从欧洲观看美国Netflix？想在国外访问BBC iPlayer？VPN可以解锁全球各地的流媒体内容。本指南涵盖了关于VPN和流媒体的一切知识。",
-        "updated": "更新于2026年11月",
+        "updated": "更新于{month}",
         "level": "实用指南"
       },
       "toc": {
@@ -1021,7 +1021,7 @@
         "readTime": "8分钟阅读",
         "title": "种子下载VPN",
         "subtitle": "在没有保护的情况下使用种子下载会将您的IP地址暴露给数千个对等节点。了解VPN如何在您下载时保护您的安全，以及在支持P2P的VPN中应该寻找哪些功能。",
-        "updated": "更新于2026年11月",
+        "updated": "更新于{month}",
         "level": "隐私指南"
       },
       "toc": {
@@ -1296,7 +1296,7 @@
         "readTime": "10分钟阅读",
         "title": "旅行VPN指南",
         "subtitle": "出国旅行？VPN与护照一样重要。学习如何访问家乡内容、在酒店WiFi上保持安全、绕过审查，甚至在预订时省钱。",
-        "updated": "更新于2026年11月",
+        "updated": "更新于{month}",
         "level": "旅行必备"
       },
       "toc": {
@@ -1640,7 +1640,7 @@
         "readTime": "9分钟阅读",
         "title": "移动设备VPN",
         "subtitle": "您的智能手机随处可见——您的VPN保护也应该如此。学习如何在iOS和Android上设置和优化VPN，以实现最大的安全性和便利性。",
-        "updated": "更新于2026年11月",
+        "updated": "更新于{month}",
         "level": "移动设置指南"
       },
       "toc": {
@@ -1923,7 +1923,7 @@
         "readTime": "10分钟阅读",
         "title": "VPN隐私指南",
         "subtitle": "并非所有VPN在隐私方面都是平等的。了解「无日志」的真正含义，为什么管辖权很重要，以及如何判断VPN是否真正保护您的隐私。",
-        "updated": "更新于2026年11月",
+        "updated": "更新于{month}",
         "level": "隐私深度解析"
       },
       "toc": {
@@ -2226,7 +2226,7 @@
         "readTime": "12分钟阅读",
         "title": "VPN协议解释",
         "subtitle": "WireGuard、OpenVPN、IKEv2——这些术语是什么意思，您应该使用哪个？本指南用通俗易懂的语言分解了VPN协议，帮助您做出正确的选择。",
-        "updated": "更新于2026年11月",
+        "updated": "更新于{month}",
         "level": "技术指南"
       },
       "toc": {
@@ -2558,7 +2558,7 @@
         "readTime": "6分钟阅读",
         "title": "VPN速度指南",
         "subtitle": "您的VPN拖慢了您的互联网速度吗？了解影响VPN速度的因素，发现经过验证的技巧，优化您的连接以用于流媒体、游戏和日常浏览。",
-        "updated": "更新于2026年11月",
+        "updated": "更新于{month}",
         "level": "实用指南"
       },
       "toc": {
@@ -2821,7 +2821,7 @@
         "readTime": "8分钟阅读",
         "title": "公共WiFi安全指南",
         "subtitle": "免费WiFi很方便，但也伴随着严重的风险。了解黑客如何利用公共网络，以及在咖啡店、机场、酒店等场所保护您数据的基本步骤。",
-        "updated": "更新于2026年11月",
+        "updated": "更新于{month}",
         "level": "安全必备"
       },
       "toc": {
@@ -3277,11 +3277,11 @@
   },
   "freeVpn": {
     "meta": {
-      "title": "最佳免费VPN 2026年11月：测试的前4名（含真实数据限制）- ZeroToVPN",
+      "title": "最佳免费VPN {month}：测试的前4名（含真实数据限制）- ZeroToVPN",
       "description": "正在寻找真正免费的VPN？我们测试了20多个免费VPN。ProtonVPN提供无限数据，Windscribe提供10GB/月。了解哪些免费VPN是安全的。"
     },
     "hero": {
-      "badge": "2026年11月更新",
+      "badge": "{month}更新",
       "title": "最佳免费VPN服务2026",
       "subtitle": "我们测试了20多个免费VPN，以找到具有最佳数据限制的最安全选项。这是真正有效的（和无效的）。"
     },
@@ -3660,7 +3660,7 @@
   "comparePage": {
     "allComparisons": "全部 VPN 对比",
     "allComparisonsIntro": "我们维护的所有对比，包括不那么常见的组合。",
-    "badge": "2026年11月更新",
+    "badge": "{month}更新",
     "title": "并排比较VPN",
     "subtitle": "了解顶级VPN服务如何相互比较。比较速度、安全功能、价格等。",
     "fullComparisonTable": "完整比较表",
@@ -3837,11 +3837,11 @@
   },
   "androidVpn": {
     "meta": {
-      "title": "2026年11月最佳Android VPN：前3名测试应用 – ZeroToVPN",
+      "title": "{month}最佳Android VPN：前3名测试应用 – ZeroToVPN",
       "description": "寻找最佳Android VPN？我们测试了15+款Android VPN应用。NordVPN（95%）、Surfshark（94%）和ExpressVPN（93%）是速度、安全性和分流隧道等功能的首选。"
     },
     "hero": {
-      "badge": "2026年11月更新",
+      "badge": "{month}更新",
       "title": "最佳Android VPN – 2026年指南",
       "subtitle": "我们测试了15+款Android VPN应用，找到了速度、安全性和Android特定功能的最佳选择。以下是在您的Android手机或平板电脑上效果最好的选项。"
     },
@@ -4029,7 +4029,7 @@
   },
   "mobileVpn": {
     "meta": {
-      "title": "最佳移动VPN（iPhone和Android）2026年11月 – ZeroToVPN",
+      "title": "最佳移动VPN（iPhone和Android）{month} – ZeroToVPN",
       "description": "为您的iPhone或Android找到最佳移动VPN。我们测试了15+款VPN应用。Surfshark、NordVPN和ExpressVPN是移动安全的首选。"
     },
     "hero": {
@@ -4282,7 +4282,7 @@
   },
   "iphoneVpn": {
     "meta": {
-      "title": "2026年11月最佳iPhone和iOS VPN – ZeroToVPN",
+      "title": "{month}最佳iPhone和iOS VPN – ZeroToVPN",
       "description": "找到最佳iPhone和iOS VPN。我们测试了15+款VPN应用。ExpressVPN、NordVPN和Surfshark是iOS安全和隐私的首选。"
     },
     "hero": {

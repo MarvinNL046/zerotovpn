@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { RankedVpnRow } from "@/components/vpn/ranked-vpn-row";
 import { getAllVpns } from "@/lib/vpn-data-layer";
 import { RelatedPages } from "@/components/seo/related-pages";
-import { generateAlternates } from "@/lib/seo-utils";
+import { generateAlternates, getLocalizedMonthYear } from "@/lib/seo-utils";
 import {
   Shield,
   CheckCircle,
@@ -77,7 +77,7 @@ export default async function SouthKoreaVpnPage({ params }: Props) {
 
   const content = {
     en: {
-      badge: "Updated March 2026",
+      badge: `Updated ${getLocalizedMonthYear("en")}`,
       title: "Best VPN for South Korea",
       subtitle: "Fast gaming, streaming access, and privacy protection in South Korea",
       legalStatus: "VPN Legal Status in South Korea",
@@ -113,11 +113,11 @@ export default async function SouthKoreaVpnPage({ params }: Props) {
       getVpn: "Get VPN",
       worksInCountry: "Works in South Korea",
       obfuscation: "Low Latency",
-      lastUpdated: "Last updated: March 2026",
+      lastUpdated: `Last updated: ${getLocalizedMonthYear("en")}`,
       sources: "Sources",
     },
     nl: {
-      badge: "Bijgewerkt maart 2026",
+      badge: `Bijgewerkt ${getLocalizedMonthYear("nl")}`,
       title: "Beste VPN voor Zuid-Korea",
       subtitle: "Snel gamen, streaming toegang en privacybescherming in Zuid-Korea",
       legalStatus: "VPN Juridische Status in Zuid-Korea",
@@ -153,11 +153,11 @@ export default async function SouthKoreaVpnPage({ params }: Props) {
       getVpn: "Download VPN",
       worksInCountry: "Werkt in Zuid-Korea",
       obfuscation: "Lage Latentie",
-      lastUpdated: "Laatst bijgewerkt: maart 2026",
+      lastUpdated: `Laatst bijgewerkt: ${getLocalizedMonthYear("nl")}`,
       sources: "Bronnen",
     },
     de: {
-      badge: "Aktualisiert März 2026",
+      badge: `Aktualisiert ${getLocalizedMonthYear("de")}`,
       title: "Beste VPN für Südkorea",
       subtitle: "Schnelles Gaming, Streaming-Zugang und Privatsphärenschutz in Südkorea",
       legalStatus: "VPN-Rechtsstatus in Südkorea",
@@ -193,11 +193,11 @@ export default async function SouthKoreaVpnPage({ params }: Props) {
       getVpn: "VPN erhalten",
       worksInCountry: "Funktioniert in Südkorea",
       obfuscation: "Niedrige Latenz",
-      lastUpdated: "Zuletzt aktualisiert: März 2026",
+      lastUpdated: `Zuletzt aktualisiert: ${getLocalizedMonthYear("de")}`,
       sources: "Quellen",
     },
     es: {
-      badge: "Actualizado marzo 2026",
+      badge: `Actualizado ${getLocalizedMonthYear("es")}`,
       title: "Mejor VPN para Corea del Sur",
       subtitle: "Gaming rápido, acceso a streaming y protección de privacidad en Corea del Sur",
       legalStatus: "Estado legal de VPN en Corea del Sur",
@@ -233,11 +233,11 @@ export default async function SouthKoreaVpnPage({ params }: Props) {
       getVpn: "Obtener VPN",
       worksInCountry: "Funciona en Corea del Sur",
       obfuscation: "Baja Latencia",
-      lastUpdated: "Última actualización: marzo 2026",
+      lastUpdated: `Última actualización: ${getLocalizedMonthYear("es")}`,
       sources: "Fuentes",
     },
     fr: {
-      badge: "Mis à jour mars 2026",
+      badge: `Mis à jour ${getLocalizedMonthYear("fr")}`,
       title: "Meilleur VPN pour la Corée du Sud",
       subtitle: "Gaming rapide, accès streaming et protection de la vie privée en Corée du Sud",
       legalStatus: "Statut légal du VPN en Corée du Sud",
@@ -273,11 +273,11 @@ export default async function SouthKoreaVpnPage({ params }: Props) {
       getVpn: "Obtenir VPN",
       worksInCountry: "Fonctionne en Corée du Sud",
       obfuscation: "Faible Latence",
-      lastUpdated: "Dernière mise à jour : mars 2026",
+      lastUpdated: `Dernière mise à jour : ${getLocalizedMonthYear("fr")}`,
       sources: "Sources",
     },
     zh: {
-      badge: "更新于2026年3月",
+      badge: `更新于${getLocalizedMonthYear("zh")}`,
       title: "韩国最佳VPN",
       subtitle: "韩国的快速游戏、流媒体访问和隐私保护",
       legalStatus: "韩国VPN法律状态",
@@ -313,11 +313,11 @@ export default async function SouthKoreaVpnPage({ params }: Props) {
       getVpn: "获取VPN",
       worksInCountry: "在韩国可用",
       obfuscation: "低延迟",
-      lastUpdated: "最后更新：2026年3月",
+      lastUpdated: `最后更新：${getLocalizedMonthYear("zh")}`,
       sources: "来源",
     },
     ja: {
-      badge: "2026年3月更新",
+      badge: `${getLocalizedMonthYear("ja")}更新`,
       title: "韓国に最適なVPN",
       subtitle: "韓国での高速ゲーミング、ストリーミングアクセス、プライバシー保護",
       legalStatus: "韓国のVPN法的地位",
@@ -353,11 +353,11 @@ export default async function SouthKoreaVpnPage({ params }: Props) {
       getVpn: "VPNを取得",
       worksInCountry: "韓国で機能",
       obfuscation: "低遅延",
-      lastUpdated: "最終更新：2026年3月",
+      lastUpdated: `最終更新：${getLocalizedMonthYear("ja")}`,
       sources: "情報源",
     },
     ko: {
-      badge: "2026년 3월 업데이트",
+      badge: `${getLocalizedMonthYear("ko")} 업데이트`,
       title: "한국 최고의 VPN",
       subtitle: "한국에서의 빠른 게임, 스트리밍 접근 및 개인정보 보호",
       legalStatus: "한국의 VPN 법적 지위",
@@ -393,11 +393,11 @@ export default async function SouthKoreaVpnPage({ params }: Props) {
       getVpn: "VPN 받기",
       worksInCountry: "한국에서 작동",
       obfuscation: "저지연",
-      lastUpdated: "마지막 업데이트: 2026년 3월",
+      lastUpdated: `마지막 업데이트: ${getLocalizedMonthYear("ko")}`,
       sources: "출처",
     },
     th: {
-      badge: "อัปเดตมีนาคม 2026",
+      badge: `อัปเดต${getLocalizedMonthYear("th")}`,
       title: "VPN ที่ดีที่สุดสำหรับเกาหลีใต้",
       subtitle: "เกมที่รวดเร็ว การเข้าถึงสตรีมมิ่ง และการปกป้องความเป็นส่วนตัวในเกาหลีใต้",
       legalStatus: "สถานะทางกฎหมายของ VPN ในเกาหลีใต้",
@@ -433,7 +433,7 @@ export default async function SouthKoreaVpnPage({ params }: Props) {
       getVpn: "รับ VPN",
       worksInCountry: "ใช้งานได้ในเกาหลีใต้",
       obfuscation: "เลเทนซีต่ำ",
-      lastUpdated: "อัปเดตล่าสุด: มีนาคม 2026",
+      lastUpdated: `อัปเดตล่าสุด: ${getLocalizedMonthYear("th")}`,
       sources: "แหล่งที่มา",
     },
   };

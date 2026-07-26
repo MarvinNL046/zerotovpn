@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { RankedVpnRow } from "@/components/vpn/ranked-vpn-row";
 import { getAllVpns } from "@/lib/vpn-data-layer";
 import { RelatedPages } from "@/components/seo/related-pages";
-import { generateAlternates } from "@/lib/seo-utils";
+import { generateAlternates, getLocalizedMonthYear } from "@/lib/seo-utils";
 import {
   Shield,
   CheckCircle,
@@ -77,7 +77,7 @@ export default async function MalaysiaVpnPage({ params }: Props) {
 
   const content = {
     en: {
-      badge: "Updated March 2026",
+      badge: `Updated ${getLocalizedMonthYear("en")}`,
       title: "Best VPN for Malaysia",
       subtitle: "Bypass MCMC content blocks and protect your privacy in Malaysia",
       legalStatus: "VPN Legal Status in Malaysia",
@@ -160,11 +160,11 @@ export default async function MalaysiaVpnPage({ params }: Props) {
       getVpn: "Get VPN",
       worksInCountry: "Works in Malaysia",
       obfuscation: "DNS Protection",
-      lastUpdated: "Last updated: March 2026",
+      lastUpdated: `Last updated: ${getLocalizedMonthYear("en")}`,
       sources: "Sources",
     },
     nl: {
-      badge: "Bijgewerkt maart 2026",
+      badge: `Bijgewerkt ${getLocalizedMonthYear("nl")}`,
       title: "Beste VPN voor Maleisië",
       subtitle: "Omzeil MCMC-inhoudsblokkades en bescherm je privacy in Maleisië",
       legalStatus: "VPN Juridische Status in Maleisië",
@@ -223,11 +223,11 @@ export default async function MalaysiaVpnPage({ params }: Props) {
       getVpn: "Download VPN",
       worksInCountry: "Werkt in Maleisië",
       obfuscation: "DNS-Bescherming",
-      lastUpdated: "Laatst bijgewerkt: maart 2026",
+      lastUpdated: `Laatst bijgewerkt: ${getLocalizedMonthYear("nl")}`,
       sources: "Bronnen",
     },
     de: {
-      badge: "Aktualisiert März 2026",
+      badge: `Aktualisiert ${getLocalizedMonthYear("de")}`,
       title: "Beste VPN für Malaysia",
       subtitle: "Umgehen Sie MCMC-Inhaltssperren und schützen Sie Ihre Privatsphäre in Malaysia",
       legalStatus: "VPN-Rechtsstatus in Malaysia",
@@ -286,11 +286,11 @@ export default async function MalaysiaVpnPage({ params }: Props) {
       getVpn: "VPN erhalten",
       worksInCountry: "Funktioniert in Malaysia",
       obfuscation: "DNS-Schutz",
-      lastUpdated: "Zuletzt aktualisiert: März 2026",
+      lastUpdated: `Zuletzt aktualisiert: ${getLocalizedMonthYear("de")}`,
       sources: "Quellen",
     },
     es: {
-      badge: "Actualizado marzo 2026",
+      badge: `Actualizado ${getLocalizedMonthYear("es")}`,
       title: "Mejor VPN para Malasia",
       subtitle: "Evita los bloqueos de contenido MCMC y protege tu privacidad en Malasia",
       legalStatus: "Estado legal de VPN en Malasia",
@@ -334,11 +334,11 @@ export default async function MalaysiaVpnPage({ params }: Props) {
       getVpn: "Obtener VPN",
       worksInCountry: "Funciona en Malasia",
       obfuscation: "Protección DNS",
-      lastUpdated: "Última actualización: marzo 2026",
+      lastUpdated: `Última actualización: ${getLocalizedMonthYear("es")}`,
       sources: "Fuentes",
     },
     fr: {
-      badge: "Mis à jour mars 2026",
+      badge: `Mis à jour ${getLocalizedMonthYear("fr")}`,
       title: "Meilleur VPN pour la Malaisie",
       subtitle: "Contournez les blocages MCMC et protégez votre vie privée en Malaisie",
       legalStatus: "Statut légal du VPN en Malaisie",
@@ -382,11 +382,11 @@ export default async function MalaysiaVpnPage({ params }: Props) {
       getVpn: "Obtenir VPN",
       worksInCountry: "Fonctionne en Malaisie",
       obfuscation: "Protection DNS",
-      lastUpdated: "Dernière mise à jour : mars 2026",
+      lastUpdated: `Dernière mise à jour : ${getLocalizedMonthYear("fr")}`,
       sources: "Sources",
     },
     zh: {
-      badge: "更新于2026年3月",
+      badge: `更新于${getLocalizedMonthYear("zh")}`,
       title: "马来西亚最佳VPN",
       subtitle: "绕过MCMC内容封锁，保护您在马来西亚的隐私",
       legalStatus: "马来西亚VPN法律状态",
@@ -422,11 +422,11 @@ export default async function MalaysiaVpnPage({ params }: Props) {
       getVpn: "获取VPN",
       worksInCountry: "在马来西亚可用",
       obfuscation: "DNS保护",
-      lastUpdated: "最后更新：2026年3月",
+      lastUpdated: `最后更新：${getLocalizedMonthYear("zh")}`,
       sources: "来源",
     },
     ja: {
-      badge: "2026年3月更新",
+      badge: `${getLocalizedMonthYear("ja")}更新`,
       title: "マレーシアに最適なVPN",
       subtitle: "MCMCコンテンツブロックを回避してマレーシアでプライバシーを保護",
       legalStatus: "マレーシアのVPN法的地位",
@@ -462,11 +462,11 @@ export default async function MalaysiaVpnPage({ params }: Props) {
       getVpn: "VPNを取得",
       worksInCountry: "マレーシアで機能",
       obfuscation: "DNS保護",
-      lastUpdated: "最終更新：2026年3月",
+      lastUpdated: `最終更新：${getLocalizedMonthYear("ja")}`,
       sources: "情報源",
     },
     ko: {
-      badge: "2026년 3월 업데이트",
+      badge: `${getLocalizedMonthYear("ko")} 업데이트`,
       title: "말레이시아 최고의 VPN",
       subtitle: "MCMC 콘텐츠 차단을 우회하고 말레이시아에서 개인정보를 보호하세요",
       legalStatus: "말레이시아의 VPN 법적 지위",
@@ -502,11 +502,11 @@ export default async function MalaysiaVpnPage({ params }: Props) {
       getVpn: "VPN 받기",
       worksInCountry: "말레이시아에서 작동",
       obfuscation: "DNS 보호",
-      lastUpdated: "마지막 업데이트: 2026년 3월",
+      lastUpdated: `마지막 업데이트: ${getLocalizedMonthYear("ko")}`,
       sources: "출처",
     },
     th: {
-      badge: "อัปเดตมีนาคม 2026",
+      badge: `อัปเดต${getLocalizedMonthYear("th")}`,
       title: "VPN ที่ดีที่สุดสำหรับมาเลเซีย",
       subtitle: "หลีกเลี่ยงการบล็อกเนื้อหา MCMC และปกป้องความเป็นส่วนตัวของคุณในมาเลเซีย",
       legalStatus: "สถานะทางกฎหมายของ VPN ในมาเลเซีย",
@@ -542,7 +542,7 @@ export default async function MalaysiaVpnPage({ params }: Props) {
       getVpn: "รับ VPN",
       worksInCountry: "ใช้งานได้ในมาเลเซีย",
       obfuscation: "การป้องกัน DNS",
-      lastUpdated: "อัปเดตล่าสุด: มีนาคม 2026",
+      lastUpdated: `อัปเดตล่าสุด: ${getLocalizedMonthYear("th")}`,
       sources: "แหล่งที่มา",
     },
   };

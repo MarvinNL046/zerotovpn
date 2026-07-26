@@ -12,7 +12,7 @@ import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { getVpnBySlug, type VpnProvider } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
-import { getShortMonthYear, generateAlternates } from "@/lib/seo-utils";
+import { getShortMonthYear, generateAlternates, getLocalizedMonthYear } from "@/lib/seo-utils";
 import { LastUpdated } from "@/components/last-updated";
 import {
   Shield,
@@ -174,7 +174,7 @@ export default async function FastestVpnPage({ params }: Props) {
   // Content translations
   const content = {
     en: {
-      badge: "Speed Tested February 2026",
+      badge: `Speed Tested ${getLocalizedMonthYear("en")}`,
       title: "Fastest VPNs (Speed Tested Feb 2026)",
       subtitle:
         "We speed-tested 30+ VPNs with real download/upload benchmarks. These are the fastest VPNs ranked by speed score, with protocol technology explained.",
@@ -290,10 +290,10 @@ export default async function FastestVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "View All VPN Reviews",
-      lastUpdated: "Last updated: February 2026",
+      lastUpdated: `Last updated: ${getLocalizedMonthYear("en")}`,
     },
     nl: {
-      badge: "Snelheidstest februari 2026",
+      badge: `Snelheidstest ${getLocalizedMonthYear("nl")}`,
       title: "Snelste VPNs (Snelheidstest feb 2026)",
       subtitle:
         "We hebben 30+ VPNs getest met echte download/upload benchmarks. Dit zijn de snelste VPNs gerangschikt op snelheidsscore, met uitleg over protocoltechnologie.",
@@ -409,10 +409,10 @@ export default async function FastestVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Bekijk alle VPN-reviews",
-      lastUpdated: "Laatste update: februari 2026",
+      lastUpdated: `Laatste update: ${getLocalizedMonthYear("nl")}`,
     },
     de: {
-      badge: "Geschwindigkeitstest Februar 2026",
+      badge: `Geschwindigkeitstest ${getLocalizedMonthYear("de")}`,
       title: "Schnellste VPNs (Geschwindigkeitstest Feb 2026)",
       subtitle:
         "Wir haben über 30 VPNs mit echten Download/Upload-Benchmarks getestet. Dies sind die schnellsten VPNs, nach Geschwindigkeitspunkten gerankt, mit Erklärung der Protokolltechnologie.",
@@ -528,10 +528,10 @@ export default async function FastestVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Alle VPN-Bewertungen anzeigen",
-      lastUpdated: "Zuletzt aktualisiert: Februar 2026",
+      lastUpdated: `Zuletzt aktualisiert: ${getLocalizedMonthYear("de")}`,
     },
     es: {
-      badge: "Prueba de velocidad febrero 2026",
+      badge: `Prueba de velocidad ${getLocalizedMonthYear("es")}`,
       title: "VPNs más rápidas (Prueba de velocidad feb 2026)",
       subtitle:
         "Probamos más de 30 VPNs con benchmarks reales de descarga/carga. Estas son las VPNs más rápidas clasificadas por puntuación de velocidad, con tecnología de protocolo explicada.",
@@ -647,10 +647,10 @@ export default async function FastestVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Ver todas las reseñas de VPN",
-      lastUpdated: "Última actualización: febrero 2026",
+      lastUpdated: `Última actualización: ${getLocalizedMonthYear("es")}`,
     },
     fr: {
-      badge: "Test de vitesse février 2026",
+      badge: `Test de vitesse ${getLocalizedMonthYear("fr")}`,
       title: "VPNs les plus rapides (Test de vitesse fév 2026)",
       subtitle:
         "Nous avons testé plus de 30 VPN avec de vrais benchmarks de téléchargement/chargement. Ce sont les VPN les plus rapides classés par score de vitesse, avec la technologie de protocole expliquée.",
@@ -766,11 +766,11 @@ export default async function FastestVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Voir toutes les critiques VPN",
-      lastUpdated: "Dernière mise à jour: février 2026",
+      lastUpdated: `Dernière mise à jour: ${getLocalizedMonthYear("fr")}`,
     },
     zh: {
-      badge: "速度测试 2026年2月",
-      title: "最快的VPN (速度测试 2026年2月)",
+      badge: `速度测试 ${getLocalizedMonthYear("zh")}`,
+      title: `最快的VPN (速度测试 ${getLocalizedMonthYear("zh")})`,
       subtitle:
         "我们用真实的下载/上传基准测试了30多个VPN。这些是按速度评分排列的最快VPN，并解释了协议技术。",
       topPicks: "按速度评分排列的最快VPN",
@@ -885,11 +885,11 @@ export default async function FastestVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "查看所有VPN评论",
-      lastUpdated: "最后更新：2026年2月",
+      lastUpdated: `最后更新：${getLocalizedMonthYear("zh")}`,
     },
     ja: {
-      badge: "スピードテスト 2026年2月",
-      title: "最速VPN (スピードテスト 2026年2月)",
+      badge: `スピードテスト ${getLocalizedMonthYear("ja")}`,
+      title: `最速VPN (スピードテスト ${getLocalizedMonthYear("ja")})`,
       subtitle:
         "30以上のVPNをリアルなダウンロード/アップロードベンチマークでテストしました。これらはスピードスコアでランク付けされた最速のVPNで、プロトコル技術を説明します。",
       topPicks: "スピードスコアでランク付けされた最速VPN",
@@ -1004,11 +1004,11 @@ export default async function FastestVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "すべてのVPNレビューを表示",
-      lastUpdated: "最終更新：2026年2月",
+      lastUpdated: `最終更新：${getLocalizedMonthYear("ja")}`,
     },
     ko: {
-      badge: "속도 테스트 2026년 2월",
-      title: "가장 빠른 VPN (속도 테스트 2026년 2월)",
+      badge: `속도 테스트 ${getLocalizedMonthYear("ko")}`,
+      title: `가장 빠른 VPN (속도 테스트 ${getLocalizedMonthYear("ko")})`,
       subtitle:
         "실제 다운로드/업로드 벤치마크로 30개 이상의 VPN을 테스트했습니다. 속도 점수로 순위를 매긴 가장 빠른 VPN으로 프로토콜 기술을 설명합니다.",
       topPicks: "속도 점수로 순위를 매긴 가장 빠른 VPN",
@@ -1123,10 +1123,10 @@ export default async function FastestVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "모든 VPN 리뷰 보기",
-      lastUpdated: "마지막 업데이트: 2026년 2월",
+      lastUpdated: `마지막 업데이트: ${getLocalizedMonthYear("ko")}`,
     },
     th: {
-      badge: "ทดสอบความเร็ว กุมภาพันธ์ 2026",
+      badge: `ทดสอบความเร็ว ${getLocalizedMonthYear("th")}`,
       title: "VPN ที่เร็วที่สุด (ทดสอบความเร็ว ก.พ. 2026)",
       subtitle:
         "เราทดสอบ VPN มากกว่า 30 รายการด้วยเกณฑ์มาตรฐานการดาวน์โหลด/อัปโหลดจริง นี่คือ VPN ที่เร็วที่สุดจัดอันดับตามคะแนนความเร็ว พร้อมอธิบายเทคโนโลยีโปรโตคอล",
@@ -1242,7 +1242,7 @@ export default async function FastestVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "ดูรีวิว VPN ทั้งหมด",
-      lastUpdated: "อัปเดตล่าสุด: กุมภาพันธ์ 2026",
+      lastUpdated: `อัปเดตล่าสุด: ${getLocalizedMonthYear("th")}`,
     },
   };
 

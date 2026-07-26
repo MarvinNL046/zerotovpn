@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { RankedVpnRow } from "@/components/vpn/ranked-vpn-row";
 import { getAllVpns, type VpnProvider } from "@/lib/vpn-data-layer";
 import { RelatedPages } from "@/components/seo/related-pages";
-import { generateAlternates } from "@/lib/seo-utils";
+import { generateAlternates, getLocalizedMonthYear } from "@/lib/seo-utils";
 import {
   Shield,
   AlertTriangle,
@@ -101,7 +101,7 @@ export default async function RussiaVpnPage({ params }: Props) {
 
   const content = {
     en: {
-      badge: "Updated March 2026",
+      badge: `Updated ${getLocalizedMonthYear("en")}`,
       title: "Best VPN for Russia",
       subtitle: "Navigate Russia's increasing internet restrictions with VPNs that still work",
       severityWarning: "Rapidly Changing Situation",
@@ -194,14 +194,14 @@ export default async function RussiaVpnPage({ params }: Props) {
       readReview: "Read Review",
       mayWorkInRussia: "May work in Russia",
       obfuscation: "Obfuscation",
-      lastUpdated: "Last updated: March 2026",
+      lastUpdated: `Last updated: ${getLocalizedMonthYear("en")}`,
       sources: "Sources",
       disclaimer: "Important Disclaimer",
       disclaimerText:
         "The legal situation in Russia is evolving rapidly. This information is for educational purposes. Always verify current laws and exercise caution.",
     },
     nl: {
-      badge: "Bijgewerkt maart 2026",
+      badge: `Bijgewerkt ${getLocalizedMonthYear("nl")}`,
       title: "Beste VPN voor Rusland",
       subtitle: "Navigeer door Ruslands toenemende internetbeperkingen met werkende VPNs",
       severityWarning: "Snel Veranderende Situatie",
@@ -294,14 +294,14 @@ export default async function RussiaVpnPage({ params }: Props) {
       readReview: "Lees Review",
       mayWorkInRussia: "Werkt mogelijk in Rusland",
       obfuscation: "Obfuscatie",
-      lastUpdated: "Laatst bijgewerkt: maart 2026",
+      lastUpdated: `Laatst bijgewerkt: ${getLocalizedMonthYear("nl")}`,
       sources: "Bronnen",
       disclaimer: "Belangrijke Disclaimer",
       disclaimerText:
         "De juridische situatie in Rusland verandert snel. Deze informatie is bedoeld voor educatieve doeleinden.",
     },
     de: {
-      badge: "Aktualisiert March 2026",
+      badge: `Aktualisiert ${getLocalizedMonthYear("de")}`,
       title: "Beste VPN für Russland",
       subtitle: "Navigieren Sie durch Russlands zunehmende Internetbeschränkungen mit funktionierenden VPNs",
       severityWarning: "Sich schnell ändernde Situation",
@@ -394,14 +394,14 @@ export default async function RussiaVpnPage({ params }: Props) {
       readReview: "Bewertung Lesen",
       mayWorkInRussia: "Funktioniert möglicherweise in Russland",
       obfuscation: "Verschleierung",
-      lastUpdated: "Zuletzt aktualisiert: March 2026",
+      lastUpdated: `Zuletzt aktualisiert: ${getLocalizedMonthYear("de")}`,
       sources: "Quellen",
       disclaimer: "Wichtiger Haftungsausschluss",
       disclaimerText:
         "Die rechtliche Situation in Russland entwickelt sich schnell. Diese Informationen dienen Bildungszwecken. Überprüfen Sie immer aktuelle Gesetze und seien Sie vorsichtig.",
     },
     es: {
-      badge: "Actualizado marzo 2026",
+      badge: `Actualizado ${getLocalizedMonthYear("es")}`,
       title: "Mejor VPN para Rusia",
       subtitle: "Navega por las crecientes restricciones de internet de Rusia con VPNs que aún funcionan",
       severityWarning: "Situación que Cambia Rápidamente",
@@ -494,14 +494,14 @@ export default async function RussiaVpnPage({ params }: Props) {
       readReview: "Leer Reseña",
       mayWorkInRussia: "Puede funcionar en Rusia",
       obfuscation: "Ofuscación",
-      lastUpdated: "Última actualización: marzo 2026",
+      lastUpdated: `Última actualización: ${getLocalizedMonthYear("es")}`,
       sources: "Fuentes",
       disclaimer: "Aviso Importante",
       disclaimerText:
         "La situación legal en Rusia está evolucionando rápidamente. Esta información es con fines educativos. Siempre verifica las leyes actuales y ten precaución.",
     },
     fr: {
-      badge: "Mis à jour mars 2026",
+      badge: `Mis à jour ${getLocalizedMonthYear("fr")}`,
       title: "Meilleur VPN pour la Russie",
       subtitle: "Naviguez dans les restrictions Internet croissantes de la Russie avec des VPN qui fonctionnent encore",
       severityWarning: "Situation Évoluant Rapidement",
@@ -594,14 +594,14 @@ export default async function RussiaVpnPage({ params }: Props) {
       readReview: "Lire l'Avis",
       mayWorkInRussia: "Peut fonctionner en Russie",
       obfuscation: "Obfuscation",
-      lastUpdated: "Dernière mise à jour: mars 2026",
+      lastUpdated: `Dernière mise à jour: ${getLocalizedMonthYear("fr")}`,
       sources: "Sources",
       disclaimer: "Avertissement Important",
       disclaimerText:
         "La situation juridique en Russie évolue rapidement. Ces informations sont à des fins éducatives. Vérifiez toujours les lois actuelles et faites preuve de prudence.",
     },
     zh: {
-      badge: "2026年3月更新",
+      badge: `${getLocalizedMonthYear("zh")}更新`,
       title: "俄罗斯最佳VPN",
       subtitle: "使用仍然有效的VPN应对俄罗斯日益增加的互联网限制",
       severityWarning: "快速变化的情况",
@@ -694,14 +694,14 @@ export default async function RussiaVpnPage({ params }: Props) {
       readReview: "阅读评论",
       mayWorkInRussia: "可能在俄罗斯有效",
       obfuscation: "混淆",
-      lastUpdated: "最后更新：2026年3月",
+      lastUpdated: `最后更新：${getLocalizedMonthYear("zh")}`,
       sources: "来源",
       disclaimer: "重要免责声明",
       disclaimerText:
         "俄罗斯的法律状况正在快速变化。此信息仅供教育目的。始终验证当前法律并谨慎行事。",
     },
     ja: {
-      badge: "2026年3月更新",
+      badge: `${getLocalizedMonthYear("ja")}更新`,
       title: "ロシア向けベストVPN",
       subtitle: "まだ機能するVPNでロシアの増加するインターネット制限をナビゲート",
       severityWarning: "急速に変化する状況",
@@ -794,14 +794,14 @@ export default async function RussiaVpnPage({ params }: Props) {
       readReview: "レビューを読む",
       mayWorkInRussia: "ロシアで機能する可能性があります",
       obfuscation: "難読化",
-      lastUpdated: "最終更新：2026年3月",
+      lastUpdated: `最終更新：${getLocalizedMonthYear("ja")}`,
       sources: "出典",
       disclaimer: "重要な免責事項",
       disclaimerText:
         "ロシアの法的状況は急速に進化しています。この情報は教育目的です。常に現在の法律を確認し、注意を払ってください。",
     },
     ko: {
-      badge: "2026년 3월 업데이트",
+      badge: `${getLocalizedMonthYear("ko")} 업데이트`,
       title: "러시아 최고의 VPN",
       subtitle: "여전히 작동하는 VPN으로 러시아의 증가하는 인터넷 제한 탐색",
       severityWarning: "빠르게 변화하는 상황",
@@ -894,14 +894,14 @@ export default async function RussiaVpnPage({ params }: Props) {
       readReview: "리뷰 읽기",
       mayWorkInRussia: "러시아에서 작동할 수 있음",
       obfuscation: "난독화",
-      lastUpdated: "마지막 업데이트: 2026년 3월",
+      lastUpdated: `마지막 업데이트: ${getLocalizedMonthYear("ko")}`,
       sources: "출처",
       disclaimer: "중요한 면책 조항",
       disclaimerText:
         "러시아의 법적 상황은 빠르게 진화하고 있습니다. 이 정보는 교육 목적입니다. 항상 현재 법률을 확인하고 주의하십시오.",
     },
     th: {
-      badge: "อัปเดตมีนาคม 2026",
+      badge: `อัปเดต${getLocalizedMonthYear("th")}`,
       title: "VPN ที่ดีที่สุดสำหรับรัสเซีย",
       subtitle: "นำทางข้อจำกัดอินเทอร์เน็ตที่เพิ่มขึ้นของรัสเซียด้วย VPN ที่ยังใช้งานได้",
       severityWarning: "สถานการณ์ที่เปลี่ยนแปลงอย่างรวดเร็ว",
@@ -994,7 +994,7 @@ export default async function RussiaVpnPage({ params }: Props) {
       readReview: "อ่านรีวิว",
       mayWorkInRussia: "อาจใช้งานได้ในรัสเซีย",
       obfuscation: "การปกปิด",
-      lastUpdated: "อัปเดตล่าสุด: มีนาคม 2026",
+      lastUpdated: `อัปเดตล่าสุด: ${getLocalizedMonthYear("th")}`,
       sources: "แหล่งที่มา",
       disclaimer: "ข้อจำกัดความรับผิดชอบที่สำคัญ",
       disclaimerText:

@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { RankedVpnRow } from "@/components/vpn/ranked-vpn-row";
 import { getAllVpns } from "@/lib/vpn-data-layer";
 import { RelatedPages } from "@/components/seo/related-pages";
-import { generateAlternates } from "@/lib/seo-utils";
+import { generateAlternates, getLocalizedMonthYear } from "@/lib/seo-utils";
 import {
   Shield,
   CheckCircle,
@@ -78,7 +78,7 @@ export default async function NetherlandsVpnPage({ params }: Props) {
 
   const content = {
     en: {
-      badge: "Updated March 2026",
+      badge: `Updated ${getLocalizedMonthYear("en")}`,
       title: "Best VPN for Netherlands",
       subtitle: "Protect your privacy, stream Dutch content abroad, and stay secure online",
       legalStatus: "VPN Status in the Netherlands",
@@ -192,12 +192,12 @@ export default async function NetherlandsVpnPage({ params }: Props) {
       getVpn: "Get VPN",
       dutchServers: "Dutch servers",
       noLogs: "No-logs policy",
-      lastUpdated: "Last updated: March 2026",
+      lastUpdated: `Last updated: ${getLocalizedMonthYear("en")}`,
       sources: "Sources",
       freeTierNote: "Free Tier Available",
     },
     nl: {
-      badge: "Bijgewerkt maart 2026",
+      badge: `Bijgewerkt ${getLocalizedMonthYear("nl")}`,
       title: "Beste VPN voor Nederland",
       subtitle: "Bescherm je privacy, stream Nederlandse content in het buitenland, en blijf veilig online",
       legalStatus: "VPN Status in Nederland",
@@ -311,12 +311,12 @@ export default async function NetherlandsVpnPage({ params }: Props) {
       getVpn: "Download VPN",
       dutchServers: "Nederlandse servers",
       noLogs: "No-logs beleid",
-      lastUpdated: "Laatst bijgewerkt: maart 2026",
+      lastUpdated: `Laatst bijgewerkt: ${getLocalizedMonthYear("nl")}`,
       sources: "Bronnen",
       freeTierNote: "Gratis Tier Beschikbaar",
     },
     de: {
-      badge: "Aktualisiert March 2026",
+      badge: `Aktualisiert ${getLocalizedMonthYear("de")}`,
       title: "Beste VPN für die Niederlande",
       subtitle: "Schützen Sie Ihre Privatsphäre, streamen Sie niederländische Inhalte im Ausland und bleiben Sie online sicher",
       legalStatus: "VPN-Status in den Niederlanden",
@@ -430,12 +430,12 @@ export default async function NetherlandsVpnPage({ params }: Props) {
       getVpn: "VPN Holen",
       dutchServers: "Niederländische Server",
       noLogs: "No-Logs-Richtlinie",
-      lastUpdated: "Zuletzt aktualisiert: March 2026",
+      lastUpdated: `Zuletzt aktualisiert: ${getLocalizedMonthYear("de")}`,
       sources: "Quellen",
       freeTierNote: "Kostenlose Stufe Verfügbar",
     },
     es: {
-      badge: "Actualizado marzo 2026",
+      badge: `Actualizado ${getLocalizedMonthYear("es")}`,
       title: "Mejor VPN para Países Bajos",
       subtitle: "Proteja su privacidad, transmita contenido holandés en el extranjero y permanezca seguro en línea",
       legalStatus: "Estado de VPN en los Países Bajos",
@@ -554,7 +554,7 @@ export default async function NetherlandsVpnPage({ params }: Props) {
       freeTierNote: "Nivel gratuito disponible",
     },
     fr: {
-      badge: "Mis à jour mars 2026",
+      badge: `Mis à jour ${getLocalizedMonthYear("fr")}`,
       title: "Meilleur VPN pour les Pays-Bas",
       subtitle: "Protégez votre vie privée, regardez du contenu néerlandais à l'étranger et restez en sécurité en ligne",
       legalStatus: "Statut VPN aux Pays-Bas",
@@ -668,12 +668,12 @@ export default async function NetherlandsVpnPage({ params }: Props) {
       getVpn: "Obtenir VPN",
       dutchServers: "Serveurs néerlandais",
       noLogs: "Politique de non-journalisation",
-      lastUpdated: "Dernière mise à jour: mars 2026",
+      lastUpdated: `Dernière mise à jour: ${getLocalizedMonthYear("fr")}`,
       sources: "Sources",
       freeTierNote: "Niveau gratuit disponible",
     },
     zh: {
-      badge: "2026年3月更新",
+      badge: `${getLocalizedMonthYear("zh")}更新`,
       title: "荷兰最佳VPN",
       subtitle: "保护您的隐私，在国外观看荷兰内容，保持在线安全",
       legalStatus: "荷兰的VPN状态",
@@ -787,12 +787,12 @@ export default async function NetherlandsVpnPage({ params }: Props) {
       getVpn: "获取VPN",
       dutchServers: "荷兰服务器",
       noLogs: "无日志政策",
-      lastUpdated: "最后更新：2026年3月",
+      lastUpdated: `最后更新：${getLocalizedMonthYear("zh")}`,
       sources: "来源",
       freeTierNote: "提供免费套餐",
     },
     ja: {
-      badge: "2026年3月更新",
+      badge: `${getLocalizedMonthYear("ja")}更新`,
       title: "オランダに最適なVPN",
       subtitle: "プライバシーを保護し、海外でオランダのコンテンツをストリーミングし、オンラインで安全を保つ",
       legalStatus: "オランダのVPN状況",
@@ -906,12 +906,12 @@ export default async function NetherlandsVpnPage({ params }: Props) {
       getVpn: "VPNを入手",
       dutchServers: "オランダのサーバー",
       noLogs: "ノーログポリシー",
-      lastUpdated: "最終更新：2026年3月",
+      lastUpdated: `最終更新：${getLocalizedMonthYear("ja")}`,
       sources: "ソース",
       freeTierNote: "無料プラン利用可能",
     },
     ko: {
-      badge: "2026년 3월 업데이트",
+      badge: `${getLocalizedMonthYear("ko")} 업데이트`,
       title: "네덜란드 최고의 VPN",
       subtitle: "개인정보를 보호하고, 해외에서 네덜란드 콘텐츠를 스트리밍하며, 온라인에서 안전하게 지내세요",
       legalStatus: "네덜란드의 VPN 상태",
@@ -1025,12 +1025,12 @@ export default async function NetherlandsVpnPage({ params }: Props) {
       getVpn: "VPN 받기",
       dutchServers: "네덜란드 서버",
       noLogs: "노로그 정책",
-      lastUpdated: "마지막 업데이트: 2026년 3월",
+      lastUpdated: `마지막 업데이트: ${getLocalizedMonthYear("ko")}`,
       sources: "출처",
       freeTierNote: "무료 티어 이용 가능",
     },
     th: {
-      badge: "อัปเดตมีนาคม 2026",
+      badge: `อัปเดต${getLocalizedMonthYear("th")}`,
       title: "VPN ที่ดีที่สุดสำหรับเนเธอร์แลนด์",
       subtitle: "ปกป้องความเป็นส่วนตัวของคุณ สตรีมเนื้อหาดัตช์ในต่างประเทศ และรักษาความปลอดภัยออนไลน์",
       legalStatus: "สถานะ VPN ในเนเธอร์แลนด์",
@@ -1144,7 +1144,7 @@ export default async function NetherlandsVpnPage({ params }: Props) {
       getVpn: "รับ VPN",
       dutchServers: "เซิร์ฟเวอร์ดัตช์",
       noLogs: "นโยบายไม่เก็บบันทึก",
-      lastUpdated: "อัปเดตล่าสุด: มีนาคม 2026",
+      lastUpdated: `อัปเดตล่าสุด: ${getLocalizedMonthYear("th")}`,
       sources: "แหล่งที่มา",
       freeTierNote: "มีระดับฟรี",
     },

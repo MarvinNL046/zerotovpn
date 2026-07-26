@@ -1,7 +1,8 @@
 import { CountryPageLabels, TranslatedCountryContent } from "./types";
 
+import { getLocalizedMonthYear } from "@/lib/seo-utils";
 export const koLabels: CountryPageLabels = {
-  badge: "2026년 2월 업데이트",
+  badge: `${getLocalizedMonthYear("ko")} 업데이트`,
   bestVpnFor: "{country}에 가장 적합한 VPN",
   legalStatusTitle: "{country}의 VPN 법적 상태",
   internetFreedomScore: "인터넷 자유 점수: {score}/100 (Freedom House)",

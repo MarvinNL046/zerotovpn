@@ -8,6 +8,7 @@ import { jaTranslations, jaLabels } from "./ja";
 import { koTranslations, koLabels } from "./ko";
 import { thTranslations, thLabels } from "./th";
 
+import { getLocalizedMonthYear } from "@/lib/seo-utils";
 const translationMap: Record<string, Record<string, TranslatedCountryContent>> = {
   nl: nlTranslations,
   de: deTranslations,
@@ -32,7 +33,7 @@ const labelsMap: Record<string, CountryPageLabels> = {
 
 // English labels (default)
 export const enLabels: CountryPageLabels = {
-  badge: "Updated February 2026",
+  badge: `Updated ${getLocalizedMonthYear("en")}`,
   bestVpnFor: "Best VPN for {country}",
   legalStatusTitle: "VPN Legal Status in {country}",
   internetFreedomScore: "Internet Freedom Score: {score}/100 (Freedom House)",

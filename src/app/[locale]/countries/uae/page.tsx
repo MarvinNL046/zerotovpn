@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { RankedVpnRow } from "@/components/vpn/ranked-vpn-row";
 import { getAllVpns } from "@/lib/vpn-data-layer";
 import { RelatedPages } from "@/components/seo/related-pages";
-import { generateAlternates } from "@/lib/seo-utils";
+import { generateAlternates, getLocalizedMonthYear } from "@/lib/seo-utils";
 import {
   Shield,
   AlertTriangle,
@@ -78,7 +78,7 @@ export default async function UAEVpnPage({ params }: Props) {
 
   const content = {
     en: {
-      badge: "Updated March 2026",
+      badge: `Updated ${getLocalizedMonthYear("en")}`,
       title: "Best VPN for UAE & Dubai",
       subtitle: "Navigate UAE's VPN regulations safely and access restricted content",
       legalNotice: "Important Legal Information",
@@ -185,11 +185,11 @@ export default async function UAEVpnPage({ params }: Props) {
       getVpn: "Get VPN",
       worksInUAE: "Works in UAE",
       obfuscation: "Obfuscation",
-      lastUpdated: "Last updated: March 2026",
+      lastUpdated: `Last updated: ${getLocalizedMonthYear("en")}`,
       sources: "Sources",
     },
     nl: {
-      badge: "Bijgewerkt maart 2026",
+      badge: `Bijgewerkt ${getLocalizedMonthYear("nl")}`,
       title: "Beste VPN voor VAE & Dubai",
       subtitle: "Navigeer veilig door de VAE VPN-regelgeving",
       legalNotice: "Belangrijke Juridische Informatie",
@@ -296,11 +296,11 @@ export default async function UAEVpnPage({ params }: Props) {
       getVpn: "Download VPN",
       worksInUAE: "Werkt in VAE",
       obfuscation: "Obfuscatie",
-      lastUpdated: "Laatst bijgewerkt: maart 2026",
+      lastUpdated: `Laatst bijgewerkt: ${getLocalizedMonthYear("nl")}`,
       sources: "Bronnen",
     },
     de: {
-      badge: "Aktualisiert March 2026",
+      badge: `Aktualisiert ${getLocalizedMonthYear("de")}`,
       title: "Beste VPN für VAE & Dubai",
       subtitle: "Sicher durch die VAE VPN-Vorschriften navigieren und auf eingeschränkte Inhalte zugreifen",
       legalNotice: "Wichtige rechtliche Informationen",
@@ -407,11 +407,11 @@ export default async function UAEVpnPage({ params }: Props) {
       getVpn: "VPN holen",
       worksInUAE: "Funktioniert in VAE",
       obfuscation: "Verschleierung",
-      lastUpdated: "Zuletzt aktualisiert: March 2026",
+      lastUpdated: `Zuletzt aktualisiert: ${getLocalizedMonthYear("de")}`,
       sources: "Quellen",
     },
     es: {
-      badge: "Actualizado marzo 2026",
+      badge: `Actualizado ${getLocalizedMonthYear("es")}`,
       title: "Mejor VPN para EAU y Dubái",
       subtitle: "Navega de forma segura por las regulaciones VPN de EAU y accede a contenido restringido",
       legalNotice: "Información Legal Importante",
@@ -518,11 +518,11 @@ export default async function UAEVpnPage({ params }: Props) {
       getVpn: "Obtener VPN",
       worksInUAE: "Funciona en EAU",
       obfuscation: "Ofuscación",
-      lastUpdated: "Última actualización: marzo 2026",
+      lastUpdated: `Última actualización: ${getLocalizedMonthYear("es")}`,
       sources: "Fuentes",
     },
     fr: {
-      badge: "Mis à jour mars 2026",
+      badge: `Mis à jour ${getLocalizedMonthYear("fr")}`,
       title: "Meilleur VPN pour EAU et Dubaï",
       subtitle: "Naviguez en toute sécurité dans les réglementations VPN des EAU et accédez au contenu restreint",
       legalNotice: "Information Juridique Importante",
@@ -629,11 +629,11 @@ export default async function UAEVpnPage({ params }: Props) {
       getVpn: "Obtenir VPN",
       worksInUAE: "Fonctionne aux EAU",
       obfuscation: "Obscurcissement",
-      lastUpdated: "Dernière mise à jour : mars 2026",
+      lastUpdated: `Dernière mise à jour : ${getLocalizedMonthYear("fr")}`,
       sources: "Sources",
     },
     zh: {
-      badge: "2026年3月更新",
+      badge: `${getLocalizedMonthYear("zh")}更新`,
       title: "阿联酋和迪拜最佳VPN",
       subtitle: "安全地遵守阿联酋VPN法规并访问受限内容",
       legalNotice: "重要法律信息",
@@ -740,11 +740,11 @@ export default async function UAEVpnPage({ params }: Props) {
       getVpn: "获取VPN",
       worksInUAE: "在阿联酋可用",
       obfuscation: "混淆",
-      lastUpdated: "最后更新：2026年3月",
+      lastUpdated: `最后更新：${getLocalizedMonthYear("zh")}`,
       sources: "资料来源",
     },
     ja: {
-      badge: "2026年3月更新",
+      badge: `${getLocalizedMonthYear("ja")}更新`,
       title: "UAEとドバイに最適なVPN",
       subtitle: "UAEのVPN規制を安全にナビゲートし、制限されたコンテンツにアクセス",
       legalNotice: "重要な法的情報",
@@ -851,11 +851,11 @@ export default async function UAEVpnPage({ params }: Props) {
       getVpn: "VPNを入手",
       worksInUAE: "UAEで動作",
       obfuscation: "難読化",
-      lastUpdated: "最終更新：2026年3月",
+      lastUpdated: `最終更新：${getLocalizedMonthYear("ja")}`,
       sources: "情報源",
     },
     ko: {
-      badge: "2026년 3월 업데이트",
+      badge: `${getLocalizedMonthYear("ko")} 업데이트`,
       title: "UAE 및 두바이 최고의 VPN",
       subtitle: "UAE의 VPN 규정을 안전하게 탐색하고 제한된 콘텐츠에 액세스",
       legalNotice: "중요한 법적 정보",
@@ -962,11 +962,11 @@ export default async function UAEVpnPage({ params }: Props) {
       getVpn: "VPN 받기",
       worksInUAE: "UAE에서 작동",
       obfuscation: "난독화",
-      lastUpdated: "마지막 업데이트: 2026년 3월",
+      lastUpdated: `마지막 업데이트: ${getLocalizedMonthYear("ko")}`,
       sources: "출처",
     },
     th: {
-      badge: "อัปเดตเมื่อมีนาคม 2026",
+      badge: `อัปเดตเมื่อ${getLocalizedMonthYear("th")}`,
       title: "VPN ที่ดีที่สุดสำหรับ UAE และดูไบ",
       subtitle: "นำทางกฎระเบียบ VPN ของ UAE อย่างปลอดภัยและเข้าถึงเนื้อหาที่ถูกจำกัด",
       legalNotice: "ข้อมูลทางกฎหมายที่สำคัญ",
@@ -1073,7 +1073,7 @@ export default async function UAEVpnPage({ params }: Props) {
       getVpn: "รับ VPN",
       worksInUAE: "ใช้งานได้ใน UAE",
       obfuscation: "การซ่อนตัว",
-      lastUpdated: "อัปเดตล่าสุด: มีนาคม 2026",
+      lastUpdated: `อัปเดตล่าสุด: ${getLocalizedMonthYear("th")}`,
       sources: "แหล่งที่มา",
     },
   };

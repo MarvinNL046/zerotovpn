@@ -192,7 +192,7 @@
         "readTime": "8分で読めます",
         "title": "VPNとは？",
         "subtitle": "仮想プライベートネットワーク（VPN）は、インターネット接続を暗号化しIPアドレスを隠すことで、オンラインでのプライバシーとセキュリティを保護する強力なツールです。このガイドでは、VPNについて知っておくべきすべてのことをわかりやすく説明します。",
-        "updated": "2026年11月更新",
+        "updated": "{month}更新",
         "level": "初心者向け"
       },
       "toc": {
@@ -392,7 +392,7 @@
         "readTime": "10分で読めます",
         "title": "VPNはどのように機能するのか？",
         "subtitle": "VPNの「接続」ボタンをクリックしたときに何が起こるのか疑問に思ったことはありませんか？このガイドでは、VPN技術の背後にある技術的な仕組みを解説し、暗号化、トンネリングプロトコル、データ保護を明確で理解しやすい言葉で説明します。",
-        "updated": "2026年11月更新",
+        "updated": "{month}更新",
         "level": "中級レベル"
       },
       "toc": {
@@ -625,7 +625,7 @@
         "readTime": "7分で読める",
         "title": "ストリーミングに最適なVPN",
         "subtitle": "ヨーロッパから米国版Netflixを視聴したいですか？海外からBBC iPlayerにアクセスしたいですか？VPNは世界中のストリーミングコンテンツのロックを解除できます。このガイドでは、VPNとストリーミングに関する必要な情報をすべて網羅しています。",
-        "updated": "2026年11月更新",
+        "updated": "{month}更新",
         "level": "実践ガイド"
       },
       "toc": {
@@ -923,7 +923,7 @@
         "readTime": "8分で読める",
         "title": "トレント用VPN",
         "subtitle": "保護なしでトレントすると、数千のピアにあなたのIPアドレスが露出します。ダウンロード中にVPNがどのようにあなたを保護するか、そしてP2P対応VPNで探すべき機能について学びましょう。",
-        "updated": "2026年11月更新",
+        "updated": "{month}更新",
         "level": "プライバシーガイド"
       },
       "toc": {
@@ -1198,7 +1198,7 @@
         "readTime": "10分で読める",
         "title": "旅行用VPNガイド",
         "subtitle": "海外旅行中ですか？VPNはパスポートと同じくらい必須です。自国のコンテンツへのアクセス方法、ホテルのWiFiでの安全確保、検閲の回避、さらには予約でお金を節約する方法を学びましょう。",
-        "updated": "2026年11月更新",
+        "updated": "{month}更新",
         "level": "旅行必須"
       },
       "toc": {
@@ -1542,7 +1542,7 @@
         "readTime": "9分で読める",
         "title": "モバイルデバイスでのVPN",
         "subtitle": "スマートフォンはどこにでも持ち歩きます。VPN保護も同じであるべきです。最大限のセキュリティと利便性のために、iOSとAndroidでVPNを設定して最適化する方法を学びましょう。",
-        "updated": "2026年11月更新",
+        "updated": "{month}更新",
         "level": "モバイル設定ガイド"
       },
       "toc": {
@@ -1825,7 +1825,7 @@
         "readTime": "10分で読める",
         "title": "VPNプライバシーガイド",
         "subtitle": "プライバシーに関して、すべてのVPNが同じように作られているわけではありません。「ノーログ」が本当に意味するもの、管轄権が重要な理由、そしてVPNが本当にあなたのプライバシーを保護しているかどうかを見分ける方法を学びましょう。",
-        "updated": "2026年11月更新",
+        "updated": "{month}更新",
         "level": "プライバシー詳細解説"
       },
       "toc": {
@@ -2128,7 +2128,7 @@
         "readTime": "12分で読める",
         "title": "VPNプロトコル解説",
         "subtitle": "WireGuard、OpenVPN、IKEv2 - これらの用語は何を意味し、どれを使用すべきでしょうか？このガイドでは、VPNプロトコルを分かりやすい言葉で説明し、正しい選択をするのに役立ちます。",
-        "updated": "2026年11月更新",
+        "updated": "{month}更新",
         "level": "技術ガイド"
       },
       "toc": {
@@ -2460,7 +2460,7 @@
         "readTime": "6分で読める",
         "title": "VPN速度ガイド",
         "subtitle": "VPNがインターネットを遅くしていますか？VPN速度に影響する要因を学び、ストリーミング、ゲーム、日常のブラウジングのために接続を最適化する実証済みのヒントを発見しましょう。",
-        "updated": "2026年11月更新",
+        "updated": "{month}更新",
         "level": "実践ガイド"
       },
       "toc": {
@@ -2723,7 +2723,7 @@
         "readTime": "8分で読める",
         "title": "公共WiFi安全ガイド",
         "subtitle": "無料WiFiは便利ですが、深刻なリスクが伴います。ハッカーが公共ネットワークを悪用する方法と、コーヒーショップ、空港、ホテルなどでデータを保護するための必須ステップを学びましょう。",
-        "updated": "2026年11月更新",
+        "updated": "{month}更新",
         "level": "セキュリティ必須"
       },
       "toc": {
@@ -3276,11 +3276,11 @@
   },
   "freeVpn": {
     "meta": {
-      "title": "ベスト無料VPN 2026年11月：トップ4をテスト（実際のデータ制限付き）- ZeroToVPN",
+      "title": "ベスト無料VPN {month}：トップ4をテスト（実際のデータ制限付き）- ZeroToVPN",
       "description": "本当に無料のVPNをお探しですか？20以上の無料VPNをテストしました。ProtonVPNは無制限データ、Windscribeは10GB/月を提供。安全な無料VPNを学びましょう。"
     },
     "hero": {
-      "badge": "2026年11月更新",
+      "badge": "{month}更新",
       "title": "ベスト無料VPNサービス2026",
       "subtitle": "20以上の無料VPNをテストし、最高のデータ制限を持つ最も安全なオプションを見つけました。実際に機能するもの（しないもの）をご紹介します。"
     },
@@ -3659,7 +3659,7 @@
   "comparePage": {
     "allComparisons": "すべてのVPN比較",
     "allComparisonsIntro": "当サイトが維持しているすべての比較。あまり知られていない組み合わせも含みます。",
-    "badge": "2026年11月更新",
+    "badge": "{month}更新",
     "title": "VPNを並べて比較",
     "subtitle": "トップVPNサービスがどのように比較されるかをご覧ください。速度、セキュリティ機能、価格などを比較します。",
     "fullComparisonTable": "完全比較表",
@@ -3836,11 +3836,11 @@
   },
   "androidVpn": {
     "meta": {
-      "title": "Android向けベストVPN 2026年11月 - トップ3のテスト済みアプリ – ZeroToVPN",
+      "title": "Android向けベストVPN {month} - トップ3のテスト済みアプリ – ZeroToVPN",
       "description": "Android向けのベストVPNをお探しですか？15以上のAndroid VPNアプリをテストしました。NordVPN(95%)、Surfshark(94%)、ExpressVPN(93%)がスピード、セキュリティ、スプリットトンネリングなどの機能において最高の選択肢です。"
     },
     "hero": {
-      "badge": "2026年11月更新",
+      "badge": "{month}更新",
       "title": "Android向けベストVPN – 2026年ガイド",
       "subtitle": "スピード、セキュリティ、Android専用機能において最適なオプションを見つけるために、15以上のAndroid向けVPNアプリをテストしました。Androidスマートフォンまたはタブレットに最適なものをご紹介します。"
     },
@@ -4028,7 +4028,7 @@
   },
   "mobileVpn": {
     "meta": {
-      "title": "最高のモバイルVPN（iPhone & Android）2026年11月 – ZeroToVPN",
+      "title": "最高のモバイルVPN（iPhone & Android）{month} – ZeroToVPN",
       "description": "iPhoneまたはAndroid用の最高のモバイルVPNを見つけましょう。15以上のVPNアプリをテストしました。Surfshark、NordVPN、ExpressVPNがモバイルセキュリティのトップチョイスです。"
     },
     "hero": {
@@ -4281,7 +4281,7 @@
   },
   "iphoneVpn": {
     "meta": {
-      "title": "iPhone・iOS向けベストVPN 2026年11月 – ZeroToVPN",
+      "title": "iPhone・iOS向けベストVPN {month} – ZeroToVPN",
       "description": "iPhone・iOS向けのベストVPNを見つけましょう。15以上のVPNアプリをテストしました。ExpressVPN、NordVPN、SurfsharkがiOSのセキュリティとプライバシーにおいて最高の選択肢です。"
     },
     "hero": {

@@ -1,4 +1,5 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
+import { getLocalizedMonthYear } from "@/lib/seo-utils";
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import { getAllVpns } from "@/lib/vpn-data-layer";
@@ -125,7 +126,7 @@ export default async function ComparePage({ params }: Props) {
         <div className="container">
           <div className="max-w-3xl mx-auto text-center space-y-4">
             <Badge variant="secondary" className="px-4 py-1">
-              {t("badge")}
+              {t("badge", { month: getLocalizedMonthYear(locale) })}
             </Badge>
             <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
               <Scale className="h-8 w-8 text-primary" />

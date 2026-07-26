@@ -192,7 +192,7 @@
         "readTime": "8 min de lecture",
         "title": "Qu'est-ce qu'un VPN ?",
         "subtitle": "Un Réseau Privé Virtuel (VPN) est un outil puissant qui chiffre votre connexion internet et masque votre adresse IP, protégeant ainsi votre vie privée et votre sécurité en ligne. Dans ce guide, nous vous expliquerons tout ce que vous devez savoir sur les VPN en termes simples.",
-        "updated": "Mis à jour en novembre 2026",
+        "updated": "Mis à jour en {month}",
         "level": "Adapté aux Débutants"
       },
       "toc": {
@@ -392,7 +392,7 @@
         "readTime": "10 min de lecture",
         "title": "Comment Fonctionne un VPN ?",
         "subtitle": "Vous êtes-vous déjà demandé ce qui se passe lorsque vous cliquez sur « Connecter » sur votre VPN ? Ce guide décortique la magie technique derrière la technologie VPN, expliquant le chiffrement, les protocoles de tunneling et la protection des données en termes clairs et compréhensibles.",
-        "updated": "Mis à jour en novembre 2026",
+        "updated": "Mis à jour en {month}",
         "level": "Niveau Intermédiaire"
       },
       "toc": {
@@ -625,7 +625,7 @@
         "readTime": "7 min de lecture",
         "title": "Meilleur VPN pour le Streaming",
         "subtitle": "Vous voulez regarder Netflix US depuis l'Europe ? Accéder à BBC iPlayer à l'étranger ? Un VPN peut débloquer du contenu de streaming du monde entier. Ce guide couvre tout ce que vous devez savoir sur les VPN et le streaming.",
-        "updated": "Mis à jour en novembre 2026",
+        "updated": "Mis à jour en {month}",
         "level": "Guide Pratique"
       },
       "toc": {
@@ -923,7 +923,7 @@
         "readTime": "8 min de lecture",
         "title": "VPN pour le Torrenting",
         "subtitle": "Faire du torrenting sans protection expose votre adresse IP à des milliers de pairs. Découvrez comment un VPN vous protège pendant le téléchargement, et quelles fonctionnalités rechercher dans un VPN compatible P2P.",
-        "updated": "Mis à jour en novembre 2026",
+        "updated": "Mis à jour en {month}",
         "level": "Guide Confidentialité"
       },
       "toc": {
@@ -1198,7 +1198,7 @@
         "readTime": "10 min de lecture",
         "title": "Guide VPN pour les voyages",
         "subtitle": "Vous voyagez à l'étranger ? Un VPN est aussi essentiel que votre passeport. Découvrez comment accéder au contenu de votre pays, rester en sécurité sur le WiFi des hôtels, contourner la censure et même économiser de l'argent sur les réservations.",
-        "updated": "Mis à jour en novembre 2026",
+        "updated": "Mis à jour en {month}",
         "level": "Essentiel Voyage"
       },
       "toc": {
@@ -1542,7 +1542,7 @@
         "readTime": "9 min de lecture",
         "title": "VPN sur appareils mobiles",
         "subtitle": "Votre smartphone vous accompagne partout - et votre protection VPN devrait faire de même. Découvrez comment configurer et optimiser un VPN sur iOS et Android pour une sécurité et commodité maximales.",
-        "updated": "Mis à jour en novembre 2026",
+        "updated": "Mis à jour en {month}",
         "level": "Guide de configuration mobile"
       },
       "toc": {
@@ -1825,7 +1825,7 @@
         "readTime": "10 min de lecture",
         "title": "Guide de confidentialité VPN",
         "subtitle": "Tous les VPN ne sont pas égaux en matière de confidentialité. Découvrez ce que signifie réellement « sans logs », pourquoi la juridiction est importante et comment savoir si un VPN protège vraiment votre vie privée.",
-        "updated": "Mis à jour en novembre 2026",
+        "updated": "Mis à jour en {month}",
         "level": "Plongée approfondie confidentialité"
       },
       "toc": {
@@ -2128,7 +2128,7 @@
         "readTime": "12 min de lecture",
         "title": "Protocoles VPN expliqués",
         "subtitle": "WireGuard, OpenVPN, IKEv2 - que signifient ces termes et lequel devriez-vous utiliser ? Ce guide décortique les protocoles VPN en langage simple pour vous aider à faire le bon choix.",
-        "updated": "Mis à jour en novembre 2026",
+        "updated": "Mis à jour en {month}",
         "level": "Guide Technique"
       },
       "toc": {
@@ -2460,7 +2460,7 @@
         "readTime": "6 min de lecture",
         "title": "Guide de vitesse VPN",
         "subtitle": "Votre VPN ralentit-il votre connexion Internet ? Découvrez quels facteurs affectent la vitesse VPN et des conseils éprouvés pour optimiser votre connexion pour le streaming, le gaming et la navigation quotidienne.",
-        "updated": "Mis à jour en novembre 2026",
+        "updated": "Mis à jour en {month}",
         "level": "Guide Pratique"
       },
       "toc": {
@@ -2730,7 +2730,7 @@
         "readTime": "8 min de lecture",
         "title": "Guide de sécurité WiFi public",
         "subtitle": "Le WiFi gratuit est pratique, mais il comporte des risques sérieux. Découvrez comment les hackers exploitent les réseaux publics et les étapes essentielles pour protéger vos données dans les cafés, aéroports, hôtels et au-delà.",
-        "updated": "Mis à jour en novembre 2026",
+        "updated": "Mis à jour en {month}",
         "level": "Essentiel Sécurité"
       },
       "toc": {
@@ -3666,7 +3666,7 @@
   "comparePage": {
     "allComparisons": "Toutes les comparaisons de VPN",
     "allComparisonsIntro": "Chaque comparaison que nous maintenons, y compris les duos moins évidents.",
-    "badge": "Mis à jour novembre 2026",
+    "badge": "Mis à jour {month}",
     "title": "Comparez les VPNs Côte à Côte",
     "subtitle": "Découvrez comment les meilleurs services VPN se comparent. Comparez les vitesses, les fonctionnalités de sécurité, les prix et plus encore.",
     "fullComparisonTable": "Tableau de Comparaison Complet",

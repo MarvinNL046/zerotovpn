@@ -289,7 +289,7 @@
         "readTime": "8 min leestijd",
         "title": "Wat is een VPN?",
         "subtitle": "Een Virtual Private Network (VPN) is een krachtig hulpmiddel dat jouw internetverbinding versleutelt en je IP-adres verbergt, waardoor je privacy en veiligheid online worden beschermd. In deze gids leggen we alles uit wat je moet weten over VPN's in begrijpelijke taal.",
-        "updated": "Bijgewerkt november 2026",
+        "updated": "Bijgewerkt {month}",
         "level": "Beginnersvriendelijk"
       },
       "toc": {
@@ -489,7 +489,7 @@
         "readTime": "10 min leestijd",
         "title": "Hoe werkt een VPN?",
         "subtitle": "Heb je je ooit afgevraagd wat er gebeurt wanneer je op \"Verbinden\" klikt in je VPN? Deze gids legt de technische magie achter VPN-technologie uit, waarbij encryptie, tunnelingprotocollen en gegevensbescherming in duidelijke, begrijpelijke termen worden uitgelegd.",
-        "updated": "Bijgewerkt november 2026",
+        "updated": "Bijgewerkt {month}",
         "level": "Gemiddeld niveau"
       },
       "toc": {
@@ -722,7 +722,7 @@
         "readTime": "7 min lezen",
         "title": "Beste VPN voor Streaming",
         "subtitle": "Wil je Netflix US kijken vanuit Europa? Toegang tot BBC iPlayer vanuit het buitenland? Een VPN kan streamingcontent van over de hele wereld ontgrendelen. Deze gids behandelt alles wat je moet weten over VPNs en streaming.",
-        "updated": "Bijgewerkt november 2026",
+        "updated": "Bijgewerkt {month}",
         "level": "Praktische Gids"
       },
       "toc": {
@@ -1020,7 +1020,7 @@
         "readTime": "8 min lezen",
         "title": "VPN voor Torrenting",
         "subtitle": "Torrenten zonder bescherming stelt je IP-adres bloot aan duizenden peers. Leer hoe een VPN je veilig houdt tijdens het downloaden, en naar welke functies je moet zoeken in een P2P-vriendelijke VPN.",
-        "updated": "Bijgewerkt november 2026",
+        "updated": "Bijgewerkt {month}",
         "level": "Privacy Gids"
       },
       "toc": {
@@ -1295,7 +1295,7 @@
         "readTime": "10 min lezen",
         "title": "VPN voor Reizen Gids",
         "subtitle": "Reis je naar het buitenland? Een VPN is net zo essentieel als je paspoort. Leer hoe je toegang krijgt tot thuiscontent, veilig blijft op hotel-WiFi, censuur omzeilt en zelfs geld bespaart op boekingen.",
-        "updated": "Bijgewerkt november 2026",
+        "updated": "Bijgewerkt {month}",
         "level": "Reis Essentieel"
       },
       "toc": {
@@ -1639,7 +1639,7 @@
         "readTime": "9 min lezen",
         "title": "VPN op Mobiele Apparaten",
         "subtitle": "Je smartphone gaat overal mee naartoe - en je VPN-bescherming ook. Leer hoe je een VPN instelt en optimaliseert op iOS en Android voor maximale beveiliging en gebruiksgemak.",
-        "updated": "Bijgewerkt november 2026",
+        "updated": "Bijgewerkt {month}",
         "level": "Mobiele Setup Gids"
       },
       "toc": {
@@ -1922,7 +1922,7 @@
         "readTime": "10 min lezen",
         "title": "VPN Privacy Gids",
         "subtitle": "Niet alle VPNs zijn gelijk als het gaat om privacy. Leer wat \"no-logs\" echt betekent, waarom jurisdictie belangrijk is en hoe je kunt zien of een VPN echt je privacy beschermt.",
-        "updated": "Bijgewerkt november 2026",
+        "updated": "Bijgewerkt {month}",
         "level": "Privacy Verdieping"
       },
       "toc": {
@@ -2225,7 +2225,7 @@
         "readTime": "12 min lezen",
         "title": "VPN Protocollen Uitgelegd",
         "subtitle": "WireGuard, OpenVPN, IKEv2 - wat betekenen deze termen en welke moet je gebruiken? Deze gids legt VPN-protocollen uit in begrijpelijke taal om je te helpen de juiste keuze te maken.",
-        "updated": "Bijgewerkt november 2026",
+        "updated": "Bijgewerkt {month}",
         "level": "Technische Gids"
       },
       "toc": {
@@ -2557,7 +2557,7 @@
         "readTime": "6 min lezen",
         "title": "VPN Snelheid Gids",
         "subtitle": "Vertraagt je VPN je internet? Leer welke factoren VPN-snelheid beïnvloeden en ontdek bewezen tips om je verbinding te optimaliseren voor streaming, gaming en dagelijks browsen.",
-        "updated": "Bijgewerkt november 2026",
+        "updated": "Bijgewerkt {month}",
         "level": "Praktische Gids"
       },
       "toc": {
@@ -2820,7 +2820,7 @@
         "readTime": "8 min lezen",
         "title": "Openbare WiFi Veiligheid Gids",
         "subtitle": "Gratis WiFi is handig, maar brengt serieuze risico's met zich mee. Leer hoe hackers openbare netwerken misbruiken en de essentiële stappen om je gegevens te beschermen in coffeeshops, luchthavens, hotels en daarbuiten.",
-        "updated": "Bijgewerkt november 2026",
+        "updated": "Bijgewerkt {month}",
         "level": "Beveiliging Essentieel"
       },
       "toc": {
@@ -3276,11 +3276,11 @@
   },
   "freeVpn": {
     "meta": {
-      "title": "Beste Gratis VPN November 2026: Top 4 Getest (met ECHTE Datalimieten) - ZeroToVPN",
+      "title": "Beste Gratis VPN {month}: Top 4 Getest (met ECHTE Datalimieten) - ZeroToVPN",
       "description": "Op zoek naar een echt gratis VPN? We hebben 20+ gratis VPNs getest. ProtonVPN biedt onbeperkte data, Windscribe geeft 10GB/maand. Leer welke gratis VPNs veilig zijn en welke je moet vermijden."
     },
     "hero": {
-      "badge": "Bijgewerkt November 2026",
+      "badge": "Bijgewerkt {month}",
       "title": "Beste Gratis VPN Diensten 2026",
       "subtitle": "We hebben 20+ gratis VPNs getest om de veiligste opties met de beste datalimieten te vinden. Dit is wat echt werkt (en wat niet)."
     },
@@ -3659,7 +3659,7 @@
   "comparePage": {
     "allComparisons": "Alle VPN-vergelijkingen",
     "allComparisonsIntro": "Elke vergelijking die we bijhouden, ook de minder voor de hand liggende.",
-    "badge": "Bijgewerkt november 2026",
+    "badge": "Bijgewerkt {month}",
     "title": "Vergelijk VPNs Naast Elkaar",
     "subtitle": "Bekijk hoe de beste VPN-diensten zich tot elkaar verhouden. Vergelijk snelheden, beveiligingsfuncties, prijzen en meer.",
     "fullComparisonTable": "Volledige Vergelijkingstabel",
@@ -3836,11 +3836,11 @@
   },
   "androidVpn": {
     "meta": {
-      "title": "Beste VPN voor Android November 2026: Top 3 Geteste Apps – ZeroToVPN",
+      "title": "Beste VPN voor Android {month}: Top 3 Geteste Apps – ZeroToVPN",
       "description": "Op zoek naar de beste VPN voor Android? We testten 15+ Android VPN apps. NordVPN (95%), Surfshark (94%) en ExpressVPN (93%) zijn de beste keuzes voor snelheid, beveiliging en functies zoals split tunneling."
     },
     "hero": {
-      "badge": "Bijgewerkt November 2026",
+      "badge": "Bijgewerkt {month}",
       "title": "Beste VPN voor Android – 2026 Gids",
       "subtitle": "We testten 15+ VPN apps voor Android om de beste opties te vinden voor snelheid, beveiliging en Android-specifieke functies. Dit werkt het beste op je Android telefoon of tablet."
     },
@@ -4028,7 +4028,7 @@
   },
   "mobileVpn": {
     "meta": {
-      "title": "Beste Mobiele VPN (iPhone & Android) November 2026 – ZeroToVPN",
+      "title": "Beste Mobiele VPN (iPhone & Android) {month} – ZeroToVPN",
       "description": "Vind de beste mobiele VPN voor je iPhone of Android. We testten 15+ VPN apps. Surfshark, NordVPN en ExpressVPN zijn de beste keuzes voor mobiele beveiliging."
     },
     "hero": {
@@ -4281,7 +4281,7 @@
   },
   "iphoneVpn": {
     "meta": {
-      "title": "Beste VPN voor iPhone & iOS November 2026 – ZeroToVPN",
+      "title": "Beste VPN voor iPhone & iOS {month} – ZeroToVPN",
       "description": "Vind de beste VPN voor iPhone en iOS. We testten 15+ VPN apps. ExpressVPN, NordVPN en Surfshark zijn de beste keuzes voor iOS beveiliging en privacy."
     },
     "hero": {

@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { RankedVpnRow } from "@/components/vpn/ranked-vpn-row";
 import { getAllVpns } from "@/lib/vpn-data-layer";
 import { RelatedPages } from "@/components/seo/related-pages";
-import { generateAlternates } from "@/lib/seo-utils";
+import { generateAlternates, getLocalizedMonthYear } from "@/lib/seo-utils";
 import {
   Shield,
   CheckCircle,
@@ -76,7 +76,7 @@ export default async function PakistanVpnPage({ params }: Props) {
 
   const content = {
     en: {
-      badge: "Updated February 2026",
+      badge: `Updated ${getLocalizedMonthYear("en")}`,
       title: "Best VPN for Pakistan",
       subtitle: "Bypass Pakistan's internet censorship and access blocked content safely",
       legalNotice: "Important Legal Information",
@@ -140,11 +140,11 @@ export default async function PakistanVpnPage({ params }: Props) {
       effectiveness91: "91% Effective",
       effectiveness89: "89% Effective",
       effectiveness86: "86% Effective",
-      lastUpdated: "Last updated: February 2026",
+      lastUpdated: `Last updated: ${getLocalizedMonthYear("en")}`,
       sources: "Sources",
     },
     nl: {
-      badge: "Bijgewerkt februari 2026",
+      badge: `Bijgewerkt ${getLocalizedMonthYear("nl")}`,
       title: "Beste VPN voor Pakistan",
       subtitle: "Omzeil Pakistan's internetcensuur en krijg veilig toegang tot geblokkeerde inhoud",
       legalNotice: "Belangrijke Juridische Informatie",
@@ -191,11 +191,11 @@ export default async function PakistanVpnPage({ params }: Props) {
       effectiveness91: "91% Effectief",
       effectiveness89: "89% Effectief",
       effectiveness86: "86% Effectief",
-      lastUpdated: "Laatst bijgewerkt: februari 2026",
+      lastUpdated: `Laatst bijgewerkt: ${getLocalizedMonthYear("nl")}`,
       sources: "Bronnen",
     },
     de: {
-      badge: "Aktualisiert Februar 2026",
+      badge: `Aktualisiert ${getLocalizedMonthYear("de")}`,
       title: "Beste VPN fur Pakistan",
       subtitle: "Umgehen Sie Pakistans Internetzensur und greifen Sie sicher auf blockierte Inhalte zu",
       legalNotice: "Wichtige rechtliche Informationen",
@@ -242,11 +242,11 @@ export default async function PakistanVpnPage({ params }: Props) {
       effectiveness91: "91% Effektiv",
       effectiveness89: "89% Effektiv",
       effectiveness86: "86% Effektiv",
-      lastUpdated: "Zuletzt aktualisiert: Februar 2026",
+      lastUpdated: `Zuletzt aktualisiert: ${getLocalizedMonthYear("de")}`,
       sources: "Quellen",
     },
     es: {
-      badge: "Actualizado febrero 2026",
+      badge: `Actualizado ${getLocalizedMonthYear("es")}`,
       title: "Mejor VPN para Pakistan",
       subtitle: "Evita la censura de internet de Pakistan y accede a contenido bloqueado de forma segura",
       legalNotice: "Informacion Legal Importante",
@@ -293,7 +293,7 @@ export default async function PakistanVpnPage({ params }: Props) {
       effectiveness91: "91% Efectivo",
       effectiveness89: "89% Efectivo",
       effectiveness86: "86% Efectivo",
-      lastUpdated: "Ultima actualizacion: febrero 2026",
+      lastUpdated: `Ultima actualizacion: ${getLocalizedMonthYear("es")}`,
       sources: "Fuentes",
     },
     fr: {
@@ -348,7 +348,7 @@ export default async function PakistanVpnPage({ params }: Props) {
       sources: "Sources",
     },
     zh: {
-      badge: "2026年2月更新",
+      badge: `${getLocalizedMonthYear("zh")}更新`,
       title: "巴基斯坦最佳VPN",
       subtitle: "绕过巴基斯坦的互联网审查，安全访问被封锁的内容",
       legalNotice: "重要法律信息",
@@ -395,11 +395,11 @@ export default async function PakistanVpnPage({ params }: Props) {
       effectiveness91: "91%有效",
       effectiveness89: "89%有效",
       effectiveness86: "86%有效",
-      lastUpdated: "最后更新：2026年2月",
+      lastUpdated: `最后更新：${getLocalizedMonthYear("zh")}`,
       sources: "资料来源",
     },
     ja: {
-      badge: "2026年2月更新",
+      badge: `${getLocalizedMonthYear("ja")}更新`,
       title: "パキスタン向けベストVPN",
       subtitle: "パキスタンのインターネット検閲を回避し、安全にブロックされたコンテンツにアクセス",
       legalNotice: "重要な法的情報",
@@ -446,11 +446,11 @@ export default async function PakistanVpnPage({ params }: Props) {
       effectiveness91: "91%有効",
       effectiveness89: "89%有効",
       effectiveness86: "86%有効",
-      lastUpdated: "最終更新：2026年2月",
+      lastUpdated: `最終更新：${getLocalizedMonthYear("ja")}`,
       sources: "情報源",
     },
     ko: {
-      badge: "2026년 2월 업데이트",
+      badge: `${getLocalizedMonthYear("ko")} 업데이트`,
       title: "파키스탄 최고의 VPN",
       subtitle: "파키스탄의 인터넷 검열을 우회하고 차단된 콘텐츠에 안전하게 접속",
       legalNotice: "중요한 법적 정보",
@@ -497,11 +497,11 @@ export default async function PakistanVpnPage({ params }: Props) {
       effectiveness91: "91% 효과적",
       effectiveness89: "89% 효과적",
       effectiveness86: "86% 효과적",
-      lastUpdated: "마지막 업데이트: 2026년 2월",
+      lastUpdated: `마지막 업데이트: ${getLocalizedMonthYear("ko")}`,
       sources: "출처",
     },
     th: {
-      badge: "อัปเดตเมื่อกุมภาพันธ์ 2026",
+      badge: `อัปเดตเมื่อ${getLocalizedMonthYear("th")}`,
       title: "VPN ที่ดีที่สุดสำหรับปากีสถาน",
       subtitle: "หลีกเลี่ยงการเซ็นเซอร์อินเทอร์เน็ตของปากีสถานและเข้าถึงเนื้อหาที่ถูกบล็อกอย่างปลอดภัย",
       legalNotice: "ข้อมูลทางกฎหมายที่สำคัญ",
@@ -548,7 +548,7 @@ export default async function PakistanVpnPage({ params }: Props) {
       effectiveness91: "ประสิทธิภาพ 91%",
       effectiveness89: "ประสิทธิภาพ 89%",
       effectiveness86: "ประสิทธิภาพ 86%",
-      lastUpdated: "อัปเดตล่าสุด: กุมภาพันธ์ 2026",
+      lastUpdated: `อัปเดตล่าสุด: ${getLocalizedMonthYear("th")}`,
       sources: "แหล่งที่มา",
     },
   };

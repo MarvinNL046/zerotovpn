@@ -13,7 +13,7 @@ import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { getAllVpns, type VpnProvider } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
-import { generateAlternates } from "@/lib/seo-utils";
+import { generateAlternates, getLocalizedMonthYear } from "@/lib/seo-utils";
 import { LastUpdated } from "@/components/last-updated";
 import {
   Zap,
@@ -142,7 +142,7 @@ export default async function BestVpnPage({ params }: Props) {
   // Content translations
   const content = {
     en: {
-      badge: "Updated March 2026",
+      badge: `Updated ${getLocalizedMonthYear("en")}`,
       title: "Best VPN Services in 2026",
       subtitle: "We tested 35+ VPNs to find the best options for privacy, streaming, and security. Here are our top picks based on extensive real-world testing.",
       quickPicks: "Quick Picks",
@@ -186,10 +186,10 @@ export default async function BestVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "View All VPN Reviews",
-      lastUpdated: "Last updated: March 2026",
+      lastUpdated: `Last updated: ${getLocalizedMonthYear("en")}`,
     },
     nl: {
-      badge: "Bijgewerkt maart 2026",
+      badge: `Bijgewerkt ${getLocalizedMonthYear("nl")}`,
       title: "Beste VPN Diensten in 2026",
       subtitle: "We hebben 35+ VPNs getest om de beste opties voor privacy, streaming en veiligheid te vinden. Hier zijn onze topkeuzes op basis van uitgebreide tests.",
       quickPicks: "Snelle Keuzes",
@@ -233,10 +233,10 @@ export default async function BestVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Bekijk Alle VPN Reviews",
-      lastUpdated: "Laatst bijgewerkt: maart 2026",
+      lastUpdated: `Laatst bijgewerkt: ${getLocalizedMonthYear("nl")}`,
     },
     de: {
-      badge: "Aktualisiert March 2026",
+      badge: `Aktualisiert ${getLocalizedMonthYear("de")}`,
       title: "Beste VPN-Dienste 2026",
       subtitle: "Wir haben über 35 VPNs getestet, um die besten Optionen für Datenschutz, Streaming und Sicherheit zu finden. Hier sind unsere Top-Empfehlungen basierend auf umfangreichen Praxistests.",
       quickPicks: "Schnellauswahl",
@@ -280,10 +280,10 @@ export default async function BestVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Alle VPN-Bewertungen ansehen",
-      lastUpdated: "Zuletzt aktualisiert: March 2026",
+      lastUpdated: `Zuletzt aktualisiert: ${getLocalizedMonthYear("de")}`,
     },
     es: {
-      badge: "Actualizado marzo 2026",
+      badge: `Actualizado ${getLocalizedMonthYear("es")}`,
       title: "Mejores servicios VPN en 2026",
       subtitle: "Probamos más de 35 VPN para encontrar las mejores opciones de privacidad, streaming y seguridad. Estas son nuestras principales recomendaciones basadas en pruebas exhaustivas.",
       quickPicks: "Selección rápida",
@@ -327,10 +327,10 @@ export default async function BestVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Ver todas las reseñas de VPN",
-      lastUpdated: "Última actualización: marzo 2026",
+      lastUpdated: `Última actualización: ${getLocalizedMonthYear("es")}`,
     },
     fr: {
-      badge: "Mis à jour mars 2026",
+      badge: `Mis à jour ${getLocalizedMonthYear("fr")}`,
       title: "Meilleurs services VPN en 2026",
       subtitle: "Nous avons testé plus de 35 VPN pour trouver les meilleures options en matière de confidentialité, streaming et sécurité. Voici nos meilleurs choix basés sur des tests approfondis.",
       quickPicks: "Sélection rapide",
@@ -374,10 +374,10 @@ export default async function BestVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "Voir tous les avis VPN",
-      lastUpdated: "Dernière mise à jour : mars 2026",
+      lastUpdated: `Dernière mise à jour : ${getLocalizedMonthYear("fr")}`,
     },
     zh: {
-      badge: "2026年3月更新",
+      badge: `${getLocalizedMonthYear("zh")}更新`,
       title: "2026年最佳VPN服务",
       subtitle: "我们测试了35款以上的VPN，为您找到隐私保护、流媒体和安全性方面的最佳选择。以下是基于全面实际测试的精选推荐。",
       quickPicks: "精选推荐",
@@ -421,10 +421,10 @@ export default async function BestVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "查看所有VPN评测",
-      lastUpdated: "最后更新：2026年3月",
+      lastUpdated: `最后更新：${getLocalizedMonthYear("zh")}`,
     },
     ja: {
-      badge: "2026年3月更新",
+      badge: `${getLocalizedMonthYear("ja")}更新`,
       title: "2026年おすすめVPNサービス",
       subtitle: "35以上のVPNをテストし、プライバシー、ストリーミング、セキュリティに最適なサービスを厳選しました。実際の使用テストに基づくおすすめをご紹介します。",
       quickPicks: "おすすめピックアップ",
@@ -468,10 +468,10 @@ export default async function BestVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "すべてのVPNレビューを見る",
-      lastUpdated: "最終更新：2026年3月",
+      lastUpdated: `最終更新：${getLocalizedMonthYear("ja")}`,
     },
     ko: {
-      badge: "2026년 3월 업데이트",
+      badge: `${getLocalizedMonthYear("ko")} 업데이트`,
       title: "2026년 최고의 VPN 서비스",
       subtitle: "35개 이상의 VPN을 테스트하여 개인정보 보호, 스트리밍, 보안에 가장 적합한 서비스를 선별했습니다. 실제 사용 테스트를 기반으로 한 추천 목록입니다.",
       quickPicks: "빠른 선택",
@@ -515,10 +515,10 @@ export default async function BestVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "모든 VPN 리뷰 보기",
-      lastUpdated: "최종 업데이트: 2026년 3월",
+      lastUpdated: `최종 업데이트: ${getLocalizedMonthYear("ko")}`,
     },
     th: {
-      badge: "อัปเดตเดือนมีนาคม 2026",
+      badge: `อัปเดตเดือน${getLocalizedMonthYear("th")}`,
       title: "บริการ VPN ที่ดีที่สุดในปี 2026",
       subtitle: "เราทดสอบ VPN มากกว่า 35 ตัวเพื่อค้นหาตัวเลือกที่ดีที่สุดด้านความเป็นส่วนตัว สตรีมมิ่ง และความปลอดภัย นี่คือตัวเลือกอันดับต้นๆ จากการทดสอบจริงอย่างละเอียด",
       quickPicks: "ตัวเลือกแนะนำ",
@@ -562,7 +562,7 @@ export default async function BestVpnPage({ params }: Props) {
         },
       ],
       viewAllVpns: "ดูรีวิว VPN ทั้งหมด",
-      lastUpdated: "อัปเดตล่าสุด: มีนาคม 2026",
+      lastUpdated: `อัปเดตล่าสุด: ${getLocalizedMonthYear("th")}`,
     },
   };
 

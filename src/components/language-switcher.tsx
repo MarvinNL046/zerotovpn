@@ -46,11 +46,11 @@ export function LanguageSwitcher() {
 
   return (
     <Select value={locale} onValueChange={handleChange}>
-      <SelectTrigger className="w-[140px]">
+      <SelectTrigger className="w-[68px] sm:w-[140px]">
         <SelectValue>
           <span className="flex items-center gap-2">
             <span>{languageFlags[locale]}</span>
-            <span>{languageNames[locale]}</span>
+            <span className="hidden sm:inline">{languageNames[locale]}</span>
           </span>
         </SelectValue>
       </SelectTrigger>

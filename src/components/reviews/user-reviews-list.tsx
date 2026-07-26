@@ -153,7 +153,7 @@ export function UserReviewsList({
       {/* Sort Options */}
       <div className="flex items-center gap-4">
         <span className="text-sm text-muted-foreground">{t.sortBy}</span>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           <Button
             variant={sortBy === "recent" ? "default" : "outline"}
             size="sm"
@@ -237,12 +237,12 @@ function ReviewCard({ review, locale, t, usageLabels, periodLabels }: ReviewCard
     <Card className={review.featured ? "border-primary" : ""}>
       <CardHeader className="pb-3">
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
-          <div className="flex items-start gap-3">
+          <div className="flex min-w-0 items-start gap-3">
             <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
               <User className="h-5 w-5 text-primary" />
             </div>
             <div>
-              <div className="flex items-center gap-2">
+              <div className="flex min-w-0 flex-wrap items-center gap-2">
                 <span className="font-semibold">{review.authorName}</span>
                 {review.verified && (
                   <Badge variant="secondary" className="text-xs">

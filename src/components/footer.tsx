@@ -13,7 +13,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
           {/* Brand */}
           <div className="space-y-4">
-            <Link href="/" className="flex items-center space-x-2">
+            <Link prefetch={false} href="/" className="flex items-center space-x-2">
               <Shield className="h-6 w-6 text-orange-400" />
               <span className="font-bold text-xl">
                 Zero<span className="text-orange-400">To</span>VPN
@@ -28,6 +28,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
+                  prefetch={false}
                   href="/reviews"
                   className="text-slate-400 hover:text-orange-400"
                 >
@@ -36,6 +37,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/is-nordvpn-safe"
                   className="text-slate-400 hover:text-orange-400"
                 >
@@ -44,6 +46,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/vpn-index"
                   className="text-slate-400 hover:text-orange-400"
                 >
@@ -52,6 +55,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/best/best-vpn"
                   className="text-slate-400 hover:text-orange-400"
                 >
@@ -60,6 +64,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/best/free-vpn"
                   className="text-slate-400 hover:text-orange-400"
                 >
@@ -68,6 +73,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/best/vpn-free-trial"
                   className="text-slate-400 hover:text-orange-400"
                 >
@@ -76,6 +82,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/best/vpn-port-forwarding"
                   className="text-slate-400 hover:text-orange-400"
                 >
@@ -84,6 +91,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/best/vpn-gaming"
                   className="text-slate-400 hover:text-orange-400"
                 >
@@ -92,6 +100,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/compare"
                   className="text-slate-400 hover:text-orange-400"
                 >
@@ -100,6 +109,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/countries"
                   className="text-slate-400 hover:text-orange-400"
                 >
@@ -108,6 +118,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/quiz"
                   className="text-slate-400 hover:text-orange-400"
                 >
@@ -116,6 +127,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/speed-test"
                   className="text-slate-400 hover:text-orange-400"
                 >
@@ -124,6 +136,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/tools/what-is-my-ip"
                   className="text-slate-400 hover:text-orange-400"
                 >
@@ -132,6 +145,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/tools/dns-leak-test"
                   className="text-slate-400 hover:text-orange-400"
                 >
@@ -140,6 +154,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/guides/what-is-vpn"
                   className="text-slate-400 hover:text-orange-400"
                 >
@@ -148,6 +163,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/reports/vpn-transparency-performance-index-2026"
                   className="text-slate-400 hover:text-orange-400"
                 >
@@ -156,6 +172,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/blog"
                   className="text-slate-400 hover:text-orange-400"
                 >
@@ -171,6 +188,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
+                  prefetch={false}
                   href="/best/vpn-laptops"
                   className="text-slate-400 hover:text-orange-400"
                 >
@@ -179,6 +197,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/best/vpn-windows"
                   className="text-slate-400 hover:text-orange-400"
                 >
@@ -187,6 +206,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/best/vpn-macos"
                   className="text-slate-400 hover:text-orange-400"
                 >
@@ -195,6 +215,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/best/vpn-chromebook"
                   className="text-slate-400 hover:text-orange-400"
                 >
@@ -203,6 +224,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/best/vpn-linux"
                   className="text-slate-400 hover:text-orange-400"
                 >
@@ -218,6 +240,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
+                  prefetch={false}
                   href="/privacy-policy"
                   className="text-slate-400 hover:text-orange-400"
                 >
@@ -226,6 +249,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/terms"
                   className="text-slate-400 hover:text-orange-400"
                 >
@@ -234,6 +258,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/affiliate-disclosure"
                   className="text-slate-400 hover:text-orange-400"
                 >
@@ -242,6 +267,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/cookie-policy"
                   className="text-slate-400 hover:text-orange-400"
                 >
@@ -250,6 +276,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/methodology"
                   className="text-slate-400 hover:text-orange-400"
                 >
@@ -265,6 +292,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
+                  prefetch={false}
                   href="/about"
                   className="text-slate-400 hover:text-orange-400"
                 >
@@ -273,6 +301,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/how-we-test"
                   className="text-slate-400 hover:text-orange-400"
                 >
@@ -281,6 +310,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/contact"
                   className="text-slate-400 hover:text-orange-400"
                 >

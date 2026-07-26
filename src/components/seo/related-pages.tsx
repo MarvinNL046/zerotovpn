@@ -95,6 +95,7 @@ export function RelatedPages({
 
           return (
             <Link
+              prefetch={false}
               key={index}
               href={page.href}
               className="group block transition-transform hover:scale-[1.02]"

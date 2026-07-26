@@ -19,7 +19,7 @@ import {
   getCountryTranslation,
   getCountryPageLabels,
 } from "@/lib/country-translations";
-import { generateAlternates } from "@/lib/seo-utils";
+import { generateAlternates, titelMetMerk } from "@/lib/seo-utils";
 import { AffiliateDisclosure } from "@/components/vpn/affiliate-disclosure";
 import { RankedVpnRow } from "@/components/vpn/ranked-vpn-row";
 import {
@@ -74,7 +74,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     metadataBase: new URL(baseUrl),
-    title: cleanTitle,
+    title: { absolute: titelMetMerk(cleanTitle) },
     description: metaDescription,
     openGraph: {
       title: metaTitle,

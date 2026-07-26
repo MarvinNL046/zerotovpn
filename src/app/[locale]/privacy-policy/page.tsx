@@ -2,8 +2,7 @@ import { setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import { Shield, Cookie, Eye, UserCheck, Mail, FileText } from "lucide-react";
-import { generateAlternates } from "@/lib/seo-utils";
-
+import { generateAlternates, titelMetMerk } from "@/lib/seo-utils";
 type Props = {
   params: Promise<{ locale: string }>;
 };
@@ -14,7 +13,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   return {
     metadataBase: new URL(baseUrl),
-    title: "Privacy Policy",
+    title: { absolute: titelMetMerk("Privacy Policy") },
     description:
       "Learn how ZeroToVPN collects, uses, and protects your personal information. Our privacy policy explains your rights and our data practices.",
     robots: {

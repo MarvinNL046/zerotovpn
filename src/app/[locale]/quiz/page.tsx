@@ -4,7 +4,7 @@ import { QuizWizard } from "@/components/quiz/quiz-wizard";
 import { getAllVpns } from "@/lib/vpn-data-layer";
 import { routing } from "@/i18n/routing";
 
-import { OG_LOCALE_MAP, stripBrand } from "@/lib/seo-utils";
+import { OG_LOCALE_MAP, stripBrand, titelMetMerk } from "@/lib/seo-utils";
 type Props = {
   params: Promise<{ locale: string }>;
 };
@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   });
 
   return {
-    title: stripBrand(t("title")),
+    title: { absolute: titelMetMerk(stripBrand(t("title"))) },
     description: t("description"),
     openGraph: {
       locale: OG_LOCALE_MAP[locale] ?? "en_US",

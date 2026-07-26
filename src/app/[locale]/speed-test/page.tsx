@@ -16,8 +16,7 @@ import {
   ChevronDown,
 } from "lucide-react";
 import type { Metadata } from "next";
-import { generateAlternates } from "@/lib/seo-utils";
-
+import { generateAlternates, titelMetMerk } from "@/lib/seo-utils";
 type Props = {
   params: Promise<{ locale: string }>;
 };
@@ -27,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: "speedTest" });
 
   return {
-    title: t("pageTitle"),
+    title: { absolute: titelMetMerk(t("pageTitle")) },
     description: t("pageDescription"),
     alternates: generateAlternates("/speed-test", locale),
   };

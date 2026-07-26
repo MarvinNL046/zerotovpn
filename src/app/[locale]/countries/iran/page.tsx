@@ -7,7 +7,7 @@ import { getAllVpns } from "@/lib/vpn-data-layer";
 import { ComparisonTableSchema } from "@/components/structured-data";
 import { Link } from "@/i18n/navigation";
 import { RelatedPages } from "@/components/seo/related-pages";
-import { OG_LOCALE_MAP, generateAlternates, getLocalizedMonthYear, getShortMonthYear } from "@/lib/seo-utils";
+import { OG_LOCALE_MAP, generateAlternates, getLocalizedMonthYear, getShortMonthYear, titelMetMerk } from "@/lib/seo-utils";
 import {
   Shield,
   CheckCircle,
@@ -59,7 +59,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     metadataBase: new URL(baseUrl),
-    title: (titles[locale] || titles.en).replace(" | ZeroToVPN", ""),
+    title: { absolute: titelMetMerk((titles[locale] || titles.en).replace(" | ZeroToVPN", "")) },
     description: descriptions[locale] || descriptions.en,
     openGraph: {
       locale: OG_LOCALE_MAP[locale] ?? "en_US",

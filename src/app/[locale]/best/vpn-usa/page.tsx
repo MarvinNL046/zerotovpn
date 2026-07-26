@@ -6,7 +6,7 @@ import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { Go2NetworkSection } from "@/components/seo/go2-network-section";
 import { Link } from "@/i18n/navigation";
-import { OG_LOCALE_MAP, generateAlternates, getShortMonthYear } from "@/lib/seo-utils";
+import { OG_LOCALE_MAP, generateAlternates, getShortMonthYear, titelMetMerk } from "@/lib/seo-utils";
 import { getVpnBySlug } from "@/lib/vpn-data-layer";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { Plane, Shield, Tv, Wifi, Globe } from "lucide-react";
@@ -348,7 +348,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const t = content[locale] || content.en;
   return {
     metadataBase: new URL(baseUrl),
-    title: `${t.metaTitle} (${shortMonthYear})`,
+    title: { absolute: titelMetMerk(`${t.metaTitle} (${shortMonthYear})`) },
     description: t.metaDescription,
     alternates: generateAlternates("/best/vpn-usa", locale),
     openGraph: {

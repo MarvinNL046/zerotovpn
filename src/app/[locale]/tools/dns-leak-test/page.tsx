@@ -6,8 +6,7 @@ import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { FAQAccordion } from "@/components/seo/faq-schema";
 import { ShieldAlert, Shield, Lock, AlertTriangle } from "lucide-react";
 import type { Metadata } from "next";
-import { generateAlternates } from "@/lib/seo-utils";
-
+import { generateAlternates, titelMetMerk } from "@/lib/seo-utils";
 import { getRequiredDiscountPercent } from "@/lib/vpn-discount";
 type Props = {
   params: Promise<{ locale: string }>;
@@ -18,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: "dnsLeakTest" });
 
   return {
-    title: t("pageTitle"),
+    title: { absolute: titelMetMerk(t("pageTitle")) },
     description: t("pageSubtitle"),
     // Canonicaliseerde naar de apex (307) én naar /en/…, een pad dat onder
     // localePrefix "as-needed" niet bestaat. generateAlternates doet het goed

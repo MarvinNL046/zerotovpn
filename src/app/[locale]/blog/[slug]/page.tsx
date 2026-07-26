@@ -8,7 +8,7 @@ import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import { getPostBySlug, getAllPublishedSlugs } from "@/lib/pipeline/blog-service";
 import { routing } from "@/i18n/routing";
-import { generateAlternates } from "@/lib/seo-utils";
+import { generateAlternates, titelMetMerk } from "@/lib/seo-utils";
 import { getRelatedContent } from "@/lib/content-links";
 import { RelatedContent } from "@/components/seo/related-content";
 import InlineAd from "@/components/ads/InlineAd";
@@ -65,7 +65,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     metadataBase: new URL(baseUrl),
-    title: post.metaTitle || post.title,
+    title: { absolute: titelMetMerk(post.metaTitle || post.title) },
     description: post.metaDescription || post.excerpt,
     openGraph: {
       title: post.metaTitle || post.title,

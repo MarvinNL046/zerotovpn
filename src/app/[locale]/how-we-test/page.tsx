@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { Link } from "@/i18n/navigation";
-import { OG_LOCALE_MAP, generateAlternates } from "@/lib/seo-utils";
+import { OG_LOCALE_MAP, generateAlternates, titelMetMerk } from "@/lib/seo-utils";
 import { FlaskConical, Gauge, ShieldCheck, Tv, Download, Clock3, LockKeyhole } from "lucide-react";
 
 type Props = {
@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     metadataBase: new URL(baseUrl),
-    title: "How We Test VPNs",
+    title: { absolute: titelMetMerk("How We Test VPNs") },
     description:
       "A practical overview of ZeroToVPN's test workflow: baseline setup, speed and latency runs, streaming checks, kill switch tests, and score publication.",
     alternates: generateAlternates("/how-we-test", locale),

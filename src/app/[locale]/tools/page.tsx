@@ -3,7 +3,7 @@ import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { Link } from "@/i18n/navigation";
 import { Globe, Shield, ShieldAlert, Zap, Wrench } from "lucide-react";
 import type { Metadata } from "next";
-import { generateAlternates } from "@/lib/seo-utils";
+import { generateAlternates, titelMetMerk } from "@/lib/seo-utils";
 import { getVpnAffiliateUrl } from "@/lib/vpn-links";
 
 type Props = {
@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "toolsPage" });
   return {
-    title: t("meta.title"),
+    title: { absolute: titelMetMerk(t("meta.title")) },
     description: t("meta.description"),
     alternates: generateAlternates("/tools", locale),
   };

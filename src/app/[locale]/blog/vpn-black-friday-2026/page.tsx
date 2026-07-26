@@ -12,7 +12,7 @@ import { RelatedPages } from "@/components/seo/related-pages";
 import { AuthorBox, FactCheckedBadge } from "@/components/blog/author-box";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { routing } from "@/i18n/routing";
-import { OG_LOCALE_MAP } from "@/lib/seo-utils";
+import { OG_LOCALE_MAP, titelMetMerk } from "@/lib/seo-utils";
 import {
   Calendar,
   Clock,
@@ -71,7 +71,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     metadataBase: new URL(baseUrl),
-    title: (titles[locale] || titles.en).replace(" | ZeroToVPN", ""),
+    title: { absolute: titelMetMerk((titles[locale] || titles.en).replace(" | ZeroToVPN", "")) },
     description: descriptions[locale] || descriptions.en,
     alternates: {
       canonical: canonicalUrl,

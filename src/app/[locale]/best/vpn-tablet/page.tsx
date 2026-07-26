@@ -32,7 +32,7 @@ import { RelatedPages } from "@/components/seo/related-pages";
 import { LastUpdated } from "@/components/last-updated";
 import { getVpnAffiliateUrl } from "@/lib/vpn-links";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
-import { OG_LOCALE_MAP, generateAlternates } from "@/lib/seo-utils";
+import { OG_LOCALE_MAP, generateAlternates, titelMetMerk } from "@/lib/seo-utils";
 import { getRequiredDiscountPercent } from "@/lib/vpn-discount";
 type Props = {
   params: Promise<{ locale: string }>;
@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     metadataBase: new URL(baseUrl),
-    title: t("meta.title"),
+    title: { absolute: titelMetMerk(t("meta.title")) },
     description: t("meta.description"),
     openGraph: {
       locale: OG_LOCALE_MAP[locale] ?? "en_US",

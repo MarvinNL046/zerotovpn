@@ -12,7 +12,7 @@ import { Check, X } from "lucide-react";
 import { routing } from "@/i18n/routing";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import type { VpnData } from "@/lib/db/vpn-service";
-import { OG_LOCALE_MAP, getLocalizedMonthYear, getShortMonthYear } from "@/lib/seo-utils";
+import { OG_LOCALE_MAP, getLocalizedMonthYear, getShortMonthYear, titelMetMerk } from "@/lib/seo-utils";
 import { LastUpdated } from "@/components/last-updated";
 import { FaqSchema } from "@/components/structured-data";
 import { getRelatedContent, reviewLink } from "@/lib/content-links";
@@ -81,7 +81,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     metadataBase: new URL(baseUrl),
-    title: t("title", namen),
+    title: { absolute: titelMetMerk(t("title", namen)) },
     description: t("description", namen),
     alternates: {
       canonical: canonicalUrl,

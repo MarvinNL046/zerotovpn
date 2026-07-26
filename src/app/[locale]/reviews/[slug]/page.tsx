@@ -32,7 +32,7 @@ import {
 } from "@/components/structured-data";
 import { routing } from "@/i18n/routing";
 import type { Metadata } from "next";
-import { getShortMonthYear, getLocalizedMonthYear, OG_LOCALE_MAP } from "@/lib/seo-utils";
+import { OG_LOCALE_MAP, getLocalizedMonthYear, getShortMonthYear, titelMetMerk } from "@/lib/seo-utils";
 import { LastUpdated } from "@/components/last-updated";
 import InlineAd from "@/components/ads/InlineAd";
 import { AuthorBio } from "@/components/author-bio";
@@ -527,7 +527,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     metadataBase: new URL(baseUrl),
-    title: (titles[locale] || titles.en).replace(" | ZeroToVPN", ""),
+    title: { absolute: titelMetMerk((titles[locale] || titles.en).replace(" | ZeroToVPN", "")) },
     description: descriptions[locale] || descriptions.en,
     keywords: isNordVpn && locale === "en"
       ? [

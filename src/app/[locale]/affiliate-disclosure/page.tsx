@@ -12,8 +12,7 @@ import {
   Scale,
 } from "lucide-react";
 import { getAllVpns } from "@/lib/vpn-data-layer";
-import { generateAlternates } from "@/lib/seo-utils";
-
+import { generateAlternates, titelMetMerk } from "@/lib/seo-utils";
 type Props = {
   params: Promise<{ locale: string }>;
 };
@@ -24,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   return {
     metadataBase: new URL(baseUrl),
-    title: "Affiliate Disclosure",
+    title: { absolute: titelMetMerk("Affiliate Disclosure") },
     description:
       "Learn how ZeroToVPN earns money through affiliate partnerships. We believe in full transparency about our business relationships.",
     robots: {

@@ -6,7 +6,7 @@ import { BreadcrumbSchema, ComparisonTableSchema } from "@/components/structured
 import { Link } from "@/i18n/navigation";
 import type { Metadata } from "next";
 
-import { OG_LOCALE_MAP } from "@/lib/seo-utils";
+import { OG_LOCALE_MAP, titelMetMerk } from "@/lib/seo-utils";
 type Props = {
   params: Promise<{ locale: string }>;
 };
@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     metadataBase: new URL(baseUrl),
-    title: titles[locale] || titles.en,
+    title: { absolute: titelMetMerk(titles[locale] || titles.en) },
     description: descriptions[locale] || descriptions.en,
     keywords: [
       "VPN reviews",

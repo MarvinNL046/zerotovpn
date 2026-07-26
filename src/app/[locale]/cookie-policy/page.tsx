@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { generateAlternates } from "@/lib/seo-utils";
+import { generateAlternates, titelMetMerk } from "@/lib/seo-utils";
 import { Cookie, Shield, Settings, BarChart3, Megaphone, Mail, FileText } from "lucide-react";
 
 type Props = {
@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   return {
     metadataBase: new URL(baseUrl),
-    title: "Cookie Policy",
+    title: { absolute: titelMetMerk("Cookie Policy") },
     description:
       "Learn how ZeroToVPN uses cookies and similar tracking technologies. Understand the types of cookies we use, their purpose, and how to manage your preferences.",
     robots: {

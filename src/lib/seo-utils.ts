@@ -49,6 +49,27 @@ export function stripBrand(title: string): string {
   return title.replace(/\s*[|\-–—]\s*ZeroToVPN\s*$/u, "").trim();
 }
 
+/** Wat Google in de zoekresultaten kwijt kan voor hij afkapt. */
+const TITEL_MAX = 60;
+const MERK = " | ZeroToVPN";
+
+/**
+ * Zet de sitenaam achter de titel, maar alleen als het geheel binnen de
+ * zoekresultaten past.
+ *
+ * De layout deed dit onvoorwaardelijk via `title.template`. Daardoor was 328
+ * van de 465 titels langer dan 60 tekens — en bij 288 daarvan kwam dat puur
+ * door die twaalf tekens. De merknaam achteraan is nu net het stuk dat Google
+ * als eerste wegkapt, dus je betaalt de ruimte zonder er iets voor te krijgen.
+ *
+ * Gebruik dit met `title: { absolute: titelMetMerk(...) }`, zodat de template
+ * van de layout er niet nog eens overheen gaat.
+ */
+export function titelMetMerk(titel: string): string {
+  const schoon = stripBrand(titel);
+  return schoon.length + MERK.length <= TITEL_MAX ? schoon + MERK : schoon;
+}
+
 /** OG locale mapping (ISO 639-1 → Open Graph format) */
 export const OG_LOCALE_MAP: Record<string, string> = {
   en: "en_US", nl: "nl_NL", de: "de_DE", es: "es_ES",

@@ -4,7 +4,7 @@ import { Link } from "@/i18n/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
-import { generateAlternates } from "@/lib/seo-utils";
+import { generateAlternates, titelMetMerk } from "@/lib/seo-utils";
 import { FileSpreadsheet } from "lucide-react";
 
 type Props = {
@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   return {
     metadataBase: new URL(baseUrl),
-    title: (copy[locale] ?? copy.en).title,
+    title: { absolute: titelMetMerk((copy[locale] ?? copy.en).title) },
     description: (copy[locale] ?? copy.en).subtitle,
     alternates: generateAlternates("/reports", locale),
   };

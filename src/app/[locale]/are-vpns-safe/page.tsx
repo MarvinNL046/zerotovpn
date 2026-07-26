@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { Link } from "@/i18n/navigation";
-import { OG_LOCALE_MAP, generateAlternates, getShortMonthYear } from "@/lib/seo-utils";
+import { OG_LOCALE_MAP, generateAlternates, getShortMonthYear, titelMetMerk } from "@/lib/seo-utils";
 import { getVpnBySlug } from "@/lib/vpn-data-layer";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { ShieldCheck, TriangleAlert, CheckCircle2, Lock, Eye, FileWarning } from "lucide-react";
@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     metadataBase: new URL(baseUrl),
-    title: `Are VPNs Safe? (${shortMonthYear}) - What to Trust and What to Avoid`,
+    title: { absolute: titelMetMerk(`Are VPNs Safe? (${shortMonthYear}) - What to Trust and What to Avoid`) },
     description:
       "Are VPNs safe in practice? Learn the real risk model, red flags to avoid, and how to choose a trustworthy VPN provider.",
     alternates: generateAlternates("/are-vpns-safe", locale),

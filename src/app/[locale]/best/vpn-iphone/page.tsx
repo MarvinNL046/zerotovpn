@@ -1,5 +1,5 @@
 import { setRequestLocale } from "next-intl/server";
-import { OG_LOCALE_MAP, getLocalizedMonthYear, stripBrand } from "@/lib/seo-utils";
+import { OG_LOCALE_MAP, getLocalizedMonthYear, stripBrand, titelMetMerk } from "@/lib/seo-utils";
 import { getTranslations } from "next-intl/server";
 import { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     metadataBase: new URL(baseUrl),
-    title: stripBrand(t("meta.title", { month: getLocalizedMonthYear(locale) })),
+    title: { absolute: titelMetMerk(stripBrand(t("meta.title", { month: getLocalizedMonthYear(locale) }))) },
     description: t("meta.description"),
     openGraph: {
       locale: OG_LOCALE_MAP[locale] ?? "en_US",

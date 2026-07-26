@@ -1,5 +1,5 @@
 import { setRequestLocale } from "next-intl/server";
-import { OG_LOCALE_MAP, getLocalizedMonthYear, stripBrand } from "@/lib/seo-utils";
+import { OG_LOCALE_MAP, getLocalizedMonthYear, stripBrand, titelMetMerk } from "@/lib/seo-utils";
 import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
@@ -104,7 +104,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: "guides.vpnForTravel" });
   return {
     metadataBase: new URL(baseUrl),
-    title: stripBrand(t("meta.title")),
+    title: { absolute: titelMetMerk(stripBrand(t("meta.title"))) },
     description: t("meta.description"),
     robots: {
       index: true,

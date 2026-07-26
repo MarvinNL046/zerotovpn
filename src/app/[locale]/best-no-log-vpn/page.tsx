@@ -6,7 +6,7 @@ import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { Link } from "@/i18n/navigation";
-import { OG_LOCALE_MAP, generateAlternates, getShortMonthYear } from "@/lib/seo-utils";
+import { OG_LOCALE_MAP, generateAlternates, getShortMonthYear, titelMetMerk } from "@/lib/seo-utils";
 import { getAllVpns } from "@/lib/vpn-data-layer";
 import { getVpnIndexRows, type LoggingPolicyGrade, type AuditStatus } from "@/lib/vpn-transparency-data";
 import { Shield, FileCheck, Lock, Building2 } from "lucide-react";
@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     metadataBase: new URL(baseUrl),
-    title: `Best No-Log VPN (${shortMonthYear}) - Audited Privacy Picks`,
+    title: { absolute: titelMetMerk(`Best No-Log VPN (${shortMonthYear}) - Audited Privacy Picks`) },
     description:
       "Data-backed no-log VPN picks with ownership, jurisdiction, audit status, and last-tested visibility.",
     alternates: generateAlternates("/best-no-log-vpn", locale),

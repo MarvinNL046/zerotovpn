@@ -1,5 +1,5 @@
 import { setRequestLocale } from "next-intl/server";
-import { getLocalizedMonthYear } from "@/lib/seo-utils";
+import { OG_LOCALE_MAP, getLocalizedMonthYear, stripBrand } from "@/lib/seo-utils";
 import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
@@ -53,16 +53,17 @@ const baseUrl = "https://www.zerotovpn.com";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "guides.vpnForTorrenting" });
   return {
     metadataBase: new URL(baseUrl),
-    title: "VPN for Torrenting: Stay Safe While Downloading (2026 Guide) - ZeroToVPN",
-    description:
-      "Learn how to use a VPN for safe torrenting. Understand P2P-friendly VPNs, kill switches, and leak protection to download securely and anonymously.",
+    title: stripBrand(t("meta.title")),
+    description: t("meta.description"),
     robots: {
       index: true,
       follow: true,
     },
     openGraph: {
+      locale: OG_LOCALE_MAP[locale] ?? "en_US",
       title: "VPN for Torrenting: Stay Safe While Downloading (2026)",
       description:
         "Learn how to use a VPN for safe torrenting with P2P-friendly servers and essential security features.",

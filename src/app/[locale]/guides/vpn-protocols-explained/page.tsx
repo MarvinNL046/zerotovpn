@@ -1,5 +1,5 @@
 import { setRequestLocale } from "next-intl/server";
-import { getLocalizedMonthYear } from "@/lib/seo-utils";
+import { OG_LOCALE_MAP, getLocalizedMonthYear, stripBrand } from "@/lib/seo-utils";
 import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
@@ -106,16 +106,17 @@ const baseUrl = "https://www.zerotovpn.com";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "guides.vpnProtocolsExplained" });
   return {
     metadataBase: new URL(baseUrl),
-    title: "VPN Protocols Explained: WireGuard vs OpenVPN vs IKEv2 (2026)",
-    description:
-      "WireGuard vs OpenVPN vs IKEv2 — which VPN protocol is fastest and most secure in 2026? We tested all three for speed, stability and real-world use.",
+    title: stripBrand(t("meta.title")),
+    description: t("meta.description"),
     robots: {
       index: true,
       follow: true,
     },
     openGraph: {
+      locale: OG_LOCALE_MAP[locale] ?? "en_US",
       title: "VPN Protocols Explained: WireGuard vs OpenVPN vs IKEv2 (2026)",
       description:
         "WireGuard vs OpenVPN vs IKEv2 — which VPN protocol is fastest and most secure in 2026? We tested all three for speed, stability and real-world use.",

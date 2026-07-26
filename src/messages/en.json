@@ -3934,7 +3934,11 @@
         "question": "What's the difference between monthly and long-term VPN plans?",
         "answer": "Long-term plans (1-2 years) offer significant discounts - often 60-80% off the monthly price. For example, NordVPN costs $12.99/month on a monthly plan but only $3.09/month on a 2-year plan. All top VPNs offer 30-day money-back guarantees, so you can try long-term plans risk-free."
       }
-    ]
+    ],
+    "meta": {
+      "title": "{a} vs {b} ({month}) – Comparison",
+      "description": "{a} vs {b} tested head-to-head on speed, price and features. See which VPN fits you in {month}."
+    }
   },
   "speedTest": {
     "title": "Internet Speed Test",

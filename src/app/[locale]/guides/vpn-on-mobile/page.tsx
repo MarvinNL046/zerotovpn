@@ -1,5 +1,5 @@
 import { setRequestLocale } from "next-intl/server";
-import { getLocalizedMonthYear } from "@/lib/seo-utils";
+import { OG_LOCALE_MAP, getLocalizedMonthYear, stripBrand } from "@/lib/seo-utils";
 import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
@@ -115,16 +115,17 @@ const baseUrl = "https://www.zerotovpn.com";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "guides.vpnOnMobile" });
   return {
     metadataBase: new URL(baseUrl),
-    title: "VPN on Mobile: Complete iOS & Android Setup Guide (2026) - ZeroToVPN",
-    description:
-      "Learn how to set up and use a VPN on your iPhone or Android device. Step-by-step guides, best practices, and tips for mobile VPN security.",
+    title: stripBrand(t("meta.title")),
+    description: t("meta.description"),
     robots: {
       index: true,
       follow: true,
     },
     openGraph: {
+      locale: OG_LOCALE_MAP[locale] ?? "en_US",
       title: "VPN on Mobile: Complete iOS & Android Setup Guide (2026)",
       description:
         "Learn how to set up and use a VPN on your iPhone or Android device. Step-by-step guides and best practices.",

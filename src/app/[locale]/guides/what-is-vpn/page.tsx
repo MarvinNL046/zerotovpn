@@ -1,5 +1,5 @@
 import { setRequestLocale } from "next-intl/server";
-import { getLocalizedMonthYear } from "@/lib/seo-utils";
+import { OG_LOCALE_MAP, getLocalizedMonthYear, stripBrand } from "@/lib/seo-utils";
 import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
@@ -42,6 +42,7 @@ const baseUrl = "https://www.zerotovpn.com";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "guides.whatIsVpn" });
 
   const prefix = locale === "en" ? "" : `/${locale}`;
   const canonicalUrl = `${baseUrl}${prefix}/guides/what-is-vpn`;
@@ -55,9 +56,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     metadataBase: new URL(baseUrl),
-    title: "What is a VPN? Complete Beginner's Guide 2026 - ZeroToVPN",
-    description:
-      "Learn what a VPN is, how it works, and why you need one. Our comprehensive beginner's guide explains VPN technology in simple terms.",
+    title: stripBrand(t("meta.title")),
+    description: t("meta.description"),
     alternates: {
       canonical: canonicalUrl,
       languages: languages,
@@ -67,6 +67,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       follow: true,
     },
     openGraph: {
+      locale: OG_LOCALE_MAP[locale] ?? "en_US",
       title: "What is a VPN? Complete Beginner's Guide 2026",
       description:
         "Learn what a VPN is, how it works, and why you need one. Our comprehensive beginner's guide explains VPN technology in simple terms.",

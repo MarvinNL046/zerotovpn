@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   return {
     metadataBase: new URL(baseUrl),
-    title: "Privacy Policy - ZeroToVPN",
+    title: "Privacy Policy",
     description:
       "Learn how ZeroToVPN collects, uses, and protects your personal information. Our privacy policy explains your rights and our data practices.",
     robots: {

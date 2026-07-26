@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   return {
     metadataBase: new URL(baseUrl),
-    title: "Terms of Service - ZeroToVPN",
+    title: "Terms of Service",
     description:
       "Read the terms and conditions for using ZeroToVPN. Understand your rights and responsibilities when using our VPN comparison and review website.",
     robots: {

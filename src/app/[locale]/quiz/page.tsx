@@ -4,6 +4,7 @@ import { QuizWizard } from "@/components/quiz/quiz-wizard";
 import { getAllVpns } from "@/lib/vpn-data-layer";
 import { routing } from "@/i18n/routing";
 
+import { OG_LOCALE_MAP, stripBrand } from "@/lib/seo-utils";
 type Props = {
   params: Promise<{ locale: string }>;
 };
@@ -26,14 +27,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   });
 
   return {
-    title: t("title"),
+    title: stripBrand(t("title")),
     description: t("description"),
     openGraph: {
+      locale: OG_LOCALE_MAP[locale] ?? "en_US",
       title: t("ogTitle"),
       description: t("ogDescription"),
       url: canonicalUrl,
-      siteName: "ZeroToVPN",
-      locale: locale,
+      siteName: "ZeroToVPN",
       type: "website",
       images: [
         {

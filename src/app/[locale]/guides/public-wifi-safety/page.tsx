@@ -1,5 +1,5 @@
 import { setRequestLocale } from "next-intl/server";
-import { getLocalizedMonthYear } from "@/lib/seo-utils";
+import { OG_LOCALE_MAP, getLocalizedMonthYear, stripBrand } from "@/lib/seo-utils";
 import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
@@ -49,16 +49,17 @@ const baseUrl = "https://www.zerotovpn.com";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "guides.publicWifiSafety" });
   return {
     metadataBase: new URL(baseUrl),
-    title: "Public WiFi Safety: How to Stay Secure on Open Networks (2026) - ZeroToVPN",
-    description:
-      "Learn about public WiFi risks and how to protect yourself. Discover essential security tips for using WiFi at cafes, airports, hotels, and other public places.",
+    title: stripBrand(t("meta.title")),
+    description: t("meta.description"),
     robots: {
       index: true,
       follow: true,
     },
     openGraph: {
+      locale: OG_LOCALE_MAP[locale] ?? "en_US",
       title: "Public WiFi Safety: How to Stay Secure on Open Networks (2026)",
       description:
         "Learn about public WiFi risks and how to protect yourself. Essential security tips for cafes, airports, and hotels.",

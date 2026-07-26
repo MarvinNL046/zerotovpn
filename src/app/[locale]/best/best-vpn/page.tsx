@@ -13,7 +13,7 @@ import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { getAllVpns, type VpnProvider } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
-import { generateAlternates, getLocalizedMonthYear } from "@/lib/seo-utils";
+import { OG_LOCALE_MAP, generateAlternates, getLocalizedMonthYear } from "@/lib/seo-utils";
 import { LastUpdated } from "@/components/last-updated";
 import {
   Zap,
@@ -81,6 +81,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       : undefined,
     alternates: generateAlternates("/best/best-vpn", locale),
     openGraph: {
+      locale: OG_LOCALE_MAP[locale] ?? "en_US",
       title: titles[locale] || titles.en,
       description: descriptions[locale] || descriptions.en,
       type: "article",

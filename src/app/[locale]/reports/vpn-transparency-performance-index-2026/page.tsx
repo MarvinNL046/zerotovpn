@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { Link } from "@/i18n/navigation";
-import { generateAlternates } from "@/lib/seo-utils";
+import { OG_LOCALE_MAP, generateAlternates } from "@/lib/seo-utils";
 import { formatAuditStatus, formatLoggingPolicy, getVpnIndexRows } from "@/lib/vpn-transparency-data";
 import { getAllVpns } from "@/lib/vpn-data-layer";
 import { FileSpreadsheet, TrendingUp, ShieldCheck, Gauge, RefreshCw } from "lucide-react";
@@ -51,11 +51,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   return {
     metadataBase: new URL(baseUrl),
-    title: "VPN Transparency & Performance Index 2026 | ZeroToVPN",
+    title: "VPN Transparency & Performance Index 2026",
     description:
       "Independent report across 3 regions with measurable metrics: speed, latency, logging policy, ownership, jurisdiction, streaming unlock, torrent support, and kill switch reliability.",
     alternates: generateAlternates("/reports/vpn-transparency-performance-index-2026", locale),
     openGraph: {
+      locale: OG_LOCALE_MAP[locale] ?? "en_US",
       title: "VPN Transparency & Performance Index 2026",
       description: "We tested VPN providers across three regions and published the full transparency matrix.",
       type: "article",

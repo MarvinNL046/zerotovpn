@@ -3793,7 +3793,11 @@
         "question": "Was ist der Unterschied zwischen monatlichen und langfristigen VPN-Tarifen?",
         "answer": "Langfristige Tarife (1-2 Jahre) bieten erhebliche Rabatte - oft 60-80% Ersparnis gegenüber dem Monatspreis. Zum Beispiel kostet NordVPN monatlich 12,99€, aber nur 2,99€/Monat bei einem 2-Jahres-Tarif. Alle Top-VPNs bieten 30-Tage-Geld-zurück-Garantien."
       }
-    ]
+    ],
+    "meta": {
+      "title": "{a} vs. {b} ({month}) – Vergleich",
+      "description": "{a} und {b} im direkten Test: Geschwindigkeit, Preis und Funktionen. Welches VPN passt {month} zu Ihnen?"
+    }
   },
   "speedTest": {
     "title": "Internet Geschwindigkeitstest",

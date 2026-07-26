@@ -1,5 +1,5 @@
 import { setRequestLocale } from "next-intl/server";
-import { getLocalizedMonthYear } from "@/lib/seo-utils";
+import { OG_LOCALE_MAP, getLocalizedMonthYear, stripBrand } from "@/lib/seo-utils";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
@@ -41,16 +41,17 @@ const baseUrl = "https://www.zerotovpn.com";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "guides.howVpnWorks" });
   return {
     metadataBase: new URL(baseUrl),
-    title: "How Does a VPN Work? Technical Guide 2026 - ZeroToVPN",
-    description:
-      "Understand the technical details behind VPN technology. Learn about encryption, tunneling protocols, and how VPNs protect your data step by step.",
+    title: stripBrand(t("meta.title")),
+    description: t("meta.description"),
     robots: {
       index: true,
       follow: true,
     },
     openGraph: {
+      locale: OG_LOCALE_MAP[locale] ?? "en_US",
       title: "How Does a VPN Work? Technical Guide 2026",
       description:
         "Understand the technical details behind VPN technology. Learn about encryption, tunneling protocols, and how VPNs protect your data.",

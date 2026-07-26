@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   return {
     metadataBase: new URL(baseUrl),
-    title: "Affiliate Disclosure - ZeroToVPN",
+    title: "Affiliate Disclosure",
     description:
       "Learn how ZeroToVPN earns money through affiliate partnerships. We believe in full transparency about our business relationships.",
     robots: {

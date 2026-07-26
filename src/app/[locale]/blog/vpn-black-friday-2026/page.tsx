@@ -12,6 +12,7 @@ import { RelatedPages } from "@/components/seo/related-pages";
 import { AuthorBox, FactCheckedBadge } from "@/components/blog/author-box";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { routing } from "@/i18n/routing";
+import { OG_LOCALE_MAP } from "@/lib/seo-utils";
 import {
   Calendar,
   Clock,
@@ -92,6 +93,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       follow: true,
     },
     openGraph: {
+      locale: OG_LOCALE_MAP[locale] ?? "en_US",
       title: titles[locale] || titles.en,
       description: descriptions[locale] || descriptions.en,
       type: "article",

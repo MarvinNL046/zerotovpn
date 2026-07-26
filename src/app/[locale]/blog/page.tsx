@@ -1,6 +1,6 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Metadata } from "next";
-import { generateAlternates } from "@/lib/seo-utils";
+import { OG_LOCALE_MAP, generateAlternates } from "@/lib/seo-utils";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "@/i18n/navigation";
@@ -88,6 +88,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: (titles[locale] || titles.en).replace(" | ZeroToVPN", ""),
     description: descriptions[locale] || descriptions.en,
     openGraph: {
+      locale: OG_LOCALE_MAP[locale] ?? "en_US",
       title: titles[locale] || titles.en,
       description: descriptions[locale] || descriptions.en,
       type: "website",

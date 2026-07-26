@@ -1,5 +1,5 @@
 import { setRequestLocale } from "next-intl/server";
-import { getLocalizedMonthYear } from "@/lib/seo-utils";
+import { OG_LOCALE_MAP, getLocalizedMonthYear, stripBrand } from "@/lib/seo-utils";
 import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
@@ -101,16 +101,17 @@ const baseUrl = "https://www.zerotovpn.com";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "guides.vpnForTravel" });
   return {
     metadataBase: new URL(baseUrl),
-    title: "VPN for Travel: Essential Guide to Staying Connected Abroad (2026) - ZeroToVPN",
-    description:
-      "Learn why you need a VPN when traveling. Access home content, bypass censorship, protect on hotel WiFi, and find deals. Complete travel VPN guide.",
+    title: stripBrand(t("meta.title")),
+    description: t("meta.description"),
     robots: {
       index: true,
       follow: true,
     },
     openGraph: {
+      locale: OG_LOCALE_MAP[locale] ?? "en_US",
       title: "VPN for Travel: Essential Guide to Staying Connected Abroad (2026)",
       description:
         "Learn why you need a VPN when traveling. Access home content, bypass censorship, and stay secure.",

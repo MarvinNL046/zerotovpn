@@ -3744,7 +3744,11 @@
         "question": "Wat is het verschil tussen maandelijkse en langetermijn VPN-abonnementen?",
         "answer": "Langetermijnabonnementen (1-2 jaar) bieden aanzienlijke kortingen - vaak 60-80% korting op de maandprijs. NordVPN kost bijvoorbeeld €12,99/maand op een maandabonnement maar slechts €2,99/maand op een 2-jarig abonnement. Alle top-VPNs bieden 30 dagen geld-terug-garantie, zodat je langetermijnabonnementen risicovrij kunt proberen."
       }
-    ]
+    ],
+    "meta": {
+      "title": "{a} vs {b} ({month}) – Vergelijking",
+      "description": "{a} en {b} naast elkaar getest op snelheid, prijs en functies. Zie welke VPN bij je past in {month}."
+    }
   },
   "speedTest": {
     "title": "Internet Snelheidstest",

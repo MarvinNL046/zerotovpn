@@ -1,4 +1,4 @@
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getVpnBySlug } from "@/lib/vpn-data-layer";
@@ -12,7 +12,7 @@ import { Check, X } from "lucide-react";
 import { routing } from "@/i18n/routing";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import type { VpnData } from "@/lib/db/vpn-service";
-import { getShortMonthYear, OG_LOCALE_MAP } from "@/lib/seo-utils";
+import { OG_LOCALE_MAP, getLocalizedMonthYear, getShortMonthYear } from "@/lib/seo-utils";
 import { LastUpdated } from "@/components/last-updated";
 import { FaqSchema } from "@/components/structured-data";
 import { getRelatedContent, reviewLink } from "@/lib/content-links";
@@ -75,12 +75,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     languages[l] = `${baseUrl}${p}/compare/${comparison}`;
   });
 
-  const shortMonthYear = getShortMonthYear();
+  const t = await getTranslations({ locale, namespace: "comparePage.meta" });
+  const maand = getLocalizedMonthYear(locale);
+  const namen = { a: vpn1.name, b: vpn2.name, month: maand };
 
   return {
     metadataBase: new URL(baseUrl),
-    title: `${vpn1.name} vs ${vpn2.name} (${shortMonthYear}) - Comparison`,
-    description: `${vpn1.name} vs ${vpn2.name} tested head-to-head on speed, price & features. Find out which VPN is right for you in ${shortMonthYear}.`,
+    title: t("title", namen),
+    description: t("description", namen),
     alternates: {
       canonical: canonicalUrl,
       languages: languages,
@@ -90,11 +92,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       follow: true,
     },
     openGraph: {
-      title: `${vpn1.name} vs ${vpn2.name} (${shortMonthYear}) - VPN Comparison | ZeroToVPN`,
-      description: `Detailed comparison of ${vpn1.name} and ${vpn2.name}. Find out which VPN is faster, more secure, and offers better value.`,
+      locale: OG_LOCALE_MAP[locale] ?? "en_US",
+      title: t("title", namen),
+      description: t("description", namen),
       url: canonicalUrl,
       type: "article",
-      locale: OG_LOCALE_MAP[locale] || "en_US",
       siteName: "ZeroToVPN",
       images: [
         {

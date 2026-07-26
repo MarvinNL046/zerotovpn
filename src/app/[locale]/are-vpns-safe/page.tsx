@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { Link } from "@/i18n/navigation";
-import { generateAlternates, getShortMonthYear } from "@/lib/seo-utils";
+import { OG_LOCALE_MAP, generateAlternates, getShortMonthYear } from "@/lib/seo-utils";
 import { getVpnBySlug } from "@/lib/vpn-data-layer";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { ShieldCheck, TriangleAlert, CheckCircle2, Lock, Eye, FileWarning } from "lucide-react";
@@ -27,6 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       "Are VPNs safe in practice? Learn the real risk model, red flags to avoid, and how to choose a trustworthy VPN provider.",
     alternates: generateAlternates("/are-vpns-safe", locale),
     openGraph: {
+      locale: OG_LOCALE_MAP[locale] ?? "en_US",
       title: `Are VPNs Safe? (${shortMonthYear})`,
       description:
         "A practical safety guide: provider risk, no-log evidence, and the checklist before you buy.",

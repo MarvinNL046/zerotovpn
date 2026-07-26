@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { Link } from "@/i18n/navigation";
-import { generateAlternates } from "@/lib/seo-utils";
+import { OG_LOCALE_MAP, generateAlternates } from "@/lib/seo-utils";
 import { FlaskConical, Clock, Gauge, Scale, Repeat2, Database, CheckCircle2 } from "lucide-react";
 
 type Props = {
@@ -33,12 +33,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   return {
     metadataBase: new URL(baseUrl),
-    title: "VPN Testing Methodology | ZeroToVPN",
+    title: "VPN Testing Methodology",
     description:
       "How ZeroToVPN tests VPNs: locations, baseline, timing, scoring weights, re-test cadence, and affiliate safeguards. Built for measurable and repeatable rankings.",
     alternates: generateAlternates("/methodology", locale),
     openGraph: {
-      title: "VPN Testing Methodology | ZeroToVPN",
+      locale: OG_LOCALE_MAP[locale] ?? "en_US",
+      title: "VPN Testing Methodology",
       description: "Our full VPN testing protocol: transparent, measurable, and reproducible.",
       type: "article",
     },

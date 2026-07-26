@@ -1,6 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { Metadata } from "next";
-import { getShortMonthYear, generateAlternates } from "@/lib/seo-utils";
+import { OG_LOCALE_MAP, generateAlternates, getShortMonthYear } from "@/lib/seo-utils";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
@@ -51,6 +51,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: titles[locale] || titles.en,
     description: descriptions[locale] || descriptions.en,
     openGraph: {
+      locale: OG_LOCALE_MAP[locale] ?? "en_US",
       title: titles[locale] || titles.en,
       description: descriptions[locale] || descriptions.en,
       type: "article",

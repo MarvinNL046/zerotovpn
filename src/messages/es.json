@@ -4098,7 +4098,11 @@
         "question": "¿Cuál es la diferencia entre planes VPN mensuales y a largo plazo?",
         "answer": "Los planes a largo plazo (1-2 años) ofrecen descuentos significativos - a menudo 60-80% de descuento sobre el precio mensual. Por ejemplo, NordVPN cuesta 12,99€/mes en un plan mensual pero solo 2,99€/mes en un plan de 2 años. Todas las principales VPN ofrecen garantías de devolución de 30 días."
       }
-    ]
+    ],
+    "meta": {
+      "title": "{a} vs {b} ({month}): comparativa",
+      "description": "{a} y {b} comparadas en velocidad, precio y funciones. Descubre cuál te conviene en {month}."
+    }
   },
   "speedTest": {
     "title": "Test de Velocidad de Internet",

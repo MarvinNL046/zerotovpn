@@ -34,6 +34,21 @@ export function generateAlternates(path: string, locale: string) {
   };
 }
 
+/**
+ * Haalt een achterliggende sitenaam van een titel af.
+ *
+ * De layout plakt via `title.template` zelf al " | ZeroToVPN" achter elke
+ * paginatitel. Titels die de merknaam ook zelf meedroegen kwamen daardoor
+ * dubbel in de SERP: "VPN Testing Methodology | ZeroToVPN | ZeroToVPN".
+ * Dat kostte 12 zichtbare tekens in een titelbalk waar er maar ~60 tellen.
+ *
+ * Gebruik dit rond elke titel die uit een vertaalbestand of een handmatige
+ * lijst komt; de template zorgt daarna voor één consistente merknaam.
+ */
+export function stripBrand(title: string): string {
+  return title.replace(/\s*[|\-–—]\s*ZeroToVPN\s*$/u, "").trim();
+}
+
 /** OG locale mapping (ISO 639-1 → Open Graph format) */
 export const OG_LOCALE_MAP: Record<string, string> = {
   en: "en_US", nl: "nl_NL", de: "de_DE", es: "es_ES",

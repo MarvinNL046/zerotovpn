@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   return {
     metadataBase: new URL(baseUrl),
-    title: "Cookie Policy - ZeroToVPN",
+    title: "Cookie Policy",
     description:
       "Learn how ZeroToVPN uses cookies and similar tracking technologies. Understand the types of cookies we use, their purpose, and how to manage your preferences.",
     robots: {

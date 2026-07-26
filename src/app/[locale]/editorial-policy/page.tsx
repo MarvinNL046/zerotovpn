@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { Link } from "@/i18n/navigation";
-import { generateAlternates } from "@/lib/seo-utils";
+import { OG_LOCALE_MAP, generateAlternates } from "@/lib/seo-utils";
 import { Scale, FileCheck, Shield, RefreshCw, CircleAlert, HandCoins } from "lucide-react";
 
 type Props = {
@@ -19,12 +19,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     metadataBase: new URL(baseUrl),
-    title: "Editorial Policy | ZeroToVPN",
+    title: "Editorial Policy",
     description:
       "How ZeroToVPN protects editorial independence: scoring rules, testing standards, corrections policy, and affiliate separation.",
     alternates: generateAlternates("/editorial-policy", locale),
     openGraph: {
-      title: "Editorial Policy | ZeroToVPN",
+      locale: OG_LOCALE_MAP[locale] ?? "en_US",
+      title: "Editorial Policy",
       description:
         "Our editorial policy explains exactly how rankings are created and protected from commercial influence.",
       type: "article",

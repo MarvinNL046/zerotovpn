@@ -7,7 +7,7 @@ import { RelatedPages } from "@/components/seo/related-pages";
 import { Go2NetworkSection } from "@/components/seo/go2-network-section";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { Link } from "@/i18n/navigation";
-import { generateAlternates, getShortMonthYear } from "@/lib/seo-utils";
+import { OG_LOCALE_MAP, generateAlternates, getShortMonthYear } from "@/lib/seo-utils";
 import { getVpnBySlug } from "@/lib/vpn-data-layer";
 import { Laptop, Wifi, Plane, Shield, Video, Globe } from "lucide-react";
 
@@ -28,6 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       "Independent VPN picks for digital nomads: stable calls, safer public WiFi, and transparent privacy while working across countries.",
     alternates: generateAlternates("/best-vpn-for-digital-nomads", locale),
     openGraph: {
+      locale: OG_LOCALE_MAP[locale] ?? "en_US",
       title: `Best VPN for Digital Nomads (${shortMonthYear})`,
       description:
         "Data-driven VPN picks for nomad workflows: remote work reliability, privacy, and travel readiness.",

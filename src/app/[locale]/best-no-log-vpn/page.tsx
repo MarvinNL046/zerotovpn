@@ -6,7 +6,7 @@ import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { Link } from "@/i18n/navigation";
-import { generateAlternates, getShortMonthYear } from "@/lib/seo-utils";
+import { OG_LOCALE_MAP, generateAlternates, getShortMonthYear } from "@/lib/seo-utils";
 import { getAllVpns } from "@/lib/vpn-data-layer";
 import { getVpnIndexRows, type LoggingPolicyGrade, type AuditStatus } from "@/lib/vpn-transparency-data";
 import { Shield, FileCheck, Lock, Building2 } from "lucide-react";
@@ -28,6 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       "Data-backed no-log VPN picks with ownership, jurisdiction, audit status, and last-tested visibility.",
     alternates: generateAlternates("/best-no-log-vpn", locale),
     openGraph: {
+      locale: OG_LOCALE_MAP[locale] ?? "en_US",
       title: `Best No-Log VPN (${shortMonthYear})`,
       description:
         "Independent no-log VPN ranking focused on verified transparency signals.",

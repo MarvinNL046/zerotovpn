@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   return {
     metadataBase: new URL(baseUrl),
-    title: "VPN Research Reports | ZeroToVPN",
+    title: "VPN Research Reports",
     description: "Independent, data-driven VPN research reports from ZeroToVPN.",
     alternates: generateAlternates("/reports", locale),
   };

@@ -30,7 +30,7 @@ import {
 } from "lucide-react";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { LastUpdated } from "@/components/last-updated";
-import { generateAlternates } from "@/lib/seo-utils";
+import { OG_LOCALE_MAP, generateAlternates } from "@/lib/seo-utils";
 import { getVpnAffiliateUrl } from "@/lib/vpn-links";
 
 import { getRequiredDiscountPercent } from "@/lib/vpn-discount";
@@ -49,6 +49,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: t("meta.title"),
     description: t("meta.description"),
     openGraph: {
+      locale: OG_LOCALE_MAP[locale] ?? "en_US",
       title: t("meta.title"),
       description: t("meta.description"),
       type: "article",

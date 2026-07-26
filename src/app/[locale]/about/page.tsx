@@ -27,8 +27,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
-import { generateAlternates } from "@/lib/seo-utils";
-
+import { OG_LOCALE_MAP, generateAlternates } from "@/lib/seo-utils";
 type Props = {
   params: Promise<{ locale: string }>;
 };
@@ -39,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   return {
     metadataBase: new URL(baseUrl),
-    title: "About ZeroToVPN | Our Testing Methodology",
+    title: { absolute: "About ZeroToVPN | Our Testing Methodology" },
     description:
       "Learn about ZeroToVPN's independent VPN testing methodology, our expert team, and our commitment to honest, unbiased reviews. No sponsored rankings.",
     robots: {
@@ -50,6 +49,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     // naar /about zelf-canonicaliseerden en de vertalingen uit de index vielen.
     alternates: generateAlternates("/about", locale),
     openGraph: {
+      locale: OG_LOCALE_MAP[locale] ?? "en_US",
       title: "About ZeroToVPN | Our Testing Methodology",
       description:
         "Discover how we independently test and review VPN services. Our rigorous methodology covers speed, security, privacy, and streaming performance.",

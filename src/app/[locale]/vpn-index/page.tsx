@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { VpnIndexDashboard } from "@/components/vpn/vpn-index-dashboard";
 import { getAllVpns } from "@/lib/vpn-data-layer";
-import { generateAlternates } from "@/lib/seo-utils";
+import { OG_LOCALE_MAP, generateAlternates } from "@/lib/seo-utils";
 import { getVpnIndexRows } from "@/lib/vpn-transparency-data";
 import { BarChart3 } from "lucide-react";
 
@@ -23,6 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       "Data dashboard with VPN scorecards, rankings, and filters for budget, privacy-first, streaming, and gaming use cases.",
     alternates: generateAlternates("/vpn-index", locale),
     openGraph: {
+      locale: OG_LOCALE_MAP[locale] ?? "en_US",
       title: "VPN Index 2026 | Transparency + Performance Dashboard",
       description:
         "Independent VPN rankings powered by transparent methodology and repeatable testing.",

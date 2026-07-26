@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
   const titles: Record<string, string> = {
-    en: "Best VPN for Pakistan 2026: Bypass Censorship & Access Blocked Sites | ZeroToVPN",
+    en: "Best VPN for Pakistan 2026: Bypass Censorship | ZeroToVPN",
     nl: "Beste VPN voor Pakistan 2026: Omzeil Censuur & Toegang tot Geblokkeerde Sites | ZeroToVPN",
     de: "Beste VPN fur Pakistan 2026: Zensur Umgehen & Gesperrte Seiten Zugreifen | ZeroToVPN",
     es: "Mejor VPN para Pakistan 2026: Evita la Censura y Accede a Sitios Bloqueados | ZeroToVPN",

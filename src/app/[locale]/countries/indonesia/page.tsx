@@ -14,7 +14,7 @@ const baseUrl = "https://www.zerotovpn.com";
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const titles: Record<string, string> = {
-    en: "Best VPN for Indonesia 2026: Access Reddit, Vimeo & Blocked Sites | ZeroToVPN",
+    en: "Best VPN for Indonesia 2026: Access Blocked Sites | ZeroToVPN",
     nl: "Beste VPN voor Indonesie 2026: Toegang tot Reddit, Vimeo & Geblokkeerde Sites | ZeroToVPN",
     de: "Beste VPN fur Indonesien 2026: Zugriff auf Reddit, Vimeo & Gesperrte Seiten | ZeroToVPN",
     es: "Mejor VPN para Indonesia 2026: Accede a Reddit, Vimeo y Sitios Bloqueados | ZeroToVPN",

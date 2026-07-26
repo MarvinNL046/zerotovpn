@@ -44,7 +44,7 @@ const content: Record<string, {
   related: { title: string; description: string; href: string; icon: string }[];
 }> = {
   en: {
-    metaTitle: "Best VPN for Morocco - Travel, Privacy & Public WiFi",
+    metaTitle: "Best VPN for Morocco — Travel & Public WiFi",
     metaDescription: "Independent picks for using a VPN in Morocco: safe public WiFi use, stronger privacy, and stable access while traveling.",
     ogTitle: "Best VPN for Morocco",
     ogDescription: "Data-driven VPN picks for Morocco travel, day-to-day privacy, and streaming access.",

@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const shortMonthYear = getShortMonthYear();
 
   const titles: Record<string, string> = {
-    en: `5 Best VPNs for Netflix (Tested ${shortMonthYear}) - Unblock Every Library | ZeroToVPN`,
+    en: `5 Best VPNs for Netflix (${shortMonthYear}) — Unblock Every Library | ZeroToVPN`,
     nl: `5 Beste VPNs voor Netflix (Getest ${shortMonthYear}) - Deblokeer Elke Bibliotheek | ZeroToVPN`,
     de: `5 Beste VPNs für Netflix (Getestet ${shortMonthYear}) - Jede Bibliothek Entsperren | ZeroToVPN`,
     es: `5 Mejores VPNs para Netflix (Probadas ${shortMonthYear}) - Desbloquea Todas las Bibliotecas | ZeroToVPN`,

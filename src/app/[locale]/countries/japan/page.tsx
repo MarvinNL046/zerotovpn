@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
   const titles: Record<string, string> = {
-    en: "Best VPN for Japan 2026: Stream Japanese Content & Stay Private | ZeroToVPN",
+    en: "Best VPN for Japan 2026: Stream Japanese Content | ZeroToVPN",
     nl: "Beste VPN voor Japan 2026: Stream Japanse Inhoud & Blijf Privé | ZeroToVPN",
     de: "Beste VPN für Japan 2026: Japanische Inhalte Streamen & Privat Bleiben | ZeroToVPN",
     es: "Mejor VPN para Japón 2026: Streaming de Contenido Japonés y Privacidad | ZeroToVPN",

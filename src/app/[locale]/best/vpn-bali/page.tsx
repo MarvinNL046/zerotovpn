@@ -44,7 +44,7 @@ const content: Record<string, {
   related: { title: string; description: string; href: string; icon: string }[];
 }> = {
   en: {
-    metaTitle: "Best VPN for Bali - Remote Work, Streaming & Public WiFi",
+    metaTitle: "Best VPN for Bali — Remote Work & Public WiFi",
     metaDescription: "Independent picks for using a VPN in Bali: safer public WiFi, stable streaming access, and privacy while traveling or working remotely.",
     ogTitle: "Best VPN for Bali",
     ogDescription: "Data-driven VPN picks for Bali travel, digital nomads, streaming, and privacy.",

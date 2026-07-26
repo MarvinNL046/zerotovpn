@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const shortMonthYear = getShortMonthYear();
 
   const titles: Record<string, string> = {
-    en: `Best VPNs for macOS (Tested ${shortMonthYear}) - Native Apps, M1/M2 Optimized | ZeroToVPN`,
+    en: `Best VPNs for macOS (${shortMonthYear}) — Native Apps, M-Series | ZeroToVPN`,
     nl: `Beste VPNs voor macOS (Getest ${shortMonthYear}) - Native Apps, M1/M2 Geoptimaliseerd | ZeroToVPN`,
     de: `Beste VPNs für macOS (Getestet ${shortMonthYear}) - Native Apps, M1/M2 Optimiert | ZeroToVPN`,
     es: `Mejores VPNs para macOS (Probados ${shortMonthYear}) - Apps Nativas, Optimizadas M1/M2 | ZeroToVPN`,

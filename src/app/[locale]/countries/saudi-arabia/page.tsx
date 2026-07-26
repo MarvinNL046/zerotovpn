@@ -14,7 +14,7 @@ const baseUrl = "https://www.zerotovpn.com";
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const titles: Record<string, string> = {
-    en: "Best VPN for Saudi Arabia 2026: Unblock VoIP & Access Restricted Content | ZeroToVPN",
+    en: "Best VPN for Saudi Arabia 2026: Unblock VoIP & Calls | ZeroToVPN",
     nl: "Beste VPN voor Saudi-Arabie 2026: Deblokkeer VoIP & Toegang tot Beperkte Inhoud | ZeroToVPN",
     de: "Beste VPN fur Saudi-Arabien 2026: VoIP Entsperren & Eingeschrankte Inhalte | ZeroToVPN",
     es: "Mejor VPN para Arabia Saudita 2026: Desbloquear VoIP y Contenido Restringido | ZeroToVPN",

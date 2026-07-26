@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const shortMonthYear = getShortMonthYear();
 
   const titles: Record<string, string> = {
-    en: "Best VPN for Gaming (2026) - Lowest Ping & Fastest Servers Tested | ZeroToVPN",
+    en: "Best VPN for Gaming (2026) — Lowest Ping, Tested | ZeroToVPN",
     nl: "Beste VPN voor Gaming 2026 - Laagste Ping & Snelste Servers Getest | ZeroToVPN",
     de: "Bestes VPN für Gaming 2026 - Niedrigster Ping & Schnellste Server Getestet | ZeroToVPN",
     es: "Mejor VPN para Gaming 2026 - Menor Ping y Servidores Más Rápidos Probados | ZeroToVPN",

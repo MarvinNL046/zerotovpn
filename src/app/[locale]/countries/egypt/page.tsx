@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
   const titles: Record<string, string> = {
-    en: "Best VPN for Egypt 2026: Unblock VoIP & Access Censored Content | ZeroToVPN",
+    en: "Best VPN for Egypt 2026: Unblock VoIP & Censored Sites | ZeroToVPN",
     nl: "Beste VPN voor Egypte 2026: Deblokkeer VoIP & Toegang tot Gecensureerde Inhoud | ZeroToVPN",
     de: "Beste VPN fur Agypten 2026: VoIP Entsperren & Zensierte Inhalte Zugreifen | ZeroToVPN",
     es: "Mejor VPN para Egipto 2026: Desbloquear VoIP y Acceder a Contenido Censurado | ZeroToVPN",

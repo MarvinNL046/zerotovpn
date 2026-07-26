@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const shortMonthYear = getShortMonthYear();
 
   const titles: Record<string, string> = {
-    en: `5 Best VPNs for Firestick (Tested ${shortMonthYear}) - Native Fire TV Apps | ZeroToVPN`,
+    en: `5 Best VPNs for Firestick (${shortMonthYear}) — Native Fire TV Apps | ZeroToVPN`,
     nl: `5 Beste VPNs voor Firestick (Getest ${shortMonthYear}) - Native Fire TV Apps | ZeroToVPN`,
     de: `5 Beste VPNs für Firestick (Getestet ${shortMonthYear}) - Native Fire TV Apps | ZeroToVPN`,
     es: `5 Mejores VPNs para Firestick (Probadas ${shortMonthYear}) - Apps Nativas Fire TV | ZeroToVPN`,

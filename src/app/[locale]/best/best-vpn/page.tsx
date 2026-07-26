@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
   const titles: Record<string, string> = {
-    en: "Best VPN in 2026 (Tested & Ranked for Speed, Privacy & Streaming) | ZeroToVPN",
+    en: "Best VPN in 2026 — Tested & Ranked on Speed and Privacy | ZeroToVPN",
     nl: "Beste VPN van 2026 (Getest & Gerangschikt op Snelheid, Privacy en Streaming) | ZeroToVPN",
     de: "Bester VPN 2026 (Unabhängig Getestet für Speed, Datenschutz und Streaming) | ZeroToVPN",
     es: "Mejor VPN 2026 (Probado y Clasificado por Velocidad, Privacidad y Streaming) | ZeroToVPN",

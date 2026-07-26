@@ -14,7 +14,7 @@ const baseUrl = "https://www.zerotovpn.com";
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const titles: Record<string, string> = {
-    en: "Best VPN for Vietnam 2026: Bypass Censorship & Protect Privacy | ZeroToVPN",
+    en: "Best VPN for Vietnam 2026: Bypass Censorship | ZeroToVPN",
     nl: "Beste VPN voor Vietnam 2026: Omzeil Censuur & Bescherm Privacy | ZeroToVPN",
     de: "Beste VPN fur Vietnam 2026: Zensur Umgehen & Privatsphare Schutzen | ZeroToVPN",
     es: "Mejor VPN para Vietnam 2026: Evita la Censura y Protege tu Privacidad | ZeroToVPN",

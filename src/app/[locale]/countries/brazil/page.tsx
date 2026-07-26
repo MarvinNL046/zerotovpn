@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
   const titles: Record<string, string> = {
-    en: "Best VPN for Brazil 2026: Privacy, Streaming & WhatsApp Blocks | ZeroToVPN",
+    en: "Best VPN for Brazil 2026: Privacy & Streaming | ZeroToVPN",
     nl: "Beste VPN voor Brazilië 2026: Privacy, Streaming & WhatsApp-blokkades | ZeroToVPN",
     de: "Beste VPN für Brasilien 2026: Privatsphäre, Streaming & WhatsApp-Sperren | ZeroToVPN",
     es: "Mejor VPN para Brasil 2026: Privacidad, Streaming y Bloqueos de WhatsApp | ZeroToVPN",

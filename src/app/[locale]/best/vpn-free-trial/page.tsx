@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const m = getShortMonthYear();
 
   const titles: Record<string, string> = {
-    en: `VPNs With a Real Free Trial (${m}) — Checked at the Source`,
+    en: `VPNs With a Real Free Trial (${m}) — Checked at Source`,
     nl: `VPN's met een échte gratis proefperiode (${m}) — bij de bron gecheckt`,
     de: `VPNs mit echter kostenloser Testphase (${m}) — an der Quelle geprüft`,
     es: `VPNs con prueba gratuita real (${m}) — verificado en la fuente`,

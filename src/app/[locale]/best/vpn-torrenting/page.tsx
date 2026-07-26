@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const shortMonthYear = getShortMonthYear();
 
   const titles: Record<string, string> = {
-    en: `5 Best VPNs for Torrenting (Tested ${shortMonthYear}) - Fastest P2P, No Logs | ZeroToVPN`,
+    en: `5 Best VPNs for Torrenting (${shortMonthYear}) — Fast P2P, No Logs | ZeroToVPN`,
     nl: `5 Beste VPNs voor Torrenting (Getest ${shortMonthYear}) - Snelste P2P, Geen Logs | ZeroToVPN`,
     de: `5 Beste VPNs für Torrenting (Getestet ${shortMonthYear}) - Schnellste P2P, Keine Logs | ZeroToVPN`,
     es: `5 Mejores VPNs para Torrenting (Probados ${shortMonthYear}) - Más Rápidos P2P, Sin Logs | ZeroToVPN`,

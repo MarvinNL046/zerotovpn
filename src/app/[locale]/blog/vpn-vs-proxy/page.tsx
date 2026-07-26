@@ -424,11 +424,11 @@ export default async function VpnVsProxyPage({ params }: Props) {
             <div className="max-w-4xl mx-auto">
               <h2 className="text-2xl font-bold mb-6">{t("related.title")}</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Link href="/blog/vpn-black-friday-2026">
+                <Link href="/guides/what-is-vpn">
                   <Card className="hover:shadow-lg transition-shadow h-full">
                     <CardContent className="p-6">
                       <Badge variant="secondary" className="mb-3">
-                        {blogT("categories.deals")}
+                        {blogT("categories.tips")}
                       </Badge>
                       <h3 className="text-lg font-bold mb-2">
                         {t("related.post1.title")}

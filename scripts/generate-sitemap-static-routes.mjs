@@ -63,11 +63,20 @@ function main() {
   const isRedirectOnly = (filePath) =>
     REDIRECT_ONLY_RE.test(fs.readFileSync(filePath, "utf8"));
 
+  // Zet een pagina zichzelf op noindex, dan hoort hij hier ook niet in: je
+  // vraagt Google anders te crawlen wat je vervolgens weigert te laten
+  // indexeren. Ook dit lezen we uit het bestand zelf, zodat er geen lijst met
+  // slugs is die kan gaan afwijken van de werkelijkheid.
+  const NOINDEX_RE = /robots\s*:\s*\{[^}]*\bindex\s*:\s*false/s;
+  const isNoindex = (filePath) =>
+    NOINDEX_RE.test(fs.readFileSync(filePath, "utf8"));
+
   const redirectOnly = pageFiles.filter(isRedirectOnly);
+  const noindex = pageFiles.filter(isNoindex);
   const routes = Array.from(
     new Set(
       pageFiles
-        .filter((file) => !redirectOnly.includes(file))
+        .filter((file) => !redirectOnly.includes(file) && !noindex.includes(file))
         .map(normalizeRouteFromPageFile)
         .filter((route) => route !== null)
     )
@@ -83,7 +92,7 @@ function main() {
     `[sitemap] generated ${routes.length} static locale routes -> ${path.relative(projectRoot, outputFile)}`
   );
   console.log(
-    `[sitemap] excluded ${redirectOnly.length} redirect-only routes from the sitemap`
+    `[sitemap] excluded ${redirectOnly.length} redirect-only and ${noindex.length} noindex routes from the sitemap`
   );
 }
 

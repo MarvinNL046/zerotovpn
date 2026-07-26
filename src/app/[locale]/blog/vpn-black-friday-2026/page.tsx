@@ -76,6 +76,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       canonical: canonicalUrl,
       languages: languages,
     },
+    // Uit de zoekresultaten gehaald op 26 juli 2026. Dit stuk belooft een
+    // Black Friday-actie met "beperkte tijd" terwijl Black Friday pas eind
+    // november is; jaarrond vindbaar is het gewoon misleidend.
+    //
+    // Bewust noindex en geen verwijdering: de URL blijft werken, dus bezoekers
+    // met een oude link komen niet op een 404. De sitemap-generator laat
+    // noindex-pagina's automatisch weg, dus hier hoeft verder niets voor.
+    //
+    // Weer aanzetten in november: haal dit robots-blok weg, zet de post terug
+    // in blogPosts in src/app/[locale]/blog/page.tsx, en controleer eerst de
+    // prijzen — de kortingen komen uit vpn-data.ts.
+    robots: {
+      index: false,
+      follow: true,
+    },
     openGraph: {
       title: titles[locale] || titles.en,
       description: descriptions[locale] || descriptions.en,

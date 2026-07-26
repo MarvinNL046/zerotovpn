@@ -97,13 +97,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 // Blog posts data
+// De Black Friday-post staat hier bewust NIET in: die belooft een actie met
+// "beperkte tijd" en is buiten november misleidend. De pagina blijft bestaan
+// (noindex, zie de post zelf), alleen niet meer in de index of de sitemap.
 const blogPosts = [
-  {
-    slug: "vpn-black-friday-2026",
-    category: "deals",
-    date: "2025-11-29",
-    readTime: "5 min",
-  },
   {
     slug: "is-vpn-legal",
     category: "security",
@@ -495,7 +492,7 @@ export default async function BlogPage({ params }: Props) {
               title="Explore More"
               pages={[
                 { title: "Best VPNs 2026", description: "Our top-rated VPN services", href: "/best/best-vpn", icon: "trophy" },
-                { title: "VPN Black Friday Deals", description: "Biggest discounts of the year", href: "/blog/vpn-black-friday-2026", icon: "tag" },
+                { title: "What Is a VPN?", description: "How a VPN works, in plain language", href: "/guides/what-is-vpn", icon: "shield" },
                 { title: "Is VPN Legal?", description: "VPN legality around the world", href: "/blog/is-vpn-legal", icon: "shield" },
                 { title: "VPN vs Proxy", description: "Differences and when to use each", href: "/blog/vpn-vs-proxy", icon: "zap" }
               ]}

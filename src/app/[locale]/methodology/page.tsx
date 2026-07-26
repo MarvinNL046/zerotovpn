@@ -33,13 +33,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   return {
     metadataBase: new URL(baseUrl),
-    title: "VPN Testing Methodology",
-    description:
-      "How ZeroToVPN tests VPNs: locations, baseline, timing, scoring weights, re-test cadence, and affiliate safeguards. Built for measurable and repeatable rankings.",
+    title: { absolute: (copy[locale] ?? copy.en).title },
+    description: (copy[locale] ?? copy.en).subtitle,
     alternates: generateAlternates("/methodology", locale),
     openGraph: {
       locale: OG_LOCALE_MAP[locale] ?? "en_US",
-      title: "VPN Testing Methodology",
+      title: (copy[locale] ?? copy.en).title,
       description: "Our full VPN testing protocol: transparent, measurable, and reproducible.",
       type: "article",
     },

@@ -17,8 +17,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   return {
     metadataBase: new URL(baseUrl),
-    title: "VPN Research Reports",
-    description: "Independent, data-driven VPN research reports from ZeroToVPN.",
+    title: (copy[locale] ?? copy.en).title,
+    description: (copy[locale] ?? copy.en).subtitle,
     alternates: generateAlternates("/reports", locale),
   };
 }
@@ -40,7 +40,7 @@ const copy: Record<string, { badge: string; title: string; subtitle: string; car
     open: "Open rapport",
     reports: "Rapporten",
   },
-  de: { badge: "Research-Bibliothek", title: "VPN Research Reports", subtitle: "Offentliche Reports zur Absicherung von Rankings.", cardBody: "Kern-Asset mit messbaren Metriken fur Speed, Latenz, Logging, Ownership, Jurisdiktion, Streaming, Torrent und Kill Switch.", open: "Report offnen", reports: "Reports" },
+  de: { badge: "Research-Bibliothek", title: "VPN-Forschungsberichte", subtitle: "Offentliche Reports zur Absicherung von Rankings.", cardBody: "Kern-Asset mit messbaren Metriken fur Speed, Latenz, Logging, Ownership, Jurisdiktion, Streaming, Torrent und Kill Switch.", open: "Report offnen", reports: "Reports" },
   es: { badge: "Biblioteca de investigacion", title: "Informes de investigacion VPN", subtitle: "Activos publicos que respaldan rankings y reviews.", cardBody: "Activo central con metricas medibles de velocidad, latencia, logs, propiedad, jurisdiccion, streaming, torrent y kill switch.", open: "Abrir informe", reports: "Informes" },
   fr: { badge: "Bibliotheque recherche", title: "Rapports de recherche VPN", subtitle: "Rapports publics qui soutiennent nos classements.", cardBody: "Actif principal avec metriques mesurables: vitesse, latence, logs, ownership, juridiction, streaming, torrent et kill switch.", open: "Ouvrir le rapport", reports: "Rapports" },
   zh: { badge: "研究库", title: "VPN 研究报告", subtitle: "用于支撑排名与评测结论的公开报告。", cardBody: "核心报告包含速度、延迟、日志、所有权、司法辖区、流媒体、种子与 Kill Switch 等可量化指标。", open: "打开报告", reports: "报告" },

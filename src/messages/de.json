@@ -5590,5 +5590,11 @@
         "answer": "Ein IP-Leck verrät Ihre echte IP-Adresse, obwohl ein VPN läuft. Ein DNS-Leck verrät, welche Webseiten Sie besuchen. Beides schadet Ihrer Privatsphäre, funktioniert aber unterschiedlich. Mit unserem IP-Checker testen Sie auf IP-Lecks."
       }
     ]
+  },
+  "toolsPage": {
+    "meta": {
+      "title": "Kostenlose VPN- und Datenschutz-Tools",
+      "description": "IP-Adresse prüfen, auf DNS-Lecks testen und Tempo messen. Kostenlos, ohne Anmeldung."
+    }
   }
 }

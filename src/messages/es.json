@@ -5895,5 +5895,11 @@
         "answer": "Una fuga de IP deja ver tu dirección IP real aunque uses VPN. Una fuga DNS deja ver qué webs visitas. Las dos dañan tu privacidad, pero funcionan de forma distinta. Usa nuestra herramienta de IP para comprobar las fugas de IP."
       }
     ]
+  },
+  "toolsPage": {
+    "meta": {
+      "title": "Herramientas gratuitas de VPN y privacidad",
+      "description": "Consulta tu IP, comprueba fugas DNS y mide tu velocidad. Gratis y sin registro."
+    }
   }
 }

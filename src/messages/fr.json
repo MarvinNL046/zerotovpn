@@ -5548,5 +5548,11 @@
         "answer": "Une fuite d'IP révèle votre vraie adresse IP malgré le VPN. Une fuite DNS révèle les sites que vous visitez. Les deux nuisent à votre vie privée, mais par des mécanismes différents. Utilisez notre outil IP pour tester les fuites d'adresse."
       }
     ]
+  },
+  "toolsPage": {
+    "meta": {
+      "title": "Outils VPN et confidentialité gratuits",
+      "description": "Vérifiez votre IP, testez les fuites DNS et mesurez votre débit. Gratuit, sans inscription."
+    }
   }
 }

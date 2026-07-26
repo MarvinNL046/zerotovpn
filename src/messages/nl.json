@@ -5541,5 +5541,11 @@
         "answer": "Een IP-lek onthult je echte IP-adres ondanks het gebruik van een VPN. Een DNS-lek onthult welke websites je bezoekt. Beide schaden je privacy, maar werken via verschillende mechanismen. Gebruik onze IP-checker tool om op IP-lekken te testen."
       }
     ]
+  },
+  "toolsPage": {
+    "meta": {
+      "title": "Gratis VPN- en privacytools",
+      "description": "Bekijk je IP-adres, test op DNS-lekken en meet je snelheid. Gratis, zonder account."
+    }
   }
 }

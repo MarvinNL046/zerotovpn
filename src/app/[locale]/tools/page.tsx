@@ -12,10 +12,10 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "toolsPage" });
   return {
-    title: "Free VPN & Privacy Tools",
-    description:
-      "Free online tools to check your IP address, test for DNS leaks, and measure your internet speed. Stay safe and private online.",
+    title: t("meta.title"),
+    description: t("meta.description"),
     alternates: generateAlternates("/tools", locale),
   };
 }

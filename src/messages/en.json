@@ -5539,5 +5539,11 @@
         "answer": "An IP leak exposes your real IP address despite using a VPN. A DNS leak exposes which websites you visit. Both compromise your privacy, but they work through different mechanisms. Use our IP checker tool to test for IP leaks."
       }
     ]
+  },
+  "toolsPage": {
+    "meta": {
+      "title": "Free VPN & Privacy Tools",
+      "description": "Check your IP address, test for DNS leaks and measure your speed. Free, no sign-up."
+    }
   }
 }

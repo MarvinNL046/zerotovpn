@@ -393,7 +393,7 @@ export default async function VpnCheapPage({ params }: Props) {
 
   return (
     <>
-      <BreadcrumbSchema items={[{ name: "Best VPN Guides", href: "/best" }, { name: "Cheapest VPN", href: "/best/vpn-cheap" }]} />
+      <BreadcrumbSchema items={[{ name: "Best VPN Guides", href: "/best/best-vpn" }, { name: "Cheapest VPN", href: "/best/vpn-cheap" }]} />
       <ItemListSchema vpns={cheapVpns} />
       <FAQSchema faqs={t.faqs} />
 

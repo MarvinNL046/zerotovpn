@@ -1871,7 +1871,7 @@ export default async function MacOSVpnPage({ params }: Props) {
       <ItemListSchema macosVpns={macosVpns} />
       <BreadcrumbSchema
         items={[
-          { name: "Best VPN Guides", href: "/best" },
+          { name: "Best VPN Guides", href: "/best/best-vpn" },
           { name: "Best VPN for macOS 2026", href: "/best/vpn-macos" },
         ]}
       />

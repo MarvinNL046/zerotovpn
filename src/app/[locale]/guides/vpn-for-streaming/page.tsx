@@ -498,7 +498,7 @@ export default async function VpnForStreamingPage({ params }: Props) {
               title="Related Guides"
               pages={[
                 { title: "VPN Speed Guide", description: "Optimize speed for 4K streaming", href: "/guides/vpn-speed-guide", icon: "zap" },
-                { title: "Best Gaming VPNs", description: "Low-latency VPNs for gaming", href: "/best/best-gaming-vpn", icon: "gamepad" },
+                { title: "Best Gaming VPNs", description: "Low-latency VPNs for gaming", href: "/best/vpn-gaming", icon: "gamepad" },
                 { title: "VPN for Torrenting", description: "Stay safe while downloading", href: "/guides/vpn-for-torrenting", icon: "download" },
                 { title: "Best VPNs 2026", description: "Top-rated streaming VPNs", href: "/best/best-vpn", icon: "trophy" }
               ]}

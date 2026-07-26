@@ -144,7 +144,10 @@
     "dnsLeakTest": "DNSリークテスト",
     "vpnIndex": "VPN Index",
     "methodology": "Methodology",
-    "transparencyReport": "Transparency Report 2026"
+    "transparencyReport": "Transparency Report 2026",
+    "cookiePolicy": "Cookie ポリシー",
+    "howWeTest": "テスト方法",
+    "quiz": "VPN 診断"
   },
   "newsletter": {
     "title": "最新情報を入手",

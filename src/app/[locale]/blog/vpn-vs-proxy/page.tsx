@@ -478,7 +478,7 @@ export default async function VpnVsProxyPage({ params }: Props) {
                   { title: "Is VPN Legal?", description: "VPN legality around the world", href: "/blog/is-vpn-legal", icon: "shield" },
                   { title: "What is a VPN?", description: "Learn VPN basics", href: "/guides/what-is-vpn", icon: "shield" },
                   { title: "Best VPNs 2026", description: "Our top-rated VPN services", href: "/best/best-vpn", icon: "trophy" },
-                  { title: "VPN for Streaming", description: "Best VPNs for Netflix and more", href: "/best/streaming-vpn", icon: "play" }
+                  { title: "VPN for Streaming", description: "Best VPNs for Netflix and more", href: "/best/vpn-streaming", icon: "play" }
                 ]}
               />
             </div>

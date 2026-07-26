@@ -652,7 +652,9 @@ export default async function VpnForTravelPage({ params }: Props) {
                 { title: "Public WiFi Safety", description: "Stay secure on hotel and airport WiFi", href: "/guides/public-wifi-safety", icon: "wifi" },
                 { title: "VPN on Mobile", description: "Setup VPN on iPhone and Android", href: "/guides/vpn-on-mobile", icon: "smartphone" },
                 { title: "VPN for Streaming", description: "Access home content while abroad", href: "/guides/vpn-for-streaming", icon: "play" },
-                { title: "Best VPNs 2026", description: "Top-rated travel VPNs", href: "/best/best-vpn", icon: "trophy" }
+                { title: "Best VPNs 2026", description: "Top-rated travel VPNs", href: "/best/best-vpn", icon: "trophy" },
+                { title: "VPN for Digital Nomads", description: "Working abroad on unfamiliar networks", href: "/best-vpn-for-digital-nomads", icon: "globe" },
+                { title: "Best VPN for Morocco", description: "What works on Moroccan networks", href: "/best/vpn-morocco", icon: "shield" }
               ]}
             />
 

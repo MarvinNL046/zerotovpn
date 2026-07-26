@@ -383,7 +383,7 @@ export default async function VpnFirestickPage({ params }: Props) {
 
   return (
     <>
-      <BreadcrumbSchema items={[{ name: "Best VPN Guides", href: "/best" }, { name: "Best VPN for Firestick", href: "/best/vpn-firestick" }]} />
+      <BreadcrumbSchema items={[{ name: "Best VPN Guides", href: "/best/best-vpn" }, { name: "Best VPN for Firestick", href: "/best/vpn-firestick" }]} />
       <ItemListSchema vpns={firestickVpns} />
       <FAQSchema faqs={t.faqs} />
 

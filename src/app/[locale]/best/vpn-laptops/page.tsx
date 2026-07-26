@@ -1494,7 +1494,7 @@ export default async function LaptopVpnPage({ params }: Props) {
 
   // Breadcrumb items
   const breadcrumbItems = [
-    { name: "Best VPN", href: "/best" },
+    { name: "Best VPN", href: "/best/best-vpn" },
     { name: "Laptops & Notebooks", href: "/best/vpn-laptops" },
   ];
 
@@ -1524,7 +1524,7 @@ export default async function LaptopVpnPage({ params }: Props) {
     {
       title: "Best Budget VPN",
       description: "Affordable VPNs without compromising quality",
-      href: "/best/budget-vpn"
+      href: "/best/vpn-cheap"
     },
   ];
 

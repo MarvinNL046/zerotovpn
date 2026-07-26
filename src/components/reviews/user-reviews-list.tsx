@@ -273,7 +273,7 @@ function ReviewCard({ review, locale, t, usageLabels, periodLabels }: ReviewCard
       </CardHeader>
       <CardContent className="space-y-4">
         {/* Title */}
-        <h4 className="font-semibold text-lg">{review.title}</h4>
+        <h3 className="font-semibold text-lg">{review.title}</h3>
 
         {/* Usage badges */}
         {(review.usageType || review.usagePeriod) && (

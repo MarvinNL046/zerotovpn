@@ -112,7 +112,9 @@ export function VpnReviewCard({
       <CardHeader>
         <div className="flex items-center justify-between gap-4">
           <CardTitle className="flex items-center gap-3 text-2xl">
-            <span className="metric">{rank}.</span> {name}
+            <h3 className="flex items-center gap-3">
+              <span className="metric">{rank}.</span> {name}
+            </h3>
             {score != null && (
               <Badge variant="outline" className={scoreClassName}>
                 {scoreIcon}

@@ -451,7 +451,7 @@ export default async function VpnTorrentingPage({ params }: Props) {
 
   return (
     <>
-      <BreadcrumbSchema items={[{ name: "Best VPN Guides", href: "/best" }, { name: "Best VPN for Torrenting", href: "/best/vpn-torrenting" }]} />
+      <BreadcrumbSchema items={[{ name: "Best VPN Guides", href: "/best/best-vpn" }, { name: "Best VPN for Torrenting", href: "/best/vpn-torrenting" }]} />
       <ItemListSchema vpns={torrentVpns} />
       <FAQSchema faqs={t.faqs} />
 

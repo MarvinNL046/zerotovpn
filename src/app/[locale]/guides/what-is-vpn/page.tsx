@@ -409,7 +409,8 @@ export default async function WhatIsVpnPage({ params }: Props) {
                 { title: "How VPNs Work", description: "Technical deep-dive into VPN technology", href: "/guides/how-vpn-works", icon: "zap" },
                 { title: "VPN Protocols Explained", description: "Compare WireGuard, OpenVPN, and more", href: "/guides/vpn-protocols-explained", icon: "lock" },
                 { title: "Best VPNs 2026", description: "Our top-rated VPN recommendations", href: "/best/best-vpn", icon: "trophy" },
-                { title: "VPN Privacy Guide", description: "Maximize your online privacy", href: "/guides/vpn-privacy-guide", icon: "shield" }
+                { title: "VPN Privacy Guide", description: "Maximize your online privacy", href: "/guides/vpn-privacy-guide", icon: "shield" },
+                { title: "Are VPNs Safe?", description: "What a VPN protects, and what it does not", href: "/are-vpns-safe", icon: "shield" }
               ]}
             />
           </div>

@@ -144,7 +144,10 @@
     "dnsLeakTest": "DNS Lek Test",
     "vpnIndex": "VPN Index",
     "methodology": "Methodology",
-    "transparencyReport": "Transparency Report 2026"
+    "transparencyReport": "Transparency Report 2026",
+    "cookiePolicy": "Cookiebeleid",
+    "howWeTest": "Hoe we testen",
+    "quiz": "VPN-keuzehulp"
   },
   "exitIntent": {
     "headline": "Wacht! Mis deze exclusieve aanbieding niet!",

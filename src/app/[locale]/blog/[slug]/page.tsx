@@ -12,6 +12,7 @@ import { generateAlternates } from "@/lib/seo-utils";
 import { getRelatedContent } from "@/lib/content-links";
 import { RelatedContent } from "@/components/seo/related-content";
 import InlineAd from "@/components/ads/InlineAd";
+import { normaliseerArtikelKoppen } from "@/lib/blog-content";
 import {
   AuthorBox,
   FactCheckedBadge,
@@ -189,7 +190,7 @@ export default async function DynamicBlogPost({ params }: Props) {
         {/* Article Content */}
         <div
           className="blog-content max-w-none"
-          dangerouslySetInnerHTML={{ __html: post.content }}
+          dangerouslySetInnerHTML={{ __html: normaliseerArtikelKoppen(post.content) }}
         />
 
         {/* Ad placement */}

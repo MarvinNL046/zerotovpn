@@ -24,7 +24,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-white font-semibold mb-4">{t("links")}</h4>
+            <h3 className="text-white font-semibold mb-4">{t("links")}</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
@@ -108,6 +108,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/quiz"
+                  className="text-slate-400 hover:text-orange-400"
+                >
+                  {t("quiz")}
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/speed-test"
                   className="text-slate-400 hover:text-orange-400"
                 >
@@ -159,7 +167,7 @@ export function Footer() {
 
           {/* Devices */}
           <div>
-            <h4 className="text-white font-semibold mb-4">{t("devices")}</h4>
+            <h3 className="text-white font-semibold mb-4">{t("devices")}</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
@@ -206,7 +214,7 @@ export function Footer() {
 
           {/* Legal */}
           <div>
-            <h4 className="text-white font-semibold mb-4">{t("legal")}</h4>
+            <h3 className="text-white font-semibold mb-4">{t("legal")}</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
@@ -234,6 +242,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/cookie-policy"
+                  className="text-slate-400 hover:text-orange-400"
+                >
+                  {t("cookiePolicy")}
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/methodology"
                   className="text-slate-400 hover:text-orange-400"
                 >
@@ -245,7 +261,7 @@ export function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="text-white font-semibold mb-4">{t("company")}</h4>
+            <h3 className="text-white font-semibold mb-4">{t("company")}</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
@@ -253,6 +269,14 @@ export function Footer() {
                   className="text-slate-400 hover:text-orange-400"
                 >
                   {t("about")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/how-we-test"
+                  className="text-slate-400 hover:text-orange-400"
+                >
+                  {t("howWeTest")}
                 </Link>
               </li>
               <li>

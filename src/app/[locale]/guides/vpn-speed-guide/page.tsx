@@ -621,7 +621,7 @@ export default async function VpnSpeedGuidePage({ params }: Props) {
               pages={[
                 { title: "VPN Protocols Explained", description: "Compare WireGuard, OpenVPN speeds", href: "/guides/vpn-protocols-explained", icon: "lock" },
                 { title: "VPN for Streaming", description: "Optimize for 4K streaming", href: "/guides/vpn-for-streaming", icon: "play" },
-                { title: "Best Gaming VPNs", description: "Low-latency gaming VPNs", href: "/best/best-gaming-vpn", icon: "gamepad" },
+                { title: "Best Gaming VPNs", description: "Low-latency gaming VPNs", href: "/best/vpn-gaming", icon: "gamepad" },
                 { title: "Best VPNs 2026", description: "Fastest VPN recommendations", href: "/best/best-vpn", icon: "trophy" }
               ]}
             />

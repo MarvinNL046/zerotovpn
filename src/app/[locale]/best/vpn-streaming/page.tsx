@@ -552,7 +552,7 @@ export default async function VpnStreamingPage({ params }: Props) {
     <>
       <BreadcrumbSchema
         items={[
-          { name: "Best VPN Guides", href: "/best" },
+          { name: "Best VPN Guides", href: "/best/best-vpn" },
           { name: "Best VPN for Streaming", href: "/best/vpn-streaming" },
         ]}
       />

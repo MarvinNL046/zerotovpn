@@ -1416,7 +1416,7 @@ export default async function ChromebookVpnPage({ params }: Props) {
     <>
       <BreadcrumbSchema
         items={[
-          { name: "Best VPN Guides", href: "/best" },
+          { name: "Best VPN Guides", href: "/best/best-vpn" },
           { name: "Best VPN for Chromebook", href: "/best/vpn-chromebook" },
         ]}
       />

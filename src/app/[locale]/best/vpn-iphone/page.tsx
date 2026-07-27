@@ -563,7 +563,7 @@ export default async function IphoneVpnPage({ params }: Props) {
                       <div key={i} className="flex gap-3">
                         <AlertTriangle className="h-5 w-5 text-orange-500 flex-shrink-0 mt-0.5" />
                         <div>
-                          <h4 className="font-semibold mb-1">{item.title}</h4>
+                          <h3 className="font-semibold mb-1">{item.title}</h3>
                           <p className="text-sm text-muted-foreground">{item.description}</p>
                         </div>
                       </div>

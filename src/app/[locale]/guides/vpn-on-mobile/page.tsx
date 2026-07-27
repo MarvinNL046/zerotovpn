@@ -247,10 +247,10 @@ export default async function VpnOnMobilePage({ params }: Props) {
 
                   return (
                     <div key={index} className="bg-muted/50 rounded-lg p-4">
-                      <h4 className="font-semibold mb-2 flex items-center gap-2">
+                      <h3 className="font-semibold mb-2 flex items-center gap-2">
                         <IconComponent className={`h-4 w-4 ${iconColor}`} />
                         {benefit.title}
-                      </h4>
+                      </h3>
                       <p className="text-sm text-muted-foreground">
                         {benefit.description}
                       </p>
@@ -286,7 +286,7 @@ export default async function VpnOnMobilePage({ params }: Props) {
                       {step.number}
                     </div>
                     <div>
-                      <h4 className="font-semibold mb-1">{step.title}</h4>
+                      <h3 className="font-semibold mb-1">{step.title}</h3>
                       <p className="text-sm text-muted-foreground">
                         {step.description}
                       </p>
@@ -331,7 +331,7 @@ export default async function VpnOnMobilePage({ params }: Props) {
                       {step.number}
                     </div>
                     <div>
-                      <h4 className="font-semibold mb-1">{step.title}</h4>
+                      <h3 className="font-semibold mb-1">{step.title}</h3>
                       <p className="text-sm text-muted-foreground">
                         {step.description}
                       </p>
@@ -422,10 +422,10 @@ export default async function VpnOnMobilePage({ params }: Props) {
 
               <div className="grid md:grid-cols-2 gap-4 mb-6">
                 <div className="bg-green-50 dark:bg-green-950/20 border border-green-200 dark:border-green-800 rounded-lg p-4">
-                  <h4 className="font-semibold text-green-700 dark:text-green-300 mb-2 flex items-center gap-2">
+                  <h3 className="font-semibold text-green-700 dark:text-green-300 mb-2 flex items-center gap-2">
                     <CheckCircle className="h-4 w-4" />
                     {batteryTips.doThis.title}
-                  </h4>
+                  </h3>
                   <ul className="text-sm text-green-600 dark:text-green-400 space-y-2">
                     {batteryTips.doThis.items.map((item: string, index: number) => (
                       <li key={index}>• {item}</li>

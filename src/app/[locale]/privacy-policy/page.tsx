@@ -214,7 +214,7 @@ export default async function PrivacyPolicyPage({ params }: Props) {
 
                 <div className="space-y-4">
                   <div className="border-l-4 border-primary pl-4">
-                    <h4 className="font-semibold">Google AdSense</h4>
+                    <h3 className="font-semibold">Google AdSense</h3>
                     <p className="text-sm text-muted-foreground">
                       We display advertisements through Google AdSense, which uses
                       cookies to serve ads based on your visits to our site and other
@@ -305,7 +305,7 @@ export default async function PrivacyPolicyPage({ params }: Props) {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="bg-muted/50 rounded-lg p-4">
-                    <h4 className="font-semibold mb-2">Right to Access</h4>
+                    <h3 className="font-semibold mb-2">Right to Access</h3>
                     <p className="text-sm text-muted-foreground">
                       Request a copy of the personal data we hold about you.
                     </p>

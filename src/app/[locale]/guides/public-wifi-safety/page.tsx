@@ -214,7 +214,7 @@ export default async function PublicWifiSafetyPage({ params }: Props) {
                     <div key={index} className="flex gap-4 p-4 bg-muted/50 rounded-lg">
                       <IconComponent className={`h-5 w-5 ${colors[index]} flex-shrink-0 mt-1`} />
                       <div>
-                        <h4 className="font-semibold mb-1">{risk.title}</h4>
+                        <h3 className="font-semibold mb-1">{risk.title}</h3>
                         <p className="text-sm text-muted-foreground">
                           {risk.description}
                         </p>
@@ -247,7 +247,7 @@ export default async function PublicWifiSafetyPage({ params }: Props) {
                     <div key={index} className="border rounded-lg p-4">
                       <div className="flex items-center gap-2 mb-2">
                         <IconComponent className={`h-5 w-5 ${colors[index]}`} />
-                        <h4 className="font-semibold">{attack.title}</h4>
+                        <h3 className="font-semibold">{attack.title}</h3>
                       </div>
                       <p className="text-sm text-muted-foreground mb-3">
                         {attack.description}
@@ -276,10 +276,10 @@ export default async function PublicWifiSafetyPage({ params }: Props) {
 
               <div className="grid md:grid-cols-2 gap-4 mb-6">
                 <div className="bg-green-50 dark:bg-green-950/20 border border-green-200 dark:border-green-800 rounded-lg p-4">
-                  <h4 className="font-semibold text-green-700 dark:text-green-300 mb-3 flex items-center gap-2">
+                  <h3 className="font-semibold text-green-700 dark:text-green-300 mb-3 flex items-center gap-2">
                     <CheckCircle className="h-4 w-4" />
                     {t("sections.protectionTips.doThis.title")}
-                  </h4>
+                  </h3>
                   <ul className="text-sm text-green-600 dark:text-green-400 space-y-2">
                     {(t.raw("sections.protectionTips.doThis.items") as string[]).map((item, index) => (
                       <li key={index} className="flex items-start gap-2">
@@ -346,7 +346,7 @@ export default async function PublicWifiSafetyPage({ params }: Props) {
                     <div key={index} className="flex gap-4 p-4 bg-primary/5 rounded-lg border border-primary/20">
                       <IconComponent className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
                       <div>
-                        <h4 className="font-semibold mb-1">{benefit.title}</h4>
+                        <h3 className="font-semibold mb-1">{benefit.title}</h3>
                         <p className="text-sm text-muted-foreground">
                           {benefit.description}
                         </p>
@@ -407,7 +407,7 @@ export default async function PublicWifiSafetyPage({ params }: Props) {
                     <div key={index} className="border rounded-lg p-4">
                       <div className="flex items-center gap-2 mb-2">
                         <IconComponent className={`h-5 w-5 ${colors[index]}`} />
-                        <h4 className="font-semibold">{location.name}</h4>
+                        <h3 className="font-semibold">{location.name}</h3>
                         <Badge variant={riskVariants[location.riskLevel]}>{location.riskLevel}</Badge>
                       </div>
                       <p className="text-sm text-muted-foreground mb-2">
@@ -437,7 +437,7 @@ export default async function PublicWifiSafetyPage({ params }: Props) {
 
               <div className="bg-muted/50 rounded-lg p-6 mb-6">
                 <div>
-                  <h4 className="font-semibold mb-4">{t("sections.checklist.beforeConnecting.title")}</h4>
+                  <h3 className="font-semibold mb-4">{t("sections.checklist.beforeConnecting.title")}</h3>
                   <ul className="space-y-2 mb-6">
                     {(t.raw("sections.checklist.beforeConnecting.items") as string[]).map((item, index) => (
                       <li key={index} className="flex items-center gap-2 text-sm">

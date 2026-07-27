@@ -615,7 +615,7 @@ export default async function AndroidTabletVpnPage({ params }: Props) {
                     {t("torrenting.warning")}
                   </p>
                   <div className="space-y-3">
-                    <h4 className="font-semibold text-sm">Requirements:</h4>
+                    <h3 className="font-semibold text-sm">Requirements:</h3>
                     <ul className="space-y-2">
                       {(t.raw("torrenting.requirements") as string[]).map((item, i) => (
                         <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">

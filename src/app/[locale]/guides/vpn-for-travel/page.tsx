@@ -241,10 +241,10 @@ export default async function VpnForTravelPage({ params }: Props) {
 
                   return (
                     <div key={index} className="bg-muted/50 rounded-lg p-4">
-                      <h4 className="font-semibold mb-2 flex items-center gap-2">
+                      <h3 className="font-semibold mb-2 flex items-center gap-2">
                         <IconComponent className={`h-4 w-4 ${iconColor}`} />
                         {reason.title}
-                      </h4>
+                      </h3>
                       <p className="text-sm text-muted-foreground">
                         {reason.description}
                       </p>
@@ -282,7 +282,7 @@ export default async function VpnForTravelPage({ params }: Props) {
                     <div key={index} className="border rounded-lg p-4">
                       <div className="flex items-center gap-2 mb-2">
                         <IconComponent className={`h-5 w-5 ${iconColor}`} />
-                        <h4 className="font-semibold">{service.title}</h4>
+                        <h3 className="font-semibold">{service.title}</h3>
                       </div>
                       <p className="text-sm text-muted-foreground mb-3">
                         {service.description}
@@ -357,10 +357,10 @@ export default async function VpnForTravelPage({ params }: Props) {
               </div>
 
               <div className="bg-muted/50 rounded-lg p-4 mb-6">
-                <h4 className="font-semibold mb-2 flex items-center gap-2">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
                   <Key className="h-4 w-4" />
                   {t("sections.bypassCensorship.tips.title")}
-                </h4>
+                </h3>
                 <ul className="text-sm text-muted-foreground space-y-2">
                   {censorshipTips.map((tip, index) => (
                     <li key={index} className="flex items-start gap-2">
@@ -408,7 +408,7 @@ export default async function VpnForTravelPage({ params }: Props) {
                     <div key={index} className="flex gap-4 p-4 bg-muted/50 rounded-lg">
                       <IconComponent className={`h-5 w-5 ${iconColor} flex-shrink-0 mt-1`} />
                       <div>
-                        <h4 className="font-semibold mb-1">{network.title}</h4>
+                        <h3 className="font-semibold mb-1">{network.title}</h3>
                         <p className="text-sm text-muted-foreground">
                           {network.description}
                         </p>
@@ -458,10 +458,10 @@ export default async function VpnForTravelPage({ params }: Props) {
               </p>
 
               <div className="bg-muted/50 rounded-lg p-4 mb-6">
-                <h4 className="font-semibold mb-3 flex items-center gap-2">
+                <h3 className="font-semibold mb-3 flex items-center gap-2">
                   <Calendar className="h-4 w-4" />
                   {t("sections.saveMoney.howItWorks.title")}
-                </h4>
+                </h3>
                 <p className="text-sm text-muted-foreground mb-3">
                   {t("sections.saveMoney.howItWorks.description")}
                 </p>
@@ -576,10 +576,10 @@ export default async function VpnForTravelPage({ params }: Props) {
               </div>
 
               <div className="bg-muted/50 rounded-lg p-4">
-                <h4 className="font-semibold mb-2 flex items-center gap-2">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
                   <Download className="h-4 w-4" />
                   {t("sections.bestVpns.featureChecklist.title")}
-                </h4>
+                </h3>
                 <ul className="text-sm text-muted-foreground space-y-1">
                   {featureChecklist.map((feature, index) => (
                     <li key={index} className="flex items-center gap-2">

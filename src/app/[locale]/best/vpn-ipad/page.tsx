@@ -522,7 +522,7 @@ export default async function IpadVpnPage({ params }: Props) {
                   <p className="text-muted-foreground">{t("streaming.description")}</p>
 
                   <div className="space-y-3">
-                    <h4 className="font-semibold">Streaming Services:</h4>
+                    <h3 className="font-semibold">Streaming Services:</h3>
                     <div className="grid md:grid-cols-2 gap-2">
                       {(t.raw("streaming.services") as string[]).map((service, i) => (
                         <div key={i} className="flex items-center gap-2 p-3 bg-muted/50 rounded-lg">
@@ -551,10 +551,10 @@ export default async function IpadVpnPage({ params }: Props) {
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="p-4 bg-green-50 dark:bg-green-950/30 rounded-lg border border-green-200 dark:border-green-800">
-                      <h4 className="font-semibold mb-3 text-green-700 dark:text-green-400 flex items-center gap-2">
+                      <h3 className="font-semibold mb-3 text-green-700 dark:text-green-400 flex items-center gap-2">
                         <CheckCircle className="h-5 w-5" />
                         {t("safety.premium.title")}
-                      </h4>
+                      </h3>
                       <ul className="space-y-2 text-sm">
                         {(t.raw("safety.premium.features") as string[]).map((feature, i) => (
                           <li key={i} className="flex items-start gap-2">

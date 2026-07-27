@@ -596,7 +596,7 @@ export default async function AndroidVpnPage({ params }: Props) {
                     {t("apk.warning.description")}
                   </p>
                   <div className="space-y-3">
-                    <h4 className="font-semibold text-sm">{t("apk.instructions.title")}</h4>
+                    <h3 className="font-semibold text-sm">{t("apk.instructions.title")}</h3>
                     <ol className="space-y-2 text-sm text-muted-foreground list-decimal list-inside">
                       {(t.raw("apk.instructions.steps") as string[]).map((step, i) => (
                         <li key={i}>{step}</li>

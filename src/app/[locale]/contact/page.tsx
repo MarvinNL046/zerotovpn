@@ -63,6 +63,7 @@ export default async function ContactPage({ params }: Props) {
       <section className="py-12 lg:py-16">
         <div className="container">
           <div className="max-w-5xl mx-auto">
+            <h2 className="text-2xl font-bold mb-6 text-center">Ways to reach us</h2>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               {/* General Inquiries */}
               <div className="bg-card border rounded-xl p-6 text-center hover:shadow-lg transition-shadow">

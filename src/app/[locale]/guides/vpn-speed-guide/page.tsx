@@ -442,7 +442,7 @@ export default async function VpnSpeedGuidePage({ params }: Props) {
                   <div key={tip.number} className="flex gap-4">
                     <div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold flex-shrink-0">{tip.number}</div>
                     <div>
-                      <h4 className="font-bold">{tip.title}</h4>
+                      <h3 className="font-bold">{tip.title}</h3>
                       <p className="text-sm text-muted-foreground">
                         {tip.description}
                       </p>

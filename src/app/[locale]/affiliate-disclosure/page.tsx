@@ -162,7 +162,7 @@ export default async function AffiliateDisclosurePage({ params }: Props) {
 
                 <div className="space-y-4">
                   <div className="bg-muted/50 rounded-lg p-4">
-                    <h4 className="font-semibold mb-2">Testing Before Recommending</h4>
+                    <h3 className="font-semibold mb-2">Testing Before Recommending</h3>
                     <p className="text-sm text-muted-foreground">
                       We personally test every VPN we review, including speed tests,
                       security audits, streaming compatibility, and customer support
@@ -250,7 +250,7 @@ export default async function AffiliateDisclosurePage({ params }: Props) {
                       <CheckCircle className="h-4 w-4 text-green-600 dark:text-green-400" />
                     </div>
                     <div>
-                      <h4 className="font-semibold">No Extra Cost</h4>
+                      <h3 className="font-semibold">No Extra Cost</h3>
                       <p className="text-sm text-muted-foreground">
                         You never pay more by using our affiliate links. Prices are
                         the same as if you went directly to the VPN website.

@@ -220,7 +220,7 @@ export default async function WhatIsVpnPage({ params }: Props) {
                         {step.number}
                       </div>
                       <div>
-                        <h4 className="font-semibold">{step.title}</h4>
+                        <h3 className="font-semibold">{step.title}</h3>
                         <p className="text-sm text-muted-foreground">
                           {step.description}
                         </p>
@@ -316,7 +316,7 @@ export default async function WhatIsVpnPage({ params }: Props) {
                     key={index}
                     className="p-4 bg-yellow-50 dark:bg-yellow-900/10 border border-yellow-200 dark:border-yellow-800 rounded-lg"
                   >
-                    <h4 className="font-semibold mb-1">{item.title}</h4>
+                    <h3 className="font-semibold mb-1">{item.title}</h3>
                     <p className="text-sm text-muted-foreground">{item.description}</p>
                   </div>
                 ))}

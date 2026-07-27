@@ -197,7 +197,7 @@ export default async function CookiePolicyPage({ params }: Props) {
                 </p>
                 <div className="space-y-4">
                   <div className="border-l-4 border-primary pl-4">
-                    <h4 className="font-semibold">Google (Analytics &amp; AdSense)</h4>
+                    <h3 className="font-semibold">Google (Analytics &amp; AdSense)</h3>
                     <p className="text-sm text-muted-foreground">
                       Used for website analytics and advertising. See{" "}
                       <a
@@ -312,7 +312,7 @@ export default async function CookiePolicyPage({ params }: Props) {
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="bg-muted/50 rounded-lg p-4">
-                    <h4 className="font-semibold mb-2">Session Cookies</h4>
+                    <h3 className="font-semibold mb-2">Session Cookies</h3>
                     <p className="text-sm text-muted-foreground">
                       Deleted automatically when you close your browser.
                     </p>

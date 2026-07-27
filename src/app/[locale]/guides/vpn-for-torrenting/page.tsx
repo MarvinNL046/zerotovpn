@@ -411,7 +411,7 @@ export default async function VpnForTorrentingPage({ params }: Props) {
                         {step.number}
                       </div>
                       <div>
-                        <h4 className="font-bold">{step.title}</h4>
+                        <h3 className="font-bold">{step.title}</h3>
                         <p className="text-sm text-muted-foreground">
                           {step.description}
                         </p>

@@ -288,10 +288,10 @@ export default async function VpnProtocolsExplainedPage({ params }: Props) {
 
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <h4 className="font-semibold text-sm mb-2 flex items-center gap-2">
+                    <h3 className="font-semibold text-sm mb-2 flex items-center gap-2">
                       <CheckCircle className="h-4 w-4 text-green-500" />
                       {wireguard.advantages.title}
-                    </h4>
+                    </h3>
                     <ul className="text-xs text-muted-foreground space-y-1">
                       {wireguard.advantages.items.map((item: string, index: number) => (
                         <li key={index}>• {item}</li>
@@ -350,10 +350,10 @@ export default async function VpnProtocolsExplainedPage({ params }: Props) {
 
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <h4 className="font-semibold text-sm mb-2 flex items-center gap-2">
+                    <h3 className="font-semibold text-sm mb-2 flex items-center gap-2">
                       <CheckCircle className="h-4 w-4 text-green-500" />
                       {openvpn.advantages.title}
-                    </h4>
+                    </h3>
                     <ul className="text-xs text-muted-foreground space-y-1">
                       {openvpn.advantages.items.map((item: string, index: number) => (
                         <li key={index}>• {item}</li>
@@ -427,10 +427,10 @@ export default async function VpnProtocolsExplainedPage({ params }: Props) {
 
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <h4 className="font-semibold text-sm mb-2 flex items-center gap-2">
+                    <h3 className="font-semibold text-sm mb-2 flex items-center gap-2">
                       <CheckCircle className="h-4 w-4 text-green-500" />
                       {ikev2.advantages.title}
-                    </h4>
+                    </h3>
                     <ul className="text-xs text-muted-foreground space-y-1">
                       {ikev2.advantages.items.map((item: string, index: number) => (
                         <li key={index}>• {item}</li>

@@ -7,6 +7,7 @@ import { getAllVpns, type VpnProvider } from "@/lib/vpn-data-layer";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { OG_LOCALE_MAP, generateAlternates, getLocalizedMonthYear, titelMetMerk } from "@/lib/seo-utils";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
+import { FaqSchema } from "@/components/structured-data";
 import {
   Shield,
   AlertTriangle,
@@ -1238,6 +1239,7 @@ export default async function ChinaVpnPage({ params }: Props) {
 
   return (
     <>
+      <FaqSchema faqs={t.faqs.map((f) => ({ question: f.q, answer: f.a }))} />
       <CountryVpnSchema vpns={topChinaVpns} locale={locale} />
 
       <div className="flex flex-col">

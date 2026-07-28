@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { RankedVpnRow } from "@/components/vpn/ranked-vpn-row";
 import { getAllVpns } from "@/lib/vpn-data-layer";
-import { ComparisonTableSchema } from "@/components/structured-data";
+import { ComparisonTableSchema, FaqSchema } from "@/components/structured-data";
 import { Link } from "@/i18n/navigation";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { OG_LOCALE_MAP, generateAlternates, getLocalizedMonthYear, getShortMonthYear, titelMetMerk } from "@/lib/seo-utils";
@@ -1167,6 +1167,7 @@ export default async function IranVpnPage({ params }: Props) {
 
   return (
     <>
+      <FaqSchema faqs={t.faqs.map((f) => ({ question: f.q, answer: f.a }))} />
     <ComparisonTableSchema vpns={iranVpns} />
 
     <div className="flex flex-col">

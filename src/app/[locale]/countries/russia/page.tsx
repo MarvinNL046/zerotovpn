@@ -6,6 +6,7 @@ import { RankedVpnRow } from "@/components/vpn/ranked-vpn-row";
 import { getAllVpns, type VpnProvider } from "@/lib/vpn-data-layer";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { OG_LOCALE_MAP, generateAlternates, getLocalizedMonthYear, titelMetMerk } from "@/lib/seo-utils";
+import { FaqSchema } from "@/components/structured-data";
 import {
   Shield,
   AlertTriangle,
@@ -1007,6 +1008,7 @@ export default async function RussiaVpnPage({ params }: Props) {
 
   return (
     <>
+      <FaqSchema faqs={t.faqs.map((f) => ({ question: f.q, answer: f.a }))} />
       <CountryVpnSchema vpns={russiaVpns} locale={locale} />
 
       <div className="flex flex-col">

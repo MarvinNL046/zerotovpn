@@ -8,6 +8,7 @@ import { RelatedPages } from "@/components/seo/related-pages";
 import { OG_LOCALE_MAP, generateAlternates, getLocalizedMonthYear, titelMetMerk } from "@/lib/seo-utils";
 import { Shield, CheckCircle, XCircle, Globe, Clock, ArrowRight, Smartphone, Lock, AlertTriangle, Eye } from "lucide-react";
 
+import { FaqSchema } from "@/components/structured-data";
 type Props = { params: Promise<{ locale: string }> };
 const baseUrl = "https://www.zerotovpn.com";
 
@@ -127,6 +128,7 @@ export default async function IndonesiaVpnPage({ params }: Props) {
 
   return (
     <div className="flex flex-col">
+      <FaqSchema faqs={t.faqs.map((f) => ({ question: f.q, answer: f.a }))} />
       <section className="relative py-16 lg:py-24 overflow-hidden"><div className="absolute inset-0 bg-gradient-to-br from-red-500/10 via-background to-background" /><div className="container relative"><div className="max-w-4xl mx-auto text-center space-y-6"><Badge variant="secondary" className="px-4 py-1"><Clock className="h-3 w-3 mr-1" />{t.badge}</Badge><div className="flex items-center justify-center gap-3 mb-4"><span className="text-6xl">&#x1F1EE;&#x1F1E9;</span></div><h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">{t.title}</h1><p className="text-xl text-muted-foreground max-w-3xl mx-auto">{t.subtitle}</p></div></div></section>
 
       <section className="py-8"><div className="container"><Card className="border-green-500 bg-green-500/10"><CardContent className="pt-6"><div className="flex items-start gap-4"><CheckCircle className="h-8 w-8 text-green-500 flex-shrink-0" /><div><h2 className="text-xl font-bold text-green-600 dark:text-green-400 mb-2">{t.legalNotice}</h2><p className="text-muted-foreground">{t.legalNoticeText}</p></div></div></CardContent></Card></div></section>

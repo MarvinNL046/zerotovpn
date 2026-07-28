@@ -6,6 +6,7 @@ import { RankedVpnRow } from "@/components/vpn/ranked-vpn-row";
 import { getAllVpns } from "@/lib/vpn-data-layer";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { OG_LOCALE_MAP, generateAlternates, getLocalizedMonthYear, titelMetMerk } from "@/lib/seo-utils";
+import { FaqSchema } from "@/components/structured-data";
 import {
   Shield,
   CheckCircle,
@@ -443,6 +444,7 @@ export default async function BrazilVpnPage({ params }: Props) {
 
   return (
     <div className="flex flex-col">
+      <FaqSchema faqs={t.faqs.map((f) => ({ question: f.q, answer: f.a }))} />
       <section className="relative py-16 lg:py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 via-background to-background" />
         <div className="container relative">

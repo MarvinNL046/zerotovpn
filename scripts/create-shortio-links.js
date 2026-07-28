@@ -1,4 +1,13 @@
-const API_KEY = 'sk_W3WMj17FK7x0MG5D';
+// De sleutel stond hier hardgecodeerd in een PUBLIEKE repo. Wie hem heeft kan
+// je verkortlinks laten wijzen waar hij wil — dus ook je affiliate-omzet
+// omleiden. Hij komt nu uit de omgeving; zet hem lokaal in .env.local of geef
+// hem mee: SHORTIO_API_KEY=... node scripts/create-shortio-links.js
+const API_KEY = process.env.SHORTIO_API_KEY;
+
+if (!API_KEY) {
+  console.error('SHORTIO_API_KEY ontbreekt. Zet hem in de omgeving voor je dit draait.');
+  process.exit(1);
+}
 const DOMAIN = 'go.zerotovpn.com';
 
 const vpnLinks = [

@@ -44,6 +44,12 @@ const checks = [
     patterns: [/Top 3 overview/, /id=\"comparison\"/, /id=\"methodology\"/, /id=\"faq\"/, /priceVerifiedAt/, /AffiliateTextLink/],
   },
   {
+    name: "homepage evidence-bounded recommendation",
+    file: "src/app/[locale]/page.tsx",
+    patterns: [/Shortlist candidate/, /catalog data and documented options/, /Provider-stated countries/, /Refund window in catalog/],
+    forbiddenPatterns: [/After testing 38\+ VPNs/, /consistently ranks #1/, /94%.*Speed Retention/, /4\.8\/5.*Our Rating/],
+  },
+  {
     name: "Obfuscation support page",
     file: "src/components/editorial/obfuscation-editorial-page.tsx",
     patterns: [/What is VPN obfuscation\?/, /id=\"compare\"/, /id=\"test-plan\"/, /id=\"faq\"/, /DataForSEO/],

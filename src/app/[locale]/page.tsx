@@ -79,6 +79,7 @@ export default async function HomePage({ params }: Props) {
   const t = await getTranslations("home");
 
   const featuredVpns = await getFeaturedVpns();
+  const nordvpn = featuredVpns.find((vpn) => vpn.slug === "nordvpn") ?? null;
 
   // Get FAQ data from translations
   const faqData = t.raw("faq") as Array<{ question: string; answer: string }>;
@@ -275,35 +276,35 @@ export default async function HomePage({ params }: Props) {
               {/* Editor's Choice Badge */}
               <div className="flex items-center gap-2 mb-4">
                 <span className="inline-flex items-center bg-primary text-primary-foreground text-sm font-bold px-3 py-1 rounded-full">
-                  &#11088; Editor&apos;s Choice 2026
+                  &#11088; Shortlist candidate
                 </span>
               </div>
 
               <h2 className="text-2xl md:text-3xl font-bold mb-4">
-                Why We Recommend NordVPN
+                Why NordVPN is on the shortlist
               </h2>
 
               <p className="text-muted-foreground mb-6 max-w-2xl">
-                After testing 38+ VPNs, NordVPN consistently ranks #1 for speed, security, and value.
+                NordVPN is a starting point for readers who want a broad feature set. We compare its catalog data and documented options with alternatives; verify the current plan and test conditions before subscribing.
               </p>
 
               {/* Key stats grid */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                 <div>
-                  <div className="text-2xl font-bold text-primary">7,400+</div>
-                  <div className="text-sm text-muted-foreground">Servers</div>
+                  <div className="text-2xl font-bold text-primary">{nordvpn?.countries ?? "—"}</div>
+                  <div className="text-sm text-muted-foreground">Provider-stated countries</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-primary">94%</div>
-                  <div className="text-sm text-muted-foreground">Speed Retention</div>
+                  <div className="text-2xl font-bold text-primary">{nordvpn?.protocols.length ?? "—"}</div>
+                  <div className="text-sm text-muted-foreground">Catalog protocols: {nordvpn?.protocols.length ?? "—"}</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-primary">30 days</div>
-                  <div className="text-sm text-muted-foreground">money-back</div>
+                  <div className="text-2xl font-bold text-primary">{nordvpn?.moneyBackDays ?? "—"} days</div>
+                  <div className="text-sm text-muted-foreground">Refund window in catalog</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-primary">4.8/5</div>
-                  <div className="text-sm text-muted-foreground">Our Rating</div>
+                  <div className="text-2xl font-bold text-primary">{nordvpn?.maxDevices ?? "—"}</div>
+                  <div className="text-sm text-muted-foreground">Max devices in catalog</div>
                 </div>
               </div>
 

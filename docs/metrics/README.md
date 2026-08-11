@@ -22,3 +22,13 @@ Required comparison discipline:
 - Compare page and query exports separately; do not treat visible screenshot rows as complete tables.
 - Keep Short.io and partner-dashboard windows aligned.
 - Report clicks, human clicks, conversions, conversion rate and EPC as separate fields.
+
+## Sitemap health audit
+
+The live sitemap audit checks every sitemap URL for a 200 response, self-canonical, indexable robots state and exactly one H1:
+
+```powershell
+npm run audit:sitemap
+```
+
+Use `AUDIT_CONCURRENCY=4` to lower request pressure or `AUDIT_LIMIT=100` for a smoke run. The report is written to `docs/metrics/sitemap-audit-YYYY-MM-DD.{json,md}`. A URL with a 200 response can still be a sitemap error when it is `noindex`; fix the sitemap generator or the page metadata rather than counting it as indexed.

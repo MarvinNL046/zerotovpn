@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-11T17:24:06.102Z",
+  "generatedAt": "2026-08-11T17:58:44.485Z",
   "paths": [
     "",
     "/about",
@@ -67,9 +67,11 @@
     "/guides",
     "/guides/how-vpn-works",
     "/guides/public-wifi-safety",
+    "/guides/vpn-for-restricted-networks",
     "/guides/vpn-for-streaming",
     "/guides/vpn-for-torrenting",
     "/guides/vpn-for-travel",
+    "/guides/vpn-obfuscation-explained",
     "/guides/vpn-on-mobile",
     "/guides/vpn-privacy-guide",
     "/guides/vpn-protocols-explained",

@@ -60,16 +60,25 @@ function main() {
   // levert een "Pagina met omleiding"-melding op. We herkennen ze aan de
   // aanroep zelf, zodat een nieuwe stub automatisch buiten de sitemap valt.
   const REDIRECT_ONLY_RE = /\b(permanentRedirect|redirect)\s*\(/;
-  const isRedirectOnly = (filePath) =>
-    REDIRECT_ONLY_RE.test(fs.readFileSync(filePath, "utf8"));
+  const LOCALE_AWARE_ROUTE_RE = /if\s*\(\s*locale\s*===\s*["']en["']\s*\)\s*return/;
+  const isRedirectOnly = (filePath) => {
+    const source = fs.readFileSync(filePath, "utf8");
+    return REDIRECT_ONLY_RE.test(source) && !LOCALE_AWARE_ROUTE_RE.test(source);
+  };
 
   // Zet een pagina zichzelf op noindex, dan hoort hij hier ook niet in: je
   // vraagt Google anders te crawlen wat je vervolgens weigert te laten
   // indexeren. Ook dit lezen we uit het bestand zelf, zodat er geen lijst met
   // slugs is die kan gaan afwijken van de werkelijkheid.
   const NOINDEX_RE = /robots\s*:\s*\{[^}]*\bindex\s*:\s*false/s;
-  const isNoindex = (filePath) =>
-    NOINDEX_RE.test(fs.readFileSync(filePath, "utf8"));
+  // Locale-aware pages can be indexable in English while noindexing
+  // translated fallbacks. They are filtered per locale in app/sitemap.ts,
+  // so do not remove the route altogether here.
+  const LOCALE_AWARE_NOINDEX_RE = /robots\s*:\s*locale\s*===|if\s*\(\s*locale\s*===\s*["']en["']\s*\)/;
+  const isNoindex = (filePath) => {
+    const source = fs.readFileSync(filePath, "utf8");
+    return NOINDEX_RE.test(source) && !LOCALE_AWARE_NOINDEX_RE.test(source);
+  };
 
   const redirectOnly = pageFiles.filter(isRedirectOnly);
   const noindex = pageFiles.filter(isNoindex);

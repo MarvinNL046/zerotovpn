@@ -55,6 +55,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const routeMap = new Map<string, SitemapEntry>();
   const staticPaths = discoveredStaticRoutes.paths as string[];
   const staticPathSet = new Set(staticPaths);
+  // Translated fallbacks for these pages remain noindex until localized
+  // evidence exists; the English canonical route stays indexable.
+  const noindexLocalesByPath: Record<string, Set<string>> = {
+    "/countries/iran": new Set(locales.filter((locale) => locale !== "en")),
+    "/guides/vpn-obfuscation-explained": new Set(locales.filter((locale) => locale !== "en")),
+    "/guides/vpn-for-restricted-networks": new Set(locales.filter((locale) => locale !== "en")),
+  };
 
   const addLocalizedPath = (
     path: string,
@@ -66,11 +73,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     };
 
     for (const locale of locales) {
+      if (noindexLocalesByPath[path]?.has(locale)) continue;
       const altPrefix = locale === "en" ? "" : `/${locale}`;
       alternates[locale] = `${baseUrl}${altPrefix}${path}`;
     }
 
     for (const locale of locales) {
+      if (noindexLocalesByPath[path]?.has(locale)) continue;
       const prefix = locale === "en" ? "" : `/${locale}`;
       const url = `${baseUrl}${prefix}${path}`;
       const basePriority = opts?.priority ?? profile.priority;

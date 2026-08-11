@@ -32,6 +32,10 @@
 
 - **11 August 2026:** Resolved the CactusVPN manual affiliate-context flag by separating a time-limited provider trial from a permanent free tier. The provider record now uses qualified copy, `freeTier: false` and a dated first-party evidence note. Production deployment `dpl_3BrpErvcnu1EBDQ34ZBw76PTdbcK` is Ready; the post-deploy audit reduced active promotion-term flags from **21 to 12** while keeping 0 missing-rel, disclosure, interruptive or fetch failures.
 
+- **11 August 2026:** Added `/best/vpn-free-trial` to the formal live editorial gate. The page now exposes a visible review date, methodology link, source anchor and shared social-image metadata; the gate will prevent future trial/commercial changes from bypassing the same release checks as the main pillar.
+
+- **11 August 2026:** Deployed the free-trial gate changes in `dpl_29jpAZt2okZsMSPVQAEQK5bPv1a5`. Production HTML exposes the review date, methodology link, source anchor, one H1 and seven slug-attributed affiliate links; the live editorial gate now passes **13/13** with 88 affiliate links and 0 metadata, freshness, rel, slug, cluster-link or social-image failures.
+
 - **11 August 2026:** Extracted `BestVpnEditorialTemplate` and `EditorialQuickPickCard` into `src/components/editorial/best-vpn-editorial-template.tsx`, then refactored the Best VPN page and dynamic blog route to use the shared disclosure/jump-nav pattern. ESLint, production build and local browser checks pass.
 - **11 August 2026:** Added the [Iran editorial brief](../research/iran-vpn-editorial-brief-2026-08-11.md) with the research fields, evidence boundary, internal-link map and affiliate compliance gates for the first content refresh.
 - **11 August 2026:** Ran the first cached DataForSEO US/English pass for the Iran cluster: keyword overview, related suggestions, five SERP/PAA samples and competitor domains. Results are recorded in `docs/research/dataforseo-iran-cluster-2026-08-11.{json,md}`; missing current volume is explicitly not treated as zero demand.

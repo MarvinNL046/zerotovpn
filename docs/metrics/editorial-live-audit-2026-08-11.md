@@ -1,11 +1,11 @@
 # Live editorial page audit
 
-Generated: 2026-08-11T21:13:55.226Z
+Generated: 2026-08-11T21:20:30.869Z
 
-- Target pages: **12**
-- Passing pages: **12**
+- Target pages: **13**
+- Passing pages: **13**
 - Pages needing review: **0**
-- Affiliate links checked: **81**
+- Affiliate links checked: **88**
 - Affiliate links missing sponsored/nofollow: **0**
 - Affiliate links missing Short.io slug telemetry: **0**
 - Missing required cluster links: **0**
@@ -30,5 +30,6 @@ Generated: 2026-08-11T21:13:55.226Z
 | pass | /guides/vpn-for-restricted-networks | How to Use a VPN on a Restricted Network | ZeroToVPN | 1 | 51 | 6 | — | — |
 | pass | /guides/vpn-for-travel | VPN for Travel: What to Test Before You Leave | ZeroToVPN | 1 | 48 | 6 | — | — |
 | pass | /best/free-vpn | Best Free VPNs: Safety, Limits and Trade-offs | ZeroToVPN | 1 | 46 | 3 | — | — |
+| pass | /best/vpn-free-trial | VPNs With a Real Free Trial (Aug 2026) — Checked at Source | 1 | 42 | 7 | — | — |
 
 Raw records: [editorial-live-audit-2026-08-11.json](./editorial-live-audit-2026-08-11.json)

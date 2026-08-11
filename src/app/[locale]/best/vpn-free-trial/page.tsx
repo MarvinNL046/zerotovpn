@@ -1,6 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { Metadata } from "next";
-import { OG_LOCALE_MAP, generateAlternates, getShortMonthYear, titelMetMerk } from "@/lib/seo-utils";
+import { DEFAULT_OG_IMAGE, OG_LOCALE_MAP, generateAlternates, getShortMonthYear, titelMetMerk } from "@/lib/seo-utils";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
@@ -8,6 +8,7 @@ import { AffiliateDisclosure } from "@/components/vpn/affiliate-disclosure";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { FAQAccordion } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
+import { Link } from "@/i18n/navigation";
 import { getVpnBySlug } from "@/lib/vpn-data";
 import { VPN_TRIALS, GRATIS_ABONNEMENT } from "@/lib/vpn-trials";
 import { CheckCircle, XCircle, CreditCard, Clock, AlertTriangle } from "lucide-react";
@@ -55,6 +56,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: titles[locale] || titles.en,
       description: descriptions[locale] || descriptions.en,
       type: "article",
+      images: [DEFAULT_OG_IMAGE],
     },
     alternates: generateAlternates("/best/vpn-free-trial", locale),
   };
@@ -205,6 +207,12 @@ export default async function VpnFreeTrialPage({ params }: Props) {
               <div className="mt-6">
                 <AffiliateDisclosure variant="inline" />
               </div>
+              <p className="mt-4 text-sm text-muted-foreground">
+                Last reviewed: 11 August 2026 ·{" "}
+                <Link href="/methodology" className="text-primary hover:underline">
+                  How we test and verify provider claims
+                </Link>
+              </p>
             </div>
           </div>
         </section>
@@ -407,7 +415,7 @@ export default async function VpnFreeTrialPage({ params }: Props) {
         </section>
 
         {/* Bronnen — elke claim hierboven komt van de aanbieder zelf */}
-        <section className="border-t py-12">
+        <section id="sources" className="border-t py-12">
           <div className="container">
             <div className="mx-auto max-w-3xl">
               <h2 className="mb-2 text-lg font-semibold">{t.sourcesTitle}</h2>

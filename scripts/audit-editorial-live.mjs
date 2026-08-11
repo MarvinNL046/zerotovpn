@@ -6,6 +6,7 @@ const BASE = (process.env.EDITORIAL_AUDIT_BASE ?? "https://www.zerotovpn.com").r
 const timeoutMs = Math.max(1000, Number(process.env.EDITORIAL_AUDIT_TIMEOUT_MS ?? 15000));
 
 const targets = [
+  { path: "/", name: "Homepage hub", ids: [], links: ["/best/best-vpn", "/blog/best-vpn-for-iran-2026-bypass-internet-censorship", "/guides/vpn-protocols-explained"], expectFaq: true, expectTable: false },
   { path: "/best/best-vpn", name: "Best VPN commercial pillar", ids: ["comparison", "methodology", "faq"], links: ["/blog/best-vpn-for-iran-2026-bypass-internet-censorship", "/guides/vpn-protocols-explained", "/best/free-vpn"], expectFaq: true },
   { path: "/blog/best-vpn-for-iran-2026-bypass-internet-censorship", name: "Iran editorial hub", ids: ["cluster-links", "quick-picks", "sources"], links: ["/countries/russia", "/blog/best-vpn-for-telegram-2026", "/guides/vpn-obfuscation-explained"], expectFaq: true },
   { path: "/blog/best-vpn-for-telegram-2026", name: "Telegram editorial hub", ids: ["cluster-links", "quick-picks", "sources"], links: ["/countries/iran", "/countries/russia", "/guides/vpn-obfuscation-explained"], expectFaq: true },

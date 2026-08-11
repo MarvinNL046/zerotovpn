@@ -200,7 +200,7 @@ export default async function HomePage({ params }: Props) {
                 Built for measurable, explainable, repeatable, data-driven VPN research.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
               <Link href="/reports/vpn-transparency-performance-index-2026" className="rounded-xl border bg-card p-6 hover:border-primary/40 transition-colors">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4">
                   <FileSpreadsheet className="h-5 w-5" />
@@ -222,6 +222,15 @@ export default async function HomePage({ params }: Props) {
                 <h3 className="font-semibold mb-2">VPN Index Dashboard</h3>
                 <p className="text-sm text-muted-foreground">Scorecards and filters for budget, privacy-first, streaming, and gaming decisions.</p>
               </Link>
+              <div className="rounded-xl border bg-card p-6">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4">
+                  <Shield className="h-5 w-5" />
+                </div>
+                <h3 className="font-semibold mb-2">Censorship research</h3>
+                <p className="text-sm text-muted-foreground">
+                  Start with the <Link href="/blog/best-vpn-for-iran-2026-bypass-internet-censorship" className="underline underline-offset-2">Iran evidence dossier</Link> or compare the <Link href="/guides/vpn-protocols-explained" className="underline underline-offset-2">VPN protocol guide</Link> before changing settings.
+                </p>
+              </div>
             </div>
           </div>
         </section>

@@ -7,6 +7,13 @@ const timeoutMs = Math.max(1000, Number(process.env.EDITORIAL_AUDIT_TIMEOUT_MS ?
 
 const targets = [
   { path: "/", name: "Homepage hub", ids: [], links: ["/best/best-vpn", "/blog/best-vpn-for-iran-2026-bypass-internet-censorship", "/guides/vpn-protocols-explained"], expectFaq: true, expectTable: false },
+  { path: "/about", name: "About methodology page", ids: [], links: [], expectFaq: false, expectTable: false },
+  { path: "/best/vpn-linux", name: "Linux use-case page", ids: [], links: [], expectFaq: false, expectTable: false },
+  { path: "/best/vpn-windows", name: "Windows use-case page", ids: [], links: [], expectFaq: false, expectTable: false },
+  { path: "/best/vpn-laptops", name: "Laptop use-case page", ids: [], links: [], expectFaq: false, expectTable: false },
+  { path: "/best/vpn-privacy", name: "Privacy use-case page", ids: [], links: [], expectFaq: false, expectTable: false },
+  { path: "/best/vpn-gaming", name: "Gaming use-case page", ids: [], links: [], expectFaq: false, expectTable: false },
+  { path: "/best/vpn-chromebook", name: "Chromebook use-case page", ids: [], links: [], expectFaq: false, expectTable: false },
   { path: "/best/best-vpn", name: "Best VPN commercial pillar", ids: ["comparison", "methodology", "faq"], links: ["/blog/best-vpn-for-iran-2026-bypass-internet-censorship", "/guides/vpn-protocols-explained", "/best/free-vpn"], expectFaq: true },
   { path: "/blog/best-vpn-for-iran-2026-bypass-internet-censorship", name: "Iran editorial hub", ids: ["cluster-links", "quick-picks", "sources"], links: ["/countries/russia", "/blog/best-vpn-for-telegram-2026", "/guides/vpn-obfuscation-explained"], expectFaq: true },
   { path: "/blog/best-vpn-for-telegram-2026", name: "Telegram editorial hub", ids: ["cluster-links", "quick-picks", "sources"], links: ["/countries/iran", "/countries/russia", "/guides/vpn-obfuscation-explained"], expectFaq: true },

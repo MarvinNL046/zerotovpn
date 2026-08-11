@@ -11,7 +11,7 @@ import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { getVpnBySlug, type VpnProvider } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
-import { OG_LOCALE_MAP, generateAlternates, getLocalizedMonthYear, getShortMonthYear, titelMetMerk } from "@/lib/seo-utils";
+import { DEFAULT_OG_IMAGE, OG_LOCALE_MAP, generateAlternates, getLocalizedMonthYear, getShortMonthYear, titelMetMerk } from "@/lib/seo-utils";
 import { LastUpdated } from "@/components/last-updated";
 import {
   Shield,
@@ -74,6 +74,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: titles[locale] || titles.en,
       description: descriptions[locale] || descriptions.en,
       type: "article",
+      images: [DEFAULT_OG_IMAGE],
     },
     alternates: generateAlternates("/best/vpn-gaming", locale),
   };

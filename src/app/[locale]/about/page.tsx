@@ -27,7 +27,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
-import { OG_LOCALE_MAP, generateAlternates } from "@/lib/seo-utils";
+import { DEFAULT_OG_IMAGE, OG_LOCALE_MAP, generateAlternates } from "@/lib/seo-utils";
 type Props = {
   params: Promise<{ locale: string }>;
 };
@@ -56,6 +56,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `${baseUrl}/about`,
       siteName: "ZeroToVPN",
       type: "website",
+      images: [DEFAULT_OG_IMAGE],
     },
   };
 }

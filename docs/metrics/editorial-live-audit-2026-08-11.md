@@ -1,6 +1,6 @@
 # Live editorial page audit
 
-Generated: 2026-08-11T19:51:59.470Z
+Generated: 2026-08-11T19:59:00.654Z
 
 - Target pages: **10**
 - Passing pages: **10**
@@ -12,6 +12,7 @@ Generated: 2026-08-11T19:51:59.470Z
 - Pages missing complete Twitter metadata: **0**
 - Pages failing image alt/dimension checks: **0**
 - Pages with future structured-data dates: **0**
+- Pages with a broken social-image URL: **0**
 
 | Status | Page | Title | H1s | Internal links | Affiliate links | Missing required IDs | Missing cluster links |
 |---|---|---|---:|---:|---:|---|---|

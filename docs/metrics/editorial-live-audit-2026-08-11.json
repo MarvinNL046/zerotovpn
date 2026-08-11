@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "summary": {
-    "generatedAt": "2026-08-11T19:51:59.470Z",
+    "generatedAt": "2026-08-11T19:59:00.654Z",
     "targetCount": 10,
     "okCount": 10,
     "failedCount": 0,
@@ -11,7 +11,8 @@
     "openGraphFailureCount": 0,
     "twitterFailureCount": 0,
     "imageSeoFailureCount": 0,
-    "futureSchemaDateFailureCount": 0
+    "futureSchemaDateFailureCount": 0,
+    "socialImageFailureCount": 0
   },
   "records": [
     {
@@ -31,7 +32,7 @@
       "url": "https://www.zerotovpn.com/best/best-vpn",
       "status": 200,
       "finalUrl": "https://www.zerotovpn.com/best/best-vpn",
-      "durationMs": 2091,
+      "durationMs": 5186,
       "title": "Best VPN in 2026: Transparent Shortlist and Comparison | ZeroToVPN",
       "description": "Compare leading VPN providers by use case, current pricing metadata, protocol support and transparent testing notes.",
       "canonical": "https://www.zerotovpn.com/best/best-vpn",
@@ -73,9 +74,15 @@
         "clusterLinks": true,
         "faqSchema": true,
         "imageSeo": true,
-        "structuredDataDates": true
+        "structuredDataDates": true,
+        "socialImage": true
       },
-      "ok": true
+      "ok": true,
+      "socialImage": {
+        "status": 200,
+        "contentType": "image/png",
+        "ok": true
+      }
     },
     {
       "path": "/blog/best-vpn-for-iran-2026-bypass-internet-censorship",
@@ -94,7 +101,7 @@
       "url": "https://www.zerotovpn.com/blog/best-vpn-for-iran-2026-bypass-internet-censorship",
       "status": 200,
       "finalUrl": "https://www.zerotovpn.com/blog/best-vpn-for-iran-2026-bypass-internet-censorship",
-      "durationMs": 2062,
+      "durationMs": 4026,
       "title": "Best VPN for Iran in 2026: tested options, limits and safer preparation",
       "description": "There is no permanent best VPN for Iran. Use current evidence, obfuscation options, provider documentation and a failure-safe test plan before relying on any connection.",
       "canonical": "https://www.zerotovpn.com/blog/best-vpn-for-iran-2026-bypass-internet-censorship",
@@ -136,9 +143,15 @@
         "clusterLinks": true,
         "faqSchema": true,
         "imageSeo": true,
-        "structuredDataDates": true
+        "structuredDataDates": true,
+        "socialImage": true
       },
-      "ok": true
+      "ok": true,
+      "socialImage": {
+        "status": 200,
+        "contentType": "image/png",
+        "ok": true
+      }
     },
     {
       "path": "/blog/best-vpn-for-telegram-2026",
@@ -157,7 +170,7 @@
       "url": "https://www.zerotovpn.com/blog/best-vpn-for-telegram-2026",
       "status": 200,
       "finalUrl": "https://www.zerotovpn.com/blog/best-vpn-for-telegram-2026",
-      "durationMs": 2108,
+      "durationMs": 4064,
       "title": "Best VPN for Telegram in 2026: what to verify before you connect",
       "description": "Telegram access depends on the network, device and current block. Compare a VPN with Telegram&#x27;s own MTProxy option, document the limits and test your exact setup before relying on it.",
       "canonical": "https://www.zerotovpn.com/blog/best-vpn-for-telegram-2026",
@@ -199,9 +212,15 @@
         "clusterLinks": true,
         "faqSchema": true,
         "imageSeo": true,
-        "structuredDataDates": true
+        "structuredDataDates": true,
+        "socialImage": true
       },
-      "ok": true
+      "ok": true,
+      "socialImage": {
+        "status": 200,
+        "contentType": "image/png",
+        "ok": true
+      }
     },
     {
       "path": "/countries/russia",
@@ -219,7 +238,7 @@
       "url": "https://www.zerotovpn.com/countries/russia",
       "status": 200,
       "finalUrl": "https://www.zerotovpn.com/countries/russia",
-      "durationMs": 2536,
+      "durationMs": 2357,
       "title": "VPN for Russia in 2026: What to Verify Before You Connect",
       "description": "VPN access in Russia can change by ISP and date. Compare obfuscation, preparation, legal uncertainty and a bounded test plan before relying on a provider.",
       "canonical": "https://www.zerotovpn.com/countries/russia",
@@ -261,9 +280,15 @@
         "clusterLinks": true,
         "faqSchema": true,
         "imageSeo": true,
-        "structuredDataDates": true
+        "structuredDataDates": true,
+        "socialImage": true
       },
-      "ok": true
+      "ok": true,
+      "socialImage": {
+        "status": 200,
+        "contentType": "image/png",
+        "ok": true
+      }
     },
     {
       "path": "/countries/china",
@@ -281,7 +306,7 @@
       "url": "https://www.zerotovpn.com/countries/china",
       "status": 200,
       "finalUrl": "https://www.zerotovpn.com/countries/china",
-      "durationMs": 2100,
+      "durationMs": 5218,
       "title": "VPN for China in 2026: What to Verify Before You Connect",
       "description": "China&#x27;s internet environment is highly restricted and can change by network and date. Compare obfuscation, preparation, legal uncertainty and a bounded VPN test plan.",
       "canonical": "https://www.zerotovpn.com/countries/china",
@@ -323,9 +348,15 @@
         "clusterLinks": true,
         "faqSchema": true,
         "imageSeo": true,
-        "structuredDataDates": true
+        "structuredDataDates": true,
+        "socialImage": true
       },
-      "ok": true
+      "ok": true,
+      "socialImage": {
+        "status": 200,
+        "contentType": "image/png",
+        "ok": true
+      }
     },
     {
       "path": "/guides/vpn-protocols-explained",
@@ -344,7 +375,7 @@
       "url": "https://www.zerotovpn.com/guides/vpn-protocols-explained",
       "status": 200,
       "finalUrl": "https://www.zerotovpn.com/guides/vpn-protocols-explained",
-      "durationMs": 2086,
+      "durationMs": 5294,
       "title": "VPN Protocols Explained: WireGuard vs OpenVPN (2026) | ZeroToVPN",
       "description": "A practical, evidence-led guide to WireGuard, OpenVPN, TCP vs UDP and VPN obfuscation, with a bounded test plan and current sources.",
       "canonical": "https://www.zerotovpn.com/guides/vpn-protocols-explained",
@@ -386,9 +417,15 @@
         "clusterLinks": true,
         "faqSchema": true,
         "imageSeo": true,
-        "structuredDataDates": true
+        "structuredDataDates": true,
+        "socialImage": true
       },
-      "ok": true
+      "ok": true,
+      "socialImage": {
+        "status": 200,
+        "contentType": "image/png",
+        "ok": true
+      }
     },
     {
       "path": "/guides/vpn-obfuscation-explained",
@@ -407,7 +444,7 @@
       "url": "https://www.zerotovpn.com/guides/vpn-obfuscation-explained",
       "status": 200,
       "finalUrl": "https://www.zerotovpn.com/guides/vpn-obfuscation-explained",
-      "durationMs": 2061,
+      "durationMs": 4106,
       "title": "VPN Obfuscation Explained: Stealth and OpenVPN | ZeroToVPN",
       "description": "Understand VPN obfuscation, stealth features and OpenVPN trade-offs with an evidence-led test plan and current provider documentation.",
       "canonical": "https://www.zerotovpn.com/guides/vpn-obfuscation-explained",
@@ -449,9 +486,15 @@
         "clusterLinks": true,
         "faqSchema": true,
         "imageSeo": true,
-        "structuredDataDates": true
+        "structuredDataDates": true,
+        "socialImage": true
       },
-      "ok": true
+      "ok": true,
+      "socialImage": {
+        "status": 200,
+        "contentType": "image/png",
+        "ok": true
+      }
     },
     {
       "path": "/guides/vpn-for-restricted-networks",
@@ -471,7 +514,7 @@
       "url": "https://www.zerotovpn.com/guides/vpn-for-restricted-networks",
       "status": 200,
       "finalUrl": "https://www.zerotovpn.com/guides/vpn-for-restricted-networks",
-      "durationMs": 1341,
+      "durationMs": 4095,
       "title": "How to Use a VPN on a Restricted Network | ZeroToVPN",
       "description": "Identify the restriction, prepare a VPN lawfully and run a bounded test without assuming access or bypass guarantees.",
       "canonical": "https://www.zerotovpn.com/guides/vpn-for-restricted-networks",
@@ -513,9 +556,15 @@
         "clusterLinks": true,
         "faqSchema": true,
         "imageSeo": true,
-        "structuredDataDates": true
+        "structuredDataDates": true,
+        "socialImage": true
       },
-      "ok": true
+      "ok": true,
+      "socialImage": {
+        "status": 200,
+        "contentType": "image/png",
+        "ok": true
+      }
     },
     {
       "path": "/guides/vpn-for-travel",
@@ -534,7 +583,7 @@
       "url": "https://www.zerotovpn.com/guides/vpn-for-travel",
       "status": 200,
       "finalUrl": "https://www.zerotovpn.com/guides/vpn-for-travel",
-      "durationMs": 2342,
+      "durationMs": 1509,
       "title": "VPN for Travel: What to Test Before You Leave | ZeroToVPN",
       "description": "A bounded travel VPN guide for hotel and airport Wi-Fi, device preparation, destination restrictions and safer connectivity.",
       "canonical": "https://www.zerotovpn.com/guides/vpn-for-travel",
@@ -576,9 +625,15 @@
         "clusterLinks": true,
         "faqSchema": true,
         "imageSeo": true,
-        "structuredDataDates": true
+        "structuredDataDates": true,
+        "socialImage": true
       },
-      "ok": true
+      "ok": true,
+      "socialImage": {
+        "status": 200,
+        "contentType": "image/png",
+        "ok": true
+      }
     },
     {
       "path": "/best/free-vpn",
@@ -598,7 +653,7 @@
       "url": "https://www.zerotovpn.com/best/free-vpn",
       "status": 200,
       "finalUrl": "https://www.zerotovpn.com/best/free-vpn",
-      "durationMs": 2006,
+      "durationMs": 1112,
       "title": "Best Free VPNs: Safety, Limits and Trade-offs | ZeroToVPN",
       "description": "Compare free VPN tiers by data limits, privacy evidence, locations and realistic use cases without blanket safety claims.",
       "canonical": "https://www.zerotovpn.com/best/free-vpn",
@@ -640,9 +695,15 @@
         "clusterLinks": true,
         "faqSchema": true,
         "imageSeo": true,
-        "structuredDataDates": true
+        "structuredDataDates": true,
+        "socialImage": true
       },
-      "ok": true
+      "ok": true,
+      "socialImage": {
+        "status": 200,
+        "contentType": "image/png",
+        "ok": true
+      }
     }
   ]
 }

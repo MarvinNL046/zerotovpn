@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Shield, CheckCircle, ExternalLink } from "lucide-react";
+import { isAffiliateUrl } from "@/lib/blog-content";
 
 // ZeroToVPN expert author info — used across all blog posts for E-E-A-T
 export const AUTHOR = {
@@ -136,7 +137,7 @@ export function SourcesSection({ content }: { content: string }) {
             <a
               href={source.url}
               target="_blank"
-              rel="noopener noreferrer"
+              rel={isAffiliateUrl(source.url) ? "noopener noreferrer sponsored nofollow" : "noopener noreferrer"}
               className="text-primary hover:underline"
             >
               {source.text}

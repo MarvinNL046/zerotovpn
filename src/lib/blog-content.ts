@@ -33,6 +33,10 @@ export function normaliseerArtikelKoppen(html: string): string {
 
 const AFFILIATE_HREF = /(?:go\.zerotovpn\.com|go\.nordvpn\.net|nordvpn\.tpo\.lv|[?&](?:offer_id|aff_id|url_id)=)/i;
 
+export function isAffiliateUrl(url: string): boolean {
+  return AFFILIATE_HREF.test(url);
+}
+
 /**
  * Normalize legacy article HTML so affiliate links carry the disclosure
  * attributes required by search engines and partner programs. New content
@@ -44,7 +48,7 @@ export function normaliseerAffiliateLinks(html: string): string {
 
   return html.replace(/<a\b[^>]*>/gi, (tag) => {
     const href = tag.match(/\bhref=["']([^"']+)["']/i)?.[1] ?? "";
-    if (!AFFILIATE_HREF.test(href)) return tag;
+    if (!isAffiliateUrl(href)) return tag;
 
     const relMatch = tag.match(/\brel=["']([^"']*)["']/i);
     const tokens = (relMatch?.[1] ?? "")

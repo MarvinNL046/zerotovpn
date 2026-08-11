@@ -1,14 +1,14 @@
 # Live affiliate context audit
 
-Generated: 2026-08-11T18:54:22.397Z
+Generated: 2026-08-11T19:09:29.652Z
 
 - Sitemap URLs discovered: **2279**
 - URLs checked: **2279**
-- Pages with affiliate links: **1756**
-- Affiliate links checked: **8216**
+- Pages with affiliate links: **1755**
+- Affiliate links checked: **8213**
 - Pages with missing `sponsored` + `nofollow`: **0**
 - Affiliate pages without visible disclosure text: **0**
-- Affiliate pages with promotion terms requiring review: **22**
+- Affiliate pages with promotion terms requiring review: **21**
 - Pages with interruptive-promotion markers: **0**
 - Non-200 fetches: **0**
 
@@ -35,7 +35,6 @@ Generated: 2026-08-11T18:54:22.397Z
 | 200 | https://www.zerotovpn.com/ko/reviews/cactusvpn | 3 | 0 | yes | free\s+(?:months?|trial) |
 | 200 | https://www.zerotovpn.com/th/reviews/cactusvpn | 3 | 0 | yes | free\s+(?:months?|trial) |
 | 200 | https://www.zerotovpn.com/blog/vpn-ai-chatbot-privacy-prevent-prompt-logging | 3 | 0 | yes | incentive(?:s)? |
-| 200 | https://www.zerotovpn.com/blog/vpn-blockchain-privacy-mask-wallet-activity-2026 | 3 | 0 | yes | free\s+(?:months?|trial) |
 | 200 | https://www.zerotovpn.com/blog/vpn-leaks-email-clients-gmail-outlook-apple-mail-2026 | 3 | 0 | yes | incentive(?:s)? |
 | 200 | https://www.zerotovpn.com/blog/vpn-leaks-video-calls-slack-discord-teams-2026 | 4 | 0 | yes | free\s+(?:months?|trial) |
 

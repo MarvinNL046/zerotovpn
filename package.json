@@ -9,6 +9,8 @@
     "seo:telegram": "node scripts/telegram-seo-research.mjs",
     "seo:russia": "node scripts/russia-seo-research.mjs",
     "seo:china": "node scripts/china-seo-research.mjs",
+    "seo:protocols": "node scripts/protocol-seo-research.mjs",
+    "audit:editorial": "node scripts/editorial-audit.mjs",
     "prebuild": "npm run generate:sitemap-routes",
     "build": "next build",
     "start": "next start",

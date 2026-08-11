@@ -1,0 +1,386 @@
+{
+  "schemaVersion": 1,
+  "cluster": "VPN protocols / obfuscation / WireGuard vs OpenVPN",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "fetchedAt": "2026-08-11T16:49:32.079Z",
+  "refreshed": true,
+  "seeds": [
+    "vpn protocols explained",
+    "wireguard vs openvpn",
+    "best vpn protocol",
+    "openvpn tcp vs udp",
+    "vpn obfuscation protocol",
+    "stealth vpn",
+    "vpn protocol for china"
+  ],
+  "overview": [
+    {
+      "keyword": "best vpn protocol",
+      "currentVolume": null,
+      "latestVolume": 480,
+      "latestMonth": "2024-02",
+      "difficulty": 17,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "openvpn tcp vs udp",
+      "currentVolume": 170,
+      "latestVolume": 110,
+      "latestMonth": "2026-06",
+      "difficulty": 0,
+      "intent": "informational"
+    },
+    {
+      "keyword": "stealth vpn",
+      "currentVolume": null,
+      "latestVolume": 260,
+      "latestMonth": "2024-02",
+      "difficulty": 0,
+      "intent": "informational"
+    },
+    {
+      "keyword": "vpn protocols explained",
+      "currentVolume": null,
+      "latestVolume": 10,
+      "latestMonth": "2024-02",
+      "difficulty": 23,
+      "intent": "informational"
+    },
+    {
+      "keyword": "wireguard vs openvpn",
+      "currentVolume": 1600,
+      "latestVolume": 1000,
+      "latestMonth": "2026-06",
+      "difficulty": 8,
+      "intent": "commercial"
+    }
+  ],
+  "suggestions": [
+    {
+      "seed": "vpn protocols explained",
+      "keyword": "proton vpn protocols explained",
+      "volume": 30
+    },
+    {
+      "seed": "vpn protocols explained",
+      "keyword": "vpn protocols explained",
+      "volume": null
+    },
+    {
+      "seed": "wireguard vs openvpn",
+      "keyword": "wireguard vs openvpn",
+      "volume": 1600
+    },
+    {
+      "seed": "wireguard vs openvpn",
+      "keyword": "openvpn vs wireguard",
+      "volume": 1000
+    },
+    {
+      "seed": "wireguard vs openvpn",
+      "keyword": "wireguard vs openvpn speed",
+      "volume": 50
+    },
+    {
+      "seed": "wireguard vs openvpn",
+      "keyword": "wireguard vs openvpn performance",
+      "volume": 50
+    },
+    {
+      "seed": "wireguard vs openvpn",
+      "keyword": "openvpn vs wireguard reddit",
+      "volume": 30
+    },
+    {
+      "seed": "wireguard vs openvpn",
+      "keyword": "wireguard vs openvpn reddit",
+      "volume": 30
+    },
+    {
+      "seed": "wireguard vs openvpn",
+      "keyword": "openvpn vs wireguard speed",
+      "volume": 30
+    },
+    {
+      "seed": "wireguard vs openvpn",
+      "keyword": "wireguard vs openvpn vs ikev2",
+      "volume": 20
+    },
+    {
+      "seed": "wireguard vs openvpn",
+      "keyword": "openvpn dco vs wireguard",
+      "volume": 20
+    },
+    {
+      "seed": "wireguard vs openvpn",
+      "keyword": "openvpn vs wireguard performance",
+      "volume": 20
+    },
+    {
+      "seed": "wireguard vs openvpn",
+      "keyword": "pia openvpn vs wireguard",
+      "volume": 20
+    },
+    {
+      "seed": "wireguard vs openvpn",
+      "keyword": "wireguard vs openvpn unifi",
+      "volume": 20
+    },
+    {
+      "seed": "best vpn protocol",
+      "keyword": "vpn which protocol is best",
+      "volume": 210
+    },
+    {
+      "seed": "best vpn protocol",
+      "keyword": "best vpn protocol for p2p",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn protocol",
+      "keyword": "best free vpn for blue protocol",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn protocol",
+      "keyword": "best type of vpn protocol",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn protocol",
+      "keyword": "best vpn for blue protocol",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn protocol",
+      "keyword": "best vpn protocol for gaming reddit",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn protocol",
+      "keyword": "best vpn protocol for windows",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn protocol",
+      "keyword": "best vpn protocol for mac",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn protocol",
+      "keyword": "what is the best vpn protocol for gaming",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn protocol",
+      "keyword": "best protocol for proton vpn",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn protocol",
+      "keyword": "best vpn connection protocol",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn protocol",
+      "keyword": "best vpn protocol for streaming video",
+      "volume": 10
+    },
+    {
+      "seed": "openvpn tcp vs udp",
+      "keyword": "openvpn udp vs tcp",
+      "volume": 170
+    },
+    {
+      "seed": "openvpn tcp vs udp",
+      "keyword": "openvpn tcp vs udp",
+      "volume": 170
+    },
+    {
+      "seed": "openvpn tcp vs udp",
+      "keyword": "udp vs tcp openvpn",
+      "volume": 10
+    },
+    {
+      "seed": "openvpn tcp vs udp",
+      "keyword": "openvpn tcp vs udp speed",
+      "volume": 10
+    },
+    {
+      "seed": "openvpn tcp vs udp",
+      "keyword": "openvpn udp vs tcp nordvpn",
+      "volume": 10
+    },
+    {
+      "seed": "openvpn tcp vs udp",
+      "keyword": "openvpn tcp vs udp reddit",
+      "volume": 10
+    },
+    {
+      "seed": "openvpn tcp vs udp",
+      "keyword": "openvpn udp vs tcp vs nordlynx",
+      "volume": 10
+    },
+    {
+      "seed": "openvpn tcp vs udp",
+      "keyword": "openvpn udp vs openvpn tcp",
+      "volume": 10
+    },
+    {
+      "seed": "openvpn tcp vs udp",
+      "keyword": "what is openvpn tcp vs udp",
+      "volume": 10
+    },
+    {
+      "seed": "openvpn tcp vs udp",
+      "keyword": "tcp vs udp openvpn",
+      "volume": 10
+    },
+    {
+      "seed": "openvpn tcp vs udp",
+      "keyword": "openvpn tcp vs udp performance",
+      "volume": 10
+    },
+    {
+      "seed": "openvpn tcp vs udp",
+      "keyword": "openvpn udp vs tcp performance",
+      "volume": 10
+    },
+    {
+      "seed": "stealth vpn",
+      "keyword": "stealth guard vpn",
+      "volume": 30
+    },
+    {
+      "seed": "stealth vpn",
+      "keyword": "nordvpn stealth vpn",
+      "volume": 20
+    },
+    {
+      "seed": "stealth vpn",
+      "keyword": "stealth protocol proton vpn windows",
+      "volume": 10
+    },
+    {
+      "seed": "stealth vpn",
+      "keyword": "stealth vpn vs openvpn",
+      "volume": 10
+    },
+    {
+      "seed": "stealth vpn",
+      "keyword": "stealth vpn openvpn",
+      "volume": 10
+    },
+    {
+      "seed": "stealth vpn",
+      "keyword": "stealth vpn android",
+      "volume": 10
+    },
+    {
+      "seed": "stealth vpn",
+      "keyword": "free stealth vpn for android",
+      "volume": 10
+    },
+    {
+      "seed": "stealth vpn",
+      "keyword": "ebay stealth vpn",
+      "volume": 10
+    },
+    {
+      "seed": "stealth vpn",
+      "keyword": "astrill openvpn vs stealth vpn",
+      "volume": 10
+    },
+    {
+      "seed": "stealth vpn",
+      "keyword": "free stealth vpn android",
+      "volume": 10
+    },
+    {
+      "seed": "stealth vpn",
+      "keyword": "vpn for ebay stealth",
+      "volume": 10
+    },
+    {
+      "seed": "stealth vpn",
+      "keyword": "proton vpn wireguard vs stealth",
+      "volume": 10
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "vpn protocols explained",
+      "paa": [
+        "Which VPN protocol should I choose?",
+        "What are four common VPN protocols?",
+        "Which VPN protocol is hardest to block?",
+        "What are the main VPN protocols?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "wireguard vs openvpn",
+      "paa": [
+        "Is WireGuard better than OpenVPN?",
+        "What are the disadvantages of WireGuard?",
+        "Is WireGuard still safe?",
+        "Is WireGuard or OpenVPN free?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "best vpn protocol",
+      "paa": [
+        "Can the FBI track a VPN?",
+        "Why avoid NordVPN?",
+        "Which VPN protocol is better, TCP or UDP?",
+        "Which VPN protocol is hardest to block?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "openvpn tcp vs udp",
+      "paa": [
+        "Should I use TCP or UDP for OpenVPN?",
+        "Which is faster, VPN UDP or TCP?",
+        "Should I use TCP or UDP?",
+        "Is OpenVPN TCP safe?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn obfuscation protocol",
+      "paa": [
+        "Can my employer know if I am using an obfuscated VPN?",
+        "What is VPN obfuscation?",
+        "Is obfuscated VPN safe?",
+        "Which VPN has obfuscation?"
+      ],
+      "hasAiOverview": true
+    }
+  ],
+  "competitors": [
+    "youtube.com",
+    "reddit.com",
+    "techradar.com",
+    "cybernews.com",
+    "cnet.com",
+    "pcmag.com",
+    "tomsguide.com",
+    "security.org",
+    "gizmodo.com",
+    "cyberinsider.com",
+    "thebestvpn.com",
+    "comparitech.com",
+    "allaboutcookies.org",
+    "vpnmentor.com",
+    "cloudwards.net",
+    "top10vpn.com",
+    "01net.com",
+    "vpnpro.com",
+    "pcworld.com"
+  ],
+  "sourcePolicy": "DataForSEO signals prioritise questions and structure; they do not prove a protocol is secure, available, lawful or effective on a particular network."
+}

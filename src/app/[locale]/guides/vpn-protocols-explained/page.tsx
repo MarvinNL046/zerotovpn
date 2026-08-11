@@ -31,6 +31,8 @@ import { FAQSchema } from "@/components/seo/faq-schema";
 import { generateAlternates } from "@/lib/seo-utils";
 import { getRelatedContent } from "@/lib/content-links";
 import { getVpnAffiliateUrl } from "@/lib/vpn-links";
+import { getAllVpns } from "@/lib/vpn-data-layer";
+import { ProtocolsEditorialPage } from "@/components/editorial/protocols-editorial-page";
 
 // Type definitions
 type DeterminesItem = {
@@ -106,6 +108,21 @@ const baseUrl = "https://www.zerotovpn.com";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  if (locale === "en") {
+    return {
+      metadataBase: new URL(baseUrl),
+      title: { absolute: "VPN Protocols Explained: WireGuard vs OpenVPN (2026) | ZeroToVPN" },
+      description: "A practical, evidence-led guide to WireGuard, OpenVPN, TCP vs UDP and VPN obfuscation, with a bounded test plan and current sources.",
+      robots: { index: true, follow: true },
+      openGraph: {
+        locale: "en_US",
+        title: "VPN Protocols Explained: WireGuard vs OpenVPN (2026)",
+        description: "Choose a VPN protocol by use case, compare WireGuard with OpenVPN, and verify obfuscation without relying on access guarantees.",
+        type: "article",
+      },
+      alternates: generateAlternates("/guides/vpn-protocols-explained", locale),
+    };
+  }
   const t = await getTranslations({ locale, namespace: "guides.vpnProtocolsExplained" });
   return {
     metadataBase: new URL(baseUrl),
@@ -129,6 +146,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function VpnProtocolsExplainedPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
+  if (locale === "en") {
+    const vpns = await getAllVpns();
+    return <ProtocolsEditorialPage vpns={vpns} />;
+  }
   const t = await getTranslations("guides.vpnProtocolsExplained");
   const pageUrl = locale === "en" ? `${baseUrl}/guides/vpn-protocols-explained` : `${baseUrl}/${locale}/guides/vpn-protocols-explained`;
 

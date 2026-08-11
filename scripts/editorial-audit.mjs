@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { readdirSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
 const ROOT = resolve(import.meta.dirname, "..");
@@ -96,6 +96,26 @@ const results = checks.map((check) => {
     .filter((pattern) => pattern.test(source))
     .map(String);
   return { ...check, pass: missing.length === 0 && forbidden.length === 0, missing, forbidden };
+});
+
+const localeFiles = readdirSync(resolve(ROOT, "src/messages"))
+  .filter((file) => file.endsWith(".json"))
+  .sort();
+const popupForbidden = /affiliate|coupon|discount|deal|offer|promo|cashback|incentive|free\s+months?|\b\d{1,3}%\s*off/i;
+const popupLocaleFailures = [];
+for (const file of localeFiles) {
+  const locale = JSON.parse(readFileSync(resolve(ROOT, "src/messages", file), "utf8"));
+  const popup = locale.newsletter?.popupTitle && locale.newsletter?.popupSubtitle
+    ? `${locale.newsletter.popupTitle} ${locale.newsletter.popupSubtitle}`
+    : "";
+  if (!popup || popupForbidden.test(popup)) popupLocaleFailures.push(file);
+}
+results.push({
+  name: "newsletter popup copy remains email-only in every locale",
+  file: "src/messages/*.json",
+  pass: popupLocaleFailures.length === 0,
+  missing: popupLocaleFailures.length ? popupLocaleFailures.map((file) => `clean popup copy: ${file}`) : [],
+  forbidden: [],
 });
 const failed = results.filter((result) => !result.pass);
 console.log(JSON.stringify({ checkedAt: new Date().toISOString(), checked: results.length, passed: results.length - failed.length, failed: failed.length, results: results.map(({ name, file, pass, missing, forbidden }) => ({ name, file, pass, missing, forbidden })) }, null, 2));

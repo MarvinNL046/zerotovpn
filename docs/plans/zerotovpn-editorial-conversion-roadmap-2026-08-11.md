@@ -12,6 +12,8 @@
 
 - **11 August 2026:** Ran a real 390px Chrome smoke test on /countries/iran and /. Both routes rendered with HTTP 200, one H1, no horizontal overflow, no framework error overlay and no page errors. The test caught and fixed a removed /best breadcrumb prefetch plus a locale-dependent homepage number formatter that caused a React hydration warning. Evidence: [mobile-browser-smoke-2026-08-11.md](../metrics/mobile-browser-smoke-2026-08-11.md); deployment dpl_Hqx6frvFzixrTptRBYp6Wo56BMbt is Ready.
 
+- **11 August 2026:** Hardened the newsletter-only exit-intent guard: `npm run audit:editorial` now checks the popup component and verifies that every locale's rendered popup title/subtitle remains free of affiliate, deal, coupon, discount, promotion, cashback and incentive language. The guard passes **16/16** checks.
+
 - **11 August 2026:** Extracted `BestVpnEditorialTemplate` and `EditorialQuickPickCard` into `src/components/editorial/best-vpn-editorial-template.tsx`, then refactored the Best VPN page and dynamic blog route to use the shared disclosure/jump-nav pattern. ESLint, production build and local browser checks pass.
 - **11 August 2026:** Added the [Iran editorial brief](../research/iran-vpn-editorial-brief-2026-08-11.md) with the research fields, evidence boundary, internal-link map and affiliate compliance gates for the first content refresh.
 - **11 August 2026:** Ran the first cached DataForSEO US/English pass for the Iran cluster: keyword overview, related suggestions, five SERP/PAA samples and competitor domains. Results are recorded in `docs/research/dataforseo-iran-cluster-2026-08-11.{json,md}`; missing current volume is explicitly not treated as zero demand.

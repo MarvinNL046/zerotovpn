@@ -77,7 +77,7 @@ export const telegramVpnEditorialContent = `
 
 <p>Network rules and enforcement can change. Check the current laws, regulator guidance, employer or school policy and service terms that apply to you. This page is not legal advice and does not authorise a particular use. Do not use a VPN or proxy to facilitate criminal activity, expose someone else's data or defeat an organisation's security controls.</p>
 
-<p>For the country-specific evidence boundary, see our <a href="/blog/best-vpn-for-iran-2026-bypass-internet-censorship">Iran VPN guide</a> and <a href="/countries/iran">Iran evidence checklist</a>. Compare the same questions in <a href="/countries/russia">Russia</a> and <a href="/countries/china">China</a>, and review our <a href="/guides/vpn-protocols-explained">VPN protocol explainer</a> before changing settings.</p>
+<p>For the country-specific evidence boundary, see our <a href="/blog/best-vpn-for-iran-2026-bypass-internet-censorship">Iran VPN guide</a> and <a href="/countries/iran">Iran evidence checklist</a>. Compare the same questions in <a href="/countries/russia">Russia</a> and <a href="/countries/china">China</a>, and review our <a href="/guides/vpn-protocols-explained">VPN protocol explainer</a> and <a href="/guides/vpn-obfuscation-explained">VPN obfuscation guide</a> before changing settings.</p>
 
 <h2>FAQ from the current search results</h2>
 

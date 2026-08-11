@@ -72,7 +72,7 @@ export const iranVpnEditorialContent = `
 
 <p>Rules and enforcement can change, and the legality of a particular use depends on purpose, location and current authorities. Check current government, regulator, consular, employer, school and service terms that apply to you. Do not use a VPN to facilitate criminal activity, bypass an organisation's security policy or expose another person's data.</p>
 
-<p>For the evidence boundary and the questions we still need to verify, see the <a href="/countries/iran">Iran VPN evidence checklist</a>. For protocol background, read <a href="/guides/vpn-protocols-explained">how VPN protocols work</a>. For the wider censorship cluster, compare our guides to <a href="/countries/russia">VPN use in Russia</a>, <a href="/countries/china">VPN use in China</a> and <a href="/blog/best-vpn-for-telegram-2026">VPNs for Telegram</a>.</p>
+<p>For the evidence boundary and the questions we still need to verify, see the <a href="/countries/iran">Iran VPN evidence checklist</a>. For protocol background, read <a href="/guides/vpn-protocols-explained">how VPN protocols work</a> and our <a href="/guides/vpn-obfuscation-explained">VPN obfuscation guide</a>. For the wider censorship cluster, compare our guides to <a href="/countries/russia">VPN use in Russia</a>, <a href="/countries/china">VPN use in China</a> and <a href="/blog/best-vpn-for-telegram-2026">VPNs for Telegram</a>.</p>
 
 <h2>FAQ: questions from the current SERP</h2>
 

@@ -76,6 +76,11 @@ const checks = [
     forbiddenPatterns: [/99%/, /20\+ free VPNs/, /No Hidden Costs|Geen Verborgen Kosten|Keine Versteckten Kosten/i],
   },
   {
+    name: "retired free VPN translations are not serialized to clients",
+    file: "src/app/[locale]/layout.tsx",
+    patterns: [/const clientMessages = \{ \.\.\.messages \}/, /delete clientMessages\.freeVpn/, /messages=\{clientMessages\}/],
+  },
+  {
     name: "newsletter-only exit intent popup",
     file: "src/components/conversion/exit-intent-popup.tsx",
     patterns: [/useTranslations\("newsletter"\)/, /<NewsletterForm[^>]+source="exit-intent"/, /Owned-media newsletter prompt/],

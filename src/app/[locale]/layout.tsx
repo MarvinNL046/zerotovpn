@@ -131,6 +131,11 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   // Get messages for the locale
   const messages = await getMessages();
+  // The free-VPN page now uses the shared evidence-led template. Keep the
+  // retired translated payload out of the client bundle so legacy claims
+  // cannot reappear in serialized HTML while localized copy is rebuilt.
+  const clientMessages = { ...messages };
+  delete clientMessages.freeVpn;
 
   return (
     <ThemeProvider
@@ -139,7 +144,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         enableSystem
         disableTransitionOnChange
       >
-        <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider messages={clientMessages}>
           <div className="relative flex min-h-screen flex-col">
             {/* Toetsenbord- en schermlezergebruikers moesten eerst door de
                 banner en het volledige mega-menu heen voordat ze bij de

@@ -1,6 +1,6 @@
 # Live sitemap audit
 
-Generated: 2026-08-11T22:18:01.601Z
+Generated: 2026-08-11T23:17:36.690Z
 
 - Sitemap URLs discovered: **2279**
 - URLs checked: **2279**

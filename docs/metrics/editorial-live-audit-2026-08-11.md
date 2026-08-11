@@ -1,11 +1,11 @@
 # Live editorial page audit
 
-Generated: 2026-08-11T22:51:57.505Z
+Generated: 2026-08-11T23:15:23.461Z
 
-- Target pages: **15**
-- Passing pages: **15**
+- Target pages: **22**
+- Passing pages: **22**
 - Pages needing review: **0**
-- Affiliate links checked: **94**
+- Affiliate links checked: **123**
 - Affiliate links missing sponsored/nofollow: **0**
 - Affiliate links missing Short.io slug telemetry: **0**
 - Missing required cluster links: **0**
@@ -19,6 +19,13 @@ Generated: 2026-08-11T22:51:57.505Z
 | Status | Page | Title | H1s | Internal links | Affiliate links | Missing required IDs | Missing cluster links |
 |---|---|---|---:|---:|---:|---|---|
 | pass | / | ZeroToVPN: Independent VPN Research, Transparency &amp; Real-World Testing | 1 | 50 | 9 | — | — |
+| pass | /about | About ZeroToVPN | Our Testing Methodology | 1 | 47 | 0 | — | — |
+| pass | /best/vpn-linux | Best VPNs for Linux (Aug 2026) — Native Apps &amp; CLI | 1 | 44 | 3 | — | — |
+| pass | /best/vpn-windows | Best VPNs for Windows PC (Aug 2026) — Native Apps &amp; Speed | 1 | 41 | 5 | — | — |
+| pass | /best/vpn-laptops | Best VPNs for Laptops (Aug 2026) — Lightweight &amp; Secure | 1 | 42 | 6 | — | — |
+| pass | /best/vpn-privacy | Best VPNs for Privacy (Aug 2026) — Audited No-Logs Picks | 1 | 42 | 5 | — | — |
+| pass | /best/vpn-gaming | Best VPN for Gaming (2026) — Lowest Ping, Tested | ZeroToVPN | 1 | 44 | 4 | — | — |
+| pass | /best/vpn-chromebook | Best VPN for Chromebook (2026) - Easy Setup &amp; Fast Speeds | 1 | 41 | 6 | — | — |
 | pass | /best/best-vpn | Best VPN in 2026: Transparent Shortlist and Comparison | ZeroToVPN | 1 | 64 | 21 | — | — |
 | pass | /blog/best-vpn-for-iran-2026-bypass-internet-censorship | Best VPN for Iran in 2026: tested options, limits and safer preparation | 1 | 60 | 6 | — | — |
 | pass | /blog/best-vpn-for-telegram-2026 | Best VPN for Telegram in 2026: what to verify before you connect | 1 | 59 | 6 | — | — |

@@ -93,7 +93,7 @@ export function ComparisonTable({ vpns }: ComparisonTableProps) {
                 </div>
               </TableCell>
               <TableCell className="text-center font-medium">
-                {vpn.servers.toLocaleString()}
+                {vpn.servers.toLocaleString("en-US")}
               </TableCell>
               <TableCell className="text-center">
                 {vpn.netflixSupport ? (

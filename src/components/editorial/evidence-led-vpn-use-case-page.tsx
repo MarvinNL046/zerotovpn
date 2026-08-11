@@ -91,7 +91,7 @@ export function EvidenceLedVpnUseCasePage({
   locale,
   route,
   eyebrow,
-  breadcrumbRoot = { name: "Best VPN guides", href: "/best" },
+  breadcrumbRoot = { name: "VPN guides", href: "/guides" },
   title,
   introduction,
   status,

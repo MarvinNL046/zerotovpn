@@ -38,6 +38,11 @@ const checks = [
     file: "src/components/editorial/best-vpn-pillar-page.tsx",
     patterns: [/Top 3 overview/, /id=\"comparison\"/, /id=\"methodology\"/, /id=\"faq\"/, /priceVerifiedAt/, /AffiliateTextLink/],
   },
+  {
+    name: "Obfuscation support page",
+    file: "src/components/editorial/obfuscation-editorial-page.tsx",
+    patterns: [/What is VPN obfuscation\?/, /id=\"compare\"/, /id=\"test-plan\"/, /id=\"faq\"/, /DataForSEO/],
+  },
 ];
 
 const results = checks.map((check) => {

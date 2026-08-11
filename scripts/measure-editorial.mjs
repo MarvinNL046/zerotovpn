@@ -189,6 +189,14 @@ if (process.argv.includes("--help") || !label || !out) {
     const gscQueries = summarizeSearchConsole(gscQueriesRows, "queries");
     const shortIo = summarizeShortIo(shortIoRows);
     const partner = summarizePartner(partnerRows);
+    const partnerMissingMetrics = partnerPath
+      ? [
+          ...(partner.rows.length ? [] : ["affiliate.partner"]),
+          ...(partner.rows.some((row) => row.conversions !== null) ? [] : ["affiliate.partner.conversions"]),
+          ...(partner.rows.some((row) => row.revenue !== null) ? [] : ["affiliate.partner.revenue"]),
+          ...(partner.rows.some((row) => row.epc !== null) ? [] : ["affiliate.partner.epc"]),
+        ]
+      : ["affiliate.partner.conversions", "affiliate.partner.revenue", "affiliate.partner.epc"];
     const report = {
       schemaVersion: 1,
       label,
@@ -204,7 +212,7 @@ if (process.argv.includes("--help") || !label || !out) {
         },
         partnerExportProvided: Boolean(partnerPath),
         missingMetrics: [
-          ...(partnerPath ? [] : ["affiliate.partner.conversions", "affiliate.partner.revenue", "affiliate.partner.epc"]),
+          ...partnerMissingMetrics,
           ...(gscPagesRows.length ? [] : ["searchConsole.pages"]),
           ...(gscQueriesRows.length ? [] : ["searchConsole.queries"]),
           ...(shortIoRows.length ? [] : ["affiliate.rows"]),

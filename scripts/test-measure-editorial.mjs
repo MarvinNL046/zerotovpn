@@ -62,11 +62,17 @@ try {
   assert(localized.dataQuality.partnerExportProvided === false, "Partner export should be marked absent");
   assert(localized.dataQuality.missingMetrics.includes("affiliate.partner.conversions"), "Missing partner metrics should be explicit");
 
+  const emptyPartner = write("empty-partner.csv", "date,link,clicks\n2026-08-01,go.zerotovpn.com/nordvpn,10\n");
+  const emptyPartnerOut = join(temp, "empty-partner.json");
+  run(["--label", "test-empty-partner", "--gsc-pages", pages, "--gsc-queries", queries, "--shortio", shortIo, "--partner", emptyPartner, "--out", emptyPartnerOut]);
+  const emptyPartnerReport = JSON.parse(readFileSync(emptyPartnerOut, "utf8"));
+  assert(emptyPartnerReport.dataQuality.missingMetrics.includes("affiliate.partner"), "Empty partner export should be flagged");
+
   const missing = spawnSync(process.execPath, [importer, "--label", "missing", "--out", join(temp, "missing.json")], { encoding: "utf8" });
   assert(missing.status !== 0, "Missing required inputs should fail");
   assert(missing.stderr.includes("--gsc-pages"), "Missing-input error should identify the required flag");
 
-  console.log(JSON.stringify({ passed: true, cases: ["english", "localized", "missing-required-input"] }, null, 2));
+  console.log(JSON.stringify({ passed: true, cases: ["english", "localized", "empty-partner", "missing-required-input"] }, null, 2));
 } finally {
   rmSync(temp, { recursive: true, force: true });
 }

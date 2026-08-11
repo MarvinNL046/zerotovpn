@@ -35,6 +35,7 @@ import { LastUpdated } from "@/components/last-updated";
 import { generateAlternates } from "@/lib/seo-utils";
 import { getRelatedContent } from "@/lib/content-links";
 import { getVpnAffiliateUrl } from "@/lib/vpn-links";
+import { AffiliateDisclosure } from "@/components/vpn/affiliate-disclosure";
 
 const affiliateLinks = {
   expressvpn: getVpnAffiliateUrl("expressvpn"),
@@ -156,6 +157,7 @@ export default async function VpnPrivacyGuidePage({ params }: Props) {
       <section className="py-12 lg:py-16">
         <div className="container">
           <div className="max-w-3xl mx-auto prose prose-lg dark:prose-invert">
+            <AffiliateDisclosure className="mb-6" />
             {/* What is VPN Privacy */}
             <div id="what-is-privacy" className="scroll-mt-20 mb-12">
               <h2 className="flex items-center gap-2 text-2xl font-bold mb-4">
@@ -371,7 +373,7 @@ export default async function VpnPrivacyGuidePage({ params }: Props) {
                       if (hasLink) {
                         return (
                           <li key={index}>
-                            <a href={affiliateLinks[vpnKey]} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline inline-flex items-center gap-1">
+                            <a href={affiliateLinks[vpnKey]} target="_blank" rel="noopener noreferrer sponsored nofollow" className="text-primary hover:underline inline-flex items-center gap-1">
                               {location.split(" - ")[0]} <ExternalLink className="h-2.5 w-2.5" />
                             </a> - {location.split(" - ")[1]}
                           </li>
@@ -432,7 +434,7 @@ export default async function VpnPrivacyGuidePage({ params }: Props) {
                   return (
                     <div key={index} className="flex items-center justify-between p-4 bg-card border rounded-lg">
                       <div>
-                        <a href={affiliateLinks[vpnKey]} target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline inline-flex items-center gap-1">
+                        <a href={affiliateLinks[vpnKey]} target="_blank" rel="noopener noreferrer sponsored nofollow" className="font-semibold text-primary hover:underline inline-flex items-center gap-1">
                           {vpn.name} <ExternalLink className="h-3 w-3" />
                         </a>
                         <p className="text-xs text-muted-foreground">{vpn.audits}</p>

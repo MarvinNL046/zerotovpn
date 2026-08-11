@@ -30,3 +30,34 @@ export function normaliseerArtikelKoppen(html: string): string {
     .replace(OVERIGE_H1_OPEN, "<h2$1>")
     .replace(OVERIGE_H1_DICHT, "</h2>");
 }
+
+const AFFILIATE_HREF = /(?:go\.zerotovpn\.com|go\.nordvpn\.net|nordvpn\.tpo\.lv|[?&](?:offer_id|aff_id|url_id)=)/i;
+
+/**
+ * Normalize legacy article HTML so affiliate links carry the disclosure
+ * attributes required by search engines and partner programs. New content
+ * should use AffiliateButton/AffiliateTextLink; this protects imported posts
+ * that still contain raw anchors.
+ */
+export function normaliseerAffiliateLinks(html: string): string {
+  if (!html) return html;
+
+  return html.replace(/<a\b[^>]*>/gi, (tag) => {
+    const href = tag.match(/\bhref=["']([^"']+)["']/i)?.[1] ?? "";
+    if (!AFFILIATE_HREF.test(href)) return tag;
+
+    const relMatch = tag.match(/\brel=["']([^"']*)["']/i);
+    const tokens = (relMatch?.[1] ?? "")
+      .split(/\s+/)
+      .filter(Boolean);
+    for (const token of ["sponsored", "nofollow"]) {
+      if (!tokens.includes(token)) tokens.push(token);
+    }
+    const rel = `rel="${tokens.join(" ")}"`;
+
+    if (relMatch) {
+      return tag.replace(relMatch[0], rel);
+    }
+    return tag.replace(/>$/, ` ${rel}>`);
+  });
+}

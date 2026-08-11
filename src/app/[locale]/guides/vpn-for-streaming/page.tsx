@@ -33,6 +33,7 @@ import { getRelatedContent } from "@/lib/content-links";
 import { LastUpdated } from "@/components/last-updated";
 import { generateAlternates } from "@/lib/seo-utils";
 import { getVpnAffiliateUrl } from "@/lib/vpn-links";
+import { AffiliateDisclosure } from "@/components/vpn/affiliate-disclosure";
 
 // Affiliate links
 const affiliateLinks = {
@@ -176,6 +177,7 @@ export default async function VpnForStreamingPage({ params }: Props) {
       <section className="py-12 lg:py-16">
         <div className="container">
           <div className="max-w-3xl mx-auto prose prose-lg dark:prose-invert">
+            <AffiliateDisclosure className="mb-6" />
             {/* Why Use VPN for Streaming */}
             <div id="why-vpn-streaming" className="scroll-mt-20 mb-12">
               <h2 className="flex items-center gap-2 text-2xl font-bold mb-4">
@@ -335,7 +337,7 @@ export default async function VpnForStreamingPage({ params }: Props) {
                           <a
                             href={affiliateLinks[vpnKey]}
                             target="_blank"
-                            rel="noopener noreferrer"
+                            rel="noopener noreferrer sponsored nofollow"
                             className="font-bold text-lg text-primary hover:underline inline-flex items-center gap-1"
                           >
                             {vpn.name}

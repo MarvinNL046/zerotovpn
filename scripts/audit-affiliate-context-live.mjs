@@ -49,7 +49,7 @@ function findAffiliateLinks(html) {
     const textStart = match.index + match[0].length;
     const textEnd = html.indexOf("</a>", textStart);
     const anchorText = stripHtml(html.slice(textStart, textEnd >= 0 ? textEnd : textStart + 300)).slice(0, 240);
-    links.push({ href, anchorText, rel, hasSponsored: rel.includes("sponsored"), hasNofollow: rel.includes("nofollow") });
+    links.push({ index: match.index, href, anchorText, rel, hasSponsored: rel.includes("sponsored"), hasNofollow: rel.includes("nofollow") });
   }
   return links;
 }
@@ -104,8 +104,12 @@ const records = await mapConcurrent(urls, async (url) => {
   const { title, h1 } = pageMeta(response.html);
   const affiliateLinks = findAffiliateLinks(response.html);
   const bodyText = stripHtml(response.html);
-  const disclosure = /affiliate\s+(?:links?|disclosure)|commission/i.test(bodyText);
-  const promoTerms = matches(promoPatterns, bodyText);
+  const disclosure = /(?:affiliate\s+(?:links?|disclosure)|commission)/i.test(bodyText)
+    || /href=["'][^"']*\/affiliate-disclosure(?:["'?#])/i.test(response.html);
+  const promoContext = affiliateLinks
+    .map((link) => stripHtml(response.html.slice(Math.max(0, link.index - 500), link.index + 1500)))
+    .join(" ");
+  const promoTerms = [...new Set(matches(promoPatterns, promoContext))];
   // Avoid serialized translation chunks: only flag actual rendered popup/modal markers.
   const interruptiveTerms = [];
   if (/data-slot=["'][^"']*(?:exit-intent|newsletter-popup|popunder)[^"']*["']/i.test(response.html)) interruptiveTerms.push("popup-marker");
@@ -148,7 +152,7 @@ const summary = {
   failedFetchCount: records.filter((record) => record.status !== 200).length,
   slowOver2sCount: records.filter((record) => record.durationMs > 2000).length,
 };
-const report = { schemaVersion: 1, summary, records };
+const report = { schemaVersion: 2, summary, records };
 const outputDir = resolve(ROOT, "docs", "metrics");
 mkdirSync(outputDir, { recursive: true });
 const jsonPath = resolve(outputDir, `affiliate-context-audit-${today}.json`);

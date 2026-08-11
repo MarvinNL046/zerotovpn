@@ -34,6 +34,7 @@ import { LastUpdated } from "@/components/last-updated";
 import { generateAlternates } from "@/lib/seo-utils";
 import { getRelatedContent } from "@/lib/content-links";
 import { getVpnAffiliateUrl } from "@/lib/vpn-links";
+import { AffiliateDisclosure } from "@/components/vpn/affiliate-disclosure";
 
 // Type definitions
 type Benefit = {
@@ -227,6 +228,7 @@ export default async function VpnOnMobilePage({ params }: Props) {
       <div className="py-12 lg:py-16">
         <div className="container">
           <div className="max-w-3xl mx-auto space-y-16">
+            <AffiliateDisclosure className="mb-6" />
             {/* Why Mobile VPN */}
             <section id="why-use-vpn-on-mobile">
               <div className="flex items-center gap-3 mb-6">
@@ -492,7 +494,7 @@ export default async function VpnOnMobilePage({ params }: Props) {
                           <a
                             href={affiliateLinks[vpnKey]}
                             target="_blank"
-                            rel="noopener noreferrer"
+                            rel="noopener noreferrer sponsored nofollow"
                             className="font-semibold text-primary hover:underline inline-flex items-center gap-1"
                           >
                             {vpn.name}
@@ -515,7 +517,7 @@ export default async function VpnOnMobilePage({ params }: Props) {
                       <a
                         href={affiliateLinks[vpnKey]}
                         target="_blank"
-                        rel="noopener noreferrer"
+                        rel="noopener noreferrer sponsored nofollow"
                         className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
                       >
                         Visit {vpn.name}

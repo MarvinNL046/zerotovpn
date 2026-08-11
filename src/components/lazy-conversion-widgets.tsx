@@ -2,10 +2,6 @@
 
 import dynamic from "next/dynamic";
 
-const ExitIntentPopup = dynamic(
-  () => import("@/components/conversion/exit-intent-popup").then((m) => m.ExitIntentPopup),
-  { ssr: false }
-);
 const StickyCTABar = dynamic(
   () => import("@/components/conversion/sticky-cta-bar").then((m) => m.StickyCTABar),
   { ssr: false }
@@ -13,7 +9,7 @@ const StickyCTABar = dynamic(
 export function LazyConversionWidgets() {
   return (
     <>
-      <ExitIntentPopup />
+      {/* Nord's affiliate rules prohibit pop-up/under advertising; keep conversion contextual. */}
       <StickyCTABar />
     </>
   );

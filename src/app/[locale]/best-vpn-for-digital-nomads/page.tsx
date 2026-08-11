@@ -6,6 +6,7 @@ import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { Go2NetworkSection } from "@/components/seo/go2-network-section";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
+import { AffiliateDisclosure } from "@/components/vpn/affiliate-disclosure";
 import { Link } from "@/i18n/navigation";
 import { OG_LOCALE_MAP, generateAlternates, getShortMonthYear, titelMetMerk } from "@/lib/seo-utils";
 import { getVpnBySlug } from "@/lib/vpn-data-layer";
@@ -109,6 +110,7 @@ export default async function BestVpnForDigitalNomadsPage({ params }: Props) {
       <section className="py-10">
         <div className="container max-w-5xl space-y-6">
           <h2 className="text-2xl font-bold">Top VPN picks for digital nomads</h2>
+          <AffiliateDisclosure variant="card" />
           <div className="grid gap-4 md:grid-cols-3">
             {picks.map((vpn) => (
               <Card key={vpn.id}>

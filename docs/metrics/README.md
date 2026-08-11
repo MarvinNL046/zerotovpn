@@ -33,3 +33,13 @@ npm run audit:sitemap
 ```
 
 Use `AUDIT_CONCURRENCY=4` to lower request pressure or `AUDIT_LIMIT=100` for a smoke run. The report is written to `docs/metrics/sitemap-audit-YYYY-MM-DD.{json,md}`. A URL with a 200 response can still be a sitemap error when it is `noindex`; fix the sitemap generator or the page metadata rather than counting it as indexed.
+
+## Affiliate context audit
+
+The affiliate context audit fetches every URL in the live sitemap and checks affiliate-link rel attributes, disclosure text, and review flags for coupon/incentive or interruptive-promotion markers:
+
+```powershell
+npm run audit:affiliate-context
+```
+
+Use `AFFILIATE_AUDIT_CONCURRENCY=8` to lower request pressure or `AFFILIATE_AUDIT_LIMIT=100` for a smoke run. Promotion terms are manual-review flags because an editorial policy page may mention prohibited techniques while explaining them; missing `sponsored`/`nofollow` is an actionable technical failure.

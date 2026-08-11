@@ -14,6 +14,7 @@
     "seo:travel": "node scripts/travel-seo-research.mjs",
     "seo:free-vpn": "node scripts/free-vpn-seo-research.mjs",
     "audit:sitemap": "node scripts/audit-sitemap-live.mjs",
+    "audit:affiliate-context": "node scripts/audit-affiliate-context-live.mjs",
     "audit:editorial": "node scripts/editorial-audit.mjs",
     "measure:editorial": "node scripts/measure-editorial.mjs",
     "prebuild": "npm run generate:sitemap-routes",

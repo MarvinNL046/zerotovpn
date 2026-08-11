@@ -18,6 +18,8 @@
 - **11 August 2026:** Audited the Russia country page with a new DataForSEO dossier and replaced the English route's stale claim-heavy layout with a shared evidence-led editorial shell. It now uses dated Freedom House context, a decision table, bounded test plan, reciprocal Iran/Telegram/China links, FAQ schema and a contextual shortlist. Desktop and 390px browser checks pass; deployment follows after the release gate.
 - **11 August 2026:** Audited the China country page with a new DataForSEO dossier and replaced the English route's stale provider-success and legal-certainty claims with a shared evidence-led editorial shell. It now uses dated Freedom House and travel guidance, a decision table, bounded test plan, reciprocal cluster links, FAQ schema and contextual provider CTAs. Release QA is next.
 - **11 August 2026:** Built and deployed the protocol support page at `/guides/vpn-protocols-explained` from a fresh DataForSEO dossier. The page targets the strongest current signals (`wireguard vs openvpn` and `openvpn tcp vs udp`), adds decision cards, a comparison table, bounded obfuscation guidance, a reproducible test plan, PAA FAQ schema, official sources and reciprocal links to Iran/Russia/China/Telegram. Added `npm run audit:editorial`; all six editorial/compliance checks pass. Local and production desktop/390px browser checks pass with six sponsored/no-follow CTAs and no overflow. Production deployment: `dpl_GkosyHK3BhG4XekdRyvc45YTND39`.
+- **11 August 2026:** Converted the supplied Search Console, AI-visibility, indexing and Short.io screenshots into the [performance baseline and next-pillar gate](./zerotovpn-performance-baseline-2026-08-11.md). The next commercial pillar is `/best/best-vpn`: it already has hub-level visibility, but the current implementation still contains stale test counts, speed/coverage figures and universal legal/access wording that must be qualified or sourced before the next release.
+- **11 August 2026:** Rebuilt the English `/best/best-vpn` pillar with the shared Tom's Guide-style top-three cards, contextual clickable prices, provider dossiers, a decision table, bounded methodology, cluster links, FAQ schema and freshness labels. Local desktop and 390px checks pass with no overflow; the page no longer renders the stale `6,730 Mbps`/`35+ VPNs` claims. Release gate remains: commit, deploy, verify production, then capture the pre-release Search Console and affiliate exports.
 
 ## Outcome we are building
 
@@ -96,7 +98,7 @@ Before a page is published, the implementation must pass these gates from the Ob
 - Make quick picks, price links, provider dossiers, tables, disclosures, FAQs and related links reusable props.
 - Add a page-level content brief type: `primaryKeyword`, `intent`, `cluster`, `lastReviewedAt`, `evidence`, `affiliateContext`, `schemaType`.
 - Add automated checks for missing disclosure, missing methodology link, missing canonical metadata and affiliate links without `sponsored nofollow`. The initial six-file gate now runs as `npm run audit:editorial`.
-- Create a Search Console baseline for the existing Best VPN, Iran, Russia and Telegram pages.
+- Create a Search Console baseline for the existing Best VPN, Iran, Russia and Telegram pages. The screenshot-based baseline is documented in [zerotovpn-performance-baseline-2026-08-11.md](./zerotovpn-performance-baseline-2026-08-11.md); replace it with CSV/API exports before statistical reporting.
 
 ### Phase 2 — Upgrade existing winners (weeks 2–3)
 
@@ -189,3 +191,7 @@ Review every two weeks by cluster:
 - Search Console baseline recorded before publishing and reviewed after 14 days.
 - No affiliate links on pages that fail the NordVPN promotion-context audit.
 - Deployment, browser QA and page-level compliance notes recorded.
+
+## Baseline update: 11 August 2026
+
+The screenshot-based baseline and next release gate now live in [zerotovpn-performance-baseline-2026-08-11.md](./zerotovpn-performance-baseline-2026-08-11.md). The next implementation target is `/best/best-vpn`: first remove or qualify stale test, speed, coverage and legal/access claims; then apply the shared Tom's Guide-style shortlist, evidence table, contextual inline affiliate links and reciprocal cluster links. Search Console and Short.io exports must be captured before release and again after 14 days so CTR, affiliate clicks, conversion rate and EPC are measured separately.

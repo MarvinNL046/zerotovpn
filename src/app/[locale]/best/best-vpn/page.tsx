@@ -32,6 +32,7 @@ import {
   Trophy,
   Crown,
 } from "lucide-react";
+import { BestVpnPillarPage } from "@/components/editorial/best-vpn-pillar-page";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -41,6 +42,22 @@ const baseUrl = "https://www.zerotovpn.com";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+
+  if (locale === "en") {
+    return {
+      metadataBase: new URL(baseUrl),
+      title: { absolute: "Best VPN in 2026: Transparent Shortlist and Comparison | ZeroToVPN" },
+      description: "Compare leading VPN providers by use case, current pricing metadata, protocol support and transparent testing notes.",
+      robots: { index: true, follow: true },
+      alternates: generateAlternates("/best/best-vpn", locale),
+      openGraph: {
+        locale: "en_US",
+        title: "Best VPN in 2026: Transparent Shortlist and Comparison",
+        description: "Choose a VPN by use case, verify the plan and protocol, and compare evidence without universal access or speed guarantees.",
+        type: "article",
+      },
+    };
+  }
 
   const titles: Record<string, string> = {
     en: "Best VPN in 2026 — Tested & Ranked on Speed and Privacy | ZeroToVPN",
@@ -143,6 +160,10 @@ export default async function BestVpnPage({ params }: Props) {
   setRequestLocale(locale);
 
   const allVpns = await getAllVpns();
+
+  if (locale === "en") {
+    return <BestVpnPillarPage vpns={allVpns} />;
+  }
 
   // Content translations
   const content = {

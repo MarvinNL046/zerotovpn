@@ -33,6 +33,11 @@ const checks = [
     file: "src/components/editorial/protocols-editorial-page.tsx",
     patterns: [/WireGuard vs OpenVPN/, /id=\"comparison\"/, /id=\"test-plan\"/, /id=\"faq\"/, /DataForSEO/],
   },
+  {
+    name: "Best VPN commercial pillar",
+    file: "src/components/editorial/best-vpn-pillar-page.tsx",
+    patterns: [/Top 3 overview/, /id=\"comparison\"/, /id=\"methodology\"/, /id=\"faq\"/, /priceVerifiedAt/, /AffiliateTextLink/],
+  },
 ];
 
 const results = checks.map((check) => {

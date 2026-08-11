@@ -36,6 +36,8 @@
 
 - **11 August 2026:** Deployed the free-trial gate changes in `dpl_29jpAZt2okZsMSPVQAEQK5bPv1a5`. Production HTML exposes the review date, methodology link, source anchor, one H1 and seven slug-attributed affiliate links; the live editorial gate now passes **13/13** with 88 affiliate links and 0 metadata, freshness, rel, slug, cluster-link or social-image failures.
 
+- **11 August 2026:** Re-ran the full sitemap audit after the free-trial deployment: **2,279/2,279** URLs returned 200, indexable, self-canonical and one H1, with 0 failures. Three transient responses over two seconds were rechecked three times each and all stayed below two seconds; evidence is in [performance-spot-check-2026-08-11.md](../metrics/performance-spot-check-2026-08-11.md).
+
 - **11 August 2026:** Extracted `BestVpnEditorialTemplate` and `EditorialQuickPickCard` into `src/components/editorial/best-vpn-editorial-template.tsx`, then refactored the Best VPN page and dynamic blog route to use the shared disclosure/jump-nav pattern. ESLint, production build and local browser checks pass.
 - **11 August 2026:** Added the [Iran editorial brief](../research/iran-vpn-editorial-brief-2026-08-11.md) with the research fields, evidence boundary, internal-link map and affiliate compliance gates for the first content refresh.
 - **11 August 2026:** Ran the first cached DataForSEO US/English pass for the Iran cluster: keyword overview, related suggestions, five SERP/PAA samples and competitor domains. Results are recorded in `docs/research/dataforseo-iran-cluster-2026-08-11.{json,md}`; missing current volume is explicitly not treated as zero demand.

@@ -1,11 +1,11 @@
 # Live editorial page audit
 
-Generated: 2026-08-11T19:59:00.654Z
+Generated: 2026-08-11T20:05:02.696Z
 
-- Target pages: **10**
-- Passing pages: **10**
+- Target pages: **11**
+- Passing pages: **11**
 - Pages needing review: **0**
-- Affiliate links checked: **72**
+- Affiliate links checked: **81**
 - Affiliate links missing sponsored/nofollow: **0**
 - Missing required cluster links: **0**
 - Pages missing complete Open Graph metadata: **0**
@@ -16,6 +16,7 @@ Generated: 2026-08-11T19:59:00.654Z
 
 | Status | Page | Title | H1s | Internal links | Affiliate links | Missing required IDs | Missing cluster links |
 |---|---|---|---:|---:|---:|---|---|
+| pass | / | ZeroToVPN: Independent VPN Research, Transparency &amp; Real-World Testing | 1 | 50 | 9 | — | — |
 | pass | /best/best-vpn | Best VPN in 2026: Transparent Shortlist and Comparison | ZeroToVPN | 1 | 64 | 21 | — | — |
 | pass | /blog/best-vpn-for-iran-2026-bypass-internet-censorship | Best VPN for Iran in 2026: tested options, limits and safer preparation | 1 | 60 | 6 | — | — |
 | pass | /blog/best-vpn-for-telegram-2026 | Best VPN for Telegram in 2026: what to verify before you connect | 1 | 59 | 6 | — | — |

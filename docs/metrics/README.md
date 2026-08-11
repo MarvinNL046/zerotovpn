@@ -23,7 +23,7 @@ Run the importer regression suite before using a new export format:
 npm run test:measure-editorial
 ```
 
-Run the page-level release gate against the current English commercial and cluster pages:
+Run the page-level release gate against the current English commercial/cluster pages and homepage hub:
 
 ```powershell
 npm run audit:editorial-live

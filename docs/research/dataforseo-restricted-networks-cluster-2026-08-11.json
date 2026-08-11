@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "cluster": "VPN use on restricted networks / censorship preparation",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "fetchedAt": "2026-08-11T17:19:57.264Z",
+  "refreshed": true,
+  "seeds": [
+    "vpn for restricted networks",
+    "how to use a vpn on a restricted network",
+    "vpn censorship",
+    "bypass internet censorship vpn",
+    "vpn for censored internet",
+    "vpn restrictions at work"
+  ],
+  "overview": [
+    {
+      "keyword": "vpn censorship",
+      "currentVolume": null,
+      "latestVolume": 10,
+      "latestMonth": "2024-02",
+      "difficulty": 49,
+      "intent": "informational"
+    }
+  ],
+  "suggestions": [
+    {
+      "seed": "vpn censorship",
+      "keyword": "best vpn for bypassing censorship",
+      "volume": 10
+    },
+    {
+      "seed": "vpn censorship",
+      "keyword": "vpn bypass censorship",
+      "volume": 10
+    },
+    {
+      "seed": "vpn censorship",
+      "keyword": "vpn & anti-censorship tools",
+      "volume": 0
+    },
+    {
+      "seed": "vpn censorship",
+      "keyword": "vpn & anti censorship tools",
+      "volume": 0
+    },
+    {
+      "seed": "vpn censorship",
+      "keyword": "anti censorship vpn",
+      "volume": null
+    },
+    {
+      "seed": "vpn censorship",
+      "keyword": "bypass censorship without vpn",
+      "volume": null
+    },
+    {
+      "seed": "vpn censorship",
+      "keyword": "internet censorship vpn",
+      "volume": null
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "vpn for restricted networks",
+      "paa": [],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "how to use a vpn on a restricted network",
+      "paa": [
+        "How to use VPN to bypass network restrictions?",
+        "Can a VPN bypass restrictions?",
+        "How to use VPN for restricted sites?",
+        "Will a VPN bypass Wi-Fi restrictions?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn censorship",
+      "paa": [
+        "Are VPNs becoming illegal in the US?",
+        "How can I bypass VPN censorship?",
+        "Can the FBI see through VPNs?",
+        "Can I get banned for using a VPN?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "bypass internet censorship vpn",
+      "paa": [
+        "Can a VPN bypass internet censorship?",
+        "Can I use a VPN to bypass network restrictions?",
+        "Can the FBI track a VPN?",
+        "Which free VPN is best for bypassing censorship?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn for censored internet",
+      "paa": [
+        "Can a VPN bypass internet censorship?",
+        "Which VPNs can bypass censorship?",
+        "Can the FBI see through VPNs?",
+        "Is there a VPN that can bypass Wi-Fi restrictions?"
+      ],
+      "hasAiOverview": true
+    }
+  ],
+  "sourcePolicy": "DataForSEO signals prioritise questions and structure; they do not prove that bypassing a restriction is safe, lawful or effective on a particular network."
+}

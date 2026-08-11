@@ -43,6 +43,11 @@ const checks = [
     file: "src/components/editorial/obfuscation-editorial-page.tsx",
     patterns: [/What is VPN obfuscation\?/, /id=\"compare\"/, /id=\"test-plan\"/, /id=\"faq\"/, /DataForSEO/],
   },
+  {
+    name: "Restricted network support page",
+    file: "src/components/editorial/restricted-networks-editorial-page.tsx",
+    patterns: [/Not every restriction is a VPN problem/, /id=\"restriction-types\"/, /id=\"prepare\"/, /id=\"test-plan\"/, /id=\"faq\"/, /DataForSEO/],
+  },
 ];
 
 const results = checks.map((check) => {

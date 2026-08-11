@@ -81,7 +81,7 @@ function CountryVpnSchema() {
       "@type": "Organization",
       name: "ZeroToVPN",
     },
-    dateModified: "2026-11-30",
+    dateModified: "2026-08-11",
   };
 
   return (

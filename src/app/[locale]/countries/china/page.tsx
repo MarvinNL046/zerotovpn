@@ -84,7 +84,7 @@ function CountryVpnSchema({ vpns }: { vpns: VpnProvider[] }) {
       "@type": "Organization",
       name: "ZeroToVPN",
     },
-    dateModified: "2026-11-30",
+    dateModified: "2026-08-11",
     mainEntity: {
       "@type": "ItemList",
       name: "VPNs That Work in China",

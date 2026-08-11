@@ -103,6 +103,9 @@ function extractSignals(html, target, url) {
   const missingLinks = (target.links ?? []).filter((path) => !normalizedHrefs.includes(path));
   const missingImageAltCount = images.filter(({ alt }) => !alt.trim()).length;
   const missingImageDimensionsCount = images.filter(({ width, height, fill }) => !fill && (!width || !height)).length;
+  const futureSchemaDates = [...html.matchAll(/"(?:datePublished|dateModified)"\s*:\s*"([^"]+)"/gi)]
+    .map((match) => match[1])
+    .filter((value) => Number.isFinite(Date.parse(value)) && Date.parse(value) > Date.now() + 86400000);
   const canonicalAbsolute = meta.canonical ? normalizeUrl(new URL(meta.canonical, url).toString()) : null;
   const checks = {
     status200: true,
@@ -122,6 +125,7 @@ function extractSignals(html, target, url) {
     clusterLinks: missingLinks.length === 0,
     faqSchema: !target.expectFaq || faqSchema,
     imageSeo: missingImageAltCount === 0 && missingImageDimensionsCount === 0,
+    structuredDataDates: futureSchemaDates.length === 0,
   };
   return {
     ...meta,
@@ -131,6 +135,7 @@ function extractSignals(html, target, url) {
     imageCount: images.length,
     missingImageAltCount,
     missingImageDimensionsCount,
+    futureSchemaDates,
     affiliateLinkCount: affiliateLinks.length,
     missingAffiliateRelCount: missingAffiliateRel.length,
     missingIds,
@@ -170,6 +175,7 @@ const summary = {
   openGraphFailureCount: records.filter((record) => !record.checks?.openGraph).length,
   twitterFailureCount: records.filter((record) => !record.checks?.twitter).length,
   imageSeoFailureCount: records.filter((record) => !record.checks?.imageSeo).length,
+  futureSchemaDateFailureCount: records.filter((record) => !record.checks?.structuredDataDates).length,
 };
 const payload = { schemaVersion: 1, summary, records };
 const outDir = resolve(ROOT, "docs", "metrics");
@@ -181,7 +187,7 @@ await writeFile(jsonPath, `${JSON.stringify(payload, null, 2)}\n`, "utf8");
 const rows = records.map((record) => `| ${record.ok ? "pass" : "FAIL"} | ${record.path} | ${record.title ?? ""} | ${record.h1Count ?? "n/a"} | ${record.internalLinkCount ?? "n/a"} | ${record.affiliateLinkCount ?? "n/a"} | ${record.missingIds?.join(", ") || "—"} | ${record.missingLinks?.join(", ") || "—"} |`);
 const markdown = [
   "# Live editorial page audit", "", `Generated: ${summary.generatedAt}`, "",
-  `- Target pages: **${summary.targetCount}**`, `- Passing pages: **${summary.okCount}**`, `- Pages needing review: **${summary.failedCount}**`, `- Affiliate links checked: **${summary.affiliateLinkCount}**`, `- Affiliate links missing sponsored/nofollow: **${summary.missingAffiliateRelCount}**`, `- Missing required cluster links: **${summary.missingClusterLinkCount}**`, `- Pages missing complete Open Graph metadata: **${summary.openGraphFailureCount}**`, `- Pages missing complete Twitter metadata: **${summary.twitterFailureCount}**`, `- Pages failing image alt/dimension checks: **${summary.imageSeoFailureCount}**`, "",
+  `- Target pages: **${summary.targetCount}**`, `- Passing pages: **${summary.okCount}**`, `- Pages needing review: **${summary.failedCount}**`, `- Affiliate links checked: **${summary.affiliateLinkCount}**`, `- Affiliate links missing sponsored/nofollow: **${summary.missingAffiliateRelCount}**`, `- Missing required cluster links: **${summary.missingClusterLinkCount}**`, `- Pages missing complete Open Graph metadata: **${summary.openGraphFailureCount}**`, `- Pages missing complete Twitter metadata: **${summary.twitterFailureCount}**`, `- Pages failing image alt/dimension checks: **${summary.imageSeoFailureCount}**`, `- Pages with future structured-data dates: **${summary.futureSchemaDateFailureCount}**`, "",
   "| Status | Page | Title | H1s | Internal links | Affiliate links | Missing required IDs | Missing cluster links |", "|---|---|---|---:|---:|---:|---|---|", ...rows, "", `Raw records: [editorial-live-audit-${label}.json](./editorial-live-audit-${label}.json)`,
 ].join("\n") + "\n";
 await writeFile(mdPath, markdown, "utf8");

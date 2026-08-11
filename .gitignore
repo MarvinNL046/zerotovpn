@@ -46,6 +46,7 @@ next-env.d.ts
 .netlify
 auth.json
 .env*.local
+!.env.example
 
 # lokaal opgehaalde productie-env (nooit committen)
 .env.local

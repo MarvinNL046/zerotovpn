@@ -13,6 +13,7 @@
     "seo:restricted-networks": "node scripts/restricted-networks-seo-research.mjs",
     "seo:travel": "node scripts/travel-seo-research.mjs",
     "seo:free-vpn": "node scripts/free-vpn-seo-research.mjs",
+    "seo:smoke": "node scripts/dfs-smoke.mjs",
     "audit:sitemap": "node scripts/audit-sitemap-live.mjs",
     "audit:affiliate-context": "node scripts/audit-affiliate-context-live.mjs",
     "audit:editorial-live": "node scripts/audit-editorial-live.mjs",

@@ -17,6 +17,7 @@
     "audit:affiliate-context": "node scripts/audit-affiliate-context-live.mjs",
     "audit:editorial": "node scripts/editorial-audit.mjs",
     "measure:editorial": "node scripts/measure-editorial.mjs",
+    "test:measure-editorial": "node scripts/test-measure-editorial.mjs",
     "prebuild": "npm run generate:sitemap-routes",
     "build": "next build",
     "start": "next start",

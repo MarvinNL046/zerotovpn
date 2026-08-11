@@ -15,7 +15,13 @@ npm run measure:editorial -- `
   --out docs/metrics/post-14d-2026-08-25.json
 ```
 
-The importer accepts localized or English headers for pages/queries, clicks, impressions, CTR, position, country and referrer. The optional `--partner` export accepts conversions/sales, revenue/commission and EPC columns and writes them under `affiliate.partner`; if it is omitted, those fields remain `null`. It writes normalized totals, top rows and deltas without inferring missing partner data.
+The importer accepts localized or English headers for pages/queries, clicks, impressions, CTR, position, country and referrer, and detects comma-, semicolon- and tab-delimited exports. It also normalizes decimal commas such as `0,2%` without turning them into `2%`. The optional `--partner` export accepts conversions/sales, revenue/commission and EPC columns and writes them under `affiliate.partner`; if it is omitted, those fields remain `null`. Required GSC/Short.io paths now fail fast when omitted, and every report includes `dataQuality.rowCounts` plus an explicit `missingMetrics` list instead of silently treating missing inputs as zero. It writes normalized totals, top rows and deltas without inferring missing partner data.
+
+Run the importer regression suite before using a new export format:
+
+```powershell
+npm run test:measure-editorial
+```
 
 Required comparison discipline:
 

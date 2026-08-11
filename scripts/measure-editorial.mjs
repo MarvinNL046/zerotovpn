@@ -13,6 +13,10 @@ function usage() {
 }
 
 function parseCsv(text) {
+  const firstLine = text.split(/\r?\n/, 1)[0] ?? "";
+  const delimiter = [",", ";", "\t"]
+    .map((candidate) => ({ candidate, count: firstLine.split(candidate).length - 1 }))
+    .sort((a, b) => b.count - a.count)[0].candidate;
   const rows = [];
   let row = [];
   let value = "";
@@ -22,7 +26,7 @@ function parseCsv(text) {
     const next = text[index + 1];
     if (char === '"' && quoted && next === '"') { value += '"'; index += 1; continue; }
     if (char === '"') { quoted = !quoted; continue; }
-    if (char === "," && !quoted) { row.push(value); value = ""; continue; }
+    if (char === delimiter && !quoted) { row.push(value); value = ""; continue; }
     if ((char === "\n" || char === "\r") && !quoted) {
       if (char === "\r" && next === "\n") index += 1;
       row.push(value); value = "";
@@ -44,7 +48,29 @@ function normalizeHeader(value) {
 
 function number(value) {
   if (value === undefined || value === null || value === "") return null;
-  const normalized = String(value).replace(/%/g, "").replace(/\s/g, "").replace(/,/g, "");
+  const raw = String(value)
+    .trim()
+    .replace(/[%\s\u00a0]/g, "")
+    .replace(/[^0-9,.'+\-]/g, "");
+  if (!raw) return null;
+
+  const comma = raw.lastIndexOf(",");
+  const dot = raw.lastIndexOf(".");
+  let normalized = raw.replace(/'/g, "");
+
+  if (comma >= 0 && dot >= 0) {
+    // The last separator is the decimal separator in mixed locale exports.
+    normalized = comma > dot
+      ? normalized.replace(/\./g, "").replace(",", ".")
+      : normalized.replace(/,/g, "");
+  } else if (comma >= 0) {
+    const decimals = raw.length - comma - 1;
+    normalized = decimals === 3 ? normalized.replace(/,/g, "") : normalized.replace(",", ".");
+  } else if (dot >= 0) {
+    const decimals = raw.length - dot - 1;
+    normalized = decimals === 3 ? normalized.replace(/\./g, "") : normalized;
+  }
+
   const parsed = Number(normalized);
   return Number.isFinite(parsed) ? parsed : null;
 }
@@ -140,14 +166,53 @@ function delta(current, baseline) {
 
 const label = arg("--label");
 const out = arg("--out");
-if (process.argv.includes("--help") || !label || !out) { usage(); process.exitCode = 1; }
-else {
+const requiredInputFlags = ["--gsc-pages", "--gsc-queries", "--shortio"];
+const missingInputFlags = requiredInputFlags.filter((flag) => !arg(flag));
+if (process.argv.includes("--help") || !label || !out) {
+  usage();
+  process.exitCode = 1;
+} else if (missingInputFlags.length) {
+  console.error(`Missing required input flag(s): ${missingInputFlags.join(", ")}`);
+  usage();
+  process.exitCode = 1;
+} else {
   try {
-    const gscPages = summarizeSearchConsole(readRows(arg("--gsc-pages")), "pages");
-    const gscQueries = summarizeSearchConsole(readRows(arg("--gsc-queries")), "queries");
-    const shortIo = summarizeShortIo(readRows(arg("--shortio")));
-    const partner = summarizePartner(readRows(arg("--partner")));
-    const report = { schemaVersion: 1, label, capturedAt: new Date().toISOString(), sourceFiles: [arg("--gsc-pages"), arg("--gsc-queries"), arg("--shortio"), arg("--partner")].filter(Boolean), searchConsole: { pages: gscPages, queries: gscQueries }, affiliate: { ...shortIo, partner } };
+    const gscPagesPath = arg("--gsc-pages");
+    const gscQueriesPath = arg("--gsc-queries");
+    const shortIoPath = arg("--shortio");
+    const partnerPath = arg("--partner");
+    const gscPagesRows = readRows(gscPagesPath);
+    const gscQueriesRows = readRows(gscQueriesPath);
+    const shortIoRows = readRows(shortIoPath);
+    const partnerRows = readRows(partnerPath);
+    const gscPages = summarizeSearchConsole(gscPagesRows, "pages");
+    const gscQueries = summarizeSearchConsole(gscQueriesRows, "queries");
+    const shortIo = summarizeShortIo(shortIoRows);
+    const partner = summarizePartner(partnerRows);
+    const report = {
+      schemaVersion: 1,
+      label,
+      capturedAt: new Date().toISOString(),
+      sourceFiles: [gscPagesPath, gscQueriesPath, shortIoPath, partnerPath].filter(Boolean),
+      dataQuality: {
+        requiredInputsPresent: true,
+        rowCounts: {
+          gscPages: gscPagesRows.length,
+          gscQueries: gscQueriesRows.length,
+          shortIo: shortIoRows.length,
+          partner: partnerRows.length,
+        },
+        partnerExportProvided: Boolean(partnerPath),
+        missingMetrics: [
+          ...(partnerPath ? [] : ["affiliate.partner.conversions", "affiliate.partner.revenue", "affiliate.partner.epc"]),
+          ...(gscPagesRows.length ? [] : ["searchConsole.pages"]),
+          ...(gscQueriesRows.length ? [] : ["searchConsole.queries"]),
+          ...(shortIoRows.length ? [] : ["affiliate.rows"]),
+        ],
+      },
+      searchConsole: { pages: gscPages, queries: gscQueries },
+      affiliate: { ...shortIo, partner },
+    };
     const baselinePath = arg("--baseline");
     if (baselinePath) {
       const baseline = JSON.parse(readFileSync(resolve(ROOT, baselinePath), "utf8"));

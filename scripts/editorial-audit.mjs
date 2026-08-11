@@ -44,6 +44,12 @@ const checks = [
     patterns: [/Top 3 overview/, /id=\"comparison\"/, /id=\"methodology\"/, /id=\"faq\"/, /priceVerifiedAt/, /AffiliateTextLink/],
   },
   {
+    name: "localized Best VPN routes avoid retired performance claims",
+    file: "src/app/[locale]/best/best-vpn/page.tsx",
+    patterns: [/BestVpnPillarPage vpns=\{allVpns\}/, /Repeatable test notes/, /Comparamos una amplia selección/],
+    forbiddenPatterns: [/35\+|35以上|35개 이상|35款以上|plus de 35|über 35|มากกว่า 35/i, /500\+|500回|500회|500多次|plus de 500|über 500|มากกว่า 500/i, /6,730|7,000\+.*118|24\/7/],
+  },
+  {
     name: "homepage evidence-bounded recommendation",
     file: "src/app/[locale]/page.tsx",
     patterns: [/Shortlist candidate/, /catalog data and documented options/, /Provider-stated countries/, /Refund window in catalog/],

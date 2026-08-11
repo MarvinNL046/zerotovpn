@@ -90,6 +90,8 @@
 - **11 August 2026:** Classified the 12 active affiliate-audit promotion flags in [affiliate-context-review-2026-08-11.md](../metrics/affiliate-context-review-2026-08-11.md). Free-trial wording is permitted only as a verified provider feature; “incentive” mentions in privacy articles are explanatory text. Any unclassified flag now requires removing the commercial destination before release.
 - **11 August 2026:** Extended `npm run audit:editorial` to cover the global sticky CTA as well as the newsletter popup and restricted-context renderer. Both global conversion surfaces are now required to remain site-owned and non-commercial; the audit passes 15/15 checks.
 
+- **12 August 2026 - localized pillar claim gate:** Audited all localized `/best/best-vpn` variants after the sitemap scan found legacy copy in their shared FAQ and trust sections. Replaced unsupported provider/test-count, speed, coverage, support and fixed-price claims with catalog-aware, date-bounded language; the exit-intent popup remains enabled only for first-party email collection. Added a regression check for all localized variants; local editorial checks pass **21/21**, lint passes with the existing 53 warnings, and the full Webpack build still generates **4,447 routes**. Deploy this change before the next live editorial gate.
+
 ## Outcome we are building
 
 ZeroToVPN should feel like an independent testing publication, not a collection of affiliate landing pages. Every high-intent page must answer the query quickly, prove why the recommendation exists, give the reader a fair alternative, and make the relevant next action obvious without urgency tricks or irrelevant promotion.

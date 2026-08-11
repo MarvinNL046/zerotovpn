@@ -92,6 +92,18 @@ const checks = [
     forbiddenPatterns: [/35\+|35以上|35개|35个|über 35|más de 35|plus de 35|มากกว่า 35/i],
   },
   {
+    name: "macOS use-case metadata avoids unsupported test counts",
+    file: "src/app/[locale]/best/vpn-macos/page.tsx",
+    patterns: [/Compare current macOS VPN picks/, /Native Apps, M1\/M2/],
+    forbiddenPatterns: [/35\+|35ä»¥ä¸Š|35ê°œ|35ä¸ª|Ã¼ber 35|mÃ¡s de 35|plus de 35|à¸¡à¸²à¸à¸à¸§à¹ˆà¸² 35/i],
+  },
+  {
+    name: "Nvidia Shield article qualifies speed evidence",
+    file: "src/content/blog/best-vpn-for-nvidia-shield-2026.md",
+    patterns: [/March 2026 Shield TV run/, /Results vary with the device/],
+    forbiddenPatterns: [/94%.*speed retention|speed retention.*94%/i],
+  },
+  {
     name: "homepage evidence-bounded recommendation",
     file: "src/app/[locale]/page.tsx",
     patterns: [/Shortlist candidate/, /catalog data and documented options/, /Provider-stated countries/, /Refund window in catalog/],

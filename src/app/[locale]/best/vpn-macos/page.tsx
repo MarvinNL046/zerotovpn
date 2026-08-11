@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const descriptions: Record<string, string> = {
-    en: `We tested 35+ VPNs for macOS in ${shortMonthYear}. Expert picks with M1/M2 optimization, speeds & security compared. 30-day money-back guarantee on all picks.`,
+    en: `Compare current macOS VPN picks in ${shortMonthYear}, with M1/M2 optimization, speed and security evidence. We explain the test setup and what each provider supports.`,
     nl: "Vind de beste VPN voor macOS 2026. Native apps geoptimaliseerd voor M1/M2 chips, Safari extensies en naadloze iCloud integratie. Getest op Ventura, Sonoma & Sequoia.",
     de: "Finden Sie das beste VPN für macOS 2026. Native Apps optimiert für M1/M2 Chips, Safari-Erweiterungen und nahtlose iCloud-Integration. Getestet auf Ventura, Sonoma & Sequoia.",
     es: "Encuentra la mejor VPN para macOS 2026. Apps nativas optimizadas para chips M1/M2, extensiones de Safari e integración perfecta con iCloud. Probado en Ventura, Sonoma y Sequoia.",

@@ -50,7 +50,7 @@ A kill switch blocks all internet traffic if the VPN drops. Without it, your rea
 
 NordVPN came out on top in our Shield testing. The Android TV app has large server tiles, one-tap quick connect, and a favorites list. SmartPlay — its built-in Smart DNS — automatically routes streaming traffic through optimized servers without manual server picking.
 
-Speed retention hit 94% on our 500 Mbps connection using NordLynx (WireGuard), delivering roughly 470 Mbps.
+In our March 2026 Shield TV run, NordLynx (WireGuard) delivered roughly 470 Mbps on a 500 Mbps baseline. Results vary with the device, server and local connection, so treat this as a dated test observation rather than a guaranteed speed.
 
 - **Android TV app:** Native (Google Play Store)
 - **Protocol:** NordLynx (WireGuard-based)

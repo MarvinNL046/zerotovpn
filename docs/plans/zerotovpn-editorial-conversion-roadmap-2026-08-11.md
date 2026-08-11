@@ -16,6 +16,8 @@
 
 - **11 August 2026:** Deployed commit `2cb3032` to Vercel production as `dpl_6prSSJ1ESSTgKrYTUvdBG8bavjbq`. The remote Webpack build completed all **4,447** routes successfully and the production alias remains `https://www.zerotovpn.com`; the deployment is Ready.
 
+- **11 August 2026:** Audited the localized free-VPN routes against the same evidence standard as the English pillar. The old translated metadata and body contained unsupported percentage/test-count/universal-safety claims, so all locales now use the evidence-led free-tier template with locale-correct Article JSON-LD URLs until separately translated copy passes the claim audit. Added French and Dutch representatives to the live gate; no new URLs were created.
+
 - **11 August 2026:** Ran a real 390px Chrome smoke test on /countries/iran and /. Both routes rendered with HTTP 200, one H1, no horizontal overflow, no framework error overlay and no page errors. The test caught and fixed a removed /best breadcrumb prefetch plus a locale-dependent homepage number formatter that caused a React hydration warning. Evidence: [mobile-browser-smoke-2026-08-11.md](../metrics/mobile-browser-smoke-2026-08-11.md); deployment dpl_Hqx6frvFzixrTptRBYp6Wo56BMbt is Ready.
 
 - **11 August 2026:** Hardened the newsletter-only exit-intent guard: `npm run audit:editorial` now checks the popup component and verifies that every locale's rendered popup title/subtitle remains free of affiliate, deal, coupon, discount, promotion, cashback and incentive language. The guard passes **16/16** checks.
@@ -261,4 +263,4 @@ The screenshot-based baseline remains useful as historical context, but the curr
 
 The machine-readable screenshot transcription is [zerotovpn-baseline-2026-08-11.json](../metrics/zerotovpn-baseline-2026-08-11.json). `npm run measure:editorial` now normalizes localized Search Console/Short.io CSV exports and writes a comparable report; the importer was verified with a local fixture and deliberately leaves conversions/EPC null until the partner dashboard export is joined.
 
-The exit-intent popup remains enabled as an owned-media newsletter prompt. It contains only the newsletter form and a dismiss action; an editorial audit now fails if affiliate URLs, provider offers, coupons, discounts or incentives are added to that component. The global popup/sticky guards and restricted-context renderer are pushed in commits `2fde9fe` and `ee4e3f9`; the current GitHub-triggered production deployment is `dpl_A6DWyAC775mJe4ZwUzKLRc9b1ocW`.
+The exit-intent popup remains enabled as an owned-media newsletter prompt. It contains only the newsletter form and a dismiss action; an editorial audit now fails if affiliate URLs, provider offers, coupons, discounts or incentives are added to that component. The global popup/sticky guards and restricted-context renderer remain covered by the release gate; the latest verified production deployment is `dpl_6prSSJ1ESSTgKrYTUvdBG8bavjbq`.

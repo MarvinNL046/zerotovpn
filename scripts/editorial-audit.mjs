@@ -70,6 +70,12 @@ const checks = [
     patterns: [/what is actually free/, /id="free-tiers"/, /id="safety"/, /id="faq"/, /protonvpn.com\/free-vpn/, /DataForSEO/],
   },
   {
+    name: "localized free VPN routes use the evidence-led template",
+    file: "src/app/[locale]/best/free-vpn/page.tsx",
+    patterns: [/locale !== "en"/, /<FreeVpnEditorialPage locale=\{locale\} \/>/, /Limits and Trade-offs/],
+    forbiddenPatterns: [/99%/, /20\+ free VPNs/, /No Hidden Costs|Geen Verborgen Kosten|Keine Versteckten Kosten/i],
+  },
+  {
     name: "newsletter-only exit intent popup",
     file: "src/components/conversion/exit-intent-popup.tsx",
     patterns: [/useTranslations\("newsletter"\)/, /<NewsletterForm[^>]+source="exit-intent"/, /Owned-media newsletter prompt/],

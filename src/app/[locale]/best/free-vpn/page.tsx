@@ -1,8 +1,8 @@
 import { setRequestLocale } from "next-intl/server";
-import { DEFAULT_OG_IMAGE, OG_LOCALE_MAP, getLocalizedMonthYear, titelMetMerk } from "@/lib/seo-utils";
+import { DEFAULT_OG_IMAGE, OG_LOCALE_MAP, getLocalizedMonthYear } from "@/lib/seo-utils";
 import { getTranslations } from "next-intl/server";
 import { Metadata } from "next";
-import { getShortMonthYear, generateAlternates } from "@/lib/seo-utils";
+import { generateAlternates } from "@/lib/seo-utils";
 import { LastUpdated } from "@/components/last-updated";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -42,8 +42,6 @@ const baseUrl = "https://www.zerotovpn.com";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  const shortMonthYear = getShortMonthYear();
-
   if (locale === "en") {
     return {
       metadataBase: new URL(baseUrl),
@@ -55,38 +53,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const titles: Record<string, string> = {
-    en: `4 Best Free VPNs (${shortMonthYear}) - No Hidden Costs | ZeroToVPN`,
-    nl: `4 Beste Gratis VPNs (Getest ${shortMonthYear}) - Geen Verborgen Kosten | ZeroToVPN`,
-    de: `4 Beste Gratis VPNs (Getestet ${shortMonthYear}) - Keine Versteckten Kosten | ZeroToVPN`,
-    es: `4 Mejores VPNs Gratis (Probadas ${shortMonthYear}) - Sin Costos Ocultos | ZeroToVPN`,
-    fr: `4 Meilleurs VPNs Gratuits (Testés ${shortMonthYear}) - Sans Frais Cachés | ZeroToVPN`,
-    zh: `4款最佳免费VPN (测试于 ${shortMonthYear}) - 无隐藏费用 | ZeroToVPN`,
-    ja: `4つのベスト無料VPN (テスト済み ${shortMonthYear}) - 隠れた費用なし | ZeroToVPN`,
-    ko: `4가지 최고의 무료 VPN (테스트됨 ${shortMonthYear}) - 숨겨진 비용 없음 | ZeroToVPN`,
-    th: `4 VPN ฟรีที่ดีที่สุด (ทดสอบ ${shortMonthYear}) - ไม่มีค่าใช้จ่ายแอบแฝง | ZeroToVPN`,
-  };
-
-  const descriptions: Record<string, string> = {
-    en: `We tested 30+ free VPNs to find the best ones. Expert picks updated ${shortMonthYear} — only these pass our security & speed tests. No credit card required.`,
-    nl: "99% van de gratis VPNs verkoopt je data. We vonden 4 die echt gratis, veilig en snel genoeg zijn om te gebruiken. Geen creditcard nodig.",
-    de: "99% der kostenlosen VPNs verkaufen Ihre Daten. Wir haben 4 gefunden, die wirklich kostenlos, sicher und schnell genug sind. Keine Kreditkarte nötig.",
-    es: "El 99% de las VPNs gratis venden tus datos. Encontramos 4 que son realmente gratis, seguras y lo suficientemente rápidas. Sin tarjeta de crédito.",
-    fr: "99% des VPNs gratuits vendent vos données. Nous en avons trouvé 4 vraiment gratuits, sûrs et assez rapides. Pas de carte bancaire requise.",
-    zh: "99%的免费VPN出售您的数据。我们找到4个真正免费、安全且足够快的VPN。无需信用卡。",
-    ja: "無料VPNの99%はデータを販売しています。本当に無料で安全、実用的な速度の4つを見つけました。クレジットカード不要。",
-    ko: "무료 VPN의 99%가 데이터를 판매합니다. 진짜 무료이고 안전하며 실제로 사용할 만큼 빠른 4개를 찾았습니다. 신용카드 필요 없음.",
-    th: "99% ของ VPN ฟรีขายข้อมูลของคุณ เราพบ 4 ตัวที่ฟรีจริง ปลอดภัย และเร็วพอใช้งานได้จริง ไม่ต้องใช้บัตรเครดิต",
-  };
-
+  const title = "Best Free VPNs: Limits and Trade-offs | ZeroToVPN";
+  const description = "Compare free VPN tiers by data limits, privacy evidence, locations and realistic use cases. Verify current plan terms before installing.";
   return {
     metadataBase: new URL(baseUrl),
-    title: { absolute: titelMetMerk((titles[locale] || titles.en).replace(" | ZeroToVPN", "")) },
-    description: descriptions[locale] || descriptions.en,
+    title: { absolute: title },
+    description,
+    robots: { index: true, follow: true },
     openGraph: {
       locale: OG_LOCALE_MAP[locale] ?? "en_US",
-      title: titles[locale] || titles.en,
-      description: descriptions[locale] || descriptions.en,
+      title,
+      description,
       type: "article",
       images: [DEFAULT_OG_IMAGE],
     },
@@ -186,7 +163,12 @@ export default async function FreeVpnPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
 
-  if (locale === "en") return <FreeVpnEditorialPage />;
+  if (locale === "en") return <FreeVpnEditorialPage locale={locale} />;
+
+  // Keep every locale on the evidence-led template until localized copy has passed
+  // the same claim and source audit as the English pillar. This avoids publishing
+  // legacy percentage, test-count or universal-safety claims in translated routes.
+  return <FreeVpnEditorialPage locale={locale} />;
 
   const t = await getTranslations("freeVpn");
 

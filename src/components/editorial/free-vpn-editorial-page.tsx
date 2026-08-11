@@ -8,6 +8,7 @@ import { Link } from "@/i18n/navigation";
 import { getVpnAffiliateUrl, type VpnLinkSlug } from "@/lib/vpn-links";
 
 const pageUrl = "https://www.zerotovpn.com/best/free-vpn";
+const siteUrl = "https://www.zerotovpn.com";
 const faq = [
   { question: "Is there any 100% free VPN?", answer: "Yes, some providers offer a free tier without a subscription fee. “Free” still comes with trade-offs such as limited locations, data caps, fewer simultaneous features or slower access. Read the current plan and privacy terms before installing." },
   { question: "Are free VPNs safe to use?", answer: "Safety depends on the provider, app, privacy policy, permissions and update path. Treat a free download as untrusted until you can identify the operator, the business model and current independent evidence. A free price is not evidence of privacy." },
@@ -36,10 +37,11 @@ function FreeTierCard({ rank, name, vpnId, badge, description, limit, bestFor, o
   );
 }
 
-export function FreeVpnEditorialPage() {
+export function FreeVpnEditorialPage({ locale = "en" }: { locale?: string } = {}) {
+  const localizedPageUrl = locale === "en" ? pageUrl : `${siteUrl}/${locale}/best/free-vpn`;
   return (
     <>
-      <ArticleJsonLd title="Best Free VPNs: Safety, Limits and Trade-offs" description="Compare free VPN tiers by data limits, privacy evidence, locations and realistic use cases without blanket safety claims." url={pageUrl} datePublished="2026-01-01" dateModified="2026-08-11" />
+      <ArticleJsonLd title="Best Free VPNs: Safety, Limits and Trade-offs" description="Compare free VPN tiers by data limits, privacy evidence, locations and realistic use cases without blanket safety claims." url={localizedPageUrl} datePublished="2026-01-01" dateModified="2026-08-11" />
       <BreadcrumbSchema items={[{ name: "Best VPNs", href: "/best/best-vpn" }, { name: "Free VPNs", href: "/best/free-vpn" }]} />
       <FAQSchema title="Free VPN FAQ" faqs={faq} />
       <BestVpnEditorialTemplate navigation={nav}>

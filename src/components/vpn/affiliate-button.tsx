@@ -18,7 +18,10 @@ interface AffiliateButtonProps {
 // terwijl de pagina al aan het weg-navigeren is.
 function getShortIoSlug(affiliateUrl: string): string | null {
   try {
-    const url = new URL(affiliateUrl, window.location.origin);
+    // Use a fixed base so server rendering and client hydration produce the
+    // same attribute. Affiliate destinations are absolute Short.io URLs;
+    // the base only makes malformed relative values fail predictably.
+    const url = new URL(affiliateUrl, "https://go.zerotovpn.com");
     if (url.hostname !== "go.zerotovpn.com") return null;
     return url.pathname.replace(/^\/+|\/+$/g, "") || null;
   } catch {

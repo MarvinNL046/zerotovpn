@@ -9,7 +9,7 @@
 - Completed the first censorship-cluster pass for the Iran and Telegram articles: added a visible three-link research cluster, reciprocal links to the Iran evidence checklist, and Russia/China/Telegram context links.
 - Updated Iran and Telegram metadata to match the search intent while avoiding permanent-access claims.
 - Corrected NordVPN coverage copy from 127 to 118 countries in the general and gaming comparison surfaces; the affiliate Offer 15 list of 232 included locations remains internal campaign geography.
-- Rebuilt and verified the app: 4,429 static pages generated, sitemap endpoint returns 2,285 URLs, and the changed Iran/Telegram/Russia routes load with HTTP 200 in Chrome. The only browser console error observed is the existing Google AdSense 403 request.
+- Rebuilt and verified the app: the current production sitemap contains 2,279 curated URLs, and the changed Iran/Telegram/Russia routes load with HTTP 200 in the browser. The production sitemap audit now verifies status, canonical, robots and H1 structure for every URL; the latest run passed 2,279/2,279 URLs.
 
 ## 1. Executive direction
 
@@ -208,11 +208,10 @@ Screenshots are useful for context, but CSV/API exports should be the source of 
 
 ## Immediate next actions
 
-1. Share or connect the Google Drive folder.
-2. Export GSC pages and queries for 16 months, including the page and query tabs.
-3. Rebuild the Iran page first and record its baseline.
-4. Audit the Russia and Telegram pages next.
-5. Run a URL comparison: sitemap vs indexed/exported URLs.
-6. Start the first DataForSEO dossier for the censorship cluster.
+1. Export GSC pages and queries for the same 14-day window used for the next review, including page and query tabs.
+2. Export Short.io click rows and the Nord affiliate conversion/EPC report for the same window; keep raw exports in the ignored `.cache/metrics` folder.
+3. Run `npm run measure:editorial` against those exports and compare the censorship, free-VPN and commercial-pillar pages separately.
+4. Recheck the live sitemap and editorial gate before selecting the next cluster.
+5. Use the measured winners plus a small DataForSEO refresh to choose the next 4–8 pages; do not expand the URL set on keyword volume alone.
 
 **Decision rule:** every new page must either strengthen an existing cluster, answer a demonstrated query, or provide original evidence. If it does none of those, it waits.

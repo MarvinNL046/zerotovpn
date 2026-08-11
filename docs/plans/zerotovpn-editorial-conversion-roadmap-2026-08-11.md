@@ -121,11 +121,11 @@ For each page, improve the first viewport, the comparison table, provider card s
 
 ### Phase 3 — First new editorial post (week 4)
 
-Recommended post:
+Shipped first editorial post:
 
 **“Best VPN for Iran in 2026: tested options for censorship, privacy and safer travel”**
 
-Why this first:
+Why this was first:
 
 - It aligns with existing Search Console impressions and near-page-one visibility.
 - It naturally supports Iran, Telegram, Russia, China, obfuscation and VPN-protocol clusters.
@@ -146,14 +146,18 @@ Suggested outline:
 
 ### Phase 4 — Controlled cluster expansion (weeks 5–8)
 
-Use DataForSEO and Search Console gaps to select 4–8 pages only after the hub brief is approved. Candidate supporting pages:
+The first controlled expansion is now live. The reciprocal support set around the censorship and commercial hubs is:
 
-- VPN obfuscation explained.
-- How to use a VPN on restricted networks.
-- Best VPN for Telegram calls and media.
-- VPN protocols for censorship resistance.
-- Is using a VPN legal when travelling?
-- Best VPN for China, with evidence date and limitations.
+- [VPN obfuscation explained](/guides/vpn-obfuscation-explained)
+- [How to use a VPN on restricted networks](/guides/vpn-for-restricted-networks)
+- [VPN protocols explained](/guides/vpn-protocols-explained)
+- [VPNs for travel](/guides/vpn-for-travel)
+- [Best free VPN](/best/free-vpn)
+- [Best VPN for Telegram](/blog/best-vpn-for-telegram-2026)
+- [VPN for Russia](/countries/russia)
+- [VPN for China](/countries/china)
+
+The next 4–8 page selection is paused until the 14-day Search Console and Short.io exports are available. DataForSEO may refine the hypothesis, but it should not be used to manufacture another large URL batch without measured demand.
 
 Each page must link to the hub, at least two related guides and one relevant review or comparison. Do not create thin country/keyword variations without a distinct question and evidence.
 
@@ -201,6 +205,6 @@ Review every two weeks by cluster:
 
 ## Baseline update: 11 August 2026
 
-The screenshot-based baseline and next release gate now live in [zerotovpn-performance-baseline-2026-08-11.md](./zerotovpn-performance-baseline-2026-08-11.md). The next implementation target is `/best/best-vpn`: first remove or qualify stale test, speed, coverage and legal/access claims; then apply the shared Tom's Guide-style shortlist, evidence table, contextual inline affiliate links and reciprocal cluster links. Search Console and Short.io exports must be captured before release and again after 14 days so CTR, affiliate clicks, conversion rate and EPC are measured separately.
+The screenshot-based baseline and release gate live in [zerotovpn-performance-baseline-2026-08-11.md](./zerotovpn-performance-baseline-2026-08-11.md). The `/best/best-vpn` implementation is now complete and live with the shared Tom's Guide-style shortlist, evidence table, contextual inline affiliate links and reciprocal cluster links. Search Console and Short.io exports must still be captured before the next content release and again after 14 days so CTR, affiliate clicks, conversion rate and EPC are measured separately.
 
 The machine-readable screenshot transcription is [zerotovpn-baseline-2026-08-11.json](../metrics/zerotovpn-baseline-2026-08-11.json). `npm run measure:editorial` now normalizes localized Search Console/Short.io CSV exports and writes a comparable report; the importer was verified with a local fixture and deliberately leaves conversions/EPC null until the partner dashboard export is joined.

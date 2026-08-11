@@ -64,3 +64,9 @@ npm run audit:affiliate-context
 Use `AFFILIATE_AUDIT_CONCURRENCY=8` to lower request pressure or `AFFILIATE_AUDIT_LIMIT=100` for a smoke run. Promotion terms are manual-review flags because an editorial policy page may mention prohibited techniques while explaining them; missing `sponsored`/`nofollow` is an actionable technical failure.
 
 The current flag classifications and release gate are recorded in [affiliate-context-review-2026-08-11.md](./affiliate-context-review-2026-08-11.md). Treat an unclassified flag as a reason to remove the affiliate destination before publishing.
+
+## Current measurement checkpoint — 12 August 2026
+
+The production release gates were rerun after the localized free-VPN cleanup: the editorial target set is **15/15**, the sitemap is **2,279/2,279** healthy URLs, and the affiliate-context scan reports **1,755 affiliate pages / 8,189 links** with zero missing disclosure, rel, interruptive-promotion or fetch failures. These checks validate release quality; they are not traffic or revenue evidence.
+
+No real Search Console, Short.io or Nord affiliate export is present in `.cache/metrics` yet. The files there are explicitly named fixtures and must not be used for KPI decisions. Keep the next 4–8 page selection paused until the matched 14-day exports are available; the planned comparison checkpoint is **25 August 2026**. At that point run the command above with the real files, then select pages from measured cluster winners rather than from volume alone.

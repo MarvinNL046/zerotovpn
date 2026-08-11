@@ -6,7 +6,7 @@ const checks = [
   {
     name: "shared affiliate rel policy",
     file: "src/components/vpn/affiliate-button.tsx",
-    patterns: [/sponsored\s+nofollow/, /trackAffiliateClick/],
+    patterns: [/sponsored\s+nofollow/, /trackAffiliateClick/, /affiliateSlug/, /data-affiliate-slug/],
   },
   {
     name: "shared editorial disclosure",

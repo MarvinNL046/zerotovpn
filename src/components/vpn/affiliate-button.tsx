@@ -16,9 +16,20 @@ interface AffiliateButtonProps {
 // Stuurt de klik naar /api/click zonder de navigatie op te houden.
 // sendBeacon is hier het juiste gereedschap: de browser levert het verzoek af
 // terwijl de pagina al aan het weg-navigeren is.
-export function trackAffiliateClick(vpnId: string) {
+function getShortIoSlug(affiliateUrl: string): string | null {
+  try {
+    const url = new URL(affiliateUrl, window.location.origin);
+    if (url.hostname !== "go.zerotovpn.com") return null;
+    return url.pathname.replace(/^\/+|\/+$/g, "") || null;
+  } catch {
+    return null;
+  }
+}
+
+export function trackAffiliateClick(vpnId: string, affiliateUrl: string) {
   const payload = JSON.stringify({
     vpnId,
+    affiliateSlug: getShortIoSlug(affiliateUrl),
     page: window.location.pathname,
     referrer: document.referrer,
   });
@@ -63,7 +74,8 @@ export function AffiliateButton({
         href={affiliateUrl}
         target="_blank"
         rel="noopener noreferrer sponsored nofollow"
-        onClick={() => trackAffiliateClick(vpnId)}
+        data-affiliate-slug={getShortIoSlug(affiliateUrl) ?? undefined}
+        onClick={() => trackAffiliateClick(vpnId, affiliateUrl)}
       >
         {children || (
           <>
@@ -103,7 +115,8 @@ export function AffiliateTextLink({
       rel="noopener noreferrer sponsored nofollow"
       className={className}
       aria-label={`Visit ${vpnName}`}
-      onClick={() => trackAffiliateClick(vpnId)}
+      data-affiliate-slug={getShortIoSlug(affiliateUrl) ?? undefined}
+      onClick={() => trackAffiliateClick(vpnId, affiliateUrl)}
     >
       {children}
     </a>

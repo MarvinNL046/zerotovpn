@@ -37,6 +37,7 @@ Required comparison discipline:
 - Compare page and query exports separately; do not treat visible screenshot rows as complete tables.
 - Keep Short.io and partner-dashboard windows aligned.
 - Report clicks, human clicks, conversions, conversion rate and EPC as separate fields.
+- First-party affiliate click beacons now include `vpnId`, `affiliateSlug` (the `go.zerotovpn.com/<slug>` path), page and referrer. Treat this as diagnostic telemetry; Short.io remains the source of truth for redirect clicks and the partner dashboard remains the source of truth for conversions and EPC.
 
 ## Sitemap health audit
 

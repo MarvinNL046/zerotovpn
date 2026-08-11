@@ -1,25 +1,25 @@
 # Live editorial page audit
 
-Generated: 2026-08-11T19:26:32.490Z
+Generated: 2026-08-11T19:35:55.684Z
 
 - Target pages: **10**
-- Passing pages: **3**
-- Pages needing review: **7**
+- Passing pages: **10**
+- Pages needing review: **0**
 - Affiliate links checked: **72**
 - Affiliate links missing sponsored/nofollow: **0**
-- Missing required cluster links: **9**
+- Missing required cluster links: **0**
 
 | Status | Page | Title | H1s | Internal links | Affiliate links | Missing required IDs | Missing cluster links |
 |---|---|---|---:|---:|---:|---|---|
 | pass | /best/best-vpn | Best VPN in 2026: Transparent Shortlist and Comparison | ZeroToVPN | 1 | 64 | 21 | — | — |
-| FAIL | /blog/best-vpn-for-iran-2026-bypass-internet-censorship | Best VPN for Iran in 2026: tested options, limits and safer preparation | 1 | 59 | 6 | — | /guides/vpn-obfuscation-explained |
-| FAIL | /blog/best-vpn-for-telegram-2026 | Best VPN for Telegram in 2026: what to verify before you connect | 1 | 58 | 6 | — | /guides/vpn-obfuscation-explained |
+| pass | /blog/best-vpn-for-iran-2026-bypass-internet-censorship | Best VPN for Iran in 2026: tested options, limits and safer preparation | 1 | 60 | 6 | — | — |
+| pass | /blog/best-vpn-for-telegram-2026 | Best VPN for Telegram in 2026: what to verify before you connect | 1 | 59 | 6 | — | — |
 | pass | /countries/russia | VPN for Russia in 2026: What to Verify Before You Connect | 1 | 46 | 6 | — | — |
-| FAIL | /countries/china | VPN for China in 2026: What to Verify Before You Connect | 1 | 46 | 6 | — | /guides/vpn-obfuscation-explained |
-| FAIL | /guides/vpn-protocols-explained | VPN Protocols Explained: WireGuard vs OpenVPN (2026) | ZeroToVPN | 1 | 48 | 6 | — | /guides/vpn-obfuscation-explained, /guides/vpn-for-restricted-networks |
-| FAIL | /guides/vpn-obfuscation-explained | VPN Obfuscation Explained: Stealth and OpenVPN | ZeroToVPN | 1 | 48 | 6 | — | /guides/vpn-for-restricted-networks |
-| FAIL | /guides/vpn-for-restricted-networks | How to Use a VPN on a Restricted Network | ZeroToVPN | 1 | 49 | 6 | — | /guides/vpn-for-travel, /countries/iran |
-| FAIL | /guides/vpn-for-travel | VPN for Travel: What to Test Before You Leave | ZeroToVPN | 1 | 47 | 6 | — | /countries/iran |
+| pass | /countries/china | VPN for China in 2026: What to Verify Before You Connect | 1 | 47 | 6 | — | — |
+| pass | /guides/vpn-protocols-explained | VPN Protocols Explained: WireGuard vs OpenVPN (2026) | ZeroToVPN | 1 | 50 | 6 | — | — |
+| pass | /guides/vpn-obfuscation-explained | VPN Obfuscation Explained: Stealth and OpenVPN | ZeroToVPN | 1 | 49 | 6 | — | — |
+| pass | /guides/vpn-for-restricted-networks | How to Use a VPN on a Restricted Network | ZeroToVPN | 1 | 51 | 6 | — | — |
+| pass | /guides/vpn-for-travel | VPN for Travel: What to Test Before You Leave | ZeroToVPN | 1 | 48 | 6 | — | — |
 | pass | /best/free-vpn | Best Free VPNs: Safety, Limits and Trade-offs | ZeroToVPN | 1 | 46 | 3 | — | — |
 
 Raw records: [editorial-live-audit-2026-08-11.json](./editorial-live-audit-2026-08-11.json)

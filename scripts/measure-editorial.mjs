@@ -86,6 +86,88 @@ function pick(row, names) {
   return undefined;
 }
 
+function classifyCluster(value) {
+  const normalized = String(value ?? "").toLowerCase();
+  if (/(iran|telegram|russia|china|obfuscation|restricted-network)/.test(normalized)) return "censorship";
+  if (/(best\/free-vpn|free-vpn)/.test(normalized)) return "free-vpn";
+  if (/(best\/best-vpn|^https?:\/\/www\.zerotovpn\.com\/?$)/.test(normalized)) return "commercial-pillar";
+  if (/protocol/.test(normalized)) return "protocols";
+  if (/travel/.test(normalized)) return "travel";
+  return "other";
+}
+
+function slugFromLink(value) {
+  if (!value) return "unknown";
+  try {
+    const pathname = new URL(value).pathname.replace(/\/+$/, "");
+    return pathname.split("/").filter(Boolean).pop() || "root";
+  } catch {
+    const cleaned = String(value).split(/[?#]/, 1)[0].replace(/\/+$/, "");
+    return cleaned.split("/").filter(Boolean).pop() || "unknown";
+  }
+}
+
+function summarizeSearchClusters(rows) {
+  const grouped = rows.reduce((map, row) => {
+    const cluster = row.cluster ?? "other";
+    const current = map[cluster] ?? { cluster, clicks: 0, impressions: 0, weightedPosition: 0, positionImpressions: 0 };
+    current.clicks += row.clicks ?? 0;
+    current.impressions += row.impressions ?? 0;
+    if (row.position !== null && (row.impressions ?? 0) > 0) {
+      current.weightedPosition += row.position * row.impressions;
+      current.positionImpressions += row.impressions;
+    }
+    map[cluster] = current;
+    return map;
+  }, {});
+  return Object.values(grouped)
+    .map(({ cluster, clicks, impressions, weightedPosition, positionImpressions }) => ({
+      cluster,
+      clicks,
+      impressions,
+      ctr: impressions ? clicks / impressions : null,
+      averagePosition: positionImpressions ? weightedPosition / positionImpressions : null,
+    }))
+    .sort((a, b) => b.impressions - a.impressions);
+}
+
+function summarizeAffiliateSlugs(rows) {
+  const grouped = rows.reduce((map, row) => {
+    const slug = row.slug ?? "unknown";
+    const current = map[slug] ?? { slug, clicks: 0, humanClicks: 0, rows: 0 };
+    current.clicks += row.clicks ?? 0;
+    current.humanClicks += row.humanClicks ?? 0;
+    current.rows += 1;
+    map[slug] = current;
+    return map;
+  }, {});
+  return Object.values(grouped).sort((a, b) => b.clicks - a.clicks);
+}
+
+function summarizePartnerSlugs(rows) {
+  const grouped = rows.reduce((map, row) => {
+    const slug = row.slug ?? "unknown";
+    const current = map[slug] ?? { slug, clicks: 0, conversions: 0, revenue: 0, hasConversions: false, hasRevenue: false, rows: 0 };
+    current.clicks += row.clicks ?? 0;
+    if (row.conversions !== null) { current.conversions += row.conversions; current.hasConversions = true; }
+    if (row.revenue !== null) { current.revenue += row.revenue; current.hasRevenue = true; }
+    current.rows += 1;
+    map[slug] = current;
+    return map;
+  }, {});
+  return Object.values(grouped)
+    .map(({ slug, clicks, conversions, revenue, hasConversions, hasRevenue, rows }) => ({
+      slug,
+      clicks: clicks || null,
+      conversions: hasConversions ? conversions : null,
+      revenue: hasRevenue ? revenue : null,
+      conversionRate: clicks && hasConversions ? conversions / clicks : null,
+      epc: clicks && hasRevenue ? revenue / clicks : null,
+      rows,
+    }))
+    .sort((a, b) => (b.revenue ?? b.clicks ?? 0) - (a.revenue ?? a.clicks ?? 0));
+}
+
 function readRows(path) {
   if (!path) return [];
   const absolute = resolve(ROOT, path);
@@ -100,13 +182,14 @@ function summarizeSearchConsole(rows, kind) {
     const impressions = number(pick(row, ["impressions", "vertoningen", "aantal_vertoningen"]));
     const ctr = ratio(pick(row, ["ctr", "gemiddelde_ctr"]));
     const position = number(pick(row, ["position", "positie", "gemiddelde_positie"]));
-    return { [kind === "pages" ? "page" : "query"]: label ?? "", clicks, impressions, ctr, position };
+    const key = kind === "pages" ? "page" : "query";
+    return { [key]: label ?? "", cluster: classifyCluster(label), clicks, impressions, ctr, position };
   }).filter((row) => row[kind === "pages" ? "page" : "query"]);
   const clicks = normalized.reduce((sum, row) => sum + (row.clicks ?? 0), 0);
   const impressions = normalized.reduce((sum, row) => sum + (row.impressions ?? 0), 0);
   const weightedPositions = normalized.filter((row) => row.position !== null && (row.impressions ?? 0) > 0);
   const averagePosition = weightedPositions.length ? weightedPositions.reduce((sum, row) => sum + row.position * row.impressions, 0) / weightedPositions.reduce((sum, row) => sum + row.impressions, 0) : null;
-  return { rows: normalized, totals: { clicks, impressions, ctr: impressions ? clicks / impressions : null, averagePosition } };
+  return { rows: normalized, totals: { clicks, impressions, ctr: impressions ? clicks / impressions : null, averagePosition }, byCluster: summarizeSearchClusters(normalized) };
 }
 
 function summarizeShortIo(rows) {
@@ -116,7 +199,8 @@ function summarizeShortIo(rows) {
     country: pick(row, ["country", "land", "country_name"]) ?? "Unknown",
     referrer: pick(row, ["referrer", "doorverwijzer", "referer"]) ?? "Unknown",
     clicks: number(pick(row, ["clicks", "kliks", "total_clicks"])) ?? 0,
-    humanClicks: number(pick(row, ["human_clicks", "menselijke_clicks"]))
+    humanClicks: number(pick(row, ["human_clicks", "menselijke_clicks"])),
+    slug: slugFromLink(pick(row, ["link", "short_url", "short_link", "url", "short_url_slug"])),
   }));
   const sumBy = (field) => Object.entries(normalized.reduce((map, row) => { const key = row[field] || "Unknown"; map[key] = (map[key] ?? 0) + row.clicks; return map; }, {})).sort((a, b) => b[1] - a[1]).slice(0, 20).map(([name, clicks]) => ({ [field]: name, clicks }));
   return {
@@ -128,6 +212,7 @@ function summarizeShortIo(rows) {
     topCountries: sumBy("country"),
     topReferrers: sumBy("referrer"),
     topLinks: sumBy("link"),
+    bySlug: summarizeAffiliateSlugs(normalized),
   };
 }
 
@@ -139,6 +224,7 @@ function summarizePartner(rows) {
     conversions: number(pick(row, ["conversions", "conversion", "sales", "orders", "transactions"])),
     revenue: number(pick(row, ["revenue", "commission", "earnings", "payout", "total_revenue"])),
     epc: number(pick(row, ["epc", "earnings_per_click", "revenue_per_click"])),
+    slug: slugFromLink(pick(row, ["link", "short_url", "short_link", "url", "offer"])),
   })).filter((row) => row.conversions !== null || row.revenue !== null || row.epc !== null);
   const clicks = normalized.reduce((sum, row) => sum + (row.clicks ?? 0), 0);
   const conversions = normalized.reduce((sum, row) => sum + (row.conversions ?? 0), 0);
@@ -156,6 +242,7 @@ function summarizePartner(rows) {
       conversionRate: clicks && normalized.some((row) => row.conversions !== null) ? conversions / clicks : null,
       epc: clicks && normalized.some((row) => row.revenue !== null) ? revenue / clicks : reportedEpc,
     },
+    bySlug: summarizePartnerSlugs(normalized),
   };
 }
 

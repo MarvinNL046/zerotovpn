@@ -27,7 +27,7 @@ function assert(condition, message) {
 try {
   const pages = write(
     "pages.csv",
-    "Top pages,Clicks,Impressions,CTR,Position\nhttps://www.zerotovpn.com/,30,1409,2.13%,15.0\nhttps://www.zerotovpn.com/blog/test,24,12034,0.20%,9.0\n",
+    "Top pages,Clicks,Impressions,CTR,Position\nhttps://www.zerotovpn.com/,30,1409,2.13%,15.0\nhttps://www.zerotovpn.com/blog/best-vpn-for-iran-2026-bypass-internet-censorship,24,12034,0.20%,9.0\n",
   );
   const queries = write(
     "queries.csv",
@@ -48,11 +48,15 @@ try {
   assert(english.searchConsole.pages.totals.clicks === 54, "English clicks should total 54");
   assert(english.searchConsole.pages.totals.impressions === 13443, "English impressions should total 13443");
   assert(Math.abs(english.searchConsole.pages.totals.ctr - 54 / 13443) < 1e-12, "English CTR should be normalized");
+  assert(english.searchConsole.pages.byCluster.find((row) => row.cluster === "censorship")?.clicks === 24, "Censorship cluster should retain page clicks");
+  assert(english.searchConsole.pages.byCluster.find((row) => row.cluster === "commercial-pillar")?.impressions === 1409, "Commercial pillar cluster should retain homepage impressions");
+  assert(english.affiliate.bySlug[0].slug === "nordvpn" && english.affiliate.bySlug[0].clicks === 145, "Short.io clicks should be grouped by slug");
   assert(Math.abs(english.affiliate.partner.totals.epc - 155 / 150) < 1e-12, "Partner EPC should be revenue per click");
+  assert(english.affiliate.partner.bySlug[0].slug === "nordvpn" && english.affiliate.partner.bySlug[0].conversions === 5, "Partner conversions should be grouped by slug");
 
   const localizedPages = write(
     "localized-pages.csv",
-    "Pagina;Klikken;Vertoningen;Gemiddelde CTR;Gemiddelde positie\nhttps://www.zerotovpn.com/;30;1.409;2,13%;15,0\nhttps://www.zerotovpn.com/blog/test;24;12.034;0,20%;9,0\n",
+    "Pagina;Klikken;Vertoningen;Gemiddelde CTR;Gemiddelde positie\nhttps://www.zerotovpn.com/;30;1.409;2,13%;15,0\nhttps://www.zerotovpn.com/blog/best-vpn-for-iran-2026-bypass-internet-censorship;24;12.034;0,20%;9,0\n",
   );
   const localizedOut = join(temp, "localized.json");
   run(["--label", "test-localized", "--gsc-pages", localizedPages, "--gsc-queries", queries, "--shortio", shortIo, "--out", localizedOut]);

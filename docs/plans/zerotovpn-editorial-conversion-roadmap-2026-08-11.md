@@ -28,6 +28,8 @@
 
 - **11 August 2026:** Added a freshness gate to `npm run audit:editorial-live`: every non-homepage commercial/cluster target must expose a visible updated/reviewed signal or `dateModified` structured data. The current production audit passes **12/12** with `freshnessFailureCount: 0`.
 
+- **11 August 2026:** Made `npm run measure:editorial` cluster-aware for the next review. Reports now group Search Console pages/queries into the roadmap clusters and group Short.io/partner rows by link slug, with regression coverage for censorship, commercial-pillar and NordVPN slug totals. No new URLs are being selected until the real 14-day exports are available.
+
 - **11 August 2026:** Extracted `BestVpnEditorialTemplate` and `EditorialQuickPickCard` into `src/components/editorial/best-vpn-editorial-template.tsx`, then refactored the Best VPN page and dynamic blog route to use the shared disclosure/jump-nav pattern. ESLint, production build and local browser checks pass.
 - **11 August 2026:** Added the [Iran editorial brief](../research/iran-vpn-editorial-brief-2026-08-11.md) with the research fields, evidence boundary, internal-link map and affiliate compliance gates for the first content refresh.
 - **11 August 2026:** Ran the first cached DataForSEO US/English pass for the Iran cluster: keyword overview, related suggestions, five SERP/PAA samples and competitor domains. Results are recorded in `docs/research/dataforseo-iran-cluster-2026-08-11.{json,md}`; missing current volume is explicitly not treated as zero demand.

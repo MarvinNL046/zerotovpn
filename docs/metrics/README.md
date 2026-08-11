@@ -17,6 +17,8 @@ npm run measure:editorial -- `
 
 The importer accepts localized or English headers for pages/queries, clicks, impressions, CTR, position, country and referrer, and detects comma-, semicolon- and tab-delimited exports. It also normalizes decimal commas such as `0,2%` without turning them into `2%`. The optional `--partner` export accepts conversions/sales, revenue/commission and EPC columns and writes them under `affiliate.partner`; if it is omitted, those fields remain `null`. Required GSC/Short.io paths now fail fast when omitted, and every report includes `dataQuality.rowCounts` plus an explicit `missingMetrics` list instead of silently treating missing inputs as zero. It writes normalized totals, top rows and deltas without inferring missing partner data.
 
+Each report also includes `searchConsole.pages.byCluster` and `searchConsole.queries.byCluster` for the roadmap groups (`censorship`, `free-vpn`, `commercial-pillar`, `protocols`, `travel`, `other`). Short.io and partner rows are grouped under `affiliate.bySlug` and `affiliate.partner.bySlug`; use these for cluster-specific review when links have dedicated slugs, while treating an aggregate provider slug as diagnostic rather than page attribution.
+
 Run the importer regression suite before using a new export format:
 
 ```powershell

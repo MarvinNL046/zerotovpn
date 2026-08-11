@@ -4281,9 +4281,9 @@
         "title": "旅行に最適",
         "description": "ExpressVPNは中国やUAEなどの制限の厳しい国でも確実に動作します。"
       },
-      "getBest": "Surfsharkを入手 - {discount}% OFF",
+      "getBest": "Surfsharkの長期プランを見る",
       "getFastest": "NordVPN を試す – {days}日間返金保証",
-      "getTravel": "ExpressVPNを入手 - {discount}% OFF"
+      "getTravel": "ExpressVPNの長期プランを見る"
     }
   },
   "iphoneVpn": {
@@ -4729,7 +4729,7 @@
         "description": "中国、UAEで動作、最も信頼性が高い"
       },
       "getBest": "NordVPNを入手",
-      "getValue": "Surfsharkを入手 - {discount}% OFF",
+      "getValue": "Surfsharkの長期プランを見る",
       "getTravel": "ExpressVPNを入手"
     }
   },
@@ -4915,7 +4915,7 @@
       "title": "iPadに最適なVPNを入手",
       "description": "これらのトップ評価VPNでiPadを保護し、世界中のコンテンツをブロック解除しましょう。",
       "getBest": "iPad向けNordVPNを入手",
-      "getValue": "Surfsharkを入手 - {discount}% OFF",
+      "getValue": "Surfsharkの長期プランを見る",
       "getTravel": "ExpressVPNを入手"
     }
   },
@@ -5113,7 +5113,7 @@
       "title": "AndroidタブレットVPNを選択",
       "description": "今すぐAndroidタブレットに最高の保護を獲得しましょう。",
       "getBest": "NordVPNを入手",
-      "getValue": "Surfsharkを入手 - {discount}% OFF",
+      "getValue": "Surfsharkの長期プランを見る",
       "getTravel": "ExpressVPNを入手"
     }
   },
@@ -5305,7 +5305,7 @@
       "title": "Windowsタブレットに最適なVPNを選択",
       "description": "これらのトップ評価VPNでSurface ProまたはSurface Goを保護しましょう。",
       "getBest": "NordVPNを入手",
-      "getValue": "Surfsharkを入手 - {discount}% OFF",
+      "getValue": "Surfsharkの長期プランを見る",
       "getTravel": "ExpressVPNを入手"
     }
   },
@@ -5330,7 +5330,7 @@
       "verified": "検証済みコード",
       "verifiedDesc": "すべてのクーポンがテスト済みで動作確認済み",
       "savings": "大幅節約",
-      "savingsDesc": "最大{discount}%オフ",
+      "savingsDesc": "長期プランの料金を比較",
       "updated": "毎日更新",
       "updatedDesc": "毎日新しいセール",
       "exclusive": "限定セール",

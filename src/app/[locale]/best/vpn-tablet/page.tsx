@@ -33,7 +33,6 @@ import { LastUpdated } from "@/components/last-updated";
 import { getVpnAffiliateUrl } from "@/lib/vpn-links";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { OG_LOCALE_MAP, generateAlternates, titelMetMerk } from "@/lib/seo-utils";
-import { getRequiredDiscountPercent } from "@/lib/vpn-discount";
 type Props = {
   params: Promise<{ locale: string }>;
 };
@@ -229,7 +228,7 @@ export default async function TabletVpnPage({ params }: Props) {
       ],
       pros: t.raw("reviews.surfshark.pros") as string[],
       cons: t.raw("reviews.surfshark.cons") as string[],
-      cta: <>{t("reviews.getButton")} Surfshark - {getRequiredDiscountPercent("surfshark")}% OFF</>,
+      cta: <>{t("reviews.getButton")} Surfshark on the long-term plan</>,
     },
     {
       vpn: getVpnById("expressvpn")!,
@@ -643,7 +642,7 @@ export default async function TabletVpnPage({ params }: Props) {
                       vpnName="NordVPN"
                       affiliateUrl={getVpnAffiliateUrl("nordvpn")}
                     >
-                      {t("conclusion.getBest", { discount: getRequiredDiscountPercent("surfshark") })}
+                      {t("conclusion.getBest")}
                     </AffiliateButton>
                   </CardContent>
                 </Card>
@@ -658,7 +657,7 @@ export default async function TabletVpnPage({ params }: Props) {
                       vpnName="Surfshark"
                       affiliateUrl={getVpnAffiliateUrl("surfshark")}
                     >
-                      {t("conclusion.getValue", { discount: getRequiredDiscountPercent("surfshark") })}
+                      {t("conclusion.getValue")}
                     </AffiliateButton>
                   </CardContent>
                 </Card>
@@ -673,7 +672,7 @@ export default async function TabletVpnPage({ params }: Props) {
                       vpnName="ExpressVPN"
                       affiliateUrl={getVpnAffiliateUrl("expressvpn")}
                     >
-                      {t("conclusion.getTravel", { discount: getRequiredDiscountPercent("expressvpn") })}
+                      {t("conclusion.getTravel")}
                     </AffiliateButton>
                   </CardContent>
                 </Card>

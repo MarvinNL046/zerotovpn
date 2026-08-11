@@ -4279,9 +4279,9 @@
         "title": "Best for Travel",
         "description": "ExpressVPN works reliably in restrictive countries like China and UAE."
       },
-      "getBest": "Get Surfshark – {discount}% OFF",
+      "getBest": "Get Surfshark on the long-term plan",
       "getFastest": "Try NordVPN – {days}-day money-back guarantee",
-      "getTravel": "Get ExpressVPN – {discount}% OFF"
+      "getTravel": "Get ExpressVPN on the long-term plan"
     }
   },
   "iphoneVpn": {
@@ -4654,7 +4654,7 @@
       "title": "Get the Best VPN for Your iPad",
       "description": "Protect your iPad and unlock worldwide content with these top-rated VPNs.",
       "getBest": "Get NordVPN for iPad",
-      "getValue": "Get Surfshark - {discount}% OFF",
+      "getValue": "Get Surfshark on the long-term plan",
       "getTravel": "Get ExpressVPN"
     }
   },
@@ -4852,7 +4852,7 @@
       "title": "Choose Your Android Tablet VPN",
       "description": "Get the best protection for your Android tablet today.",
       "getBest": "Get NordVPN",
-      "getValue": "Get Surfshark - {discount}% OFF",
+      "getValue": "Get Surfshark on the long-term plan",
       "getTravel": "Get ExpressVPN"
     }
   },
@@ -5111,7 +5111,7 @@
         "description": "Works in China, UAE, most reliable"
       },
       "getBest": "Get NordVPN",
-      "getValue": "Get Surfshark - {discount}% OFF",
+      "getValue": "Get Surfshark on the long-term plan",
       "getTravel": "Get ExpressVPN"
     }
   },
@@ -5303,7 +5303,7 @@
       "title": "Choose the Best VPN for Your Windows Tablet",
       "description": "Protect your Surface Pro or Surface Go with these top-rated VPNs.",
       "getBest": "Get NordVPN",
-      "getValue": "Get Surfshark - {discount}% OFF",
+      "getValue": "Get Surfshark on the long-term plan",
       "getTravel": "Get ExpressVPN"
     }
   },
@@ -5328,7 +5328,7 @@
       "verified": "Verified Codes",
       "verifiedDesc": "All coupons tested and working",
       "savings": "Big Savings",
-      "savingsDesc": "Save up to {discount}% OFF",
+      "savingsDesc": "Compare long-term plan pricing",
       "updated": "Daily Updates",
       "updatedDesc": "Fresh deals every day",
       "exclusive": "Exclusive Deals",

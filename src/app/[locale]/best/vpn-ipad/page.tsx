@@ -31,7 +31,6 @@ import { LastUpdated } from "@/components/last-updated";
 import { OG_LOCALE_MAP, generateAlternates, titelMetMerk } from "@/lib/seo-utils";
 import { getVpnAffiliateUrl } from "@/lib/vpn-links";
 
-import { getRequiredDiscountPercent } from "@/lib/vpn-discount";
 type Props = {
   params: Promise<{ locale: string }>;
 };
@@ -669,7 +668,7 @@ export default async function IpadVpnPage({ params }: Props) {
                       vpnName="NordVPN"
                       affiliateUrl={getVpnAffiliateUrl("nordvpn")}
                     >
-                      {t("conclusion.getBest", { discount: getRequiredDiscountPercent("surfshark") })}
+                      {t("conclusion.getBest")}
                     </AffiliateButton>
                   </CardContent>
                 </Card>
@@ -690,7 +689,7 @@ export default async function IpadVpnPage({ params }: Props) {
                       vpnName="Surfshark"
                       affiliateUrl={getVpnAffiliateUrl("surfshark")}
                     >
-                      {t("conclusion.getValue", { discount: getRequiredDiscountPercent("surfshark") })}
+                      {t("conclusion.getValue")}
                     </AffiliateButton>
                   </CardContent>
                 </Card>
@@ -711,7 +710,7 @@ export default async function IpadVpnPage({ params }: Props) {
                       vpnName="ExpressVPN"
                       affiliateUrl={getVpnAffiliateUrl("expressvpn")}
                     >
-                      {t("conclusion.getTravel", { discount: getRequiredDiscountPercent("expressvpn") })}
+                      {t("conclusion.getTravel")}
                     </AffiliateButton>
                   </CardContent>
                 </Card>

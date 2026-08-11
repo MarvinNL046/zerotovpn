@@ -43,3 +43,5 @@ npm run audit:affiliate-context
 ```
 
 Use `AFFILIATE_AUDIT_CONCURRENCY=8` to lower request pressure or `AFFILIATE_AUDIT_LIMIT=100` for a smoke run. Promotion terms are manual-review flags because an editorial policy page may mention prohibited techniques while explaining them; missing `sponsored`/`nofollow` is an actionable technical failure.
+
+The current flag classifications and release gate are recorded in [affiliate-context-review-2026-08-11.md](./affiliate-context-review-2026-08-11.md). Treat an unclassified flag as a reason to remove the affiliate destination before publishing.

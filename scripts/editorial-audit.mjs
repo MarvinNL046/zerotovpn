@@ -72,6 +72,11 @@ const checks = [
       /affiliateUrl|affiliateHref|coupon|discount|promo(code)?|cashback|incentive|view deal|buy now/i,
     ],
   },
+  {
+    name: "restricted affiliate context guard",
+    file: "src/app/[locale]/blog/[slug]/page.tsx",
+    patterns: [/isRestrictedAffiliateContext/, /verwijderAffiliateLinks\(post\.content\)/, /SourcesSection content=\{articleContent\}/],
+  },
 ];
 
 const results = checks.map((check) => {

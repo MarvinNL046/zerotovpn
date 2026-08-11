@@ -65,3 +65,21 @@ export function normaliseerAffiliateLinks(html: string): string {
     return tag.replace(/>$/, ` ${rel}>`);
   });
 }
+
+/**
+ * Remove affiliate anchors from an article that contains a restricted or
+ * otherwise unsuitable adjacent context. The provider name remains readable,
+ * but the commercial destination is not rendered on that page.
+ */
+export function verwijderAffiliateLinks(html: string): string {
+  if (!html) return html;
+
+  return html.replace(/<a\b[^>]*>[\s\S]*?<\/a>/gi, (anchor) => {
+    const href = anchor.match(/\bhref=["']([^"']+)["']/i)?.[1] ?? "";
+    if (!isAffiliateUrl(href)) return anchor;
+
+    return anchor
+      .replace(/^<a\b[^>]*>/i, "")
+      .replace(/<\/a>$/i, "");
+  });
+}

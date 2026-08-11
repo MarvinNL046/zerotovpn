@@ -14,7 +14,11 @@ import { generateAlternates, titelMetMerk } from "@/lib/seo-utils";
 import { getRelatedContent } from "@/lib/content-links";
 import { RelatedContent } from "@/components/seo/related-content";
 import InlineAd from "@/components/ads/InlineAd";
-import { normaliseerAffiliateLinks, normaliseerArtikelKoppen } from "@/lib/blog-content";
+import {
+  normaliseerAffiliateLinks,
+  normaliseerArtikelKoppen,
+  verwijderAffiliateLinks,
+} from "@/lib/blog-content";
 import {
   AuthorBox,
   FactCheckedBadge,
@@ -165,6 +169,8 @@ export default async function DynamicBlogPost({ params }: Props) {
   const isIranEditorial = slug === "best-vpn-for-iran-2026-bypass-internet-censorship";
   const isTelegramEditorial = slug === "best-vpn-for-telegram-2026";
   const isCensorshipEditorial = isIranEditorial || isTelegramEditorial;
+  const isRestrictedAffiliateContext =
+    slug === "vpn-blockchain-privacy-mask-wallet-activity-2026";
   const displayTitle = isIranEditorial
     ? iranVpnEditorialTitle
     : isTelegramEditorial
@@ -199,6 +205,9 @@ export default async function DynamicBlogPost({ params }: Props) {
     .trim();
   const readTime = `${Math.max(1, Math.ceil(textOnly.length / 1500))} min`;
   const lastUpdated = formatDate(post.updatedAt, locale);
+  const articleContent = isRestrictedAffiliateContext
+    ? verwijderAffiliateLinks(post.content)
+    : post.content;
 
   return (
     <div className="flex flex-col">
@@ -331,7 +340,9 @@ export default async function DynamicBlogPost({ params }: Props) {
         {/* Article Content */}
         <div
           className="blog-content max-w-none"
-          dangerouslySetInnerHTML={{ __html: normaliseerAffiliateLinks(normaliseerArtikelKoppen(post.content)) }}
+          dangerouslySetInnerHTML={{
+            __html: normaliseerAffiliateLinks(normaliseerArtikelKoppen(articleContent)),
+          }}
         />
 
         {isIranEditorial && <FAQSchema title="Iran VPN FAQ" faqs={iranVpnEditorialFaq} />}
@@ -342,7 +353,7 @@ export default async function DynamicBlogPost({ params }: Props) {
 
         {/* E-E-A-T: Sources & References */}
         <div id="sources" className="scroll-mt-20">
-          <SourcesSection content={post.content} />
+          <SourcesSection content={articleContent} />
         </div>
 
         {/* E-E-A-T: Author Box */}

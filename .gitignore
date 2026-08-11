@@ -49,4 +49,11 @@ auth.json
 
 # lokaal opgehaalde productie-env (nooit committen)
 .env.local
+.cache/
 .env.prod
+
+# Local compliance/dev server logs
+.local-compliance-dev*.log
+
+# Large affiliate source archives are local reference material, not deployable app assets
+/assets/affiliate-source/

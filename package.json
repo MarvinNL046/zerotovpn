@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "npm run generate:sitemap-routes && next dev",
     "generate:sitemap-routes": "node scripts/generate-sitemap-static-routes.mjs",
+    "seo:iran": "node scripts/iran-seo-research.mjs",
     "prebuild": "npm run generate:sitemap-routes",
     "build": "next build",
     "start": "next start",

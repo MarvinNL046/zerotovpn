@@ -3,7 +3,6 @@ import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { Header } from "@/components/header";
-import { SecurityBanner } from "@/components/security-banner";
 import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { OrganizationJsonLd, WebsiteJsonLd } from "@/components/seo/json-ld";
@@ -11,7 +10,6 @@ import { LazyConversionWidgets } from "@/components/lazy-conversion-widgets";
 import { CookieConsent } from "@/components/cookie-consent";
 import type { Metadata } from "next";
 
-import { getRequiredDiscountPercent } from "@/lib/vpn-discount";
 type Props = {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
@@ -152,7 +150,6 @@ export default async function LocaleLayout({ children, params }: Props) {
             >
               Skip to content
             </a>
-            <SecurityBanner nordvpnDiscount={getRequiredDiscountPercent("nordvpn")} />
             <Header />
             <main id="main" className="flex-1">
               {children}

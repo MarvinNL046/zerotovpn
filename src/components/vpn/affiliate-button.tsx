@@ -16,7 +16,7 @@ interface AffiliateButtonProps {
 // Stuurt de klik naar /api/click zonder de navigatie op te houden.
 // sendBeacon is hier het juiste gereedschap: de browser levert het verzoek af
 // terwijl de pagina al aan het weg-navigeren is.
-function trackClick(vpnId: string) {
+export function trackAffiliateClick(vpnId: string) {
   const payload = JSON.stringify({
     vpnId,
     page: window.location.pathname,
@@ -63,7 +63,7 @@ export function AffiliateButton({
         href={affiliateUrl}
         target="_blank"
         rel="noopener noreferrer sponsored nofollow"
-        onClick={() => trackClick(vpnId)}
+        onClick={() => trackAffiliateClick(vpnId)}
       >
         {children || (
           <>
@@ -73,5 +73,39 @@ export function AffiliateButton({
         )}
       </a>
     </Button>
+  );
+}
+
+interface AffiliateTextLinkProps {
+  vpnId: string;
+  vpnName: string;
+  affiliateUrl: string;
+  className?: string;
+  children: React.ReactNode;
+}
+
+/**
+ * Inline affiliate link for contextual prices and editorial CTAs.
+ * It deliberately shares the same sponsored/nofollow and click tracking
+ * contract as the primary button, so every commercial link stays auditable.
+ */
+export function AffiliateTextLink({
+  vpnId,
+  vpnName,
+  affiliateUrl,
+  className,
+  children,
+}: AffiliateTextLinkProps) {
+  return (
+    <a
+      href={affiliateUrl}
+      target="_blank"
+      rel="noopener noreferrer sponsored nofollow"
+      className={className}
+      aria-label={`Visit ${vpnName}`}
+      onClick={() => trackAffiliateClick(vpnId)}
+    >
+      {children}
+    </a>
   );
 }

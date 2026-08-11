@@ -5,7 +5,6 @@ import { Shield, Check, Globe, Zap, Lock, Server, Wifi, Eye } from "lucide-react
 import { cn } from "@/lib/utils";
 import { PulseIndicator } from "@/components/ui/pulse-indicator";
 import { Link } from "@/i18n/navigation";
-import { getVpnAffiliateUrl } from "@/lib/vpn-links";
 
 // Real visitor data from our own /api/ip endpoint
 interface VisitorInfo {
@@ -112,15 +111,13 @@ export function HeroIllustration({ className }: HeroIllustrationProps) {
               </div>
               <div className="flex items-end">
                 {info && !info.isVpn && (
-                  <a
-                    href={getVpnAffiliateUrl("nordvpn")}
-                    target="_blank"
-                    rel="noopener noreferrer sponsored nofollow"
+                  <Link
+                    href="/quiz"
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary text-primary-foreground text-xs font-semibold rounded-lg hover:bg-primary/90 transition-colors"
                   >
                     <Shield className="h-3 w-3" />
-                    Protect with NordVPN
-                  </a>
+                    Find your VPN
+                  </Link>
                 )}
               </div>
             </div>

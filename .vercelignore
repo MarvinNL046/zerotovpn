@@ -1,0 +1,19 @@
+# Source-only research and media bundles are not part of the Next.js runtime.
+assets/
+docs/assets/
+docs/compliance/
+docs/plans/
+docs/research/
+
+# Local development/build state.
+.git/
+.next/
+node_modules/
+.playwright-mcp/
+_bmad-output/
+.claude/
+
+# Local logs and credentials.
+*.log
+.env.local
+.env.*.local

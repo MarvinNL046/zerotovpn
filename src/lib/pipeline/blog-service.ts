@@ -6,6 +6,14 @@
 import fs from "fs/promises";
 import path from "path";
 import postIndex from "@/data/posts/index.json";
+import {
+  iranVpnEditorialContent,
+  iranVpnEditorialExcerpt,
+  iranVpnEditorialTitle,
+  iranVpnEditorialUpdatedAt,
+} from "@/data/editorial/iran-vpn-2026";
+
+const IRAN_EDITORIAL_SLUG = "best-vpn-for-iran-2026-bypass-internet-censorship";
 
 // Vorm van een volledige post zoals de detailpagina hem gebruikt. De oude
 // drizzle-kolommen die alleen de pipeline nodig had (sourceData/aiPrompt/
@@ -124,21 +132,28 @@ async function readPostFile(
       "utf8",
     );
     const p = JSON.parse(raw);
+    const isIranEditorial = language === "en" && slug === IRAN_EDITORIAL_SLUG;
     return {
       id: p.id,
       slug: p.slug,
       language: p.language,
-      title: p.title,
-      excerpt: p.excerpt ?? "",
-      content: p.content ?? "",
-      metaTitle: p.metaTitle ?? null,
-      metaDescription: p.metaDescription ?? null,
+      title: isIranEditorial ? iranVpnEditorialTitle : p.title,
+      excerpt: isIranEditorial ? iranVpnEditorialExcerpt : p.excerpt ?? "",
+      content: isIranEditorial ? iranVpnEditorialContent : p.content ?? "",
+      metaTitle: isIranEditorial ? iranVpnEditorialTitle : p.metaTitle ?? null,
+      metaDescription: isIranEditorial
+        ? iranVpnEditorialExcerpt
+        : p.metaDescription ?? null,
       category: p.category ?? "",
       tags: p.tags ?? null,
       published: true,
       publishedAt: p.publishedAt ? new Date(p.publishedAt) : null,
       createdAt: p.createdAt ? new Date(p.createdAt) : new Date(0),
-      updatedAt: p.updatedAt ? new Date(p.updatedAt) : new Date(0),
+      updatedAt: isIranEditorial
+        ? new Date(iranVpnEditorialUpdatedAt)
+        : p.updatedAt
+          ? new Date(p.updatedAt)
+          : new Date(0),
       featuredImage: null,
       featuredImageUrl: p.featuredImageUrl ?? null,
     };

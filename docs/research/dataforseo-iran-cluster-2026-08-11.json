@@ -1,0 +1,1668 @@
+{
+  "schemaVersion": 1,
+  "cluster": "VPN for Iran / censorship",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "startedAt": "2026-08-11T16:07:51.449Z",
+  "completedAt": "2026-08-11T16:07:51.465Z",
+  "refreshed": false,
+  "seeds": [
+    "best vpn for iran",
+    "iran vpn",
+    "vpn iran censorship",
+    "best vpn for iran 2026",
+    "how to use vpn in iran",
+    "vpn obfuscation iran"
+  ],
+  "overview": [
+    {
+      "keyword": "best vpn for iran",
+      "searchVolume": null,
+      "latestNonZeroVolume": 210,
+      "latestNonZeroMonth": "2024-02",
+      "difficulty": 0,
+      "intent": "commercial",
+      "trend": [
+        {
+          "year": 2026,
+          "month": 4,
+          "search_volume": 0
+        },
+        {
+          "year": 2026,
+          "month": 3,
+          "search_volume": 0
+        },
+        {
+          "year": 2026,
+          "month": 2,
+          "search_volume": 0
+        },
+        {
+          "year": 2026,
+          "month": 1,
+          "search_volume": 0
+        },
+        {
+          "year": 2025,
+          "month": 12,
+          "search_volume": 0
+        },
+        {
+          "year": 2025,
+          "month": 11,
+          "search_volume": 0
+        },
+        {
+          "year": 2025,
+          "month": 10,
+          "search_volume": 0
+        },
+        {
+          "year": 2025,
+          "month": 9,
+          "search_volume": 0
+        },
+        {
+          "year": 2025,
+          "month": 8,
+          "search_volume": 0
+        },
+        {
+          "year": 2025,
+          "month": 7,
+          "search_volume": 0
+        },
+        {
+          "year": 2025,
+          "month": 6,
+          "search_volume": 0
+        },
+        {
+          "year": 2025,
+          "month": 5,
+          "search_volume": 0
+        },
+        {
+          "year": 2025,
+          "month": 4,
+          "search_volume": 0
+        },
+        {
+          "year": 2025,
+          "month": 3,
+          "search_volume": 0
+        },
+        {
+          "year": 2025,
+          "month": 2,
+          "search_volume": 0
+        },
+        {
+          "year": 2025,
+          "month": 1,
+          "search_volume": 0
+        },
+        {
+          "year": 2024,
+          "month": 12,
+          "search_volume": 0
+        },
+        {
+          "year": 2024,
+          "month": 11,
+          "search_volume": 0
+        },
+        {
+          "year": 2024,
+          "month": 10,
+          "search_volume": 0
+        },
+        {
+          "year": 2024,
+          "month": 9,
+          "search_volume": 0
+        },
+        {
+          "year": 2024,
+          "month": 8,
+          "search_volume": 0
+        },
+        {
+          "year": 2024,
+          "month": 7,
+          "search_volume": 0
+        },
+        {
+          "year": 2024,
+          "month": 6,
+          "search_volume": 0
+        },
+        {
+          "year": 2024,
+          "month": 5,
+          "search_volume": 0
+        },
+        {
+          "year": 2024,
+          "month": 4,
+          "search_volume": 0
+        },
+        {
+          "year": 2024,
+          "month": 3,
+          "search_volume": 0
+        },
+        {
+          "year": 2024,
+          "month": 2,
+          "search_volume": 210
+        },
+        {
+          "year": 2024,
+          "month": 1,
+          "search_volume": 170
+        },
+        {
+          "year": 2023,
+          "month": 12,
+          "search_volume": 170
+        },
+        {
+          "year": 2023,
+          "month": 11,
+          "search_volume": 140
+        },
+        {
+          "year": 2023,
+          "month": 10,
+          "search_volume": 110
+        },
+        {
+          "year": 2023,
+          "month": 9,
+          "search_volume": 140
+        },
+        {
+          "year": 2023,
+          "month": 8,
+          "search_volume": 210
+        },
+        {
+          "year": 2023,
+          "month": 7,
+          "search_volume": 260
+        },
+        {
+          "year": 2023,
+          "month": 6,
+          "search_volume": 210
+        },
+        {
+          "year": 2023,
+          "month": 5,
+          "search_volume": 260
+        },
+        {
+          "year": 2023,
+          "month": 4,
+          "search_volume": 320
+        },
+        {
+          "year": 2023,
+          "month": 3,
+          "search_volume": 320
+        },
+        {
+          "year": 2023,
+          "month": 2,
+          "search_volume": 320
+        },
+        {
+          "year": 2023,
+          "month": 1,
+          "search_volume": 590
+        },
+        {
+          "year": 2022,
+          "month": 12,
+          "search_volume": 720
+        },
+        {
+          "year": 2022,
+          "month": 11,
+          "search_volume": 590
+        },
+        {
+          "year": 2022,
+          "month": 10,
+          "search_volume": 1600
+        },
+        {
+          "year": 2022,
+          "month": 9,
+          "search_volume": 480
+        },
+        {
+          "year": 2022,
+          "month": 8,
+          "search_volume": 50
+        },
+        {
+          "year": 2022,
+          "month": 7,
+          "search_volume": 70
+        },
+        {
+          "year": 2022,
+          "month": 6,
+          "search_volume": 90
+        },
+        {
+          "year": 2022,
+          "month": 5,
+          "search_volume": 90
+        },
+        {
+          "year": 2022,
+          "month": 4,
+          "search_volume": 70
+        },
+        {
+          "year": 2022,
+          "month": 3,
+          "search_volume": 50
+        },
+        {
+          "year": 2022,
+          "month": 2,
+          "search_volume": 50
+        },
+        {
+          "year": 2022,
+          "month": 1,
+          "search_volume": 50
+        },
+        {
+          "year": 2021,
+          "month": 12,
+          "search_volume": 70
+        },
+        {
+          "year": 2021,
+          "month": 11,
+          "search_volume": 50
+        },
+        {
+          "year": 2021,
+          "month": 10,
+          "search_volume": 50
+        },
+        {
+          "year": 2021,
+          "month": 9,
+          "search_volume": 30
+        },
+        {
+          "year": 2021,
+          "month": 8,
+          "search_volume": 40
+        },
+        {
+          "year": 2021,
+          "month": 7,
+          "search_volume": 50
+        },
+        {
+          "year": 2021,
+          "month": 6,
+          "search_volume": 50
+        },
+        {
+          "year": 2021,
+          "month": 5,
+          "search_volume": 70
+        },
+        {
+          "year": 2021,
+          "month": 4,
+          "search_volume": 40
+        },
+        {
+          "year": 2021,
+          "month": 3,
+          "search_volume": 50
+        },
+        {
+          "year": 2021,
+          "month": 2,
+          "search_volume": 40
+        },
+        {
+          "year": 2021,
+          "month": 1,
+          "search_volume": 50
+        },
+        {
+          "year": 2020,
+          "month": 12,
+          "search_volume": 50
+        },
+        {
+          "year": 2020,
+          "month": 11,
+          "search_volume": 70
+        },
+        {
+          "year": 2020,
+          "month": 10,
+          "search_volume": 70
+        },
+        {
+          "year": 2020,
+          "month": 9,
+          "search_volume": 70
+        },
+        {
+          "year": 2020,
+          "month": 8,
+          "search_volume": 90
+        },
+        {
+          "year": 2020,
+          "month": 7,
+          "search_volume": 70
+        },
+        {
+          "year": 2020,
+          "month": 6,
+          "search_volume": 70
+        },
+        {
+          "year": 2020,
+          "month": 5,
+          "search_volume": 90
+        },
+        {
+          "year": 2020,
+          "month": 4,
+          "search_volume": 50
+        },
+        {
+          "year": 2020,
+          "month": 3,
+          "search_volume": 70
+        },
+        {
+          "year": 2020,
+          "month": 2,
+          "search_volume": 50
+        },
+        {
+          "year": 2020,
+          "month": 1,
+          "search_volume": 70
+        },
+        {
+          "year": 2019,
+          "month": 12,
+          "search_volume": 70
+        },
+        {
+          "year": 2019,
+          "month": 11,
+          "search_volume": 70
+        },
+        {
+          "year": 2019,
+          "month": 10,
+          "search_volume": 40
+        },
+        {
+          "year": 2019,
+          "month": 9,
+          "search_volume": 50
+        },
+        {
+          "year": 2019,
+          "month": 8,
+          "search_volume": 40
+        },
+        {
+          "year": 2019,
+          "month": 7,
+          "search_volume": 40
+        },
+        {
+          "year": 2019,
+          "month": 6,
+          "search_volume": 70
+        },
+        {
+          "year": 2019,
+          "month": 5,
+          "search_volume": 40
+        },
+        {
+          "year": 2019,
+          "month": 4,
+          "search_volume": 40
+        },
+        {
+          "year": 2019,
+          "month": 3,
+          "search_volume": 50
+        },
+        {
+          "year": 2019,
+          "month": 2,
+          "search_volume": 50
+        },
+        {
+          "year": 2019,
+          "month": 1,
+          "search_volume": 50
+        },
+        {
+          "year": 2018,
+          "month": 12,
+          "search_volume": 40
+        },
+        {
+          "year": 2018,
+          "month": 11,
+          "search_volume": 30
+        },
+        {
+          "year": 2018,
+          "month": 10,
+          "search_volume": 30
+        }
+      ]
+    },
+    {
+      "keyword": "how to use vpn in iran",
+      "searchVolume": 10,
+      "latestNonZeroVolume": 10,
+      "latestNonZeroMonth": "2026-05",
+      "difficulty": null,
+      "intent": "informational",
+      "trend": [
+        {
+          "year": 2026,
+          "month": 6,
+          "search_volume": 0
+        },
+        {
+          "year": 2026,
+          "month": 5,
+          "search_volume": 10
+        },
+        {
+          "year": 2026,
+          "month": 4,
+          "search_volume": 0
+        },
+        {
+          "year": 2026,
+          "month": 3,
+          "search_volume": 0
+        },
+        {
+          "year": 2026,
+          "month": 2,
+          "search_volume": 0
+        },
+        {
+          "year": 2026,
+          "month": 1,
+          "search_volume": 10
+        },
+        {
+          "year": 2025,
+          "month": 12,
+          "search_volume": 0
+        },
+        {
+          "year": 2025,
+          "month": 11,
+          "search_volume": 0
+        },
+        {
+          "year": 2025,
+          "month": 10,
+          "search_volume": 0
+        },
+        {
+          "year": 2025,
+          "month": 9,
+          "search_volume": 10
+        },
+        {
+          "year": 2025,
+          "month": 8,
+          "search_volume": 10
+        },
+        {
+          "year": 2025,
+          "month": 7,
+          "search_volume": 0
+        },
+        {
+          "year": 2025,
+          "month": 6,
+          "search_volume": 10
+        },
+        {
+          "year": 2025,
+          "month": 5,
+          "search_volume": 0
+        },
+        {
+          "year": 2025,
+          "month": 4,
+          "search_volume": 10
+        },
+        {
+          "year": 2025,
+          "month": 3,
+          "search_volume": 10
+        },
+        {
+          "year": 2025,
+          "month": 2,
+          "search_volume": 10
+        },
+        {
+          "year": 2025,
+          "month": 1,
+          "search_volume": 0
+        },
+        {
+          "year": 2024,
+          "month": 12,
+          "search_volume": 0
+        },
+        {
+          "year": 2024,
+          "month": 11,
+          "search_volume": 10
+        },
+        {
+          "year": 2024,
+          "month": 10,
+          "search_volume": 10
+        },
+        {
+          "year": 2024,
+          "month": 9,
+          "search_volume": 10
+        },
+        {
+          "year": 2024,
+          "month": 8,
+          "search_volume": 0
+        },
+        {
+          "year": 2024,
+          "month": 7,
+          "search_volume": 0
+        },
+        {
+          "year": 2024,
+          "month": 6,
+          "search_volume": 10
+        },
+        {
+          "year": 2024,
+          "month": 5,
+          "search_volume": 0
+        },
+        {
+          "year": 2024,
+          "month": 4,
+          "search_volume": 10
+        },
+        {
+          "year": 2024,
+          "month": 3,
+          "search_volume": 10
+        },
+        {
+          "year": 2024,
+          "month": 2,
+          "search_volume": 0
+        },
+        {
+          "year": 2024,
+          "month": 1,
+          "search_volume": 10
+        },
+        {
+          "year": 2023,
+          "month": 12,
+          "search_volume": 10
+        },
+        {
+          "year": 2023,
+          "month": 11,
+          "search_volume": 10
+        },
+        {
+          "year": 2023,
+          "month": 10,
+          "search_volume": 0
+        },
+        {
+          "year": 2023,
+          "month": 9,
+          "search_volume": 0
+        },
+        {
+          "year": 2023,
+          "month": 8,
+          "search_volume": 10
+        },
+        {
+          "year": 2023,
+          "month": 7,
+          "search_volume": 10
+        },
+        {
+          "year": 2023,
+          "month": 6,
+          "search_volume": 10
+        },
+        {
+          "year": 2023,
+          "month": 5,
+          "search_volume": 10
+        },
+        {
+          "year": 2023,
+          "month": 4,
+          "search_volume": 10
+        },
+        {
+          "year": 2023,
+          "month": 3,
+          "search_volume": 10
+        },
+        {
+          "year": 2023,
+          "month": 2,
+          "search_volume": 10
+        },
+        {
+          "year": 2023,
+          "month": 1,
+          "search_volume": 10
+        },
+        {
+          "year": 2022,
+          "month": 12,
+          "search_volume": 10
+        },
+        {
+          "year": 2022,
+          "month": 11,
+          "search_volume": 0
+        },
+        {
+          "year": 2022,
+          "month": 10,
+          "search_volume": 10
+        },
+        {
+          "year": 2022,
+          "month": 9,
+          "search_volume": 10
+        },
+        {
+          "year": 2022,
+          "month": 8,
+          "search_volume": 10
+        },
+        {
+          "year": 2022,
+          "month": 7,
+          "search_volume": 10
+        },
+        {
+          "year": 2022,
+          "month": 6,
+          "search_volume": 10
+        },
+        {
+          "year": 2022,
+          "month": 5,
+          "search_volume": 10
+        },
+        {
+          "year": 2022,
+          "month": 4,
+          "search_volume": 10
+        },
+        {
+          "year": 2022,
+          "month": 3,
+          "search_volume": 0
+        },
+        {
+          "year": 2022,
+          "month": 2,
+          "search_volume": 0
+        },
+        {
+          "year": 2022,
+          "month": 1,
+          "search_volume": 10
+        },
+        {
+          "year": 2021,
+          "month": 12,
+          "search_volume": 10
+        },
+        {
+          "year": 2021,
+          "month": 11,
+          "search_volume": 0
+        },
+        {
+          "year": 2021,
+          "month": 10,
+          "search_volume": 10
+        },
+        {
+          "year": 2021,
+          "month": 9,
+          "search_volume": 10
+        },
+        {
+          "year": 2021,
+          "month": 8,
+          "search_volume": 0
+        },
+        {
+          "year": 2021,
+          "month": 7,
+          "search_volume": 10
+        },
+        {
+          "year": 2021,
+          "month": 6,
+          "search_volume": 10
+        },
+        {
+          "year": 2021,
+          "month": 5,
+          "search_volume": 10
+        },
+        {
+          "year": 2021,
+          "month": 4,
+          "search_volume": 10
+        },
+        {
+          "year": 2021,
+          "month": 3,
+          "search_volume": 0
+        },
+        {
+          "year": 2021,
+          "month": 2,
+          "search_volume": 10
+        },
+        {
+          "year": 2021,
+          "month": 1,
+          "search_volume": 0
+        },
+        {
+          "year": 2020,
+          "month": 12,
+          "search_volume": 0
+        },
+        {
+          "year": 2020,
+          "month": 11,
+          "search_volume": 0
+        },
+        {
+          "year": 2020,
+          "month": 10,
+          "search_volume": 0
+        },
+        {
+          "year": 2020,
+          "month": 9,
+          "search_volume": 0
+        },
+        {
+          "year": 2020,
+          "month": 8,
+          "search_volume": 10
+        },
+        {
+          "year": 2020,
+          "month": 7,
+          "search_volume": 0
+        },
+        {
+          "year": 2020,
+          "month": 6,
+          "search_volume": 0
+        },
+        {
+          "year": 2020,
+          "month": 5,
+          "search_volume": 10
+        },
+        {
+          "year": 2020,
+          "month": 4,
+          "search_volume": 0
+        },
+        {
+          "year": 2020,
+          "month": 3,
+          "search_volume": 0
+        },
+        {
+          "year": 2020,
+          "month": 2,
+          "search_volume": 0
+        },
+        {
+          "year": 2020,
+          "month": 1,
+          "search_volume": 0
+        },
+        {
+          "year": 2019,
+          "month": 12,
+          "search_volume": 10
+        },
+        {
+          "year": 2019,
+          "month": 11,
+          "search_volume": 10
+        },
+        {
+          "year": 2019,
+          "month": 10,
+          "search_volume": 10
+        },
+        {
+          "year": 2019,
+          "month": 9,
+          "search_volume": 0
+        },
+        {
+          "year": 2019,
+          "month": 8,
+          "search_volume": 0
+        }
+      ]
+    },
+    {
+      "keyword": "iran vpn",
+      "searchVolume": null,
+      "latestNonZeroVolume": 880,
+      "latestNonZeroMonth": "2024-02",
+      "difficulty": 0,
+      "intent": "informational",
+      "trend": [
+        {
+          "year": 2026,
+          "month": 3,
+          "search_volume": 0
+        },
+        {
+          "year": 2026,
+          "month": 2,
+          "search_volume": 0
+        },
+        {
+          "year": 2026,
+          "month": 1,
+          "search_volume": 0
+        },
+        {
+          "year": 2025,
+          "month": 12,
+          "search_volume": 0
+        },
+        {
+          "year": 2025,
+          "month": 11,
+          "search_volume": 0
+        },
+        {
+          "year": 2025,
+          "month": 10,
+          "search_volume": 0
+        },
+        {
+          "year": 2025,
+          "month": 9,
+          "search_volume": 0
+        },
+        {
+          "year": 2025,
+          "month": 8,
+          "search_volume": 0
+        },
+        {
+          "year": 2025,
+          "month": 7,
+          "search_volume": 0
+        },
+        {
+          "year": 2025,
+          "month": 6,
+          "search_volume": 0
+        },
+        {
+          "year": 2025,
+          "month": 5,
+          "search_volume": 0
+        },
+        {
+          "year": 2025,
+          "month": 4,
+          "search_volume": 0
+        },
+        {
+          "year": 2025,
+          "month": 3,
+          "search_volume": 0
+        },
+        {
+          "year": 2025,
+          "month": 2,
+          "search_volume": 0
+        },
+        {
+          "year": 2025,
+          "month": 1,
+          "search_volume": 0
+        },
+        {
+          "year": 2024,
+          "month": 12,
+          "search_volume": 0
+        },
+        {
+          "year": 2024,
+          "month": 11,
+          "search_volume": 0
+        },
+        {
+          "year": 2024,
+          "month": 10,
+          "search_volume": 0
+        },
+        {
+          "year": 2024,
+          "month": 9,
+          "search_volume": 0
+        },
+        {
+          "year": 2024,
+          "month": 8,
+          "search_volume": 0
+        },
+        {
+          "year": 2024,
+          "month": 7,
+          "search_volume": 0
+        },
+        {
+          "year": 2024,
+          "month": 6,
+          "search_volume": 0
+        },
+        {
+          "year": 2024,
+          "month": 5,
+          "search_volume": 0
+        },
+        {
+          "year": 2024,
+          "month": 4,
+          "search_volume": 0
+        },
+        {
+          "year": 2024,
+          "month": 3,
+          "search_volume": 0
+        },
+        {
+          "year": 2024,
+          "month": 2,
+          "search_volume": 880
+        },
+        {
+          "year": 2024,
+          "month": 1,
+          "search_volume": 590
+        },
+        {
+          "year": 2023,
+          "month": 12,
+          "search_volume": 590
+        },
+        {
+          "year": 2023,
+          "month": 11,
+          "search_volume": 720
+        },
+        {
+          "year": 2023,
+          "month": 10,
+          "search_volume": 390
+        },
+        {
+          "year": 2023,
+          "month": 9,
+          "search_volume": 390
+        },
+        {
+          "year": 2023,
+          "month": 8,
+          "search_volume": 320
+        },
+        {
+          "year": 2023,
+          "month": 7,
+          "search_volume": 390
+        },
+        {
+          "year": 2023,
+          "month": 6,
+          "search_volume": 320
+        },
+        {
+          "year": 2023,
+          "month": 5,
+          "search_volume": 390
+        },
+        {
+          "year": 2023,
+          "month": 4,
+          "search_volume": 480
+        },
+        {
+          "year": 2023,
+          "month": 3,
+          "search_volume": 390
+        },
+        {
+          "year": 2023,
+          "month": 2,
+          "search_volume": 390
+        },
+        {
+          "year": 2023,
+          "month": 1,
+          "search_volume": 880
+        },
+        {
+          "year": 2022,
+          "month": 12,
+          "search_volume": 880
+        },
+        {
+          "year": 2022,
+          "month": 11,
+          "search_volume": 880
+        },
+        {
+          "year": 2022,
+          "month": 10,
+          "search_volume": 2400
+        },
+        {
+          "year": 2022,
+          "month": 9,
+          "search_volume": 1000
+        },
+        {
+          "year": 2022,
+          "month": 8,
+          "search_volume": 210
+        },
+        {
+          "year": 2022,
+          "month": 7,
+          "search_volume": 210
+        },
+        {
+          "year": 2022,
+          "month": 6,
+          "search_volume": 210
+        },
+        {
+          "year": 2022,
+          "month": 5,
+          "search_volume": 170
+        },
+        {
+          "year": 2022,
+          "month": 4,
+          "search_volume": 170
+        },
+        {
+          "year": 2022,
+          "month": 3,
+          "search_volume": 210
+        },
+        {
+          "year": 2022,
+          "month": 2,
+          "search_volume": 140
+        },
+        {
+          "year": 2022,
+          "month": 1,
+          "search_volume": 170
+        },
+        {
+          "year": 2021,
+          "month": 12,
+          "search_volume": 140
+        },
+        {
+          "year": 2021,
+          "month": 11,
+          "search_volume": 140
+        },
+        {
+          "year": 2021,
+          "month": 10,
+          "search_volume": 140
+        },
+        {
+          "year": 2021,
+          "month": 9,
+          "search_volume": 110
+        },
+        {
+          "year": 2021,
+          "month": 8,
+          "search_volume": 110
+        },
+        {
+          "year": 2021,
+          "month": 7,
+          "search_volume": 170
+        },
+        {
+          "year": 2021,
+          "month": 6,
+          "search_volume": 170
+        },
+        {
+          "year": 2021,
+          "month": 5,
+          "search_volume": 170
+        },
+        {
+          "year": 2021,
+          "month": 4,
+          "search_volume": 140
+        },
+        {
+          "year": 2021,
+          "month": 3,
+          "search_volume": 140
+        },
+        {
+          "year": 2021,
+          "month": 2,
+          "search_volume": 170
+        },
+        {
+          "year": 2021,
+          "month": 1,
+          "search_volume": 170
+        },
+        {
+          "year": 2020,
+          "month": 12,
+          "search_volume": 210
+        },
+        {
+          "year": 2020,
+          "month": 11,
+          "search_volume": 140
+        },
+        {
+          "year": 2020,
+          "month": 10,
+          "search_volume": 140
+        },
+        {
+          "year": 2020,
+          "month": 9,
+          "search_volume": 140
+        },
+        {
+          "year": 2020,
+          "month": 8,
+          "search_volume": 170
+        },
+        {
+          "year": 2020,
+          "month": 7,
+          "search_volume": 170
+        },
+        {
+          "year": 2020,
+          "month": 6,
+          "search_volume": 110
+        },
+        {
+          "year": 2020,
+          "month": 5,
+          "search_volume": 170
+        },
+        {
+          "year": 2020,
+          "month": 4,
+          "search_volume": 140
+        },
+        {
+          "year": 2020,
+          "month": 3,
+          "search_volume": 140
+        },
+        {
+          "year": 2020,
+          "month": 2,
+          "search_volume": 260
+        },
+        {
+          "year": 2020,
+          "month": 1,
+          "search_volume": 260
+        },
+        {
+          "year": 2019,
+          "month": 12,
+          "search_volume": 170
+        },
+        {
+          "year": 2019,
+          "month": 11,
+          "search_volume": 390
+        },
+        {
+          "year": 2019,
+          "month": 10,
+          "search_volume": 90
+        },
+        {
+          "year": 2019,
+          "month": 9,
+          "search_volume": 110
+        },
+        {
+          "year": 2019,
+          "month": 8,
+          "search_volume": 260
+        },
+        {
+          "year": 2019,
+          "month": 7,
+          "search_volume": 210
+        },
+        {
+          "year": 2019,
+          "month": 6,
+          "search_volume": 210
+        },
+        {
+          "year": 2019,
+          "month": 5,
+          "search_volume": 170
+        },
+        {
+          "year": 2019,
+          "month": 4,
+          "search_volume": 170
+        },
+        {
+          "year": 2019,
+          "month": 3,
+          "search_volume": 210
+        },
+        {
+          "year": 2019,
+          "month": 2,
+          "search_volume": 170
+        },
+        {
+          "year": 2019,
+          "month": 1,
+          "search_volume": 390
+        },
+        {
+          "year": 2018,
+          "month": 12,
+          "search_volume": 480
+        },
+        {
+          "year": 2018,
+          "month": 11,
+          "search_volume": 390
+        },
+        {
+          "year": 2018,
+          "month": 10,
+          "search_volume": 390
+        }
+      ]
+    }
+  ],
+  "relatedKeywords": [
+    {
+      "seed": "iran vpn",
+      "type": "suggestion",
+      "keyword": "vpn best for iran",
+      "searchVolume": 10
+    },
+    {
+      "seed": "iran vpn",
+      "type": "suggestion",
+      "keyword": "best vpn service for iran",
+      "searchVolume": 10
+    },
+    {
+      "seed": "iran vpn",
+      "type": "suggestion",
+      "keyword": "best vpn for iran reddit",
+      "searchVolume": 10
+    },
+    {
+      "seed": "best vpn for iran",
+      "type": "suggestion",
+      "keyword": "what is the best free vpn for iran",
+      "searchVolume": 10
+    },
+    {
+      "seed": "best vpn for iran",
+      "type": "suggestion",
+      "keyword": "best free vpn for iran 2023",
+      "searchVolume": 10
+    },
+    {
+      "seed": "best vpn for iran",
+      "type": "suggestion",
+      "keyword": "what is the best vpn for iran",
+      "searchVolume": 10
+    },
+    {
+      "seed": "best vpn for iran",
+      "type": "suggestion",
+      "keyword": "best free vpn for whatsapp in iran",
+      "searchVolume": 10
+    },
+    {
+      "seed": "best vpn for iran",
+      "type": "suggestion",
+      "keyword": "best chrome vpn extension for iran",
+      "searchVolume": 10
+    },
+    {
+      "seed": "best vpn for iran",
+      "type": "suggestion",
+      "keyword": "best vpn extension for chrome in iran",
+      "searchVolume": 0
+    },
+    {
+      "seed": "best vpn for iran",
+      "type": "suggestion",
+      "keyword": "best free vpn for android in iran download",
+      "searchVolume": 0
+    },
+    {
+      "seed": "best vpn for iran",
+      "type": "related",
+      "keyword": "best vpn for iran reddit",
+      "searchVolume": 10
+    },
+    {
+      "seed": "best vpn for iran",
+      "type": "related",
+      "keyword": "best free vpn for whatsapp in iran",
+      "searchVolume": 10
+    },
+    {
+      "seed": "best vpn for iran",
+      "type": "related",
+      "keyword": "best vpn for iran",
+      "searchVolume": null
+    },
+    {
+      "seed": "best vpn for iran",
+      "type": "related",
+      "keyword": "best vpn for iran free",
+      "searchVolume": null
+    },
+    {
+      "seed": "best vpn for iran",
+      "type": "related",
+      "keyword": "best vpn for iran ios",
+      "searchVolume": null
+    },
+    {
+      "seed": "best vpn for iran",
+      "type": "related",
+      "keyword": "free vpn for iran",
+      "searchVolume": null
+    },
+    {
+      "seed": "best vpn for iran",
+      "type": "related",
+      "keyword": "best free vpn for iran android",
+      "searchVolume": null
+    },
+    {
+      "seed": "iran vpn",
+      "type": "suggestion",
+      "keyword": "ip iran free vpn",
+      "searchVolume": 20
+    },
+    {
+      "seed": "iran vpn",
+      "type": "suggestion",
+      "keyword": "iran ip vpn free ios",
+      "searchVolume": 10
+    },
+    {
+      "seed": "iran vpn",
+      "type": "suggestion",
+      "keyword": "ip iran open vpn",
+      "searchVolume": 10
+    },
+    {
+      "seed": "iran vpn",
+      "type": "suggestion",
+      "keyword": "does outline vpn work in iran",
+      "searchVolume": 10
+    },
+    {
+      "seed": "iran vpn",
+      "type": "suggestion",
+      "keyword": "iran vpn for iphone",
+      "searchVolume": 10
+    },
+    {
+      "seed": "iran vpn",
+      "type": "suggestion",
+      "keyword": "yuz vpn iran",
+      "searchVolume": 10
+    },
+    {
+      "seed": "iran vpn",
+      "type": "suggestion",
+      "keyword": "iran vpn ir",
+      "searchVolume": 10
+    },
+    {
+      "seed": "iran vpn",
+      "type": "related",
+      "keyword": "iran vpn for android",
+      "searchVolume": 10
+    },
+    {
+      "seed": "iran vpn",
+      "type": "related",
+      "keyword": "iran vpn",
+      "searchVolume": null
+    },
+    {
+      "seed": "iran vpn",
+      "type": "related",
+      "keyword": "iran vpn free",
+      "searchVolume": null
+    },
+    {
+      "seed": "iran vpn",
+      "type": "related",
+      "keyword": "iran vpn apk",
+      "searchVolume": null
+    },
+    {
+      "seed": "iran vpn",
+      "type": "related",
+      "keyword": "iran vpn download",
+      "searchVolume": null
+    },
+    {
+      "seed": "iran vpn",
+      "type": "related",
+      "keyword": "iran vpn chrome extension",
+      "searchVolume": null
+    },
+    {
+      "seed": "iran vpn",
+      "type": "related",
+      "keyword": "best iran vpn",
+      "searchVolume": null
+    },
+    {
+      "seed": "iran vpn",
+      "type": "related",
+      "keyword": "iran vpn free for pc",
+      "searchVolume": null
+    },
+    {
+      "seed": "iran vpn",
+      "type": "related",
+      "keyword": "iran vpn for pc",
+      "searchVolume": null
+    },
+    {
+      "seed": "how to use vpn in iran",
+      "type": "suggestion",
+      "keyword": "how to use vpn in iran",
+      "searchVolume": 10
+    },
+    {
+      "seed": "how to use vpn in iran",
+      "type": "suggestion",
+      "keyword": "how to use whatsapp in iran without vpn",
+      "searchVolume": 0
+    },
+    {
+      "seed": "how to use vpn in iran",
+      "type": "suggestion",
+      "keyword": "how to use youtube without vpn in iran",
+      "searchVolume": 0
+    },
+    {
+      "seed": "how to use vpn in iran",
+      "type": "suggestion",
+      "keyword": "how to use outline vpn in iran",
+      "searchVolume": null
+    },
+    {
+      "seed": "how to use vpn in iran",
+      "type": "related",
+      "keyword": "how to use vpn in iran",
+      "searchVolume": 10
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "best vpn for iran",
+      "paa": [
+        "Can Iranians use a VPN?",
+        "What is the best VPN for Iranians who live outside Iran?",
+        "Which free VPN has Iran IP?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "iran vpn",
+      "paa": [
+        "Does Iran allow VPNs?",
+        "What VPN works in Iran War?",
+        "Is there a free VPN for Iran?",
+        "How to open VPN in Iran?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn iran censorship",
+      "paa": [
+        "Does Iran ban VPNs?",
+        "Why is Iran so censored?",
+        "Does NordVPN cover Iran?",
+        "Why has Iran blacked out the internet?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "best vpn for iran 2026",
+      "paa": [],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "how to use vpn in iran",
+      "paa": [
+        "How do I set up a VPN for Iran?",
+        "Is $100 USD a lot in Iran?",
+        "What is the best VPN to use in Iran?",
+        "Does Iran ban VPNs?"
+      ],
+      "hasAiOverview": true
+    }
+  ],
+  "domainCompetitors": [
+    "youtube.com",
+    "reddit.com",
+    "techradar.com",
+    "cybernews.com",
+    "cnet.com",
+    "pcmag.com",
+    "tomsguide.com",
+    "security.org",
+    "gizmodo.com",
+    "cyberinsider.com",
+    "thebestvpn.com",
+    "comparitech.com",
+    "allaboutcookies.org",
+    "vpnmentor.com",
+    "cloudwards.net",
+    "top10vpn.com",
+    "01net.com",
+    "vpnpro.com",
+    "pcworld.com"
+  ],
+  "sourcePolicy": "DataForSEO API responses cached locally; no volume or difficulty is treated as editorial proof without a dated source check."
+}

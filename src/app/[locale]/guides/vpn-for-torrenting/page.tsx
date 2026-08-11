@@ -29,21 +29,10 @@ import {
   ShieldOff,
   Wifi,
   Star,
-  ExternalLink,
 } from "lucide-react";
 import { LastUpdated } from "@/components/last-updated";
 import { generateAlternates } from "@/lib/seo-utils";
 import { getRelatedContent } from "@/lib/content-links";
-import { getVpnAffiliateUrl } from "@/lib/vpn-links";
-
-const affiliateLinks = {
-  expressvpn: getVpnAffiliateUrl("expressvpn"),
-  nordvpn: getVpnAffiliateUrl("nordvpn"),
-  surfshark: getVpnAffiliateUrl("surfshark"),
-  cyberghost: getVpnAffiliateUrl("cyberghost"),
-  protonvpn: getVpnAffiliateUrl("protonvpn"),
-  pia: getVpnAffiliateUrl("pia"),
-};
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -322,9 +311,6 @@ export default async function VpnForTorrentingPage({ params }: Props) {
                   visitLink?: string;
                 }>).map((vpn, index) => {
                   const isFirst = index === 0;
-                  const link = vpn.name.toLowerCase().replace(/\s+/g, '');
-                  const hasLink = affiliateLinks[link as keyof typeof affiliateLinks];
-
                   return (
                     <div key={index} className={`bg-card ${isFirst ? 'border-2 border-primary' : 'border'} rounded-xl p-5`}>
                       <div className="flex items-center justify-between mb-3">
@@ -332,19 +318,7 @@ export default async function VpnForTorrentingPage({ params }: Props) {
                           <Badge className={isFirst ? "mb-2 bg-primary/10 text-primary" : "mb-2"} variant={isFirst ? undefined : "secondary"}>
                             {vpn.badge}
                           </Badge>
-                          <h3 className="font-bold text-lg">
-                            {hasLink ? (
-                              <a
-                                href={affiliateLinks[link as keyof typeof affiliateLinks]}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="hover:text-primary inline-flex items-center gap-1"
-                              >
-                                {vpn.name}
-                                <ExternalLink className="h-3 w-3" />
-                              </a>
-                            ) : vpn.name}
-                          </h3>
+                          <h3 className="font-bold text-lg">{vpn.name}</h3>
                         </div>
                         <div className="text-right">
                           <div className="flex items-center gap-1 text-yellow-500 mb-1">
@@ -369,17 +343,6 @@ export default async function VpnForTorrentingPage({ params }: Props) {
                           </div>
                         ))}
                       </div>
-                      {hasLink && vpn.visitLink && (
-                        <a
-                          href={affiliateLinks[link as keyof typeof affiliateLinks]}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline mt-3"
-                        >
-                          {vpn.visitLink}
-                          <ArrowRight className="h-3 w-3" />
-                        </a>
-                      )}
                     </div>
                   );
                 })}

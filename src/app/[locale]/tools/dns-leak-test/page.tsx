@@ -7,7 +7,6 @@ import { FAQAccordion } from "@/components/seo/faq-schema";
 import { ShieldAlert, Shield, Lock, AlertTriangle } from "lucide-react";
 import type { Metadata } from "next";
 import { generateAlternates, titelMetMerk } from "@/lib/seo-utils";
-import { getRequiredDiscountPercent } from "@/lib/vpn-discount";
 type Props = {
   params: Promise<{ locale: string }>;
 };
@@ -66,7 +65,7 @@ export default async function DnsLeakTestPage({ params }: Props) {
 
       {/* DNS Leak Test Widget */}
       <div className="mb-12">
-        <DnsLeakWidget nordvpnDiscount={getRequiredDiscountPercent("nordvpn")} />
+        <DnsLeakWidget />
       </div>
 
       {/* Info Cards */}

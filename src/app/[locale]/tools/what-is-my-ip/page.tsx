@@ -7,7 +7,6 @@ import { FAQAccordion } from "@/components/seo/faq-schema";
 import { Globe, Shield, Eye, Wifi } from "lucide-react";
 import type { Metadata } from "next";
 import { generateAlternates, titelMetMerk } from "@/lib/seo-utils";
-import { getRequiredDiscountPercent } from "@/lib/vpn-discount";
 type Props = {
   params: Promise<{ locale: string }>;
 };
@@ -66,7 +65,7 @@ export default async function WhatIsMyIpPage({ params }: Props) {
 
       {/* IP Lookup Widget */}
       <div className="mb-12">
-        <IpLookupWidget nordvpnDiscount={getRequiredDiscountPercent("nordvpn")} />
+        <IpLookupWidget />
       </div>
 
       {/* Info Cards */}

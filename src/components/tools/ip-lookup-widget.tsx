@@ -9,7 +9,7 @@ import {
   RefreshCw, Wifi, Clock, Building2, Loader2
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { getVpnAffiliateUrl } from "@/lib/vpn-links";
+import { Link } from "@/i18n/navigation";
 
 interface IpInfo {
   ip: string;
@@ -39,7 +39,7 @@ function countryFlag(code: string): string {
   );
 }
 
-export function IpLookupWidget({ nordvpnDiscount }: { nordvpnDiscount: number }) {
+export function IpLookupWidget() {
   const t = useTranslations("ipTool");
   const [ipInfo, setIpInfo] = useState<IpInfo | null>(null);
   const [loading, setLoading] = useState(true);
@@ -216,7 +216,7 @@ export function IpLookupWidget({ nordvpnDiscount }: { nordvpnDiscount: number })
         </CardContent>
       </Card>
 
-      {/* NordVPN CTA - only when NOT protected */}
+      {/* Neutral next step - only when NOT protected */}
       {!isProtected && (
         <Card className="overflow-hidden bg-gradient-to-r from-blue-600 to-indigo-700 text-white border-0">
           <CardContent className="p-6 md:p-8">
@@ -230,21 +230,12 @@ export function IpLookupWidget({ nordvpnDiscount }: { nordvpnDiscount: number })
                 <h3 className="text-xl font-bold mb-1">{t("getProtected")}</h3>
                 <p className="text-white/80 text-sm">{t("getProtectedDesc")}</p>
               </div>
-              <a
-                href={getVpnAffiliateUrl("nordvpn")}
-                target="_blank"
-                rel="noopener noreferrer sponsored nofollow"
+              <Link
+                href="/quiz"
                 className="inline-flex items-center gap-2 bg-white text-blue-700 font-bold px-6 py-3 rounded-lg hover:bg-white/90 transition-colors shrink-0 text-sm md:text-base"
-                onClick={() => {
-                  fetch("/api/click", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ vpnId: "nordvpn", page: "ip-tool" }),
-                  }).catch(() => {});
-                }}
               >
-                {t("nordvpnDeal", { discount: nordvpnDiscount })}
-              </a>
+                Find your VPN
+              </Link>
             </div>
           </CardContent>
         </Card>

@@ -288,8 +288,8 @@ export default async function HomePage({ params }: Props) {
                   <div className="text-sm text-muted-foreground">Speed Retention</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-primary">$2.99</div>
-                  <div className="text-sm text-muted-foreground">/month</div>
+                  <div className="text-2xl font-bold text-primary">30 days</div>
+                  <div className="text-sm text-muted-foreground">money-back</div>
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-primary">4.8/5</div>
@@ -305,7 +305,7 @@ export default async function HomePage({ params }: Props) {
                   rel="noopener noreferrer sponsored nofollow"
                   className="inline-flex items-center bg-primary text-primary-foreground font-semibold px-6 py-3 rounded-lg hover:bg-primary/90 transition"
                 >
-                  Get NordVPN Deal &rarr;
+                  Visit NordVPN &rarr;
                 </a>
                 <Link
                   href="/reviews/nordvpn"
@@ -314,6 +314,9 @@ export default async function HomePage({ params }: Props) {
                   Read Full Review
                 </Link>
               </div>
+              <p className="mt-3 text-xs text-muted-foreground">
+                Advertisement · affiliate link · our editorial ratings are independent.
+              </p>
             </div>
           </div>
         </section>

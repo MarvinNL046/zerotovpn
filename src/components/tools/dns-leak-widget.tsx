@@ -10,7 +10,7 @@ import {
   ChevronRight
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { getVpnAffiliateUrl } from "@/lib/vpn-links";
+import { Link } from "@/i18n/navigation";
 
 interface DnsServer {
   ip: string;
@@ -47,7 +47,7 @@ function countryFlag(code: string): string {
   );
 }
 
-export function DnsLeakWidget({ nordvpnDiscount }: { nordvpnDiscount: number }) {
+export function DnsLeakWidget() {
   const t = useTranslations("dnsLeakTest");
   const [status, setStatus] = useState<TestStatus>("idle");
   const [step, setStep] = useState<TestStep>(0);
@@ -344,22 +344,13 @@ export function DnsLeakWidget({ nordvpnDiscount }: { nordvpnDiscount: number }) 
                 <h3 className="text-xl font-bold mb-1">{t("fixLeaks")}</h3>
                 <p className="text-white/80 text-sm">{t("fixLeaksDesc")}</p>
               </div>
-              <a
-                href={getVpnAffiliateUrl("nordvpn")}
-                target="_blank"
-                rel="noopener noreferrer sponsored nofollow"
+              <Link
+                href="/quiz"
                 className="inline-flex items-center gap-2 bg-white text-blue-700 font-bold px-6 py-3 rounded-lg hover:bg-white/90 transition-colors shrink-0 text-sm md:text-base"
-                onClick={() => {
-                  fetch("/api/click", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ vpnId: "nordvpn", page: "dns-leak-test" }),
-                  }).catch(() => {});
-                }}
               >
-                {t("nordvpnDeal", { discount: nordvpnDiscount })}
+                Find your VPN
                 <ChevronRight className="h-4 w-4" />
-              </a>
+              </Link>
             </div>
           </CardContent>
         </Card>

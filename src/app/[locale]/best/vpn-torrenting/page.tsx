@@ -4,10 +4,7 @@ import { OG_LOCALE_MAP, generateAlternates, getLocalizedMonthYear, getShortMonth
 import { LastUpdated } from "@/components/last-updated";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { RankedVpnRow } from "@/components/vpn/ranked-vpn-row";
-import { RatingStars } from "@/components/vpn/rating-stars";
-import { VpnLogo } from "@/components/ui/vpn-logo";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
@@ -490,7 +487,7 @@ export default async function VpnTorrentingPage({ params }: Props) {
                   key={index}
                   name={item.vpn?.name || ""}
                   vpnId={item.vpn?.slug || ""}
-                  affiliateUrl={item.vpn?.affiliateUrl || ""}
+                  affiliateUrl=""
                   rating={item.vpn?.overallRating}
                   rank={index + 1}
                   logo
@@ -593,9 +590,13 @@ export default async function VpnTorrentingPage({ params }: Props) {
             <p className="text-xl mb-8 opacity-90">{t.ctaSubtitle}</p>
             <div className="flex flex-wrap justify-center gap-4">
               {torrentVpns.slice(0, 3).map((item) => (
-                <AffiliateButton key={item.vpn?.slug} vpnId={item.vpn?.slug || ""} vpnName={item.vpn?.name || ""} affiliateUrl={item.vpn?.affiliateUrl || ""} className="bg-white text-green-600 hover:bg-gray-100 dark:bg-gray-800 dark:text-green-400 dark:hover:bg-gray-700">
-                  {t.getVpnButton} {item.vpn?.name}
-                </AffiliateButton>
+                <Link
+                  key={item.vpn?.slug}
+                  href={`/reviews/${item.vpn?.slug}`}
+                  className="inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2 font-semibold text-green-600 hover:bg-gray-100 dark:bg-gray-800 dark:text-green-400 dark:hover:bg-gray-700"
+                >
+                  Read {item.vpn?.name} review <ArrowRight className="h-4 w-4" />
+                </Link>
               ))}
             </div>
           </div>

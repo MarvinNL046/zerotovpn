@@ -121,7 +121,7 @@ export default async function GamingVpnPage({ params }: Props) {
       protocol: "NordLynx (WireGuard)",
       avgPing: "~8ms",
       devices: "10",
-      countries: "127",
+      countries: "118",
       specialFeatures: ["Smart Ping List", "DDoS Protection", "Live Latency"],
       price: "$3.09/mo",
     },

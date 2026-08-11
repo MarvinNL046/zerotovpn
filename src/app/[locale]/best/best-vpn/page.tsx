@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ComparisonTable } from "@/components/vpn/comparison-table";
-import { AffiliateButton } from "@/components/vpn/affiliate-button";
+import { AffiliateButton, AffiliateTextLink } from "@/components/vpn/affiliate-button";
 import { RatingStars } from "@/components/vpn/rating-stars";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { getRelatedContent, reviewLink } from "@/lib/content-links";
@@ -15,6 +15,10 @@ import { getAllVpns, type VpnProvider } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
 import { OG_LOCALE_MAP, generateAlternates, getLocalizedMonthYear, titelMetMerk } from "@/lib/seo-utils";
 import { LastUpdated } from "@/components/last-updated";
+import {
+  BestVpnEditorialTemplate,
+  EditorialQuickPickCard,
+} from "@/components/editorial/best-vpn-editorial-template";
 import {
   Zap,
   Globe,
@@ -569,6 +573,11 @@ export default async function BestVpnPage({ params }: Props) {
 
   const t = content[locale as keyof typeof content] || content.en;
 
+  // Keep the editorial deep dives focused like a magazine-style best-picks
+  // page. The full provider set remains available in the comparison table and
+  // review directory below.
+  const rankedVpns = allVpns.slice(0, 10);
+
   // Build related content links
   const topVpnLinks = allVpns
     .slice(0, 5)
@@ -620,103 +629,52 @@ export default async function BestVpnPage({ params }: Props) {
           </div>
         </section>
 
+        <BestVpnEditorialTemplate
+          navigation={[
+            { href: "#quick-picks", label: "Quick picks" },
+            { href: "#rankings", label: "Rankings" },
+            { href: "#comparison", label: "Compare" },
+            { href: "#faq", label: "FAQs" },
+            { href: "#methodology", label: "How we test" },
+          ]}
+        >
         {/* Quick Picks Section */}
-        <section className="py-12 border-y bg-muted/30">
+        <section id="quick-picks" className="scroll-mt-20 py-12 border-y bg-muted/30">
           <div className="container">
             <h2 className="text-2xl font-bold text-center mb-8">{t.quickPicks}</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* Best Overall */}
               {bestOverall && (
-                <Card className="relative border-2 border-yellow-500/50 bg-gradient-to-b from-yellow-500/5 to-transparent">
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <Badge className="bg-yellow-500 text-yellow-950">
-                      <Crown className="h-3 w-3 mr-1" />
-                      {t.bestOverall}
-                    </Badge>
-                  </div>
-                  <CardContent className="pt-8 text-center space-y-4">
-                    <h3 className="text-2xl font-bold">{bestOverall.name}</h3>
-                    <RatingStars rating={bestOverall.overallRating} size="md" />
-                    <p className="text-sm text-muted-foreground">{bestOverall.shortDescription}</p>
-                    <div className="text-3xl font-bold text-primary">
-                      ${bestOverall.priceTwoYear || bestOverall.priceYearly}
-                      <span className="text-sm font-normal text-muted-foreground">/mo</span>
-                    </div>
-                    <AffiliateButton
-                      vpnId={bestOverall.id}
-                      vpnName={bestOverall.name}
-                      affiliateUrl={bestOverall.affiliateUrl}
-                      className="w-full"
-                    >
-                      Get {bestOverall.name}
-                    </AffiliateButton>
-                  </CardContent>
-                </Card>
+                <EditorialQuickPickCard
+                  vpn={bestOverall}
+                  label={t.bestOverall}
+                  tone="gold"
+                  icon={<Crown className="mr-1 h-3 w-3" />}
+                />
               )}
 
-              {/* Best Value */}
               {bestValue && (
-                <Card className="relative border-2 border-green-500/50 bg-gradient-to-b from-green-500/5 to-transparent">
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <Badge className="bg-green-500 text-green-950">
-                      <TrendingUp className="h-3 w-3 mr-1" />
-                      {t.bestValue}
-                    </Badge>
-                  </div>
-                  <CardContent className="pt-8 text-center space-y-4">
-                    <h3 className="text-2xl font-bold">{bestValue.name}</h3>
-                    <RatingStars rating={bestValue.overallRating} size="md" />
-                    <p className="text-sm text-muted-foreground">{bestValue.shortDescription}</p>
-                    <div className="text-3xl font-bold text-primary">
-                      ${bestValue.priceTwoYear || bestValue.priceYearly}
-                      <span className="text-sm font-normal text-muted-foreground">/mo</span>
-                    </div>
-                    <AffiliateButton
-                      vpnId={bestValue.id}
-                      vpnName={bestValue.name}
-                      affiliateUrl={bestValue.affiliateUrl}
-                      className="w-full"
-                    >
-                      Get {bestValue.name}
-                    </AffiliateButton>
-                  </CardContent>
-                </Card>
+                <EditorialQuickPickCard
+                  vpn={bestValue}
+                  label={t.bestValue}
+                  tone="green"
+                  icon={<TrendingUp className="mr-1 h-3 w-3" />}
+                />
               )}
 
-              {/* Fastest VPN */}
               {bestSpeed && (
-                <Card className="relative border-2 border-blue-500/50 bg-gradient-to-b from-blue-500/5 to-transparent">
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <Badge className="bg-blue-500 text-blue-950">
-                      <Zap className="h-3 w-3 mr-1" />
-                      {t.bestSpeed}
-                    </Badge>
-                  </div>
-                  <CardContent className="pt-8 text-center space-y-4">
-                    <h3 className="text-2xl font-bold">{bestSpeed.name}</h3>
-                    <RatingStars rating={bestSpeed.overallRating} size="md" />
-                    <p className="text-sm text-muted-foreground">{bestSpeed.shortDescription}</p>
-                    <div className="text-3xl font-bold text-primary">
-                      ${bestSpeed.priceTwoYear || bestSpeed.priceYearly}
-                      <span className="text-sm font-normal text-muted-foreground">/mo</span>
-                    </div>
-                    <AffiliateButton
-                      vpnId={bestSpeed.id}
-                      vpnName={bestSpeed.name}
-                      affiliateUrl={bestSpeed.affiliateUrl}
-                      className="w-full"
-                    >
-                      Get {bestSpeed.name}
-                    </AffiliateButton>
-                  </CardContent>
-                </Card>
+                <EditorialQuickPickCard
+                  vpn={bestSpeed}
+                  label={t.bestSpeed}
+                  tone="blue"
+                  icon={<Zap className="mr-1 h-3 w-3" />}
+                />
               )}
             </div>
           </div>
         </section>
 
         {/* Top Rated VPNs - Full Cards */}
-        <section className="py-16 lg:py-24">
+        <section id="rankings" className="scroll-mt-20 py-16 lg:py-24">
           <div className="container">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">{t.topRated}</h2>
@@ -726,7 +684,7 @@ export default async function BestVpnPage({ params }: Props) {
             </div>
 
             <div className="space-y-8">
-              {allVpns.map((vpn, index) => (
+              {rankedVpns.map((vpn, index) => (
                 <Card key={vpn.id} className="overflow-hidden">
                   <div className="flex flex-col lg:flex-row">
                     {/* Rank Badge */}
@@ -748,7 +706,11 @@ export default async function BestVpnPage({ params }: Props) {
                         {/* VPN Info */}
                         <div className="flex-1 space-y-4">
                           <div className="flex items-center gap-3">
-                            <h3 className="text-2xl font-bold">{vpn.name}</h3>
+                            <h3 className="text-2xl font-bold">
+                              <Link href={`/reviews/${vpn.slug}`} className="hover:text-primary">
+                                {vpn.name}
+                              </Link>
+                            </h3>
                             {vpn.editorChoice && (
                               <Badge className="bg-yellow-500 text-yellow-950">
                                 Editor&apos;s Choice
@@ -788,6 +750,16 @@ export default async function BestVpnPage({ params }: Props) {
                               </div>
                             ))}
                           </div>
+
+                          {/* Cons are shown beside the strengths so the ranking remains transparent. */}
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
+                            {vpn.cons.slice(0, 2).map((con, i) => (
+                              <div key={i} className="flex items-start gap-2 text-muted-foreground">
+                                <span aria-hidden="true" className="mt-0.5 text-red-500">−</span>
+                                <span>{con}</span>
+                              </div>
+                            ))}
+                          </div>
                         </div>
 
                         {/* Price & CTA */}
@@ -798,6 +770,43 @@ export default async function BestVpnPage({ params }: Props) {
                               ${vpn.priceTwoYear || vpn.priceYearly}
                             </div>
                             <div className="text-sm text-muted-foreground">/month</div>
+                            <div className="mt-3 space-y-1 border-t pt-3 text-left text-xs text-muted-foreground">
+                              <div className="flex justify-between gap-3">
+                                <span>Monthly</span>
+                                <AffiliateTextLink
+                                  vpnId={vpn.id}
+                                  vpnName={vpn.name}
+                                  affiliateUrl={vpn.affiliateUrl}
+                                  className="font-medium text-foreground underline decoration-primary/40 underline-offset-2 hover:decoration-primary"
+                                >
+                                  ${vpn.priceMonthly.toFixed(2)}/mo
+                                </AffiliateTextLink>
+                              </div>
+                              <div className="flex justify-between gap-3">
+                                <span>Annual</span>
+                                <AffiliateTextLink
+                                  vpnId={vpn.id}
+                                  vpnName={vpn.name}
+                                  affiliateUrl={vpn.affiliateUrl}
+                                  className="font-medium text-foreground underline decoration-primary/40 underline-offset-2 hover:decoration-primary"
+                                >
+                                  ${vpn.priceYearly.toFixed(2)}/mo
+                                </AffiliateTextLink>
+                              </div>
+                              {vpn.priceTwoYear ? (
+                                <div className="flex justify-between gap-3">
+                                  <span>2-year plan</span>
+                                  <AffiliateTextLink
+                                    vpnId={vpn.id}
+                                    vpnName={vpn.name}
+                                    affiliateUrl={vpn.affiliateUrl}
+                                    className="font-medium text-foreground underline decoration-primary/40 underline-offset-2 hover:decoration-primary"
+                                  >
+                                    ${vpn.priceTwoYear.toFixed(2)}/mo
+                                  </AffiliateTextLink>
+                                </div>
+                              ) : null}
+                            </div>
                           </div>
                           <div className="space-y-2">
                             <AffiliateButton
@@ -807,7 +816,7 @@ export default async function BestVpnPage({ params }: Props) {
                               className="w-full"
                               size="lg"
                             >
-                              Get {vpn.name}
+                              Visit {vpn.name}
                             </AffiliateButton>
                             <Button variant="outline" className="w-full" asChild>
                               <Link href={`/reviews/${vpn.slug}`}>
@@ -830,7 +839,7 @@ export default async function BestVpnPage({ params }: Props) {
         </section>
 
         {/* Why Trust Us */}
-        <section className="py-16 bg-muted/30">
+        <section id="methodology" className="scroll-mt-20 py-16 bg-muted/30">
           <div className="container">
             <div className="max-w-3xl mx-auto">
               <div className="text-center mb-8">
@@ -850,7 +859,7 @@ export default async function BestVpnPage({ params }: Props) {
         </section>
 
         {/* Comparison Table */}
-        <section className="py-16 lg:py-24">
+        <section id="comparison" className="scroll-mt-20 py-16 lg:py-24">
           <div className="container">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">{t.comparisonTitle}</h2>
@@ -863,7 +872,7 @@ export default async function BestVpnPage({ params }: Props) {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-16 bg-muted/30">
+        <section id="faq" className="scroll-mt-20 py-16 bg-muted/30">
           <div className="container">
             <div className="max-w-3xl mx-auto">
               <FAQSchema
@@ -871,7 +880,7 @@ export default async function BestVpnPage({ params }: Props) {
                 faqs={[
                   {
                     question: "What is the best VPN in 2026?",
-                    answer: "Based on our extensive testing, NordVPN is the best VPN in 2026. It offers the best combination of speed (up to 6,730 Mbps), security features (AES-256 encryption, kill switch, no-logs policy), and streaming capabilities at a competitive price of $3.09/month. With 7,000+ servers in 127 countries and excellent 24/7 support, it's our top choice for most users."
+                    answer: "Based on our extensive testing, NordVPN is the best VPN in 2026. It offers the best combination of speed (up to 6,730 Mbps), security features (AES-256 encryption, kill switch, no-logs policy), and streaming capabilities at a competitive price of $3.09/month. With 7,000+ servers in 118 countries and excellent 24/7 support, it's our top choice for most users."
                   },
                   {
                     question: "Are VPNs legal to use?",
@@ -945,6 +954,7 @@ export default async function BestVpnPage({ params }: Props) {
             />
           </div>
         </section>
+        </BestVpnEditorialTemplate>
       </div>
     </>
   );

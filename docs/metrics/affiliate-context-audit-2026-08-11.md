@@ -1,6 +1,6 @@
 # Live affiliate context audit
 
-Generated: 2026-08-11T18:38:24.867Z
+Generated: 2026-08-11T18:54:22.397Z
 
 - Sitemap URLs discovered: **2279**
 - URLs checked: **2279**
@@ -8,7 +8,7 @@ Generated: 2026-08-11T18:38:24.867Z
 - Affiliate links checked: **8216**
 - Pages with missing `sponsored` + `nofollow`: **0**
 - Affiliate pages without visible disclosure text: **0**
-- Affiliate pages with promotion terms requiring review: **32**
+- Affiliate pages with promotion terms requiring review: **22**
 - Pages with interruptive-promotion markers: **0**
 - Non-200 fetches: **0**
 
@@ -16,8 +16,6 @@ Generated: 2026-08-11T18:38:24.867Z
 
 | Status | URL | Affiliate links | Missing rel | Disclosure | Flags |
 |---:|---|---:|---:|---|---|
-| 200 | https://www.zerotovpn.com/best/vpn-android-tablet | 5 | 0 | yes | \b\d{1,3}%\s*(?:off|discount) |
-| 200 | https://www.zerotovpn.com/ja/best/vpn-android-tablet | 5 | 0 | yes | \b\d{1,3}%\s*(?:off|discount) |
 | 200 | https://www.zerotovpn.com/best/vpn-free-trial | 7 | 0 | yes | free\s+(?:months?|trial) |
 | 200 | https://www.zerotovpn.com/nl/best/vpn-free-trial | 7 | 0 | yes | free\s+(?:months?|trial) |
 | 200 | https://www.zerotovpn.com/de/best/vpn-free-trial | 7 | 0 | yes | free\s+(?:months?|trial) |
@@ -27,14 +25,6 @@ Generated: 2026-08-11T18:38:24.867Z
 | 200 | https://www.zerotovpn.com/ja/best/vpn-free-trial | 7 | 0 | yes | free\s+(?:months?|trial) |
 | 200 | https://www.zerotovpn.com/ko/best/vpn-free-trial | 7 | 0 | yes | free\s+(?:months?|trial) |
 | 200 | https://www.zerotovpn.com/th/best/vpn-free-trial | 7 | 0 | yes | free\s+(?:months?|trial) |
-| 200 | https://www.zerotovpn.com/best/vpn-ipad | 6 | 0 | yes | \b\d{1,3}%\s*(?:off|discount) |
-| 200 | https://www.zerotovpn.com/ja/best/vpn-ipad | 6 | 0 | yes | \b\d{1,3}%\s*(?:off|discount) |
-| 200 | https://www.zerotovpn.com/best/vpn-mobile | 6 | 0 | yes | \b\d{1,3}%\s*(?:off|discount) |
-| 200 | https://www.zerotovpn.com/ja/best/vpn-mobile | 6 | 0 | yes | \b\d{1,3}%\s*(?:off|discount) |
-| 200 | https://www.zerotovpn.com/best/vpn-tablet | 6 | 0 | yes | \b\d{1,3}%\s*(?:off|discount) |
-| 200 | https://www.zerotovpn.com/ja/best/vpn-tablet | 6 | 0 | yes | \b\d{1,3}%\s*(?:off|discount) |
-| 200 | https://www.zerotovpn.com/best/vpn-windows-tablet | 6 | 0 | yes | \b\d{1,3}%\s*(?:off|discount) |
-| 200 | https://www.zerotovpn.com/ja/best/vpn-windows-tablet | 6 | 0 | yes | \b\d{1,3}%\s*(?:off|discount) |
 | 200 | https://www.zerotovpn.com/reviews/cactusvpn | 3 | 0 | yes | free\s+(?:months?|trial) |
 | 200 | https://www.zerotovpn.com/nl/reviews/cactusvpn | 3 | 0 | yes | free\s+(?:months?|trial) |
 | 200 | https://www.zerotovpn.com/de/reviews/cactusvpn | 3 | 0 | yes | free\s+(?:months?|trial) |

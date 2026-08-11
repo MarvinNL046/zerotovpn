@@ -101,7 +101,7 @@ export default async function EditorialPolicyPage({ params }: Props) {
             The report surface that readers use for comparison is the <Link href="/reports/vpn-transparency-performance-index-2026" className="text-primary hover:underline">Transparency &amp; Performance Index</Link>.
           </p>
           <p>
-            We do not promise that a VPN is "perfect". We publish trade-offs and context so readers can choose by use case.
+            We do not promise that a VPN is &quot;perfect&quot;. We publish trade-offs and context so readers can choose by use case.
           </p>
           <div className="rounded-xl border bg-card p-5">
             <p className="text-sm">

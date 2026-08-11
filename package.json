@@ -20,7 +20,7 @@
     "measure:editorial": "node scripts/measure-editorial.mjs",
     "test:measure-editorial": "node scripts/test-measure-editorial.mjs",
     "prebuild": "npm run generate:sitemap-routes",
-    "build": "next build",
+    "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint"
   },

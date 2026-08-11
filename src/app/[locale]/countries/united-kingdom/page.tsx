@@ -477,7 +477,7 @@ export default async function UnitedKingdomVpnPage({ params }: Props) {
                   </Badge>
                   <Badge variant="outline" className="bg-yellow-50 dark:bg-yellow-950 text-yellow-700 dark:text-yellow-300 border-yellow-200">
                     <Ban className="h-3 w-3 mr-1" />
-                    Snooper's Charter active
+                    Snooper&apos;s Charter active
                   </Badge>
                 </div>
               </div>

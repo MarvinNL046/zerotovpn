@@ -2,6 +2,8 @@
 
 import { useEffect, useRef } from "react";
 
+type AdsenseQueue = { push: (value: Record<string, unknown>) => void };
+
 export default function InlineAd({ className = "" }: { className?: string }) {
   const adRef = useRef<HTMLDivElement>(null);
   const pushed = useRef(false);
@@ -9,8 +11,8 @@ export default function InlineAd({ className = "" }: { className?: string }) {
   useEffect(() => {
     if (pushed.current) return;
     try {
-      const adsbygoogle = (window as any).adsbygoogle || [];
-      adsbygoogle.push({});
+      const adsbygoogle = (window as Window & { adsbygoogle?: AdsenseQueue }).adsbygoogle;
+      adsbygoogle?.push({});
       pushed.current = true;
     } catch {}
   }, []);

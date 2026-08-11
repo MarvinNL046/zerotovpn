@@ -2,14 +2,16 @@
 
 import { useEffect, useRef } from "react";
 
+type AdsenseQueue = { push: (value: Record<string, unknown>) => void };
+
 export default function SidebarAd() {
   const pushed = useRef(false);
 
   useEffect(() => {
     if (pushed.current) return;
     try {
-      const adsbygoogle = (window as any).adsbygoogle || [];
-      adsbygoogle.push({});
+      const adsbygoogle = (window as Window & { adsbygoogle?: AdsenseQueue }).adsbygoogle;
+      adsbygoogle?.push({});
       pushed.current = true;
     } catch {}
   }, []);

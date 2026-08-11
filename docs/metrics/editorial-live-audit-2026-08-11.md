@@ -1,6 +1,6 @@
 # Live editorial page audit
 
-Generated: 2026-08-11T19:35:55.684Z
+Generated: 2026-08-11T19:48:11.306Z
 
 - Target pages: **10**
 - Passing pages: **10**
@@ -8,6 +8,9 @@ Generated: 2026-08-11T19:35:55.684Z
 - Affiliate links checked: **72**
 - Affiliate links missing sponsored/nofollow: **0**
 - Missing required cluster links: **0**
+- Pages missing complete Open Graph metadata: **0**
+- Pages missing complete Twitter metadata: **0**
+- Pages failing image alt/dimension checks: **0**
 
 | Status | Page | Title | H1s | Internal links | Affiliate links | Missing required IDs | Missing cluster links |
 |---|---|---|---:|---:|---:|---|---|

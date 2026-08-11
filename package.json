@@ -8,6 +8,7 @@
     "seo:iran": "node scripts/iran-seo-research.mjs",
     "seo:telegram": "node scripts/telegram-seo-research.mjs",
     "seo:russia": "node scripts/russia-seo-research.mjs",
+    "seo:china": "node scripts/china-seo-research.mjs",
     "prebuild": "npm run generate:sitemap-routes",
     "build": "next build",
     "start": "next start",

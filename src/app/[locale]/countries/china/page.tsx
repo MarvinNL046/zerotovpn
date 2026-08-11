@@ -23,6 +23,7 @@ import {
   Ban,
   CheckCircle,
 } from "lucide-react";
+import { ChinaVpnEditorialPage } from "@/components/editorial/china-vpn-editorial-page";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -34,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
   const titles: Record<string, string> = {
-    en: "Best VPN for China 2026: Bypass the Great Firewall | ZeroToVPN",
+    en: "VPN for China in 2026: What to Verify Before You Connect | ZeroToVPN",
     nl: "Beste VPN voor China 2026: Omzeil de Chinese Firewall | ZeroToVPN",
     de: "Beste VPN für China 2026: Die Große Firewall umgehen | ZeroToVPN",
     es: "Mejor VPN para China 2026: Evita el Gran Cortafuegos | ZeroToVPN",
@@ -46,7 +47,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const descriptions: Record<string, string> = {
-    en: "Find VPNs that actually work in China in 2026. Expert-tested solutions to bypass the Great Firewall. Download before you travel!",
+    en: "China's internet environment is highly restricted and can change by network and date. Compare obfuscation, preparation, legal uncertainty and a bounded VPN test plan.",
     nl: "Vind VPNs die echt werken in China in 2026. Expert-geteste oplossingen om de Chinese Firewall te omzeilen.",
     de: "Finden Sie VPNs, die 2026 tatsächlich in China funktionieren. Expertentestete Lösungen zur Umgehung der Großen Firewall.",
     es: "Encuentra VPNs que realmente funcionan en China en 2026. Soluciones probadas por expertos para evitar el Gran Cortafuegos.",
@@ -72,7 +73,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 // Country-specific schema
-function CountryVpnSchema({ vpns, locale }: { vpns: VpnProvider[]; locale: string }) {
+function CountryVpnSchema({ vpns }: { vpns: VpnProvider[] }) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -125,10 +126,9 @@ export default async function ChinaVpnPage({ params }: Props) {
     ["expressvpn", "astrill", "surfshark"].includes(vpn.slug)
   );
 
-  // VPNs that sometimes work (~70% success rate)
-  const sometimesWorkVpns = allVpns.filter((vpn) =>
-    ["nordvpn"].includes(vpn.slug)
-  );
+  if (locale === "en") {
+    return <ChinaVpnEditorialPage vpns={allVpns} />;
+  }
 
   const content = {
     en: {
@@ -1240,7 +1240,7 @@ export default async function ChinaVpnPage({ params }: Props) {
   return (
     <>
       <FaqSchema faqs={t.faqs.map((f) => ({ question: f.q, answer: f.a }))} />
-      <CountryVpnSchema vpns={topChinaVpns} locale={locale} />
+      <CountryVpnSchema vpns={topChinaVpns} />
 
       <div className="flex flex-col">
         {/* Breadcrumbs */}

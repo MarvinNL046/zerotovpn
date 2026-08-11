@@ -1,0 +1,140 @@
+import { mkdir, writeFile } from "node:fs/promises";
+import { resolve } from "node:path";
+
+const ROOT = resolve(import.meta.dirname, "..");
+const BASE = "https://www.zerotovpn.com";
+const timeoutMs = Math.max(1000, Number(process.env.EDITORIAL_AUDIT_TIMEOUT_MS ?? 15000));
+
+const targets = [
+  { path: "/best/best-vpn", name: "Best VPN commercial pillar", ids: ["comparison", "methodology", "faq"], expectFaq: true },
+  { path: "/blog/best-vpn-for-iran-2026-bypass-internet-censorship", name: "Iran editorial hub", ids: ["cluster-links", "quick-picks", "sources"], expectFaq: true },
+  { path: "/blog/best-vpn-for-telegram-2026", name: "Telegram editorial hub", ids: ["cluster-links", "quick-picks", "sources"], expectFaq: true },
+  { path: "/countries/russia", name: "Russia country cluster", ids: ["faq", "sources"], expectFaq: true },
+  { path: "/countries/china", name: "China country cluster", ids: ["faq", "sources"], expectFaq: true },
+  { path: "/guides/vpn-protocols-explained", name: "Protocol support page", ids: ["comparison", "test-plan", "faq"], expectFaq: true },
+  { path: "/guides/vpn-obfuscation-explained", name: "Obfuscation support page", ids: ["compare", "test-plan", "faq"], expectFaq: true },
+  { path: "/guides/vpn-for-restricted-networks", name: "Restricted-network support page", ids: ["restriction-types", "prepare", "test-plan", "faq"], expectFaq: true },
+  { path: "/guides/vpn-for-travel", name: "Travel support page", ids: ["prepare", "compare", "faq"], expectFaq: true },
+  { path: "/best/free-vpn", name: "Free VPN support page", ids: ["free-tiers", "safety", "faq"], expectFaq: true, expectTable: false },
+];
+
+const affiliateHref = /(?:go\.zerotovpn\.com|go\.nordvpn\.net|nordvpn\.tpo\.lv|[?&](?:offer_id|aff_id|url_id)=)/i;
+
+function normalizeUrl(value) {
+  try {
+    const url = new URL(value, BASE);
+    url.hash = "";
+    if (url.pathname.length > 1) url.pathname = url.pathname.replace(/\/$/, "");
+    return url.toString();
+  } catch {
+    return value;
+  }
+}
+
+function firstMatch(html, pattern) {
+  return html.match(pattern)?.[1]?.trim() ?? null;
+}
+
+function extractMeta(html) {
+  const title = firstMatch(html, /<title[^>]*>([\s\S]*?)<\/title>/i)?.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim() ?? null;
+  const description = firstMatch(html, /<meta[^>]+name=["']description["'][^>]+content=["']([^"']*)["']/i)
+    ?? firstMatch(html, /<meta[^>]+content=["']([^"']*)["'][^>]+name=["']description["']/i);
+  const canonical = firstMatch(html, /<link[^>]+rel=["'][^"']*canonical[^"']*["'][^>]+href=["']([^"']+)["']/i)
+    ?? firstMatch(html, /<link[^>]+href=["']([^"']+)["'][^>]+rel=["'][^"']*canonical[^"']*["']/i);
+  const robots = firstMatch(html, /<meta[^>]+name=["']robots["'][^>]+content=["']([^"']+)["']/i)
+    ?? firstMatch(html, /<meta[^>]+content=["']([^"']+)["'][^>]+name=["']robots["']/i);
+  return { title, description, canonical, robots };
+}
+
+function extractAnchors(html) {
+  return [...html.matchAll(/<a\b([^>]*)>/gi)].map((match) => {
+    const attrs = match[1];
+    return {
+      href: attrs.match(/\bhref=["']([^"']+)["']/i)?.[1] ?? "",
+      rel: attrs.match(/\brel=["']([^"']*)["']/i)?.[1]?.split(/\s+/).filter(Boolean) ?? [],
+    };
+  });
+}
+
+function extractSignals(html, target, url) {
+  const meta = extractMeta(html);
+  const anchors = extractAnchors(html);
+  const internalLinks = anchors.filter(({ href }) => href.startsWith("/") || href.startsWith(BASE)).length;
+  const affiliateLinks = anchors.filter(({ href }) => affiliateHref.test(href));
+  const missingAffiliateRel = affiliateLinks.filter(({ rel }) => !rel.includes("sponsored") || !rel.includes("nofollow"));
+  const hasDisclosure = /affiliate links? may earn|affiliate disclosure|commission/i.test(html) || /href=["'][^"']*affiliate-disclosure/i.test(html);
+  const hasMethodology = /href=["'][^"']*(?:methodology|how-we-test)/i.test(html);
+  const faqSchema = /["']@type["']\s*:\s*["']FAQPage["']/i.test(html);
+  const missingIds = target.ids.filter((id) => !new RegExp(`(?:id|aria-labelledby)=["']${id}["']`, "i").test(html));
+  const canonicalAbsolute = meta.canonical ? normalizeUrl(new URL(meta.canonical, url).toString()) : null;
+  const checks = {
+    status200: true,
+    title: Boolean(meta.title),
+    description: Boolean(meta.description),
+    selfCanonical: canonicalAbsolute === normalizeUrl(url),
+    indexable: !/(?:^|[\s,])noindex(?:$|[\s,])/i.test(meta.robots ?? ""),
+    oneH1: [...html.matchAll(/<h1\b/gi)].length === 1,
+    disclosure: hasDisclosure,
+    methodology: hasMethodology,
+    table: target.expectTable === false || /<table\b/i.test(html),
+    internalLinks: internalLinks >= 3,
+    affiliateRel: missingAffiliateRel.length === 0,
+    requiredIds: missingIds.length === 0,
+    faqSchema: !target.expectFaq || faqSchema,
+  };
+  return {
+    ...meta,
+    h1Count: [...html.matchAll(/<h1\b/gi)].length,
+    internalLinkCount: internalLinks,
+    tableCount: [...html.matchAll(/<table\b/gi)].length,
+    affiliateLinkCount: affiliateLinks.length,
+    missingAffiliateRelCount: missingAffiliateRel.length,
+    missingIds,
+    faqSchema,
+    checks,
+    ok: Object.values(checks).every(Boolean),
+  };
+}
+
+async function fetchTarget(target) {
+  const url = `${BASE}${target.path}`;
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  const started = Date.now();
+  try {
+    const response = await fetch(url, { redirect: "follow", signal: controller.signal, headers: { "user-agent": "ZeroToVPN-editorial-audit/1.0" } });
+    const html = response.headers.get("content-type")?.includes("text/html") ? await response.text() : "";
+    const signals = extractSignals(html, target, response.url || url);
+    return { ...target, url, status: response.status, finalUrl: response.url, durationMs: Date.now() - started, ...signals, checks: { ...signals.checks, status200: response.status === 200 }, ok: response.status === 200 && signals.ok };
+  } catch (error) {
+    return { ...target, url, status: null, durationMs: Date.now() - started, ok: false, error: error instanceof Error ? error.message : String(error) };
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+const records = await Promise.all(targets.map(fetchTarget));
+const summary = {
+  generatedAt: new Date().toISOString(),
+  targetCount: records.length,
+  okCount: records.filter((record) => record.ok).length,
+  failedCount: records.filter((record) => !record.ok).length,
+  affiliateLinkCount: records.reduce((sum, record) => sum + (record.affiliateLinkCount ?? 0), 0),
+  missingAffiliateRelCount: records.reduce((sum, record) => sum + (record.missingAffiliateRelCount ?? 0), 0),
+};
+const payload = { schemaVersion: 1, summary, records };
+const outDir = resolve(ROOT, "docs", "metrics");
+await mkdir(outDir, { recursive: true });
+const label = new Date().toISOString().slice(0, 10);
+const jsonPath = resolve(outDir, `editorial-live-audit-${label}.json`);
+const mdPath = resolve(outDir, `editorial-live-audit-${label}.md`);
+await writeFile(jsonPath, `${JSON.stringify(payload, null, 2)}\n`, "utf8");
+const rows = records.map((record) => `| ${record.ok ? "pass" : "FAIL"} | ${record.path} | ${record.title ?? ""} | ${record.h1Count ?? "n/a"} | ${record.internalLinkCount ?? "n/a"} | ${record.affiliateLinkCount ?? "n/a"} | ${record.missingIds?.join(", ") || "—"} |`);
+const markdown = [
+  "# Live editorial page audit", "", `Generated: ${summary.generatedAt}`, "",
+  `- Target pages: **${summary.targetCount}**`, `- Passing pages: **${summary.okCount}**`, `- Pages needing review: **${summary.failedCount}**`, `- Affiliate links checked: **${summary.affiliateLinkCount}**`, `- Affiliate links missing sponsored/nofollow: **${summary.missingAffiliateRelCount}**`, "",
+  "| Status | Page | Title | H1s | Internal links | Affiliate links | Missing required IDs |", "|---|---|---|---:|---:|---:|---|", ...rows, "", `Raw records: [editorial-live-audit-${label}.json](./editorial-live-audit-${label}.json)`,
+].join("\n") + "\n";
+await writeFile(mdPath, markdown, "utf8");
+console.log(JSON.stringify({ summary, jsonPath, mdPath }, null, 2));
+if (summary.failedCount > 0) process.exitCode = 1;

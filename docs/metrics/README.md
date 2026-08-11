@@ -23,6 +23,14 @@ Run the importer regression suite before using a new export format:
 npm run test:measure-editorial
 ```
 
+Run the page-level release gate against the current English commercial and cluster pages:
+
+```powershell
+npm run audit:editorial-live
+```
+
+This checks metadata, canonical/indexability, one H1, disclosure, methodology, tables where the page type requires them, FAQ schema, required section anchors, internal links and affiliate `sponsored nofollow` attributes. Card-based pages such as `/best/free-vpn` explicitly opt out of the table check because their free-tier comparison is represented as structured cards.
+
 Required comparison discipline:
 
 - Keep the same Search Console property, search type, country/device filters and date-window length.

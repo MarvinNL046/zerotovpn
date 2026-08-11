@@ -47,7 +47,7 @@ const checks = [
     name: "homepage evidence-bounded recommendation",
     file: "src/app/[locale]/page.tsx",
     patterns: [/Shortlist candidate/, /catalog data and documented options/, /Provider-stated countries/, /Refund window in catalog/],
-    forbiddenPatterns: [/After testing 38\+ VPNs/, /consistently ranks #1/, /94%.*Speed Retention/, /4\.8\/5.*Our Rating/],
+    forbiddenPatterns: [/After testing 38\+ VPNs/, /consistently ranks #1/, /94%.*Speed Retention/, /4\.8\/5.*Our Rating/, /50\+/, /100K\+/, /500\+ speed tests/, /24\/7.*Updated/],
   },
   {
     name: "Obfuscation support page",
@@ -79,6 +79,11 @@ const checks = [
     name: "retired free VPN translations are not serialized to clients",
     file: "src/app/[locale]/layout.tsx",
     patterns: [/const clientMessages = \{ \.\.\.messages \}/, /delete clientMessages\.freeVpn/, /messages=\{clientMessages\}/],
+  },
+  {
+    name: "retired homepage trust claims are not serialized to clients",
+    file: "src/app/[locale]/layout.tsx",
+    patterns: [/delete clientMessages\.home\?\.trustIndicators/],
   },
   {
     name: "newsletter-only exit intent popup",

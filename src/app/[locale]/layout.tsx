@@ -136,6 +136,9 @@ export default async function LocaleLayout({ children, params }: Props) {
   // cannot reappear in serialized HTML while localized copy is rebuilt.
   const clientMessages = { ...messages };
   delete clientMessages.freeVpn;
+  // The homepage now renders evidence signals from live catalog state; do not
+  // serialize the retired traffic/test-count claims from the message bundle.
+  delete clientMessages.home?.trustIndicators;
 
   return (
     <ThemeProvider

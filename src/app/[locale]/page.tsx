@@ -7,7 +7,7 @@ import { VpnCard } from "@/components/vpn/vpn-card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { getFeaturedVpns } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
-import { Shield, Zap, Globe, CheckCircle, ArrowRight, Server, Users, Clock, FlaskConical, BarChart3, FileSpreadsheet } from "lucide-react";
+import { Shield, Zap, Globe, CheckCircle, ArrowRight, FlaskConical, BarChart3, FileSpreadsheet } from "lucide-react";
 import {
   ComparisonTableSchema,
 } from "@/components/structured-data";
@@ -80,6 +80,7 @@ export default async function HomePage({ params }: Props) {
 
   const featuredVpns = await getFeaturedVpns();
   const nordvpn = featuredVpns.find((vpn) => vpn.slug === "nordvpn") ?? null;
+  const currentReview = getShortMonthYear();
 
   // Get FAQ data from translations
   const faqData = t.raw("faq") as Array<{ question: string; answer: string }>;
@@ -139,7 +140,7 @@ export default async function HomePage({ params }: Props) {
           </div>
         </section>
 
-        {/* Trust Indicators */}
+        {/* Evidence signals: deliberately bounded to verifiable site state. */}
         <section className="py-12 relative">
           {/* Soft gradient background that fades at edges */}
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-muted/40 to-transparent" />
@@ -150,43 +151,43 @@ export default async function HomePage({ params }: Props) {
                   <Shield className="h-6 w-6 text-primary" />
                 </div>
                 <div className="text-3xl font-bold text-primary mb-1">
-                  {t("trustIndicators.vpnsTested.value")}
+                  {featuredVpns.length}
                 </div>
                 <div className="text-sm text-muted-foreground">
-                  {t("trustIndicators.vpnsTested.label")}
+                  Providers in this comparison
                 </div>
               </div>
               <div className="text-center animate-fade-in-up stagger-2">
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-green-500/10 mb-3 icon-glow">
-                  <Users className="h-6 w-6 text-green-500" />
+                  <FileSpreadsheet className="h-6 w-6 text-green-500" />
                 </div>
                 <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-1">
-                  {t("trustIndicators.monthlyReaders.value")}
+                  2026
                 </div>
                 <div className="text-sm text-muted-foreground">
-                  {t("trustIndicators.monthlyReaders.label")}
+                  Transparency report
                 </div>
               </div>
               <div className="text-center animate-fade-in-up stagger-3">
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/10 mb-3 icon-glow">
-                  <Server className="h-6 w-6 text-blue-500" />
+                  <FlaskConical className="h-6 w-6 text-blue-500" />
                 </div>
                 <div className="text-3xl font-bold text-primary mb-1">
-                  {t("trustIndicators.speedTests.value")}
+                  Test plan
                 </div>
                 <div className="text-sm text-muted-foreground">
-                  {t("trustIndicators.speedTests.label")}
+                  Methodology and sources
                 </div>
               </div>
               <div className="text-center animate-fade-in-up stagger-4">
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-orange-500/10 mb-3 icon-glow">
-                  <Clock className="h-6 w-6 text-orange-500" />
+                  <BarChart3 className="h-6 w-6 text-orange-500" />
                 </div>
                 <div className="text-3xl font-bold text-primary mb-1">
-                  {t("trustIndicators.updated.value")}
+                  {currentReview}
                 </div>
                 <div className="text-sm text-muted-foreground">
-                  {t("trustIndicators.updated.label")}
+                  Last reviewed
                 </div>
               </div>
             </div>

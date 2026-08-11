@@ -14,6 +14,8 @@
 
 - **11 August 2026:** Cleared the repository release checks: `npm run lint` now exits successfully with warnings only, and the full 4,447-route production build passes with TypeScript and static generation. The build script now uses Next's Webpack builder because the local Turbopack font loader intermittently fails on external Google-font fetches; this keeps the required `npm run build` gate deterministic without changing the rendered font configuration.
 
+- **11 August 2026:** Deployed commit `2cb3032` to Vercel production as `dpl_6prSSJ1ESSTgKrYTUvdBG8bavjbq`. The remote Webpack build completed all **4,447** routes successfully and the production alias remains `https://www.zerotovpn.com`; the deployment is Ready.
+
 - **11 August 2026:** Ran a real 390px Chrome smoke test on /countries/iran and /. Both routes rendered with HTTP 200, one H1, no horizontal overflow, no framework error overlay and no page errors. The test caught and fixed a removed /best breadcrumb prefetch plus a locale-dependent homepage number formatter that caused a React hydration warning. Evidence: [mobile-browser-smoke-2026-08-11.md](../metrics/mobile-browser-smoke-2026-08-11.md); deployment dpl_Hqx6frvFzixrTptRBYp6Wo56BMbt is Ready.
 
 - **11 August 2026:** Hardened the newsletter-only exit-intent guard: `npm run audit:editorial` now checks the popup component and verifies that every locale's rendered popup title/subtitle remains free of affiliate, deal, coupon, discount, promotion, cashback and incentive language. The guard passes **16/16** checks.

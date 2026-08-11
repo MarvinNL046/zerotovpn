@@ -27,6 +27,11 @@ import {
   iranVpnEditorialTitle,
   iranVpnEditorialExcerpt,
 } from "@/data/editorial/iran-vpn-2026";
+import {
+  telegramVpnEditorialFaq,
+  telegramVpnEditorialTitle,
+  telegramVpnEditorialExcerpt,
+} from "@/data/editorial/telegram-vpn-2026";
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
@@ -84,9 +89,9 @@ const clusterMetadata: Record<string, { title: string; description: string }> = 
       iranVpnEditorialExcerpt,
   },
   "best-vpn-for-telegram-2026": {
-    title: "Best VPN for Telegram in 2026: Unblock Messaging Safely",
+    title: telegramVpnEditorialTitle,
     description:
-      "Find a VPN for Telegram in restricted countries, compare obfuscation and fallback options, and prepare before a network block changes.",
+      telegramVpnEditorialExcerpt,
   },
 };
 
@@ -158,9 +163,19 @@ export default async function DynamicBlogPost({ params }: Props) {
 
   const clusterLinks = censorshipClusterLinks[slug] || [];
   const isIranEditorial = slug === "best-vpn-for-iran-2026-bypass-internet-censorship";
-  const displayTitle = isIranEditorial ? iranVpnEditorialTitle : post.title;
-  const displayExcerpt = isIranEditorial ? iranVpnEditorialExcerpt : post.excerpt;
-  const editorialVpns = isIranEditorial ? await getAllVpns() : [];
+  const isTelegramEditorial = slug === "best-vpn-for-telegram-2026";
+  const isCensorshipEditorial = isIranEditorial || isTelegramEditorial;
+  const displayTitle = isIranEditorial
+    ? iranVpnEditorialTitle
+    : isTelegramEditorial
+      ? telegramVpnEditorialTitle
+      : post.title;
+  const displayExcerpt = isIranEditorial
+    ? iranVpnEditorialExcerpt
+    : isTelegramEditorial
+      ? telegramVpnEditorialExcerpt
+      : post.excerpt;
+  const editorialVpns = isCensorshipEditorial ? await getAllVpns() : [];
   const relatedLinks = getRelatedContent({
     currentHref: `/blog/${slug}`,
     tags: post.tags || [],
@@ -201,7 +216,7 @@ export default async function DynamicBlogPost({ params }: Props) {
       <BestVpnEditorialTemplate
         navigation={[
           { href: "#article-content", label: "Article" },
-          ...(isIranEditorial ? [{ href: "#quick-picks", label: "Shortlist" }] : []),
+          ...(isCensorshipEditorial ? [{ href: "#quick-picks", label: "Shortlist" }] : []),
           ...(clusterLinks.length > 0 ? [{ href: "#cluster-links", label: "Cluster" }] : []),
           { href: "#sources", label: "Sources" },
           { href: "#related-content", label: "Related" },
@@ -277,7 +292,16 @@ export default async function DynamicBlogPost({ params }: Props) {
           <FactCheckedBadge lastUpdated={lastUpdated} />
         </div>
 
-        {isIranEditorial && <IranEditorialQuickPicks vpns={editorialVpns} />}
+        {isCensorshipEditorial && (
+          <IranEditorialQuickPicks
+            vpns={editorialVpns}
+            heading={isTelegramEditorial ? "Start with documented Telegram options" : undefined}
+            eyebrow={isTelegramEditorial ? "Telegram shortlist" : undefined}
+            description={isTelegramEditorial
+              ? "These are contextual affiliate links to providers worth evaluating for Telegram access. They are not proof of a current connection on your network; compare Telegram's MTProxy option and verify the live provider documentation first."
+              : undefined}
+          />
+        )}
 
         {/* Featured Image */}
         {(post.featuredImageUrl || post.featuredImage) && (
@@ -311,6 +335,7 @@ export default async function DynamicBlogPost({ params }: Props) {
         />
 
         {isIranEditorial && <FAQSchema title="Iran VPN FAQ" faqs={iranVpnEditorialFaq} />}
+        {isTelegramEditorial && <FAQSchema title="Telegram VPN FAQ" faqs={telegramVpnEditorialFaq} />}
 
         {/* Ad placement */}
         <InlineAd />

@@ -12,8 +12,15 @@ import {
   iranVpnEditorialTitle,
   iranVpnEditorialUpdatedAt,
 } from "@/data/editorial/iran-vpn-2026";
+import {
+  telegramVpnEditorialContent,
+  telegramVpnEditorialExcerpt,
+  telegramVpnEditorialTitle,
+  telegramVpnEditorialUpdatedAt,
+} from "@/data/editorial/telegram-vpn-2026";
 
 const IRAN_EDITORIAL_SLUG = "best-vpn-for-iran-2026-bypass-internet-censorship";
+const TELEGRAM_EDITORIAL_SLUG = "best-vpn-for-telegram-2026";
 
 // Vorm van een volledige post zoals de detailpagina hem gebruikt. De oude
 // drizzle-kolommen die alleen de pipeline nodig had (sourceData/aiPrompt/
@@ -74,19 +81,37 @@ interface RawSummary {
 const INDEX = postIndex as unknown as Record<string, RawSummary[]>;
 const POSTS_DIR = path.join(process.cwd(), "src", "data", "posts");
 
+const EDITORIAL_SUMMARIES: Record<string, { title: string; excerpt: string; updatedAt: string }> = {
+  [IRAN_EDITORIAL_SLUG]: {
+    title: iranVpnEditorialTitle,
+    excerpt: iranVpnEditorialExcerpt,
+    updatedAt: iranVpnEditorialUpdatedAt,
+  },
+  [TELEGRAM_EDITORIAL_SLUG]: {
+    title: telegramVpnEditorialTitle,
+    excerpt: telegramVpnEditorialExcerpt,
+    updatedAt: telegramVpnEditorialUpdatedAt,
+  },
+};
+
 function toSummary(raw: RawSummary): BlogPostSummary {
+  const editorial = raw.language === "en" ? EDITORIAL_SUMMARIES[raw.slug] : undefined;
   return {
     id: raw.id,
     slug: raw.slug,
     language: raw.language,
-    title: raw.title,
-    excerpt: raw.excerpt ?? "",
+    title: editorial?.title ?? raw.title,
+    excerpt: editorial?.excerpt ?? raw.excerpt ?? "",
     category: raw.category ?? "",
     tags: raw.tags,
     published: true,
     publishedAt: raw.publishedAt ? new Date(raw.publishedAt) : null,
     createdAt: raw.createdAt ? new Date(raw.createdAt) : new Date(0),
-    updatedAt: raw.updatedAt ? new Date(raw.updatedAt) : null,
+    updatedAt: editorial
+      ? new Date(editorial.updatedAt)
+      : raw.updatedAt
+        ? new Date(raw.updatedAt)
+        : null,
     hasFeaturedImage: raw.hasFeaturedImage,
     featuredImageUrl: raw.featuredImageUrl,
   };
@@ -133,24 +158,28 @@ async function readPostFile(
     );
     const p = JSON.parse(raw);
     const isIranEditorial = language === "en" && slug === IRAN_EDITORIAL_SLUG;
+    const isTelegramEditorial = language === "en" && slug === TELEGRAM_EDITORIAL_SLUG;
+    const editorial = isIranEditorial
+      ? { title: iranVpnEditorialTitle, excerpt: iranVpnEditorialExcerpt, content: iranVpnEditorialContent, updatedAt: iranVpnEditorialUpdatedAt }
+      : isTelegramEditorial
+        ? { title: telegramVpnEditorialTitle, excerpt: telegramVpnEditorialExcerpt, content: telegramVpnEditorialContent, updatedAt: telegramVpnEditorialUpdatedAt }
+        : null;
     return {
       id: p.id,
       slug: p.slug,
       language: p.language,
-      title: isIranEditorial ? iranVpnEditorialTitle : p.title,
-      excerpt: isIranEditorial ? iranVpnEditorialExcerpt : p.excerpt ?? "",
-      content: isIranEditorial ? iranVpnEditorialContent : p.content ?? "",
-      metaTitle: isIranEditorial ? iranVpnEditorialTitle : p.metaTitle ?? null,
-      metaDescription: isIranEditorial
-        ? iranVpnEditorialExcerpt
-        : p.metaDescription ?? null,
+      title: editorial?.title ?? p.title,
+      excerpt: editorial?.excerpt ?? p.excerpt ?? "",
+      content: editorial?.content ?? p.content ?? "",
+      metaTitle: editorial?.title ?? p.metaTitle ?? null,
+      metaDescription: editorial?.excerpt ?? p.metaDescription ?? null,
       category: p.category ?? "",
       tags: p.tags ?? null,
       published: true,
       publishedAt: p.publishedAt ? new Date(p.publishedAt) : null,
       createdAt: p.createdAt ? new Date(p.createdAt) : new Date(0),
-      updatedAt: isIranEditorial
-        ? new Date(iranVpnEditorialUpdatedAt)
+      updatedAt: editorial
+        ? new Date(editorial.updatedAt)
         : p.updatedAt
           ? new Date(p.updatedAt)
           : new Date(0),

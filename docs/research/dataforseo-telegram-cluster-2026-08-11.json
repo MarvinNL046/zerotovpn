@@ -1,0 +1,497 @@
+{
+  "schemaVersion": 1,
+  "cluster": "VPN for Telegram / censored messaging",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "startedAt": "2026-08-11T16:26:25.734Z",
+  "completedAt": "2026-08-11T16:26:25.751Z",
+  "refreshed": false,
+  "seeds": [
+    "best vpn for telegram",
+    "vpn for telegram",
+    "unblock telegram",
+    "telegram vpn",
+    "best vpn for telegram 2026",
+    "telegram blocked countries",
+    "telegram calls vpn"
+  ],
+  "overview": [
+    {
+      "keyword": "best vpn for telegram",
+      "searchVolume": null,
+      "latestNonZeroVolume": 50,
+      "latestNonZeroMonth": "2024-02",
+      "difficulty": 4,
+      "intent": "informational"
+    },
+    {
+      "keyword": "telegram vpn",
+      "searchVolume": null,
+      "latestNonZeroVolume": 390,
+      "latestNonZeroMonth": "2024-02",
+      "difficulty": 16,
+      "intent": "informational"
+    },
+    {
+      "keyword": "unblock telegram",
+      "searchVolume": 210,
+      "latestNonZeroVolume": 170,
+      "latestNonZeroMonth": "2026-06",
+      "difficulty": 6,
+      "intent": "navigational"
+    },
+    {
+      "keyword": "vpn for telegram",
+      "searchVolume": null,
+      "latestNonZeroVolume": 390,
+      "latestNonZeroMonth": "2024-02",
+      "difficulty": 3,
+      "intent": "informational"
+    }
+  ],
+  "relatedKeywords": [
+    {
+      "seed": "telegram vpn",
+      "type": "suggestion",
+      "keyword": "best telegram channels for vpn",
+      "searchVolume": 10
+    },
+    {
+      "seed": "vpn for telegram",
+      "type": "suggestion",
+      "keyword": "best vpn for telegram free",
+      "searchVolume": 10
+    },
+    {
+      "seed": "best vpn for telegram",
+      "type": "suggestion",
+      "keyword": "best vpn for telegram desktop",
+      "searchVolume": 0
+    },
+    {
+      "seed": "best vpn for telegram",
+      "type": "suggestion",
+      "keyword": "best free vpn for telegram in iran",
+      "searchVolume": 0
+    },
+    {
+      "seed": "best vpn for telegram",
+      "type": "suggestion",
+      "keyword": "best free vpn for telegram download",
+      "searchVolume": null
+    },
+    {
+      "seed": "best vpn for telegram",
+      "type": "suggestion",
+      "keyword": "the best vpn for telegram",
+      "searchVolume": null
+    },
+    {
+      "seed": "best vpn for telegram",
+      "type": "suggestion",
+      "keyword": "best free vpn for telegram desktop",
+      "searchVolume": null
+    },
+    {
+      "seed": "best vpn for telegram",
+      "type": "suggestion",
+      "keyword": "which vpn is best for telegram",
+      "searchVolume": null
+    },
+    {
+      "seed": "best vpn for telegram",
+      "type": "suggestion",
+      "keyword": "best vpn for telegram",
+      "searchVolume": null
+    },
+    {
+      "seed": "best vpn for telegram",
+      "type": "suggestion",
+      "keyword": "best vpn for telegram download",
+      "searchVolume": null
+    },
+    {
+      "seed": "vpn for telegram",
+      "type": "related",
+      "keyword": "best vpn for telegram free",
+      "searchVolume": 10
+    },
+    {
+      "seed": "vpn for telegram",
+      "type": "related",
+      "keyword": "best vpn for telegram",
+      "searchVolume": null
+    },
+    {
+      "seed": "vpn for telegram",
+      "type": "related",
+      "keyword": "free vpn for telegram for pc",
+      "searchVolume": null
+    },
+    {
+      "seed": "telegram vpn",
+      "type": "related",
+      "keyword": "telegram vpn proxy",
+      "searchVolume": null
+    },
+    {
+      "seed": "best vpn for telegram",
+      "type": "related",
+      "keyword": "telegram vpn download",
+      "searchVolume": null
+    },
+    {
+      "seed": "telegram vpn",
+      "type": "related",
+      "keyword": "telegram vpn apk",
+      "searchVolume": null
+    },
+    {
+      "seed": "vpn for telegram",
+      "type": "suggestion",
+      "keyword": "free vpn for pc telegram",
+      "searchVolume": 10
+    },
+    {
+      "seed": "vpn for telegram",
+      "type": "suggestion",
+      "keyword": "which vpn use for telegram",
+      "searchVolume": 10
+    },
+    {
+      "seed": "vpn for telegram",
+      "type": "suggestion",
+      "keyword": "vpn for telegram iphone",
+      "searchVolume": 10
+    },
+    {
+      "seed": "vpn for telegram",
+      "type": "suggestion",
+      "keyword": "vpn for telegram for pc",
+      "searchVolume": 10
+    },
+    {
+      "seed": "vpn for telegram",
+      "type": "suggestion",
+      "keyword": "vpn for telegram x",
+      "searchVolume": 10
+    },
+    {
+      "seed": "vpn for telegram",
+      "type": "suggestion",
+      "keyword": "free vpn for desktop telegram",
+      "searchVolume": 10
+    },
+    {
+      "seed": "vpn for telegram",
+      "type": "suggestion",
+      "keyword": "vpn for telegram apk",
+      "searchVolume": 10
+    },
+    {
+      "seed": "vpn for telegram",
+      "type": "suggestion",
+      "keyword": "vpn for telegram ios",
+      "searchVolume": 10
+    },
+    {
+      "seed": "vpn for telegram",
+      "type": "related",
+      "keyword": "vpn for telegram apk",
+      "searchVolume": 10
+    },
+    {
+      "seed": "vpn for telegram",
+      "type": "related",
+      "keyword": "vpn for telegram",
+      "searchVolume": null
+    },
+    {
+      "seed": "vpn for telegram",
+      "type": "related",
+      "keyword": "free vpn for telegram",
+      "searchVolume": null
+    },
+    {
+      "seed": "vpn for telegram",
+      "type": "related",
+      "keyword": "free vpn for telegram android",
+      "searchVolume": null
+    },
+    {
+      "seed": "unblock telegram",
+      "type": "suggestion",
+      "keyword": "how to unblock someone on telegram",
+      "searchVolume": 320
+    },
+    {
+      "seed": "unblock telegram",
+      "type": "suggestion",
+      "keyword": "how to unblock in telegram",
+      "searchVolume": 260
+    },
+    {
+      "seed": "unblock telegram",
+      "type": "suggestion",
+      "keyword": "how to unblock on telegram",
+      "searchVolume": 260
+    },
+    {
+      "seed": "unblock telegram",
+      "type": "suggestion",
+      "keyword": "how to unblock telegram",
+      "searchVolume": 260
+    },
+    {
+      "seed": "unblock telegram",
+      "type": "suggestion",
+      "keyword": "unblock telegram",
+      "searchVolume": 210
+    },
+    {
+      "seed": "unblock telegram",
+      "type": "suggestion",
+      "keyword": "telegram unblock",
+      "searchVolume": 210
+    },
+    {
+      "seed": "unblock telegram",
+      "type": "suggestion",
+      "keyword": "how do you unblock someone on telegram",
+      "searchVolume": 110
+    },
+    {
+      "seed": "unblock telegram",
+      "type": "suggestion",
+      "keyword": "how to unblock people on telegram",
+      "searchVolume": 70
+    },
+    {
+      "seed": "unblock telegram",
+      "type": "suggestion",
+      "keyword": "unblock on telegram",
+      "searchVolume": 40
+    },
+    {
+      "seed": "unblock telegram",
+      "type": "suggestion",
+      "keyword": "unblock someone on telegram",
+      "searchVolume": 30
+    },
+    {
+      "seed": "unblock telegram",
+      "type": "related",
+      "keyword": "telegram web",
+      "searchVolume": 368000
+    },
+    {
+      "seed": "unblock telegram",
+      "type": "related",
+      "keyword": "telegram login",
+      "searchVolume": 60500
+    },
+    {
+      "seed": "unblock telegram",
+      "type": "related",
+      "keyword": "telegram support",
+      "searchVolume": 5400
+    },
+    {
+      "seed": "unblock telegram",
+      "type": "related",
+      "keyword": "unblock telegram",
+      "searchVolume": 210
+    },
+    {
+      "seed": "unblock telegram",
+      "type": "related",
+      "keyword": "telegram unblock sensitive content",
+      "searchVolume": 20
+    },
+    {
+      "seed": "unblock telegram",
+      "type": "related",
+      "keyword": "unblock telegram account",
+      "searchVolume": 10
+    },
+    {
+      "seed": "unblock telegram",
+      "type": "related",
+      "keyword": "telegram unblock bot",
+      "searchVolume": 10
+    },
+    {
+      "seed": "unblock telegram",
+      "type": "related",
+      "keyword": "how to unblock someone on telegram on android",
+      "searchVolume": 10
+    },
+    {
+      "seed": "unblock telegram",
+      "type": "related",
+      "keyword": "how to unblock yourself on telegram without deleting account",
+      "searchVolume": 10
+    },
+    {
+      "seed": "telegram vpn",
+      "type": "suggestion",
+      "keyword": "opera vpn telegram",
+      "searchVolume": 10
+    },
+    {
+      "seed": "telegram vpn",
+      "type": "suggestion",
+      "keyword": "telegram vpn android",
+      "searchVolume": 10
+    },
+    {
+      "seed": "telegram vpn",
+      "type": "suggestion",
+      "keyword": "telegram vpn russia",
+      "searchVolume": 10
+    },
+    {
+      "seed": "telegram vpn",
+      "type": "suggestion",
+      "keyword": "free pia vpn login telegram",
+      "searchVolume": 10
+    },
+    {
+      "seed": "telegram vpn",
+      "type": "suggestion",
+      "keyword": "telegram vpn ios",
+      "searchVolume": 10
+    },
+    {
+      "seed": "telegram vpn",
+      "type": "suggestion",
+      "keyword": "vpn app telegram",
+      "searchVolume": 10
+    },
+    {
+      "seed": "telegram vpn",
+      "type": "suggestion",
+      "keyword": "free vpn login telegram",
+      "searchVolume": 10
+    },
+    {
+      "seed": "telegram vpn",
+      "type": "suggestion",
+      "keyword": "telegram xnxubd vpn browser apk old version",
+      "searchVolume": 10
+    },
+    {
+      "seed": "telegram vpn",
+      "type": "suggestion",
+      "keyword": "usar vpn telegram",
+      "searchVolume": 10
+    },
+    {
+      "seed": "telegram vpn",
+      "type": "related",
+      "keyword": "telegram vpn ios",
+      "searchVolume": 10
+    },
+    {
+      "seed": "telegram vpn",
+      "type": "related",
+      "keyword": "telegram vpn link",
+      "searchVolume": 10
+    },
+    {
+      "seed": "telegram vpn",
+      "type": "related",
+      "keyword": "telegram vpn group links",
+      "searchVolume": 10
+    },
+    {
+      "seed": "telegram vpn",
+      "type": "related",
+      "keyword": "telegram vpn for android",
+      "searchVolume": 0
+    },
+    {
+      "seed": "telegram vpn",
+      "type": "related",
+      "keyword": "telegram vpn",
+      "searchVolume": null
+    },
+    {
+      "seed": "telegram vpn",
+      "type": "related",
+      "keyword": "telegram vpn free",
+      "searchVolume": null
+    },
+    {
+      "seed": "telegram vpn",
+      "type": "related",
+      "keyword": "telegram vpn free download",
+      "searchVolume": null
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "best vpn for telegram",
+      "paa": [
+        "Which VPN is best for Telegram?",
+        "Why avoid NordVPN?",
+        "Can I use a VPN to access Telegram?",
+        "What is the best 100% free VPN?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn for telegram",
+      "paa": [],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "unblock telegram",
+      "paa": [
+        "How do I unblock my Telegram?",
+        "How do I unblock someone on Telegram?",
+        "How do I see my blocked list on Telegram?",
+        "Why has Telegram blocked me?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "telegram vpn",
+      "paa": [],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "best vpn for telegram 2026",
+      "paa": [
+        "What is the best VPN to get in 2026?",
+        "Will Telegram ban me if I use VPN?",
+        "Can the FBI track a VPN?",
+        "Why avoid NordVPN?"
+      ],
+      "hasAiOverview": true
+    }
+  ],
+  "competitors": [
+    "youtube.com",
+    "reddit.com",
+    "techradar.com",
+    "cybernews.com",
+    "cnet.com",
+    "pcmag.com",
+    "tomsguide.com",
+    "security.org",
+    "gizmodo.com",
+    "cyberinsider.com",
+    "thebestvpn.com",
+    "comparitech.com",
+    "allaboutcookies.org",
+    "vpnmentor.com",
+    "cloudwards.net",
+    "top10vpn.com",
+    "01net.com",
+    "vpnpro.com",
+    "pcworld.com"
+  ],
+  "sourcePolicy": "DataForSEO responses are cached locally and used for prioritisation, not as proof that a provider currently connects in a particular country."
+}

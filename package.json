@@ -11,6 +11,7 @@
     "seo:china": "node scripts/china-seo-research.mjs",
     "seo:protocols": "node scripts/protocol-seo-research.mjs",
     "seo:restricted-networks": "node scripts/restricted-networks-seo-research.mjs",
+    "seo:travel": "node scripts/travel-seo-research.mjs",
     "audit:editorial": "node scripts/editorial-audit.mjs",
     "measure:editorial": "node scripts/measure-editorial.mjs",
     "prebuild": "npm run generate:sitemap-routes",

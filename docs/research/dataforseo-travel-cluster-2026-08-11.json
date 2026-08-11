@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "cluster": "VPN for travel / hotel Wi-Fi / international travel",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "fetchedAt": "2026-08-11T17:31:51.687Z",
+  "refreshed": false,
+  "seeds": [
+    "vpn for travel",
+    "best vpn for travel",
+    "vpn for international travel",
+    "vpn for hotel wifi",
+    "vpn for airport wifi",
+    "vpn for traveling abroad",
+    "vpn for censorship while traveling"
+  ],
+  "overview": [
+    {
+      "keyword": "best vpn for travel",
+      "currentVolume": null,
+      "latestVolume": 480,
+      "latestMonth": "2024-02",
+      "difficulty": 13,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "vpn for hotel wifi",
+      "currentVolume": null,
+      "latestVolume": 110,
+      "latestMonth": "2024-02",
+      "difficulty": 4,
+      "intent": "informational"
+    },
+    {
+      "keyword": "vpn for international travel",
+      "currentVolume": null,
+      "latestVolume": 140,
+      "latestMonth": "2024-02",
+      "difficulty": 11,
+      "intent": "informational"
+    },
+    {
+      "keyword": "vpn for travel",
+      "currentVolume": null,
+      "latestVolume": 720,
+      "latestMonth": "2024-02",
+      "difficulty": 25,
+      "intent": "informational"
+    },
+    {
+      "keyword": "vpn for traveling abroad",
+      "currentVolume": null,
+      "latestVolume": 70,
+      "latestMonth": "2024-02",
+      "difficulty": 29,
+      "intent": "informational"
+    }
+  ],
+  "suggestions": [
+    {
+      "seed": "best vpn for travel",
+      "keyword": "best vpn for travel to china",
+      "volume": 70
+    },
+    {
+      "seed": "vpn for travel",
+      "keyword": "vpn for travel to china",
+      "volume": 50
+    },
+    {
+      "seed": "best vpn for travel",
+      "keyword": "best vpn for travel abroad",
+      "volume": 50
+    },
+    {
+      "seed": "best vpn for travel",
+      "keyword": "best vpn for european travel",
+      "volume": 30
+    },
+    {
+      "seed": "vpn for international travel",
+      "keyword": "do i need a vpn for international travel",
+      "volume": 30
+    },
+    {
+      "seed": "vpn for travel",
+      "keyword": "short term vpn for travel",
+      "volume": 20
+    },
+    {
+      "seed": "best vpn for travel",
+      "keyword": "best free vpn for china travel",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for travel",
+      "keyword": "what is a vpn for travel",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for travel",
+      "keyword": "vpn for europe travel",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for international travel",
+      "keyword": "best vpn for international travel reddit",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for travel",
+      "keyword": "vpn for travel to europe",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for travel",
+      "keyword": "free vpn for travel",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for travel",
+      "keyword": "best vpn for travel asia",
+      "volume": null
+    },
+    {
+      "seed": "best vpn for travel",
+      "keyword": "best vpn for travel to japan",
+      "volume": null
+    },
+    {
+      "seed": "best vpn for travel",
+      "keyword": "best vpn for travel to france",
+      "volume": null
+    },
+    {
+      "seed": "best vpn for travel",
+      "keyword": "best vpn for global travel",
+      "volume": null
+    },
+    {
+      "seed": "best vpn for travel",
+      "keyword": "best vpn router for travel",
+      "volume": null
+    },
+    {
+      "seed": "best vpn for travel",
+      "keyword": "best vpn for travel to mexico",
+      "volume": null
+    },
+    {
+      "seed": "vpn for international travel",
+      "keyword": "best free vpn for international travel",
+      "volume": null
+    },
+    {
+      "seed": "vpn for international travel",
+      "keyword": "best vpn service for international travel",
+      "volume": null
+    },
+    {
+      "seed": "vpn for international travel",
+      "keyword": "best mac vpn for international travel",
+      "volume": null
+    },
+    {
+      "seed": "vpn for international travel",
+      "keyword": "vpn for international travel",
+      "volume": null
+    },
+    {
+      "seed": "vpn for hotel wifi",
+      "keyword": "best vpn for hotel wifi",
+      "volume": null
+    },
+    {
+      "seed": "vpn for hotel wifi",
+      "keyword": "free vpn for hotel wifi",
+      "volume": null
+    },
+    {
+      "seed": "vpn for traveling abroad",
+      "keyword": "vpn for traveling abroad",
+      "volume": null
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "vpn for travel",
+      "paa": [
+        "Do I really need a VPN while traveling?",
+        "What is the best VPN when traveling?",
+        "What is the downside of using a VPN?",
+        "Is there a free VPN for travel?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "best vpn for travel",
+      "paa": [
+        "What is the best VPN to use for travel?",
+        "Is it a good idea to use a VPN when traveling?",
+        "Why avoid NordVPN?",
+        "Can FBI track NordVPN?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn for international travel",
+      "paa": [
+        "Do I need a VPN when traveling internationally?",
+        "Which VPN is best for international travel?",
+        "Will Netflix ban me if I use a VPN?",
+        "What is the downside of using a VPN?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn for hotel wifi",
+      "paa": [],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn for airport wifi",
+      "paa": [
+        "Do VPNs work on airport Wi-Fi?",
+        "What is the best VPN for using at airports?",
+        "Can the FBI see through VPNs?",
+        "Will Netflix ban me if I use VPN?"
+      ],
+      "hasAiOverview": true
+    }
+  ],
+  "sourcePolicy": "DataForSEO signals prioritise questions and structure; they do not prove a provider works on a destination network, that a price will be lower, or that a use is lawful."
+}

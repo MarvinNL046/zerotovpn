@@ -41,6 +41,8 @@ import { LastUpdated } from "@/components/last-updated";
 import { generateAlternates } from "@/lib/seo-utils";
 import { getRelatedContent } from "@/lib/content-links";
 import { getVpnAffiliateUrl } from "@/lib/vpn-links";
+import { getAllVpns } from "@/lib/vpn-data-layer";
+import { TravelEditorialPage } from "@/components/editorial/travel-editorial-page";
 
 // Type definitions
 type Reason = {
@@ -101,6 +103,16 @@ const baseUrl = "https://www.zerotovpn.com";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  if (locale === "en") {
+    return {
+      metadataBase: new URL(baseUrl),
+      title: { absolute: "VPN for Travel: What to Test Before You Leave | ZeroToVPN" },
+      description: "A bounded travel VPN guide for hotel and airport Wi-Fi, device preparation, destination restrictions and safer connectivity.",
+      robots: { index: true, follow: true },
+      openGraph: { locale: "en_US", title: "VPN for Travel: What to Test Before You Leave", description: "Prepare and test a VPN for travel without assuming access, savings or legal permission.", type: "article" },
+      alternates: generateAlternates("/guides/vpn-for-travel", locale),
+    };
+  }
   const t = await getTranslations({ locale, namespace: "guides.vpnForTravel" });
   return {
     metadataBase: new URL(baseUrl),
@@ -124,6 +136,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function VpnForTravelPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
+  if (locale === "en") {
+    const vpns = await getAllVpns();
+    return <TravelEditorialPage vpns={vpns} />;
+  }
   const t = await getTranslations("guides.vpnForTravel");
   const pageUrl = locale === "en" ? `${baseUrl}/guides/vpn-for-travel` : `${baseUrl}/${locale}/guides/vpn-for-travel`;
 

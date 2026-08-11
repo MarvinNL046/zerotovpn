@@ -48,6 +48,11 @@ const checks = [
     file: "src/components/editorial/restricted-networks-editorial-page.tsx",
     patterns: [/Not every restriction is a VPN problem/, /id=\"restriction-types\"/, /id=\"prepare\"/, /id=\"test-plan\"/, /id=\"faq\"/, /DataForSEO/],
   },
+  {
+    name: "Travel support page",
+    file: "src/components/editorial/travel-editorial-page.tsx",
+    patterns: [/What a travel VPN can/, /id="prepare"/, /id="compare"/, /id="faq"/, /travel.state.gov/, /DataForSEO/],
+  },
 ];
 
 const results = checks.map((check) => {

@@ -72,6 +72,7 @@ function extractAnchors(html) {
     return {
       href: attrs.match(/\bhref=["']([^"']+)["']/i)?.[1] ?? "",
       rel: attrs.match(/\brel=["']([^"']*)["']/i)?.[1]?.split(/\s+/).filter(Boolean) ?? [],
+      affiliateSlug: attrs.match(/\bdata-affiliate-slug=["']([^"']+)["']/i)?.[1] ?? "",
     };
   });
 }
@@ -95,6 +96,7 @@ function extractSignals(html, target, url) {
   const internalLinks = anchors.filter(({ href }) => href.startsWith("/") || href.startsWith(BASE)).length;
   const affiliateLinks = anchors.filter(({ href }) => affiliateHref.test(href));
   const missingAffiliateRel = affiliateLinks.filter(({ rel }) => !rel.includes("sponsored") || !rel.includes("nofollow"));
+  const missingAffiliateSlug = affiliateLinks.filter(({ affiliateSlug }) => !/^[a-z0-9][a-z0-9-]*$/i.test(affiliateSlug));
   const hasDisclosure = /affiliate links? may earn|affiliate disclosure|commission/i.test(html) || /href=["'][^"']*affiliate-disclosure/i.test(html);
   const hasMethodology = /href=["'][^"']*(?:methodology|how-we-test)/i.test(html);
   const faqSchema = /["']@type["']\s*:\s*["']FAQPage["']/i.test(html);
@@ -123,6 +125,7 @@ function extractSignals(html, target, url) {
     table: target.expectTable === false || /<table\b/i.test(html),
     internalLinks: internalLinks >= 3,
     affiliateRel: missingAffiliateRel.length === 0,
+    affiliateSlug: missingAffiliateSlug.length === 0,
     requiredIds: missingIds.length === 0,
     clusterLinks: missingLinks.length === 0,
     faqSchema: !target.expectFaq || faqSchema,
@@ -140,6 +143,7 @@ function extractSignals(html, target, url) {
     futureSchemaDates,
     affiliateLinkCount: affiliateLinks.length,
     missingAffiliateRelCount: missingAffiliateRel.length,
+    missingAffiliateSlugCount: missingAffiliateSlug.length,
     missingIds,
     missingLinks,
     faqSchema,
@@ -194,6 +198,7 @@ const summary = {
   failedCount: records.filter((record) => !record.ok).length,
   affiliateLinkCount: records.reduce((sum, record) => sum + (record.affiliateLinkCount ?? 0), 0),
   missingAffiliateRelCount: records.reduce((sum, record) => sum + (record.missingAffiliateRelCount ?? 0), 0),
+  missingAffiliateSlugCount: records.reduce((sum, record) => sum + (record.missingAffiliateSlugCount ?? 0), 0),
   missingClusterLinkCount: records.reduce((sum, record) => sum + (record.missingLinks?.length ?? 0), 0),
   openGraphFailureCount: records.filter((record) => !record.checks?.openGraph).length,
   twitterFailureCount: records.filter((record) => !record.checks?.twitter).length,
@@ -211,7 +216,7 @@ await writeFile(jsonPath, `${JSON.stringify(payload, null, 2)}\n`, "utf8");
 const rows = records.map((record) => `| ${record.ok ? "pass" : "FAIL"} | ${record.path} | ${record.title ?? ""} | ${record.h1Count ?? "n/a"} | ${record.internalLinkCount ?? "n/a"} | ${record.affiliateLinkCount ?? "n/a"} | ${record.missingIds?.join(", ") || "—"} | ${record.missingLinks?.join(", ") || "—"} |`);
 const markdown = [
   "# Live editorial page audit", "", `Generated: ${summary.generatedAt}`, "",
-  `- Target pages: **${summary.targetCount}**`, `- Passing pages: **${summary.okCount}**`, `- Pages needing review: **${summary.failedCount}**`, `- Affiliate links checked: **${summary.affiliateLinkCount}**`, `- Affiliate links missing sponsored/nofollow: **${summary.missingAffiliateRelCount}**`, `- Missing required cluster links: **${summary.missingClusterLinkCount}**`, `- Pages missing complete Open Graph metadata: **${summary.openGraphFailureCount}**`, `- Pages missing complete Twitter metadata: **${summary.twitterFailureCount}**`, `- Pages failing image alt/dimension checks: **${summary.imageSeoFailureCount}**`, `- Pages with future structured-data dates: **${summary.futureSchemaDateFailureCount}**`, `- Pages with a broken social-image URL: **${summary.socialImageFailureCount}**`, "",
+  `- Target pages: **${summary.targetCount}**`, `- Passing pages: **${summary.okCount}**`, `- Pages needing review: **${summary.failedCount}**`, `- Affiliate links checked: **${summary.affiliateLinkCount}**`, `- Affiliate links missing sponsored/nofollow: **${summary.missingAffiliateRelCount}**`, `- Affiliate links missing Short.io slug telemetry: **${summary.missingAffiliateSlugCount}**`, `- Missing required cluster links: **${summary.missingClusterLinkCount}**`, `- Pages missing complete Open Graph metadata: **${summary.openGraphFailureCount}**`, `- Pages missing complete Twitter metadata: **${summary.twitterFailureCount}**`, `- Pages failing image alt/dimension checks: **${summary.imageSeoFailureCount}**`, `- Pages with future structured-data dates: **${summary.futureSchemaDateFailureCount}**`, `- Pages with a broken social-image URL: **${summary.socialImageFailureCount}**`, "",
   "| Status | Page | Title | H1s | Internal links | Affiliate links | Missing required IDs | Missing cluster links |", "|---|---|---|---:|---:|---:|---|---|", ...rows, "", `Raw records: [editorial-live-audit-${label}.json](./editorial-live-audit-${label}.json)`,
 ].join("\n") + "\n";
 await writeFile(mdPath, markdown, "utf8");

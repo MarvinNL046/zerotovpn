@@ -4,6 +4,7 @@ import { getShortMonthYear } from "@/lib/seo-utils";
 import { Button } from "@/components/ui/button";
 import { ComparisonTable } from "@/components/vpn/comparison-table";
 import { VpnCard } from "@/components/vpn/vpn-card";
+import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { getFeaturedVpns } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
 import { Shield, Zap, Globe, CheckCircle, ArrowRight, Server, Users, Clock, FlaskConical, BarChart3, FileSpreadsheet } from "lucide-react";
@@ -308,14 +309,14 @@ export default async function HomePage({ params }: Props) {
 
               {/* CTA buttons */}
               <div className="flex flex-wrap gap-3">
-                <a
-                  href={getVpnAffiliateUrl("nordvpn")}
-                  target="_blank"
-                  rel="noopener noreferrer sponsored nofollow"
+                <AffiliateButton
+                  vpnId="nordvpn"
+                  vpnName="NordVPN"
+                  affiliateUrl={getVpnAffiliateUrl("nordvpn")}
                   className="inline-flex items-center bg-primary text-primary-foreground font-semibold px-6 py-3 rounded-lg hover:bg-primary/90 transition"
                 >
                   Visit NordVPN &rarr;
-                </a>
+                </AffiliateButton>
                 <Link
                   href="/reviews/nordvpn"
                   className="inline-flex items-center border font-semibold px-6 py-3 rounded-lg hover:bg-muted transition"

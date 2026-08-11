@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { getAllVpns } from "@/lib/vpn-data-layer";
-import { generateAlternates } from "@/lib/seo-utils";
+import { DEFAULT_OG_IMAGE, generateAlternates } from "@/lib/seo-utils";
 import { RestrictedNetworksEditorialPage } from "@/components/editorial/restricted-networks-editorial-page";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: "Identify the restriction, prepare a VPN lawfully and run a bounded test without assuming access or bypass guarantees.",
       robots: { index: true, follow: true },
       alternates: generateAlternates("/guides/vpn-for-restricted-networks", locale),
-      openGraph: { locale: "en_US", title: "How to Use a VPN on a Restricted Network", description: "A preparation and testing guide for restricted Wi-Fi, ISP filtering and country-level censorship.", type: "article" },
+      openGraph: { locale: "en_US", title: "How to Use a VPN on a Restricted Network", description: "A preparation and testing guide for restricted Wi-Fi, ISP filtering and country-level censorship.", type: "article", images: [DEFAULT_OG_IMAGE] },
     };
   }
   return { metadataBase: new URL(baseUrl), title: "VPN for Restricted Networks | ZeroToVPN", description: "A bounded guide to identifying and testing VPN restrictions.", robots: { index: false, follow: true }, alternates: generateAlternates("/guides/vpn-for-restricted-networks", locale) };

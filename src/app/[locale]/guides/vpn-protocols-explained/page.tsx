@@ -1,5 +1,5 @@
 import { setRequestLocale } from "next-intl/server";
-import { OG_LOCALE_MAP, getLocalizedMonthYear, stripBrand, titelMetMerk } from "@/lib/seo-utils";
+import { DEFAULT_OG_IMAGE, OG_LOCALE_MAP, getLocalizedMonthYear, stripBrand, titelMetMerk } from "@/lib/seo-utils";
 import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
@@ -118,7 +118,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         locale: "en_US",
         title: "VPN Protocols Explained: WireGuard vs OpenVPN (2026)",
         description: "Choose a VPN protocol by use case, compare WireGuard with OpenVPN, and verify obfuscation without relying on access guarantees.",
-        type: "article",
+       type: "article",
+       images: [DEFAULT_OG_IMAGE],
       },
       alternates: generateAlternates("/guides/vpn-protocols-explained", locale),
     };
@@ -138,6 +139,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description:
         "WireGuard vs OpenVPN vs IKEv2 — which VPN protocol is fastest and most secure in 2026? We tested all three for speed, stability and real-world use.",
       type: "article",
+      images: [DEFAULT_OG_IMAGE],
     },
     alternates: generateAlternates("/guides/vpn-protocols-explained", locale),
   };

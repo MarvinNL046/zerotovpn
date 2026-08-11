@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { RankedVpnRow } from "@/components/vpn/ranked-vpn-row";
 import { getAllVpns, type VpnProvider } from "@/lib/vpn-data-layer";
 import { RelatedPages } from "@/components/seo/related-pages";
-import { OG_LOCALE_MAP, generateAlternates, getLocalizedMonthYear, titelMetMerk } from "@/lib/seo-utils";
+import { DEFAULT_OG_IMAGE, OG_LOCALE_MAP, generateAlternates, getLocalizedMonthYear, titelMetMerk } from "@/lib/seo-utils";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { FaqSchema } from "@/components/structured-data";
 import {
@@ -67,6 +67,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: titles[locale] || titles.en,
       description: descriptions[locale] || descriptions.en,
       type: "article",
+      images: [DEFAULT_OG_IMAGE],
     },
     alternates: generateAlternates("/countries/china", locale),
   };

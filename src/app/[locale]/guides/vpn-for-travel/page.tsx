@@ -1,5 +1,5 @@
 import { setRequestLocale } from "next-intl/server";
-import { OG_LOCALE_MAP, getLocalizedMonthYear, stripBrand, titelMetMerk } from "@/lib/seo-utils";
+import { DEFAULT_OG_IMAGE, OG_LOCALE_MAP, getLocalizedMonthYear, stripBrand, titelMetMerk } from "@/lib/seo-utils";
 import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
@@ -110,7 +110,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: { absolute: "VPN for Travel: What to Test Before You Leave | ZeroToVPN" },
       description: "A bounded travel VPN guide for hotel and airport Wi-Fi, device preparation, destination restrictions and safer connectivity.",
       robots: { index: true, follow: true },
-      openGraph: { locale: "en_US", title: "VPN for Travel: What to Test Before You Leave", description: "Prepare and test a VPN for travel without assuming access, savings or legal permission.", type: "article" },
+      openGraph: { locale: "en_US", title: "VPN for Travel: What to Test Before You Leave", description: "Prepare and test a VPN for travel without assuming access, savings or legal permission.", type: "article", images: [DEFAULT_OG_IMAGE] },
       alternates: generateAlternates("/guides/vpn-for-travel", locale),
     };
   }
@@ -129,6 +129,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description:
         "Learn why you need a VPN when traveling. Access home content, bypass censorship, and stay secure.",
       type: "article",
+      images: [DEFAULT_OG_IMAGE],
     },
     alternates: generateAlternates("/guides/vpn-for-travel", locale),
   };

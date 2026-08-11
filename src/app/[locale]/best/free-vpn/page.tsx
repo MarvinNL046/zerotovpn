@@ -1,5 +1,5 @@
 import { setRequestLocale } from "next-intl/server";
-import { OG_LOCALE_MAP, getLocalizedMonthYear, titelMetMerk } from "@/lib/seo-utils";
+import { DEFAULT_OG_IMAGE, OG_LOCALE_MAP, getLocalizedMonthYear, titelMetMerk } from "@/lib/seo-utils";
 import { getTranslations } from "next-intl/server";
 import { Metadata } from "next";
 import { getShortMonthYear, generateAlternates } from "@/lib/seo-utils";
@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: { absolute: "Best Free VPNs: Safety, Limits and Trade-offs | ZeroToVPN" },
       description: "Compare free VPN tiers by data limits, privacy evidence, locations and realistic use cases without blanket safety claims.",
       robots: { index: true, follow: true },
-      openGraph: { locale: "en_US", title: "Best Free VPNs: Safety, Limits and Trade-offs", description: "A bounded comparison of free VPN tiers and their real limitations.", type: "article" },
+      openGraph: { locale: "en_US", title: "Best Free VPNs: Safety, Limits and Trade-offs", description: "A bounded comparison of free VPN tiers and their real limitations.", type: "article", images: [DEFAULT_OG_IMAGE] },
       alternates: generateAlternates("/best/free-vpn", locale),
     };
   }
@@ -88,6 +88,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: titles[locale] || titles.en,
       description: descriptions[locale] || descriptions.en,
       type: "article",
+      images: [DEFAULT_OG_IMAGE],
     },
     alternates: generateAlternates("/best/free-vpn", locale),
   };

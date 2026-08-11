@@ -2,7 +2,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
 const ROOT = resolve(import.meta.dirname, "..");
-const BASE = "https://www.zerotovpn.com";
+const BASE = (process.env.EDITORIAL_AUDIT_BASE ?? "https://www.zerotovpn.com").replace(/\/$/, "");
 const timeoutMs = Math.max(1000, Number(process.env.EDITORIAL_AUDIT_TIMEOUT_MS ?? 15000));
 
 const targets = [
@@ -35,6 +35,12 @@ function firstMatch(html, pattern) {
   return html.match(pattern)?.[1]?.trim() ?? null;
 }
 
+function metaContent(html, attribute, value) {
+  const escaped = value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return firstMatch(html, new RegExp(`<meta[^>]+${attribute}=["']${escaped}["'][^>]+content=["']([^"']*)["']`, "i"))
+    ?? firstMatch(html, new RegExp(`<meta[^>]+content=["']([^"']*)["'][^>]+${attribute}=["']${escaped}["']`, "i"));
+}
+
 function extractMeta(html) {
   const title = firstMatch(html, /<title[^>]*>([\s\S]*?)<\/title>/i)?.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim() ?? null;
   const description = firstMatch(html, /<meta[^>]+name=["']description["'][^>]+content=["']([^"']*)["']/i)
@@ -43,7 +49,19 @@ function extractMeta(html) {
     ?? firstMatch(html, /<link[^>]+href=["']([^"']+)["'][^>]+rel=["'][^"']*canonical[^"']*["']/i);
   const robots = firstMatch(html, /<meta[^>]+name=["']robots["'][^>]+content=["']([^"']+)["']/i)
     ?? firstMatch(html, /<meta[^>]+content=["']([^"']+)["'][^>]+name=["']robots["']/i);
-  return { title, description, canonical, robots };
+  return {
+    title,
+    description,
+    canonical,
+    robots,
+    ogTitle: metaContent(html, "property", "og:title"),
+    ogDescription: metaContent(html, "property", "og:description"),
+    ogImage: metaContent(html, "property", "og:image"),
+    twitterCard: metaContent(html, "name", "twitter:card"),
+    twitterTitle: metaContent(html, "name", "twitter:title"),
+    twitterDescription: metaContent(html, "name", "twitter:description"),
+    twitterImage: metaContent(html, "name", "twitter:image"),
+  };
 }
 
 function extractAnchors(html) {
@@ -56,9 +74,22 @@ function extractAnchors(html) {
   });
 }
 
+function extractImages(html) {
+  return [...html.matchAll(/<img\b([^>]*)>/gi)].map((match) => {
+    const attrs = match[1];
+    return {
+      alt: attrs.match(/\balt=["']([^"']*)["']/i)?.[1] ?? "",
+      width: attrs.match(/\bwidth=["']([^"']*)["']/i)?.[1] ?? "",
+      height: attrs.match(/\bheight=["']([^"']*)["']/i)?.[1] ?? "",
+      fill: /\bdata-nimg=["']fill["']/i.test(attrs) || /\bfill(?:=["'][^"']*["'])?/i.test(attrs),
+    };
+  });
+}
+
 function extractSignals(html, target, url) {
   const meta = extractMeta(html);
   const anchors = extractAnchors(html);
+  const images = extractImages(html);
   const internalLinks = anchors.filter(({ href }) => href.startsWith("/") || href.startsWith(BASE)).length;
   const affiliateLinks = anchors.filter(({ href }) => affiliateHref.test(href));
   const missingAffiliateRel = affiliateLinks.filter(({ rel }) => !rel.includes("sponsored") || !rel.includes("nofollow"));
@@ -70,11 +101,15 @@ function extractSignals(html, target, url) {
     try { return new URL(href, BASE).pathname.replace(/\/$/, "") || "/"; } catch { return href; }
   });
   const missingLinks = (target.links ?? []).filter((path) => !normalizedHrefs.includes(path));
+  const missingImageAltCount = images.filter(({ alt }) => !alt.trim()).length;
+  const missingImageDimensionsCount = images.filter(({ width, height, fill }) => !fill && (!width || !height)).length;
   const canonicalAbsolute = meta.canonical ? normalizeUrl(new URL(meta.canonical, url).toString()) : null;
   const checks = {
     status200: true,
     title: Boolean(meta.title),
     description: Boolean(meta.description),
+    openGraph: Boolean(meta.ogTitle && meta.ogDescription && meta.ogImage),
+    twitter: Boolean(meta.twitterCard && meta.twitterTitle && meta.twitterDescription && meta.twitterImage),
     selfCanonical: canonicalAbsolute === normalizeUrl(url),
     indexable: !/(?:^|[\s,])noindex(?:$|[\s,])/i.test(meta.robots ?? ""),
     oneH1: [...html.matchAll(/<h1\b/gi)].length === 1,
@@ -86,12 +121,16 @@ function extractSignals(html, target, url) {
     requiredIds: missingIds.length === 0,
     clusterLinks: missingLinks.length === 0,
     faqSchema: !target.expectFaq || faqSchema,
+    imageSeo: missingImageAltCount === 0 && missingImageDimensionsCount === 0,
   };
   return {
     ...meta,
     h1Count: [...html.matchAll(/<h1\b/gi)].length,
     internalLinkCount: internalLinks,
     tableCount: [...html.matchAll(/<table\b/gi)].length,
+    imageCount: images.length,
+    missingImageAltCount,
+    missingImageDimensionsCount,
     affiliateLinkCount: affiliateLinks.length,
     missingAffiliateRelCount: missingAffiliateRel.length,
     missingIds,
@@ -128,6 +167,9 @@ const summary = {
   affiliateLinkCount: records.reduce((sum, record) => sum + (record.affiliateLinkCount ?? 0), 0),
   missingAffiliateRelCount: records.reduce((sum, record) => sum + (record.missingAffiliateRelCount ?? 0), 0),
   missingClusterLinkCount: records.reduce((sum, record) => sum + (record.missingLinks?.length ?? 0), 0),
+  openGraphFailureCount: records.filter((record) => !record.checks?.openGraph).length,
+  twitterFailureCount: records.filter((record) => !record.checks?.twitter).length,
+  imageSeoFailureCount: records.filter((record) => !record.checks?.imageSeo).length,
 };
 const payload = { schemaVersion: 1, summary, records };
 const outDir = resolve(ROOT, "docs", "metrics");
@@ -139,7 +181,7 @@ await writeFile(jsonPath, `${JSON.stringify(payload, null, 2)}\n`, "utf8");
 const rows = records.map((record) => `| ${record.ok ? "pass" : "FAIL"} | ${record.path} | ${record.title ?? ""} | ${record.h1Count ?? "n/a"} | ${record.internalLinkCount ?? "n/a"} | ${record.affiliateLinkCount ?? "n/a"} | ${record.missingIds?.join(", ") || "—"} | ${record.missingLinks?.join(", ") || "—"} |`);
 const markdown = [
   "# Live editorial page audit", "", `Generated: ${summary.generatedAt}`, "",
-  `- Target pages: **${summary.targetCount}**`, `- Passing pages: **${summary.okCount}**`, `- Pages needing review: **${summary.failedCount}**`, `- Affiliate links checked: **${summary.affiliateLinkCount}**`, `- Affiliate links missing sponsored/nofollow: **${summary.missingAffiliateRelCount}**`, `- Missing required cluster links: **${summary.missingClusterLinkCount}**`, "",
+  `- Target pages: **${summary.targetCount}**`, `- Passing pages: **${summary.okCount}**`, `- Pages needing review: **${summary.failedCount}**`, `- Affiliate links checked: **${summary.affiliateLinkCount}**`, `- Affiliate links missing sponsored/nofollow: **${summary.missingAffiliateRelCount}**`, `- Missing required cluster links: **${summary.missingClusterLinkCount}**`, `- Pages missing complete Open Graph metadata: **${summary.openGraphFailureCount}**`, `- Pages missing complete Twitter metadata: **${summary.twitterFailureCount}**`, `- Pages failing image alt/dimension checks: **${summary.imageSeoFailureCount}**`, "",
   "| Status | Page | Title | H1s | Internal links | Affiliate links | Missing required IDs | Missing cluster links |", "|---|---|---|---:|---:|---:|---|---|", ...rows, "", `Raw records: [editorial-live-audit-${label}.json](./editorial-live-audit-${label}.json)`,
 ].join("\n") + "\n";
 await writeFile(mdPath, markdown, "utf8");

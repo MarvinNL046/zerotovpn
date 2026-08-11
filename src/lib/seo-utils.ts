@@ -9,6 +9,14 @@ import { routing } from "@/i18n/routing";
 // canonical, breadcrumb of JSON-LD laat elke crawler op een omleiding landen.
 export const BASE_URL = "https://www.zerotovpn.com";
 
+/** Shared social preview used whenever a child page supplies its own metadata. */
+export const DEFAULT_OG_IMAGE = {
+  url: `${BASE_URL}/opengraph-image`,
+  width: 1200,
+  height: 630,
+  alt: "ZeroToVPN — independent VPN reviews and comparisons",
+} as const;
+
 /**
  * Generates correct canonical URL and hreflang alternates for any page path.
  * Use this in every page's generateMetadata to ensure correct SEO tags.

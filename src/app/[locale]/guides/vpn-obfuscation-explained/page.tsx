@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { redirect } from "next/navigation";
 import { getAllVpns } from "@/lib/vpn-data-layer";
-import { generateAlternates } from "@/lib/seo-utils";
+import { DEFAULT_OG_IMAGE, generateAlternates } from "@/lib/seo-utils";
 import { ObfuscationEditorialPage } from "@/components/editorial/obfuscation-editorial-page";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -22,6 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         title: "VPN Obfuscation Explained: Stealth and OpenVPN",
         description: "What VPN obfuscation changes, what it cannot promise and how to verify a provider feature on your setup.",
         type: "article",
+        images: [DEFAULT_OG_IMAGE],
       },
     };
   }

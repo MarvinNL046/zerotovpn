@@ -10,7 +10,7 @@ import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import { getPostBySlug, getAllPublishedSlugs } from "@/lib/pipeline/blog-service";
 import { getAllVpns } from "@/lib/vpn-data-layer";
 import { routing } from "@/i18n/routing";
-import { generateAlternates, titelMetMerk } from "@/lib/seo-utils";
+import { DEFAULT_OG_IMAGE, generateAlternates, titelMetMerk } from "@/lib/seo-utils";
 import { getRelatedContent } from "@/lib/content-links";
 import { RelatedContent } from "@/components/seo/related-content";
 import InlineAd from "@/components/ads/InlineAd";
@@ -147,6 +147,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: override?.title || post.metaTitle || post.title,
       description: override?.description || post.metaDescription || post.excerpt,
       type: "article",
+      images: [DEFAULT_OG_IMAGE],
       publishedTime: post.publishedAt?.toISOString(),
       modifiedTime: post.updatedAt.toISOString(),
       authors: ["ZeroToVPN Expert Team"],
@@ -321,6 +322,10 @@ export default async function DynamicBlogPost({ params }: Props) {
             <img
               src={post.featuredImageUrl || post.featuredImage!}
               alt={displayTitle}
+              width="1200"
+              height="630"
+              loading="eager"
+              decoding="async"
               className="w-full h-auto object-cover max-h-[400px]"
             />
           </div>

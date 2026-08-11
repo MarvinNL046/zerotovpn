@@ -13,7 +13,7 @@ import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { getAllVpns, type VpnProvider } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
-import { OG_LOCALE_MAP, generateAlternates, getLocalizedMonthYear, titelMetMerk } from "@/lib/seo-utils";
+import { DEFAULT_OG_IMAGE, OG_LOCALE_MAP, generateAlternates, getLocalizedMonthYear, titelMetMerk } from "@/lib/seo-utils";
 import { LastUpdated } from "@/components/last-updated";
 import {
   BestVpnEditorialTemplate,
@@ -55,6 +55,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         title: "Best VPN in 2026: Transparent Shortlist and Comparison",
         description: "Choose a VPN by use case, verify the plan and protocol, and compare evidence without universal access or speed guarantees.",
         type: "article",
+        images: [DEFAULT_OG_IMAGE],
       },
     };
   }
@@ -106,6 +107,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: titles[locale] || titles.en,
       description: descriptions[locale] || descriptions.en,
       type: "article",
+      images: [DEFAULT_OG_IMAGE],
     },
   };
 }

@@ -47,15 +47,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const descriptions: Record<string, string> = {
-    en: `We tested 35+ VPNs for laptops. Expert picks updated ${shortMonthYear} with battery efficiency, WiFi security & travel features compared. See our honest verdict.`,
-    nl: "Vind de beste VPN voor laptops in 2026. We hebben 35+ VPNs getest op batterij-efficiëntie, WiFi-beveiliging en reisvriendelijke functies. Bescherm je notebook op openbare netwerken.",
-    de: "Finden Sie das beste VPN für Laptops in 2026. Wir haben über 35 VPNs auf Batterieeffizienz, WLAN-Sicherheit und Reisefreundlichkeit getestet. Schützen Sie Ihr Notebook in öffentlichen Netzwerken.",
-    es: "Encuentra la mejor VPN para portátiles en 2026. Probamos más de 35 VPNs en eficiencia de batería, seguridad WiFi y características amigables para viajes. Protege tu portátil en redes públicas.",
-    fr: "Trouvez le meilleur VPN pour ordinateurs portables en 2026. Nous avons testé plus de 35 VPN pour l'efficacité de la batterie, la sécurité WiFi et les fonctionnalités de voyage. Protégez votre portable sur les réseaux publics.",
-    zh: "找到2026年最佳笔记本电脑VPN。我们测试了35+个VPN的电池效率、WiFi安全性和旅行友好功能。在公共网络上保护您的笔记本电脑。",
-    janswer: "2026年最高のノートパソコンVPNを見つけよう。35以上のVPNをバッテリー効率、WiFiセキュリティ、旅行向け機能でテストしました。公共ネットワークでノートパソコンを保護。",
-    ko: "2026년 최고의 노트북 VPN을 찾으세요. 35개 이상의 VPN을 배터리 효율성, WiFi 보안, 여행 친화적 기능 측면에서 테스트했습니다. 공용 네트워크에서 노트북을 보호하세요.",
-    th: "ค้นหา VPN ที่ดีที่สุดสำหรับแล็ปท็อปในปี 2026 เราทดสอบ VPN มากกว่า 35 รายการสำหรับประสิทธิภาพแบตเตอรี่, ความปลอดภัย WiFi และคุณสมบัติสำหรับการเดินทาง ปกป้องโน้ตบุ๊กของคุณบนเครือข่ายสาธารณะ",
+    en: `We compare several VPNs for laptops. Expert picks updated ${shortMonthYear} with battery efficiency, WiFi security & travel features compared. See our honest verdict.`,
+    nl: "Vind de beste VPN voor laptops in 2026. We vergelijken meerdere VPN-providers op batterij-efficiëntie, WiFi-beveiliging en reisvriendelijke functies. Bescherm je notebook op openbare netwerken.",
+    de: "Finden Sie das beste VPN für Laptops in 2026. Wir vergleichen mehrere VPN-Anbieter auf Batterieeffizienz, WLAN-Sicherheit und Reisefreundlichkeit getestet. Schützen Sie Ihr Notebook in öffentlichen Netzwerken.",
+    es: "Encuentra la mejor VPN para portátiles en 2026. Comparamos varias VPNs en eficiencia de batería, seguridad WiFi y características amigables para viajes. Protege tu portátil en redes públicas.",
+    fr: "Trouvez le meilleur VPN pour ordinateurs portables en 2026. Nous comparons plusieurs VPN pour l'efficacité de la batterie, la sécurité WiFi et les fonctionnalités de voyage. Protégez votre portable sur les réseaux publics.",
+    zh: "找到2026年最佳笔记本电脑VPN。我们比较了多家VPN的电池效率、WiFi安全性和旅行友好功能。在公共网络上保护您的笔记本电脑。",
+    janswer: "2026年最高のノートパソコンVPNを見つけよう。複数のVPNをバッテリー効率、WiFiセキュリティ、旅行向け機能で比較します。公共ネットワークでノートパソコンを保護。",
+    ko: "2026년 최고의 노트북 VPN을 찾으세요. 여러 VPN을 배터리 효율성, WiFi 보안, 여행 친화적 기능 측면에서 비교합니다. 공용 네트워크에서 노트북을 보호하세요.",
+    th: "ค้นหา VPN ที่ดีที่สุดสำหรับแล็ปท็อปในปี 2026 เราเปรียบเทียบ VPN หลายราย รายการสำหรับประสิทธิภาพแบตเตอรี่, ความปลอดภัย WiFi และคุณสมบัติสำหรับการเดินทาง ปกป้องโน้ตบุ๊กของคุณบนเครือข่ายสาธารณะ",
   };
 
   return {
@@ -160,7 +160,7 @@ export default async function LaptopVpnPage({ params }: Props) {
       badge: `Updated ${getLocalizedMonthYear("en")}`,
       title: "Best VPN for Laptops & Notebooks in 2026",
       subtitle:
-        "We tested 35+ VPNs specifically for laptop use. These are the best options for battery life, WiFi security, and mobile productivity.",
+        "We compare several VPNs specifically for laptop use. These are the best options for battery life, WiFi security, and mobile productivity.",
       topPicks: "Top Laptop VPNs",
       whyUseVpn: "Why Use a VPN on Your Laptop?",
       whyUsePoints: [
@@ -308,7 +308,7 @@ export default async function LaptopVpnPage({ params }: Props) {
       badge: `Bijgewerkt ${getLocalizedMonthYear("nl")}`,
       title: "Beste VPN voor Laptops & Notebooks in 2026",
       subtitle:
-        "We hebben 35+ VPNs specifiek getest voor laptopgebruik. Dit zijn de beste opties voor batterijduur, WiFi-beveiliging en mobiele productiviteit.",
+        "We vergelijken meerdere VPN-providers voor laptopgebruik. Gebruik batterijduur, wifi-beveiliging en mobiele productiviteit als beslispunten en controleer je eigen setup.",
       topPicks: "Top Laptop VPNs",
       whyUseVpn: "Waarom Een VPN Gebruiken Op Je Laptop?",
       whyUsePoints: [
@@ -456,7 +456,7 @@ export default async function LaptopVpnPage({ params }: Props) {
       badge: `Aktualisiert ${getLocalizedMonthYear("de")}`,
       title: "Beste VPN für Laptops & Notebooks in 2026",
       subtitle:
-        "Wir haben über 35 VPNs speziell für Laptop-Nutzung getestet. Dies sind die besten Optionen für Akkulaufzeit, WLAN-Sicherheit und mobile Produktivität.",
+        "Wir vergleichen mehrere VPN-Anbieter speziell für Laptop-Nutzung getestet. Dies sind die besten Optionen für Akkulaufzeit, WLAN-Sicherheit und mobile Produktivität.",
       topPicks: "Top Laptop VPNs",
       whyUseVpn: "Warum Ein VPN Auf Ihrem Laptop Verwenden?",
       whyUsePoints: [
@@ -604,7 +604,7 @@ export default async function LaptopVpnPage({ params }: Props) {
       badge: `Actualizado ${getLocalizedMonthYear("es")}`,
       title: "Mejor VPN para Portátiles y Notebooks en 2026",
       subtitle:
-        "Probamos más de 35 VPNs específicamente para uso en portátiles. Estas son las mejores opciones para duración de batería, seguridad WiFi y productividad móvil.",
+        "Comparamos varias VPNs específicamente para uso en portátiles. Estas son las mejores opciones para duración de batería, seguridad WiFi y productividad móvil.",
       topPicks: "Mejores VPNs para Portátiles",
       whyUseVpn: "¿Por Qué Usar Una VPN En Tu Portátil?",
       whyUsePoints: [
@@ -752,7 +752,7 @@ export default async function LaptopVpnPage({ params }: Props) {
       badge: `Mis à jour ${getLocalizedMonthYear("fr")}`,
       title: "Meilleur VPN pour Ordinateurs Portables en 2026",
       subtitle:
-        "Nous avons testé plus de 35 VPN spécifiquement pour l'utilisation sur ordinateur portable. Ce sont les meilleures options pour autonomie de batterie, sécurité WiFi et productivité mobile.",
+        "Nous comparons plusieurs VPN spécifiquement pour l'utilisation sur ordinateur portable. Ce sont les meilleures options pour autonomie de batterie, sécurité WiFi et productivité mobile.",
       topPicks: "Meilleurs VPN Pour Portables",
       whyUseVpn: "Pourquoi Utiliser Un VPN Sur Votre Portable?",
       whyUsePoints: [
@@ -900,7 +900,7 @@ export default async function LaptopVpnPage({ params }: Props) {
       badge: `更新于${getLocalizedMonthYear("zh")}`,
       title: "2026年最佳笔记本电脑VPN",
       subtitle:
-        "我们专门为笔记本电脑使用测试了35+个VPN。这些是电池寿命、WiFi安全性和移动生产力的最佳选择。",
+        "我们专门为笔记本电脑使用比较了多家VPN。这些是电池寿命、WiFi安全性和移动生产力的最佳选择。",
       topPicks: "顶级笔记本电脑VPN",
       whyUseVpn: "为什么在笔记本电脑上使用VPN？",
       whyUsePoints: [
@@ -1048,7 +1048,7 @@ export default async function LaptopVpnPage({ params }: Props) {
       badge: `${getLocalizedMonthYear("ja")}更新`,
       title: "2026年ノートパソコン用ベストVPN",
       subtitle:
-        "35以上のVPNをノートパソコン使用に特化してテストしました。バッテリー寿命、WiFiセキュリティ、モバイル生産性のベストオプションです。",
+        "複数のVPNをノートパソコン使用に特化して比較します。バッテリー寿命、WiFiセキュリティ、モバイル生産性のベストオプションです。",
       topPicks: "トップノートパソコンVPN",
       whyUseVpn: "ノートパソコンでVPNを使用する理由",
       whyUsePoints: [
@@ -1196,7 +1196,7 @@ export default async function LaptopVpnPage({ params }: Props) {
       badge: `${getLocalizedMonthYear("ko")} 업데이트`,
       title: "2026년 노트북용 최고의 VPN",
       subtitle:
-        "노트북 사용을 위해 35개 이상의 VPN을 테스트했습니다. 배터리 수명, WiFi 보안 및 모바일 생산성을 위한 최고의 옵션입니다.",
+        "노트북 사용을 위해 여러 VPN을 비교합니다. 배터리 수명, WiFi 보안 및 모바일 생산성을 위한 최고의 옵션입니다.",
       topPicks: "최고의 노트북 VPN",
       whyUseVpn: "노트북에서 VPN을 사용하는 이유",
       whyUsePoints: [
@@ -1344,7 +1344,7 @@ export default async function LaptopVpnPage({ params }: Props) {
       badge: `อัปเดต${getLocalizedMonthYear("th")}`,
       title: "VPN ที่ดีที่สุดสำหรับแล็ปท็อปในปี 2026",
       subtitle:
-        "เราทดสอบ VPN มากกว่า 35 รายการโดยเฉพาะสำหรับการใช้งานแล็ปท็อป นี่คือตัวเลือกที่ดีที่สุดสำหรับอายุการใช้งานแบตเตอรี่ ความปลอดภัย WiFi และประสิทธิภาพการทำงานบนมือถือ",
+        "เราเปรียบเทียบ VPN หลายราย รายการโดยเฉพาะสำหรับการใช้งานแล็ปท็อป นี่คือตัวเลือกที่ดีที่สุดสำหรับอายุการใช้งานแบตเตอรี่ ความปลอดภัย WiFi และประสิทธิภาพการทำงานบนมือถือ",
       topPicks: "VPN แล็ปท็อปชั้นนำ",
       whyUseVpn: "ทำไมต้องใช้ VPN บนแล็ปท็อป?",
       whyUsePoints: [

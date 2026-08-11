@@ -54,15 +54,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const descriptions: Record<string, string> = {
-    en: `We tested 35+ VPNs for privacy. Expert picks updated ${shortMonthYear} with jurisdiction, no-logs audits & anonymous payment compared. See our honest verdict.`,
-    nl: "Vind de beste privacy VPN voor 2026. We hebben 35+ VPNs getest op jurisdictie, no-logs audits en anonieme betaling. Bescherm je online privacy.",
-    de: "Finden Sie das beste Datenschutz-VPN für 2026. Wir haben über 35 VPNs auf Jurisdiktion, No-Logs-Audits und anonyme Zahlung getestet. Schützen Sie Ihre Online-Privatsphäre.",
-    es: "Encuentra la mejor VPN para privacidad de 2026. Probamos más de 35 VPNs en jurisdicción, auditorías sin registros y pago anónimo. Protege tu privacidad en línea.",
-    fr: "Trouvez le meilleur VPN pour la vie privée en 2026. Nous avons testé plus de 35 VPNs pour la juridiction, les audits sans logs et le paiement anonyme. Protégez votre vie privée en ligne.",
-    zh: "找到2026年最佳隐私VPN。我们测试了35+个VPN的管辖权、无日志审计和匿名支付。保护您的在线隐私。",
-    ja: "2026年最高のプライバシーVPNを見つけよう。35以上のVPNを管轄区域、ノーログ監査、匿名支払いでテストしました。オンラインプライバシーを守ろう。",
-    ko: "2026년 최고의 개인정보 보호 VPN을 찾으세요. 35개 이상의 VPN을 관할권, 로그 없음 감사, 익명 결제 측면에서 테스트했습니다. 온라인 개인정보를 보호하세요.",
-    th: "ค้นหา VPN สำหรับความเป็นส่วนตัวที่ดีที่สุดในปี 2026 เราทดสอบ VPN มากกว่า 35 รายการสำหรับเขตอำนาจศาล การตรวจสอบไม่มีบันทึก และการชำระเงินแบบไม่ระบุตัวตน",
+    en: `We compare several VPNs for privacy. Expert picks updated ${shortMonthYear} with jurisdiction, no-logs audits & anonymous payment compared. See our honest verdict.`,
+    nl: "Vind de beste privacy VPN voor 2026. We vergelijken meerdere VPN-providers op jurisdictie, no-logs audits en anonieme betaling. Bescherm je online privacy.",
+    de: "Finden Sie ein Datenschutz-VPN für 2026. Wir vergleichen mehrere VPN-Anbieter nach Jurisdiktion, No-Logs-Dokumentation und Zahlungsoptionen. Schützen Sie Ihre Online-Privatsphäre.",
+    es: "Encuentra la mejor VPN para privacidad de 2026. Comparamos varias VPNs en jurisdicción, auditorías sin registros y pago anónimo. Protege tu privacidad en línea.",
+    fr: "Trouvez le meilleur VPN pour la vie privée en 2026. Nous comparons plusieurs VPNs pour la juridiction, les audits sans logs et le paiement anonyme. Protégez votre vie privée en ligne.",
+    zh: "找到2026年最佳隐私VPN。我们比较了多家VPN的管辖权、无日志审计和匿名支付。保护您的在线隐私。",
+    ja: "2026年最高のプライバシーVPNを見つけよう。複数のVPNを管轄区域、ノーログ監査、匿名支払いで比較します。オンラインプライバシーを守ろう。",
+    ko: "2026년 최고의 개인정보 보호 VPN을 찾으세요. 여러 VPN을 관할권, 로그 없음 감사, 익명 결제 측면에서 비교합니다. 온라인 개인정보를 보호하세요.",
+    th: "ค้นหา VPN สำหรับความเป็นส่วนตัวที่ดีที่สุดในปี 2026 เราเปรียบเทียบ VPN หลายราย รายการสำหรับเขตอำนาจศาล การตรวจสอบไม่มีบันทึก และการชำระเงินแบบไม่ระบุตัวตน",
   };
 
   return {
@@ -208,7 +208,7 @@ export default async function PrivacyVpnPage({ params }: Props) {
       badge: `Updated ${getLocalizedMonthYear("en")}`,
       title: "Best VPNs for Privacy in 2026",
       subtitle:
-        "We tested 35+ VPNs specifically for privacy protection. These are the most private options with verified no-logs policies, strong jurisdictions, and independent audits.",
+        "We compare several VPNs specifically for privacy protection. These are the most private options with verified no-logs policies, strong jurisdictions, and independent audits.",
       topPicks: "Top Privacy VPNs",
       whyUseVpn: "Why Privacy Matters When Choosing a VPN",
       whyUsePoints: [
@@ -323,7 +323,7 @@ export default async function PrivacyVpnPage({ params }: Props) {
       badge: `Bijgewerkt ${getLocalizedMonthYear("nl")}`,
       title: "Beste VPN voor Privacy in 2026",
       subtitle:
-        "We hebben 35+ VPNs specifiek getest op privacybescherming. Dit zijn de meest private opties met geverifieerde no-logs beleid, sterke jurisdicties en onafhankelijke audits.",
+        "We vergelijken meerdere VPN-providers op privacybescherming. Gebruik de kandidaten als startpunt en controleer no-logs-bewijs, jurisdictie en audits voor je eigen dreigingsmodel.",
       topPicks: "Top Privacy VPNs",
       whyUseVpn: "Waarom Privacy Belangrijk Is Bij Het Kiezen Van Een VPN",
       whyUsePoints: [
@@ -438,7 +438,7 @@ export default async function PrivacyVpnPage({ params }: Props) {
       badge: `Aktualisiert ${getLocalizedMonthYear("de")}`,
       title: "Beste VPN für Privatsphäre in 2026",
       subtitle:
-        "Wir haben über 35 VPNs speziell auf Datenschutz getestet. Dies sind die privatsten Optionen mit verifizierten No-Logs-Richtlinien, starken Jurisdiktionen und unabhängigen Audits.",
+        "Wir vergleichen mehrere VPN-Anbieter nach Datenschutz. Nutzen Sie die Kandidaten als Startpunkt und prüfen Sie No-Logs-Nachweise, Jurisdiktion und Audits für Ihr Bedrohungsmodell.",
       topPicks: "Top Datenschutz VPNs",
       whyUseVpn: "Warum Datenschutz Bei Der VPN-Wahl Wichtig Ist",
       whyUsePoints: [
@@ -553,7 +553,7 @@ export default async function PrivacyVpnPage({ params }: Props) {
       badge: `Actualizado ${getLocalizedMonthYear("es")}`,
       title: "Mejor VPN para Privacidad en 2026",
       subtitle:
-        "Probamos más de 35 VPNs específicamente para protección de privacidad. Estas son las opciones más privadas con políticas sin registros verificadas, jurisdicciones sólidas y auditorías independientes.",
+        "Comparamos varias VPNs específicamente para protección de privacidad. Estas son las opciones más privadas con políticas sin registros verificadas, jurisdicciones sólidas y auditorías independientes.",
       topPicks: "Mejores VPNs para Privacidad",
       whyUseVpn: "Por Qué Importa La Privacidad Al Elegir Una VPN",
       whyUsePoints: [
@@ -668,7 +668,7 @@ export default async function PrivacyVpnPage({ params }: Props) {
       badge: `Mis à jour ${getLocalizedMonthYear("fr")}`,
       title: "Meilleurs VPNs pour la Vie Privée en 2026",
       subtitle:
-        "Nous avons testé plus de 35 VPNs spécifiquement pour la protection de la vie privée. Ce sont les options les plus privées avec des politiques sans logs vérifiées, des juridictions solides et des audits indépendants.",
+        "Nous comparons plusieurs VPNs spécifiquement pour la protection de la vie privée. Ce sont les options les plus privées avec des politiques sans logs vérifiées, des juridictions solides et des audits indépendants.",
       topPicks: "Meilleurs VPNs pour la Vie Privée",
       whyUseVpn: "Pourquoi La Vie Privée Compte Dans Le Choix D'un VPN",
       whyUsePoints: [
@@ -898,7 +898,7 @@ export default async function PrivacyVpnPage({ params }: Props) {
       badge: `${getLocalizedMonthYear("ja")}更新`,
       title: "2026年プライバシー向けベストVPN",
       subtitle:
-        "プライバシー保護のために35以上のVPNをテストしました。これらは、確認済みのノーログポリシー、強力な管轄区域、独立した監査を持つ最もプライベートな選択肢です。",
+        "プライバシー保護のために複数のVPNを比較します。これらは、確認済みのノーログポリシー、強力な管轄区域、独立した監査を持つ最もプライベートな選択肢です。",
       topPicks: "トッププライバシーVPN",
       whyUseVpn: "VPN選択においてプライバシーが重要な理由",
       whyUsePoints: [
@@ -1013,7 +1013,7 @@ export default async function PrivacyVpnPage({ params }: Props) {
       badge: `${getLocalizedMonthYear("ko")} 업데이트`,
       title: "2026년 개인정보 보호를 위한 최고의 VPN",
       subtitle:
-        "개인정보 보호를 위해 35개 이상의 VPN을 테스트했습니다. 검증된 로그 없음 정책, 강력한 관할권 및 독립 감사를 갖춘 가장 비공개적인 옵션들입니다.",
+        "개인정보 보호를 위해 여러 VPN을 비교합니다. 검증된 로그 없음 정책, 강력한 관할권 및 독립 감사를 갖춘 가장 비공개적인 옵션들입니다.",
       topPicks: "최고의 개인정보 VPN",
       whyUseVpn: "VPN 선택 시 개인정보가 중요한 이유",
       whyUsePoints: [
@@ -1128,7 +1128,7 @@ export default async function PrivacyVpnPage({ params }: Props) {
       badge: `อัปเดต${getLocalizedMonthYear("th")}`,
       title: "VPN ที่ดีที่สุดสำหรับความเป็นส่วนตัวในปี 2026",
       subtitle:
-        "เราทดสอบ VPN มากกว่า 35 รายการสำหรับการปกป้องความเป็นส่วนตัว นี่คือตัวเลือกที่เป็นส่วนตัวที่สุดพร้อมนโยบายไม่มีบันทึกที่ตรวจสอบแล้ว เขตอำนาจศาลที่แข็งแกร่ง และการตรวจสอบอิสระ",
+        "เราเปรียบเทียบ VPN หลายราย รายการสำหรับการปกป้องความเป็นส่วนตัว นี่คือตัวเลือกที่เป็นส่วนตัวที่สุดพร้อมนโยบายไม่มีบันทึกที่ตรวจสอบแล้ว เขตอำนาจศาลที่แข็งแกร่ง และการตรวจสอบอิสระ",
       topPicks: "VPN ความเป็นส่วนตัวอันดับต้น",
       whyUseVpn: "ทำไมความเป็นส่วนตัวถึงสำคัญเมื่อเลือก VPN",
       whyUsePoints: [

@@ -52,15 +52,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const descriptions: Record<string, string> = {
-    en: `We tested 35+ VPNs for Linux. Expert picks updated ${shortMonthYear} with Ubuntu/Debian/Fedora support, CLI tools & speeds compared. See our honest verdict.`,
-    nl: "Vind de beste Linux VPN voor 2026. We hebben 35+ VPNs getest voor Ubuntu, Debian, Fedora en meer. Native apps, CLI-tools en OpenVPN-configuraties inbegrepen.",
-    de: "Finden Sie das beste Linux-VPN für 2026. Wir haben über 35 VPNs für Ubuntu, Debian, Fedora und mehr getestet. Native Apps, CLI-Tools und OpenVPN-Konfigurationen inklusive.",
-    es: "Encuentra la mejor VPN para Linux de 2026. Probamos más de 35 VPNs para Ubuntu, Debian, Fedora y más. Incluye apps nativas, herramientas CLI y configs OpenVPN.",
-    fr: "Trouvez le meilleur VPN Linux pour 2026. Nous avons testé plus de 35 VPNs pour Ubuntu, Debian, Fedora et plus. Apps natives, outils CLI et configs OpenVPN inclus.",
-    zh: "找到2026年最佳Linux VPN。我们测试了35+个VPN用于Ubuntu、Debian、Fedora等。包含原生应用、CLI工具和OpenVPN配置。",
-    janswer: "2026年最高のLinux VPNを見つけよう。Ubuntu、Debian、Fedoraなど35以上のVPNをテストしました。ネイティブアプリ、CLIツール、OpenVPN設定を含みます。",
-    ko: "2026년 최고의 리눅스 VPN을 찾으세요. Ubuntu, Debian, Fedora 등 35개 이상의 VPN을 테스트했습니다. 네이티브 앱, CLI 도구 및 OpenVPN 구성 포함.",
-    th: "ค้นหา VPN Linux ที่ดีที่สุดในปี 2026 เราทดสอบ VPN มากกว่า 35 รายการสำหรับ Ubuntu, Debian, Fedora และอื่นๆ รวมแอปเนทีฟ, เครื่องมือ CLI และการกำหนดค่า OpenVPN",
+    en: `We compare several VPNs for Linux. Expert picks updated ${shortMonthYear} with Ubuntu/Debian/Fedora support, CLI tools & speeds compared. See our honest verdict.`,
+    nl: "Vind de beste Linux VPN voor 2026. We vergelijken meerdere VPN-providers voor Ubuntu, Debian, Fedora en meer. Native apps, CLI-tools en OpenVPN-configuraties inbegrepen.",
+    de: "Finden Sie das beste Linux-VPN für 2026. Wir vergleichen mehrere VPN-Anbieter für Ubuntu, Debian, Fedora und mehr getestet. Native Apps, CLI-Tools und OpenVPN-Konfigurationen inklusive.",
+    es: "Encuentra la mejor VPN para Linux de 2026. Comparamos varias VPNs para Ubuntu, Debian, Fedora y más. Incluye apps nativas, herramientas CLI y configs OpenVPN.",
+    fr: "Trouvez le meilleur VPN Linux pour 2026. Nous comparons plusieurs VPNs pour Ubuntu, Debian, Fedora et plus. Apps natives, outils CLI et configs OpenVPN inclus.",
+    zh: "找到2026年最佳Linux VPN。我们比较了多家VPN用于Ubuntu、Debian、Fedora等。包含原生应用、CLI工具和OpenVPN配置。",
+    janswer: "2026年最高のLinux VPNを見つけよう。Ubuntu、Debian、Fedoraなど複数のVPNを比較します。ネイティブアプリ、CLIツール、OpenVPN設定を含みます。",
+    ko: "2026년 최고의 리눅스 VPN을 찾으세요. Ubuntu, Debian, Fedora 등 여러 VPN을 비교합니다. 네이티브 앱, CLI 도구 및 OpenVPN 구성 포함.",
+    th: "ค้นหา VPN Linux ที่ดีที่สุดในปี 2026 เราเปรียบเทียบ VPN หลายราย รายการสำหรับ Ubuntu, Debian, Fedora และอื่นๆ รวมแอปเนทีฟ, เครื่องมือ CLI และการกำหนดค่า OpenVPN",
   };
 
   return {
@@ -159,7 +159,7 @@ export default async function LinuxVpnPage({ params }: Props) {
       badge: `Updated ${getLocalizedMonthYear("en")}`,
       title: "Best VPN for Linux in 2026",
       subtitle:
-        "We tested 35+ VPNs specifically for Linux compatibility. These are the best options with native apps, CLI support, and comprehensive distro coverage.",
+        "We compare several VPNs specifically for Linux compatibility. These are the best options with native apps, CLI support, and comprehensive distro coverage.",
       topPicks: "Top Linux VPNs",
       whyUseVpn: "Why Use a VPN on Linux?",
       whyUsePoints: [
@@ -307,7 +307,7 @@ export default async function LinuxVpnPage({ params }: Props) {
       badge: `Bijgewerkt ${getLocalizedMonthYear("nl")}`,
       title: "Beste VPN voor Linux in 2026",
       subtitle:
-        "We hebben 35+ VPNs specifiek getest voor Linux-compatibiliteit. Dit zijn de beste opties met native apps, CLI-ondersteuning en uitgebreide distro-dekking.",
+        "We vergelijken meerdere VPN-providers op Linux-compatibiliteit. Gebruik native apps, CLI-ondersteuning en distro-dekking als beslispunten en controleer je eigen setup.",
       topPicks: "Top Linux VPNs",
       whyUseVpn: "Waarom Een VPN Gebruiken Op Linux?",
       whyUsePoints: [
@@ -455,7 +455,7 @@ export default async function LinuxVpnPage({ params }: Props) {
       badge: `Aktualisiert ${getLocalizedMonthYear("de")}`,
       title: "Beste VPN für Linux in 2026",
       subtitle:
-        "Wir haben über 35 VPNs speziell für Linux-Kompatibilität getestet. Dies sind die besten Optionen mit nativen Apps, CLI-Unterstützung und umfassender Distro-Abdeckung.",
+        "Wir vergleichen mehrere VPN-Anbieter speziell für Linux-Kompatibilität getestet. Dies sind die besten Optionen mit nativen Apps, CLI-Unterstützung und umfassender Distro-Abdeckung.",
       topPicks: "Top Linux VPNs",
       whyUseVpn: "Warum Ein VPN Auf Linux Verwenden?",
       whyUsePoints: [
@@ -603,7 +603,7 @@ export default async function LinuxVpnPage({ params }: Props) {
       badge: `Actualizado ${getLocalizedMonthYear("es")}`,
       title: "Mejor VPN para Linux en 2026",
       subtitle:
-        "Probamos más de 35 VPNs específicamente para compatibilidad con Linux. Estas son las mejores opciones con apps nativas, soporte CLI y cobertura completa de distros.",
+        "Comparamos varias VPNs específicamente para compatibilidad con Linux. Estas son las mejores opciones con apps nativas, soporte CLI y cobertura completa de distros.",
       topPicks: "Mejores VPNs para Linux",
       whyUseVpn: "¿Por Qué Usar Una VPN En Linux?",
       whyUsePoints: [
@@ -751,7 +751,7 @@ export default async function LinuxVpnPage({ params }: Props) {
       badge: `Mis à jour ${getLocalizedMonthYear("fr")}`,
       title: "Meilleur VPN pour Linux en 2026",
       subtitle:
-        "Nous avons testé plus de 35 VPN spécifiquement pour la compatibilité Linux. Ce sont les meilleures options avec apps natives, support CLI et couverture complète des distros.",
+        "Nous comparons plusieurs VPN spécifiquement pour la compatibilité Linux. Ce sont les meilleures options avec apps natives, support CLI et couverture complète des distros.",
       topPicks: "Meilleurs VPN Linux",
       whyUseVpn: "Pourquoi Utiliser Un VPN Sur Linux?",
       whyUsePoints: [
@@ -899,7 +899,7 @@ export default async function LinuxVpnPage({ params }: Props) {
       badge: `${getLocalizedMonthYear("zh")}更新`,
       title: "2026年最佳Linux VPN",
       subtitle:
-        "我们专门测试了35+个VPN的Linux兼容性。这些是具有原生应用、CLI支持和全面发行版覆盖的最佳选择。",
+        "我们专门比较了多家VPN的Linux兼容性。这些是具有原生应用、CLI支持和全面发行版覆盖的最佳选择。",
       topPicks: "顶级Linux VPN",
       whyUseVpn: "为什么在Linux上使用VPN？",
       whyUsePoints: [
@@ -1047,7 +1047,7 @@ export default async function LinuxVpnPage({ params }: Props) {
       badge: `${getLocalizedMonthYear("ja")}更新`,
       title: "2026年最高のLinux VPN",
       subtitle:
-        "Linux互換性に特化して35以上のVPNをテストしました。ネイティブアプリ、CLIサポート、包括的なディストリビューションカバレッジを備えた最良のオプションです。",
+        "Linux互換性に特化して複数のVPNを比較します。ネイティブアプリ、CLIサポート、包括的なディストリビューションカバレッジを備えた最良のオプションです。",
       topPicks: "トップLinux VPN",
       whyUseVpn: "なぜLinuxでVPNを使用するのか？",
       whyUsePoints: [
@@ -1195,7 +1195,7 @@ export default async function LinuxVpnPage({ params }: Props) {
       badge: `${getLocalizedMonthYear("ko")} 업데이트`,
       title: "2026년 최고의 리눅스 VPN",
       subtitle:
-        "Linux 호환성을 위해 35개 이상의 VPN을 테스트했습니다. 네이티브 앱, CLI 지원 및 포괄적인 배포판 적용 범위를 갖춘 최고의 옵션입니다.",
+        "Linux 호환성을 위해 여러 VPN을 비교합니다. 네이티브 앱, CLI 지원 및 포괄적인 배포판 적용 범위를 갖춘 최고의 옵션입니다.",
       topPicks: "최고의 리눅스 VPN",
       whyUseVpn: "왜 리눅스에서 VPN을 사용해야 하나요?",
       whyUsePoints: [
@@ -1343,7 +1343,7 @@ export default async function LinuxVpnPage({ params }: Props) {
       badge: `อัปเดต${getLocalizedMonthYear("th")}`,
       title: "VPN ที่ดีที่สุดสำหรับ Linux ในปี 2026",
       subtitle:
-        "เราทดสอบ VPN มากกว่า 35 รายการโดยเฉพาะสำหรับความเข้ากันได้กับ Linux นี่คือตัวเลือกที่ดีที่สุดพร้อมแอปเนทีฟ, การรองรับ CLI และการครอบคลุมดิสโทรอย่างครอบคลุม",
+        "เราเปรียบเทียบ VPN หลายราย รายการโดยเฉพาะสำหรับความเข้ากันได้กับ Linux นี่คือตัวเลือกที่ดีที่สุดพร้อมแอปเนทีฟ, การรองรับ CLI และการครอบคลุมดิสโทรอย่างครอบคลุม",
       topPicks: "VPN Linux ชั้นนำ",
       whyUseVpn: "ทำไมต้องใช้ VPN บน Linux?",
       whyUsePoints: [

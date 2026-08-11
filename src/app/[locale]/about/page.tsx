@@ -110,27 +110,27 @@ export default async function AboutPage({ params }: Props) {
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary">50+</div>
+              <div className="text-3xl font-bold text-primary">Catalog</div>
               <div className="text-sm text-muted-foreground">
-                VPNs Independently Tested
+                Current provider records
               </div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary">500+</div>
+              <div className="text-3xl font-bold text-primary">Method</div>
               <div className="text-sm text-muted-foreground">
-                Speed Tests Conducted
+                Reproducible test plan
               </div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary">200+</div>
+              <div className="text-3xl font-bold text-primary">Evidence</div>
               <div className="text-sm text-muted-foreground">
-                Security Audits Performed
+                Sources and dated notes
               </div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary">100K+</div>
+              <div className="text-3xl font-bold text-primary">9</div>
               <div className="text-sm text-muted-foreground">
-                Monthly Readers
+                Publication locales
               </div>
             </div>
           </div>
@@ -265,8 +265,8 @@ export default async function AboutPage({ params }: Props) {
                       </h3>
                       <p className="text-sm text-muted-foreground mb-3">
                         We measure download speed, upload speed, and latency
-                        across 50+ server locations on a standardized 1Gbps
-                        baseline connection.
+                        under recorded device, protocol, server and network
+                        conditions; results are dated and setup-specific.
                       </p>
                       <ul className="space-y-1.5">
                         <li className="text-xs text-muted-foreground flex items-center gap-1.5">
@@ -522,10 +522,10 @@ export default async function AboutPage({ params }: Props) {
                     </p>
 
                     <p className="text-muted-foreground mt-4 leading-relaxed">
-                      Our team of cybersecurity professionals has tested and
-                      reviewed over 50 VPN services since 2024. We combine
-                      hands-on technical testing with in-depth data analysis to
-                      provide unbiased VPN recommendations you can trust.
+                      Our research combines provider documentation, catalog
+                      fields and hands-on checks. We publish the conditions and
+                      limitations so readers can evaluate recommendations rather
+                      than treating a single result as universal.
                     </p>
 
                     <div className="mt-4 space-y-2">
@@ -534,8 +534,8 @@ export default async function AboutPage({ params }: Props) {
                       </h4>
                       <div className="flex flex-wrap gap-2">
                         {[
-                          "50+ VPN services tested",
-                          "Independent speed & security audits",
+                          "Provider records reviewed",
+                          "Dated speed & security checks",
                           "No sponsored rankings",
                           "Active since 2024",
                           "Multi-platform testing (Windows, macOS, Linux, iOS, Android)",
@@ -930,10 +930,9 @@ export default async function AboutPage({ params }: Props) {
                   <h3 className="text-lg font-semibold">Authoritativeness</h3>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  With 100,000+ monthly readers and content published in 9
-                  languages, ZeroToVPN is a trusted resource for VPN information
-                  worldwide. Our reviews are cited by privacy advocates and tech
-                  publications.
+                  ZeroToVPN publishes research and comparisons across 9 locales.
+                  Each review separates provider documentation, catalog fields and
+                  dated checks so readers can verify what a recommendation means.
                 </p>
               </div>
 

@@ -54,15 +54,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const descriptions: Record<string, string> = {
-    en: "We tested 12 VPNs for gaming performance. See which VPN delivered the lowest ping, best stability and fastest servers in 2026.",
-    nl: "We testten 12 VPNs voor gaming performance. Bekijk welke VPN de laagste ping, beste stabiliteit en snelste servers leverde in 2026.",
-    de: "Wir haben 12 VPNs für Gaming-Performance getestet. Sehen Sie, welches VPN 2026 den niedrigsten Ping, die beste Stabilität und die schnellsten Server liefert.",
-    es: "Probamos 12 VPNs para rendimiento gaming. Descubre cuál ofrece el ping más bajo, mejor estabilidad y servidores más rápidos en 2026.",
-    fr: "Nous avons testé 12 VPNs pour le gaming. Découvrez lequel offre le ping le plus bas, la meilleure stabilité et les serveurs les plus rapides en 2026.",
-    zh: "找到2026年最佳游戏VPN。我们测试了35+个VPN的延迟、速度和DDoS保护。减少延迟并访问地区锁定的游戏。",
-    ja: "2026年最高のゲーミングVPNを見つけよう。35以上のVPNをping、速度、DDoS保護でテストしました。ラグを減らし、地域制限されたゲームにアクセス。",
-    ko: "2026년 최고의 게임용 VPN을 찾으세요. 35개 이상의 VPN을 핑, 속도, DDoS 보호 측면에서 테스트했습니다. 렉을 줄이고 지역 제한 게임에 액세스하세요.",
-    th: "ค้นหา VPN สำหรับเกมที่ดีที่สุดในปี 2026 เราทดสอบ VPN มากกว่า 35 รายการสำหรับ ping, ความเร็ว และการป้องกัน DDoS ลดแลคและเข้าถึงเกมที่ถูกล็อคตามภูมิศาสตร์",
+    en: "Compare current VPN provider records for gaming performance, then test ping, stability and server choice on your own network in 2026.",
+    nl: "Vergelijk actuele VPN-providergegevens voor gaming en test ping, stabiliteit en serverkeuze op je eigen netwerk in 2026.",
+    de: "Vergleichen Sie aktuelle VPN-Anbieterdaten für Gaming und testen Sie Ping, Stabilität und Serverwahl in Ihrem eigenen Netzwerk 2026.",
+    es: "Compara datos actuales de proveedores VPN para gaming y prueba el ping, la estabilidad y el servidor en tu propia red en 2026.",
+    fr: "Comparez les données actuelles des fournisseurs VPN pour le gaming et testez le ping, la stabilité et le serveur sur votre réseau en 2026.",
+    zh: "找到2026年最佳游戏VPN。我们比较了多家VPN的延迟、速度和DDoS保护。减少延迟并访问地区锁定的游戏。",
+    ja: "2026年最高のゲーミングVPNを見つけよう。複数のVPNをping、速度、DDoS保護で比較します。ラグを減らし、地域制限されたゲームにアクセス。",
+    ko: "2026년 최고의 게임용 VPN을 찾으세요. 여러 VPN을 핑, 속도, DDoS 보호 측면에서 비교합니다. 렉을 줄이고 지역 제한 게임에 액세스하세요.",
+    th: "ค้นหา VPN สำหรับเกมที่ดีที่สุดในปี 2026 เราเปรียบเทียบ VPN หลายราย รายการสำหรับ ping, ความเร็ว และการป้องกัน DDoS ลดแลคและเข้าถึงเกมที่ถูกล็อคตามภูมิศาสตร์",
   };
 
   return {
@@ -176,7 +176,7 @@ export default async function GamingVpnPage({ params }: Props) {
       badge: `Updated ${getLocalizedMonthYear("en")}`,
       title: "Best VPN for Gaming in 2026",
       subtitle:
-        "We tested 35+ VPNs specifically for gaming performance. These are the fastest options with the lowest ping and best DDoS protection.",
+        "We compare several VPNs specifically for gaming performance. These are the fastest options with the lowest ping and best DDoS protection.",
       topPicks: "Top Gaming VPNs",
       whyUseVpn: "Why Use a VPN for Gaming?",
       whyUsePoints: [
@@ -316,7 +316,7 @@ export default async function GamingVpnPage({ params }: Props) {
       badge: `Bijgewerkt ${getLocalizedMonthYear("nl")}`,
       title: "Beste VPN voor Gaming in 2026",
       subtitle:
-        "We hebben 35+ VPNs specifiek getest voor gaming prestaties. Dit zijn de snelste opties met de laagste ping en beste DDoS-bescherming.",
+        "We vergelijken meerdere VPN-providers voor gaming. Gebruik ping, stabiliteit en DDoS-bescherming als beslispunten en controleer je eigen netwerk.",
       topPicks: "Top Gaming VPNs",
       whyUseVpn: "Waarom Een VPN Gebruiken Voor Gaming?",
       whyUsePoints: [
@@ -460,7 +460,7 @@ export default async function GamingVpnPage({ params }: Props) {
       badge: `Aktualisiert ${getLocalizedMonthYear("de")}`,
       title: "Beste VPN für Gaming in 2026",
       subtitle:
-        "Wir haben über 35 VPNs speziell für Gaming-Leistung getestet. Dies sind die schnellsten Optionen mit dem niedrigsten Ping und bestem DDoS-Schutz.",
+        "Wir vergleichen mehrere VPN-Anbieter speziell für Gaming-Leistung getestet. Dies sind die schnellsten Optionen mit dem niedrigsten Ping und bestem DDoS-Schutz.",
       topPicks: "Top Gaming VPNs",
       whyUseVpn: "Warum Ein VPN Für Gaming Verwenden?",
       whyUsePoints: [
@@ -608,7 +608,7 @@ export default async function GamingVpnPage({ params }: Props) {
       badge: `Actualizado ${getLocalizedMonthYear("es")}`,
       title: "Mejor VPN para Gaming en 2026",
       subtitle:
-        "Probamos más de 35 VPNs específicamente para rendimiento en gaming. Estas son las opciones más rápidas con el ping más bajo y la mejor protección DDoS.",
+        "Comparamos varias VPNs específicamente para rendimiento en gaming. Estas son las opciones más rápidas con el ping más bajo y la mejor protección DDoS.",
       topPicks: "Mejores VPNs para Gaming",
       whyUseVpn: "¿Por Qué Usar Una VPN Para Gaming?",
       whyUsePoints: [
@@ -756,7 +756,7 @@ export default async function GamingVpnPage({ params }: Props) {
       badge: `Mis à jour ${getLocalizedMonthYear("fr")}`,
       title: "Meilleur VPN pour Gaming en 2026",
       subtitle:
-        "Nous avons testé plus de 35 VPN spécifiquement pour les performances gaming. Ce sont les options les plus rapides avec le ping le plus bas et la meilleure protection DDoS.",
+        "Nous comparons plusieurs VPN spécifiquement pour les performances gaming. Ce sont les options les plus rapides avec le ping le plus bas et la meilleure protection DDoS.",
       topPicks: "Meilleurs VPN Gaming",
       whyUseVpn: "Pourquoi Utiliser Un VPN Pour Le Gaming?",
       whyUsePoints: [
@@ -1052,7 +1052,7 @@ export default async function GamingVpnPage({ params }: Props) {
       badge: `${getLocalizedMonthYear("ja")}更新`,
       title: "2026年最高のゲーミングVPN",
       subtitle:
-        "ゲームパフォーマンスを専門に35以上のVPNをテストしました。これらは最低のpingと最高のDDoS保護を備えた最速のオプションです。",
+        "ゲームパフォーマンスを専門に複数のVPNを比較します。これらは最低のpingと最高のDDoS保護を備えた最速のオプションです。",
       topPicks: "トップゲーミングVPN",
       whyUseVpn: "ゲームにVPNを使用する理由",
       whyUsePoints: [
@@ -1192,7 +1192,7 @@ export default async function GamingVpnPage({ params }: Props) {
       badge: `${getLocalizedMonthYear("ko")} 업데이트`,
       title: "2026년 최고의 게임용 VPN",
       subtitle:
-        "게임 성능을 위해 35개 이상의 VPN을 테스트했습니다. 가장 낮은 핑과 최고의 DDoS 보호 기능을 갖춘 가장 빠른 옵션입니다.",
+        "게임 성능을 위해 여러 VPN을 비교합니다. 가장 낮은 핑과 최고의 DDoS 보호 기능을 갖춘 가장 빠른 옵션입니다.",
       topPicks: "최고의 게임용 VPN",
       whyUseVpn: "게임에 VPN을 사용하는 이유",
       whyUsePoints: [
@@ -1332,7 +1332,7 @@ export default async function GamingVpnPage({ params }: Props) {
       badge: `อัปเดต${getLocalizedMonthYear("th")}`,
       title: "VPN ที่ดีที่สุดสำหรับเกมในปี 2026",
       subtitle:
-        "เราทดสอบ VPN มากกว่า 35 รายการโดยเฉพาะสำหรับประสิทธิภาพการเล่นเกม นี่คือตัวเลือกที่เร็วที่สุดพร้อม ping ต่ำที่สุดและการป้องกัน DDoS ที่ดีที่สุด",
+        "เราเปรียบเทียบ VPN หลายราย รายการโดยเฉพาะสำหรับประสิทธิภาพการเล่นเกม นี่คือตัวเลือกที่เร็วที่สุดพร้อม ping ต่ำที่สุดและการป้องกัน DDoS ที่ดีที่สุด",
       topPicks: "VPN เกมชั้นนำ",
       whyUseVpn: "ทำไมต้องใช้ VPN สำหรับเกม?",
       whyUsePoints: [

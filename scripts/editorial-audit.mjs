@@ -50,6 +50,48 @@ const checks = [
     forbiddenPatterns: [/35\+|35以上|35개 이상|35款以上|plus de 35|über 35|มากกว่า 35/i, /500\+|500回|500회|500多次|plus de 500|über 500|มากกว่า 500/i, /6,730|7,000\+.*118|24\/7/],
   },
   {
+    name: "about page uses verifiable trust signals",
+    file: "src/app/[locale]/about/page.tsx",
+    patterns: [/Current provider records/, /Reproducible test plan/, /Sources and dated notes/, /Publication locales/, /separates provider documentation/],
+    forbiddenPatterns: [/100K\+|100,000\+|Monthly Readers|monthly readers|50\+|500\+|200\+/i],
+  },
+  {
+    name: "Linux use-case page avoids unsupported test counts",
+    file: "src/app/[locale]/best/vpn-linux/page.tsx",
+    patterns: [/We compare several VPNs for Linux/, /We vergelijken meerdere VPN-providers op Linux/],
+    forbiddenPatterns: [/35\+|35以上|35개|35个|über 35|más de 35|plus de 35|มากกว่า 35/i],
+  },
+  {
+    name: "Windows use-case page avoids unsupported test counts",
+    file: "src/app/[locale]/best/vpn-windows/page.tsx",
+    patterns: [/We compare several VPNs for Windows/, /We vergelijken meerdere VPN-providers op Windows/],
+    forbiddenPatterns: [/35\+|35以上|35개|35个|über 35|más de 35|plus de 35|มากกว่า 35/i],
+  },
+  {
+    name: "laptop use-case page avoids unsupported test counts",
+    file: "src/app/[locale]/best/vpn-laptops/page.tsx",
+    patterns: [/We compare several VPNs for laptops/, /We vergelijken meerdere VPN-providers voor laptopgebruik/],
+    forbiddenPatterns: [/35\+|35以上|35개|35个|über 35|más de 35|plus de 35|มากกว่า 35/i],
+  },
+  {
+    name: "privacy use-case page avoids unsupported test counts",
+    file: "src/app/[locale]/best/vpn-privacy/page.tsx",
+    patterns: [/We compare several VPNs for privacy/, /We vergelijken meerdere VPN-providers op privacybescherming/],
+    forbiddenPatterns: [/35\+|35以上|35개|35个|über 35|más de 35|plus de 35|มากกว่า 35/i],
+  },
+  {
+    name: "gaming use-case page avoids unsupported test counts",
+    file: "src/app/[locale]/best/vpn-gaming/page.tsx",
+    patterns: [/Compare current VPN provider records for gaming performance/, /We vergelijken meerdere VPN-providers voor gaming/],
+    forbiddenPatterns: [/35\+|35以上|35개|35个|über 35|más de 35|plus de 35|มากกว่า 35|We tested 12 VPNs/i],
+  },
+  {
+    name: "Chromebook use-case page avoids unsupported test counts",
+    file: "src/app/[locale]/best/vpn-chromebook/page.tsx",
+    patterns: [/We vergelijken meerdere VPN-providers voor Chromebook-compatibiliteit/],
+    forbiddenPatterns: [/35\+|35以上|35개|35个|über 35|más de 35|plus de 35|มากกว่า 35/i],
+  },
+  {
     name: "homepage evidence-bounded recommendation",
     file: "src/app/[locale]/page.tsx",
     patterns: [/Shortlist candidate/, /catalog data and documented options/, /Provider-stated countries/, /Refund window in catalog/],

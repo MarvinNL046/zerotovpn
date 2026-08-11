@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-08-11",
+  "property": "sc-domain:zerotovpn.com",
+  "source": "Google Search Console UI",
+  "dateRange": {
+    "start": "2026-05-10",
+    "end": "2026-08-09"
+  },
+  "searchType": "web",
+  "filters": [],
+  "siteCards": {
+    "clicks": 395,
+    "impressionsDisplayed": "184K",
+    "ctrDisplayed": "0.2%",
+    "averagePosition": 32.7
+  },
+  "searchConsole": {
+    "totals": {
+      "clicks": 395,
+      "impressions": null,
+      "ctr": 0.002,
+      "averagePosition": 32.7
+    }
+  },
+  "affiliate": {
+    "totalClicks": null,
+    "humanClicks": null,
+    "conversions": null,
+    "conversionRate": null,
+    "epc": null
+  },
+  "topPages": [
+    { "path": "/", "clicks": 31, "impressions": 1418, "position": 15.0 },
+    { "path": "/blog/best-vpn-for-iran-2026-bypass-internet-censorship", "clicks": 24, "impressions": 11692, "position": 9.1 },
+    { "path": "/countries/russia", "clicks": 13, "impressions": 4755, "position": 22.1 },
+    { "path": "/blog/best-vpn-for-telegram-2026", "clicks": 10, "impressions": 2846, "position": 9.9 },
+    { "path": "/es/blog/who-owns-vpn-2026-ownership-breakdown", "clicks": 8, "impressions": 1384, "position": 8.8 },
+    { "path": "/countries/iran", "clicks": 7, "impressions": 2703, "position": 14.2 },
+    { "path": "/ko/best/vpn-chromebook", "clicks": 7, "impressions": 316, "position": 17.1 },
+    { "path": "/fr/best/free-vpn", "clicks": 6, "impressions": 6064, "position": 35.6 },
+    { "path": "/best/vpn-android-tablet", "clicks": 6, "impressions": 646, "position": 18.3 },
+    { "path": "/zh/best/free-vpn", "clicks": 5, "impressions": 288, "position": 71.9 },
+    { "path": "/compare/protonvpn-vs-astrill", "clicks": 5, "impressions": 112, "position": 5.3 },
+    { "path": "/ja/countries/myanmar", "clicks": 5, "impressions": 84, "position": 9.9 },
+    { "path": "/fr/compare/protonvpn-vs-astrill", "clicks": 5, "impressions": 23, "position": 3.8 },
+    { "path": "/blog/best-free-vpn-reddit-2026", "clicks": 4, "impressions": 6571, "position": 9.6 },
+    { "path": "/best/vpn-russia", "clicks": 4, "impressions": 417, "position": 23.0 },
+    { "path": "/zh/best/vpn-china", "clicks": 4, "impressions": 258, "position": 58.7 }
+  ],
+  "topQueries": [
+    { "query": "free vpn", "clicks": 3, "impressions": 332, "position": 35.9 },
+    { "query": "russia vpn", "clicks": 3, "impressions": 261, "position": 32.5 },
+    { "query": "크롬북 vpn", "clicks": 3, "impressions": 81, "position": 9.5 },
+    { "query": "vpn 中国", "clicks": 3, "impressions": 31, "position": 65.1 },
+    { "query": "ウズベキスタン vpn", "clicks": 2, "impressions": 36, "position": 7.5 },
+    { "query": "review vpn", "clicks": 2, "impressions": 32, "position": 46.2 },
+    { "query": "zaro vpn", "clicks": 2, "impressions": 17, "position": 4.2 },
+    { "query": "ミャンマー vpn", "clicks": 2, "impressions": 7, "position": 14.9 },
+    { "query": "vpn排名", "clicks": 2, "impressions": 3, "position": 46.0 },
+    { "query": "vpn gratuit", "clicks": 1, "impressions": 1279, "position": 39.3 },
+    { "query": "vpn comparison", "clicks": 1, "impressions": 704, "position": 43.9 },
+    { "query": "best vpn for android", "clicks": 1, "impressions": 653, "position": 53.5 },
+    { "query": "vpn for chromebook", "clicks": 1, "impressions": 531, "position": 45.3 },
+    { "query": "chromebook vpn", "clicks": 1, "impressions": 523, "position": 35.6 },
+    { "query": "vpn leak test", "clicks": 1, "impressions": 428, "position": 47.7 },
+    { "query": "vpn russia", "clicks": 1, "impressions": 279, "position": 35.0 },
+    { "query": "dns leak test", "clicks": 1, "impressions": 268, "position": 63.3 },
+    { "query": "vpn for russia", "clicks": 1, "impressions": 218, "position": 40.0 },
+    { "query": "vpn free trial", "clicks": 1, "impressions": 179, "position": 58.0 }
+  ]
+}

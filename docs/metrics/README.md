@@ -1,6 +1,6 @@
 # Editorial measurement loop
 
-The committed [baseline](./zerotovpn-baseline-2026-08-11.json) is a screenshot transcription, clearly marked as such. It is useful for planning but is not a Search Console or partner-dashboard export.
+The committed [historical baseline](./zerotovpn-baseline-2026-08-11.json) is a screenshot transcription, clearly marked as such. The current authenticated Search Console snapshot is [gsc-baseline-2026-08-11.md](./gsc-baseline-2026-08-11.md); it covers 10 May–9 August 2026 with Search type Web and no active filters. It is stronger than the screenshot transcription but is still a UI snapshot, not a downloadable API export.
 
 When the next exports are available, keep the raw files outside Git or in a local ignored folder and run:
 
@@ -11,7 +11,7 @@ npm run measure:editorial -- `
   --gsc-queries .cache/metrics/gsc-queries.csv `
   --shortio .cache/metrics/shortio.csv `
   --partner .cache/metrics/nord-affiliate.csv `
-  --baseline docs/metrics/zerotovpn-baseline-2026-08-11.json `
+  --baseline docs/metrics/gsc-baseline-2026-08-11.json `
   --out docs/metrics/post-14d-2026-08-25.json
 ```
 

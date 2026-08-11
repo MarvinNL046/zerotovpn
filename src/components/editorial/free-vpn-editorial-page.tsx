@@ -5,7 +5,7 @@ import { FAQSchema } from "@/components/seo/faq-schema";
 import { BestVpnEditorialTemplate } from "@/components/editorial/best-vpn-editorial-template";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { Link } from "@/i18n/navigation";
-import { getVpnAffiliateUrl } from "@/lib/vpn-links";
+import { getVpnAffiliateUrl, type VpnLinkSlug } from "@/lib/vpn-links";
 
 const pageUrl = "https://www.zerotovpn.com/best/free-vpn";
 const faq = [
@@ -25,7 +25,7 @@ const nav = [
   { href: "#sources", label: "Sources" },
 ] as const;
 
-function FreeTierCard({ rank, name, vpnId, badge, description, limit, bestFor, officialUrl, officialLabel }: { rank: number; name: string; vpnId: string; badge?: string; description: string; limit: string; bestFor: string; officialUrl: string; officialLabel: string }) {
+function FreeTierCard({ rank, name, vpnId, badge, description, limit, bestFor, officialUrl, officialLabel }: { rank: number; name: string; vpnId: VpnLinkSlug; badge?: string; description: string; limit: string; bestFor: string; officialUrl: string; officialLabel: string }) {
   return (
     <article className="rounded-2xl border bg-card p-5 shadow-sm">
       <div className="flex items-start justify-between gap-4"><div><p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">{rank}. {badge ?? "Free tier"}</p><h3 className="mt-2 text-xl font-bold">{name}</h3></div><ShieldCheck className="size-5 text-emerald-600" aria-hidden="true" /></div>

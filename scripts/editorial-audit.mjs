@@ -53,6 +53,11 @@ const checks = [
     file: "src/components/editorial/travel-editorial-page.tsx",
     patterns: [/What a travel VPN can/, /id="prepare"/, /id="compare"/, /id="faq"/, /travel.state.gov/, /DataForSEO/],
   },
+  {
+    name: "Free VPN support page",
+    file: "src/components/editorial/free-vpn-editorial-page.tsx",
+    patterns: [/what is actually free/, /id="free-tiers"/, /id="safety"/, /id="faq"/, /protonvpn.com\/free-vpn/, /DataForSEO/],
+  },
 ];
 
 const results = checks.map((check) => {

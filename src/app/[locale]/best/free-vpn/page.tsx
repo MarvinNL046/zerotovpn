@@ -18,6 +18,7 @@ import { FAQAccordion } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { Link } from "@/i18n/navigation";
 import { getVpnAffiliateUrl } from "@/lib/vpn-links";
+import { FreeVpnEditorialPage } from "@/components/editorial/free-vpn-editorial-page";
 import {
   Shield,
   CheckCircle,
@@ -42,6 +43,17 @@ const baseUrl = "https://www.zerotovpn.com";
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const shortMonthYear = getShortMonthYear();
+
+  if (locale === "en") {
+    return {
+      metadataBase: new URL(baseUrl),
+      title: { absolute: "Best Free VPNs: Safety, Limits and Trade-offs | ZeroToVPN" },
+      description: "Compare free VPN tiers by data limits, privacy evidence, locations and realistic use cases without blanket safety claims.",
+      robots: { index: true, follow: true },
+      openGraph: { locale: "en_US", title: "Best Free VPNs: Safety, Limits and Trade-offs", description: "A bounded comparison of free VPN tiers and their real limitations.", type: "article" },
+      alternates: generateAlternates("/best/free-vpn", locale),
+    };
+  }
 
   const titles: Record<string, string> = {
     en: `4 Best Free VPNs (${shortMonthYear}) - No Hidden Costs | ZeroToVPN`,
@@ -172,6 +184,8 @@ function FreeVpnListSchema() {
 export default async function FreeVpnPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  if (locale === "en") return <FreeVpnEditorialPage />;
 
   const t = await getTranslations("freeVpn");
 

@@ -1,0 +1,551 @@
+{
+  "schemaVersion": 1,
+  "cluster": "Free VPNs / safety / limits / streaming",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "fetchedAt": "2026-08-11T17:44:07.288Z",
+  "refreshed": false,
+  "seeds": [
+    "free vpn",
+    "best free vpn",
+    "free vpn no credit card",
+    "are free vpns safe",
+    "free vpn for streaming",
+    "free vpn for china"
+  ],
+  "overview": [
+    {
+      "keyword": "are free vpns safe",
+      "currentVolume": 590,
+      "latestVolume": 480,
+      "latestMonth": "2026-06",
+      "difficulty": 15,
+      "intent": "informational"
+    },
+    {
+      "keyword": "best free vpn",
+      "currentVolume": null,
+      "latestVolume": 33100,
+      "latestMonth": "2024-02",
+      "difficulty": 20,
+      "intent": "informational"
+    },
+    {
+      "keyword": "free vpn",
+      "currentVolume": null,
+      "latestVolume": 165000,
+      "latestMonth": "2024-02",
+      "difficulty": 55,
+      "intent": "informational"
+    },
+    {
+      "keyword": "free vpn for china",
+      "currentVolume": null,
+      "latestVolume": 880,
+      "latestMonth": "2024-02",
+      "difficulty": 0,
+      "intent": "informational"
+    },
+    {
+      "keyword": "free vpn for streaming",
+      "currentVolume": null,
+      "latestVolume": 210,
+      "latestMonth": "2024-02",
+      "difficulty": 32,
+      "intent": "informational"
+    },
+    {
+      "keyword": "free vpn no credit card",
+      "currentVolume": null,
+      "latestVolume": 210,
+      "latestMonth": "2024-02",
+      "difficulty": 20,
+      "intent": "informational"
+    }
+  ],
+  "suggestions": [
+    {
+      "seed": "best free vpn",
+      "keyword": "best vpn network free",
+      "volume": 33100
+    },
+    {
+      "seed": "best free vpn",
+      "keyword": "vpn best free vpn",
+      "volume": 33100
+    },
+    {
+      "seed": "best free vpn",
+      "keyword": "best free vpn networks",
+      "volume": 33100
+    },
+    {
+      "seed": "free vpn",
+      "keyword": "free vpn mobile iphone",
+      "volume": 18100
+    },
+    {
+      "seed": "free vpn",
+      "keyword": "free vpn software android",
+      "volume": 14800
+    },
+    {
+      "seed": "free vpn",
+      "keyword": "application vpn free",
+      "volume": 6600
+    },
+    {
+      "seed": "free vpn",
+      "keyword": "free apps vpn",
+      "volume": 6600
+    },
+    {
+      "seed": "free vpn",
+      "keyword": "vpn to download free",
+      "volume": 6600
+    },
+    {
+      "seed": "free vpn",
+      "keyword": "free vpn web browsing",
+      "volume": 4400
+    },
+    {
+      "seed": "free vpn",
+      "keyword": "free vpn internet browsing",
+      "volume": 4400
+    },
+    {
+      "seed": "best free vpn",
+      "keyword": "android vpn best free",
+      "volume": 3600
+    },
+    {
+      "seed": "free vpn",
+      "keyword": "free vpn software for chrome",
+      "volume": 3600
+    },
+    {
+      "seed": "free vpn",
+      "keyword": "vpn for downloading free",
+      "volume": 3600
+    },
+    {
+      "seed": "free vpn",
+      "keyword": "free vpn for websites",
+      "volume": 3600
+    },
+    {
+      "seed": "free vpn",
+      "keyword": "free vpn for downloads",
+      "volume": 3600
+    },
+    {
+      "seed": "best free vpn",
+      "keyword": "best free vpn software for android",
+      "volume": 3600
+    },
+    {
+      "seed": "best free vpn",
+      "keyword": "best free vpn for mac book",
+      "volume": 1900
+    },
+    {
+      "seed": "best free vpn",
+      "keyword": "free vpn mac best",
+      "volume": 1900
+    },
+    {
+      "seed": "best free vpn",
+      "keyword": "best free vpn extensions chrome",
+      "volume": 1000
+    },
+    {
+      "seed": "best free vpn",
+      "keyword": "best vpn software for windows free",
+      "volume": 720
+    },
+    {
+      "seed": "best free vpn",
+      "keyword": "best free vpn software windows",
+      "volume": 720
+    },
+    {
+      "seed": "best free vpn",
+      "keyword": "best torrenting vpn free",
+      "volume": 590
+    },
+    {
+      "seed": "best free vpn",
+      "keyword": "best vpn free for torrenting",
+      "volume": 590
+    },
+    {
+      "seed": "best free vpn",
+      "keyword": "best vpn torrenting free",
+      "volume": 590
+    },
+    {
+      "seed": "best free vpn",
+      "keyword": "best free vpn 2025",
+      "volume": 480
+    },
+    {
+      "seed": "best free vpn",
+      "keyword": "best free iphone vpn apps",
+      "volume": 320
+    },
+    {
+      "seed": "free vpn no credit card",
+      "keyword": "free vpn trial no credit card required",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn no credit card",
+      "keyword": "free vpn for netflix no credit card",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn no credit card",
+      "keyword": "free trial vpn no credit card needed",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn no credit card",
+      "keyword": "vpn free no credit card needed",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn no credit card",
+      "keyword": "no credit card vpn free trial",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn no credit card",
+      "keyword": "vpn free trial no credit card needed",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn no credit card",
+      "keyword": "try vpn free no credit card",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn no credit card",
+      "keyword": "free vpn software no credit card",
+      "volume": 0
+    },
+    {
+      "seed": "free vpn no credit card",
+      "keyword": "vpn free trial no credit card uk",
+      "volume": 0
+    },
+    {
+      "seed": "free vpn no credit card",
+      "keyword": "no credit card free vpn",
+      "volume": null
+    },
+    {
+      "seed": "free vpn no credit card",
+      "keyword": "free trial vpn canada no credit card",
+      "volume": null
+    },
+    {
+      "seed": "free vpn no credit card",
+      "keyword": "free vpn no credit card needed",
+      "volume": null
+    },
+    {
+      "seed": "free vpn no credit card",
+      "keyword": "vpn trial free no credit card",
+      "volume": null
+    },
+    {
+      "seed": "free vpn no credit card",
+      "keyword": "free trial no credit card vpn",
+      "volume": null
+    },
+    {
+      "seed": "free vpn no credit card",
+      "keyword": "vpn free trial no credit card reddit",
+      "volume": null
+    },
+    {
+      "seed": "are free vpns safe",
+      "keyword": "are free vpns safe",
+      "volume": 590
+    },
+    {
+      "seed": "are free vpns safe",
+      "keyword": "are there any safe free vpns",
+      "volume": 50
+    },
+    {
+      "seed": "are free vpns safe",
+      "keyword": "free vpns that are safe",
+      "volume": 40
+    },
+    {
+      "seed": "are free vpns safe",
+      "keyword": "what vpns are free and safe",
+      "volume": 30
+    },
+    {
+      "seed": "are free vpns safe",
+      "keyword": "are there safe free vpns",
+      "volume": 20
+    },
+    {
+      "seed": "are free vpns safe",
+      "keyword": "what free vpns are safe",
+      "volume": 20
+    },
+    {
+      "seed": "are free vpns safe",
+      "keyword": "are there any free vpns that are safe",
+      "volume": 20
+    },
+    {
+      "seed": "are free vpns safe",
+      "keyword": "are there any free safe vpns",
+      "volume": 10
+    },
+    {
+      "seed": "are free vpns safe",
+      "keyword": "are free vpns safe to use",
+      "volume": 10
+    },
+    {
+      "seed": "are free vpns safe",
+      "keyword": "which vpns are free and safe",
+      "volume": 10
+    },
+    {
+      "seed": "are free vpns safe",
+      "keyword": "how safe are free vpns",
+      "volume": 10
+    },
+    {
+      "seed": "are free vpns safe",
+      "keyword": "are free vpns safe reddit",
+      "volume": 10
+    },
+    {
+      "seed": "are free vpns safe",
+      "keyword": "what are some safe free vpns",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn for streaming",
+      "keyword": "free vpn for streaming video",
+      "volume": 210
+    },
+    {
+      "seed": "free vpn for streaming",
+      "keyword": "best free vpn for streaming video",
+      "volume": 140
+    },
+    {
+      "seed": "free vpn for streaming",
+      "keyword": "best free vpn for streaming tv",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn for streaming",
+      "keyword": "free vpn for online streaming",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn for streaming",
+      "keyword": "free vpn for streaming movies",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn for streaming",
+      "keyword": "free vpn for streaming services",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn for streaming",
+      "keyword": "which is the best free vpn for streaming",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn for streaming",
+      "keyword": "free vpn for streaming tv",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn for streaming",
+      "keyword": "free vpn for streaming sports",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn for streaming",
+      "keyword": "fastest free vpn for streaming",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn for streaming",
+      "keyword": "is there a free vpn for streaming",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn for streaming",
+      "keyword": "free vpn for ipad streaming",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn for streaming",
+      "keyword": "best free vpn for streaming sports",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn for streaming",
+      "keyword": "best free vpn for live streaming",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn for streaming",
+      "keyword": "vpn free for streaming",
+      "volume": null
+    },
+    {
+      "seed": "free vpn for china",
+      "keyword": "best vpn free for china",
+      "volume": 260
+    },
+    {
+      "seed": "free vpn for china",
+      "keyword": "free vpn for use in china",
+      "volume": 50
+    },
+    {
+      "seed": "free vpn for china",
+      "keyword": "free vpn for iphone china",
+      "volume": 20
+    },
+    {
+      "seed": "free vpn for china",
+      "keyword": "free vpn in china for iphone",
+      "volume": 20
+    },
+    {
+      "seed": "free vpn for china",
+      "keyword": "free vpn for china iphone",
+      "volume": 20
+    },
+    {
+      "seed": "free vpn for china",
+      "keyword": "what is the best free vpn for china",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn for china",
+      "keyword": "best free vpn for china travel",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn for china",
+      "keyword": "free vpn for china apk",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn for china",
+      "keyword": "best free vpn app for china",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn for china",
+      "keyword": "which vpn works in china for free",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn for china",
+      "keyword": "best vpn for china server free",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn for china",
+      "keyword": "best free vpn for pc in china",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn for china",
+      "keyword": "best free vpn for laptop in china",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn for china",
+      "keyword": "good free vpn for china",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn for china",
+      "keyword": "best vpn for china free download",
+      "volume": 10
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "free vpn",
+      "paa": [
+        "Is there any 100% free VPN?",
+        "Is there any really free VPN?",
+        "Are free VPNs illegal?",
+        "Which is the best VPN for free?"
+      ],
+      "hasAiOverview": false
+    },
+    {
+      "keyword": "best free vpn",
+      "paa": [
+        "What is the best fully free VPN?",
+        "Is there any 100% free VPN?",
+        "Are free VPNs illegal?",
+        "Can the FBI track a VPN?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "free vpn no credit card",
+      "paa": [
+        "Is there a free VPN that requires no payment?",
+        "How to get a VPN without a credit card?",
+        "Is there a VPN that is 100% free?",
+        "Can I get a free trial for a VPN without using a credit card?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "are free vpns safe",
+      "paa": [
+        "Can I trust a free VPN?",
+        "Which free VPN is safest to use?",
+        "Can the FBI track a VPN?",
+        "Is it illegal to use a free VPN?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "free vpn for streaming",
+      "paa": [
+        "Is there any 100% free VPN?",
+        "Are free VPNs illegal?",
+        "Will Netflix ban me for using a VPN?",
+        "What is the no. 1 free VPN?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "free vpn for china",
+      "paa": [
+        "Which VPN is 100% free?",
+        "Which free VPN works in China in 2026?",
+        "Is VPN illegal for tourists in China?"
+      ],
+      "hasAiOverview": true
+    }
+  ],
+  "sourcePolicy": "DataForSEO signals prioritise questions and structure; they do not prove that a free tier is safe, private, available or suitable for streaming."
+}

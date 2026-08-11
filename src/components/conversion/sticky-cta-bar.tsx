@@ -12,7 +12,7 @@ interface StickyCTABarProps {
 
 /**
  * A non-commercial, site-owned conversion aid. Affiliate offers belong in
- * contextual editorial placements, not in a global discount banner.
+ * contextual editorial placements, not in a global promotion banner.
  */
 export function StickyCTABar({ position = "bottom" }: StickyCTABarProps) {
   const sticky = useTranslations("stickyBar");

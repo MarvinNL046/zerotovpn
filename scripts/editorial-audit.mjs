@@ -69,13 +69,22 @@ const checks = [
     patterns: [/useTranslations\("newsletter"\)/, /<NewsletterForm[^>]+source="exit-intent"/, /Owned-media newsletter prompt/],
     forbiddenPatterns: [
       /go\.zerotovpn\.com|go\.nordvpn\.net|nordvpn\.tpo\.lv/i,
-      /affiliateUrl|affiliateHref|coupon|discount|promo(code)?|cashback|incentive|view deal|buy now/i,
+      /affiliateUrl|affiliateHref|coupon|discount|\bpromo(?:code)?\b|cashback|incentive|view deal|buy now/i,
     ],
   },
   {
     name: "restricted affiliate context guard",
     file: "src/app/[locale]/blog/[slug]/page.tsx",
     patterns: [/isRestrictedAffiliateContext/, /verwijderAffiliateLinks\(post\.content\)/, /SourcesSection content=\{articleContent\}/],
+  },
+  {
+    name: "non-commercial sticky CTA guard",
+    file: "src/components/conversion/sticky-cta-bar.tsx",
+    patterns: [/Link href="\/quiz"/, /site-owned conversion aid/],
+    forbiddenPatterns: [
+      /go\.zerotovpn\.com|go\.nordvpn\.net|nordvpn\.tpo\.lv/i,
+      /affiliateUrl|affiliateHref|coupon|discount|\bpromo(?:code)?\b|cashback|incentive|view deal|buy now/i,
+    ],
   },
 ];
 

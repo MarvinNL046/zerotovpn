@@ -1,9 +1,9 @@
 # Live editorial page audit
 
-Generated: 2026-08-11T20:05:02.696Z
+Generated: 2026-08-11T20:14:06.055Z
 
-- Target pages: **11**
-- Passing pages: **11**
+- Target pages: **12**
+- Passing pages: **12**
 - Pages needing review: **0**
 - Affiliate links checked: **81**
 - Affiliate links missing sponsored/nofollow: **0**
@@ -20,6 +20,7 @@ Generated: 2026-08-11T20:05:02.696Z
 | pass | /best/best-vpn | Best VPN in 2026: Transparent Shortlist and Comparison | ZeroToVPN | 1 | 64 | 21 | — | — |
 | pass | /blog/best-vpn-for-iran-2026-bypass-internet-censorship | Best VPN for Iran in 2026: tested options, limits and safer preparation | 1 | 60 | 6 | — | — |
 | pass | /blog/best-vpn-for-telegram-2026 | Best VPN for Telegram in 2026: what to verify before you connect | 1 | 59 | 6 | — | — |
+| pass | /countries/iran | VPN Use in Iran: Evidence and Safety Checklist | ZeroToVPN | 1 | 54 | 0 | — | — |
 | pass | /countries/russia | VPN for Russia in 2026: What to Verify Before You Connect | 1 | 46 | 6 | — | — |
 | pass | /countries/china | VPN for China in 2026: What to Verify Before You Connect | 1 | 47 | 6 | — | — |
 | pass | /guides/vpn-protocols-explained | VPN Protocols Explained: WireGuard vs OpenVPN (2026) | ZeroToVPN | 1 | 50 | 6 | — | — |

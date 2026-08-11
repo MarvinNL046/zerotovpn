@@ -92,7 +92,7 @@ export default async function VpnFreeTrialPage({ params }: Props) {
       ],
       tableTitle: "What each provider actually offers",
       tableIntro:
-        "Every line below was read on the provider's own page on 25 July 2026. Where other sites disagree, we follow the provider.",
+        "Each row below has a provider source and checked date in the Sources section. Where other sites disagree, we follow the provider's first-party wording.",
       colVpn: "VPN",
       colTrial: "Free trial",
       colPlatforms: "Where",
@@ -162,7 +162,7 @@ export default async function VpnFreeTrialPage({ params }: Props) {
         },
       ],
       sourcesTitle: "Sources",
-      sourcesIntro: "Each claim above links to the page it came from, read on 25 July 2026.",
+      sourcesIntro: "Each claim above links to the provider page it came from; the checked date is shown beside the source.",
       checkedOn: "checked",
     },
   } as const;

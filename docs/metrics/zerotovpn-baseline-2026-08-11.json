@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-08-11",
+  "source": "User-provided Search Console, AI visibility, indexing and Short.io screenshots",
+  "sourceType": "screenshot-baseline-not-api-export",
+  "searchConsole": {
+    "window": "2026-05-09/2026-08-07",
+    "totals": {
+      "clicks": 394,
+      "impressions": 183000,
+      "ctr": 0.002,
+      "averagePosition": 32.5
+    },
+    "pages": [
+      { "page": "/", "clicks": 30, "impressions": 1409, "position": 15.0 },
+      { "page": "/blog/best-vpn-for-iran-2026-bypass-internet-censorship", "clicks": 24, "impressions": 12034, "position": 9.0 },
+      { "page": "/countries/russia", "clicks": 13, "impressions": 4596, "position": 22.3 },
+      { "page": "/blog/best-vpn-for-telegram-2026", "clicks": 10, "impressions": 2858, "position": 9.9 }
+    ],
+    "queries": [
+      { "query": "free vpn", "clicks": 3, "impressions": 329 },
+      { "query": "russia vpn", "clicks": 3, "impressions": 255 },
+      { "query": "korean vpn", "clicks": 3, "impressions": 81 }
+    ]
+  },
+  "indexing": {
+    "indexedPages": 6740,
+    "notIndexedPages": 7330,
+    "sitemapDiscoveredPages": 2285
+  },
+  "affiliate": {
+    "provider": "NordVPN",
+    "shortUrl": "https://go.zerotovpn.com/nordvpn",
+    "window": "last-30-days-as-shown",
+    "totalClicks": 341,
+    "humanClicks": 286,
+    "topCountries": [
+      { "country": "China", "clicks": 134 },
+      { "country": "The Netherlands", "clicks": 11 },
+      { "country": "United States", "clicks": 10 },
+      { "country": "Iran", "clicks": 8 },
+      { "country": "Germany", "clicks": 8 }
+    ],
+    "topReferrers": [
+      { "referrer": "Unknown", "clicks": 207 },
+      { "referrer": "go.zerotovpn.com", "clicks": 78 },
+      { "referrer": "www.zerotovpn.com", "clicks": 1 }
+    ],
+    "conversions": null,
+    "epc": null
+  },
+  "authoritySignals": {
+    "domainRating": 0.4,
+    "urlRating": 5,
+    "backlinks": 1400,
+    "referringDomains": 593,
+    "organicKeywords": 10,
+    "organicTraffic": 37
+  },
+  "notes": [
+    "Values are transcribed from screenshots and should not be treated as an API export.",
+    "Search Console page rows and query rows are partial visible examples, not complete tables.",
+    "Conversions and EPC were not visible; they must be joined from the partner dashboard.",
+    "Do not compare this baseline to a later period until date windows and filters match."
+  ]
+}

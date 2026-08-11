@@ -1,12 +1,13 @@
 # Live editorial page audit
 
-Generated: 2026-08-11T20:41:45.771Z
+Generated: 2026-08-11T20:51:48.334Z
 
 - Target pages: **12**
 - Passing pages: **12**
 - Pages needing review: **0**
 - Affiliate links checked: **81**
 - Affiliate links missing sponsored/nofollow: **0**
+- Affiliate links missing Short.io slug telemetry: **0**
 - Missing required cluster links: **0**
 - Pages missing complete Open Graph metadata: **0**
 - Pages missing complete Twitter metadata: **0**

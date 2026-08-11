@@ -22,6 +22,8 @@
 
 - **11 August 2026:** Rechecked the three sitemap responses that exceeded two seconds. Three production samples per route all stayed below 1.3 seconds (medians 0.63–0.87 s), so no content or routing change is justified. Evidence: [performance-spot-check-2026-08-11.md](../metrics/performance-spot-check-2026-08-11.md).
 
+- **11 August 2026:** Promoted Short.io slug telemetry into `npm run audit:editorial-live` and fixed the homepage's standalone NordVPN CTA to use the shared tracked affiliate component. Deployment `dpl_HTvYv9Yoa8gzqM8TMwmxHrd1vyWw` is Ready; the live gate passes **12/12**, checking 81 affiliate links with 0 missing `sponsored nofollow` attributes and 0 missing slug attributes.
+
 - **11 August 2026:** Extracted `BestVpnEditorialTemplate` and `EditorialQuickPickCard` into `src/components/editorial/best-vpn-editorial-template.tsx`, then refactored the Best VPN page and dynamic blog route to use the shared disclosure/jump-nav pattern. ESLint, production build and local browser checks pass.
 - **11 August 2026:** Added the [Iran editorial brief](../research/iran-vpn-editorial-brief-2026-08-11.md) with the research fields, evidence boundary, internal-link map and affiliate compliance gates for the first content refresh.
 - **11 August 2026:** Ran the first cached DataForSEO US/English pass for the Iran cluster: keyword overview, related suggestions, five SERP/PAA samples and competitor domains. Results are recorded in `docs/research/dataforseo-iran-cluster-2026-08-11.{json,md}`; missing current volume is explicitly not treated as zero demand.

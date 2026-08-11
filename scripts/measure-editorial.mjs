@@ -9,7 +9,7 @@ function arg(name) {
 }
 
 function usage() {
-  console.log("Usage: node scripts/measure-editorial.mjs --label post-14d --gsc-pages export.csv --gsc-queries queries.csv --shortio clicks.csv --out docs/metrics/post-14d.json [--baseline docs/metrics/zerotovpn-baseline-2026-08-11.json]");
+  console.log("Usage: node scripts/measure-editorial.mjs --label post-14d --gsc-pages export.csv --gsc-queries queries.csv --shortio clicks.csv [--partner partner.csv] --out docs/metrics/post-14d.json [--baseline docs/metrics/zerotovpn-baseline-2026-08-11.json]");
 }
 
 function parseCsv(text) {
@@ -105,6 +105,34 @@ function summarizeShortIo(rows) {
   };
 }
 
+function summarizePartner(rows) {
+  const normalized = rows.map((row) => ({
+    date: pick(row, ["date", "datum", "created_at"]),
+    link: pick(row, ["link", "short_url", "short_link", "url", "offer"]),
+    clicks: number(pick(row, ["clicks", "kliks", "total_clicks"])),
+    conversions: number(pick(row, ["conversions", "conversion", "sales", "orders", "transactions"])),
+    revenue: number(pick(row, ["revenue", "commission", "earnings", "payout", "total_revenue"])),
+    epc: number(pick(row, ["epc", "earnings_per_click", "revenue_per_click"])),
+  })).filter((row) => row.conversions !== null || row.revenue !== null || row.epc !== null);
+  const clicks = normalized.reduce((sum, row) => sum + (row.clicks ?? 0), 0);
+  const conversions = normalized.reduce((sum, row) => sum + (row.conversions ?? 0), 0);
+  const revenue = normalized.reduce((sum, row) => sum + (row.revenue ?? 0), 0);
+  const epcRows = normalized.filter((row) => row.epc !== null);
+  const reportedEpc = epcRows.length
+    ? epcRows.reduce((sum, row) => sum + row.epc, 0) / epcRows.length
+    : null;
+  return {
+    rows: normalized,
+    totals: {
+      clicks: clicks || null,
+      conversions: normalized.some((row) => row.conversions !== null) ? conversions : null,
+      revenue: normalized.some((row) => row.revenue !== null) ? revenue : null,
+      conversionRate: clicks && normalized.some((row) => row.conversions !== null) ? conversions / clicks : null,
+      epc: clicks && normalized.some((row) => row.revenue !== null) ? revenue / clicks : reportedEpc,
+    },
+  };
+}
+
 function delta(current, baseline) {
   if (typeof current !== "number" || typeof baseline !== "number") return null;
   return { absolute: current - baseline, relative: baseline === 0 ? null : (current - baseline) / baseline };
@@ -118,16 +146,17 @@ else {
     const gscPages = summarizeSearchConsole(readRows(arg("--gsc-pages")), "pages");
     const gscQueries = summarizeSearchConsole(readRows(arg("--gsc-queries")), "queries");
     const shortIo = summarizeShortIo(readRows(arg("--shortio")));
-    const report = { schemaVersion: 1, label, capturedAt: new Date().toISOString(), sourceFiles: [arg("--gsc-pages"), arg("--gsc-queries"), arg("--shortio")].filter(Boolean), searchConsole: { pages: gscPages, queries: gscQueries }, affiliate: shortIo };
+    const partner = summarizePartner(readRows(arg("--partner")));
+    const report = { schemaVersion: 1, label, capturedAt: new Date().toISOString(), sourceFiles: [arg("--gsc-pages"), arg("--gsc-queries"), arg("--shortio"), arg("--partner")].filter(Boolean), searchConsole: { pages: gscPages, queries: gscQueries }, affiliate: { ...shortIo, partner } };
     const baselinePath = arg("--baseline");
     if (baselinePath) {
       const baseline = JSON.parse(readFileSync(resolve(ROOT, baselinePath), "utf8"));
-      report.comparison = { baseline: baselinePath, searchConsole: { clicks: delta(gscPages.totals.clicks, baseline.searchConsole?.totals?.clicks), impressions: delta(gscPages.totals.impressions, baseline.searchConsole?.totals?.impressions), ctr: delta(gscPages.totals.ctr, baseline.searchConsole?.totals?.ctr), averagePosition: delta(gscPages.totals.averagePosition, baseline.searchConsole?.totals?.averagePosition) }, affiliate: { clicks: delta(shortIo.totals.clicks, baseline.affiliate?.totalClicks), humanClicks: delta(shortIo.totals.humanClicks, baseline.affiliate?.humanClicks) } };
+      report.comparison = { baseline: baselinePath, searchConsole: { clicks: delta(gscPages.totals.clicks, baseline.searchConsole?.totals?.clicks), impressions: delta(gscPages.totals.impressions, baseline.searchConsole?.totals?.impressions), ctr: delta(gscPages.totals.ctr, baseline.searchConsole?.totals?.ctr), averagePosition: delta(gscPages.totals.averagePosition, baseline.searchConsole?.totals?.averagePosition) }, affiliate: { clicks: delta(shortIo.totals.clicks, baseline.affiliate?.totalClicks), humanClicks: delta(shortIo.totals.humanClicks, baseline.affiliate?.humanClicks), conversions: delta(partner.totals.conversions, baseline.affiliate?.conversions), epc: delta(partner.totals.epc, baseline.affiliate?.epc), conversionRate: delta(partner.totals.conversionRate, baseline.affiliate?.conversionRate) } };
     }
     const outputPath = resolve(ROOT, out);
     mkdirSync(resolve(outputPath, ".."), { recursive: true });
     writeFileSync(outputPath, `${JSON.stringify(report, null, 2)}\n`);
-    console.log(JSON.stringify({ outputPath, label, gscPageRows: gscPages.rows.length, gscQueryRows: gscQueries.rows.length, shortIoRows: shortIo.rows.length, compared: Boolean(report.comparison) }, null, 2));
+    console.log(JSON.stringify({ outputPath, label, gscPageRows: gscPages.rows.length, gscQueryRows: gscQueries.rows.length, shortIoRows: shortIo.rows.length, partnerRows: partner.rows.length, compared: Boolean(report.comparison) }, null, 2));
   } catch (error) {
     console.error(error instanceof Error ? error.message : String(error));
     process.exitCode = 1;

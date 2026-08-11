@@ -10,11 +10,12 @@ npm run measure:editorial -- `
   --gsc-pages .cache/metrics/gsc-pages.csv `
   --gsc-queries .cache/metrics/gsc-queries.csv `
   --shortio .cache/metrics/shortio.csv `
+  --partner .cache/metrics/nord-affiliate.csv `
   --baseline docs/metrics/zerotovpn-baseline-2026-08-11.json `
   --out docs/metrics/post-14d-2026-08-25.json
 ```
 
-The importer accepts localized or English headers for pages/queries, clicks, impressions, CTR, position, country and referrer. It writes normalized totals, top rows and deltas. It does not infer conversions or EPC; those must be joined from the partner dashboard and recorded separately.
+The importer accepts localized or English headers for pages/queries, clicks, impressions, CTR, position, country and referrer. The optional `--partner` export accepts conversions/sales, revenue/commission and EPC columns and writes them under `affiliate.partner`; if it is omitted, those fields remain `null`. It writes normalized totals, top rows and deltas without inferring missing partner data.
 
 Required comparison discipline:
 

@@ -18,8 +18,8 @@ const targets = [
   { path: "/guides/vpn-for-restricted-networks", name: "Restricted-network support page", ids: ["restriction-types", "prepare", "test-plan", "faq"], links: ["/guides/vpn-obfuscation-explained", "/guides/vpn-for-travel", "/countries/iran"], expectFaq: true },
   { path: "/guides/vpn-for-travel", name: "Travel support page", ids: ["prepare", "compare", "faq"], links: ["/guides/vpn-for-restricted-networks", "/countries/iran", "/best/best-vpn"], expectFaq: true },
   { path: "/best/free-vpn", name: "Free VPN support page", ids: ["free-tiers", "safety", "faq"], links: ["/best/best-vpn", "/guides/vpn-for-travel", "/guides/vpn-for-restricted-networks"], expectFaq: true, expectTable: false },
-  { path: "/fr/best/free-vpn", name: "French free VPN support page", ids: ["free-tiers", "safety", "faq"], links: ["/best/best-vpn", "/guides/vpn-for-travel", "/guides/vpn-for-restricted-networks"], expectFaq: true, expectTable: false },
-  { path: "/nl/best/free-vpn", name: "Dutch free VPN support page", ids: ["free-tiers", "safety", "faq"], links: ["/best/best-vpn", "/guides/vpn-for-travel", "/guides/vpn-for-restricted-networks"], expectFaq: true, expectTable: false },
+  { path: "/fr/best/free-vpn", name: "French free VPN support page", ids: ["free-tiers", "safety", "faq"], links: ["/fr/best/best-vpn", "/fr/guides/vpn-for-travel", "/fr/guides/vpn-for-restricted-networks"], expectFaq: true, expectTable: false },
+  { path: "/nl/best/free-vpn", name: "Dutch free VPN support page", ids: ["free-tiers", "safety", "faq"], links: ["/nl/best/best-vpn", "/nl/guides/vpn-for-travel", "/nl/guides/vpn-for-restricted-networks"], expectFaq: true, expectTable: false },
   { path: "/best/vpn-free-trial", name: "Free-trial comparison", ids: ["sources"], links: ["/best/free-vpn", "/best/best-vpn", "/methodology"], expectFaq: true },
 ];
 

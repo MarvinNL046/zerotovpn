@@ -72,7 +72,7 @@ const checks = [
   {
     name: "localized free VPN routes use the evidence-led template",
     file: "src/app/[locale]/best/free-vpn/page.tsx",
-    patterns: [/locale !== "en"/, /<FreeVpnEditorialPage locale=\{locale\} \/>/, /Limits and Trade-offs/],
+    patterns: [/All locales use the same audited template/, /<FreeVpnEditorialPage locale=\{locale\} \/>/, /Limits and Trade-offs/],
     forbiddenPatterns: [/99%/, /20\+ free VPNs/, /No Hidden Costs|Geen Verborgen Kosten|Keine Versteckten Kosten/i],
   },
   {

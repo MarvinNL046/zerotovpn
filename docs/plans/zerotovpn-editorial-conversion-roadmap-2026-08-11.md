@@ -104,7 +104,7 @@ Before a page is published, the implementation must pass these gates from the Ob
 - Extract a shared `BestVpnEditorialTemplate` from the current Best VPN page.
 - Make quick picks, price links, provider dossiers, tables, disclosures, FAQs and related links reusable props.
 - Add a page-level content brief type: `primaryKeyword`, `intent`, `cluster`, `lastReviewedAt`, `evidence`, `affiliateContext`, `schemaType`.
-- Add automated checks for missing disclosure, missing methodology link, missing canonical metadata and affiliate links without `sponsored nofollow`. The initial six-file gate now runs as `npm run audit:editorial`.
+- Add automated checks for missing disclosure, missing methodology link, missing canonical metadata and affiliate links without `sponsored nofollow`. The editorial gate now covers 12 shared and cluster-specific checks through `npm run audit:editorial`.
 - Create a Search Console baseline for the existing Best VPN, Iran, Russia and Telegram pages. The screenshot-based baseline is documented in [zerotovpn-performance-baseline-2026-08-11.md](./zerotovpn-performance-baseline-2026-08-11.md); replace it with CSV/API exports before statistical reporting.
 
 ### Phase 2 — Upgrade existing winners (weeks 2–3)

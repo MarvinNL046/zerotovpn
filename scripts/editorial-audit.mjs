@@ -19,6 +19,11 @@ const checks = [
     patterns: [/Reproducible local check/, /affiliateUrl/, /id=\"faq\"/],
   },
   {
+    name: "Telegram evidence-led page",
+    file: "src/data/editorial/telegram-vpn-2026.ts",
+    patterns: [/MTProxy guide/, /<table>/, /How to test Telegram/, /<h3>Which VPN is best for Telegram\?<\/h3>/, /DataForSEO/],
+  },
+  {
     name: "Russia cluster evidence",
     file: "src/components/editorial/russia-vpn-editorial-page.tsx",
     patterns: [/Freedom House/, /id=\"faq\"/, /id=\"sources\"/, /IranEditorialQuickPicks/],

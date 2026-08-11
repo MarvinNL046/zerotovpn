@@ -96,7 +96,7 @@ Before a page is published, the implementation must pass these gates from the Ob
 - Responsive layout, 16px+ body text, 48px touch targets and no page-level horizontal scroll.
 - Optimised images with meaningful alt text and fixed dimensions.
 - Affiliate links use `rel="sponsored nofollow"`; authoritative non-commercial sources use normal editorial linking.
-- No popups, fake urgency, keyword stuffing, doorway pages, unauthorised coupons or irrelevant provider promotion.
+- No affiliate pop-up/under advertising, fake urgency, keyword stuffing, doorway pages, unauthorised coupons or irrelevant provider promotion. A consented owned-newsletter prompt may collect email only when it contains no provider, coupon, discount or affiliate CTA.
 
 ## Content production plan
 

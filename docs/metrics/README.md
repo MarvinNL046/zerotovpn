@@ -36,7 +36,7 @@ Use `AUDIT_CONCURRENCY=4` to lower request pressure or `AUDIT_LIMIT=100` for a s
 
 ## Affiliate context audit
 
-The affiliate context audit fetches every URL in the live sitemap and checks affiliate-link rel attributes, disclosure text, and review flags for coupon/incentive or interruptive-promotion markers:
+The affiliate context audit fetches every URL in the live sitemap and checks affiliate-link rel attributes, disclosure text, and review flags for coupon/incentive or interruptive-promotion markers. The site may show an owned newsletter consent prompt, but it must not contain a provider, coupon, discount or affiliate CTA:
 
 ```powershell
 npm run audit:affiliate-context

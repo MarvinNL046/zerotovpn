@@ -1,9 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Compass, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
 import {
   Dialog,
   DialogContent,
@@ -11,7 +10,6 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
 import { NewsletterForm } from "@/components/newsletter/newsletter-form";
 
 const SESSION_KEY = "exitIntentShown";
@@ -19,13 +17,11 @@ const PERMANENT_DISMISS_KEY = "exitIntentDismissed";
 const DISMISS_DURATION_MS = 30 * 24 * 60 * 60 * 1000;
 
 /**
- * Exit-intent is now a consented newsletter and discovery prompt. It contains
- * no affiliate link, offer, coupon, or provider-specific advertising.
+ * This is an owned-media newsletter prompt only. It contains no affiliate
+ * link, offer, coupon, discount, provider recommendation or deal language.
  */
 export function ExitIntentPopup() {
   const t = useTranslations("newsletter");
-  const footer = useTranslations("footer");
-  const cta = useTranslations("cta");
   const [isOpen, setIsOpen] = useState(false);
   const [hasShown, setHasShown] = useState(false);
 
@@ -66,8 +62,6 @@ export function ExitIntentPopup() {
     };
   }, [hasShown]);
 
-  const handleClose = () => setIsOpen(false);
-
   const handleDontShowAgain = () => {
     localStorage.setItem(PERMANENT_DISMISS_KEY, Date.now().toString());
     setIsOpen(false);
@@ -85,19 +79,7 @@ export function ExitIntentPopup() {
         </DialogHeader>
 
         <div className="rounded-lg border border-primary/20 bg-primary/5 p-6 shadow-lg">
-          <div className="flex items-center gap-3 mb-4">
-            <Compass className="h-6 w-6 text-primary" aria-hidden="true" />
-            <p className="font-semibold">{footer("quiz")}</p>
-          </div>
-          <p className="text-sm text-muted-foreground mb-5">{footer("aboutText")}</p>
-          <div className="space-y-3">
-            <NewsletterForm variant="default" source="exit-intent" />
-            <Button asChild variant="outline" className="w-full">
-              <Link href="/quiz" onClick={handleClose}>
-                {cta("learnMore")}
-              </Link>
-            </Button>
-          </div>
+          <NewsletterForm variant="default" source="exit-intent" />
         </div>
 
         <div className="text-center">

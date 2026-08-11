@@ -81,7 +81,7 @@ const iranRelatedGuides = [
   { label: "Iran VPN research", href: "/blog/best-vpn-for-iran-2026-bypass-internet-censorship", body: "Read the current testing notes, obfuscation checks, and preparation steps." },
   { label: "Unblock Telegram", href: "/blog/best-vpn-for-telegram-2026", body: "See how restricted messaging fits into the wider censorship cluster." },
   { label: "VPN use in Russia", href: "/countries/russia", body: "Compare the same evidence boundary in another high-censorship context." },
-  { label: "VPN use in China", href: "/best/vpn-china", body: "Compare the same evidence boundary in another high-censorship context." },
+  { label: "VPN use in China", href: "/countries/china", body: "Compare the same evidence boundary in another high-censorship context." },
   { label: "VPN use in Turkey", href: "/best/vpn-turkey", body: "Review country-specific legal, network, and operational questions." },
   { label: "VPN choice helper", href: "/tools/vpn-choice-helper", body: "Turn your device, network, and failure conditions into a checklist." },
   { label: "How we research VPNs", href: "/methodology", body: "See how source dates, observations, and commercial links are separated." },

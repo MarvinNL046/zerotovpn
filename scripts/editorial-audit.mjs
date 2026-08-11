@@ -63,14 +63,26 @@ const checks = [
     file: "src/components/editorial/free-vpn-editorial-page.tsx",
     patterns: [/what is actually free/, /id="free-tiers"/, /id="safety"/, /id="faq"/, /protonvpn.com\/free-vpn/, /DataForSEO/],
   },
+  {
+    name: "newsletter-only exit intent popup",
+    file: "src/components/conversion/exit-intent-popup.tsx",
+    patterns: [/useTranslations\("newsletter"\)/, /<NewsletterForm[^>]+source="exit-intent"/, /Owned-media newsletter prompt/],
+    forbiddenPatterns: [
+      /go\.zerotovpn\.com|go\.nordvpn\.net|nordvpn\.tpo\.lv/i,
+      /affiliateUrl|affiliateHref|coupon|discount|promo(code)?|cashback|incentive|view deal|buy now/i,
+    ],
+  },
 ];
 
 const results = checks.map((check) => {
   const path = resolve(ROOT, check.file);
   const source = readFileSync(path, "utf8");
   const missing = check.patterns.filter((pattern) => !pattern.test(source)).map(String);
-  return { ...check, pass: missing.length === 0, missing };
+  const forbidden = (check.forbiddenPatterns ?? [])
+    .filter((pattern) => pattern.test(source))
+    .map(String);
+  return { ...check, pass: missing.length === 0 && forbidden.length === 0, missing, forbidden };
 });
 const failed = results.filter((result) => !result.pass);
-console.log(JSON.stringify({ checkedAt: new Date().toISOString(), checked: results.length, passed: results.length - failed.length, failed: failed.length, results: results.map(({ name, file, pass, missing }) => ({ name, file, pass, missing })) }, null, 2));
+console.log(JSON.stringify({ checkedAt: new Date().toISOString(), checked: results.length, passed: results.length - failed.length, failed: failed.length, results: results.map(({ name, file, pass, missing, forbidden }) => ({ name, file, pass, missing, forbidden })) }, null, 2));
 if (failed.length) process.exitCode = 1;

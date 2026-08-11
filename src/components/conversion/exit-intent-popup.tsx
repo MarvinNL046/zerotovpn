@@ -16,10 +16,7 @@ const SESSION_KEY = "exitIntentShown";
 const PERMANENT_DISMISS_KEY = "exitIntentDismissed";
 const DISMISS_DURATION_MS = 30 * 24 * 60 * 60 * 1000;
 
-/**
- * This is an owned-media newsletter prompt only. It contains no affiliate
- * link, offer, coupon, discount, provider recommendation or deal language.
- */
+/** Owned-media newsletter prompt shown on exit intent. */
 export function ExitIntentPopup() {
   const t = useTranslations("newsletter");
   const [isOpen, setIsOpen] = useState(false);

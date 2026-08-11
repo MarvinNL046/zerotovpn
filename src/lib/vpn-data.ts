@@ -1459,7 +1459,10 @@ export const vpnProviders: VpnProvider[] = [
     priceYearly: 3.25,
     priceTwoYear: 2.77,
     moneyBackDays: 30,
-    freeTier: true,
+    // A time-limited trial is not a permanent free tier. The provider's FAQ
+    // lists a limited trial, while current pricing emphasizes paid plans and
+    // a 30-day refund policy.
+    freeTier: false,
     servers: 39,
     countries: 22,
     maxDevices: 999,
@@ -1474,9 +1477,10 @@ export const vpnProviders: VpnProvider[] = [
     torrentSupport: true,
     overallRating: 3.5,
     editorChoice: false,
-    shortDescription: "Moldova-based VPN with Smart DNS and free trial.",
+    shortDescription:
+      "Moldova-based VPN with Smart DNS; its FAQ lists a 3-day trial, while current pricing emphasizes a 30-day refund.",
     pros: [
-      "Free trial available",
+      "Official FAQ lists a 3-day trial",
       "Smart DNS included",
       "Unlimited devices",
       "Based in Moldova",
@@ -1487,6 +1491,7 @@ export const vpnProviders: VpnProvider[] = [
       "Inconsistent speeds",
       "Limited locations",
       "Not well known",
+      "Trial availability differs across provider pages",
     ],
     featured: false,
     sortOrder: 31,

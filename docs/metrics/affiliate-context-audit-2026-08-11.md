@@ -1,6 +1,6 @@
 # Live affiliate context audit
 
-Generated: 2026-08-11T20:15:30.009Z
+Generated: 2026-08-11T21:13:16.379Z
 
 - Sitemap URLs discovered: **2279**
 - URLs checked: **2279**
@@ -8,7 +8,7 @@ Generated: 2026-08-11T20:15:30.009Z
 - Affiliate links checked: **8213**
 - Pages with missing `sponsored` + `nofollow`: **0**
 - Affiliate pages without visible disclosure text: **0**
-- Affiliate pages with promotion terms requiring review: **21**
+- Affiliate pages with promotion terms requiring review: **12**
 - Pages with interruptive-promotion markers: **0**
 - Non-200 fetches: **0**
 
@@ -25,15 +25,6 @@ Generated: 2026-08-11T20:15:30.009Z
 | 200 | https://www.zerotovpn.com/ja/best/vpn-free-trial | 7 | 0 | yes | free\s+(?:months?|trial) |
 | 200 | https://www.zerotovpn.com/ko/best/vpn-free-trial | 7 | 0 | yes | free\s+(?:months?|trial) |
 | 200 | https://www.zerotovpn.com/th/best/vpn-free-trial | 7 | 0 | yes | free\s+(?:months?|trial) |
-| 200 | https://www.zerotovpn.com/reviews/cactusvpn | 3 | 0 | yes | free\s+(?:months?|trial) |
-| 200 | https://www.zerotovpn.com/nl/reviews/cactusvpn | 3 | 0 | yes | free\s+(?:months?|trial) |
-| 200 | https://www.zerotovpn.com/de/reviews/cactusvpn | 3 | 0 | yes | free\s+(?:months?|trial) |
-| 200 | https://www.zerotovpn.com/es/reviews/cactusvpn | 3 | 0 | yes | free\s+(?:months?|trial) |
-| 200 | https://www.zerotovpn.com/fr/reviews/cactusvpn | 3 | 0 | yes | free\s+(?:months?|trial) |
-| 200 | https://www.zerotovpn.com/zh/reviews/cactusvpn | 3 | 0 | yes | free\s+(?:months?|trial) |
-| 200 | https://www.zerotovpn.com/ja/reviews/cactusvpn | 3 | 0 | yes | free\s+(?:months?|trial) |
-| 200 | https://www.zerotovpn.com/ko/reviews/cactusvpn | 3 | 0 | yes | free\s+(?:months?|trial) |
-| 200 | https://www.zerotovpn.com/th/reviews/cactusvpn | 3 | 0 | yes | free\s+(?:months?|trial) |
 | 200 | https://www.zerotovpn.com/blog/vpn-ai-chatbot-privacy-prevent-prompt-logging | 3 | 0 | yes | incentive(?:s)? |
 | 200 | https://www.zerotovpn.com/blog/vpn-leaks-email-clients-gmail-outlook-apple-mail-2026 | 3 | 0 | yes | incentive(?:s)? |
 | 200 | https://www.zerotovpn.com/blog/vpn-leaks-video-calls-slack-discord-teams-2026 | 4 | 0 | yes | free\s+(?:months?|trial) |

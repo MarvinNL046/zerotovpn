@@ -1,0 +1,285 @@
+{
+  "schemaVersion": 1,
+  "cluster": "VPN for Russia / censorship",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "fetchedAt": "2026-08-11T16:32:53.345Z",
+  "refreshed": false,
+  "seeds": [
+    "best vpn for russia",
+    "vpn for russia",
+    "russia vpn",
+    "does vpn work in russia",
+    "is vpn legal in russia",
+    "vpn russia 2026"
+  ],
+  "overview": [
+    {
+      "keyword": "best vpn for russia",
+      "currentVolume": null,
+      "latestVolume": 140,
+      "latestMonth": "2024-02",
+      "difficulty": 5,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "does vpn work in russia",
+      "currentVolume": null,
+      "latestVolume": null,
+      "latestMonth": null,
+      "difficulty": null,
+      "intent": "informational"
+    },
+    {
+      "keyword": "is vpn legal in russia",
+      "currentVolume": null,
+      "latestVolume": 10,
+      "latestMonth": "2024-02",
+      "difficulty": 12,
+      "intent": "informational"
+    },
+    {
+      "keyword": "russia vpn",
+      "currentVolume": null,
+      "latestVolume": 1000,
+      "latestMonth": "2024-02",
+      "difficulty": 0,
+      "intent": "informational"
+    },
+    {
+      "keyword": "vpn for russia",
+      "currentVolume": null,
+      "latestVolume": 1000,
+      "latestMonth": "2024-02",
+      "difficulty": 5,
+      "intent": "informational"
+    }
+  ],
+  "suggestions": [
+    {
+      "seed": "vpn for russia",
+      "keyword": "best vpn services for russia",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for russia",
+      "keyword": "best vpn for russia server",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for russia",
+      "keyword": "the best vpn for russia",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for russia",
+      "keyword": "best vpn for russia 2024",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for russia",
+      "keyword": "best free vpn for iphone in russia",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for russia",
+      "keyword": "best vpn for iphone in russia",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for russia",
+      "keyword": "best vpn for lost ark russia",
+      "volume": 0
+    },
+    {
+      "seed": "best vpn for russia",
+      "keyword": "best vpn for russia 2023",
+      "volume": 0
+    },
+    {
+      "seed": "best vpn for russia",
+      "keyword": "best vpn for russia 2022",
+      "volume": null
+    },
+    {
+      "seed": "russia vpn",
+      "keyword": "russia vpn for android",
+      "volume": 10
+    },
+    {
+      "seed": "russia vpn",
+      "keyword": "russia vpn for iphone",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for russia",
+      "keyword": "download vpn russia for pc",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for russia",
+      "keyword": "vpn russia for android",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for russia",
+      "keyword": "free russia vpn for pc",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for russia",
+      "keyword": "vpn for pc russia",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for russia",
+      "keyword": "vpn russia for ios",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for russia",
+      "keyword": "vpn for mac russia",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for russia",
+      "keyword": "vpn for instagram russia",
+      "volume": 10
+    },
+    {
+      "seed": "does vpn work in russia",
+      "keyword": "does express vpn work in russia",
+      "volume": 20
+    },
+    {
+      "seed": "does vpn work in russia",
+      "keyword": "does proton vpn work in russia",
+      "volume": 20
+    },
+    {
+      "seed": "russia vpn",
+      "keyword": "is vpn allowed in russia",
+      "volume": 10
+    },
+    {
+      "seed": "russia vpn",
+      "keyword": "free vpn servers in russia",
+      "volume": 10
+    },
+    {
+      "seed": "russia vpn",
+      "keyword": "telegram vpn russia",
+      "volume": 10
+    },
+    {
+      "seed": "russia vpn",
+      "keyword": "vpn change russia",
+      "volume": 10
+    },
+    {
+      "seed": "russia vpn",
+      "keyword": "vpn changer russia",
+      "volume": 10
+    },
+    {
+      "seed": "russia vpn",
+      "keyword": "use of vpn in russia",
+      "volume": 10
+    },
+    {
+      "seed": "russia vpn",
+      "keyword": "vpn russia free windows",
+      "volume": 10
+    },
+    {
+      "seed": "russia vpn",
+      "keyword": "vpn usage in russia",
+      "volume": 10
+    },
+    {
+      "seed": "is vpn legal in russia",
+      "keyword": "is it legal to use a vpn in russia",
+      "volume": null
+    },
+    {
+      "seed": "is vpn legal in russia",
+      "keyword": "is vpn legal in russia",
+      "volume": null
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "best vpn for russia",
+      "paa": [
+        "Which VPN works best in Russia?",
+        "What VPN has Russia for free?",
+        "Which VPN is government-approved in Russia?",
+        "What is the best VPN to call Russia?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn for russia",
+      "paa": [
+        "Which VPN supports Russia?",
+        "Can the FBI track a VPN?",
+        "Can you use VPN in Russia?",
+        "Is there a free VPN for Russia?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "russia vpn",
+      "paa": [
+        "Which VPN works for Russia?",
+        "Is using a VPN in Russia legal?",
+        "Which VPNs work in Russia in 2026?",
+        "Which VPN free lets me use Russia for free?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "does vpn work in russia",
+      "paa": [
+        "Is it legal to use a VPN in Russia?",
+        "Which VPN is still working in Russia?",
+        "Can the FBI track a VPN?",
+        "What VPNs are blocked in Russia?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "is vpn legal in russia",
+      "paa": [
+        "Can the FBI track a VPN?",
+        "Does any VPN work in Russia?",
+        "Does Russia check your phone?",
+        "Which country has banned VPN?"
+      ],
+      "hasAiOverview": true
+    }
+  ],
+  "competitors": [
+    "youtube.com",
+    "reddit.com",
+    "techradar.com",
+    "cybernews.com",
+    "cnet.com",
+    "pcmag.com",
+    "tomsguide.com",
+    "security.org",
+    "gizmodo.com",
+    "cyberinsider.com",
+    "thebestvpn.com",
+    "comparitech.com",
+    "allaboutcookies.org",
+    "vpnmentor.com",
+    "cloudwards.net",
+    "top10vpn.com",
+    "01net.com",
+    "vpnpro.com",
+    "pcworld.com"
+  ],
+  "sourcePolicy": "DataForSEO signals prioritise questions and structure; they do not prove current access, legality or provider performance."
+}

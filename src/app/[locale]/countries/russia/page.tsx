@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { RankedVpnRow } from "@/components/vpn/ranked-vpn-row";
-import { getAllVpns, type VpnProvider } from "@/lib/vpn-data-layer";
+import { getAllVpns } from "@/lib/vpn-data-layer";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { OG_LOCALE_MAP, generateAlternates, getLocalizedMonthYear, titelMetMerk } from "@/lib/seo-utils";
 import { FaqSchema } from "@/components/structured-data";
@@ -21,6 +21,7 @@ import {
   TrendingUp,
   Info,
 } from "lucide-react";
+import { RussiaVpnEditorialPage } from "@/components/editorial/russia-vpn-editorial-page";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -32,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
   const titles: Record<string, string> = {
-    en: "VPN for Russia: What Works in 2026? | ZeroToVPN",
+    en: "VPN for Russia in 2026: What to Verify Before You Connect | ZeroToVPN",
     nl: "VPN voor Rusland: Wat Werkt in 2026? | ZeroToVPN",
     de: "VPN für Russland: Was Funktioniert 2026? | ZeroToVPN",
     es: "VPN para Rusia: ¿Qué Funciona en 2026? | ZeroToVPN",
@@ -44,7 +45,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const descriptions: Record<string, string> = {
-    en: "Traveling to Russia or living there? Learn which VPNs still work reliably in 2026 despite 197+ blocked services. See our expert-tested picks.",
+    en: "VPN access in Russia can change by ISP and date. Compare obfuscation, preparation, legal uncertainty and a bounded test plan before relying on a provider.",
     nl: "Reis je naar Rusland of woon je daar? Ontdek welke VPNs in 2026 nog betrouwbaar werken. Bekijk onze expert-geteste aanbevelingen.",
     de: "Reisen Sie nach Russland oder leben Sie dort? Hier erfahren Sie, was über VPN-Zugang, Einschränkungen und noch funktionierende Dienste 2026 wichtig ist.",
     es: "¿Viajas a Rusia o vives allí? Aquí tienes lo que debes saber sobre acceso VPN, restricciones y servicios que siguen funcionando en 2026.",
@@ -69,7 +70,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-function CountryVpnSchema({ vpns, locale }: { vpns: VpnProvider[]; locale: string }) {
+function CountryVpnSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -100,6 +101,10 @@ export default async function RussiaVpnPage({ params }: Props) {
   const russiaVpns = allVpns.filter((vpn) =>
     ["expressvpn", "nordvpn", "surfshark"].includes(vpn.slug)
   );
+
+  if (locale === "en") {
+    return <RussiaVpnEditorialPage vpns={allVpns} />;
+  }
 
   const content = {
     en: {
@@ -1009,7 +1014,7 @@ export default async function RussiaVpnPage({ params }: Props) {
   return (
     <>
       <FaqSchema faqs={t.faqs.map((f) => ({ question: f.q, answer: f.a }))} />
-      <CountryVpnSchema vpns={russiaVpns} locale={locale} />
+      <CountryVpnSchema />
 
       <div className="flex flex-col">
         {/* Hero Section */}

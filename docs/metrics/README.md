@@ -29,7 +29,7 @@ Run the page-level release gate against the current English commercial and clust
 npm run audit:editorial-live
 ```
 
-This checks title/description, complete Open Graph and Twitter card metadata, canonical/indexability, one H1, disclosure, methodology, tables where the page type requires them, FAQ schema, required section anchors, internal links, affiliate `sponsored nofollow` attributes, image alt/dimension hygiene and future structured-data dates. Card-based pages such as `/best/free-vpn` explicitly opt out of the table check because their free-tier comparison is represented as structured cards.
+This checks title/description, complete Open Graph and Twitter card metadata, a reachable image URL for those cards, canonical/indexability, one H1, disclosure, methodology, tables where the page type requires them, FAQ schema, required section anchors, internal links, affiliate `sponsored nofollow` attributes, image alt/dimension hygiene and future structured-data dates. Card-based pages such as `/best/free-vpn` explicitly opt out of the table check because their free-tier comparison is represented as structured cards.
 
 Required comparison discipline:
 

@@ -15,5 +15,5 @@ export const config = {
   // - Static files (images, etc.)
   // - Admin routes (separate from i18n)
   // - Handler routes (Stack Auth)
-  matcher: ["/((?!api|admin|handler|_next|_vercel|.*\\..*).*)"],
+  matcher: ["/((?!api|admin|handler|_next|_vercel|opengraph-image|twitter-image|.*\\..*).*)"],
 };

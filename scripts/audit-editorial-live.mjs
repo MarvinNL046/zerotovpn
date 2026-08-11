@@ -155,7 +155,28 @@ async function fetchTarget(target) {
     const response = await fetch(url, { redirect: "follow", signal: controller.signal, headers: { "user-agent": "ZeroToVPN-editorial-audit/1.0" } });
     const html = response.headers.get("content-type")?.includes("text/html") ? await response.text() : "";
     const signals = extractSignals(html, target, response.url || url);
-    return { ...target, url, status: response.status, finalUrl: response.url, durationMs: Date.now() - started, ...signals, checks: { ...signals.checks, status200: response.status === 200 }, ok: response.status === 200 && signals.ok };
+    const socialImageUrl = signals.ogImage || signals.twitterImage;
+    let socialImage = { status: null, contentType: null, ok: false };
+    if (socialImageUrl) {
+      try {
+        const imageTarget = new URL(socialImageUrl, response.url || url);
+        if (BASE !== "https://www.zerotovpn.com" && imageTarget.origin === "https://www.zerotovpn.com") {
+          imageTarget.protocol = new URL(BASE).protocol;
+          imageTarget.host = new URL(BASE).host;
+        }
+        const imageResponse = await fetch(imageTarget, { redirect: "follow", signal: controller.signal, headers: { "user-agent": "ZeroToVPN-editorial-audit/1.0" } });
+        socialImage = {
+          status: imageResponse.status,
+          contentType: imageResponse.headers.get("content-type"),
+          ok: imageResponse.ok && (imageResponse.headers.get("content-type") ?? "").startsWith("image/"),
+        };
+        await imageResponse.arrayBuffer();
+      } catch (error) {
+        socialImage = { status: null, contentType: null, ok: false, error: error instanceof Error ? error.message : String(error) };
+      }
+    }
+    const checks = { ...signals.checks, status200: response.status === 200, socialImage: socialImage.ok };
+    return { ...target, url, status: response.status, finalUrl: response.url, durationMs: Date.now() - started, ...signals, socialImage, checks, ok: response.status === 200 && Object.values(checks).every(Boolean) };
   } catch (error) {
     return { ...target, url, status: null, durationMs: Date.now() - started, ok: false, error: error instanceof Error ? error.message : String(error) };
   } finally {
@@ -176,6 +197,7 @@ const summary = {
   twitterFailureCount: records.filter((record) => !record.checks?.twitter).length,
   imageSeoFailureCount: records.filter((record) => !record.checks?.imageSeo).length,
   futureSchemaDateFailureCount: records.filter((record) => !record.checks?.structuredDataDates).length,
+  socialImageFailureCount: records.filter((record) => !record.checks?.socialImage).length,
 };
 const payload = { schemaVersion: 1, summary, records };
 const outDir = resolve(ROOT, "docs", "metrics");
@@ -187,7 +209,7 @@ await writeFile(jsonPath, `${JSON.stringify(payload, null, 2)}\n`, "utf8");
 const rows = records.map((record) => `| ${record.ok ? "pass" : "FAIL"} | ${record.path} | ${record.title ?? ""} | ${record.h1Count ?? "n/a"} | ${record.internalLinkCount ?? "n/a"} | ${record.affiliateLinkCount ?? "n/a"} | ${record.missingIds?.join(", ") || "—"} | ${record.missingLinks?.join(", ") || "—"} |`);
 const markdown = [
   "# Live editorial page audit", "", `Generated: ${summary.generatedAt}`, "",
-  `- Target pages: **${summary.targetCount}**`, `- Passing pages: **${summary.okCount}**`, `- Pages needing review: **${summary.failedCount}**`, `- Affiliate links checked: **${summary.affiliateLinkCount}**`, `- Affiliate links missing sponsored/nofollow: **${summary.missingAffiliateRelCount}**`, `- Missing required cluster links: **${summary.missingClusterLinkCount}**`, `- Pages missing complete Open Graph metadata: **${summary.openGraphFailureCount}**`, `- Pages missing complete Twitter metadata: **${summary.twitterFailureCount}**`, `- Pages failing image alt/dimension checks: **${summary.imageSeoFailureCount}**`, `- Pages with future structured-data dates: **${summary.futureSchemaDateFailureCount}**`, "",
+  `- Target pages: **${summary.targetCount}**`, `- Passing pages: **${summary.okCount}**`, `- Pages needing review: **${summary.failedCount}**`, `- Affiliate links checked: **${summary.affiliateLinkCount}**`, `- Affiliate links missing sponsored/nofollow: **${summary.missingAffiliateRelCount}**`, `- Missing required cluster links: **${summary.missingClusterLinkCount}**`, `- Pages missing complete Open Graph metadata: **${summary.openGraphFailureCount}**`, `- Pages missing complete Twitter metadata: **${summary.twitterFailureCount}**`, `- Pages failing image alt/dimension checks: **${summary.imageSeoFailureCount}**`, `- Pages with future structured-data dates: **${summary.futureSchemaDateFailureCount}**`, `- Pages with a broken social-image URL: **${summary.socialImageFailureCount}**`, "",
   "| Status | Page | Title | H1s | Internal links | Affiliate links | Missing required IDs | Missing cluster links |", "|---|---|---|---:|---:|---:|---|---|", ...rows, "", `Raw records: [editorial-live-audit-${label}.json](./editorial-live-audit-${label}.json)`,
 ].join("\n") + "\n";
 await writeFile(mdPath, markdown, "utf8");

@@ -96,7 +96,7 @@ The current flag classifications and release gate are recorded in [affiliate-con
 
 ## Current measurement checkpoint — 12 August 2026
 
-The production release gates were rerun after the cluster-template work: the live editorial target set is **22/22** with **127** compliant affiliate links and zero content-brief, metadata, freshness, image, disclosure, rel, slug or cluster-link failures. The sitemap remains **2,279/2,279** healthy URLs, and the affiliate-context scan reports **1,755 affiliate pages / 8,189 links** with zero missing disclosure, rel, interruptive-promotion or fetch failures. These checks validate release quality; they are not traffic or revenue evidence.
+The latest production release gates cover **25/25** editorial targets, including the three core review routes, with **135** compliant affiliate links and zero content-brief, metadata, freshness, image, disclosure, rel, slug or cluster-link failures. The sitemap remains **2,279/2,279** healthy URLs. The latest affiliate-context scan reports **1,755 affiliate pages / 8,450 links**, zero missing disclosure/rel, zero interruptive-promotion flags and zero fetch failures; seven responses exceeded the two-second observation threshold and are retained as performance observations. These checks validate release quality; they are not traffic or revenue evidence.
 
 The exact matched-window contract is machine-readable in [measurement-window-manifest-2026-08-12.json](./measurement-window-manifest-2026-08-12.json) and summarized in [measurement-window-manifest-2026-08-12.md](./measurement-window-manifest-2026-08-12.md). It supersedes earlier interim wording that predated the authenticated GSC and Short.io exports; the Nord partner export is still the only missing gate input.
 

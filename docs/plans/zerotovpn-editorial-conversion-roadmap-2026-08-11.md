@@ -537,6 +537,12 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - Local editorial audit remains **52/52** and the production build generated **4,447/4,447** routes. Deployment `zerotovpn-c60fpd4hw-marvinnl046s-projects.vercel.app` is Ready; the final live gate passes **25/25**, checking **135** affiliate links with 0 missing sponsored/nofollow attributes, 0 missing slugs, 0 image-SEO failures, 0 missing cluster links and 0 social-image failures.
 - This improves review-page compliance and attribution hygiene; it does not close the matched Nord conversion/EPC gate, which still requires the dated partner export for 28 July–10 August.
 
+### Full corpus compliance recheck: 12 August 2026
+
+- Re-ran the full production claim scan across **2,279/2,279** sitemap URLs: **0** provider-count, reader-count, speed-test-count, maximum-speed, speed-retention or rank findings, with 0 fetch errors.
+- Re-ran the Nord promotion-context audit across the same **2,279/2,279** URLs: **1,755** pages and **8,450** affiliate links, 0 missing `sponsored nofollow` pages, 0 disclosure failures, 0 interruptive-promotion flags and 0 fetch failures. Twelve contextual flags remain the documented manual-review set (free-trial or explanatory incentive language), not technical violations.
+- These fresh scans strengthen release confidence but do not provide conversions, revenue or EPC; the matched Nord partner export remains the only open measurement-gate input.
+
 ### Nord affiliate interim screenshot: 12 August 2026
 
 - The user-supplied authenticated Nord Performance Report screenshot for **6–12 August 2026** shows **19 clicks** (NordVPN 15, NordVPN China 2, NordVPN Arabia 2), **0 conversions**, **$0.00 payout** and **$0.00 EPC**. Full evidence and interpretation boundaries are recorded in [nord-partner-interim-screenshot-2026-08-12.md](../metrics/nord-partner-interim-screenshot-2026-08-12.md).

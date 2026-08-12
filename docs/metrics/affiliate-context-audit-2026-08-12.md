@@ -1,6 +1,6 @@
 # Live affiliate context audit
 
-Generated: 2026-08-12T16:17:26.090Z
+Generated: 2026-08-12T18:39:02.202Z
 
 - Sitemap URLs discovered: **2279**
 - URLs checked: **2279**

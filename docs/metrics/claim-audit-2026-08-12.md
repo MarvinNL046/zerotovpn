@@ -1,6 +1,6 @@
 # Live editorial claim audit
 
-Generated: 2026-08-12T18:04:42.194Z
+Generated: 2026-08-12T18:37:53.072Z
 
 - URLs checked: **2279**
 - Pages with flagged claims: **0**

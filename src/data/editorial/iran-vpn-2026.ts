@@ -1,8 +1,8 @@
 export const iranVpnEditorialTitle =
-  "Best VPN for Iran in 2026: tested options, limits and safer preparation";
+  "Best VPN for Iran 2026: Tested Options & Setup Limits";
 
 export const iranVpnEditorialExcerpt =
-  "There is no permanent best VPN for Iran. Use current evidence, obfuscation options, provider documentation and a failure-safe test plan before relying on any connection.";
+  "Compare obfuscation, app access and privacy evidence for Iran, then test your device and network before relying on any VPN connection.";
 
 export const iranVpnEditorialUpdatedAt = "2026-08-11T00:00:00.000Z";
 

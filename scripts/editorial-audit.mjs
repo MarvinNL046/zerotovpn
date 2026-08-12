@@ -65,6 +65,12 @@ const checks = [
     forbiddenPatterns: [/Best VPN in 2026: Transparent Shortlist and Comparison/],
   },
   {
+    name: "Iran pillar SERP metadata matches censorship intent",
+    file: "src/data/editorial/iran-vpn-2026.ts",
+    patterns: [/Best VPN for Iran 2026: Tested Options & Setup Limits/, /Compare obfuscation, app access and privacy evidence for Iran/],
+    forbiddenPatterns: [/Best VPN for Iran in 2026: tested options, limits and safer preparation/],
+  },
+  {
     name: "shared editorial content-brief contract",
     file: "src/lib/editorial-content-brief.ts",
     patterns: [/primaryKeyword/, /intent/, /cluster/, /lastReviewedAt/, /evidence/, /affiliateContext/, /schemaType/, /isEditorialContentBrief/],

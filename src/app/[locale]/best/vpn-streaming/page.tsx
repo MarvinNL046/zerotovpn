@@ -596,6 +596,7 @@ export default async function VpnStreamingPage({ params }: Props) {
                   logo
                   badge={item.badge}
                   price={item.price}
+                  priceLink
                   priceClassName="text-2xl text-purple-600 dark:text-purple-400"
                   labels={{ cta: `${t.getVpnButton} ${item.vpn?.name ?? ""}` }}
                   middle={

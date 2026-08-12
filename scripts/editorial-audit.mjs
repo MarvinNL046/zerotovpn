@@ -14,6 +14,11 @@ const checks = [
     patterns: [/affiliate links may earn us a commission/, /affiliate-disclosure/],
   },
   {
+    name: "shared ranked price-link option",
+    file: "src/components/vpn/ranked-vpn-row.tsx",
+    patterns: [/priceLink = false/, /AffiliateTextLink/, /priceLink \?/],
+  },
+  {
     name: "Iran evidence-led page",
     file: "src/components/editorial/evidence-led-vpn-use-case-page.tsx",
     patterns: [/Reproducible local check/, /affiliateUrl/, /id=\"faq\"/],

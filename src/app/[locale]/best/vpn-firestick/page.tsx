@@ -418,6 +418,7 @@ export default async function VpnFirestickPage({ params }: Props) {
                   logo
                   badge={item.badge}
                   price={item.price}
+                  priceLink
                   priceClassName="text-2xl text-orange-600 dark:text-orange-400"
                   labels={{ cta: `${t.getVpnButton} ${item.vpn?.name ?? ""}` }}
                   middle={

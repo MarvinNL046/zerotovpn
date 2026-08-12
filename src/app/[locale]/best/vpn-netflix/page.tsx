@@ -776,6 +776,7 @@ export default async function VpnNetflixPage({ params }: Props) {
                   logo
                   badge={item.badge}
                   price={item.price}
+                  priceLink
                   priceClassName="text-red-600 dark:text-red-400"
                   labels={{ cta: `${t.getVpnButton} ${item.vpn?.name ?? ""}` }}
                   middle={

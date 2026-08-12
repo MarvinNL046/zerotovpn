@@ -493,6 +493,7 @@ export default async function VpnTorrentingPage({ params }: Props) {
                   logo
                   badge={item.badge}
                   price={item.price}
+                  priceLink
                   priceClassName="text-2xl text-green-600 dark:text-green-400"
                   labels={{ cta: `${t.getVpnButton} ${item.vpn?.name ?? ""}` }}
                   middle={

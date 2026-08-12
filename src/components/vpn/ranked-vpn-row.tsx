@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Link } from "@/i18n/navigation";
 import { VpnLogo } from "@/components/ui/vpn-logo";
 import { RatingStars } from "./rating-stars";
-import { AffiliateButton } from "./affiliate-button";
+import { AffiliateButton, AffiliateTextLink } from "./affiliate-button";
 import { cn } from "@/lib/utils";
 
 /**
@@ -39,6 +39,7 @@ export function RankedVpnRow({
   afterRating,
   badge,
   price,
+  priceLink = false,
   priceNote,
   priceClassName,
   stats = [],
@@ -74,6 +75,8 @@ export function RankedVpnRow({
   /** Al opgemaakt, want de helft van de pagina's bewaart een string als
    *  "$2.99/mo" en de andere helft rekent met priceTwoYear. */
   price: React.ReactNode;
+  /** Makes a supplied price a tracked affiliate link on commercial list pages. */
+  priceLink?: boolean;
   /** Kleine regel onder de prijs, bv. "2-year plan" op /best/vpn-cheap. */
   priceNote?: React.ReactNode;
   /** Accentkleur van de prijs; verschilt per paginathema (rood op /vpn-netflix,
@@ -167,7 +170,16 @@ export function RankedVpnRow({
               priceClassName ?? "text-primary",
             )}
           >
-            {price}
+            {priceLink ? (
+              <AffiliateTextLink
+                vpnId={vpnId}
+                vpnName={name}
+                affiliateUrl={affiliateUrl}
+                className="underline decoration-current/40 underline-offset-4 hover:decoration-current"
+              >
+                {price}
+              </AffiliateTextLink>
+            ) : price}
           </div>
           {priceNote && (
             <span className="text-xs text-muted-foreground">{priceNote}</span>

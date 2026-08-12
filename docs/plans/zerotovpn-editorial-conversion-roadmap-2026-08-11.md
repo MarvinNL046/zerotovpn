@@ -700,3 +700,9 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - Wired `VPN_APPROVED_AFFILIATE_IDS` and `AFFILIATE_VPN_NORDVPN_URL` into `src/lib/vpn-links.ts`. `getVpnAffiliateUrl("nordvpn")` now returns an affiliate destination only when `nordvpn` is explicitly approved, the destination parses as HTTPS, and the server-side URL is present; otherwise it returns an empty value instead of silently using a hard-coded Nord destination.
 - Added a source regression guard and verified the resolver in three isolated cases: no approval → empty, approved HTTPS → `https://go.zerotovpn.com/nordvpn`, non-HTTPS → empty. Configured the approved ID and owned Short.io destination in local ignored env and Vercel Production without exposing credentials.
 - Local editorial checks pass **67/67**. The production deployment must be rechecked after the environment-backed build so Nord links remain present on approved commercial pages while restricted routes retain their existing empty affiliate boundary.
+
+### Global promotion-copy neutralization: 13 August 2026
+
+- Replaced generic “exclusive deals/offers” language in the global Open Graph image, Twitter image, JSON-LD descriptions, locale metadata and English homepage/newsletter metadata with evidence-led comparisons, current plan terms and buying guidance. This keeps the email-only exit-intent collection prompt available without presenting an unassigned Nord offer.
+- Added a regression check to `scripts/editorial-audit.mjs` for the global metadata/owned-media surfaces. Local editorial audit now passes **68/68**.
+- Production verification is pending for the next deploy; the existing live gates remain the source of truth for sitemap, editorial and affiliate-context behavior.

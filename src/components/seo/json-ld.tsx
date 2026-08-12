@@ -13,7 +13,7 @@ export function OrganizationJsonLd() {
       height: 512,
     },
     description:
-      "Expert VPN reviews, honest comparisons, and exclusive deals on top VPN services.",
+      "Expert VPN reviews, honest comparisons, and evidence-led plan comparisons for top VPN services.",
     sameAs: [
       // Add social media links when available
       // "https://twitter.com/zerotovpn",
@@ -41,7 +41,7 @@ export function WebsiteJsonLd() {
     name: "ZeroToVPN",
     url: "https://www.zerotovpn.com",
     description:
-      "Find the perfect VPN for your needs. Expert reviews, honest comparisons, and exclusive deals.",
+      "Find the perfect VPN for your needs with expert reviews, honest comparisons, and evidence-led plan context.",
     potentialAction: {
       "@type": "SearchAction",
       target: {

@@ -35,14 +35,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const descriptions: Record<string, string> = {
-    en: "Find the perfect VPN for your needs. Expert reviews, honest comparisons, and exclusive deals on top VPN services.",
-    nl: "Vind de perfecte VPN voor jouw behoeften. Expert reviews, eerlijke vergelijkingen en exclusieve deals.",
-    de: "Finden Sie das perfekte VPN für Ihre Bedürfnisse. Expertenbewertungen, ehrliche Vergleiche und exklusive Angebote.",
-    es: "Encuentra la VPN perfecta para tus necesidades. Reseñas de expertos, comparaciones honestas y ofertas exclusivas.",
-    fr: "Trouvez le VPN parfait pour vos besoins. Avis d'experts, comparaisons honnêtes et offres exclusives.",
-    zh: "找到适合您需求的完美VPN。专家评测、诚实比较和独家优惠。",
-    ja: "あなたのニーズに最適なVPNを見つけましょう。専門家レビュー、正直な比較、限定特典。",
-    ko: "당신의 필요에 맞는 완벽한 VPN을 찾아보세요. 전문가 리뷰, 솔직한 비교, 독점 혜택.",
+    en: "Find the perfect VPN for your needs. Expert reviews, honest comparisons, and current plan terms from top VPN services.",
+    nl: "Vind de perfecte VPN voor jouw behoeften. Expert reviews, eerlijke vergelijkingen en actuele abonnementsvoorwaarden.",
+    de: "Finden Sie das perfekte VPN für Ihre Bedürfnisse. Expertenbewertungen, ehrliche Vergleiche und aktuelle Tarifbedingungen.",
+    es: "Encuentra la VPN perfecta para tus necesidades. Reseñas de expertos, comparaciones honestas y condiciones de los planes actuales.",
+    fr: "Trouvez le VPN parfait pour vos besoins. Avis d'experts, comparaisons honnêtes et conditions tarifaires actuelles.",
+    zh: "找到适合您需求的完美VPN。专家评测、诚实比较和当前套餐条款。",
+    ja: "あなたのニーズに最適なVPNを見つけましょう。専門家レビュー、正直な比較、現在のプラン条件。",
+    ko: "당신의 필요에 맞는 완벽한 VPN을 찾아보세요. 전문가 리뷰, 솔직한 비교, 현재 요금제 조건.",
     th: "ค้นหา VPN ที่สมบูรณ์แบบสำหรับความต้องการของคุณ รีวิวจากผู้เชี่ยวชาญ เปรียบเทียบอย่างตรงไปตรงมา",
   };
 

@@ -77,9 +77,9 @@ The public link `https://go.zerotovpn.com/nordvpn` now returns a 302 to the dire
 1. **Done:** Replace the global exit-intent NordVPN popup with an email-only, consented newsletter prompt. It may remain enabled for first-party email collection, but must never contain an affiliate URL, provider offer, coupon, discount, cashback or incentive.
 2. **Done:** Remove or neutralize the global sticky discount CTA; no “OFF”, “limited offer”, coupon or deal language without an assigned offer.
 3. **Partially done:** Remove Nord links from current torrenting/P2P routes and keep a route-level regression check for new restricted content.
-4. **In progress:** Remove legacy Nord coupon links and unverified discount claims from all locales and content formats. The known published coupon/deal links and seasonal Black Friday route are now blocked; remaining scan findings are non-link translation/metadata records requiring a context review.
+4. **In progress:** Remove legacy Nord coupon links and unverified discount claims from all locales and content formats. The known published coupon/deal links and seasonal Black Friday route are now blocked; remaining findings are dormant translation records or factual educational uses, not live Nord affiliate placements.
 5. **Done:** Wire the approved-provider environment variables into the link resolver so Nord is fail-closed by default. The production project now has the approved `nordvpn` ID and the owned `go.zerotovpn.com/nordvpn` destination configured as non-sensitive environment values.
-6. Add a build-time audit that fails when a Nord affiliate URL appears in a restricted route or when an unapproved discount claim is introduced.
+6. **Done:** Build-time editorial checks now fail when a Nord affiliate URL appears in a restricted route, when the blocked coupon/seasonal slugs are published, when legacy unassigned coupon markers return in cleaned routes, or when global metadata/owned-media copy reintroduces unassigned exclusive-offer language.
 7. Ask the Nord account manager in writing whether a site may contain separate educational P2P content while Nord links are limited to compliant pages.
 
 ## Operating rule

@@ -340,6 +340,24 @@ const results = checks.map((check) => {
   return { ...check, pass: missing.length === 0 && forbidden.length === 0, missing, forbidden };
 });
 
+const globalPromotionCopyFiles = [
+  "src/app/opengraph-image.tsx",
+  "src/app/twitter-image.tsx",
+  "src/components/seo/json-ld.tsx",
+  "src/app/[locale]/layout.tsx",
+];
+const globalPromotionCopyFailures = globalPromotionCopyFiles.filter((file) => {
+  const source = readFileSync(resolve(ROOT, file), "utf8");
+  return /exclusive\s+(?:deals?|offers?)|exclusiv(?:e|es|a|as)\s+(?:deals?|offres?|angebote|ofertas)/i.test(source);
+});
+results.push({
+  name: "global metadata and owned-media copy avoids unassigned exclusive offers",
+  file: "src/app/{opengraph-image,twitter-image}.tsx + layout/messages/JSON-LD",
+  pass: globalPromotionCopyFailures.length === 0,
+  missing: [],
+  forbidden: globalPromotionCopyFailures,
+});
+
 const trackedCommercialCtaFiles = [
   "src/content/blog/best-vpn-for-ffxiv-2026.md",
   "src/content/blog/best-vpn-for-mlb-tv-2026.md",

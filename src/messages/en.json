@@ -24,7 +24,7 @@
   },
   "metadata": {
     "title": "ZeroToVPN - Best VPN Reviews & Comparisons 2026",
-    "description": "Find the perfect VPN for your needs. Expert reviews, honest comparisons, and exclusive deals on top VPN services."
+    "description": "Find the perfect VPN for your needs. Expert reviews, honest comparisons, and current plan terms from top VPN services."
   },
   "nav": {
     "home": "Home",
@@ -62,7 +62,7 @@
   },
   "hero": {
     "title": "Find Your Perfect VPN",
-    "subtitle": "From zero to secure in minutes. Expert reviews, honest comparisons, and exclusive deals.",
+    "subtitle": "From zero to secure in minutes. Expert reviews, honest comparisons, and evidence-led plan context.",
     "cta": "Compare VPNs",
     "trusted": "Trusted by over 100,000 readers"
   },
@@ -178,9 +178,9 @@
     "popupSubtitle": "Join readers who receive independent VPN reviews and practical security tips in their inbox.",
     "dontShowAgain": "Don't show this again",
     "footerTitle": "Newsletter",
-    "footerSubtitle": "Get exclusive VPN deals and security tips",
-    "blogCtaTitle": "Never Miss a VPN Deal",
-    "blogCtaSubtitle": "Get weekly VPN reviews, security tips, and exclusive deals delivered to your inbox."
+    "footerSubtitle": "Get weekly VPN reviews and security tips",
+    "blogCtaTitle": "Get Better VPN Buying Guidance",
+    "blogCtaSubtitle": "Get weekly VPN reviews, security tips, and evidence-led buying guidance delivered to your inbox."
   },
   "guides": {
     "whatIsVpn": {

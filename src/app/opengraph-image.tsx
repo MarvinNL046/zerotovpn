@@ -86,7 +86,7 @@ export default async function OgImage() {
               maxWidth: 800,
             }}
           >
-            Expert reviews • Honest comparisons • Exclusive deals
+            Expert reviews • Honest comparisons • Evidence-led comparisons
           </span>
         </div>
         <div

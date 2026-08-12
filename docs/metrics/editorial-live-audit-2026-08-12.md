@@ -1,6 +1,6 @@
 # Live editorial page audit
 
-Generated: 2026-08-12T20:37:00.833Z
+Generated: 2026-08-12T20:48:52.355Z
 
 - Target pages: **25**
 - Passing pages: **25**
@@ -41,7 +41,7 @@ Generated: 2026-08-12T20:37:00.833Z
 | pass | /guides/vpn-for-restricted-networks | How to Use a VPN on a Restricted Network | ZeroToVPN | 1 | 51 | 6 | — | — |
 | pass | /guides/vpn-for-travel | VPN for Travel: What to Test Before You Leave | ZeroToVPN | 1 | 48 | 6 | — | — |
 | pass | /best/free-vpn | Best Free VPNs: Limits and Trade-offs | ZeroToVPN | 1 | 46 | 3 | — | — |
-| pass | /fr/best/free-vpn | Best Free VPNs: Limits and Trade-offs | ZeroToVPN | 1 | 46 | 3 | — | — |
+| pass | /fr/best/free-vpn | Meilleurs VPN gratuits 2026 : limites, sécurité et comparatif | ZeroToVPN | 1 | 46 | 3 | — | — |
 | pass | /nl/best/free-vpn | Best Free VPNs: Limits and Trade-offs | ZeroToVPN | 1 | 46 | 3 | — | — |
 | pass | /best/vpn-free-trial | Best VPN Free Trials (Aug 2026): 7-Day &amp; No-Card Options | 1 | 43 | 11 | — | — |
 

@@ -234,14 +234,24 @@ const results = checks.map((check) => {
   return { ...check, pass: missing.length === 0 && forbidden.length === 0, missing, forbidden };
 });
 
-const quantifiedClaimSlugs = [
-  "vpn-credentials-theft-prevention-2026",
-  "vpn-kill-switch-vs-dns-leak-protection-2026",
+const quantifiedClaimRecords = [
+  {
+    slug: "vpn-credentials-theft-prevention-2026",
+    forbiddenPattern: /\b50\+\s+(?:VPN(?:\s+(?:services?|providers?|apps?)|s?)|services)\b/i,
+  },
+  {
+    slug: "vpn-kill-switch-vs-dns-leak-protection-2026",
+    forbiddenPattern: /\b50\+\s+(?:VPN(?:\s+(?:services?|providers?|apps?)|s?)|services)\b/i,
+  },
+  {
+    slug: "best-free-vpns-2026",
+    forbiddenPattern: /(?:\b(?:50\+|over\s+50|more\s+than\s+50|mehr\s+als\s+50|plus\s+de\s+50|m(?:\u00E1|\u00C3\u00A1)s\s+de\s+50|meer\s+dan\s+50)\s+(?:VPN(?:s|\s+(?:services?|providers?|apps?))?|services?|servicios?|diensten?)\b|50\u4ee5\u4e0a\u306e(?:VPN|\u30b5\u30fc\u30d3\u30b9)|50\uac1c\s+\uc774\uc0c1\uc758\s+(?:VPN|\uc11c\ube44\uc2a4)|(?:\u0e01\u0e27\u0e48\u0e32|\u0e21\u0e32\u0e01\u0e01\u0e27\u0e48\u0e32)\s*50\s*\u0e15\u0e31\u0e27|50\u591a[\u6b3e\u79cd]?VPN)/iu,
+  },
 ];
 const postLocaleDirs = readdirSync(resolve(ROOT, "src/data/posts"), { withFileTypes: true })
   .filter((entry) => entry.isDirectory())
   .map((entry) => entry.name);
-for (const slug of quantifiedClaimSlugs) {
+for (const { slug, forbiddenPattern } of quantifiedClaimRecords) {
   const files = postLocaleDirs
     .map((locale) => resolve(ROOT, "src/data/posts", locale, `${slug}.json`))
     .filter((path) => {
@@ -252,7 +262,6 @@ for (const slug of quantifiedClaimSlugs) {
         return false;
       }
     });
-  const forbiddenPattern = /\b50\+\s+(?:VPN(?:\s+(?:services?|providers?|apps?)|s?)|services)\b/i;
   const forbiddenFiles = files.filter((path) => forbiddenPattern.test(readFileSync(path, "utf8")));
   results.push({
     name: `${slug} records avoid unsupported provider counts`,

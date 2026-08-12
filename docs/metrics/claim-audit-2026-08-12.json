@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-12T12:56:22.789Z",
+  "generatedAt": "2026-08-12T13:09:22.195Z",
   "base": "https://www.zerotovpn.com",
   "urlCount": 2279,
   "checkedUrlCount": 2279,
   "errorCount": 0,
-  "findingCount": 233,
+  "findingCount": 226,
   "counts": {
-    "provider-count": 233,
+    "provider-count": 226,
     "reader-count": 0,
     "speed-test-count": 0,
     "max-speed": 0,
@@ -120,90 +120,6 @@
           "id": "provider-count",
           "label": "unsupported provider/test count",
           "excerpt": "Compares to Third-Party VPNs in Real-World Testing We tested Apple Private Relay against 50+ VPN services. Here&#x27;s what our independent testing revealed about privacy, performance, and real-world usage. 1 min อ่านเพิ่มเติม เคล็ดลับ May 5 VPN"
-        }
-      ]
-    },
-    {
-      "url": "https://www.zerotovpn.com/blog/best-free-vpns-2026",
-      "status": 200,
-      "finalUrl": "https://www.zerotovpn.com/blog/best-free-vpns-2026",
-      "matches": [
-        {
-          "id": "provider-count",
-          "label": "unsupported provider/test count",
-          "excerpt": "026 Updated: February 15, 2026 35 min Best Free VPNs That Actually Work in 2026 We tested 50+ VPNs to find the truly free options that don&#x27;t compromise on security. Here are the best free VPNs that actually deliver. Fact-checked | Written by Z"
-        }
-      ]
-    },
-    {
-      "url": "https://www.zerotovpn.com/nl/blog/best-free-vpns-2026",
-      "status": 200,
-      "finalUrl": "https://www.zerotovpn.com/nl/blog/best-free-vpns-2026",
-      "matches": [
-        {
-          "id": "provider-count",
-          "label": "unsupported provider/test count",
-          "excerpt": ": maart 9, 2026 35 min Beste gratis VPN&#x27;s die echt werken in 2026 We hebben meer dan 50 VPN&#x27;s getest om de echt gratis opties te vinden die geen concessies doen aan veiligheid. Dit zijn de beste gratis VPN&#x27;s die echt leveren. Fact-"
-        }
-      ]
-    },
-    {
-      "url": "https://www.zerotovpn.com/de/blog/best-free-vpns-2026",
-      "status": 200,
-      "finalUrl": "https://www.zerotovpn.com/de/blog/best-free-vpns-2026",
-      "matches": [
-        {
-          "id": "provider-count",
-          "label": "unsupported provider/test count",
-          "excerpt": "26 35 min Die besten kostenlosen VPNs, die 2026 wirklich funktionieren Wir haben mehr als 50 VPNs getestet, um die wirklich kostenlosen Optionen zu finden, die bei der Sicherheit keine Kompromisse eingehen. Hier sind die besten kostenlosen VPNs, d"
-        }
-      ]
-    },
-    {
-      "url": "https://www.zerotovpn.com/es/blog/best-free-vpns-2026",
-      "status": 200,
-      "finalUrl": "https://www.zerotovpn.com/es/blog/best-free-vpns-2026",
-      "matches": [
-        {
-          "id": "provider-count",
-          "label": "unsupported provider/test count",
-          "excerpt": "9, 2026 35 min Las mejores VPN gratuitas que realmente funcionan en 2026 Probamos más de 50 VPN para encontrar las opciones gratuitas que no comprometen la seguridad. Estas son las mejores VPN gratuitas que cumplen de verdad. Fact-checked | Writ"
-        }
-      ]
-    },
-    {
-      "url": "https://www.zerotovpn.com/fr/blog/best-free-vpns-2026",
-      "status": 200,
-      "finalUrl": "https://www.zerotovpn.com/fr/blog/best-free-vpns-2026",
-      "matches": [
-        {
-          "id": "provider-count",
-          "label": "unsupported provider/test count",
-          "excerpt": "min Les meilleurs VPN gratuits qui fonctionnent vraiment en 2026 Nous avons testé plus de 50 VPN pour trouver les options gratuites qui ne compromettent pas la sécurité. Voici les meilleurs VPN gratuits qui tiennent leurs promesses. Fact-checked"
-        }
-      ]
-    },
-    {
-      "url": "https://www.zerotovpn.com/zh/blog/best-free-vpns-2026",
-      "status": 200,
-      "finalUrl": "https://www.zerotovpn.com/zh/blog/best-free-vpns-2026",
-      "matches": [
-        {
-          "id": "provider-count",
-          "label": "unsupported provider/test count",
-          "excerpt": "ur data or limiting you to a crawl—is harder than it sounds. We've personally tested over 50 VPN服务 through rigorous speed benchmarks, security audits, and real-world usage scenarios, and the majority of \"free\" options either throttle speeds to un"
-        }
-      ]
-    },
-    {
-      "url": "https://www.zerotovpn.com/ko/blog/best-free-vpns-2026",
-      "status": 200,
-      "finalUrl": "https://www.zerotovpn.com/ko/blog/best-free-vpns-2026",
-      "matches": [
-        {
-          "id": "provider-count",
-          "label": "unsupported provider/test count",
-          "excerpt": "VPN meets your needs or if a paid alternative is worth the investment. In our testing of 50+ VPN services, we've identified specific scenarios where paid VPNs provide clear advantages and others where free options are genuinely sufficient. 무료 VPN"
         }
       ]
     },

@@ -302,3 +302,11 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - Added two data-record guards to `npm run audit:editorial`, bringing the local editorial suite to **41/41** and preventing the quantified wording from returning in these slugs.
 - Production deployment `dpl_9sf5Mxroa2DQRrVfV14LMiTm8BkE` is Ready. Focused live checks returned HTTP 200, one H1 and no retired provider-count pattern on English and localized routes. The full live editorial gate remains **22/22**.
 - The full sitemap claim audit now reports **233 flagged URLs**, 2,279/2,279 checked and 0 fetch errors. This batch removed 12 flagged route variants; the remaining corpus will continue in cluster-sized batches.
+
+### Free-VPN legacy claim batch: 12 August 2026
+
+- Qualified unsupported provider-count wording in all nine available `best-free-vpns-2026` locale records, including Japanese, Korean, Thai and Chinese variants. Numeric limits such as data caps and Mbps values were retained; only the unverified lifetime sample-size language was removed.
+- Added a locale-aware regression guard for the free-VPN records. `npm run audit:editorial` now passes **42/42** and protects the two security slugs plus this legacy free-VPN slug from the retired provider-count patterns.
+- The canonical `/best/free-vpn` evidence-led pillar remains unchanged. The legacy `/blog/best-free-vpns-2026` routes remain self-canonical (no redirect was inferred) but now render qualified content in every available locale.
+- Production deployment `dpl_FqF3Dv4X2syi4xc87hhfuUED8Mkf` is Ready with the aliases `www.zerotovpn.com`, `zerotovpn.com` and `zerotovpn.vercel.app`. Focused live checks for the pillar and English, Dutch, German and Spanish legacy routes returned HTTP 200, one H1 and no retired provider-count pattern. The newsletter-only exit-intent popup remains present.
+- `npm run audit:editorial-live` passed **22/22** with 123 affiliate links and zero compliance, metadata, image or freshness failures. The full sitemap claim audit now reports **226 flagged URLs** (down from 233), with **2,279/2,279** URLs checked and zero fetch errors. Remaining findings are staged legacy-corpus reviews, not an instruction to mass-rewrite unrelated pages.

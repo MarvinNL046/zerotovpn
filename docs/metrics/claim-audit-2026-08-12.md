@@ -1,16 +1,16 @@
 # Live editorial claim audit
 
-Generated: 2026-08-12T12:56:22.789Z
+Generated: 2026-08-12T13:09:22.195Z
 
 - URLs checked: **2279**
-- Pages with flagged claims: **233**
+- Pages with flagged claims: **226**
 - Fetch errors: **0**
 
 ## Pattern counts
 
 | Pattern | Pages |
 |---|---:|
-| unsupported provider/test count | 233 |
+| unsupported provider/test count | 226 |
 | unsupported reader count | 0 |
 | unsupported speed-test count | 0 |
 | unqualified maximum speed claim | 0 |
@@ -28,13 +28,6 @@ Generated: 2026-08-12T12:56:22.789Z
 - `/ja/blog` — **unsupported provider/test count**: Compares to Third-Party VPNs in Real-World Testing We tested Apple Private Relay against 50+ VPN services. Here&#x27;s what our independent testing revealed about privacy, performance, and real-world usage. 1 min 続きを読む ヒント May 5 VPN and Windows D
 - `/ko/blog` — **unsupported provider/test count**: Compares to Third-Party VPNs in Real-World Testing We tested Apple Private Relay against 50+ VPN services. Here&#x27;s what our independent testing revealed about privacy, performance, and real-world usage. 1 min 더 읽기 팁 May 5 VPN and Windows Defe
 - `/th/blog` — **unsupported provider/test count**: Compares to Third-Party VPNs in Real-World Testing We tested Apple Private Relay against 50+ VPN services. Here&#x27;s what our independent testing revealed about privacy, performance, and real-world usage. 1 min อ่านเพิ่มเติม เคล็ดลับ May 5 VPN
-- `/blog/best-free-vpns-2026` — **unsupported provider/test count**: 026 Updated: February 15, 2026 35 min Best Free VPNs That Actually Work in 2026 We tested 50+ VPNs to find the truly free options that don&#x27;t compromise on security. Here are the best free VPNs that actually deliver. Fact-checked | Written by Z
-- `/nl/blog/best-free-vpns-2026` — **unsupported provider/test count**: : maart 9, 2026 35 min Beste gratis VPN&#x27;s die echt werken in 2026 We hebben meer dan 50 VPN&#x27;s getest om de echt gratis opties te vinden die geen concessies doen aan veiligheid. Dit zijn de beste gratis VPN&#x27;s die echt leveren. Fact-
-- `/de/blog/best-free-vpns-2026` — **unsupported provider/test count**: 26 35 min Die besten kostenlosen VPNs, die 2026 wirklich funktionieren Wir haben mehr als 50 VPNs getestet, um die wirklich kostenlosen Optionen zu finden, die bei der Sicherheit keine Kompromisse eingehen. Hier sind die besten kostenlosen VPNs, d
-- `/es/blog/best-free-vpns-2026` — **unsupported provider/test count**: 9, 2026 35 min Las mejores VPN gratuitas que realmente funcionan en 2026 Probamos más de 50 VPN para encontrar las opciones gratuitas que no comprometen la seguridad. Estas son las mejores VPN gratuitas que cumplen de verdad. Fact-checked | Writ
-- `/fr/blog/best-free-vpns-2026` — **unsupported provider/test count**: min Les meilleurs VPN gratuits qui fonctionnent vraiment en 2026 Nous avons testé plus de 50 VPN pour trouver les options gratuites qui ne compromettent pas la sécurité. Voici les meilleurs VPN gratuits qui tiennent leurs promesses. Fact-checked
-- `/zh/blog/best-free-vpns-2026` — **unsupported provider/test count**: ur data or limiting you to a crawl—is harder than it sounds. We've personally tested over 50 VPN服务 through rigorous speed benchmarks, security audits, and real-world usage scenarios, and the majority of "free" options either throttle speeds to un
-- `/ko/blog/best-free-vpns-2026` — **unsupported provider/test count**: VPN meets your needs or if a paid alternative is worth the investment. In our testing of 50+ VPN services, we've identified specific scenarios where paid VPNs provide clear advantages and others where free options are genuinely sufficient. 무료 VPN
 - `/blog/best-vpn-for-traveling-abroad-2026` — **unsupported provider/test count**: ng security, speed, cost, and destination-specific challenges. After extensive testing of 50+ VPN services, we've identified that NordVPN offers the best overall combination of features and reliability for most travelers, while ExpressVPN excels f
 - `/blog/best-vpn-for-turkey-2026-bypass-censorship-legal-risks` — **unsupported provider/test count**: itoring and ISP surveillance. Over the past 18 months, our team at Zero to VPN has tested 50+ VPN services across restricted markets, including Turkey-specific scenarios. We've evaluated which providers maintain functional servers, resist blocking
 - `/blog/can-vpn-hide-from-isp` — **unsupported provider/test count**: should guide your decision. Based on our extensive testing at ZeroToVPN, we've evaluated 50+ VPN services to identify which ones offer the strongest ISP privacy protection. The most important factors are encryption strength, no-logs policy, serve

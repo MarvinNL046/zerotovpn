@@ -1,8 +1,8 @@
 # Editorial measurement loop
 
-The committed [historical baseline](./zerotovpn-baseline-2026-08-11.json) is a screenshot transcription, clearly marked as such. The current authenticated Search Console snapshot is [gsc-baseline-2026-08-11.md](./gsc-baseline-2026-08-11.md); it covers 10 May–9 August 2026 with Search type Web and no active filters. It is stronger than the screenshot transcription but is still a UI snapshot, not a downloadable API export.
+The committed [historical baseline](./zerotovpn-baseline-2026-08-11.json) is a screenshot transcription, clearly marked as such. The earlier authenticated Search Console snapshot is [gsc-baseline-2026-08-11.md](./gsc-baseline-2026-08-11.md); the newer downloadable window is documented in [gsc-export-2026-08-12.md](./gsc-export-2026-08-12.md). The Short.io API export for that same window is documented in [shortio-export-2026-08-12.md](./shortio-export-2026-08-12.md).
 
-When the next exports are available, keep the raw files outside Git or in a local ignored folder and run:
+Keep raw exports outside Git or in a local ignored folder and run:
 
 ```powershell
 npm run measure:editorial -- `
@@ -27,6 +27,18 @@ npm run measure:check-inputs -- `
 
 The check rejects filenames containing `fixture`, `sample` or `example`, checks the header shape and requires a readable partner export before reporting `ready: true`. A missing partner export is intentional during the current pre-checkpoint state.
 
+For the Short.io window, inject the production API key through Vercel without copying it into the shell or repository:
+
+```powershell
+npx vercel env run --environment=production -- `
+  npm run export:shortio -- `
+  --start 2026-07-28 --end 2026-08-10 `
+  --out .cache/metrics/shortio-2026-08-12/clicks.csv `
+  --json .cache/metrics/shortio-2026-08-12/details.json
+```
+
+The exporter records current-link totals plus domain-level totals and keeps wildcard/deleted paths separate. See [shortio-export-2026-08-12.md](./shortio-export-2026-08-12.md) for the attribution boundary.
+
 The importer accepts localized or English headers for pages/queries, clicks, impressions, CTR, position, country and referrer, and detects comma-, semicolon- and tab-delimited exports. It also normalizes decimal commas such as `0,2%` without turning them into `2%`. The optional `--partner` export accepts conversions/sales, revenue/commission and EPC columns and writes them under `affiliate.partner`; if it is omitted, those fields remain `null`. Required GSC/Short.io paths now fail fast when omitted, and every report includes `dataQuality.rowCounts` plus an explicit `missingMetrics` list instead of silently treating missing inputs as zero. It writes normalized totals, top rows and deltas without inferring missing partner data.
 
 Each report also includes `searchConsole.pages.byCluster` and `searchConsole.queries.byCluster` for the roadmap groups (`censorship`, `free-vpn`, `commercial-pillar`, `protocols`, `travel`, `other`). Short.io and partner rows are grouped under `affiliate.bySlug` and `affiliate.partner.bySlug`; use these for cluster-specific review when links have dedicated slugs, while treating an aggregate provider slug as diagnostic rather than page attribution.
@@ -35,6 +47,7 @@ Run the importer regression suite before using a new export format:
 
 ```powershell
 npm run test:measure-editorial
+npm run test:measurement-inputs
 ```
 
 Run the page-level release gate against the current English commercial/cluster pages and homepage hub:
@@ -81,4 +94,4 @@ The current flag classifications and release gate are recorded in [affiliate-con
 
 The production release gates were rerun after the localized free-VPN cleanup: the editorial target set is **15/15**, the sitemap is **2,279/2,279** healthy URLs, and the affiliate-context scan reports **1,755 affiliate pages / 8,189 links** with zero missing disclosure, rel, interruptive-promotion or fetch failures. These checks validate release quality; they are not traffic or revenue evidence.
 
-No real Search Console, Short.io or Nord affiliate export is present in `.cache/metrics` yet. The files there are explicitly named fixtures and must not be used for KPI decisions. Keep the next 4–8 page selection paused until the matched 14-day exports are available; the planned comparison checkpoint is **25 August 2026**. At that point run the command above with the real files, then select pages from measured cluster winners rather than from volume alone.
+Real Search Console Pages/Queries exports and a real Short.io API export now exist for **28 July–10 August 2026**; see [gsc-export-2026-08-12.md](./gsc-export-2026-08-12.md), [shortio-export-2026-08-12.md](./shortio-export-2026-08-12.md) and the interim join [measurement-interim-2026-08-12.md](./measurement-interim-2026-08-12.md). The partner conversion/revenue/EPC export is still absent, and Short.io has a documented wildcard/deleted residual that is not attributed to pages. `measure:check-inputs` therefore correctly remains `ready: false`; keep the next 4–8 page selection paused until the partner export and an attribution-complete Short.io join are available. The planned comparison checkpoint remains **25 August 2026**.

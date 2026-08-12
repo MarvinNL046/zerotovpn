@@ -14,7 +14,7 @@ for (let index = 0; index < args.length; index += 1) {
 
 const rules = {
   "gsc-pages": { label: "Search Console pages", patterns: [/page|url/i, /click|impression/i] },
-  "gsc-queries": { label: "Search Console queries", patterns: [/query|search/i, /click|impression/i] },
+  "gsc-queries": { label: "Search Console queries", patterns: [/quer(?:y|ies)|search/i, /click|impression/i] },
   shortio: { label: "Short.io", patterns: [/click|human/i, /link|slug|short/i] },
   partner: { label: "Partner dashboard", patterns: [/conversion|sale|commission|revenue|epc/i] },
 };

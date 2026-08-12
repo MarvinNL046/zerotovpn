@@ -115,7 +115,7 @@ export default async function VpnCheapPage({ params }: Props) {
       monthlyPrice: "$2.49",
       planLength: "2 years",
       devices: "Unlimited",
-      servers: "3,200+",
+      servers: surfshark?.servers ? `${surfshark.servers.toLocaleString("en-US")}+` : "Provider-stated",
       streaming: true,
       torrenting: true,
       speed: "88 Mbps",
@@ -128,7 +128,7 @@ export default async function VpnCheapPage({ params }: Props) {
       monthlyPrice: `$${cyberghost?.priceTwoYear ?? 2.03}`,
       planLength: "2 years",
       devices: "7",
-      servers: "9,000+",
+      servers: cyberghost?.servers ? `${cyberghost.servers.toLocaleString("en-US")}+` : "Provider-stated",
       streaming: true,
       torrenting: true,
       speed: "82 Mbps",
@@ -141,7 +141,7 @@ export default async function VpnCheapPage({ params }: Props) {
       monthlyPrice: `$${privateInternetAccess?.priceTwoYear ?? 2.19}`,
       planLength: "3 years",
       devices: "Unlimited",
-      servers: "35,000+",
+      servers: privateInternetAccess?.servers ? `${privateInternetAccess.servers.toLocaleString("en-US")}+` : "Provider-stated",
       streaming: true,
       torrenting: true,
       speed: "76 Mbps",
@@ -154,7 +154,7 @@ export default async function VpnCheapPage({ params }: Props) {
       monthlyPrice: "$3.09",
       planLength: "2 years",
       devices: "10",
-      servers: "6,000+",
+      servers: nordvpn?.servers ? `${nordvpn.servers.toLocaleString("en-US")}+` : "Provider-stated",
       streaming: true,
       torrenting: true,
       speed: "92 Mbps",
@@ -167,7 +167,7 @@ export default async function VpnCheapPage({ params }: Props) {
       monthlyPrice: "$2.99",
       planLength: "2 years",
       devices: "10",
-      servers: "2,900+",
+      servers: protonvpn?.servers ? `${protonvpn.servers.toLocaleString("en-US")}+` : "Provider-stated",
       streaming: true,
       torrenting: true,
       speed: "78 Mbps",
@@ -445,7 +445,7 @@ export default async function VpnCheapPage({ params }: Props) {
                       <>
                       <div className="flex items-center gap-2 text-sm"><DollarSign className="size-4 text-green-600" aria-hidden="true" /><span>{item.monthlyPrice}/mo</span></div>
                       <div className="flex items-center gap-2 text-sm"><Monitor className="size-4 text-blue-500" aria-hidden="true" /><span>{item.devices} devices</span></div>
-                      <div className="flex items-center gap-2 text-sm"><Server className="size-4 text-purple-500" aria-hidden="true" /><span>{item.servers}</span></div>
+                      <div className="flex items-center gap-2 text-sm"><Server className="size-4 text-purple-500" aria-hidden="true" /><span>Provider-stated: {item.servers}</span></div>
                       <div className="flex items-center gap-2 text-sm"><Zap className="size-4 text-yellow-500" aria-hidden="true" /><span>{item.speed}</span></div>
                       <div className="flex items-center gap-2 text-sm"><Globe className="size-4 text-blue-500" aria-hidden="true" /><span>{item.moneyBack}</span></div>
                     </>

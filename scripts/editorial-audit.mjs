@@ -234,6 +234,35 @@ const results = checks.map((check) => {
   return { ...check, pass: missing.length === 0 && forbidden.length === 0, missing, forbidden };
 });
 
+const quantifiedClaimSlugs = [
+  "vpn-credentials-theft-prevention-2026",
+  "vpn-kill-switch-vs-dns-leak-protection-2026",
+];
+const postLocaleDirs = readdirSync(resolve(ROOT, "src/data/posts"), { withFileTypes: true })
+  .filter((entry) => entry.isDirectory())
+  .map((entry) => entry.name);
+for (const slug of quantifiedClaimSlugs) {
+  const files = postLocaleDirs
+    .map((locale) => resolve(ROOT, "src/data/posts", locale, `${slug}.json`))
+    .filter((path) => {
+      try {
+        readFileSync(path, "utf8");
+        return true;
+      } catch {
+        return false;
+      }
+    });
+  const forbiddenPattern = /\b50\+\s+(?:VPN(?:\s+(?:services?|providers?|apps?)|s?)|services)\b/i;
+  const forbiddenFiles = files.filter((path) => forbiddenPattern.test(readFileSync(path, "utf8")));
+  results.push({
+    name: `${slug} records avoid unsupported provider counts`,
+    file: `src/data/posts/*/${slug}.json`,
+    pass: forbiddenFiles.length === 0,
+    missing: [],
+    forbidden: forbiddenFiles.map((path) => path.replace(`${ROOT}\\`, "")),
+  });
+}
+
 const localeFiles = readdirSync(resolve(ROOT, "src/messages"))
   .filter((file) => file.endsWith(".json"))
   .sort();

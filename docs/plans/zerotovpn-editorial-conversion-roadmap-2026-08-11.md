@@ -294,4 +294,11 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - Updated the dynamic blog renderer so every localized Iran route uses the evidence-led editorial body rather than stale translated JSON content. The route keeps the localized URL and metadata while sharing the same bounded evidence and safety limits.
 - Added two regression checks to `npm run audit:editorial`, bringing the local suite to **39/39**.
 - The production deployment `dpl_9sf5Mxroa2DQRrVfV14LMiTm8BkE` is Ready. Live checks for the English/translated streaming routes and localized Iran routes return 200, one H1 and no retired provider-count patterns. `npm run audit:editorial-live` remains **22/22**.
-- The full claim audit now flags **245 URLs** (down from 253) across 2,279 checked URLs, with zero fetch errors. The remaining findings are legacy blog/deal corpus items and remain a staged review backlog; no bulk rewrite is being inferred from the pattern match alone.
+- The full claim audit now flags **233 URLs** (down from 245) across 2,279 checked URLs, with zero fetch errors. The remaining findings are legacy blog/deal corpus items and remain a staged review backlog; no bulk rewrite is being inferred from the pattern match alone.
+
+### Security-content claim batch: 12 August 2026
+
+- Qualified the repeated “50+ VPN” language in the credential-theft and kill-switch/DNS-leak articles across the available locale records. The articles retain their threat-model, setup and testing guidance, but now refer to multiple provider records instead of an unsupported lifetime sample size.
+- Added two data-record guards to `npm run audit:editorial`, bringing the local editorial suite to **41/41** and preventing the quantified wording from returning in these slugs.
+- Production deployment `dpl_9sf5Mxroa2DQRrVfV14LMiTm8BkE` is Ready. Focused live checks returned HTTP 200, one H1 and no retired provider-count pattern on English and localized routes. The full live editorial gate remains **22/22**.
+- The full sitemap claim audit now reports **233 flagged URLs**, 2,279/2,279 checked and 0 fetch errors. This batch removed 12 flagged route variants; the remaining corpus will continue in cluster-sized batches.

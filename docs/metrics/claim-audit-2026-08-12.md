@@ -1,16 +1,16 @@
 # Live editorial claim audit
 
-Generated: 2026-08-12T12:46:40.747Z
+Generated: 2026-08-12T12:56:22.789Z
 
 - URLs checked: **2279**
-- Pages with flagged claims: **245**
+- Pages with flagged claims: **233**
 - Fetch errors: **0**
 
 ## Pattern counts
 
 | Pattern | Pages |
 |---|---:|
-| unsupported provider/test count | 245 |
+| unsupported provider/test count | 233 |
 | unsupported reader count | 0 |
 | unsupported speed-test count | 0 |
 | unqualified maximum speed claim | 0 |
@@ -104,13 +104,6 @@ Generated: 2026-08-12T12:46:40.747Z
 - `/blog/vpn-contactless-delivery-protect-home-address-package-tracking-data-brokers` — **unsupported provider/test count**: ions while maintaining privacy for browsing. In our testing at ZeroToVPN, we've evaluated 50+ VPN services using real-world scenarios, including e-commerce browsing, package tracking, and data broker exposure. We've found that enterprise-grade VPN
 - `/blog/vpn-corporate-email-metadata-outlook-gmail-location-leak` — **unsupported provider/test count**: VPN's comprehensive VPN comparison and testing resources . Our team has personally tested 50+ VPN services through rigorous benchmarks and real-world usage scenarios, and we provide honest, independent recommendations based on actual performance a
 - `/blog/vpn-corporate-network-access-home-network-security-2026` — **unsupported provider/test count**: ols, visit ZeroToVPN.com where our team of industry professionals has tested and reviewed 50+ VPN services and security solutions. Our independent testing methodology ensures that recommendations are based on real-world performance and security an
-- `/blog/vpn-credentials-theft-prevention-2026` — **unsupported provider/test count**: theft occurs or which VPN security features actually defend against it. In our testing of 50+ VPN services at Zero to VPN , we discovered that credential theft isn't just about weak passwords—it's a sophisticated attack vector that exploits gaps i
-- `/nl/blog/vpn-credentials-theft-prevention-2026` — **unsupported provider/test count**: theft occurs or which VPN security features actually defend against it. In our testing of 50+ VPN services at Zero to VPN , we discovered that credential theft isn't just about weak passwords—it's a sophisticated attack vector that exploits gaps i
-- `/de/blog/vpn-credentials-theft-prevention-2026` — **unsupported provider/test count**: theft occurs or which VPN security features actually defend against it. In our testing of 50+ VPN services at Zero to VPN , we discovered that Zugangsdaten-Diebstahl isn't just about weak passwords—it's a sophisticated attack vector that exploits
-- `/es/blog/vpn-credentials-theft-prevention-2026` — **unsupported provider/test count**: occurs or which VPN security features actually defend against it. En nuestras pruebas of 50+ VPN services at Zero to VPN , we discovered that robo de credenciales isn't just about weak passwords—it's a sophisticated attack vector that exploits ga
-- `/fr/blog/vpn-credentials-theft-prevention-2026` — **unsupported provider/test count**: ft occurs or which VPN security features actually defend against it. Lors de nos tests of 50+ VPN services at Zero to VPN , we discovered that vol d'identifiants isn't just about weak passwords—it's a sophisticated attack vector that exploits gaps
-- `/zh/blog/vpn-credentials-theft-prevention-2026` — **unsupported provider/test count**: unaware of how this theft occurs or which VPN 安全功能 actually defend against it. 在我们的测试中 of 50+ VPN服务 at Zero to VPN , we discovered that 凭证盗窃 isn't just about weak passwords—it's a sophisticated attack vector that 漏洞利用s gaps in VPN infrastructure,
-- `/th/blog/vpn-credentials-theft-prevention-2026` — **unsupported provider/test count**: ส่วนตัวที่จัดเก็บกับผู้ให้บริการ และอาจเฝ้าดูกิจกรรมของคุณ In our hands-on testing across 50+ VPN services, we identified three distinct attack vectors: ภัยคุกคามภายนอก (phishing, malware, credential stuffing), ช่องโหว่ฝั่งผู้ให้บริการ (weak authe
 - `/blog/vpn-cryptocurrency-exchange-security-api-keys-2026` — **unsupported provider/test count**: lity, and real-world reliability through hands-on testing. Our team has personally tested 50+ VPN services through rigorous benchmarks and real-world usage scenarios, ensuring our recommendations are based on verifiable evidence rather than market
 - `/blog/vpn-cryptocurrency-trading-security-2026` — **unsupported provider/test count**: private wallet keys. This comprehensive guide shares our hands-on testing experience with 50+ VPN services and shows you exactly how to implement them for maximum cryptocurrency security. Key Takeaways Question Answer Why do crypto traders need a
 - `/blog/vpn-cryptocurrency-wallet-recovery-seed-phrases-private-keys-2026` — **unsupported provider/test count**: specifications, audit history, and real-world security practices. We've personally tested 50+ VPN services and identified the features that matter most for this use case. The most critical factors are encryption strength, verified no-logs policies
@@ -154,11 +147,6 @@ Generated: 2026-08-12T12:46:40.747Z
 - `/blog/vpn-hotel-room-keys-keycard-cloning-security-2026` — **unsupported provider/test count**: VPN reviews and comparisons . Our team of security professionals has independently tested 50+ VPN services through rigorous benchmarks and real-world usage scenarios, providing you with the expert guidance needed to select the best VPN for your ho
 - `/blog/vpn-hotel-wifi-protect-credit-card-passport-2026` — **unsupported provider/test count**: a leisure traveler visiting countries with internet restrictions. We've personally tested 50+ VPN services through rigorous benchmarks and real-world usage. The following comparison highlights the features most important for hotel WiFi security. C
 - `/blog/vpn-instant-messaging-metadata-leaks-signal-whatsapp-telegram-2026` — **unsupported provider/test count**: service that matches your privacy needs and threat model. At ZeroToVPN.com , we've tested 50+ VPN services through rigorous benchmarks and real-world usage to help you make informed decisions about your privacy. Our independent testing methodology
-- `/blog/vpn-kill-switch-vs-dns-leak-protection-2026` — **unsupported provider/test count**: us on one security feature while ignoring another equally critical one. In our testing of 50+ VPN services, we've discovered that understanding the difference between a VPN kill switch and DNS leak protection could be the deciding factor between g
-- `/nl/blog/vpn-kill-switch-vs-dns-leak-protection-2026` — **unsupported provider/test count**: us on one security feature while ignoring another equally critical one. In our testing of 50+ VPN services, we've discovered that understanding the difference between a VPN kill switch and DNS leak protection could be the deciding factor between g
-- `/de/blog/vpn-kill-switch-vs-dns-leak-protection-2026` — **unsupported provider/test count**: us on one security feature while ignoring another equally critical one. In our testing of 50+ VPN services, we've discovered that understanding the difference between a VPN Kill Switch and DNS-Leck protection could be the deciding factor between g
-- `/es/blog/vpn-kill-switch-vs-dns-leak-protection-2026` — **unsupported provider/test count**: función de seguridad while ignoring another equally critical one. En nuestras pruebas of 50+ VPN services, we've discovered that understanding the difference between a VPN kill switch and protección contra fugas DNS could be the deciding factor b
-- `/fr/blog/vpn-kill-switch-vs-dns-leak-protection-2026` — **unsupported provider/test count**: ctionnalité de sécurité while ignoring another equally critical one. Lors de nos tests of 50+ VPN services, we've discovered that understanding the difference between a VPN kill switch and protection contre les fuites DNS could be the deciding fac
 - `/th/blog/vpn-kill-switch-vs-dns-leak-protection-2026` — **unsupported provider/test count**: คุณส่งคำขอไปยังเซิร์ฟเวอร์ DNS IPv6 ที่ข้าม VPN ของคุณทั้งหมด เราค้นพบช่องโหว่นี้ใน 8 จาก 50 VPN ที่ทดสอบซึ่งไม่ได้บล็อกทราฟฟิก IPv6 อย่างถูกต้อง กลไกที่สามคือ WebRTC Leak ซึ่ง API ของเบราว์เซอร์เปิดเผยที่อยู่ IP จริงของคุณโดยไม่ตั้งใจระหว่างการเ
 - `/blog/vpn-latency-vs-speed-slow-connection-2026` — **unsupported provider/test count**: iver 500 Mbps—it cares how quickly the server responds to your request. In our testing of 50+ VPN services, we've discovered that perceived speed correlates far more closely with latency than with raw bandwidth. A user with a VPN connection showin
 - `/blog/vpn-leak-testing-tools-compared-2026` — **unsupported provider/test count**: t a "failed" test. We've categorized the major types based on our testing experience with 50+ VPN services across different platforms and protocols. Each test type has legitimate uses, but each also has blind spots. A comprehensive security check

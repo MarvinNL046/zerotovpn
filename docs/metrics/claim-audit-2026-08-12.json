@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-12T12:46:40.747Z",
+  "generatedAt": "2026-08-12T12:56:22.789Z",
   "base": "https://www.zerotovpn.com",
   "urlCount": 2279,
   "checkedUrlCount": 2279,
   "errorCount": 0,
-  "findingCount": 245,
+  "findingCount": 233,
   "counts": {
-    "provider-count": 245,
+    "provider-count": 233,
     "reader-count": 0,
     "speed-test-count": 0,
     "max-speed": 0,
@@ -1036,90 +1036,6 @@
       ]
     },
     {
-      "url": "https://www.zerotovpn.com/blog/vpn-credentials-theft-prevention-2026",
-      "status": 200,
-      "finalUrl": "https://www.zerotovpn.com/blog/vpn-credentials-theft-prevention-2026",
-      "matches": [
-        {
-          "id": "provider-count",
-          "label": "unsupported provider/test count",
-          "excerpt": "theft occurs or which VPN security features actually defend against it. In our testing of 50+ VPN services at Zero to VPN , we discovered that credential theft isn't just about weak passwords—it's a sophisticated attack vector that exploits gaps i"
-        }
-      ]
-    },
-    {
-      "url": "https://www.zerotovpn.com/nl/blog/vpn-credentials-theft-prevention-2026",
-      "status": 200,
-      "finalUrl": "https://www.zerotovpn.com/nl/blog/vpn-credentials-theft-prevention-2026",
-      "matches": [
-        {
-          "id": "provider-count",
-          "label": "unsupported provider/test count",
-          "excerpt": "theft occurs or which VPN security features actually defend against it. In our testing of 50+ VPN services at Zero to VPN , we discovered that credential theft isn't just about weak passwords—it's a sophisticated attack vector that exploits gaps i"
-        }
-      ]
-    },
-    {
-      "url": "https://www.zerotovpn.com/de/blog/vpn-credentials-theft-prevention-2026",
-      "status": 200,
-      "finalUrl": "https://www.zerotovpn.com/de/blog/vpn-credentials-theft-prevention-2026",
-      "matches": [
-        {
-          "id": "provider-count",
-          "label": "unsupported provider/test count",
-          "excerpt": "theft occurs or which VPN security features actually defend against it. In our testing of 50+ VPN services at Zero to VPN , we discovered that Zugangsdaten-Diebstahl isn't just about weak passwords—it's a sophisticated attack vector that exploits"
-        }
-      ]
-    },
-    {
-      "url": "https://www.zerotovpn.com/es/blog/vpn-credentials-theft-prevention-2026",
-      "status": 200,
-      "finalUrl": "https://www.zerotovpn.com/es/blog/vpn-credentials-theft-prevention-2026",
-      "matches": [
-        {
-          "id": "provider-count",
-          "label": "unsupported provider/test count",
-          "excerpt": "occurs or which VPN security features actually defend against it. En nuestras pruebas of 50+ VPN services at Zero to VPN , we discovered that robo de credenciales isn't just about weak passwords—it's a sophisticated attack vector that exploits ga"
-        }
-      ]
-    },
-    {
-      "url": "https://www.zerotovpn.com/fr/blog/vpn-credentials-theft-prevention-2026",
-      "status": 200,
-      "finalUrl": "https://www.zerotovpn.com/fr/blog/vpn-credentials-theft-prevention-2026",
-      "matches": [
-        {
-          "id": "provider-count",
-          "label": "unsupported provider/test count",
-          "excerpt": "ft occurs or which VPN security features actually defend against it. Lors de nos tests of 50+ VPN services at Zero to VPN , we discovered that vol d'identifiants isn't just about weak passwords—it's a sophisticated attack vector that exploits gaps"
-        }
-      ]
-    },
-    {
-      "url": "https://www.zerotovpn.com/zh/blog/vpn-credentials-theft-prevention-2026",
-      "status": 200,
-      "finalUrl": "https://www.zerotovpn.com/zh/blog/vpn-credentials-theft-prevention-2026",
-      "matches": [
-        {
-          "id": "provider-count",
-          "label": "unsupported provider/test count",
-          "excerpt": "unaware of how this theft occurs or which VPN 安全功能 actually defend against it. 在我们的测试中 of 50+ VPN服务 at Zero to VPN , we discovered that 凭证盗窃 isn't just about weak passwords—it's a sophisticated attack vector that 漏洞利用s gaps in VPN infrastructure,"
-        }
-      ]
-    },
-    {
-      "url": "https://www.zerotovpn.com/th/blog/vpn-credentials-theft-prevention-2026",
-      "status": 200,
-      "finalUrl": "https://www.zerotovpn.com/th/blog/vpn-credentials-theft-prevention-2026",
-      "matches": [
-        {
-          "id": "provider-count",
-          "label": "unsupported provider/test count",
-          "excerpt": "ส่วนตัวที่จัดเก็บกับผู้ให้บริการ และอาจเฝ้าดูกิจกรรมของคุณ In our hands-on testing across 50+ VPN services, we identified three distinct attack vectors: ภัยคุกคามภายนอก (phishing, malware, credential stuffing), ช่องโหว่ฝั่งผู้ให้บริการ (weak authe"
-        }
-      ]
-    },
-    {
       "url": "https://www.zerotovpn.com/blog/vpn-cryptocurrency-exchange-security-api-keys-2026",
       "status": 200,
       "finalUrl": "https://www.zerotovpn.com/blog/vpn-cryptocurrency-exchange-security-api-keys-2026",
@@ -1632,66 +1548,6 @@
           "id": "provider-count",
           "label": "unsupported provider/test count",
           "excerpt": "service that matches your privacy needs and threat model. At ZeroToVPN.com , we've tested 50+ VPN services through rigorous benchmarks and real-world usage to help you make informed decisions about your privacy. Our independent testing methodology"
-        }
-      ]
-    },
-    {
-      "url": "https://www.zerotovpn.com/blog/vpn-kill-switch-vs-dns-leak-protection-2026",
-      "status": 200,
-      "finalUrl": "https://www.zerotovpn.com/blog/vpn-kill-switch-vs-dns-leak-protection-2026",
-      "matches": [
-        {
-          "id": "provider-count",
-          "label": "unsupported provider/test count",
-          "excerpt": "us on one security feature while ignoring another equally critical one. In our testing of 50+ VPN services, we've discovered that understanding the difference between a VPN kill switch and DNS leak protection could be the deciding factor between g"
-        }
-      ]
-    },
-    {
-      "url": "https://www.zerotovpn.com/nl/blog/vpn-kill-switch-vs-dns-leak-protection-2026",
-      "status": 200,
-      "finalUrl": "https://www.zerotovpn.com/nl/blog/vpn-kill-switch-vs-dns-leak-protection-2026",
-      "matches": [
-        {
-          "id": "provider-count",
-          "label": "unsupported provider/test count",
-          "excerpt": "us on one security feature while ignoring another equally critical one. In our testing of 50+ VPN services, we've discovered that understanding the difference between a VPN kill switch and DNS leak protection could be the deciding factor between g"
-        }
-      ]
-    },
-    {
-      "url": "https://www.zerotovpn.com/de/blog/vpn-kill-switch-vs-dns-leak-protection-2026",
-      "status": 200,
-      "finalUrl": "https://www.zerotovpn.com/de/blog/vpn-kill-switch-vs-dns-leak-protection-2026",
-      "matches": [
-        {
-          "id": "provider-count",
-          "label": "unsupported provider/test count",
-          "excerpt": "us on one security feature while ignoring another equally critical one. In our testing of 50+ VPN services, we've discovered that understanding the difference between a VPN Kill Switch and DNS-Leck protection could be the deciding factor between g"
-        }
-      ]
-    },
-    {
-      "url": "https://www.zerotovpn.com/es/blog/vpn-kill-switch-vs-dns-leak-protection-2026",
-      "status": 200,
-      "finalUrl": "https://www.zerotovpn.com/es/blog/vpn-kill-switch-vs-dns-leak-protection-2026",
-      "matches": [
-        {
-          "id": "provider-count",
-          "label": "unsupported provider/test count",
-          "excerpt": "función de seguridad while ignoring another equally critical one. En nuestras pruebas of 50+ VPN services, we've discovered that understanding the difference between a VPN kill switch and protección contra fugas DNS could be the deciding factor b"
-        }
-      ]
-    },
-    {
-      "url": "https://www.zerotovpn.com/fr/blog/vpn-kill-switch-vs-dns-leak-protection-2026",
-      "status": 200,
-      "finalUrl": "https://www.zerotovpn.com/fr/blog/vpn-kill-switch-vs-dns-leak-protection-2026",
-      "matches": [
-        {
-          "id": "provider-count",
-          "label": "unsupported provider/test count",
-          "excerpt": "ctionnalité de sécurité while ignoring another equally critical one. Lors de nos tests of 50+ VPN services, we've discovered that understanding the difference between a VPN kill switch and protection contre les fuites DNS could be the deciding fac"
         }
       ]
     },

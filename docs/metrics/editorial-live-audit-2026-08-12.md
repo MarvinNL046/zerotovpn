@@ -1,6 +1,6 @@
 # Live editorial page audit
 
-Generated: 2026-08-12T15:26:08.102Z
+Generated: 2026-08-12T15:55:44.646Z
 
 - Target pages: **22**
 - Passing pages: **22**
@@ -39,6 +39,6 @@ Generated: 2026-08-12T15:26:08.102Z
 | pass | /best/free-vpn | Best Free VPNs: Limits and Trade-offs | ZeroToVPN | 1 | 46 | 3 | — | — |
 | pass | /fr/best/free-vpn | Best Free VPNs: Limits and Trade-offs | ZeroToVPN | 1 | 46 | 3 | — | — |
 | pass | /nl/best/free-vpn | Best Free VPNs: Limits and Trade-offs | ZeroToVPN | 1 | 46 | 3 | — | — |
-| pass | /best/vpn-free-trial | VPNs With a Real Free Trial (Aug 2026) — Checked at Source | 1 | 42 | 7 | — | — |
+| pass | /best/vpn-free-trial | VPNs With a Real Free Trial (Aug 2026) — Checked at Source | 1 | 43 | 7 | — | — |
 
 Raw records: [editorial-live-audit-2026-08-12.json](./editorial-live-audit-2026-08-12.json)

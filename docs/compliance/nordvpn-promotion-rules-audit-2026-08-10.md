@@ -1,7 +1,7 @@
 # NordVPN Promotion Rules audit
 
-**Initial audit date:** 2026-08-10  
-**Status rechecked:** 2026-08-13  
+**Initial audit date:** 2026-08-10
+**Status rechecked:** 2026-08-13
 **Scope:** ZeroToVPN website and codebase  
 **Offer:** NordVPN Offer 15  
 **Rules source:** Nord Affiliate Program Promotion Rules supplied by the account owner

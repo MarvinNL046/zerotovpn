@@ -237,6 +237,12 @@ const checks = [
     patterns: [/AffiliateTextLink/, /price=\{item\.vpn \?/, /monthlyPrice/, /Price Comparison Table/],
   },
   {
+    name: "cheap VPN pillar SERP metadata and table semantics",
+    file: "src/app/[locale]/best/vpn-cheap/page.tsx",
+    patterns: [/Best Cheap VPNs \(\$\{shortMonthYear\}\): Cheapest Plans Compared/, /Compare the best cheap VPNs under \$3\/month by plan price/, /<caption className="sr-only">Cheap VPN price comparison<\/caption>/, /scope="col"/],
+    forbiddenPatterns: [/5 Cheapest VPNs \(\$\{shortMonthYear\}\) — Tested, From \$1\.99\/mo \| ZeroToVPN/],
+  },
+  {
     name: "free-trial pillar SERP metadata and table semantics",
     file: "src/app/[locale]/best/vpn-free-trial/page.tsx",
     patterns: [/Best VPN Free Trials \(\$\{m\}\): 7-Day & No-Card Options/, /Compare genuine VPN free trials, 7-day options and no-card tests/, /<caption className=\"sr-only\">VPN free trial comparison<\/caption>/, /scope=\"col\"/],

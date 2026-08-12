@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const shortMonthYear = getShortMonthYear();
 
   const titles: Record<string, string> = {
-    en: `5 Cheapest VPNs (${shortMonthYear}) — Tested, From $1.99/mo | ZeroToVPN`,
+    en: `Best Cheap VPNs (${shortMonthYear}): Cheapest Plans Compared | ZeroToVPN`,
     nl: `5 Goedkoopste VPNs (Getest ${shortMonthYear}) - Budget Vanaf $1,99/maand | ZeroToVPN`,
     de: `5 Günstigste VPNs (Getestet ${shortMonthYear}) - Budget Ab $1,99/Monat | ZeroToVPN`,
     es: `5 VPNs Más Baratos (Probados ${shortMonthYear}) - Económicos Desde $1,99/mes | ZeroToVPN`,
@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const descriptions: Record<string, string> = {
-    en: `We tested budget VPNs under $3/month. Expert picks updated ${shortMonthYear} with speeds, streaming & security compared. Best value picks from $1.99/mo.`,
+    en: `Compare the best cheap VPNs under $3/month by plan price, speed, streaming, security and refund terms. Updated ${shortMonthYear} with source-led value checks.`,
     nl: "Op zoek naar een goedkope VPN die echt werkt? We testten budget VPNs onder $3/maand op snelheid, streaming, beveiliging en privacy. Deze 5 bieden de beste waarde.",
     de: "Auf der Suche nach einem gunstigen VPN? Wir haben Budget-VPNs unter $3/Monat auf Geschwindigkeit, Streaming, Sicherheit und Datenschutz getestet.",
     es: "Buscas un VPN barato que funcione? Probamos VPNs economicos por menos de $3/mes en velocidad, streaming, seguridad y privacidad.",
@@ -178,7 +178,7 @@ export default async function VpnCheapPage({ params }: Props) {
   const content = {
     en: {
       badge: `Updated ${getLocalizedMonthYear("en")}`,
-      title: "Cheapest VPNs in 2026",
+      title: "Best Cheap VPNs in 2026: Cheapest Plans Compared",
       subtitle:
         "You do not need to spend $10+/month on a VPN. These 5 budget options start at just $1.99/month and still deliver excellent speeds, streaming support, and strong security.",
       topPicks: "Top Budget VPNs",
@@ -464,15 +464,16 @@ export default async function VpnCheapPage({ params }: Props) {
             <p className="text-center text-gray-600 dark:text-gray-300 mb-12">{t.priceDesc}</p>
             <div className="overflow-x-auto max-w-5xl mx-auto">
               <table className="w-full bg-white dark:bg-gray-900 rounded-lg overflow-hidden">
+                <caption className="sr-only">Cheap VPN price comparison</caption>
                 <thead className="bg-gray-100 dark:bg-gray-800">
                   <tr>
-                    <th className="px-4 py-4 text-left">{t.tableHeaders.vpn}</th>
-                    <th className="px-3 py-4 text-center">{t.tableHeaders.price}</th>
-                    <th className="px-3 py-4 text-center">{t.tableHeaders.plan}</th>
-                    <th className="px-3 py-4 text-center">{t.tableHeaders.devices}</th>
-                    <th className="px-3 py-4 text-center">{t.tableHeaders.streaming}</th>
-                    <th className="px-3 py-4 text-center">{t.tableHeaders.torrenting}</th>
-                    <th className="px-3 py-4 text-center">{t.tableHeaders.moneyBack}</th>
+                    <th scope="col" className="px-4 py-4 text-left">{t.tableHeaders.vpn}</th>
+                    <th scope="col" className="px-3 py-4 text-center">{t.tableHeaders.price}</th>
+                    <th scope="col" className="px-3 py-4 text-center">{t.tableHeaders.plan}</th>
+                    <th scope="col" className="px-3 py-4 text-center">{t.tableHeaders.devices}</th>
+                    <th scope="col" className="px-3 py-4 text-center">{t.tableHeaders.streaming}</th>
+                    <th scope="col" className="px-3 py-4 text-center">{t.tableHeaders.torrenting}</th>
+                    <th scope="col" className="px-3 py-4 text-center">{t.tableHeaders.moneyBack}</th>
                   </tr>
                 </thead>
                 <tbody>

@@ -11,7 +11,7 @@ The Offer 15 redirect is now configured correctly, but the website is **not yet 
 
 ## Remediation update — 2026-08-10
 
-The three urgent placements have now been neutralized in the codebase: the exit-intent dialog is a consented newsletter/VPN-finder prompt with no affiliate URL, the sticky bar links only to the internal quiz/comparison flow, and the global security banner no longer advertises NordVPN. Nord affiliate CTAs were also removed from the torrenting/P2P guide and ranking pages. The remaining findings below are content-governance work for later passes; Nord promotion should stay limited to clearly relevant, compliant review and comparison pages until those checks are complete.
+The three urgent placements have now been neutralized in the codebase: the exit-intent dialog is a consented newsletter/VPN-finder prompt with no affiliate URL, the sticky bar links only to the internal quiz/comparison flow, and the global security banner no longer advertises NordVPN. Nord affiliate CTAs were also removed from the torrenting/P2P guide and ranking pages. The legacy price/deal page was subsequently blocked and redirected to the evidence-led cheap-VPN pillar because it contained unassigned coupon language and stale savings claims. Nord promotion should stay limited to clearly relevant, compliant review and comparison pages.
 
 ## Findings
 
@@ -48,7 +48,11 @@ The three urgent placements have now been neutralized in the codebase: the exit-
 
 6. **Risky legacy content**
 
-   `src/content/blog/best-free-vpn-reddit-2026.md` and `src/content/blog/is-brave-vpn-free-2026.md` contain Nord coupon links and promotional price claims. These are not safe to publish under the current rules without offer-specific approval.
+`src/content/blog/best-free-vpn-reddit-2026.md` and `src/content/blog/is-brave-vpn-free-2026.md` contain Nord coupon links and promotional price claims. These are not safe to publish under the current rules without offer-specific approval.
+
+7. **Legacy price/deal page (remediated)**
+
+`/blog/vpn-price-comparison-best-deals` and its locale variants contained unassigned coupon-code language, “exclusive” offers and stale percentage savings. The slug is now blocked from the published post corpus and permanently redirects to `/best/vpn-cheap`; a build-time regression check protects the block and redirect.
 
 ### Passed / no evidence found in static scan
 

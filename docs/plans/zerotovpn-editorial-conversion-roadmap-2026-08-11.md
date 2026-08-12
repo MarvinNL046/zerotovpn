@@ -569,3 +569,10 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 
 - The browser smoke exposed the same retired 7,000/3,200 comparison wording inside localized Android benefit lists, even though the visible server stat was already dynamic. Replaced those stale numeric comparisons in all nine locale message files with bounded qualitative wording (large network / smaller than NordVPN).
 - Extended the network regression to scan every locale message file for retired 7,000/6,400 literals. The public 232-location affiliate geography remains absent from locale product copy.
+
+### Public article network-copy cleanup: 12 August 2026
+
+- Updated the live-source and rendered English records for `is-brave-vpn-free-2026` and `best-country-for-vpn-server-location-2026`. Retired NordVPN/Surfshark/ProtonVPN network counts are replaced with the current provider snapshot where used, with a visible instruction to verify provider coverage before subscribing.
+- Added regression coverage to `npm run test:network-claims` for both source/render pairs. It rejects retired 7,000/6,400/3,200 literals and requires the bounded current markers, preventing future importer drift.
+- Verification: network-claim test passed, editorial audit **52/52**, production build **4,447/4,447**, lint **0 errors** (52 existing warnings), and live editorial audit **25/25** with **135** compliant affiliate links and zero rel, slug, metadata, freshness, image, schema, cluster or social-image failures.
+- Production deployment `dpl_96sH29RSKkhSidCmLiagGcV21cA9` is Ready and aliased to `https://www.zerotovpn.com`. HTTP and Chrome UI smoke checks returned one H1 per article, showed 7,400, and found no 7,000/6,400/3,200 remnants. This remains a claim-consistency release; the matched Nord conversion/revenue/EPC gate is still open.

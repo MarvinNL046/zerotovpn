@@ -223,10 +223,10 @@ Your ideal server depends on what you are trying to do.
 
 Not every VPN has servers in every country. Before subscribing, verify that your VPN of choice has servers where you need them.
 
-- [NordVPN](/reviews/nordvpn): 6,400+ servers in 111 countries (79 virtual locations added in January 2026)
+- [NordVPN](/reviews/nordvpn): 7,400+ servers in 118 countries in our current provider snapshot; verify the current location list before subscribing
 - [ExpressVPN](/reviews/expressvpn): 3,000+ servers in 105 countries, 27 in Asia-Pacific alone
-- Surfshark: 3,200+ servers in 100+ countries
-- ProtonVPN: 4,500+ servers in 91 countries
+- Surfshark: 4,500+ servers in 100 countries in our current provider snapshot
+- ProtonVPN: 15,000+ servers in 120 countries in our current provider snapshot
 
 ### Step 3: Test Multiple Locations
 

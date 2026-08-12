@@ -42,6 +42,30 @@ for (const file of messageFiles) {
   }
 }
 
+const publicArticleChecks = [
+  {
+    files: [
+      "src/content/blog/is-brave-vpn-free-2026.md",
+      "src/data/posts/en/is-brave-vpn-free-2026.json",
+    ],
+    required: ["7,400+", "118"],
+  },
+  {
+    files: [
+      "src/content/blog/best-country-for-vpn-server-location-2026.md",
+      "src/data/posts/en/best-country-for-vpn-server-location-2026.json",
+    ],
+    required: ["7,400+", "118", "4,500+", "15,000+"],
+  },
+];
+for (const { files, required } of publicArticleChecks) {
+  for (const file of files) {
+    const article = read(file);
+    assert(!/(?:7,000|6,400|3,200)\+?/.test(article), `${file} contains a retired public network-count literal`);
+    for (const marker of required) assert(article.includes(marker), `${file} is missing current network marker ${marker}`);
+  }
+}
+
 console.log(JSON.stringify({
   passed: true,
   nordvpnNetworkSnapshot: { servers, countries },

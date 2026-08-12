@@ -77,7 +77,7 @@ Brave VPN currently works on Windows, macOS, iOS, and Android. Linux support is 
 
 ### Limited Server Network
 
-With 300+ servers across 40+ countries, Brave VPN's network is small compared to established providers. NordVPN offers 7,000+ servers in 118+ countries. ExpressVPN has servers in 105 countries. A smaller network means fewer options for bypassing geo-restrictions and potentially more congested servers during peak hours.
+With 300+ servers across 40+ countries, Brave VPN's network is small compared to established providers. Our current NordVPN provider snapshot records 7,400+ servers in 118 countries; verify the provider's current location list before subscribing. ExpressVPN has servers in 105 countries. A smaller network means fewer options for bypassing geo-restrictions and potentially more congested servers during peak hours.
 
 ### No Streaming Optimization
 
@@ -102,7 +102,7 @@ Here is how Brave VPN stacks up against the most popular VPN services in 2026:
 | Feature | Brave VPN | NordVPN | ProtonVPN Free | Surfshark |
 |---|---|---|---|---|
 | **Monthly price** | $9.99 | $3.39 (2yr) | Free | $2.49 (2yr) |
-| **Servers** | 300+ | 7,000+ | 200+ | 3,200+ |
+| **Servers** | 300+ | 7,400+ | 200+ | 4,500+ |
 | **Countries** | 40+ | 118+ | 5 | 100+ |
 | **Simultaneous devices** | 10 | 10 | 1 | Unlimited |
 | **Streaming unblock** | Limited | Excellent | No | Excellent |
@@ -164,7 +164,7 @@ Not particularly. Brave VPN does not have dedicated streaming servers and is not
 
 ### How does Brave VPN compare to NordVPN?
 
-NordVPN is significantly cheaper on long-term plans ($3.39/month vs $9.99/month), has 7,000+ servers vs Brave's 300+, supports more platforms including Linux, and offers advanced features like double VPN and streaming optimization. Brave VPN's only advantage is browser integration.
+NordVPN is significantly cheaper on long-term plans ($3.39/month vs $9.99/month), has 7,400+ servers vs Brave's 300+ in our current provider snapshot, supports more platforms including Linux, and offers advanced features like double VPN and streaming optimization. Verify current pricing and coverage before subscribing. Brave VPN's only advantage is browser integration.
 
 ### Can I use Brave VPN on multiple devices?
 

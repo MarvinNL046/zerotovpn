@@ -412,3 +412,4 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 
 - Captured a fresh authenticated UI snapshot for **27 July–9 August 2026**: **86 clicks**, **36,178 impressions**, **0.2% CTR** and **33.7 average position**. The visible query rows reinforce free/trial, Russia and comparison intent.
 - Recorded the snapshot in [gsc-interim-window-2026-08-12.md](../metrics/gsc-interim-window-2026-08-12.md). It is explicitly an interim observation, not a complete export; the 14-day page/query, Short.io and partner-export gate remains pending.
+- Added the detailed top-page/query extraction in [gsc-interim-window-detail-2026-08-12.md](../metrics/gsc-interim-window-detail-2026-08-12.md). It identifies `/best/best-vpn` and `/best/vpn-free-trial` as impression-rich refresh hypotheses while keeping the next 4–8 page selection paused until redirect and partner outcomes are joined.

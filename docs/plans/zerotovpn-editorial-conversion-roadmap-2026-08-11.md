@@ -730,3 +730,4 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - The 14-day KPI gate is still open: Search Console and Short.io evidence is real and cached, but no authenticated Nord partner export matching 2026-07-28 through 2026-08-10 is available. Do not infer conversions, revenue, EPC or attribution from the interim screenshot.
 
 - Added the [Nord partner export handoff](../metrics/nord-partner-export-handoff-2026-08-13.md) with the exact shared window, accepted column names, fail-closed validation behavior and reproducible commands for the final joined report. This removes format ambiguity without treating the dashboard screenshot as a substitute for dated export data.
+- The documentation-only release is also live: Vercel deployment `dpl_8S6T6eAVA6zE5w96Yy9MjjVRHEHz` for commit `9ba95d8` reached **READY**, aliases `www.zerotovpn.com` and `zerotovpn.com`, and the live Best VPN pillar returned HTTP 200.

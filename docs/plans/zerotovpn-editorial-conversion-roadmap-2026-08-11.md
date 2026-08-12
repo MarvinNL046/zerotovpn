@@ -528,7 +528,7 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 
 - Audited the stored review records for **NordLayer** and **Perfect Privacy**. Their commercial “NordVPN” alternative links now use `https://go.zerotovpn.com/nordvpn`; first-party NordVPN source citations remain direct editorial references.
 - Added a regression guard to `npm run audit:editorial` for both records. The live review renderer already exposed tracked CTAs; this closes the dormant source-record drift before a future importer can reintroduce an untracked commercial link.
-- Verification: local editorial audit **51/51** and production build **4,447/4,447** routes. The matched Nord partner-export gate remains unchanged.
+- Verification: local editorial audit **51/51** and production build **4,447/4,447** routes. Production deployment `dpl_4w8RdVFVmWJTmU5vDogekZ3SEWnK` is Ready and aliased to `https://www.zerotovpn.com`; Vercel error-log scan returned no logs, and both review URLs return HTTP 200, one H1, tracked CTA links and zero direct bare NordVPN destinations. The matched Nord partner-export gate remains unchanged.
 
 ### Nord affiliate interim screenshot: 12 August 2026
 

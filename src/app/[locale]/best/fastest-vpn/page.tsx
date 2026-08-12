@@ -134,7 +134,7 @@ export default async function FastestVpnPage({ params }: Props) {
       serverCount: nordvpn?.servers ?? 7400,
       countries: nordvpn?.countries ?? 118,
       speedScore: nordvpn?.speedScore ?? 94,
-      speedFeatures: ["NordLynx Protocol", "7,400+ Servers", "Smart Server Selection"],
+      speedFeatures: ["NordLynx Protocol", `${nordvpn?.servers.toLocaleString() ?? "—"}+ Servers`, "Smart Server Selection"],
       price: "$3.09/mo",
     },
     {

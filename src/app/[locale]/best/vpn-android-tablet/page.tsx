@@ -179,7 +179,7 @@ export default async function AndroidTabletVpnPage({ params }: Props) {
       description: <>{t("reviews.nordvpn.description")}</>,
       stats: [
         { icon: <Zap className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{s("protocol")}</>, value: <>NordLynx</> },
-        { icon: <Server className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{s("servers")}</>, value: <>7000+</> },
+        { icon: <Server className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{s("servers")}</>, value: <>{getVpnById("nordvpn")!.servers.toLocaleString()}+</> },
         { icon: <Settings className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{s("killSwitch")}</>, value: <>{s("yes")}</>, valueClassName: "text-green-600" },
         { icon: <Tablet className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{s("tabletUi")}</>, value: <>{s("optimized")}</>, valueClassName: "text-green-600" },
       ],

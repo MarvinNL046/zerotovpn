@@ -203,7 +203,7 @@ export default async function AndroidVpnPage({ params }: Props) {
       description: <>{t("reviews.nordvpn.description")}</>,
       stats: [
         { icon: <Zap className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{t("reviews.protocol")}</>, value: <>NordLynx</> },
-        { icon: <Server className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{t("reviews.servers")}</>, value: <>7000+</> },
+        { icon: <Server className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{t("reviews.servers")}</>, value: <>{getVpnById("nordvpn")!.servers.toLocaleString()}+</> },
         { icon: <Settings className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{t("reviews.splitTunnel")}</>, value: <>{t("reviews.yes")}</>, valueClassName: "text-green-600" },
         { icon: <Shield className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{t("reviews.killSwitch")}</>, value: <>{t("reviews.yes")}</>, valueClassName: "text-green-600" },
       ],

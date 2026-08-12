@@ -196,7 +196,7 @@ export default async function IpadVpnPage({ params }: Props) {
       stats: [
         { icon: <Zap className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{s("protocol")}</>, value: <>NordLynx</> },
         { icon: <Split className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{s("splitTunnel")}</>, value: <>{s("yes")}</>, valueClassName: "text-green-600" },
-        { icon: <Server className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{s("servers")}</>, value: <>6400+</> },
+        { icon: <Server className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{s("servers")}</>, value: <>{getVpnById("nordvpn")!.servers.toLocaleString()}+</> },
         { icon: <Monitor className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{s("devices")}</>, value: <>10</> },
       ],
       pros: t.raw("reviews.nordvpn.pros") as string[],

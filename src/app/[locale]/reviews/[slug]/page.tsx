@@ -593,6 +593,7 @@ export default async function ReviewPage({ params }: Props) {
   if (!vpn) {
     notFound();
   }
+  const nordvpn = vpnProviders.find((provider) => provider.slug === "nordvpn");
 
   const prefix = _locale === "en" ? "" : `/${_locale}`;
   const breadcrumbs = [
@@ -817,7 +818,7 @@ export default async function ReviewPage({ params }: Props) {
             <div className="text-sm font-semibold text-orange-600 dark:text-orange-400 mb-1">See Our #1 Pick</div>
             <div className="text-lg font-bold mb-2">NordVPN</div>
             <div className="text-sm text-muted-foreground mb-3">
-              Rated 4.8/5 · From $2.99/mo · 7,400+ servers
+              Rated {nordvpn?.overallRating ?? "—"}/5 · From ${nordvpn?.priceTwoYear ?? nordvpn?.priceYearly ?? "—"}/mo · {nordvpn ? `${nordvpn.servers.toLocaleString()}+` : "—"} servers
             </div>
             <div className="flex gap-2 flex-wrap">
               <AffiliateTextLink

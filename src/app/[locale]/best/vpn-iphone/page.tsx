@@ -218,7 +218,7 @@ export default async function IphoneVpnPage({ params }: Props) {
       stats: [
         { icon: <Zap className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{t("reviews.protocol")}</>, value: <>NordLynx</> },
         { icon: <Battery className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{t("reviews.battery")}</>, value: <>{t("reviews.excellent")}</>, valueClassName: "text-green-600" },
-        { icon: <Server className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{t("reviews.servers")}</>, value: <>6400+</> },
+        { icon: <Server className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{t("reviews.servers")}</>, value: <>{getVpnById("nordvpn")!.servers.toLocaleString()}+</> },
         { icon: <Monitor className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{t("reviews.devices")}</>, value: <>10</> },
       ],
       pros: t.raw("reviews.nordvpn.pros") as string[],

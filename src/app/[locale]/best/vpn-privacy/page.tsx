@@ -160,10 +160,9 @@ export default async function PrivacyVpnPage({ params }: Props) {
       acceptsCrypto: true,
       ramOnlyServers: false,
       killSwitchDefault: true,
-      // From static data: servers: 7400, countries: 118, maxDevices: 10
-      servers: "7,400+",
-      countries: "118",
-      devices: "10",
+      servers: nordvpn ? `${nordvpn.servers.toLocaleString()}+` : "—",
+      countries: nordvpn ? String(nordvpn.countries) : "—",
+      devices: nordvpn ? String(nordvpn.maxDevices) : "—",
       price: "$3.09/mo",
       specialFeatures: ["PwC no-logs audit", "Threat Protection", "Double VPN"],
     },

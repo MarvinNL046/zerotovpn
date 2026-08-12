@@ -557,3 +557,10 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 
 - The user-supplied authenticated Nord Performance Report screenshot for **6–12 August 2026** shows **19 clicks** (NordVPN 15, NordVPN China 2, NordVPN Arabia 2), **0 conversions**, **$0.00 payout** and **$0.00 EPC**. Full evidence and interpretation boundaries are recorded in [nord-partner-interim-screenshot-2026-08-12.md](../metrics/nord-partner-interim-screenshot-2026-08-12.md).
 - This is not a downloadable export and does not match the 28 July–10 August GSC/Short.io window, so the partner conversion/revenue/EPC gate remains open. The next required input is a filtered Nord export for the matched window with timezone, clicks, conversions, payout/revenue and EPC.
+
+### Nord network-claim consistency pass: 12 August 2026
+
+- Audited public network wording after comparing the affiliate Offer 15 location list with the provider snapshot. The dashboard's **232 included locations** is campaign geography for eligibility, not NordVPN's server-network country count; public copy remains **7,400+ servers in 118 countries** from `src/lib/vpn-data.ts` and is not changed to 232.
+- Removed stale hardcoded NordVPN server counts (`7,000+` and `6,400+`) from Android, tablet and iPad/iPhone surfaces. Those stats now render from the same `vpn-data.ts` record as reviews and comparison tables; the privacy and fastest-VPN surfaces now do the same.
+- Added `npm run test:network-claims`, which locks the 7,400/118 snapshot, rejects retired literals and prevents affiliate geography from entering locale message copy. This is a consistency guard, not a claim of fresh provider evidence; the snapshot still needs a dated source refresh when the provider record is updated.
+- Verification: network-claim regression passes, local editorial audit **52/52**. Production build/deploy and the live editorial gate remain the next release checks; the Nord conversion/EPC partner gate is unaffected and remains open.

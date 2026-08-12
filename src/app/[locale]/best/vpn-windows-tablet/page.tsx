@@ -196,7 +196,7 @@ export default async function WindowsTabletVpnPage({ params }: Props) {
       stats: [
         { icon: <Tablet className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{s("devices")}</>, value: <>10</> },
         { icon: <Zap className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{s("speed")}</>, value: <>94/100</>, valueClassName: "text-green-600" },
-        { icon: <Server className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{s("servers")}</>, value: <>7,400+</> },
+        { icon: <Server className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{s("servers")}</>, value: <>{getVpnById("nordvpn")!.servers.toLocaleString()}+</> },
         { icon: <Shield className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{s("protocol")}</>, value: <>NordLynx</> },
       ],
       pros: t.raw("reviews.nordvpn.pros") as string[],

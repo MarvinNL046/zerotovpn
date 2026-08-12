@@ -223,7 +223,7 @@ export default async function MobileVpnPage({ params }: Props) {
         { icon: <Smartphone className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{t("reviews.devices")}</>, value: <>10</> },
         { icon: <Battery className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{t("reviews.battery")}</>, value: <>{t("reviews.moderate")}</> },
         { icon: <Zap className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{t("reviews.speed")}</>, value: <>94/100</>, valueClassName: "text-green-600" },
-        { icon: <Server className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{t("reviews.servers")}</>, value: <>7,400+</> },
+        { icon: <Server className="h-4 w-4 text-muted-foreground" aria-hidden="true" />, label: <>{t("reviews.servers")}</>, value: <>{getVpnById("nordvpn")!.servers.toLocaleString()}+</> },
       ],
       pros: t.raw("reviews.nordvpn.pros") as string[],
       cons: t.raw("reviews.nordvpn.cons") as string[],

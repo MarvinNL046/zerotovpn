@@ -11,7 +11,7 @@ The Offer 15 redirect is now configured correctly, but the website is **not yet 
 
 ## Remediation update — 2026-08-10
 
-The three urgent placements have now been neutralized in the codebase: the exit-intent dialog is a consented newsletter/VPN-finder prompt with no affiliate URL, the sticky bar links only to the internal quiz/comparison flow, and the global security banner no longer advertises NordVPN. Nord affiliate CTAs were also removed from the torrenting/P2P guide and ranking pages. The legacy price/deal page was subsequently blocked and redirected to the evidence-led cheap-VPN pillar because it contained unassigned coupon language and stale savings claims. Nord promotion should stay limited to clearly relevant, compliant review and comparison pages.
+The three urgent placements have now been neutralized in the codebase: the exit-intent dialog is a consented newsletter/VPN-finder prompt with no affiliate URL, the sticky bar links only to the internal quiz/comparison flow, and the global security banner no longer advertises NordVPN. Nord affiliate CTAs were also removed from the torrenting/P2P guide and ranking pages. The legacy price/deal page was subsequently blocked and redirected to the evidence-led cheap-VPN pillar because it contained unassigned coupon language and stale savings claims. A later scan found coupon/deal labels in the Nvidia Shield TV guide; those labels are now neutral and guarded by the editorial audit. Nord promotion should stay limited to clearly relevant, compliant review and comparison pages.
 
 ## Findings
 
@@ -42,13 +42,15 @@ The three urgent placements have now been neutralized in the codebase: the exit-
 
 ### High — commercial copy requires cleanup
 
-5. **Discount and coupon claims**
+5. **Discount and coupon claims (site-wide scan ongoing)**
 
    Nord discount language appears in the IP lookup and DNS leak widgets, translation files, and editorial content. Examples include “NordVPN — X% Off”, “68% off”, and NordVPN price claims. These must be removed or replaced with neutral copy unless the exact promotion is assigned to this account in the Nord dashboard.
 
 6. **Risky legacy content (remediated)**
 
 `src/content/blog/best-free-vpn-reddit-2026.md` and `src/content/blog/is-brave-vpn-free-2026.md` previously contained Nord coupon links and promotional price claims. Those claims and `/coupons/*` links were removed from the source and rendered English records; the build-time audit now fails if they return. The pages retain neutral provider comparisons and relevant review links only.
+
+The Nvidia Shield TV guide also contained coupon/deal labels in its provider rows. Those labels were replaced with neutral plan-term links in the source and rendered English record; the build-time audit now covers that guide as well.
 
 7. **Legacy price/deal page (remediated)**
 
@@ -71,7 +73,7 @@ The public link `https://go.zerotovpn.com/nordvpn` now returns a 302 to the dire
 1. **Done:** Replace the global exit-intent NordVPN popup with an email-only, consented newsletter prompt. It may remain enabled for first-party email collection, but must never contain an affiliate URL, provider offer, coupon, discount, cashback or incentive.
 2. **Done:** Remove or neutralize the global sticky discount CTA; no “OFF”, “limited offer”, coupon or deal language without an assigned offer.
 3. **Partially done:** Remove Nord links from current torrenting/P2P routes and keep a route-level regression check for new restricted content.
-4. Remove legacy Nord coupon links and unverified discount claims from all locales and content formats.
+4. **In progress:** Remove legacy Nord coupon links and unverified discount claims from all locales and content formats. The known published coupon/deal links are gone; remaining scan findings are non-link translation/metadata records requiring a context review.
 5. Wire the approved-provider environment variables into the link resolver so Nord is fail-closed by default.
 6. Add a build-time audit that fails when a Nord affiliate URL appears in a restricted route or when an unapproved discount claim is introduced.
 7. Ask the Nord account manager in writing whether a site may contain separate educational P2P content while Nord links are limited to compliant pages.

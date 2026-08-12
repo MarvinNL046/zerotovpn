@@ -406,6 +406,28 @@ results.push({
   forbidden: legacyPromotionFailures.map((file) => file.replace(`${ROOT}\\`, "")),
 });
 
+const shieldPromotionFiles = [
+  "src/content/blog/best-vpn-for-nvidia-shield-2026.md",
+  ...postLocaleDirs.map((locale) => resolve(ROOT, "src/data/posts", locale, "best-vpn-for-nvidia-shield-2026.json")),
+].filter((file) => {
+  try {
+    readFileSync(resolve(ROOT, file), "utf8");
+    return true;
+  } catch {
+    return false;
+  }
+});
+const shieldPromotionFailures = shieldPromotionFiles.filter((file) =>
+  /coupon|\/coupons\/|\b\d{1,3}%\s*off\b|\b(?:get|claim)\s+(?:a\s+)?(?:deal|offer)\b/i.test(readFileSync(resolve(ROOT, file), "utf8")),
+);
+results.push({
+  name: "Nvidia Shield guide contains no unassigned coupon promotion",
+  file: "src/content/blog/best-vpn-for-nvidia-shield-2026.md + rendered records",
+  pass: shieldPromotionFailures.length === 0,
+  missing: [],
+  forbidden: shieldPromotionFailures.map((file) => file.replace(`${ROOT}\\`, "")),
+});
+
 for (const { slug, forbiddenPattern } of quantifiedClaimRecords) {
   const files = postLocaleDirs
     .map((locale) => resolve(ROOT, "src/data/posts", locale, `${slug}.json`))

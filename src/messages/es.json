@@ -3437,6 +3437,7 @@
     "freeTierAvailable": "Nivel Gratuito Disponible",
     "reviewTitle": "Reseña de {name} 2026",
     "basedOnTesting": "Basado en nuestras pruebas exhaustivas",
+    "methodologyLink": "Cómo probamos",
     "getVpnPrice": "Obtener {name} - ${price}/mes",
     "quickStats": {
       "title": "Estadísticas Rápidas",

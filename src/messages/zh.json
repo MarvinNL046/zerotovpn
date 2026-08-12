@@ -3084,6 +3084,7 @@
     "freeTierAvailable": "提供免费套餐",
     "reviewTitle": "{name} 2026年评测",
     "basedOnTesting": "基于我们的综合测试",
+    "methodologyLink": "测试方法",
     "getVpnPrice": "获取{name} - ${price}/月",
     "quickStats": {
       "title": "快速统计",

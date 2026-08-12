@@ -3098,6 +3098,7 @@
     "freeTierAvailable": "무료 플랜 제공",
     "reviewTitle": "{name} 리뷰 2026",
     "basedOnTesting": "종합적인 테스트 결과 기반",
+    "methodologyLink": "테스트 방법",
     "getVpnPrice": "{name} 받기 - ${price}/월",
     "quickStats": {
       "title": "주요 정보",

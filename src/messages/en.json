@@ -3081,6 +3081,7 @@
     "freeTierAvailable": "Free Tier Available",
     "reviewTitle": "{name} Review 2026",
     "basedOnTesting": "Based on our comprehensive testing",
+    "methodologyLink": "How we test",
     "getVpnPrice": "Get {name} - ${price}/mo",
     "quickStats": {
       "title": "Quick Stats",

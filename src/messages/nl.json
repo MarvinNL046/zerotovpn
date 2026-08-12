@@ -3083,6 +3083,7 @@
     "freeTierAvailable": "Gratis Versie Beschikbaar",
     "reviewTitle": "{name} Review 2026",
     "basedOnTesting": "Gebaseerd op onze uitgebreide tests",
+    "methodologyLink": "Hoe we testen",
     "getVpnPrice": "Krijg {name} - ${price}/mnd",
     "quickStats": {
       "title": "Snelle Statistieken",

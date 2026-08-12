@@ -3252,6 +3252,7 @@
     "freeTierAvailable": "มีแผนฟรี",
     "reviewTitle": "รีวิว {name} ปี 2026",
     "basedOnTesting": "จากการทดสอบอย่างครอบคลุมของเรา",
+    "methodologyLink": "วิธีการทดสอบ",
     "getVpnPrice": "รับ {name} - ${price}/เดือน",
     "quickStats": {
       "title": "สถิติโดยย่อ",

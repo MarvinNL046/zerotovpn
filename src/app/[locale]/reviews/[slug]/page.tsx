@@ -686,6 +686,12 @@ export default async function ReviewPage({ params }: Props) {
                 {t("reviewTitle", { name: vpn.name })}
               </h1>
               <LastUpdated locale={_locale} className="mb-4 text-slate-400" />
+              <Link
+                href="/methodology"
+                className="mb-4 inline-flex text-sm text-slate-300 underline underline-offset-4 hover:text-white"
+              >
+                {t("methodologyLink")}
+              </Link>
 
               <div className="flex items-center gap-3 mb-4">
                 <RatingStars rating={vpn.overallRating} size="lg" />

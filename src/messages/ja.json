@@ -3083,6 +3083,7 @@
     "freeTierAvailable": "無料プランあり",
     "reviewTitle": "{name}レビュー2026年版",
     "basedOnTesting": "総合的なテスト結果に基づく",
+    "methodologyLink": "テスト方法",
     "getVpnPrice": "{name}を入手 - ${price}/月",
     "quickStats": {
       "title": "クイック統計",

@@ -3132,6 +3132,7 @@
     "freeTierAvailable": "Kostenlose Version verfügbar",
     "reviewTitle": "{name} Bewertung 2026",
     "basedOnTesting": "Basierend auf unseren umfassenden Tests",
+    "methodologyLink": "So testen wir",
     "getVpnPrice": "{name} holen - ${price}/Monat",
     "quickStats": {
       "title": "Schnellübersicht",

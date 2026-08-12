@@ -298,6 +298,15 @@ results.push({
   forbidden: trackedReviewCtaFailures,
 });
 
+const reviewTemplateSource = readFileSync(resolve(ROOT, "src/app/[locale]/reviews/[slug]/page.tsx"), "utf8");
+results.push({
+  name: "review template exposes the methodology link",
+  file: "src/app/[locale]/reviews/[slug]/page.tsx",
+  pass: /href=\"\/methodology\"/.test(reviewTemplateSource) && /t\(\"methodologyLink\"\)/.test(reviewTemplateSource),
+  missing: [],
+  forbidden: [],
+});
+
 const quantifiedClaimRecords = [
   {
     slug: "vpn-credentials-theft-prevention-2026",

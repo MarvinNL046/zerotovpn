@@ -3090,6 +3090,7 @@
     "freeTierAvailable": "Niveau gratuit disponible",
     "reviewTitle": "Avis {name} 2026",
     "basedOnTesting": "Basé sur nos tests approfondis",
+    "methodologyLink": "Notre méthode de test",
     "getVpnPrice": "Obtenir {name} - ${price}/mois",
     "quickStats": {
       "title": "Statistiques rapides",

@@ -628,6 +628,11 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - Production deployment `dpl_2HmNZKyD6ENEKhvM8Q7ZWWTabEs7` is Ready and aliased to `https://www.zerotovpn.com`. HTTP and browser checks confirm status 200, one H1, the new title/description, caption `VPN free trial comparison`, five scoped column headers, 22 tracked affiliate URLs in the HTML response (11 visible browser anchors after client rendering) and a visible affiliate disclosure.
 - Fresh live release gate: **25/25** editorial targets pass with **140** compliant affiliate links and zero metadata, freshness, schema, image, rel, slug, cluster-link, content-brief or social-image failures. Measurement protocol: retain this title for the next matched Search Console window and compare impressions, CTR, position and qualified Short.io clicks; do not infer conversions/EPC until the dated Nord partner export is joined.
 
+### Affiliate-context recheck after cheap-VPN release: 12 August 2026
+
+- Re-ran the Nord promotion-context audit across **2,279/2,279** sitemap URLs after the final cheap-VPN deployment: **1,755** affiliate pages, **8,799** tracked affiliate links, **0** missing `sponsored nofollow` pages, **0** disclosure failures, **0** interruptive-promotion flags and **0** fetch failures.
+- The same **12** contextual flags remain the documented manual-review set (free-trial or explanatory incentive language); no new coupon, cashback, popup-affiliate or unrelated-content violation was introduced. Evidence is stored in [affiliate-context-audit-2026-08-12.md](../metrics/affiliate-context-audit-2026-08-12.md).
+
 ### Cheap-VPN pillar SERP metadata and table semantics: 12 August 2026
 
 - Used the authenticated 28 July–10 August Search Console export to prioritize the existing English `/best/vpn-cheap` pillar: **856 impressions**, **1 click**, **0.12% CTR** and average position **54.26**. The query mix is led by `cheap vpn` (**171 impressions**, position **51.3**), `cheapest vpn` (**104 impressions**, position **49.05**) and `vpn cheap` (**60 impressions**, position **53.17**), with related value-intent variants such as `affordable vpn` and `best cheap vpn`.

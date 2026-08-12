@@ -19,6 +19,11 @@ const checks = [
     patterns: [/priceLink = false/, /AffiliateTextLink/, /priceLink \?/],
   },
   {
+    name: "shared table headers expose column scope",
+    file: "src/components/ui/table.tsx",
+    patterns: [/scope="col"/, /function TableHead/],
+  },
+  {
     name: "Iran evidence-led page",
     file: "src/components/editorial/evidence-led-vpn-use-case-page.tsx",
     patterns: [/Reproducible local check/, /affiliateUrl/, /id=\"faq\"/],

@@ -352,6 +352,12 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - Production deployment `dpl_7xMCUNm16n4gMbJFWWbwf6z5ehc5` is Ready. The live Spanish index measured about 678 KB; 390px browser checks showed one H1, 23 cards on page one, 24 on page two and no horizontal overflow. Evidence is recorded in [blog-pagination-browser-smoke-2026-08-12.md](../metrics/blog-pagination-browser-smoke-2026-08-12.md).
 - `npm run audit:editorial-live` passed **22/22** after deployment. The exit-intent popup remains a newsletter-only owned-media prompt and is not part of affiliate promotion.
 
+### Localized pagination UX: 12 August 2026
+
+- Localized the new blog pagination controls for all nine supported locales instead of leaving `Previous`, `Next` and the page counter in English.
+- Production deployment `dpl_6L6YosrPQjWDwZYa8ukoz85asiKa` is Ready. Chrome checks for Spanish, Dutch and German page two confirmed translated labels, `noindex, follow`, one H1 and no 390px overflow. Evidence: [blog-pagination-localization-smoke-2026-08-12.md](../metrics/blog-pagination-localization-smoke-2026-08-12.md).
+- The production editorial gate remains **22/22** with 123 compliant affiliate links. No popup or affiliate-context behavior changed.
+
 ### NordVPN promotion-context audit: 12 August 2026
 
 - Re-ran `npm run audit:affiliate-context` against all **2,279/2,279** live sitemap URLs: **1,755** pages with affiliate links and **8,189** links checked.

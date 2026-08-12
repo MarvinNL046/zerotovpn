@@ -543,6 +543,11 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - Re-ran the Nord promotion-context audit across the same **2,279/2,279** URLs: **1,755** pages and **8,450** affiliate links, 0 missing `sponsored nofollow` pages, 0 disclosure failures, 0 interruptive-promotion flags and 0 fetch failures. Twelve contextual flags remain the documented manual-review set (free-trial or explanatory incentive language), not technical violations.
 - These fresh scans strengthen release confidence but do not provide conversions, revenue or EPC; the matched Nord partner export remains the only open measurement-gate input.
 
+### Short.io path-level export guard: 12 August 2026
+
+- Extended `scripts/export-shortio-metrics.mjs` with a separate `--paths-out` diagnostic CSV and a machine-readable `popularPathExport` section. The exporter now preserves wildcard/deleted/path-level observations without silently treating them as current-page attribution.
+- The current-link CSV remains the source for stable Short.io slug joins; the path CSV is a reconciliation aid and cannot close the conversion gate by itself. The Nord partner export is still required for conversions, revenue and EPC.
+
 ### Nord affiliate interim screenshot: 12 August 2026
 
 - The user-supplied authenticated Nord Performance Report screenshot for **6–12 August 2026** shows **19 clicks** (NordVPN 15, NordVPN China 2, NordVPN Arabia 2), **0 conversions**, **$0.00 payout** and **$0.00 EPC**. Full evidence and interpretation boundaries are recorded in [nord-partner-interim-screenshot-2026-08-12.md](../metrics/nord-partner-interim-screenshot-2026-08-12.md).

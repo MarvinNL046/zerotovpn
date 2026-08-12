@@ -17,6 +17,7 @@
     "shortIo": {
       "status": "ready-with-residual",
       "export": ".cache/metrics/shortio-2026-08-12/clicks.csv",
+      "popularPaths": ".cache/metrics/shortio-2026-08-12/popular-paths.csv",
       "evidence": "docs/metrics/shortio-export-2026-08-12.md",
       "residual": "Wildcard/deleted paths remain separate and are not attributed to current page slugs."
     },

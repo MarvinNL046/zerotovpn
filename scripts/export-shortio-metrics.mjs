@@ -14,6 +14,7 @@ const startDate = arg("--start");
 const endDate = arg("--end");
 const out = arg("--out");
 const jsonOut = arg("--json");
+const pathsOut = arg("--paths-out", out ? out.replace(/\.csv$/i, ".paths.csv") : undefined);
 const apiKey = process.env.SHORTIO_API_KEY;
 
 if (!apiKey || !startDate || !endDate || !out) {
@@ -104,6 +105,17 @@ function csvCell(value) {
   return /[",\r\n]/.test(text) ? `"${text.replaceAll('"', '""')}"` : text;
 }
 
+function normalizePopularPath(entry) {
+  const path = String(entry?.path ?? entry?.displayName ?? "").trim();
+  const clicks = Number(entry?.score ?? entry?.clicks ?? 0);
+  return {
+    date: `${startDate}/${endDate}`,
+    path,
+    display_name: String(entry?.displayName ?? path),
+    clicks: Number.isFinite(clicks) ? clicks : 0,
+  };
+}
+
 if (apiKey && startDate && endDate && out) {
   try {
     const domain = await getDomain();
@@ -128,9 +140,19 @@ if (apiKey && startDate && endDate && out) {
       ["date", "link", "short_url", "path", "original_url", "clicks", "human_clicks"],
       ...rows.map((row) => [row.date, row.link, row.short_url, row.path, row.original_url, row.clicks, row.human_clicks]),
     ].map((row) => row.map(csvCell).join(",")).join("\n") + "\n";
+    const popularPathRows = (Array.isArray(popularPaths) ? popularPaths : []).map(normalizePopularPath);
+    const pathsOutput = [
+      ["date", "path", "display_name", "clicks"],
+      ...popularPathRows.map((row) => [row.date, row.path, row.display_name, row.clicks]),
+    ].map((row) => row.map(csvCell).join(",")).join("\n") + "\n";
     const outputPath = resolve(out);
     mkdirSync(resolve(outputPath, ".."), { recursive: true });
     writeFileSync(outputPath, output);
+    const pathsOutputPath = pathsOut ? resolve(pathsOut) : null;
+    if (pathsOutputPath) {
+      mkdirSync(resolve(pathsOutputPath, ".."), { recursive: true });
+      writeFileSync(pathsOutputPath, pathsOutput);
+    }
     const details = {
       domain,
       startDate,
@@ -139,6 +161,12 @@ if (apiKey && startDate && endDate && out) {
       note: "Per-link statistics cover the 39 links currently returned by the Short.io link API. Domain totals and popular paths are retained separately because wildcard/deleted paths cannot be joined to a current link slug.",
       domainStats,
       popularPaths,
+      popularPathExport: {
+        path: pathsOutputPath,
+        rows: popularPathRows,
+        coverage: "popular-paths-diagnostic",
+        note: "Path rows are a separate diagnostic view. A wildcard or path without a stable current-link/page join must not be attributed to an editorial page.",
+      },
       links: rows,
     };
     if (jsonOut) {
@@ -146,7 +174,7 @@ if (apiKey && startDate && endDate && out) {
       mkdirSync(resolve(jsonPath, ".."), { recursive: true });
       writeFileSync(jsonPath, `${JSON.stringify(details, null, 2)}\n`);
     }
-    console.log(JSON.stringify({ domainId: domain.id, domain: DOMAIN, startDate, endDate, links: rows.length, totalClicks: rows.reduce((sum, row) => sum + row.clicks, 0), totalHumanClicks: rows.reduce((sum, row) => sum + row.human_clicks, 0), domainTotalClicks: domainStats.clicks, domainHumanClicks: domainStats.humanClicks, popularPathRows: popularPaths.length, coverage: details.coverage, output: outputPath, json: jsonOut ? resolve(jsonOut) : null }, null, 2));
+    console.log(JSON.stringify({ domainId: domain.id, domain: DOMAIN, startDate, endDate, links: rows.length, totalClicks: rows.reduce((sum, row) => sum + row.clicks, 0), totalHumanClicks: rows.reduce((sum, row) => sum + row.human_clicks, 0), domainTotalClicks: domainStats.clicks, domainHumanClicks: domainStats.humanClicks, popularPathRows: popularPathRows.length, coverage: details.coverage, output: outputPath, pathsOutput: pathsOutputPath, json: jsonOut ? resolve(jsonOut) : null }, null, 2));
   } catch (error) {
     console.error(error instanceof Error ? error.message : String(error));
     process.exitCode = 1;

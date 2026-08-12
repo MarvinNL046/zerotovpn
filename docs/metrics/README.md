@@ -38,10 +38,11 @@ npx vercel env run --environment=production -- `
   npm run export:shortio -- `
   --start 2026-07-28 --end 2026-08-10 `
   --out .cache/metrics/shortio-2026-08-12/clicks.csv `
+  --paths-out .cache/metrics/shortio-2026-08-12/popular-paths.csv `
   --json .cache/metrics/shortio-2026-08-12/details.json
 ```
 
-The exporter records current-link totals plus domain-level totals and keeps wildcard/deleted paths separate. See [shortio-export-2026-08-12.md](./shortio-export-2026-08-12.md) for the attribution boundary.
+The exporter records current-link totals plus domain-level totals and now writes a separate `popular-paths.csv` diagnostic export. Wildcard/deleted paths remain separate from current-link/page attribution; a path row is evidence of a Short.io path only, not proof of which editorial page generated it. See [shortio-export-2026-08-12.md](./shortio-export-2026-08-12.md) for the attribution boundary.
 
 The importer accepts localized or English headers for pages/queries, clicks, impressions, CTR, position, country and referrer, and detects comma-, semicolon- and tab-delimited exports. It also normalizes decimal commas such as `0,2%` without turning them into `2%`. The optional `--partner` export accepts conversions/sales, revenue/commission and EPC columns and writes them under `affiliate.partner`; if it is omitted, those fields remain `null`. Required GSC/Short.io paths now fail fast when omitted, and every report includes `dataQuality.rowCounts` plus an explicit `missingMetrics` list instead of silently treating missing inputs as zero. It writes normalized totals, top rows and deltas without inferring missing partner data.
 

@@ -10,7 +10,8 @@ This report records a read-only API export from the production Short.io workspac
 - Source: Short.io Statistics API, authenticated with the production `SHORTIO_API_KEY` already stored in Vercel
 - Secret handling: the key was injected through `vercel env run`; it was never printed, committed or written to the report
 - Raw API details: `.cache/metrics/shortio-2026-08-12/details.json` (ignored)
-- Measurement CSV: `.cache/metrics/shortio-2026-08-12/clicks.csv` (ignored)
+- Current-link measurement CSV: `.cache/metrics/shortio-2026-08-12/clicks.csv` (ignored)
+- Popular-path diagnostic CSV: `.cache/metrics/shortio-2026-08-12/popular-paths.csv` (ignored)
 - Export command: `scripts/export-shortio-metrics.mjs`
 
 ## Domain-level totals
@@ -51,7 +52,7 @@ The residual is intentionally not allocated to pages or providers. It includes w
 
 ## Popular paths (separate, not joined)
 
-The API's popular-path view returned `/*` (1,325), `/protonvpn` (577), `/surfshark` (235), `/nordvpn` (173), `/windscribe` (129), `/expressvpn` (93), `/` (79), `/tunnelbear` (59), `/cyberghost` (41), `/private-internet-access` (18) and `/mullvad` (7). These scores are retained as a diagnostic view only because they do not reconcile one-to-one with the per-link totals and do not include page attribution.
+The API's popular-path view is also exported as a separate `popular-paths.csv` diagnostic file. It returned `/*` (1,325), `/protonvpn` (577), `/surfshark` (235), `/nordvpn` (173), `/windscribe` (129), `/expressvpn` (93), `/` (79), `/tunnelbear` (59), `/cyberghost` (41), `/private-internet-access` (18) and `/mullvad` (7). These scores do not reconcile one-to-one with the per-link totals and do not include page attribution; wildcard/deleted paths remain unassigned.
 
 ## Interpretation boundary
 

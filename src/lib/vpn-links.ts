@@ -63,11 +63,31 @@ export const VPN_LINKS = {
 
 export type VpnLinkSlug = keyof typeof VPN_LINKS;
 
+const approvedAffiliateIds = new Set(
+  (process.env.VPN_APPROVED_AFFILIATE_IDS ?? "")
+    .split(",")
+    .map((value) => value.trim().toLowerCase())
+    .filter(Boolean),
+);
+
+function getConfiguredNordVpnAffiliateUrl(): string {
+  if (!approvedAffiliateIds.has("nordvpn")) return "";
+  const configured = process.env.AFFILIATE_VPN_NORDVPN_URL?.trim() ?? "";
+  try {
+    const url = new URL(configured);
+    if (url.protocol !== "https:") return "";
+    return url.toString();
+  } catch {
+    return "";
+  }
+}
+
 export function getVpnWebsiteUrl(slug: VpnLinkSlug): string {
   return VPN_LINKS[slug].website;
 }
 
 export function getVpnAffiliateUrl(slug: VpnLinkSlug): string {
+  if (slug === "nordvpn") return getConfiguredNordVpnAffiliateUrl();
   return VPN_LINKS[slug].affiliateUrl;
 }
 

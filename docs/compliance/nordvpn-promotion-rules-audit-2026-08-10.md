@@ -40,6 +40,8 @@ The three urgent placements have now been neutralized in the codebase: the exit-
 
    `src/lib/vpn-data.ts` injects a Nord affiliate URL into the provider object, and many page templates inherit it automatically. The existing `VPN_APPROVED_AFFILIATE_IDS` and `AFFILIATE_VPN_NORDVPN_URL` placeholders are not read by application code.
 
+   **Remediated 2026-08-12:** `src/lib/vpn-links.ts` now reads those server-side variables and returns the Nord destination only when the provider ID is explicitly approved and the configured URL is valid HTTPS. Missing approval or configuration fails closed to an empty destination. A source audit and isolated resolver checks protect the behavior.
+
 ### High — commercial copy requires cleanup
 
 5. **Discount and coupon claims (site-wide scan ongoing)**
@@ -76,7 +78,7 @@ The public link `https://go.zerotovpn.com/nordvpn` now returns a 302 to the dire
 2. **Done:** Remove or neutralize the global sticky discount CTA; no “OFF”, “limited offer”, coupon or deal language without an assigned offer.
 3. **Partially done:** Remove Nord links from current torrenting/P2P routes and keep a route-level regression check for new restricted content.
 4. **In progress:** Remove legacy Nord coupon links and unverified discount claims from all locales and content formats. The known published coupon/deal links and seasonal Black Friday route are now blocked; remaining scan findings are non-link translation/metadata records requiring a context review.
-5. Wire the approved-provider environment variables into the link resolver so Nord is fail-closed by default.
+5. **Done:** Wire the approved-provider environment variables into the link resolver so Nord is fail-closed by default. The production project now has the approved `nordvpn` ID and the owned `go.zerotovpn.com/nordvpn` destination configured as non-sensitive environment values.
 6. Add a build-time audit that fails when a Nord affiliate URL appears in a restricted route or when an unapproved discount claim is introduced.
 7. Ask the Nord account manager in writing whether a site may contain separate educational P2P content while Nord links are limited to compliant pages.
 

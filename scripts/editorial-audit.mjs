@@ -9,6 +9,11 @@ const checks = [
     patterns: [/sponsored\s+nofollow/, /trackAffiliateClick/, /affiliateSlug/, /data-affiliate-slug/],
   },
   {
+    name: "NordVPN affiliate resolver fails closed without approval",
+    file: "src/lib/vpn-links.ts",
+    patterns: [/VPN_APPROVED_AFFILIATE_IDS/, /AFFILIATE_VPN_NORDVPN_URL/, /approvedAffiliateIds\.has\("nordvpn"\)/, /url\.protocol !== "https:"/, /if \(slug === "nordvpn"\)/],
+  },
+  {
     name: "shared editorial disclosure",
     file: "src/components/editorial/best-vpn-editorial-template.tsx",
     patterns: [/affiliate links may earn us a commission/, /affiliate-disclosure/],

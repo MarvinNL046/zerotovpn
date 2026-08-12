@@ -694,3 +694,9 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - Removed the route from the app surface and blocked its slug from the published blog corpus. English and all supported locale variants now permanently redirect to the evidence-led `/best/vpn-cheap` pillar; the seasonal route is excluded from the sitemap.
 - Added publication and redirect regression checks. The clean build now generates **4,429/4,429** routes (18 seasonal route variants removed), and the Nord partner screenshot remains an interim **19-click / 0-conversion** observation rather than matched conversion evidence.
 - Verification: production deployment `zerotovpn-e0whvcoaw-marvinnl046s-projects.vercel.app` is Ready; all 9 locale redirects return **308** to the corresponding `/best/vpn-cheap` path, the seasonal slug is absent from the live sitemap, and the full sitemap audit passes **2,271/2,271** with zero status, indexability, canonical, H1 or slow-response failures.
+
+### Fail-closed NordVPN affiliate configuration: 12 August 2026
+
+- Wired `VPN_APPROVED_AFFILIATE_IDS` and `AFFILIATE_VPN_NORDVPN_URL` into `src/lib/vpn-links.ts`. `getVpnAffiliateUrl("nordvpn")` now returns an affiliate destination only when `nordvpn` is explicitly approved, the destination parses as HTTPS, and the server-side URL is present; otherwise it returns an empty value instead of silently using a hard-coded Nord destination.
+- Added a source regression guard and verified the resolver in three isolated cases: no approval → empty, approved HTTPS → `https://go.zerotovpn.com/nordvpn`, non-HTTPS → empty. Configured the approved ID and owned Short.io destination in local ignored env and Vercel Production without exposing credentials.
+- Local editorial checks pass **67/67**. The production deployment must be rechecked after the environment-backed build so Nord links remain present on approved commercial pages while restricted routes retain their existing empty affiliate boundary.

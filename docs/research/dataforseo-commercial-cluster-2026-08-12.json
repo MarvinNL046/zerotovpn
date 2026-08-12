@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "cluster": "commercial VPN pillar",
+  "fetchedAt": "2026-08-12T13:53:47.558Z",
+  "location_code": 2840,
+  "language_code": "en",
+  "keywords": [
+    { "keyword": "best vpn", "search_volume": null, "keyword_difficulty": 64, "intent": "commercial" },
+    { "keyword": "best vpn 2026", "search_volume": null, "keyword_difficulty": null, "intent": null },
+    { "keyword": "vpn comparison", "search_volume": null, "keyword_difficulty": 77, "intent": "commercial" },
+    { "keyword": "best vpn for privacy", "search_volume": null, "keyword_difficulty": 52, "intent": "commercial" },
+    { "keyword": "best vpn for streaming", "search_volume": null, "keyword_difficulty": 31, "intent": "commercial" },
+    { "keyword": "best cheap vpn", "search_volume": null, "keyword_difficulty": 39, "intent": "commercial" }
+  ],
+  "serp": [
+    { "keyword": "best vpn", "ai_overview": true, "paa": ["Which VPN is actually the best?", "Why avoid NordVPN?", "Which VPN do hackers use?", "What is the best free VPN for the USA?"] },
+    { "keyword": "vpn comparison", "ai_overview": true, "paa": ["Which VPN is actually the best?", "Why avoid NordVPN?", "Can the FBI track a VPN?", "Which VPN is the best?"] },
+    { "keyword": "best vpn for privacy", "ai_overview": true, "paa": ["What is the most secure VPN for privacy?", "Why avoid NordVPN?", "Can the FBI see through VPNs?", "Which VPN do hackers use?"] },
+    { "keyword": "best vpn for streaming", "ai_overview": true, "paa": ["Will Netflix ban me if I use VPN?", "Do VPNs actually work for streaming?", "Why avoid NordVPN?", "Why is Netflix blocking NordVPN?"] }
+  ],
+  "sourcePolicy": "DataForSEO signals inform question coverage and structure; they do not prove access, legality, anonymity or provider performance."
+}

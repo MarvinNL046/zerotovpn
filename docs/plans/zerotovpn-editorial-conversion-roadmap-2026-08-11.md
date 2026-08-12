@@ -455,6 +455,11 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - Added a local regression check and a live editorial gate for the brief fields. Local checks pass **48/48**; the production build generates **4,447** routes; the live editorial gate passes **22/22** with **0** content-brief failures; the claim audit remains **2,279/2,279** with **0 findings**.
 - Production deployment `dpl_4CzAAKixgSfWZXz6ExeKWsmjvmwF` is Ready. The read-only browser smoke is recorded in [content-brief-browser-smoke-2026-08-12.md](../metrics/content-brief-browser-smoke-2026-08-12.md).
 
+### Iran content brief alignment: 12 August 2026
+
+- Added the same typed brief to the Iran editorial hub: `best vpn for iran`, commercial intent, `censorship-restricted-networks`, review date 11 August, three evidence references and the `vpn-selection` affiliate boundary. The brief is passed only for the Iran dossier; other blog posts keep their existing non-commercial or restricted-context handling.
+- The live gate now verifies both core briefs. Production deployment `dpl_AWWJCK3Uwjpc3hUPMNpaQmji5z7S` is Ready; editorial audit **22/22**, content-brief failures **0**, claim audit **2,279/2,279** with **0 findings**. Both one-H1 browser checks are recorded in [content-brief-browser-smoke-2026-08-12.md](../metrics/content-brief-browser-smoke-2026-08-12.md).
+
 ### Nord affiliate interim screenshot: 12 August 2026
 
 - The user-supplied authenticated Nord Performance Report screenshot for **6–12 August 2026** shows **19 clicks** (NordVPN 15, NordVPN China 2, NordVPN Arabia 2), **0 conversions**, **$0.00 payout** and **$0.00 EPC**. Full evidence and interpretation boundaries are recorded in [nord-partner-interim-screenshot-2026-08-12.md](../metrics/nord-partner-interim-screenshot-2026-08-12.md).

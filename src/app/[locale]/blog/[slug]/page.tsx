@@ -26,6 +26,7 @@ import {
 } from "@/components/blog/author-box";
 import { BestVpnEditorialTemplate } from "@/components/editorial/best-vpn-editorial-template";
 import { IranEditorialQuickPicks } from "@/components/editorial/iran-editorial-quick-picks";
+import type { EditorialContentBrief } from "@/lib/editorial-content-brief";
 import {
   iranVpnEditorialFaq,
   iranVpnEditorialContent,
@@ -43,6 +44,20 @@ type Props = {
 };
 
 const baseUrl = "https://www.zerotovpn.com";
+
+const iranContentBrief = {
+  primaryKeyword: "best vpn for iran",
+  intent: "commercial",
+  cluster: "censorship-restricted-networks",
+  lastReviewedAt: "2026-08-11",
+  evidence: [
+    "docs/research/dataforseo-iran-cluster-2026-08-11.md",
+    "/methodology",
+    "https://freedomhouse.org/country/iran/freedom-net/2025",
+  ],
+  affiliateContext: "vpn-selection",
+  schemaType: "Article",
+} satisfies EditorialContentBrief;
 
 type ClusterLink = {
   title: string;
@@ -227,6 +242,7 @@ export default async function DynamicBlogPost({ params }: Props) {
 
       {/* Article Header and shared editorial disclosure/jump navigation */}
       <BestVpnEditorialTemplate
+        brief={isIranEditorial ? iranContentBrief : undefined}
         navigation={[
           { href: "#article-content", label: "Article" },
           ...(isCensorshipEditorial ? [{ href: "#quick-picks", label: "Shortlist" }] : []),

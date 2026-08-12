@@ -73,7 +73,7 @@ const checks = [
   {
     name: "localized Iran blog routes use the evidence-led body",
     file: "src/app/[locale]/blog/[slug]/page.tsx",
-    patterns: [/iranVpnEditorialContent/, /const articleContent = isIranEditorial/],
+    patterns: [/iranVpnEditorialContent/, /const articleContent = isIranEditorial/, /iranContentBrief/, /best vpn for iran/, /censorship-restricted-networks/, /brief=\{isIranEditorial \? iranContentBrief : undefined\}/],
     forbiddenPatterns: [/articleContent = isRestrictedAffiliateContext\s*\?\s*verwijderAffiliateLinks\(post\.content\)/i],
   },
   {

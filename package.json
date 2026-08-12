@@ -21,6 +21,7 @@
     "audit:editorial-live": "node scripts/audit-editorial-live.mjs",
     "audit:editorial": "node scripts/editorial-audit.mjs",
     "measure:editorial": "node scripts/measure-editorial.mjs",
+    "measure:check-inputs": "node scripts/check-measurement-inputs.mjs",
     "test:measure-editorial": "node scripts/test-measure-editorial.mjs",
     "prebuild": "npm run generate:sitemap-routes",
     "build": "next build --webpack",

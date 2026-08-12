@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { RatingStars } from "@/components/vpn/rating-stars";
-import { AffiliateButton } from "@/components/vpn/affiliate-button";
+import { AffiliateButton, AffiliateTextLink } from "@/components/vpn/affiliate-button";
 import { AffiliateDisclosure } from "@/components/vpn/affiliate-disclosure";
 import { UserReviewsList } from "@/components/reviews/user-reviews-list";
 import { ReviewForm } from "@/components/reviews/review-form";
@@ -820,14 +820,14 @@ export default async function ReviewPage({ params }: Props) {
               Rated 4.8/5 · From $2.99/mo · 7,400+ servers
             </div>
             <div className="flex gap-2 flex-wrap">
-              <a
-                href={getVpnAffiliateUrl("nordvpn")}
-                target="_blank"
-                rel="noopener noreferrer sponsored nofollow"
+              <AffiliateTextLink
+                vpnId="nordvpn"
+                vpnName="NordVPN"
+                affiliateUrl={getVpnAffiliateUrl("nordvpn")}
                 className="text-sm bg-orange-500 hover:bg-orange-600 text-white rounded-full px-4 py-1.5 font-medium shadow-sm shadow-orange-500/25 transition"
               >
                 Get NordVPN →
-              </a>
+              </AffiliateTextLink>
               <Link
                 href={`/reviews/nordvpn`}
                 className="text-sm border border-slate-300 dark:border-slate-600 px-4 py-1.5 rounded-full font-medium hover:bg-muted transition"

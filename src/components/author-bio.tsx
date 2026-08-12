@@ -1,11 +1,14 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export function AuthorBio() {
   return (
     <div className="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl p-6 flex items-start gap-4 mt-10">
-      <img
+      <Image
         src="/images/team/marvin.webp"
         alt="Marvin Smit — Founder of ZeroToVPN"
+        width={64}
+        height={64}
         className="w-16 h-16 rounded-full object-cover flex-shrink-0 border-2 border-orange-500"
       />
       <div>

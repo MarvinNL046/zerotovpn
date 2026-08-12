@@ -8,6 +8,16 @@
 - `C:\Projecten\zerotovpn\docs\research\tomsguide-best-vpn-page-analysis-2026-08-11.md`
 - `C:\Projecten\zerotovpn\docs\plans\zerotovpn-masterplan-2026.md`
 
+## Current status — 13 August 2026
+
+**Release state:** live and technically green. The latest production checks cover 25/25 editorial targets with 140 compliant affiliate links, zero missing affiliate `rel`/slug attributes, zero disclosure failures, zero cluster-link/content-brief/social-image failures and zero fetch failures. The full affiliate-context audit checked 2,271/2,271 sitemap URLs, including 1,755 affiliate pages and 8,799 tracked links; it observed two transient responses over two seconds but no functional failure. Its 11 raw contextual matches are classified in [the manual review](../compliance/nordvpn-contextual-flag-review-2026-08-13.md), not treated as hidden exceptions.
+
+**Editorial state:** the shared Tom’s Guide-inspired comparison architecture, evidence blocks, inline tracked prices, branded provider marks, captions/table semantics, cluster links, localized free-VPN pages and email-only exit-intent prompt are implemented and deployed. No new URL batch should be published while the next measurement join is incomplete.
+
+**Measurement state:** the real Search Console and Short.io inputs for **28 July–10 August 2026** are retained and documented. The partner conversion/revenue/EPC input is still missing; the user-supplied Nord dashboard screenshot is only a non-matching **6–12 August** observation (19 clicks, 0 conversions, $0 payout, $0 EPC). The roadmap therefore remains active until an authenticated Nord export for the shared window passes the input and date guards and produces a matched `measure:editorial` report.
+
+**Next action:** obtain the dated Nord partner export, run the commands in the completion matrix, then use the joined cluster report to choose the next 4–8 existing-page improvements. Until then, preserve the current production copy and treat DataForSEO as hypothesis support rather than a reason to create thin variants.
+
 ## Execution log
 
 - **12 August 2026 — shared quick-pick template refinement:** Updated `EditorialQuickPickCard`, used by the Best VPN and Iran editorial surfaces, to show the provider's branded logo with meaningful alt text and an explicit plan/refund context line below the tracked price. This follows the Tom's Guide top-3 pattern while keeping the amount a transparent catalog value and the CTA compliant. The shared editorial guard now requires the provider mark and plan context; local checks pass **47/47**, targeted ESLint passes and the full Webpack build remains **4,447 routes**.

@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { AffiliateButton, AffiliateTextLink } from "@/components/vpn/affiliate-button";
 import { RatingStars } from "@/components/vpn/rating-stars";
@@ -102,6 +103,19 @@ export function EditorialQuickPickCard({
         </span>
       </div>
       <CardContent className="pt-8 text-center space-y-4">
+        <div className="flex h-12 items-center justify-center" data-provider-mark="true">
+          {vpn.logo ? (
+            <Image
+              src={vpn.logo}
+              alt={`${vpn.name} logo`}
+              width={132}
+              height={40}
+              className="max-h-10 w-auto object-contain"
+            />
+          ) : (
+            <span className="text-sm font-semibold text-muted-foreground">{vpn.name}</span>
+          )}
+        </div>
         <h3 className="text-2xl font-bold">
           <Link href={`/reviews/${vpn.slug}`} className="hover:text-primary">
             {vpn.name}
@@ -120,6 +134,10 @@ export function EditorialQuickPickCard({
           </AffiliateTextLink>
           <span className="text-sm font-normal text-muted-foreground">/mo</span>
         </div>
+        <p className="text-xs text-muted-foreground" data-plan-context="true">
+          {vpn.priceTwoYear ? "Long-term plan equivalent" : "Annual plan equivalent"}
+          {vpn.moneyBackDays > 0 ? ` · ${vpn.moneyBackDays}-day refund window` : " · Check provider refund terms"}
+        </p>
         <AffiliateButton
           vpnId={vpn.id}
           vpnName={vpn.name}

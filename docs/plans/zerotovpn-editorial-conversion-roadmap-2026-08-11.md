@@ -10,6 +10,8 @@
 
 ## Execution log
 
+- **12 August 2026 — shared quick-pick template refinement:** Updated `EditorialQuickPickCard`, used by the Best VPN and Iran editorial surfaces, to show the provider's branded logo with meaningful alt text and an explicit plan/refund context line below the tracked price. This follows the Tom's Guide top-3 pattern while keeping the amount a transparent catalog value and the CTA compliant. The shared editorial guard now requires the provider mark and plan context; local checks pass **47/47**, targeted ESLint passes and the full Webpack build remains **4,447 routes**.
+
 - **12 August 2026 — partner export remains gated by authentication:** The Nord affiliate dashboard resolves to its login screen in the available browser session. No partner CSV/API response was accessible, so conversions, revenue and EPC remain `null`; the roadmap does not infer them from Short.io clicks. The next required input is a same-window Nord partner export after an authenticated dashboard session.
 
 - **12 August 2026 — real Short.io API export captured:** Used the production `SHORTIO_API_KEY` through Vercel's environment runner to export the 28 July–10 August window. Domain totals are **7,663 clicks / 3,008 human clicks**; the current-link attribution CSV covers **39 links / 2,241 clicks / 1,791 human clicks**. The **5,422-click** residual is kept separate because Short.io reports wildcard/deleted paths that cannot be mapped to current page slugs. Evidence: [shortio-export-2026-08-12.md](../metrics/shortio-export-2026-08-12.md); reusable exporter: `scripts/export-shortio-metrics.mjs`. Partner conversions/revenue/EPC remain missing, so the formal conversion gate stays open.

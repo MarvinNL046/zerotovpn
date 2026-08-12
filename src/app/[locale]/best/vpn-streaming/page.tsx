@@ -53,10 +53,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     de: "Wir vergleichen fünf VPN-Anbieter für Streaming anhand aktueller Anbieterinformationen, datierter Produktaufzeichnungen und plattformspezifischer Prüfungen.",
     es: "Comparamos cinco proveedores VPN para streaming con información actual del proveedor, registros de producto fechados y comprobaciones por plataforma.",
     fr: "Nous comparons cinq fournisseurs VPN pour le streaming à partir de leurs informations actuelles, de fiches produit datées et de contrôles par plateforme.",
-    zh: "我们测试了50多个VPN与Netflix、Disney+、BBC iPlayer、Hulu、Amazon Prime和HBO Max。这5个解锁最多平台，速度最快。",
-    ja: "Netflix、Disney+、BBC iPlayer、Hulu、Amazon Prime、HBO Maxで50以上のVPNをテスト。この5つが最も多くのプラットフォームを解除します。",
-    ko: "Netflix, Disney+, BBC iPlayer, Hulu, Amazon Prime, HBO Max로 50개 이상의 VPN을 테스트했습니다. 이 5개가 가장 많은 플랫폼을 차단 해제합니다.",
-    th: "เราทดสอบ VPN มากกว่า 50 ตัวกับ Netflix, Disney+, BBC iPlayer, Hulu, Amazon Prime และ HBO Max 5 ตัวนี้ปลดบล็อกแพลตฟอร์มมากที่สุด",
+    zh: "我们比较多款VPN与Netflix、Disney+、BBC iPlayer、Hulu、Amazon Prime和HBO Max，并记录当前平台检查与速度结果。",
+    ja: "Netflix、Disney+、BBC iPlayer、Hulu、Amazon Prime、HBO Maxで複数のVPNを比較し、現在のプラットフォーム確認と速度結果を記録します。",
+    ko: "Netflix, Disney+, BBC iPlayer, Hulu, Amazon Prime, HBO Max에서 여러 VPN을 비교하고 현재 플랫폼 확인과 속도 결과를 기록합니다.",
+    th: "เราเปรียบเทียบ VPN หลายรายกับ Netflix, Disney+, BBC iPlayer, Hulu, Amazon Prime และ HBO Max พร้อมบันทึกผลการตรวจสอบแพลตฟอร์มและความเร็วปัจจุบัน",
   };
 
   return {
@@ -382,7 +382,7 @@ export default async function VpnStreamingPage({ params }: Props) {
     zh: {
       badge: `${getLocalizedMonthYear("zh")}更新`,
       title: "2026年最佳流媒体VPN",
-      subtitle: "我们测试了50多个VPN与Netflix、Disney+、BBC iPlayer、Hulu、Amazon Prime和HBO Max。这5个解锁最多平台，速度足够4K。",
+      subtitle: "我们比较多款VPN与Netflix、Disney+、BBC iPlayer、Hulu、Amazon Prime和HBO Max，并记录当前平台检查与速度结果。",
       topPicks: "最佳流媒体VPN",
       platformTitle: "流媒体平台兼容性",
       platformDesc: "基于我们最新月度测试，每款VPN解锁哪些平台。",
@@ -418,7 +418,7 @@ export default async function VpnStreamingPage({ params }: Props) {
     ja: {
       badge: `${getLocalizedMonthYear("ja")}更新`,
       title: "2026年ストリーミング向けベストVPN",
-      subtitle: "Netflix、Disney+、BBC iPlayer、Hulu、Amazon Prime、HBO Maxで50以上のVPNをテスト。この5つが最も多くのプラットフォームを解除します。",
+      subtitle: "Netflix、Disney+、BBC iPlayer、Hulu、Amazon Prime、HBO Maxで複数のVPNを比較し、現在のプラットフォーム確認と速度結果を記録します。",
       topPicks: "トップストリーミングVPN",
       platformTitle: "ストリーミングプラットフォーム互換性",
       platformDesc: "最新の月次テストに基づく各VPNの対応プラットフォーム。",
@@ -454,7 +454,7 @@ export default async function VpnStreamingPage({ params }: Props) {
     ko: {
       badge: `${getLocalizedMonthYear("ko")} 업데이트`,
       title: "2026년 스트리밍 최고의 VPN",
-      subtitle: "Netflix, Disney+, BBC iPlayer, Hulu, Amazon Prime, HBO Max로 50개 이상의 VPN을 테스트했습니다. 이 5개가 가장 많은 플랫폼을 차단 해제합니다.",
+      subtitle: "Netflix, Disney+, BBC iPlayer, Hulu, Amazon Prime, HBO Max에서 여러 VPN을 비교하고 현재 플랫폼 확인과 속도 결과를 기록합니다.",
       topPicks: "최고의 스트리밍 VPN",
       platformTitle: "스트리밍 플랫폼 호환성",
       platformDesc: "최신 월간 테스트 기준 각 VPN이 차단 해제하는 플랫폼.",
@@ -490,7 +490,7 @@ export default async function VpnStreamingPage({ params }: Props) {
     th: {
       badge: `อัปเดต${getLocalizedMonthYear("th")}`,
       title: "VPN ที่ดีที่สุดสำหรับ Streaming ในปี 2026",
-      subtitle: "เราทดสอบ VPN มากกว่า 50 ตัวกับ Netflix, Disney+, BBC iPlayer, Hulu, Amazon Prime และ HBO Max 5 ตัวนี้ปลดบล็อกแพลตฟอร์มมากที่สุด",
+      subtitle: "เราเปรียบเทียบ VPN หลายรายกับ Netflix, Disney+, BBC iPlayer, Hulu, Amazon Prime และ HBO Max พร้อมบันทึกผลการตรวจสอบแพลตฟอร์มและความเร็วปัจจุบัน",
       topPicks: "VPN สตรีมมิ่งชั้นนำ",
       platformTitle: "ความเข้ากันได้กับแพลตฟอร์มสตรีมมิ่ง",
       platformDesc: "แพลตฟอร์มใดที่ VPN แต่ละตัวปลดบล็อกจากการทดสอบรายเดือนล่าสุด",

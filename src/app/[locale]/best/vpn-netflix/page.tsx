@@ -49,15 +49,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const descriptions: Record<string, string> = {
-    en: `We tested 50+ VPNs for Netflix streaming. Expert picks updated ${shortMonthYear} with speeds, prices & unblocking compared. See our honest verdict & money-back options.`,
-    nl: "We testten 50+ VPNs met Netflix in 2026. Slechts 5 deblokkeren nog steeds betrouwbaar US, UK, Japan en andere bibliotheken. Bekijk snelheidstests, 4K-ondersteuning en Smart DNS.",
-    de: "Wir haben 2026 uber 50 VPNs mit Netflix getestet. Nur 5 entsperren noch zuverlassig US-, UK-, Japan- und andere Bibliotheken. Geschwindigkeitstests, 4K und Smart DNS.",
-    es: "Probamos mas de 50 VPNs con Netflix en 2026. Solo 5 desbloquean EE.UU., Reino Unido, Japon y otras bibliotecas de forma fiable. Tests de velocidad, soporte 4K y Smart DNS.",
-    fr: "Nous avons teste plus de 50 VPN avec Netflix en 2026. Seuls 5 debloquent encore les bibliotheques US, UK, Japon et autres. Tests de vitesse, support 4K et Smart DNS.",
-    zh: "我们在2026年测试了50多个VPN。只有5个仍能可靠解锁美国、英国、日本等片库。查看速度测试、4K支持和Smart DNS功能。",
-    ja: "2026年に50以上のVPNをNetflixでテスト。米国、英国、日本などのライブラリを確実に解除できるのは5つだけ。速度テスト、4K対応、Smart DNS機能を確認。",
-    ko: "2026년 50개 이상의 VPN을 넷플릭스로 테스트했습니다. 미국, 영국, 일본 등의 라이브러리를 안정적으로 차단 해제하는 것은 5개뿐입니다. 속도 테스트, 4K 지원, Smart DNS 기능 확인.",
-    th: "เราทดสอบ VPN มากกว่า 50 ตัวกับ Netflix ในปี 2026 มีเพียง 5 ตัวที่ยังปลดบล็อกไลบรารี US, UK, Japan ได้อย่างน่าเชื่อถือ ดูผลทดสอบความเร็ว การรองรับ 4K และ Smart DNS",
+    en: `We compare leading VPNs for Netflix streaming. Expert picks updated ${shortMonthYear} with speeds, prices & unblocking compared. See our honest verdict & money-back options.`,
+    nl: "We vergelijken meerdere VPN's voor Netflix in 2026. Bekijk actuele blokkadechecks, snelheidstests, 4K-ondersteuning en Smart DNS.",
+    de: "Wir vergleichen mehrere VPNs mit Netflix im Jahr 2026. Sehen Sie aktuelle Blockierungschecks, Geschwindigkeitstests, 4K und Smart DNS.",
+    es: "Comparamos varios VPN con Netflix en 2026. Consulta comprobaciones actuales de bloqueo, pruebas de velocidad, soporte 4K y Smart DNS.",
+    fr: "Nous comparons plusieurs VPN avec Netflix en 2026. Consultez les contrôles actuels de blocage, les tests de vitesse, la 4K et le Smart DNS.",
+    zh: "我们在2026年比较多款Netflix VPN。查看当前的解锁检查、速度测试、4K支持和Smart DNS功能。",
+    ja: "2026年にNetflix向けの複数のVPNを比較。現在のブロック確認、速度テスト、4K対応、Smart DNS機能を確認できます。",
+    ko: "2026년 넷플릭스용 여러 VPN을 비교합니다. 현재 차단 해제 확인, 속도 테스트, 4K 지원, Smart DNS 기능을 살펴보세요.",
+    th: "เราเปรียบเทียบ VPN หลายรายสำหรับ Netflix ในปี 2026 พร้อมตรวจสอบการปลดบล็อกปัจจุบัน ผลทดสอบความเร็ว การรองรับ 4K และ Smart DNS",
   };
 
   return {

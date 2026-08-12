@@ -1,6 +1,6 @@
 // De vergelijkingen die vooraf gerenderd worden en in de sitemap staan.
 //
-// Waarom dit een gedeelde lijst is: 38 VPN's leveren 703 paarsgewijze
+// Waarom dit een gedeelde lijst is: de VPN-catalogus levert paarsgewijze
 // combinaties op. Die allemaal in de sitemap zetten nodigde Google uit om
 // ~6.300 URL's te crawlen die nergens vandaan gelinkt worden en pas bij het
 // eerste bezoek gerenderd worden — crawlbudget dat wegloopt naar lege pagina's.

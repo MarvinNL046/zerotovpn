@@ -1,4 +1,4 @@
-import { readdirSync, readFileSync } from "node:fs";
+import { globSync, readdirSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
 const ROOT = resolve(import.meta.dirname, "..");
@@ -245,7 +245,7 @@ const quantifiedClaimRecords = [
   },
   {
     slug: "best-free-vpns-2026",
-    forbiddenPattern: /(?:\b(?:50\+|over\s+50|more\s+than\s+50|mehr\s+als\s+50|plus\s+de\s+50|m(?:\u00E1|\u00C3\u00A1)s\s+de\s+50|meer\s+dan\s+50)\s+(?:VPN(?:s|\s+(?:services?|providers?|apps?))?|services?|servicios?|diensten?)\b|50\u4ee5\u4e0a\u306e(?:VPN|\u30b5\u30fc\u30d3\u30b9)|50\uac1c\s+\uc774\uc0c1\uc758\s+(?:VPN|\uc11c\ube44\uc2a4)|(?:\u0e01\u0e27\u0e48\u0e32|\u0e21\u0e32\u0e01\u0e01\u0e27\u0e48\u0e32)\s*50\s*\u0e15\u0e31\u0e27|50\u591a[\u6b3e\u79cd]?VPN)/iu,
+    forbiddenPattern: /(?:\b(?:50\+|over\s+50|more\s+than\s+50|mehr\s+als\s+50|plus\s+de\s+50|m(?:\u00E1|\u00C3\u00A1)s\s+de\s+50|meer\s+dan\s+50)\s+(?:VPN(?:s|\s+(?:services?|providers?|apps?))?|services?|servicios?|diensten?)\b|50\u4ee5\u4e0a\u306e(?:VPN|\u30b5\u30fc\u30d3\u30b9)|50\uac1c\s+\uc774\uc0c1\uc758\s+(?:VPN|\uc11c\ube44\uc2a4)|(?:\u0e01\u0e27\u0e48\u0e32|\u0e21\u0e32\u0e01\u0e01\u0e27\u0e48\u0e32)\s*50\s*(?:\u0e15\u0e31\u0e27|\u0e1a\u0e23\u0e34\u0e01\u0e32\u0e23|\u0e23\u0e32\u0e22)|50\u591a[\u6b3e\u79cd]?VPN)/iu,
   },
 ];
 const postLocaleDirs = readdirSync(resolve(ROOT, "src/data/posts"), { withFileTypes: true })
@@ -271,6 +271,22 @@ for (const { slug, forbiddenPattern } of quantifiedClaimRecords) {
     forbidden: forbiddenFiles.map((path) => path.replace(`${ROOT}\\`, "")),
   });
 }
+
+const legacyProviderCountPattern = /(?:\b(?:35|38|50)\+?\s+(?:VPNs?|VPN\s+(?:providers?|services?))\b|\b(?:over|more\s+than)\s+(?:35|38|50)\+?\s+VPN\b|mehr\s+als\s+(?:35|38|50)\+?\s+VPN|plus\s+de\s+(?:35|38|50)\+?\s+VPN|m(?:\u00E1|\u00C3\u00A1)s\s+de\s+(?:35|38|50)\+?\s+VPN|meer\s+dan\s+(?:35|38|50)\+?\s+VPN|(?:35|38|50)\s*\u4ee5\u4e0a\u306e\s*(?:VPN|\u30b5\u30fc\u30d3\u30b9)|(?:35|38|50)\s*\uac1c\s*\uc774\uc0c1\uc758\s*(?:VPN|\uc11c\ube44\uc2a4)|(?:\u0e01\u0e27\u0e48\u0e32|\u0e21\u0e32\u0e01\u0e01\u0e27\u0e48\u0e32)\s*50\s*(?:\u0e15\u0e31\u0e27|\u0e1a\u0e23\u0e34\u0e01\u0e32\u0e23|\u0e23\u0e32\u0e22|VPN)|50\u591a[\u6b3e\u79cd]?VPN)/iu;
+const legacyProviderFiles = [
+  ...postLocaleDirs.flatMap((locale) => globSync(resolve(ROOT, "src/data/posts", locale, "*.json"))),
+  resolve(ROOT, "src/data/posts/index.json"),
+  resolve(ROOT, "src/app/[locale]/best/vpn-netflix/page.tsx"),
+  resolve(ROOT, "src/app/[locale]/best/vpn-streaming/page.tsx"),
+];
+const legacyProviderFailures = legacyProviderFiles.filter((path) => legacyProviderCountPattern.test(readFileSync(path, "utf8")));
+results.push({
+  name: "legacy provider-count corpus stays evidence-bounded",
+  file: "src/data/posts/**/*.json + Netflix/streaming route copy",
+  pass: legacyProviderFailures.length === 0,
+  missing: [],
+  forbidden: legacyProviderFailures.map((path) => path.replace(`${ROOT}\\`, "")),
+});
 
 const localeFiles = readdirSync(resolve(ROOT, "src/messages"))
   .filter((file) => file.endsWith(".json"))

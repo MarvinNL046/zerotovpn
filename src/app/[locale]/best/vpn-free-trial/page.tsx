@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import { DEFAULT_OG_IMAGE, OG_LOCALE_MAP, generateAlternates, getShortMonthYear, titelMetMerk } from "@/lib/seo-utils";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { AffiliateButton } from "@/components/vpn/affiliate-button";
+import { AffiliateButton, AffiliateTextLink } from "@/components/vpn/affiliate-button";
 import { AffiliateDisclosure } from "@/components/vpn/affiliate-disclosure";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { FAQAccordion } from "@/components/seo/faq-schema";
@@ -363,7 +363,14 @@ export default async function VpnFreeTrialPage({ params }: Props) {
                         <div className="text-sm text-muted-foreground">
                           {t.startsAt}{" "}
                           <span className="metric font-bold text-foreground">
-                            ${vpn.priceTwoYear || vpn.priceYearly}
+                            <AffiliateTextLink
+                              vpnId={vpn.id}
+                              vpnName={vpn.name}
+                              affiliateUrl={vpn.affiliateUrl}
+                              className="font-bold text-primary underline underline-offset-4 hover:text-primary/80"
+                            >
+                              ${vpn.priceTwoYear || vpn.priceYearly}
+                            </AffiliateTextLink>
                           </span>
                           {t.perMonth}
                         </div>

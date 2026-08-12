@@ -65,4 +65,13 @@ export const editorialContentBriefs = {
     affiliateContext: "vpn-selection",
     schemaType: "Article",
   },
+  telegram: {
+    primaryKeyword: "best vpn for telegram",
+    intent: "commercial",
+    cluster: "censorship-restricted-networks",
+    lastReviewedAt: "2026-08-12",
+    evidence: ["docs/research/dataforseo-telegram-cluster-2026-08-11.md", "/methodology", "https://core.telegram.org/proxy"],
+    affiliateContext: "vpn-selection",
+    schemaType: "Article",
+  },
 } satisfies Record<string, EditorialContentBrief>;

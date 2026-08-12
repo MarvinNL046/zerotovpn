@@ -27,6 +27,7 @@ import {
 import { BestVpnEditorialTemplate } from "@/components/editorial/best-vpn-editorial-template";
 import { IranEditorialQuickPicks } from "@/components/editorial/iran-editorial-quick-picks";
 import type { EditorialContentBrief } from "@/lib/editorial-content-brief";
+import { editorialContentBriefs } from "@/lib/editorial-content-briefs";
 import {
   iranVpnEditorialFaq,
   iranVpnEditorialContent,
@@ -242,7 +243,7 @@ export default async function DynamicBlogPost({ params }: Props) {
 
       {/* Article Header and shared editorial disclosure/jump navigation */}
       <BestVpnEditorialTemplate
-        brief={isIranEditorial ? iranContentBrief : undefined}
+        brief={isIranEditorial ? iranContentBrief : isTelegramEditorial ? editorialContentBriefs.telegram : undefined}
         navigation={[
           { href: "#article-content", label: "Article" },
           ...(isCensorshipEditorial ? [{ href: "#quick-picks", label: "Shortlist" }] : []),

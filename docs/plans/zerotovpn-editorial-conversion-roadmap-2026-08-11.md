@@ -463,7 +463,12 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 ### Shared cluster brief coverage: 12 August 2026
 
 - Centralized briefs for the China, Russia, free-VPN, travel, restricted-network, obfuscation and protocol pages in `src/lib/editorial-content-briefs.ts`. Each brief names the actual query, intent, roadmap cluster, dated evidence references and the applicable `vpn-selection` boundary; no new URLs were created.
-- The live gate now checks the nine core brief-bearing routes. Production deployment `dpl_HvzVBT15ywDyKyjEXq2bHE56exNs` is Ready; build **4,447 routes**, local editorial audit **49/49**, live editorial audit **22/22** with **0** content-brief failures, and claim audit **2,279/2,279** with **0 findings**. The shared-cluster browser smoke is recorded in [content-brief-browser-smoke-2026-08-12.md](../metrics/content-brief-browser-smoke-2026-08-12.md).
+- The live gate now checks the ten core brief-bearing routes. Production deployment `dpl_HvzVBT15ywDyKyjEXq2bHE56exNs` is Ready; build **4,447 routes**, local editorial audit **49/49**, live editorial audit **22/22** with **0** content-brief failures, and claim audit **2,279/2,279** with **0 findings**. The shared-cluster browser smoke is recorded in [content-brief-browser-smoke-2026-08-12.md](../metrics/content-brief-browser-smoke-2026-08-12.md).
+
+### Telegram brief alignment: 12 August 2026
+
+- Added the Telegram dossier to the centralized censorship-cluster brief map with `best vpn for telegram`, commercial intent, a dated 12 August review, the Telegram proxy documentation and the existing VPN-selection affiliate boundary. The generic blog route only receives this brief for the dedicated Telegram slug.
+- Production deployment `dpl_34HbqZvP9x31DWHLyLmMYGNE4Too` is Ready. The live editorial gate remains **22/22** with **0** content-brief failures; the Telegram browser smoke returned one H1, three provider marks and all brief fields. The measurement gate remains unchanged.
 
 ### Nord affiliate interim screenshot: 12 August 2026
 

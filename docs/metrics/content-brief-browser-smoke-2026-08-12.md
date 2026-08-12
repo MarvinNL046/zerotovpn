@@ -44,6 +44,7 @@ The same read-only browser check visited the nine brief-bearing production route
 | --- | --- | --- | --- | --- |
 | `/best/best-vpn` | `best vpn` | commercial | commercial-choice | 2026-08-12 |
 | `/blog/best-vpn-for-iran-2026-bypass-internet-censorship` | `best vpn for iran` | commercial | censorship-restricted-networks | 2026-08-11 |
+| `/blog/best-vpn-for-telegram-2026` | `best vpn for telegram` | commercial | censorship-restricted-networks | 2026-08-12 |
 | `/countries/russia` | `vpn for russia` | commercial | censorship-restricted-networks | 2026-08-12 |
 | `/countries/china` | `vpn for china` | commercial | censorship-restricted-networks | 2026-08-11 |
 | `/guides/vpn-protocols-explained` | `vpn protocols` | informational | protocol-and-technical-literacy | 2026-08-11 |

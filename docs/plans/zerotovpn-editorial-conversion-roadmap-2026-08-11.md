@@ -442,3 +442,14 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 
 - Read the authenticated Short.io domain dashboard for the same **27 July–9 August** window: **8,123 total clicks**, **3,115 human clicks**, with `/protonvpn` at **585**, `/surfshark` at **238**, `/nordvpn` at **182** and `/windscribe` at **129** human clicks.
 - Recorded the observation in [shortio-interim-window-2026-08-12.md](../metrics/shortio-interim-window-2026-08-12.md). The aggregate `/*` path is intentionally not attributed to a page, and the formal measurement gate remains pending until a downloadable Short.io export and partner conversions/revenue/EPC are joined.
+
+### Quick Pick price-freshness release: 12 August 2026
+
+- Added a visible last-price-check line to the shared Quick Pick cards, plus optional `priceLastVerified`/`priceSource` data fields and an editorial regression guard. This makes the clickable price context auditable without presenting a catalog value as a guaranteed offer.
+- Local verification: `npm run audit:editorial` **47/47**, `npm run build` generated **4,447** routes, `npm run audit:editorial-live` **22/22**, and `npm run audit:claims-live` checked **2,279/2,279** URLs with **0 findings**.
+- Production deployment `dpl_3HDW8FDNzpXoE4XPvx4GcPEKQyy1` is Ready and aliased to `https://www.zerotovpn.com`. Live `/best/best-vpn` shows three `Price checked: 2026-07-25` lines, three long-term-plan/refund context lines, branded provider logo alt text, comparison table price links and the newsletter-only popup marker.
+
+### Nord affiliate interim screenshot: 12 August 2026
+
+- The user-supplied authenticated Nord Performance Report screenshot for **6–12 August 2026** shows **19 clicks** (NordVPN 15, NordVPN China 2, NordVPN Arabia 2), **0 conversions**, **$0.00 payout** and **$0.00 EPC**. Full evidence and interpretation boundaries are recorded in [nord-partner-interim-screenshot-2026-08-12.md](../metrics/nord-partner-interim-screenshot-2026-08-12.md).
+- This is not a downloadable export and does not match the 28 July–10 August GSC/Short.io window, so the partner conversion/revenue/EPC gate remains open. The next required input is a filtered Nord export for the matched window with timezone, clicks, conversions, payout/revenue and EPC.

@@ -52,6 +52,8 @@ The three urgent placements have now been neutralized in the codebase: the exit-
 
 The Nvidia Shield TV guide also contained coupon/deal labels in its provider rows. Those labels were replaced with neutral plan-term links in the source and rendered English record; the build-time audit now covers that guide as well.
 
+The seasonal `/blog/vpn-black-friday-2026` route was also retired from the app surface. It was already `noindex`, but still exposed unverified discounts and affiliate CTAs outside the active promotion period. The route and locale variants now redirect permanently to `/best/vpn-cheap`, and the slug is blocked from the published blog corpus.
+
 7. **Legacy price/deal page (remediated)**
 
 `/blog/vpn-price-comparison-best-deals` and its locale variants contained unassigned coupon-code language, “exclusive” offers and stale percentage savings. The slug is now blocked from the published post corpus and permanently redirects to `/best/vpn-cheap`; a build-time regression check protects the block and redirect.
@@ -73,7 +75,7 @@ The public link `https://go.zerotovpn.com/nordvpn` now returns a 302 to the dire
 1. **Done:** Replace the global exit-intent NordVPN popup with an email-only, consented newsletter prompt. It may remain enabled for first-party email collection, but must never contain an affiliate URL, provider offer, coupon, discount, cashback or incentive.
 2. **Done:** Remove or neutralize the global sticky discount CTA; no “OFF”, “limited offer”, coupon or deal language without an assigned offer.
 3. **Partially done:** Remove Nord links from current torrenting/P2P routes and keep a route-level regression check for new restricted content.
-4. **In progress:** Remove legacy Nord coupon links and unverified discount claims from all locales and content formats. The known published coupon/deal links are gone; remaining scan findings are non-link translation/metadata records requiring a context review.
+4. **In progress:** Remove legacy Nord coupon links and unverified discount claims from all locales and content formats. The known published coupon/deal links and seasonal Black Friday route are now blocked; remaining scan findings are non-link translation/metadata records requiring a context review.
 5. Wire the approved-provider environment variables into the link resolver so Nord is fail-closed by default.
 6. Add a build-time audit that fails when a Nord affiliate URL appears in a restricted route or when an unapproved discount claim is introduced.
 7. Ask the Nord account manager in writing whether a site may contain separate educational P2P content while Nord links are limited to compliant pages.

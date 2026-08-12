@@ -24,9 +24,12 @@ const TELEGRAM_EDITORIAL_SLUG = "best-vpn-for-telegram-2026";
 
 // Legacy deal/coupon content is not a compliant commercial surface: it contains
 // unassigned coupon language and stale promotional prices. Keep the records for
-// audit history, but never render or include this slug in the published corpus;
-// next.config.ts sends the old URL to the evidence-led cheap-VPN pillar.
-const BLOCKED_PUBLISHED_SLUGS = new Set(["vpn-price-comparison-best-deals"]);
+// audit history, but never render or include these slugs in the published corpus;
+// next.config.ts sends the old URLs to the evidence-led cheap-VPN pillar.
+const BLOCKED_PUBLISHED_SLUGS = new Set([
+  "vpn-price-comparison-best-deals",
+  "vpn-black-friday-2026",
+]);
 
 // Vorm van een volledige post zoals de detailpagina hem gebruikt. De oude
 // drizzle-kolommen die alleen de pipeline nodig had (sourceData/aiPrompt/

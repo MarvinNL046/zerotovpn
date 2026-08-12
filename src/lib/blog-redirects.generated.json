@@ -1,5 +1,15 @@
 [
   {
+    "source": "/blog/vpn-black-friday-2026",
+    "destination": "/best/vpn-cheap",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-black-friday-2026",
+    "destination": "/:locale/best/vpn-cheap",
+    "permanent": true
+  },
+  {
     "source": "/blog/vpn-guide-tips-may-2026-2026-05-34",
     "destination": "/blog/vpn-guide-tips-may-2026",
     "permanent": true

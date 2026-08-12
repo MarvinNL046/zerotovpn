@@ -295,9 +295,24 @@ const checks = [
     patterns: [/BLOCKED_PUBLISHED_SLUGS/, /vpn-price-comparison-best-deals/, /if \(BLOCKED_PUBLISHED_SLUGS\.has\(slug\)\) return null/],
   },
   {
+    name: "seasonal Black Friday page is blocked from publication",
+    file: "src/lib/pipeline/blog-service.ts",
+    patterns: [/BLOCKED_PUBLISHED_SLUGS/, /vpn-black-friday-2026/, /if \(BLOCKED_PUBLISHED_SLUGS\.has\(slug\)\) return null/],
+  },
+  {
     name: "legacy coupon page redirects to compliant value pillar",
     file: "src/lib/blog-redirects.generated.json",
     patterns: [/"source": "\/blog\/vpn-price-comparison-best-deals"/, /"destination": "\/best\/vpn-cheap"/, /"source": "\/:locale\(nl\|de\|es\|fr\|zh\|ja\|ko\|th\)\/blog\/vpn-price-comparison-best-deals"/, /"destination": "\/:locale\/best\/vpn-cheap"/],
+  },
+  {
+    name: "seasonal Black Friday page redirects to compliant value pillar",
+    file: "src/lib/blog-redirects.generated.json",
+    patterns: [
+      /"source": "\/blog\/vpn-black-friday-2026"/,
+      /"destination": "\/best\/vpn-cheap"/,
+      /"source": "\/:locale\(nl\|de\|es\|fr\|zh\|ja\|ko\|th\)\/blog\/vpn-black-friday-2026"/,
+      /"destination": "\/:locale\/best\/vpn-cheap"/,
+    ],
   },
   {
     name: "non-commercial sticky CTA guard",

@@ -687,3 +687,9 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - A second legacy commercial pattern was found in `/blog/best-vpn-for-nvidia-shield-2026`: the NordVPN and Surfshark rows used coupon/deal labels even though the page is an Android TV setup and streaming guide. The links had already normalized to review destinations in the rendered record, but the labels still implied unassigned promotions.
 - Replaced both labels with neutral `Compare current plan terms` links to the evidence-led cheap-VPN pillar in the markdown source and English rendered record. No affiliate destination, price fact or disclosure behavior changed.
 - Added a fail-closed editorial regression check covering the source and all rendered locale records. Local editorial checks now pass **64/64**; the Nord partner screenshot remains an interim **19-click / 0-conversion** observation for 6–12 August and is not joined to the 28 July–10 August Search Console/Short.io window.
+
+### Seasonal Black Friday route compliance: 12 August 2026
+
+- The dedicated `/blog/vpn-black-friday-2026` route was `noindex` but still rendered unverified percentage discounts, limited-time language and NordVPN affiliate CTAs outside the active promotion window. `noindex` alone did not satisfy the Nord promotion rules.
+- Removed the route from the app surface and blocked its slug from the published blog corpus. English and all supported locale variants now permanently redirect to the evidence-led `/best/vpn-cheap` pillar; the seasonal route is excluded from the sitemap.
+- Added publication and redirect regression checks. The clean build now generates **4,429/4,429** routes (18 seasonal route variants removed), and the Nord partner screenshot remains an interim **19-click / 0-conversion** observation rather than matched conversion evidence.

@@ -495,6 +495,12 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - A fresh read-only dashboard navigation was attempted against the Nord performance endpoint. The available session redirected to `https://affiliates.nordvpn.com/login`; no CSV/API response was exposed, so no partner values were added or inferred.
 - The next required action remains an authenticated download for 28 July–10 August with dated clicks, conversions, payout/revenue and EPC columns. The measurement gate stays closed until that file passes both input and partner-window validation.
 
+### Full release verification: 12 August 2026
+
+- `npm run build` completed successfully with the Webpack builder and generated **4,447/4,447** routes; sitemap generation reported 90 static locale routes, excluding 33 redirect-only and one noindex route.
+- Fresh production audits remain green: editorial **22/22**, claim audit **2,279/2,279** with 0 findings and 0 fetch errors, and cluster links **21/21** across 4 clusters with 0 missing links or fetch failures.
+- This confirms release quality after the measurement-tooling changes; it does not close the Nord conversion/EPC gate.
+
 ### Current production verification snapshot: 12 August 2026
 
 - Fresh live checks against `https://www.zerotovpn.com` pass **22/22** editorial targets with **127** compliant affiliate links, zero brief/metadata/freshness/image/schema/rel/slug/cluster-link failures, and zero social-image failures.

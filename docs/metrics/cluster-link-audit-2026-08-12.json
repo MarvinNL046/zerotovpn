@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generatedAt": "2026-08-12T15:09:10.952Z",
+    "generatedAt": "2026-08-12T18:04:53.089Z",
     "base": "https://www.zerotovpn.com",
     "clusterCount": 4,
     "pageCount": 21,
@@ -56,7 +56,7 @@
     {
       "path": "/best/best-vpn",
       "status": 200,
-      "durationMs": 344,
+      "durationMs": 576,
       "internalLinkCount": 46,
       "required": [
         "/best/vpn-privacy",
@@ -72,7 +72,7 @@
     {
       "path": "/best/vpn-privacy",
       "status": 200,
-      "durationMs": 522,
+      "durationMs": 516,
       "internalLinkCount": 35,
       "required": [
         "/best/best-vpn",
@@ -85,7 +85,7 @@
     {
       "path": "/best/vpn-streaming",
       "status": 200,
-      "durationMs": 436,
+      "durationMs": 694,
       "internalLinkCount": 35,
       "required": [
         "/best/best-vpn",
@@ -99,7 +99,7 @@
     {
       "path": "/best/vpn-netflix",
       "status": 200,
-      "durationMs": 518,
+      "durationMs": 504,
       "internalLinkCount": 35,
       "required": [
         "/best/best-vpn",
@@ -112,7 +112,7 @@
     {
       "path": "/best/vpn-cheap",
       "status": 200,
-      "durationMs": 496,
+      "durationMs": 315,
       "internalLinkCount": 34,
       "required": [
         "/best/best-vpn",
@@ -126,7 +126,7 @@
     {
       "path": "/best/fastest-vpn",
       "status": 200,
-      "durationMs": 323,
+      "durationMs": 337,
       "internalLinkCount": 33,
       "required": [
         "/best/best-vpn",
@@ -139,7 +139,7 @@
     {
       "path": "/best/vpn-free-trial",
       "status": 200,
-      "durationMs": 393,
+      "durationMs": 324,
       "internalLinkCount": 33,
       "required": [
         "/best/best-vpn",
@@ -152,7 +152,7 @@
     {
       "path": "/blog/best-vpn-for-iran-2026-bypass-internet-censorship",
       "status": 200,
-      "durationMs": 500,
+      "durationMs": 481,
       "internalLinkCount": 43,
       "required": [
         "/countries/iran",
@@ -167,7 +167,7 @@
     {
       "path": "/countries/iran",
       "status": 200,
-      "durationMs": 234,
+      "durationMs": 500,
       "internalLinkCount": 44,
       "required": [
         "/blog/best-vpn-for-iran-2026-bypass-internet-censorship",
@@ -181,7 +181,7 @@
     {
       "path": "/countries/russia",
       "status": 200,
-      "durationMs": 384,
+      "durationMs": 404,
       "internalLinkCount": 38,
       "required": [
         "/countries/iran",
@@ -195,7 +195,7 @@
     {
       "path": "/countries/china",
       "status": 200,
-      "durationMs": 495,
+      "durationMs": 506,
       "internalLinkCount": 39,
       "required": [
         "/countries/iran",
@@ -209,7 +209,7 @@
     {
       "path": "/blog/best-vpn-for-telegram-2026",
       "status": 200,
-      "durationMs": 394,
+      "durationMs": 568,
       "internalLinkCount": 43,
       "required": [
         "/countries/iran",
@@ -223,7 +223,7 @@
     {
       "path": "/guides/vpn-obfuscation-explained",
       "status": 200,
-      "durationMs": 332,
+      "durationMs": 496,
       "internalLinkCount": 42,
       "required": [
         "/guides/vpn-protocols-explained",
@@ -237,7 +237,7 @@
     {
       "path": "/guides/vpn-for-restricted-networks",
       "status": 200,
-      "durationMs": 421,
+      "durationMs": 831,
       "internalLinkCount": 44,
       "required": [
         "/guides/vpn-obfuscation-explained",
@@ -251,7 +251,7 @@
     {
       "path": "/guides/vpn-protocols-explained",
       "status": 200,
-      "durationMs": 485,
+      "durationMs": 321,
       "internalLinkCount": 42,
       "required": [
         "/guides/vpn-obfuscation-explained",
@@ -265,7 +265,7 @@
     {
       "path": "/guides/vpn-obfuscation-explained",
       "status": 200,
-      "durationMs": 490,
+      "durationMs": 214,
       "internalLinkCount": 42,
       "required": [
         "/guides/vpn-protocols-explained",
@@ -279,7 +279,7 @@
     {
       "path": "/guides/vpn-speed-guide",
       "status": 200,
-      "durationMs": 421,
+      "durationMs": 494,
       "internalLinkCount": 39,
       "required": [
         "/guides/vpn-protocols-explained",
@@ -292,7 +292,7 @@
     {
       "path": "/what-is-a-vpn",
       "status": 200,
-      "durationMs": 897,
+      "durationMs": 742,
       "internalLinkCount": 40,
       "required": [
         "/guides/vpn-protocols-explained"
@@ -304,7 +304,7 @@
     {
       "path": "/how-does-a-vpn-work",
       "status": 200,
-      "durationMs": 1385,
+      "durationMs": 724,
       "internalLinkCount": 39,
       "required": [
         "/guides/vpn-protocols-explained",
@@ -317,7 +317,7 @@
     {
       "path": "/guides/vpn-for-travel",
       "status": 200,
-      "durationMs": 308,
+      "durationMs": 524,
       "internalLinkCount": 40,
       "required": [
         "/guides/vpn-for-restricted-networks",
@@ -331,7 +331,7 @@
     {
       "path": "/guides/public-wifi-safety",
       "status": 200,
-      "durationMs": 413,
+      "durationMs": 521,
       "internalLinkCount": 40,
       "required": [
         "/guides/vpn-for-travel",

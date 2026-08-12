@@ -1,6 +1,6 @@
 # Live editorial page audit
 
-Generated: 2026-08-12T20:09:54.010Z
+Generated: 2026-08-12T20:17:54.647Z
 
 - Target pages: **25**
 - Passing pages: **25**
@@ -34,7 +34,7 @@ Generated: 2026-08-12T20:09:54.010Z
 | pass | /blog/best-vpn-for-iran-2026-bypass-internet-censorship | Best VPN for Iran 2026: Tested Options &amp; Setup Limits | 1 | 60 | 6 | — | — |
 | pass | /blog/best-vpn-for-telegram-2026 | Best VPN for Telegram in 2026: what to verify before you connect | 1 | 59 | 6 | — | — |
 | pass | /countries/iran | VPN Use in Iran: Evidence and Safety Checklist | ZeroToVPN | 1 | 54 | 0 | — | — |
-| pass | /countries/russia | VPN for Russia in 2026: What to Verify Before You Connect | 1 | 46 | 6 | — | — |
+| pass | /countries/russia | VPN for Russia 2026: Obfuscation, Setup &amp; What to Verify | 1 | 46 | 6 | — | — |
 | pass | /countries/china | VPN for China in 2026: What to Verify Before You Connect | 1 | 47 | 6 | — | — |
 | pass | /guides/vpn-protocols-explained | VPN Protocols Explained: WireGuard vs OpenVPN (2026) | ZeroToVPN | 1 | 50 | 6 | — | — |
 | pass | /guides/vpn-obfuscation-explained | VPN Obfuscation Explained: Stealth and OpenVPN | ZeroToVPN | 1 | 49 | 6 | — | — |

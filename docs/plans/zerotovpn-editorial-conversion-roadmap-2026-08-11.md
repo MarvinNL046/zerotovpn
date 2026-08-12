@@ -501,6 +501,11 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - Fresh production audits remain green: editorial **22/22**, claim audit **2,279/2,279** with 0 findings and 0 fetch errors, and cluster links **21/21** across 4 clusters with 0 missing links or fetch failures.
 - This confirms release quality after the measurement-tooling changes; it does not close the Nord conversion/EPC gate.
 
+### Post-checkpoint candidate hypotheses: 12 August 2026
+
+- Added [post-checkpoint-candidate-hypotheses-2026-08-12.md](../metrics/post-checkpoint-candidate-hypotheses-2026-08-12.md) with six existing-page hypotheses from the downloaded Search Console Pages table: commercial pillar, localized free-VPN, trial, Russia hub, cheap-VPN and Russia decision page.
+- This is deliberately not a 4–8 page selection. Each row lists the missing query, attribution and partner evidence required before editing; no new URLs are created while the matched gate is open.
+
 ### Current production verification snapshot: 12 August 2026
 
 - Fresh live checks against `https://www.zerotovpn.com` pass **22/22** editorial targets with **127** compliant affiliate links, zero brief/metadata/freshness/image/schema/rel/slug/cluster-link failures, and zero social-image failures.

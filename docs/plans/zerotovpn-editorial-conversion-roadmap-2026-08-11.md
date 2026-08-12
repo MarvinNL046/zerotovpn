@@ -636,6 +636,14 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - Production deployment `dpl_JBxyLaQi8GkoyTEarDQt1fP5RZaZ` is Ready and aliased to `https://www.zerotovpn.com`. HTTP and browser checks confirm `/fr/best/free-vpn` returns 200, one French H1, nine FAQ items, French disclosure/navigation and three rendered affiliate anchors; the English canonical still renders its original English copy.
 - Fresh live release gate: **25/25** editorial targets pass with **140** compliant affiliate links and zero metadata, freshness, schema, image, rel, slug, cluster-link, content-brief or social-image failures. Measurement protocol: compare French impressions, CTR, position and qualified Short.io clicks in the next matched window; do not infer conversions/EPC until the dated Nord partner export is joined.
 
+### Spanish free-VPN pillar localization: 12 August 2026
+
+- Used the authenticated Search Console export to prioritize `/es/best/free-vpn`: **478 impressions**, **1 click**, **0.21% CTR** and average position **49.44**. Spanish query evidence includes `vpn gratis` (**42 impressions**, **1 click**, **2.38% CTR**), `gratis vpn` (**47 impressions**) and `mejor vpn gratis` (**22 impressions**).
+- Extended the same evidence-led copy map to Spanish: metadata, H1, navigation, free-tier cards, safety checklist, paid-upgrade boundary, FAQ, source labels and JSON-LD are now Spanish. Provider facts, official source URLs, affiliate destinations, disclosure and bounded claims remain unchanged.
+- Added Spanish copy to the typed localization guard. Local editorial audit passes **60/60** and the Webpack build generates **4,447/4,447** routes.
+- Production deployment `dpl_5WPpg13sR9KWe3HPR9Ek4E1NTfUr` is Ready and aliased to `https://www.zerotovpn.com`. HTTP and browser checks confirm `/es/best/free-vpn` returns 200, one Spanish H1, nine FAQ items, Spanish navigation/disclosure and three rendered affiliate anchors; English and French routes remain correctly localized.
+- Fresh live release gates: editorial **25/25** with **140** compliant affiliate links; full affiliate-context audit **2,279/2,279** URLs, **1,755** affiliate pages, **8,799** links, zero disclosure/rel/interruptive/fetch failures and the same 12 manual contextual flags. Measurement protocol: compare Spanish impressions, CTR, position and qualified Short.io clicks in the next matched window; do not infer conversions/EPC until the dated Nord partner export is joined.
+
 ### Affiliate-context recheck after cheap-VPN release: 12 August 2026
 
 - Re-ran the Nord promotion-context audit across **2,279/2,279** sitemap URLs after the final cheap-VPN deployment: **1,755** affiliate pages, **8,799** tracked affiliate links, **0** missing `sponsored nofollow` pages, **0** disclosure failures, **0** interruptive-promotion flags and **0** fetch failures.

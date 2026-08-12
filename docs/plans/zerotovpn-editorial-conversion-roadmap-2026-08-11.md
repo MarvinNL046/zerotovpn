@@ -758,3 +758,9 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 
 - Added `npm run seo:best-vpn` and ran it against the existing US/English DataForSEO credentials without copying secrets into the repository. The dossier contains five keyword-overview rows, 75 deduplicated suggestions and six organic SERP/PAA samples for the existing commercial pillar; evidence is stored in [dataforseo-best-vpn-cluster-2026-08-13.md](../research/dataforseo-best-vpn-cluster-2026-08-13.md).
 - Current volume fields were unavailable for these terms; the latest non-zero history is February 2024 (for example, 49,500 for `best vpn`). The PAA set is therefore used only to refine intent coverage and FAQ prioritisation. No page, price, affiliate destination or URL batch was changed, and the matched Nord KPI gate remains open.
+
+### Commercial-pillar dossier release verification: 13 August 2026
+
+- Commit `ae85619` (the reusable `seo:best-vpn` runner and its cached JSON/Markdown evidence) is deployed to Vercel production as [`dpl_E2gop4j8pVvqXcYUbn7x3N8UUtXT`](https://vercel.com/marvinnl046s-projects/zerotovpn/E2gop4j8pVvqXcYUbn7x3N8UUtXT), with the production aliases `www.zerotovpn.com` and `zerotovpn.com` remaining healthy.
+- The post-deploy smoke of `/best/vpn-port-forwarding` returned HTTP 200, the refined title `Best VPNs With Port Forwarding (Aug 2026): Providers Compared`, exactly one H1 and all four PAA-derived FAQ questions. Vercel reported no runtime errors in the selected one-hour window.
+- The repository is clean and the local editorial regression suite remains **71/71**; measurement-input and measurement-report regression suites also pass. This release changes research evidence and tooling only, so it intentionally creates no new URL batch and does not alter affiliate destinations or the open Nord partner-export gate.

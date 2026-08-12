@@ -4,8 +4,8 @@
   "targetDomain": "zerotovpn.com",
   "location_code": 2840,
   "language_code": "en",
-  "fetchedAt": "2026-08-11T17:31:51.687Z",
-  "refreshed": false,
+  "fetchedAt": "2026-08-12T15:19:43.297Z",
+  "refreshed": true,
   "seeds": [
     "vpn for travel",
     "best vpn for travel",
@@ -190,8 +190,8 @@
       "paa": [
         "Do I really need a VPN while traveling?",
         "What is the best VPN when traveling?",
-        "What is the downside of using a VPN?",
-        "Is there a free VPN for travel?"
+        "Will Netflix ban me if I use a VPN?",
+        "How much does VPN cost per month?"
       ],
       "hasAiOverview": true
     },
@@ -211,22 +211,27 @@
         "Do I need a VPN when traveling internationally?",
         "Which VPN is best for international travel?",
         "Will Netflix ban me if I use a VPN?",
-        "What is the downside of using a VPN?"
+        "Why avoid NordVPN?"
       ],
       "hasAiOverview": true
     },
     {
       "keyword": "vpn for hotel wifi",
-      "paa": [],
+      "paa": [
+        "Should you use a VPN on hotel Wi-Fi?",
+        "Will Netflix ban me if I use VPN?",
+        "Why won't my hotel Wi-Fi allow me to use my VPN?",
+        "Can hotel Wi-Fi see your history with VPN?"
+      ],
       "hasAiOverview": true
     },
     {
       "keyword": "vpn for airport wifi",
       "paa": [
         "Do VPNs work on airport Wi-Fi?",
-        "What is the best VPN for using at airports?",
         "Can the FBI see through VPNs?",
-        "Will Netflix ban me if I use VPN?"
+        "How can I bypass Wi-Fi restrictions on my flight?",
+        "Is using VPN illegal in the US?"
       ],
       "hasAiOverview": true
     }

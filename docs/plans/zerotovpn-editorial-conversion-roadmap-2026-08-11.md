@@ -400,3 +400,9 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - Re-ran `npm run audit:affiliate-context` against all **2,279/2,279** live sitemap URLs: **1,755** pages with affiliate links and **8,189** links checked.
 - Hard compliance gates remain clean: **0** missing `sponsored nofollow`, **0** missing disclosure pages, **0** interruptive-promotion markers and **0** fetch failures. The newsletter-only exit-intent popup remains separate from affiliate advertising.
 - The 12 remaining promotion-term flags are the previously classified free-trial/plan wording on the dedicated trial pages and explanatory “incentives” language in privacy articles. The manual review record now points to the 12 August audit; no unassigned coupon, cashback, fake-expiry or irrelevant NordVPN placement was found.
+
+### Travel-cluster DataForSEO refresh: 12 August 2026
+
+- Refreshed the US/English travel dossier with current Labs suggestions and five SERP/PAA samples. The live signals continue to centre on travel need, international travel, hotel/airport Wi-Fi, captive-portal or protocol blocking and price questions; historical monthly values remain labelled as historical rather than current demand.
+- Added one bounded FAQ answer to `/guides/vpn-for-travel` for the new hotel-Wi-Fi blocking question. It explains completing the captive portal first, retrying with a supported protocol and keeping an approved fallback; it makes no access, legality or savings promise.
+- Updated the page/schema freshness date to **12 August 2026**. The newsletter exit-intent popup remains enabled as first-party email collection only; no affiliate CTA or popup behavior changed.

@@ -38,7 +38,7 @@ The Iran dossier rendered three branded quick-pick provider marks and one H1. It
 
 ## Shared-cluster coverage smoke
 
-The same read-only browser check visited the nine brief-bearing production routes below. Every route returned exactly one H1, a populated brief and three evidence references:
+The same read-only browser check visited the ten distinct brief-bearing production routes below. Every route returned exactly one H1, a populated brief and three evidence references. The live gate also applies the free-VPN brief to its French and Dutch locale variants.
 
 | Route | Keyword | Intent | Cluster | Reviewed |
 | --- | --- | --- | --- | --- |

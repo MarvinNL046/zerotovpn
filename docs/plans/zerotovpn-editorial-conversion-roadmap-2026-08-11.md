@@ -463,7 +463,7 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 ### Shared cluster brief coverage: 12 August 2026
 
 - Centralized briefs for the China, Russia, free-VPN, travel, restricted-network, obfuscation and protocol pages in `src/lib/editorial-content-briefs.ts`. Each brief names the actual query, intent, roadmap cluster, dated evidence references and the applicable `vpn-selection` boundary; no new URLs were created.
-- The live gate now checks the ten core brief-bearing routes. Production deployment `dpl_HvzVBT15ywDyKyjEXq2bHE56exNs` is Ready; build **4,447 routes**, local editorial audit **49/49**, live editorial audit **22/22** with **0** content-brief failures, and claim audit **2,279/2,279** with **0 findings**. The shared-cluster browser smoke is recorded in [content-brief-browser-smoke-2026-08-12.md](../metrics/content-brief-browser-smoke-2026-08-12.md).
+- The live gate now checks **12 routes** with a brief (10 distinct content routes plus French and Dutch free-VPN variants). Production deployment `dpl_HvzVBT15ywDyKyjEXq2bHE56exNs` is Ready; build **4,447 routes**, local editorial audit **49/49**, live editorial audit **22/22** with **0** content-brief failures, and claim audit **2,279/2,279** with **0 findings**. The shared-cluster browser smoke is recorded in [content-brief-browser-smoke-2026-08-12.md](../metrics/content-brief-browser-smoke-2026-08-12.md).
 
 ### Telegram brief alignment: 12 August 2026
 

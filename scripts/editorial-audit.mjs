@@ -54,6 +54,11 @@ const checks = [
     patterns: [/primaryKeyword/, /intent/, /cluster/, /lastReviewedAt/, /evidence/, /affiliateContext/, /schemaType/, /isEditorialContentBrief/],
   },
   {
+    name: "cluster page briefs stay centralized",
+    file: "src/lib/editorial-content-briefs.ts",
+    patterns: [/china:/, /freeVpn:/, /travel:/, /restrictedNetworks:/, /obfuscation:/, /protocols:/, /russia:/, /censorship-restricted-networks/, /protocol-and-technical-literacy/, /travel-and-public-wifi/],
+  },
+  {
     name: "shared quick-pick cards expose branded provider marks and plan context",
     file: "src/components/editorial/best-vpn-editorial-template.tsx",
     patterns: [/data-provider-mark="true"/, /alt=\{`\$\{vpn\.name\} logo`\}/, /data-plan-context="true"/, /data-price-freshness="true"/, /Long-term plan equivalent/, /refund window/],

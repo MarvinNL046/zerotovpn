@@ -460,6 +460,11 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - Added the same typed brief to the Iran editorial hub: `best vpn for iran`, commercial intent, `censorship-restricted-networks`, review date 11 August, three evidence references and the `vpn-selection` affiliate boundary. The brief is passed only for the Iran dossier; other blog posts keep their existing non-commercial or restricted-context handling.
 - The live gate now verifies both core briefs. Production deployment `dpl_AWWJCK3Uwjpc3hUPMNpaQmji5z7S` is Ready; editorial audit **22/22**, content-brief failures **0**, claim audit **2,279/2,279** with **0 findings**. Both one-H1 browser checks are recorded in [content-brief-browser-smoke-2026-08-12.md](../metrics/content-brief-browser-smoke-2026-08-12.md).
 
+### Shared cluster brief coverage: 12 August 2026
+
+- Centralized briefs for the China, Russia, free-VPN, travel, restricted-network, obfuscation and protocol pages in `src/lib/editorial-content-briefs.ts`. Each brief names the actual query, intent, roadmap cluster, dated evidence references and the applicable `vpn-selection` boundary; no new URLs were created.
+- The live gate now checks the nine core brief-bearing routes. Production deployment `dpl_HvzVBT15ywDyKyjEXq2bHE56exNs` is Ready; build **4,447 routes**, local editorial audit **49/49**, live editorial audit **22/22** with **0** content-brief failures, and claim audit **2,279/2,279** with **0 findings**. The shared-cluster browser smoke is recorded in [content-brief-browser-smoke-2026-08-12.md](../metrics/content-brief-browser-smoke-2026-08-12.md).
+
 ### Nord affiliate interim screenshot: 12 August 2026
 
 - The user-supplied authenticated Nord Performance Report screenshot for **6–12 August 2026** shows **19 clicks** (NordVPN 15, NordVPN China 2, NordVPN Arabia 2), **0 conversions**, **$0.00 payout** and **$0.00 EPC**. Full evidence and interpretation boundaries are recorded in [nord-partner-interim-screenshot-2026-08-12.md](../metrics/nord-partner-interim-screenshot-2026-08-12.md).

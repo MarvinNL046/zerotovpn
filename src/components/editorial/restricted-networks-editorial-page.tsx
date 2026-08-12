@@ -6,6 +6,7 @@ import { BestVpnEditorialTemplate } from "@/components/editorial/best-vpn-editor
 import { IranEditorialQuickPicks } from "@/components/editorial/iran-editorial-quick-picks";
 import { Link } from "@/i18n/navigation";
 import type { VpnData } from "@/lib/vpn-data-layer";
+import { editorialContentBriefs } from "@/lib/editorial-content-briefs";
 
 const pageUrl = "https://www.zerotovpn.com/guides/vpn-for-restricted-networks";
 const faq = [
@@ -31,7 +32,7 @@ export function RestrictedNetworksEditorialPage({ vpns }: { vpns: VpnData[] }) {
       <ArticleJsonLd title="How to Use a VPN on a Restricted Network: A Bounded Guide" description="Understand network restriction types, prepare a lawful VPN test and compare evidence without promising access everywhere." url={pageUrl} datePublished="2026-01-01" dateModified="2026-08-11" />
       <BreadcrumbSchema items={[{ name: "Guides", href: "/guides" }, { name: "VPN for restricted networks", href: "/guides/vpn-for-restricted-networks" }]} />
       <FAQSchema title="VPN restricted networks FAQ" faqs={faq} />
-      <BestVpnEditorialTemplate navigation={nav}>
+      <BestVpnEditorialTemplate brief={editorialContentBriefs.restrictedNetworks} navigation={nav}>
         <article>
           <section className="border-b bg-gradient-to-br from-teal-500/10 via-background to-background py-14 lg:py-20"><div className="container max-w-5xl"><div className="max-w-3xl"><p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">Updated August 11, 2026 · preparation guide</p><h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-6xl">How to use a VPN on a restricted network—without guessing what it proves</h1><p className="mt-6 text-xl leading-8 text-muted-foreground">A VPN can change a route or traffic signal, but it cannot guarantee access or override a network owner’s rules. First identify the restriction, then prepare the official app and run a bounded test you can reproduce.</p><p className="mt-5 text-sm leading-6 text-muted-foreground">Independent editorial research. Affiliate links may earn us a commission; <Link href="/affiliate-disclosure" className="underline">read our disclosure</Link>. Do not use this guide to evade workplace, school or legal controls.</p></div></div></section>
 

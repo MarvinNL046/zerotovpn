@@ -6,6 +6,7 @@ import { FAQSchema } from "@/components/seo/faq-schema";
 import { AuthorBox, FactCheckedBadge } from "@/components/blog/author-box";
 import { BestVpnEditorialTemplate } from "@/components/editorial/best-vpn-editorial-template";
 import { IranEditorialQuickPicks } from "@/components/editorial/iran-editorial-quick-picks";
+import { editorialContentBriefs } from "@/lib/editorial-content-briefs";
 import type { VpnData } from "@/lib/vpn-data-layer";
 
 const updated = "August 11, 2026";
@@ -27,7 +28,7 @@ export function ChinaVpnEditorialPage({ vpns }: { vpns: VpnData[] }) {
   return (
     <div className="flex flex-col">
       <div className="container pt-6"><BreadcrumbSchema items={[{ name: "Countries", href: "/countries" }, { name: "VPN for China", href: "/countries/china" }]} /></div>
-      <BestVpnEditorialTemplate navigation={[{ href: "#article-content", label: "Article" }, { href: "#quick-picks", label: "Shortlist" }, { href: "#decision-table", label: "Compare" }, { href: "#cluster-links", label: "Cluster" }, { href: "#faq", label: "FAQ" }, { href: "#sources", label: "Sources" }]}>
+      <BestVpnEditorialTemplate brief={editorialContentBriefs.china} navigation={[{ href: "#article-content", label: "Article" }, { href: "#quick-picks", label: "Shortlist" }, { href: "#decision-table", label: "Compare" }, { href: "#cluster-links", label: "Cluster" }, { href: "#faq", label: "FAQ" }, { href: "#sources", label: "Sources" }]}> 
         <main id="article-content" className="container max-w-4xl py-8 lg:py-12">
           <div className="mb-8">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-primary">Country research · updated {updated}</p>

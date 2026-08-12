@@ -6,6 +6,7 @@ import { BestVpnEditorialTemplate } from "@/components/editorial/best-vpn-editor
 import { IranEditorialQuickPicks } from "@/components/editorial/iran-editorial-quick-picks";
 import { Link } from "@/i18n/navigation";
 import type { VpnData } from "@/lib/vpn-data-layer";
+import { editorialContentBriefs } from "@/lib/editorial-content-briefs";
 
 const pageUrl = "https://www.zerotovpn.com/guides/vpn-for-travel";
 const faq = [
@@ -32,7 +33,7 @@ export function TravelEditorialPage({ vpns }: { vpns: VpnData[] }) {
       <ArticleJsonLd title="VPN for Travel: What to Test Before You Leave" description="A bounded travel VPN guide for hotel and airport Wi-Fi, device preparation, destination restrictions and safer connectivity." url={pageUrl} datePublished="2026-01-01" dateModified="2026-08-12" />
       <BreadcrumbSchema items={[{ name: "Guides", href: "/guides" }, { name: "VPN for travel", href: "/guides/vpn-for-travel" }]} />
       <FAQSchema title="VPN for travel FAQ" faqs={faq} />
-      <BestVpnEditorialTemplate navigation={nav}>
+      <BestVpnEditorialTemplate brief={editorialContentBriefs.travel} navigation={nav}>
         <article>
           <section className="border-b bg-gradient-to-br from-cyan-500/10 via-background to-background py-14 lg:py-20"><div className="container max-w-5xl"><div className="max-w-3xl"><p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">Updated August 12, 2026 Â· travel preparation guide</p><h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-6xl">VPN for travel: what to test before you leave</h1><p className="mt-6 text-xl leading-8 text-muted-foreground">A VPN can be useful on an untrusted connection or in a location with network restrictions, but it is not a passport, a universal access key or a guaranteed way to lower a booking price. Match the tool to the risk, prepare before departure and keep a fallback.</p><p className="mt-5 text-sm leading-6 text-muted-foreground">Independent editorial research. Affiliate links may earn us a commission; <Link href="/affiliate-disclosure" className="underline">read our disclosure</Link>. Destination rules and service availability can change.</p></div></div></section>
 

@@ -6,6 +6,7 @@ import { BestVpnEditorialTemplate } from "@/components/editorial/best-vpn-editor
 import { IranEditorialQuickPicks } from "@/components/editorial/iran-editorial-quick-picks";
 import { Link } from "@/i18n/navigation";
 import type { VpnData } from "@/lib/vpn-data-layer";
+import { editorialContentBriefs } from "@/lib/editorial-content-briefs";
 
 const pageUrl = "https://www.zerotovpn.com/guides/vpn-protocols-explained";
 const faq = [
@@ -32,7 +33,7 @@ export function ProtocolsEditorialPage({ vpns }: { vpns: VpnData[] }) {
       <ArticleJsonLd title="VPN Protocols Explained: WireGuard vs OpenVPN (2026)" description="A practical, evidence-led guide to WireGuard, OpenVPN, TCP vs UDP and VPN obfuscation." url={pageUrl} datePublished="2026-01-01" dateModified="2026-08-11" />
       <BreadcrumbSchema items={[{ name: "Guides", href: "/guides" }, { name: "VPN protocols explained", href: "/guides/vpn-protocols-explained" }]} />
       <FAQSchema title="VPN protocols FAQ" faqs={faq} />
-      <BestVpnEditorialTemplate navigation={nav}>
+      <BestVpnEditorialTemplate brief={editorialContentBriefs.protocols} navigation={nav}>
         <article>
           <section className="border-b bg-gradient-to-br from-blue-500/10 via-background to-background py-14 lg:py-20">
             <div className="container max-w-5xl">

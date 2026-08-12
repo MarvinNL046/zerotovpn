@@ -6,6 +6,7 @@ import { BestVpnEditorialTemplate } from "@/components/editorial/best-vpn-editor
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { Link } from "@/i18n/navigation";
 import { getVpnAffiliateUrl, type VpnLinkSlug } from "@/lib/vpn-links";
+import { editorialContentBriefs } from "@/lib/editorial-content-briefs";
 
 const pageUrl = "https://www.zerotovpn.com/best/free-vpn";
 const siteUrl = "https://www.zerotovpn.com";
@@ -48,7 +49,7 @@ export function FreeVpnEditorialPage({ locale = "en" }: { locale?: string } = {}
       <ArticleJsonLd title="Best Free VPNs: Safety, Limits and Trade-offs" description="Compare free VPN tiers by data limits, privacy evidence, locations and realistic use cases without blanket safety claims." url={localizedPageUrl} datePublished="2026-01-01" dateModified="2026-08-12" />
       <BreadcrumbSchema items={[{ name: "Best VPNs", href: "/best/best-vpn" }, { name: "Free VPNs", href: "/best/free-vpn" }]} />
       <FAQSchema title="Free VPN FAQ" faqs={faq} />
-      <BestVpnEditorialTemplate navigation={nav}>
+      <BestVpnEditorialTemplate brief={editorialContentBriefs.freeVpn} navigation={nav}>
         <article>
           <section className="border-b bg-gradient-to-br from-emerald-500/10 via-background to-background py-14 lg:py-20"><div className="container max-w-5xl"><div className="max-w-3xl"><p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">Updated August 12, 2026 · free-tier guide</p><h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-6xl">Best free VPNs: what is actually free, safe and useful?</h1><p className="mt-6 text-xl leading-8 text-muted-foreground">A free VPN can be a sensible choice for light, occasional use—but “free” does not mean unlimited, private or suitable for censorship and streaming. Compare the plan boundary, privacy evidence and failure mode before you connect.</p><p className="mt-5 text-sm leading-6 text-muted-foreground">Independent editorial research. Affiliate links may earn us a commission; <Link href="/affiliate-disclosure" className="underline">read our disclosure</Link>. Provider plans and policies can change.</p></div></div></section>
 

@@ -8,7 +8,7 @@ This matrix separates delivered release work from the one measurement milestone 
 | Roadmap requirement | Status | Evidence |
 | --- | --- | --- |
 | Shared editorial template used on Best VPN and Iran pages | Complete | `src/components/editorial/best-vpn-editorial-template.tsx`; production editorial gate 22/22 |
-| Page-level content brief contract on the commercial and Iran pillars | Complete | `src/lib/editorial-content-brief.ts`, live attributes on `/best/best-vpn` and the Iran dossier, and [content-brief browser smoke](../metrics/content-brief-browser-smoke-2026-08-12.md); content-brief failure count 0 |
+| Page-level content brief contract across audited cluster pages | Complete | `src/lib/editorial-content-brief.ts` + centralized cluster map, live attributes on 9 core commercial/censorship/protocol/travel/free routes, and [content-brief browser smoke](../metrics/content-brief-browser-smoke-2026-08-12.md); content-brief failure count 0 |
 | First Iran editorial post published with evidence dossier, FAQ schema and compliant CTAs | Complete | `/blog/best-vpn-for-iran-2026-bypass-internet-censorship`; `docs/research/iran-vpn-editorial-brief-2026-08-11.md`; live cluster audit |
 | At least five supporting cluster links live and reciprocal | Complete | `docs/metrics/cluster-link-audit-2026-08-12.md`: 21/21 canonical pages across 4 clusters, 0 missing required links |
 | Search Console baseline captured before the content refresh | Complete | `docs/metrics/gsc-baseline-2026-08-11.md` and `zerotovpn-baseline-2026-08-11.json` |

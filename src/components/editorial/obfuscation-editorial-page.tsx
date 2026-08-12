@@ -6,6 +6,7 @@ import { BestVpnEditorialTemplate } from "@/components/editorial/best-vpn-editor
 import { IranEditorialQuickPicks } from "@/components/editorial/iran-editorial-quick-picks";
 import { Link } from "@/i18n/navigation";
 import type { VpnData } from "@/lib/vpn-data-layer";
+import { editorialContentBriefs } from "@/lib/editorial-content-briefs";
 
 const pageUrl = "https://www.zerotovpn.com/guides/vpn-obfuscation-explained";
 const faq = [
@@ -31,7 +32,7 @@ export function ObfuscationEditorialPage({ vpns }: { vpns: VpnData[] }) {
       <ArticleJsonLd title="VPN Obfuscation Explained: Stealth, OpenVPN and What to Verify" description="An evidence-led guide to VPN obfuscation, stealth features, protocol trade-offs and bounded network testing." url={pageUrl} datePublished="2026-01-01" dateModified="2026-08-11" />
       <BreadcrumbSchema items={[{ name: "Guides", href: "/guides" }, { name: "VPN obfuscation explained", href: "/guides/vpn-obfuscation-explained" }]} />
       <FAQSchema title="VPN obfuscation FAQ" faqs={faq} />
-      <BestVpnEditorialTemplate navigation={nav}>
+      <BestVpnEditorialTemplate brief={editorialContentBriefs.obfuscation} navigation={nav}>
         <article>
           <section className="border-b bg-gradient-to-br from-violet-500/10 via-background to-background py-14 lg:py-20"><div className="container max-w-5xl"><div className="max-w-3xl"><p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">Updated August 11, 2026 · network-compatibility guide</p><h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-6xl">VPN obfuscation explained: what stealth modes do—and what they cannot promise</h1><p className="mt-6 text-xl leading-8 text-muted-foreground">Obfuscation can change how VPN traffic is presented to a filter. It cannot make you invisible or prove that a provider works everywhere. This guide explains the trade-offs, the evidence to save and a bounded way to test.</p><p className="mt-5 text-sm leading-6 text-muted-foreground">Independent editorial research. Affiliate links may earn us a commission; <Link href="/affiliate-disclosure" className="underline">read our disclosure</Link>. Always check current provider documentation and local rules.</p></div></div></section>
 

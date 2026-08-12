@@ -1,0 +1,68 @@
+import type { EditorialContentBrief } from "@/lib/editorial-content-brief";
+
+/** Shared briefs for the audited editorial cluster pages. */
+export const editorialContentBriefs = {
+  china: {
+    primaryKeyword: "vpn for china",
+    intent: "commercial",
+    cluster: "censorship-restricted-networks",
+    lastReviewedAt: "2026-08-11",
+    evidence: ["docs/research/dataforseo-china-cluster-2026-08-11.md", "/methodology", "https://freedomhouse.org/country/china/freedom-net/2025"],
+    affiliateContext: "vpn-selection",
+    schemaType: "Article",
+  },
+  freeVpn: {
+    primaryKeyword: "best free vpn",
+    intent: "commercial",
+    cluster: "free-and-low-cost-access",
+    lastReviewedAt: "2026-08-12",
+    evidence: ["docs/research/dataforseo-free-vpn-cluster-2026-08-11.md", "/methodology", "https://protonvpn.com/free-vpn/download"],
+    affiliateContext: "vpn-selection",
+    schemaType: "Article",
+  },
+  travel: {
+    primaryKeyword: "vpn for travel",
+    intent: "commercial",
+    cluster: "travel-and-public-wifi",
+    lastReviewedAt: "2026-08-12",
+    evidence: ["docs/research/dataforseo-travel-cluster-2026-08-11.md", "/methodology", "https://www.cisa.gov/news-events/news/holiday-traveling-personal-internet-enabled-devices"],
+    affiliateContext: "vpn-selection",
+    schemaType: "Article",
+  },
+  restrictedNetworks: {
+    primaryKeyword: "vpn on a restricted network",
+    intent: "informational",
+    cluster: "censorship-restricted-networks",
+    lastReviewedAt: "2026-08-11",
+    evidence: ["docs/research/dataforseo-restricted-networks-cluster-2026-08-11.md", "/methodology", "https://freedomhouse.org/"],
+    affiliateContext: "vpn-selection",
+    schemaType: "Article",
+  },
+  obfuscation: {
+    primaryKeyword: "vpn obfuscation",
+    intent: "informational",
+    cluster: "protocol-and-technical-literacy",
+    lastReviewedAt: "2026-08-11",
+    evidence: ["docs/research/dataforseo-restricted-networks-cluster-2026-08-11.md", "/methodology", "https://www.wireguard.com/"],
+    affiliateContext: "vpn-selection",
+    schemaType: "Article",
+  },
+  protocols: {
+    primaryKeyword: "vpn protocols",
+    intent: "informational",
+    cluster: "protocol-and-technical-literacy",
+    lastReviewedAt: "2026-08-11",
+    evidence: ["docs/research/dataforseo-protocols-cluster-2026-08-11.md", "/methodology", "https://www.wireguard.com/"],
+    affiliateContext: "vpn-selection",
+    schemaType: "Article",
+  },
+  russia: {
+    primaryKeyword: "vpn for russia",
+    intent: "commercial",
+    cluster: "censorship-restricted-networks",
+    lastReviewedAt: "2026-08-12",
+    evidence: ["docs/research/dataforseo-russia-cluster-2026-08-11.md", "/methodology", "https://freedomhouse.org/country/russia/freedom-net/2025"],
+    affiliateContext: "vpn-selection",
+    schemaType: "Article",
+  },
+} satisfies Record<string, EditorialContentBrief>;

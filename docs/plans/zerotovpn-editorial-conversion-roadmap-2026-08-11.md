@@ -548,6 +548,11 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - Extended `scripts/export-shortio-metrics.mjs` with a separate `--paths-out` diagnostic CSV and a machine-readable `popularPathExport` section. The exporter now preserves wildcard/deleted/path-level observations without silently treating them as current-page attribution.
 - The current-link CSV remains the source for stable Short.io slug joins; the path CSV is a reconciliation aid and cannot close the conversion gate by itself. The Nord partner export is still required for conversions, revenue and EPC.
 
+### Nord dashboard access recheck: 12 August 2026
+
+- A fresh read-only Chrome check found no open Nord affiliate tab in the connected session. Opening the performance-report URL directly redirected to `https://affiliates.nordvpn.com/login`, so no authenticated CSV/API response was available.
+- No credentials, cookies or session data were inspected or copied. The partner gate remains correctly closed until an authenticated dashboard export for 28 July–10 August is available.
+
 ### Nord affiliate interim screenshot: 12 August 2026
 
 - The user-supplied authenticated Nord Performance Report screenshot for **6–12 August 2026** shows **19 clicks** (NordVPN 15, NordVPN China 2, NordVPN Arabia 2), **0 conversions**, **$0.00 payout** and **$0.00 EPC**. Full evidence and interpretation boundaries are recorded in [nord-partner-interim-screenshot-2026-08-12.md](../metrics/nord-partner-interim-screenshot-2026-08-12.md).

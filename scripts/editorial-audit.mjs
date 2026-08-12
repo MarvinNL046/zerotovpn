@@ -24,6 +24,11 @@ const checks = [
     patterns: [/scope="col"/, /function TableHead/],
   },
   {
+    name: "shared comparison prices are tracked inline links",
+    file: "src/components/vpn/comparison-table.tsx",
+    patterns: [/AffiliateTextLink/, /dataPriceLink/, /vpn\.priceTwoYear/, /perMonth/],
+  },
+  {
     name: "Iran evidence-led page",
     file: "src/components/editorial/evidence-led-vpn-use-case-page.tsx",
     patterns: [/Reproducible local check/, /affiliateUrl/, /id=\"faq\"/],

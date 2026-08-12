@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { RatingStars } from "./rating-stars";
-import { AffiliateButton } from "./affiliate-button";
+import { AffiliateButton, AffiliateTextLink } from "./affiliate-button";
 import { Link } from "@/i18n/navigation";
 import { Check, X, Shield, Zap, ExternalLink } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -104,7 +104,15 @@ export function ComparisonTable({ vpns }: ComparisonTableProps) {
               </TableCell>
               <TableCell className="text-right">
                 <div className="font-bold text-primary">
-                  ${vpn.priceTwoYear || vpn.priceYearly}
+                  <AffiliateTextLink
+                    vpnId={vpn.id}
+                    vpnName={vpn.name}
+                    affiliateUrl={vpn.affiliateUrl}
+                    className="underline decoration-primary/40 underline-offset-2 hover:decoration-primary"
+                    dataPriceLink
+                  >
+                    ${(vpn.priceTwoYear || vpn.priceYearly).toFixed(2)}
+                  </AffiliateTextLink>
                 </div>
                 <div className="text-xs text-muted-foreground">{t("perMonth")}</div>
               </TableCell>

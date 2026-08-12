@@ -96,6 +96,7 @@ interface AffiliateTextLinkProps {
   vpnName: string;
   affiliateUrl: string;
   className?: string;
+  dataPriceLink?: boolean;
   children: React.ReactNode;
 }
 
@@ -109,6 +110,7 @@ export function AffiliateTextLink({
   vpnName,
   affiliateUrl,
   className,
+  dataPriceLink,
   children,
 }: AffiliateTextLinkProps) {
   return (
@@ -118,6 +120,7 @@ export function AffiliateTextLink({
       rel="noopener noreferrer sponsored nofollow"
       className={className}
       aria-label={`Visit ${vpnName}`}
+      data-price-link={dataPriceLink ? "true" : undefined}
       data-affiliate-slug={getShortIoSlug(affiliateUrl) ?? undefined}
       onClick={() => trackAffiliateClick(vpnId, affiliateUrl)}
     >

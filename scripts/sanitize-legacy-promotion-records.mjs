@@ -6,6 +6,7 @@ const slugs = new Set([
   "best-free-vpn-reddit-2026",
   "is-brave-vpn-free-2026",
   "best-vpn-for-nvidia-shield-2026",
+  "vpn-leaks-video-calls-slack-discord-teams-2026",
 ]);
 const locales = readdirSync(resolve(root, "src/data/posts"), { withFileTypes: true })
   .filter((entry) => entry.isDirectory())
@@ -32,6 +33,12 @@ const replacements = {
     [
       /<p><a href="\/reviews\/surfshark">Read our full Surfshark review<\/a>\s*\|\s*<a href="[^"]+">Get Surfshark deal<\/a><\/p>/i,
       "<p><a href=\"/reviews/surfshark\">Read our full Surfshark review</a> | <a href=\"/best/vpn-cheap\">Compare current plan terms</a></p>",
+    ],
+  ],
+  "vpn-leaks-video-calls-slack-discord-teams-2026": [
+    [
+      /offers a free trial or money-back guarantee so you can test it before committing/i,
+      "offers a documented refund window so you can test it before committing",
     ],
   ],
 };

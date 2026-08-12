@@ -471,6 +471,27 @@ results.push({
   forbidden: shieldPromotionFailures.map((file) => file.replace(`${ROOT}\\`, "")),
 });
 
+const videoCallPromotionFiles = [
+  ...postLocaleDirs.map((locale) => resolve(ROOT, "src/data/posts", locale, "vpn-leaks-video-calls-slack-discord-teams-2026.json")),
+].filter((file) => {
+  try {
+    readFileSync(file, "utf8");
+    return true;
+  } catch {
+    return false;
+  }
+});
+const videoCallPromotionFailures = videoCallPromotionFiles.filter((file) =>
+  /\bfree\s+(?:months?|trial)\b/i.test(readFileSync(file, "utf8")),
+);
+results.push({
+  name: "video-call leak guide avoids promotional free-trial language",
+  file: "src/data/posts/*/vpn-leaks-video-calls-slack-discord-teams-2026.json",
+  pass: videoCallPromotionFailures.length === 0,
+  missing: [],
+  forbidden: videoCallPromotionFailures.map((file) => file.replace(`${ROOT}\\`, "")),
+});
+
 for (const { slug, forbiddenPattern } of quantifiedClaimRecords) {
   const files = postLocaleDirs
     .map((locale) => resolve(ROOT, "src/data/posts", locale, `${slug}.json`))

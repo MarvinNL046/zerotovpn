@@ -50,6 +50,18 @@ const checks = [
     forbiddenPatterns: [/35\+|35以上|35개 이상|35款以上|plus de 35|über 35|มากกว่า 35/i, /500\+|500回|500회|500多次|plus de 500|über 500|มากกว่า 500/i, /6,730|7,000\+.*118|24\/7/],
   },
   {
+    name: "streaming pillar avoids unsupported provider-count claims",
+    file: "src/app/[locale]/best/vpn-streaming/page.tsx",
+    patterns: [/current provider documentation/, /actuele providerinformatie/, /fünf VPN-Anbieter/, /cinco proveedores/, /cinq fournisseurs/],
+    forbiddenPatterns: [/50\+ VPN|over 50 VPN|more than 50 VPN|plus de 50 VPN|uber 50 VPN|mas de 50 VPN/i],
+  },
+  {
+    name: "localized Iran blog routes use the evidence-led body",
+    file: "src/app/[locale]/blog/[slug]/page.tsx",
+    patterns: [/iranVpnEditorialContent/, /const articleContent = isIranEditorial/],
+    forbiddenPatterns: [/articleContent = isRestrictedAffiliateContext\s*\?\s*verwijderAffiliateLinks\(post\.content\)/i],
+  },
+  {
     name: "about page uses verifiable trust signals",
     file: "src/app/[locale]/about/page.tsx",
     patterns: [/Current provider records/, /Reproducible test plan/, /Sources and dated notes/, /Publication locales/, /separates provider documentation/],

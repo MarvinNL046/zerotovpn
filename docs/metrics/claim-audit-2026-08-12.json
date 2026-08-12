@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-12T12:34:09.307Z",
+  "generatedAt": "2026-08-12T12:46:40.747Z",
   "base": "https://www.zerotovpn.com",
   "urlCount": 2279,
   "checkedUrlCount": 2279,
   "errorCount": 0,
-  "findingCount": 253,
+  "findingCount": 245,
   "counts": {
-    "provider-count": 253,
+    "provider-count": 245,
     "reader-count": 0,
     "speed-test-count": 0,
     "max-speed": 0,
@@ -15,66 +15,6 @@
     "rank-claim": 0
   },
   "findings": [
-    {
-      "url": "https://www.zerotovpn.com/best/vpn-streaming",
-      "status": 200,
-      "finalUrl": "https://www.zerotovpn.com/best/vpn-streaming",
-      "matches": [
-        {
-          "id": "provider-count",
-          "label": "unsupported provider/test count",
-          "excerpt": "ng Updated August 2026 Best VPN for Streaming in 2026 Last updated: August 2026 We tested 50+ VPNs against Netflix, Disney+, BBC iPlayer, Hulu, Amazon Prime, and HBO Max. These 5 unblock the most platforms with speeds fast enough for 4K. Top Stream"
-        }
-      ]
-    },
-    {
-      "url": "https://www.zerotovpn.com/nl/best/vpn-streaming",
-      "status": 200,
-      "finalUrl": "https://www.zerotovpn.com/nl/best/vpn-streaming",
-      "matches": [
-        {
-          "id": "provider-count",
-          "label": "unsupported provider/test count",
-          "excerpt": "rkt augustus 2026 Beste VPN voor Streaming in 2026 Last updated: augustus 2026 We testten 50+ VPNs tegen Netflix, Disney+, BBC iPlayer, Hulu, Amazon Prime en HBO Max. Deze 5 deblokkeren de meeste platforms met snelheden snel genoeg voor 4K. Top Str"
-        }
-      ]
-    },
-    {
-      "url": "https://www.zerotovpn.com/de/best/vpn-streaming",
-      "status": 200,
-      "finalUrl": "https://www.zerotovpn.com/de/best/vpn-streaming",
-      "matches": [
-        {
-          "id": "provider-count",
-          "label": "unsupported provider/test count",
-          "excerpt": "iert August 2026 Beste VPN fur Streaming in 2026 Last updated: August 2026 Wir haben uber 50 VPNs mit Netflix, Disney+, BBC iPlayer, Hulu, Amazon Prime und HBO Max getestet. Diese 5 entsperren die meisten Plattformen. Top Streaming VPNs Best Overa"
-        }
-      ]
-    },
-    {
-      "url": "https://www.zerotovpn.com/es/best/vpn-streaming",
-      "status": 200,
-      "finalUrl": "https://www.zerotovpn.com/es/best/vpn-streaming",
-      "matches": [
-        {
-          "id": "provider-count",
-          "label": "unsupported provider/test count",
-          "excerpt": "sto de 2026 Mejor VPN para Streaming en 2026 Last updated: agosto de 2026 Probamos mas de 50 VPNs contra Netflix, Disney+, BBC iPlayer, Hulu, Amazon Prime y HBO Max. Estos 5 desbloquean mas plataformas. Mejores VPNs para Streaming Best Overall 1 N"
-        }
-      ]
-    },
-    {
-      "url": "https://www.zerotovpn.com/fr/best/vpn-streaming",
-      "status": 200,
-      "finalUrl": "https://www.zerotovpn.com/fr/best/vpn-streaming",
-      "matches": [
-        {
-          "id": "provider-count",
-          "label": "unsupported provider/test count",
-          "excerpt": "2026 Meilleur VPN pour Streaming en 2026 Last updated: août 2026 Nous avons teste plus de 50 VPN contre Netflix, Disney+, BBC iPlayer, Hulu, Amazon Prime et HBO Max. Ces 5 debloquent le plus de plateformes. Meilleurs VPNs Streaming Best Overall 1"
-        }
-      ]
-    },
     {
       "url": "https://www.zerotovpn.com/blog",
       "status": 200,
@@ -264,42 +204,6 @@
           "id": "provider-count",
           "label": "unsupported provider/test count",
           "excerpt": "VPN meets your needs or if a paid alternative is worth the investment. In our testing of 50+ VPN services, we've identified specific scenarios where paid VPNs provide clear advantages and others where free options are genuinely sufficient. 무료 VPN"
-        }
-      ]
-    },
-    {
-      "url": "https://www.zerotovpn.com/nl/blog/best-vpn-for-iran-2026-bypass-internet-censorship",
-      "status": 200,
-      "finalUrl": "https://www.zerotovpn.com/nl/blog/best-vpn-for-iran-2026-bypass-internet-censorship",
-      "matches": [
-        {
-          "id": "provider-count",
-          "label": "unsupported provider/test count",
-          "excerpt": "m Score van slechts 16/100—geclassificeerd als \"Niet Vrij.\" Onze onafhankelijke tests van 50+ VPN-services hebben geïdentificeerd welke VPN-providers Irans geavanceerde censuurinfrastructuur succesvol omzeilen, en nog belangrijker, hoe ze veilig t"
-        }
-      ]
-    },
-    {
-      "url": "https://www.zerotovpn.com/de/blog/best-vpn-for-iran-2026-bypass-internet-censorship",
-      "status": 200,
-      "finalUrl": "https://www.zerotovpn.com/de/blog/best-vpn-for-iran-2026-bypass-internet-censorship",
-      "matches": [
-        {
-          "id": "provider-count",
-          "label": "unsupported provider/test count",
-          "excerpt": "nternet Freedom Score of just 16/100—classified as \"Not Free.\" Our independent testing of 50+ VPN services has identified which VPN providers successfully bypass Iran's sophisticated censorship infrastructure, and more importantly, how to use them"
-        }
-      ]
-    },
-    {
-      "url": "https://www.zerotovpn.com/zh/blog/best-vpn-for-iran-2026-bypass-internet-censorship",
-      "status": 200,
-      "finalUrl": "https://www.zerotovpn.com/zh/blog/best-vpn-for-iran-2026-bypass-internet-censorship",
-      "matches": [
-        {
-          "id": "provider-count",
-          "label": "unsupported provider/test count",
-          "excerpt": "dom House 互联网自由 Score of just 16/100—classified as \"Not Free.\" Our independent testing of 50+ VPN服务 has identified which VPN提供商 successfully bypass Iran's sophisticated 审查 infrastructure, and more importantly, how to use them safely. This comprehe"
         }
       ]
     },

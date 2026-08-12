@@ -28,6 +28,7 @@ import { BestVpnEditorialTemplate } from "@/components/editorial/best-vpn-editor
 import { IranEditorialQuickPicks } from "@/components/editorial/iran-editorial-quick-picks";
 import {
   iranVpnEditorialFaq,
+  iranVpnEditorialContent,
   iranVpnEditorialTitle,
   iranVpnEditorialExcerpt,
 } from "@/data/editorial/iran-vpn-2026";
@@ -206,9 +207,11 @@ export default async function DynamicBlogPost({ params }: Props) {
     .trim();
   const readTime = `${Math.max(1, Math.ceil(textOnly.length / 1500))} min`;
   const lastUpdated = formatDate(post.updatedAt, locale);
-  const articleContent = isRestrictedAffiliateContext
-    ? verwijderAffiliateLinks(post.content)
-    : post.content;
+  const articleContent = isIranEditorial
+    ? iranVpnEditorialContent
+    : isRestrictedAffiliateContext
+      ? verwijderAffiliateLinks(post.content)
+      : post.content;
 
   return (
     <div className="flex flex-col">

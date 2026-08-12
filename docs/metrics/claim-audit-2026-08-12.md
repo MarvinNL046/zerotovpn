@@ -1,16 +1,16 @@
 # Live editorial claim audit
 
-Generated: 2026-08-12T12:34:09.307Z
+Generated: 2026-08-12T12:46:40.747Z
 
 - URLs checked: **2279**
-- Pages with flagged claims: **253**
+- Pages with flagged claims: **245**
 - Fetch errors: **0**
 
 ## Pattern counts
 
 | Pattern | Pages |
 |---|---:|
-| unsupported provider/test count | 253 |
+| unsupported provider/test count | 245 |
 | unsupported reader count | 0 |
 | unsupported speed-test count | 0 |
 | unqualified maximum speed claim | 0 |
@@ -19,11 +19,6 @@ Generated: 2026-08-12T12:34:09.307Z
 
 ## Findings
 
-- `/best/vpn-streaming` — **unsupported provider/test count**: ng Updated August 2026 Best VPN for Streaming in 2026 Last updated: August 2026 We tested 50+ VPNs against Netflix, Disney+, BBC iPlayer, Hulu, Amazon Prime, and HBO Max. These 5 unblock the most platforms with speeds fast enough for 4K. Top Stream
-- `/nl/best/vpn-streaming` — **unsupported provider/test count**: rkt augustus 2026 Beste VPN voor Streaming in 2026 Last updated: augustus 2026 We testten 50+ VPNs tegen Netflix, Disney+, BBC iPlayer, Hulu, Amazon Prime en HBO Max. Deze 5 deblokkeren de meeste platforms met snelheden snel genoeg voor 4K. Top Str
-- `/de/best/vpn-streaming` — **unsupported provider/test count**: iert August 2026 Beste VPN fur Streaming in 2026 Last updated: August 2026 Wir haben uber 50 VPNs mit Netflix, Disney+, BBC iPlayer, Hulu, Amazon Prime und HBO Max getestet. Diese 5 entsperren die meisten Plattformen. Top Streaming VPNs Best Overa
-- `/es/best/vpn-streaming` — **unsupported provider/test count**: sto de 2026 Mejor VPN para Streaming en 2026 Last updated: agosto de 2026 Probamos mas de 50 VPNs contra Netflix, Disney+, BBC iPlayer, Hulu, Amazon Prime y HBO Max. Estos 5 desbloquean mas plataformas. Mejores VPNs para Streaming Best Overall 1 N
-- `/fr/best/vpn-streaming` — **unsupported provider/test count**: 2026 Meilleur VPN pour Streaming en 2026 Last updated: août 2026 Nous avons teste plus de 50 VPN contre Netflix, Disney+, BBC iPlayer, Hulu, Amazon Prime et HBO Max. Ces 5 debloquent le plus de plateformes. Meilleurs VPNs Streaming Best Overall 1
 - `/blog` — **unsupported provider/test count**: Compares to Third-Party VPNs in Real-World Testing We tested Apple Private Relay against 50+ VPN services. Here&#x27;s what our independent testing revealed about privacy, performance, and real-world usage. 1 min Read more Tips May 5 VPN and Wind
 - `/nl/blog` — **unsupported provider/test count**: Compares to Third-Party VPNs in Real-World Testing We tested Apple Private Relay against 50+ VPN services. Here&#x27;s what our independent testing revealed about privacy, performance, and real-world usage. 1 min Lees meer Tips mei 5 VPN and Wind
 - `/de/blog` — **unsupported provider/test count**: Compares to Third-Party VPNs in Real-World Testing We tested Apple Private Relay against 50+ VPN services. Here&#x27;s what our independent testing revealed about privacy, performance, and real-world usage. 1 min Weiterlesen Tipps Mai 5 VPN and W
@@ -40,9 +35,6 @@ Generated: 2026-08-12T12:34:09.307Z
 - `/fr/blog/best-free-vpns-2026` — **unsupported provider/test count**: min Les meilleurs VPN gratuits qui fonctionnent vraiment en 2026 Nous avons testé plus de 50 VPN pour trouver les options gratuites qui ne compromettent pas la sécurité. Voici les meilleurs VPN gratuits qui tiennent leurs promesses. Fact-checked
 - `/zh/blog/best-free-vpns-2026` — **unsupported provider/test count**: ur data or limiting you to a crawl—is harder than it sounds. We've personally tested over 50 VPN服务 through rigorous speed benchmarks, security audits, and real-world usage scenarios, and the majority of "free" options either throttle speeds to un
 - `/ko/blog/best-free-vpns-2026` — **unsupported provider/test count**: VPN meets your needs or if a paid alternative is worth the investment. In our testing of 50+ VPN services, we've identified specific scenarios where paid VPNs provide clear advantages and others where free options are genuinely sufficient. 무료 VPN
-- `/nl/blog/best-vpn-for-iran-2026-bypass-internet-censorship` — **unsupported provider/test count**: m Score van slechts 16/100—geclassificeerd als "Niet Vrij." Onze onafhankelijke tests van 50+ VPN-services hebben geïdentificeerd welke VPN-providers Irans geavanceerde censuurinfrastructuur succesvol omzeilen, en nog belangrijker, hoe ze veilig t
-- `/de/blog/best-vpn-for-iran-2026-bypass-internet-censorship` — **unsupported provider/test count**: nternet Freedom Score of just 16/100—classified as "Not Free." Our independent testing of 50+ VPN services has identified which VPN providers successfully bypass Iran's sophisticated censorship infrastructure, and more importantly, how to use them
-- `/zh/blog/best-vpn-for-iran-2026-bypass-internet-censorship` — **unsupported provider/test count**: dom House 互联网自由 Score of just 16/100—classified as "Not Free." Our independent testing of 50+ VPN服务 has identified which VPN提供商 successfully bypass Iran's sophisticated 审查 infrastructure, and more importantly, how to use them safely. This comprehe
 - `/blog/best-vpn-for-traveling-abroad-2026` — **unsupported provider/test count**: ng security, speed, cost, and destination-specific challenges. After extensive testing of 50+ VPN services, we've identified that NordVPN offers the best overall combination of features and reliability for most travelers, while ExpressVPN excels f
 - `/blog/best-vpn-for-turkey-2026-bypass-censorship-legal-risks` — **unsupported provider/test count**: itoring and ISP surveillance. Over the past 18 months, our team at Zero to VPN has tested 50+ VPN services across restricted markets, including Turkey-specific scenarios. We've evaluated which providers maintain functional servers, resist blocking
 - `/blog/can-vpn-hide-from-isp` — **unsupported provider/test count**: should guide your decision. Based on our extensive testing at ZeroToVPN, we've evaluated 50+ VPN services to identify which ones offer the strongest ISP privacy protection. The most important factors are encryption strength, no-logs policy, serve

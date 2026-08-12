@@ -287,3 +287,11 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - Production deployment `dpl_CZ8uQN2379cYGxtGnLBPdw2c8wJm` is Ready and aliases `www.zerotovpn.com`, `zerotovpn.com` and `zerotovpn.vercel.app`.
 - `npm run audit:editorial-live` passed **22/22** targets after deployment: 123 affiliate links, 0 missing affiliate rel/slug, 0 cluster-link failures, 0 metadata/image/freshness/schema-date failures. The newsletter-only exit-intent popup remains present in the production bundle.
 - A reproducible full-sitemap claim audit is now available as `npm run audit:claims-live` (`scripts/audit-claims-live.mjs`). The 12 August production run checked **2,279/2,279** sitemap URLs with **0 fetch errors** and flagged **253 URLs** for manual review, all from legacy provider-count language; no reader-count, speed-test-count, max-speed, speed-retention or rank patterns were found. This is a backlog signal, not an automatic rewrite: the next content pass should group the 183 unique canonical paths by cluster, verify evidence, and update or retire claims in batches.
+
+### Cluster claim-batch update: 12 August 2026
+
+- Refreshed the localized streaming pillar copy and metadata to describe a five-provider comparison with dated records and platform-specific checks, removing unsupported lifetime provider-count language from the English, Dutch, German, Spanish and French variants.
+- Updated the dynamic blog renderer so every localized Iran route uses the evidence-led editorial body rather than stale translated JSON content. The route keeps the localized URL and metadata while sharing the same bounded evidence and safety limits.
+- Added two regression checks to `npm run audit:editorial`, bringing the local suite to **39/39**.
+- The production deployment `dpl_9sf5Mxroa2DQRrVfV14LMiTm8BkE` is Ready. Live checks for the English/translated streaming routes and localized Iran routes return 200, one H1 and no retired provider-count patterns. `npm run audit:editorial-live` remains **22/22**.
+- The full claim audit now flags **245 URLs** (down from 253) across 2,279 checked URLs, with zero fetch errors. The remaining findings are legacy blog/deal corpus items and remain a staged review backlog; no bulk rewrite is being inferred from the pattern match alone.

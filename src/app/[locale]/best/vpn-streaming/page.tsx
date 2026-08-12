@@ -48,11 +48,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const descriptions: Record<string, string> = {
-    en: `We tested 50+ VPNs for streaming. Expert picks updated ${shortMonthYear} with Netflix, Disney+, BBC iPlayer speeds compared. See our honest verdict.`,
-    nl: "We testten 50+ VPNs met Netflix, Disney+, BBC iPlayer, Hulu, Amazon Prime en HBO Max. Deze 5 deblokkeren de meeste platforms met de snelste snelheden.",
-    de: "Wir haben uber 50 VPNs mit Netflix, Disney+, BBC iPlayer, Hulu, Amazon Prime und HBO Max getestet. Diese 5 entsperren die meisten Plattformen.",
-    es: "Probamos mas de 50 VPNs con Netflix, Disney+, BBC iPlayer, Hulu, Amazon Prime y HBO Max. Estos 5 desbloquean mas plataformas con las velocidades mas rapidas.",
-    fr: "Nous avons teste plus de 50 VPN avec Netflix, Disney+, BBC iPlayer, Hulu, Amazon Prime et HBO Max. Ces 5 debloquent le plus de plateformes.",
+    en: `We compare five VPN providers for streaming using current provider documentation, dated product records and platform-specific checks. Expert picks updated ${shortMonthYear}.`,
+    nl: "We vergelijken vijf VPN-providers voor streaming op basis van actuele providerinformatie, gedateerde productrecords en platformgerichte controles.",
+    de: "Wir vergleichen fünf VPN-Anbieter für Streaming anhand aktueller Anbieterinformationen, datierter Produktaufzeichnungen und plattformspezifischer Prüfungen.",
+    es: "Comparamos cinco proveedores VPN para streaming con información actual del proveedor, registros de producto fechados y comprobaciones por plataforma.",
+    fr: "Nous comparons cinq fournisseurs VPN pour le streaming à partir de leurs informations actuelles, de fiches produit datées et de contrôles par plateforme.",
     zh: "我们测试了50多个VPN与Netflix、Disney+、BBC iPlayer、Hulu、Amazon Prime和HBO Max。这5个解锁最多平台，速度最快。",
     ja: "Netflix、Disney+、BBC iPlayer、Hulu、Amazon Prime、HBO Maxで50以上のVPNをテスト。この5つが最も多くのプラットフォームを解除します。",
     ko: "Netflix, Disney+, BBC iPlayer, Hulu, Amazon Prime, HBO Max로 50개 이상의 VPN을 테스트했습니다. 이 5개가 가장 많은 플랫폼을 차단 해제합니다.",
@@ -170,7 +170,7 @@ export default async function VpnStreamingPage({ params }: Props) {
       badge: `Updated ${getLocalizedMonthYear("en")}`,
       title: "Best VPN for Streaming in 2026",
       subtitle:
-        "We tested 50+ VPNs against Netflix, Disney+, BBC iPlayer, Hulu, Amazon Prime, and HBO Max. These 5 unblock the most platforms with speeds fast enough for 4K.",
+        "We compare five providers against current streaming requirements and document which platform claims are provider-supplied, tested, or still uncertain.",
       topPicks: "Top Streaming VPNs",
       platformTitle: "Streaming Platform Compatibility",
       platformDesc: "Which platforms each VPN unblocks based on our latest monthly tests.",
@@ -223,7 +223,7 @@ export default async function VpnStreamingPage({ params }: Props) {
       badge: `Bijgewerkt ${getLocalizedMonthYear("nl")}`,
       title: "Beste VPN voor Streaming in 2026",
       subtitle:
-        "We testten 50+ VPNs tegen Netflix, Disney+, BBC iPlayer, Hulu, Amazon Prime en HBO Max. Deze 5 deblokkeren de meeste platforms met snelheden snel genoeg voor 4K.",
+        "We vergelijken vijf providers met actuele streamingvereisten en markeren welke platformclaims afkomstig zijn van providers, tests of nog onzeker zijn.",
       topPicks: "Top Streaming VPNs",
       platformTitle: "Streaming Platform Compatibiliteit",
       platformDesc: "Welke platforms elke VPN deblokkeert op basis van onze laatste maandelijkse tests.",
@@ -274,7 +274,7 @@ export default async function VpnStreamingPage({ params }: Props) {
     de: {
       badge: `Aktualisiert ${getLocalizedMonthYear("de")}`,
       title: "Beste VPN fur Streaming in 2026",
-      subtitle: "Wir haben uber 50 VPNs mit Netflix, Disney+, BBC iPlayer, Hulu, Amazon Prime und HBO Max getestet. Diese 5 entsperren die meisten Plattformen.",
+      subtitle: "Wir vergleichen fünf Anbieter mit aktuellen Streaming-Anforderungen und kennzeichnen Anbieterangaben, eigene Prüfungen und offene Unsicherheiten.",
       topPicks: "Top Streaming VPNs",
       platformTitle: "Streaming-Plattform Kompatibilitat",
       platformDesc: "Welche Plattformen jedes VPN basierend auf unseren monatlichen Tests entsperrt.",
@@ -310,7 +310,7 @@ export default async function VpnStreamingPage({ params }: Props) {
     es: {
       badge: `Actualizado ${getLocalizedMonthYear("es")}`,
       title: "Mejor VPN para Streaming en 2026",
-      subtitle: "Probamos mas de 50 VPNs contra Netflix, Disney+, BBC iPlayer, Hulu, Amazon Prime y HBO Max. Estos 5 desbloquean mas plataformas.",
+      subtitle: "Comparamos cinco proveedores con los requisitos actuales de streaming y distinguimos entre datos del proveedor, comprobaciones y puntos inciertos.",
       topPicks: "Mejores VPNs para Streaming",
       platformTitle: "Compatibilidad con Plataformas de Streaming",
       platformDesc: "Que plataformas desbloquea cada VPN segun nuestras pruebas mensuales.",
@@ -346,7 +346,7 @@ export default async function VpnStreamingPage({ params }: Props) {
     fr: {
       badge: "Mis a jour fevrier 2026",
       title: "Meilleur VPN pour Streaming en 2026",
-      subtitle: "Nous avons teste plus de 50 VPN contre Netflix, Disney+, BBC iPlayer, Hulu, Amazon Prime et HBO Max. Ces 5 debloquent le plus de plateformes.",
+      subtitle: "Nous comparons cinq fournisseurs avec les exigences actuelles du streaming en distinguant les données des fournisseurs, les contrôles et les incertitudes.",
       topPicks: "Meilleurs VPNs Streaming",
       platformTitle: "Compatibilite des Plateformes de Streaming",
       platformDesc: "Quelles plateformes chaque VPN debloque selon nos tests mensuels.",

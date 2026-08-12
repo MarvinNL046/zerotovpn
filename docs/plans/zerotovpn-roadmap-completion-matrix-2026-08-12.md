@@ -23,7 +23,7 @@ This matrix separates delivered release work from the one measurement milestone 
 
 The roadmap should remain active until the pending partner export is available, Short.io attribution is explicitly handled, and a matched report is generated with `npm run measure:editorial`. Do not convert fixture output into a KPI conclusion. Once the export arrives:
 
-1. Run `npm run measure:check-inputs` against Pages, Queries, Chart, Short.io and partner files.
+1. Run `npm run measure:check-inputs` with the paired window flags against Pages, Queries, Chart, Short.io and partner files.
 2. Run `npm run test:measure-editorial`.
 3. Generate the post-14-day report with paired `--window-start`/`--window-end` flags, `--gsc-chart Chart.csv`, and the fixed Search Console/Short.io/partner window.
 4. Select the next 4–8 pages from measured cluster winners, not from historical volume alone.

@@ -485,6 +485,11 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - `measure:editorial` now requires `--gsc-chart` whenever a measurement window is supplied and validates every partner row date against that same ISO window. Invalid dates or rows outside the window fail closed; missing partner data remains explicitly `not-provided`.
 - Regression coverage includes an in-window partner export, an empty-but-dated partner export, and an out-of-window partner export. The real interim report records `partnerWindow: not-provided` rather than inferring a conversion result.
 
+### Input-check window guard: 12 August 2026
+
+- `npm run measure:check-inputs` now accepts the same paired `--window-start`/`--window-end` flags and verifies that Chart.csv dates, plus any supplied partner dates, fall inside that window before the gate can proceed.
+- The real four-input check reports Chart `matched` for 28 July–10 August and partner `optional-missing`; the command remains intentionally not ready until the Nord export is supplied.
+
 ### Current production verification snapshot: 12 August 2026
 
 - Fresh live checks against `https://www.zerotovpn.com` pass **22/22** editorial targets with **127** compliant affiliate links, zero brief/metadata/freshness/image/schema/rel/slug/cluster-link failures, and zero social-image failures.

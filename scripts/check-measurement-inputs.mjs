@@ -20,6 +20,25 @@ const rules = {
   partner: { label: "Partner dashboard", patterns: [/conversion|sale|commission|revenue|epc/i] },
 };
 
+const windowStart = inputs["window-start"];
+const windowEnd = inputs["window-end"];
+const iso = /^\d{4}-\d{2}-\d{2}$/;
+if ((windowStart && !windowEnd) || (!windowStart && windowEnd) || (windowStart && (!iso.test(windowStart) || !iso.test(windowEnd) || windowStart > windowEnd))) {
+  console.error("Measurement window must use paired, ordered YYYY-MM-DD values.");
+  process.exitCode = 1;
+}
+
+function windowStatus(text) {
+  if (!windowStart || !windowEnd) return { status: "not-checked" };
+  const dates = text.match(/\b\d{4}-\d{2}-\d{2}\b/g) ?? [];
+  if (!dates.length) return { status: "window-review" };
+  const minDate = dates.slice().sort()[0];
+  const maxDate = dates.slice().sort().at(-1);
+  return minDate >= windowStart && maxDate <= windowEnd
+    ? { status: "matched", minDate, maxDate }
+    : { status: "window-mismatch", minDate, maxDate };
+}
+
 const results = [];
 for (const key of [...required, ...optional]) {
   const value = inputs[key];
@@ -41,8 +60,11 @@ for (const key of [...required, ...optional]) {
     const header = text.split(/\r?\n/).slice(0, 5).join(" ");
     record.bytes = Buffer.byteLength(text);
     record.headerMatches = rules[key].patterns.map((pattern) => pattern.test(header));
+    if (["gsc-chart", "partner"].includes(key)) record.window = windowStatus(text);
     if (!record.bytes) record.status = "empty";
     else if (record.headerMatches.some((match) => !match)) record.status = "header-review";
+    else if (record.window?.status === "window-review") record.status = "window-review";
+    else if (record.window?.status === "window-mismatch") record.status = "window-mismatch";
   } catch (error) {
     record.status = "unreadable";
     record.error = error instanceof Error ? error.message : String(error);
@@ -50,9 +72,10 @@ for (const key of [...required, ...optional]) {
   results.push(record);
 }
 
-const blocking = results.filter((record) => ["missing", "fixture-rejected", "empty", "header-review", "unreadable"].includes(record.status));
+const blocking = results.filter((record) => ["missing", "fixture-rejected", "empty", "header-review", "window-review", "window-mismatch", "unreadable"].includes(record.status));
 const report = {
   ready: blocking.length === 0 && results.some((record) => record.key === "partner" && record.status === "ready"),
+  measurementWindow: windowStart && windowEnd ? { start: windowStart, end: windowEnd } : null,
   note: "Fixtures and inferred values are never accepted as production KPI inputs.",
   results,
 };

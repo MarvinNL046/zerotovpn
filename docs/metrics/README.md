@@ -20,6 +20,8 @@ Before running the importer, validate that the paths are real exports rather tha
 
 ```powershell
 npm run measure:check-inputs -- `
+  --window-start 2026-07-28 `
+  --window-end 2026-08-10 `
   --gsc-pages .cache/metrics/gsc-pages.csv `
   --gsc-queries .cache/metrics/gsc-queries.csv `
   --gsc-chart .cache/metrics/gsc-chart.csv `
@@ -27,7 +29,7 @@ npm run measure:check-inputs -- `
   --partner .cache/metrics/nord-affiliate.csv
 ```
 
-The check rejects filenames containing `fixture`, `sample` or `example`, checks the header shape, requires the authoritative Search Console `Chart.csv`, and requires a readable partner export before reporting `ready: true`. A missing partner export is intentional during the current pre-checkpoint state.
+The check rejects filenames containing `fixture`, `sample` or `example`, checks the header shape and declared window, requires the authoritative Search Console `Chart.csv`, and requires a readable partner export before reporting `ready: true`. A missing partner export is intentional during the current pre-checkpoint state.
 
 For the Short.io window, inject the production API key through Vercel without copying it into the shell or repository:
 

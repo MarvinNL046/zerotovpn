@@ -31,6 +31,17 @@ type Props = {
 
 const baseUrl = "https://www.zerotovpn.com";
 const BLOG_PAGE_SIZE = 24;
+const paginationLabels: Record<string, { label: string; previous: string; next: string; page: (page: number, total: number) => string }> = {
+  en: { label: "Blog pagination", previous: "Previous", next: "Next", page: (page, total) => `Page ${page} of ${total}` },
+  nl: { label: "Blogpaginering", previous: "Vorige", next: "Volgende", page: (page, total) => `Pagina ${page} van ${total}` },
+  de: { label: "Blog-Seitennavigation", previous: "Zurück", next: "Weiter", page: (page, total) => `Seite ${page} von ${total}` },
+  es: { label: "Paginación del blog", previous: "Anterior", next: "Siguiente", page: (page, total) => `Página ${page} de ${total}` },
+  fr: { label: "Pagination du blog", previous: "Précédent", next: "Suivant", page: (page, total) => `Page ${page} sur ${total}` },
+  zh: { label: "\u535a\u5ba2\u5206\u9875", previous: "\u4e0a\u4e00\u9875", next: "\u4e0b\u4e00\u9875", page: (page, total) => `\u7b2c ${page} \u9875\uff0c\u5171 ${total} \u9875` },
+  ja: { label: "\u30d6\u30ed\u30b0\u306e\u30da\u30fc\u30b8\u30cd\u30fc\u30b7\u30e7\u30f3", previous: "\u524d\u3078", next: "\u6b21\u3078", page: (page, total) => `${total}\u30da\u30fc\u30b8\u4e2d${page}\u30da\u30fc\u30b8` },
+  ko: { label: "\ube14\ub85c\uadf8 \ud398\uc774\uc9c0 \ud0d0\uc0c9", previous: "\uc774\uc804", next: "\ub2e4\uc74c", page: (page, total) => `${total}\ud398\uc774\uc9c0 \uc911 ${page}\ud398\uc774\uc9c0` },
+  th: { label: "\u0e01\u0e32\u0e23\u0e41\u0e1a\u0e48\u0e07\u0e2b\u0e19\u0e49\u0e32\u0e1a\u0e25\u0e47\u0e2d\u0e01", previous: "\u0e01\u0e48\u0e2d\u0e19\u0e2b\u0e19\u0e49\u0e32", next: "\u0e16\u0e31\u0e14\u0e44\u0e1b", page: (page, total) => `\u0e2b\u0e19\u0e49\u0e32 ${page} \u0e08\u0e32\u0e01 ${total}` },
+};
 
 function parsePage(value: string | string[] | undefined): number {
   const raw = Array.isArray(value) ? value[0] : value;
@@ -261,6 +272,7 @@ export default async function BlogPage({ params, searchParams }: Props) {
 
   const pageCount = Math.max(1, Math.ceil(allPosts.length / BLOG_PAGE_SIZE));
   const page = Math.min(requestedPage, pageCount);
+  const pagination = paginationLabels[locale] ?? paginationLabels.en;
   const featuredPost = page === 1 ? allPosts[0] : undefined;
   const firstPostIndex = page === 1 ? 1 : (page - 1) * BLOG_PAGE_SIZE;
   const lastPostIndex = page === 1 ? BLOG_PAGE_SIZE : page * BLOG_PAGE_SIZE;
@@ -490,16 +502,16 @@ export default async function BlogPage({ params, searchParams }: Props) {
       </section>
 
       {pageCount > 1 && (
-        <nav aria-label="Blog pagination" className="container flex items-center justify-between gap-4 py-8">
+        <nav aria-label={pagination.label} className="container flex items-center justify-between gap-4 py-8">
           {page > 1 ? (
             <Link href={`/blog?page=${page - 1}`} className="rounded-lg border px-4 py-2 text-sm font-semibold hover:bg-muted">
-              Previous
+              {pagination.previous}
             </Link>
           ) : <span />}
-          <span className="text-sm text-muted-foreground">Page {page} of {pageCount}</span>
+          <span className="text-sm text-muted-foreground">{pagination.page(page, pageCount)}</span>
           {page < pageCount ? (
             <Link href={`/blog?page=${page + 1}`} className="rounded-lg border px-4 py-2 text-sm font-semibold hover:bg-muted">
-              Next
+              {pagination.next}
             </Link>
           ) : <span />}
         </nav>

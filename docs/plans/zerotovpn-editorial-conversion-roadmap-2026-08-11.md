@@ -344,3 +344,9 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - Added FAQ coverage for the new “which free VPN”, “should I use a VPN with Telegram?” and safe-link/provenance questions. Answers distinguish VPN-wide routing from Telegram's proxy scope, warn against unverified channel links and retain the evidence boundary around provider access.
 - Updated the editorial source date to 12 August 2026. Affiliate links remain inside the documented Telegram-evaluation context; the newsletter-only exit-intent popup is unchanged.
 - Local verification: `npm run audit:editorial` **43/43**, `npm run lint` 0 errors (53 existing warnings), and `npm run build` generated **4,447** pages. Production deployment `dpl_BtkQcneA1JwuRppJme3qJCZEgcqF` is Ready; the live Telegram smoke returned HTTP 200, one H1, all three new FAQ questions, `dateModified` 2026-08-12, FAQ schema, six compliant affiliate links and no retired claims. The 390px browser evidence is recorded in [telegram-browser-smoke-2026-08-12.md](../metrics/telegram-browser-smoke-2026-08-12.md); the newsletter-only popup marker remains present.
+
+### NordVPN promotion-context audit: 12 August 2026
+
+- Re-ran `npm run audit:affiliate-context` against all **2,279/2,279** live sitemap URLs: **1,755** pages with affiliate links and **8,189** links checked.
+- Hard compliance gates remain clean: **0** missing `sponsored nofollow`, **0** missing disclosure pages, **0** interruptive-promotion markers and **0** fetch failures. The newsletter-only exit-intent popup remains separate from affiliate advertising.
+- The 12 remaining promotion-term flags are the previously classified free-trial/plan wording on the dedicated trial pages and explanatory “incentives” language in privacy articles. The manual review record now points to the 12 August audit; no unassigned coupon, cashback, fake-expiry or irrelevant NordVPN placement was found.

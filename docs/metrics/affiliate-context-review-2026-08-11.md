@@ -1,7 +1,7 @@
 # Affiliate context manual review
 
-**Audit:** [affiliate-context-audit-2026-08-11.json](./affiliate-context-audit-2026-08-11.json)  
-**Reviewed:** 11 August 2026
+**Audit:** [affiliate-context-audit-2026-08-12.json](./affiliate-context-audit-2026-08-12.json)  
+**Reviewed:** 12 August 2026
 
 The latest live audit produced **12 active** promotion-term flags, down from 21 after the restricted blockchain context and the CactusVPN wording were corrected. These are review queues, not automatic violations. The NordVPN rules prohibit unauthorised coupons, incentives, interruptive ads and irrelevant affiliate placement; they do not prohibit an editorial page from accurately explaining a provider's documented trial or from using the word “incentive” in a privacy explanation.
 

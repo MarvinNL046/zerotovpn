@@ -4,9 +4,9 @@
   "targetDomain": "zerotovpn.com",
   "location_code": 2840,
   "language_code": "en",
-  "startedAt": "2026-08-11T16:26:25.734Z",
-  "completedAt": "2026-08-11T16:26:25.751Z",
-  "refreshed": false,
+  "startedAt": "2026-08-12T14:15:52.519Z",
+  "completedAt": "2026-08-12T14:16:14.377Z",
+  "refreshed": true,
   "seeds": [
     "best vpn for telegram",
     "vpn for telegram",
@@ -434,16 +434,21 @@
     {
       "keyword": "best vpn for telegram",
       "paa": [
-        "Which VPN is best for Telegram?",
         "Why avoid NordVPN?",
         "Can I use a VPN to access Telegram?",
-        "What is the best 100% free VPN?"
+        "What is the best 100% free VPN?",
+        "What are some good VPN links for Telegram?"
       ],
       "hasAiOverview": true
     },
     {
       "keyword": "vpn for telegram",
-      "paa": [],
+      "paa": [
+        "Can I use a VPN for Telegram?",
+        "Which free VPN is best for Telegram?",
+        "Is Telegram safe for US citizens?",
+        "What is the best free VPN proxy for Telegram?"
+      ],
       "hasAiOverview": true
     },
     {
@@ -452,13 +457,18 @@
         "How do I unblock my Telegram?",
         "How do I unblock someone on Telegram?",
         "How do I see my blocked list on Telegram?",
-        "Why has Telegram blocked me?"
+        "How to unblock 18+ on Telegram?"
       ],
       "hasAiOverview": true
     },
     {
       "keyword": "telegram vpn",
-      "paa": [],
+      "paa": [
+        "Can I use Telegram with a VPN?",
+        "Is Telegram safe for US citizens?",
+        "Should I use a VPN with Telegram?",
+        "Is there a free VPN link available on Telegram?"
+      ],
       "hasAiOverview": true
     },
     {

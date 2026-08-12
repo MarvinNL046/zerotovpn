@@ -903,9 +903,9 @@ export default async function AboutPage({ params }: Props) {
                   <h3 className="text-lg font-semibold">Experience</h3>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  We have personally tested over 50 VPN services since 2024,
-                  accumulating thousands of hours of real-world usage across
-                  Windows, macOS, Linux, iOS, and Android platforms.
+                  We maintain current provider records and dated test notes
+                  across Windows, macOS, Linux, iOS, and Android use cases.
+                  Recommendations are separated from provider documentation.
                 </p>
               </div>
 

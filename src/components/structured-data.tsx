@@ -299,7 +299,7 @@ export function ArticleJsonLd({
       url: "https://www.zerotovpn.com/about",
       jobTitle: "VPN Security Researchers",
       description:
-        "Cybersecurity professionals who have tested and reviewed over 50 VPN services since 2024.",
+        "Cybersecurity professionals who maintain dated provider records, test notes, and evidence-bounded VPN comparisons.",
       sameAs: [
         "https://twitter.com/zerotovpn",
         "https://facebook.com/zerotovpn",

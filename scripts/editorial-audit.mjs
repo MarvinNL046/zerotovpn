@@ -53,7 +53,7 @@ const checks = [
     name: "about page uses verifiable trust signals",
     file: "src/app/[locale]/about/page.tsx",
     patterns: [/Current provider records/, /Reproducible test plan/, /Sources and dated notes/, /Publication locales/, /separates provider documentation/],
-    forbiddenPatterns: [/100K\+|100,000\+|Monthly Readers|monthly readers|50\+|500\+|200\+/i],
+    forbiddenPatterns: [/100K\+|100,000\+|Monthly Readers|monthly readers|50\+|over 50|tested and reviewed over 50|500\+|200\+/i],
   },
   {
     name: "Linux use-case page avoids unsupported test counts",

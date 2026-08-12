@@ -345,6 +345,13 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - Updated the editorial source date to 12 August 2026. Affiliate links remain inside the documented Telegram-evaluation context; the newsletter-only exit-intent popup is unchanged.
 - Local verification: `npm run audit:editorial` **43/43**, `npm run lint` 0 errors (53 existing warnings), and `npm run build` generated **4,447** pages. Production deployment `dpl_BtkQcneA1JwuRppJme3qJCZEgcqF` is Ready; the live Telegram smoke returned HTTP 200, one H1, all three new FAQ questions, `dateModified` 2026-08-12, FAQ schema, six compliant affiliate links and no retired claims. The 390px browser evidence is recorded in [telegram-browser-smoke-2026-08-12.md](../metrics/telegram-browser-smoke-2026-08-12.md); the newsletter-only popup marker remains present.
 
+### Blog index pagination and live performance: 12 August 2026
+
+- The blog index was serving roughly 2.73 MB of HTML and about 498 article cards in one response. It now renders one featured article plus 24 recent-post slots per page; article URLs remain unchanged.
+- Pagination variants use `?page=N`, keep the canonical `/blog` URL, and emit `noindex, follow` for pages after the first. The sitemap generator was made query-aware so the canonical blog route remains in the sitemap.
+- Production deployment `dpl_7xMCUNm16n4gMbJFWWbwf6z5ehc5` is Ready. The live Spanish index measured about 678 KB; 390px browser checks showed one H1, 23 cards on page one, 24 on page two and no horizontal overflow. Evidence is recorded in [blog-pagination-browser-smoke-2026-08-12.md](../metrics/blog-pagination-browser-smoke-2026-08-12.md).
+- `npm run audit:editorial-live` passed **22/22** after deployment. The exit-intent popup remains a newsletter-only owned-media prompt and is not part of affiliate promotion.
+
 ### NordVPN promotion-context audit: 12 August 2026
 
 - Re-ran `npm run audit:affiliate-context` against all **2,279/2,279** live sitemap URLs: **1,755** pages with affiliate links and **8,189** links checked.

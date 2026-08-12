@@ -364,6 +364,11 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - The map defines the internal-link contract (pillar, two siblings, evidence/methodology and next-step bridge) and a measured post-checkpoint queue. It explicitly blocks thin new keyword variants until the matched 25 August exports are available.
 - The exit-intent popup remains first-party newsletter-only; affiliate links remain restricted to genuine VPN-selection contexts and the current compliance gates.
 
+### Commercial cluster bridge update: 12 August 2026
+
+- The `/best/best-vpn` pillar now links contextually to the five measured decision branches: privacy, streaming, value, free tiers and trials. These are editorial navigation links, not additional affiliate CTAs.
+- Added those routes to the live editorial gate so the bridge cannot silently disappear in a future refactor. Production deployment `dpl_91UP9Vrwk8X1zVNfqbZdZHjTsjJ6` is Ready; the gate remains **22/22** and the 390px browser smoke is recorded in [commercial-cluster-bridge-browser-smoke-2026-08-12.md](../metrics/commercial-cluster-bridge-browser-smoke-2026-08-12.md).
+
 ### NordVPN promotion-context audit: 12 August 2026
 
 - Re-ran `npm run audit:affiliate-context` against all **2,279/2,279** live sitemap URLs: **1,755** pages with affiliate links and **8,189** links checked.

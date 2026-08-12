@@ -1,6 +1,6 @@
 # Live editorial page audit
 
-Generated: 2026-08-12T14:53:36.839Z
+Generated: 2026-08-12T15:03:47.880Z
 
 - Target pages: **22**
 - Passing pages: **22**
@@ -26,7 +26,7 @@ Generated: 2026-08-12T14:53:36.839Z
 | pass | /best/vpn-privacy | Best VPNs for Privacy (Aug 2026) — Audited No-Logs Picks | 1 | 42 | 5 | — | — |
 | pass | /best/vpn-gaming | Best VPN for Gaming (2026) — Lowest Ping, Tested | ZeroToVPN | 1 | 44 | 4 | — | — |
 | pass | /best/vpn-chromebook | Best VPN for Chromebook (2026) - Easy Setup &amp; Fast Speeds | 1 | 41 | 6 | — | — |
-| pass | /best/best-vpn | Best VPN in 2026: Transparent Shortlist and Comparison | ZeroToVPN | 1 | 64 | 21 | — | — |
+| pass | /best/best-vpn | Best VPN in 2026: Transparent Shortlist and Comparison | ZeroToVPN | 1 | 69 | 21 | — | — |
 | pass | /blog/best-vpn-for-iran-2026-bypass-internet-censorship | Best VPN for Iran in 2026: tested options, limits and safer preparation | 1 | 60 | 6 | — | — |
 | pass | /blog/best-vpn-for-telegram-2026 | Best VPN for Telegram in 2026: what to verify before you connect | 1 | 59 | 6 | — | — |
 | pass | /countries/iran | VPN Use in Iran: Evidence and Safety Checklist | ZeroToVPN | 1 | 54 | 0 | — | — |

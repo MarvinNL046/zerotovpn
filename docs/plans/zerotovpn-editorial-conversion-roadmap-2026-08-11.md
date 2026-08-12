@@ -358,6 +358,12 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - Production deployment `dpl_6L6YosrPQjWDwZYa8ukoz85asiKa` is Ready. Chrome checks for Spanish, Dutch and German page two confirmed translated labels, `noindex, follow`, one H1 and no 390px overflow. Evidence: [blog-pagination-localization-smoke-2026-08-12.md](../metrics/blog-pagination-localization-smoke-2026-08-12.md).
 - The production editorial gate remains **22/22** with 123 compliant affiliate links. No popup or affiliate-context behavior changed.
 
+### Cluster content map: 12 August 2026
+
+- Added [zerotovpn-cluster-content-map-2026-08-12.md](./zerotovpn-cluster-content-map-2026-08-12.md), which maps the live commercial, censorship, free/trial, protocol, travel and trust clusters to their existing pillars and supporting URLs.
+- The map defines the internal-link contract (pillar, two siblings, evidence/methodology and next-step bridge) and a measured post-checkpoint queue. It explicitly blocks thin new keyword variants until the matched 25 August exports are available.
+- The exit-intent popup remains first-party newsletter-only; affiliate links remain restricted to genuine VPN-selection contexts and the current compliance gates.
+
 ### NordVPN promotion-context audit: 12 August 2026
 
 - Re-ran `npm run audit:affiliate-context` against all **2,279/2,279** live sitemap URLs: **1,755** pages with affiliate links and **8,189** links checked.

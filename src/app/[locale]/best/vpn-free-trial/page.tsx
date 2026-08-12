@@ -7,6 +7,7 @@ import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { AffiliateDisclosure } from "@/components/vpn/affiliate-disclosure";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { FAQAccordion } from "@/components/seo/faq-schema";
+import { ArticleJsonLd } from "@/components/seo/json-ld";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { Link } from "@/i18n/navigation";
 import { getVpnBySlug } from "@/lib/vpn-data";
@@ -171,6 +172,7 @@ export default async function VpnFreeTrialPage({ params }: Props) {
   // Engelse tekst tot ze vertaald zijn. Beter zichtbaar Engels dan een half
   // vertaalde pagina met verzonnen termen — de metadata is wél per taal.
   const t = content.en;
+  const localizedPageUrl = locale === "en" ? `${baseUrl}/best/vpn-free-trial` : `${baseUrl}/${locale}/best/vpn-free-trial`;
 
   const rijen = VPN_TRIALS.map((trial) => ({
     trial,
@@ -186,6 +188,13 @@ export default async function VpnFreeTrialPage({ params }: Props) {
 
   return (
     <>
+      <ArticleJsonLd
+        title="VPNs With a Real Free Trial"
+        description="Compare genuine VPN trials with money-back guarantees and permanently free tiers, using provider sources and checked dates."
+        url={localizedPageUrl}
+        datePublished="2026-01-01"
+        dateModified="2026-08-12"
+      />
       <BreadcrumbSchema
         items={[
           { name: "Best VPNs", href: "/best/best-vpn" },
@@ -381,6 +390,13 @@ export default async function VpnFreeTrialPage({ params }: Props) {
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="text-2xl font-bold md:text-3xl">{t.freeTierTitle}</h2>
               <p className="mt-3 text-muted-foreground">{t.freeTierIntro}</p>
+              <p className="mt-3 text-sm text-muted-foreground">
+                Want a plan that never expires? See our{" "}
+                <Link href="/best/free-vpn" className="text-primary hover:underline">
+                  evidence-led free VPN comparison
+                </Link>
+                .
+              </p>
             </div>
             <div className="mx-auto mt-8 grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {gratis.map((vpn) => (

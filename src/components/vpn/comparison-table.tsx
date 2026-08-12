@@ -4,6 +4,7 @@ import {
   Table,
   TableBody,
   TableCell,
+  TableCaption,
   TableHead,
   TableHeader,
   TableRow,
@@ -26,6 +27,7 @@ export function ComparisonTable({ vpns }: ComparisonTableProps) {
   return (
     <div className="w-full overflow-x-auto">
       <Table>
+        <TableCaption className="sr-only">{t("caption")}</TableCaption>
         <TableHeader>
           <TableRow>
             <TableHead className="w-12">{t("headers.rank")}</TableHead>

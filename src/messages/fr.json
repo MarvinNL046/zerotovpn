@@ -3049,6 +3049,7 @@
     }
   },
   "vpnTable": {
+    "caption": "Tableau comparatif des VPN",
     "headers": {
       "rank": "#",
       "vpn": "VPN",

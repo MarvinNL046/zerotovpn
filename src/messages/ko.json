@@ -3057,6 +3057,7 @@
     }
   },
   "vpnTable": {
+    "caption": "VPN 비교표",
     "headers": {
       "rank": "#",
       "vpn": "VPN",

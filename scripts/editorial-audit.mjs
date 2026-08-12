@@ -26,7 +26,7 @@ const checks = [
   {
     name: "shared comparison prices are tracked inline links",
     file: "src/components/vpn/comparison-table.tsx",
-    patterns: [/AffiliateTextLink/, /dataPriceLink/, /vpn\.priceTwoYear/, /perMonth/],
+    patterns: [/AffiliateTextLink/, /dataPriceLink/, /vpn\.priceTwoYear/, /TableCaption/, /t\("caption"\)/, /perMonth/],
   },
   {
     name: "Iran evidence-led page",

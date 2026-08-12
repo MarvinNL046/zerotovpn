@@ -3040,6 +3040,7 @@
     ]
   },
   "vpnTable": {
+    "caption": "VPN comparison table",
     "headers": {
       "rank": "#",
       "vpn": "VPN",

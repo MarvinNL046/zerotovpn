@@ -3043,6 +3043,7 @@
     }
   },
   "vpnTable": {
+    "caption": "VPN 对比表",
     "headers": {
       "rank": "#",
       "vpn": "VPN",

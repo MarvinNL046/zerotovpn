@@ -731,3 +731,9 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 
 - Added the [Nord partner export handoff](../metrics/nord-partner-export-handoff-2026-08-13.md) with the exact shared window, accepted column names, fail-closed validation behavior and reproducible commands for the final joined report. This removes format ambiguity without treating the dashboard screenshot as a substitute for dated export data.
 - The documentation-only release is also live: Vercel deployment `dpl_8S6T6eAVA6zE5w96Yy9MjjVRHEHz` for commit `9ba95d8` reached **READY**, aliases `www.zerotovpn.com` and `zerotovpn.com`, and the live Best VPN pillar returned HTTP 200.
+
+### Port-forwarding comparison intent refinement: 13 August 2026
+
+- Used the authenticated Search Console query export to refine the existing `/best/vpn-port-forwarding` page. The query group contains **35 impressions** for `vpn with port forwarding`, **16** for `port forwarding vpn`, **14** for `best vpn with port forwarding` and **12** for `vpn port forwarding`; all currently sit outside page one, so the change targets intent clarity rather than claiming a ranking win.
+- Updated the English title/H1 to `Best VPNs With Port Forwarding (Aug 2026): Providers Compared`, rewrote the description around provider comparison and source-checked limits, and added a reciprocal protocol-guide link. No new URL, discount, coupon or Nord CTA was introduced; the existing affiliate boundary remains provider-selection-only.
+- Added the route to the live editorial target list and a build-time metadata/cluster-link regression guard. Local editorial audit passes **71/71**, lint has **0 errors** (51 existing warnings), and the production build generates **4,429/4,429** routes. The result is a controlled on-page hypothesis to measure in the next matched Search Console window, not a conversion conclusion.

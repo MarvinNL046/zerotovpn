@@ -31,6 +31,7 @@ const targets = [
   { path: "/fr/best/free-vpn", name: "French free VPN support page", ids: ["free-tiers", "safety", "faq"], links: ["/fr/best/best-vpn", "/fr/guides/vpn-for-travel", "/fr/guides/vpn-for-restricted-networks"], expectFaq: true, expectTable: false, brief: { primaryKeyword: "best free vpn", intent: "commercial", cluster: "free-and-low-cost-access", lastReviewedAt: "2026-08-12", affiliateContext: "vpn-selection", schemaType: "Article" } },
   { path: "/nl/best/free-vpn", name: "Dutch free VPN support page", ids: ["free-tiers", "safety", "faq"], links: ["/nl/best/best-vpn", "/nl/guides/vpn-for-travel", "/nl/guides/vpn-for-restricted-networks"], expectFaq: true, expectTable: false, brief: { primaryKeyword: "best free vpn", intent: "commercial", cluster: "free-and-low-cost-access", lastReviewedAt: "2026-08-12", affiliateContext: "vpn-selection", schemaType: "Article" } },
   { path: "/best/vpn-free-trial", name: "Free-trial comparison", ids: ["sources"], links: ["/best/free-vpn", "/best/best-vpn", "/methodology"], expectFaq: true },
+  { path: "/best/vpn-port-forwarding", name: "Port-forwarding comparison", ids: [], links: ["/best/best-vpn", "/best/vpn-torrenting", "/guides/vpn-protocols-explained"], expectFaq: true, expectTable: false },
 ];
 
 const affiliateHref = /(?:go\.zerotovpn\.com|go\.nordvpn\.net|nordvpn\.tpo\.lv|[?&](?:offer_id|aff_id|url_id)=)/i;

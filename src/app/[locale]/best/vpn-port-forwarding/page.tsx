@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const m = getShortMonthYear();
 
   const titles: Record<string, string> = {
-    en: `VPNs With Port Forwarding (${m}) — Who Still Has It`,
+    en: `Best VPNs With Port Forwarding (${m}): Providers Compared`,
     nl: `VPN's met port forwarding (${m}) — wie het nog heeft`,
     de: `VPNs mit Portweiterleitung (${m}) — wer es noch anbietet`,
     es: `VPNs con reenvío de puertos (${m}) — quién lo mantiene`,
@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const descriptions: Record<string, string> = {
-    en: "Three big providers support port forwarding, four do not, and one dropped it in 2023 — which most lists missed. Checked at the source, with what you get.",
+    en: "Looking for a VPN with port forwarding? Compare Proton VPN, Private Internet Access and PureVPN, see who dropped the feature, and check the limits at the source.",
     nl: "Drie grote aanbieders ondersteunen port forwarding, vier niet, en één heeft het in 2023 verwijderd — wat de meeste lijstjes gemist hebben. Bij de bron nagelezen, met wat je per aanbieder echt krijgt.",
     de: "Drei große Anbieter unterstützen Portweiterleitung, vier nicht, und einer hat sie 2023 entfernt — was die meisten Listen übersehen haben. An der Quelle geprüft.",
     es: "Tres grandes proveedores admiten reenvío de puertos, cuatro no, y uno lo eliminó en 2023 — algo que casi ninguna lista ha notado. Verificado en la fuente.",
@@ -100,7 +100,7 @@ export default async function VpnPortForwardingPage({ params }: Props) {
   // metadata is wel per taal. Bewust, niet vergeten.
   const t = {
     badge: "Checked at the source",
-    title: "VPNs With Port Forwarding",
+    title: "Best VPNs With Port Forwarding",
     subtitle:
       "A feature that quietly disappeared from half the market. Here is who still offers it, what you actually get, and why the provider everyone used to recommend no longer counts.",
     whyTitle: "What port forwarding is for",
@@ -368,6 +368,11 @@ export default async function VpnPortForwardingPage({ params }: Props) {
               title: "VPNs with a real free trial",
               description: "Test one before you pay for it.",
               href: "/best/vpn-free-trial",
+            },
+            {
+              title: "VPN protocols explained",
+              description: "See how WireGuard and OpenVPN affect the connection.",
+              href: "/guides/vpn-protocols-explained",
             },
           ]}
         />

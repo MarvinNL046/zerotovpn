@@ -259,6 +259,12 @@ const checks = [
     forbiddenPatterns: [/VPNs With a Real Free Trial \(\$\{m\}\) — Checked at Source/],
   },
   {
+    name: "port-forwarding comparison SERP metadata and cluster link",
+    file: "src/app/[locale]/best/vpn-port-forwarding/page.tsx",
+    patterns: [/Best VPNs With Port Forwarding \(\$\{m\}\): Providers Compared/, /Looking for a VPN with port forwarding\? Compare Proton VPN/, /title: "Best VPNs With Port Forwarding"/, /guides\/vpn-protocols-explained/],
+    forbiddenPatterns: [/VPNs With Port Forwarding \(\$\{m\}\) — Who Still Has It/],
+  },
+  {
     name: "torrenting page preserves affiliate boundary",
     file: "src/app/[locale]/best/vpn-torrenting/page.tsx",
     patterns: [/affiliateUrl=""/],

@@ -1,13 +1,14 @@
 # NordVPN Promotion Rules audit
 
-**Audit date:** 2026-08-10  
+**Initial audit date:** 2026-08-10  
+**Status rechecked:** 2026-08-13  
 **Scope:** ZeroToVPN website and codebase  
 **Offer:** NordVPN Offer 15  
 **Rules source:** Nord Affiliate Program Promotion Rules supplied by the account owner
 
 ## Executive conclusion
 
-The Offer 15 redirect is now configured correctly, but the website is **not yet compliant for a site-wide NordVPN rollout**. The most urgent issues are a global exit-intent popup with a NordVPN affiliate CTA and discount claim, a global sticky CTA with a hard-coded discount claim, and Nord affiliate CTAs on torrenting/P2P pages.
+The initial audit found several unsafe global placements. They are now remediated and covered by build/live regression checks. NordVPN remains approved only in genuine VPN-selection contexts; this is not approval for a site-wide commercial CTA.
 
 ## Remediation update — 2026-08-10
 
@@ -36,9 +37,9 @@ The three urgent placements have now been neutralized in the codebase: the exit-
 
    The torrenting guide and ranking page now render no Nord affiliate URLs. Keep this as a regression check whenever new P2P content is added.
 
-4. **Central provider data has no content-context guard**
+4. **Central provider data guard (remediated)**
 
-   `src/lib/vpn-data.ts` injects a Nord affiliate URL into the provider object, and many page templates inherit it automatically. The existing `VPN_APPROVED_AFFILIATE_IDS` and `AFFILIATE_VPN_NORDVPN_URL` placeholders are not read by application code.
+   `src/lib/vpn-data.ts` contains provider catalog destinations, but commercial Nord rendering now goes through `src/lib/vpn-links.ts`. The resolver reads `VPN_APPROVED_AFFILIATE_IDS` and `AFFILIATE_VPN_NORDVPN_URL` server-side and fails closed when approval or a valid HTTPS destination is absent. Restricted page templates additionally omit affiliate links at render time.
 
    **Remediated 2026-08-12:** `src/lib/vpn-links.ts` now reads those server-side variables and returns the Nord destination only when the provider ID is explicitly approved and the configured URL is valid HTTPS. Missing approval or configuration fails closed to an empty destination. A source audit and isolated resolver checks protect the behavior.
 
@@ -77,11 +78,11 @@ The public link `https://go.zerotovpn.com/nordvpn` now returns a 302 to the dire
 1. **Done:** Replace the global exit-intent NordVPN popup with an email-only, consented newsletter prompt. It may remain enabled for first-party email collection, but must never contain an affiliate URL, provider offer, coupon, discount, cashback or incentive.
 2. **Done:** Remove or neutralize the global sticky discount CTA; no “OFF”, “limited offer”, coupon or deal language without an assigned offer.
 3. **Partially done:** Remove Nord links from current torrenting/P2P routes and keep a route-level regression check for new restricted content.
-4. **In progress:** Remove legacy Nord coupon links and unverified discount claims from all locales and content formats. The known published coupon/deal links and seasonal Black Friday route are now blocked; remaining findings are dormant translation records or factual educational uses, not live Nord affiliate placements.
+4. **Done for published surfaces:** Remove legacy Nord coupon links and unverified discount claims from all locales and content formats. The known published coupon/deal links and seasonal Black Friday route are blocked; remaining raw context matches are factual trial-intent or educational uses and are documented in [the contextual review](nordvpn-contextual-flag-review-2026-08-13.md), not live Nord affiliate-placement violations.
 5. **Done:** Wire the approved-provider environment variables into the link resolver so Nord is fail-closed by default. The production project now has the approved `nordvpn` ID and the owned `go.zerotovpn.com/nordvpn` destination configured as non-sensitive environment values.
 6. **Done:** Build-time editorial checks now fail when a Nord affiliate URL appears in a restricted route, when the blocked coupon/seasonal slugs are published, when legacy unassigned coupon markers return in cleaned routes, or when global metadata/owned-media copy reintroduces unassigned exclusive-offer language.
 7. **Done:** Retired offer/coupon translation namespaces are removed from the serialized client message payload; the live `/en` and `/nl` HTML audit now shows no exclusive-offer, coupon or claim-deal markers. The exit-intent component still collects only newsletter email consent.
-7. Ask the Nord account manager in writing whether a site may contain separate educational P2P content while Nord links are limited to compliant pages.
+8. Ask the Nord account manager in writing whether a site may contain separate educational P2P content while Nord links are limited to compliant pages.
 
 ## Operating rule
 

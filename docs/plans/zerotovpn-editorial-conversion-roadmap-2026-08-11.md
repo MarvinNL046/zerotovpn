@@ -10,6 +10,8 @@
 
 ## Execution log
 
+- **12 August 2026 — partner export remains gated by authentication:** The Nord affiliate dashboard resolves to its login screen in the available browser session. No partner CSV/API response was accessible, so conversions, revenue and EPC remain `null`; the roadmap does not infer them from Short.io clicks. The next required input is a same-window Nord partner export after an authenticated dashboard session.
+
 - **12 August 2026 — real Short.io API export captured:** Used the production `SHORTIO_API_KEY` through Vercel's environment runner to export the 28 July–10 August window. Domain totals are **7,663 clicks / 3,008 human clicks**; the current-link attribution CSV covers **39 links / 2,241 clicks / 1,791 human clicks**. The **5,422-click** residual is kept separate because Short.io reports wildcard/deleted paths that cannot be mapped to current page slugs. Evidence: [shortio-export-2026-08-12.md](../metrics/shortio-export-2026-08-12.md); reusable exporter: `scripts/export-shortio-metrics.mjs`. Partner conversions/revenue/EPC remain missing, so the formal conversion gate stays open.
 
 - **12 August 2026 — real-export header validation:** The measurement input checker now recognizes Search Console's plural `Top queries` export header. The authenticated Pages and Queries files both pass header validation; `npm run test:measure-editorial` remains green.

@@ -369,6 +369,12 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - The `/best/best-vpn` pillar now links contextually to the five measured decision branches: privacy, streaming, value, free tiers and trials. These are editorial navigation links, not additional affiliate CTAs.
 - Added those routes to the live editorial gate so the bridge cannot silently disappear in a future refactor. Production deployment `dpl_91UP9Vrwk8X1zVNfqbZdZHjTsjJ6` is Ready; the gate remains **22/22** and the 390px browser smoke is recorded in [commercial-cluster-bridge-browser-smoke-2026-08-12.md](../metrics/commercial-cluster-bridge-browser-smoke-2026-08-12.md).
 
+### Reproducible cluster-link audit: 12 August 2026
+
+- Added `npm run audit:cluster-links`, a live route-level check for the commercial, censorship, technical and travel clusters. It verifies required parent/sibling bridges, follows permanent redirects and excludes legacy aliases from the canonical cluster count.
+- The production run checked **21 canonical pages across 4 clusters**: **21/21 passing**, **0 missing required links** and **0 fetch failures**. Evidence is recorded in [cluster-link-audit-2026-08-12.md](../metrics/cluster-link-audit-2026-08-12.md).
+- The audit clarified that `/best-vpn-for-travel`, `/best-vpn-for-public-wifi` and `/vpn-encryption-explained` are redirect aliases, not separate content nodes. This prevents duplicate-route work from distorting the topical-authority map.
+
 ### NordVPN promotion-context audit: 12 August 2026
 
 - Re-ran `npm run audit:affiliate-context` against all **2,279/2,279** live sitemap URLs: **1,755** pages with affiliate links and **8,189** links checked.

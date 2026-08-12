@@ -17,6 +17,7 @@
     "audit:sitemap": "node scripts/audit-sitemap-live.mjs",
     "audit:affiliate-context": "node scripts/audit-affiliate-context-live.mjs",
     "audit:claims-live": "node scripts/audit-claims-live.mjs",
+    "audit:cluster-links": "node scripts/audit-cluster-links-live.mjs",
     "audit:editorial-live": "node scripts/audit-editorial-live.mjs",
     "audit:editorial": "node scripts/editorial-audit.mjs",
     "measure:editorial": "node scripts/measure-editorial.mjs",

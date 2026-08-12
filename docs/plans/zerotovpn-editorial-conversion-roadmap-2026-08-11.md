@@ -375,6 +375,11 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - The production run checked **21 canonical pages across 4 clusters**: **21/21 passing**, **0 missing required links** and **0 fetch failures**. Evidence is recorded in [cluster-link-audit-2026-08-12.md](../metrics/cluster-link-audit-2026-08-12.md).
 - The audit clarified that `/best-vpn-for-travel`, `/best-vpn-for-public-wifi` and `/vpn-encryption-explained` are redirect aliases, not separate content nodes. This prevents duplicate-route work from distorting the topical-authority map.
 
+### Post-release sitemap health: 12 August 2026
+
+- The full production sitemap audit checked **2,279/2,279** URLs: all returned 200, were indexable, self-canonical and had exactly one H1. There were **0** canonical mismatches, noindex-in-sitemap entries or H1 failures.
+- Six concurrent samples crossed two seconds, but three sequential rechecks for each stayed between **239 ms and 619 ms**. They are transient performance observations, not evidence for a route rewrite. Evidence: [sitemap-performance-recheck-2026-08-12.md](../metrics/sitemap-performance-recheck-2026-08-12.md).
+
 ### NordVPN promotion-context audit: 12 August 2026
 
 - Re-ran `npm run audit:affiliate-context` against all **2,279/2,279** live sitemap URLs: **1,755** pages with affiliate links and **8,189** links checked.

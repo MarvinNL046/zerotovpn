@@ -6,6 +6,7 @@ This is the first machine-generated join of real Search Console exports and real
 
 - Search Console Pages CSV: `.cache/metrics/gsc-2026-08-12/Pages.csv` (1,000 exported rows)
 - Search Console Queries CSV: `.cache/metrics/gsc-2026-08-12/Queries.csv` (1,000 exported rows)
+- Search Console Chart CSV: `.cache/metrics/gsc-2026-08-12/Chart.csv` (14 daily rows; authoritative period totals)
 - Short.io current-link CSV: `.cache/metrics/shortio-2026-08-12/clicks.csv` (39 current links)
 - Partner export: **not provided**
 - Machine report: [measurement-interim-2026-08-12.json](./measurement-interim-2026-08-12.json)
@@ -20,7 +21,7 @@ This is the first machine-generated join of real Search Console exports and real
 | Short.io current-link export | clicks | 2,241 |
 | Short.io current-link export | human clicks | 1,791 |
 
-For the authoritative Search Console period totals, use [gsc-export-2026-08-12.md](./gsc-export-2026-08-12.md): `Chart.csv` reports 36,763 impressions and position 33.42. The page/query downloads are top-1,000 tables and are not interchangeable with the chart total.
+The machine report now stores the authoritative Chart.csv totals separately under `searchConsole.siteTotals`: 93 clicks, 36,763 impressions, 0.253% CTR and impression-weighted position 33.42. The page/query downloads are top-1,000 tables and remain separate; their row sums are not interchangeable with the chart total. See [gsc-export-2026-08-12.md](./gsc-export-2026-08-12.md) for provenance.
 
 ## Gate status
 

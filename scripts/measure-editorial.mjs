@@ -9,7 +9,7 @@ function arg(name) {
 }
 
 function usage() {
-  console.log("Usage: node scripts/measure-editorial.mjs --label post-14d --window-start YYYY-MM-DD --window-end YYYY-MM-DD --gsc-pages export.csv --gsc-queries queries.csv --shortio clicks.csv [--partner partner.csv] --out docs/metrics/post-14d.json [--baseline docs/metrics/zerotovpn-baseline-2026-08-11.json]");
+  console.log("Usage: node scripts/measure-editorial.mjs --label post-14d --window-start YYYY-MM-DD --window-end YYYY-MM-DD --gsc-pages export.csv --gsc-queries queries.csv --shortio clicks.csv [--gsc-chart chart.csv] [--partner partner.csv] --out docs/metrics/post-14d.json [--baseline docs/metrics/zerotovpn-baseline-2026-08-11.json]");
 }
 
 function parseCsv(text) {
@@ -192,6 +192,23 @@ function summarizeSearchConsole(rows, kind) {
   return { rows: normalized, totals: { clicks, impressions, ctr: impressions ? clicks / impressions : null, averagePosition }, byCluster: summarizeSearchClusters(normalized) };
 }
 
+function summarizeSearchChart(rows) {
+  const normalized = rows.map((row) => ({
+    date: pick(row, ["date", "datum"]),
+    clicks: number(pick(row, ["clicks", "klikken", "aantal_klikken"])),
+    impressions: number(pick(row, ["impressions", "vertoningen", "aantal_vertoningen"])),
+    ctr: ratio(pick(row, ["ctr", "gemiddelde_ctr"])),
+    position: number(pick(row, ["position", "positie", "gemiddelde_positie"])),
+  })).filter((row) => row.date);
+  const clicks = normalized.reduce((sum, row) => sum + (row.clicks ?? 0), 0);
+  const impressions = normalized.reduce((sum, row) => sum + (row.impressions ?? 0), 0);
+  const weightedPositions = normalized.filter((row) => row.position !== null && (row.impressions ?? 0) > 0);
+  const averagePosition = weightedPositions.length
+    ? weightedPositions.reduce((sum, row) => sum + row.position * row.impressions, 0) / weightedPositions.reduce((sum, row) => sum + row.impressions, 0)
+    : null;
+  return { rows: normalized, totals: { clicks, impressions, ctr: impressions ? clicks / impressions : null, averagePosition } };
+}
+
 function summarizeShortIo(rows) {
   const normalized = rows.map((row) => ({
     date: pick(row, ["date", "datum", "created_at"]),
@@ -281,14 +298,17 @@ if (process.argv.includes("--help") || !label || !out) {
     const gscPagesPath = arg("--gsc-pages");
     const gscQueriesPath = arg("--gsc-queries");
     const shortIoPath = arg("--shortio");
+    const gscChartPath = arg("--gsc-chart");
     const partnerPath = arg("--partner");
     const gscPagesRows = readRows(gscPagesPath);
     const gscQueriesRows = readRows(gscQueriesPath);
     const shortIoRows = readRows(shortIoPath);
+    const gscChartRows = readRows(gscChartPath);
     const partnerRows = readRows(partnerPath);
     const gscPages = summarizeSearchConsole(gscPagesRows, "pages");
     const gscQueries = summarizeSearchConsole(gscQueriesRows, "queries");
     const shortIo = summarizeShortIo(shortIoRows);
+    const gscChart = gscChartRows.length ? summarizeSearchChart(gscChartRows) : null;
     const partner = summarizePartner(partnerRows);
     const partnerMissingMetrics = partnerPath
       ? [
@@ -303,13 +323,14 @@ if (process.argv.includes("--help") || !label || !out) {
       label,
       capturedAt: new Date().toISOString(),
       measurementWindow: windowStart && windowEnd ? { start: windowStart, end: windowEnd } : null,
-      sourceFiles: [gscPagesPath, gscQueriesPath, shortIoPath, partnerPath].filter(Boolean),
+      sourceFiles: [gscPagesPath, gscQueriesPath, shortIoPath, gscChartPath, partnerPath].filter(Boolean),
       dataQuality: {
         requiredInputsPresent: true,
         rowCounts: {
           gscPages: gscPagesRows.length,
           gscQueries: gscQueriesRows.length,
           shortIo: shortIoRows.length,
+          gscChart: gscChartRows.length,
           partner: partnerRows.length,
         },
         partnerExportProvided: Boolean(partnerPath),
@@ -320,7 +341,7 @@ if (process.argv.includes("--help") || !label || !out) {
           ...(shortIoRows.length ? [] : ["affiliate.rows"]),
         ],
       },
-      searchConsole: { pages: gscPages, queries: gscQueries },
+      searchConsole: { pages: gscPages, queries: gscQueries, siteTotals: gscChart?.totals ?? null, chartRows: gscChart?.rows ?? [] },
       affiliate: { ...shortIo, partner },
     };
     const baselinePath = arg("--baseline");

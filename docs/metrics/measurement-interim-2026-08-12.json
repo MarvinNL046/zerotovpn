@@ -1,11 +1,16 @@
 {
   "schemaVersion": 1,
   "label": "interim-14d-2026-08-12",
-  "capturedAt": "2026-08-12T16:43:41.198Z",
+  "capturedAt": "2026-08-12T17:51:56.014Z",
+  "measurementWindow": {
+    "start": "2026-07-28",
+    "end": "2026-08-10"
+  },
   "sourceFiles": [
     ".cache/metrics/gsc-2026-08-12/Pages.csv",
     ".cache/metrics/gsc-2026-08-12/Queries.csv",
-    ".cache/metrics/shortio-2026-08-12/clicks.csv"
+    ".cache/metrics/shortio-2026-08-12/clicks.csv",
+    ".cache/metrics/gsc-2026-08-12/Chart.csv"
   ],
   "dataQuality": {
     "requiredInputsPresent": true,
@@ -13,6 +18,7 @@
       "gscPages": 1000,
       "gscQueries": 1000,
       "shortIo": 39,
+      "gscChart": 14,
       "partner": 0
     },
     "partnerExportProvided": false,
@@ -16123,7 +16129,113 @@
           "averagePosition": 27.306956521739128
         }
       ]
-    }
+    },
+    "siteTotals": {
+      "clicks": 93,
+      "impressions": 36763,
+      "ctr": 0.0025297173788863805,
+      "averagePosition": 33.417210238555064
+    },
+    "chartRows": [
+      {
+        "date": "2026-07-28",
+        "clicks": 5,
+        "impressions": 2780,
+        "ctr": 0.0018,
+        "position": 35.8
+      },
+      {
+        "date": "2026-07-29",
+        "clicks": 5,
+        "impressions": 2735,
+        "ctr": 0.0018,
+        "position": 36.2
+      },
+      {
+        "date": "2026-07-30",
+        "clicks": 7,
+        "impressions": 3144,
+        "ctr": 0.0022,
+        "position": 39.2
+      },
+      {
+        "date": "2026-07-31",
+        "clicks": 8,
+        "impressions": 2300,
+        "ctr": 0.0034999999999999996,
+        "position": 36.8
+      },
+      {
+        "date": "2026-08-01",
+        "clicks": 1,
+        "impressions": 2327,
+        "ctr": 0.0004,
+        "position": 33.3
+      },
+      {
+        "date": "2026-08-02",
+        "clicks": 5,
+        "impressions": 2664,
+        "ctr": 0.0019,
+        "position": 33.8
+      },
+      {
+        "date": "2026-08-03",
+        "clicks": 6,
+        "impressions": 2314,
+        "ctr": 0.0026,
+        "position": 32.9
+      },
+      {
+        "date": "2026-08-04",
+        "clicks": 7,
+        "impressions": 2314,
+        "ctr": 0.003,
+        "position": 31.8
+      },
+      {
+        "date": "2026-08-05",
+        "clicks": 11,
+        "impressions": 2972,
+        "ctr": 0.0037,
+        "position": 31.7
+      },
+      {
+        "date": "2026-08-06",
+        "clicks": 9,
+        "impressions": 2873,
+        "ctr": 0.0031,
+        "position": 35.3
+      },
+      {
+        "date": "2026-08-07",
+        "clicks": 7,
+        "impressions": 2160,
+        "ctr": 0.0032,
+        "position": 32.2
+      },
+      {
+        "date": "2026-08-08",
+        "clicks": 5,
+        "impressions": 2033,
+        "ctr": 0.0025,
+        "position": 30.3
+      },
+      {
+        "date": "2026-08-09",
+        "clicks": 8,
+        "impressions": 2954,
+        "ctr": 0.0027,
+        "position": 29.8
+      },
+      {
+        "date": "2026-08-10",
+        "clicks": 9,
+        "impressions": 3193,
+        "ctr": 0.0028000000000000004,
+        "position": 28.2
+      }
+    ]
   },
   "affiliate": {
     "rows": [

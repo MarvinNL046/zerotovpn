@@ -483,9 +483,9 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 
 ### Measurement window enforcement: 12 August 2026
 
-- Extended `scripts/measure-editorial.mjs` with paired `--window-start` and `--window-end` flags. The importer now records the exact ISO window in every report and fails closed for partial, malformed or reversed dates.
+- Extended `scripts/measure-editorial.mjs` with paired `--window-start` and `--window-end` flags plus optional `--gsc-chart`. The importer now records the exact ISO window in every report, keeps authoritative daily Search Console totals separate from top-1,000 page/query sums, and fails closed for partial, malformed or reversed dates.
 - Regression coverage includes exact-window persistence and reversed-window rejection. The real-input dry run records **28 July–10 August 2026**, 1,000 GSC page rows, 1,000 query rows and 39 Short.io rows; partner conversions/revenue/EPC remain explicitly missing.
-- The next matched run must use `--window-start 2026-07-28 --window-end 2026-08-10` (or the actual shared export window) together with all four source files.
+- The next matched run must use `--window-start 2026-07-28 --window-end 2026-08-10` (or the actual shared export window), `--gsc-chart Chart.csv`, and all four source files.
 
 ### Nord affiliate interim screenshot: 12 August 2026
 

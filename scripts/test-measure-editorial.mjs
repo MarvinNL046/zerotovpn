@@ -41,10 +41,15 @@ try {
     "partner.csv",
     "date,link,clicks,conversions,revenue,epc\n2026-08-01,go.zerotovpn.com/nordvpn,100,4,120,1.20\n2026-08-02,go.zerotovpn.com/nordvpn,50,1,35,0.70\n",
   );
+  const chart = write(
+    "chart.csv",
+    "Date,Clicks,Impressions,CTR,Position\n2026-07-28,5,2780,0.18%,35.8\n2026-07-29,5,2735,0.18%,36.2\n",
+  );
   const englishOut = join(temp, "english.json");
-  run(["--label", "test-english", "--window-start", "2026-07-28", "--window-end", "2026-08-10", "--gsc-pages", pages, "--gsc-queries", queries, "--shortio", shortIo, "--partner", partner, "--out", englishOut]);
+  run(["--label", "test-english", "--window-start", "2026-07-28", "--window-end", "2026-08-10", "--gsc-pages", pages, "--gsc-queries", queries, "--shortio", shortIo, "--gsc-chart", chart, "--partner", partner, "--out", englishOut]);
   const english = JSON.parse(readFileSync(englishOut, "utf8"));
   assert(english.measurementWindow.start === "2026-07-28" && english.measurementWindow.end === "2026-08-10", "Measurement window should be recorded exactly");
+  assert(english.searchConsole.siteTotals.clicks === 10 && english.searchConsole.siteTotals.impressions === 5515, "Chart totals should be aggregated separately from top-page rows");
   assert(english.dataQuality.missingMetrics.length === 0, "English fixture should have no missing metrics");
   assert(english.searchConsole.pages.totals.clicks === 54, "English clicks should total 54");
   assert(english.searchConsole.pages.totals.impressions === 13443, "English impressions should total 13443");

@@ -25,5 +25,5 @@ The roadmap should remain active until the pending partner export is available, 
 
 1. Run `npm run measure:check-inputs` against all four files.
 2. Run `npm run test:measure-editorial`.
-3. Generate the post-14-day report with paired `--window-start` and `--window-end` flags for the fixed Search Console/Short.io/partner window.
+3. Generate the post-14-day report with paired `--window-start`/`--window-end` flags, `--gsc-chart Chart.csv`, and the fixed Search Console/Short.io/partner window.
 4. Select the next 4–8 pages from measured cluster winners, not from historical volume alone.

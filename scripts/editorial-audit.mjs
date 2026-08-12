@@ -282,6 +282,22 @@ results.push({
   forbidden: trackedCommercialCtaFailures,
 });
 
+const trackedReviewCtaFiles = [
+  "src/data/reviews/nordlayer.json",
+  "src/data/reviews/perfect-privacy.json",
+];
+const trackedReviewCtaFailures = trackedReviewCtaFiles.filter((file) => {
+  const source = readFileSync(resolve(ROOT, file), "utf8");
+  return !source.includes("[NordVPN](https://go.zerotovpn.com/nordvpn)") || source.includes("[NordVPN](https://nordvpn.com)");
+});
+results.push({
+  name: "review alternatives use the tracked NordVPN destination",
+  file: "src/data/reviews/{nordlayer,perfect-privacy}.json",
+  pass: trackedReviewCtaFailures.length === 0,
+  missing: [],
+  forbidden: trackedReviewCtaFailures,
+});
+
 const quantifiedClaimRecords = [
   {
     slug: "vpn-credentials-theft-prevention-2026",

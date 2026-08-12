@@ -524,6 +524,12 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - Added a regression guard to `npm run audit:editorial` so a future markdown import cannot silently restore an untracked commercial destination. The rendered `src/data/posts/en` records were already on the tracked route, so this closes source/render drift without changing copy or creating URLs.
 - Verification: local editorial audit **50/50** and production build **4,447/4,447** routes. This is an attribution/compliance correction; it does not change the open matched-window Nord conversion/EPC gate.
 
+### Review CTA source consistency: 12 August 2026
+
+- Audited the stored review records for **NordLayer** and **Perfect Privacy**. Their commercial “NordVPN” alternative links now use `https://go.zerotovpn.com/nordvpn`; first-party NordVPN source citations remain direct editorial references.
+- Added a regression guard to `npm run audit:editorial` for both records. The live review renderer already exposed tracked CTAs; this closes the dormant source-record drift before a future importer can reintroduce an untracked commercial link.
+- Verification: local editorial audit **51/51** and production build **4,447/4,447** routes. The matched Nord partner-export gate remains unchanged.
+
 ### Nord affiliate interim screenshot: 12 August 2026
 
 - The user-supplied authenticated Nord Performance Report screenshot for **6–12 August 2026** shows **19 clicks** (NordVPN 15, NordVPN China 2, NordVPN Arabia 2), **0 conversions**, **$0.00 payout** and **$0.00 EPC**. Full evidence and interpretation boundaries are recorded in [nord-partner-interim-screenshot-2026-08-12.md](../metrics/nord-partner-interim-screenshot-2026-08-12.md).

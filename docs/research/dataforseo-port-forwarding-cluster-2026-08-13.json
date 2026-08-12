@@ -1,0 +1,242 @@
+{
+  "schemaVersion": 1,
+  "cluster": "VPN port forwarding / torrenting feature comparison",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "fetchedAt": "2026-08-12T23:12:40.495Z",
+  "refreshed": false,
+  "seeds": [
+    "vpn with port forwarding",
+    "port forwarding vpn",
+    "best vpn with port forwarding",
+    "vpn port forwarding",
+    "which vpn supports port forwarding",
+    "vpn for torrenting port forwarding"
+  ],
+  "overview": [
+    {
+      "keyword": "best vpn with port forwarding",
+      "currentVolume": null,
+      "latestVolume": 170,
+      "latestMonth": "2024-02",
+      "difficulty": 0,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "port forwarding vpn",
+      "currentVolume": null,
+      "latestVolume": 1300,
+      "latestMonth": "2024-02",
+      "difficulty": 0,
+      "intent": "informational"
+    },
+    {
+      "keyword": "vpn port forwarding",
+      "currentVolume": null,
+      "latestVolume": 1300,
+      "latestMonth": "2024-02",
+      "difficulty": 6,
+      "intent": "informational"
+    },
+    {
+      "keyword": "vpn with port forwarding",
+      "currentVolume": null,
+      "latestVolume": 1300,
+      "latestMonth": "2024-02",
+      "difficulty": 0,
+      "intent": "informational"
+    }
+  ],
+  "suggestions": [
+    {
+      "seed": "vpn port forwarding",
+      "keyword": "vpn provider with port forwarding",
+      "volume": 70
+    },
+    {
+      "seed": "vpn port forwarding",
+      "keyword": "vpn services with port forwarding",
+      "volume": 70
+    },
+    {
+      "seed": "vpn port forwarding",
+      "keyword": "cheapest vpn with port forwarding",
+      "volume": 20
+    },
+    {
+      "seed": "vpn with port forwarding",
+      "keyword": "free vpn with port forwarding 2017",
+      "volume": 10
+    },
+    {
+      "seed": "vpn with port forwarding",
+      "keyword": "does port forwarding work with vpn",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn with port forwarding",
+      "keyword": "best vpn service with port forwarding",
+      "volume": 10
+    },
+    {
+      "seed": "vpn with port forwarding",
+      "keyword": "vpn server with port forwarding",
+      "volume": 10
+    },
+    {
+      "seed": "vpn with port forwarding",
+      "keyword": "reddit vpn with port forwarding",
+      "volume": 10
+    },
+    {
+      "seed": "vpn with port forwarding",
+      "keyword": "free vpn with port forwarding service",
+      "volume": 10
+    },
+    {
+      "seed": "vpn with port forwarding",
+      "keyword": "vpn with port forwarding 2019",
+      "volume": 0
+    },
+    {
+      "seed": "vpn with port forwarding",
+      "keyword": "vpn with port forwarding 2018",
+      "volume": 0
+    },
+    {
+      "seed": "vpn with port forwarding",
+      "keyword": "list of vpn with port forwarding",
+      "volume": null
+    },
+    {
+      "seed": "vpn port forwarding",
+      "keyword": "vpn that support port forwarding",
+      "volume": 70
+    },
+    {
+      "seed": "vpn port forwarding",
+      "keyword": "does proton vpn have port forwarding",
+      "volume": 40
+    },
+    {
+      "seed": "vpn port forwarding",
+      "keyword": "what is port forwarding in vpn",
+      "volume": 30
+    },
+    {
+      "seed": "vpn port forwarding",
+      "keyword": "proton vpn port forwarding qbittorrent",
+      "volume": 30
+    },
+    {
+      "seed": "vpn port forwarding",
+      "keyword": "port forwarding proton vpn",
+      "volume": 20
+    },
+    {
+      "seed": "vpn port forwarding",
+      "keyword": "port forwarding free vpn",
+      "volume": 10
+    },
+    {
+      "seed": "vpn port forwarding",
+      "keyword": "privado vpn port forwarding",
+      "volume": 10
+    },
+    {
+      "seed": "vpn port forwarding",
+      "keyword": "algo vpn port forwarding",
+      "volume": 10
+    },
+    {
+      "seed": "vpn port forwarding",
+      "keyword": "proton vpn port forwarding linux",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn with port forwarding",
+      "keyword": "best vpn with port forwarding",
+      "volume": null
+    },
+    {
+      "seed": "best vpn with port forwarding",
+      "keyword": "best vpn with port forwarding reddit",
+      "volume": null
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "vpn with port forwarding",
+      "paa": [
+        "Which VPN service has port forwarding?",
+        "Can you use a VPN for port forwarding?",
+        "Can the FBI track a VPN?",
+        "Which VPN offers free port forwarding?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "port forwarding vpn",
+      "paa": [
+        "Can you use a VPN for port forwarding?",
+        "What VPN has port forwarding?",
+        "Which VPN offers free port forwarding?",
+        "Is there a downside to port forwarding?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "best vpn with port forwarding",
+      "paa": [
+        "Should I use port forwarding with VPN?",
+        "Is there a free VPN that offers port forwarding?",
+        "What is the best VPN with static IP and port forwarding?",
+        "Does NordVPN allow port forwarding?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn port forwarding",
+      "paa": [
+        "Can I use VPN for port forwarding?",
+        "Is there a VPN that allows port forwarding?",
+        "How do I set up port forwarding for my VPN?",
+        "Do VPNs use port 443?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "which vpn supports port forwarding",
+      "paa": [
+        "Is there a VPN that allows port forwarding?",
+        "Can I use VPN for port forwarding?",
+        "Can I do port forwarding with NordVPN?",
+        "Does OpenVPN use port 443 or 1194?"
+      ],
+      "hasAiOverview": true
+    }
+  ],
+  "competitors": [
+    "youtube.com",
+    "reddit.com",
+    "techradar.com",
+    "cybernews.com",
+    "cnet.com",
+    "pcmag.com",
+    "tomsguide.com",
+    "security.org",
+    "gizmodo.com",
+    "cyberinsider.com",
+    "thebestvpn.com",
+    "comparitech.com",
+    "allaboutcookies.org",
+    "vpnmentor.com",
+    "cloudwards.net",
+    "top10vpn.com",
+    "01net.com",
+    "vpnpro.com",
+    "pcworld.com"
+  ],
+  "sourcePolicy": "DataForSEO signals prioritise questions and structure; provider feature availability, safety and current limits require first-party source checks."
+}

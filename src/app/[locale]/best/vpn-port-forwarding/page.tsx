@@ -156,6 +156,22 @@ export default async function VpnPortForwardingPage({ params }: Props) {
         q: "Can I choose which port I get?",
         a: "With Proton VPN and PureVPN, yes. With Private Internet Access the port is assigned at random, which is fine for a torrent client but awkward if you need a fixed port for a service at home.",
       },
+      {
+        q: "Is there a free VPN that offers port forwarding?",
+        a: "Treat that claim cautiously. Port forwarding is commonly limited to paid plans, paid add-ons or a narrow set of servers, and a free label does not prove that inbound connections are supported. Check the provider's current feature and acceptable-use pages before installing anything.",
+      },
+      {
+        q: "How do I set up port forwarding with a VPN?",
+        a: "Confirm that the provider supports it on your plan, request or assign the port in its app or account panel, then enter that port in the service that needs inbound connections. Test the port from outside your network and close it again when the service is not needed.",
+      },
+      {
+        q: "Do VPNs use port 443?",
+        a: "Some VPN protocols can connect over TCP or UDP port 443, but that is an outbound transport choice and is not the same as forwarding an inbound port to your device. Check the provider's protocol documentation for the exact transport and fallback behavior.",
+      },
+      {
+        q: "Does a static IP automatically include port forwarding?",
+        a: "No. A static or dedicated IP can make an address predictable, but it does not by itself open an inbound port. The provider must separately document port-forwarding support, the allowed ports and any add-on cost.",
+      },
     ],
     sourcesTitle: "Sources",
     sourcesIntro: "Every row links to where it came from. Read on 25 July 2026.",

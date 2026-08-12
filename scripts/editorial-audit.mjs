@@ -194,6 +194,12 @@ const checks = [
     patterns: [/AffiliateTextLink/, /price=\{item\.vpn \?/, /monthlyPrice/, /Price Comparison Table/],
   },
   {
+    name: "torrenting page preserves affiliate boundary",
+    file: "src/app/[locale]/best/vpn-torrenting/page.tsx",
+    patterns: [/affiliateUrl=""/],
+    forbiddenPatterns: [/priceLink/],
+  },
+  {
     name: "localized free VPN routes use the evidence-led template",
     file: "src/app/[locale]/best/free-vpn/page.tsx",
     patterns: [/All locales use the same audited template/, /<FreeVpnEditorialPage locale=\{locale\} \/>/, /Limits and Trade-offs/],

@@ -1,0 +1,499 @@
+{
+  "schemaVersion": 1,
+  "cluster": "Best VPN commercial pillar / use-case comparisons",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "fetchedAt": "2026-08-12T23:44:33.139Z",
+  "refreshed": false,
+  "seeds": [
+    "best vpn",
+    "best vpn 2026",
+    "best vpn for privacy",
+    "best vpn for streaming",
+    "best vpn for gaming",
+    "best cheap vpn"
+  ],
+  "overview": [
+    {
+      "keyword": "best cheap vpn",
+      "currentVolume": null,
+      "latestVolume": 1900,
+      "latestMonth": "2024-02",
+      "difficulty": 39,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "best vpn",
+      "currentVolume": null,
+      "latestVolume": 49500,
+      "latestMonth": "2024-02",
+      "difficulty": 64,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "best vpn for gaming",
+      "currentVolume": null,
+      "latestVolume": 2400,
+      "latestMonth": "2024-02",
+      "difficulty": 36,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "best vpn for privacy",
+      "currentVolume": null,
+      "latestVolume": 390,
+      "latestMonth": "2024-02",
+      "difficulty": 52,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "best vpn for streaming",
+      "currentVolume": null,
+      "latestVolume": 1300,
+      "latestMonth": "2024-02",
+      "difficulty": 31,
+      "intent": "commercial"
+    }
+  ],
+  "suggestions": [
+    {
+      "seed": "best vpn",
+      "keyword": "vpn privacy best",
+      "volume": 90500
+    },
+    {
+      "seed": "best vpn",
+      "keyword": "best vpn network free",
+      "volume": 33100
+    },
+    {
+      "seed": "best vpn",
+      "keyword": "vpn best free vpn",
+      "volume": 33100
+    },
+    {
+      "seed": "best vpn",
+      "keyword": "best free vpn networks",
+      "volume": 33100
+    },
+    {
+      "seed": "best vpn",
+      "keyword": "vpn providers best",
+      "volume": 14800
+    },
+    {
+      "seed": "best vpn",
+      "keyword": "best phone vpn iphone",
+      "volume": 12100
+    },
+    {
+      "seed": "best vpn",
+      "keyword": "best vpn 2025",
+      "volume": 6600
+    },
+    {
+      "seed": "best vpn",
+      "keyword": "best android vpn software",
+      "volume": 4400
+    },
+    {
+      "seed": "best vpn",
+      "keyword": "best vpn program for android",
+      "volume": 4400
+    },
+    {
+      "seed": "best vpn",
+      "keyword": "best vpn software android",
+      "volume": 4400
+    },
+    {
+      "seed": "best vpn",
+      "keyword": "android vpn best free",
+      "volume": 3600
+    },
+    {
+      "seed": "best vpn",
+      "keyword": "best vpn streaming video",
+      "volume": 3600
+    },
+    {
+      "seed": "best vpn",
+      "keyword": "best free vpn software for android",
+      "volume": 3600
+    },
+    {
+      "seed": "best vpn",
+      "keyword": "china vpn best",
+      "volume": 2900
+    },
+    {
+      "seed": "best vpn",
+      "keyword": "vpn best for china",
+      "volume": 2900
+    },
+    {
+      "seed": "best vpn for privacy",
+      "keyword": "best vpn for privacy and speed",
+      "volume": 30
+    },
+    {
+      "seed": "best vpn for privacy",
+      "keyword": "atlas vpn best free vpn for privacy",
+      "volume": 0
+    },
+    {
+      "seed": "best vpn for privacy",
+      "keyword": "best vpn for privacy 2021",
+      "volume": 0
+    },
+    {
+      "seed": "best vpn for privacy",
+      "keyword": "best vpn for privacy 2023",
+      "volume": 0
+    },
+    {
+      "seed": "best vpn for privacy",
+      "keyword": "best vpn for privacy 2020",
+      "volume": 0
+    },
+    {
+      "seed": "best vpn for privacy",
+      "keyword": "all best vpn scholarship for online privacy",
+      "volume": 0
+    },
+    {
+      "seed": "best vpn for privacy",
+      "keyword": "best vpn for security and privacy",
+      "volume": null
+    },
+    {
+      "seed": "best vpn for privacy",
+      "keyword": "best vpn for online privacy",
+      "volume": null
+    },
+    {
+      "seed": "best vpn for privacy",
+      "keyword": "best vpn for security and privacy reddit",
+      "volume": null
+    },
+    {
+      "seed": "best vpn for privacy",
+      "keyword": "best vpn service for privacy",
+      "volume": null
+    },
+    {
+      "seed": "best vpn for privacy",
+      "keyword": "best vpn for privacy and security",
+      "volume": null
+    },
+    {
+      "seed": "best vpn for privacy",
+      "keyword": "best vpn country for privacy",
+      "volume": null
+    },
+    {
+      "seed": "best vpn for privacy",
+      "keyword": "best vpn for privacy free",
+      "volume": null
+    },
+    {
+      "seed": "best vpn for privacy",
+      "keyword": "which vpn is best for privacy",
+      "volume": null
+    },
+    {
+      "seed": "best vpn for privacy",
+      "keyword": "best free vpn for privacy",
+      "volume": null
+    },
+    {
+      "seed": "best vpn for streaming",
+      "keyword": "best free vpn for streaming video",
+      "volume": 140
+    },
+    {
+      "seed": "best vpn for streaming",
+      "keyword": "best vpn 2021 for streaming",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for streaming",
+      "keyword": "best android vpn for streaming",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for streaming",
+      "keyword": "best vpn for streaming in uk",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for streaming",
+      "keyword": "best vpn server for streaming",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for streaming",
+      "keyword": "best free vpn for streaming tv",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for streaming",
+      "keyword": "best vpn for streaming in mexico",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for streaming",
+      "keyword": "best vpn for streaming hbo",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for streaming",
+      "keyword": "best vpn for youtube streaming",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for streaming",
+      "keyword": "best vpn for streaming internationally",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for streaming",
+      "keyword": "best vpn for iphone streaming",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for streaming",
+      "keyword": "best vpn for unblocking streaming services",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for streaming",
+      "keyword": "what is the best vpn for streaming movies",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for streaming",
+      "keyword": "best vpn settings for streaming",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for streaming",
+      "keyword": "which vpn is best for live streaming",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for gaming",
+      "keyword": "best vpn for xbox gaming",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for gaming",
+      "keyword": "best gaming vpn for pubg mobile",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for gaming",
+      "keyword": "best free vpn for gaming in india",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for gaming",
+      "keyword": "best vpn protocol for gaming reddit",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for gaming",
+      "keyword": "best free vpn for gaming online",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for gaming",
+      "keyword": "best gaming vpn for ios",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for gaming",
+      "keyword": "best free vpn for cloud gaming",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for gaming",
+      "keyword": "best free vpn for gaming low ping pc",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for gaming",
+      "keyword": "what is the best vpn protocol for gaming",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for gaming",
+      "keyword": "best vpn for gaming free pc",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for gaming",
+      "keyword": "best vpn for pubg gaming",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for gaming",
+      "keyword": "best free pc vpn for gaming",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for gaming",
+      "keyword": "best vpn for gaming online",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for gaming",
+      "keyword": "best vpn for gaming 2018",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for gaming",
+      "keyword": "best vpn for gaming 2024",
+      "volume": 10
+    },
+    {
+      "seed": "best cheap vpn",
+      "keyword": "best vpn locations for cheap flights",
+      "volume": 170
+    },
+    {
+      "seed": "best cheap vpn",
+      "keyword": "best and cheap vpn service",
+      "volume": 30
+    },
+    {
+      "seed": "best cheap vpn",
+      "keyword": "cheap and best vpn service",
+      "volume": 30
+    },
+    {
+      "seed": "best cheap vpn",
+      "keyword": "best place to vpn for cheap flights",
+      "volume": 20
+    },
+    {
+      "seed": "best cheap vpn",
+      "keyword": "best cheap vpn netflix",
+      "volume": 10
+    },
+    {
+      "seed": "best cheap vpn",
+      "keyword": "best vpn country for cheap hotels",
+      "volume": 10
+    },
+    {
+      "seed": "best cheap vpn",
+      "keyword": "best cheap vpn 2024",
+      "volume": 10
+    },
+    {
+      "seed": "best cheap vpn",
+      "keyword": "which vpn is best and cheap",
+      "volume": 10
+    },
+    {
+      "seed": "best cheap vpn",
+      "keyword": "best vpn to get cheap flights",
+      "volume": 10
+    },
+    {
+      "seed": "best cheap vpn",
+      "keyword": "best vpn location for cheap hotels",
+      "volume": 10
+    },
+    {
+      "seed": "best cheap vpn",
+      "keyword": "best vpn to use for cheap flights",
+      "volume": 10
+    },
+    {
+      "seed": "best cheap vpn",
+      "keyword": "best cheap vpn reddit 2024",
+      "volume": 10
+    },
+    {
+      "seed": "best cheap vpn",
+      "keyword": "best vpn country for cheap flights reddit",
+      "volume": 10
+    },
+    {
+      "seed": "best cheap vpn",
+      "keyword": "best cheap vpn reddit 2020",
+      "volume": 0
+    },
+    {
+      "seed": "best cheap vpn",
+      "keyword": "best cheap vpn reddit 2023",
+      "volume": 0
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "best vpn",
+      "paa": [
+        "Which VPN is actually the best?",
+        "Why avoid NordVPN?",
+        "Which VPN do hackers use?",
+        "What is the best free VPN for the USA?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "best vpn 2026",
+      "paa": [
+        "Are VPNs worth it in 2026?",
+        "What is the best VPN to use right now?",
+        "Will Netflix ban me if I use a VPN?",
+        "Can the FBI track a VPN?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "best vpn for privacy",
+      "paa": [
+        "What is the most secure VPN for privacy?",
+        "Why avoid NordVPN?",
+        "Can the FBI see through VPNs?",
+        "Which VPN do hackers use?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "best vpn for streaming",
+      "paa": [
+        "What is the best VPN for streaming?",
+        "Do VPNs actually work for streaming?",
+        "Which VPN is best for live streaming?",
+        "Will Netflix ban me for using a VPN?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "best vpn for gaming",
+      "paa": [
+        "Do VPNs really work for gaming?",
+        "Which country VPN is best for gaming?",
+        "What is the no. 1 fastest VPN in the world?",
+        "Will a VPN slow down gaming?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "best cheap vpn",
+      "paa": [
+        "Which VPN is 100% free?",
+        "What is the best affordable VPN service?",
+        "Which VPN is safe and cheap?",
+        "Are free VPNs illegal?"
+      ],
+      "hasAiOverview": true
+    }
+  ],
+  "sourcePolicy": "DataForSEO signals prioritise intent coverage and page structure; they do not prove current provider performance, pricing, availability or conversion value."
+}

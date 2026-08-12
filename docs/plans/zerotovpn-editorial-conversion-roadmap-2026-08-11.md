@@ -753,3 +753,8 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 
 - Re-ran `npm run measure:editorial` against the retained authenticated Search Console Pages/Queries/Chart exports and the real Short.io click export for **28 July–10 August 2026**. The run processed **1,000** page rows, **1,000** query rows, **14** chart days and **39** Short.io rows, and reproduced the existing interim report exactly: **93** authoritative Search Console clicks, **36,763** impressions and cluster totals of 14 censorship, 11 commercial-pillar, 4 free-VPN, 0 travel and 0 protocols clicks in the downloaded page table.
 - The importer records `requiredInputsPresent: true` but leaves `affiliate.partner.conversions`, `affiliate.partner.revenue` and `affiliate.partner.epc` missing because no Nord partner export was supplied. The output is kept in the ignored `.cache/metrics` folder; it is a reproducibility check, not a KPI conclusion or a page-selection decision.
+
+### Commercial-pillar DataForSEO brief: 13 August 2026
+
+- Added `npm run seo:best-vpn` and ran it against the existing US/English DataForSEO credentials without copying secrets into the repository. The dossier contains five keyword-overview rows, 75 deduplicated suggestions and six organic SERP/PAA samples for the existing commercial pillar; evidence is stored in [dataforseo-best-vpn-cluster-2026-08-13.md](../research/dataforseo-best-vpn-cluster-2026-08-13.md).
+- Current volume fields were unavailable for these terms; the latest non-zero history is February 2024 (for example, 49,500 for `best vpn`). The PAA set is therefore used only to refine intent coverage and FAQ prioritisation. No page, price, affiliate destination or URL batch was changed, and the matched Nord KPI gate remains open.

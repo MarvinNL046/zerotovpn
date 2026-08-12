@@ -104,6 +104,12 @@ const checks = [
     forbiddenPatterns: [/94%.*speed retention|speed retention.*94%/i],
   },
   {
+    name: "Nvidia Shield rendered record stays evidence-bounded",
+    file: "src/data/posts/en/best-vpn-for-nvidia-shield-2026.json",
+    patterns: [/dated speed observations/, /March 2026 Shield TV run/, /Results vary with the device/],
+    forbiddenPatterns: [/We tested over 10 VPN providers/i, /Speed retention hit 94%/i],
+  },
+  {
     name: "homepage evidence-bounded recommendation",
     file: "src/app/[locale]/page.tsx",
     patterns: [/Shortlist candidate/, /catalog data and documented options/, /Provider-stated countries/, /Refund window in catalog/],

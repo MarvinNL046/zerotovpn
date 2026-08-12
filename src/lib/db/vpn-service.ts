@@ -26,6 +26,8 @@ export interface VpnData {
   priceMonthly: number;
   priceYearly: number;
   priceTwoYear: number | null;
+  priceLastVerified?: string | null;
+  priceSource?: string | null;
   moneyBackDays: number;
   freeTier: boolean;
   servers: number;

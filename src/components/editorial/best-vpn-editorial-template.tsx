@@ -138,6 +138,9 @@ export function EditorialQuickPickCard({
           {vpn.priceTwoYear ? "Long-term plan equivalent" : "Annual plan equivalent"}
           {vpn.moneyBackDays > 0 ? ` · ${vpn.moneyBackDays}-day refund window` : " · Check provider refund terms"}
         </p>
+        <p className="text-xs text-muted-foreground" data-price-freshness="true">
+          Price checked: {vpn.priceLastVerified ?? "not recorded"}
+        </p>
         <AffiliateButton
           vpnId={vpn.id}
           vpnName={vpn.name}

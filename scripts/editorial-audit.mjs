@@ -51,7 +51,7 @@ const checks = [
   {
     name: "shared quick-pick cards expose branded provider marks and plan context",
     file: "src/components/editorial/best-vpn-editorial-template.tsx",
-    patterns: [/data-provider-mark="true"/, /alt=\{`\$\{vpn\.name\} logo`\}/, /data-plan-context="true"/, /Long-term plan equivalent/, /refund window/],
+    patterns: [/data-provider-mark="true"/, /alt=\{`\$\{vpn\.name\} logo`\}/, /data-plan-context="true"/, /data-price-freshness="true"/, /Long-term plan equivalent/, /refund window/],
   },
   {
     name: "localized Best VPN routes avoid retired performance claims",

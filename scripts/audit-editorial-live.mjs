@@ -14,7 +14,7 @@ const targets = [
   { path: "/best/vpn-privacy", name: "Privacy use-case page", ids: [], links: [], expectFaq: false, expectTable: false },
   { path: "/best/vpn-gaming", name: "Gaming use-case page", ids: [], links: [], expectFaq: false, expectTable: false },
   { path: "/best/vpn-chromebook", name: "Chromebook use-case page", ids: [], links: [], expectFaq: false, expectTable: false },
-  { path: "/best/best-vpn", name: "Best VPN commercial pillar", ids: ["comparison", "methodology", "faq"], links: ["/blog/best-vpn-for-iran-2026-bypass-internet-censorship", "/guides/vpn-protocols-explained", "/best/free-vpn", "/best/vpn-privacy", "/best/vpn-streaming", "/best/vpn-cheap", "/best/vpn-free-trial"], expectFaq: true },
+  { path: "/best/best-vpn", name: "Best VPN commercial pillar", ids: ["comparison", "methodology", "faq"], links: ["/blog/best-vpn-for-iran-2026-bypass-internet-censorship", "/guides/vpn-protocols-explained", "/best/free-vpn", "/best/vpn-privacy", "/best/vpn-streaming", "/best/vpn-cheap", "/best/vpn-free-trial"], expectFaq: true, brief: { primaryKeyword: "best vpn", intent: "commercial", cluster: "commercial-choice", lastReviewedAt: "2026-08-12", affiliateContext: "vpn-selection", schemaType: "CollectionPage" } },
   { path: "/blog/best-vpn-for-iran-2026-bypass-internet-censorship", name: "Iran editorial hub", ids: ["cluster-links", "quick-picks", "sources"], links: ["/countries/russia", "/blog/best-vpn-for-telegram-2026", "/guides/vpn-obfuscation-explained"], expectFaq: true },
   { path: "/blog/best-vpn-for-telegram-2026", name: "Telegram editorial hub", ids: ["cluster-links", "quick-picks", "sources"], links: ["/countries/iran", "/countries/russia", "/guides/vpn-obfuscation-explained"], expectFaq: true },
   { path: "/countries/iran", name: "Iran evidence checklist", ids: ["summary", "evidence-matrix", "failure-conditions", "evidence-checklist", "provider-dossiers", "verification", "faq", "related-guides"], links: ["/blog/best-vpn-for-iran-2026-bypass-internet-censorship", "/countries/russia", "/countries/china"], expectFaq: true },
@@ -99,10 +99,30 @@ function extractImages(html) {
   });
 }
 
+function extractContentBrief(html, target) {
+  if (!target.brief) return { missing: [], present: false };
+  const section = html.match(/<section[^>]+data-editorial-brief=["']true["'][^>]*>/i)?.[0] ?? "";
+  const attributeNames = {
+    primaryKeyword: "data-primary-keyword",
+    intent: "data-editorial-intent",
+    cluster: "data-editorial-cluster",
+    affiliateContext: "data-affiliate-context",
+    schemaType: "data-schema-type",
+  };
+  const missing = Object.entries(target.brief)
+    .filter(([key, expected]) => key !== "lastReviewedAt" && !new RegExp(`${attributeNames[key] ?? `data-${key.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`)}`}=["']${String(expected).replace(/[.*+?^${}()|[\\]\\]/g, "\\$&")}["']`, "i").test(section))
+    .map(([key]) => key);
+  const reviewedAt = target.brief.lastReviewedAt;
+  if (!new RegExp(`data-last-reviewed-at=["']${reviewedAt}["']`, "i").test(section)) missing.push("lastReviewedAt");
+  if (!new RegExp(`data-evidence-count=["'][1-9][0-9]*["']`, "i").test(section)) missing.push("evidence");
+  return { missing, present: Boolean(section) };
+}
+
 function extractSignals(html, target, url) {
   const meta = extractMeta(html);
   const anchors = extractAnchors(html);
   const images = extractImages(html);
+  const contentBrief = extractContentBrief(html, target);
   const internalLinks = anchors.filter(({ href }) => href.startsWith("/") || href.startsWith(BASE)).length;
   const affiliateLinks = anchors.filter(({ href }) => affiliateHref.test(href));
   const missingAffiliateRel = affiliateLinks.filter(({ rel }) => !rel.includes("sponsored") || !rel.includes("nofollow"));
@@ -142,6 +162,7 @@ function extractSignals(html, target, url) {
     faqSchema: !target.expectFaq || faqSchema,
     imageSeo: missingImageAltCount === 0 && missingImageDimensionsCount === 0,
     structuredDataDates: futureSchemaDates.length === 0,
+    contentBrief: contentBrief.missing.length === 0,
   };
   return {
     ...meta,
@@ -152,6 +173,7 @@ function extractSignals(html, target, url) {
     missingImageAltCount,
     missingImageDimensionsCount,
     futureSchemaDates,
+    contentBrief,
     affiliateLinkCount: affiliateLinks.length,
     missingAffiliateRelCount: missingAffiliateRel.length,
     missingAffiliateSlugCount: missingAffiliateSlug.length,
@@ -216,6 +238,7 @@ const summary = {
   imageSeoFailureCount: records.filter((record) => !record.checks?.imageSeo).length,
   futureSchemaDateFailureCount: records.filter((record) => !record.checks?.structuredDataDates).length,
   freshnessFailureCount: records.filter((record) => !record.checks?.freshness).length,
+  contentBriefFailureCount: records.filter((record) => !record.checks?.contentBrief).length,
   socialImageFailureCount: records.filter((record) => !record.checks?.socialImage).length,
 };
 const payload = { schemaVersion: 1, summary, records };
@@ -228,7 +251,7 @@ await writeFile(jsonPath, `${JSON.stringify(payload, null, 2)}\n`, "utf8");
 const rows = records.map((record) => `| ${record.ok ? "pass" : "FAIL"} | ${record.path} | ${record.title ?? ""} | ${record.h1Count ?? "n/a"} | ${record.internalLinkCount ?? "n/a"} | ${record.affiliateLinkCount ?? "n/a"} | ${record.missingIds?.join(", ") || "—"} | ${record.missingLinks?.join(", ") || "—"} |`);
 const markdown = [
   "# Live editorial page audit", "", `Generated: ${summary.generatedAt}`, "",
-  `- Target pages: **${summary.targetCount}**`, `- Passing pages: **${summary.okCount}**`, `- Pages needing review: **${summary.failedCount}**`, `- Affiliate links checked: **${summary.affiliateLinkCount}**`, `- Affiliate links missing sponsored/nofollow: **${summary.missingAffiliateRelCount}**`, `- Affiliate links missing Short.io slug telemetry: **${summary.missingAffiliateSlugCount}**`, `- Missing required cluster links: **${summary.missingClusterLinkCount}**`, `- Pages missing complete Open Graph metadata: **${summary.openGraphFailureCount}**`, `- Pages missing complete Twitter metadata: **${summary.twitterFailureCount}**`, `- Pages failing image alt/dimension checks: **${summary.imageSeoFailureCount}**`, `- Pages with future structured-data dates: **${summary.futureSchemaDateFailureCount}**`, `- Pages missing a freshness signal: **${summary.freshnessFailureCount}**`, `- Pages with a broken social-image URL: **${summary.socialImageFailureCount}**`, "",
+  `- Target pages: **${summary.targetCount}**`, `- Passing pages: **${summary.okCount}**`, `- Pages needing review: **${summary.failedCount}**`, `- Affiliate links checked: **${summary.affiliateLinkCount}**`, `- Affiliate links missing sponsored/nofollow: **${summary.missingAffiliateRelCount}**`, `- Affiliate links missing Short.io slug telemetry: **${summary.missingAffiliateSlugCount}**`, `- Missing required cluster links: **${summary.missingClusterLinkCount}**`, `- Pages missing complete Open Graph metadata: **${summary.openGraphFailureCount}**`, `- Pages missing complete Twitter metadata: **${summary.twitterFailureCount}**`, `- Pages failing image alt/dimension checks: **${summary.imageSeoFailureCount}**`, `- Pages with future structured-data dates: **${summary.futureSchemaDateFailureCount}**`, `- Pages missing a freshness signal: **${summary.freshnessFailureCount}**`, `- Pages missing a required content brief: **${summary.contentBriefFailureCount}**`, `- Pages with a broken social-image URL: **${summary.socialImageFailureCount}**`, "",
   "| Status | Page | Title | H1s | Internal links | Affiliate links | Missing required IDs | Missing cluster links |", "|---|---|---|---:|---:|---:|---|---|", ...rows, "", `Raw records: [editorial-live-audit-${label}.json](./editorial-live-audit-${label}.json)`,
 ].join("\n") + "\n";
 await writeFile(mdPath, markdown, "utf8");

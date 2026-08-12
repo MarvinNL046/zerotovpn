@@ -449,6 +449,12 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - Local verification: `npm run audit:editorial` **47/47**, `npm run build` generated **4,447** routes, `npm run audit:editorial-live` **22/22**, and `npm run audit:claims-live` checked **2,279/2,279** URLs with **0 findings**.
 - Production deployment `dpl_3HDW8FDNzpXoE4XPvx4GcPEKQyy1` is Ready and aliased to `https://www.zerotovpn.com`. Live `/best/best-vpn` shows three `Price checked: 2026-07-25` lines, three long-term-plan/refund context lines, branded provider logo alt text, comparison table price links and the newsletter-only popup marker.
 
+### Page-level content brief contract: 12 August 2026
+
+- Added the typed `EditorialContentBrief` contract in `src/lib/editorial-content-brief.ts` with `primaryKeyword`, intent, cluster, review date, evidence references, affiliate context and schema type. The Best VPN pillar now supplies a concrete `commercial-choice` brief to the shared template, which exposes auditable data attributes without adding keyword-stuffed visible copy.
+- Added a local regression check and a live editorial gate for the brief fields. Local checks pass **48/48**; the production build generates **4,447** routes; the live editorial gate passes **22/22** with **0** content-brief failures; the claim audit remains **2,279/2,279** with **0 findings**.
+- Production deployment `dpl_4CzAAKixgSfWZXz6ExeKWsmjvmwF` is Ready. The read-only browser smoke is recorded in [content-brief-browser-smoke-2026-08-12.md](../metrics/content-brief-browser-smoke-2026-08-12.md).
+
 ### Nord affiliate interim screenshot: 12 August 2026
 
 - The user-supplied authenticated Nord Performance Report screenshot for **6–12 August 2026** shows **19 clicks** (NordVPN 15, NordVPN China 2, NordVPN Arabia 2), **0 conversions**, **$0.00 payout** and **$0.00 EPC**. Full evidence and interpretation boundaries are recorded in [nord-partner-interim-screenshot-2026-08-12.md](../metrics/nord-partner-interim-screenshot-2026-08-12.md).

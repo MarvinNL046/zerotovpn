@@ -5,6 +5,7 @@ import { FAQSchema } from "@/components/seo/faq-schema";
 import { BestVpnEditorialTemplate, EditorialQuickPickCard } from "@/components/editorial/best-vpn-editorial-template";
 import { AffiliateButton, AffiliateTextLink } from "@/components/vpn/affiliate-button";
 import { Link } from "@/i18n/navigation";
+import type { EditorialContentBrief } from "@/lib/editorial-content-brief";
 import type { VpnData } from "@/lib/vpn-data-layer";
 
 const pageUrl = "https://www.zerotovpn.com/best/best-vpn";
@@ -29,6 +30,20 @@ const nav = [
   { href: "#sources", label: "Sources" },
 ] as const;
 
+const contentBrief = {
+  primaryKeyword: "best vpn",
+  intent: "commercial",
+  cluster: "commercial-choice",
+  lastReviewedAt: "2026-08-12",
+  evidence: [
+    "docs/research/dataforseo-commercial-cluster-2026-08-12.md",
+    "/methodology",
+    "/editorial-policy",
+  ],
+  affiliateContext: "vpn-selection",
+  schemaType: "CollectionPage",
+} satisfies EditorialContentBrief;
+
 function money(value: number | undefined) {
   return typeof value === "number" ? `$${value.toFixed(2)}` : "—";
 }
@@ -50,7 +65,7 @@ export function BestVpnPillarPage({ vpns }: { vpns: VpnData[] }) {
       <ArticleJsonLd title="Best VPN in 2026: evidence-led shortlist and comparison" description="Compare leading VPN providers by use case, pricing metadata, protocol support and transparent test notes." url={pageUrl} datePublished="2026-01-01" dateModified="2026-08-12" />
       <BreadcrumbSchema items={[{ name: "Best VPNs", href: "/best/best-vpn" }]} />
       <FAQSchema title="Best VPN FAQ" faqs={faq} />
-      <BestVpnEditorialTemplate navigation={nav}>
+      <BestVpnEditorialTemplate navigation={nav} brief={contentBrief}>
         <article>
           <section className="border-b bg-gradient-to-br from-primary/10 via-background to-background py-14 lg:py-20"><div className="container max-w-6xl"><div className="max-w-4xl"><p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">Updated August 12, 2026 · independent comparison</p><h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-6xl">Best VPN in 2026: a transparent shortlist you can verify</h1><p className="mt-6 text-xl leading-8 text-muted-foreground">Use the shortlist to choose a starting point, then verify the plan, protocol and test conditions that match your setup. We separate provider documentation, catalog data and real-world checks instead of promising one VPN works everywhere.</p><p className="mt-5 text-sm leading-6 text-muted-foreground">Affiliate links may earn us a commission. This does not determine the ranking; <Link href="/affiliate-disclosure" className="underline">read the disclosure</Link>. Prices and features can change.</p></div></div></section>
 

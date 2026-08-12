@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "summary": {
-    "generatedAt": "2026-08-12T17:04:14.817Z",
+    "generatedAt": "2026-08-12T17:16:17.732Z",
     "targetCount": 22,
     "okCount": 22,
     "failedCount": 0,
@@ -14,6 +14,7 @@
     "imageSeoFailureCount": 0,
     "futureSchemaDateFailureCount": 0,
     "freshnessFailureCount": 0,
+    "contentBriefFailureCount": 0,
     "socialImageFailureCount": 0
   },
   "records": [
@@ -31,7 +32,7 @@
       "url": "https://www.zerotovpn.com/",
       "status": 200,
       "finalUrl": "https://www.zerotovpn.com/",
-      "durationMs": 5982,
+      "durationMs": 1021,
       "title": "ZeroToVPN: Independent VPN Research, Transparency &amp; Real-World Testing",
       "description": "Independent VPN research and real-world testing. See measurable rankings updated Aug 2026, full methodology, and the VPN Transparency &amp; Performance Index 2026.",
       "canonical": "https://www.zerotovpn.com",
@@ -50,6 +51,10 @@
       "missingImageAltCount": 0,
       "missingImageDimensionsCount": 0,
       "futureSchemaDates": [],
+      "contentBrief": {
+        "missing": [],
+        "present": false
+      },
       "affiliateLinkCount": 9,
       "missingAffiliateRelCount": 0,
       "missingAffiliateSlugCount": 0,
@@ -77,6 +82,7 @@
         "faqSchema": true,
         "imageSeo": true,
         "structuredDataDates": true,
+        "contentBrief": true,
         "socialImage": true
       },
       "ok": true,
@@ -96,7 +102,7 @@
       "url": "https://www.zerotovpn.com/about",
       "status": 200,
       "finalUrl": "https://www.zerotovpn.com/about",
-      "durationMs": 5774,
+      "durationMs": 1117,
       "title": "About ZeroToVPN | Our Testing Methodology",
       "description": "Learn about ZeroToVPN&#x27;s independent VPN testing methodology, our expert team, and our commitment to honest, unbiased reviews. No sponsored rankings.",
       "canonical": "https://www.zerotovpn.com/about",
@@ -115,6 +121,10 @@
       "missingImageAltCount": 0,
       "missingImageDimensionsCount": 0,
       "futureSchemaDates": [],
+      "contentBrief": {
+        "missing": [],
+        "present": false
+      },
       "affiliateLinkCount": 0,
       "missingAffiliateRelCount": 0,
       "missingAffiliateSlugCount": 0,
@@ -142,6 +152,7 @@
         "faqSchema": true,
         "imageSeo": true,
         "structuredDataDates": true,
+        "contentBrief": true,
         "socialImage": true
       },
       "ok": true,
@@ -161,7 +172,7 @@
       "url": "https://www.zerotovpn.com/best/vpn-linux",
       "status": 200,
       "finalUrl": "https://www.zerotovpn.com/best/vpn-linux",
-      "durationMs": 5937,
+      "durationMs": 1033,
       "title": "Best VPNs for Linux (Aug 2026) — Native Apps &amp; CLI",
       "description": "We compare several VPNs for Linux. Expert picks updated Aug 2026 with Ubuntu/Debian/Fedora support, CLI tools &amp; speeds compared. See our honest verdict.",
       "canonical": "https://www.zerotovpn.com/best/vpn-linux",
@@ -180,6 +191,10 @@
       "missingImageAltCount": 0,
       "missingImageDimensionsCount": 0,
       "futureSchemaDates": [],
+      "contentBrief": {
+        "missing": [],
+        "present": false
+      },
       "affiliateLinkCount": 3,
       "missingAffiliateRelCount": 0,
       "missingAffiliateSlugCount": 0,
@@ -207,6 +222,7 @@
         "faqSchema": true,
         "imageSeo": true,
         "structuredDataDates": true,
+        "contentBrief": true,
         "socialImage": true
       },
       "ok": true,
@@ -226,7 +242,7 @@
       "url": "https://www.zerotovpn.com/best/vpn-windows",
       "status": 200,
       "finalUrl": "https://www.zerotovpn.com/best/vpn-windows",
-      "durationMs": 5470,
+      "durationMs": 1102,
       "title": "Best VPNs for Windows PC (Aug 2026) — Native Apps &amp; Speed",
       "description": "We compare several VPNs for Windows PC. Expert picks updated Aug 2026 with speeds, native apps &amp; security compared. 30-day money-back guarantee on all picks.",
       "canonical": "https://www.zerotovpn.com/best/vpn-windows",
@@ -245,6 +261,10 @@
       "missingImageAltCount": 0,
       "missingImageDimensionsCount": 0,
       "futureSchemaDates": [],
+      "contentBrief": {
+        "missing": [],
+        "present": false
+      },
       "affiliateLinkCount": 5,
       "missingAffiliateRelCount": 0,
       "missingAffiliateSlugCount": 0,
@@ -272,6 +292,7 @@
         "faqSchema": true,
         "imageSeo": true,
         "structuredDataDates": true,
+        "contentBrief": true,
         "socialImage": true
       },
       "ok": true,
@@ -291,7 +312,7 @@
       "url": "https://www.zerotovpn.com/best/vpn-laptops",
       "status": 200,
       "finalUrl": "https://www.zerotovpn.com/best/vpn-laptops",
-      "durationMs": 5735,
+      "durationMs": 1105,
       "title": "Best VPNs for Laptops (Aug 2026) — Lightweight &amp; Secure",
       "description": "We compare several VPNs for laptops. Expert picks updated Aug 2026 with battery efficiency, WiFi security &amp; travel features compared. See our honest verdict.",
       "canonical": "https://www.zerotovpn.com/best/vpn-laptops",
@@ -310,6 +331,10 @@
       "missingImageAltCount": 0,
       "missingImageDimensionsCount": 0,
       "futureSchemaDates": [],
+      "contentBrief": {
+        "missing": [],
+        "present": false
+      },
       "affiliateLinkCount": 6,
       "missingAffiliateRelCount": 0,
       "missingAffiliateSlugCount": 0,
@@ -337,6 +362,7 @@
         "faqSchema": true,
         "imageSeo": true,
         "structuredDataDates": true,
+        "contentBrief": true,
         "socialImage": true
       },
       "ok": true,
@@ -356,7 +382,7 @@
       "url": "https://www.zerotovpn.com/best/vpn-privacy",
       "status": 200,
       "finalUrl": "https://www.zerotovpn.com/best/vpn-privacy",
-      "durationMs": 5722,
+      "durationMs": 1285,
       "title": "Best VPNs for Privacy (Aug 2026) — Audited No-Logs Picks",
       "description": "We compare several VPNs for privacy. Expert picks updated Aug 2026 with jurisdiction, no-logs audits &amp; anonymous payment compared. See our honest verdict.",
       "canonical": "https://www.zerotovpn.com/best/vpn-privacy",
@@ -375,6 +401,10 @@
       "missingImageAltCount": 0,
       "missingImageDimensionsCount": 0,
       "futureSchemaDates": [],
+      "contentBrief": {
+        "missing": [],
+        "present": false
+      },
       "affiliateLinkCount": 5,
       "missingAffiliateRelCount": 0,
       "missingAffiliateSlugCount": 0,
@@ -402,6 +432,7 @@
         "faqSchema": true,
         "imageSeo": true,
         "structuredDataDates": true,
+        "contentBrief": true,
         "socialImage": true
       },
       "ok": true,
@@ -421,7 +452,7 @@
       "url": "https://www.zerotovpn.com/best/vpn-gaming",
       "status": 200,
       "finalUrl": "https://www.zerotovpn.com/best/vpn-gaming",
-      "durationMs": 5850,
+      "durationMs": 1080,
       "title": "Best VPN for Gaming (2026) — Lowest Ping, Tested | ZeroToVPN",
       "description": "Compare current VPN provider records for gaming performance, then test ping, stability and server choice on your own network in 2026.",
       "canonical": "https://www.zerotovpn.com/best/vpn-gaming",
@@ -440,6 +471,10 @@
       "missingImageAltCount": 0,
       "missingImageDimensionsCount": 0,
       "futureSchemaDates": [],
+      "contentBrief": {
+        "missing": [],
+        "present": false
+      },
       "affiliateLinkCount": 4,
       "missingAffiliateRelCount": 0,
       "missingAffiliateSlugCount": 0,
@@ -467,6 +502,7 @@
         "faqSchema": true,
         "imageSeo": true,
         "structuredDataDates": true,
+        "contentBrief": true,
         "socialImage": true
       },
       "ok": true,
@@ -486,7 +522,7 @@
       "url": "https://www.zerotovpn.com/best/vpn-chromebook",
       "status": 200,
       "finalUrl": "https://www.zerotovpn.com/best/vpn-chromebook",
-      "durationMs": 5721,
+      "durationMs": 1075,
       "title": "Best VPN for Chromebook (2026) - Easy Setup &amp; Fast Speeds",
       "description": "Looking for a VPN on Chromebook? We tested setup time, ChromeOS compatibility and speed to find the easiest and fastest options in 2026.",
       "canonical": "https://www.zerotovpn.com/best/vpn-chromebook",
@@ -505,6 +541,10 @@
       "missingImageAltCount": 0,
       "missingImageDimensionsCount": 0,
       "futureSchemaDates": [],
+      "contentBrief": {
+        "missing": [],
+        "present": false
+      },
       "affiliateLinkCount": 6,
       "missingAffiliateRelCount": 0,
       "missingAffiliateSlugCount": 0,
@@ -532,6 +572,7 @@
         "faqSchema": true,
         "imageSeo": true,
         "structuredDataDates": true,
+        "contentBrief": true,
         "socialImage": true
       },
       "ok": true,
@@ -559,10 +600,18 @@
         "/best/vpn-free-trial"
       ],
       "expectFaq": true,
+      "brief": {
+        "primaryKeyword": "best vpn",
+        "intent": "commercial",
+        "cluster": "commercial-choice",
+        "lastReviewedAt": "2026-08-12",
+        "affiliateContext": "vpn-selection",
+        "schemaType": "CollectionPage"
+      },
       "url": "https://www.zerotovpn.com/best/best-vpn",
       "status": 200,
       "finalUrl": "https://www.zerotovpn.com/best/best-vpn",
-      "durationMs": 5567,
+      "durationMs": 1024,
       "title": "Best VPN in 2026: Transparent Shortlist and Comparison | ZeroToVPN",
       "description": "Compare leading VPN providers by use case, current pricing metadata, protocol support and transparent testing notes.",
       "canonical": "https://www.zerotovpn.com/best/best-vpn",
@@ -581,6 +630,10 @@
       "missingImageAltCount": 0,
       "missingImageDimensionsCount": 0,
       "futureSchemaDates": [],
+      "contentBrief": {
+        "missing": [],
+        "present": true
+      },
       "affiliateLinkCount": 21,
       "missingAffiliateRelCount": 0,
       "missingAffiliateSlugCount": 0,
@@ -608,6 +661,7 @@
         "faqSchema": true,
         "imageSeo": true,
         "structuredDataDates": true,
+        "contentBrief": true,
         "socialImage": true
       },
       "ok": true,
@@ -634,7 +688,7 @@
       "url": "https://www.zerotovpn.com/blog/best-vpn-for-iran-2026-bypass-internet-censorship",
       "status": 200,
       "finalUrl": "https://www.zerotovpn.com/blog/best-vpn-for-iran-2026-bypass-internet-censorship",
-      "durationMs": 5697,
+      "durationMs": 1191,
       "title": "Best VPN for Iran in 2026: tested options, limits and safer preparation",
       "description": "There is no permanent best VPN for Iran. Use current evidence, obfuscation options, provider documentation and a failure-safe test plan before relying on any connection.",
       "canonical": "https://www.zerotovpn.com/blog/best-vpn-for-iran-2026-bypass-internet-censorship",
@@ -653,6 +707,10 @@
       "missingImageAltCount": 0,
       "missingImageDimensionsCount": 0,
       "futureSchemaDates": [],
+      "contentBrief": {
+        "missing": [],
+        "present": false
+      },
       "affiliateLinkCount": 6,
       "missingAffiliateRelCount": 0,
       "missingAffiliateSlugCount": 0,
@@ -680,6 +738,7 @@
         "faqSchema": true,
         "imageSeo": true,
         "structuredDataDates": true,
+        "contentBrief": true,
         "socialImage": true
       },
       "ok": true,
@@ -706,7 +765,7 @@
       "url": "https://www.zerotovpn.com/blog/best-vpn-for-telegram-2026",
       "status": 200,
       "finalUrl": "https://www.zerotovpn.com/blog/best-vpn-for-telegram-2026",
-      "durationMs": 5741,
+      "durationMs": 1130,
       "title": "Best VPN for Telegram in 2026: what to verify before you connect",
       "description": "Telegram access depends on the network, device and current block. Compare a VPN with Telegram&#x27;s own MTProxy option, document the limits and test your exact setup before relying on it.",
       "canonical": "https://www.zerotovpn.com/blog/best-vpn-for-telegram-2026",
@@ -725,6 +784,10 @@
       "missingImageAltCount": 0,
       "missingImageDimensionsCount": 0,
       "futureSchemaDates": [],
+      "contentBrief": {
+        "missing": [],
+        "present": false
+      },
       "affiliateLinkCount": 6,
       "missingAffiliateRelCount": 0,
       "missingAffiliateSlugCount": 0,
@@ -752,6 +815,7 @@
         "faqSchema": true,
         "imageSeo": true,
         "structuredDataDates": true,
+        "contentBrief": true,
         "socialImage": true
       },
       "ok": true,
@@ -783,7 +847,7 @@
       "url": "https://www.zerotovpn.com/countries/iran",
       "status": 200,
       "finalUrl": "https://www.zerotovpn.com/countries/iran",
-      "durationMs": 5486,
+      "durationMs": 1279,
       "title": "VPN Use in Iran: Evidence and Safety Checklist | ZeroToVPN",
       "description": "Use current authoritative guidance, provider records, network-specific checks, and a failure-safe plan before considering VPN use in Iran.",
       "canonical": "https://www.zerotovpn.com/countries/iran",
@@ -802,6 +866,10 @@
       "missingImageAltCount": 0,
       "missingImageDimensionsCount": 0,
       "futureSchemaDates": [],
+      "contentBrief": {
+        "missing": [],
+        "present": false
+      },
       "affiliateLinkCount": 0,
       "missingAffiliateRelCount": 0,
       "missingAffiliateSlugCount": 0,
@@ -829,6 +897,7 @@
         "faqSchema": true,
         "imageSeo": true,
         "structuredDataDates": true,
+        "contentBrief": true,
         "socialImage": true
       },
       "ok": true,
@@ -854,7 +923,7 @@
       "url": "https://www.zerotovpn.com/countries/russia",
       "status": 200,
       "finalUrl": "https://www.zerotovpn.com/countries/russia",
-      "durationMs": 3075,
+      "durationMs": 2016,
       "title": "VPN for Russia in 2026: What to Verify Before You Connect",
       "description": "VPN access in Russia can change by ISP and date. Compare obfuscation, preparation, legal uncertainty and a bounded test plan before relying on a provider.",
       "canonical": "https://www.zerotovpn.com/countries/russia",
@@ -873,6 +942,10 @@
       "missingImageAltCount": 0,
       "missingImageDimensionsCount": 0,
       "futureSchemaDates": [],
+      "contentBrief": {
+        "missing": [],
+        "present": false
+      },
       "affiliateLinkCount": 6,
       "missingAffiliateRelCount": 0,
       "missingAffiliateSlugCount": 0,
@@ -900,6 +973,7 @@
         "faqSchema": true,
         "imageSeo": true,
         "structuredDataDates": true,
+        "contentBrief": true,
         "socialImage": true
       },
       "ok": true,
@@ -925,7 +999,7 @@
       "url": "https://www.zerotovpn.com/countries/china",
       "status": 200,
       "finalUrl": "https://www.zerotovpn.com/countries/china",
-      "durationMs": 5373,
+      "durationMs": 1145,
       "title": "VPN for China in 2026: What to Verify Before You Connect",
       "description": "China&#x27;s internet environment is highly restricted and can change by network and date. Compare obfuscation, preparation, legal uncertainty and a bounded VPN test plan.",
       "canonical": "https://www.zerotovpn.com/countries/china",
@@ -944,6 +1018,10 @@
       "missingImageAltCount": 0,
       "missingImageDimensionsCount": 0,
       "futureSchemaDates": [],
+      "contentBrief": {
+        "missing": [],
+        "present": false
+      },
       "affiliateLinkCount": 6,
       "missingAffiliateRelCount": 0,
       "missingAffiliateSlugCount": 0,
@@ -971,6 +1049,7 @@
         "faqSchema": true,
         "imageSeo": true,
         "structuredDataDates": true,
+        "contentBrief": true,
         "socialImage": true
       },
       "ok": true,
@@ -997,7 +1076,7 @@
       "url": "https://www.zerotovpn.com/guides/vpn-protocols-explained",
       "status": 200,
       "finalUrl": "https://www.zerotovpn.com/guides/vpn-protocols-explained",
-      "durationMs": 5656,
+      "durationMs": 1137,
       "title": "VPN Protocols Explained: WireGuard vs OpenVPN (2026) | ZeroToVPN",
       "description": "A practical, evidence-led guide to WireGuard, OpenVPN, TCP vs UDP and VPN obfuscation, with a bounded test plan and current sources.",
       "canonical": "https://www.zerotovpn.com/guides/vpn-protocols-explained",
@@ -1016,6 +1095,10 @@
       "missingImageAltCount": 0,
       "missingImageDimensionsCount": 0,
       "futureSchemaDates": [],
+      "contentBrief": {
+        "missing": [],
+        "present": false
+      },
       "affiliateLinkCount": 6,
       "missingAffiliateRelCount": 0,
       "missingAffiliateSlugCount": 0,
@@ -1043,6 +1126,7 @@
         "faqSchema": true,
         "imageSeo": true,
         "structuredDataDates": true,
+        "contentBrief": true,
         "socialImage": true
       },
       "ok": true,
@@ -1069,7 +1153,7 @@
       "url": "https://www.zerotovpn.com/guides/vpn-obfuscation-explained",
       "status": 200,
       "finalUrl": "https://www.zerotovpn.com/guides/vpn-obfuscation-explained",
-      "durationMs": 5661,
+      "durationMs": 1255,
       "title": "VPN Obfuscation Explained: Stealth and OpenVPN | ZeroToVPN",
       "description": "Understand VPN obfuscation, stealth features and OpenVPN trade-offs with an evidence-led test plan and current provider documentation.",
       "canonical": "https://www.zerotovpn.com/guides/vpn-obfuscation-explained",
@@ -1088,6 +1172,10 @@
       "missingImageAltCount": 0,
       "missingImageDimensionsCount": 0,
       "futureSchemaDates": [],
+      "contentBrief": {
+        "missing": [],
+        "present": false
+      },
       "affiliateLinkCount": 6,
       "missingAffiliateRelCount": 0,
       "missingAffiliateSlugCount": 0,
@@ -1115,6 +1203,7 @@
         "faqSchema": true,
         "imageSeo": true,
         "structuredDataDates": true,
+        "contentBrief": true,
         "socialImage": true
       },
       "ok": true,
@@ -1142,7 +1231,7 @@
       "url": "https://www.zerotovpn.com/guides/vpn-for-restricted-networks",
       "status": 200,
       "finalUrl": "https://www.zerotovpn.com/guides/vpn-for-restricted-networks",
-      "durationMs": 2671,
+      "durationMs": 1116,
       "title": "How to Use a VPN on a Restricted Network | ZeroToVPN",
       "description": "Identify the restriction, prepare a VPN lawfully and run a bounded test without assuming access or bypass guarantees.",
       "canonical": "https://www.zerotovpn.com/guides/vpn-for-restricted-networks",
@@ -1161,6 +1250,10 @@
       "missingImageAltCount": 0,
       "missingImageDimensionsCount": 0,
       "futureSchemaDates": [],
+      "contentBrief": {
+        "missing": [],
+        "present": false
+      },
       "affiliateLinkCount": 6,
       "missingAffiliateRelCount": 0,
       "missingAffiliateSlugCount": 0,
@@ -1188,6 +1281,7 @@
         "faqSchema": true,
         "imageSeo": true,
         "structuredDataDates": true,
+        "contentBrief": true,
         "socialImage": true
       },
       "ok": true,
@@ -1214,7 +1308,7 @@
       "url": "https://www.zerotovpn.com/guides/vpn-for-travel",
       "status": 200,
       "finalUrl": "https://www.zerotovpn.com/guides/vpn-for-travel",
-      "durationMs": 5484,
+      "durationMs": 1181,
       "title": "VPN for Travel: What to Test Before You Leave | ZeroToVPN",
       "description": "A bounded travel VPN guide for hotel and airport Wi-Fi, device preparation, destination restrictions and safer connectivity.",
       "canonical": "https://www.zerotovpn.com/guides/vpn-for-travel",
@@ -1233,6 +1327,10 @@
       "missingImageAltCount": 0,
       "missingImageDimensionsCount": 0,
       "futureSchemaDates": [],
+      "contentBrief": {
+        "missing": [],
+        "present": false
+      },
       "affiliateLinkCount": 6,
       "missingAffiliateRelCount": 0,
       "missingAffiliateSlugCount": 0,
@@ -1260,6 +1358,7 @@
         "faqSchema": true,
         "imageSeo": true,
         "structuredDataDates": true,
+        "contentBrief": true,
         "socialImage": true
       },
       "ok": true,
@@ -1287,7 +1386,7 @@
       "url": "https://www.zerotovpn.com/best/free-vpn",
       "status": 200,
       "finalUrl": "https://www.zerotovpn.com/best/free-vpn",
-      "durationMs": 5600,
+      "durationMs": 1370,
       "title": "Best Free VPNs: Limits and Trade-offs | ZeroToVPN",
       "description": "Compare free VPN tiers by data limits, privacy evidence, locations and realistic use cases. Verify current plan terms before installing.",
       "canonical": "https://www.zerotovpn.com/best/free-vpn",
@@ -1306,6 +1405,10 @@
       "missingImageAltCount": 0,
       "missingImageDimensionsCount": 0,
       "futureSchemaDates": [],
+      "contentBrief": {
+        "missing": [],
+        "present": false
+      },
       "affiliateLinkCount": 3,
       "missingAffiliateRelCount": 0,
       "missingAffiliateSlugCount": 0,
@@ -1333,6 +1436,7 @@
         "faqSchema": true,
         "imageSeo": true,
         "structuredDataDates": true,
+        "contentBrief": true,
         "socialImage": true
       },
       "ok": true,
@@ -1360,7 +1464,7 @@
       "url": "https://www.zerotovpn.com/fr/best/free-vpn",
       "status": 200,
       "finalUrl": "https://www.zerotovpn.com/fr/best/free-vpn",
-      "durationMs": 5422,
+      "durationMs": 1044,
       "title": "Best Free VPNs: Limits and Trade-offs | ZeroToVPN",
       "description": "Compare free VPN tiers by data limits, privacy evidence, locations and realistic use cases. Verify current plan terms before installing.",
       "canonical": "https://www.zerotovpn.com/fr/best/free-vpn",
@@ -1379,6 +1483,10 @@
       "missingImageAltCount": 0,
       "missingImageDimensionsCount": 0,
       "futureSchemaDates": [],
+      "contentBrief": {
+        "missing": [],
+        "present": false
+      },
       "affiliateLinkCount": 3,
       "missingAffiliateRelCount": 0,
       "missingAffiliateSlugCount": 0,
@@ -1406,6 +1514,7 @@
         "faqSchema": true,
         "imageSeo": true,
         "structuredDataDates": true,
+        "contentBrief": true,
         "socialImage": true
       },
       "ok": true,
@@ -1433,7 +1542,7 @@
       "url": "https://www.zerotovpn.com/nl/best/free-vpn",
       "status": 200,
       "finalUrl": "https://www.zerotovpn.com/nl/best/free-vpn",
-      "durationMs": 5683,
+      "durationMs": 1190,
       "title": "Best Free VPNs: Limits and Trade-offs | ZeroToVPN",
       "description": "Compare free VPN tiers by data limits, privacy evidence, locations and realistic use cases. Verify current plan terms before installing.",
       "canonical": "https://www.zerotovpn.com/nl/best/free-vpn",
@@ -1452,6 +1561,10 @@
       "missingImageAltCount": 0,
       "missingImageDimensionsCount": 0,
       "futureSchemaDates": [],
+      "contentBrief": {
+        "missing": [],
+        "present": false
+      },
       "affiliateLinkCount": 3,
       "missingAffiliateRelCount": 0,
       "missingAffiliateSlugCount": 0,
@@ -1479,6 +1592,7 @@
         "faqSchema": true,
         "imageSeo": true,
         "structuredDataDates": true,
+        "contentBrief": true,
         "socialImage": true
       },
       "ok": true,
@@ -1503,7 +1617,7 @@
       "url": "https://www.zerotovpn.com/best/vpn-free-trial",
       "status": 200,
       "finalUrl": "https://www.zerotovpn.com/best/vpn-free-trial",
-      "durationMs": 5530,
+      "durationMs": 2289,
       "title": "VPNs With a Real Free Trial (Aug 2026) — Checked at Source",
       "description": "Most VPN free trials are money-back guarantees in disguise. We checked each provider&#x27;s own page: who gives a trial, how long, and whether a card is needed.",
       "canonical": "https://www.zerotovpn.com/best/vpn-free-trial",
@@ -1522,6 +1636,10 @@
       "missingImageAltCount": 0,
       "missingImageDimensionsCount": 0,
       "futureSchemaDates": [],
+      "contentBrief": {
+        "missing": [],
+        "present": false
+      },
       "affiliateLinkCount": 11,
       "missingAffiliateRelCount": 0,
       "missingAffiliateSlugCount": 0,
@@ -1549,6 +1667,7 @@
         "faqSchema": true,
         "imageSeo": true,
         "structuredDataDates": true,
+        "contentBrief": true,
         "socialImage": true
       },
       "ok": true,

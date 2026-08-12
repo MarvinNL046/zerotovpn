@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { AffiliateButton, AffiliateTextLink } from "@/components/vpn/affiliate-button";
 import { RatingStars } from "@/components/vpn/rating-stars";
 import { Link } from "@/i18n/navigation";
+import type { EditorialContentBrief } from "@/lib/editorial-content-brief";
 import type { VpnData } from "@/lib/vpn-data-layer";
 
 export interface EditorialNavItem {
@@ -14,6 +15,7 @@ export interface EditorialNavItem {
 interface BestVpnEditorialTemplateProps {
   navigation: readonly EditorialNavItem[];
   disclosureHref?: string;
+  brief?: EditorialContentBrief;
   children: ReactNode;
 }
 
@@ -27,11 +29,22 @@ interface BestVpnEditorialTemplateProps {
 export function BestVpnEditorialTemplate({
   navigation,
   disclosureHref = "/affiliate-disclosure",
+  brief,
   children,
 }: BestVpnEditorialTemplateProps) {
   return (
     <>
-      <section className="sticky top-16 z-30 border-y bg-background/95 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-background/80">
+      <section
+        className="sticky top-16 z-30 border-y bg-background/95 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-background/80"
+        data-editorial-brief={brief ? "true" : undefined}
+        data-primary-keyword={brief?.primaryKeyword}
+        data-editorial-intent={brief?.intent}
+        data-editorial-cluster={brief?.cluster}
+        data-last-reviewed-at={brief?.lastReviewedAt}
+        data-affiliate-context={brief?.affiliateContext}
+        data-schema-type={brief?.schemaType}
+        data-evidence-count={brief ? String(brief.evidence.length) : undefined}
+      >
         <div className="container flex items-center gap-4 overflow-x-auto py-3">
           <nav aria-label="On this page" className="flex min-w-max items-center gap-4 text-sm">
             {navigation.map((item, index) => (

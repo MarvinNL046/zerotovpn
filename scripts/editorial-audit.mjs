@@ -46,7 +46,12 @@ const checks = [
   {
     name: "Best VPN commercial pillar",
     file: "src/components/editorial/best-vpn-pillar-page.tsx",
-    patterns: [/Top 3 overview/, /id=\"comparison\"/, /id=\"methodology\"/, /id=\"faq\"/, /priceVerifiedAt/, /AffiliateTextLink/],
+    patterns: [/Top 3 overview/, /id=\"comparison\"/, /id=\"methodology\"/, /id=\"faq\"/, /priceVerifiedAt/, /AffiliateTextLink/, /contentBrief/, /primaryKeyword: \"best vpn\"/, /cluster: \"commercial-choice\"/, /affiliateContext: \"vpn-selection\"/],
+  },
+  {
+    name: "shared editorial content-brief contract",
+    file: "src/lib/editorial-content-brief.ts",
+    patterns: [/primaryKeyword/, /intent/, /cluster/, /lastReviewedAt/, /evidence/, /affiliateContext/, /schemaType/, /isEditorialContentBrief/],
   },
   {
     name: "shared quick-pick cards expose branded provider marks and plan context",

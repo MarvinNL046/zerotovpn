@@ -1,6 +1,6 @@
 # ZeroToVPN roadmap completion matrix
 
-**Checked:** 12 August 2026  
+**Checked:** 12 August 2026 (fresh live verification)
 **Source plan:** [ZeroToVPN Editorial & Conversion Roadmap](./zerotovpn-editorial-conversion-roadmap-2026-08-11.md)
 
 This matrix separates delivered release work from the one measurement milestone that cannot be closed without real exports.
@@ -21,7 +21,7 @@ This matrix separates delivered release work from the one measurement milestone 
 
 ## Measurement gate
 
-The roadmap should remain active until the three pending export rows are available and a matched report is generated with `npm run measure:editorial`. Do not convert fixture output into a KPI conclusion. Once the exports arrive:
+The roadmap should remain active until the pending partner export is available, Short.io attribution is explicitly handled, and a matched report is generated with `npm run measure:editorial`. Do not convert fixture output into a KPI conclusion. Once the export arrives:
 
 1. Run `npm run measure:check-inputs` against all four files.
 2. Run `npm run test:measure-editorial`.

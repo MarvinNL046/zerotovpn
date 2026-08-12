@@ -475,6 +475,12 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - Added [measurement-window-manifest-2026-08-12.json](../metrics/measurement-window-manifest-2026-08-12.json) and its readable summary to make the 28 July–10 August join reproducible. It records real authenticated GSC and Short.io inputs, the intentionally unassigned Short.io wildcard/deleted residual, and the non-matching 6–12 August Nord screenshot.
 - This manifest supersedes older interim log wording that predated the authenticated exports. The gate remains `matched: false` and `ready: false`; no conversion, revenue or EPC value is inferred.
 
+### Current production verification snapshot: 12 August 2026
+
+- Fresh live checks against `https://www.zerotovpn.com` pass **22/22** editorial targets with **127** compliant affiliate links, zero brief/metadata/freshness/image/schema/rel/slug/cluster-link failures, and zero social-image failures.
+- The fresh full-sitemap claim audit checked **2,279/2,279** URLs with **0** fetch errors and **0** findings across all configured provider-count, reader-count, speed-test-count, maximum-speed, speed-retention and ranking patterns. This supersedes the earlier staged claim-backlog counts recorded in the historical execution entries above.
+- These are release-quality and claim-safety checks, not conversion evidence. The matched partner export remains the only open measurement-gate input.
+
 ### Nord affiliate interim screenshot: 12 August 2026
 
 - The user-supplied authenticated Nord Performance Report screenshot for **6–12 August 2026** shows **19 clicks** (NordVPN 15, NordVPN China 2, NordVPN Arabia 2), **0 conversions**, **$0.00 payout** and **$0.00 EPC**. Full evidence and interpretation boundaries are recorded in [nord-partner-interim-screenshot-2026-08-12.md](../metrics/nord-partner-interim-screenshot-2026-08-12.md).

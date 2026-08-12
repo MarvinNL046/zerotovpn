@@ -218,7 +218,7 @@ Here is a pattern in every Reddit thread about free VPNs: the top answer recomme
 
 The difference is stark. For the cost of a single coffee per month, you get 10-100x more server locations, dramatically faster speeds, streaming access, multiple devices, and dedicated P2P support.
 
-**Reddit's real consensus**, once you dig past the initial "best free VPN?" question, is: ProtonVPN Free if you genuinely cannot afford anything, but NordVPN or Surfshark on a 2-year plan if you can spare $2-3/month. Grab a [NordVPN coupon (68% off)](/coupons/nordvpn) or a [Surfshark deal](/coupons/surfshark) to lock in the lowest price.
+**Reddit's real consensus**, once you dig past the initial "best free VPN?" question, is: ProtonVPN Free if you genuinely cannot afford anything, but NordVPN or Surfshark may be worth comparing on a long-term plan if you can afford a paid service. Check the current plan terms and renewal price on the provider site before committing.
 
 [Read our NordVPN review](/reviews/nordvpn) | [Read our Surfshark review](/reviews/surfshark)
 

@@ -379,6 +379,33 @@ const quantifiedClaimRecords = [
 const postLocaleDirs = readdirSync(resolve(ROOT, "src/data/posts"), { withFileTypes: true })
   .filter((entry) => entry.isDirectory())
   .map((entry) => entry.name);
+
+const legacyPromotionFiles = [
+  "src/content/blog/best-free-vpn-reddit-2026.md",
+  "src/content/blog/is-brave-vpn-free-2026.md",
+  ...postLocaleDirs.flatMap((locale) => [
+    resolve(ROOT, "src/data/posts", locale, "best-free-vpn-reddit-2026.json"),
+    resolve(ROOT, "src/data/posts", locale, "is-brave-vpn-free-2026.json"),
+  ]),
+].filter((file) => {
+  try {
+    readFileSync(resolve(ROOT, file), "utf8");
+    return true;
+  } catch {
+    return false;
+  }
+});
+const legacyPromotionFailures = legacyPromotionFiles.filter((file) =>
+  /coupon|\/coupons\/|\b\d{1,3}%\s*off\b/i.test(readFileSync(resolve(ROOT, file), "utf8")),
+);
+results.push({
+  name: "legacy free-VPN pages contain no unassigned coupon promotion",
+  file: "src/content/blog/{best-free-vpn-reddit-2026,is-brave-vpn-free-2026}.md + rendered records",
+  pass: legacyPromotionFailures.length === 0,
+  missing: [],
+  forbidden: legacyPromotionFailures.map((file) => file.replace(`${ROOT}\\`, "")),
+});
+
 for (const { slug, forbiddenPattern } of quantifiedClaimRecords) {
   const files = postLocaleDirs
     .map((locale) => resolve(ROOT, "src/data/posts", locale, `${slug}.json`))

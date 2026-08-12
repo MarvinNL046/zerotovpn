@@ -113,7 +113,7 @@ Here is how Brave VPN stacks up against the most popular VPN services in 2026:
 | **Double VPN** | No | Yes | Yes (Secure Core) | Yes (MultiHop) |
 | **No-log audit** | No public audit | Yes (Deloitte) | Yes | Yes |
 
-The comparison makes the value gap clear. [NordVPN](/reviews/nordvpn) offers significantly more features, servers, and platform support at roughly one-third the price on a long-term plan — grab a [NordVPN coupon](/coupons/nordvpn) to lock in the best deal. [ProtonVPN's free tier](/reviews/protonvpn) offers unlimited data with no cost at all, though with limitations on speed and server access. [Surfshark](/coupons/surfshark) is another strong alternative at under $2.50/month.
+The comparison highlights a trade-off between dedicated-VPN features and Brave's browser integration. [NordVPN](/reviews/nordvpn) offers broader platform support and a larger provider-stated network, but plan prices and renewal terms change by region. [ProtonVPN's free tier](/reviews/protonvpn) offers unlimited data with no cost at all, though with limitations on speed and server access. For a broader value comparison, see our [cheap-VPN guide](/best/vpn-cheap) and verify the current provider terms before subscribing.
 
 ## Free Alternatives Worth Considering
 

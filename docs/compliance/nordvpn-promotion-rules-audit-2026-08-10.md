@@ -64,7 +64,7 @@ The public link `https://go.zerotovpn.com/nordvpn` now returns a 302 to the dire
 
 ## Required remediation order
 
-1. **Done:** Disable the global exit-intent NordVPN popup.
+1. **Done:** Replace the global exit-intent NordVPN popup with an email-only, consented newsletter prompt. It may remain enabled for first-party email collection, but must never contain an affiliate URL, provider offer, coupon, discount, cashback or incentive.
 2. **Done:** Remove or neutralize the global sticky discount CTA; no “OFF”, “limited offer”, coupon or deal language without an assigned offer.
 3. **Partially done:** Remove Nord links from current torrenting/P2P routes and keep a route-level regression check for new restricted content.
 4. Remove legacy Nord coupon links and unverified discount claims from all locales and content formats.

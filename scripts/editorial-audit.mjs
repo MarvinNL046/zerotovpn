@@ -218,7 +218,7 @@ const checks = [
   {
     name: "newsletter-only exit intent popup",
     file: "src/components/conversion/exit-intent-popup.tsx",
-    patterns: [/useTranslations\("newsletter"\)/, /<NewsletterForm[^>]+source="exit-intent"/, /Owned-media newsletter prompt/],
+    patterns: [/useTranslations\("newsletter"\)/, /<NewsletterForm[^>]+source="exit-intent"/, /data-email-collection-only="true"/, /Owned-media newsletter prompt/],
     forbiddenPatterns: [
       /go\.zerotovpn\.com|go\.nordvpn\.net|nordvpn\.tpo\.lv/i,
       /affiliateUrl|affiliateHref|coupon|discount|\bpromo(?:code)?\b|cashback|incentive|view deal|buy now/i,

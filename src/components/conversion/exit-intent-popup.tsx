@@ -66,7 +66,10 @@ export function ExitIntentPopup() {
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogContent className="sm:max-w-[500px] max-w-[calc(100%-2rem)]">
+      <DialogContent
+        className="sm:max-w-[500px] max-w-[calc(100%-2rem)]"
+        data-email-collection-only="true"
+      >
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-center flex items-center justify-center gap-2">
             <Mail className="h-5 w-5 text-primary" aria-hidden="true" />

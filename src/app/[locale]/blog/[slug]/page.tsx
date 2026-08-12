@@ -114,6 +114,31 @@ const clusterMetadata: Record<string, { title: string; description: string }> = 
     description:
       telegramVpnEditorialExcerpt,
   },
+  "best-vpn-for-chatgpt-2026": {
+    title: "Best VPNs for ChatGPT 2026: What Works in Restricted Countries",
+    description:
+      "Compare VPNs for ChatGPT and OpenAI in restricted countries: access checks, latency, mobile setup and privacy limits before you connect.",
+  },
+};
+
+const aiPrivacyClusterLinks: Record<string, ClusterLink[]> = {
+  "best-vpn-for-chatgpt-2026": [
+    {
+      title: "Best VPNs overall",
+      description: "Compare privacy, streaming, speed and value before choosing a provider.",
+      href: "/best/vpn",
+    },
+    {
+      title: "AI privacy and data leaks",
+      description: "Learn what a VPN can and cannot protect when you use ChatGPT and other AI tools.",
+      href: "/blog/vpn-generative-ai-privacy-chatgpt-claude-gemini-data-leaks",
+    },
+    {
+      title: "VPNs for China",
+      description: "Check obfuscation, app preparation and network limits before travelling.",
+      href: "/countries/china",
+    },
+  ],
 };
 
 // Pre-render alle gepubliceerde blogposts bij het bouwen, in elke taal (met
@@ -183,9 +208,10 @@ export default async function DynamicBlogPost({ params }: Props) {
     notFound();
   }
 
-  const clusterLinks = censorshipClusterLinks[slug] || [];
+  const clusterLinks = censorshipClusterLinks[slug] || aiPrivacyClusterLinks[slug] || [];
   const isIranEditorial = slug === "best-vpn-for-iran-2026-bypass-internet-censorship";
   const isTelegramEditorial = slug === "best-vpn-for-telegram-2026";
+  const isChatgptEditorial = slug === "best-vpn-for-chatgpt-2026";
   const isCensorshipEditorial = isIranEditorial || isTelegramEditorial;
   const isRestrictedAffiliateContext =
     slug === "vpn-blockchain-privacy-mask-wallet-activity-2026";
@@ -193,12 +219,16 @@ export default async function DynamicBlogPost({ params }: Props) {
     ? iranVpnEditorialTitle
     : isTelegramEditorial
       ? telegramVpnEditorialTitle
-      : post.title;
+      : isChatgptEditorial
+        ? clusterMetadata[slug].title
+        : post.title;
   const displayExcerpt = isIranEditorial
     ? iranVpnEditorialExcerpt
     : isTelegramEditorial
       ? telegramVpnEditorialExcerpt
-      : post.excerpt;
+      : isChatgptEditorial
+        ? clusterMetadata[slug].description
+        : post.excerpt;
   const editorialVpns = isCensorshipEditorial ? await getAllVpns() : [];
   const relatedLinks = getRelatedContent({
     currentHref: `/blog/${slug}`,

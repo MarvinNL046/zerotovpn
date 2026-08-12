@@ -1,7 +1,7 @@
 import { access, readFile } from "node:fs/promises";
 import { basename, resolve } from "node:path";
 
-const required = ["gsc-pages", "gsc-queries", "shortio"];
+const required = ["gsc-pages", "gsc-queries", "gsc-chart", "shortio"];
 const optional = ["partner"];
 const args = process.argv.slice(2);
 const inputs = {};
@@ -15,6 +15,7 @@ for (let index = 0; index < args.length; index += 1) {
 const rules = {
   "gsc-pages": { label: "Search Console pages", patterns: [/page|url/i, /click|impression/i] },
   "gsc-queries": { label: "Search Console queries", patterns: [/quer(?:y|ies)|search/i, /click|impression/i] },
+  "gsc-chart": { label: "Search Console chart", patterns: [/date|datum/i, /click|impression/i, /ctr|position|positie/i] },
   shortio: { label: "Short.io", patterns: [/click|human/i, /link|slug|short/i] },
   partner: { label: "Partner dashboard", patterns: [/conversion|sale|commission|revenue|epc/i] },
 };

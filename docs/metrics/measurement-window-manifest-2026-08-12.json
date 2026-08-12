@@ -11,6 +11,7 @@
       "status": "ready",
       "pages": ".cache/metrics/gsc-2026-08-12/Pages.csv",
       "queries": ".cache/metrics/gsc-2026-08-12/Queries.csv",
+      "chart": ".cache/metrics/gsc-2026-08-12/Chart.csv",
       "evidence": "docs/metrics/gsc-export-2026-08-12.md"
     },
     "shortIo": {

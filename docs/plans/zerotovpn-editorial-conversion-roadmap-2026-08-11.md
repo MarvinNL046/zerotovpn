@@ -475,6 +475,11 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - Added [measurement-window-manifest-2026-08-12.json](../metrics/measurement-window-manifest-2026-08-12.json) and its readable summary to make the 28 July–10 August join reproducible. It records real authenticated GSC and Short.io inputs, the intentionally unassigned Short.io wildcard/deleted residual, and the non-matching 6–12 August Nord screenshot.
 - This manifest supersedes older interim log wording that predated the authenticated exports. The gate remains `matched: false` and `ready: false`; no conversion, revenue or EPC value is inferred.
 
+### Authoritative Chart input guard: 12 August 2026
+
+- Made `--gsc-chart` a required input for `npm run measure:check-inputs`; Pages and Queries alone can no longer look like a complete Search Console site-total export.
+- Added Chart.csv header regression coverage and re-ran the real input check: Pages, Queries, Chart and Short.io are `ready`; the gate remains `ready: false` only because the Nord partner export is absent.
+
 ### Current production verification snapshot: 12 August 2026
 
 - Fresh live checks against `https://www.zerotovpn.com` pass **22/22** editorial targets with **127** compliant affiliate links, zero brief/metadata/freshness/image/schema/rel/slug/cluster-link failures, and zero social-image failures.

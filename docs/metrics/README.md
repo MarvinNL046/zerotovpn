@@ -9,6 +9,7 @@ npm run measure:editorial -- `
   --label post-14d `
   --gsc-pages .cache/metrics/gsc-pages.csv `
   --gsc-queries .cache/metrics/gsc-queries.csv `
+  --gsc-chart .cache/metrics/gsc-chart.csv `
   --shortio .cache/metrics/shortio.csv `
   --partner .cache/metrics/nord-affiliate.csv `
   --baseline docs/metrics/gsc-baseline-2026-08-11.json `
@@ -21,11 +22,12 @@ Before running the importer, validate that the paths are real exports rather tha
 npm run measure:check-inputs -- `
   --gsc-pages .cache/metrics/gsc-pages.csv `
   --gsc-queries .cache/metrics/gsc-queries.csv `
+  --gsc-chart .cache/metrics/gsc-chart.csv `
   --shortio .cache/metrics/shortio.csv `
   --partner .cache/metrics/nord-affiliate.csv
 ```
 
-The check rejects filenames containing `fixture`, `sample` or `example`, checks the header shape and requires a readable partner export before reporting `ready: true`. A missing partner export is intentional during the current pre-checkpoint state.
+The check rejects filenames containing `fixture`, `sample` or `example`, checks the header shape, requires the authoritative Search Console `Chart.csv`, and requires a readable partner export before reporting `ready: true`. A missing partner export is intentional during the current pre-checkpoint state.
 
 For the Short.io window, inject the production API key through Vercel without copying it into the shell or repository:
 
@@ -95,6 +97,8 @@ The current flag classifications and release gate are recorded in [affiliate-con
 The production release gates were rerun after the cluster-template work: the live editorial target set is **22/22** with **127** compliant affiliate links and zero content-brief, metadata, freshness, image, disclosure, rel, slug or cluster-link failures. The sitemap remains **2,279/2,279** healthy URLs, and the affiliate-context scan reports **1,755 affiliate pages / 8,189 links** with zero missing disclosure, rel, interruptive-promotion or fetch failures. These checks validate release quality; they are not traffic or revenue evidence.
 
 The exact matched-window contract is machine-readable in [measurement-window-manifest-2026-08-12.json](./measurement-window-manifest-2026-08-12.json) and summarized in [measurement-window-manifest-2026-08-12.md](./measurement-window-manifest-2026-08-12.md). It supersedes earlier interim wording that predated the authenticated GSC and Short.io exports; the Nord partner export is still the only missing gate input.
+
+The input guard also requires the authoritative Search Console `Chart.csv`; Pages and Queries alone cannot satisfy the production measurement contract.
 
 `measure:editorial` now records the shared window when called with paired `--window-start` and `--window-end` flags and rejects malformed or reversed dates. This prevents a valid-looking report from losing its period when the partner export is joined later.
 

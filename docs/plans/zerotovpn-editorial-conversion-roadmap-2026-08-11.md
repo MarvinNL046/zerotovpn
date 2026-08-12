@@ -413,3 +413,8 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - Captured a fresh authenticated UI snapshot for **27 July–9 August 2026**: **86 clicks**, **36,178 impressions**, **0.2% CTR** and **33.7 average position**. The visible query rows reinforce free/trial, Russia and comparison intent.
 - Recorded the snapshot in [gsc-interim-window-2026-08-12.md](../metrics/gsc-interim-window-2026-08-12.md). It is explicitly an interim observation, not a complete export; the 14-day page/query, Short.io and partner-export gate remains pending.
 - Added the detailed top-page/query extraction in [gsc-interim-window-detail-2026-08-12.md](../metrics/gsc-interim-window-detail-2026-08-12.md). It identifies `/best/best-vpn` and `/best/vpn-free-trial` as impression-rich refresh hypotheses while keeping the next 4–8 page selection paused until redirect and partner outcomes are joined.
+
+### Short.io interim window: 12 August 2026
+
+- Read the authenticated Short.io domain dashboard for the same **27 July–9 August** window: **8,123 total clicks**, **3,115 human clicks**, with `/protonvpn` at **585**, `/surfshark` at **238**, `/nordvpn` at **182** and `/windscribe` at **129** human clicks.
+- Recorded the observation in [shortio-interim-window-2026-08-12.md](../metrics/shortio-interim-window-2026-08-12.md). The aggregate `/*` path is intentionally not attributed to a page, and the formal measurement gate remains pending until a downloadable Short.io export and partner conversions/revenue/EPC are joined.

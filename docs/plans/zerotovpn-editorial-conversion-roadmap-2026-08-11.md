@@ -423,7 +423,7 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 
 - Re-ran `npm run audit:affiliate-context` against all **2,279/2,279** live sitemap URLs: **1,755** pages with affiliate links and **8,189** links checked.
 - Hard compliance gates remain clean: **0** missing `sponsored nofollow`, **0** missing disclosure pages, **0** interruptive-promotion markers and **0** fetch failures. The newsletter-only exit-intent popup remains separate from affiliate advertising.
-- The 12 remaining promotion-term flags are the previously classified free-trial/plan wording on the dedicated trial pages and explanatory “incentives” language in privacy articles. The manual review record now points to the 12 August audit; no unassigned coupon, cashback, fake-expiry or irrelevant NordVPN placement was found.
+- The 12 promotion-term flags are the previously classified free-trial/plan wording on the dedicated trial pages and explanatory “incentives” language in privacy articles. The manual review record points to the 12 August audit; no unassigned coupon, cashback, fake-expiry or irrelevant NordVPN placement was found.
 
 ### Travel-cluster DataForSEO refresh: 12 August 2026
 
@@ -705,10 +705,10 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 
 - Replaced generic “exclusive deals/offers” language in the global Open Graph image, Twitter image, JSON-LD descriptions, locale metadata and English homepage/newsletter metadata with evidence-led comparisons, current plan terms and buying guidance. This keeps the email-only exit-intent collection prompt available without presenting an unassigned Nord offer.
 - Added regression checks to `scripts/editorial-audit.mjs` for the global metadata/owned-media surfaces and retired promotion namespaces in the client payload. Local editorial audit now passes **69/69**.
-- Production deployment `zerotovpn-iojkvidp2-marvinnl046s-projects.vercel.app` is Ready. Live `/en` and `/nl` HTML checks return 200 with no legacy exclusive-offer, coupon or claim-deal markers; the full editorial audit passes **25/25**, and the affiliate-context audit checks **2,271/2,271** URLs with **0** missing-rel, disclosure, interruptive, fetch or slow-response failures. The 12 manual contextual flags remain unchanged and are not inferred as policy violations.
+- Production deployment `zerotovpn-iojkvidp2-marvinnl046s-projects.vercel.app` is Ready. Live `/en` and `/nl` HTML checks return 200 with no legacy exclusive-offer, coupon or claim-deal markers; the full editorial audit passes **25/25**, and the affiliate-context audit checks **2,271/2,271** URLs with **0** missing-rel, disclosure, interruptive, fetch or slow-response failures. The 11 remaining manual contextual flags are documented and are not inferred as policy violations.
 
 ### Educational video-call guide promotion cleanup: 13 August 2026
 
 - The affiliate-context audit identified one manual flag on `/blog/vpn-leaks-video-calls-slack-discord-teams-2026`: a setup step recommended a “free trial” next to contextual provider links. The page is educational, but neutral refund-window wording is clearer and avoids sounding like an unassigned incentive.
 - Replaced that sentence in the English rendered record with `documented refund window`, extended `scripts/sanitize-legacy-promotion-records.mjs` for repeatability, and added an editorial regression guard. Local editorial audit now passes **70/70** and the production build generates **4,429/4,429** routes.
-- The live affiliate-context audit remains the release gate after deployment; the dedicated free-trial pillar retains its legitimate trial-intent language and remains a separate contextual review item.
+- The live affiliate-context audit remains the release gate after deployment; the dedicated free-trial pillar retains its legitimate trial-intent language and remains a separate contextual review item. The manual flag count drops from 12 to 11 after this change.

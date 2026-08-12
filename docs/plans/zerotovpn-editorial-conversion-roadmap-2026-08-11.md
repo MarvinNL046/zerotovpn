@@ -390,6 +390,11 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - Added [zerotovpn-roadmap-completion-matrix-2026-08-12.md](./zerotovpn-roadmap-completion-matrix-2026-08-12.md) with requirement-level evidence for the delivered template, Iran post, reciprocal cluster links, baseline, compliance, popup and deployment work.
 - The matrix keeps the 14-day Search Console, Short.io and partner review explicitly **pending** until real exports exist; it does not treat fixtures as evidence.
 
+### Full-sitemap claim regression: 12 August 2026
+
+- Re-ran `npm run audit:claims-live` across **2,279/2,279** production URLs after the cluster/navigation work.
+- Result: **0** fetch errors and **0** findings across provider/test counts, reader counts, speed-test counts, maximum-speed claims, speed-retention claims and unqualified ranking claims.
+
 ### NordVPN promotion-context audit: 12 August 2026
 
 - Re-ran `npm run audit:affiliate-context` against all **2,279/2,279** live sitemap URLs: **1,755** pages with affiliate links and **8,189** links checked.

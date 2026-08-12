@@ -1,6 +1,6 @@
 # Live sitemap audit
 
-Generated: 2026-08-12T22:20:27.874Z
+Generated: 2026-08-12T22:39:36.344Z
 
 - Sitemap URLs discovered: **2271**
 - URLs checked: **2271**
@@ -9,7 +9,7 @@ Generated: 2026-08-12T22:20:27.874Z
 - Canonical mismatches: **0**
 - Noindex URLs in sitemap: **0**
 - Missing/invalid H1 count: **0**
-- Responses over 2 seconds: **4**
+- Responses over 2 seconds: **1**
 
 ## First failures
 

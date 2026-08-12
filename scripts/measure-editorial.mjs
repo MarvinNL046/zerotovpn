@@ -9,7 +9,7 @@ function arg(name) {
 }
 
 function usage() {
-  console.log("Usage: node scripts/measure-editorial.mjs --label post-14d --gsc-pages export.csv --gsc-queries queries.csv --shortio clicks.csv [--partner partner.csv] --out docs/metrics/post-14d.json [--baseline docs/metrics/zerotovpn-baseline-2026-08-11.json]");
+  console.log("Usage: node scripts/measure-editorial.mjs --label post-14d --window-start YYYY-MM-DD --window-end YYYY-MM-DD --gsc-pages export.csv --gsc-queries queries.csv --shortio clicks.csv [--partner partner.csv] --out docs/metrics/post-14d.json [--baseline docs/metrics/zerotovpn-baseline-2026-08-11.json]");
 }
 
 function parseCsv(text) {
@@ -253,6 +253,8 @@ function delta(current, baseline) {
 
 const label = arg("--label");
 const out = arg("--out");
+const windowStart = arg("--window-start");
+const windowEnd = arg("--window-end");
 const requiredInputFlags = ["--gsc-pages", "--gsc-queries", "--shortio"];
 const missingInputFlags = requiredInputFlags.filter((flag) => !arg(flag));
 if (process.argv.includes("--help") || !label || !out) {
@@ -260,6 +262,18 @@ if (process.argv.includes("--help") || !label || !out) {
   process.exitCode = 1;
 } else if (missingInputFlags.length) {
   console.error(`Missing required input flag(s): ${missingInputFlags.join(", ")}`);
+  usage();
+  process.exitCode = 1;
+} else if ((windowStart && !windowEnd) || (!windowStart && windowEnd)) {
+  console.error("Both --window-start and --window-end are required together.");
+  usage();
+  process.exitCode = 1;
+} else if ((windowStart && !/^\d{4}-\d{2}-\d{2}$/.test(windowStart)) || (windowEnd && !/^\d{4}-\d{2}-\d{2}$/.test(windowEnd))) {
+  console.error("Measurement window dates must use YYYY-MM-DD.");
+  usage();
+  process.exitCode = 1;
+} else if (windowStart && windowEnd && windowStart > windowEnd) {
+  console.error("--window-start must be on or before --window-end.");
   usage();
   process.exitCode = 1;
 } else {
@@ -288,6 +302,7 @@ if (process.argv.includes("--help") || !label || !out) {
       schemaVersion: 1,
       label,
       capturedAt: new Date().toISOString(),
+      measurementWindow: windowStart && windowEnd ? { start: windowStart, end: windowEnd } : null,
       sourceFiles: [gscPagesPath, gscQueriesPath, shortIoPath, partnerPath].filter(Boolean),
       dataQuality: {
         requiredInputsPresent: true,

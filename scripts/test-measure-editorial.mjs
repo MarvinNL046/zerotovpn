@@ -42,8 +42,9 @@ try {
     "date,link,clicks,conversions,revenue,epc\n2026-08-01,go.zerotovpn.com/nordvpn,100,4,120,1.20\n2026-08-02,go.zerotovpn.com/nordvpn,50,1,35,0.70\n",
   );
   const englishOut = join(temp, "english.json");
-  run(["--label", "test-english", "--gsc-pages", pages, "--gsc-queries", queries, "--shortio", shortIo, "--partner", partner, "--out", englishOut]);
+  run(["--label", "test-english", "--window-start", "2026-07-28", "--window-end", "2026-08-10", "--gsc-pages", pages, "--gsc-queries", queries, "--shortio", shortIo, "--partner", partner, "--out", englishOut]);
   const english = JSON.parse(readFileSync(englishOut, "utf8"));
+  assert(english.measurementWindow.start === "2026-07-28" && english.measurementWindow.end === "2026-08-10", "Measurement window should be recorded exactly");
   assert(english.dataQuality.missingMetrics.length === 0, "English fixture should have no missing metrics");
   assert(english.searchConsole.pages.totals.clicks === 54, "English clicks should total 54");
   assert(english.searchConsole.pages.totals.impressions === 13443, "English impressions should total 13443");
@@ -76,7 +77,10 @@ try {
   assert(missing.status !== 0, "Missing required inputs should fail");
   assert(missing.stderr.includes("--gsc-pages"), "Missing-input error should identify the required flag");
 
-  console.log(JSON.stringify({ passed: true, cases: ["english", "localized", "empty-partner", "missing-required-input"] }, null, 2));
+  const mismatchedWindow = spawnSync(process.execPath, [importer, "--label", "bad-window", "--window-start", "2026-08-10", "--window-end", "2026-07-28", "--gsc-pages", pages, "--gsc-queries", queries, "--shortio", shortIo, "--out", join(temp, "bad-window.json")], { encoding: "utf8" });
+  assert(mismatchedWindow.status !== 0 && mismatchedWindow.stderr.includes("on or before"), "Reversed measurement windows should fail closed");
+
+  console.log(JSON.stringify({ passed: true, cases: ["english-window", "localized", "empty-partner", "missing-required-input", "reversed-window"] }, null, 2));
 } finally {
   rmSync(temp, { recursive: true, force: true });
 }

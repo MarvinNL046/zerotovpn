@@ -481,6 +481,12 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - The fresh full-sitemap claim audit checked **2,279/2,279** URLs with **0** fetch errors and **0** findings across all configured provider-count, reader-count, speed-test-count, maximum-speed, speed-retention and ranking patterns. This supersedes the earlier staged claim-backlog counts recorded in the historical execution entries above.
 - These are release-quality and claim-safety checks, not conversion evidence. The matched partner export remains the only open measurement-gate input.
 
+### Measurement window enforcement: 12 August 2026
+
+- Extended `scripts/measure-editorial.mjs` with paired `--window-start` and `--window-end` flags. The importer now records the exact ISO window in every report and fails closed for partial, malformed or reversed dates.
+- Regression coverage includes exact-window persistence and reversed-window rejection. The real-input dry run records **28 July–10 August 2026**, 1,000 GSC page rows, 1,000 query rows and 39 Short.io rows; partner conversions/revenue/EPC remain explicitly missing.
+- The next matched run must use `--window-start 2026-07-28 --window-end 2026-08-10` (or the actual shared export window) together with all four source files.
+
 ### Nord affiliate interim screenshot: 12 August 2026
 
 - The user-supplied authenticated Nord Performance Report screenshot for **6–12 August 2026** shows **19 clicks** (NordVPN 15, NordVPN China 2, NordVPN Arabia 2), **0 conversions**, **$0.00 payout** and **$0.00 EPC**. Full evidence and interpretation boundaries are recorded in [nord-partner-interim-screenshot-2026-08-12.md](../metrics/nord-partner-interim-screenshot-2026-08-12.md).

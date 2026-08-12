@@ -490,6 +490,11 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - `npm run measure:check-inputs` now accepts the same paired `--window-start`/`--window-end` flags and verifies that Chart.csv dates, plus any supplied partner dates, fall inside that window before the gate can proceed.
 - The real four-input check reports Chart `matched` for 28 July–10 August and partner `optional-missing`; the command remains intentionally not ready until the Nord export is supplied.
 
+### Nord export access recheck: 12 August 2026
+
+- A fresh read-only dashboard navigation was attempted against the Nord performance endpoint. The available session redirected to `https://affiliates.nordvpn.com/login`; no CSV/API response was exposed, so no partner values were added or inferred.
+- The next required action remains an authenticated download for 28 July–10 August with dated clicks, conversions, payout/revenue and EPC columns. The measurement gate stays closed until that file passes both input and partner-window validation.
+
 ### Current production verification snapshot: 12 August 2026
 
 - Fresh live checks against `https://www.zerotovpn.com` pass **22/22** editorial targets with **127** compliant affiliate links, zero brief/metadata/freshness/image/schema/rel/slug/cluster-link failures, and zero social-image failures.

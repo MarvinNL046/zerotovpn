@@ -576,3 +576,9 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - Added regression coverage to `npm run test:network-claims` for both source/render pairs. It rejects retired 7,000/6,400/3,200 literals and requires the bounded current markers, preventing future importer drift.
 - Verification: network-claim test passed, editorial audit **52/52**, production build **4,447/4,447**, lint **0 errors** (52 existing warnings), and live editorial audit **25/25** with **135** compliant affiliate links and zero rel, slug, metadata, freshness, image, schema, cluster or social-image failures.
 - Production deployment `dpl_96sH29RSKkhSidCmLiagGcV21cA9` is Ready and aliased to `https://www.zerotovpn.com`. HTTP and Chrome UI smoke checks returned one H1 per article, showed 7,400, and found no 7,000/6,400/3,200 remnants. This remains a claim-consistency release; the matched Nord conversion/revenue/EPC gate is still open.
+
+### Comparison-table semantics and claim recheck: 12 August 2026
+
+- Added explicit `scope="col"` semantics to every header in the Best VPN pillar comparison table. The table already had a caption and `scope="row"` provider cells; this closes the remaining header-association gap in the on-page accessibility/SEO checklist.
+- Added the semantic requirement to `npm run audit:editorial`, so a future table refactor cannot silently remove column-header scope. The fresh full live claim audit checked **2,279/2,279** URLs with **0** findings and **0** fetch errors across all configured claim patterns.
+- Local verification: editorial audit **52/52**, network-claim regression passed and production build **4,447/4,447**. The change is limited to markup semantics; affiliate destinations, disclosure and newsletter-only popup behavior are unchanged.

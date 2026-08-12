@@ -2,7 +2,7 @@ import { setRequestLocale } from "next-intl/server";
 import { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { AffiliateButton } from "@/components/vpn/affiliate-button";
+import { AffiliateButton, AffiliateTextLink } from "@/components/vpn/affiliate-button";
 import { RankedVpnRow } from "@/components/vpn/ranked-vpn-row";
 import { RatingStars } from "@/components/vpn/rating-stars";
 import { VpnLogo } from "@/components/ui/vpn-logo";
@@ -427,7 +427,16 @@ export default async function VpnCheapPage({ params }: Props) {
                   rank={index + 1}
                   logo
                   badge={item.badge}
-                  price={item.monthlyPrice}
+                  price={item.vpn ? (
+                    <AffiliateTextLink
+                      vpnId={item.vpn.slug}
+                      vpnName={item.vpn.name}
+                      affiliateUrl={item.vpn.affiliateUrl}
+                      className="underline decoration-current/40 underline-offset-4 hover:decoration-current"
+                    >
+                      {item.monthlyPrice}
+                    </AffiliateTextLink>
+                  ) : item.monthlyPrice}
                   priceClassName="text-3xl text-emerald-600 dark:text-emerald-400"
                   priceNote={`${item.planLength} plan`}
                   labels={{ cta: `${t.getVpnButton} ${item.vpn?.name ?? ""}` }}
@@ -470,7 +479,18 @@ export default async function VpnCheapPage({ params }: Props) {
                   {cheapVpns.map((item, index) => (
                     <tr key={index} className="border-t border-gray-200 dark:border-gray-700">
                       <td className="px-4 py-4 font-semibold">{item.vpn?.name}</td>
-                      <td className="px-3 py-4 text-center font-bold text-emerald-600">{item.monthlyPrice}</td>
+                      <td className="px-3 py-4 text-center font-bold text-emerald-600">
+                        {item.vpn ? (
+                          <AffiliateTextLink
+                            vpnId={item.vpn.slug}
+                            vpnName={item.vpn.name}
+                            affiliateUrl={item.vpn.affiliateUrl}
+                            className="underline underline-offset-2"
+                          >
+                            {item.monthlyPrice}
+                          </AffiliateTextLink>
+                        ) : item.monthlyPrice}
+                      </td>
                       <td className="px-3 py-4 text-center text-sm">{item.planLength}</td>
                       <td className="px-3 py-4 text-center text-sm">{item.devices}</td>
                       <td className="px-3 py-4 text-center">{item.streaming ? <CheckCircle className="w-5 h-5 text-green-500 mx-auto" /> : <XCircle className="w-5 h-5 text-gray-300 mx-auto" />}</td>

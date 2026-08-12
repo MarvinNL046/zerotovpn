@@ -184,6 +184,11 @@ const checks = [
     patterns: [/what is actually free/, /id="free-tiers"/, /id="safety"/, /id="faq"/, /protonvpn.com\/free-vpn/, /DataForSEO/],
   },
   {
+    name: "cheap VPN page exposes tracked inline prices",
+    file: "src/app/[locale]/best/vpn-cheap/page.tsx",
+    patterns: [/AffiliateTextLink/, /price=\{item\.vpn \?/, /monthlyPrice/, /Price Comparison Table/],
+  },
+  {
     name: "localized free VPN routes use the evidence-led template",
     file: "src/app/[locale]/best/free-vpn/page.tsx",
     patterns: [/All locales use the same audited template/, /<FreeVpnEditorialPage locale=\{locale\} \/>/, /Limits and Trade-offs/],

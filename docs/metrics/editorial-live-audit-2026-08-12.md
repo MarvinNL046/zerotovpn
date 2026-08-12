@@ -1,6 +1,6 @@
 # Live editorial page audit
 
-Generated: 2026-08-12T19:55:32.682Z
+Generated: 2026-08-12T20:03:39.271Z
 
 - Target pages: **25**
 - Passing pages: **25**
@@ -27,7 +27,7 @@ Generated: 2026-08-12T19:55:32.682Z
 | pass | /best/vpn-privacy | Best VPNs for Privacy (Aug 2026) — Audited No-Logs Picks | 1 | 42 | 5 | — | — |
 | pass | /best/vpn-gaming | Best VPN for Gaming (2026) — Lowest Ping, Tested | ZeroToVPN | 1 | 44 | 4 | — | — |
 | pass | /best/vpn-chromebook | Best VPN for Chromebook (2026) - Easy Setup &amp; Fast Speeds | 1 | 41 | 6 | — | — |
-| pass | /best/best-vpn | Best VPN in 2026: Transparent Shortlist and Comparison | ZeroToVPN | 1 | 69 | 21 | — | — |
+| pass | /best/best-vpn | Best VPN 2026: Compare Privacy, Streaming &amp; Value Picks | ZeroToVPN | 1 | 69 | 21 | — | — |
 | pass | /reviews/nordvpn | NordVPN Review 2026: Is It Still the Best VPN? (Tested) | 1 | 49 | 2 | — | — |
 | pass | /reviews/surfshark | Surfshark Review (Aug 2026) - Tested &amp; Rated | ZeroToVPN | 1 | 50 | 3 | — | — |
 | pass | /reviews/mullvad | Mullvad VPN Review (Aug 2026) - Tested &amp; Rated | ZeroToVPN | 1 | 50 | 3 | — | — |

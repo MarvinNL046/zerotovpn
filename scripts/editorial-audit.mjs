@@ -59,6 +59,12 @@ const checks = [
     patterns: [/Top 3 overview/, /id=\"comparison\"/, /scope=\"col\"/, /id=\"methodology\"/, /id=\"faq\"/, /priceVerifiedAt/, /AffiliateTextLink/, /contentBrief/, /primaryKeyword: \"best vpn\"/, /cluster: \"commercial-choice\"/, /affiliateContext: \"vpn-selection\"/],
   },
   {
+    name: "Best VPN English SERP metadata matches commercial intent",
+    file: "src/app/[locale]/best/best-vpn/page.tsx",
+    patterns: [/Best VPN 2026: Compare Privacy, Streaming & Value Picks/, /Find the best VPN for privacy, streaming, speed or price/],
+    forbiddenPatterns: [/Best VPN in 2026: Transparent Shortlist and Comparison/],
+  },
+  {
     name: "shared editorial content-brief contract",
     file: "src/lib/editorial-content-brief.ts",
     patterns: [/primaryKeyword/, /intent/, /cluster/, /lastReviewedAt/, /evidence/, /affiliateContext/, /schemaType/, /isEditorialContentBrief/],

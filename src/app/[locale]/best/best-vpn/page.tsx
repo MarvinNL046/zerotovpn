@@ -46,14 +46,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (locale === "en") {
     return {
       metadataBase: new URL(baseUrl),
-      title: { absolute: "Best VPN in 2026: Transparent Shortlist and Comparison | ZeroToVPN" },
-      description: "Compare leading VPN providers by use case, current pricing metadata, protocol support and transparent testing notes.",
+      title: { absolute: "Best VPN 2026: Compare Privacy, Streaming & Value Picks | ZeroToVPN" },
+      description: "Find the best VPN for privacy, streaming, speed or price. Compare current plan details, protocols and dated real-world checks before you choose.",
       robots: { index: true, follow: true },
       alternates: generateAlternates("/best/best-vpn", locale),
       openGraph: {
         locale: "en_US",
-        title: "Best VPN in 2026: Transparent Shortlist and Comparison",
-        description: "Choose a VPN by use case, verify the plan and protocol, and compare evidence without universal access or speed guarantees.",
+        title: "Best VPN 2026: Compare Privacy, Streaming & Value Picks",
+        description: "Compare VPNs by privacy, streaming, speed and value using current plan details and dated real-world checks.",
         type: "article",
         images: [DEFAULT_OG_IMAGE],
       },

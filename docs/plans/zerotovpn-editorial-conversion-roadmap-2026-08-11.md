@@ -564,3 +564,8 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - Removed stale hardcoded NordVPN server counts (`7,000+` and `6,400+`) from Android, tablet and iPad/iPhone surfaces. Those stats now render from the same `vpn-data.ts` record as reviews and comparison tables; the privacy and fastest-VPN surfaces now do the same.
 - Added `npm run test:network-claims`, which locks the 7,400/118 snapshot, rejects retired literals and prevents affiliate geography from entering locale message copy. This is a consistency guard, not a claim of fresh provider evidence; the snapshot still needs a dated source refresh when the provider record is updated.
 - Verification: network-claim regression passes, local editorial audit **52/52**, production build **4,447/4,447** and live editorial audit **25/25** with 135 compliant affiliate links. Deployment `dpl_4NXfx6rSKMSNofjKyvVGcSJJZuYQ` is Ready and aliased to `https://www.zerotovpn.com`; live network routes return HTTP 200 with 7,400/118 and no retired 7,000/6,400 or 232-location copy. The Nord conversion/EPC partner gate is unaffected and remains open.
+
+### Locale network-copy cleanup: 12 August 2026
+
+- The browser smoke exposed the same retired 7,000/3,200 comparison wording inside localized Android benefit lists, even though the visible server stat was already dynamic. Replaced those stale numeric comparisons in all nine locale message files with bounded qualitative wording (large network / smaller than NordVPN).
+- Extended the network regression to scan every locale message file for retired 7,000/6,400 literals. The public 232-location affiliate geography remains absent from locale product copy.

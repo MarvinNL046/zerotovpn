@@ -4256,7 +4256,7 @@
           "El protocolo NordLynx ofrece las velocidades más rápidas en Android",
           "El túnel dividido te permite excluir aplicaciones bancarias",
           "Soporte de VPN siempre activa para protección automática",
-          "Más de 7,000 servidores para rendimiento consistente",
+          "Red de servidores amplia para un rendimiento constante",
           "Interfaz Android limpia e intuitiva",
           "Funciona con Android 5.0+ (Lollipop y versiones más recientes)"
         ],
@@ -4279,7 +4279,7 @@
         ],
         "cons": [
           "Velocidades ligeramente más lentas que NordVPN",
-          "Red de servidores más pequeña (3,200 vs 7,000)",
+          "Red de servidores más pequeña que NordVPN",
           "La suplantación GPS requiere Android 6.0+",
           "Menos consistente para streaming"
         ]

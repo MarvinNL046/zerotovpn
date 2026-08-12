@@ -35,6 +35,7 @@ for (const file of routeFiles) {
 const messageFiles = ["en", "nl", "de", "es", "fr", "ja", "ko", "th", "zh"].map((locale) => `src/messages/${locale}.json`);
 for (const file of messageFiles) {
   const messages = read(file);
+  assert(!/(?:7[,.]000|6[,.]400)\+?/.test(messages), `${file} contains a retired NordVPN server-count literal`);
   for (const match of messages.matchAll(/(?:7[,.]400\+[^\n"]*118|118[^\n"]*7[,.]400\+)/gi)) {
     assert(!/232/.test(match[0]), `${file} exposes affiliate geography as public network coverage`);
     assert(/7[,.]400/.test(match[0]) && /118/.test(match[0]), `${file} contains an unbounded NordVPN network claim`);

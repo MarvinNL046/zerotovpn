@@ -3486,7 +3486,7 @@
           "NordLynx protocol delivers fastest speeds on Android",
           "Split tunneling lets you exclude banking apps",
           "Always-on VPN support for automatic protection",
-          "7,000+ servers for consistent performance",
+          "Large server network for consistent performance",
           "Clean, intuitive Android interface",
           "Works with Android 5.0+ (Lollipop and newer)"
         ],
@@ -3509,7 +3509,7 @@
         ],
         "cons": [
           "Speeds slightly slower than NordVPN",
-          "Smaller server network (3,200 vs 7,000)",
+          "Smaller server network than NordVPN",
           "GPS spoofing requires Android 6.0+",
           "Less consistent for streaming"
         ]

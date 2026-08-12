@@ -1,6 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { Metadata } from "next";
-import { OG_LOCALE_MAP, generateAlternates, getShortMonthYear, titelMetMerk } from "@/lib/seo-utils";
+import { DEFAULT_OG_IMAGE, OG_LOCALE_MAP, generateAlternates, getShortMonthYear, titelMetMerk } from "@/lib/seo-utils";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
@@ -58,6 +58,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: titles[locale] || titles.en,
       description: descriptions[locale] || descriptions.en,
       type: "article",
+      images: [DEFAULT_OG_IMAGE],
     },
     alternates: generateAlternates("/best/vpn-port-forwarding", locale),
   };

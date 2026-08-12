@@ -6,10 +6,10 @@ import { isAffiliateUrl } from "@/lib/blog-content";
 export const AUTHOR = {
   name: "ZeroToVPN Expert Team",
   role: "VPN Security Researchers",
-  bio: "Our team of cybersecurity professionals has tested and reviewed over 50 VPN services since 2024. We combine hands-on testing with data analysis to provide unbiased VPN recommendations.",
+  bio: "Our team combines documented provider checks, hands-on testing and data analysis to explain VPN trade-offs and provide evidence-bounded recommendations.",
   credentials: [
-    "50+ VPN services tested",
-    "Independent speed & security audits",
+    "Current provider records",
+    "Dated speed & security checks",
     "No sponsored rankings",
   ],
   avatar: "/images/zerotovpn-team.svg",

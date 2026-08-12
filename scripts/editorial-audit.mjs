@@ -140,6 +140,12 @@ const checks = [
     forbiddenPatterns: [/50\+ VPN|35\+ VPN/i],
   },
   {
+    name: "shared author credentials stay evidence-bounded",
+    file: "src/components/blog/author-box.tsx",
+    patterns: [/documented provider checks/, /Current provider records/, /Dated speed & security checks/],
+    forbiddenPatterns: [/50\+ VPN|over 50 VPN|VPN services tested/i],
+  },
+  {
     name: "homepage evidence-bounded recommendation",
     file: "src/app/[locale]/page.tsx",
     patterns: [/Shortlist candidate/, /catalog data and documented options/, /Provider-stated countries/, /Refund window in catalog/],

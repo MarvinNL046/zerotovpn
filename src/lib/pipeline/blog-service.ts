@@ -22,6 +22,12 @@ import {
 const IRAN_EDITORIAL_SLUG = "best-vpn-for-iran-2026-bypass-internet-censorship";
 const TELEGRAM_EDITORIAL_SLUG = "best-vpn-for-telegram-2026";
 
+// Legacy deal/coupon content is not a compliant commercial surface: it contains
+// unassigned coupon language and stale promotional prices. Keep the records for
+// audit history, but never render or include this slug in the published corpus;
+// next.config.ts sends the old URL to the evidence-led cheap-VPN pillar.
+const BLOCKED_PUBLISHED_SLUGS = new Set(["vpn-price-comparison-best-deals"]);
+
 // Vorm van een volledige post zoals de detailpagina hem gebruikt. De oude
 // drizzle-kolommen die alleen de pipeline nodig had (sourceData/aiPrompt/
 // aiModel/featuredImage-base64) bestaan niet meer.
@@ -122,7 +128,9 @@ export async function getAllPublishedPostSummaries(
   language: string = "en",
   category?: string,
 ): Promise<BlogPostSummary[]> {
-  const rows = INDEX[language] ?? [];
+  const rows = (INDEX[language] ?? []).filter(
+    (r) => !BLOCKED_PUBLISHED_SLUGS.has(r.slug),
+  );
   const filtered = category ? rows.filter((r) => r.category === category) : rows;
   return filtered.map(toSummary);
 }
@@ -139,6 +147,7 @@ export async function getPostBySlug(
   slug: string,
   language: string = "en",
 ): Promise<BlogPost | null> {
+  if (BLOCKED_PUBLISHED_SLUGS.has(slug)) return null;
   const post = await readPostFile(language, slug);
   if (post) return post;
   if (language !== "en") return readPostFile("en", slug);
@@ -198,6 +207,7 @@ export async function getAllPublishedSlugs(): Promise<
   const out: Array<{ slug: string; language: string; updatedAt: Date }> = [];
   for (const rows of Object.values(INDEX)) {
     for (const r of rows) {
+      if (BLOCKED_PUBLISHED_SLUGS.has(r.slug)) continue;
       out.push({
         slug: r.slug,
         language: r.language,

@@ -290,6 +290,16 @@ const checks = [
     patterns: [/isRestrictedAffiliateContext/, /verwijderAffiliateLinks\(post\.content\)/, /SourcesSection content=\{articleContent\}/],
   },
   {
+    name: "legacy coupon page is blocked from publication",
+    file: "src/lib/pipeline/blog-service.ts",
+    patterns: [/BLOCKED_PUBLISHED_SLUGS/, /vpn-price-comparison-best-deals/, /if \(BLOCKED_PUBLISHED_SLUGS\.has\(slug\)\) return null/],
+  },
+  {
+    name: "legacy coupon page redirects to compliant value pillar",
+    file: "src/lib/blog-redirects.generated.json",
+    patterns: [/"source": "\/blog\/vpn-price-comparison-best-deals"/, /"destination": "\/best\/vpn-cheap"/, /"source": "\/:locale\(nl\|de\|es\|fr\|zh\|ja\|ko\|th\)\/blog\/vpn-price-comparison-best-deals"/, /"destination": "\/:locale\/best\/vpn-cheap"/],
+  },
+  {
     name: "non-commercial sticky CTA guard",
     file: "src/components/conversion/sticky-cta-bar.tsx",
     patterns: [/Link href="\/quiz"/, /site-owned conversion aid/],

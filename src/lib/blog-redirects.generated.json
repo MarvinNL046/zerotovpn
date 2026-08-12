@@ -620,6 +620,16 @@
     "permanent": true
   },
   {
+    "source": "/blog/vpn-price-comparison-best-deals",
+    "destination": "/best/vpn-cheap",
+    "permanent": true
+  },
+  {
+    "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-price-comparison-best-deals",
+    "destination": "/:locale/best/vpn-cheap",
+    "permanent": true
+  },
+  {
     "source": "/blog/vpn-guide-tips-february-2026-2026-02",
     "destination": "/blog/vpn-guide-tips-february-2026",
     "permanent": true

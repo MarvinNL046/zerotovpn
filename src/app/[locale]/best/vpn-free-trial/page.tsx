@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const m = getShortMonthYear();
 
   const titles: Record<string, string> = {
-    en: `VPNs With a Real Free Trial (${m}) — Checked at Source`,
+    en: `Best VPN Free Trials (${m}): 7-Day & No-Card Options`,
     nl: `VPN's met een échte gratis proefperiode (${m}) — bij de bron gecheckt`,
     de: `VPNs mit echter kostenloser Testphase (${m}) — an der Quelle geprüft`,
     es: `VPNs con prueba gratuita real (${m}) — verificado en la fuente`,
@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const descriptions: Record<string, string> = {
-    en: "Most VPN free trials are money-back guarantees in disguise. We checked each provider's own page: who gives a trial, how long, and whether a card is needed.",
+    en: "Compare genuine VPN free trials, 7-day options and no-card tests. We check provider terms, payment requirements, refund windows and source dates.",
     nl: "De meeste 'gratis proefperiodes' zijn een geld-terug-garantie in vermomming. We controleerden elke claim op de pagina van de aanbieder zelf: wie geeft echt een proefperiode, hoe lang, en moet je eerst betaalgegevens invullen?",
     de: "Die meisten VPN-Testphasen sind verkappte Geld-zurück-Garantien. Wir haben jede Angabe auf der Seite des Anbieters geprüft: Wer bietet wirklich eine Testphase, wie lange, und sind Zahlungsdaten nötig?",
     es: "La mayoría de las pruebas gratuitas son garantías de devolución disfrazadas. Verificamos cada dato en la página del proveedor: quién ofrece prueba real, cuántos días y si exigen datos de pago.",
@@ -189,7 +189,7 @@ export default async function VpnFreeTrialPage({ params }: Props) {
   return (
     <>
       <ArticleJsonLd
-        title="VPNs With a Real Free Trial"
+        title="Best VPN Free Trials: Real Trials, Refunds & No-Card Options"
         description="Compare genuine VPN trials with money-back guarantees and permanently free tiers, using provider sources and checked dates."
         url={localizedPageUrl}
         datePublished="2026-01-01"
@@ -210,7 +210,7 @@ export default async function VpnFreeTrialPage({ params }: Props) {
                 {t.badge}
               </Badge>
               <h1 className="text-4xl font-bold tracking-tight md:text-5xl">
-                {t.title}
+                Best VPN Free Trials: Real Trials, Refunds &amp; No-Card Options
               </h1>
               <p className="mt-4 text-lg text-muted-foreground">{t.subtitle}</p>
               <div className="mt-6">
@@ -266,13 +266,14 @@ export default async function VpnFreeTrialPage({ params }: Props) {
 
             <div className="mx-auto mt-8 max-w-5xl overflow-x-auto">
               <table className="w-full border-collapse text-sm">
+                <caption className="sr-only">VPN free trial comparison</caption>
                 <thead>
                   <tr className="border-b text-left">
-                    <th className="p-3 font-semibold">{t.colVpn}</th>
-                    <th className="p-3 font-semibold">{t.colTrial}</th>
-                    <th className="p-3 font-semibold">{t.colPlatforms}</th>
-                    <th className="p-3 font-semibold">{t.colCard}</th>
-                    <th className="p-3 font-semibold">{t.colRefund}</th>
+                    <th scope="col" className="p-3 font-semibold">{t.colVpn}</th>
+                    <th scope="col" className="p-3 font-semibold">{t.colTrial}</th>
+                    <th scope="col" className="p-3 font-semibold">{t.colPlatforms}</th>
+                    <th scope="col" className="p-3 font-semibold">{t.colCard}</th>
+                    <th scope="col" className="p-3 font-semibold">{t.colRefund}</th>
                   </tr>
                 </thead>
                 <tbody>

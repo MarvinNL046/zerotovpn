@@ -237,6 +237,12 @@ const checks = [
     patterns: [/AffiliateTextLink/, /price=\{item\.vpn \?/, /monthlyPrice/, /Price Comparison Table/],
   },
   {
+    name: "free-trial pillar SERP metadata and table semantics",
+    file: "src/app/[locale]/best/vpn-free-trial/page.tsx",
+    patterns: [/Best VPN Free Trials \(\$\{m\}\): 7-Day & No-Card Options/, /Compare genuine VPN free trials, 7-day options and no-card tests/, /<caption className=\"sr-only\">VPN free trial comparison<\/caption>/, /scope=\"col\"/],
+    forbiddenPatterns: [/VPNs With a Real Free Trial \(\$\{m\}\) — Checked at Source/],
+  },
+  {
     name: "torrenting page preserves affiliate boundary",
     file: "src/app/[locale]/best/vpn-torrenting/page.tsx",
     patterns: [/affiliateUrl=""/],

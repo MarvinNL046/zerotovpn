@@ -330,3 +330,10 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - Added a dedicated [commercial DataForSEO dossier](../research/dataforseo-commercial-cluster-2026-08-12.md) for `best vpn`, `vpn comparison`, privacy, streaming and cheap-VPN subintents. Current volume was missing in the API response, so historical monthly values are not treated as current demand.
 - Updated the English `/best/best-vpn` pillar with PAA-aligned FAQ answers for “Which VPN is actually the best?”, FBI/VPN tracking, streaming reliability and reasons a reader might avoid NordVPN. Answers stay use-case-specific and non-incentivised; affiliate links remain confined to comparison cards and contextual price links.
 - Post-deploy verification on `dpl_BQKZCT7K6zwNipqQSajmWYMdWmwn` passed the full live editorial gate **22/22**: 123 affiliate links, zero rel/slug, metadata, cluster-link, image, schema-date or freshness failures. The 14-day KPI checkpoint remains the next measurement gate rather than a reason to manufacture current volume from stale API history.
+
+### Free-VPN PAA refinement: 12 August 2026
+
+- Refreshed the US/English DataForSEO free-VPN dossier with 6 overview rows, 84 suggestions and 6 SERP/PAA rows. Current volume was missing for most commercial seeds, so stale historical values are not used as current demand.
+- Added bounded FAQ coverage to `/best/free-vpn` for VPN legality, traceability, no-credit-card signup and streaming blocks. The answers keep provider claims conditional and do not add affiliate links to educational FAQ copy.
+- Updated the page freshness/schema date and source note to 12 August 2026. The newsletter-only exit-intent popup remains enabled and unchanged.
+- Local verification: `npm run audit:editorial` **43/43**, `npm run lint` 0 errors (53 existing warnings), and `npm run build` generated **4,447** pages successfully. Deployment and live editorial-gate results are recorded after the production smoke test.

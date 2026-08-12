@@ -7,7 +7,7 @@ This matrix separates delivered release work from the one measurement milestone 
 
 | Roadmap requirement | Status | Evidence |
 | --- | --- | --- |
-| Shared editorial template used on Best VPN and Iran pages | Complete | `src/components/editorial/best-vpn-editorial-template.tsx`; latest production editorial gate 25/25, including NordVPN, Surfshark and Mullvad reviews |
+| Shared editorial template used on Best VPN and Iran pages | Complete | `src/components/editorial/best-vpn-editorial-template.tsx`; latest production editorial gate 26/26 with 143 compliant affiliate links, including NordVPN, Surfshark and Mullvad reviews |
 | Page-level content brief contract across audited cluster pages | Complete | `src/lib/editorial-content-brief.ts` + centralized cluster map, live attributes on 10 distinct commercial/censorship/protocol/travel/free routes plus French/Dutch free-VPN variants, and [content-brief browser smoke](../metrics/content-brief-browser-smoke-2026-08-12.md); content-brief failure count 0 |
 | First Iran editorial post published with evidence dossier, FAQ schema and compliant CTAs | Complete | `/blog/best-vpn-for-iran-2026-bypass-internet-censorship`; `docs/research/iran-vpn-editorial-brief-2026-08-11.md`; live cluster audit |
 | At least five supporting cluster links live and reciprocal | Complete | `docs/metrics/cluster-link-audit-2026-08-12.md`: 21/21 canonical pages across 4 clusters, 0 missing required links |
@@ -17,7 +17,7 @@ This matrix separates delivered release work from the one measurement milestone 
 | Partner conversions, revenue and EPC joined | Screenshot observation only; matched export pending | [Nord interim screenshot evidence](../metrics/nord-partner-interim-screenshot-2026-08-12.md) shows 19 clicks, 0 conversions, $0 payout and $0 EPC for 6–12 Aug. It does not match the 28 Jul–10 Aug GSC/Short.io window and is not a downloadable export; the measurement guard correctly keeps the row pending |
 | No affiliate links on pages failing NordVPN context rules | Complete | Latest `affiliate-context-audit-2026-08-12` checked 2,271/2,271 URLs and 8,799 links with 0 missing-rel pages, 0 disclosure failures, 0 interruptive flags and 0 fetch failures; it observed 2 transient responses over two seconds. The 11 contextual flags remain documented for manual review |
 | Exit-intent popup remains owned-media email collection only | Complete | `npm run audit:editorial` newsletter guard; popup browser smoke; no provider/coupon/discount/incentive CTA |
-| Deployment, browser QA and page-level compliance recorded | Complete | Latest production deployment `dpl_8S6T6eAVA6zE5w96Yy9MjjVRHEHz` (commit `9ba95d8`) is Ready with `www.zerotovpn.com` and `zerotovpn.com` aliases; the live Best VPN pillar returned HTTP 200, while editorial, claim, affiliate-context, sitemap and cluster-link evidence remains in `docs/metrics/` |
+| Deployment, browser QA and page-level compliance recorded | Complete | Latest production deployment `dpl_5fPK3V7vG18CjNB4LiBrCR7BR9aG` (commit `afeb12a`) is Ready with `www.zerotovpn.com`, `zerotovpn.com` and `zerotovpn.vercel.app` aliases; the live port-forwarding page returned HTTP 200 with the refined title, one H1, shared Open Graph image, FAQ schema and protocol-cluster link, while editorial, claim, affiliate-context, sitemap and cluster-link evidence remains in `docs/metrics/` |
 
 ## Measurement gate
 

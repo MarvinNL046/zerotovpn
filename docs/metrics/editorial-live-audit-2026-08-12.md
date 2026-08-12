@@ -1,11 +1,11 @@
 # Live editorial page audit
 
-Generated: 2026-08-12T22:35:58.011Z
+Generated: 2026-08-12T22:58:10.687Z
 
-- Target pages: **25**
-- Passing pages: **25**
+- Target pages: **26**
+- Passing pages: **26**
 - Pages needing review: **0**
-- Affiliate links checked: **140**
+- Affiliate links checked: **143**
 - Affiliate links missing sponsored/nofollow: **0**
 - Affiliate links missing Short.io slug telemetry: **0**
 - Missing required cluster links: **0**
@@ -44,5 +44,6 @@ Generated: 2026-08-12T22:35:58.011Z
 | pass | /fr/best/free-vpn | Meilleurs VPN gratuits 2026 : limites, sécurité et comparatif | ZeroToVPN | 1 | 46 | 3 | — | — |
 | pass | /nl/best/free-vpn | Best Free VPNs: Limits and Trade-offs | ZeroToVPN | 1 | 46 | 3 | — | — |
 | pass | /best/vpn-free-trial | Best VPN Free Trials (Aug 2026): 7-Day &amp; No-Card Options | 1 | 43 | 11 | — | — |
+| pass | /best/vpn-port-forwarding | Best VPNs With Port Forwarding (Aug 2026): Providers Compared | 1 | 42 | 3 | — | — |
 
 Raw records: [editorial-live-audit-2026-08-12.json](./editorial-live-audit-2026-08-12.json)

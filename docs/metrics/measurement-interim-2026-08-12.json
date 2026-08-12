@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "label": "interim-14d-2026-08-12",
-  "capturedAt": "2026-08-12T17:51:56.014Z",
+  "capturedAt": "2026-08-12T17:57:42.918Z",
   "measurementWindow": {
     "start": "2026-07-28",
     "end": "2026-08-10"
@@ -22,6 +22,9 @@
       "partner": 0
     },
     "partnerExportProvided": false,
+    "partnerWindow": {
+      "status": "not-provided"
+    },
     "missingMetrics": [
       "affiliate.partner.conversions",
       "affiliate.partner.revenue",

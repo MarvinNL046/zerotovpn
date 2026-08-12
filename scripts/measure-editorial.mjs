@@ -8,8 +8,26 @@ function arg(name) {
   return index >= 0 ? process.argv[index + 1] : undefined;
 }
 
+function isoDate(value) {
+  const match = String(value ?? "").match(/\b\d{4}-\d{2}-\d{2}\b/);
+  if (!match) return null;
+  const date = match[0];
+  const parsed = new Date(`${date}T00:00:00Z`);
+  return Number.isNaN(parsed.getTime()) || parsed.toISOString().slice(0, 10) !== date ? null : date;
+}
+
+function validatePartnerWindow(rows, start, end) {
+  if (!rows.length) return { status: "missing-data", rowCount: 0 };
+  const dates = rows.map((row) => isoDate(pick(row, ["date", "datum", "created_at"])));
+  if (dates.some((date) => !date)) return { status: "invalid-date", rowCount: rows.length };
+  const minDate = dates.slice().sort()[0];
+  const maxDate = dates.slice().sort().at(-1);
+  if (minDate < start || maxDate > end) return { status: "outside-window", rowCount: rows.length, minDate, maxDate };
+  return { status: "matched", rowCount: rows.length, minDate, maxDate };
+}
+
 function usage() {
-  console.log("Usage: node scripts/measure-editorial.mjs --label post-14d --window-start YYYY-MM-DD --window-end YYYY-MM-DD --gsc-pages export.csv --gsc-queries queries.csv --shortio clicks.csv [--gsc-chart chart.csv] [--partner partner.csv] --out docs/metrics/post-14d.json [--baseline docs/metrics/zerotovpn-baseline-2026-08-11.json]");
+  console.log("Usage: node scripts/measure-editorial.mjs --label post-14d --window-start YYYY-MM-DD --window-end YYYY-MM-DD --gsc-pages export.csv --gsc-queries queries.csv --gsc-chart chart.csv --shortio clicks.csv [--partner partner.csv] --out docs/metrics/post-14d.json [--baseline docs/metrics/zerotovpn-baseline-2026-08-11.json]");
 }
 
 function parseCsv(text) {
@@ -281,6 +299,10 @@ if (process.argv.includes("--help") || !label || !out) {
   console.error(`Missing required input flag(s): ${missingInputFlags.join(", ")}`);
   usage();
   process.exitCode = 1;
+} else if (windowStart && windowEnd && !arg("--gsc-chart")) {
+  console.error("--gsc-chart is required when a measurement window is provided.");
+  usage();
+  process.exitCode = 1;
 } else if ((windowStart && !windowEnd) || (!windowStart && windowEnd)) {
   console.error("Both --window-start and --window-end are required together.");
   usage();
@@ -310,6 +332,12 @@ if (process.argv.includes("--help") || !label || !out) {
     const shortIo = summarizeShortIo(shortIoRows);
     const gscChart = gscChartRows.length ? summarizeSearchChart(gscChartRows) : null;
     const partner = summarizePartner(partnerRows);
+    const partnerWindow = partnerPath && windowStart && windowEnd
+      ? validatePartnerWindow(partnerRows, windowStart, windowEnd)
+      : { status: partnerPath ? "not-checked" : "not-provided" };
+    if (["outside-window", "invalid-date"].includes(partnerWindow.status)) {
+      throw new Error(`Partner export does not match the requested measurement window: ${JSON.stringify(partnerWindow)}`);
+    }
     const partnerMissingMetrics = partnerPath
       ? [
           ...(partner.rows.length ? [] : ["affiliate.partner"]),
@@ -334,6 +362,7 @@ if (process.argv.includes("--help") || !label || !out) {
           partner: partnerRows.length,
         },
         partnerExportProvided: Boolean(partnerPath),
+        partnerWindow,
         missingMetrics: [
           ...partnerMissingMetrics,
           ...(gscPagesRows.length ? [] : ["searchConsole.pages"]),

@@ -65,27 +65,33 @@ try {
     "Pagina;Klikken;Vertoningen;Gemiddelde CTR;Gemiddelde positie\nhttps://www.zerotovpn.com/;30;1.409;2,13%;15,0\nhttps://www.zerotovpn.com/blog/best-vpn-for-iran-2026-bypass-internet-censorship;24;12.034;0,20%;9,0\n",
   );
   const localizedOut = join(temp, "localized.json");
-  run(["--label", "test-localized", "--gsc-pages", localizedPages, "--gsc-queries", queries, "--shortio", shortIo, "--out", localizedOut]);
+  run(["--label", "test-localized", "--window-start", "2026-07-28", "--window-end", "2026-08-10", "--gsc-pages", localizedPages, "--gsc-queries", queries, "--gsc-chart", chart, "--shortio", shortIo, "--out", localizedOut]);
   const localized = JSON.parse(readFileSync(localizedOut, "utf8"));
   assert(localized.searchConsole.pages.totals.impressions === 13443, "Localized thousands separators should parse");
   assert(Math.abs(localized.searchConsole.pages.rows[0].ctr - 0.0213) < 1e-12, "Localized decimal comma should parse");
   assert(localized.dataQuality.partnerExportProvided === false, "Partner export should be marked absent");
+  assert(localized.dataQuality.partnerWindow.status === "not-provided", "Missing partner export should have an explicit window status");
   assert(localized.dataQuality.missingMetrics.includes("affiliate.partner.conversions"), "Missing partner metrics should be explicit");
 
   const emptyPartner = write("empty-partner.csv", "date,link,clicks\n2026-08-01,go.zerotovpn.com/nordvpn,10\n");
   const emptyPartnerOut = join(temp, "empty-partner.json");
-  run(["--label", "test-empty-partner", "--gsc-pages", pages, "--gsc-queries", queries, "--shortio", shortIo, "--partner", emptyPartner, "--out", emptyPartnerOut]);
+  run(["--label", "test-empty-partner", "--window-start", "2026-07-28", "--window-end", "2026-08-10", "--gsc-pages", pages, "--gsc-queries", queries, "--gsc-chart", chart, "--shortio", shortIo, "--partner", emptyPartner, "--out", emptyPartnerOut]);
   const emptyPartnerReport = JSON.parse(readFileSync(emptyPartnerOut, "utf8"));
   assert(emptyPartnerReport.dataQuality.missingMetrics.includes("affiliate.partner"), "Empty partner export should be flagged");
+  assert(emptyPartnerReport.dataQuality.partnerWindow.status === "matched", "Partner dates should be checked even when metrics are empty");
 
   const missing = spawnSync(process.execPath, [importer, "--label", "missing", "--out", join(temp, "missing.json")], { encoding: "utf8" });
   assert(missing.status !== 0, "Missing required inputs should fail");
   assert(missing.stderr.includes("--gsc-pages"), "Missing-input error should identify the required flag");
 
-  const mismatchedWindow = spawnSync(process.execPath, [importer, "--label", "bad-window", "--window-start", "2026-08-10", "--window-end", "2026-07-28", "--gsc-pages", pages, "--gsc-queries", queries, "--shortio", shortIo, "--out", join(temp, "bad-window.json")], { encoding: "utf8" });
+  const mismatchedWindow = spawnSync(process.execPath, [importer, "--label", "bad-window", "--window-start", "2026-08-10", "--window-end", "2026-07-28", "--gsc-pages", pages, "--gsc-queries", queries, "--gsc-chart", chart, "--shortio", shortIo, "--out", join(temp, "bad-window.json")], { encoding: "utf8" });
   assert(mismatchedWindow.status !== 0 && mismatchedWindow.stderr.includes("on or before"), "Reversed measurement windows should fail closed");
 
-  console.log(JSON.stringify({ passed: true, cases: ["english-window", "localized", "empty-partner", "missing-required-input", "reversed-window"] }, null, 2));
+  const outsidePartner = write("outside-partner.csv", "date,link,clicks,conversions,revenue,epc\n2026-08-11,go.zerotovpn.com/nordvpn,10,1,10,1\n");
+  const outsideWindow = spawnSync(process.execPath, [importer, "--label", "outside-partner", "--window-start", "2026-07-28", "--window-end", "2026-08-10", "--gsc-pages", pages, "--gsc-queries", queries, "--gsc-chart", chart, "--shortio", shortIo, "--partner", outsidePartner, "--out", join(temp, "outside-partner.json")], { encoding: "utf8" });
+  assert(outsideWindow.status !== 0 && outsideWindow.stderr.includes("does not match"), "Partner rows outside the measurement window should fail closed");
+
+  console.log(JSON.stringify({ passed: true, cases: ["english-window", "localized", "empty-partner", "missing-required-input", "reversed-window", "partner-window-mismatch"] }, null, 2));
 } finally {
   rmSync(temp, { recursive: true, force: true });
 }

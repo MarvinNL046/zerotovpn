@@ -480,6 +480,11 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - Made `--gsc-chart` a required input for `npm run measure:check-inputs`; Pages and Queries alone can no longer look like a complete Search Console site-total export.
 - Added Chart.csv header regression coverage and re-ran the real input check: Pages, Queries, Chart and Short.io are `ready`; the gate remains `ready: false` only because the Nord partner export is absent.
 
+### Partner window matching guard: 12 August 2026
+
+- `measure:editorial` now requires `--gsc-chart` whenever a measurement window is supplied and validates every partner row date against that same ISO window. Invalid dates or rows outside the window fail closed; missing partner data remains explicitly `not-provided`.
+- Regression coverage includes an in-window partner export, an empty-but-dated partner export, and an out-of-window partner export. The real interim report records `partnerWindow: not-provided` rather than inferring a conversion result.
+
 ### Current production verification snapshot: 12 August 2026
 
 - Fresh live checks against `https://www.zerotovpn.com` pass **22/22** editorial targets with **127** compliant affiliate links, zero brief/metadata/freshness/image/schema/rel/slug/cluster-link failures, and zero social-image failures.

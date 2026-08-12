@@ -23,6 +23,8 @@ This is the first machine-generated join of real Search Console exports and real
 
 The machine report now stores the authoritative Chart.csv totals separately under `searchConsole.siteTotals`: 93 clicks, 36,763 impressions, 0.253% CTR and impression-weighted position 33.42. The page/query downloads are top-1,000 tables and remain separate; their row sums are not interchangeable with the chart total. See [gsc-export-2026-08-12.md](./gsc-export-2026-08-12.md) for provenance.
 
+The report also records `dataQuality.partnerWindow: not-provided`. When a Nord export is supplied, every dated partner row must fall inside the declared 28 July–10 August window before conversion metrics can be summarized.
+
 ## Gate status
 
 `npm run measure:check-inputs` now accepts both real GSC files and the real Short.io CSV. The command correctly remains `ready: false` because there is no partner export. Conversions, revenue, EPC and conversion rate are therefore `null`; no affiliate outcome is inferred from clicks.

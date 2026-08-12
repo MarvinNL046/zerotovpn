@@ -105,7 +105,8 @@ const summary = {
   missingLinkCount: records.reduce((sum, record) => sum + record.missing.length, 0),
   fetchFailureCount: records.filter((record) => record.status !== 200).length,
 };
-const report = { summary, clusters: Object.fromEntries(Object.entries(clusters).map(([key, value]) => [key, { label: value.label, pages: value.pages.map((page) => page.path) }])), records };
+const reportRecords = records.map(({ internalPaths: _internalPaths, ...record }) => record);
+const report = { summary, clusters: Object.fromEntries(Object.entries(clusters).map(([key, value]) => [key, { label: value.label, pages: value.pages.map((page) => page.path) }])), records: reportRecords };
 const label = new Date().toISOString().slice(0, 10);
 const metricsDir = resolve(ROOT, "docs", "metrics");
 await mkdir(metricsDir, { recursive: true });

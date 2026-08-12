@@ -46,9 +46,9 @@ The three urgent placements have now been neutralized in the codebase: the exit-
 
    Nord discount language appears in the IP lookup and DNS leak widgets, translation files, and editorial content. Examples include “NordVPN — X% Off”, “68% off”, and NordVPN price claims. These must be removed or replaced with neutral copy unless the exact promotion is assigned to this account in the Nord dashboard.
 
-6. **Risky legacy content**
+6. **Risky legacy content (remediated)**
 
-`src/content/blog/best-free-vpn-reddit-2026.md` and `src/content/blog/is-brave-vpn-free-2026.md` contain Nord coupon links and promotional price claims. These are not safe to publish under the current rules without offer-specific approval.
+`src/content/blog/best-free-vpn-reddit-2026.md` and `src/content/blog/is-brave-vpn-free-2026.md` previously contained Nord coupon links and promotional price claims. Those claims and `/coupons/*` links were removed from the source and rendered English records; the build-time audit now fails if they return. The pages retain neutral provider comparisons and relevant review links only.
 
 7. **Legacy price/deal page (remediated)**
 

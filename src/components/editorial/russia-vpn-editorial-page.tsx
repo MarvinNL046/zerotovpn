@@ -8,11 +8,13 @@ import { BestVpnEditorialTemplate } from "@/components/editorial/best-vpn-editor
 import { IranEditorialQuickPicks } from "@/components/editorial/iran-editorial-quick-picks";
 import type { VpnData } from "@/lib/vpn-data-layer";
 
-const updated = "August 11, 2026";
+const updated = "August 12, 2026";
 const faq = [
   { question: "Is using a VPN legal in Russia?", answer: "The legal and enforcement position can change and depends on the use, service and current rules. Check current authoritative guidance and do not treat this page as legal advice." },
   { question: "Which VPN works in Russia?", answer: "No provider is guaranteed to work on every Russian ISP or date. Evaluate documented obfuscation or stealth options, prepare before travel and record a bounded test on the network that matters." },
   { question: "Can I use a VPN to access Telegram in Russia?", answer: "A VPN may help when Telegram traffic is filtered, but access varies by network and feature. Compare it with Telegram's official MTProto proxy guidance and test messages, media and calls separately." },
+  { question: "Is there a free VPN for Russia?", answer: "A free tier may have different protocols, limits, distribution paths and privacy terms from a paid plan. Check whether the official app and updates are available on your network, and test the exact feature you need before relying on it." },
+  { question: "Is NordVPN still available in Russia?", answer: "Provider availability, app distribution and blocking conditions can change. Check NordVPN's current official documentation and account route, then test the app on the ISP and device that matter; this page cannot guarantee access." },
   { question: "Should I install a VPN before travelling to Russia?", answer: "Preparing an official app, account recovery and a fallback communication method before a restrictive network is prudent. It does not guarantee future access, so keep a failure-safe plan." },
   { question: "Are free VPNs safe in Russia?", answer: "A free tier can have different protocols, limits and distribution paths. Compare ownership, privacy terms, update access and support; never assume free means private or available." },
 ];
@@ -59,12 +61,12 @@ export function RussiaVpnEditorialPage({ vpns }: { vpns: VpnData[] }) {
 
           <section id="faq" className="scroll-mt-24 mt-12"><h2 className="text-3xl font-bold">Russia VPN FAQ</h2><div className="mt-5 divide-y rounded-xl border">{faq.map((item) => <details key={item.question} className="group p-4"><summary className="cursor-pointer font-semibold">{item.question}<ArrowRight className="ml-2 inline size-4 transition-transform group-open:rotate-90" aria-hidden="true" /></summary><p className="mt-3 max-w-3xl leading-7 text-muted-foreground">{item.answer}</p></details>)}</div></section>
 
-          <section id="sources" className="scroll-mt-24 mt-12"><h2 className="text-3xl font-bold">Sources and methodology</h2><ul className="mt-5 list-disc space-y-2 pl-5 text-sm leading-6 text-muted-foreground"><li><a className="underline" href="https://freedomhouse.org/country/russia/freedom-net/2025" target="_blank" rel="noopener noreferrer">Freedom House - Russia: Freedom on the Net 2025</a></li><li><a className="underline" href="https://support.nordvpn.com/hc/en-us/articles/19615332252561-Enable-or-disable-Obfuscated-servers" target="_blank" rel="noopener noreferrer">NordVPN support - obfuscated servers</a></li><li><a className="underline" href="https://core.telegram.org/proxy" target="_blank" rel="noopener noreferrer">Telegram Core - MTProxy documentation</a></li><li>ZeroToVPN DataForSEO dossier: US/English keyword overview, PAA samples and competitor domains, fetched August 11, 2026.</li></ul></section>
+          <section id="sources" className="scroll-mt-24 mt-12"><h2 className="text-3xl font-bold">Sources and methodology</h2><ul className="mt-5 list-disc space-y-2 pl-5 text-sm leading-6 text-muted-foreground"><li><a className="underline" href="https://freedomhouse.org/country/russia/freedom-net/2025" target="_blank" rel="noopener noreferrer">Freedom House - Russia: Freedom on the Net 2025</a></li><li><a className="underline" href="https://support.nordvpn.com/hc/en-us/articles/19615332252561-Enable-or-disable-Obfuscated-servers" target="_blank" rel="noopener noreferrer">NordVPN support - obfuscated servers</a></li><li><a className="underline" href="https://core.telegram.org/proxy" target="_blank" rel="noopener noreferrer">Telegram Core - MTProxy documentation</a></li><li>ZeroToVPN DataForSEO dossier: US/English keyword overview, PAA samples and competitor domains, fetched August 12, 2026.</li></ul></section>
           <AuthorBox />
         </main>
       </BestVpnEditorialTemplate>
       <FAQSchema title="Russia VPN FAQ" faqs={faq} />
-      <ArticleJsonLd title="VPN for Russia in 2026: what to verify before you connect" description="Evidence-led Russia VPN comparison with dated sources, bounded testing and preparation guidance." datePublished="2026-08-11T00:00:00.000Z" dateModified="2026-08-11T00:00:00.000Z" url="https://www.zerotovpn.com/countries/russia" />
+      <ArticleJsonLd title="VPN for Russia in 2026: what to verify before you connect" description="Evidence-led Russia VPN comparison with dated sources, bounded testing and preparation guidance." datePublished="2026-08-11T00:00:00.000Z" dateModified="2026-08-12T00:00:00.000Z" url="https://www.zerotovpn.com/countries/russia" />
     </div>
   );
 }

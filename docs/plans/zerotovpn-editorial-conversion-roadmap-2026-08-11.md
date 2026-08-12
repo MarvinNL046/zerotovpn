@@ -318,3 +318,9 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - Local release gate: `npm run audit:editorial` **43/43**, `npm run lint` 0 errors (53 existing warnings), and `npm run build` generated 4,447 pages successfully.
 - Production deployment `dpl_HVU2E6SD13v5mKebQbkXM6E5Bhhv` is Ready with aliases `www.zerotovpn.com`, `zerotovpn.com` and `zerotovpn.vercel.app`. Live editorial audit passed **22/22** with 123 affiliate links and no rel/slug, cluster-link, metadata, image or freshness failures.
 - The full live claim audit checked **2,279/2,279** URLs with 0 fetch errors and **0 findings** across provider-count, reader-count, speed-test-count, max-speed, speed-retention and rank-claim patterns. A visible browser smoke test confirmed one H1, compliant `sponsored nofollow` affiliate links and the newsletter form on the live Netflix route.
+
+### Russia PAA refinement: 12 August 2026
+
+- Refreshed the Russia DataForSEO dossier with current US/English SERP/PAA samples and competitor data. The new PAA set reinforces four answer intents: legality, current provider availability, free-tier limitations and Telegram access; it does not establish that any provider works on a particular Russian ISP.
+- Added bounded FAQ answers for “Is there a free VPN for Russia?” and “Is NordVPN still available in Russia?” to the English Russia dossier, updated its freshness/schema date to 12 August, and kept all affiliate links inside the genuine VPN-selection context.
+- Verification: `npm run audit:editorial` **43/43**, `npm run lint` 0 errors (53 existing warnings), and `npm run build` generated **4,447** pages successfully. The 14-day KPI checkpoint remains 25 August because no real Search Console, Short.io or partner export is present yet.

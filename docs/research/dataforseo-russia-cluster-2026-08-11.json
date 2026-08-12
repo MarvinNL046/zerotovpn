@@ -4,8 +4,8 @@
   "targetDomain": "zerotovpn.com",
   "location_code": 2840,
   "language_code": "en",
-  "fetchedAt": "2026-08-11T16:32:53.345Z",
-  "refreshed": false,
+  "fetchedAt": "2026-08-12T13:42:49.223Z",
+  "refreshed": true,
   "seeds": [
     "best vpn for russia",
     "vpn for russia",
@@ -212,10 +212,10 @@
     {
       "keyword": "best vpn for russia",
       "paa": [
-        "Which VPN works best in Russia?",
         "What VPN has Russia for free?",
-        "Which VPN is government-approved in Russia?",
-        "What is the best VPN to call Russia?"
+        "Is VPN legal in Russia?",
+        "Can the FBI track a VPN?",
+        "Is NordVPN still available in Russia?"
       ],
       "hasAiOverview": true
     },
@@ -224,8 +224,8 @@
       "paa": [
         "Which VPN supports Russia?",
         "Can the FBI track a VPN?",
-        "Can you use VPN in Russia?",
-        "Is there a free VPN for Russia?"
+        "Is there a free VPN for Russia?",
+        "Can you use VPN in Russia?"
       ],
       "hasAiOverview": true
     },
@@ -237,15 +237,15 @@
         "Which VPNs work in Russia in 2026?",
         "Which VPN free lets me use Russia for free?"
       ],
-      "hasAiOverview": true
+      "hasAiOverview": false
     },
     {
       "keyword": "does vpn work in russia",
       "paa": [
         "Is it legal to use a VPN in Russia?",
         "Which VPN is still working in Russia?",
-        "Can the FBI track a VPN?",
-        "What VPNs are blocked in Russia?"
+        "How far does $100 go in Russia?",
+        "Can the FBI track a VPN?"
       ],
       "hasAiOverview": true
     },
@@ -254,8 +254,8 @@
       "paa": [
         "Can the FBI track a VPN?",
         "Does any VPN work in Russia?",
-        "Does Russia check your phone?",
-        "Which country has banned VPN?"
+        "Can two men marry in Russia?",
+        "Does Russia check your phone?"
       ],
       "hasAiOverview": true
     }

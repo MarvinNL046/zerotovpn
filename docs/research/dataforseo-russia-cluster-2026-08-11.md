@@ -1,6 +1,6 @@
 # DataForSEO research - Russia VPN cluster
 
-Fetched: 2026-08-11T16:32:53.345Z | location 2840 | language en
+Fetched: 2026-08-12T13:42:49.223Z | location 2840 | language en
 
 ## Keyword overview
 
@@ -16,20 +16,20 @@ Fetched: 2026-08-11T16:32:53.345Z | location 2840 | language en
 
 ### best vpn for russia
 - AI Overview: yes
-- PAA: Which VPN works best in Russia?
 - PAA: What VPN has Russia for free?
-- PAA: Which VPN is government-approved in Russia?
-- PAA: What is the best VPN to call Russia?
+- PAA: Is VPN legal in Russia?
+- PAA: Can the FBI track a VPN?
+- PAA: Is NordVPN still available in Russia?
 
 ### vpn for russia
 - AI Overview: yes
 - PAA: Which VPN supports Russia?
 - PAA: Can the FBI track a VPN?
-- PAA: Can you use VPN in Russia?
 - PAA: Is there a free VPN for Russia?
+- PAA: Can you use VPN in Russia?
 
 ### russia vpn
-- AI Overview: yes
+- AI Overview: no
 - PAA: Which VPN works for Russia?
 - PAA: Is using a VPN in Russia legal?
 - PAA: Which VPNs work in Russia in 2026?
@@ -39,15 +39,15 @@ Fetched: 2026-08-11T16:32:53.345Z | location 2840 | language en
 - AI Overview: yes
 - PAA: Is it legal to use a VPN in Russia?
 - PAA: Which VPN is still working in Russia?
+- PAA: How far does $100 go in Russia?
 - PAA: Can the FBI track a VPN?
-- PAA: What VPNs are blocked in Russia?
 
 ### is vpn legal in russia
 - AI Overview: yes
 - PAA: Can the FBI track a VPN?
 - PAA: Does any VPN work in Russia?
+- PAA: Can two men marry in Russia?
 - PAA: Does Russia check your phone?
-- PAA: Which country has banned VPN?
 
 ## Suggestion candidates
 

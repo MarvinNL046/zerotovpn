@@ -265,6 +265,23 @@ const results = checks.map((check) => {
   return { ...check, pass: missing.length === 0 && forbidden.length === 0, missing, forbidden };
 });
 
+const trackedCommercialCtaFiles = [
+  "src/content/blog/best-vpn-for-ffxiv-2026.md",
+  "src/content/blog/best-vpn-for-mlb-tv-2026.md",
+  "src/content/blog/best-vpn-for-fortnite-2026.md",
+];
+const trackedCommercialCtaFailures = trackedCommercialCtaFiles.filter((file) => {
+  const source = readFileSync(resolve(ROOT, file), "utf8");
+  return !source.includes("https://go.zerotovpn.com/nordvpn") || /https?:\/\/(?:www\.)?nordvpn\.com/i.test(source);
+});
+results.push({
+  name: "commercial use-case NordVPN CTAs use the tracked destination",
+  file: "src/content/blog/best-vpn-for-{ffxiv,mlb-tv,fortnite}-2026.md",
+  pass: trackedCommercialCtaFailures.length === 0,
+  missing: [],
+  forbidden: trackedCommercialCtaFailures,
+});
+
 const quantifiedClaimRecords = [
   {
     slug: "vpn-credentials-theft-prevention-2026",

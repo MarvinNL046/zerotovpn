@@ -95,9 +95,9 @@ Use `AFFILIATE_AUDIT_CONCURRENCY=8` to lower request pressure or `AFFILIATE_AUDI
 
 The current flag classifications and release gate are recorded in [affiliate-context-review-2026-08-11.md](./affiliate-context-review-2026-08-11.md). Treat an unclassified flag as a reason to remove the affiliate destination before publishing.
 
-## Current measurement checkpoint — 12 August 2026
+## Current measurement checkpoint — 13 August 2026
 
-The latest production release gates cover **25/25** editorial targets, including the three core review routes, with **135** compliant affiliate links and zero content-brief, metadata, freshness, image, disclosure, rel, slug or cluster-link failures. The sitemap remains **2,279/2,279** healthy URLs. The latest affiliate-context scan reports **1,755 affiliate pages / 8,450 links**, zero missing disclosure/rel, zero interruptive-promotion flags and zero fetch failures; seven responses exceeded the two-second observation threshold and are retained as performance observations. These checks validate release quality; they are not traffic or revenue evidence.
+The latest production release gates cover **26/26** editorial targets, including the three core review routes and the port-forwarding comparison, with **143** compliant affiliate links and zero content-brief, metadata, freshness, image, disclosure, rel, slug or cluster-link failures. The post-release sitemap scan covers **2,271/2,271** healthy URLs. The latest affiliate-context scan reports **1,755 affiliate pages / 8,799 links**, zero missing disclosure/rel, zero interruptive-promotion flags, zero fetch failures and zero slow responses. These checks validate release quality; they are not traffic or revenue evidence.
 
 The exact matched-window contract is machine-readable in [measurement-window-manifest-2026-08-12.json](./measurement-window-manifest-2026-08-12.json) and summarized in [measurement-window-manifest-2026-08-12.md](./measurement-window-manifest-2026-08-12.md). It supersedes earlier interim wording that predated the authenticated GSC and Short.io exports; the Nord partner export is still the only missing gate input.
 

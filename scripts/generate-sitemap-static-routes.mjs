@@ -75,9 +75,14 @@ function main() {
   // translated fallbacks. They are filtered per locale in app/sitemap.ts,
   // so do not remove the route altogether here.
   const LOCALE_AWARE_NOINDEX_RE = /robots\s*:\s*locale\s*===|if\s*\(\s*locale\s*===\s*["']en["']\s*\)/;
+  // Query-aware pages can noindex only their pagination variants while the
+  // canonical page remains indexable. Keep the static route in the sitemap.
+  const QUERY_PAGINATION_NOINDEX_RE = /searchParams|parsePage/;
   const isNoindex = (filePath) => {
     const source = fs.readFileSync(filePath, "utf8");
-    return NOINDEX_RE.test(source) && !LOCALE_AWARE_NOINDEX_RE.test(source);
+    return NOINDEX_RE.test(source)
+      && !LOCALE_AWARE_NOINDEX_RE.test(source)
+      && !QUERY_PAGINATION_NOINDEX_RE.test(source);
   };
 
   const redirectOnly = pageFiles.filter(isRedirectOnly);

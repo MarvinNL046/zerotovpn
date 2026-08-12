@@ -26,9 +26,17 @@ export const revalidate = 600;
 
 type Props = {
   params: Promise<{ locale: string }>;
+  searchParams?: Promise<{ page?: string | string[] }>;
 };
 
 const baseUrl = "https://www.zerotovpn.com";
+const BLOG_PAGE_SIZE = 24;
+
+function parsePage(value: string | string[] | undefined): number {
+  const raw = Array.isArray(value) ? value[0] : value;
+  const parsed = Number.parseInt(raw ?? "1", 10);
+  return Number.isFinite(parsed) && parsed > 0 ? parsed : 1;
+}
 
 function formatDateLong(dateStr: string, locale: string): string {
   const date = new Date(dateStr);
@@ -56,8 +64,10 @@ function formatDateShort(dateStr: string, locale: string): string {
   return `${m[date.getMonth()]} ${date.getDate()}`;
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params, searchParams }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const query = searchParams ? await searchParams : undefined;
+  const page = parsePage(query?.page);
 
   const titles: Record<string, string> = {
     en: "VPN Blog - News, Tips & Security Guides | ZeroToVPN",
@@ -94,6 +104,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "website",
     },
     alternates: generateAlternates("/blog", locale),
+    ...(page > 1 ? { robots: { index: false, follow: true } } : {}),
   };
 }
 
@@ -182,8 +193,10 @@ const categoryConfig: Record<string, {
   },
 };
 
-export default async function BlogPage({ params }: Props) {
+export default async function BlogPage({ params, searchParams }: Props) {
   const { locale } = await params;
+  const query = searchParams ? await searchParams : undefined;
+  const requestedPage = parsePage(query?.page);
   setRequestLocale(locale);
   const t = await getTranslations("blog");
 
@@ -246,8 +259,12 @@ export default async function BlogPage({ params }: Props) {
     ...dynamicPosts,
   ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
-  const featuredPost = allPosts[0]; // Already sorted newest-first
-  const otherPosts = allPosts.slice(1);
+  const pageCount = Math.max(1, Math.ceil(allPosts.length / BLOG_PAGE_SIZE));
+  const page = Math.min(requestedPage, pageCount);
+  const featuredPost = page === 1 ? allPosts[0] : undefined;
+  const firstPostIndex = page === 1 ? 1 : (page - 1) * BLOG_PAGE_SIZE;
+  const lastPostIndex = page === 1 ? BLOG_PAGE_SIZE : page * BLOG_PAGE_SIZE;
+  const otherPosts = allPosts.slice(firstPostIndex, lastPostIndex);
 
   return (
     <div className="flex flex-col">
@@ -471,6 +488,22 @@ export default async function BlogPage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {pageCount > 1 && (
+        <nav aria-label="Blog pagination" className="container flex items-center justify-between gap-4 py-8">
+          {page > 1 ? (
+            <Link href={`/blog?page=${page - 1}`} className="rounded-lg border px-4 py-2 text-sm font-semibold hover:bg-muted">
+              Previous
+            </Link>
+          ) : <span />}
+          <span className="text-sm text-muted-foreground">Page {page} of {pageCount}</span>
+          {page < pageCount ? (
+            <Link href={`/blog?page=${page + 1}`} className="rounded-lg border px-4 py-2 text-sm font-semibold hover:bg-muted">
+              Next
+            </Link>
+          ) : <span />}
+        </nav>
+      )}
 
       {/* CTA Section */}
       <section className="py-12 lg:py-16 border-t">

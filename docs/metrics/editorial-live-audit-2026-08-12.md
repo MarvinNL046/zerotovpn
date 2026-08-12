@@ -1,6 +1,6 @@
 # Live editorial page audit
 
-Generated: 2026-08-12T20:03:39.271Z
+Generated: 2026-08-12T20:09:54.010Z
 
 - Target pages: **25**
 - Passing pages: **25**
@@ -31,7 +31,7 @@ Generated: 2026-08-12T20:03:39.271Z
 | pass | /reviews/nordvpn | NordVPN Review 2026: Is It Still the Best VPN? (Tested) | 1 | 49 | 2 | — | — |
 | pass | /reviews/surfshark | Surfshark Review (Aug 2026) - Tested &amp; Rated | ZeroToVPN | 1 | 50 | 3 | — | — |
 | pass | /reviews/mullvad | Mullvad VPN Review (Aug 2026) - Tested &amp; Rated | ZeroToVPN | 1 | 50 | 3 | — | — |
-| pass | /blog/best-vpn-for-iran-2026-bypass-internet-censorship | Best VPN for Iran in 2026: tested options, limits and safer preparation | 1 | 60 | 6 | — | — |
+| pass | /blog/best-vpn-for-iran-2026-bypass-internet-censorship | Best VPN for Iran 2026: Tested Options &amp; Setup Limits | 1 | 60 | 6 | — | — |
 | pass | /blog/best-vpn-for-telegram-2026 | Best VPN for Telegram in 2026: what to verify before you connect | 1 | 59 | 6 | — | — |
 | pass | /countries/iran | VPN Use in Iran: Evidence and Safety Checklist | ZeroToVPN | 1 | 54 | 0 | — | — |
 | pass | /countries/russia | VPN for Russia in 2026: What to Verify Before You Connect | 1 | 46 | 6 | — | — |

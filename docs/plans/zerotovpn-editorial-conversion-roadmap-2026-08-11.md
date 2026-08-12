@@ -470,6 +470,11 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - Added the Telegram dossier to the centralized censorship-cluster brief map with `best vpn for telegram`, commercial intent, a dated 12 August review, the Telegram proxy documentation and the existing VPN-selection affiliate boundary. The generic blog route only receives this brief for the dedicated Telegram slug.
 - Production deployment `dpl_34HbqZvP9x31DWHLyLmMYGNE4Too` is Ready. The live editorial gate remains **22/22** with **0** content-brief failures; the Telegram browser smoke returned one H1, three provider marks and all brief fields. The measurement gate remains unchanged.
 
+### Measurement-window manifest correction: 12 August 2026
+
+- Added [measurement-window-manifest-2026-08-12.json](../metrics/measurement-window-manifest-2026-08-12.json) and its readable summary to make the 28 July–10 August join reproducible. It records real authenticated GSC and Short.io inputs, the intentionally unassigned Short.io wildcard/deleted residual, and the non-matching 6–12 August Nord screenshot.
+- This manifest supersedes older interim log wording that predated the authenticated exports. The gate remains `matched: false` and `ready: false`; no conversion, revenue or EPC value is inferred.
+
 ### Nord affiliate interim screenshot: 12 August 2026
 
 - The user-supplied authenticated Nord Performance Report screenshot for **6–12 August 2026** shows **19 clicks** (NordVPN 15, NordVPN China 2, NordVPN Arabia 2), **0 conversions**, **$0.00 payout** and **$0.00 EPC**. Full evidence and interpretation boundaries are recorded in [nord-partner-interim-screenshot-2026-08-12.md](../metrics/nord-partner-interim-screenshot-2026-08-12.md).

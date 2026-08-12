@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-08-12",
+  "window": {
+    "start": "2026-07-28",
+    "end": "2026-08-10",
+    "timezone": "site-export-defined"
+  },
+  "sources": {
+    "searchConsole": {
+      "status": "ready",
+      "pages": ".cache/metrics/gsc-2026-08-12/Pages.csv",
+      "queries": ".cache/metrics/gsc-2026-08-12/Queries.csv",
+      "evidence": "docs/metrics/gsc-export-2026-08-12.md"
+    },
+    "shortIo": {
+      "status": "ready-with-residual",
+      "export": ".cache/metrics/shortio-2026-08-12/clicks.csv",
+      "evidence": "docs/metrics/shortio-export-2026-08-12.md",
+      "residual": "Wildcard/deleted paths remain separate and are not attributed to current page slugs."
+    },
+    "nordPartner": {
+      "status": "missing",
+      "export": null,
+      "evidence": "docs/metrics/nord-partner-interim-screenshot-2026-08-12.md",
+      "note": "The available screenshot covers 2026-08-06 through 2026-08-12 and cannot be joined to this window."
+    }
+  },
+  "gate": {
+    "matched": false,
+    "ready": false,
+    "blockedMetrics": [
+      "affiliate.partner.conversions",
+      "affiliate.partner.revenue",
+      "affiliate.partner.epc"
+    ],
+    "nextRequiredInput": "A downloadable Nord partner export for 2026-07-28 through 2026-08-10 with timezone, clicks, conversions, payout/revenue and EPC."
+  }
+}

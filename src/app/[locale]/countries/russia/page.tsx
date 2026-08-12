@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
   const titles: Record<string, string> = {
-    en: "VPN for Russia in 2026: What to Verify Before You Connect | ZeroToVPN",
+    en: "VPN for Russia 2026: Obfuscation, Setup & What to Verify | ZeroToVPN",
     nl: "VPN voor Rusland: Wat Werkt in 2026? | ZeroToVPN",
     de: "VPN für Russland: Was Funktioniert 2026? | ZeroToVPN",
     es: "VPN para Rusia: ¿Qué Funciona en 2026? | ZeroToVPN",
@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const descriptions: Record<string, string> = {
-    en: "VPN access in Russia can change by ISP and date. Compare obfuscation, preparation, legal uncertainty and a bounded test plan before relying on a provider.",
+    en: "Compare VPN options for Russia by obfuscation, app access and privacy evidence. Prepare before travel and test your ISP, device and protocol—no permanent access guarantee.",
     nl: "Reis je naar Rusland of woon je daar? Ontdek welke VPNs in 2026 nog betrouwbaar werken. Bekijk onze expert-geteste aanbevelingen.",
     de: "Reisen Sie nach Russland oder leben Sie dort? Hier erfahren Sie, was über VPN-Zugang, Einschränkungen und noch funktionierende Dienste 2026 wichtig ist.",
     es: "¿Viajas a Rusia o vives allí? Aquí tienes lo que debes saber sobre acceso VPN, restricciones y servicios que siguen funcionando en 2026.",

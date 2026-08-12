@@ -41,7 +41,13 @@ const checks = [
   {
     name: "Russia cluster evidence",
     file: "src/components/editorial/russia-vpn-editorial-page.tsx",
-    patterns: [/Freedom House/, /id=\"faq\"/, /id=\"sources\"/, /IranEditorialQuickPicks/],
+    patterns: [/Freedom House/, /id=\"faq\"/, /id=\"sources\"/, /IranEditorialQuickPicks/, /scope=\"col\"/, /VPN for Russia 2026: obfuscation/],
+  },
+  {
+    name: "Russia pillar SERP metadata matches censorship intent",
+    file: "src/app/[locale]/countries/russia/page.tsx",
+    patterns: [/VPN for Russia 2026: Obfuscation, Setup & What to Verify/, /Compare VPN options for Russia by obfuscation, app access and privacy evidence/],
+    forbiddenPatterns: [/VPN for Russia in 2026: What to Verify Before You Connect/],
   },
   {
     name: "China cluster evidence",

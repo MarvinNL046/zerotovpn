@@ -764,3 +764,9 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - Commit `ae85619` (the reusable `seo:best-vpn` runner and its cached JSON/Markdown evidence) is deployed to Vercel production as [`dpl_E2gop4j8pVvqXcYUbn7x3N8UUtXT`](https://vercel.com/marvinnl046s-projects/zerotovpn/E2gop4j8pVvqXcYUbn7x3N8UUtXT), with the production aliases `www.zerotovpn.com` and `zerotovpn.com` remaining healthy.
 - The post-deploy smoke of `/best/vpn-port-forwarding` returned HTTP 200, the refined title `Best VPNs With Port Forwarding (Aug 2026): Providers Compared`, exactly one H1 and all four PAA-derived FAQ questions. Vercel reported no runtime errors in the selected one-hour window.
 - The repository is clean and the local editorial regression suite remains **71/71**; measurement-input and measurement-report regression suites also pass. This release changes research evidence and tooling only, so it intentionally creates no new URL batch and does not alter affiliate destinations or the open Nord partner-export gate.
+
+### Locale homepage trust-copy cleanup: 13 August 2026
+
+- A source-level review found that the homepage still rendered the unsupported `hero.trusted`/`home.hero.trusted` strings in all nine locales, even though the visible evidence-signal strip had already been rebuilt. These strings claimed more than 100,000 readers and were therefore inconsistent with the evidence-bounded homepage contract.
+- Replaced both copies per locale with a neutral statement about independent, evidence-led VPN comparisons. No affiliate destination, popup behavior, ranking claim or URL changed.
+- Added a fail-closed `npm run audit:editorial` check for both locale trust-copy paths. The local suite now passes **72/72**; the change is ready for the next production deployment and remains independent of the open Nord partner-export measurement gate.

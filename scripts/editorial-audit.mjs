@@ -554,6 +554,20 @@ results.push({
   missing: popupLocaleFailures.length ? popupLocaleFailures.map((file) => `clean popup copy: ${file}`) : [],
   forbidden: [],
 });
+const trustCopyFailures = [];
+const legacyTrustCopy = /100\s*[,.]?\s*000|100\s*k\+?|100k\+?/iu;
+for (const file of localeFiles) {
+  const locale = JSON.parse(readFileSync(resolve(ROOT, "src/messages", file), "utf8"));
+  const trustCopy = [locale.hero?.trusted, locale.home?.hero?.trusted].filter(Boolean).join(" ");
+  if (!trustCopy || legacyTrustCopy.test(trustCopy)) trustCopyFailures.push(file);
+}
+results.push({
+  name: "homepage trust copy stays evidence-bounded in every locale",
+  file: "src/messages/*.json (hero.trusted and home.hero.trusted)",
+  pass: trustCopyFailures.length === 0,
+  missing: trustCopyFailures.length ? trustCopyFailures.map((file) => `neutral trust copy: ${file}`) : [],
+  forbidden: [],
+});
 const failed = results.filter((result) => !result.pass);
 console.log(JSON.stringify({ checkedAt: new Date().toISOString(), checked: results.length, passed: results.length - failed.length, failed: failed.length, results: results.map(({ name, file, pass, missing, forbidden }) => ({ name, file, pass, missing, forbidden })) }, null, 2));
 if (failed.length) process.exitCode = 1;

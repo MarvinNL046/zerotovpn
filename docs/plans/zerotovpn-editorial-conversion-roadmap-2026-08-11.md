@@ -530,6 +530,13 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - Added a regression guard to `npm run audit:editorial` for both records. The live review renderer already exposed tracked CTAs; this closes the dormant source-record drift before a future importer can reintroduce an untracked commercial link.
 - Verification: local editorial audit **51/51** and production build **4,447/4,447** routes. Production deployment `dpl_4w8RdVFVmWJTmU5vDogekZ3SEWnK` is Ready and aliased to `https://www.zerotovpn.com`; Vercel error-log scan returned no logs, and both review URLs return HTTP 200, one H1, tracked CTA links and zero direct bare NordVPN destinations. The matched Nord partner-export gate remains unchanged.
 
+### Review template methodology and live markup gate: 12 August 2026
+
+- Extended the shared review template with a localized, visible `How we test` link to `/methodology` and added NordVPN, Surfshark and Mullvad reviews to the production editorial gate. This makes the methodology path explicit on commercial review pages and keeps review pages inside the same cluster-quality contract.
+- The first live run exposed two review sidebar links without Short.io slug telemetry and missing width/height metadata on review author images. Replaced the raw sidebar anchor with the shared `AffiliateTextLink` and migrated the author image to `next/image`, then re-ran the production deployment.
+- Local editorial audit remains **52/52** and the production build generated **4,447/4,447** routes. Deployment `zerotovpn-c60fpd4hw-marvinnl046s-projects.vercel.app` is Ready; the final live gate passes **25/25**, checking **135** affiliate links with 0 missing sponsored/nofollow attributes, 0 missing slugs, 0 image-SEO failures, 0 missing cluster links and 0 social-image failures.
+- This improves review-page compliance and attribution hygiene; it does not close the matched Nord conversion/EPC gate, which still requires the dated partner export for 28 July–10 August.
+
 ### Nord affiliate interim screenshot: 12 August 2026
 
 - The user-supplied authenticated Nord Performance Report screenshot for **6–12 August 2026** shows **19 clicks** (NordVPN 15, NordVPN China 2, NordVPN Arabia 2), **0 conversions**, **$0.00 payout** and **$0.00 EPC**. Full evidence and interpretation boundaries are recorded in [nord-partner-interim-screenshot-2026-08-12.md](../metrics/nord-partner-interim-screenshot-2026-08-12.md).

@@ -110,6 +110,36 @@ const checks = [
     forbiddenPatterns: [/We tested over 10 VPN providers/i, /Speed retention hit 94%/i],
   },
   {
+    name: "BBC iPlayer article avoids unsupported provider counts",
+    file: "src/content/blog/best-vpn-for-bbc-iplayer-2026.md",
+    patterns: [/current provider records/, /remaining providers we checked/],
+    forbiddenPatterns: [/38 VPN|tested 38|38\+ VPN/i],
+  },
+  {
+    name: "BBC iPlayer rendered record avoids unsupported provider counts",
+    file: "src/data/posts/en/best-vpn-for-bbc-iplayer-2026.json",
+    patterns: [/current provider records/, /remaining providers we checked/],
+    forbiddenPatterns: [/38 VPN|tested 38|38\+ VPN/i],
+  },
+  {
+    name: "Torrenting Reddit article avoids unsupported provider counts",
+    file: "src/content/blog/best-vpn-for-torrenting-reddit-2026.md",
+    patterns: [/current provider evidence/],
+    forbiddenPatterns: [/38\+ VPN/i],
+  },
+  {
+    name: "Torrenting Reddit rendered record avoids unsupported provider counts",
+    file: "src/data/posts/en/best-vpn-for-torrenting-reddit-2026.json",
+    patterns: [/current provider evidence/],
+    forbiddenPatterns: [/38\+ VPN/i],
+  },
+  {
+    name: "Biometric payment article qualifies provider evidence",
+    file: "src/data/posts/en/vpn-biometric-payment-fingerprint-identity-leak-2026.json",
+    patterns: [/multiple VPN providers/, /multiple VPN providers; some claims/],
+    forbiddenPatterns: [/50\+ VPN|35\+ VPN/i],
+  },
+  {
     name: "homepage evidence-bounded recommendation",
     file: "src/app/[locale]/page.tsx",
     patterns: [/Shortlist candidate/, /catalog data and documented options/, /Provider-stated countries/, /Refund window in catalog/],

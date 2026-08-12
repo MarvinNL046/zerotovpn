@@ -385,6 +385,11 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - Added `npm run measure:check-inputs` to reject fixture/sample/example files, validate export headers and require a real partner export before reporting the KPI gate as ready.
 - The current `.cache/metrics` inventory still contains only explicitly named fixtures, so the gate correctly remains not ready. No KPI or conversion values have been inferred.
 
+### Roadmap completion matrix: 12 August 2026
+
+- Added [zerotovpn-roadmap-completion-matrix-2026-08-12.md](./zerotovpn-roadmap-completion-matrix-2026-08-12.md) with requirement-level evidence for the delivered template, Iran post, reciprocal cluster links, baseline, compliance, popup and deployment work.
+- The matrix keeps the 14-day Search Console, Short.io and partner review explicitly **pending** until real exports exist; it does not treat fixtures as evidence.
+
 ### NordVPN promotion-context audit: 12 August 2026
 
 - Re-ran `npm run audit:affiliate-context` against all **2,279/2,279** live sitemap URLs: **1,755** pages with affiliate links and **8,189** links checked.

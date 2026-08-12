@@ -8,21 +8,30 @@ type Props = {
 };
 
 const baseUrl = "https://www.zerotovpn.com";
-const title = "Best Free VPNs: Limits and Trade-offs | ZeroToVPN";
-const description = "Compare free VPN tiers by data limits, privacy evidence, locations and realistic use cases. Verify current plan terms before installing.";
+const metadataByLocale: Record<string, { title: string; description: string }> = {
+  en: {
+    title: "Best Free VPNs: Limits and Trade-offs | ZeroToVPN",
+    description: "Compare free VPN tiers by data limits, privacy evidence, locations and realistic use cases. Verify current plan terms before installing.",
+  },
+  fr: {
+    title: "Meilleurs VPN gratuits 2026 : limites, sécurité et comparatif | ZeroToVPN",
+    description: "Comparez les VPN gratuits selon leurs limites de données, leur confidentialité, leurs pays disponibles et leurs usages réels. Vérifiez les conditions actuelles avant l’installation.",
+  },
+};
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const metadata = metadataByLocale[locale] ?? metadataByLocale.en;
 
   return {
     metadataBase: new URL(baseUrl),
-    title: { absolute: title },
-    description,
+    title: { absolute: metadata.title },
+    description: metadata.description,
     robots: { index: true, follow: true },
     openGraph: {
       locale: OG_LOCALE_MAP[locale] ?? "en_US",
-      title,
-      description,
+      title: metadata.title,
+      description: metadata.description,
       type: "article",
       images: [DEFAULT_OG_IMAGE],
     },

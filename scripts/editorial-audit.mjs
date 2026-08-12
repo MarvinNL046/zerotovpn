@@ -227,9 +227,14 @@ const checks = [
     patterns: [/What a travel VPN can/, /id="prepare"/, /id="compare"/, /id="faq"/, /travel.state.gov/, /DataForSEO/],
   },
   {
-    name: "Free VPN support page",
+    name: "Free VPN support page template",
     file: "src/components/editorial/free-vpn-editorial-page.tsx",
-    patterns: [/what is actually free/, /id="free-tiers"/, /id="safety"/, /id="faq"/, /protonvpn.com\/free-vpn/, /DataForSEO/],
+    patterns: [/freeVpnCopy/, /FreeTierCard/, /id="free-tiers"/, /id="safety"/, /id="faq"/, /editorialContentBriefs\.freeVpn/],
+  },
+  {
+    name: "Free VPN localized evidence copy",
+    file: "src/components/editorial/free-vpn-copy.ts",
+    patterns: [/what is actually free/, /Meilleurs VPN gratuits/, /protonvpn.com\/free-vpn/, /DataForSEO/, /100% free/],
   },
   {
     name: "cheap VPN page exposes tracked inline prices",

@@ -276,6 +276,11 @@ const checks = [
     patterns: [/const clientMessages = \{ \.\.\.messages \}/, /delete clientMessages\.freeVpn/, /messages=\{clientMessages\}/],
   },
   {
+    name: "retired promotion payloads are not serialized to clients",
+    file: "src/app/[locale]/layout.tsx",
+    patterns: [/delete clientMessages\.exitIntent/, /delete clientMessages\.exitPopup/, /delete clientMessages\.couponsPage/, /clientMessages\.stickyBar = \{ dismiss:/],
+  },
+  {
     name: "retired homepage trust claims are not serialized to clients",
     file: "src/app/[locale]/layout.tsx",
     patterns: [/delete clientMessages\.home\?\.trustIndicators/],

@@ -136,6 +136,15 @@ export default async function LocaleLayout({ children, params }: Props) {
   // cannot reappear in serialized HTML while localized copy is rebuilt.
   const clientMessages = { ...messages };
   delete clientMessages.freeVpn;
+  // Retired coupon/offer payloads are not used by the current UI. Keep them
+  // out of serialized HTML so old promotion copy cannot surface client-side.
+  delete clientMessages.exitIntent;
+  delete clientMessages.exitPopup;
+  delete clientMessages.coupons;
+  delete clientMessages.couponsPage;
+  if (clientMessages.stickyBar) {
+    clientMessages.stickyBar = { dismiss: clientMessages.stickyBar.dismiss };
+  }
   // The homepage now renders evidence signals from live catalog state; do not
   // serialize the retired traffic/test-count claims from the message bundle.
   delete clientMessages.home?.trustIndicators;

@@ -1,11 +1,11 @@
 # Live editorial page audit
 
-Generated: 2026-08-12T19:21:25.018Z
+Generated: 2026-08-12T19:45:36.732Z
 
 - Target pages: **25**
 - Passing pages: **25**
 - Pages needing review: **0**
-- Affiliate links checked: **135**
+- Affiliate links checked: **140**
 - Affiliate links missing sponsored/nofollow: **0**
 - Affiliate links missing Short.io slug telemetry: **0**
 - Missing required cluster links: **0**
@@ -19,7 +19,7 @@ Generated: 2026-08-12T19:21:25.018Z
 
 | Status | Page | Title | H1s | Internal links | Affiliate links | Missing required IDs | Missing cluster links |
 |---|---|---|---:|---:|---:|---|---|
-| pass | / | ZeroToVPN: Independent VPN Research, Transparency &amp; Real-World Testing | 1 | 50 | 9 | — | — |
+| pass | / | ZeroToVPN: Independent VPN Research, Transparency &amp; Real-World Testing | 1 | 50 | 14 | — | — |
 | pass | /about | About ZeroToVPN | Our Testing Methodology | 1 | 47 | 0 | — | — |
 | pass | /best/vpn-linux | Best VPNs for Linux (Aug 2026) — Native Apps &amp; CLI | 1 | 44 | 3 | — | — |
 | pass | /best/vpn-windows | Best VPNs for Windows PC (Aug 2026) — Native Apps &amp; Speed | 1 | 41 | 5 | — | — |

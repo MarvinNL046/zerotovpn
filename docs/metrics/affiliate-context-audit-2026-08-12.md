@@ -1,11 +1,11 @@
 # Live affiliate context audit
 
-Generated: 2026-08-12T18:39:02.202Z
+Generated: 2026-08-12T19:46:26.922Z
 
 - Sitemap URLs discovered: **2279**
 - URLs checked: **2279**
 - Pages with affiliate links: **1755**
-- Affiliate links checked: **8450**
+- Affiliate links checked: **8799**
 - Pages with missing `sponsored` + `nofollow`: **0**
 - Affiliate pages without visible disclosure text: **0**
 - Affiliate pages with promotion terms requiring review: **12**

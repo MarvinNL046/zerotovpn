@@ -17,6 +17,10 @@ const metadataByLocale: Record<string, { title: string; description: string }> =
     title: "Meilleurs VPN gratuits 2026 : limites, sécurité et comparatif | ZeroToVPN",
     description: "Comparez les VPN gratuits selon leurs limites de données, leur confidentialité, leurs pays disponibles et leurs usages réels. Vérifiez les conditions actuelles avant l’installation.",
   },
+  es: {
+    title: "Mejores VPN gratis 2026: límites, seguridad y comparativa | ZeroToVPN",
+    description: "Compara VPN gratis por límites de datos, privacidad, ubicaciones y usos reales. Verifica las condiciones actuales del plan antes de instalarlo.",
+  },
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

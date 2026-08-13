@@ -1,11 +1,11 @@
 # Live editorial page audit
 
-Generated: 2026-08-13T08:37:42.470Z
+Generated: 2026-08-13T08:53:15.524Z
 
-- Target pages: **55**
-- Passing pages: **55**
+- Target pages: **56**
+- Passing pages: **56**
 - Pages needing review: **0**
-- Affiliate links checked: **214**
+- Affiliate links checked: **220**
 - Affiliate links missing sponsored/nofollow: **0**
 - Affiliate links missing Short.io slug telemetry: **0**
 - Missing required cluster links: **0**
@@ -29,6 +29,7 @@ Generated: 2026-08-13T08:37:42.470Z
 | pass | /best/vpn-gaming | Best VPNs for Gaming in 2026: Ping, Stability and DDoS Boundaries | 1 | 42 | 6 | — | — |
 | pass | /blog/does-vpn-reduce-ping-gaming-2026 | Does a VPN Reduce Ping? What Gaming Tests Can Actually Show (2026) | 1 | 55 | 0 | — | — |
 | pass | /speed-test | Internet Speed Test: Measure Download, Upload, Ping and Jitter (2026) | 1 | 43 | 0 | — | — |
+| pass | /tools/dns-leak-test | DNS Leak Test: Check Whether Your VPN Is Routing DNS Correctly | 1 | 42 | 6 | — | — |
 | pass | /nl/speed-test | Gratis Internet Snelheidstest | ZeroToVPN | 1 | 37 | 0 | — | — |
 | pass | /de/speed-test | Kostenloser Internet Geschwindigkeitstest | ZeroToVPN | 1 | 37 | 0 | — | — |
 | pass | /fr/speed-test | Test de Vitesse Internet Gratuit | ZeroToVPN | 1 | 37 | 0 | — | — |

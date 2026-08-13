@@ -1,5 +1,6 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { DnsLeakWidget } from "@/components/tools/dns-leak-widget";
+import { DnsLeakEditorialPage, dnsLeakEditorialDescription, dnsLeakEditorialTitle } from "@/components/editorial/dns-leak-editorial-page";
 import { VpnCard } from "@/components/vpn/vpn-card";
 import { vpnProviders } from "@/lib/vpn-data";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
@@ -13,6 +14,13 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  if (locale === "en") {
+    return {
+      title: { absolute: titelMetMerk(dnsLeakEditorialTitle) },
+      description: dnsLeakEditorialDescription,
+      alternates: generateAlternates("/tools/dns-leak-test", locale),
+    };
+  }
   const t = await getTranslations({ locale, namespace: "dnsLeakTest" });
 
   return {
@@ -28,6 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function DnsLeakTestPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
+  if (locale === "en") return <DnsLeakEditorialPage />;
   const t = await getTranslations("dnsLeakTest");
 
   // Get top 3 VPNs with best security for DNS leak protection

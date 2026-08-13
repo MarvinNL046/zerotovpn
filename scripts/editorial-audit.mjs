@@ -456,6 +456,17 @@ const checks = [
     forbiddenPatterns: [/fastest.*universal/i, /35,000\+/i, /96%.*speed/i, /99%.*security/i],
   },
   {
+    name: "DNS leak tool uses evidence-led diagnostic template",
+    file: "src/components/editorial/dns-leak-editorial-page.tsx",
+    patterns: [/DnsLeakEditorialPage/, /Run the DNS leak test/, /id="test"/, /id="interpret"/, /id="fix"/, /id="faq"/, /id="sources"/, /DataForSEO|dataforseo-dns-leak-cluster/, /browserleaks.com\/dns/, /protonvpn.com\/support\/dns-leaks-privacy/, /AffiliateTextLink/],
+    forbiddenPatterns: [/guaranteed leak-free/i, /100% private/i, /fastest.*universal/i],
+  },
+  {
+    name: "DNS leak route uses the audited English component",
+    file: "src/app/[locale]/tools/dns-leak-test/page.tsx",
+    patterns: [/DnsLeakEditorialPage/, /locale === "en"/, /dnsLeakEditorialTitle/, /dnsLeakEditorialDescription/],
+  },
+  {
     name: "VPN comparison route uses the audited English component and metadata",
     file: "src/app/[locale]/compare/page.tsx",
     patterns: [/VpnComparisonEditorialPage/, /locale === "en"/, /vpnComparisonEditorialTitle/, /vpnComparisonEditorialDescription/],

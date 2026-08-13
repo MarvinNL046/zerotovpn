@@ -173,6 +173,15 @@ export const editorialContentBriefs = {
     affiliateContext: "none",
     schemaType: "Article",
   },
+  dnsLeak: {
+    primaryKeyword: "dns leak test",
+    intent: "informational",
+    cluster: "privacy-and-trust",
+    lastReviewedAt: "2026-08-13",
+    evidence: ["docs/research/dataforseo-dns-leak-cluster-2026-08-13.md", "/methodology", "https://browserleaks.com/dns", "https://protonvpn.com/support/dns-leaks-privacy"],
+    affiliateContext: "vpn-selection",
+    schemaType: "Article",
+  },
   portForwarding: {
     primaryKeyword: "best vpn with port forwarding",
     intent: "commercial",

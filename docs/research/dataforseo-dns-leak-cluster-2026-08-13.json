@@ -1,0 +1,267 @@
+{
+  "schemaVersion": 1,
+  "cluster": "DNS leak testing / VPN privacy boundaries",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "fetchedAt": "2026-08-13T08:44:37.930Z",
+  "refreshed": true,
+  "seeds": [
+    "dns leak test",
+    "vpn dns leak test",
+    "dns leak test online",
+    "how to fix a dns leak",
+    "what is a dns leak",
+    "dns leak protection vpn"
+  ],
+  "overview": [
+    {
+      "keyword": "dns leak protection vpn",
+      "currentVolume": null,
+      "latestVolume": 10,
+      "latestMonth": "2024-02",
+      "difficulty": 58,
+      "intent": "informational"
+    },
+    {
+      "keyword": "dns leak test",
+      "currentVolume": 33100,
+      "latestVolume": 33100,
+      "latestMonth": "2026-06",
+      "difficulty": 61,
+      "intent": "informational"
+    },
+    {
+      "keyword": "dns leak test online",
+      "currentVolume": 20,
+      "latestVolume": 40,
+      "latestMonth": "2026-06",
+      "difficulty": null,
+      "intent": "informational"
+    },
+    {
+      "keyword": "how to fix a dns leak",
+      "currentVolume": 20,
+      "latestVolume": 10,
+      "latestMonth": "2026-06",
+      "difficulty": 17,
+      "intent": "informational"
+    },
+    {
+      "keyword": "vpn dns leak test",
+      "currentVolume": null,
+      "latestVolume": 30,
+      "latestMonth": "2024-02",
+      "difficulty": 27,
+      "intent": "informational"
+    },
+    {
+      "keyword": "what is a dns leak",
+      "currentVolume": 210,
+      "latestVolume": 170,
+      "latestMonth": "2026-06",
+      "difficulty": 46,
+      "intent": "informational"
+    }
+  ],
+  "suggestions": [
+    {
+      "seed": "dns leak test",
+      "keyword": "dns leak test",
+      "volume": 33100
+    },
+    {
+      "seed": "dns leak test",
+      "keyword": "test dns leak",
+      "volume": 33100
+    },
+    {
+      "seed": "dns leak test",
+      "keyword": "check dns leak test",
+      "volume": 33100
+    },
+    {
+      "seed": "dns leak test",
+      "keyword": "leak test dns",
+      "volume": 33100
+    },
+    {
+      "seed": "dns leak test",
+      "keyword": "test for dns leak",
+      "volume": 33100
+    },
+    {
+      "seed": "dns leak test",
+      "keyword": "nordvpn dns leak test",
+      "volume": 590
+    },
+    {
+      "seed": "dns leak test",
+      "keyword": "dns test leak",
+      "volume": 390
+    },
+    {
+      "seed": "dns leak test",
+      "keyword": "dns leak test website",
+      "volume": 170
+    },
+    {
+      "seed": "dns leak test",
+      "keyword": "expressvpn dns leak test",
+      "volume": 140
+    },
+    {
+      "seed": "dns leak test",
+      "keyword": "surfshark dns leak test",
+      "volume": 110
+    },
+    {
+      "seed": "dns leak test",
+      "keyword": "dns leak test tool",
+      "volume": 110
+    },
+    {
+      "seed": "vpn dns leak test",
+      "keyword": "dns leak test for vpn",
+      "volume": 70
+    },
+    {
+      "seed": "dns leak test",
+      "keyword": "best dns leak test",
+      "volume": 50
+    },
+    {
+      "seed": "dns leak test",
+      "keyword": "dns leak test surfshark",
+      "volume": 50
+    },
+    {
+      "seed": "dns leak test",
+      "keyword": "cloudflare dns leak test",
+      "volume": 50
+    },
+    {
+      "seed": "vpn dns leak test",
+      "keyword": "vpn test dns leak",
+      "volume": 10
+    },
+    {
+      "seed": "vpn dns leak test",
+      "keyword": "strong vpn dns leak test",
+      "volume": null
+    },
+    {
+      "seed": "vpn dns leak test",
+      "keyword": "test vpn dns leak",
+      "volume": null
+    },
+    {
+      "seed": "vpn dns leak test",
+      "keyword": "dns leak test vpn",
+      "volume": null
+    },
+    {
+      "seed": "vpn dns leak test",
+      "keyword": "vpn insights dns leak test",
+      "volume": null
+    },
+    {
+      "seed": "dns leak test online",
+      "keyword": "dns leak test online",
+      "volume": 20
+    },
+    {
+      "seed": "dns leak test online",
+      "keyword": "online dns leak test",
+      "volume": 10
+    },
+    {
+      "seed": "how to fix a dns leak",
+      "keyword": "how to fix a dns leak",
+      "volume": 20
+    },
+    {
+      "seed": "what is a dns leak",
+      "keyword": "what is a dns leak",
+      "volume": 210
+    },
+    {
+      "seed": "what is a dns leak",
+      "keyword": "what is a dns leak test",
+      "volume": 10
+    },
+    {
+      "seed": "dns leak protection vpn",
+      "keyword": "proton vpn dns leak protection",
+      "volume": 20
+    },
+    {
+      "seed": "dns leak protection vpn",
+      "keyword": "best vpn with dns leak protection",
+      "volume": 10
+    },
+    {
+      "seed": "dns leak protection vpn",
+      "keyword": "dns leak protection vpn",
+      "volume": null
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "dns leak test",
+      "paa": [],
+      "hasAiOverview": false
+    },
+    {
+      "keyword": "vpn dns leak test",
+      "paa": [
+        "Is it safe to perform a DNS leak test?",
+        "How can I check if my VPN is leaked?",
+        "How can I check for DNS leaks?",
+        "How to do a NordVPN DNS leak test?"
+      ],
+      "hasAiOverview": false
+    },
+    {
+      "keyword": "dns leak test online",
+      "paa": [
+        "How can I test for DNS leaks?",
+        "Is DNS leak test legit?",
+        "Is 9.9 9.9 DNS safe?",
+        "Can a DNS leak expose my location?"
+      ],
+      "hasAiOverview": false
+    },
+    {
+      "keyword": "how to fix a dns leak",
+      "paa": [
+        "Is a DNS leak bad?",
+        "What causes DNS leaks?",
+        "Is changing DNS to 8.8.8.8 safe?",
+        "How do I tell if I have a DNS leak?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "what is a dns leak",
+      "paa": [
+        "How do you fix a DNS leak?",
+        "How do I know if I have a DNS leak?",
+        "Is it safe to perform a DNS leak test?",
+        "Is blocking DNS traffic good or bad?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "dns leak protection vpn",
+      "paa": [
+        "Can a DNS leak expose my location?",
+        "Does NordVPN protect against DNS leaks?",
+        "Is a DNS leak bad?",
+        "Is DNS leak test legit?"
+      ],
+      "hasAiOverview": true
+    }
+  ],
+  "sourcePolicy": "DataForSEO signals prioritise test intent, diagnosis questions and FAQ coverage; they do not prove that a VPN prevents every DNS leak or that a provider's current implementation works on every device."
+}

@@ -27,6 +27,11 @@ export const serverLocationEditorialFaq = [
     answer:
       "A VPN changes the network path but does not make someone untraceable. Attribution can involve provider records, account data, device identifiers and legal process; review the provider's current logging policy rather than assuming a jurisdiction is a shield.",
   },
+  {
+    question: "Which countries should I avoid using a VPN in?",
+    answer:
+      "There is no universal avoid list that applies to every provider or traveller. Check the local rules, the provider's availability and its legal entity and logging disclosures, then choose a server that meets your lawful use case rather than relying on a country label alone.",
+  },
 ];
 
 export const serverLocationEditorialContent = `
@@ -53,6 +58,9 @@ export const serverLocationEditorialContent = `
 <h2>How to evaluate privacy by location</h2>
 <p>A server country is not the same thing as a provider's legal home, operating entity or logging practice. Read the provider's current privacy policy, jurisdiction explanation, transparency material and independent audits where available. A country label alone cannot establish that a service keeps no logs or that a user is beyond lawful requests. For the evaluation method, see our <a href="/methodology">VPN testing methodology</a> and <a href="/best/vpn-privacy">privacy comparison</a>.</p>
 
+<h2>Is there a country you should avoid?</h2>
+<p>Not as a universal rule. A location may be unsuitable because the provider has no reliable endpoint there, local rules affect VPN use, the route is unstable or the service's terms do not support the intended activity. Check the current local guidance and provider documentation, and keep legal or contractual assumptions separate from the speed test.</p>
+
 <h2>Streaming and regional access: verify before relying on it</h2>
 <p>Streaming catalogues, account rules and VPN detection change. A location that worked for one title, account or date may not work for another. Use the required region only where you have permission, check the platform's terms and treat the result as a dated observation. If a provider changes the route or the service blocks an endpoint, switch back to the documented fallback rather than assuming every server in that country behaves the same.</p>
 
@@ -74,6 +82,8 @@ export const serverLocationEditorialContent = `
 <p>Use the location required by the service and your lawful access rights, then check current provider and service terms. Streaming availability changes by title, account, server and date, so record the result as a dated observation.</p>
 <h3>Can the FBI track someone using a VPN?</h3>
 <p>A VPN changes the network path but does not make someone untraceable. Attribution can involve provider records, account data, device identifiers and legal process; review the provider's current logging policy rather than assuming a jurisdiction is a shield.</p>
+<h3>Which countries should I avoid using a VPN in?</h3>
+<p>There is no universal avoid list. Check local rules, provider availability and current privacy disclosures, then choose a server for your lawful use case rather than assuming a country label is automatically safe or unsafe.</p>
 
 <p><strong>Evidence note:</strong> Reviewed 13 August 2026 against current US/English search-intent and PAA signals. The dossier informs question coverage; it does not prove that a country is fastest, safest, legal or able to unlock a particular service.</p>
 `;

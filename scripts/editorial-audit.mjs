@@ -348,7 +348,7 @@ const checks = [
   {
     name: "server-location page uses PAA-led bounded location copy",
     file: "src/data/editorial/server-location-2026.ts",
-    patterns: [/What country should I set my VPN to\?/, /Which country server is fastest for a VPN\?/, /Which country is best for using a VPN for streaming\?/, /Can the FBI track someone using a VPN\?/, /VPN server location decision guide/, /2026/],
+    patterns: [/What country should I set my VPN to\?/, /Which country server is fastest for a VPN\?/, /Which country is best for using a VPN for streaming\?/, /Can the FBI track someone using a VPN\?/, /Which countries should I avoid using a VPN in\?/, /VPN server location decision guide/, /2026/],
     forbiddenPatterns: [/50\+ server locations|tested 50\+/i, /permanent-unblocking guarantee/i],
   },
   {

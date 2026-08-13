@@ -8,7 +8,7 @@
 ## Executive summary
 
 - **The next page batch is not yet a conversion leaderboard.** Search Console shows where demand and ranking opportunity exist, while the Nord export still has no page-level sub-ID. The queue therefore ranks *actionability*, not affiliate revenue.
-- **The strongest immediate commercial candidate is `/compare/protonvpn-vs-airvpn`.** It already has page-one visibility (157 impressions, 1 click, average position 10.04), eight live affiliate anchors and a comparison dossier, but it is not in `LINKED_COMPARISONS` or the sitemap. It needs an evidence-led copy review before being promoted.
+- **The strongest immediate commercial candidate is `/compare/protonvpn-vs-airvpn`.** It already has page-one visibility (157 impressions, 1 click, average position 10.04), eight live affiliate anchors and a comparison dossier. Its evidence-led renderer is now live with `noindex, follow`, but it remains outside `LINKED_COMPARISONS` and the sitemap until the attribution and promotion gates are satisfied.
 - **Two pages combine page-one visibility with a clear conversion surface:** the simultaneous-connections article (167 impressions, position 10.57) and the fitness-tracking article (193 impressions, position 5.68). Both have eight live affiliate anchors, so their next work should be CTR/intent refinement rather than new URL creation.
 - **The connection-drops article is a high-value authority/CTR candidate, not a direct affiliate winner.** It has 400 impressions at position 15.45 but no affiliate anchors; improve the answer and internal links first, then reassess commercial placement under the contextual affiliate policy.
 
@@ -20,7 +20,7 @@ The Search Console cohort is the 28 July–10 August 2026 Web-search export for 
 
 | Tier | Existing URL | GSC impressions | Clicks | Avg. position | Live affiliate anchors | Current status | Recommended action after attribution gate |
 |---|---|---:|---:|---:|---:|---|---|
-| A | `/compare/protonvpn-vs-airvpn` | 157 | 1 | 10.04 | 8 | Indexable, self-canonical, one H1, **not in sitemap**; comparison dossier exists | Review the generic comparison claims against the AirVPN/competition evidence, add a bounded decision table and sources, then consider adding it to `LINKED_COMPARISONS` and the sitemap only when internal links and audit coverage are ready |
+| A | `/compare/protonvpn-vs-airvpn` | 157 | 1 | 10.04 | 8 | Evidence-led renderer live, `noindex, follow`, self-canonical, one H1, **not in sitemap** | After the sub-ID join, rerun the live gate, add the real internal-link path and only then consider `LINKED_COMPARISONS` and sitemap promotion |
 | A | `/blog/vpn-simultaneous-connections-limits-workarounds-2026` | 167 | 0 | 10.57 | 8 | DataForSEO dossier and commercial intent already documented | Improve the SERP answer for device limits/workarounds, make plan/device wording dated, and instrument the existing CTAs; do not create a variant |
 | A | `/blog/vpn-fitness-tracking-apps-strava-apple-health-garmin-privacy` | 193 | 0 | 5.68 | 8 | Strong ranking with a CTR gap; existing conversion surface | Tighten the title/intro and PAA-style FAQ around Strava, Apple Health and Garmin privacy; preserve the evidence boundary and test whether the existing CTAs are visible at the decision point |
 | B | `/blog/vpn-connection-drops-why-disconnects-how-to-fix-2026` | 400 | 0 | 15.45 | 0 | High informational demand, no affiliate surface | Add a concise diagnostic checklist, internal links to protocol/device guides and a dated troubleshooting source set; only add contextual provider links if the reader’s next step genuinely requires a VPN |
@@ -39,7 +39,7 @@ These pages have useful demand signals but were just changed, so another rewrite
 
 ## Why this queue is safer than a new URL batch
 
-The current sitemap intentionally avoids thousands of empty pairwise comparison pages. The ProtonVPN/AirVPN page is a useful exception to investigate because it already receives impressions and clicks, but adding it to the sitemap before the generic comparison component is evidence-bounded would advertise a page whose claims have not passed the current editorial gate. The detailed preparation is recorded in the [ProtonVPN/AirVPN comparison brief](../research/protonvpn-vs-airvpn-comparison-brief-2026-08-13.md). The queue therefore separates:
+The current sitemap intentionally avoids thousands of empty pairwise comparison pages. The ProtonVPN/AirVPN page is a useful exception to investigate because it already receives impressions and clicks, but it remains `noindex, follow` and outside the sitemap until attribution, internal linking and the live editorial gate are all ready. The detailed preparation is recorded in the [ProtonVPN/AirVPN comparison brief](../research/protonvpn-vs-airvpn-comparison-brief-2026-08-13.md). The queue therefore separates:
 
 1. **copy and evidence readiness**;
 2. **internal-link and sitemap eligibility**; and
@@ -49,7 +49,7 @@ Only a page that passes all three should be promoted or used as a template for a
 
 ## Recommended run order
 
-1. Capture the next dated Nord performance export with **Sub ID 1** and **Advertiser Sub ID 1** selected. Confirm that a returned value contains `zt_<locale>-<public-page-slug>`.
+1. Capture the next dated Nord performance export with **Sub ID 1** (`Stat.affiliate_info1`) and **Advertiser Sub ID 1** selected. Confirm that a returned value contains `zt_<locale>-<public-page-slug>`.
 2. Join that value to the Short.io slug/page map and update `measure:editorial`. Keep unmatched offer totals separate.
 3. Run the full editorial, sitemap and affiliate-context audits before editing any Tier A page.
 4. Refresh the comparison page first if the attribution join is real; otherwise start with the simultaneous-connections and fitness-tracking pages because their existing anchors provide a bounded measurement surface.
@@ -57,8 +57,8 @@ Only a page that passes all three should be promoted or used as a template for a
 
 ## Open questions
 
-- Does the Nord dashboard expose the forwarded `aff_sub` under **Sub ID 1**, **Advertiser Sub ID 1**, or another report field?
-- Should `/compare/protonvpn-vs-airvpn` be promoted into the sitemap after the component’s fixed ratings/speed/streaming claims are replaced with dated evidence?
+- Does offer 15 / URL 902 retain the forwarded `aff_sub` in **Sub ID 1** (`Stat.affiliate_info1`) for a fresh known page click?
+- Should `/compare/protonvpn-vs-airvpn` be promoted into the sitemap after the attribution join, internal-link path and live gate all pass?
 - For pages with zero affiliate anchors, which reader action is genuinely useful enough to justify a contextual provider link?
 
 ## Caveats and sources

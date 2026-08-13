@@ -54,4 +54,4 @@ The repository now contains a credential-safe scaffold for that check:
 npm run nord:api-smoke -- --start 2026-07-28 --end 2026-08-13
 ```
 
-It reads `TUNE_NETWORK_ID` and `TUNE_AFFILIATE_API_KEY` only from `.env.local`, never prints the key, requests the stats fields needed for the attribution join and reports only returned sub-ID values. TUNE's official `Affiliate_Report::getStats` documentation identifies `Stat.affiliate_info1` as affiliate sub 1 and supports date-window parameters.
+It reads `TUNE_NETWORK_ID` and `TUNE_AFFILIATE_API_KEY` only from `.env.local`, never prints the key, requests the stats fields needed for the attribution join and reports only returned sub-ID values. It uses TUNE's required `filters[Stat.date][conditional]=BETWEEN` filter and defaults to offer 15; pass `--offer-id all` to inspect all offers. TUNE's official `Affiliate_Report::getStats` documentation identifies `Stat.affiliate_info1` as affiliate sub 1, while the filtering guide documents the report-filter syntax and explains that `data_start`/`data_end` alone do not filter rows.

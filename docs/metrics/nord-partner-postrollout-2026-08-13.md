@@ -51,3 +51,9 @@ A separate screenshot of the authenticated Performance Report shows the broader 
 ## Authenticated dashboard recheck: 13 August 2026
 
 The current authenticated Performance Report view now defaults to **1 January 2007 - 13 August 2026** and shows **25 aggregate clicks**: NordVPN **21**, NordVPN China **2** and NordVPN Arabia **2**. Conversions remain **0**, payout **$0.00** and EPC **$0.00**. Opening the NordVPN offer detail does not expose a populated sub-ID field in the visible report. This confirms additional account-level activity since the 19-click screenshot, but it still cannot be joined to a ZeroToVPN page or attributed to the current `aff_sub` rollout.
+
+## TUNE API smoke-test: 28 July-13 August 2026
+
+After adding the Nord/TUNE API credentials locally, the corrected date-filtered command `npm run nord:api-smoke -- --start 2026-07-28 --end 2026-08-13` returned **3 dated rows** for offer 15 / URL 902 with HTTP/API success. It returned **10 clicks on 11 August, 8 on 12 August and 6 on 13 August**; all rows show 0 conversions, 0 payout and 0 EPC. The API response explicitly included `Stat.affiliate_info1`, `Stat.affiliate_info2` and `Stat.affiliate_info3`, but all three were empty on every returned row. Use `--offer-id all` for the broader offer set.
+
+This proves the API key, network ID, endpoint and requested field selection work. It also confirms that the current offer/report response contains the sub-ID fields but no retained `zt_<public-page-slug>` value, so page-level attribution remains unresolved rather than merely hidden by the dashboard UI.

@@ -44,3 +44,6 @@ The raw CSV is retained locally at `.cache/metrics/nord-partner-2026-08-13/partn
 The importer field probe records the same distinction under `affiliate.partner.subIdFields`: `stat_affiliate_info1` and `stat_adv_sub1` are both present with `populatedRows: 0`. The probe is diagnostic only and is not used as a matched-window KPI report.
 
 **Measurement decision:** page-level Nord attribution remains open. The next safe action is a support question to Nord asking which Performance Report/API field exposes forwarded `aff_sub`/TUNE sub IDs, while keeping the live redirect contract unchanged.
+## User-provided dashboard cross-check: 6-12 August 2026
+
+A separate screenshot of the authenticated Performance Report shows the broader offer summary for **6 August 2026 - 12 August 2026**: NordVPN **15 clicks**, NordVPN China **2**, NordVPN Arabia **2**, for **19 total clicks**, **0 conversions**, **$0.00 payout** and **$0.00 EPC**. This is an account-level retention signal only; it is not a page-level join and is not mixed into the dated KPI files or the 13 August probe.

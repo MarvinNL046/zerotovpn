@@ -1,11 +1,11 @@
 # Live editorial page audit
 
-Generated: 2026-08-13T04:23:55.669Z
+Generated: 2026-08-13T04:44:36.331Z
 
-- Target pages: **36**
-- Passing pages: **36**
+- Target pages: **37**
+- Passing pages: **37**
 - Pages needing review: **0**
-- Affiliate links checked: **170**
+- Affiliate links checked: **176**
 - Affiliate links missing sponsored/nofollow: **0**
 - Affiliate links missing Short.io slug telemetry: **0**
 - Missing required cluster links: **0**
@@ -30,6 +30,7 @@ Generated: 2026-08-13T04:23:55.669Z
 | pass | /best/vpn-mobile | Best Mobile VPNs in 2026: iPhone, Android, Battery and Setup Limits | 1 | 41 | 6 | — | — |
 | pass | /blog/best-vpn-for-chatgpt-2026 | Best VPNs for ChatGPT in 2026: Access, Privacy and Setup Limits | 1 | 48 | 9 | — | — |
 | pass | /blog/best-free-vpn-reddit-2026 | Best Free VPNs Reddit Discussions Can Point You Toward in 2026 | 1 | 45 | 4 | — | — |
+| pass | /best/vpn-android | Best VPNs for Android in 2026: Apps, Battery and Setup | 1 | 42 | 6 | — | — |
 | pass | /best/best-vpn | Best VPN 2026: Compare Privacy, Streaming &amp; Value Picks | ZeroToVPN | 1 | 69 | 21 | — | — |
 | pass | /reviews/nordvpn | NordVPN Review 2026: Is It Still the Best VPN? (Tested) | 1 | 49 | 2 | — | — |
 | pass | /reviews/surfshark | Surfshark Review (Aug 2026) - Tested &amp; Rated | ZeroToVPN | 1 | 50 | 3 | — | — |

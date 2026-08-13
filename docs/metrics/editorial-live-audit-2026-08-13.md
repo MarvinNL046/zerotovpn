@@ -1,13 +1,13 @@
 # Live editorial page audit
 
-Generated: 2026-08-13T03:15:15.639Z
+Generated: 2026-08-13T03:18:50.284Z
 
 - Target pages: **32**
-- Passing pages: **31**
-- Pages needing review: **1**
+- Passing pages: **32**
+- Pages needing review: **0**
 - Affiliate links checked: **147**
 - Affiliate links missing sponsored/nofollow: **0**
-- Affiliate links missing Short.io slug telemetry: **1**
+- Affiliate links missing Short.io slug telemetry: **0**
 - Missing required cluster links: **0**
 - Pages missing complete Open Graph metadata: **0**
 - Pages missing complete Twitter metadata: **0**
@@ -50,6 +50,6 @@ Generated: 2026-08-13T03:15:15.639Z
 | pass | /blog/can-vpn-hide-from-isp | Can a VPN Hide You From Your ISP? What It Does and Does Not Hide (2026) | 1 | 54 | 0 | — | — |
 | pass | /blog/is-brave-vpn-free-2026 | Is Brave VPN Free? What the Browser Includes and What Costs Extra (2026) | 1 | 53 | 0 | — | — |
 | pass | /blog/vpn-account-sharing-safe-guide-2026 | Can You Share a VPN Account? Simultaneous Devices, Family Use and Provider Terms (2026) | 1 | 50 | 0 | — | — |
-| FAIL | /blog/vpn-simultaneous-connections-limits-workarounds-2026 | How Many Devices Can Use a VPN? Simultaneous Connections and Device Limits (2026) | 1 | 51 | 4 | — | — |
+| pass | /blog/vpn-simultaneous-connections-limits-workarounds-2026 | How Many Devices Can Use a VPN? Simultaneous Connections and Device Limits (2026) | 1 | 51 | 4 | — | — |
 
 Raw records: [editorial-live-audit-2026-08-13.json](./editorial-live-audit-2026-08-13.json)

@@ -1,6 +1,6 @@
 # Live editorial page audit
 
-Generated: 2026-08-13T05:53:23.799Z
+Generated: 2026-08-13T06:10:37.425Z
 
 - Target pages: **39**
 - Passing pages: **39**
@@ -34,7 +34,7 @@ Generated: 2026-08-13T05:53:23.799Z
 | pass | /best/vpn-android | Best VPNs for Android in 2026: Apps, Battery and Setup | 1 | 42 | 6 | — | — |
 | pass | /best/best-vpn | Best VPN 2026: Compare Privacy, Streaming &amp; Value Picks | ZeroToVPN | 1 | 69 | 21 | — | — |
 | pass | /best/vpn-cheap | Best Cheap VPNs in 2026: Compare Value, Terms and Trade-offs | 1 | 45 | 6 | — | — |
-| pass | /reviews/nordvpn | NordVPN Review 2026: Is It Still the Best VPN? (Tested) | 1 | 49 | 2 | — | — |
+| pass | /reviews/nordvpn | NordVPN Review 2026: Privacy Evidence, Price and Performance | 1 | 43 | 2 | — | — |
 | pass | /reviews/surfshark | Surfshark Review (Aug 2026) - Tested &amp; Rated | ZeroToVPN | 1 | 50 | 3 | — | — |
 | pass | /reviews/mullvad | Mullvad VPN Review (Aug 2026) - Tested &amp; Rated | ZeroToVPN | 1 | 50 | 3 | — | — |
 | pass | /blog/best-vpn-for-iran-2026-bypass-internet-censorship | Best VPN for Iran 2026: Tested Options &amp; Setup Limits | 1 | 60 | 6 | — | — |

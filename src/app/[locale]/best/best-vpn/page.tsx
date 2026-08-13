@@ -33,6 +33,7 @@ import {
   Crown,
 } from "lucide-react";
 import { BestVpnPillarPage } from "@/components/editorial/best-vpn-pillar-page";
+import { FrenchBestVpnPillarPage, frenchBestVpnDescription, frenchBestVpnTitle } from "@/components/editorial/french-best-vpn-pillar-page";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -65,7 +66,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     nl: "Beste VPN van 2026 (Getest & Gerangschikt op Snelheid, Privacy en Streaming) | ZeroToVPN",
     de: "Bester VPN 2026 (Unabhängig Getestet für Speed, Datenschutz und Streaming) | ZeroToVPN",
     es: "Mejor VPN 2026 (Probado y Clasificado por Velocidad, Privacidad y Streaming) | ZeroToVPN",
-    fr: "Meilleur VPN 2026 (Tests Indépendants: Vitesse, Confidentialité et Streaming) | ZeroToVPN",
+    fr: frenchBestVpnTitle,
     zh: "2026年最佳VPN（速度、隐私和流媒体独立测试排名）| ZeroToVPN",
     ja: "2026年おすすめVPN（速度・プライバシー・ストリーミングを独自テストしてランキング）| ZeroToVPN",
     ko: "2026년 최고의 VPN (속도, 개인정보 보호, 스트리밍 독립 테스트 순위) | ZeroToVPN",
@@ -77,7 +78,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     nl: "We testten onafhankelijk snelheid, privacy, streaming en loggingtransparantie om de top VPNs van 2026 te ranken. Vergelijk prijzen en vind jouw ideale VPN.",
     de: "Wir haben Speed, Datenschutz, Streaming und Logging-Transparenz unabhängig getestet. Vergleichen Sie Preise und finden Sie Ihren idealen VPN noch heute.",
     es: "Probamos velocidad, privacidad, streaming y transparencia de registros de forma independiente. Compara precios y encuentra tu VPN ideal hoy.",
-    fr: "Nous avons testé la vitesse, la confidentialité, le streaming et la transparence des logs. Comparez les prix et trouvez votre VPN idéal aujourd'hui.",
+    fr: frenchBestVpnDescription,
     zh: "我们独立测试了速度、隐私、流媒体和日志透明度，为您排名2026年最佳VPN。比较价格，立即找到您的理想VPN。",
     ja: "速度、プライバシー、ストリーミング、ログの透明性を独自にテストし、2026年のトップVPNをランキングしました。料金を比較して、あなたに最適なVPNを見つけましょう。",
     ko: "속도, 개인정보 보호, 스트리밍, 로깅 투명성을 독립적으로 테스트하여 2026년 최고의 VPN을 선정했습니다. 가격을 비교하고 나에게 맞는 VPN을 찾아보세요.",
@@ -165,6 +166,10 @@ export default async function BestVpnPage({ params }: Props) {
 
   if (locale === "en") {
     return <BestVpnPillarPage vpns={allVpns} />;
+  }
+
+  if (locale === "fr") {
+    return <FrenchBestVpnPillarPage vpns={allVpns} />;
   }
 
   // Content translations

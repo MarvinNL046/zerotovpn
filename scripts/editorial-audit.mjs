@@ -91,6 +91,17 @@ const checks = [
     patterns: [/Are VPNs worth it in 2026\?/, /What is the best VPN for streaming\?/, /Will Netflix ban me if I use a VPN\?/, /What is the best free VPN for the USA\?/],
   },
   {
+    name: "French Best VPN pillar uses localized evidence-led structure",
+    file: "src/components/editorial/french-best-vpn-pillar-page.tsx",
+    patterns: [/Meilleur VPN en 2026/, /id="quick-picks"/, /id="rankings"/, /id="comparison"/, /id="methodology"/, /id="faq"/, /id="sources"/, /meilleur vpn/, /commercial-choice/, /AffiliateTextLink/, /FAQSchema/],
+    forbiddenPatterns: [/Tests Indépendants|testé[s]? plus de/i],
+  },
+  {
+    name: "French Best VPN route uses localized editorial component",
+    file: "src/app/[locale]/best/best-vpn/page.tsx",
+    patterns: [/FrenchBestVpnPillarPage/, /locale === "fr"/, /frenchBestVpnTitle/, /frenchBestVpnDescription/],
+  },
+  {
     name: "Best VPN English SERP metadata matches commercial intent",
     file: "src/app/[locale]/best/best-vpn/page.tsx",
     patterns: [/Best VPN 2026: Compare Privacy, Streaming & Value Picks/, /Find the best VPN for privacy, streaming, speed or price/],
@@ -122,7 +133,7 @@ const checks = [
   {
     name: "cluster page briefs stay centralized",
     file: "src/lib/editorial-content-briefs.ts",
-    patterns: [/china:/, /freeVpn:/, /travel:/, /restrictedNetworks:/, /obfuscation:/, /protocols:/, /russia:/, /telegram:/, /censorship-restricted-networks/, /protocol-and-technical-literacy/, /travel-and-public-wifi/],
+    patterns: [/china:/, /freeVpn:/, /travel:/, /restrictedNetworks:/, /obfuscation:/, /protocols:/, /russia:/, /telegram:/, /bestVpnFr:/, /censorship-restricted-networks/, /protocol-and-technical-literacy/, /travel-and-public-wifi/],
   },
   {
     name: "Russia brief freshness and dossier path",

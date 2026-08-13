@@ -1,0 +1,383 @@
+{
+  "schemaVersion": 1,
+  "cluster": "French best VPN commercial pillar",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2250,
+  "language_code": "fr",
+  "fetchedAt": "2026-08-13T09:48:24.770Z",
+  "refreshed": true,
+  "seeds": [
+    "meilleur vpn",
+    "meilleur vpn 2026",
+    "vpn pour streaming",
+    "vpn pas cher",
+    "vpn confidentialité",
+    "vpn gratuit"
+  ],
+  "overview": [
+    {
+      "keyword": "meilleur vpn",
+      "currentVolume": null,
+      "latestVolume": 8100,
+      "latestMonth": "2024-02",
+      "difficulty": 29,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "vpn confidentialité",
+      "currentVolume": null,
+      "latestVolume": 30,
+      "latestMonth": "2024-02",
+      "difficulty": null,
+      "intent": "informational"
+    },
+    {
+      "keyword": "vpn gratuit",
+      "currentVolume": null,
+      "latestVolume": 74000,
+      "latestMonth": "2024-02",
+      "difficulty": 25,
+      "intent": "informational"
+    },
+    {
+      "keyword": "vpn pas cher",
+      "currentVolume": null,
+      "latestVolume": 1300,
+      "latestMonth": "2024-02",
+      "difficulty": 16,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "vpn pour streaming",
+      "currentVolume": null,
+      "latestVolume": 50,
+      "latestMonth": "2024-02",
+      "difficulty": 0,
+      "intent": "commercial"
+    }
+  ],
+  "suggestions": [
+    {
+      "seed": "meilleur vpn",
+      "keyword": "meilleur vpn 2025",
+      "volume": 320
+    },
+    {
+      "seed": "vpn gratuit",
+      "keyword": "meilleur vpn gratuit sans abonnement",
+      "volume": 320
+    },
+    {
+      "seed": "meilleur vpn",
+      "keyword": "meilleur vpn pour chine",
+      "volume": 320
+    },
+    {
+      "seed": "meilleur vpn",
+      "keyword": "meilleur vpn en francais",
+      "volume": 170
+    },
+    {
+      "seed": "meilleur vpn",
+      "keyword": "meilleur vpn reddit",
+      "volume": 30
+    },
+    {
+      "seed": "meilleur vpn",
+      "keyword": "quel est le meilleur vpn gratuit pour iphone",
+      "volume": 20
+    },
+    {
+      "seed": "meilleur vpn",
+      "keyword": "meilleur destination no lag vpn",
+      "volume": 20
+    },
+    {
+      "seed": "meilleur vpn",
+      "keyword": "meilleur pays vpn pour billet d'avion",
+      "volume": 20
+    },
+    {
+      "seed": "meilleur vpn",
+      "keyword": "quel est le meilleur antivirus avec vpn",
+      "volume": 20
+    },
+    {
+      "seed": "meilleur vpn",
+      "keyword": "meilleur prix vpn",
+      "volume": 10
+    },
+    {
+      "seed": "meilleur vpn",
+      "keyword": "le meilleur vpn android gratuit",
+      "volume": 10
+    },
+    {
+      "seed": "meilleur vpn",
+      "keyword": "meilleur vpn gratuit et illimité",
+      "volume": 10
+    },
+    {
+      "seed": "meilleur vpn",
+      "keyword": "meilleur vpn android payant",
+      "volume": 10
+    },
+    {
+      "seed": "meilleur vpn",
+      "keyword": "quel est le meilleur logiciel vpn gratuit",
+      "volume": 10
+    },
+    {
+      "seed": "meilleur vpn",
+      "keyword": "le meilleur vpn 2024",
+      "volume": 10
+    },
+    {
+      "seed": "vpn pour streaming",
+      "keyword": "meilleur vpn pour streaming",
+      "volume": null
+    },
+    {
+      "seed": "vpn pour streaming",
+      "keyword": "à quoi sert un vpn pour le streaming",
+      "volume": null
+    },
+    {
+      "seed": "vpn pour streaming",
+      "keyword": "vpn pour regarder streaming",
+      "volume": null
+    },
+    {
+      "seed": "vpn pour streaming",
+      "keyword": "faut il un vpn pour le streaming",
+      "volume": null
+    },
+    {
+      "seed": "vpn pour streaming",
+      "keyword": "vpn pour streaming gratuit",
+      "volume": null
+    },
+    {
+      "seed": "vpn pour streaming",
+      "keyword": "vpn pour streaming",
+      "volume": null
+    },
+    {
+      "seed": "vpn pas cher",
+      "keyword": "express vpn pas cher",
+      "volume": 10
+    },
+    {
+      "seed": "vpn pas cher",
+      "keyword": "abonnement netflix pas cher vpn",
+      "volume": 10
+    },
+    {
+      "seed": "vpn pas cher",
+      "keyword": "billet avion pas cher vpn",
+      "volume": 10
+    },
+    {
+      "seed": "vpn pas cher",
+      "keyword": "boitier vpn pas cher",
+      "volume": 10
+    },
+    {
+      "seed": "vpn pas cher",
+      "keyword": "vol pas cher vpn",
+      "volume": 10
+    },
+    {
+      "seed": "vpn pas cher",
+      "keyword": "vpn 1 mois pas cher",
+      "volume": 10
+    },
+    {
+      "seed": "vpn pas cher",
+      "keyword": "quel pays billet avion pas cher vpn",
+      "volume": 10
+    },
+    {
+      "seed": "vpn pas cher",
+      "keyword": "offre vpn pas cher",
+      "volume": 10
+    },
+    {
+      "seed": "vpn pas cher",
+      "keyword": "vpn pas cher france",
+      "volume": 10
+    },
+    {
+      "seed": "vpn pas cher",
+      "keyword": "vpn payant pas cher",
+      "volume": 10
+    },
+    {
+      "seed": "vpn pas cher",
+      "keyword": "astuce billet avion pas cher vpn",
+      "volume": 10
+    },
+    {
+      "seed": "vpn pas cher",
+      "keyword": "vpn pas cher 2018",
+      "volume": 0
+    },
+    {
+      "seed": "vpn pas cher",
+      "keyword": "vpn pas cher 1 an",
+      "volume": null
+    },
+    {
+      "seed": "vpn pas cher",
+      "keyword": "vpn mensuel pas cher",
+      "volume": null
+    },
+    {
+      "seed": "vpn pas cher",
+      "keyword": "antivirus vpn pas cher",
+      "volume": null
+    },
+    {
+      "seed": "vpn confidentialité",
+      "keyword": "meilleur vpn confidentialité",
+      "volume": 10
+    },
+    {
+      "seed": "vpn confidentialité",
+      "keyword": "uvpn vpn gratuit et sécurisé pour la confidentialité en ligne",
+      "volume": 10
+    },
+    {
+      "seed": "vpn gratuit",
+      "keyword": "télecharger vpn gratuit",
+      "volume": 1900
+    },
+    {
+      "seed": "vpn gratuit",
+      "keyword": "vpn illimité et gratuit",
+      "volume": 1000
+    },
+    {
+      "seed": "vpn gratuit",
+      "keyword": "gratuit vpn france",
+      "volume": 880
+    },
+    {
+      "seed": "vpn gratuit",
+      "keyword": "free vpn gratuit vpn planet",
+      "volume": 590
+    },
+    {
+      "seed": "vpn gratuit",
+      "keyword": "meilleurs vpn gratuit iphone",
+      "volume": 390
+    },
+    {
+      "seed": "vpn gratuit",
+      "keyword": "proton vpn gratuit android",
+      "volume": 320
+    },
+    {
+      "seed": "vpn gratuit",
+      "keyword": "vpn pour la chine gratuit",
+      "volume": 320
+    },
+    {
+      "seed": "vpn gratuit",
+      "keyword": "vpn gratuit pour la chine",
+      "volume": 320
+    },
+    {
+      "seed": "vpn gratuit",
+      "keyword": "moto gp streaming gratuit sans vpn",
+      "volume": 260
+    },
+    {
+      "seed": "vpn gratuit",
+      "keyword": "meilleurs vpn gratuit pc",
+      "volume": 210
+    },
+    {
+      "seed": "vpn gratuit",
+      "keyword": "télécharger proton vpn gratuit",
+      "volume": 110
+    },
+    {
+      "seed": "vpn gratuit",
+      "keyword": "configuration vpn android gratuit",
+      "volume": 110
+    },
+    {
+      "seed": "vpn gratuit",
+      "keyword": "vpn gratuit en ligne sans telechargement",
+      "volume": 90
+    },
+    {
+      "seed": "vpn gratuit",
+      "keyword": "vpn brazil gratuit",
+      "volume": 90
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "meilleur vpn",
+      "paa": [
+        "Quel est le meilleur VPN du moment ?",
+        "Quels sont les 10 meilleurs VPN ?",
+        "Quel est le VPN gratuit le plus fiable ?",
+        "Quel VPN est le plus sérieux ?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "meilleur vpn 2026",
+      "paa": [
+        "Quel est le meilleur VPN en 2026 ?",
+        "Quels sont les 3 meilleurs VPN ?",
+        "Quel est le VPN le plus puissant au monde ?",
+        "Quel VPN est le plus efficace ?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn pour streaming",
+      "paa": [
+        "Quel est le meilleur VPN gratuit pour le streaming ?",
+        "Quels sont les 3 meilleurs VPN ?",
+        "Est-ce légal d'utiliser un VPN pour Netflix ?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn pas cher",
+      "paa": [
+        "Quel est le VPN le moins cher ?",
+        "Quel VPN 100% gratuit ?",
+        "Quel VPN choisir au prix ?",
+        "Quel est le VPN le plus intéressant ?"
+      ],
+      "hasAiOverview": false
+    },
+    {
+      "keyword": "vpn confidentialité",
+      "paa": [
+        "Est-ce qu'un VPN rend anonyme ?",
+        "Est-ce que le VPN marche qu'en on est en privé ?",
+        "Est-ce que la police peut tracer un VPN ?",
+        "Est-ce qu'un VPN protège vraiment ?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn gratuit",
+      "paa": [
+        "Quel est le meilleur VPN totalement gratuit ?",
+        "Quel VPN est 100% gratuit ?",
+        "Est-ce possible d'avoir un VPN gratuit ?",
+        "Quel est le meilleur VPN gratuit sans abonnement ?"
+      ],
+      "hasAiOverview": true
+    }
+  ],
+  "sourcePolicy": "Les signaux DataForSEO structurent la couverture d'intention ; ils ne prouvent ni performance, ni prix, ni disponibilité, ni conversion."
+}

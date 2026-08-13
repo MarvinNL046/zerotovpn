@@ -1,6 +1,6 @@
 # Live editorial page audit
 
-Generated: 2026-08-13T11:01:31.584Z
+Generated: 2026-08-13T11:10:48.962Z
 
 - Target pages: **63**
 - Passing pages: **63**

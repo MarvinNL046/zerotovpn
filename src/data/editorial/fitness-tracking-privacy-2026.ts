@@ -1,5 +1,5 @@
 export const fitnessTrackingPrivacyEditorialTitle =
-  "Fitness App Privacy: What a VPN Can—and Cannot—Hide From Strava, Apple Health and Garmin (2026)";
+  "Fitness App Privacy & VPNs: Strava, Apple Health and Garmin (2026)";
 
 export const fitnessTrackingPrivacyEditorialExcerpt =
   "A VPN can protect the network path to a fitness service, but it cannot turn off GPS or app-level health-data collection. Use this checklist to tighten Strava, Apple Health and Garmin privacy settings.";
@@ -37,10 +37,20 @@ export const fitnessTrackingPrivacyEditorialFaq = [
     answer:
       "Yes, depending on what you mean by tracked. A VPN reduces ISP or public-Wi-Fi visibility of the network traffic, but a fitness app can still receive GPS, account and activity data that you permit it to use.",
   },
+  {
+    question: "Are wearable health devices invading privacy?",
+    answer:
+      "They can create privacy risk when location, health, motion or account data is shared more broadly than intended. Review device permissions, the connected app's policy, account security and the audience for every activity; a VPN only addresses part of the network path.",
+  },
+  {
+    question: "Can you hide activity on a fitness app?",
+    answer:
+      "Usually you can limit activity, profile, follower and location visibility, but the exact controls vary by service and may not remove copies already shared or exported. Check the platform's privacy settings before and after recording a workout.",
+  },
 ];
 
 export const fitnessTrackingPrivacyEditorialContent = `
-<p>Fitness privacy has two separate layers: <strong>what your phone or watch records</strong> and <strong>what the network can observe while that data is sent</strong>. A VPN helps with the second layer. It does not disable GPS, rewrite a Strava route or stop an app from using a permission you granted.</p>
+<p>Fitness privacy has two separate layers: <strong>what your phone or watch records</strong> and <strong>what the network can observe while that data is sent</strong>. A VPN helps with the second layer. It does not disable GPS, rewrite a Strava route or stop an app from using a permission you granted. For a quick answer, start with the app's location, sharing and connected-service settings, then use a VPN only for the local network path.</p>
 
 <h2>Quick answer: what does a VPN hide from a fitness app?</h2>
 <p>A VPN normally encrypts traffic between your device and the VPN server and replaces your public IP address with the server's address. That can reduce what an ISP or public Wi-Fi operator can read about the connection. It does <strong>not</strong> hide GPS coordinates from an app that has location permission, remove timestamps from an uploaded workout or make an account anonymous.</p>
@@ -63,6 +73,9 @@ export const fitnessTrackingPrivacyEditorialContent = `
 <li><strong>Apple Health:</strong> Apple says HealthKit access is permission-controlled and that data on a passcode-protected device is encrypted. Its <a href="https://support.apple.com/en-euro/guide/security/sec88be9900f/web" target="_blank" rel="noopener noreferrer">HealthKit security guide</a> also says connected apps need a privacy policy; read the policy of every app you authorize.</li>
 <li><strong>Garmin Connect:</strong> Garmin states that GPS data from activities is uploaded to Garmin Connect and that users control who can see it there. See the <a href="https://www.garmin.com/en-GB/privacy/connect/" target="_blank" rel="noopener noreferrer">Garmin Connect privacy policy</a> before sharing activities publicly.</li>
 </ul>
+
+<h2>Can you hide a workout or make a wearable private?</h2>
+<p>You can usually reduce exposure by changing activity visibility, profile and follower access, privacy zones, connected-app permissions and export settings. That is different from deleting every copy: clubs, challenges, screenshots, shared links and exported files may have separate audiences. Wearable health devices are not automatically private or public; the practical answer depends on the device, app and permissions you chose.</p>
 
 <h2>Six settings to review before your next workout</h2>
 <ol>
@@ -99,6 +112,10 @@ export const fitnessTrackingPrivacyEditorialContent = `
 <p>Apple describes permission controls and encryption on a passcode-protected device, but connected apps and sharing destinations have their own policies. Review them before granting access.</p>
 <h3>Can your activity be tracked on a VPN?</h3>
 <p>Yes. A VPN limits some network-level visibility, while the fitness service can still process the GPS, account and activity data you allow it to receive.</p>
+<h3>Are wearable health devices invading privacy?</h3>
+<p>They can create privacy risk when location, health, motion or account data is shared more broadly than intended. Review device permissions, the connected app's policy, account security and every activity audience; a VPN addresses only part of the network path.</p>
+<h3>Can you hide activity on a fitness app?</h3>
+<p>Usually you can limit activity, profile, follower and location visibility, but exact controls vary and may not remove copies already shared or exported. Check the platform's settings before and after recording.</p>
 
 <p><strong>Evidence note:</strong> DataForSEO US/English signals were refreshed on 13 August 2026 to identify question coverage. The platform boundaries above link to first-party Strava, Apple and Garmin documentation checked on the same date. Search data does not prove a provider's data practices, medical safety or legal status.</p>
 `;

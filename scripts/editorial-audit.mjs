@@ -414,7 +414,7 @@ const checks = [
   {
     name: "fitness-tracking privacy guide uses PAA-led bounded app and network copy",
     file: "src/data/editorial/fitness-tracking-privacy-2026.ts",
-    patterns: [/Does a VPN block GPS location\?/, /Can someone see my location if I have a VPN\?/, /How do I stop my Health app from collecting data\?/, /Can I make my Strava totally private\?/, /Is Apple Health confidential\?/, /Can your activity be tracked on a VPN\?/, /Network privacy versus fitness-app privacy/, /support\.strava\.com/, /support\.apple\.com/, /garmin\.com\/en-GB\/privacy\/connect/, /2026/],
+    patterns: [/Does a VPN block GPS location\?/, /Can someone see my location if I have a VPN\?/, /How do I stop my Health app from collecting data\?/, /Can I make my Strava totally private\?/, /Is Apple Health confidential\?/, /Can your activity be tracked on a VPN\?/, /Are wearable health devices invading privacy\?/, /Can you hide activity on a fitness app\?/, /Network privacy versus fitness-app privacy/, /support\.strava\.com/, /support\.apple\.com/, /garmin\.com\/en-GB\/privacy\/connect/, /2026/],
     forbiddenPatterns: [/72 million people|\$14\.3 billion|sold to the highest bidder|VPN.*blocks GPS|makes you anonymous/i, /\b(?:83|69|46|40|81)%\s*(?:off|savings)/i],
   },
   {

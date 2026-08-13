@@ -1,11 +1,11 @@
 # Live editorial page audit
 
-Generated: 2026-08-13T09:03:43.748Z
+Generated: 2026-08-13T09:20:51.820Z
 
-- Target pages: **57**
-- Passing pages: **57**
+- Target pages: **58**
+- Passing pages: **58**
 - Pages needing review: **0**
-- Affiliate links checked: **220**
+- Affiliate links checked: **226**
 - Affiliate links missing sponsored/nofollow: **0**
 - Affiliate links missing Short.io slug telemetry: **0**
 - Missing required cluster links: **0**
@@ -44,6 +44,7 @@ Generated: 2026-08-13T09:03:43.748Z
 | pass | /blog/best-vpn-for-chatgpt-2026 | Best VPNs for ChatGPT in 2026: Access, Privacy and Setup Limits | 1 | 48 | 9 | — | — |
 | pass | /blog/best-free-vpn-reddit-2026 | Best Free VPNs Reddit Discussions Can Point You Toward in 2026 | 1 | 45 | 4 | — | — |
 | pass | /best/vpn-android | Best VPNs for Android in 2026: Apps, Battery and Setup | 1 | 42 | 6 | — | — |
+| pass | /best/vpn-android-tablet | Best VPN for Android Tablets in 2026: App Support, Setup and Trade-offs | 1 | 45 | 6 | — | — |
 | pass | /best/best-vpn | Best VPN 2026: Compare Privacy, Streaming &amp; Value Picks | ZeroToVPN | 1 | 69 | 21 | — | — |
 | pass | /best/vpn-cheap | Best Cheap VPNs in 2026: Compare Value, Terms and Trade-offs | 1 | 45 | 6 | — | — |
 | pass | /reviews/nordvpn | NordVPN Review 2026: Privacy Evidence, Price and Performance | 1 | 43 | 2 | — | — |

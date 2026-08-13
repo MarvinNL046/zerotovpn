@@ -152,9 +152,9 @@ const checks = [
     forbiddenPatterns: [/battery impact \(~[0-9]+%\)|[0-9]\.[0-9]\/5|Fastest speeds|expert-tested|app size/i],
   },
   {
-    name: "macOS localized body copy covers primary locales",
+    name: "macOS localized body copy covers all translated locales",
     file: "src/components/editorial/macos-vpn-editorial-page.tsx",
-    patterns: [/const localizedCopy: Record<string, Partial<MacosCopy>>/, /nl:/, /de:/, /es:/, /fr:/, /const copy = \{ \.\.\.baseCopy/, /locale\?: string/],
+    patterns: [/const localizedCopy: Record<string, Partial<MacosCopy>>/, /nl:/, /de:/, /es:/, /fr:/, /zh:/, /ja:/, /ko:/, /th:/, /const copy = \{ \.\.\.baseCopy/, /locale\?: string/],
     forbiddenPatterns: [/fixed speed claim|guaranteed battery|expert-tested/i],
   },
   {

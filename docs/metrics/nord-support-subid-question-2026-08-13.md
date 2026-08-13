@@ -43,3 +43,7 @@ ZeroToVPN
 - `docs/metrics/nord-aff-sub-live-smoke-2026-08-13.md`
 
 Do not attach the signed dashboard download URL or any account credential to a public issue. Use the affiliate support channel inside the authenticated dashboard.
+
+## API route discovered in authenticated dashboard
+
+The Nord publisher dashboard exposes **Tools -> APIs -> API V3** and links to TUNE's affiliate API documentation. It states that an API key is required and offers a **Request API Key** action. No key was requested or stored during this audit because that action changes account state and could issue a credential. If the key is approved, query the performance endpoint with the same date/offer filters and inspect whether `Stat.affiliate_info1` (or an equivalent sub-ID field) is returned even when the dashboard grid is blank.

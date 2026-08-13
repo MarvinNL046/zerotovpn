@@ -782,3 +782,10 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 
 - Transcribed the user-supplied authenticated Nord Performance Report screenshot for the selected **6–12 August 2026** period: **19 clicks**, **0 conversions**, **$0.00 payout** and **$0.00 EPC**. The offer split was NordVPN **15** clicks, NordVPN China **2**, and NordVPN Arabia **2**.
 - This is retained as a provenance note only: it is an aggregate screenshot with no dated row, short-link key or page attribution, and it does not match the required **28 July–10 August** join window. It is not loaded into the measurement pipeline and does not change the next-page selection. Evidence: [nord-partner-observation-2026-08-13.md](../metrics/nord-partner-observation-2026-08-13.md).
+
+### Commercial pillar PAA coverage: 13 August 2026
+
+- Used the cached US/English DataForSEO dossier to extend the existing `/best/best-vpn` FAQ with four directly observed PAA intents: whether VPNs are worth it in 2026, the best VPN for streaming, Netflix detection when using a VPN, and the best free VPN for the USA.
+- Answers stay provider-neutral and evidence-bounded: they explain variability by service, country, device and date, avoid permanent-unblocking or anonymity claims, and point readers back to current plan terms and documented free-tier limits. No new URL, discount, coupon or affiliate destination was added.
+- Updated the pillar's content-brief and Article JSON-LD review date to **13 August 2026** and added a fail-closed source guard for all four PAA questions. Local editorial audit passes **73/73**; the production build generates **4,429/4,429** routes with no TypeScript errors.
+- The matched Nord partner-export gate remains open. This is an on-page topical-authority refinement of an existing commercial URL, not a new 4–8 page selection or a conversion conclusion.

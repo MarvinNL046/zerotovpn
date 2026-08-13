@@ -70,6 +70,11 @@ const checks = [
     patterns: [/Top 3 overview/, /id=\"comparison\"/, /scope=\"col\"/, /id=\"methodology\"/, /id=\"faq\"/, /priceVerifiedAt/, /AffiliateTextLink/, /contentBrief/, /primaryKeyword: \"best vpn\"/, /cluster: \"commercial-choice\"/, /affiliateContext: \"vpn-selection\"/],
   },
   {
+    name: "Best VPN commercial pillar covers DataForSEO PAA answers",
+    file: "src/components/editorial/best-vpn-pillar-page.tsx",
+    patterns: [/Are VPNs worth it in 2026\?/, /What is the best VPN for streaming\?/, /Will Netflix ban me if I use a VPN\?/, /What is the best free VPN for the USA\?/],
+  },
+  {
     name: "Best VPN English SERP metadata matches commercial intent",
     file: "src/app/[locale]/best/best-vpn/page.tsx",
     patterns: [/Best VPN 2026: Compare Privacy, Streaming & Value Picks/, /Find the best VPN for privacy, streaming, speed or price/],

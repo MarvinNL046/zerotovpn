@@ -1,11 +1,11 @@
 # Live editorial page audit
 
-Generated: 2026-08-13T05:26:49.533Z
+Generated: 2026-08-13T05:37:47.710Z
 
 - Target pages: **39**
 - Passing pages: **39**
 - Pages needing review: **0**
-- Affiliate links checked: **188**
+- Affiliate links checked: **189**
 - Affiliate links missing sponsored/nofollow: **0**
 - Affiliate links missing Short.io slug telemetry: **0**
 - Missing required cluster links: **0**
@@ -24,7 +24,7 @@ Generated: 2026-08-13T05:26:49.533Z
 | pass | /best/vpn-linux | Best VPNs for Linux (Aug 2026) — Native Apps &amp; CLI | 1 | 44 | 3 | — | — |
 | pass | /best/vpn-windows | Best VPNs for Windows PC (Aug 2026) — Native Apps &amp; Speed | 1 | 41 | 5 | — | — |
 | pass | /best/vpn-laptops | Best VPNs for Laptops (Aug 2026) — Lightweight &amp; Secure | 1 | 42 | 6 | — | — |
-| pass | /best/vpn-privacy | Best VPNs for Privacy (Aug 2026) — Audited No-Logs Picks | 1 | 42 | 5 | — | — |
+| pass | /best/vpn-privacy | Best VPNs for Privacy in 2026: Compare No-Logs Evidence and Threat Models | 1 | 43 | 6 | — | — |
 | pass | /best/vpn-gaming | Best VPN for Gaming (2026) — Lowest Ping, Tested | ZeroToVPN | 1 | 44 | 4 | — | — |
 | pass | /best/vpn-chromebook | Best VPNs for Chromebook in 2026: Android, Chrome Extension and Linux Options | 1 | 42 | 6 | — | — |
 | pass | /best/vpn-firestick | Best VPNs for Fire TV Stick in 2026: Apps, Router Setup and Streaming Checks | 1 | 42 | 6 | — | — |

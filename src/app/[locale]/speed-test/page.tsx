@@ -17,12 +17,24 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 import { generateAlternates, titelMetMerk } from "@/lib/seo-utils";
+import { VpnSpeedTestEditorialPage } from "@/components/editorial/vpn-speed-test-editorial-page";
+import {
+  vpnSpeedTestEditorialExcerpt,
+  vpnSpeedTestEditorialTitle,
+} from "@/data/editorial/vpn-speed-test-2026";
 type Props = {
   params: Promise<{ locale: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  if (locale === "en") {
+    return {
+      title: { absolute: titelMetMerk(vpnSpeedTestEditorialTitle) },
+      description: vpnSpeedTestEditorialExcerpt,
+      alternates: generateAlternates("/speed-test", locale),
+    };
+  }
   const t = await getTranslations({ locale, namespace: "speedTest" });
 
   return {
@@ -35,6 +47,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function SpeedTestPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
+  if (locale === "en") return <VpnSpeedTestEditorialPage />;
   const t = await getTranslations("speedTest");
 
   // Get top 3 fastest VPNs by speedScore

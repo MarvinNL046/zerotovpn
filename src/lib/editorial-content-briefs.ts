@@ -164,6 +164,15 @@ export const editorialContentBriefs = {
     affiliateContext: "none",
     schemaType: "Article",
   },
+  speedTest: {
+    primaryKeyword: "internet speed test",
+    intent: "informational",
+    cluster: "speed-and-performance",
+    lastReviewedAt: "2026-08-13",
+    evidence: ["docs/research/dataforseo-speed-test-cluster-2026-08-13.md", "https://developers.cloudflare.com/cloudflare-one/insights/dex/diagnostics/speed-test/", "/methodology"],
+    affiliateContext: "none",
+    schemaType: "Article",
+  },
   portForwarding: {
     primaryKeyword: "best vpn with port forwarding",
     intent: "commercial",

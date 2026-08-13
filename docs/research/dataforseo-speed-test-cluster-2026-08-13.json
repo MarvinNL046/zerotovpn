@@ -1,0 +1,432 @@
+{
+  "schemaVersion": 1,
+  "cluster": "Internet and VPN speed testing / latency / measurement interpretation",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "fetchedAt": "2026-08-13T08:18:46.336Z",
+  "refreshed": false,
+  "seeds": [
+    "internet speed test",
+    "vpn speed test",
+    "test vpn speed",
+    "what is a good download speed",
+    "how much does a vpn slow down internet",
+    "speed test accuracy"
+  ],
+  "overview": [
+    {
+      "keyword": "how much does a vpn slow down internet",
+      "currentVolume": null,
+      "latestVolume": 40,
+      "latestMonth": "2024-02",
+      "difficulty": 21,
+      "intent": "informational"
+    },
+    {
+      "keyword": "internet speed test",
+      "currentVolume": 4090000,
+      "latestVolume": 4090000,
+      "latestMonth": "2026-06",
+      "difficulty": 94,
+      "intent": "informational"
+    },
+    {
+      "keyword": "speed test accuracy",
+      "currentVolume": 320,
+      "latestVolume": 260,
+      "latestMonth": "2026-06",
+      "difficulty": 38,
+      "intent": "informational"
+    },
+    {
+      "keyword": "test vpn speed",
+      "currentVolume": null,
+      "latestVolume": 720,
+      "latestMonth": "2024-02",
+      "difficulty": 20,
+      "intent": "informational"
+    },
+    {
+      "keyword": "vpn speed test",
+      "currentVolume": null,
+      "latestVolume": 720,
+      "latestMonth": "2024-02",
+      "difficulty": 33,
+      "intent": "informational"
+    },
+    {
+      "keyword": "what is a good download speed",
+      "currentVolume": 4400,
+      "latestVolume": 4400,
+      "latestMonth": "2026-06",
+      "difficulty": 8,
+      "intent": "informational"
+    }
+  ],
+  "suggestions": [
+    {
+      "seed": "internet speed test",
+      "keyword": "internet speed test",
+      "volume": 4090000
+    },
+    {
+      "seed": "internet speed test",
+      "keyword": "speed test internet wifi",
+      "volume": 1000000
+    },
+    {
+      "seed": "internet speed test",
+      "keyword": "speed test for wireless internet",
+      "volume": 1000000
+    },
+    {
+      "seed": "internet speed test",
+      "keyword": "speed test wireless internet",
+      "volume": 1000000
+    },
+    {
+      "seed": "internet speed test",
+      "keyword": "wireless internet test speed",
+      "volume": 1000000
+    },
+    {
+      "seed": "internet speed test",
+      "keyword": "wifi test internet speed",
+      "volume": 1000000
+    },
+    {
+      "seed": "internet speed test",
+      "keyword": "wireless internet speed test",
+      "volume": 1000000
+    },
+    {
+      "seed": "internet speed test",
+      "keyword": "internet test speed ookla",
+      "volume": 368000
+    },
+    {
+      "seed": "internet speed test",
+      "keyword": "internet speed checker test",
+      "volume": 165000
+    },
+    {
+      "seed": "internet speed test",
+      "keyword": "my speed internet test",
+      "volume": 165000
+    },
+    {
+      "seed": "internet speed test",
+      "keyword": "test internet speed",
+      "volume": 165000
+    },
+    {
+      "seed": "internet speed test",
+      "keyword": "check internet speed test",
+      "volume": 165000
+    },
+    {
+      "seed": "internet speed test",
+      "keyword": "test my internet speed",
+      "volume": 165000
+    },
+    {
+      "seed": "internet speed test",
+      "keyword": "speed test internet",
+      "volume": 165000
+    },
+    {
+      "seed": "internet speed test",
+      "keyword": "internet test my speed",
+      "volume": 165000
+    },
+    {
+      "seed": "test vpn speed",
+      "keyword": "how to test internet speed with vpn",
+      "volume": 10
+    },
+    {
+      "seed": "test vpn speed",
+      "keyword": "how to speed test vpn",
+      "volume": 10
+    },
+    {
+      "seed": "test vpn speed",
+      "keyword": "speed test pro vpn",
+      "volume": 10
+    },
+    {
+      "seed": "test vpn speed",
+      "keyword": "speed test vpn mod apk old version",
+      "volume": 10
+    },
+    {
+      "seed": "test vpn speed",
+      "keyword": "speed test vpn for windows",
+      "volume": 10
+    },
+    {
+      "seed": "test vpn speed",
+      "keyword": "test speed vpn connection",
+      "volume": 10
+    },
+    {
+      "seed": "test vpn speed",
+      "keyword": "test vpn tunnel speed",
+      "volume": 10
+    },
+    {
+      "seed": "test vpn speed",
+      "keyword": "speed test vpn tunnel",
+      "volume": 10
+    },
+    {
+      "seed": "test vpn speed",
+      "keyword": "private internet access vpn speed test",
+      "volume": 10
+    },
+    {
+      "seed": "test vpn speed",
+      "keyword": "vpn router speed test",
+      "volume": 10
+    },
+    {
+      "seed": "test vpn speed",
+      "keyword": "how to test your vpn speed",
+      "volume": 10
+    },
+    {
+      "seed": "test vpn speed",
+      "keyword": "speed test vpn apk mod",
+      "volume": 10
+    },
+    {
+      "seed": "test vpn speed",
+      "keyword": "speed test via vpn",
+      "volume": 10
+    },
+    {
+      "seed": "test vpn speed",
+      "keyword": "vpn speed test software",
+      "volume": 10
+    },
+    {
+      "seed": "test vpn speed",
+      "keyword": "private vpn speed test",
+      "volume": 10
+    },
+    {
+      "seed": "what is a good download speed",
+      "keyword": "what is a good download speed",
+      "volume": 4400
+    },
+    {
+      "seed": "what is a good download speed",
+      "keyword": "what is a good upload and download speed",
+      "volume": 2900
+    },
+    {
+      "seed": "what is a good download speed",
+      "keyword": "what is a good download speed and upload speed",
+      "volume": 2900
+    },
+    {
+      "seed": "what is a good download speed",
+      "keyword": "what is a good internet download and upload speed",
+      "volume": 2900
+    },
+    {
+      "seed": "what is a good download speed",
+      "keyword": "what is a good upload download speed",
+      "volume": 2900
+    },
+    {
+      "seed": "what is a good download speed",
+      "keyword": "what is a good download and upload speed",
+      "volume": 2900
+    },
+    {
+      "seed": "what is a good download speed",
+      "keyword": "what is a good download upload speed",
+      "volume": 2900
+    },
+    {
+      "seed": "what is a good download speed",
+      "keyword": "what is a good download speed for internet",
+      "volume": 1000
+    },
+    {
+      "seed": "what is a good download speed",
+      "keyword": "what is a good internet download speed",
+      "volume": 1000
+    },
+    {
+      "seed": "what is a good download speed",
+      "keyword": "what is a good download speed mbps",
+      "volume": 880
+    },
+    {
+      "seed": "what is a good download speed",
+      "keyword": "what is a good megabits per second download speed",
+      "volume": 880
+    },
+    {
+      "seed": "what is a good download speed",
+      "keyword": "what is a good download speed in mbps",
+      "volume": 880
+    },
+    {
+      "seed": "what is a good download speed",
+      "keyword": "what is a good mbps download speed",
+      "volume": 880
+    },
+    {
+      "seed": "what is a good download speed",
+      "keyword": "what is a good download speed for gaming",
+      "volume": 720
+    },
+    {
+      "seed": "what is a good download speed",
+      "keyword": "what is a good download speed for wifi",
+      "volume": 590
+    },
+    {
+      "seed": "how much does a vpn slow down internet",
+      "keyword": "how much does a vpn slow down your internet",
+      "volume": null
+    },
+    {
+      "seed": "speed test accuracy",
+      "keyword": "speed test accuracy",
+      "volume": 320
+    },
+    {
+      "seed": "speed test accuracy",
+      "keyword": "accuracy speed test",
+      "volume": 320
+    },
+    {
+      "seed": "speed test accuracy",
+      "keyword": "speed and accuracy typing test",
+      "volume": 170
+    },
+    {
+      "seed": "speed test accuracy",
+      "keyword": "typing accuracy and speed test",
+      "volume": 170
+    },
+    {
+      "seed": "speed test accuracy",
+      "keyword": "typing speed accuracy test",
+      "volume": 170
+    },
+    {
+      "seed": "speed test accuracy",
+      "keyword": "accuracy in typing speed test",
+      "volume": 170
+    },
+    {
+      "seed": "speed test accuracy",
+      "keyword": "typing test speed and accuracy",
+      "volume": 170
+    },
+    {
+      "seed": "speed test accuracy",
+      "keyword": "typing test for speed and accuracy",
+      "volume": 170
+    },
+    {
+      "seed": "speed test accuracy",
+      "keyword": "typing speed test wpm and accuracy",
+      "volume": 170
+    },
+    {
+      "seed": "speed test accuracy",
+      "keyword": "typing test speed wpm and accuracy",
+      "volume": 170
+    },
+    {
+      "seed": "speed test accuracy",
+      "keyword": "typing speed test and accuracy",
+      "volume": 170
+    },
+    {
+      "seed": "speed test accuracy",
+      "keyword": "typing test accuracy and speed",
+      "volume": 170
+    },
+    {
+      "seed": "speed test accuracy",
+      "keyword": "test typing speed and accuracy",
+      "volume": 170
+    },
+    {
+      "seed": "speed test accuracy",
+      "keyword": "typing test with speed and accuracy",
+      "volume": 170
+    },
+    {
+      "seed": "speed test accuracy",
+      "keyword": "typing speed test accuracy",
+      "volume": 170
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "internet speed test",
+      "paa": [],
+      "hasAiOverview": false
+    },
+    {
+      "keyword": "vpn speed test",
+      "paa": [
+        "Can the FBI track a VPN?",
+        "Why is my VPN killing my internet speed?",
+        "What is the fastest VPN?",
+        "Which VPN gives high speed?"
+      ],
+      "hasAiOverview": false
+    },
+    {
+      "keyword": "test vpn speed",
+      "paa": [
+        "Can the FBI track a VPN?",
+        "Are free VPNs illegal?",
+        "Why is my VPN killing my internet speed?",
+        "How do I test my VPN?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "what is a good download speed",
+      "paa": [
+        "Is 40 Mbps very slow?",
+        "Is 300 Mbps download speed good?",
+        "Is 25 Mbps download fast?",
+        "Is 100 Mbps internet too slow?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "how much does a vpn slow down internet",
+      "paa": [
+        "Will a VPN make my internet slower?",
+        "Can the FBI see through VPNs?",
+        "Should I leave the VPN on all the time?",
+        "Should you put a VPN on your router?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "speed test accuracy",
+      "paa": [
+        "Is 40 Mbps very slow?",
+        "Is 500 Mbps slow or fast?",
+        "What is an acceptable speed test result?",
+        "Which internet speed test is the most accurate?"
+      ],
+      "hasAiOverview": true
+    }
+  ],
+  "sourcePolicy": "DataForSEO signals prioritise measurement questions and FAQ structure; they do not prove a speed-test result, ISP quality, VPN performance or percentage speed loss."
+}

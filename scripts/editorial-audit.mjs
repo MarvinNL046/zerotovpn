@@ -205,6 +205,17 @@ const checks = [
     patterns: [/vpnPingGamingEditorialTitle/, /vpnPingGamingEditorialContent/, /vpnPingGamingEditorialFaq/, /gamingLatencyClusterLinks/, /isGamingLatencyEditorial/, /editorialContentBriefs\.vpnPingGaming/],
   },
   {
+    name: "speed-test page uses bounded measurement evidence",
+    file: "src/components/editorial/vpn-speed-test-editorial-page.tsx",
+    patterns: [/What this test measures/, /How to compare a VPN fairly/, /id="metrics"/, /id="compare"/, /id="faq"/, /id="sources"/, /Cloudflare/, /DataForSEO/],
+    forbiddenPatterns: [/10.?20%|30.?50%|accurate picture of the performance cost|fastest VPNs for your speed/i],
+  },
+  {
+    name: "speed-test route uses the audited English editorial override",
+    file: "src/app/[locale]/speed-test/page.tsx",
+    patterns: [/VpnSpeedTestEditorialPage/, /locale === "en"/, /vpnSpeedTestEditorialTitle/, /vpnSpeedTestEditorialExcerpt/],
+  },
+  {
     name: "connection-drops page uses PAA-led bounded troubleshooting copy",
     file: "src/data/editorial/connection-drops-2026.ts",
     patterns: [/How do I stop my VPN from disconnecting\?/, /Why won't my VPN stay on\?/, /Why does my VPN keep disconnecting and reconnecting on iPhone\?/, /Why is my VPN killing my internet connection\?/, /VPN disconnection diagnosis checklist/, /2026/],

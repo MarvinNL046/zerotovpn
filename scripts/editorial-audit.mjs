@@ -1021,6 +1021,21 @@ results.push({
   missing: trustCopyFailures.length ? trustCopyFailures.map((file) => `neutral trust copy: ${file}`) : [],
   forbidden: [],
 });
+const blogCategoryFailures = [];
+for (const file of localeFiles) {
+  const locale = JSON.parse(readFileSync(resolve(ROOT, "src/messages", file), "utf8"));
+  const categories = locale.blog?.categories ?? {};
+  for (const key of ["all", "deals", "security", "tips", "news", "best-vpn", "guides"]) {
+    if (typeof categories[key] !== "string" || !categories[key].trim()) blogCategoryFailures.push(`${file}: blog.categories.${key}`);
+  }
+}
+results.push({
+  name: "blog category labels exist in every locale",
+  file: "src/messages/*.json (blog.categories)",
+  pass: blogCategoryFailures.length === 0,
+  missing: blogCategoryFailures,
+  forbidden: [],
+});
 const speedTestLocaleFailures = [];
 const speedTestForbidden = /10\s*[–-]\s*20\s*%|30\s*[–-]\s*50\s*%|10\s*[–-]\s*20%|30\s*[–-]\s*50%|accurate(?:ly)?\s+(?:picture|performance cost)|Fastest VPNs for Your Speed|Schnellste VPNs für Ihre Verbindung|VPNs Más Rápidas para Tu Conexión|VPNs les Plus Rapides pour Votre Connexion|最速VPN|가장 빠른 VPN 추천|เร็วที่สุดสำหรับการเชื่อมต่อของคุณ|最快的VPN推荐/i;
 for (const file of localeFiles) {

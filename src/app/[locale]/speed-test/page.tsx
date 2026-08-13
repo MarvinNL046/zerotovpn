@@ -1,7 +1,5 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { SpeedTestWidget } from "@/components/tools/speed-test-widget";
-import { VpnCard } from "@/components/vpn/vpn-card";
-import { vpnProviders } from "@/lib/vpn-data";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { Link } from "@/i18n/navigation";
 import {
@@ -49,11 +47,6 @@ export default async function SpeedTestPage({ params }: Props) {
   setRequestLocale(locale);
   if (locale === "en") return <VpnSpeedTestEditorialPage />;
   const t = await getTranslations("speedTest");
-
-  // Get top 3 fastest VPNs by speedScore
-  const fastestVpns = [...vpnProviders]
-    .sort((a, b) => b.speedScore - a.speedScore)
-    .slice(0, 3);
 
   // Build FAQ items for JSON-LD schema
   const faqItems = Array.from({ length: 6 }, (_, i) => ({
@@ -309,18 +302,6 @@ export default async function SpeedTestPage({ params }: Props) {
         </div>
       </div>
 
-      {/* Fastest VPNs Section */}
-      <div className="mb-8">
-        <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-          <Zap className="h-6 w-6 text-primary" />
-          {t("recommendedVpns")}
-        </h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          {fastestVpns.map((vpn, index) => (
-            <VpnCard key={vpn.id} vpn={vpn} rank={index + 1} locale={locale} />
-          ))}
-        </div>
-      </div>
     </div>
   );
 }

@@ -3801,10 +3801,10 @@
     "pageTitle": "Test de Vitesse Internet Gratuit",
     "pageSubtitle": "Vérifiez votre vitesse de téléchargement, d'envoi et votre ping. Comparez vos résultats avant et après l'utilisation d'un VPN.",
     "whyTest": "Pourquoi Tester Votre Vitesse ?",
-    "whyTestDesc": "Comprendre votre vitesse internet vous aide à choisir le bon VPN et à vérifier qu'il ne ralentit pas significativement votre connexion.",
+    "whyTestDesc": "Comprendre votre vitesse internet fournit une référence pour comparer la même connexion avant et après un VPN.",
     "vpnImpact": "Impact du VPN sur la Vitesse",
-    "vpnImpactDesc": "Un bon VPN réduit généralement la vitesse de seulement 10-20%. Si votre vitesse baisse davantage, essayez un autre serveur ou protocole.",
-    "recommendedVpns": "VPNs les Plus Rapides pour Votre Connexion",
+    "vpnImpactDesc": "Un VPN peut modifier le débit et la latence selon la route, l'appareil, le protocole et le réseau. Comparez plusieurs mesures comparables plutôt qu'un pourcentage fixe.",
+    "recommendedVpns": "Options VPN à évaluer",
     "pageDescription": "Vérifiez votre vitesse de téléchargement, de téléversement, votre ping et votre gigue. Comparez vos résultats avant et après la connexion à un VPN.",
     "howItWorks": "Comment Fonctionne le Test de Vitesse",
     "step1Title": "Démarrer le Test",
@@ -3831,7 +3831,7 @@
     "tierGaming": "Streaming 4K, gaming en ligne",
     "tierEverything": "Tout — prêt pour l'avenir",
     "vpnImpactTitle": "Comment un VPN Affecte votre Vitesse",
-    "vpnImpactContent": "L'utilisation d'un VPN réduit généralement votre vitesse internet de 10–20% en raison de la surcharge de chiffrement et du saut supplémentaire via un serveur VPN. Les VPNs premium avec des protocoles modernes comme WireGuard minimisent cet impact. Effectuez ce test avant et après la connexion à un VPN.",
+    "vpnImpactContent": "Un VPN chiffre le trafic et modifie la route vers le point de test : le débit descendant, montant, la latence et la gigue peuvent donc changer. Le résultat dépend du réseau, de l'appareil, du protocole et du serveur. Comparez des mesures effectuées dans des conditions similaires.",
     "vpnSpeedGuideLink": "Lisez notre guide complet sur la vitesse VPN",
     "vpnTip1": "Connectez-vous à un serveur VPN proche de votre emplacement physique pour les meilleures vitesses.",
     "vpnTip2": "Utilisez le protocole WireGuard lorsqu'il est disponible — c'est le protocole VPN moderne le plus rapide.",
@@ -3844,11 +3844,11 @@
     "faq3Q": "Quelle est une bonne vitesse de téléchargement pour le streaming?",
     "faq3A": "Netflix recommande 5 Mbps pour la HD et 25 Mbps pour la 4K. Pour un foyer avec plusieurs flux, visez 50+ Mbps. Pour le gaming, vous avez besoin d'un ping bas (sous 50ms) plus que de la vitesse brute.",
     "faq4Q": "Combien un VPN ralentit-il mon internet?",
-    "faq4A": "Un bon VPN avec le protocole WireGuard réduit généralement la vitesse de 10–20%. Certains fournisseurs premium comme ExpressVPN et NordVPN atteignent régulièrement moins de 10% de perte. Les protocoles plus anciens comme OpenVPN peuvent causer 30–50% de réduction.",
+    "faq4A": "Un VPN peut réduire le débit ou augmenter la latence, tandis qu'une autre route peut se comporter différemment sur un réseau donné. Aucun pourcentage fixe ne vaut pour tous les fournisseurs et serveurs ; comparez plusieurs mesures de votre connexion.",
     "faq5Q": "Que signifie la gigue et pourquoi est-elle importante?",
     "faq5A": "La gigue est la variation de votre ping dans le temps. Un ping de 20ms avec 15ms de gigue signifie que votre latence fluctue entre 5ms et 35ms — causant des saccades lors des appels vidéo et des pics de lag dans les jeux. Visez une gigue inférieure à 10ms.",
     "faq6Q": "Dois-je utiliser un VPN avant ou après avoir testé ma vitesse?",
-    "faq6A": "Testez d'abord sans VPN pour établir votre vitesse de base. Ensuite, connectez votre VPN et relancez le test. Cela vous indique exactement combien de vitesse votre VPN coûte. Si vous perdez plus de 20–30%, essayez un autre emplacement de serveur ou passez au protocole WireGuard."
+    "faq6A": "Testez d'abord sans VPN, puis répétez la même mesure après la connexion. Conservez plusieurs résultats comparables et vérifiez la route vers le service que vous utilisez réellement ; cet outil ne prouve pas une vitesse VPN universelle."
   },
   "androidVpn": {
     "meta": {

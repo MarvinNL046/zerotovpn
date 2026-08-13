@@ -889,6 +889,28 @@ results.push({
   missing: trustCopyFailures.length ? trustCopyFailures.map((file) => `neutral trust copy: ${file}`) : [],
   forbidden: [],
 });
+const speedTestLocaleFailures = [];
+const speedTestForbidden = /10\s*[–-]\s*20\s*%|30\s*[–-]\s*50\s*%|10\s*[–-]\s*20%|30\s*[–-]\s*50%|accurate(?:ly)?\s+(?:picture|performance cost)|Fastest VPNs for Your Speed|Schnellste VPNs für Ihre Verbindung|VPNs Más Rápidas para Tu Conexión|VPNs les Plus Rapides pour Votre Connexion|最速VPN|가장 빠른 VPN 추천|เร็วที่สุดสำหรับการเชื่อมต่อของคุณ|最快的VPN推荐/i;
+for (const file of localeFiles) {
+  const locale = JSON.parse(readFileSync(resolve(ROOT, "src/messages", file), "utf8"));
+  const speedTest = locale.speedTest ?? {};
+  const speedTestCopy = JSON.stringify({
+    whyTestDesc: speedTest.whyTestDesc,
+    vpnImpactDesc: speedTest.vpnImpactDesc,
+    recommendedVpns: speedTest.recommendedVpns,
+    vpnImpactContent: speedTest.vpnImpactContent,
+    faq4A: speedTest.faq4A,
+    faq6A: speedTest.faq6A,
+  });
+  if (!speedTestCopy || speedTestForbidden.test(speedTestCopy)) speedTestLocaleFailures.push(file);
+}
+results.push({
+  name: "localized speed-test copy avoids fixed VPN-loss claims",
+  file: "src/messages/*.json (speedTest namespace)",
+  pass: speedTestLocaleFailures.length === 0,
+  missing: speedTestLocaleFailures.length ? speedTestLocaleFailures.map((file) => `bounded speedTest copy: ${file}`) : [],
+  forbidden: [],
+});
 const failed = results.filter((result) => !result.pass);
 console.log(JSON.stringify({ checkedAt: new Date().toISOString(), checked: results.length, passed: results.length - failed.length, failed: failed.length, results: results.map(({ name, file, pass, missing, forbidden }) => ({ name, file, pass, missing, forbidden })) }, null, 2));
 if (failed.length) process.exitCode = 1;

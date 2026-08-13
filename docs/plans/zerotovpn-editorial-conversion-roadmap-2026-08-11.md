@@ -936,6 +936,15 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - Commit `12a6f747` is live as Vercel production deployment [`zerotovpn-evjq34ahi`](https://zerotovpn-evjq34ahi-marvinnl046s-projects.vercel.app), READY and aliased to `https://www.zerotovpn.com`. No runtime errors were observed in the selected Vercel hour.
 - This is an existing-URL correction, not a new URL batch. Compare the next Search Console window and the matched Nord partner export; do not infer EPC/revenue from the current click count.
 
+### Fire TV / Firestick VPN editorial refresh and DataForSEO dossier: 13 August 2026
+
+- Prioritized the existing `/best/vpn-firestick` page from the retained Search Console export: **262 impressions**, **0 clicks** and average position **44.2**. This is an existing-page intent and accuracy refinement hypothesis, not proof of ranking or conversion improvement.
+- Added `npm run seo:firestick-vpn` and a dated US/English dossier with **5** keyword-overview rows, **65** deduplicated suggestions and **5** SERP/PAA samples. Historical signals include `firestick vpn` and `vpn for firestick` at **2,900** each (February 2024); current demand is not inferred from those historical fields. PAA coverage centers on installation, cost, free tiers, Fire TV support and streaming boundaries. Evidence: [dataforseo-firestick-vpn-cluster-2026-08-13.md](../research/dataforseo-firestick-vpn-cluster-2026-08-13.md).
+- Replaced the English legacy “30+ tested”, fixed speed/app-rating, 4K and universal-unblocking framing with a bounded Fire TV decision guide. It separates Fire TV app, router and streaming-test routes, adds a route comparison table, six-step setup sequence, five PAA FAQs, three dated catalog price snapshots and tracked affiliate CTAs. The newsletter-only exit-intent popup remains unchanged.
+- Local verification: `npm run audit:editorial` passes **106/106**, `npm run build` generates **4,429/4,429** routes, and production browser smoke found the new H1, all five anchors, the route table, five FAQs, the centralized content brief, three correct affiliate slugs/rel attributes and no stale claims. The live editorial gate passes **39/39** targets with **188** compliant affiliate links and zero metadata, freshness, image, schema, rel, slug, cluster-link, content-brief or social-image failures. Vercel reports no runtime errors in the selected hour.
+- Commit `492e3145` is live as Vercel production deployment [`zerotovpn-e3hzagkot`](https://zerotovpn-e3hzagkot-marvinnl046s-projects.vercel.app), READY and aliased to `https://www.zerotovpn.com`.
+- This is an existing-URL correction, not a new URL batch. Compare the next Search Console window and the matched Nord partner export; do not infer EPC/revenue from the current click count.
+
 ### Chromebook VPN editorial refresh and DataForSEO dossier: 13 August 2026
 
 - Prioritized the existing `/best/vpn-chromebook` page from the retained Search Console export: **354 impressions**, **0 clicks** and average position **32.4**. This is an existing-page intent and accuracy refinement hypothesis, not proof of ranking or conversion improvement.

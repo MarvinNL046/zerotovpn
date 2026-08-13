@@ -270,6 +270,16 @@ const checks = [
     patterns: [/ChatgptVpnEditorialPage/, /locale === "en" && slug === "best-vpn-for-chatgpt-2026"/],
   },
   {
+    name: "Reddit free VPN page uses bounded community evidence",
+    file: "src/components/editorial/reddit-free-vpn-editorial-page.tsx",
+    patterns: [/What is the best totally free VPN\?/, /Free VPN evidence checklist/, /Reddit threads are anecdotal/, /DataForSEO US\/English dossier/],
+  },
+  {
+    name: "Reddit free VPN route uses the audited English editorial component",
+    file: "src/app/[locale]/blog/[slug]/page.tsx",
+    patterns: [/RedditFreeVpnEditorialPage/, /locale === "en" && slug === "best-free-vpn-reddit-2026"/],
+  },
+  {
     name: "mobile VPN page uses PAA-led bounded mobile copy",
     file: "src/components/editorial/mobile-vpn-editorial-page.tsx",
     patterns: [/Which mobile VPN is the best\?/, /Should you put a VPN on your iPhone\?/, /Should I have a VPN on my Android phone\?/, /Does using a VPN affect mobile data\?/, /Does a VPN drain your battery\?/, /Does a VPN hide your location on iPhone or Android\?/, /Mobile VPN comparison: what to verify before choosing/, /mobile-and-device-privacy/, /DataForSEO|dataforseo-mobile-vpn/],

@@ -18,6 +18,7 @@
     "seo:best-vpn": "node scripts/best-vpn-seo-research.mjs",
     "seo:gaming": "node scripts/gaming-seo-research.mjs",
     "seo:chatgpt-vpn": "node scripts/chatgpt-vpn-seo-research.mjs",
+    "seo:reddit-free-vpn": "node scripts/reddit-free-vpn-seo-research.mjs",
     "seo:connection-drops": "node scripts/connection-drops-seo-research.mjs",
     "seo:server-location": "node scripts/server-location-seo-research.mjs",
     "seo:isp-privacy": "node scripts/isp-privacy-seo-research.mjs",

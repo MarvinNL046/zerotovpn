@@ -31,6 +31,11 @@ import {
   chatgptVpnEditorialExcerpt,
   chatgptVpnEditorialTitle,
 } from "@/components/editorial/chatgpt-vpn-editorial-page";
+import {
+  RedditFreeVpnEditorialPage,
+  redditFreeVpnEditorialExcerpt,
+  redditFreeVpnEditorialTitle,
+} from "@/components/editorial/reddit-free-vpn-editorial-page";
 import type { EditorialContentBrief } from "@/lib/editorial-content-brief";
 import { editorialContentBriefs } from "@/lib/editorial-content-briefs";
 import {
@@ -260,6 +265,10 @@ const clusterMetadata: Record<string, { title: string; description: string }> = 
   "best-vpn-for-chatgpt-2026": {
     title: chatgptVpnEditorialTitle,
     description: chatgptVpnEditorialExcerpt,
+  },
+  "best-free-vpn-reddit-2026": {
+    title: redditFreeVpnEditorialTitle,
+    description: redditFreeVpnEditorialExcerpt,
   },
   "vpn-connection-drops-why-disconnects-how-to-fix-2026": {
     title: connectionDropsEditorialTitle,
@@ -510,6 +519,10 @@ export default async function DynamicBlogPost({ params }: Props) {
 
   if (locale === "en" && slug === "best-vpn-for-chatgpt-2026") {
     return <ChatgptVpnEditorialPage vpns={await getAllVpns()} />;
+  }
+
+  if (locale === "en" && slug === "best-free-vpn-reddit-2026") {
+    return <RedditFreeVpnEditorialPage vpns={await getAllVpns()} />;
   }
 
   const post = await getPostBySlug(slug, locale);

@@ -1,0 +1,432 @@
+{
+  "schemaVersion": 1,
+  "cluster": "Reddit free VPN advice / safety / privacy / plan limits",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "fetchedAt": "2026-08-13T04:14:31.088Z",
+  "refreshed": false,
+  "seeds": [
+    "best free vpn reddit",
+    "free vpn reddit",
+    "best free vpn according to reddit",
+    "are free vpns safe reddit",
+    "proton vpn free reddit",
+    "windscribe free reddit",
+    "free vpn privacy"
+  ],
+  "overview": [
+    {
+      "keyword": "are free vpns safe reddit",
+      "currentVolume": 10,
+      "latestVolume": 10,
+      "latestMonth": "2026-06",
+      "difficulty": 19,
+      "intent": "informational"
+    },
+    {
+      "keyword": "best free vpn reddit",
+      "currentVolume": null,
+      "latestVolume": 4400,
+      "latestMonth": "2024-02",
+      "difficulty": 0,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "free vpn privacy",
+      "currentVolume": null,
+      "latestVolume": 20,
+      "latestMonth": "2024-02",
+      "difficulty": 36,
+      "intent": "informational"
+    },
+    {
+      "keyword": "free vpn reddit",
+      "currentVolume": null,
+      "latestVolume": 5400,
+      "latestMonth": "2024-02",
+      "difficulty": 0,
+      "intent": "informational"
+    },
+    {
+      "keyword": "proton vpn free reddit",
+      "currentVolume": null,
+      "latestVolume": 390,
+      "latestMonth": "2024-02",
+      "difficulty": 8,
+      "intent": "informational"
+    },
+    {
+      "keyword": "windscribe free reddit",
+      "currentVolume": 10,
+      "latestVolume": 10,
+      "latestMonth": "2026-06",
+      "difficulty": 52,
+      "intent": "informational"
+    }
+  ],
+  "suggestions": [
+    {
+      "seed": "free vpn reddit",
+      "keyword": "best free vpn for macbook reddit",
+      "volume": 70
+    },
+    {
+      "seed": "free vpn reddit",
+      "keyword": "best free vpn apps reddit",
+      "volume": 40
+    },
+    {
+      "seed": "free vpn reddit",
+      "keyword": "whats the best free vpn reddit",
+      "volume": 20
+    },
+    {
+      "seed": "free vpn reddit",
+      "keyword": "best free vpn reddit 2024",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn reddit",
+      "keyword": "best pc vpn free reddit",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn reddit",
+      "keyword": "best free uk vpn reddit",
+      "volume": 10
+    },
+    {
+      "seed": "best free vpn reddit",
+      "keyword": "best free vpn on android reddit",
+      "volume": 10
+    },
+    {
+      "seed": "best free vpn reddit",
+      "keyword": "best free vpn phone reddit",
+      "volume": 10
+    },
+    {
+      "seed": "best free vpn reddit",
+      "keyword": "best free firefox vpn reddit",
+      "volume": 10
+    },
+    {
+      "seed": "best free vpn reddit",
+      "keyword": "best free vpn reddit 2019",
+      "volume": 10
+    },
+    {
+      "seed": "best free vpn reddit",
+      "keyword": "best vpn for pc reddit free",
+      "volume": 10
+    },
+    {
+      "seed": "best free vpn reddit",
+      "keyword": "best vpn android free reddit",
+      "volume": 10
+    },
+    {
+      "seed": "best free vpn reddit",
+      "keyword": "best free vpn for pirating games reddit",
+      "volume": 10
+    },
+    {
+      "seed": "best free vpn reddit",
+      "keyword": "best free vpn ipad reddit",
+      "volume": 10
+    },
+    {
+      "seed": "best free vpn reddit",
+      "keyword": "best free vpn 2024 reddit",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn reddit",
+      "keyword": "free vpn for gambling reddit",
+      "volume": 30
+    },
+    {
+      "seed": "free vpn reddit",
+      "keyword": "are there any free vpn reddit",
+      "volume": 30
+    },
+    {
+      "seed": "proton vpn free reddit",
+      "keyword": "reddit proton vpn free",
+      "volume": 30
+    },
+    {
+      "seed": "proton vpn free reddit",
+      "keyword": "proton vpn reddit free",
+      "volume": 30
+    },
+    {
+      "seed": "free vpn reddit",
+      "keyword": "japan vpn free reddit",
+      "volume": 20
+    },
+    {
+      "seed": "free vpn reddit",
+      "keyword": "vpn for iphone free reddit",
+      "volume": 20
+    },
+    {
+      "seed": "free vpn reddit",
+      "keyword": "free vpn ukraine reddit",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn reddit",
+      "keyword": "free vpn planet reddit",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn reddit",
+      "keyword": "good free vpn reddit 2024",
+      "volume": 10
+    },
+    {
+      "seed": "are free vpns safe reddit",
+      "keyword": "are free vpns safe reddit",
+      "volume": 10
+    },
+    {
+      "seed": "proton vpn free reddit",
+      "keyword": "is free proton vpn safe reddit",
+      "volume": 10
+    },
+    {
+      "seed": "proton vpn free reddit",
+      "keyword": "is proton free vpn safe reddit",
+      "volume": 10
+    },
+    {
+      "seed": "proton vpn free reddit",
+      "keyword": "proton vpn free version reddit",
+      "volume": 10
+    },
+    {
+      "seed": "proton vpn free reddit",
+      "keyword": "is proton vpn free reddit",
+      "volume": 10
+    },
+    {
+      "seed": "proton vpn free reddit",
+      "keyword": "is proton vpn free good reddit",
+      "volume": 10
+    },
+    {
+      "seed": "proton vpn free reddit",
+      "keyword": "is free proton vpn good reddit",
+      "volume": 10
+    },
+    {
+      "seed": "proton vpn free reddit",
+      "keyword": "proton vpn free review reddit",
+      "volume": 10
+    },
+    {
+      "seed": "proton vpn free reddit",
+      "keyword": "proton free vpn reddit",
+      "volume": null
+    },
+    {
+      "seed": "proton vpn free reddit",
+      "keyword": "free proton vpn reddit",
+      "volume": null
+    },
+    {
+      "seed": "windscribe free reddit",
+      "keyword": "windscribe free vpn reddit",
+      "volume": 10
+    },
+    {
+      "seed": "windscribe free reddit",
+      "keyword": "windscribe free reddit",
+      "volume": 10
+    },
+    {
+      "seed": "windscribe free reddit",
+      "keyword": "free vpn like windscribe reddit",
+      "volume": 10
+    },
+    {
+      "seed": "windscribe free reddit",
+      "keyword": "windscribe free 50gb reddit",
+      "volume": 10
+    },
+    {
+      "seed": "windscribe free reddit",
+      "keyword": "windscribe free voucher 2020 reddit",
+      "volume": null
+    },
+    {
+      "seed": "windscribe free reddit",
+      "keyword": "reddit windscribe free",
+      "volume": null
+    },
+    {
+      "seed": "windscribe free reddit",
+      "keyword": "windscribe free vs pro reddit",
+      "volume": null
+    },
+    {
+      "seed": "windscribe free reddit",
+      "keyword": "windscribe free trial reddit",
+      "volume": null
+    },
+    {
+      "seed": "windscribe free reddit",
+      "keyword": "is windscribe free reddit",
+      "volume": null
+    },
+    {
+      "seed": "windscribe free reddit",
+      "keyword": "windscribe free voucher reddit",
+      "volume": null
+    },
+    {
+      "seed": "free vpn privacy",
+      "keyword": "free vpn for privacy",
+      "volume": 30
+    },
+    {
+      "seed": "free vpn privacy",
+      "keyword": "perfect privacy vpn free",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn privacy",
+      "keyword": "free vpn to protect your privacy",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn privacy",
+      "keyword": "hotspot shield free privacy & security vpn proxy",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn privacy",
+      "keyword": "secure vpn free online privacy",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn privacy",
+      "keyword": "touch vpn free unlimited vpn proxy wifi privacy",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn privacy",
+      "keyword": "perfect privacy vpn free trial",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn privacy",
+      "keyword": "free vpn protect your privacy",
+      "volume": 10
+    },
+    {
+      "seed": "free vpn privacy",
+      "keyword": "secure vpn free online privacy apk",
+      "volume": 0
+    },
+    {
+      "seed": "free vpn privacy",
+      "keyword": "protonvpn secure and free vpn service for protecting your privacy",
+      "volume": 0
+    },
+    {
+      "seed": "free vpn privacy",
+      "keyword": "purevpn free vpn proxy unblock with privacy",
+      "volume": 0
+    },
+    {
+      "seed": "free vpn privacy",
+      "keyword": "zenmate security privacy & unblock vpn free download",
+      "volume": 0
+    },
+    {
+      "seed": "free vpn privacy",
+      "keyword": "atlas vpn best free vpn for privacy",
+      "volume": 0
+    },
+    {
+      "seed": "free vpn privacy",
+      "keyword": "7 completely free vpn services to protect your privacy",
+      "volume": 0
+    },
+    {
+      "seed": "free vpn privacy",
+      "keyword": "uvpn free and secure vpn for online privacy",
+      "volume": 0
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "best free vpn reddit",
+      "paa": [
+        "What is the best totally free VPN?",
+        "Is there any 100% free VPN?",
+        "Are free VPNs illegal?",
+        "Are free VPNs sketchy?"
+      ],
+      "hasAiOverview": false
+    },
+    {
+      "keyword": "free vpn reddit",
+      "paa": [],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "best free vpn according to reddit",
+      "paa": [
+        "Which free VPN is the most trustworthy?",
+        "What is the most trusted VPN on Reddit?",
+        "Are free VPNs illegal?",
+        "What is the best cheapest VPN on Reddit?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "are free vpns safe reddit",
+      "paa": [
+        "Can a free VPN be trusted?",
+        "Can the FBI track a VPN?",
+        "Why avoid free VPN?",
+        "Are free VPNs illegal?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "proton vpn free reddit",
+      "paa": [
+        "Is Proton Free VPN really free?",
+        "Is there any 100% free VPN?",
+        "Can I be tracked if I use Proton VPN?",
+        "Is there a better free VPN than Proton?"
+      ],
+      "hasAiOverview": false
+    },
+    {
+      "keyword": "windscribe free reddit",
+      "paa": [
+        "Is Windscribe really free to use?",
+        "Is there any 100% free VPN?",
+        "Is there a free version of Windscribe?",
+        "Are free VPNs sketchy?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "free vpn privacy",
+      "paa": [
+        "Is there a VPN that is 100% free?",
+        "What is the safest free VPN?",
+        "Can I trust a free VPN?"
+      ],
+      "hasAiOverview": true
+    }
+  ],
+  "sourcePolicy": "DataForSEO signals prioritise question coverage; Reddit threads are anecdotal and do not prove provider safety, current plan limits, privacy practices or performance."
+}

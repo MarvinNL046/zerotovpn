@@ -83,4 +83,13 @@ export const editorialContentBriefs = {
     affiliateContext: "vpn-selection",
     schemaType: "Article",
   },
+  redditFreeVpn: {
+    primaryKeyword: "best free vpn reddit",
+    intent: "commercial",
+    cluster: "free-and-low-cost-access",
+    lastReviewedAt: "2026-08-13",
+    evidence: ["docs/research/dataforseo-reddit-free-vpn-cluster-2026-08-13.md", "/methodology", "/best/free-vpn"],
+    affiliateContext: "vpn-selection",
+    schemaType: "Article",
+  },
 } satisfies Record<string, EditorialContentBrief>;

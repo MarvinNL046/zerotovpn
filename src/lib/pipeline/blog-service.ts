@@ -54,6 +54,12 @@ import {
   vpnSimultaneousConnectionsEditorialTitle,
   vpnSimultaneousConnectionsEditorialUpdatedAt,
 } from "@/data/editorial/vpn-simultaneous-connections-2026";
+import {
+  fitnessTrackingPrivacyEditorialContent,
+  fitnessTrackingPrivacyEditorialExcerpt,
+  fitnessTrackingPrivacyEditorialTitle,
+  fitnessTrackingPrivacyEditorialUpdatedAt,
+} from "@/data/editorial/fitness-tracking-privacy-2026";
 
 const IRAN_EDITORIAL_SLUG = "best-vpn-for-iran-2026-bypass-internet-censorship";
 const TELEGRAM_EDITORIAL_SLUG = "best-vpn-for-telegram-2026";
@@ -63,6 +69,7 @@ const ISP_PRIVACY_EDITORIAL_SLUG = "can-vpn-hide-from-isp";
 const BRAVE_VPN_EDITORIAL_SLUG = "is-brave-vpn-free-2026";
 const VPN_ACCOUNT_SHARING_EDITORIAL_SLUG = "vpn-account-sharing-safe-guide-2026";
 const VPN_SIMULTANEOUS_CONNECTIONS_EDITORIAL_SLUG = "vpn-simultaneous-connections-limits-workarounds-2026";
+const FITNESS_TRACKING_PRIVACY_EDITORIAL_SLUG = "vpn-fitness-tracking-apps-strava-apple-health-garmin-privacy";
 
 // Legacy deal/coupon content is not a compliant commercial surface: it contains
 // unassigned coupon language and stale promotional prices. Keep the records for
@@ -173,6 +180,11 @@ const EDITORIAL_SUMMARIES: Record<string, { title: string; excerpt: string; upda
     excerpt: vpnSimultaneousConnectionsEditorialExcerpt,
     updatedAt: vpnSimultaneousConnectionsEditorialUpdatedAt,
   },
+  [FITNESS_TRACKING_PRIVACY_EDITORIAL_SLUG]: {
+    title: fitnessTrackingPrivacyEditorialTitle,
+    excerpt: fitnessTrackingPrivacyEditorialExcerpt,
+    updatedAt: fitnessTrackingPrivacyEditorialUpdatedAt,
+  },
 };
 
 function toSummary(raw: RawSummary): BlogPostSummary {
@@ -249,6 +261,7 @@ async function readPostFile(
     const isBraveVpnEditorial = language === "en" && slug === BRAVE_VPN_EDITORIAL_SLUG;
     const isVpnAccountSharingEditorial = language === "en" && slug === VPN_ACCOUNT_SHARING_EDITORIAL_SLUG;
     const isVpnSimultaneousConnectionsEditorial = language === "en" && slug === VPN_SIMULTANEOUS_CONNECTIONS_EDITORIAL_SLUG;
+    const isFitnessTrackingPrivacyEditorial = language === "en" && slug === FITNESS_TRACKING_PRIVACY_EDITORIAL_SLUG;
     const editorial = isIranEditorial
       ? { title: iranVpnEditorialTitle, excerpt: iranVpnEditorialExcerpt, content: iranVpnEditorialContent, updatedAt: iranVpnEditorialUpdatedAt }
       : isTelegramEditorial
@@ -265,6 +278,8 @@ async function readPostFile(
                   ? { title: vpnAccountSharingEditorialTitle, excerpt: vpnAccountSharingEditorialExcerpt, content: vpnAccountSharingEditorialContent, updatedAt: vpnAccountSharingEditorialUpdatedAt }
                   : isVpnSimultaneousConnectionsEditorial
                     ? { title: vpnSimultaneousConnectionsEditorialTitle, excerpt: vpnSimultaneousConnectionsEditorialExcerpt, content: vpnSimultaneousConnectionsEditorialContent, updatedAt: vpnSimultaneousConnectionsEditorialUpdatedAt }
+                    : isFitnessTrackingPrivacyEditorial
+                      ? { title: fitnessTrackingPrivacyEditorialTitle, excerpt: fitnessTrackingPrivacyEditorialExcerpt, content: fitnessTrackingPrivacyEditorialContent, updatedAt: fitnessTrackingPrivacyEditorialUpdatedAt }
                   : null;
     return {
       id: p.id,

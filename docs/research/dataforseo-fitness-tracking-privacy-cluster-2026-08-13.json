@@ -1,0 +1,252 @@
+{
+  "schemaVersion": 1,
+  "cluster": "Fitness tracking privacy / GPS data / wearable app boundaries",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "fetchedAt": "2026-08-13T03:24:34.636Z",
+  "refreshed": false,
+  "seeds": [
+    "fitness app privacy",
+    "does a vpn hide gps location",
+    "strava privacy settings",
+    "apple health privacy",
+    "garmin connect privacy",
+    "vpn for fitness tracking"
+  ],
+  "overview": [
+    {
+      "keyword": "apple health privacy",
+      "currentVolume": 30,
+      "latestVolume": 20,
+      "latestMonth": "2026-06",
+      "difficulty": 41,
+      "intent": "informational"
+    },
+    {
+      "keyword": "fitness app privacy",
+      "currentVolume": 10,
+      "latestVolume": 10,
+      "latestMonth": "2026-06",
+      "difficulty": null,
+      "intent": "informational"
+    },
+    {
+      "keyword": "garmin connect privacy",
+      "currentVolume": 10,
+      "latestVolume": 10,
+      "latestMonth": "2026-06",
+      "difficulty": null,
+      "intent": "navigational"
+    },
+    {
+      "keyword": "strava privacy settings",
+      "currentVolume": 50,
+      "latestVolume": 50,
+      "latestMonth": "2026-06",
+      "difficulty": 21,
+      "intent": "navigational"
+    }
+  ],
+  "suggestions": [
+    {
+      "seed": "fitness app privacy",
+      "keyword": "fitness app privacy",
+      "volume": 10
+    },
+    {
+      "seed": "strava privacy settings",
+      "keyword": "strava privacy settings",
+      "volume": 50
+    },
+    {
+      "seed": "strava privacy settings",
+      "keyword": "privacy settings strava",
+      "volume": 10
+    },
+    {
+      "seed": "strava privacy settings",
+      "keyword": "strava privacy settings group",
+      "volume": null
+    },
+    {
+      "seed": "strava privacy settings",
+      "keyword": "strava club privacy settings",
+      "volume": null
+    },
+    {
+      "seed": "apple health privacy",
+      "keyword": "apple health privacy",
+      "volume": 30
+    },
+    {
+      "seed": "apple health privacy",
+      "keyword": "apple health data privacy",
+      "volume": 20
+    },
+    {
+      "seed": "apple health privacy",
+      "keyword": "apple health privacy ad",
+      "volume": 10
+    },
+    {
+      "seed": "apple health privacy",
+      "keyword": "apple mental health questionnaire privacy",
+      "volume": 10
+    },
+    {
+      "seed": "apple health privacy",
+      "keyword": "apple health app privacy",
+      "volume": 10
+    },
+    {
+      "seed": "apple health privacy",
+      "keyword": "apple health privacy commercial",
+      "volume": 10
+    },
+    {
+      "seed": "apple health privacy",
+      "keyword": "apple health app privacy policy",
+      "volume": 10
+    },
+    {
+      "seed": "apple health privacy",
+      "keyword": "apple health privacy policy",
+      "volume": 10
+    },
+    {
+      "seed": "apple health privacy",
+      "keyword": "apple health study apps privacy policy",
+      "volume": 10
+    },
+    {
+      "seed": "apple health privacy",
+      "keyword": "apple health cycle tracking privacy",
+      "volume": 10
+    },
+    {
+      "seed": "apple health privacy",
+      "keyword": "apple health privacy reddit",
+      "volume": 10
+    },
+    {
+      "seed": "apple health privacy",
+      "keyword": "apple watch health data privacy",
+      "volume": 10
+    },
+    {
+      "seed": "apple health privacy",
+      "keyword": "apple health period tracker privacy",
+      "volume": 10
+    },
+    {
+      "seed": "apple health privacy",
+      "keyword": "apple health app data privacy",
+      "volume": 10
+    },
+    {
+      "seed": "apple health privacy",
+      "keyword": "apple health privacy commercial actress",
+      "volume": 0
+    },
+    {
+      "seed": "garmin connect privacy",
+      "keyword": "garmin connect privacy zone",
+      "volume": 10
+    },
+    {
+      "seed": "garmin connect privacy",
+      "keyword": "garmin connect privacy policy",
+      "volume": 10
+    },
+    {
+      "seed": "garmin connect privacy",
+      "keyword": "garmin connect privacy settings",
+      "volume": 10
+    },
+    {
+      "seed": "garmin connect privacy",
+      "keyword": "garmin connect privacy",
+      "volume": 10
+    },
+    {
+      "seed": "garmin connect privacy",
+      "keyword": "privacy garmin connect",
+      "volume": null
+    },
+    {
+      "seed": "garmin connect privacy",
+      "keyword": "privacy zone garmin connect",
+      "volume": null
+    },
+    {
+      "seed": "garmin connect privacy",
+      "keyword": "garmin connect data privacy",
+      "volume": null
+    },
+    {
+      "seed": "garmin connect privacy",
+      "keyword": "adjusting privacy settings in garmin connect",
+      "volume": null
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "fitness app privacy",
+      "paa": [
+        "Are wearable health devices invading privacy?",
+        "How do I stop my Health app from collecting data?",
+        "Why do people stop using fitness apps?",
+        "Can you hide activity on the fitness app?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "does a vpn hide gps location",
+      "paa": [
+        "Can someone see my location if I have a VPN?",
+        "Can the FBI track a VPN?",
+        "Does VPN block GPS location?",
+        "Will I be tracked if I use VPN?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "strava privacy settings",
+      "paa": [
+        "Can I make my Strava totally private?",
+        "Can you stop someone from seeing your Strava?",
+        "What can people see if your Strava is private?",
+        "Can everyone see your Strava profile?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "apple health privacy",
+      "paa": [
+        "Is Apple Health confidential?",
+        "Can doctors access my Apple Health data?",
+        "Is it safe to use the Apple Health app?",
+        "Can I tell if someone is tracking me on my iPhone?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "garmin connect privacy",
+      "paa": [],
+      "hasAiOverview": false,
+      "error": "DataForSEO request failed: 40502 POST Data Is Empty."
+    },
+    {
+      "keyword": "vpn for fitness tracking",
+      "paa": [
+        "Can the FBI see through VPNs?",
+        "Will Netflix ban me for using a VPN?",
+        "Can your activity be tracked on a VPN?",
+        "What is the best VPN for streaming sports?"
+      ],
+      "hasAiOverview": true
+    }
+  ],
+  "sourcePolicy": "DataForSEO signals prioritise intent coverage and FAQ structure; they do not prove an app's current data practices, legal compliance or that a VPN can block GPS collection."
+}

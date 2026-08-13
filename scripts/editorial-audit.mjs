@@ -138,7 +138,7 @@ const checks = [
   {
     name: "localized Iran blog routes use the evidence-led body",
     file: "src/app/[locale]/blog/[slug]/page.tsx",
-    patterns: [/iranVpnEditorialContent/, /const articleContent = isIranEditorial/, /iranContentBrief/, /best vpn for iran/, /censorship-restricted-networks/, /brief=\{isIranEditorial \? iranContentBrief : isTelegramEditorial \? editorialContentBriefs\.telegram : isConnectionDropsEditorial \? connectionDropsContentBrief : isServerLocationEditorial \? serverLocationContentBrief : isIspPrivacyEditorial \? ispPrivacyContentBrief : isBraveVpnEditorial \? braveVpnContentBrief : isVpnAccountSharingEditorial \? vpnAccountSharingContentBrief : isVpnSimultaneousConnectionsEditorial \? vpnSimultaneousConnectionsContentBrief : undefined\}/],
+    patterns: [/iranVpnEditorialContent/, /const articleContent = isIranEditorial/, /iranContentBrief/, /best vpn for iran/, /censorship-restricted-networks/, /brief=\{isIranEditorial \? iranContentBrief : isTelegramEditorial \? editorialContentBriefs\.telegram : isConnectionDropsEditorial \? connectionDropsContentBrief : isServerLocationEditorial \? serverLocationContentBrief : isIspPrivacyEditorial \? ispPrivacyContentBrief : isBraveVpnEditorial \? braveVpnContentBrief : isVpnAccountSharingEditorial \? vpnAccountSharingContentBrief : isVpnSimultaneousConnectionsEditorial \? vpnSimultaneousConnectionsContentBrief : isFitnessTrackingPrivacyEditorial \? fitnessTrackingPrivacyContentBrief : undefined\}/],
     forbiddenPatterns: [/articleContent = isRestrictedAffiliateContext\s*\?\s*verwijderAffiliateLinks\(post\.content\)/i],
   },
   {
@@ -247,6 +247,17 @@ const checks = [
     name: "VPN simultaneous-connections blog route uses the audited editorial override",
     file: "src/app/[locale]/blog/[slug]/page.tsx",
     patterns: [/vpnSimultaneousConnectionsEditorialTitle/, /vpnSimultaneousConnectionsContentBrief/, /vpnSimultaneousConnectionsEditorialFaq/, /vpnSimultaneousConnectionsClusterLinks/, /isVpnSimultaneousConnectionsEditorial/],
+  },
+  {
+    name: "fitness-tracking privacy guide uses PAA-led bounded app and network copy",
+    file: "src/data/editorial/fitness-tracking-privacy-2026.ts",
+    patterns: [/Does a VPN block GPS location\?/, /Can someone see my location if I have a VPN\?/, /How do I stop my Health app from collecting data\?/, /Can I make my Strava totally private\?/, /Is Apple Health confidential\?/, /Can your activity be tracked on a VPN\?/, /Network privacy versus fitness-app privacy/, /support\.strava\.com/, /support\.apple\.com/, /garmin\.com\/en-GB\/privacy\/connect/, /2026/],
+    forbiddenPatterns: [/72 million people|\$14\.3 billion|sold to the highest bidder|VPN.*blocks GPS|makes you anonymous/i, /\b(?:83|69|46|40|81)%\s*(?:off|savings)/i],
+  },
+  {
+    name: "fitness-tracking privacy blog route uses the audited editorial override",
+    file: "src/app/[locale]/blog/[slug]/page.tsx",
+    patterns: [/fitnessTrackingPrivacyEditorialTitle/, /fitnessTrackingPrivacyContentBrief/, /fitnessTrackingPrivacyEditorialFaq/, /fitnessTrackingPrivacyClusterLinks/, /isFitnessTrackingPrivacyEditorial/],
   },
   {
     name: "Chromebook use-case page avoids unsupported test counts",

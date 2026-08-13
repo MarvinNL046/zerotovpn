@@ -96,7 +96,7 @@ export default async function WhatIsVpnPage({ params }: Props) {
         description="Learn what a VPN is, how it works, and why you need one. Our comprehensive beginner's guide explains VPN technology in simple terms."
         url={pageUrl}
         datePublished="2026-01-01"
-        dateModified="2026-11-28"
+        dateModified="2026-08-13"
       />
       <BreadcrumbJsonLd
         items={[

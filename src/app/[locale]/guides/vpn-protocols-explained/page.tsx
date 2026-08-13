@@ -178,7 +178,7 @@ export default async function VpnProtocolsExplainedPage({ params }: Props) {
         description="WireGuard vs OpenVPN vs IKEv2 — which VPN protocol is fastest and most secure in 2026? We tested all three for speed, stability and real-world use."
         url={pageUrl}
         datePublished="2026-01-01"
-        dateModified="2026-11-28"
+        dateModified="2026-08-13"
       />
       <BreadcrumbJsonLd
         items={[

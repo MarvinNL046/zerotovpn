@@ -81,6 +81,18 @@ const checks = [
     forbiddenPatterns: [/Best VPN in 2026: Transparent Shortlist and Comparison/],
   },
   {
+    name: "localized protocol guide schema date is not future-dated",
+    file: "src/app/[locale]/guides/vpn-protocols-explained/page.tsx",
+    patterns: [/dateModified="2026-08-13"/],
+    forbiddenPatterns: [/dateModified="2026-11-28"/],
+  },
+  {
+    name: "localized what-is-VPN guide schema date is not future-dated",
+    file: "src/app/[locale]/guides/what-is-vpn/page.tsx",
+    patterns: [/dateModified="2026-08-13"/],
+    forbiddenPatterns: [/dateModified="2026-11-28"/],
+  },
+  {
     name: "Iran pillar SERP metadata matches censorship intent",
     file: "src/data/editorial/iran-vpn-2026.ts",
     patterns: [/Best VPN for Iran 2026: Tested Options & Setup Limits/, /Compare obfuscation, app access and privacy evidence for Iran/],

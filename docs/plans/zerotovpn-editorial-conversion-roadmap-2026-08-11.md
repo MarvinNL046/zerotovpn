@@ -790,3 +790,9 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - Updated the pillar's content-brief and Article JSON-LD review date to **13 August 2026** and added a fail-closed source guard for all four PAA questions. Local editorial audit passes **73/73**; the production build generates **4,429/4,429** routes with no TypeScript errors.
 - The matched Nord partner-export gate remains open. This is an on-page topical-authority refinement of an existing commercial URL, not a new 4–8 page selection or a conversion conclusion.
 - Production deployment `dpl_CrbVMTbnBogVGMxFc8kcrZm9kCso` is READY and aliased to `https://www.zerotovpn.com`. The refreshed live editorial gate passes **26/26** targets with **143** compliant affiliate links and zero metadata, freshness, schema, image, rel, slug, cluster-link, content-brief or social-image failures; the page smoke returned HTTP 200, one H1, FAQ schema and all four PAA questions. Evidence: [editorial-live-audit-2026-08-13.md](../metrics/editorial-live-audit-2026-08-13.md).
+
+### Localized structured-data freshness correction: 13 August 2026
+
+- A source scan outside the current 26-route live target list found two localized guide branches with a future `dateModified` value (`2026-11-28`): `guides/vpn-protocols-explained` and `guides/what-is-vpn`. Future dates can mislead crawlers and make freshness signals inconsistent with the editorial record.
+- Corrected both localized JSON-LD dates to **13 August 2026** and added fail-closed source guards so the future value cannot return unnoticed. No copy, URL, affiliate destination, CTA or popup behavior changed.
+- Local editorial audit now passes **75/75**; the production build generates **4,429/4,429** routes. This is a bounded structured-data hygiene fix and does not close the pending Nord partner-export KPI gate.

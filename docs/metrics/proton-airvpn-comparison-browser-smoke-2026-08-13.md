@@ -14,6 +14,7 @@
 - Two commercial links resolved through `https://go.zerotovpn.com/protonvpn`; both exposed `rel="noopener noreferrer sponsored nofollow"`.
 - No AirVPN affiliate destination was present. AirVPN was linked only to its review and first-party evidence pages.
 - No error marker was present and the measured document width matched the viewport width (`2545px` each in the desktop smoke).
+- The staged route is marked `noindex, follow` while it remains outside the sitemap and production editorial gate.
 
 ## Interpretation
 

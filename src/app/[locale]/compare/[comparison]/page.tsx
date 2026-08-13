@@ -96,7 +96,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       languages: languages,
     },
     robots: {
-      index: true,
+      // Keep the staged pair out of search until the Nord attribution/live gate
+      // is explicitly closed and the route is added to LINKED_COMPARISONS.
+      index: !isProtonAirvpn,
       follow: true,
     },
     openGraph: {

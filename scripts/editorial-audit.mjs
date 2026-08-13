@@ -590,7 +590,7 @@ const checks = [
   {
     name: "Proton VPN versus AirVPN route uses the staged evidence-led renderer",
     file: "src/app/[locale]/compare/[comparison]/page.tsx",
-    patterns: [/ProtonAirvpnComparisonEditorialPage/, /locale === "en" && comparison === "protonvpn-vs-airvpn"/, /protonAirvpnComparisonTitle/, /protonAirvpnComparisonDescription/],
+    patterns: [/ProtonAirvpnComparisonEditorialPage/, /locale === "en" && comparison === "protonvpn-vs-airvpn"/, /protonAirvpnComparisonTitle/, /protonAirvpnComparisonDescription/, /index: !isProtonAirvpn/],
   },
   {
     name: "macOS use-case metadata avoids unsupported test counts",

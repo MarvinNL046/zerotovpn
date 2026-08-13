@@ -62,7 +62,7 @@ try {
 
   const nordPartner = write(
     "nord-partner.csv",
-    "Offer.name,OfferUrl.name,Stat.impressions,Stat.conversions,Stat.clicks,Stat.payout,Stat.date,Stat.ctr,Stat.ltr,Stat.erpc\nNordVPN,Cyber 3y deal,0,0,1,0,2026-08-10,0.00000,0.00000,0.00000\nNordVPN Arabia,,0,0,1,0,2026-08-10,0.00000,0.00000,0.00000\n,,0,0,2,0,,,0.00000\n",
+    "Offer.name,OfferUrl.name,Stat.impressions,Stat.conversions,Stat.clicks,Stat.payout,Stat.date,Stat.ctr,Stat.ltr,Stat.erpc,aff_sub\nNordVPN,Cyber 3y deal,0,0,1,0,2026-08-10,0.00000,0.00000,0.00000,zt_nl-best-best-vpn\nNordVPN Arabia,,0,0,1,0,2026-08-10,0.00000,0.00000,0.00000,\n,,0,0,2,0,,,0.00000,\n",
   );
   const nordOut = join(temp, "nord.json");
   run(["--label", "test-nord-export", "--window-start", "2026-07-28", "--window-end", "2026-08-10", "--gsc-pages", pages, "--gsc-queries", queries, "--gsc-chart", chart, "--shortio", shortIo, "--partner", nordPartner, "--out", nordOut]);
@@ -71,6 +71,7 @@ try {
   assert(nord.affiliate.partner.totals.clicks === 2 && nord.affiliate.partner.totals.conversions === 0, "Nord-prefixed performance fields should normalize clicks and conversions");
   assert(nord.affiliate.partner.totals.epc === 0, "Nord ERPC should normalize to EPC");
   assert(nord.affiliate.partner.bySlug.length === 2, "Unlabeled Nord aggregate rows should not be double-counted");
+  assert(nord.affiliate.partner.bySubId[0].subId === "zt_nl-best-best-vpn", "Nord aff_sub should remain available for page attribution");
   assert(nord.affiliate.partner.bySlug.some((row) => row.slug === "cyber-3y-deal"), "Nord offer URL names should remain inspectable partner slugs");
 
   const localizedPages = write(

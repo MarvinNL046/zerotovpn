@@ -163,28 +163,35 @@ function summarizeAffiliateSlugs(rows) {
   return Object.values(grouped).sort((a, b) => b.clicks - a.clicks);
 }
 
-function summarizePartnerSlugs(rows) {
+function summarizePartnerGroups(rows, keyName = "slug") {
   const grouped = rows.reduce((map, row) => {
-    const slug = row.slug ?? "unknown";
-    const current = map[slug] ?? { slug, clicks: 0, conversions: 0, revenue: 0, hasConversions: false, hasRevenue: false, rows: 0 };
+    const key = row[keyName] ?? "unknown";
+    const current = map[key] ?? { [keyName]: key, clicks: 0, conversions: 0, revenue: 0, hasConversions: false, hasRevenue: false, rows: 0 };
     current.clicks += row.clicks ?? 0;
     if (row.conversions !== null) { current.conversions += row.conversions; current.hasConversions = true; }
     if (row.revenue !== null) { current.revenue += row.revenue; current.hasRevenue = true; }
     current.rows += 1;
-    map[slug] = current;
+    map[key] = current;
     return map;
   }, {});
   return Object.values(grouped)
-    .map(({ slug, clicks, conversions, revenue, hasConversions, hasRevenue, rows }) => ({
-      slug,
+    .map((group) => {
+      const { clicks, conversions, revenue, hasConversions, hasRevenue, rows } = group;
+      return {
+      [keyName]: group[keyName],
       clicks: clicks || null,
       conversions: hasConversions ? conversions : null,
       revenue: hasRevenue ? revenue : null,
       conversionRate: clicks && hasConversions ? conversions / clicks : null,
       epc: clicks && hasRevenue ? revenue / clicks : null,
       rows,
-    }))
+      };
+    })
     .sort((a, b) => (b.revenue ?? b.clicks ?? 0) - (a.revenue ?? a.clicks ?? 0));
+}
+
+function summarizePartnerSlugs(rows) {
+  return summarizePartnerGroups(rows, "slug");
 }
 
 function readRows(path) {
@@ -263,6 +270,7 @@ function summarizePartner(rows) {
     conversions: number(pick(row, ["conversions", "conversion", "sales", "orders", "transactions", "stat_conversions"])),
     revenue: number(pick(row, ["revenue", "commission", "earnings", "payout", "total_revenue", "stat_payout"])),
     epc: number(pick(row, ["epc", "earnings_per_click", "revenue_per_click", "stat_epc", "stat_erpc"])),
+    subId: pick(row, ["aff_sub", "aff_sub1", "sub_id", "subid", "affiliate_sub_id", "stat_aff_sub", "stat_aff_sub1"]),
     slug: slugFromLink(pick(row, ["link", "short_url", "short_link", "url", "offer", "offerurl_name", "offer_name"])),
   })).filter((row) => row.conversions !== null || row.revenue !== null || row.epc !== null);
   const clicks = normalized.reduce((sum, row) => sum + (row.clicks ?? 0), 0);
@@ -282,6 +290,7 @@ function summarizePartner(rows) {
       epc: clicks && normalized.some((row) => row.revenue !== null) ? revenue / clicks : reportedEpc,
     },
     bySlug: summarizePartnerSlugs(normalized),
+    bySubId: summarizePartnerGroups(normalized.filter((row) => row.subId), "subId"),
   };
 }
 

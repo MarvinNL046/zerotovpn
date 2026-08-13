@@ -29,8 +29,11 @@ The importer accepts localized header names, but every row must provide:
 | Conversions | `conversions`, `sales`, `orders`, `transactions` |
 | Payout/revenue | `revenue`, `commission`, `earnings`, `payout`, `total_revenue` |
 | EPC | `epc`, `earnings_per_click`, `revenue_per_click` |
+| Page placement (new rollout) | `aff_sub`, `aff_sub1`, `sub_id`, `subid`, `affiliate_sub_id` |
 
 Rows without a dated field are rejected for a windowed report. Rows outside 28 July–10 August are rejected rather than silently trimmed. The script also rejects fixture/sample/example paths.
+
+For page-level attribution, retain the returned `aff_sub` value exactly. Production clicks use the format `zt_<public-page-slug>`; do not decode or replace it during export.
 
 ## Verification command
 

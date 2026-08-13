@@ -260,6 +260,17 @@ const checks = [
     patterns: [/fitnessTrackingPrivacyEditorialTitle/, /fitnessTrackingPrivacyContentBrief/, /fitnessTrackingPrivacyEditorialFaq/, /fitnessTrackingPrivacyClusterLinks/, /isFitnessTrackingPrivacyEditorial/],
   },
   {
+    name: "mobile VPN page uses PAA-led bounded mobile copy",
+    file: "src/components/editorial/mobile-vpn-editorial-page.tsx",
+    patterns: [/Which mobile VPN is the best\?/, /Should you put a VPN on your iPhone\?/, /Should I have a VPN on my Android phone\?/, /Does using a VPN affect mobile data\?/, /Does a VPN drain your battery\?/, /Does a VPN hide your location on iPhone or Android\?/, /Mobile VPN comparison: what to verify before choosing/, /mobile-and-device-privacy/, /DataForSEO|dataforseo-mobile-vpn/],
+    forbiddenPatterns: [/expert-tested|94%|96%|90\/100|makes every app request private/i, /\b(?:83|69|46|40|81)%\s*(?:off|savings)/i],
+  },
+  {
+    name: "mobile VPN route uses the audited English editorial component",
+    file: "src/app/[locale]/best/vpn-mobile/page.tsx",
+    patterns: [/MobileVpnEditorialPage/, /if \(locale === "en"\) return <MobileVpnEditorialPage \/>/, /mobileVpnEditorialTitle/],
+  },
+  {
     name: "Chromebook use-case page avoids unsupported test counts",
     file: "src/app/[locale]/best/vpn-chromebook/page.tsx",
     patterns: [/We vergelijken meerdere VPN-providers voor Chromebook-compatibiliteit/],

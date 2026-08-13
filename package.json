@@ -24,6 +24,7 @@
     "seo:vpn-account-sharing": "node scripts/vpn-account-sharing-seo-research.mjs",
     "seo:vpn-simultaneous-connections": "node scripts/vpn-simultaneous-connections-seo-research.mjs",
     "seo:fitness-tracking-privacy": "node scripts/fitness-tracking-privacy-seo-research.mjs",
+    "seo:mobile-vpn": "node scripts/mobile-vpn-seo-research.mjs",
     "seo:smoke": "node scripts/dfs-smoke.mjs",
     "export:shortio": "node scripts/export-shortio-metrics.mjs",
     "audit:sitemap": "node scripts/audit-sitemap-live.mjs",

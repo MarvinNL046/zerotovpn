@@ -34,6 +34,7 @@ import { generateAlternates } from "@/lib/seo-utils";
 import { getVpnAffiliateUrl } from "@/lib/vpn-links";
 
 import { getMoneyBackDays } from "@/lib/vpn-discount";
+import { MobileVpnEditorialPage, mobileVpnEditorialDescription, mobileVpnEditorialTitle } from "@/components/editorial/mobile-vpn-editorial-page";
 type Props = {
   params: Promise<{ locale: string }>;
 };
@@ -42,6 +43,20 @@ const baseUrl = "https://www.zerotovpn.com";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  if (locale === "en") {
+    return {
+      metadataBase: new URL(baseUrl),
+      title: { absolute: titelMetMerk(mobileVpnEditorialTitle) },
+      description: mobileVpnEditorialDescription,
+      openGraph: {
+        locale: "en_US",
+        title: mobileVpnEditorialTitle,
+        description: mobileVpnEditorialDescription,
+        type: "article",
+      },
+      alternates: generateAlternates("/best/vpn-mobile", locale),
+    };
+  }
   const t = await getTranslations({ locale, namespace: "mobileVpn" });
 
   return {
@@ -174,6 +189,8 @@ function MobileVpnListSchema() {
 export default async function MobileVpnPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  if (locale === "en") return <MobileVpnEditorialPage />;
 
   const t = await getTranslations("mobileVpn");
 

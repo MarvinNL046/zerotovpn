@@ -1,0 +1,461 @@
+{
+  "schemaVersion": 1,
+  "cluster": "Mobile VPN / iPhone / Android / battery and setup",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "fetchedAt": "2026-08-13T03:35:19.732Z",
+  "refreshed": false,
+  "seeds": [
+    "best mobile vpn",
+    "vpn for iphone",
+    "vpn for android",
+    "does a vpn drain battery",
+    "do i need a vpn on my phone",
+    "vpn mobile data",
+    "can a vpn hide gps location"
+  ],
+  "overview": [
+    {
+      "keyword": "best mobile vpn",
+      "currentVolume": null,
+      "latestVolume": 880,
+      "latestMonth": "2024-02",
+      "difficulty": 25,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "do i need a vpn on my phone",
+      "currentVolume": null,
+      "latestVolume": 320,
+      "latestMonth": "2024-02",
+      "difficulty": 16,
+      "intent": "informational"
+    },
+    {
+      "keyword": "vpn for android",
+      "currentVolume": null,
+      "latestVolume": 9900,
+      "latestMonth": "2024-02",
+      "difficulty": 48,
+      "intent": "informational"
+    },
+    {
+      "keyword": "vpn for iphone",
+      "currentVolume": null,
+      "latestVolume": 27100,
+      "latestMonth": "2024-02",
+      "difficulty": 40,
+      "intent": "informational"
+    },
+    {
+      "keyword": "vpn mobile data",
+      "currentVolume": null,
+      "latestVolume": 170,
+      "latestMonth": "2024-02",
+      "difficulty": 11,
+      "intent": "commercial"
+    }
+  ],
+  "suggestions": [
+    {
+      "seed": "best mobile vpn",
+      "keyword": "best vpn for t-mobile home internet",
+      "volume": 20
+    },
+    {
+      "seed": "best mobile vpn",
+      "keyword": "best free vpn for warzone mobile",
+      "volume": 10
+    },
+    {
+      "seed": "best mobile vpn",
+      "keyword": "best vpn for pubg mobile ios",
+      "volume": 10
+    },
+    {
+      "seed": "best mobile vpn",
+      "keyword": "best vpn for delta force mobile",
+      "volume": 10
+    },
+    {
+      "seed": "best mobile vpn",
+      "keyword": "best vpn for pubg mobile iphone",
+      "volume": 10
+    },
+    {
+      "seed": "best mobile vpn",
+      "keyword": "best vpn for pubg mobile 2024",
+      "volume": 10
+    },
+    {
+      "seed": "best mobile vpn",
+      "keyword": "best vpn for samsung mobile",
+      "volume": 10
+    },
+    {
+      "seed": "best mobile vpn",
+      "keyword": "best free vpn for mobile phone",
+      "volume": 10
+    },
+    {
+      "seed": "best mobile vpn",
+      "keyword": "best mobile vpn for android free",
+      "volume": 10
+    },
+    {
+      "seed": "best mobile vpn",
+      "keyword": "best mobile security with vpn",
+      "volume": 10
+    },
+    {
+      "seed": "best mobile vpn",
+      "keyword": "best free vpn for pubg mobile ios",
+      "volume": 10
+    },
+    {
+      "seed": "best mobile vpn",
+      "keyword": "best vpn for pubg mobile download",
+      "volume": 10
+    },
+    {
+      "seed": "best mobile vpn",
+      "keyword": "best vpn for pubg mobile global in india free",
+      "volume": 10
+    },
+    {
+      "seed": "best mobile vpn",
+      "keyword": "best free vpn for windows 10 mobile",
+      "volume": 10
+    },
+    {
+      "seed": "best mobile vpn",
+      "keyword": "best free vpn for pubg mobile india",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for iphone",
+      "keyword": "apps vpn for iphone",
+      "volume": 12100
+    },
+    {
+      "seed": "vpn for iphone",
+      "keyword": "vpn for the iphone",
+      "volume": 2900
+    },
+    {
+      "seed": "vpn for iphone",
+      "keyword": "vpn setting for iphone",
+      "volume": 2400
+    },
+    {
+      "seed": "vpn for iphone",
+      "keyword": "how to setup a vpn for iphone",
+      "volume": 2400
+    },
+    {
+      "seed": "vpn for iphone",
+      "keyword": "best vpn application for iphone",
+      "volume": 720
+    },
+    {
+      "seed": "vpn for iphone",
+      "keyword": "setup vpn for iphone free",
+      "volume": 720
+    },
+    {
+      "seed": "vpn for iphone",
+      "keyword": "free vpn configurations for iphone",
+      "volume": 720
+    },
+    {
+      "seed": "vpn for iphone",
+      "keyword": "vpn for iphone turn off",
+      "volume": 260
+    },
+    {
+      "seed": "vpn for iphone",
+      "keyword": "are there any free vpn for iphone",
+      "volume": 170
+    },
+    {
+      "seed": "vpn for iphone",
+      "keyword": "best vpn for iphone ipad",
+      "volume": 140
+    },
+    {
+      "seed": "vpn for iphone",
+      "keyword": "free vpn application for iphone",
+      "volume": 140
+    },
+    {
+      "seed": "vpn for iphone",
+      "keyword": "vpn for iphone hotspot shield",
+      "volume": 140
+    },
+    {
+      "seed": "vpn for iphone",
+      "keyword": "vpn hotspot shield for iphone",
+      "volume": 140
+    },
+    {
+      "seed": "vpn for iphone",
+      "keyword": "mullvad vpn for iphone",
+      "volume": 140
+    },
+    {
+      "seed": "vpn for iphone",
+      "keyword": "how to use vpn on iphone for free",
+      "volume": 90
+    },
+    {
+      "seed": "vpn for android",
+      "keyword": "vpn applications for android",
+      "volume": 5400
+    },
+    {
+      "seed": "vpn for android",
+      "keyword": "vpn program for android",
+      "volume": 5400
+    },
+    {
+      "seed": "vpn for android",
+      "keyword": "best vpn program for android",
+      "volume": 4400
+    },
+    {
+      "seed": "vpn for android",
+      "keyword": "great vpn for android",
+      "volume": 4400
+    },
+    {
+      "seed": "vpn for android",
+      "keyword": "best free vpn software for android",
+      "volume": 3600
+    },
+    {
+      "seed": "vpn for android",
+      "keyword": "expressvpn vpn for android",
+      "volume": 1600
+    },
+    {
+      "seed": "vpn for android",
+      "keyword": "vpn free apps for android",
+      "volume": 720
+    },
+    {
+      "seed": "vpn for android",
+      "keyword": "app vpn free for android",
+      "volume": 720
+    },
+    {
+      "seed": "vpn for android",
+      "keyword": "vpn for android devices",
+      "volume": 590
+    },
+    {
+      "seed": "vpn for android",
+      "keyword": "vpn software free download for android",
+      "volume": 590
+    },
+    {
+      "seed": "vpn for android",
+      "keyword": "vpn services for android",
+      "volume": 480
+    },
+    {
+      "seed": "vpn for android",
+      "keyword": "opera mini with vpn for android",
+      "volume": 260
+    },
+    {
+      "seed": "vpn for android",
+      "keyword": "opera mini vpn for android",
+      "volume": 260
+    },
+    {
+      "seed": "vpn for android",
+      "keyword": "download vpn software for android",
+      "volume": 210
+    },
+    {
+      "seed": "vpn for android",
+      "keyword": "what the best vpn for android",
+      "volume": 210
+    },
+    {
+      "seed": "does a vpn drain battery",
+      "keyword": "does using a vpn drain your battery",
+      "volume": 10
+    },
+    {
+      "seed": "does a vpn drain battery",
+      "keyword": "does a vpn drain your battery",
+      "volume": null
+    },
+    {
+      "seed": "do i need a vpn on my phone",
+      "keyword": "do i really need a vpn on my phone",
+      "volume": 10
+    },
+    {
+      "seed": "do i need a vpn on my phone",
+      "keyword": "do i need a vpn on my android phone",
+      "volume": null
+    },
+    {
+      "seed": "do i need a vpn on my phone",
+      "keyword": "do i need a vpn on my cell phone",
+      "volume": null
+    },
+    {
+      "seed": "do i need a vpn on my phone",
+      "keyword": "why do i need a vpn on my phone",
+      "volume": null
+    },
+    {
+      "seed": "vpn mobile data",
+      "keyword": "mobile data vpn free",
+      "volume": 10
+    },
+    {
+      "seed": "vpn mobile data",
+      "keyword": "vpn for free mobile data",
+      "volume": 10
+    },
+    {
+      "seed": "vpn mobile data",
+      "keyword": "do i need vpn for mobile data",
+      "volume": 10
+    },
+    {
+      "seed": "vpn mobile data",
+      "keyword": "how to connect vpn with mobile data",
+      "volume": 10
+    },
+    {
+      "seed": "vpn mobile data",
+      "keyword": "vpn vs mobile data",
+      "volume": 10
+    },
+    {
+      "seed": "vpn mobile data",
+      "keyword": "unlimited mobile data vpn",
+      "volume": 10
+    },
+    {
+      "seed": "vpn mobile data",
+      "keyword": "express vpn mobile data",
+      "volume": 10
+    },
+    {
+      "seed": "vpn mobile data",
+      "keyword": "free vpn mobile data",
+      "volume": 10
+    },
+    {
+      "seed": "vpn mobile data",
+      "keyword": "does vpn save mobile data",
+      "volume": 10
+    },
+    {
+      "seed": "vpn mobile data",
+      "keyword": "free mobile data using vpn",
+      "volume": 0
+    },
+    {
+      "seed": "vpn mobile data",
+      "keyword": "vpn save mobile data",
+      "volume": 0
+    },
+    {
+      "seed": "vpn mobile data",
+      "keyword": "vpn on mobile data",
+      "volume": null
+    },
+    {
+      "seed": "vpn mobile data",
+      "keyword": "does vpn work for mobile data",
+      "volume": null
+    },
+    {
+      "seed": "vpn mobile data",
+      "keyword": "vpn for mobile data apk",
+      "volume": null
+    },
+    {
+      "seed": "vpn mobile data",
+      "keyword": "can i use vpn on mobile data",
+      "volume": null
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "best mobile vpn",
+      "paa": [
+        "Which mobile VPN is the best?",
+        "Can the FBI track a VPN?",
+        "Which free VPN is best for mobile?",
+        "Do Android phones have a built-in VPN?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn for iphone",
+      "paa": [
+        "Does iPhone have a built-in VPN?",
+        "Is there a VPN for iPhone free?",
+        "Should you put a VPN on your iPhone?",
+        "How much does a VPN for iPhone cost?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn for android",
+      "paa": [
+        "Does Android have a built-in VPN?",
+        "Which VPN is free for Android?",
+        "Should I have a VPN on my Android phone?",
+        "What is the purpose of a VPN?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "does a vpn drain battery",
+      "paa": [],
+      "hasAiOverview": false,
+      "error": "DataForSEO request failed: 40502 POST Data Is Empty."
+    },
+    {
+      "keyword": "do i need a vpn on my phone",
+      "paa": [
+        "Does your phone have a built-in VPN?",
+        "What's the downside of a VPN on your cell phone?",
+        "Should VPN be on or off on a cell phone?",
+        "When shouldn't you use a VPN?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn mobile data",
+      "paa": [
+        "Can a VPN work with mobile data?",
+        "Does using a VPN affect mobile data?",
+        "What's the downside of a VPN on your cell phone?",
+        "Which VPN has free data?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "can a vpn hide gps location",
+      "paa": [
+        "Can the FBI track you with a VPN?",
+        "Can someone see my location if I have a VPN?",
+        "Can the police find you if you use a VPN?",
+        "Does a VPN hide your location on iPhone?"
+      ],
+      "hasAiOverview": true
+    }
+  ],
+  "sourcePolicy": "DataForSEO signals prioritise mobile search intent and FAQ coverage; they do not prove current app behaviour, battery impact, security or provider performance."
+}

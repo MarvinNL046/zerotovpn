@@ -2,7 +2,11 @@
 
 Status: concept v1 — visual direction and implementation brief
 
-Reference concepts: `zerotovpn-homepage-concept-v1.png` and `zerotovpn-homepage-concept-v2-editorial.png`
+Reference concepts:
+
+- `zerotovpn-homepage-concept-v1.png` — initial decision-dashboard exploration;
+- `zerotovpn-homepage-concept-v2-editorial.png` — editorial transition;
+- `zerotovpn-homepage-concept-v3-visual-editorial.png` — preferred image-led magazine direction.
 
 ## Objective
 
@@ -32,6 +36,19 @@ The design combines:
 Clear, evidence-led, practical, and human. The site should make a recommendation while stating the trade-off. Avoid hype, fake urgency, unexplained scores, and vague claims such as “the most secure VPN” without test context.
 
 ## Homepage information architecture
+
+### Visual-density rule
+
+The homepage must behave like an editorial front page, not a SaaS dashboard. Above the fold, target roughly 60% visual surface and 40% copy/UI. Use one dominant lead image, supporting thumbnail stories, a numbered trending rail, and short headlines that remain understandable without excerpts. Comparison tables and detailed scores belong after the visual discovery layer.
+
+Scanning order:
+
+1. dominant field-test story;
+2. current reviews and comparisons in the side rail;
+3. numbered trending topics;
+4. visual use-case navigation;
+5. commercial top picks;
+6. methodology and latest content.
 
 ### 1. Research announcement bar
 
@@ -67,11 +84,25 @@ Content:
 - visual: original shield/world-map illustration or testing visual;
 - trust line: last research update, methodology, and affiliate disclosure.
 
-The hero should answer what ZeroToVPN does before asking the visitor to choose a provider.
+The homepage no longer needs a large conventional marketing hero. In the preferred concept, a compact editorial lead story performs this job: a bold test image, a short field-test label, and a headline explaining what ZeroToVPN learned. The mission is visible through the story itself instead of a generic shield illustration.
+
+Use a conventional text-led hero only on campaign landing pages or when no strong editorial feature is available.
+
+### 3a. Editorial lead mosaic
+
+The first viewport uses an asymmetrical magazine grid:
+
+- one dominant, landscape field-test story;
+- three supporting image cards for a guide, provider review, and comparison;
+- a numbered “Trending now” rail with five compact entries;
+- concise category labels and headlines;
+- strong 16:9 or 4:3 thumbnail crops with consistent ZeroToVPN art direction.
+
+No excerpt should exceed two lines in this area. The image and headline must carry the click decision.
 
 ### 4. Top VPN picks
 
-Three compact recommendation cards, not a wall of providers. Every card includes:
+Place this section after the editorial mosaic and visual use-case navigation. Three compact recommendation cards, not a wall of providers. Every card includes:
 
 - rank and provider identity;
 - rating with scoring context;
@@ -178,11 +209,13 @@ Create only the missing homepage composition layer and visual primitives first. 
 
 ## Content and visual ratios
 
-For a homepage:
+For the homepage:
 
-- 40–50% decision content: picks, table, finder;
-- 20–30% trust and methodology;
-- 20–30% editorial discovery and cluster links;
+- above the fold: approximately 60% imagery and 40% copy/UI;
+- whole page: 35–45% editorial discovery;
+- 25–35% decision content: picks, comparison, finder;
+- 15–25% trust and methodology;
+- 10–15% cluster navigation and newsletter;
 - no more than one prominent affiliate CTA per recommendation card;
 - no affiliate pop-up or overlay;
 - use 6–10 visual assets per 1,500 words on long-form pages;
@@ -249,4 +282,6 @@ Use them in NordVPN-specific review and offer modules where the campaign and geo
 
 The first generated concept is a direction, not production copy or final provider data. It demonstrates the intended hierarchy: branded hero → quick picks → comparison table → trust metrics → cluster cards → newsletter.
 
-The second concept adds the missing editorial character: a large feature story, two supporting guide cards, stronger visual storytelling, and a clearer distinction between editorial content and provider recommendations. This is the preferred direction for implementation. The NordVPN source assets should be introduced inside the provider-specific modules rather than replacing the neutral editorial hero.
+The second concept adds editorial character through a large feature story and supporting guide cards.
+
+The third concept is the preferred direction. It replaces the conventional hero with an image-led editorial mosaic, adds a numbered trending rail, makes the use-case navigation photographic and delays commercial top picks until after editorial discovery. It also demonstrates the correct use of approved NordVPN material: inside a clearly labelled NordVPN review card, without copying campaign discount text into the global homepage.

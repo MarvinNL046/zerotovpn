@@ -35,6 +35,10 @@ Rows without a dated field are rejected for a windowed report. Rows outside 28 J
 
 For page-level attribution, retain the returned `aff_sub`/`Sub ID 1` value exactly. In Nord's UI, select **Sub ID 1** (and, when available, **Advertiser Sub ID 1**) before downloading. Production clicks use the format `zt_<public-page-slug>`; do not decode or replace it during export. The first post-rollout observation is documented in [nord-partner-postrollout-2026-08-13.md](nord-partner-postrollout-2026-08-13.md) and returned a blank field.
 
+## Post-rollout recheck boundary
+
+The authenticated **13 August 2026** recheck is a separate retention probe, not a replacement for the historical 28 July–10 August measurement window. Its CSV has `Stat.affiliate_info1` and `Stat.adv_sub1` headers, but both are blank on the dated NordVPN row. If a newer export is dated outside the required window, run the input checker against a separate recheck window or inspect the raw field directly; do not pass it into `post-14d-2026-08-13.json` by changing the window dates. A returned value is useful only when it is a non-empty `zt_<public-page-slug>` that can be joined to the public page map.
+
 ## Verification command
 
 Save the export outside Git (for example, `.cache/metrics/nord-partner-2026-08-13/partner.csv`) and run:

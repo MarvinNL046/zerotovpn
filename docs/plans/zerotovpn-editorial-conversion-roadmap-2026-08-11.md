@@ -1304,6 +1304,11 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - Kept the page affiliate-free and informational; the new wording does not give legal advice, promise anonymity or claim a universally fastest/safest location. The existing speed, privacy and streaming checks remain dated and source-bounded.
 - Local verification: targeted ESLint reports no errors, `npm run audit:editorial` passes **165/165**, `npm run build` generates **4,429/4,429** routes. Production deployment [`dpl_MMg5aG1iZQRowfpchTuLLu8Yx7z6`](https://vercel.com/marvinnl046s-projects/zerotovpn/MMg5aG1iZQRowfpchTuLLu8Yx7z6) is READY and aliased to `https://www.zerotovpn.com`; live HTML returns HTTP 200, one H1, the new PAA answer and zero affiliate links. The full live editorial gate passes **63/63** targets with **290** compliant affiliate links and zero metadata, freshness, image, schema-date, rel, slug, cluster-link, content-brief or social-image failures. Compare the next Search Console window before another edit.
 
+### Measurement handoff recheck: 13 August 2026
+
+- Re-ran the fail-closed input checker with the retained production files and the **28 July–10 August** window: `ready: true`; all four required inputs and the historical partner export are present, the chart and partner windows are matched, and `test:measure-editorial` remains **8/8**. The attribution helper suite remains **4/4**.
+- The separate **13 August** Nord export is intentionally not mixed into that historical report: it is a retention probe with blank `Stat.affiliate_info1` and `Stat.adv_sub1`. Updated [the export handoff](../metrics/nord-partner-export-handoff-2026-08-13.md) to make this boundary explicit and prevent a future operator from “fixing” the mismatch by changing the measurement window.
+
 ### Simultaneous-connections intent and household boundary refinement: 13 August 2026
 
 - Refined the existing `/blog/vpn-simultaneous-connections-limits-workarounds-2026` page for the commercial device-limit query. Added the missing PAA answer “Can I share my VPN with another household?” and a dedicated section separating a technical connection cap from the provider's personal-use or household permission.

@@ -1,9 +1,9 @@
 # Live editorial page audit
 
-Generated: 2026-08-13T02:32:14.591Z
+Generated: 2026-08-13T02:43:01.144Z
 
-- Target pages: **29**
-- Passing pages: **29**
+- Target pages: **30**
+- Passing pages: **30**
 - Pages needing review: **0**
 - Affiliate links checked: **143**
 - Affiliate links missing sponsored/nofollow: **0**
@@ -48,5 +48,6 @@ Generated: 2026-08-13T02:32:14.591Z
 | pass | /blog/vpn-connection-drops-why-disconnects-how-to-fix-2026 | Why Does My VPN Keep Disconnecting? Causes and Fixes (2026) | 1 | 54 | 0 | — | — |
 | pass | /blog/best-country-for-vpn-server-location-2026 | Best VPN Server Location in 2026: Speed, Privacy and Streaming Trade-offs | 1 | 53 | 0 | — | — |
 | pass | /blog/can-vpn-hide-from-isp | Can a VPN Hide You From Your ISP? What It Does and Does Not Hide (2026) | 1 | 54 | 0 | — | — |
+| pass | /blog/is-brave-vpn-free-2026 | Is Brave VPN Free? What the Browser Includes and What Costs Extra (2026) | 1 | 53 | 0 | — | — |
 
 Raw records: [editorial-live-audit-2026-08-13.json](./editorial-live-audit-2026-08-13.json)

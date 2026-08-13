@@ -138,7 +138,7 @@ const checks = [
   {
     name: "localized Iran blog routes use the evidence-led body",
     file: "src/app/[locale]/blog/[slug]/page.tsx",
-    patterns: [/iranVpnEditorialContent/, /const articleContent = isIranEditorial/, /iranContentBrief/, /best vpn for iran/, /censorship-restricted-networks/, /brief=\{isIranEditorial \? iranContentBrief : isTelegramEditorial \? editorialContentBriefs\.telegram : isConnectionDropsEditorial \? connectionDropsContentBrief : isServerLocationEditorial \? serverLocationContentBrief : isIspPrivacyEditorial \? ispPrivacyContentBrief : isBraveVpnEditorial \? braveVpnContentBrief : isVpnAccountSharingEditorial \? vpnAccountSharingContentBrief : undefined\}/],
+    patterns: [/iranVpnEditorialContent/, /const articleContent = isIranEditorial/, /iranContentBrief/, /best vpn for iran/, /censorship-restricted-networks/, /brief=\{isIranEditorial \? iranContentBrief : isTelegramEditorial \? editorialContentBriefs\.telegram : isConnectionDropsEditorial \? connectionDropsContentBrief : isServerLocationEditorial \? serverLocationContentBrief : isIspPrivacyEditorial \? ispPrivacyContentBrief : isBraveVpnEditorial \? braveVpnContentBrief : isVpnAccountSharingEditorial \? vpnAccountSharingContentBrief : isVpnSimultaneousConnectionsEditorial \? vpnSimultaneousConnectionsContentBrief : undefined\}/],
     forbiddenPatterns: [/articleContent = isRestrictedAffiliateContext\s*\?\s*verwijderAffiliateLinks\(post\.content\)/i],
   },
   {
@@ -236,6 +236,17 @@ const checks = [
     name: "VPN account-sharing blog route uses the audited editorial override",
     file: "src/app/[locale]/blog/[slug]/page.tsx",
     patterns: [/vpnAccountSharingEditorialTitle/, /vpnAccountSharingContentBrief/, /vpnAccountSharingEditorialFaq/, /vpnAccountSharingClusterLinks/, /isVpnAccountSharingEditorial/],
+  },
+  {
+    name: "VPN simultaneous-connections guide uses PAA-led bounded device copy",
+    file: "src/data/editorial/vpn-simultaneous-connections-2026.ts",
+    patterns: [/Can I use VPN on two devices\?/, /Can I use two VPN connections simultaneously\?/, /Which VPN allows unlimited devices\?/, /Do I need a separate VPN for each device\?/, /How many devices can you use with a VPN\?/, /Can multiple people use one VPN\?/, /Published simultaneous-connection examples/, /2026/],
+    forbiddenPatterns: [/71% of VPN users|1-10\+|tested dozens|unblocked Netflix|guaranteed/i, /\b(?:83|69|46|40|36|81)%\s*(?:off|savings)/i],
+  },
+  {
+    name: "VPN simultaneous-connections blog route uses the audited editorial override",
+    file: "src/app/[locale]/blog/[slug]/page.tsx",
+    patterns: [/vpnSimultaneousConnectionsEditorialTitle/, /vpnSimultaneousConnectionsContentBrief/, /vpnSimultaneousConnectionsEditorialFaq/, /vpnSimultaneousConnectionsClusterLinks/, /isVpnSimultaneousConnectionsEditorial/],
   },
   {
     name: "Chromebook use-case page avoids unsupported test counts",

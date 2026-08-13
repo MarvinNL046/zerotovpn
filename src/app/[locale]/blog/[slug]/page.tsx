@@ -67,6 +67,12 @@ import {
   vpnAccountSharingEditorialExcerpt,
   vpnAccountSharingEditorialContent,
 } from "@/data/editorial/vpn-account-sharing-2026";
+import {
+  vpnSimultaneousConnectionsEditorialFaq,
+  vpnSimultaneousConnectionsEditorialTitle,
+  vpnSimultaneousConnectionsEditorialExcerpt,
+  vpnSimultaneousConnectionsEditorialContent,
+} from "@/data/editorial/vpn-simultaneous-connections-2026";
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
@@ -158,6 +164,20 @@ const vpnAccountSharingContentBrief = {
   schemaType: "Article",
 } satisfies EditorialContentBrief;
 
+const vpnSimultaneousConnectionsContentBrief = {
+  primaryKeyword: "how many devices can use a vpn",
+  intent: "commercial",
+  cluster: "privacy-and-trust",
+  lastReviewedAt: "2026-08-13",
+  evidence: [
+    "docs/research/dataforseo-vpn-simultaneous-connections-cluster-2026-08-13.md",
+    "/methodology",
+    "/blog/vpn-account-sharing-safe-guide-2026",
+  ],
+  affiliateContext: "vpn-selection",
+  schemaType: "Article",
+} satisfies EditorialContentBrief;
+
 type ClusterLink = {
   title: string;
   description: string;
@@ -236,6 +256,10 @@ const clusterMetadata: Record<string, { title: string; description: string }> = 
   "vpn-account-sharing-safe-guide-2026": {
     title: vpnAccountSharingEditorialTitle,
     description: vpnAccountSharingEditorialExcerpt,
+  },
+  "vpn-simultaneous-connections-limits-workarounds-2026": {
+    title: vpnSimultaneousConnectionsEditorialTitle,
+    description: vpnSimultaneousConnectionsEditorialExcerpt,
   },
 };
 
@@ -359,6 +383,26 @@ const vpnAccountSharingClusterLinks: Record<string, ClusterLink[]> = {
   ],
 };
 
+const vpnSimultaneousConnectionsClusterLinks: Record<string, ClusterLink[]> = {
+  "vpn-simultaneous-connections-limits-workarounds-2026": [
+    {
+      title: "VPN account-sharing guide",
+      description: "Separate device limits from household access and credential-sharing terms.",
+      href: "/blog/vpn-account-sharing-safe-guide-2026",
+    },
+    {
+      title: "VPN privacy comparison",
+      description: "Compare logging, ownership and jurisdiction evidence alongside device limits.",
+      href: "/best/vpn-privacy",
+    },
+    {
+      title: "VPN testing methodology",
+      description: "See how plan terms and device behaviour should be checked over time.",
+      href: "/methodology",
+    },
+  ],
+};
+
 // Pre-render alle gepubliceerde blogposts bij het bouwen, in elke taal (met
 // Engelse fallback). Zonder dit werd elke blog-URL on-demand gerenderd en
 // query'de een crawler door 511 posts telkens live Postgres — wat de
@@ -426,7 +470,7 @@ export default async function DynamicBlogPost({ params }: Props) {
     notFound();
   }
 
-  const clusterLinks = censorshipClusterLinks[slug] || aiPrivacyClusterLinks[slug] || technicalClusterLinks[slug] || locationClusterLinks[slug] || ispPrivacyClusterLinks[slug] || braveVpnClusterLinks[slug] || vpnAccountSharingClusterLinks[slug] || [];
+  const clusterLinks = censorshipClusterLinks[slug] || aiPrivacyClusterLinks[slug] || technicalClusterLinks[slug] || locationClusterLinks[slug] || ispPrivacyClusterLinks[slug] || braveVpnClusterLinks[slug] || vpnAccountSharingClusterLinks[slug] || vpnSimultaneousConnectionsClusterLinks[slug] || [];
   const isIranEditorial = slug === "best-vpn-for-iran-2026-bypass-internet-censorship";
   const isTelegramEditorial = slug === "best-vpn-for-telegram-2026";
   const isChatgptEditorial = slug === "best-vpn-for-chatgpt-2026";
@@ -435,6 +479,7 @@ export default async function DynamicBlogPost({ params }: Props) {
   const isIspPrivacyEditorial = slug === "can-vpn-hide-from-isp";
   const isBraveVpnEditorial = slug === "is-brave-vpn-free-2026";
   const isVpnAccountSharingEditorial = slug === "vpn-account-sharing-safe-guide-2026";
+  const isVpnSimultaneousConnectionsEditorial = slug === "vpn-simultaneous-connections-limits-workarounds-2026";
   const isCensorshipEditorial = isIranEditorial || isTelegramEditorial;
   const isRestrictedAffiliateContext =
     slug === "vpn-blockchain-privacy-mask-wallet-activity-2026";
@@ -450,6 +495,8 @@ export default async function DynamicBlogPost({ params }: Props) {
             ? braveVpnEditorialTitle
             : isVpnAccountSharingEditorial
               ? vpnAccountSharingEditorialTitle
+              : isVpnSimultaneousConnectionsEditorial
+                ? vpnSimultaneousConnectionsEditorialTitle
         : post.title;
   const displayExcerpt = isIranEditorial
     ? iranVpnEditorialExcerpt
@@ -463,6 +510,8 @@ export default async function DynamicBlogPost({ params }: Props) {
             ? braveVpnEditorialExcerpt
             : isVpnAccountSharingEditorial
               ? vpnAccountSharingEditorialExcerpt
+              : isVpnSimultaneousConnectionsEditorial
+                ? vpnSimultaneousConnectionsEditorialExcerpt
         : post.excerpt;
   const editorialVpns = isCensorshipEditorial ? await getAllVpns() : [];
   const relatedLinks = getRelatedContent({
@@ -496,6 +545,8 @@ export default async function DynamicBlogPost({ params }: Props) {
       ? braveVpnEditorialContent
     : isVpnAccountSharingEditorial
       ? vpnAccountSharingEditorialContent
+    : isVpnSimultaneousConnectionsEditorial
+      ? vpnSimultaneousConnectionsEditorialContent
     : isRestrictedAffiliateContext
       ? verwijderAffiliateLinks(post.content)
       : post.content;
@@ -514,7 +565,7 @@ export default async function DynamicBlogPost({ params }: Props) {
 
       {/* Article Header and shared editorial disclosure/jump navigation */}
       <BestVpnEditorialTemplate
-        brief={isIranEditorial ? iranContentBrief : isTelegramEditorial ? editorialContentBriefs.telegram : isConnectionDropsEditorial ? connectionDropsContentBrief : isServerLocationEditorial ? serverLocationContentBrief : isIspPrivacyEditorial ? ispPrivacyContentBrief : isBraveVpnEditorial ? braveVpnContentBrief : isVpnAccountSharingEditorial ? vpnAccountSharingContentBrief : undefined}
+        brief={isIranEditorial ? iranContentBrief : isTelegramEditorial ? editorialContentBriefs.telegram : isConnectionDropsEditorial ? connectionDropsContentBrief : isServerLocationEditorial ? serverLocationContentBrief : isIspPrivacyEditorial ? ispPrivacyContentBrief : isBraveVpnEditorial ? braveVpnContentBrief : isVpnAccountSharingEditorial ? vpnAccountSharingContentBrief : isVpnSimultaneousConnectionsEditorial ? vpnSimultaneousConnectionsContentBrief : undefined}
         navigation={[
           { href: "#article-content", label: "Article" },
           ...(isCensorshipEditorial ? [{ href: "#quick-picks", label: "Shortlist" }] : []),
@@ -566,11 +617,11 @@ export default async function DynamicBlogPost({ params }: Props) {
           {clusterLinks.length > 0 && (
             <nav
               id="cluster-links"
-              aria-label={isConnectionDropsEditorial ? "Technical VPN troubleshooting cluster" : isServerLocationEditorial ? "VPN server location cluster" : isIspPrivacyEditorial ? "VPN ISP privacy cluster" : isBraveVpnEditorial ? "Brave VPN research cluster" : isVpnAccountSharingEditorial ? "VPN account-sharing cluster" : "Censorship research cluster"}
+              aria-label={isConnectionDropsEditorial ? "Technical VPN troubleshooting cluster" : isServerLocationEditorial ? "VPN server location cluster" : isIspPrivacyEditorial ? "VPN ISP privacy cluster" : isBraveVpnEditorial ? "Brave VPN research cluster" : isVpnAccountSharingEditorial ? "VPN account-sharing cluster" : isVpnSimultaneousConnectionsEditorial ? "VPN simultaneous-connections cluster" : "Censorship research cluster"}
               className="rounded-xl border border-primary/20 bg-primary/5 p-4 sm:p-5"
             >
               <p className="mb-3 text-sm font-semibold text-primary">
-                {isConnectionDropsEditorial ? "Technical VPN troubleshooting cluster" : isServerLocationEditorial ? "VPN server location cluster" : isIspPrivacyEditorial ? "VPN ISP privacy cluster" : isBraveVpnEditorial ? "Brave VPN research cluster" : isVpnAccountSharingEditorial ? "VPN account-sharing cluster" : "Censorship research cluster"}
+                {isConnectionDropsEditorial ? "Technical VPN troubleshooting cluster" : isServerLocationEditorial ? "VPN server location cluster" : isIspPrivacyEditorial ? "VPN ISP privacy cluster" : isBraveVpnEditorial ? "Brave VPN research cluster" : isVpnAccountSharingEditorial ? "VPN account-sharing cluster" : isVpnSimultaneousConnectionsEditorial ? "VPN simultaneous-connections cluster" : "Censorship research cluster"}
               </p>
               <div className="grid gap-3 sm:grid-cols-3">
                 {clusterLinks.map((link) => (
@@ -648,6 +699,7 @@ export default async function DynamicBlogPost({ params }: Props) {
         {isIspPrivacyEditorial && <FAQSchema title="VPN ISP privacy FAQ" faqs={ispPrivacyEditorialFaq} />}
         {isBraveVpnEditorial && <FAQSchema title="Brave VPN FAQ" faqs={braveVpnEditorialFaq} />}
         {isVpnAccountSharingEditorial && <FAQSchema title="VPN account-sharing FAQ" faqs={vpnAccountSharingEditorialFaq} />}
+        {isVpnSimultaneousConnectionsEditorial && <FAQSchema title="VPN simultaneous-connections FAQ" faqs={vpnSimultaneousConnectionsEditorialFaq} />}
 
         {/* Ad placement */}
         <InlineAd />

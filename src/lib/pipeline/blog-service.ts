@@ -48,6 +48,12 @@ import {
   vpnAccountSharingEditorialTitle,
   vpnAccountSharingEditorialUpdatedAt,
 } from "@/data/editorial/vpn-account-sharing-2026";
+import {
+  vpnSimultaneousConnectionsEditorialContent,
+  vpnSimultaneousConnectionsEditorialExcerpt,
+  vpnSimultaneousConnectionsEditorialTitle,
+  vpnSimultaneousConnectionsEditorialUpdatedAt,
+} from "@/data/editorial/vpn-simultaneous-connections-2026";
 
 const IRAN_EDITORIAL_SLUG = "best-vpn-for-iran-2026-bypass-internet-censorship";
 const TELEGRAM_EDITORIAL_SLUG = "best-vpn-for-telegram-2026";
@@ -56,6 +62,7 @@ const SERVER_LOCATION_EDITORIAL_SLUG = "best-country-for-vpn-server-location-202
 const ISP_PRIVACY_EDITORIAL_SLUG = "can-vpn-hide-from-isp";
 const BRAVE_VPN_EDITORIAL_SLUG = "is-brave-vpn-free-2026";
 const VPN_ACCOUNT_SHARING_EDITORIAL_SLUG = "vpn-account-sharing-safe-guide-2026";
+const VPN_SIMULTANEOUS_CONNECTIONS_EDITORIAL_SLUG = "vpn-simultaneous-connections-limits-workarounds-2026";
 
 // Legacy deal/coupon content is not a compliant commercial surface: it contains
 // unassigned coupon language and stale promotional prices. Keep the records for
@@ -161,6 +168,11 @@ const EDITORIAL_SUMMARIES: Record<string, { title: string; excerpt: string; upda
     excerpt: vpnAccountSharingEditorialExcerpt,
     updatedAt: vpnAccountSharingEditorialUpdatedAt,
   },
+  [VPN_SIMULTANEOUS_CONNECTIONS_EDITORIAL_SLUG]: {
+    title: vpnSimultaneousConnectionsEditorialTitle,
+    excerpt: vpnSimultaneousConnectionsEditorialExcerpt,
+    updatedAt: vpnSimultaneousConnectionsEditorialUpdatedAt,
+  },
 };
 
 function toSummary(raw: RawSummary): BlogPostSummary {
@@ -236,6 +248,7 @@ async function readPostFile(
     const isIspPrivacyEditorial = language === "en" && slug === ISP_PRIVACY_EDITORIAL_SLUG;
     const isBraveVpnEditorial = language === "en" && slug === BRAVE_VPN_EDITORIAL_SLUG;
     const isVpnAccountSharingEditorial = language === "en" && slug === VPN_ACCOUNT_SHARING_EDITORIAL_SLUG;
+    const isVpnSimultaneousConnectionsEditorial = language === "en" && slug === VPN_SIMULTANEOUS_CONNECTIONS_EDITORIAL_SLUG;
     const editorial = isIranEditorial
       ? { title: iranVpnEditorialTitle, excerpt: iranVpnEditorialExcerpt, content: iranVpnEditorialContent, updatedAt: iranVpnEditorialUpdatedAt }
       : isTelegramEditorial
@@ -250,6 +263,8 @@ async function readPostFile(
                 ? { title: braveVpnEditorialTitle, excerpt: braveVpnEditorialExcerpt, content: braveVpnEditorialContent, updatedAt: braveVpnEditorialUpdatedAt }
                 : isVpnAccountSharingEditorial
                   ? { title: vpnAccountSharingEditorialTitle, excerpt: vpnAccountSharingEditorialExcerpt, content: vpnAccountSharingEditorialContent, updatedAt: vpnAccountSharingEditorialUpdatedAt }
+                  : isVpnSimultaneousConnectionsEditorial
+                    ? { title: vpnSimultaneousConnectionsEditorialTitle, excerpt: vpnSimultaneousConnectionsEditorialExcerpt, content: vpnSimultaneousConnectionsEditorialContent, updatedAt: vpnSimultaneousConnectionsEditorialUpdatedAt }
                   : null;
     return {
       id: p.id,

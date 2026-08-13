@@ -47,3 +47,7 @@ The importer field probe records the same distinction under `affiliate.partner.s
 ## User-provided dashboard cross-check: 6-12 August 2026
 
 A separate screenshot of the authenticated Performance Report shows the broader offer summary for **6 August 2026 - 12 August 2026**: NordVPN **15 clicks**, NordVPN China **2**, NordVPN Arabia **2**, for **19 total clicks**, **0 conversions**, **$0.00 payout** and **$0.00 EPC**. This is an account-level retention signal only; it is not a page-level join and is not mixed into the dated KPI files or the 13 August probe.
+
+## Authenticated dashboard recheck: 13 August 2026
+
+The current authenticated Performance Report view now defaults to **1 January 2007 - 13 August 2026** and shows **25 aggregate clicks**: NordVPN **21**, NordVPN China **2** and NordVPN Arabia **2**. Conversions remain **0**, payout **$0.00** and EPC **$0.00**. Opening the NordVPN offer detail does not expose a populated sub-ID field in the visible report. This confirms additional account-level activity since the 19-click screenshot, but it still cannot be joined to a ZeroToVPN page or attributed to the current `aff_sub` rollout.

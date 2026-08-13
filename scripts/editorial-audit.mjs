@@ -337,7 +337,7 @@ const checks = [
   {
     name: "connection-drops page uses PAA-led bounded troubleshooting copy",
     file: "src/data/editorial/connection-drops-2026.ts",
-    patterns: [/How do I stop my VPN from disconnecting\?/, /Why won't my VPN stay on\?/, /Why does my VPN keep disconnecting and reconnecting on iPhone\?/, /Why is my VPN killing my internet connection\?/, /VPN disconnection diagnosis checklist/, /2026/],
+    patterns: [/How do I stop my VPN from disconnecting\?/, /Why won't my VPN stay on\?/, /Why does my VPN keep disconnecting and reconnecting on iPhone\?/, /Why is my VPN killing my internet connection\?/, /How can I keep my VPN connected all the time\?/, /Why is my VPN connection dropping randomly\?/, /Why does my Wi-Fi disconnect when I turn on a VPN\?/, /VPN disconnection diagnosis checklist/, /2026/],
     forbiddenPatterns: [/approximately\s+\d+%|\b\d+%\s+of\s+(?:VPN|users|cases)/i, /permanent guarantee|will stay connected/i],
   },
   {

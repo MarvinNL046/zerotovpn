@@ -1298,6 +1298,12 @@ The exit-intent popup remains enabled as an owned-media newsletter prompt. It co
 - Public production smoke returned HTTP 200, the bounded title **“Proton VPN vs AirVPN (August 2026): Privacy, Price and Port Forwarding”**, `noindex, follow`, one semantic comparison table, two Proton affiliate links with `sponsored nofollow` and no AirVPN affiliate destination. The retired universal-winner phrase is absent. Full evidence: [proton-airvpn-comparison-live-smoke-2026-08-13.md](../metrics/proton-airvpn-comparison-live-smoke-2026-08-13.md).
 - The route remains intentionally absent from `LINKED_COMPARISONS` and the generated sitemap. This confirms the production renderer boundary only; it does not establish indexation, ranking, EPC or conversion uplift. Keep the route staged until Nord confirms the forwarded `aff_sub` report/API field and the next live editorial gate explicitly covers the route.
 
+### Connection-drops PAA and device-path expansion: 13 August 2026
+
+- Expanded the existing `/blog/vpn-connection-drops-why-disconnects-how-to-fix-2026` page using the retained DataForSEO dossier. Added explicit answers for “keep my VPN connected all the time”, random connection drops and Wi-Fi disconnects when the VPN starts, plus a device-persistence section linking naturally to the iPhone, iPad, Windows and macOS guides.
+- Kept the page in the authority/CTR lane: it has no affiliate anchors, no new URL variant was created, and the copy does not turn PAA wording into a provider guarantee. The troubleshooting sequence still separates base-network, endpoint, protocol, permissions and kill-switch causes.
+- Added the new PAA phrases to the editorial regression guard. Local verification: targeted ESLint reports no errors, `npm run audit:editorial` passes **165/165**, `git diff --check` passes, and `npm run build` generates **4,429/4,429** routes. Production deployment follows after commit; compare the next Search Console window before making another rewrite.
+
 ### Diagnostic sub-ID beacon: 13 August 2026
 
 - Extended the shared affiliate click beacon to preserve the generated public `aff_sub` value as `affiliateSubId` in first-party `/api/click` diagnostics. The field is a deterministic page slug only; it carries no user, cookie or PII data and malformed destinations cannot block navigation. Evidence: [affiliate-subid-diagnostic-beacon-2026-08-13.md](../metrics/affiliate-subid-diagnostic-beacon-2026-08-13.md).

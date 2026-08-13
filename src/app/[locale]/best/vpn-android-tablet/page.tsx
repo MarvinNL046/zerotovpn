@@ -30,8 +30,10 @@ import {
 } from "lucide-react";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { LastUpdated } from "@/components/last-updated";
-import { OG_LOCALE_MAP, generateAlternates, titelMetMerk } from "@/lib/seo-utils";
+import { DEFAULT_OG_IMAGE, OG_LOCALE_MAP, generateAlternates, titelMetMerk } from "@/lib/seo-utils";
 import { getVpnAffiliateUrl } from "@/lib/vpn-links";
+import { ArticleJsonLd } from "@/components/seo/json-ld";
+import { AndroidTabletEditorialPage, androidTabletEditorialDescription, androidTabletEditorialTitle } from "@/components/editorial/android-tablet-editorial-page";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -41,6 +43,15 @@ const baseUrl = "https://www.zerotovpn.com";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  if (locale === "en") {
+    return {
+      metadataBase: new URL(baseUrl),
+      title: { absolute: titelMetMerk(androidTabletEditorialTitle) },
+      description: androidTabletEditorialDescription,
+      openGraph: { locale: "en_US", title: androidTabletEditorialTitle, description: androidTabletEditorialDescription, type: "article", images: [DEFAULT_OG_IMAGE] },
+      alternates: generateAlternates("/best/vpn-android-tablet", locale),
+    };
+  }
   const t = await getTranslations({ locale, namespace: "androidTabletVpn" });
 
   return {
@@ -154,6 +165,10 @@ function AndroidTabletVpnListSchema() {
 export default async function AndroidTabletVpnPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  if (locale === "en") {
+    return <><ArticleJsonLd title={androidTabletEditorialTitle} description={androidTabletEditorialDescription} url={`${baseUrl}/best/vpn-android-tablet`} datePublished="2026-01-01" dateModified="2026-08-13" /><AndroidTabletEditorialPage /></>;
+  }
 
   const t = await getTranslations("androidTabletVpn");
 

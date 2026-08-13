@@ -1,0 +1,226 @@
+{
+  "schemaVersion": 1,
+  "cluster": "Android tablet VPN / app support / permissions / split tunneling",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "fetchedAt": "2026-08-13T09:10:02.380Z",
+  "refreshed": true,
+  "seeds": [
+    "best vpn for android tablet",
+    "android tablet vpn",
+    "vpn for samsung tablet",
+    "vpn for lenovo tablet",
+    "do android tablets need a vpn",
+    "android vpn split tunneling"
+  ],
+  "overview": [
+    {
+      "keyword": "android tablet vpn",
+      "currentVolume": null,
+      "latestVolume": 20,
+      "latestMonth": "2024-02",
+      "difficulty": null,
+      "intent": "informational"
+    },
+    {
+      "keyword": "android vpn split tunneling",
+      "currentVolume": null,
+      "latestVolume": 20,
+      "latestMonth": "2024-02",
+      "difficulty": null,
+      "intent": "informational"
+    },
+    {
+      "keyword": "best vpn for android tablet",
+      "currentVolume": null,
+      "latestVolume": 10,
+      "latestMonth": "2024-02",
+      "difficulty": null,
+      "intent": "informational"
+    },
+    {
+      "keyword": "vpn for samsung tablet",
+      "currentVolume": null,
+      "latestVolume": 50,
+      "latestMonth": "2024-02",
+      "difficulty": 24,
+      "intent": "informational"
+    }
+  ],
+  "suggestions": [
+    {
+      "seed": "android tablet vpn",
+      "keyword": "best free vpn app for android tablet",
+      "volume": 10
+    },
+    {
+      "seed": "android tablet vpn",
+      "keyword": "best vpn for android tablet",
+      "volume": null
+    },
+    {
+      "seed": "android tablet vpn",
+      "keyword": "best free vpn for android tablet",
+      "volume": null
+    },
+    {
+      "seed": "android tablet vpn",
+      "keyword": "free vpn android tablet",
+      "volume": 30
+    },
+    {
+      "seed": "android tablet vpn",
+      "keyword": "vpn for android tablet free",
+      "volume": 30
+    },
+    {
+      "seed": "android tablet vpn",
+      "keyword": "free vpn download for android tablet",
+      "volume": 10
+    },
+    {
+      "seed": "android tablet vpn",
+      "keyword": "what is vpn on android tablet",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for samsung tablet",
+      "keyword": "vpn for samsung tablet android",
+      "volume": 10
+    },
+    {
+      "seed": "android tablet vpn",
+      "keyword": "how to setup a vpn on android tablet",
+      "volume": 10
+    },
+    {
+      "seed": "android tablet vpn",
+      "keyword": "how to use vpn on android tablet",
+      "volume": 10
+    },
+    {
+      "seed": "android tablet vpn",
+      "keyword": "tablet android vpn",
+      "volume": 0
+    },
+    {
+      "seed": "android tablet vpn",
+      "keyword": "vpn on tablet android",
+      "volume": 0
+    },
+    {
+      "seed": "android tablet vpn",
+      "keyword": "free vpn server for android tablet",
+      "volume": 0
+    },
+    {
+      "seed": "android tablet vpn",
+      "keyword": "free vpn for android tablet",
+      "volume": null
+    },
+    {
+      "seed": "vpn for samsung tablet",
+      "keyword": "vpn for tablet samsung",
+      "volume": null
+    },
+    {
+      "seed": "vpn for samsung tablet",
+      "keyword": "vpn for samsung tablet",
+      "volume": null
+    },
+    {
+      "seed": "vpn for samsung tablet",
+      "keyword": "best vpn for samsung tablet",
+      "volume": null
+    },
+    {
+      "seed": "vpn for samsung tablet",
+      "keyword": "free vpn for samsung tablet",
+      "volume": null
+    },
+    {
+      "seed": "android vpn split tunneling",
+      "keyword": "express vpn split tunneling android",
+      "volume": 10
+    },
+    {
+      "seed": "android vpn split tunneling",
+      "keyword": "split tunneling vpn android",
+      "volume": null
+    },
+    {
+      "seed": "android vpn split tunneling",
+      "keyword": "split tunneling vpn android free",
+      "volume": null
+    },
+    {
+      "seed": "android vpn split tunneling",
+      "keyword": "express vpn split tunneling android tv",
+      "volume": null
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "best vpn for android tablet",
+      "paa": [
+        "Which VPN is best for tablets?",
+        "What is the most trusted VPN for Android?",
+        "Is there a 100% free VPN for Android?",
+        "Do Androids have a built-in VPN?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "android tablet vpn",
+      "paa": [
+        "Is there a built-in VPN on Android?",
+        "Which VPN is best for tablets?",
+        "Which VPN app is best for Android?",
+        "What is the best safe VPN for Android?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn for samsung tablet",
+      "paa": [
+        "Does Samsung have a built-in VPN?",
+        "What is the best free VPN for Samsung tablets?",
+        "Does Android have a built-in VPN?",
+        "Which VPN is best for Samsung?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn for lenovo tablet",
+      "paa": [
+        "Does Android have a built-in VPN?",
+        "Is there a 100% free VPN for Android?",
+        "Which VPN is best for tablets?",
+        "What are some free VPNs available for tablets?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "do android tablets need a vpn",
+      "paa": [
+        "Does my Android have a built-in VPN?",
+        "Which VPN is best for tablets?",
+        "When shouldn't you use a VPN?",
+        "Can I set up a VPN on my Samsung tablet?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "android vpn split tunneling",
+      "paa": [
+        "What VPN has free split tunneling?",
+        "How do I use split tunneling with Android Auto using a VPN?",
+        "Why is split tunneling bad?",
+        "Can I use two VPNs simultaneously on my Android device?"
+      ],
+      "hasAiOverview": true
+    }
+  ],
+  "sourcePolicy": "DataForSEO signals prioritise Android tablet intent and FAQ coverage; they do not prove current app behaviour, battery impact, security or provider performance."
+}

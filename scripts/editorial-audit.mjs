@@ -334,6 +334,17 @@ const checks = [
     patterns: [/AndroidVpnEditorialPage/, /if \(locale === "en"\) return <AndroidVpnEditorialPage \/>/],
   },
   {
+    name: "Android tablet page uses bounded device evidence",
+    file: "src/components/editorial/android-tablet-editorial-page.tsx",
+    patterns: [/Best VPN for Android Tablets in 2026/, /Android tablet VPN comparison checklist/, /Do Android tablets need a VPN\?/, /Six setup checks before you subscribe/],
+    forbiddenPatterns: [/expert-tested|95% rating|94% rating|93% rating|Fastest VPN for Android tablets|stable 4G\/5G/i],
+  },
+  {
+    name: "Android tablet route uses the audited English editorial component",
+    file: "src/app/[locale]/best/vpn-android-tablet/page.tsx",
+    patterns: [/AndroidTabletEditorialPage/, /if \(locale === "en"\)/, /androidTabletEditorialTitle/, /dateModified="2026-08-13"/],
+  },
+  {
     name: "mobile VPN page uses PAA-led bounded mobile copy",
     file: "src/components/editorial/mobile-vpn-editorial-page.tsx",
     patterns: [/Which mobile VPN is the best\?/, /Should you put a VPN on your iPhone\?/, /Should I have a VPN on my Android phone\?/, /Does using a VPN affect mobile data\?/, /Does a VPN drain your battery\?/, /Does a VPN hide your location on iPhone or Android\?/, /Mobile VPN comparison: what to verify before choosing/, /mobile-and-device-privacy/, /DataForSEO|dataforseo-mobile-vpn/],

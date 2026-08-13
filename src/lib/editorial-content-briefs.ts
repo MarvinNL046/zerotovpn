@@ -119,6 +119,15 @@ export const editorialContentBriefs = {
     affiliateContext: "vpn-selection",
     schemaType: "CollectionPage",
   },
+  androidTabletVpn: {
+    primaryKeyword: "best vpn for android tablet",
+    intent: "commercial",
+    cluster: "mobile-and-device-privacy",
+    lastReviewedAt: "2026-08-13",
+    evidence: ["docs/research/dataforseo-android-tablet-vpn-cluster-2026-08-13.md", "/methodology", "https://support.google.com/android/answer/9089766", "https://developer.android.com/develop/connectivity/vpn"],
+    affiliateContext: "vpn-selection",
+    schemaType: "CollectionPage",
+  },
   chromebookVpn: {
     primaryKeyword: "best vpn for chromebook",
     intent: "informational",

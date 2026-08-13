@@ -1,9 +1,9 @@
 # Live editorial page audit
 
-Generated: 2026-08-13T08:14:22.027Z
+Generated: 2026-08-13T08:26:19.773Z
 
-- Target pages: **46**
-- Passing pages: **46**
+- Target pages: **47**
+- Passing pages: **47**
 - Pages needing review: **0**
 - Affiliate links checked: **214**
 - Affiliate links missing sponsored/nofollow: **0**
@@ -28,6 +28,7 @@ Generated: 2026-08-13T08:14:22.027Z
 | pass | /best/vpn-privacy | Best VPNs for Privacy in 2026: Compare No-Logs Evidence and Threat Models | 1 | 43 | 6 | — | — |
 | pass | /best/vpn-gaming | Best VPNs for Gaming in 2026: Ping, Stability and DDoS Boundaries | 1 | 42 | 6 | — | — |
 | pass | /blog/does-vpn-reduce-ping-gaming-2026 | Does a VPN Reduce Ping? What Gaming Tests Can Actually Show (2026) | 1 | 55 | 0 | — | — |
+| pass | /speed-test | Internet Speed Test: Measure Download, Upload, Ping and Jitter (2026) | 1 | 43 | 0 | — | — |
 | pass | /best/vpn-chromebook | Best VPNs for Chromebook in 2026: Android, Chrome Extension and Linux Options | 1 | 42 | 6 | — | — |
 | pass | /best/vpn-firestick | Best VPNs for Fire TV Stick in 2026: Apps, Router Setup and Streaming Checks | 1 | 42 | 6 | — | — |
 | pass | /best/vpn-mobile | Best Mobile VPNs in 2026: iPhone, Android, Battery and Setup Limits | 1 | 41 | 6 | — | — |

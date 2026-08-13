@@ -1,11 +1,11 @@
 # Live editorial page audit
 
-Generated: 2026-08-13T09:41:44.862Z
+Generated: 2026-08-13T10:01:26.514Z
 
-- Target pages: **58**
-- Passing pages: **58**
+- Target pages: **59**
+- Passing pages: **59**
 - Pages needing review: **0**
-- Affiliate links checked: **230**
+- Affiliate links checked: **251**
 - Affiliate links missing sponsored/nofollow: **0**
 - Affiliate links missing Short.io slug telemetry: **0**
 - Missing required cluster links: **0**
@@ -46,6 +46,7 @@ Generated: 2026-08-13T09:41:44.862Z
 | pass | /best/vpn-android | Best VPNs for Android in 2026: Apps, Battery and Setup | 1 | 42 | 6 | — | — |
 | pass | /best/vpn-android-tablet | Best VPN for Android Tablets in 2026: App Support, Setup and Trade-offs | 1 | 45 | 6 | — | — |
 | pass | /best/best-vpn | Best VPN 2026: Compare Privacy, Streaming &amp; Value Picks | ZeroToVPN | 1 | 69 | 21 | — | — |
+| pass | /fr/best/best-vpn | Meilleur VPN en 2026 : comparatif transparent et vérifiable | 1 | 59 | 21 | — | — |
 | pass | /best/vpn-cheap | Best Cheap VPNs in 2026: Compare Value, Terms and Trade-offs | 1 | 45 | 6 | — | — |
 | pass | /reviews/nordvpn | NordVPN Review 2026: Privacy Evidence, Price and Performance | 1 | 43 | 2 | — | — |
 | pass | /reviews/protonvpn | Proton VPN Review 2026: Privacy Evidence, Free Plan and Performance | 1 | 43 | 2 | — | — |

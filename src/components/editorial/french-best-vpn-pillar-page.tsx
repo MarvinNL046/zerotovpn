@@ -4,12 +4,18 @@ import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { FAQSchema } from "@/components/seo/faq-schema";
 import { BestVpnEditorialTemplate } from "@/components/editorial/best-vpn-editorial-template";
 import { AffiliateButton, AffiliateTextLink } from "@/components/vpn/affiliate-button";
-import { Link } from "@/i18n/navigation";
+import { Link as I18nLink } from "@/i18n/navigation";
+import type { ComponentProps } from "react";
 import type { EditorialContentBrief } from "@/lib/editorial-content-brief";
 import type { VpnData } from "@/lib/vpn-data-layer";
 
 export const frenchBestVpnTitle = "Meilleur VPN en 2026 : comparatif transparent et vérifiable";
 export const frenchBestVpnDescription = "Comparez les VPN selon la confidentialité, le streaming, le prix et les appareils. Vérifiez les conditions actuelles et les limites avant de vous abonner.";
+
+function Link(props: ComponentProps<typeof I18nLink>) {
+  const href = typeof props.href === "string" ? props.href.replace(/^\/fr(?=\/)/, "") : props.href;
+  return <I18nLink {...props} href={href} />;
+}
 
 const brief = {
   primaryKeyword: "meilleur vpn",
@@ -59,7 +65,7 @@ export function FrenchBestVpnPillarPage({ vpns }: { vpns: VpnData[] }) {
 
   return <>
     <ArticleJsonLd title={frenchBestVpnTitle} description={frenchBestVpnDescription} url="https://www.zerotovpn.com/fr/best/best-vpn" datePublished="2026-01-01" dateModified="2026-08-13" />
-    <BreadcrumbSchema items={[{ name: "Meilleurs VPN", href: "/fr/best/best-vpn" }]} />
+    <BreadcrumbSchema items={[{ name: "Meilleurs VPN", href: "/best/best-vpn" }]} />
     <FAQSchema title="FAQ meilleur VPN" faqs={faq} />
     <BestVpnEditorialTemplate navigation={nav} brief={brief}>
       <article>

@@ -55,6 +55,8 @@ auth.json
 
 # Local compliance/dev server logs
 .local-compliance-dev*.log
+.codex-dev-*.log
+.codex-dev-*.err.log
 
 # Large affiliate source archives are local reference material, not deployable app assets
 /assets/affiliate-source/

@@ -55,6 +55,11 @@ const checks = [
     forbiddenPatterns: [/VPN for Russia in 2026: What to Verify Before You Connect/],
   },
   {
+    name: "Russia FAQ reflects current PAA refresh",
+    file: "src/components/editorial/russia-vpn-editorial-page.tsx",
+    patterns: [/August 13, 2026/, /Which VPNs work in Russia in 2026\?/, /Which VPN supports Russia\?/, /Can you use a VPN in Russia\?/, /fetched August 13, 2026/],
+  },
+  {
     name: "China cluster evidence",
     file: "src/components/editorial/china-vpn-editorial-page.tsx",
     patterns: [/Freedom House/, /id=\"faq\"/, /id=\"sources\"/, /IranEditorialQuickPicks/],
@@ -107,6 +112,11 @@ const checks = [
     name: "cluster page briefs stay centralized",
     file: "src/lib/editorial-content-briefs.ts",
     patterns: [/china:/, /freeVpn:/, /travel:/, /restrictedNetworks:/, /obfuscation:/, /protocols:/, /russia:/, /telegram:/, /censorship-restricted-networks/, /protocol-and-technical-literacy/, /travel-and-public-wifi/],
+  },
+  {
+    name: "Russia brief freshness and dossier path",
+    file: "src/lib/editorial-content-briefs.ts",
+    patterns: [/russia:[\s\S]*lastReviewedAt: "2026-08-13"/, /dataforseo-russia-cluster-2026-08-13\.md/],
   },
   {
     name: "shared quick-pick cards expose branded provider marks and plan context",

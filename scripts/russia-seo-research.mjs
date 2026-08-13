@@ -6,6 +6,7 @@ import { dfs, DFS_DEFAULTS } from "./dfs.mjs";
 const ROOT = resolve(import.meta.dirname, "..");
 const CACHE = resolve(ROOT, ".cache", "dataforseo", "russia");
 const OUT = resolve(ROOT, "docs", "research");
+const reportDate = new Date().toISOString().slice(0, 10);
 const context = { ...DFS_DEFAULTS };
 const seeds = ["best vpn for russia", "vpn for russia", "russia vpn", "does vpn work in russia", "is vpn legal in russia", "vpn russia 2026"];
 
@@ -49,8 +50,8 @@ async function main() {
   try { const payload = await cached("dataforseo_labs/google/competitors_domain/live", { ...context, target: "zerotovpn.com", limit: 20 }); competitors = items(payload).map((item) => item.domain ?? item.competitor_domain).filter(Boolean).filter((domain) => domain.replace(/^www\./, "") !== "zerotovpn.com").slice(0, 20); } catch (error) { competitors = [`Unavailable: ${error instanceof Error ? error.message : String(error)}`]; }
   const report = { schemaVersion: 1, cluster: "VPN for Russia / censorship", targetDomain: "zerotovpn.com", ...context, fetchedAt: new Date().toISOString(), refreshed: process.argv.includes("--refresh"), seeds, overview: overviewRows, suggestions: [...new Map(suggestions.map((row) => [row.keyword, row])).values()], serp, competitors, sourcePolicy: "DataForSEO signals prioritise questions and structure; they do not prove current access, legality or provider performance." };
   mkdirSync(OUT, { recursive: true });
-  const jsonPath = resolve(OUT, "dataforseo-russia-cluster-2026-08-11.json");
-  const mdPath = resolve(OUT, "dataforseo-russia-cluster-2026-08-11.md");
+  const jsonPath = resolve(OUT, `dataforseo-russia-cluster-${reportDate}.json`);
+  const mdPath = resolve(OUT, `dataforseo-russia-cluster-${reportDate}.md`);
   writeFileSync(jsonPath, JSON.stringify(report, null, 2));
   const lines = ["# DataForSEO research - Russia VPN cluster", "", `Fetched: ${report.fetchedAt} | location ${report.location_code} | language ${report.language_code}`, "", "## Keyword overview", "", "| Keyword | Current | Latest non-zero | KD | Intent |", "|---|---:|---:|---:|---|", ...overviewRows.map((row) => `| ${row.keyword} | ${row.currentVolume ?? "n/a"} | ${row.latestVolume ?? "n/a"}${row.latestMonth ? ` (${row.latestMonth})` : ""} | ${row.difficulty ?? "n/a"} | ${row.intent ?? "n/a"} |`), "", "## PAA and SERP features", "", ...serp.flatMap((row) => [`### ${row.keyword}`, `- AI Overview: ${row.hasAiOverview ? "yes" : "no"}`, ...(row.paa.length ? row.paa.map((question) => `- PAA: ${question}`) : ["- No PAA returned"]), ""]), "## Suggestion candidates", "", "| Seed | Keyword | Volume |", "|---|---|---:|", ...report.suggestions.slice(0, 60).map((row) => `| ${row.seed} | ${row.keyword} | ${row.volume ?? "n/a"} |`), "", "## Competitors", "", ...competitors.map((domain) => `- ${domain}`), "", "## Editorial interpretation", "", "Use current primary sources for legal and network claims. Treat provider feature pages as feature evidence, not access guarantees."];
   writeFileSync(mdPath, `${lines.join("\n")}\n`);

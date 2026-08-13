@@ -9,7 +9,7 @@ import { RatingStars } from "@/components/vpn/rating-stars";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
-import { getVpnBySlug, type VpnProvider } from "@/lib/vpn-data-layer";
+import { getAllVpns, getVpnBySlug, type VpnProvider } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
 import {
   Laptop,
@@ -23,6 +23,7 @@ import {
   Lock,
   Crown,
 } from "lucide-react";
+import { LaptopVpnEditorialPage, laptopVpnEditorialDescription, laptopVpnEditorialTitle } from "@/components/editorial/laptop-vpn-editorial-page";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -32,6 +33,15 @@ const baseUrl = "https://www.zerotovpn.com";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  if (locale === "en") {
+    return {
+      metadataBase: new URL(baseUrl),
+      title: { absolute: titelMetMerk(laptopVpnEditorialTitle) },
+      description: laptopVpnEditorialDescription,
+      openGraph: { locale: "en_US", title: laptopVpnEditorialTitle, description: laptopVpnEditorialDescription, type: "article", images: [DEFAULT_OG_IMAGE] },
+      alternates: generateAlternates("/best/vpn-laptops", locale),
+    };
+  }
   const shortMonthYear = getShortMonthYear();
 
   const titles: Record<string, string> = {
@@ -112,6 +122,11 @@ function ItemListSchema({ laptopVpns }: { laptopVpns: LaptopVpnItem[] }) {
 export default async function LaptopVpnPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  if (locale === "en") {
+    const allVpns = await getAllVpns();
+    return <LaptopVpnEditorialPage vpns={allVpns} />;
+  }
 
   // Get laptop VPNs data
   const nordvpn = await getVpnBySlug("nordvpn");

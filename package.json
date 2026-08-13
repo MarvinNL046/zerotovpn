@@ -29,6 +29,7 @@
     "seo:windows-vpn": "node scripts/windows-vpn-seo-research.mjs",
     "seo:french-best-vpn": "node scripts/french-best-vpn-seo-research.mjs",
     "seo:spanish-best-vpn": "node scripts/french-best-vpn-seo-research.mjs --locale=es",
+    "seo:laptop-vpn": "node scripts/laptop-vpn-seo-research.mjs",
     "seo:dns-leak": "node scripts/dns-leak-seo-research.mjs",
     "seo:torrenting-reddit": "node scripts/torrenting-reddit-seo-research.mjs",
     "seo:connection-drops": "node scripts/connection-drops-seo-research.mjs",

@@ -1,0 +1,298 @@
+{
+  "schemaVersion": 1,
+  "cluster": "Laptop VPN device and travel use case",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "fetchedAt": "2026-08-13T10:15:57.854Z",
+  "refreshed": false,
+  "seeds": [
+    "best vpn for laptop",
+    "vpn for laptop",
+    "laptop vpn",
+    "vpn for travel laptop",
+    "vpn public wifi laptop",
+    "vpn split tunneling laptop"
+  ],
+  "overview": [
+    {
+      "keyword": "best vpn for laptop",
+      "currentVolume": null,
+      "latestVolume": 320,
+      "latestMonth": "2024-02",
+      "difficulty": 23,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "laptop vpn",
+      "currentVolume": null,
+      "latestVolume": 1000,
+      "latestMonth": "2024-02",
+      "difficulty": 52,
+      "intent": "transactional"
+    },
+    {
+      "keyword": "vpn for laptop",
+      "currentVolume": null,
+      "latestVolume": 1000,
+      "latestMonth": "2024-02",
+      "difficulty": 47,
+      "intent": "informational"
+    }
+  ],
+  "suggestions": [
+    {
+      "seed": "vpn for laptop",
+      "keyword": "best free vpn for laptop in china",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for laptop",
+      "keyword": "best vpn for laptop in china",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for laptop",
+      "keyword": "which vpn best for laptop",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for laptop",
+      "keyword": "best free vpn for windows 8.1 laptop",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for laptop",
+      "keyword": "best vpn for laptop reddit",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for laptop",
+      "keyword": "which vpn is best for laptop free",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for laptop",
+      "keyword": "best vpn for laptop and phone",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for laptop",
+      "keyword": "best vpn for laptop for free",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for laptop",
+      "keyword": "best free vpn for windows laptop",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for laptop",
+      "keyword": "best vpn for laptop 2021",
+      "volume": 0
+    },
+    {
+      "seed": "best vpn for laptop",
+      "keyword": "best free vpn for laptop windows 8",
+      "volume": 0
+    },
+    {
+      "seed": "best vpn for laptop",
+      "keyword": "best free vpn for laptop windows 7",
+      "volume": 0
+    },
+    {
+      "seed": "best vpn for laptop",
+      "keyword": "best vpn for laptop in uae",
+      "volume": 0
+    },
+    {
+      "seed": "best vpn for laptop",
+      "keyword": "best vpn for laptop and iphone",
+      "volume": null
+    },
+    {
+      "seed": "best vpn for laptop",
+      "keyword": "which vpn is best for laptop",
+      "volume": null
+    },
+    {
+      "seed": "laptop vpn",
+      "keyword": "vpn for work laptop",
+      "volume": 140
+    },
+    {
+      "seed": "laptop vpn",
+      "keyword": "free vpn for laptop windows",
+      "volume": 20
+    },
+    {
+      "seed": "laptop vpn",
+      "keyword": "free vpn for windows 8 laptop",
+      "volume": 10
+    },
+    {
+      "seed": "laptop vpn",
+      "keyword": "rapid vpn for laptop",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for laptop",
+      "keyword": "vpn for laptop free download windows 10",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for laptop",
+      "keyword": "free vpn for windows 8.1 laptop",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for laptop",
+      "keyword": "vpn for windows 8 laptop",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for laptop",
+      "keyword": "vpn for free laptop",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for laptop",
+      "keyword": "ultrasurf vpn for laptop",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for laptop",
+      "keyword": "betternet vpn for laptop",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for laptop",
+      "keyword": "download vpn for laptop windows 11",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for laptop",
+      "keyword": "india vpn for laptop free",
+      "volume": 10
+    },
+    {
+      "seed": "laptop vpn",
+      "keyword": "best vpn in laptop",
+      "volume": 390
+    },
+    {
+      "seed": "laptop vpn",
+      "keyword": "how do i add a vpn to my laptop",
+      "volume": 20
+    },
+    {
+      "seed": "laptop vpn",
+      "keyword": "laptop vpn extension",
+      "volume": 10
+    },
+    {
+      "seed": "laptop vpn",
+      "keyword": "google vpn laptop",
+      "volume": 10
+    },
+    {
+      "seed": "laptop vpn",
+      "keyword": "vpn icon not showing on laptop",
+      "volume": 10
+    },
+    {
+      "seed": "laptop vpn",
+      "keyword": "how to add free vpn in laptop",
+      "volume": 10
+    },
+    {
+      "seed": "laptop vpn",
+      "keyword": "how to turn off proxy or vpn on laptop",
+      "volume": 10
+    },
+    {
+      "seed": "laptop vpn",
+      "keyword": "how to get vpn on your laptop",
+      "volume": 10
+    },
+    {
+      "seed": "laptop vpn",
+      "keyword": "how to install thunder vpn in laptop",
+      "volume": 10
+    },
+    {
+      "seed": "laptop vpn",
+      "keyword": "how to make vpn in laptop",
+      "volume": 10
+    },
+    {
+      "seed": "laptop vpn",
+      "keyword": "how download vpn in laptop",
+      "volume": 10
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "best vpn for laptop",
+      "paa": [
+        "Does a laptop have a built-in VPN?",
+        "Should I put a VPN on my laptop?",
+        "Is there any 100% free VPN?",
+        "Which VPN is safe for a laptop?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn for laptop",
+      "paa": [
+        "How can I get a VPN on my laptop?",
+        "Do laptops have built-in VPN?",
+        "Can a VPN be used on a laptop?",
+        "Should I put a VPN on my laptop?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "laptop vpn",
+      "paa": [
+        "Do laptops have built-in VPN?",
+        "Does a VPN work on a laptop?",
+        "Which VPN is best for laptops?",
+        "How can I use VPN on my laptop?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn for travel laptop",
+      "paa": [
+        "What is the best VPN to use for travel?",
+        "Do laptops have built-in VPNs?",
+        "Is it a good idea to use a VPN when traveling?",
+        "Why avoid NordVPN?"
+      ],
+      "hasAiOverview": false
+    },
+    {
+      "keyword": "vpn public wifi laptop",
+      "paa": [
+        "Can I use a VPN on a public WiFi network?",
+        "Can the FBI see through VPNs?",
+        "How do I protect my laptop when using public WiFi?",
+        "Which VPN is best for using public WiFi?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn split tunneling laptop",
+      "paa": [
+        "How to enable VPN split tunneling in Windows 11?",
+        "Why is split tunneling bad?",
+        "Which VPN is best for split tunneling?",
+        "Should I use split tunneling on my VPN?"
+      ],
+      "hasAiOverview": true
+    }
+  ],
+  "sourcePolicy": "DataForSEO signals guide intent coverage only; they do not prove battery use, app size, speed, security or provider performance."
+}

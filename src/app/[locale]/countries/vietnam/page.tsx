@@ -16,7 +16,7 @@ const baseUrl = "https://www.zerotovpn.com";
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const titles: Record<string, string> = {
-    en: "Best VPN for Vietnam 2026: Bypass Censorship | ZeroToVPN",
+    en: "VPN for Vietnam 2026: What to Verify Before You Connect | ZeroToVPN",
     nl: "Beste VPN voor Vietnam 2026: Omzeil Censuur & Bescherm Privacy | ZeroToVPN",
     de: "Beste VPN fur Vietnam 2026: Zensur Umgehen & Privatsphare Schutzen | ZeroToVPN",
     es: "Mejor VPN para Vietnam 2026: Evita la Censura y Protege tu Privacidad | ZeroToVPN",
@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     th: "VPN ที่ดีที่สุดสำหรับเวียดนาม 2026: หลีกเลี่ยงการเซ็นเซอร์และปกป้องความเป็นส่วนตัว | ZeroToVPN",
   };
   const descriptions: Record<string, string> = {
-    en: "Vietnam censors Facebook, targets journalists and monitors traffic. These VPNs still work there to protect your privacy and reach blocked content.",
+    en: "Evidence-led Vietnam VPN guidance covering network conditions, preparation, provider features, legal uncertainty and a repeatable device/ISP test plan.",
     nl: "Vietnam censureert steeds meer Facebook, richt zich op journalisten en monitort internetactiviteit. Vind VPNs die werken in Vietnam.",
     de: "Vietnam zensiert zunehmend Facebook und uberwacht Internetaktivitaten. Finden Sie VPNs, die in Vietnam funktionieren.",
     es: "Vietnam censura cada vez mas Facebook y monitorea la actividad en internet. Encuentra VPN que funcionen en Vietnam.",

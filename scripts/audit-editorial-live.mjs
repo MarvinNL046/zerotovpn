@@ -8,6 +8,7 @@ const timeoutMs = Math.max(1000, Number(process.env.EDITORIAL_AUDIT_TIMEOUT_MS ?
 const targets = [
   { path: "/", name: "Homepage hub", ids: [], links: ["/best/best-vpn", "/blog/best-vpn-for-iran-2026-bypass-internet-censorship", "/guides/vpn-protocols-explained"], expectFaq: true, expectTable: false },
   { path: "/about", name: "About methodology page", ids: [], links: [], expectFaq: false, expectTable: false },
+  { path: "/compare", name: "VPN comparison", ids: ["shortlist", "comparison", "method", "faq", "sources"], links: ["/best/best-vpn", "/best/vpn-cheap", "/best/vpn-privacy", "/methodology", "/affiliate-disclosure"], expectFaq: true, expectTable: true, brief: { primaryKeyword: "vpn comparison", intent: "commercial", cluster: "provider-reviews-and-comparisons", lastReviewedAt: "2026-08-13", affiliateContext: "vpn-selection", schemaType: "CollectionPage" } },
   { path: "/best/vpn-linux", name: "Linux use-case page", ids: [], links: [], expectFaq: false, expectTable: false },
   { path: "/best/vpn-windows", name: "Windows use-case page", ids: [], links: [], expectFaq: false, expectTable: false },
   { path: "/best/vpn-laptops", name: "Laptop use-case page", ids: [], links: [], expectFaq: false, expectTable: false },

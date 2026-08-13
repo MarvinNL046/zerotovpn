@@ -362,6 +362,17 @@ const checks = [
     patterns: [/NordVpnReviewEditorialPage/, /_locale === "en" && vpn\.slug === "nordvpn"/, /nordvpnReviewTitle/, /nordvpnReviewDescription/],
   },
   {
+    name: "VPN comparison uses bounded criteria and tracked prices",
+    file: "src/components/editorial/vpn-comparison-editorial-page.tsx",
+    patterns: [/VpnComparisonEditorialPage/, /VPN provider comparison by price, terms and device criteria/, /id="shortlist"/, /id="comparison"/, /id="method"/, /id="faq"/, /DataForSEO/, /AffiliateTextLink/],
+    forbiddenPatterns: [/fastest.*universal/i, /35,000\+/i, /96%.*speed/i, /99%.*security/i],
+  },
+  {
+    name: "VPN comparison route uses the audited English component and metadata",
+    file: "src/app/[locale]/compare/page.tsx",
+    patterns: [/VpnComparisonEditorialPage/, /locale === "en"/, /vpnComparisonEditorialTitle/, /vpnComparisonEditorialDescription/],
+  },
+  {
     name: "macOS use-case metadata avoids unsupported test counts",
     file: "src/app/[locale]/best/vpn-macos/page.tsx",
     patterns: [/Compare current macOS VPN picks/, /Native Apps, M1\/M2/],

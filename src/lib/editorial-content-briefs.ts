@@ -155,4 +155,13 @@ export const editorialContentBriefs = {
     affiliateContext: "vpn-selection",
     schemaType: "Article",
   },
+  vpnComparison: {
+    primaryKeyword: "vpn comparison",
+    intent: "commercial",
+    cluster: "provider-reviews-and-comparisons",
+    lastReviewedAt: "2026-08-13",
+    evidence: ["docs/research/dataforseo-vpn-comparison-cluster-2026-08-13.md", "/methodology", "/best/best-vpn"],
+    affiliateContext: "vpn-selection",
+    schemaType: "CollectionPage",
+  },
 } satisfies Record<string, EditorialContentBrief>;

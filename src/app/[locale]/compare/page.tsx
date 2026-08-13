@@ -15,6 +15,7 @@ import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { FAQAccordion } from "@/components/seo/faq-schema";
 import type { VpnData } from "@/lib/db/vpn-service";
 import { getVpnAffiliateUrl } from "@/lib/vpn-links";
+import { VpnComparisonEditorialPage, vpnComparisonEditorialDescription, vpnComparisonEditorialTitle } from "@/components/editorial/vpn-comparison-editorial-page";
 import {
   Check,
   X,
@@ -55,10 +56,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     metadataBase: new URL(baseUrl),
     title: isEnglish
-      ? "VPN Comparison 2026: Compare the Best VPN Services Side by Side"
+      ? vpnComparisonEditorialTitle
       : "Compare VPNs Side by Side",
     description: isEnglish
-      ? "Compare VPNs on speed, security, price and features. NordVPN, ExpressVPN, Surfshark and more, side by side, so you can pick the right one."
+      ? vpnComparisonEditorialDescription
       : "Compare the best VPN services side by side. See detailed comparisons of speed, security, pricing, features, and more to find the perfect VPN for your needs.",
     keywords: isEnglish
       ? [
@@ -110,6 +111,8 @@ export default async function ComparePage({ params }: Props) {
 
   const t = await getTranslations("comparePage");
   const vpns = await getAllVpns();
+
+  if (locale === "en") return <VpnComparisonEditorialPage vpns={vpns} />;
 
   return (
     <>

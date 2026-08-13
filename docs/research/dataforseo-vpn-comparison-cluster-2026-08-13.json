@@ -1,0 +1,324 @@
+{
+  "schemaVersion": 1,
+  "cluster": "VPN comparison / price / provider selection",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "fetchedAt": "2026-08-13T06:14:19.443Z",
+  "refreshed": false,
+  "seeds": [
+    "vpn comparison",
+    "compare vpn services",
+    "best vpn comparison",
+    "vpn comparison 2026",
+    "nordvpn vs expressvpn",
+    "vpn price comparison"
+  ],
+  "overview": [
+    {
+      "keyword": "best vpn comparison",
+      "currentVolume": null,
+      "latestVolume": 40,
+      "latestMonth": "2024-02",
+      "difficulty": 52,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "compare vpn services",
+      "currentVolume": null,
+      "latestVolume": 390,
+      "latestMonth": "2024-02",
+      "difficulty": 77,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "nordvpn vs expressvpn",
+      "currentVolume": 1000,
+      "latestVolume": 1000,
+      "latestMonth": "2026-06",
+      "difficulty": 11,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "vpn comparison",
+      "currentVolume": null,
+      "latestVolume": 1000,
+      "latestMonth": "2024-02",
+      "difficulty": 77,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "vpn price comparison",
+      "currentVolume": null,
+      "latestVolume": 590,
+      "latestMonth": "2024-02",
+      "difficulty": 44,
+      "intent": "commercial"
+    }
+  ],
+  "suggestions": [
+    {
+      "seed": "vpn comparison",
+      "keyword": "comparison of vpn providers",
+      "volume": 260
+    },
+    {
+      "seed": "vpn comparison",
+      "keyword": "vpn service providers comparison",
+      "volume": 260
+    },
+    {
+      "seed": "vpn comparison",
+      "keyword": "vpn tunneling protocols comparison",
+      "volume": 10
+    },
+    {
+      "seed": "vpn comparison",
+      "keyword": "proton vpn comparison",
+      "volume": 10
+    },
+    {
+      "seed": "vpn comparison",
+      "keyword": "vpn comparison 2024",
+      "volume": 10
+    },
+    {
+      "seed": "vpn comparison",
+      "keyword": "vpn comparison sheet",
+      "volume": 10
+    },
+    {
+      "seed": "vpn comparison",
+      "keyword": "wikipedia vpn comparison",
+      "volume": 10
+    },
+    {
+      "seed": "vpn comparison",
+      "keyword": "eff vpn comparison",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn comparison",
+      "keyword": "best vpn service comparison",
+      "volume": 10
+    },
+    {
+      "seed": "vpn comparison",
+      "keyword": "https thatoneprivacysite net simple vpn comparison chart",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn comparison",
+      "keyword": "best vpn comparison 2024",
+      "volume": 10
+    },
+    {
+      "seed": "vpn comparison",
+      "keyword": "vpn comparison 2018",
+      "volume": 10
+    },
+    {
+      "seed": "vpn comparison",
+      "keyword": "vpn review comparison",
+      "volume": 10
+    },
+    {
+      "seed": "vpn comparison",
+      "keyword": "vpn protocol comparison chart",
+      "volume": 10
+    },
+    {
+      "seed": "vpn price comparison",
+      "keyword": "vpn price comparison reddit",
+      "volume": 10
+    },
+    {
+      "seed": "compare vpn services",
+      "keyword": "compare free vpn services",
+      "volume": 10
+    },
+    {
+      "seed": "compare vpn services",
+      "keyword": "compare vpn services 2023",
+      "volume": 0
+    },
+    {
+      "seed": "compare vpn services",
+      "keyword": "compare vpn services 2024",
+      "volume": 0
+    },
+    {
+      "seed": "compare vpn services",
+      "keyword": "compare best vpn services",
+      "volume": null
+    },
+    {
+      "seed": "best vpn comparison",
+      "keyword": "best vpn 2022 comparison",
+      "volume": 0
+    },
+    {
+      "seed": "best vpn comparison",
+      "keyword": "the best vpn comparison",
+      "volume": null
+    },
+    {
+      "seed": "vpn price comparison",
+      "keyword": "best vpn price comparison",
+      "volume": null
+    },
+    {
+      "seed": "best vpn comparison",
+      "keyword": "best vpn comparison",
+      "volume": null
+    },
+    {
+      "seed": "nordvpn vs expressvpn",
+      "keyword": "expressvpn vs nordvpn",
+      "volume": 1300
+    },
+    {
+      "seed": "nordvpn vs expressvpn",
+      "keyword": "nordvpn vs expressvpn",
+      "volume": 1000
+    },
+    {
+      "seed": "nordvpn vs expressvpn",
+      "keyword": "nordvpn vs expressvpn: reddit",
+      "volume": 90
+    },
+    {
+      "seed": "nordvpn vs expressvpn",
+      "keyword": "expressvpn vs nordvpn reddit",
+      "volume": 90
+    },
+    {
+      "seed": "nordvpn vs expressvpn",
+      "keyword": "nordvpn vs expressvpn reddit",
+      "volume": 90
+    },
+    {
+      "seed": "nordvpn vs expressvpn",
+      "keyword": "surfshark vs nordvpn vs expressvpn",
+      "volume": 70
+    },
+    {
+      "seed": "nordvpn vs expressvpn",
+      "keyword": "nordvpn vs surfshark vs expressvpn",
+      "volume": 50
+    },
+    {
+      "seed": "nordvpn vs expressvpn",
+      "keyword": "nordvpn vs expressvpn vs surfshark",
+      "volume": 40
+    },
+    {
+      "seed": "nordvpn vs expressvpn",
+      "keyword": "expressvpn vs nordvpn vs surfshark",
+      "volume": 40
+    },
+    {
+      "seed": "nordvpn vs expressvpn",
+      "keyword": "expressvpn vs nordvpn speed",
+      "volume": 30
+    },
+    {
+      "seed": "nordvpn vs expressvpn",
+      "keyword": "nordvpn vs expressvpn speed",
+      "volume": 30
+    },
+    {
+      "seed": "nordvpn vs expressvpn",
+      "keyword": "surfshark vs expressvpn vs nordvpn",
+      "volume": 30
+    },
+    {
+      "seed": "nordvpn vs expressvpn",
+      "keyword": "expressvpn vs nordvpn price",
+      "volume": 20
+    },
+    {
+      "seed": "nordvpn vs expressvpn",
+      "keyword": "nordvpn vs expressvpn price",
+      "volume": 20
+    },
+    {
+      "seed": "nordvpn vs expressvpn",
+      "keyword": "expressvpn vs surfshark vs nordvpn",
+      "volume": 20
+    },
+    {
+      "seed": "vpn price comparison",
+      "keyword": "vpn price comparison 2023",
+      "volume": 0
+    },
+    {
+      "seed": "vpn price comparison",
+      "keyword": "vpn price comparison india",
+      "volume": null
+    },
+    {
+      "seed": "vpn price comparison",
+      "keyword": "vpn price comparison 2021",
+      "volume": null
+    },
+    {
+      "seed": "vpn price comparison",
+      "keyword": "vpn price comparison australia",
+      "volume": null
+    },
+    {
+      "seed": "vpn price comparison",
+      "keyword": "vpn price comparison 2022",
+      "volume": null
+    },
+    {
+      "seed": "vpn price comparison",
+      "keyword": "vpn price comparison uk",
+      "volume": null
+    },
+    {
+      "seed": "vpn price comparison",
+      "keyword": "vpn comparison price",
+      "volume": null
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "vpn comparison",
+      "paa": [
+        "Which VPN is actually the best?",
+        "Why avoid NordVPN?",
+        "Can the FBI track a VPN?",
+        "Which VPN is the best?"
+      ],
+      "hasAiOverview": false
+    },
+    {
+      "keyword": "compare vpn services",
+      "paa": [],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "best vpn comparison",
+      "paa": [
+        "What are the top 3 best VPNs?",
+        "Why avoid NordVPN?",
+        "Can the FBI track a VPN?",
+        "Will Netflix ban me if I use a VPN?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn comparison 2026",
+      "paa": [
+        "What is the best VPN to use in 2026?",
+        "Is it worth having a VPN in 2026?",
+        "Will Netflix ban me if I use a VPN?",
+        "What are the top 3 best VPNs?"
+      ],
+      "hasAiOverview": true
+    }
+  ],
+  "sourcePolicy": "DataForSEO signals prioritise comparison intent and question coverage; they do not prove provider performance, pricing, rankings or conversion value. Provider facts must be tied to dated catalog or first-party evidence."
+}

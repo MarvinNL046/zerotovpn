@@ -1,11 +1,11 @@
 # Live editorial page audit
 
-Generated: 2026-08-13T03:18:50.284Z
+Generated: 2026-08-13T03:32:13.095Z
 
-- Target pages: **32**
-- Passing pages: **32**
+- Target pages: **33**
+- Passing pages: **33**
 - Pages needing review: **0**
-- Affiliate links checked: **147**
+- Affiliate links checked: **151**
 - Affiliate links missing sponsored/nofollow: **0**
 - Affiliate links missing Short.io slug telemetry: **0**
 - Missing required cluster links: **0**
@@ -51,5 +51,6 @@ Generated: 2026-08-13T03:18:50.284Z
 | pass | /blog/is-brave-vpn-free-2026 | Is Brave VPN Free? What the Browser Includes and What Costs Extra (2026) | 1 | 53 | 0 | — | — |
 | pass | /blog/vpn-account-sharing-safe-guide-2026 | Can You Share a VPN Account? Simultaneous Devices, Family Use and Provider Terms (2026) | 1 | 50 | 0 | — | — |
 | pass | /blog/vpn-simultaneous-connections-limits-workarounds-2026 | How Many Devices Can Use a VPN? Simultaneous Connections and Device Limits (2026) | 1 | 51 | 4 | — | — |
+| pass | /blog/vpn-fitness-tracking-apps-strava-apple-health-garmin-privacy | Fitness App Privacy: What a VPN Can—and Cannot—Hide From Strava, Apple Health and Garmin (2026) | 1 | 50 | 4 | — | — |
 
 Raw records: [editorial-live-audit-2026-08-13.json](./editorial-live-audit-2026-08-13.json)

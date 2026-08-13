@@ -138,7 +138,7 @@ const checks = [
   {
     name: "localized Iran blog routes use the evidence-led body",
     file: "src/app/[locale]/blog/[slug]/page.tsx",
-    patterns: [/iranVpnEditorialContent/, /const articleContent = isIranEditorial/, /iranContentBrief/, /best vpn for iran/, /censorship-restricted-networks/, /brief=\{isIranEditorial \? iranContentBrief : isTelegramEditorial \? editorialContentBriefs\.telegram : isConnectionDropsEditorial \? connectionDropsContentBrief : isServerLocationEditorial \? serverLocationContentBrief : isIspPrivacyEditorial \? ispPrivacyContentBrief : isBraveVpnEditorial \? braveVpnContentBrief : undefined\}/],
+    patterns: [/iranVpnEditorialContent/, /const articleContent = isIranEditorial/, /iranContentBrief/, /best vpn for iran/, /censorship-restricted-networks/, /brief=\{isIranEditorial \? iranContentBrief : isTelegramEditorial \? editorialContentBriefs\.telegram : isConnectionDropsEditorial \? connectionDropsContentBrief : isServerLocationEditorial \? serverLocationContentBrief : isIspPrivacyEditorial \? ispPrivacyContentBrief : isBraveVpnEditorial \? braveVpnContentBrief : isVpnAccountSharingEditorial \? vpnAccountSharingContentBrief : undefined\}/],
     forbiddenPatterns: [/articleContent = isRestrictedAffiliateContext\s*\?\s*verwijderAffiliateLinks\(post\.content\)/i],
   },
   {
@@ -225,6 +225,17 @@ const checks = [
     name: "Brave VPN blog route uses the audited editorial override",
     file: "src/app/[locale]/blog/[slug]/page.tsx",
     patterns: [/braveVpnEditorialTitle/, /braveVpnContentBrief/, /braveVpnEditorialFaq/, /braveVpnClusterLinks/, /isBraveVpnEditorial/],
+  },
+  {
+    name: "VPN account-sharing guide uses PAA-led bounded terms copy",
+    file: "src/data/editorial/vpn-account-sharing-2026.ts",
+    patterns: [/Can you share a VPN account with someone\?/, /How many people can use one VPN account\?/, /Can my wife and I use the same VPN\?/, /Can the VPN account owner see my activity\?/, /How to interpret VPN account-sharing questions/, /2026/],
+    forbiddenPatterns: [/42%|2-6|tested multiple VPN services|Digital Privacy Institute/i, /guarantee.*sharing permitted/i],
+  },
+  {
+    name: "VPN account-sharing blog route uses the audited editorial override",
+    file: "src/app/[locale]/blog/[slug]/page.tsx",
+    patterns: [/vpnAccountSharingEditorialTitle/, /vpnAccountSharingContentBrief/, /vpnAccountSharingEditorialFaq/, /vpnAccountSharingClusterLinks/, /isVpnAccountSharingEditorial/],
   },
   {
     name: "Chromebook use-case page avoids unsupported test counts",

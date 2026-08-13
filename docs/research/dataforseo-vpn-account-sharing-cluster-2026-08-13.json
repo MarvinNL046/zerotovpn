@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "cluster": "VPN account sharing / simultaneous connections / provider terms",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "fetchedAt": "2026-08-13T02:50:08.068Z",
+  "refreshed": false,
+  "seeds": [
+    "can you share a vpn account",
+    "vpn account sharing rules",
+    "is it legal to share a vpn subscription",
+    "how many devices can use a vpn",
+    "can i share my vpn with family",
+    "vpn simultaneous connections"
+  ],
+  "overview": [
+    {
+      "keyword": "can i share my vpn with family",
+      "currentVolume": null,
+      "latestVolume": 20,
+      "latestMonth": "2024-02",
+      "difficulty": 19,
+      "intent": "informational"
+    },
+    {
+      "keyword": "can you share a vpn account",
+      "currentVolume": null,
+      "latestVolume": null,
+      "latestMonth": null,
+      "difficulty": 19,
+      "intent": "informational"
+    },
+    {
+      "keyword": "vpn simultaneous connections",
+      "currentVolume": null,
+      "latestVolume": 20,
+      "latestMonth": "2024-02",
+      "difficulty": 50,
+      "intent": "informational"
+    }
+  ],
+  "suggestions": [
+    {
+      "seed": "how many devices can use a vpn",
+      "keyword": "how many devices can i use a vpn on",
+      "volume": null
+    },
+    {
+      "seed": "how many devices can use a vpn",
+      "keyword": "how many devices can you use on a vpn",
+      "volume": null
+    },
+    {
+      "seed": "can i share my vpn with family",
+      "keyword": "can i share my vpn with family",
+      "volume": null
+    },
+    {
+      "seed": "vpn simultaneous connections",
+      "keyword": "vpn with unlimited simultaneous connections",
+      "volume": 10
+    },
+    {
+      "seed": "vpn simultaneous connections",
+      "keyword": "simultaneous connections vpn",
+      "volume": 10
+    },
+    {
+      "seed": "vpn simultaneous connections",
+      "keyword": "express vpn simultaneous connections",
+      "volume": null
+    },
+    {
+      "seed": "vpn simultaneous connections",
+      "keyword": "simultaneous vpn connections",
+      "volume": null
+    },
+    {
+      "seed": "vpn simultaneous connections",
+      "keyword": "vpn unlimited simultaneous connections",
+      "volume": null
+    },
+    {
+      "seed": "vpn simultaneous connections",
+      "keyword": "cisco anyconnect simultaneous vpn connections",
+      "volume": null
+    },
+    {
+      "seed": "vpn simultaneous connections",
+      "keyword": "vpn simultaneous connections",
+      "volume": null
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "can you share a vpn account",
+      "paa": [
+        "Can my wife and I use the same VPN?",
+        "How do I share my VPN with someone?",
+        "Can the FBI see through VPNs?",
+        "Can two people share a NordVPN account?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn account sharing rules",
+      "paa": [
+        "Can you share a VPN account with someone?",
+        "Can my wife and I use the same VPN?",
+        "How many people can use one VPN account?",
+        "Can the VPN account owner see my activity?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "is it legal to share a vpn subscription",
+      "paa": [
+        "Can I share my VPN subscription with others?",
+        "Can the FBI track a VPN?",
+        "Can a VPN account be shared?",
+        "Are VPNs becoming illegal in the US?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "how many devices can use a vpn",
+      "paa": [
+        "Can I use VPN on two devices?",
+        "Is using VPN illegal in the US?",
+        "Can the FBI track a VPN?",
+        "Can I share my VPN with another household?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "can i share my vpn with family",
+      "paa": [
+        "Can I share my VPN with another household?",
+        "Can the FBI see through VPNs?",
+        "Can two people use the same VPN?",
+        "How to give VPN access to user?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn simultaneous connections",
+      "paa": [
+        "Can I use two VPN connections simultaneously?",
+        "Why avoid NordVPN?",
+        "Can the FBI see through VPNs?",
+        "Can two people use the same VPN?"
+      ],
+      "hasAiOverview": true
+    }
+  ],
+  "sourcePolicy": "DataForSEO signals prioritise intent coverage and FAQ structure; they do not prove that sharing is permitted by any specific provider, or establish legal advice."
+}

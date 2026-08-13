@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-08-12",
+  "capturedAt": "2026-08-13",
   "window": {
     "start": "2026-07-28",
     "end": "2026-08-10",
@@ -22,20 +22,16 @@
       "residual": "Wildcard/deleted paths remain separate and are not attributed to current page slugs."
     },
     "nordPartner": {
-      "status": "missing",
-      "export": null,
-      "evidence": "docs/metrics/nord-partner-interim-screenshot-2026-08-12.md",
-      "note": "The available screenshot covers 2026-08-06 through 2026-08-12 and cannot be joined to this window."
+      "status": "ready-aggregate",
+      "export": ".cache/metrics/nord-partner-2026-08-13/partner.csv",
+      "evidence": "docs/metrics/nord-partner-export-2026-08-13.md",
+      "note": "The dated export matches the window, but its offer rows do not expose the shared Short.io slug or page-level sub-ID; totals are diagnostic, not page attribution."
     }
   },
   "gate": {
-    "matched": false,
-    "ready": false,
-    "blockedMetrics": [
-      "affiliate.partner.conversions",
-      "affiliate.partner.revenue",
-      "affiliate.partner.epc"
-    ],
-    "nextRequiredInput": "A downloadable Nord partner export for 2026-07-28 through 2026-08-10 with timezone, clicks, conversions, payout/revenue and EPC."
+    "matched": true,
+    "ready": true,
+    "blockedMetrics": [],
+    "nextRequiredInput": "A Nord partner export with the shared Short.io slug or page-level sub-ID so conversions can be attributed to pages and clusters."
   }
 }

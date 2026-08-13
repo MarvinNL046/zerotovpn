@@ -1,6 +1,14 @@
 # Nord partner export handoff
 
-This is the final input needed to close the current 14-day measurement gate.
+Status: the dated export was captured and the windowed measurement gate now passes. The remaining limitation is page-level attribution: the Nord report exposes offer/offer-URL labels, but no shared Short.io slug or page sub-ID.
+
+## Captured export
+
+- Dashboard period: **28 July 2026 – 10 August 2026**
+- Captured file (ignored raw input): `.cache/metrics/nord-partner-2026-08-13/partner.csv`
+- Sanitized evidence: [nord-partner-export-2026-08-13.md](nord-partner-export-2026-08-13.md)
+- Result: **2 clicks, 0 conversions, $0 payout, $0 EPC**
+- Current next input: a shared Short.io slug, publisher sub-ID, or equivalent page-level field in the Nord export.
 
 ## Required window
 
@@ -54,4 +62,3 @@ npm run measure:editorial -- `
 ```
 
 Review `dataQuality.partnerWindow`, `affiliate.partner.totals` and `affiliate.partner.bySlug` before selecting the next 4–8 pages. Do not commit the raw partner export or any credentials; commit only the sanitized report and a provenance note.
-

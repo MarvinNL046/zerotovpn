@@ -18,7 +18,7 @@ function isoDate(value) {
 
 function validatePartnerWindow(rows, start, end) {
   if (!rows.length) return { status: "missing-data", rowCount: 0 };
-  const dates = rows.map((row) => isoDate(pick(row, ["date", "datum", "created_at"])));
+  const dates = rows.map((row) => isoDate(pick(row, ["date", "datum", "created_at", "stat_date"])));
   if (dates.some((date) => !date)) return { status: "invalid-date", rowCount: rows.length };
   const minDate = dates.slice().sort()[0];
   const maxDate = dates.slice().sort().at(-1);
@@ -121,7 +121,8 @@ function slugFromLink(value) {
     return pathname.split("/").filter(Boolean).pop() || "root";
   } catch {
     const cleaned = String(value).split(/[?#]/, 1)[0].replace(/\/+$/, "");
-    return cleaned.split("/").filter(Boolean).pop() || "unknown";
+    const last = cleaned.split("/").filter(Boolean).pop() || "unknown";
+    return last.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "unknown";
   }
 }
 
@@ -253,13 +254,16 @@ function summarizeShortIo(rows) {
 
 function summarizePartner(rows) {
   const normalized = rows.map((row) => ({
-    date: pick(row, ["date", "datum", "created_at"]),
-    link: pick(row, ["link", "short_url", "short_link", "url", "offer"]),
-    clicks: number(pick(row, ["clicks", "kliks", "total_clicks"])),
-    conversions: number(pick(row, ["conversions", "conversion", "sales", "orders", "transactions"])),
-    revenue: number(pick(row, ["revenue", "commission", "earnings", "payout", "total_revenue"])),
-    epc: number(pick(row, ["epc", "earnings_per_click", "revenue_per_click"])),
-    slug: slugFromLink(pick(row, ["link", "short_url", "short_link", "url", "offer"])),
+    // Nord's downloadable Performance Report prefixes fields with their
+    // entity name (for example `Stat.date` -> `stat_date`). Keep those
+    // aliases here so the dated report can be joined without manual edits.
+    date: pick(row, ["date", "datum", "created_at", "stat_date"]),
+    link: pick(row, ["link", "short_url", "short_link", "url", "offer", "offerurl_name", "offer_name"]),
+    clicks: number(pick(row, ["clicks", "kliks", "total_clicks", "stat_clicks"])),
+    conversions: number(pick(row, ["conversions", "conversion", "sales", "orders", "transactions", "stat_conversions"])),
+    revenue: number(pick(row, ["revenue", "commission", "earnings", "payout", "total_revenue", "stat_payout"])),
+    epc: number(pick(row, ["epc", "earnings_per_click", "revenue_per_click", "stat_epc", "stat_erpc"])),
+    slug: slugFromLink(pick(row, ["link", "short_url", "short_link", "url", "offer", "offerurl_name", "offer_name"])),
   })).filter((row) => row.conversions !== null || row.revenue !== null || row.epc !== null);
   const clicks = normalized.reduce((sum, row) => sum + (row.clicks ?? 0), 0);
   const conversions = normalized.reduce((sum, row) => sum + (row.conversions ?? 0), 0);
@@ -279,6 +283,13 @@ function summarizePartner(rows) {
     },
     bySlug: summarizePartnerSlugs(normalized),
   };
+}
+
+function filterPartnerRows(rows) {
+  // Some Nord exports append an unlabeled grand-total row with no date or
+  // offer. It is already represented by the dated offer rows and cannot be
+  // joined to a measurement window, so ignore only that aggregate row.
+  return rows.filter((row) => pick(row, ["date", "datum", "created_at", "stat_date", "link", "short_url", "short_link", "url", "offer", "offerurl_name", "offer_name"]));
 }
 
 function delta(current, baseline) {
@@ -326,7 +337,7 @@ if (process.argv.includes("--help") || !label || !out) {
     const gscQueriesRows = readRows(gscQueriesPath);
     const shortIoRows = readRows(shortIoPath);
     const gscChartRows = readRows(gscChartPath);
-    const partnerRows = readRows(partnerPath);
+    const partnerRows = filterPartnerRows(readRows(partnerPath));
     const gscPages = summarizeSearchConsole(gscPagesRows, "pages");
     const gscQueries = summarizeSearchConsole(gscQueriesRows, "queries");
     const shortIo = summarizeShortIo(shortIoRows);

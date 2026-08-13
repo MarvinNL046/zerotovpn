@@ -60,6 +60,19 @@ try {
   assert(Math.abs(english.affiliate.partner.totals.epc - 155 / 150) < 1e-12, "Partner EPC should be revenue per click");
   assert(english.affiliate.partner.bySlug[0].slug === "nordvpn" && english.affiliate.partner.bySlug[0].conversions === 5, "Partner conversions should be grouped by slug");
 
+  const nordPartner = write(
+    "nord-partner.csv",
+    "Offer.name,OfferUrl.name,Stat.impressions,Stat.conversions,Stat.clicks,Stat.payout,Stat.date,Stat.ctr,Stat.ltr,Stat.erpc\nNordVPN,Cyber 3y deal,0,0,1,0,2026-08-10,0.00000,0.00000,0.00000\nNordVPN Arabia,,0,0,1,0,2026-08-10,0.00000,0.00000,0.00000\n,,0,0,2,0,,,0.00000\n",
+  );
+  const nordOut = join(temp, "nord.json");
+  run(["--label", "test-nord-export", "--window-start", "2026-07-28", "--window-end", "2026-08-10", "--gsc-pages", pages, "--gsc-queries", queries, "--gsc-chart", chart, "--shortio", shortIo, "--partner", nordPartner, "--out", nordOut]);
+  const nord = JSON.parse(readFileSync(nordOut, "utf8"));
+  assert(nord.dataQuality.partnerWindow.status === "matched", "Nord-prefixed date headers should match the measurement window");
+  assert(nord.affiliate.partner.totals.clicks === 2 && nord.affiliate.partner.totals.conversions === 0, "Nord-prefixed performance fields should normalize clicks and conversions");
+  assert(nord.affiliate.partner.totals.epc === 0, "Nord ERPC should normalize to EPC");
+  assert(nord.affiliate.partner.bySlug.length === 2, "Unlabeled Nord aggregate rows should not be double-counted");
+  assert(nord.affiliate.partner.bySlug.some((row) => row.slug === "cyber-3y-deal"), "Nord offer URL names should remain inspectable partner slugs");
+
   const localizedPages = write(
     "localized-pages.csv",
     "Pagina;Klikken;Vertoningen;Gemiddelde CTR;Gemiddelde positie\nhttps://www.zerotovpn.com/;30;1.409;2,13%;15,0\nhttps://www.zerotovpn.com/blog/best-vpn-for-iran-2026-bypass-internet-censorship;24;12.034;0,20%;9,0\n",
@@ -91,7 +104,7 @@ try {
   const outsideWindow = spawnSync(process.execPath, [importer, "--label", "outside-partner", "--window-start", "2026-07-28", "--window-end", "2026-08-10", "--gsc-pages", pages, "--gsc-queries", queries, "--gsc-chart", chart, "--shortio", shortIo, "--partner", outsidePartner, "--out", join(temp, "outside-partner.json")], { encoding: "utf8" });
   assert(outsideWindow.status !== 0 && outsideWindow.stderr.includes("does not match"), "Partner rows outside the measurement window should fail closed");
 
-  console.log(JSON.stringify({ passed: true, cases: ["english-window", "localized", "empty-partner", "missing-required-input", "reversed-window", "partner-window-mismatch"] }, null, 2));
+  console.log(JSON.stringify({ passed: true, cases: ["english-window", "nord-prefixed-partner", "localized", "empty-partner", "missing-required-input", "reversed-window", "partner-window-mismatch"] }, null, 2));
 } finally {
   rmSync(temp, { recursive: true, force: true });
 }

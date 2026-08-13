@@ -14,7 +14,10 @@ export interface EditorialNavItem {
 
 interface BestVpnEditorialTemplateProps {
   navigation: readonly EditorialNavItem[];
+  navigationAriaLabel?: string;
   disclosureHref?: string;
+  disclosureText?: string;
+  disclosureLabel?: string;
   brief?: EditorialContentBrief;
   children: ReactNode;
 }
@@ -28,7 +31,10 @@ interface BestVpnEditorialTemplateProps {
  */
 export function BestVpnEditorialTemplate({
   navigation,
+  navigationAriaLabel = "On this page",
   disclosureHref = "/affiliate-disclosure",
+  disclosureText = "Independent editorial ratings · affiliate links may earn us a commission",
+  disclosureLabel = "disclosure",
   brief,
   children,
 }: BestVpnEditorialTemplateProps) {
@@ -46,7 +52,7 @@ export function BestVpnEditorialTemplate({
         data-evidence-count={brief ? String(brief.evidence.length) : undefined}
       >
         <div className="container flex items-center gap-4 overflow-x-auto py-3">
-          <nav aria-label="On this page" className="flex min-w-max items-center gap-4 text-sm">
+          <nav aria-label={navigationAriaLabel} className="flex min-w-max items-center gap-4 text-sm">
             {navigation.map((item, index) => (
               <a
                 key={item.href}
@@ -58,9 +64,9 @@ export function BestVpnEditorialTemplate({
             ))}
           </nav>
           <span className="ml-auto hidden whitespace-nowrap text-xs text-muted-foreground lg:block">
-            Independent editorial ratings · affiliate links may earn us a commission ·{" "}
+            {disclosureText} ·{" "}
             <Link href={disclosureHref} className="underline underline-offset-2 hover:text-primary">
-              disclosure
+              {disclosureLabel}
             </Link>
           </span>
         </div>

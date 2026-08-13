@@ -21,6 +21,10 @@ type MacosCopy = {
   breadcrumbRoot: string;
   breadcrumbCurrent: string;
   badge: string;
+  navigationAriaLabel: string;
+  disclosureText: string;
+  disclosureLabel: string;
+  evidenceBoundaryLabel: string;
   evidenceBoundary: string;
   reviewed: string;
   nav: Array<{ href: string; label: string }>;
@@ -61,6 +65,10 @@ const baseCopy: MacosCopy = {
   breadcrumbRoot: "Best VPNs",
   breadcrumbCurrent: "macOS VPNs",
   badge: "macOS privacy and Mac decision guide",
+  navigationAriaLabel: "On this page",
+  disclosureText: "Independent editorial ratings · affiliate links may earn us a commission",
+  disclosureLabel: "disclosure",
+  evidenceBoundaryLabel: "Evidence boundary",
   evidenceBoundary: "Apple Silicon support, battery use, speed and privacy outcomes vary by Mac model, macOS version, protocol, network and permissions. Verify the route you need before subscribing.",
   reviewed: "Reviewed 13 August 2026. DataForSEO guided Mac, macOS and Apple Silicon questions; it does not prove provider performance.",
   nav: [{ href: "#quick-picks", label: "Options" }, { href: "#comparison", label: "Compare" }, { href: "#setup", label: "Setup" }, { href: "#faq", label: "FAQ" }, { href: "#sources", label: "Sources" }],
@@ -94,6 +102,10 @@ const localizedCopy: Record<string, Partial<MacosCopy>> = {
     breadcrumbRoot: "Beste VPN's",
     breadcrumbCurrent: "macOS VPN's",
     badge: "macOS privacy- en beslisgids",
+    navigationAriaLabel: "Op deze pagina",
+    disclosureText: "Onafhankelijke redactionele beoordelingen · affiliate-links kunnen een commissie opleveren",
+    disclosureLabel: "disclosure",
+    evidenceBoundaryLabel: "Bewijsgrens",
     evidenceBoundary: "Ondersteuning voor Apple Silicon, batterijgebruik, snelheid en privacy-uitkomsten verschillen per Mac-model, macOS-versie, protocol, netwerk en toestemming. Controleer jouw route voordat je abonneert.",
     reviewed: "Beoordeeld op 13 augustus 2026. DataForSEO hielp bij de vragen over Mac, macOS en Apple Silicon; het bewijst geen providerprestaties.",
     nav: [{ href: "#quick-picks", label: "Opties" }, { href: "#comparison", label: "Vergelijken" }, { href: "#setup", label: "Instellen" }, { href: "#faq", label: "FAQ" }, { href: "#sources", label: "Bronnen" }],
@@ -125,6 +137,10 @@ const localizedCopy: Record<string, Partial<MacosCopy>> = {
     breadcrumbRoot: "Beste VPNs",
     breadcrumbCurrent: "macOS-VPNs",
     badge: "macOS-Datenschutz- und Entscheidungsleitfaden",
+    navigationAriaLabel: "Auf dieser Seite",
+    disclosureText: "Unabhängige redaktionelle Bewertungen · Affiliate-Links können eine Provision einbringen",
+    disclosureLabel: "Offenlegung",
+    evidenceBoundaryLabel: "Evidenzgrenze",
     evidenceBoundary: "Apple-Silicon-Unterstützung, Akkuverbrauch, Geschwindigkeit und Datenschutzergebnisse hängen von Mac-Modell, macOS-Version, Protokoll, Netzwerk und Berechtigungen ab. Prüfen Sie Ihre Route vor dem Abschluss.",
     reviewed: "Geprüft am 13. August 2026. DataForSEO leitete Fragen zu Mac, macOS und Apple Silicon; es beweist keine Anbieterleistung.",
     nav: [{ href: "#quick-picks", label: "Optionen" }, { href: "#comparison", label: "Vergleichen" }, { href: "#setup", label: "Einrichtung" }, { href: "#faq", label: "FAQ" }, { href: "#sources", label: "Quellen" }],
@@ -156,6 +172,10 @@ const localizedCopy: Record<string, Partial<MacosCopy>> = {
     breadcrumbRoot: "Mejores VPN",
     breadcrumbCurrent: "VPN para macOS",
     badge: "Guía de privacidad y decisión para macOS",
+    navigationAriaLabel: "En esta página",
+    disclosureText: "Evaluaciones editoriales independientes · los enlaces de afiliado pueden generar una comisión",
+    disclosureLabel: "divulgación",
+    evidenceBoundaryLabel: "Límite de evidencia",
     evidenceBoundary: "La compatibilidad con Apple Silicon, el consumo de batería, la velocidad y la privacidad dependen del modelo de Mac, versión de macOS, protocolo, red y permisos. Verifica tu caso antes de suscribirte.",
     reviewed: "Revisado el 13 de agosto de 2026. DataForSEO orientó las preguntas sobre Mac, macOS y Apple Silicon; no demuestra el rendimiento de un proveedor.",
     nav: [{ href: "#quick-picks", label: "Opciones" }, { href: "#comparison", label: "Comparar" }, { href: "#setup", label: "Configurar" }, { href: "#faq", label: "FAQ" }, { href: "#sources", label: "Fuentes" }],
@@ -187,6 +207,10 @@ const localizedCopy: Record<string, Partial<MacosCopy>> = {
     breadcrumbRoot: "Meilleurs VPN",
     breadcrumbCurrent: "VPN pour macOS",
     badge: "Guide de décision et de confidentialité macOS",
+    navigationAriaLabel: "Sur cette page",
+    disclosureText: "Évaluations éditoriales indépendantes · les liens affiliés peuvent générer une commission",
+    disclosureLabel: "divulgation",
+    evidenceBoundaryLabel: "Limite des preuves",
     evidenceBoundary: "La compatibilité Apple Silicon, la batterie, la vitesse et les résultats de confidentialité varient selon le Mac, macOS, le protocole, le réseau et les autorisations. Vérifiez votre usage avant de vous abonner.",
     reviewed: "Revu le 13 août 2026. DataForSEO a orienté les questions Mac, macOS et Apple Silicon ; il ne prouve pas les performances d’un fournisseur.",
     nav: [{ href: "#quick-picks", label: "Options" }, { href: "#comparison", label: "Comparer" }, { href: "#setup", label: "Configurer" }, { href: "#faq", label: "FAQ" }, { href: "#sources", label: "Sources" }],
@@ -218,6 +242,10 @@ const localizedCopy: Record<string, Partial<MacosCopy>> = {
     breadcrumbRoot: "最佳 VPN",
     breadcrumbCurrent: "macOS VPN",
     badge: "macOS 隐私与选择指南",
+    navigationAriaLabel: "本页内容",
+    disclosureText: "独立编辑评估 · affiliate 链接可能带来佣金",
+    disclosureLabel: "披露说明",
+    evidenceBoundaryLabel: "证据边界",
     evidenceBoundary: "Apple Silicon 支持、电池使用、速度和隐私结果会因 Mac 型号、macOS 版本、协议、网络和权限而异。订阅前请验证你的具体使用场景。",
     reviewed: "审阅于 2026 年 8 月 13 日。DataForSEO 用于整理 Mac、macOS 和 Apple Silicon 相关问题，但不能证明任何供应商的性能。",
     nav: [{ href: "#quick-picks", label: "选项" }, { href: "#comparison", label: "比较" }, { href: "#setup", label: "设置" }, { href: "#faq", label: "常见问题" }, { href: "#sources", label: "来源" }],
@@ -249,6 +277,10 @@ const localizedCopy: Record<string, Partial<MacosCopy>> = {
     breadcrumbRoot: "おすすめVPN",
     breadcrumbCurrent: "macOS向けVPN",
     badge: "macOSプライバシーと選び方ガイド",
+    navigationAriaLabel: "このページの内容",
+    disclosureText: "独立した編集部評価 · アフィリエイトリンクから手数料を得る場合があります",
+    disclosureLabel: "開示",
+    evidenceBoundaryLabel: "根拠の範囲",
     evidenceBoundary: "Apple Silicon対応、バッテリー使用量、速度、プライバシー結果は、Macの機種、macOS、プロトコル、ネットワーク、権限によって変わります。契約前に自分の利用経路を確認してください。",
     reviewed: "2026年8月13日確認。DataForSEOはMac、macOS、Apple Siliconに関する質問整理に使いましたが、プロバイダーの性能を証明するものではありません。",
     nav: [{ href: "#quick-picks", label: "候補" }, { href: "#comparison", label: "比較" }, { href: "#setup", label: "設定" }, { href: "#faq", label: "FAQ" }, { href: "#sources", label: "情報源" }],
@@ -280,6 +312,10 @@ const localizedCopy: Record<string, Partial<MacosCopy>> = {
     breadcrumbRoot: "추천 VPN",
     breadcrumbCurrent: "macOS VPN",
     badge: "macOS 개인정보 및 선택 가이드",
+    navigationAriaLabel: "이 페이지에서",
+    disclosureText: "독립적인 편집 평가 · 제휴 링크를 통해 수수료를 받을 수 있습니다",
+    disclosureLabel: "고지",
+    evidenceBoundaryLabel: "근거의 범위",
     evidenceBoundary: "Apple Silicon 지원, 배터리 사용, 속도와 개인정보 결과는 Mac 모델, macOS 버전, 프로토콜, 네트워크와 권한에 따라 달라집니다. 가입 전에 실제 사용 경로를 확인하세요.",
     reviewed: "2026년 8월 13일 검토. DataForSEO는 Mac, macOS 및 Apple Silicon 관련 질문을 정리하는 데 사용했으며, 제공업체의 성능을 증명하지 않습니다.",
     nav: [{ href: "#quick-picks", label: "옵션" }, { href: "#comparison", label: "비교" }, { href: "#setup", label: "설정" }, { href: "#faq", label: "FAQ" }, { href: "#sources", label: "출처" }],
@@ -311,6 +347,10 @@ const localizedCopy: Record<string, Partial<MacosCopy>> = {
     breadcrumbRoot: "VPN ที่ดีที่สุด",
     breadcrumbCurrent: "VPN สำหรับ macOS",
     badge: "คู่มือเลือก VPN และความเป็นส่วนตัวบน macOS",
+    navigationAriaLabel: "เนื้อหาในหน้านี้",
+    disclosureText: "การประเมินโดยกองบรรณาธิการอิสระ · ลิงก์พันธมิตรอาจสร้างค่าคอมมิชชัน",
+    disclosureLabel: "การเปิดเผย",
+    evidenceBoundaryLabel: "ขอบเขตหลักฐาน",
     evidenceBoundary: "การรองรับ Apple Silicon การใช้แบตเตอรี่ ความเร็ว และผลด้านความเป็นส่วนตัวแตกต่างกันตามรุ่น Mac เวอร์ชัน macOS โปรโตคอล เครือข่าย และสิทธิ์ที่อนุญาต โปรดตรวจสอบการใช้งานจริงก่อนสมัคร",
     reviewed: "ตรวจสอบเมื่อ 13 สิงหาคม 2026 DataForSEO ช่วยจัดคำถามเกี่ยวกับ Mac, macOS และ Apple Silicon แต่ไม่ได้พิสูจน์ประสิทธิภาพของผู้ให้บริการ",
     nav: [{ href: "#quick-picks", label: "ตัวเลือก" }, { href: "#comparison", label: "เปรียบเทียบ" }, { href: "#setup", label: "ตั้งค่า" }, { href: "#faq", label: "คำถามที่พบบ่อย" }, { href: "#sources", label: "แหล่งข้อมูล" }],
@@ -349,9 +389,9 @@ export function MacosVpnEditorialPage({ vpns, locale = "en" }: { vpns: VpnData[]
     <ArticleJsonLd title={copy.title} description={copy.description} url={localizedPageUrl} datePublished="2026-01-01" dateModified="2026-08-13" />
     <BreadcrumbSchema items={[{ name: copy.breadcrumbRoot, href: "/best/best-vpn" }, { name: copy.breadcrumbCurrent, href: "/best/vpn-macos" }]} />
     <FAQSchema title={copy.faqTitle} faqs={copy.faq} />
-    <BestVpnEditorialTemplate navigation={copy.nav} brief={brief}>
+    <BestVpnEditorialTemplate navigation={copy.nav} navigationAriaLabel={copy.navigationAriaLabel} disclosureText={copy.disclosureText} disclosureLabel={copy.disclosureLabel} brief={brief}>
       <div className="flex flex-col"><main className="container max-w-5xl py-8 lg:py-12">
-        <header className="mb-10 max-w-4xl"><p className="mb-3 text-sm font-semibold uppercase tracking-wide text-primary">{copy.badge}</p><h1 className="text-4xl font-bold tracking-tight md:text-5xl">{copy.title}</h1><p className="mt-5 text-xl text-muted-foreground">{copy.description}</p><div className="mt-5 flex items-start gap-3 rounded-xl border border-amber-500/30 bg-amber-500/10 p-4 text-sm leading-6"><CircleAlert className="mt-0.5 size-5 shrink-0 text-amber-700" aria-hidden="true" /><p><strong>Evidence boundary:</strong> {copy.evidenceBoundary}</p></div><p className="mt-4 text-sm text-muted-foreground">{copy.reviewed}</p></header>
+        <header className="mb-10 max-w-4xl"><p className="mb-3 text-sm font-semibold uppercase tracking-wide text-primary">{copy.badge}</p><h1 className="text-4xl font-bold tracking-tight md:text-5xl">{copy.title}</h1><p className="mt-5 text-xl text-muted-foreground">{copy.description}</p><div className="mt-5 flex items-start gap-3 rounded-xl border border-amber-500/30 bg-amber-500/10 p-4 text-sm leading-6"><CircleAlert className="mt-0.5 size-5 shrink-0 text-amber-700" aria-hidden="true" /><p><strong>{copy.evidenceBoundaryLabel}:</strong> {copy.evidenceBoundary}</p></div><p className="mt-4 text-sm text-muted-foreground">{copy.reviewed}</p></header>
         <section id="quick-picks" className="scroll-mt-24"><h2 className="text-3xl font-bold">{copy.quickTitle}</h2><p className="mt-3 max-w-3xl text-muted-foreground">{copy.quickIntro}</p><div className="mt-6 grid gap-5 md:grid-cols-3">{options.map(({ provider, vpn }) => <article key={provider.slug} className="rounded-xl border bg-card p-5 shadow-sm"><div className="mb-3 flex items-center gap-2 text-sm text-muted-foreground"><Apple className="size-4 text-primary" aria-hidden="true" /><span>{copy.providerLabels[provider.slug]}</span></div><h3 className="text-xl font-semibold">{vpn.name}</h3><p className="mt-2 min-h-16 text-sm text-muted-foreground">{copy.providerNotes[provider.slug]}</p><p className="mt-4 text-2xl font-bold text-primary"><AffiliateTextLink vpnId={vpn.id} vpnName={vpn.name} affiliateUrl={vpn.affiliateUrl} dataPriceLink>{money(vpn.priceTwoYear ?? vpn.priceYearly)}</AffiliateTextLink><span className="ml-1 text-sm font-normal text-muted-foreground">{copy.priceSuffix}</span></p><p className="mt-1 text-xs text-muted-foreground">{copy.catalogLabel} {vpn.priceLastVerified ?? "not recorded"}; verify checkout terms.</p><AffiliateButton vpnId={vpn.id} vpnName={vpn.name} affiliateUrl={vpn.affiliateUrl} className="mt-4 w-full">{copy.checkLabel}: {vpn.name}</AffiliateButton></article>)}</div></section>
         <section id="comparison" className="mt-16 scroll-mt-24"><h2 className="text-3xl font-bold">{copy.compareTitle}</h2><p className="mt-3 max-w-3xl text-muted-foreground">{copy.compareIntro}</p><div className="mt-6 overflow-x-auto rounded-xl border"><table className="w-full min-w-[720px] text-left text-sm"><caption className="sr-only">{copy.tableCaption}</caption><thead className="bg-muted/60"><tr>{copy.tableHeaders.map((header) => <th scope="col" key={header} className="p-4">{header}</th>)}</tr></thead><tbody>{copy.tableRows.map(([question, verify, boundary]) => <tr className="border-t" key={question}><th scope="row" className="p-4 font-semibold">{question}</th><td className="p-4">{verify}</td><td className="p-4">{boundary}</td></tr>)}</tbody></table></div></section>
         <section id="setup" className="mt-16 scroll-mt-24"><h2 className="text-3xl font-bold">{copy.setupTitle}</h2><ol className="mt-5 grid gap-4 md:grid-cols-2">{copy.setupChecks.map((item, index) => <li key={item} className="flex gap-3 rounded-lg border p-4"><CheckCircle2 className="mt-0.5 size-5 shrink-0 text-green-600" aria-hidden="true" /><span><strong>{index + 1}.</strong> {item}</span></li>)}</ol><div className="mt-6 grid gap-4 md:grid-cols-3"><div className="rounded-xl border p-5"><Laptop className="size-6 text-primary" aria-hidden="true" /><h3 className="mt-3 font-semibold">{copy.boundaryCards[0][0]}</h3><p className="mt-2 text-sm text-muted-foreground">{copy.boundaryCards[0][1]}</p></div><div className="rounded-xl border p-5"><Wifi className="size-6 text-primary" aria-hidden="true" /><h3 className="mt-3 font-semibold">{copy.boundaryCards[1][0]}</h3><p className="mt-2 text-sm text-muted-foreground">{copy.boundaryCards[1][1]}</p></div><div className="rounded-xl border p-5"><LockKeyhole className="size-6 text-primary" aria-hidden="true" /><h3 className="mt-3 font-semibold">{copy.boundaryCards[2][0]}</h3><p className="mt-2 text-sm text-muted-foreground">{copy.boundaryCards[2][1]}</p></div></div></section>

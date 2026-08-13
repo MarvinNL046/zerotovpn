@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "cluster": "VPN privacy from ISPs / traffic visibility / metadata limits",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "fetchedAt": "2026-08-13T02:25:21.948Z",
+  "refreshed": false,
+  "seeds": [
+    "can a vpn hide you from your isp",
+    "can a vpn hide browsing history from isp",
+    "can my isp see what i search with a vpn",
+    "what does a vpn hide from your isp",
+    "can isp see vpn traffic",
+    "does a vpn hide your ip address from isp"
+  ],
+  "overview": [
+    {
+      "keyword": "can isp see vpn traffic",
+      "currentVolume": null,
+      "latestVolume": 40,
+      "latestMonth": "2024-02",
+      "difficulty": 2,
+      "intent": "informational"
+    }
+  ],
+  "suggestions": [
+    {
+      "seed": "can isp see vpn traffic",
+      "keyword": "can isp see my vpn traffic",
+      "volume": 10
+    },
+    {
+      "seed": "can isp see vpn traffic",
+      "keyword": "can your isp see vpn traffic",
+      "volume": 10
+    },
+    {
+      "seed": "can isp see vpn traffic",
+      "keyword": "can my isp see vpn traffic",
+      "volume": 10
+    },
+    {
+      "seed": "can isp see vpn traffic",
+      "keyword": "can an isp see vpn traffic",
+      "volume": null
+    },
+    {
+      "seed": "can isp see vpn traffic",
+      "keyword": "can isp see traffic through vpn",
+      "volume": null
+    },
+    {
+      "seed": "can isp see vpn traffic",
+      "keyword": "can isp see vpn traffic",
+      "volume": null
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "can a vpn hide you from your isp",
+      "paa": [
+        "Does VPN hide everything from ISP?",
+        "Can my ISP see if I'm using a VPN?",
+        "Can the FBI track you with a VPN?",
+        "How can I prevent my ISP from seeing my browsing history?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "can a vpn hide browsing history from isp",
+      "paa": [
+        "Can my ISP see my browsing history with VPN?",
+        "How can I prevent my ISP from seeing my browsing history?",
+        "Can the FBI track a VPN?",
+        "Can my ISP see if I'm using a VPN?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "can my isp see what i search with a vpn",
+      "paa": [
+        "Can your ISP see what you do with a VPN?",
+        "Does a VPN hide your search from your ISP?",
+        "Can my friend see what I'm searching with his VPN?",
+        "Can anyone see what I'm looking at with a VPN?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "what does a vpn hide from your isp",
+      "paa": [
+        "Does VPN hide everything from your ISP?",
+        "Can the FBI track you with a VPN?",
+        "When shouldn't you use a VPN?",
+        "How can I prevent my ISP from seeing my browsing history?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "can isp see vpn traffic",
+      "paa": [
+        "Can my ISP see my browsing history with a VPN?",
+        "Can VPN traffic be monitored?",
+        "Can anyone see what I'm looking at with a VPN?",
+        "Can the FBI track a VPN?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "does a vpn hide your ip address from isp",
+      "paa": [
+        "When shouldn't you use a VPN?",
+        "Can my ISP see if I'm using a VPN?",
+        "Can the FBI track a VPN?",
+        "How do I hide my IP address without using a VPN?"
+      ],
+      "hasAiOverview": false
+    }
+  ],
+  "sourcePolicy": "DataForSEO signals prioritise intent coverage and FAQ structure; they do not prove a VPN makes a user anonymous, prevents lawful access, or hides every metadata signal from an ISP."
+}

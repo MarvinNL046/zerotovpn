@@ -138,7 +138,7 @@ const checks = [
   {
     name: "localized Iran blog routes use the evidence-led body",
     file: "src/app/[locale]/blog/[slug]/page.tsx",
-    patterns: [/iranVpnEditorialContent/, /const articleContent = isIranEditorial/, /iranContentBrief/, /best vpn for iran/, /censorship-restricted-networks/, /brief=\{isIranEditorial \? iranContentBrief : isTelegramEditorial \? editorialContentBriefs\.telegram : isConnectionDropsEditorial \? connectionDropsContentBrief : isServerLocationEditorial \? serverLocationContentBrief : undefined\}/],
+    patterns: [/iranVpnEditorialContent/, /const articleContent = isIranEditorial/, /iranContentBrief/, /best vpn for iran/, /censorship-restricted-networks/, /brief=\{isIranEditorial \? iranContentBrief : isTelegramEditorial \? editorialContentBriefs\.telegram : isConnectionDropsEditorial \? connectionDropsContentBrief : isServerLocationEditorial \? serverLocationContentBrief : isIspPrivacyEditorial \? ispPrivacyContentBrief : undefined\}/],
     forbiddenPatterns: [/articleContent = isRestrictedAffiliateContext\s*\?\s*verwijderAffiliateLinks\(post\.content\)/i],
   },
   {
@@ -203,6 +203,17 @@ const checks = [
     name: "server-location blog route uses the audited editorial override",
     file: "src/app/[locale]/blog/[slug]/page.tsx",
     patterns: [/serverLocationEditorialTitle/, /serverLocationContentBrief/, /serverLocationEditorialFaq/, /locationClusterLinks/, /isServerLocationEditorial/],
+  },
+  {
+    name: "ISP privacy page uses PAA-led bounded privacy copy",
+    file: "src/data/editorial/isp-privacy-2026.ts",
+    patterns: [/Does a VPN hide everything from your ISP\?/, /Can my ISP see if I am using a VPN\?/, /How can I prevent my ISP from seeing my browsing history\?/, /Can the FBI track you with a VPN\?/, /What an ISP can and cannot usually see through a VPN/, /2026/],
+    forbiddenPatterns: [/70% of internet users|5-15%|impossible to break|military organizations/i, /makes you untraceable/i],
+  },
+  {
+    name: "ISP privacy blog route uses the audited editorial override",
+    file: "src/app/[locale]/blog/[slug]/page.tsx",
+    patterns: [/ispPrivacyEditorialTitle/, /ispPrivacyContentBrief/, /ispPrivacyEditorialFaq/, /ispPrivacyClusterLinks/, /isIspPrivacyEditorial/],
   },
   {
     name: "Chromebook use-case page avoids unsupported test counts",

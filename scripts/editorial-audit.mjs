@@ -593,6 +593,18 @@ const checks = [
     patterns: [/ProtonAirvpnComparisonEditorialPage/, /locale === "en" && comparison === "protonvpn-vs-airvpn"/, /protonAirvpnComparisonTitle/, /protonAirvpnComparisonDescription/, /index: !isProtonAirvpn/],
   },
   {
+    name: "staged Proton VPN versus AirVPN pair stays out of sitemap link set",
+    file: "src/lib/linked-comparisons.ts",
+    patterns: [/LINKED_COMPARISONS/],
+    forbiddenPatterns: [/protonvpn-vs-airvpn/],
+  },
+  {
+    name: "staged Proton VPN versus AirVPN pair stays out of generated sitemap",
+    file: "src/lib/sitemap-static-routes.generated.json",
+    patterns: [/\"paths\"/],
+    forbiddenPatterns: [/protonvpn-vs-airvpn/],
+  },
+  {
     name: "macOS use-case metadata avoids unsupported test counts",
     file: "src/app/[locale]/best/vpn-macos/page.tsx",
     patterns: [/Compare macOS VPN options in/, /app support, network behavior/],

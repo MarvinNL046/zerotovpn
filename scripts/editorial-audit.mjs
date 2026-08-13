@@ -138,7 +138,7 @@ const checks = [
   {
     name: "localized Iran blog routes use the evidence-led body",
     file: "src/app/[locale]/blog/[slug]/page.tsx",
-    patterns: [/iranVpnEditorialContent/, /const articleContent = isIranEditorial/, /iranContentBrief/, /best vpn for iran/, /censorship-restricted-networks/, /brief=\{isIranEditorial \? iranContentBrief : isTelegramEditorial \? editorialContentBriefs\.telegram : isConnectionDropsEditorial \? connectionDropsContentBrief : isServerLocationEditorial \? serverLocationContentBrief : isIspPrivacyEditorial \? ispPrivacyContentBrief : isBraveVpnEditorial \? braveVpnContentBrief : isVpnAccountSharingEditorial \? vpnAccountSharingContentBrief : isVpnSimultaneousConnectionsEditorial \? vpnSimultaneousConnectionsContentBrief : isFitnessTrackingPrivacyEditorial \? fitnessTrackingPrivacyContentBrief : undefined\}/],
+    patterns: [/iranVpnEditorialContent/, /const articleContent = isIranEditorial/, /iranContentBrief/, /best vpn for iran/, /censorship-restricted-networks/, /brief=\{isIranEditorial[\s\S]*?isFitnessTrackingPrivacyEditorial \? fitnessTrackingPrivacyContentBrief : undefined\}/],
     forbiddenPatterns: [/articleContent = isRestrictedAffiliateContext\s*\?\s*verwijderAffiliateLinks\(post\.content\)/i],
   },
   {
@@ -225,6 +225,17 @@ const checks = [
     name: "Brave VPN blog route uses the audited editorial override",
     file: "src/app/[locale]/blog/[slug]/page.tsx",
     patterns: [/braveVpnEditorialTitle/, /braveVpnContentBrief/, /braveVpnEditorialFaq/, /braveVpnClusterLinks/, /isBraveVpnEditorial/],
+  },
+  {
+    name: "VPN leak-testing guide uses bounded tool-comparison copy",
+    file: "src/data/editorial/vpn-leak-testing-tools-2026.ts",
+    patterns: [/What is the best way to test a VPN for leaks\?/, /How do I know if I have a DNS leak\?/, /Can WebRTC leak my real IP address\?/, /Is an IPv6 warning always a VPN leak\?/, /Does a green leak-test result prove a VPN is private\?/, /VPN leak-test tools compared/, /2026/],
+    forbiddenPatterns: [/92%|80%|35%|permanent.*guarantee|anonymous by default/i],
+  },
+  {
+    name: "VPN leak-testing blog route uses the audited editorial override",
+    file: "src/app/[locale]/blog/[slug]/page.tsx",
+    patterns: [/vpnLeakTestingEditorialTitle/, /vpnLeakTestingContentBrief/, /vpnLeakTestingEditorialFaq/, /vpnLeakTestingClusterLinks/, /isVpnLeakTestingEditorial/],
   },
   {
     name: "VPN account-sharing guide uses PAA-led bounded terms copy",

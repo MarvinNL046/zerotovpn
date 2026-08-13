@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "cluster": "VPN leak testing tools / DNS / WebRTC / IPv6",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "fetchedAt": "2026-08-13",
+  "overview": [
+    { "keyword": "vpn leak test", "currentVolume": null, "latestVolume": 880, "latestMonth": "2024-02", "difficulty": 46, "intent": "informational" },
+    { "keyword": "dns leak test vpn", "currentVolume": null, "latestVolume": 10, "latestMonth": "2024-02", "difficulty": 27, "intent": "informational" }
+  ],
+  "suggestions": [
+    { "keyword": "dns leak test for vpn", "volume": 70 },
+    { "keyword": "test vpn ip leak", "volume": 10 },
+    { "keyword": "ip leak test for vpn", "volume": 10 },
+    { "keyword": "ip leak test vpn", "volume": 10 },
+    { "keyword": "vpn test dns leak", "volume": 10 },
+    { "keyword": "ipv6 vpn leak test", "volume": 10 },
+    { "keyword": "webrtc vpn leak test", "volume": 10 }
+  ],
+  "sourcePolicy": "DataForSEO informs query and question coverage only; it does not prove current demand, tool accuracy, provider performance or conversion value."
+}

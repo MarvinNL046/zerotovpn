@@ -107,10 +107,12 @@ export default async function MacOSVpnPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
 
-  if (locale === "en") {
-    const allVpns = await getAllVpns();
-    return <MacosVpnEditorialPage vpns={allVpns} />;
-  }
+  // Keep every locale on the audited evidence-led template until translated
+  // macOS copy passes the same claim gate. This prevents the legacy localized
+  // body (fixed app sizes, test counts and optimization guarantees) from
+  // returning to production HTML.
+  const allVpns = await getAllVpns();
+  return <MacosVpnEditorialPage vpns={allVpns} locale={locale} />;
 
   // Get macOS VPNs data
   const nordvpn = await getVpnBySlug("nordvpn");

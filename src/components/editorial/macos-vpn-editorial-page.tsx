@@ -22,10 +22,13 @@ const faq = [
 const providers = [{ slug: "nordvpn", label: "Everyday Mac shortlist", note: "Check the current macOS app, auto-connect and device terms against your workflow." }, { slug: "expressvpn", label: "App simplicity comparison", note: "Compare permissions, protocol choices and reconnect behaviour on your Mac." }, { slug: "surfshark", label: "Device-count comparison", note: "Review current simultaneous-device terms when one plan must cover a Mac and other devices." }] as const;
 const money = (value: number | undefined) => typeof value === "number" ? `$${value.toFixed(2)}` : "-";
 
-export function MacosVpnEditorialPage({ vpns }: { vpns: VpnData[] }) {
+const siteUrl = "https://www.zerotovpn.com";
+
+export function MacosVpnEditorialPage({ vpns, locale = "en" }: { vpns: VpnData[]; locale?: string }) {
   const options = providers.map((provider) => ({ provider, vpn: vpns.find((vpn) => vpn.slug === provider.slug) })).filter((row): row is typeof row & { vpn: VpnData } => Boolean(row.vpn));
+  const localizedPageUrl = locale === "en" ? `${siteUrl}/best/vpn-macos` : `${siteUrl}/${locale}/best/vpn-macos`;
   return <>
-    <ArticleJsonLd title={macosVpnEditorialTitle} description={macosVpnEditorialDescription} url="https://www.zerotovpn.com/best/vpn-macos" datePublished="2026-01-01" dateModified="2026-08-13" />
+    <ArticleJsonLd title={macosVpnEditorialTitle} description={macosVpnEditorialDescription} url={localizedPageUrl} datePublished="2026-01-01" dateModified="2026-08-13" />
     <BreadcrumbSchema items={[{ name: "Best VPNs", href: "/best/best-vpn" }, { name: "macOS VPNs", href: "/best/vpn-macos" }]} />
     <FAQSchema title="macOS VPN FAQ" faqs={faq} />
     <BestVpnEditorialTemplate navigation={[{ href: "#quick-picks", label: "Options" }, { href: "#comparison", label: "Compare" }, { href: "#setup", label: "Setup" }, { href: "#faq", label: "FAQ" }, { href: "#sources", label: "Sources" }]} brief={brief}>

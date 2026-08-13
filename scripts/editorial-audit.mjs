@@ -154,7 +154,12 @@ const checks = [
   {
     name: "macOS route uses audited English editorial component",
     file: "src/app/[locale]/best/vpn-macos/page.tsx",
-    patterns: [/MacosVpnEditorialPage/, /locale === "en"/, /macosVpnEditorialTitle/, /macosVpnEditorialDescription/],
+    patterns: [/MacosVpnEditorialPage/, /const allVpns = await getAllVpns/, /locale=\{locale\}/, /macosVpnEditorialTitle/, /macosVpnEditorialDescription/],
+  },
+  {
+    name: "localized macOS routes use the audited evidence-led template",
+    file: "src/app/[locale]/best/vpn-macos/page.tsx",
+    patterns: [/every locale on the audited evidence-led template/, /fixed app sizes, test counts and optimization guarantees/, /MacosVpnEditorialPage vpns=\{allVpns\} locale=\{locale\}/],
   },
   {
     name: "Best VPN English SERP metadata matches commercial intent",

@@ -1,0 +1,259 @@
+{
+  "schemaVersion": 1,
+  "cluster": "ChatGPT access, availability, VPN network privacy and account limits",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "fetchedAt": "2026-08-13T03:55:52.368Z",
+  "refreshed": false,
+  "seeds": [
+    "best vpn for chatgpt",
+    "vpn for chatgpt",
+    "chatgpt vpn",
+    "can a vpn access chatgpt",
+    "chatgpt blocked in my country",
+    "vpn for openai",
+    "is chatgpt available in china"
+  ],
+  "overview": [
+    {
+      "keyword": "best vpn for chatgpt",
+      "currentVolume": null,
+      "latestVolume": 20,
+      "latestMonth": "2024-02",
+      "difficulty": null,
+      "intent": "informational"
+    },
+    {
+      "keyword": "chatgpt vpn",
+      "currentVolume": null,
+      "latestVolume": 260,
+      "latestMonth": "2024-02",
+      "difficulty": 1,
+      "intent": "informational"
+    },
+    {
+      "keyword": "is chatgpt available in china",
+      "currentVolume": 110,
+      "latestVolume": 110,
+      "latestMonth": "2026-06",
+      "difficulty": 9,
+      "intent": "informational"
+    },
+    {
+      "keyword": "vpn for chatgpt",
+      "currentVolume": null,
+      "latestVolume": 40,
+      "latestMonth": "2024-02",
+      "difficulty": 0,
+      "intent": "informational"
+    },
+    {
+      "keyword": "vpn for openai",
+      "currentVolume": null,
+      "latestVolume": 10,
+      "latestMonth": "2024-02",
+      "difficulty": 16,
+      "intent": "informational"
+    }
+  ],
+  "suggestions": [
+    {
+      "seed": "vpn for chatgpt",
+      "keyword": "best free vpn for chatgpt",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for chatgpt",
+      "keyword": "best vpn for chatgpt",
+      "volume": null
+    },
+    {
+      "seed": "chatgpt vpn",
+      "keyword": "jego free vpn for copilot chatgpt",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for chatgpt",
+      "keyword": "vpn for chatgpt free",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for chatgpt",
+      "keyword": "vpn for chatgpt reddit",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for chatgpt",
+      "keyword": "vpn extension for chatgpt",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for chatgpt",
+      "keyword": "how to use vpn for chatgpt",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for chatgpt",
+      "keyword": "vpn for chatgpt egypt",
+      "volume": 0
+    },
+    {
+      "seed": "vpn for chatgpt",
+      "keyword": "vpn for chatgpt",
+      "volume": null
+    },
+    {
+      "seed": "chatgpt vpn",
+      "keyword": "chatgpt vpn hong kong",
+      "volume": 10
+    },
+    {
+      "seed": "chatgpt vpn",
+      "keyword": "best vpn chatgpt",
+      "volume": 10
+    },
+    {
+      "seed": "chatgpt vpn",
+      "keyword": "chatgpt on vpn",
+      "volume": 10
+    },
+    {
+      "seed": "chatgpt vpn",
+      "keyword": "chatgpt using vpn",
+      "volume": 10
+    },
+    {
+      "seed": "chatgpt vpn",
+      "keyword": "why does chatgpt not work with vpn",
+      "volume": 10
+    },
+    {
+      "seed": "chatgpt vpn",
+      "keyword": "how to use chatgpt with a vpn",
+      "volume": 10
+    },
+    {
+      "seed": "chatgpt vpn",
+      "keyword": "chatgpt vpn access denied",
+      "volume": 10
+    },
+    {
+      "seed": "chatgpt vpn",
+      "keyword": "chatgpt cheaper vpn",
+      "volume": 10
+    },
+    {
+      "seed": "chatgpt vpn",
+      "keyword": "chatgpt blocks vpn",
+      "volume": 10
+    },
+    {
+      "seed": "chatgpt vpn",
+      "keyword": "chatgpt unable to load site vpn",
+      "volume": 10
+    },
+    {
+      "seed": "chatgpt vpn",
+      "keyword": "chatgpt vpn lihkg",
+      "volume": 10
+    },
+    {
+      "seed": "chatgpt vpn",
+      "keyword": "chatgpt blocked vpn",
+      "volume": 10
+    },
+    {
+      "seed": "chatgpt vpn",
+      "keyword": "chatgpt hong kong vpn",
+      "volume": 10
+    },
+    {
+      "seed": "chatgpt vpn",
+      "keyword": "how to access chatgpt with vpn",
+      "volume": 10
+    },
+    {
+      "seed": "is chatgpt available in china",
+      "keyword": "is chatgpt available in china",
+      "volume": 110
+    },
+    {
+      "seed": "is chatgpt available in china",
+      "keyword": "why is chatgpt not available in china",
+      "volume": 10
+    },
+    {
+      "seed": "is chatgpt available in china",
+      "keyword": "why chatgpt is not available in china",
+      "volume": 10
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "best vpn for chatgpt",
+      "paa": [
+        "Which VPN is best for ChatGPT?",
+        "Can the FBI track a VPN?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn for chatgpt",
+      "paa": [
+        "Can I use VPN for ChatGPT?",
+        "Can the FBI see through VPNs?",
+        "Is using VPN illegal in the US?",
+        "Why avoid NordVPN?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "chatgpt vpn",
+      "paa": [
+        "Can you use ChatGPT with VPN?",
+        "Can the FBI track a VPN?",
+        "Is ChatGPT Plus cheaper with a VPN?",
+        "Why is ChatGPT not working with VPN?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "can a vpn access chatgpt",
+      "paa": [],
+      "hasAiOverview": false,
+      "error": "DataForSEO request failed: 20000 Ok."
+    },
+    {
+      "keyword": "chatgpt blocked in my country",
+      "paa": [
+        "Why is ChatGPT not available in my region?",
+        "Is ChatGPT banned in any country?",
+        "Why does the ChatGPT app say \"unsupported country\"?",
+        "Why am I unable to access ChatGPT?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn for openai",
+      "paa": [
+        "Can the FBI see through VPNs?",
+        "Is OpenVPN really free?",
+        "Is using VPN illegal in the US?",
+        "Is OpenVPN legal to use?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "is chatgpt available in china",
+      "paa": [
+        "What do Chinese people use instead of ChatGPT?",
+        "Which countries have banned ChatGPT?",
+        "Is using a VPN illegal in China?",
+        "Which AI is most used in China?"
+      ],
+      "hasAiOverview": true
+    }
+  ],
+  "sourcePolicy": "DataForSEO signals prioritise access-intent and FAQ coverage; they do not prove current country availability, legality, OpenAI policy, provider performance or conversion value."
+}

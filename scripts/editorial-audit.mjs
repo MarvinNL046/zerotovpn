@@ -260,6 +260,16 @@ const checks = [
     patterns: [/fitnessTrackingPrivacyEditorialTitle/, /fitnessTrackingPrivacyContentBrief/, /fitnessTrackingPrivacyEditorialFaq/, /fitnessTrackingPrivacyClusterLinks/, /isFitnessTrackingPrivacyEditorial/],
   },
   {
+    name: "ChatGPT VPN page uses bounded access and privacy evidence",
+    file: "src/components/editorial/chatgpt-vpn-editorial-page.tsx",
+    patterns: [/Which VPN is best for ChatGPT\?/, /Can I use a VPN for ChatGPT\?/, /Why is ChatGPT not working with my VPN\?/, /ChatGPT access: what a VPN can and cannot change/, /OpenAI supported countries/, /DataForSEO US\/English dossier/],
+  },
+  {
+    name: "ChatGPT VPN route uses the audited English editorial component",
+    file: "src/app/[locale]/blog/[slug]/page.tsx",
+    patterns: [/ChatgptVpnEditorialPage/, /locale === "en" && slug === "best-vpn-for-chatgpt-2026"/],
+  },
+  {
     name: "mobile VPN page uses PAA-led bounded mobile copy",
     file: "src/components/editorial/mobile-vpn-editorial-page.tsx",
     patterns: [/Which mobile VPN is the best\?/, /Should you put a VPN on your iPhone\?/, /Should I have a VPN on my Android phone\?/, /Does using a VPN affect mobile data\?/, /Does a VPN drain your battery\?/, /Does a VPN hide your location on iPhone or Android\?/, /Mobile VPN comparison: what to verify before choosing/, /mobile-and-device-privacy/, /DataForSEO|dataforseo-mobile-vpn/],

@@ -26,6 +26,11 @@ import {
 } from "@/components/blog/author-box";
 import { BestVpnEditorialTemplate } from "@/components/editorial/best-vpn-editorial-template";
 import { IranEditorialQuickPicks } from "@/components/editorial/iran-editorial-quick-picks";
+import {
+  ChatgptVpnEditorialPage,
+  chatgptVpnEditorialExcerpt,
+  chatgptVpnEditorialTitle,
+} from "@/components/editorial/chatgpt-vpn-editorial-page";
 import type { EditorialContentBrief } from "@/lib/editorial-content-brief";
 import { editorialContentBriefs } from "@/lib/editorial-content-briefs";
 import {
@@ -253,9 +258,8 @@ const clusterMetadata: Record<string, { title: string; description: string }> = 
       telegramVpnEditorialExcerpt,
   },
   "best-vpn-for-chatgpt-2026": {
-    title: "Best VPNs for ChatGPT 2026: What Works in Restricted Countries",
-    description:
-      "Compare VPNs for ChatGPT and OpenAI in restricted countries: access checks, latency, mobile setup and privacy limits before you connect.",
+    title: chatgptVpnEditorialTitle,
+    description: chatgptVpnEditorialExcerpt,
   },
   "vpn-connection-drops-why-disconnects-how-to-fix-2026": {
     title: connectionDropsEditorialTitle,
@@ -503,6 +507,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function DynamicBlogPost({ params }: Props) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
+
+  if (locale === "en" && slug === "best-vpn-for-chatgpt-2026") {
+    return <ChatgptVpnEditorialPage vpns={await getAllVpns()} />;
+  }
 
   const post = await getPostBySlug(slug, locale);
 

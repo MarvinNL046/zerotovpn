@@ -74,4 +74,13 @@ export const editorialContentBriefs = {
     affiliateContext: "vpn-selection",
     schemaType: "Article",
   },
+  chatgpt: {
+    primaryKeyword: "best vpn for chatgpt",
+    intent: "commercial",
+    cluster: "ai-privacy-and-access",
+    lastReviewedAt: "2026-08-13",
+    evidence: ["docs/research/dataforseo-chatgpt-vpn-cluster-2026-08-13.md", "/methodology", "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries"],
+    affiliateContext: "vpn-selection",
+    schemaType: "Article",
+  },
 } satisfies Record<string, EditorialContentBrief>;

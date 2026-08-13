@@ -14,6 +14,21 @@ const checks = [
     patterns: [/affiliateSubId/, /\[affiliate-click\]/],
   },
   {
+    name: "public affiliate sub-ID helper stays deterministic and Nord-scoped",
+    file: "src/lib/affiliate-attribution.ts",
+    patterns: [/buildPublicAffiliateSubId/, /isNordAffiliateUrl/, /withNordAffiliateSubId/, /aff_sub/],
+  },
+  {
+    name: "server-rendered blog anchors receive the public sub-ID",
+    file: "src/lib/blog-content.ts",
+    patterns: [/normaliseerAffiliateLinks\(html: string, pathname\?/, /withNordAffiliateSubId/, /data-affiliate-sub-id/],
+  },
+  {
+    name: "blog route supplies locale and slug to affiliate normalization",
+    file: "src/app/[locale]/blog/[slug]/page.tsx",
+    patterns: [/normaliseerAffiliateLinks\(/, /locale[\s\S]*slug/],
+  },
+  {
     name: "NordVPN affiliate resolver fails closed without approval",
     file: "src/lib/vpn-links.ts",
     patterns: [/VPN_APPROVED_AFFILIATE_IDS/, /AFFILIATE_VPN_NORDVPN_URL/, /approvedAffiliateIds\.has\("nordvpn"\)/, /url\.protocol !== "https:"/, /if \(slug === "nordvpn"\)/],

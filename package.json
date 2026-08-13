@@ -62,6 +62,7 @@
     "measure:check-inputs": "node scripts/check-measurement-inputs.mjs",
     "test:measurement-inputs": "node scripts/test-check-measurement-inputs.mjs",
     "test:measure-editorial": "node scripts/test-measure-editorial.mjs",
+    "test:affiliate-attribution": "node --experimental-strip-types scripts/test-affiliate-attribution.mjs",
     "test:network-claims": "node scripts/test-network-claims.mjs",
     "prebuild": "npm run generate:sitemap-routes",
     "build": "next build --webpack",

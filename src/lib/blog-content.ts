@@ -6,6 +6,8 @@
 // Dit wordt bij het renderen rechtgezet in plaats van in de databestanden,
 // zodat een volgende import hetzelfde probleem niet opnieuw binnenbrengt.
 
+import { buildPublicAffiliateSubId, isNordAffiliateUrl, withNordAffiliateSubId } from "./affiliate-attribution";
+
 /** Een openende h1 helemaal aan het begin van het artikel. */
 const LEIDENDE_H1 = /^\s*<h1\b[^>]*>[\s\S]*?<\/h1>\s*/i;
 
@@ -43,14 +45,28 @@ export function isAffiliateUrl(url: string): boolean {
  * should use AffiliateButton/AffiliateTextLink; this protects imported posts
  * that still contain raw anchors.
  */
-export function normaliseerAffiliateLinks(html: string): string {
+export function normaliseerAffiliateLinks(html: string, pathname?: string): string {
   if (!html) return html;
 
   return html.replace(/<a\b[^>]*>/gi, (tag) => {
-    const href = tag.match(/\bhref=["']([^"']+)["']/i)?.[1] ?? "";
+    const hrefMatch = tag.match(/\bhref=(["'])([^"']+)\1/i);
+    const href = hrefMatch?.[2] ?? "";
     if (!isAffiliateUrl(href)) return tag;
 
-    const relMatch = tag.match(/\brel=["']([^"']*)["']/i);
+    let normalizedTag = tag;
+    if (pathname && isNordAffiliateUrl(href)) {
+      const trackedHref = withNordAffiliateSubId(href, pathname);
+      if (trackedHref !== href && hrefMatch) {
+        const quote = hrefMatch[1];
+        const htmlHref = trackedHref.replace(/&/g, "&amp;");
+        normalizedTag = normalizedTag.replace(hrefMatch[0], `href=${quote}${htmlHref}${quote}`);
+      }
+      if (!/\bdata-affiliate-sub-id=/i.test(normalizedTag)) {
+        normalizedTag = normalizedTag.replace(/>$/, ` data-affiliate-sub-id="${buildPublicAffiliateSubId(pathname)}">`);
+      }
+    }
+
+    const relMatch = normalizedTag.match(/\brel=["']([^"']*)["']/i);
     const tokens = (relMatch?.[1] ?? "")
       .split(/\s+/)
       .filter(Boolean);
@@ -60,9 +76,9 @@ export function normaliseerAffiliateLinks(html: string): string {
     const rel = `rel="${tokens.join(" ")}"`;
 
     if (relMatch) {
-      return tag.replace(relMatch[0], rel);
+      return normalizedTag.replace(relMatch[0], rel);
     }
-    return tag.replace(/>$/, ` ${rel}>`);
+    return normalizedTag.replace(/>$/, ` ${rel}>`);
   });
 }
 

@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
+import { withNordAffiliateSubId } from "@/lib/affiliate-attribution";
 
 interface AffiliateButtonProps {
   vpnId: string;
@@ -42,21 +43,7 @@ export function buildAffiliateHref(
 ): string {
   if (vpnId !== "nordvpn") return affiliateUrl;
 
-  try {
-    const url = new URL(affiliateUrl, "https://go.zerotovpn.com");
-    if (url.hostname !== "go.zerotovpn.com") return affiliateUrl;
-
-    const page = pathname
-      .replace(/^\/+|\/+$/g, "")
-      .replace(/[^a-zA-Z0-9]+/g, "-")
-      .replace(/^-+|-+$/g, "")
-      .toLowerCase()
-      .slice(0, 90);
-    url.searchParams.set("aff_sub", `zt_${page || "home"}`.slice(0, 100));
-    return url.toString();
-  } catch {
-    return affiliateUrl;
-  }
+  return withNordAffiliateSubId(affiliateUrl, pathname);
 }
 
 export function trackAffiliateClick(vpnId: string, affiliateUrl: string) {

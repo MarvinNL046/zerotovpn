@@ -870,7 +870,10 @@ export default async function DynamicBlogPost({ params }: Props) {
         <div
           className="blog-content max-w-none"
           dangerouslySetInnerHTML={{
-            __html: normaliseerAffiliateLinks(normaliseerArtikelKoppen(articleContent)),
+            __html: normaliseerAffiliateLinks(
+              normaliseerArtikelKoppen(articleContent),
+              `/${locale}/blog/${slug}`,
+            ),
           }}
         />
 

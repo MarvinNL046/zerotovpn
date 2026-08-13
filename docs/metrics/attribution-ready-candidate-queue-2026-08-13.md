@@ -9,7 +9,7 @@
 
 - **The next page batch is not yet a conversion leaderboard.** Search Console shows where demand and ranking opportunity exist, while the Nord export still has no page-level sub-ID. The queue therefore ranks *actionability*, not affiliate revenue.
 - **The strongest immediate commercial candidate is `/compare/protonvpn-vs-airvpn`.** It already has page-one visibility (157 impressions, 1 click, average position 10.04), eight live affiliate anchors and a comparison dossier. Its evidence-led renderer is now live with `noindex, follow`, but it remains outside `LINKED_COMPARISONS` and the sitemap until the attribution and promotion gates are satisfied.
-- **Two pages combine page-one visibility with a clear conversion surface:** the simultaneous-connections article (167 impressions, position 10.57) and the fitness-tracking article (193 impressions, position 5.68). Both have eight live affiliate anchors, so their next work should be CTR/intent refinement rather than new URL creation.
+- **Two pages combine page-one visibility with a clear conversion surface:** the simultaneous-connections article (167 impressions, position 10.57) and the fitness-tracking article (193 impressions, position 5.68). Both have eight live affiliate anchors; the server-rendered Nord anchors now also carry deterministic page-level `aff_sub` values, so their next work should be CTR/intent refinement rather than new URL creation.
 - **The connection-drops article is a high-value authority/CTR candidate, not a direct affiliate winner.** It has 400 impressions at position 15.45 but no affiliate anchors; improve the answer and internal links first, then reassess commercial placement under the contextual affiliate policy.
 
 ## What the numbers mean

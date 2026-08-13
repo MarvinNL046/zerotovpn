@@ -4,8 +4,8 @@
   "targetDomain": "zerotovpn.com",
   "location_code": 2840,
   "language_code": "en",
-  "fetchedAt": "2026-08-12T23:44:33.139Z",
-  "refreshed": false,
+  "fetchedAt": "2026-08-13T04:47:05.332Z",
+  "refreshed": true,
   "seeds": [
     "best vpn",
     "best vpn 2026",
@@ -447,10 +447,10 @@
     {
       "keyword": "best vpn 2026",
       "paa": [
+        "Which is the best VPN in 2026?",
         "Are VPNs worth it in 2026?",
         "What is the best VPN to use right now?",
-        "Will Netflix ban me if I use a VPN?",
-        "Can the FBI track a VPN?"
+        "Will Netflix ban me if I use a VPN?"
       ],
       "hasAiOverview": true
     },
@@ -467,10 +467,10 @@
     {
       "keyword": "best vpn for streaming",
       "paa": [
-        "What is the best VPN for streaming?",
+        "What VPN is the best for streaming?",
+        "Will Netflix ban me if I use VPN?",
         "Do VPNs actually work for streaming?",
-        "Which VPN is best for live streaming?",
-        "Will Netflix ban me for using a VPN?"
+        "Why avoid NordVPN?"
       ],
       "hasAiOverview": true
     },

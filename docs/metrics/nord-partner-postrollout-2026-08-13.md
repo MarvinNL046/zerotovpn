@@ -17,11 +17,10 @@ The CSV also contains one unlabeled aggregate row. It is excluded by the importe
 
 ## Attribution boundary
 
-This is the first real Nord export queried after the page-sub-ID rollout was deployed, but the two clicks do **not** expose a returned sub-ID. The report therefore does not yet prove whether the clicks occurred before the deployment reached the visitor, whether Nord records the value under another field, or whether the network dashboard omits it from this report. It cannot be joined to an editorial page and does not close the roadmap conversion gate.
+This is the first real Nord export queried after the page-sub-ID rollout was deployed, but the two clicks do **not** expose a returned sub-ID. The report is an account/offer aggregate and does not identify whether either click originated on ZeroToVPN, so it cannot prove whether the clicks occurred before the deployment reached a visitor, whether Nord records the value under another field, or whether the network dashboard omits it from this report. It cannot be joined to an editorial page and does not close the roadmap conversion gate.
 
 The importer now accepts Nord's UI/API spelling (`Stat.affiliate_info1`, plus the `Stat.adv_sub1` and direct `aff_sub` variants) and groups non-empty values under `affiliate.partner.bySubId`. The current export correctly produces no page-level group because `Sub ID 1` is blank.
 
 ## Next measurement action
 
 Keep the existing `aff_sub=zt_<public-page-slug>` implementation live. Capture another dated export after fresh production clicks have had time to settle, retaining **Sub ID 1** and **Advertiser Sub ID 1** in the report fields. If both remain blank, ask Nord support which report/API field exposes the affiliate sub-ID before changing the redirect contract.
-

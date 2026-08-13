@@ -1,11 +1,11 @@
 # Live editorial page audit
 
-Generated: 2026-08-13T06:44:47.649Z
+Generated: 2026-08-13T06:54:21.229Z
 
 - Target pages: **42**
 - Passing pages: **42**
 - Pages needing review: **0**
-- Affiliate links checked: **206**
+- Affiliate links checked: **205**
 - Affiliate links missing sponsored/nofollow: **0**
 - Affiliate links missing Short.io slug telemetry: **0**
 - Missing required cluster links: **0**
@@ -38,7 +38,7 @@ Generated: 2026-08-13T06:44:47.649Z
 | pass | /reviews/nordvpn | NordVPN Review 2026: Privacy Evidence, Price and Performance | 1 | 43 | 2 | — | — |
 | pass | /reviews/protonvpn | Proton VPN Review 2026: Privacy Evidence, Free Plan and Performance | 1 | 43 | 2 | — | — |
 | pass | /reviews/urban-vpn | Urban VPN Review 2026: Free Plan, Privacy Risks and Safer Alternatives | 1 | 44 | 2 | — | — |
-| pass | /reviews/surfshark | Surfshark Review (Aug 2026) - Tested &amp; Rated | ZeroToVPN | 1 | 50 | 3 | — | — |
+| pass | /reviews/surfshark | Surfshark Review 2026: Privacy Evidence, Unlimited Devices and Price | 1 | 43 | 2 | — | — |
 | pass | /reviews/mullvad | Mullvad VPN Review (Aug 2026) - Tested &amp; Rated | ZeroToVPN | 1 | 50 | 3 | — | — |
 | pass | /blog/best-vpn-for-iran-2026-bypass-internet-censorship | Best VPN for Iran 2026: Tested Options &amp; Setup Limits | 1 | 60 | 6 | — | — |
 | pass | /blog/best-vpn-for-telegram-2026 | Best VPN for Telegram in 2026: what to verify before you connect | 1 | 59 | 6 | — | — |

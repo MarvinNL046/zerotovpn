@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "cluster": "Brave VPN pricing / free tier / browser integration",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "fetchedAt": "2026-08-13T02:37:02.937Z",
+  "refreshed": false,
+  "seeds": [
+    "is brave vpn free",
+    "is brave firewall vpn free",
+    "does brave have a free vpn",
+    "how much is brave vpn",
+    "brave vpn free trial",
+    "brave vpn review"
+  ],
+  "overview": [
+    {
+      "keyword": "brave vpn free trial",
+      "currentVolume": 90,
+      "latestVolume": 50,
+      "latestMonth": "2026-06",
+      "difficulty": 42,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "brave vpn review",
+      "currentVolume": null,
+      "latestVolume": 260,
+      "latestMonth": "2024-02",
+      "difficulty": 0,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "does brave have a free vpn",
+      "currentVolume": null,
+      "latestVolume": 20,
+      "latestMonth": "2024-02",
+      "difficulty": 0,
+      "intent": "informational"
+    },
+    {
+      "keyword": "how much is brave vpn",
+      "currentVolume": 50,
+      "latestVolume": 40,
+      "latestMonth": "2026-06",
+      "difficulty": 28,
+      "intent": "informational"
+    },
+    {
+      "keyword": "is brave vpn free",
+      "currentVolume": null,
+      "latestVolume": 110,
+      "latestMonth": "2024-02",
+      "difficulty": 7,
+      "intent": "informational"
+    }
+  ],
+  "suggestions": [
+    {
+      "seed": "is brave vpn free",
+      "keyword": "is brave browser vpn free",
+      "volume": 20
+    },
+    {
+      "seed": "does brave have a free vpn",
+      "keyword": "does brave browser have a free vpn",
+      "volume": 30
+    },
+    {
+      "seed": "how much is brave vpn",
+      "keyword": "how much is brave vpn",
+      "volume": 50
+    },
+    {
+      "seed": "brave vpn free trial",
+      "keyword": "brave vpn free trial",
+      "volume": 90
+    },
+    {
+      "seed": "brave vpn review",
+      "keyword": "brave browser vpn review",
+      "volume": null
+    },
+    {
+      "seed": "brave vpn review",
+      "keyword": "brave vpn review reddit",
+      "volume": null
+    },
+    {
+      "seed": "brave vpn review",
+      "keyword": "brave firewall vpn review",
+      "volume": null
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "is brave vpn free",
+      "paa": [
+        "Can Brave VPN be trusted?",
+        "Is Brave a shady browser?",
+        "Does Brave automatically have VPN?",
+        "Is there any 100% free VPN?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "is brave firewall vpn free",
+      "paa": [
+        "Does Brave VPN work for free?",
+        "Is there any 100% free VPN?",
+        "Is Brave a shady browser?",
+        "Can Brave VPN be trusted?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "does brave have a free vpn",
+      "paa": [
+        "Is there any 100% free VPN?",
+        "Does Brave VPN work for free?",
+        "Is Brave a shady browser?",
+        "Is Brave VPN actually good?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "how much is brave vpn",
+      "paa": [
+        "Does Brave VPN cost money?",
+        "Is Brave a shady browser?",
+        "Is it safe to use Brave VPN?",
+        "Which is safer, DuckDuckGo or Brave?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "brave vpn free trial",
+      "paa": [
+        "Can Brave VPN be trusted?",
+        "How to get Brave VPN for free?",
+        "Is Brave a shady browser?",
+        "Which VPN has a 30 day free trial?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "brave vpn review",
+      "paa": [
+        "Is it safe to use Brave VPN?",
+        "Is Brave a shady browser?",
+        "What is the safest VPN to use?",
+        "Which is safer, DuckDuckGo or Brave?"
+      ],
+      "hasAiOverview": true
+    }
+  ],
+  "sourcePolicy": "DataForSEO signals prioritise intent coverage and FAQ structure; they do not prove current pricing, trial eligibility, feature availability or provider performance."
+}

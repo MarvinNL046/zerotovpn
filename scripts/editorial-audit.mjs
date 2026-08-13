@@ -138,7 +138,7 @@ const checks = [
   {
     name: "localized Iran blog routes use the evidence-led body",
     file: "src/app/[locale]/blog/[slug]/page.tsx",
-    patterns: [/iranVpnEditorialContent/, /const articleContent = isIranEditorial/, /iranContentBrief/, /best vpn for iran/, /censorship-restricted-networks/, /brief=\{isIranEditorial \? iranContentBrief : isTelegramEditorial \? editorialContentBriefs\.telegram : isConnectionDropsEditorial \? connectionDropsContentBrief : isServerLocationEditorial \? serverLocationContentBrief : isIspPrivacyEditorial \? ispPrivacyContentBrief : undefined\}/],
+    patterns: [/iranVpnEditorialContent/, /const articleContent = isIranEditorial/, /iranContentBrief/, /best vpn for iran/, /censorship-restricted-networks/, /brief=\{isIranEditorial \? iranContentBrief : isTelegramEditorial \? editorialContentBriefs\.telegram : isConnectionDropsEditorial \? connectionDropsContentBrief : isServerLocationEditorial \? serverLocationContentBrief : isIspPrivacyEditorial \? ispPrivacyContentBrief : isBraveVpnEditorial \? braveVpnContentBrief : undefined\}/],
     forbiddenPatterns: [/articleContent = isRestrictedAffiliateContext\s*\?\s*verwijderAffiliateLinks\(post\.content\)/i],
   },
   {
@@ -214,6 +214,17 @@ const checks = [
     name: "ISP privacy blog route uses the audited editorial override",
     file: "src/app/[locale]/blog/[slug]/page.tsx",
     patterns: [/ispPrivacyEditorialTitle/, /ispPrivacyContentBrief/, /ispPrivacyEditorialFaq/, /ispPrivacyClusterLinks/, /isIspPrivacyEditorial/],
+  },
+  {
+    name: "Brave VPN page uses PAA-led bounded pricing copy",
+    file: "src/data/editorial/brave-vpn-2026.ts",
+    patterns: [/Does Brave automatically have a VPN\?/, /Does Brave VPN work for free\?/, /Can Brave VPN be trusted\?/, /Is it safe to use Brave VPN\?/, /What is included with Brave and what requires a separate VPN product/, /2026/],
+    forbiddenPatterns: [/300\+.*40\+ countries|7,400\+|\$3\.39|\$2\.49|99\.99/i, /permanent free tier.*guarantee/i],
+  },
+  {
+    name: "Brave VPN blog route uses the audited editorial override",
+    file: "src/app/[locale]/blog/[slug]/page.tsx",
+    patterns: [/braveVpnEditorialTitle/, /braveVpnContentBrief/, /braveVpnEditorialFaq/, /braveVpnClusterLinks/, /isBraveVpnEditorial/],
   },
   {
     name: "Chromebook use-case page avoids unsupported test counts",

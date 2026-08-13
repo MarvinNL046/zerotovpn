@@ -20,6 +20,7 @@
     "seo:connection-drops": "node scripts/connection-drops-seo-research.mjs",
     "seo:server-location": "node scripts/server-location-seo-research.mjs",
     "seo:isp-privacy": "node scripts/isp-privacy-seo-research.mjs",
+    "seo:brave-vpn": "node scripts/brave-vpn-seo-research.mjs",
     "seo:smoke": "node scripts/dfs-smoke.mjs",
     "export:shortio": "node scripts/export-shortio-metrics.mjs",
     "audit:sitemap": "node scripts/audit-sitemap-live.mjs",

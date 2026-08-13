@@ -36,12 +36,19 @@ import {
   ispPrivacyEditorialTitle,
   ispPrivacyEditorialUpdatedAt,
 } from "@/data/editorial/isp-privacy-2026";
+import {
+  braveVpnEditorialContent,
+  braveVpnEditorialExcerpt,
+  braveVpnEditorialTitle,
+  braveVpnEditorialUpdatedAt,
+} from "@/data/editorial/brave-vpn-2026";
 
 const IRAN_EDITORIAL_SLUG = "best-vpn-for-iran-2026-bypass-internet-censorship";
 const TELEGRAM_EDITORIAL_SLUG = "best-vpn-for-telegram-2026";
 const CONNECTION_DROPS_EDITORIAL_SLUG = "vpn-connection-drops-why-disconnects-how-to-fix-2026";
 const SERVER_LOCATION_EDITORIAL_SLUG = "best-country-for-vpn-server-location-2026";
 const ISP_PRIVACY_EDITORIAL_SLUG = "can-vpn-hide-from-isp";
+const BRAVE_VPN_EDITORIAL_SLUG = "is-brave-vpn-free-2026";
 
 // Legacy deal/coupon content is not a compliant commercial surface: it contains
 // unassigned coupon language and stale promotional prices. Keep the records for
@@ -137,6 +144,11 @@ const EDITORIAL_SUMMARIES: Record<string, { title: string; excerpt: string; upda
     excerpt: ispPrivacyEditorialExcerpt,
     updatedAt: ispPrivacyEditorialUpdatedAt,
   },
+  [BRAVE_VPN_EDITORIAL_SLUG]: {
+    title: braveVpnEditorialTitle,
+    excerpt: braveVpnEditorialExcerpt,
+    updatedAt: braveVpnEditorialUpdatedAt,
+  },
 };
 
 function toSummary(raw: RawSummary): BlogPostSummary {
@@ -210,6 +222,7 @@ async function readPostFile(
     const isConnectionDropsEditorial = language === "en" && slug === CONNECTION_DROPS_EDITORIAL_SLUG;
     const isServerLocationEditorial = language === "en" && slug === SERVER_LOCATION_EDITORIAL_SLUG;
     const isIspPrivacyEditorial = language === "en" && slug === ISP_PRIVACY_EDITORIAL_SLUG;
+    const isBraveVpnEditorial = language === "en" && slug === BRAVE_VPN_EDITORIAL_SLUG;
     const editorial = isIranEditorial
       ? { title: iranVpnEditorialTitle, excerpt: iranVpnEditorialExcerpt, content: iranVpnEditorialContent, updatedAt: iranVpnEditorialUpdatedAt }
       : isTelegramEditorial
@@ -220,7 +233,9 @@ async function readPostFile(
             ? { title: serverLocationEditorialTitle, excerpt: serverLocationEditorialExcerpt, content: serverLocationEditorialContent, updatedAt: serverLocationEditorialUpdatedAt }
             : isIspPrivacyEditorial
               ? { title: ispPrivacyEditorialTitle, excerpt: ispPrivacyEditorialExcerpt, content: ispPrivacyEditorialContent, updatedAt: ispPrivacyEditorialUpdatedAt }
-              : null;
+              : isBraveVpnEditorial
+                ? { title: braveVpnEditorialTitle, excerpt: braveVpnEditorialExcerpt, content: braveVpnEditorialContent, updatedAt: braveVpnEditorialUpdatedAt }
+                : null;
     return {
       id: p.id,
       slug: p.slug,

@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
+export const dynamic = "force-static";
 
 export const alt = "ZeroToVPN - Best VPN Reviews & Comparisons";
 export const size = {
@@ -9,7 +10,7 @@ export const size = {
 };
 export const contentType = "image/png";
 
-export default async function TwitterImage() {
+export default function TwitterImage() {
   return new ImageResponse(
     (
       <div

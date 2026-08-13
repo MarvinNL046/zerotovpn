@@ -1,11 +1,11 @@
 # Live editorial page audit
 
-Generated: 2026-08-13T10:51:15.998Z
+Generated: 2026-08-13T11:01:31.584Z
 
-- Target pages: **62**
-- Passing pages: **62**
+- Target pages: **63**
+- Passing pages: **63**
 - Pages needing review: **0**
-- Affiliate links checked: **284**
+- Affiliate links checked: **290**
 - Affiliate links missing sponsored/nofollow: **0**
 - Affiliate links missing Short.io slug telemetry: **0**
 - Missing required cluster links: **0**
@@ -27,6 +27,7 @@ Generated: 2026-08-13T10:51:15.998Z
 | pass | /best/vpn-laptops | Best VPNs for Laptops in 2026: Public Wi-Fi, Travel and Device Checks | 1 | 44 | 6 | — | — |
 | pass | /best/vpn-iphone | Best VPNs for iPhone in 2026: iOS App, Privacy and Setup Checks | 1 | 44 | 6 | — | — |
 | pass | /best/vpn-ipad | Best VPNs for iPad in 2026: iPadOS App, Privacy and Setup Checks | 1 | 44 | 6 | — | — |
+| pass | /best/vpn-macos | Best VPNs for macOS in 2026: Mac App, Apple Silicon and Privacy Checks | 1 | 45 | 6 | — | — |
 | pass | /best/vpn-privacy | Best VPNs for Privacy in 2026: Compare No-Logs Evidence and Threat Models | 1 | 43 | 6 | — | — |
 | pass | /best/vpn-gaming | Best VPNs for Gaming in 2026: Ping, Stability and DDoS Boundaries | 1 | 42 | 6 | — | — |
 | pass | /blog/does-vpn-reduce-ping-gaming-2026 | Does a VPN Reduce Ping? What Gaming Tests Can Actually Show (2026) | 1 | 55 | 0 | — | — |

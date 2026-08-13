@@ -1,6 +1,6 @@
 # Live editorial page audit
 
-Generated: 2026-08-13T07:55:18.401Z
+Generated: 2026-08-13T08:00:13.136Z
 
 - Target pages: **45**
 - Passing pages: **45**
@@ -46,7 +46,7 @@ Generated: 2026-08-13T07:55:18.401Z
 | pass | /countries/iran | VPN Use in Iran: Evidence and Safety Checklist | ZeroToVPN | 1 | 54 | 0 | — | — |
 | pass | /countries/russia | VPN for Russia 2026: Obfuscation, Setup &amp; What to Verify | 1 | 46 | 6 | — | — |
 | pass | /countries/china | VPN for China in 2026: What to Verify Before You Connect | 1 | 47 | 6 | — | — |
-| pass | /countries/vietnam | Best VPN for Vietnam 2026: Bypass Censorship | ZeroToVPN | 1 | 46 | 6 | — | — |
+| pass | /countries/vietnam | VPN for Vietnam 2026: What to Verify Before You Connect | 1 | 46 | 6 | — | — |
 | pass | /guides/vpn-protocols-explained | VPN Protocols Explained: WireGuard vs OpenVPN (2026) | ZeroToVPN | 1 | 50 | 6 | — | — |
 | pass | /guides/vpn-obfuscation-explained | VPN Obfuscation Explained: Stealth and OpenVPN | ZeroToVPN | 1 | 49 | 6 | — | — |
 | pass | /guides/vpn-for-restricted-networks | How to Use a VPN on a Restricted Network | ZeroToVPN | 1 | 51 | 6 | — | — |

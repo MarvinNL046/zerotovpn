@@ -28,7 +28,7 @@ export function FreeVpnEditorialPage({ locale = "en" }: { locale?: string } = {}
   const localizedPageUrl = locale === "en" ? pageUrl : `${siteUrl}/${locale}/best/free-vpn`;
   return (
     <>
-      <ArticleJsonLd title={copy.jsonLdTitle} description={copy.jsonLdDescription} url={localizedPageUrl} datePublished="2026-01-01" dateModified="2026-08-12" />
+      <ArticleJsonLd title={copy.jsonLdTitle} description={copy.jsonLdDescription} url={localizedPageUrl} datePublished="2026-01-01" dateModified="2026-08-13" />
       <BreadcrumbSchema items={[{ name: locale === "fr" ? "Meilleurs VPN" : locale === "es" ? "Mejores VPN" : "Best VPNs", href: "/best/best-vpn" }, { name: locale === "fr" ? "VPN gratuits" : locale === "es" ? "VPN gratis" : "Free VPNs", href: "/best/free-vpn" }]} />
       <FAQSchema title={copy.faqSchemaTitle} faqs={copy.faq} />
       <BestVpnEditorialTemplate brief={editorialContentBriefs.freeVpn} navigation={copy.nav}>

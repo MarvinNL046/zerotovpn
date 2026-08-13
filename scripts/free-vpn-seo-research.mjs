@@ -6,6 +6,7 @@ import { dfs, DFS_DEFAULTS } from "./dfs.mjs";
 const ROOT = resolve(import.meta.dirname, "..");
 const CACHE = resolve(ROOT, ".cache", "dataforseo", "free-vpn");
 const OUT = resolve(ROOT, "docs", "research");
+const reportDate = new Date().toISOString().slice(0, 10);
 const context = { ...DFS_DEFAULTS };
 const seeds = ["free vpn", "best free vpn", "free vpn no credit card", "are free vpns safe", "free vpn for streaming", "free vpn for china"];
 const stable = (value) => value && typeof value === "object" ? JSON.stringify(value, Object.keys(value).sort()) : JSON.stringify(value);
@@ -46,8 +47,8 @@ async function main() {
   for (const keyword of seeds) { const payload = await cached("serp/google/organic/live/advanced", { ...context, keyword, depth: 20 }); serp.push({ keyword, paa: [...new Set(paa(payload.result))].slice(0, 12), hasAiOverview: JSON.stringify(payload.result).includes('"type":"ai_overview"') }); }
   const report = { schemaVersion: 1, cluster: "Free VPNs / safety / limits / streaming", targetDomain: "zerotovpn.com", ...context, fetchedAt: new Date().toISOString(), refreshed: process.argv.includes("--refresh"), seeds, overview: overviewRows, suggestions: [...new Map(suggestions.map((row) => [row.keyword, row])).values()], serp, sourcePolicy: "DataForSEO signals prioritise questions and structure; they do not prove that a free tier is safe, private, available or suitable for streaming." };
   mkdirSync(OUT, { recursive: true });
-  const jsonPath = resolve(OUT, "dataforseo-free-vpn-cluster-2026-08-11.json");
-  const mdPath = resolve(OUT, "dataforseo-free-vpn-cluster-2026-08-11.md");
+  const jsonPath = resolve(OUT, `dataforseo-free-vpn-cluster-${reportDate}.json`);
+  const mdPath = resolve(OUT, `dataforseo-free-vpn-cluster-${reportDate}.md`);
   writeFileSync(jsonPath, JSON.stringify(report, null, 2));
   const lines = ["# DataForSEO research - free VPN", "", `Fetched: ${report.fetchedAt} | location ${report.location_code} | language ${report.language_code}`, "", "## Keyword overview", "", "| Keyword | Current | Latest non-zero | KD | Intent |", "|---|---:|---:|---:|---|", ...overviewRows.map((row) => `| ${row.keyword} | ${row.currentVolume ?? "n/a"} | ${row.latestVolume ?? "n/a"}${row.latestMonth ? ` (${row.latestMonth})` : ""} | ${row.difficulty ?? "n/a"} | ${row.intent ?? "n/a"} |`), "", "## PAA and SERP features", "", ...serp.flatMap((row) => [`### ${row.keyword}`, `- AI Overview: ${row.hasAiOverview ? "yes" : "no"}`, ...(row.paa.length ? row.paa.map((question) => `- PAA: ${question}`) : ["- No PAA returned"]), ""]), "## Suggestion candidates", "", "| Seed | Keyword | Volume |", "|---|---|---:|", ...report.suggestions.slice(0, 90).map((row) => `| ${row.seed} | ${row.keyword} | ${row.volume ?? "n/a"} |`), "", "## Editorial interpretation", "", "Separate free-tier facts from paid-plan affiliate recommendations. Use current first-party privacy policies and plan pages; do not claim that most free VPNs sell data without a source or imply streaming/censorship success from a feature label."];
   writeFileSync(mdPath, `${lines.join("\n")}\n`);

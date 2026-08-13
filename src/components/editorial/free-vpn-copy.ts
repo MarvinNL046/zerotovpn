@@ -84,6 +84,7 @@ const sharedCards: FreeVpnCardCopy[] = [
 ];
 
 const englishFaq = [
+  { question: "What’s the best free VPN right now?", answer: "There is no universal best free VPN: the right fit depends on your device, data needs, locations and privacy evidence. Compare the documented limits in the cards below, then verify the provider’s current plan and privacy pages before installing." },
   { question: "Is there any 100% free VPN?", answer: "Yes, some providers offer a free tier without a subscription fee. “Free” still comes with trade-offs such as limited locations, data caps, fewer simultaneous features or slower access. Read the current plan and privacy terms before installing." },
   { question: "Are free VPNs safe to use?", answer: "Safety depends on the provider, app, privacy policy, permissions and update path. Treat a free download as untrusted until you can identify the operator, the business model and current independent evidence. A free price is not evidence of privacy." },
   { question: "Can I use a free VPN for streaming?", answer: "Sometimes a free tier may connect to a streaming service, but providers often limit locations or explicitly reserve guaranteed streaming support for paid plans. We do not treat one successful playback as a stable feature." },
@@ -97,7 +98,7 @@ const englishFaq = [
 
 export const freeVpnCopy: Record<"en" | "fr", FreeVpnCopy> = {
   en: {
-    updated: "Updated August 12, 2026 · free-tier guide",
+    updated: "Updated August 13, 2026 · free-tier guide",
     heroTitle: "Best free VPNs: what is actually free, safe and useful?",
     heroIntro: "A free VPN can be a sensible choice for light, occasional use—but “free” does not mean unlimited, private or suitable for censorship and streaming. Compare the plan boundary, privacy evidence and failure mode before you connect.",
     disclosure: "Independent editorial research. Affiliate links may earn us a commission;",
@@ -121,7 +122,7 @@ export const freeVpnCopy: Record<"en" | "fr", FreeVpnCopy> = {
     sourceProton: "Proton VPN Free plan — bandwidth, plan and streaming boundaries.",
     sourceWindscribe: "Windscribe Free plan — data and location limits.",
     sourceTunnelBear: "TunnelBear pricing — current free allowance.",
-    sourceDataForSeo: "DataForSEO US/English dossier fetched August 12, 2026: PAA questions about truly free VPNs, legality, tracking, no-card access, streaming and China. Metrics prioritise questions; they do not prove provider outcomes.",
+    sourceDataForSeo: "DataForSEO US/English dossier fetched August 13, 2026: PAA questions about truly free VPNs, legality, tracking, no-card access, streaming and China. Metrics prioritise questions; they do not prove provider outcomes.",
     continueLead: "Continue with the",
     continueTravel: "travel guide",
     continueWifi: "public Wi-Fi safety guide",
@@ -139,7 +140,7 @@ export const freeVpnCopy: Record<"en" | "fr", FreeVpnCopy> = {
     faq: englishFaq,
   },
   fr: {
-    updated: "Mis à jour le 12 août 2026 · guide des offres gratuites",
+    updated: "Mis à jour le 13 août 2026 · guide des offres gratuites",
     heroTitle: "Meilleurs VPN gratuits : ce qui est vraiment gratuit, sûr et utile",
     heroIntro: "Un VPN gratuit peut convenir à une utilisation légère et occasionnelle, mais « gratuit » ne signifie ni illimité, ni privé, ni adapté à la censure ou au streaming. Comparez les limites du forfait, les preuves de confidentialité et les risques avant de vous connecter.",
     disclosure: "Recherche éditoriale indépendante. Les liens affiliés peuvent nous rémunérer ;",
@@ -163,7 +164,7 @@ export const freeVpnCopy: Record<"en" | "fr", FreeVpnCopy> = {
     sourceProton: "Forfait gratuit Proton VPN — limites de bande passante, de forfait et de streaming.",
     sourceWindscribe: "Forfait gratuit Windscribe — limites de données et de pays.",
     sourceTunnelBear: "Tarifs TunnelBear — quota gratuit actuel.",
-    sourceDataForSeo: "Dossier DataForSEO US/anglais récupéré le 12 août 2026 : questions PAA sur les VPN vraiment gratuits, la légalité, le suivi, l’accès sans carte, le streaming et la Chine. Ces métriques orientent les questions ; elles ne prouvent pas les performances d’un fournisseur.",
+    sourceDataForSeo: "Dossier DataForSEO US/anglais récupéré le 13 août 2026 : questions PAA sur les VPN vraiment gratuits, la légalité, le suivi, l’accès sans carte, le streaming et la Chine. Ces métriques orientent les questions ; elles ne prouvent pas les performances d’un fournisseur.",
     continueLead: "Poursuivez avec le",
     continueTravel: "guide VPN pour les voyages",
     continueWifi: "guide de sécurité du Wi-Fi public",
@@ -198,7 +199,7 @@ export const freeVpnCopy: Record<"en" | "fr", FreeVpnCopy> = {
 
 export const spanishFreeVpnCopy: FreeVpnCopy = {
   ...freeVpnCopy.en,
-  updated: "Actualizado el 12 de agosto de 2026 · guía de planes gratuitos",
+  updated: "Actualizado el 13 de agosto de 2026 · guía de planes gratuitos",
   heroTitle: "Mejores VPN gratis: qué es realmente gratuito, seguro y útil",
   heroIntro: "Una VPN gratis puede servir para un uso ligero y ocasional, pero «gratis» no significa ilimitada, privada ni adecuada para la censura o el streaming. Compara los límites del plan, las pruebas de privacidad y los posibles fallos antes de conectarte.",
   disclosure: "Investigación editorial independiente. Los enlaces de afiliado pueden generar una comisión;",
@@ -222,7 +223,7 @@ export const spanishFreeVpnCopy: FreeVpnCopy = {
   sourceProton: "Plan gratuito de Proton VPN — límites de ancho de banda, plan y streaming.",
   sourceWindscribe: "Plan gratuito de Windscribe — límites de datos y ubicaciones.",
   sourceTunnelBear: "Precios de TunnelBear — cuota gratuita actual.",
-  sourceDataForSeo: "Dossier DataForSEO US/inglés obtenido el 12 de agosto de 2026: preguntas PAA sobre VPN realmente gratis, legalidad, seguimiento, acceso sin tarjeta, streaming y China. Las métricas priorizan preguntas; no demuestran resultados de proveedores.",
+  sourceDataForSeo: "Dossier DataForSEO US/inglés obtenido el 13 de agosto de 2026: preguntas PAA sobre VPN realmente gratis, legalidad, seguimiento, acceso sin tarjeta, streaming y China. Las métricas priorizan preguntas; no demuestran resultados de proveedores.",
   continueLead: "Continúa con la",
   continueTravel: "guía de VPN para viajes",
   continueWifi: "guía de seguridad en Wi-Fi público",

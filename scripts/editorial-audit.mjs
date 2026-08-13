@@ -266,7 +266,7 @@ const checks = [
   {
     name: "Free VPN localized evidence copy",
     file: "src/components/editorial/free-vpn-copy.ts",
-    patterns: [/what is actually free/, /Meilleurs VPN gratuits/, /Mejores VPN gratis/, /protonvpn.com\/free-vpn/, /DataForSEO/, /100% free/],
+    patterns: [/what is actually free/, /Meilleurs VPN gratuits/, /Mejores VPN gratis/, /protonvpn.com\/free-vpn/, /DataForSEO/, /100% free/, /Updated August 13, 2026/, /What’s the best free VPN right now\?/, /fetched August 13, 2026/],
   },
   {
     name: "cheap VPN page exposes tracked inline prices",

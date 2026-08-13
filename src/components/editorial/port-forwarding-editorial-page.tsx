@@ -5,7 +5,7 @@ import { AffiliateDisclosure } from "@/components/vpn/affiliate-disclosure";
 import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { BestVpnEditorialTemplate } from "@/components/editorial/best-vpn-editorial-template";
-import { getVpnById } from "@/lib/vpn-data";
+import { getVpnBySlug } from "@/lib/vpn-data";
 import { getVpnAffiliateUrl, type VpnLinkSlug } from "@/lib/vpn-links";
 import { PORT_FORWARDING, type PortForwardingStatus } from "@/lib/vpn-port-forwarding";
 import { editorialContentBriefs } from "@/lib/editorial-content-briefs";
@@ -36,8 +36,8 @@ function affiliateFor(slug: string) {
 }
 
 export function PortForwardingEditorialPage() {
-  const providers = PORT_FORWARDING.map((record) => ({ record, vpn: getVpnById(record.slug) })).filter((item) => item.vpn);
-  const picks = ["protonvpn", "private-internet-access", "purevpn"].map((slug) => ({ record: PORT_FORWARDING.find((item) => item.slug === slug), vpn: getVpnById(slug) })).filter((item) => item.record && item.vpn);
+  const providers = PORT_FORWARDING.map((record) => ({ record, vpn: getVpnBySlug(record.slug) })).filter((item) => item.vpn);
+  const picks = ["protonvpn", "private-internet-access", "purevpn"].map((slug) => ({ record: PORT_FORWARDING.find((item) => item.slug === slug), vpn: getVpnBySlug(slug) })).filter((item) => item.record && item.vpn);
 
   return (
     <BestVpnEditorialTemplate brief={editorialContentBriefs.portForwarding} navigation={[{ href: "#quick-picks", label: "Verdict" }, { href: "#evidence", label: "Evidence" }, { href: "#comparison", label: "Comparison" }, { href: "#alternatives", label: "Alternatives" }, { href: "#faq", label: "FAQ" }, { href: "#sources", label: "Sources" }]}> 

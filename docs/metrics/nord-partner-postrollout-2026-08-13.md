@@ -15,6 +15,12 @@ The downloaded CSV was saved locally at `.cache/metrics/nord-partner-2026-08-13/
 
 The CSV also contains one unlabeled aggregate row. It is excluded by the importer so the dated offer row is not double-counted.
 
+## Short.io cross-check
+
+The authenticated Short.io exporter was run for the UTC window **12–13 August 2026** (the closest safe comparison to Nord's Europe/Amsterdam day). It returned **126 current-link clicks / 109 human clicks** overall and **13 clicks / 11 human clicks** for `https://go.zerotovpn.com/nordvpn`. A separate 13-August-UTC-only request returned **0** for that link. The exact day boundary therefore matters, and the Short.io export is current-link-only rather than an account-wide Nord report.
+
+This shows that ZeroToVPN traffic existed around the post-rollout period, but it does not identify which of Nord's two aggregate offer clicks came from the site. The Short.io raw exports remain in the ignored `.cache/metrics/shortio-2026-08-12-13/` and `.cache/metrics/shortio-2026-08-13/` directories; a rate-limited exploratory request was not used as evidence.
+
 ## Attribution boundary
 
 This is the first real Nord export queried after the page-sub-ID rollout was deployed, but the two clicks do **not** expose a returned sub-ID. The report is an account/offer aggregate and does not identify whether either click originated on ZeroToVPN, so it cannot prove whether the clicks occurred before the deployment reached a visitor, whether Nord records the value under another field, or whether the network dashboard omits it from this report. It cannot be joined to an editorial page and does not close the roadmap conversion gate.

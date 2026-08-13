@@ -283,7 +283,7 @@ export default async function VpnFreeTrialPage({ params }: Props) {
         </section>
 
         {/* De tabel */}
-        <section className="border-y bg-muted/30 py-12 lg:py-16">
+        <section id="comparison" className="border-y bg-muted/30 py-12 lg:py-16">
           <div className="container">
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="text-2xl font-bold md:text-3xl">{t.tableTitle}</h2>
@@ -356,7 +356,7 @@ export default async function VpnFreeTrialPage({ params }: Props) {
         </section>
 
         {/* Per aanbieder */}
-        <section className="py-12 lg:py-16">
+        <section id="faq" className="py-12 lg:py-16">
           <div className="container">
             <h2 className="mb-8 text-center text-2xl font-bold md:text-3xl">
               {t.pickTitle}

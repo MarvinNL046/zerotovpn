@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { withNordAffiliateSubId } from "@/lib/affiliate-attribution";
 
 interface AffiliateButtonProps {
@@ -90,6 +91,8 @@ export function AffiliateButton({
   className,
   children,
 }: AffiliateButtonProps) {
+  const pathname = usePathname() ?? "/";
+  const renderedHref = buildAffiliateHref(vpnId, affiliateUrl, pathname);
   // Dit was een <button> met window.open() ná een await fetch(). Twee problemen:
   // de link had geen href — dus onzichtbaar voor crawlers, geen rel-attributen,
   // niet te middenklikken of te kopiëren — en window.open() viel door de await
@@ -98,7 +101,7 @@ export function AffiliateButton({
   return (
     <Button asChild variant={variant} size={size} className={className}>
       <a
-        href={affiliateUrl}
+        href={renderedHref}
         target="_blank"
         rel="noopener noreferrer sponsored nofollow"
         data-affiliate-slug={getShortIoSlug(affiliateUrl) ?? undefined}
@@ -145,9 +148,12 @@ export function AffiliateTextLink({
   dataPriceLink,
   children,
 }: AffiliateTextLinkProps) {
+  const pathname = usePathname() ?? "/";
+  const renderedHref = buildAffiliateHref(vpnId, affiliateUrl, pathname);
+
   return (
     <a
-      href={affiliateUrl}
+      href={renderedHref}
       target="_blank"
       rel="noopener noreferrer sponsored nofollow"
       className={className}

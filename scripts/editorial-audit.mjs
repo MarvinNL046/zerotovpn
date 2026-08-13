@@ -6,7 +6,7 @@ const checks = [
   {
     name: "shared affiliate rel policy",
     file: "src/components/vpn/affiliate-button.tsx",
-    patterns: [/sponsored\s+nofollow/, /trackAffiliateClick/, /affiliateSlug/, /affiliateSubId/, /data-affiliate-slug/, /buildAffiliateHref/, /aff_sub/, /vpnId !== "nordvpn"/],
+    patterns: [/sponsored\s+nofollow/, /trackAffiliateClick/, /affiliateSlug/, /affiliateSubId/, /data-affiliate-slug/, /buildAffiliateHref/, /usePathname/, /renderedHref/, /aff_sub/, /vpnId !== "nordvpn"/],
   },
   {
     name: "affiliate beacon preserves generated public sub-ID",

@@ -1,11 +1,11 @@
 # Live editorial page audit
 
-Generated: 2026-08-13T06:10:37.425Z
+Generated: 2026-08-13T06:21:46.915Z
 
-- Target pages: **39**
-- Passing pages: **39**
+- Target pages: **40**
+- Passing pages: **40**
 - Pages needing review: **0**
-- Affiliate links checked: **191**
+- Affiliate links checked: **202**
 - Affiliate links missing sponsored/nofollow: **0**
 - Affiliate links missing Short.io slug telemetry: **0**
 - Missing required cluster links: **0**
@@ -21,6 +21,7 @@ Generated: 2026-08-13T06:10:37.425Z
 |---|---|---|---:|---:|---:|---|---|
 | pass | / | ZeroToVPN: Independent VPN Research, Transparency &amp; Real-World Testing | 1 | 50 | 14 | — | — |
 | pass | /about | About ZeroToVPN | Our Testing Methodology | 1 | 47 | 0 | — | — |
+| pass | /compare | VPN Comparison 2026: Compare Price, Privacy and Device Limits | ZeroToVPN | 1 | 46 | 11 | — | — |
 | pass | /best/vpn-linux | Best VPNs for Linux (Aug 2026) — Native Apps &amp; CLI | 1 | 44 | 3 | — | — |
 | pass | /best/vpn-windows | Best VPNs for Windows PC (Aug 2026) — Native Apps &amp; Speed | 1 | 41 | 5 | — | — |
 | pass | /best/vpn-laptops | Best VPNs for Laptops (Aug 2026) — Lightweight &amp; Secure | 1 | 42 | 6 | — | — |

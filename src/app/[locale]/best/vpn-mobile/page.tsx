@@ -1,5 +1,5 @@
 import { setRequestLocale } from "next-intl/server";
-import { OG_LOCALE_MAP, getLocalizedMonthYear, stripBrand, titelMetMerk } from "@/lib/seo-utils";
+import { DEFAULT_OG_IMAGE, OG_LOCALE_MAP, getLocalizedMonthYear, stripBrand, titelMetMerk } from "@/lib/seo-utils";
 import { getTranslations } from "next-intl/server";
 import { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
@@ -53,6 +53,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         title: mobileVpnEditorialTitle,
         description: mobileVpnEditorialDescription,
         type: "article",
+        images: [DEFAULT_OG_IMAGE],
       },
       alternates: generateAlternates("/best/vpn-mobile", locale),
     };

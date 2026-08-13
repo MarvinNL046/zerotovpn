@@ -1,11 +1,11 @@
 # Live editorial page audit
 
-Generated: 2026-08-13T09:20:51.820Z
+Generated: 2026-08-13T09:30:49.745Z
 
 - Target pages: **58**
 - Passing pages: **58**
 - Pages needing review: **0**
-- Affiliate links checked: **226**
+- Affiliate links checked: **229**
 - Affiliate links missing sponsored/nofollow: **0**
 - Affiliate links missing Short.io slug telemetry: **0**
 - Missing required cluster links: **0**
@@ -22,7 +22,7 @@ Generated: 2026-08-13T09:20:51.820Z
 | pass | / | ZeroToVPN: Independent VPN Research, Transparency &amp; Real-World Testing | 1 | 50 | 14 | — | — |
 | pass | /about | About ZeroToVPN | Our Testing Methodology | 1 | 47 | 0 | — | — |
 | pass | /compare | VPN Comparison 2026: Compare Price, Privacy and Device Limits | ZeroToVPN | 1 | 46 | 11 | — | — |
-| pass | /best/vpn-linux | Best VPNs for Linux (Aug 2026) — Native Apps &amp; CLI | 1 | 44 | 3 | — | — |
+| pass | /best/vpn-linux | Best VPNs for Linux in 2026: Native Apps, CLI and Distro Support | 1 | 45 | 6 | — | — |
 | pass | /best/vpn-windows | Best VPNs for Windows PC (Aug 2026) — Native Apps &amp; Speed | 1 | 41 | 5 | — | — |
 | pass | /best/vpn-laptops | Best VPNs for Laptops (Aug 2026) — Lightweight &amp; Secure | 1 | 42 | 6 | — | — |
 | pass | /best/vpn-privacy | Best VPNs for Privacy in 2026: Compare No-Logs Evidence and Threat Models | 1 | 43 | 6 | — | — |

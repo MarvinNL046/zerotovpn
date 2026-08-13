@@ -128,6 +128,15 @@ export const editorialContentBriefs = {
     affiliateContext: "vpn-selection",
     schemaType: "CollectionPage",
   },
+  linuxVpn: {
+    primaryKeyword: "best vpn for linux",
+    intent: "commercial",
+    cluster: "mobile-and-device-privacy",
+    lastReviewedAt: "2026-08-13",
+    evidence: ["docs/research/dataforseo-linux-vpn-cluster-2026-08-13.md", "/methodology", "https://nordvpn.com/download/linux/", "https://www.expressvpn.com/support/vpn-setup/app-for-linux/", "https://support.surfshark.com/hc/en-us/articles/5067279648146-How-to-set-up-Surfshark-VPN-on-Linux"],
+    affiliateContext: "vpn-selection",
+    schemaType: "CollectionPage",
+  },
   chromebookVpn: {
     primaryKeyword: "best vpn for chromebook",
     intent: "informational",

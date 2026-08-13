@@ -1,0 +1,407 @@
+{
+  "schemaVersion": 1,
+  "cluster": "Linux VPN / native apps / CLI / distro support",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "fetchedAt": "2026-08-13T09:24:20.099Z",
+  "refreshed": true,
+  "seeds": [
+    "best vpn for linux",
+    "linux vpn",
+    "vpn for ubuntu",
+    "vpn for debian",
+    "vpn linux cli",
+    "wireguard linux vpn"
+  ],
+  "overview": [
+    {
+      "keyword": "best vpn for linux",
+      "currentVolume": null,
+      "latestVolume": 480,
+      "latestMonth": "2024-02",
+      "difficulty": 5,
+      "intent": "informational"
+    },
+    {
+      "keyword": "linux vpn",
+      "currentVolume": null,
+      "latestVolume": 1300,
+      "latestMonth": "2024-02",
+      "difficulty": 40,
+      "intent": "informational"
+    },
+    {
+      "keyword": "vpn for debian",
+      "currentVolume": null,
+      "latestVolume": 70,
+      "latestMonth": "2024-02",
+      "difficulty": 3,
+      "intent": "informational"
+    },
+    {
+      "keyword": "vpn for ubuntu",
+      "currentVolume": null,
+      "latestVolume": 320,
+      "latestMonth": "2024-02",
+      "difficulty": 2,
+      "intent": "informational"
+    }
+  ],
+  "suggestions": [
+    {
+      "seed": "linux vpn",
+      "keyword": "best vpn software for linux",
+      "volume": 480
+    },
+    {
+      "seed": "best vpn for linux",
+      "keyword": "best vpn services for linux",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for linux",
+      "keyword": "best free vpn for arch linux",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for linux",
+      "keyword": "what is the best free vpn for linux",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for linux",
+      "keyword": "best vpn for manjaro linux",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for linux",
+      "keyword": "best free vpn services for linux",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for linux",
+      "keyword": "best vpn for linux 2019",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for linux",
+      "keyword": "best vpn for linux 2017",
+      "volume": 0
+    },
+    {
+      "seed": "best vpn for linux",
+      "keyword": "best free vpn for kali linux 2019",
+      "volume": 0
+    },
+    {
+      "seed": "best vpn for linux",
+      "keyword": "best free vpn for kali linux 2020",
+      "volume": 0
+    },
+    {
+      "seed": "best vpn for linux",
+      "keyword": "best vpn for kali linux",
+      "volume": null
+    },
+    {
+      "seed": "best vpn for linux",
+      "keyword": "best free vpn for manjaro linux",
+      "volume": null
+    },
+    {
+      "seed": "best vpn for linux",
+      "keyword": "best vpn for kali linux reddit",
+      "volume": null
+    },
+    {
+      "seed": "best vpn for linux",
+      "keyword": "best vpn client for linux",
+      "volume": null
+    },
+    {
+      "seed": "best vpn for linux",
+      "keyword": "best vpn client for linux mint",
+      "volume": null
+    },
+    {
+      "seed": "linux vpn",
+      "keyword": "free vpn software linux",
+      "volume": 1000
+    },
+    {
+      "seed": "linux vpn",
+      "keyword": "linux and vpn",
+      "volume": 720
+    },
+    {
+      "seed": "linux vpn",
+      "keyword": "vpn and linux",
+      "volume": 720
+    },
+    {
+      "seed": "linux vpn",
+      "keyword": "software vpn linux",
+      "volume": 720
+    },
+    {
+      "seed": "linux vpn",
+      "keyword": "linux software vpn",
+      "volume": 720
+    },
+    {
+      "seed": "linux vpn",
+      "keyword": "linux to linux vpn",
+      "volume": 720
+    },
+    {
+      "seed": "linux vpn",
+      "keyword": "linux vpn ubuntu",
+      "volume": 390
+    },
+    {
+      "seed": "linux vpn",
+      "keyword": "vpn en linux ubuntu",
+      "volume": 390
+    },
+    {
+      "seed": "linux vpn",
+      "keyword": "vpn ubuntu linux",
+      "volume": 390
+    },
+    {
+      "seed": "linux vpn",
+      "keyword": "linux vpn howto",
+      "volume": 260
+    },
+    {
+      "seed": "linux vpn",
+      "keyword": "vpn client in linux",
+      "volume": 110
+    },
+    {
+      "seed": "linux vpn",
+      "keyword": "vpn with linux client",
+      "volume": 110
+    },
+    {
+      "seed": "linux vpn",
+      "keyword": "proton vpn on linux",
+      "volume": 110
+    },
+    {
+      "seed": "linux vpn",
+      "keyword": "free vpn software for linux mint",
+      "volume": 110
+    },
+    {
+      "seed": "vpn for ubuntu",
+      "keyword": "best vpn software for ubuntu",
+      "volume": 90
+    },
+    {
+      "seed": "vpn for ubuntu",
+      "keyword": "vpn client for linux ubuntu",
+      "volume": 30
+    },
+    {
+      "seed": "vpn for ubuntu",
+      "keyword": "cisco vpn client for linux ubuntu",
+      "volume": 20
+    },
+    {
+      "seed": "vpn for ubuntu",
+      "keyword": "best vpn app for ubuntu",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for ubuntu",
+      "keyword": "fortinet vpn client for ubuntu",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for ubuntu",
+      "keyword": "free vpn service for linux ubuntu",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for ubuntu",
+      "keyword": "vpn for ubuntu 18",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for ubuntu",
+      "keyword": "simple vpn for ubuntu",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for ubuntu",
+      "keyword": "x vpn for ubuntu",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for ubuntu",
+      "keyword": "best vpn for ubuntu 18.04",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for ubuntu",
+      "keyword": "vpn connection for ubuntu",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for ubuntu",
+      "keyword": "fortigate ipsec vpn client for ubuntu",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for ubuntu",
+      "keyword": "vpn for ubuntu 22.04 free",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for ubuntu",
+      "keyword": "sonicwall vpn for ubuntu",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for ubuntu",
+      "keyword": "download free vpn for linux ubuntu",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for debian",
+      "keyword": "vpn for debian",
+      "volume": null
+    },
+    {
+      "seed": "vpn for debian",
+      "keyword": "vpn for linux debian",
+      "volume": null
+    },
+    {
+      "seed": "vpn for debian",
+      "keyword": "free vpn for linux debian",
+      "volume": null
+    },
+    {
+      "seed": "vpn for debian",
+      "keyword": "vpn for debian linux",
+      "volume": null
+    },
+    {
+      "seed": "vpn linux cli",
+      "keyword": "linux vpn cli",
+      "volume": null
+    },
+    {
+      "seed": "vpn linux cli",
+      "keyword": "pulse vpn linux cli",
+      "volume": null
+    },
+    {
+      "seed": "vpn linux cli",
+      "keyword": "proton vpn cli linux",
+      "volume": null
+    },
+    {
+      "seed": "wireguard linux vpn",
+      "keyword": "wireguard vpn linux kernel",
+      "volume": 10
+    },
+    {
+      "seed": "wireguard linux vpn",
+      "keyword": "vpn wireguard linux",
+      "volume": null
+    },
+    {
+      "seed": "wireguard linux vpn",
+      "keyword": "best wireguard vpn linux",
+      "volume": null
+    },
+    {
+      "seed": "wireguard linux vpn",
+      "keyword": "wireguard site to site vpn linux",
+      "volume": null
+    },
+    {
+      "seed": "wireguard linux vpn",
+      "keyword": "wireguard site-to-site vpn linux",
+      "volume": null
+    },
+    {
+      "seed": "wireguard linux vpn",
+      "keyword": "wireguard vpn linux",
+      "volume": null
+    },
+    {
+      "seed": "wireguard linux vpn",
+      "keyword": "wireguard vpn linux client",
+      "volume": null
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "best vpn for linux",
+      "paa": [],
+      "hasAiOverview": true,
+      "error": null
+    },
+    {
+      "keyword": "linux vpn",
+      "paa": [
+        "Does Linux have built-in VPN?",
+        "Is there a free Linux VPN?",
+        "Can the FBI track a VPN?",
+        "Can I use VPN in Linux?"
+      ],
+      "hasAiOverview": true,
+      "error": null
+    },
+    {
+      "keyword": "vpn for ubuntu",
+      "paa": [
+        "Which VPN is best for Ubuntu?",
+        "Is there a free VPN in Ubuntu?",
+        "Is there a completely free VPN for Linux?",
+        "What is the best VPN for Linux?"
+      ],
+      "hasAiOverview": true,
+      "error": null
+    },
+    {
+      "keyword": "vpn for debian",
+      "paa": [
+        "Which VPN is best for Linux?",
+        "Can I use Proton VPN on Debian Linux?",
+        "Does Linux have a built-in VPN?",
+        "Is OpenVPN available on Debian?"
+      ],
+      "hasAiOverview": true,
+      "error": null
+    },
+    {
+      "keyword": "vpn linux cli",
+      "paa": [
+        "How to run a VPN on Linux?",
+        "How to connect VPN via command line?",
+        "How do I install the NordVPN CLI on Linux?",
+        "Does protonvpn have a CLI?"
+      ],
+      "hasAiOverview": true,
+      "error": null
+    },
+    {
+      "keyword": "wireguard linux vpn",
+      "paa": [
+        "Does WireGuard work on Linux?",
+        "Is WireGuard free on Linux?",
+        "What are the disadvantages of WireGuard?",
+        "Is WireGuard outdated?"
+      ],
+      "hasAiOverview": true,
+      "error": null
+    }
+  ],
+  "sourcePolicy": "DataForSEO signals prioritise Linux search intent and FAQ coverage; they do not prove current app support, speed, security or provider performance."
+}

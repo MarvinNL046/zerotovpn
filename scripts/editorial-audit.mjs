@@ -165,6 +165,17 @@ const checks = [
     forbiddenPatterns: [/35\+|35以上|35개|35个|über 35|más de 35|plus de 35|มากกว่า 35/i],
   },
   {
+    name: "Linux page uses bounded distro and CLI evidence",
+    file: "src/components/editorial/linux-vpn-editorial-page.tsx",
+    patterns: [/Best VPNs for Linux in 2026/, /Linux VPN comparison checklist/, /Which VPN has the best Linux support\?/, /Six Linux checks before you subscribe/],
+    forbiddenPatterns: [/expert-tested|fastest VPN protocol|military-grade|35\+|stable speeds|best overall Linux VPN/i],
+  },
+  {
+    name: "Linux route uses the audited English editorial component",
+    file: "src/app/[locale]/best/vpn-linux/page.tsx",
+    patterns: [/LinuxVpnEditorialPage/, /if \(locale === "en"\)/, /linuxVpnEditorialTitle/, /dateModified="2026-08-13"/],
+  },
+  {
     name: "Windows use-case page avoids unsupported test counts",
     file: "src/app/[locale]/best/vpn-windows/page.tsx",
     patterns: [/We compare several VPNs for Windows/, /We vergelijken meerdere VPN-providers op Windows/],

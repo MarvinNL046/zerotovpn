@@ -5,14 +5,14 @@ import { LastUpdated } from "@/components/last-updated";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { VpnFeatureCard, type VpnFeatureCardAccent } from "@/components/vpn/vpn-feature-card";
-import { RatingStars } from "@/components/vpn/rating-stars";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { getVpnBySlug, type VpnProvider } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
+import { ArticleJsonLd } from "@/components/seo/json-ld";
+import { LinuxVpnEditorialPage, linuxVpnEditorialDescription, linuxVpnEditorialTitle } from "@/components/editorial/linux-vpn-editorial-page";
 import {
   Terminal,
   Shield,
@@ -36,6 +36,16 @@ const baseUrl = "https://www.zerotovpn.com";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+
+  if (locale === "en") {
+    return {
+      metadataBase: new URL(baseUrl),
+      title: { absolute: titelMetMerk(linuxVpnEditorialTitle) },
+      description: linuxVpnEditorialDescription,
+      openGraph: { locale: "en_US", title: linuxVpnEditorialTitle, description: linuxVpnEditorialDescription, type: "article", images: [DEFAULT_OG_IMAGE] },
+      alternates: generateAlternates("/best/vpn-linux", locale),
+    };
+  }
 
   const shortMonthYear = getShortMonthYear();
 
@@ -104,6 +114,10 @@ function ItemListSchema({ linuxVpns }: { linuxVpns: { vpn: VpnProvider | null }[
 export default async function LinuxVpnPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  if (locale === "en") {
+    return <><ArticleJsonLd title={linuxVpnEditorialTitle} description={linuxVpnEditorialDescription} url={`${baseUrl}/best/vpn-linux`} datePublished="2026-01-01" dateModified="2026-08-13" /><LinuxVpnEditorialPage /></>;
+  }
 
   // Get Linux VPNs data
   const nordvpn = await getVpnBySlug("nordvpn");

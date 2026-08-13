@@ -1,9 +1,9 @@
 # Live editorial page audit
 
-Generated: 2026-08-13T02:18:42.998Z
+Generated: 2026-08-13T02:32:14.591Z
 
-- Target pages: **28**
-- Passing pages: **28**
+- Target pages: **29**
+- Passing pages: **29**
 - Pages needing review: **0**
 - Affiliate links checked: **143**
 - Affiliate links missing sponsored/nofollow: **0**
@@ -47,5 +47,6 @@ Generated: 2026-08-13T02:18:42.998Z
 | pass | /best/vpn-port-forwarding | Best VPNs With Port Forwarding (Aug 2026): Providers Compared | 1 | 42 | 3 | — | — |
 | pass | /blog/vpn-connection-drops-why-disconnects-how-to-fix-2026 | Why Does My VPN Keep Disconnecting? Causes and Fixes (2026) | 1 | 54 | 0 | — | — |
 | pass | /blog/best-country-for-vpn-server-location-2026 | Best VPN Server Location in 2026: Speed, Privacy and Streaming Trade-offs | 1 | 53 | 0 | — | — |
+| pass | /blog/can-vpn-hide-from-isp | Can a VPN Hide You From Your ISP? What It Does and Does Not Hide (2026) | 1 | 54 | 0 | — | — |
 
 Raw records: [editorial-live-audit-2026-08-13.json](./editorial-live-audit-2026-08-13.json)

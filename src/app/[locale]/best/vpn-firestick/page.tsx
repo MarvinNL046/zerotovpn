@@ -11,7 +11,8 @@ import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { getVpnBySlug, type VpnProvider } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
-import { OG_LOCALE_MAP, generateAlternates, getLocalizedMonthYear, getShortMonthYear, titelMetMerk } from "@/lib/seo-utils";
+import { DEFAULT_OG_IMAGE, OG_LOCALE_MAP, generateAlternates, getLocalizedMonthYear, getShortMonthYear, titelMetMerk } from "@/lib/seo-utils";
+import { FirestickVpnEditorialPage, firestickVpnEditorialDescription, firestickVpnEditorialTitle } from "@/components/editorial/firestick-vpn-editorial-page";
 import { LastUpdated } from "@/components/last-updated";
 import {
   Zap,
@@ -47,8 +48,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     th: `5 VPN ที่ดีที่สุดสำหรับ Firestick (ทดสอบ ${shortMonthYear}) - แอปเนทีฟ Fire TV | ZeroToVPN`,
   };
 
+  titles.en = firestickVpnEditorialTitle;
   const descriptions: Record<string, string> = {
-    en: `We tested 30+ VPNs for Firestick. Expert picks updated ${shortMonthYear} with Fire TV app quality, speeds & unblocking compared. See our honest verdict.`,
+    en: firestickVpnEditorialDescription,
     nl: "We testten 30+ VPN apps direct op Amazon Fire TV Stick. Deze 5 hebben native apps met afstandsbediening-vriendelijke interfaces en snelle streamingsnelheden.",
     de: "Wir haben uber 30 VPN-Apps direkt auf dem Amazon Fire TV Stick getestet. Diese 5 haben native Apps mit Fernbedienungs-freundlichen Oberflachen.",
     es: "Probamos mas de 30 apps VPN directamente en Amazon Fire TV Stick. Estos 5 tienen apps nativas con interfaces amigables para el control remoto.",
@@ -68,6 +70,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: titles[locale] || titles.en,
       description: descriptions[locale] || descriptions.en,
       type: "article",
+      images: [DEFAULT_OG_IMAGE],
     },
     alternates: generateAlternates("/best/vpn-firestick", locale),
   };
@@ -98,6 +101,8 @@ function ItemListSchema({ vpns }: { vpns: { vpn: VpnProvider | null }[] }) {
 export default async function VpnFirestickPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  if (locale === "en") return <FirestickVpnEditorialPage />;
 
   const nordvpn = await getVpnBySlug("nordvpn");
   const expressvpn = await getVpnBySlug("expressvpn");

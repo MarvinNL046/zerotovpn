@@ -119,4 +119,13 @@ export const editorialContentBriefs = {
     affiliateContext: "vpn-selection",
     schemaType: "CollectionPage",
   },
+  firestickVpn: {
+    primaryKeyword: "best vpn for firestick",
+    intent: "informational",
+    cluster: "mobile-and-device-privacy",
+    lastReviewedAt: "2026-08-13",
+    evidence: ["docs/research/dataforseo-firestick-vpn-cluster-2026-08-13.md", "/methodology", "/best/vpn-streaming"],
+    affiliateContext: "vpn-selection",
+    schemaType: "CollectionPage",
+  },
 } satisfies Record<string, EditorialContentBrief>;

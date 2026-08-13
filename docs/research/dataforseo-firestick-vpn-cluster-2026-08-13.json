@@ -1,0 +1,437 @@
+{
+  "schemaVersion": 1,
+  "cluster": "Fire TV / Firestick VPN apps, streaming and network boundaries",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "fetchedAt": "2026-08-13T05:20:41.698Z",
+  "refreshed": false,
+  "seeds": [
+    "best vpn for firestick",
+    "vpn for firestick",
+    "firestick vpn",
+    "vpn for fire tv",
+    "vpn for amazon fire stick"
+  ],
+  "overview": [
+    {
+      "keyword": "best vpn for firestick",
+      "currentVolume": null,
+      "latestVolume": 2400,
+      "latestMonth": "2024-02",
+      "difficulty": 33,
+      "intent": "informational"
+    },
+    {
+      "keyword": "firestick vpn",
+      "currentVolume": null,
+      "latestVolume": 2900,
+      "latestMonth": "2024-02",
+      "difficulty": 34,
+      "intent": "informational"
+    },
+    {
+      "keyword": "vpn for amazon fire stick",
+      "currentVolume": null,
+      "latestVolume": 260,
+      "latestMonth": "2024-02",
+      "difficulty": 33,
+      "intent": "informational"
+    },
+    {
+      "keyword": "vpn for fire tv",
+      "currentVolume": null,
+      "latestVolume": 260,
+      "latestMonth": "2024-02",
+      "difficulty": 35,
+      "intent": "informational"
+    },
+    {
+      "keyword": "vpn for firestick",
+      "currentVolume": null,
+      "latestVolume": 2900,
+      "latestMonth": "2024-02",
+      "difficulty": 35,
+      "intent": "informational"
+    }
+  ],
+  "suggestions": [
+    {
+      "seed": "firestick vpn",
+      "keyword": "best vpn for firestick 2025",
+      "volume": 40
+    },
+    {
+      "seed": "vpn for firestick",
+      "keyword": "best free vpn for firestick 2020",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for firestick",
+      "keyword": "what is the best free vpn app for firestick",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for firestick",
+      "keyword": "best vpn for firestick 4k max",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for firestick",
+      "keyword": "best free vpn for firestick 2018",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for firestick",
+      "keyword": "best vpn for firestick 2024",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for firestick",
+      "keyword": "best vpn for my firestick",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for firestick",
+      "keyword": "best vpn for firestick 2020",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for firestick",
+      "keyword": "best vpn apps for firestick",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for firestick",
+      "keyword": "best free vpn for firestick no subscription",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for firestick",
+      "keyword": "best vpn for firestick netflix",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for firestick",
+      "keyword": "best free vpn for firestick 2023",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for firestick",
+      "keyword": "best vpn 2023 for firestick",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for firestick",
+      "keyword": "best vpn for firestick 2023",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for firestick",
+      "keyword": "best free vpn apk for firestick",
+      "volume": 10
+    },
+    {
+      "seed": "firestick vpn",
+      "keyword": "how to download a vpn for firestick",
+      "volume": 110
+    },
+    {
+      "seed": "firestick vpn",
+      "keyword": "kodi vpn for firestick",
+      "volume": 40
+    },
+    {
+      "seed": "firestick vpn",
+      "keyword": "proton vpn free for firestick",
+      "volume": 40
+    },
+    {
+      "seed": "vpn for firestick",
+      "keyword": "free proton vpn for firestick",
+      "volume": 20
+    },
+    {
+      "seed": "vpn for firestick",
+      "keyword": "norton vpn apk for firestick latest version",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for firestick",
+      "keyword": "vpn for 1st gen firestick",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for firestick",
+      "keyword": "free vpn hider for firestick",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for firestick",
+      "keyword": "1 vpn for firestick",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for firestick",
+      "keyword": "betternet vpn for firestick",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for firestick",
+      "keyword": "is there a free vpn for the firestick",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for firestick",
+      "keyword": "which vpn is free for firestick",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for firestick",
+      "keyword": "vpn blocker for firestick free",
+      "volume": 10
+    },
+    {
+      "seed": "firestick vpn",
+      "keyword": "nord vpn with firestick",
+      "volume": 3600
+    },
+    {
+      "seed": "firestick vpn",
+      "keyword": "how do you install a vpn on firestick",
+      "volume": 480
+    },
+    {
+      "seed": "firestick vpn",
+      "keyword": "how do you use a vpn with firestick",
+      "volume": 390
+    },
+    {
+      "seed": "firestick vpn",
+      "keyword": "ipvanish vpn on firestick",
+      "volume": 110
+    },
+    {
+      "seed": "firestick vpn",
+      "keyword": "use a vpn with firestick",
+      "volume": 90
+    },
+    {
+      "seed": "firestick vpn",
+      "keyword": "how to setup vpn firestick",
+      "volume": 70
+    },
+    {
+      "seed": "firestick vpn",
+      "keyword": "firestick vpn app free",
+      "volume": 70
+    },
+    {
+      "seed": "firestick vpn",
+      "keyword": "firestick free vpn app",
+      "volume": 70
+    },
+    {
+      "seed": "firestick vpn",
+      "keyword": "how do i install vpn on my firestick",
+      "volume": 50
+    },
+    {
+      "seed": "firestick vpn",
+      "keyword": "proton vpn firestick downloader code",
+      "volume": 40
+    },
+    {
+      "seed": "firestick vpn",
+      "keyword": "kodi vpn on firestick",
+      "volume": 40
+    },
+    {
+      "seed": "vpn for fire tv",
+      "keyword": "best free vpn for amazon fire tv",
+      "volume": 50
+    },
+    {
+      "seed": "vpn for fire tv",
+      "keyword": "surfshark vpn for fire tv",
+      "volume": 50
+    },
+    {
+      "seed": "vpn for fire tv",
+      "keyword": "vpn service for amazon fire tv",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for fire tv",
+      "keyword": "vpn for fire stick tv",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for amazon fire stick",
+      "keyword": "free vpn for amazon fire tv stick",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for fire tv",
+      "keyword": "how to use vpn for fire tv",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for fire tv",
+      "keyword": "vpn for fire tv app",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for fire tv",
+      "keyword": "vpn for fire tv reviews",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for fire tv",
+      "keyword": "vpn for fire tv stick free",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for fire tv",
+      "keyword": "vpn for kodi fire tv",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for fire tv",
+      "keyword": "best vpn for fire tv free",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for fire tv",
+      "keyword": "best free vpn for fire tv 2017",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for amazon fire stick",
+      "keyword": "best vpn for amazon fire tv stick",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for fire tv",
+      "keyword": "opera vpn for fire tv",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for amazon fire stick",
+      "keyword": "best free vpn for amazon fire tv stick",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for amazon fire stick",
+      "keyword": "vpn for amazon fire stick 4k",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for amazon fire stick",
+      "keyword": "do i need a vpn for amazon fire stick",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for amazon fire stick",
+      "keyword": "vpn free for amazon fire stick",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for amazon fire stick",
+      "keyword": "cheap vpn for amazon fire stick",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for amazon fire stick",
+      "keyword": "totally free vpn for amazon fire stick",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for amazon fire stick",
+      "keyword": "best vpn app for amazon fire stick",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for amazon fire stick",
+      "keyword": "free vpn download for amazon fire stick",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for amazon fire stick",
+      "keyword": "free vpn app for amazon fire stick",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for amazon fire stick",
+      "keyword": "free unlimited vpn for amazon fire stick",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for amazon fire stick",
+      "keyword": "best vpn for amazon fire stick 4k",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for amazon fire stick",
+      "keyword": "vpn app for amazon fire stick",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for amazon fire stick",
+      "keyword": "best free vpn for amazon fire stick uk",
+      "volume": 0
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "best vpn for firestick",
+      "paa": [
+        "What is the best free VPN for Fire Stick?",
+        "What's the best free VPN for a Fire Stick?",
+        "Is there any 100% free VPN?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn for firestick",
+      "paa": [
+        "Can I put a VPN on my Fire Stick?",
+        "Do I need a VPN for a Dodgy Fire Stick?",
+        "How much does VPN cost for Fire Stick?",
+        "Is there any 100% free VPN?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "firestick vpn",
+      "paa": [
+        "Do I really need a VPN for my Fire Stick?",
+        "How much does VPN cost for Fire Stick?",
+        "Are Amazon blocking fire sticks?",
+        "Which VPNs are best for Firesticks?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn for fire tv",
+      "paa": [
+        "Can you put a VPN on Amazon Fire TV?",
+        "Is there a free VPN for Fire TV?",
+        "Which VPN is best for Fire TV?",
+        "How much does VPN cost for Fire Stick?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn for amazon fire stick",
+      "paa": [
+        "Do I really need a VPN for my Fire Stick?",
+        "Can I get a free VPN for my Fire Stick?",
+        "Which VPN is best for Amazon Fire Stick?",
+        "How much does a VPN cost for Fire Stick?"
+      ],
+      "hasAiOverview": true
+    }
+  ],
+  "sourcePolicy": "DataForSEO signals prioritise Fire TV setup and streaming-intent coverage; they do not prove app availability, speed, 4K playback, unblocking, legal outcomes or conversion value."
+}

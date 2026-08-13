@@ -318,6 +318,17 @@ const checks = [
     patterns: [/chromebookVpnEditorialTitle/, /chromebookVpnEditorialDescription/, /locale === "en"/, /images: \[DEFAULT_OG_IMAGE\]/],
   },
   {
+    name: "Fire TV English route uses bounded editorial component",
+    file: "src/components/editorial/firestick-vpn-editorial-page.tsx",
+    patterns: [/FirestickVpnEditorialPage/, /Fire TV app/, /Router setup/, /Streaming test/, /id="comparison"/, /id="setup"/, /DataForSEO/],
+    forbiddenPatterns: [/We tested 30\+ VPNs/i, /reliable unblocking/i, /Stream Anything/i, /95% speed/i, /92%/i],
+  },
+  {
+    name: "Fire TV route metadata uses evidence-led title and social image",
+    file: "src/app/[locale]/best/vpn-firestick/page.tsx",
+    patterns: [/firestickVpnEditorialTitle/, /firestickVpnEditorialDescription/, /locale === "en"/, /images: \[DEFAULT_OG_IMAGE\]/],
+  },
+  {
     name: "macOS use-case metadata avoids unsupported test counts",
     file: "src/app/[locale]/best/vpn-macos/page.tsx",
     patterns: [/Compare current macOS VPN picks/, /Native Apps, M1\/M2/],

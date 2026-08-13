@@ -32,6 +32,7 @@
     "seo:fitness-tracking-privacy": "node scripts/fitness-tracking-privacy-seo-research.mjs",
     "seo:mobile-vpn": "node scripts/mobile-vpn-seo-research.mjs",
     "seo:nordvpn-review": "node scripts/nordvpn-review-seo-research.mjs",
+    "seo:protonvpn-review": "node scripts/protonvpn-review-seo-research.mjs",
     "seo:vpn-comparison": "node scripts/compare-vpn-seo-research.mjs",
     "seo:smoke": "node scripts/dfs-smoke.mjs",
     "export:shortio": "node scripts/export-shortio-metrics.mjs",

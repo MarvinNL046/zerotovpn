@@ -1,0 +1,232 @@
+{
+  "schemaVersion": 1,
+  "cluster": "Proton VPN review / free plan / privacy / speed / streaming",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "fetchedAt": "2026-08-13T06:28:36.225Z",
+  "refreshed": false,
+  "seeds": [
+    "proton vpn review",
+    "proton vpn review 2026",
+    "proton vpn free plan",
+    "proton vpn no logs",
+    "proton vpn speed test",
+    "is proton vpn worth it",
+    "proton vpn streaming",
+    "proton vpn vs nordvpn"
+  ],
+  "overview": [
+    {
+      "keyword": "is proton vpn worth it",
+      "currentVolume": 110,
+      "latestVolume": 170,
+      "latestMonth": "2026-06",
+      "difficulty": 19,
+      "intent": "informational"
+    },
+    {
+      "keyword": "proton vpn free plan",
+      "currentVolume": null,
+      "latestVolume": 70,
+      "latestMonth": "2024-02",
+      "difficulty": 18,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "proton vpn no logs",
+      "currentVolume": null,
+      "latestVolume": 50,
+      "latestMonth": "2024-02",
+      "difficulty": 35,
+      "intent": "informational"
+    },
+    {
+      "keyword": "proton vpn review",
+      "currentVolume": null,
+      "latestVolume": 720,
+      "latestMonth": "2024-02",
+      "difficulty": 54,
+      "intent": "informational"
+    },
+    {
+      "keyword": "proton vpn speed test",
+      "currentVolume": null,
+      "latestVolume": 20,
+      "latestMonth": "2024-02",
+      "difficulty": 58,
+      "intent": "informational"
+    },
+    {
+      "keyword": "proton vpn streaming",
+      "currentVolume": null,
+      "latestVolume": 40,
+      "latestMonth": "2024-02",
+      "difficulty": 0,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "proton vpn vs nordvpn",
+      "currentVolume": null,
+      "latestVolume": 1000,
+      "latestMonth": "2024-02",
+      "difficulty": 4,
+      "intent": "commercial"
+    }
+  ],
+  "suggestions": [
+    {
+      "seed": "proton vpn review",
+      "keyword": "proton vpn plus review",
+      "volume": 20
+    },
+    {
+      "seed": "proton vpn review",
+      "keyword": "review proton vpn free",
+      "volume": 10
+    },
+    {
+      "seed": "proton vpn review",
+      "keyword": "proton vpn review uk",
+      "volume": 10
+    },
+    {
+      "seed": "proton vpn review",
+      "keyword": "proton vpn review free",
+      "volume": 10
+    },
+    {
+      "seed": "proton vpn review",
+      "keyword": "proton vpn review 2024",
+      "volume": 10
+    },
+    {
+      "seed": "proton vpn review",
+      "keyword": "proton vpn security review",
+      "volume": 10
+    },
+    {
+      "seed": "proton vpn review",
+      "keyword": "proton vpn free review reddit",
+      "volume": 10
+    },
+    {
+      "seed": "proton vpn review",
+      "keyword": "proton vpn review 2023",
+      "volume": 0
+    },
+    {
+      "seed": "proton vpn review",
+      "keyword": "proton vpn free review",
+      "volume": null
+    },
+    {
+      "seed": "proton vpn review",
+      "keyword": "proton mail vpn review",
+      "volume": null
+    },
+    {
+      "seed": "proton vpn free plan",
+      "keyword": "proton vpn free plan countries",
+      "volume": 10
+    },
+    {
+      "seed": "proton vpn free plan",
+      "keyword": "proton vpn free plan",
+      "volume": null
+    },
+    {
+      "seed": "proton vpn no logs",
+      "keyword": "proton vpn no-logs policy",
+      "volume": 170
+    },
+    {
+      "seed": "proton vpn no logs",
+      "keyword": "proton vpn no logs policy",
+      "volume": 170
+    },
+    {
+      "seed": "proton vpn no logs",
+      "keyword": "proton vpn no logs",
+      "volume": null
+    },
+    {
+      "seed": "is proton vpn worth it",
+      "keyword": "is proton vpn worth it",
+      "volume": 110
+    },
+    {
+      "seed": "is proton vpn worth it",
+      "keyword": "is proton vpn plus worth it",
+      "volume": 40
+    },
+    {
+      "seed": "is proton vpn worth it",
+      "keyword": "is proton vpn worth it reddit",
+      "volume": 20
+    },
+    {
+      "seed": "proton vpn streaming",
+      "keyword": "proton vpn free streaming",
+      "volume": 20
+    },
+    {
+      "seed": "proton vpn streaming",
+      "keyword": "proton vpn streaming reddit",
+      "volume": 10
+    },
+    {
+      "seed": "proton vpn streaming",
+      "keyword": "proton vpn for streaming",
+      "volume": null
+    },
+    {
+      "seed": "proton vpn vs nordvpn",
+      "keyword": "proton vpn vs nordvpn reddit",
+      "volume": 20
+    },
+    {
+      "seed": "proton vpn vs nordvpn",
+      "keyword": "proton vpn vs surfshark vs nordvpn",
+      "volume": 10
+    },
+    {
+      "seed": "proton vpn vs nordvpn",
+      "keyword": "nordvpn vs proton vpn",
+      "volume": null
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "proton vpn review",
+      "paa": [
+        "Is Proton a trustworthy VPN?",
+        "What are the downsides of using Proton VPN?",
+        "What is better, NordVPN or Proton VPN?",
+        "Is Proton VPN still good in 2026?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "proton vpn review 2026",
+      "paa": [
+        "Is Proton VPN still good in 2026?",
+        "What are the downsides of using Proton VPN?",
+        "Is there a better VPN than Proton VPN?",
+        "Is Proton VPN a trustworthy VPN?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "proton vpn free plan",
+      "paa": [
+        "Does Proton VPN have a free plan?",
+        "What are the downsides of Proton Free VPN?",
+        "Is there any 100% free VPN?",
+        "Is there a better free VPN than Proton?"
+      ],
+      "hasAiOverview": false
+    }
+  ],
+  "sourcePolicy": "DataForSEO signals prioritise query intent, comparison structure and FAQ coverage; they do not prove Proton VPN performance, current pricing, audit scope or conversion value. Provider facts must be tied to dated first-party sources or reproducible tests."
+}

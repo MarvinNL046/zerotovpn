@@ -155,6 +155,15 @@ export const editorialContentBriefs = {
     affiliateContext: "vpn-selection",
     schemaType: "Article",
   },
+  protonvpnReview: {
+    primaryKeyword: "proton vpn review",
+    intent: "commercial",
+    cluster: "provider-reviews-and-comparisons",
+    lastReviewedAt: "2026-08-13",
+    evidence: ["docs/research/dataforseo-protonvpn-review-cluster-2026-08-13.md", "/methodology", "https://protonvpn.com/support/no-logs-vpn", "https://protonvpn.com/support/proton-vpn-free-plan"],
+    affiliateContext: "vpn-selection",
+    schemaType: "Article",
+  },
   vpnComparison: {
     primaryKeyword: "vpn comparison",
     intent: "commercial",

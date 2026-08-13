@@ -1,6 +1,6 @@
 # Live editorial page audit
 
-Generated: 2026-08-13T14:29:41.934Z
+Generated: 2026-08-13T14:42:25.099Z
 
 - Target pages: **63**
 - Passing pages: **63**
@@ -73,7 +73,7 @@ Generated: 2026-08-13T14:29:41.934Z
 | pass | /nl/best/free-vpn | Best Free VPNs: Limits and Trade-offs | ZeroToVPN | 1 | 46 | 3 | — | — |
 | pass | /best/vpn-free-trial | Best VPN Free Trials (Aug 2026): 7-Day &amp; No-Card Options | 1 | 43 | 11 | — | — |
 | pass | /best/vpn-port-forwarding | Best VPNs With Port Forwarding (Aug 2026): Providers Compared | 1 | 45 | 4 | — | — |
-| pass | /blog/vpn-connection-drops-why-disconnects-how-to-fix-2026 | Why Does My VPN Keep Disconnecting? Causes and Fixes (2026) | 1 | 54 | 0 | — | — |
+| pass | /blog/vpn-connection-drops-why-disconnects-how-to-fix-2026 | Why Does My VPN Keep Disconnecting? Causes and Fixes (2026) | 1 | 58 | 0 | — | — |
 | pass | /blog/best-country-for-vpn-server-location-2026 | Best VPN Server Location in 2026: Speed, Privacy and Streaming Trade-offs | 1 | 53 | 0 | — | — |
 | pass | /blog/can-vpn-hide-from-isp | Can a VPN Hide You From Your ISP? What It Does and Does Not Hide (2026) | 1 | 54 | 0 | — | — |
 | pass | /blog/is-brave-vpn-free-2026 | Is Brave VPN Free? What the Browser Includes and What Costs Extra (2026) | 1 | 53 | 0 | — | — |

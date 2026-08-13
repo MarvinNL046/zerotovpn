@@ -307,6 +307,17 @@ const checks = [
     forbiddenPatterns: [/35\+|35以上|35개|35个|über 35|más de 35|plus de 35|มากกว่า 35/i],
   },
   {
+    name: "Chromebook English route uses bounded editorial component",
+    file: "src/components/editorial/chromebook-vpn-editorial-page.tsx",
+    patterns: [/ChromebookVpnEditorialPage/, /Android-app route/, /Chrome extension/, /Linux or manual profile/, /id="comparison"/, /id="setup"/, /DataForSEO/],
+    forbiddenPatterns: [/we tested setup time/i, /Access Blocked Content/, /Stream Anywhere/],
+  },
+  {
+    name: "Chromebook route metadata uses evidence-led title and social image",
+    file: "src/app/[locale]/best/vpn-chromebook/page.tsx",
+    patterns: [/chromebookVpnEditorialTitle/, /chromebookVpnEditorialDescription/, /locale === "en"/, /images: \[DEFAULT_OG_IMAGE\]/],
+  },
+  {
     name: "macOS use-case metadata avoids unsupported test counts",
     file: "src/app/[locale]/best/vpn-macos/page.tsx",
     patterns: [/Compare current macOS VPN picks/, /Native Apps, M1\/M2/],

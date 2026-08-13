@@ -24,6 +24,7 @@ import {
   ArrowRight,
   Server,
 } from "lucide-react";
+import { ChromebookVpnEditorialPage, chromebookVpnEditorialDescription, chromebookVpnEditorialTitle } from "@/components/editorial/chromebook-vpn-editorial-page";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -37,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const shortMonthYear = getShortMonthYear();
 
   const titles: Record<string, string> = {
-    en: "Best VPN for Chromebook (2026) - Easy Setup & Fast Speeds | ZeroToVPN",
+    en: chromebookVpnEditorialTitle,
     nl: "Beste VPN voor Chromebook (2026) - Eenvoudige Setup en Snelle Snelheden | ZeroToVPN",
     de: "Bestes VPN für Chromebook (2026) - Einfache Einrichtung und Schnelle Verbindungen | ZeroToVPN",
     es: "Mejor VPN para Chromebook (2026) - Configuración Fácil y Alta Velocidad | ZeroToVPN",
@@ -49,7 +50,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const descriptions: Record<string, string> = {
-    en: "Looking for a VPN on Chromebook? We tested setup time, ChromeOS compatibility and speed to find the easiest and fastest options in 2026.",
+    en: chromebookVpnEditorialDescription,
     nl: "VPN nodig op Chromebook? We testten installatietijd, ChromeOS-compatibiliteit en snelheid om de makkelijkste en snelste opties in 2026 te vinden.",
     de: "VPN für Chromebook gesucht? Wir haben Einrichtung, ChromeOS-Kompatibilität und Geschwindigkeit getestet, um die einfachsten und schnellsten Optionen 2026 zu finden.",
     es: "¿Buscas un VPN para Chromebook? Probamos tiempo de instalación, compatibilidad con ChromeOS y velocidad para encontrar las opciones más fáciles y rápidas en 2026.",
@@ -101,6 +102,8 @@ function ItemListSchema({ chromebookVpns }: { chromebookVpns: { vpn: VpnProvider
 export default async function ChromebookVpnPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  if (locale === "en") return <ChromebookVpnEditorialPage />;
 
   // Get Chromebook VPNs data
   const nordvpn = await getVpnBySlug("nordvpn");

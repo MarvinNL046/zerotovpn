@@ -1,0 +1,355 @@
+{
+  "schemaVersion": 1,
+  "cluster": "Chromebook / ChromeOS VPN setup and privacy boundaries",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "fetchedAt": "2026-08-13T05:09:49.848Z",
+  "refreshed": false,
+  "seeds": [
+    "best vpn for chromebook",
+    "vpn for chromebook",
+    "chromebook vpn",
+    "vpn chrome os",
+    "vpn extension chromebook"
+  ],
+  "overview": [
+    {
+      "keyword": "best vpn for chromebook",
+      "currentVolume": null,
+      "latestVolume": 880,
+      "latestMonth": "2024-02",
+      "difficulty": 6,
+      "intent": "informational"
+    },
+    {
+      "keyword": "chromebook vpn",
+      "currentVolume": null,
+      "latestVolume": 5400,
+      "latestMonth": "2024-02",
+      "difficulty": 28,
+      "intent": "informational"
+    },
+    {
+      "keyword": "vpn chrome os",
+      "currentVolume": null,
+      "latestVolume": 90,
+      "latestMonth": "2024-02",
+      "difficulty": 12,
+      "intent": "informational"
+    },
+    {
+      "keyword": "vpn for chromebook",
+      "currentVolume": null,
+      "latestVolume": 4400,
+      "latestMonth": "2024-02",
+      "difficulty": 28,
+      "intent": "informational"
+    }
+  ],
+  "suggestions": [
+    {
+      "seed": "vpn for chromebook",
+      "keyword": "the best vpn for chromebook",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for chromebook",
+      "keyword": "best vpn for chromebook 2021",
+      "volume": null
+    },
+    {
+      "seed": "vpn for chromebook",
+      "keyword": "best vpn for school chromebook",
+      "volume": null
+    },
+    {
+      "seed": "best vpn for chromebook",
+      "keyword": "best vpn for chromebook os",
+      "volume": null
+    },
+    {
+      "seed": "best vpn for chromebook",
+      "keyword": "best vpn for chromebook",
+      "volume": null
+    },
+    {
+      "seed": "best vpn for chromebook",
+      "keyword": "best vpn for chromebook uk",
+      "volume": null
+    },
+    {
+      "seed": "best vpn for chromebook",
+      "keyword": "best vpn for chromebook reddit",
+      "volume": null
+    },
+    {
+      "seed": "best vpn for chromebook",
+      "keyword": "best free vpn for google chromebook",
+      "volume": null
+    },
+    {
+      "seed": "best vpn for chromebook",
+      "keyword": "best vpn for chromebook in china",
+      "volume": null
+    },
+    {
+      "seed": "best vpn for chromebook",
+      "keyword": "what is the best free vpn for chromebook",
+      "volume": null
+    },
+    {
+      "seed": "best vpn for chromebook",
+      "keyword": "best free vpn for school chromebook",
+      "volume": null
+    },
+    {
+      "seed": "vpn extension chromebook",
+      "keyword": "vpn extension for chromebook",
+      "volume": 1900
+    },
+    {
+      "seed": "chromebook vpn",
+      "keyword": "google vpn for chromebook",
+      "volume": 880
+    },
+    {
+      "seed": "chromebook vpn",
+      "keyword": "surfshark vpn for chromebook",
+      "volume": 170
+    },
+    {
+      "seed": "chromebook vpn",
+      "keyword": "opera vpn for chromebook",
+      "volume": 20
+    },
+    {
+      "seed": "vpn for chromebook",
+      "keyword": "sonicwall vpn client for chromebook",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for chromebook",
+      "keyword": "fortinet vpn client for chromebook",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for chromebook",
+      "keyword": "google one vpn for chromebook",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for chromebook",
+      "keyword": "vpn for school chromebook",
+      "volume": null
+    },
+    {
+      "seed": "vpn for chromebook",
+      "keyword": "free vpn for school chromebook unblocked",
+      "volume": null
+    },
+    {
+      "seed": "vpn for chromebook",
+      "keyword": "vpn for school chromebook unblocked",
+      "volume": null
+    },
+    {
+      "seed": "vpn for chromebook",
+      "keyword": "pia vpn app for chromebook",
+      "volume": null
+    },
+    {
+      "seed": "vpn for chromebook",
+      "keyword": "apscn vpn for chromebook",
+      "volume": null
+    },
+    {
+      "seed": "chromebook vpn",
+      "keyword": "vpn browser chromebook",
+      "volume": 6600
+    },
+    {
+      "seed": "chromebook vpn",
+      "keyword": "vpn on chromebook free",
+      "volume": 320
+    },
+    {
+      "seed": "chromebook vpn",
+      "keyword": "chromebook android vpn",
+      "volume": 90
+    },
+    {
+      "seed": "chromebook vpn",
+      "keyword": "how to make a vpn on chromebook",
+      "volume": 20
+    },
+    {
+      "seed": "chromebook vpn",
+      "keyword": "mullvad vpn chromebook",
+      "volume": 20
+    },
+    {
+      "seed": "chromebook vpn",
+      "keyword": "vpn connection chromebook",
+      "volume": 10
+    },
+    {
+      "seed": "chromebook vpn",
+      "keyword": "chromebook with vpn",
+      "volume": 10
+    },
+    {
+      "seed": "chromebook vpn",
+      "keyword": "best chromebook vpn free",
+      "volume": 10
+    },
+    {
+      "seed": "chromebook vpn",
+      "keyword": "ssl vpn chromebook",
+      "volume": 10
+    },
+    {
+      "seed": "chromebook vpn",
+      "keyword": "forticlient chromebook vpn",
+      "volume": 10
+    },
+    {
+      "seed": "chromebook vpn",
+      "keyword": "nordvpn chromebook vpn",
+      "volume": 10
+    },
+    {
+      "seed": "vpn chrome os",
+      "keyword": "hotspot shield vpn chrome os",
+      "volume": 10
+    },
+    {
+      "seed": "vpn chrome os",
+      "keyword": "cisco vpn client for chrome os",
+      "volume": 10
+    },
+    {
+      "seed": "vpn chrome os",
+      "keyword": "chrome os android vpn",
+      "volume": 10
+    },
+    {
+      "seed": "vpn chrome os",
+      "keyword": "chrome os linux vpn",
+      "volume": 0
+    },
+    {
+      "seed": "vpn chrome os",
+      "keyword": "nordvpn vpn chrome os",
+      "volume": 0
+    },
+    {
+      "seed": "vpn chrome os",
+      "keyword": "chrome os vpn android",
+      "volume": 0
+    },
+    {
+      "seed": "vpn chrome os",
+      "keyword": "l2tp vpn chrome os",
+      "volume": null
+    },
+    {
+      "seed": "vpn chrome os",
+      "keyword": "vpn chrome mac os",
+      "volume": null
+    },
+    {
+      "seed": "vpn chrome os",
+      "keyword": "vpn chrome os",
+      "volume": null
+    },
+    {
+      "seed": "vpn chrome os",
+      "keyword": "forticlient vpn chrome os",
+      "volume": null
+    },
+    {
+      "seed": "vpn chrome os",
+      "keyword": "sonicwall vpn for chrome os",
+      "volume": null
+    },
+    {
+      "seed": "vpn chrome os",
+      "keyword": "chrome os vpn connection",
+      "volume": null
+    },
+    {
+      "seed": "vpn chrome os",
+      "keyword": "chrome os vpn free",
+      "volume": null
+    },
+    {
+      "seed": "vpn chrome os",
+      "keyword": "vpn for chrome os",
+      "volume": null
+    },
+    {
+      "seed": "vpn chrome os",
+      "keyword": "best vpn for chrome os",
+      "volume": null
+    },
+    {
+      "seed": "vpn extension chromebook",
+      "keyword": "free vpn chromebook extension",
+      "volume": null
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "best vpn for chromebook",
+      "paa": [
+        "Is there a VPN that works with Chromebooks?",
+        "Should I use a VPN on a Chromebook?",
+        "What is the safest VPN for Chrome?",
+        "Is there a free VPN available for Chromebooks?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn for chromebook",
+      "paa": [
+        "Can a Chromebook run a VPN?",
+        "Which VPN is best for Chromebooks?",
+        "What is the best free VPN for Chromebooks?",
+        "Are free VPNs illegal?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "chromebook vpn",
+      "paa": [
+        "Is there a built-in VPN on Chromebook?",
+        "Is there a free VPN available for Chromebooks?",
+        "Which VPN is best for Chromebooks?",
+        "Should I use a VPN on a Chromebook?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn chrome os",
+      "paa": [
+        "Can I put a VPN on my Chromebook?",
+        "What is the best free VPN for Chrome OS?",
+        "Do Chromebooks have VPNs built-in?",
+        "Which VPN is best for Chromebooks?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn extension chromebook",
+      "paa": [
+        "How do I add a VPN to my Chromebook?",
+        "Is there a VPN extension in Chrome?",
+        "Does Chromebook have a built-in VPN?",
+        "Is there a free VPN extension for Chrome?"
+      ],
+      "hasAiOverview": false
+    }
+  ],
+  "sourcePolicy": "DataForSEO signals prioritise ChromeOS intent and question coverage; they do not prove app compatibility, speed, streaming access, security outcomes or conversion value."
+}

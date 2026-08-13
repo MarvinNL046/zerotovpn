@@ -1,11 +1,11 @@
 # Live editorial page audit
 
-Generated: 2026-08-13T07:05:27.245Z
+Generated: 2026-08-13T07:22:54.301Z
 
 - Target pages: **43**
 - Passing pages: **43**
 - Pages needing review: **0**
-- Affiliate links checked: **207**
+- Affiliate links checked: **208**
 - Affiliate links missing sponsored/nofollow: **0**
 - Affiliate links missing Short.io slug telemetry: **0**
 - Missing required cluster links: **0**
@@ -54,7 +54,7 @@ Generated: 2026-08-13T07:05:27.245Z
 | pass | /fr/best/free-vpn | Meilleurs VPN gratuits 2026 : limites, sécurité et comparatif | ZeroToVPN | 1 | 46 | 3 | — | — |
 | pass | /nl/best/free-vpn | Best Free VPNs: Limits and Trade-offs | ZeroToVPN | 1 | 46 | 3 | — | — |
 | pass | /best/vpn-free-trial | Best VPN Free Trials (Aug 2026): 7-Day &amp; No-Card Options | 1 | 43 | 11 | — | — |
-| pass | /best/vpn-port-forwarding | Best VPNs With Port Forwarding (Aug 2026): Providers Compared | 1 | 42 | 3 | — | — |
+| pass | /best/vpn-port-forwarding | Best VPNs With Port Forwarding (Aug 2026): Providers Compared | 1 | 45 | 4 | — | — |
 | pass | /blog/vpn-connection-drops-why-disconnects-how-to-fix-2026 | Why Does My VPN Keep Disconnecting? Causes and Fixes (2026) | 1 | 54 | 0 | — | — |
 | pass | /blog/best-country-for-vpn-server-location-2026 | Best VPN Server Location in 2026: Speed, Privacy and Streaming Trade-offs | 1 | 53 | 0 | — | — |
 | pass | /blog/can-vpn-hide-from-isp | Can a VPN Hide You From Your ISP? What It Does and Does Not Hide (2026) | 1 | 54 | 0 | — | — |

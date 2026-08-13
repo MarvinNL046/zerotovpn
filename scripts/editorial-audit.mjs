@@ -514,6 +514,17 @@ const checks = [
     forbiddenPatterns: [/38\+ VPN/i],
   },
   {
+    name: "Torrenting Reddit editorial override stays lawful and affiliate-free",
+    file: "src/data/editorial/torrenting-reddit-2026.ts",
+    patterns: [/torrentingRedditEditorialContent/, /Reddit can be useful/, /P2P permission/, /kill-switch/, /port-forwarding/, /EFF|Electronic Frontier Foundation/, /browserleaks.com\/dns/],
+    forbiddenPatterns: [/538 Mbps|779\.9|752 Mbps|718 Mbps|10-15% speed|5% speed reduction|fastest.*torrent/i, /AffiliateButton|go\.zerotovpn\.com|go\.nordvpn\.net/i],
+  },
+  {
+    name: "Torrenting Reddit route uses the audited evidence-led override",
+    file: "src/app/[locale]/blog/[slug]/page.tsx",
+    patterns: [/isTorrentingRedditEditorial/, /torrentingRedditEditorialContent/, /editorialContentBriefs\.torrentingReddit/, /torrentingRedditClusterLinks/],
+  },
+  {
     name: "Biometric payment article qualifies provider evidence",
     file: "src/data/posts/en/vpn-biometric-payment-fingerprint-identity-leak-2026.json",
     patterns: [/multiple VPN providers/, /multiple VPN providers; some claims/],

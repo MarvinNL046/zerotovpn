@@ -101,6 +101,12 @@ import {
   vpnPingGamingEditorialExcerpt,
   vpnPingGamingEditorialContent,
 } from "@/data/editorial/vpn-ping-gaming-2026";
+import {
+  torrentingRedditEditorialFaq,
+  torrentingRedditEditorialTitle,
+  torrentingRedditEditorialExcerpt,
+  torrentingRedditEditorialContent,
+} from "@/data/editorial/torrenting-reddit-2026";
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
@@ -329,6 +335,10 @@ const clusterMetadata: Record<string, { title: string; description: string }> = 
     title: vpnPingGamingEditorialTitle,
     description: vpnPingGamingEditorialExcerpt,
   },
+  "best-vpn-for-torrenting-reddit-2026": {
+    title: torrentingRedditEditorialTitle,
+    description: torrentingRedditEditorialExcerpt,
+  },
 };
 
 const aiPrivacyClusterLinks: Record<string, ClusterLink[]> = {
@@ -531,6 +541,14 @@ const gamingLatencyClusterLinks: Record<string, ClusterLink[]> = {
   ],
 };
 
+const torrentingRedditClusterLinks: Record<string, ClusterLink[]> = {
+  "best-vpn-for-torrenting-reddit-2026": [
+    { title: "Torrenting VPN guide", description: "Compare current P2P, privacy and setup evidence without fixed performance promises.", href: "/best/vpn-torrenting" },
+    { title: "Port-forwarding comparison", description: "Check whether incoming peer reachability is the real requirement.", href: "/best/vpn-port-forwarding" },
+    { title: "VPN protocol guide", description: "Understand WireGuard, OpenVPN and kill-switch trade-offs.", href: "/guides/vpn-protocols-explained" },
+  ],
+};
+
 // Pre-render alle gepubliceerde blogposts bij het bouwen, in elke taal (met
 // Engelse fallback). Zonder dit werd elke blog-URL on-demand gerenderd en
 // query'de een crawler door 511 posts telkens live Postgres — wat de
@@ -606,7 +624,7 @@ export default async function DynamicBlogPost({ params }: Props) {
     notFound();
   }
 
-  const clusterLinks = censorshipClusterLinks[slug] || aiPrivacyClusterLinks[slug] || technicalClusterLinks[slug] || locationClusterLinks[slug] || ispPrivacyClusterLinks[slug] || braveVpnClusterLinks[slug] || vpnLeakTestingClusterLinks[slug] || vpnAccountSharingClusterLinks[slug] || vpnSimultaneousConnectionsClusterLinks[slug] || fitnessTrackingPrivacyClusterLinks[slug] || gamingLatencyClusterLinks[slug] || [];
+  const clusterLinks = censorshipClusterLinks[slug] || aiPrivacyClusterLinks[slug] || technicalClusterLinks[slug] || locationClusterLinks[slug] || ispPrivacyClusterLinks[slug] || braveVpnClusterLinks[slug] || vpnLeakTestingClusterLinks[slug] || vpnAccountSharingClusterLinks[slug] || vpnSimultaneousConnectionsClusterLinks[slug] || fitnessTrackingPrivacyClusterLinks[slug] || gamingLatencyClusterLinks[slug] || torrentingRedditClusterLinks[slug] || [];
   const isIranEditorial = slug === "best-vpn-for-iran-2026-bypass-internet-censorship";
   const isTelegramEditorial = slug === "best-vpn-for-telegram-2026";
   const isChatgptEditorial = slug === "best-vpn-for-chatgpt-2026";
@@ -619,6 +637,7 @@ export default async function DynamicBlogPost({ params }: Props) {
   const isVpnSimultaneousConnectionsEditorial = slug === "vpn-simultaneous-connections-limits-workarounds-2026";
   const isFitnessTrackingPrivacyEditorial = slug === "vpn-fitness-tracking-apps-strava-apple-health-garmin-privacy";
   const isGamingLatencyEditorial = slug === "does-vpn-reduce-ping-gaming-2026";
+  const isTorrentingRedditEditorial = slug === "best-vpn-for-torrenting-reddit-2026";
   const isCensorshipEditorial = isIranEditorial || isTelegramEditorial;
   const isRestrictedAffiliateContext =
     slug === "vpn-blockchain-privacy-mask-wallet-activity-2026";
@@ -640,8 +659,10 @@ export default async function DynamicBlogPost({ params }: Props) {
                 ? vpnSimultaneousConnectionsEditorialTitle
                 : isFitnessTrackingPrivacyEditorial
                   ? fitnessTrackingPrivacyEditorialTitle
-                  : isGamingLatencyEditorial
+        : isGamingLatencyEditorial
                     ? vpnPingGamingEditorialTitle
+                    : isTorrentingRedditEditorial
+                      ? torrentingRedditEditorialTitle
         : post.title;
   const displayExcerpt = isIranEditorial
     ? iranVpnEditorialExcerpt
@@ -661,8 +682,10 @@ export default async function DynamicBlogPost({ params }: Props) {
                 ? vpnSimultaneousConnectionsEditorialExcerpt
                 : isFitnessTrackingPrivacyEditorial
                   ? fitnessTrackingPrivacyEditorialExcerpt
-                  : isGamingLatencyEditorial
+                : isGamingLatencyEditorial
                     ? vpnPingGamingEditorialExcerpt
+                    : isTorrentingRedditEditorial
+                      ? torrentingRedditEditorialExcerpt
         : post.excerpt;
   const editorialVpns = isCensorshipEditorial ? await getAllVpns() : [];
   const relatedLinks = getRelatedContent({
@@ -704,6 +727,8 @@ export default async function DynamicBlogPost({ params }: Props) {
       ? fitnessTrackingPrivacyEditorialContent
     : isGamingLatencyEditorial
       ? vpnPingGamingEditorialContent
+    : isTorrentingRedditEditorial
+      ? torrentingRedditEditorialContent
     : isRestrictedAffiliateContext
       ? verwijderAffiliateLinks(post.content)
       : post.content;
@@ -722,7 +747,7 @@ export default async function DynamicBlogPost({ params }: Props) {
 
       {/* Article Header and shared editorial disclosure/jump navigation */}
       <BestVpnEditorialTemplate
-        brief={isIranEditorial ? iranContentBrief : isTelegramEditorial ? editorialContentBriefs.telegram : isConnectionDropsEditorial ? connectionDropsContentBrief : isServerLocationEditorial ? serverLocationContentBrief : isIspPrivacyEditorial ? ispPrivacyContentBrief : isBraveVpnEditorial ? braveVpnContentBrief : isVpnLeakTestingEditorial ? vpnLeakTestingContentBrief : isVpnAccountSharingEditorial ? vpnAccountSharingContentBrief : isVpnSimultaneousConnectionsEditorial ? vpnSimultaneousConnectionsContentBrief : isFitnessTrackingPrivacyEditorial ? fitnessTrackingPrivacyContentBrief : isGamingLatencyEditorial ? editorialContentBriefs.vpnPingGaming : undefined}
+        brief={isIranEditorial ? iranContentBrief : isTelegramEditorial ? editorialContentBriefs.telegram : isConnectionDropsEditorial ? connectionDropsContentBrief : isServerLocationEditorial ? serverLocationContentBrief : isIspPrivacyEditorial ? ispPrivacyContentBrief : isBraveVpnEditorial ? braveVpnContentBrief : isVpnLeakTestingEditorial ? vpnLeakTestingContentBrief : isVpnAccountSharingEditorial ? vpnAccountSharingContentBrief : isVpnSimultaneousConnectionsEditorial ? vpnSimultaneousConnectionsContentBrief : isFitnessTrackingPrivacyEditorial ? fitnessTrackingPrivacyContentBrief : isGamingLatencyEditorial ? editorialContentBriefs.vpnPingGaming : isTorrentingRedditEditorial ? editorialContentBriefs.torrentingReddit : undefined}
         navigation={[
           { href: "#article-content", label: "Article" },
           ...(isCensorshipEditorial ? [{ href: "#quick-picks", label: "Shortlist" }] : []),
@@ -860,6 +885,7 @@ export default async function DynamicBlogPost({ params }: Props) {
         {isVpnSimultaneousConnectionsEditorial && <FAQSchema title="VPN simultaneous-connections FAQ" faqs={vpnSimultaneousConnectionsEditorialFaq} />}
         {isFitnessTrackingPrivacyEditorial && <FAQSchema title="Fitness tracking privacy FAQ" faqs={fitnessTrackingPrivacyEditorialFaq} />}
         {isGamingLatencyEditorial && <FAQSchema title="Gaming latency FAQ" faqs={vpnPingGamingEditorialFaq} />}
+        {isTorrentingRedditEditorial && <FAQSchema title="Torrenting VPN FAQ" faqs={torrentingRedditEditorialFaq} />}
 
         {/* Ad placement */}
         <InlineAd />

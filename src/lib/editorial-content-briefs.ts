@@ -182,6 +182,15 @@ export const editorialContentBriefs = {
     affiliateContext: "vpn-selection",
     schemaType: "Article",
   },
+  torrentingReddit: {
+    primaryKeyword: "best vpn for torrenting reddit",
+    intent: "commercial",
+    cluster: "privacy-and-trust",
+    lastReviewedAt: "2026-08-13",
+    evidence: ["docs/research/dataforseo-torrenting-reddit-cluster-2026-08-13.md", "/methodology", "https://www.eff.org/issues/file-sharing", "https://protonvpn.com/support/port-forwarding"],
+    affiliateContext: "none",
+    schemaType: "Article",
+  },
   portForwarding: {
     primaryKeyword: "best vpn with port forwarding",
     intent: "commercial",

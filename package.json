@@ -25,6 +25,7 @@
     "seo:reddit-free-vpn": "node scripts/reddit-free-vpn-seo-research.mjs",
     "seo:android-vpn": "node scripts/android-vpn-seo-research.mjs",
     "seo:dns-leak": "node scripts/dns-leak-seo-research.mjs",
+    "seo:torrenting-reddit": "node scripts/torrenting-reddit-seo-research.mjs",
     "seo:connection-drops": "node scripts/connection-drops-seo-research.mjs",
     "seo:server-location": "node scripts/server-location-seo-research.mjs",
     "seo:isp-privacy": "node scripts/isp-privacy-seo-research.mjs",

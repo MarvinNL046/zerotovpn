@@ -1,9 +1,9 @@
 # Live editorial page audit
 
-Generated: 2026-08-13T07:22:54.301Z
+Generated: 2026-08-13T07:38:47.134Z
 
-- Target pages: **43**
-- Passing pages: **43**
+- Target pages: **44**
+- Passing pages: **44**
 - Pages needing review: **0**
 - Affiliate links checked: **208**
 - Affiliate links missing sponsored/nofollow: **0**
@@ -59,6 +59,7 @@ Generated: 2026-08-13T07:22:54.301Z
 | pass | /blog/best-country-for-vpn-server-location-2026 | Best VPN Server Location in 2026: Speed, Privacy and Streaming Trade-offs | 1 | 53 | 0 | — | — |
 | pass | /blog/can-vpn-hide-from-isp | Can a VPN Hide You From Your ISP? What It Does and Does Not Hide (2026) | 1 | 54 | 0 | — | — |
 | pass | /blog/is-brave-vpn-free-2026 | Is Brave VPN Free? What the Browser Includes and What Costs Extra (2026) | 1 | 53 | 0 | — | — |
+| pass | /blog/vpn-leak-testing-tools-compared-2026 | VPN Leak Tests Compared (2026): DNS, WebRTC, IPv6 and IP Checks | 1 | 54 | 0 | — | — |
 | pass | /blog/vpn-account-sharing-safe-guide-2026 | Can You Share a VPN Account? Simultaneous Devices, Family Use and Provider Terms (2026) | 1 | 50 | 0 | — | — |
 | pass | /blog/vpn-simultaneous-connections-limits-workarounds-2026 | How Many Devices Can Use a VPN? Simultaneous Connections and Device Limits (2026) | 1 | 51 | 4 | — | — |
 | pass | /blog/vpn-fitness-tracking-apps-strava-apple-health-garmin-privacy | Fitness App Privacy: What a VPN Can—and Cannot—Hide From Strava, Apple Health and Garmin (2026) | 1 | 50 | 4 | — | — |

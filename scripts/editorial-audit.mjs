@@ -395,6 +395,17 @@ const checks = [
     patterns: [/SurfsharkReviewEditorialPage/, /_locale === "en" && vpn\.slug === "surfshark"/, /surfsharkReviewTitle/, /surfsharkReviewDescription/],
   },
   {
+    name: "AirVPN review uses bounded evidence-led editorial component",
+    file: "src/components/editorial/airvpn-review-editorial-page.tsx",
+    patterns: [/AirVpnReviewEditorialPage/, /AirVPN evidence checklist/, /id="evidence"/, /id="performance"/, /id="alternatives"/, /id="faq"/, /DataForSEO/, /port forwarding/i, /Network Lock/i],
+    forbiddenPatterns: [/We tested AirVPN for 30\+ days/i, /guarantee.*(?:Netflix|streaming)/i, /completely anonymous/i, /€2\.06/i, /ENDWINTERDEAL/i],
+  },
+  {
+    name: "AirVPN review route uses the audited English component and metadata",
+    file: "src/app/[locale]/reviews/[slug]/page.tsx",
+    patterns: [/AirVpnReviewEditorialPage/, /_locale === "en" && vpn\.slug === "airvpn"/, /airvpnReviewTitle/, /airvpnReviewDescription/],
+  },
+  {
     name: "VPN comparison uses bounded criteria and tracked prices",
     file: "src/components/editorial/vpn-comparison-editorial-page.tsx",
     patterns: [/VpnComparisonEditorialPage/, /VPN provider comparison by price, terms and device criteria/, /id="shortlist"/, /id="comparison"/, /id="method"/, /id="faq"/, /DataForSEO/, /AffiliateTextLink/],

@@ -43,6 +43,7 @@ import { NordVpnReviewEditorialPage, nordvpnReviewDescription, nordvpnReviewTitl
 import { ProtonVpnReviewEditorialPage, protonvpnReviewDescription, protonvpnReviewTitle } from "@/components/editorial/protonvpn-review-editorial-page";
 import { UrbanVpnReviewEditorialPage, urbanVpnReviewDescription, urbanVpnReviewTitle } from "@/components/editorial/urban-vpn-review-editorial-page";
 import { SurfsharkReviewEditorialPage, surfsharkReviewDescription, surfsharkReviewTitle } from "@/components/editorial/surfshark-review-editorial-page";
+import { AirVpnReviewEditorialPage, airvpnReviewDescription, airvpnReviewTitle } from "@/components/editorial/airvpn-review-editorial-page";
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
@@ -502,6 +503,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const isProtonVpn = vpn.slug === "protonvpn";
   const isUrbanVpn = vpn.slug === "urban-vpn";
   const isSurfshark = vpn.slug === "surfshark";
+  const isAirVpn = vpn.slug === "airvpn";
 
   // Generate locale-specific descriptions
   const descriptions: Record<string, string> = {
@@ -548,6 +550,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     descriptions.en = surfsharkReviewDescription;
     titles.en = `${surfsharkReviewTitle} | ZeroToVPN`;
   }
+  if (isAirVpn && locale === "en") {
+    descriptions.en = airvpnReviewDescription;
+    titles.en = `${airvpnReviewTitle} | ZeroToVPN`;
+  }
 
   return {
     metadataBase: new URL(baseUrl),
@@ -592,6 +598,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           "surfshark unlimited devices",
           "surfshark price",
           "is surfshark worth it",
+        ]
+      : isAirVpn && locale === "en"
+      ? [
+          "airvpn review",
+          "airvpn review 2026",
+          "is airvpn safe",
+          "airvpn port forwarding",
+          "airvpn netflix",
+          "airvpn iphone",
+          "airvpn price",
         ]
       : [
           vpn.name,
@@ -656,6 +672,9 @@ export default async function ReviewPage({ params }: Props) {
   }
   if (_locale === "en" && vpn.slug === "surfshark") {
     return <SurfsharkReviewEditorialPage />;
+  }
+  if (_locale === "en" && vpn.slug === "airvpn") {
+    return <AirVpnReviewEditorialPage />;
   }
   const nordvpn = vpnProviders.find((provider) => provider.slug === "nordvpn");
 

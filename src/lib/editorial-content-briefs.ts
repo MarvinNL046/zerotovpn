@@ -182,6 +182,15 @@ export const editorialContentBriefs = {
     affiliateContext: "vpn-selection",
     schemaType: "Article",
   },
+  airvpnReview: {
+    primaryKeyword: "airvpn review",
+    intent: "commercial",
+    cluster: "provider-reviews-and-comparisons",
+    lastReviewedAt: "2026-08-13",
+    evidence: ["docs/research/dataforseo-airvpn-review-cluster-2026-08-13.md", "/methodology", "https://airvpn.org/privacy/", "https://airvpn.org/faq/port_forwarding/"],
+    affiliateContext: "vpn-selection",
+    schemaType: "Article",
+  },
   vpnComparison: {
     primaryKeyword: "vpn comparison",
     intent: "commercial",

@@ -14,6 +14,7 @@ import { getVpnBySlug, type VpnProvider } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
 import { DEFAULT_OG_IMAGE, OG_LOCALE_MAP, generateAlternates, getLocalizedMonthYear, getShortMonthYear, titelMetMerk } from "@/lib/seo-utils";
 import { LastUpdated } from "@/components/last-updated";
+import { PrivacyVpnEditorialPage, privacyVpnEditorialDescription, privacyVpnEditorialTitle } from "@/components/editorial/privacy-vpn-editorial-page";
 import {
   Shield,
   CheckCircle,
@@ -53,8 +54,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     th: `VPN ที่ดีที่สุดสำหรับความเป็นส่วนตัว (ทดสอบ ${shortMonthYear}) - ไม่มีบันทึก ตรวจสอบแล้ว และไม่เปิดเผยตัวตน | ZeroToVPN`,
   };
 
+  titles.en = privacyVpnEditorialTitle;
   const descriptions: Record<string, string> = {
-    en: `We compare several VPNs for privacy. Expert picks updated ${shortMonthYear} with jurisdiction, no-logs audits & anonymous payment compared. See our honest verdict.`,
+    en: privacyVpnEditorialDescription,
     nl: "Vind de beste privacy VPN voor 2026. We vergelijken meerdere VPN-providers op jurisdictie, no-logs audits en anonieme betaling. Bescherm je online privacy.",
     de: "Finden Sie ein Datenschutz-VPN für 2026. Wir vergleichen mehrere VPN-Anbieter nach Jurisdiktion, No-Logs-Dokumentation und Zahlungsoptionen. Schützen Sie Ihre Online-Privatsphäre.",
     es: "Encuentra la mejor VPN para privacidad de 2026. Comparamos varias VPNs en jurisdicción, auditorías sin registros y pago anónimo. Protege tu privacidad en línea.",
@@ -106,6 +108,8 @@ function ItemListSchema({ privacyVpns }: { privacyVpns: { vpn: VpnProvider | nul
 export default async function PrivacyVpnPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  if (locale === "en") return <PrivacyVpnEditorialPage />;
 
   // Get privacy VPNs data using real slugs from vpn-data.ts
   const mullvad = await getVpnBySlug("mullvad");

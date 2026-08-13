@@ -18,6 +18,7 @@
     "seo:best-vpn": "node scripts/best-vpn-seo-research.mjs",
     "seo:chromebook-vpn": "node scripts/chromebook-vpn-seo-research.mjs",
     "seo:firestick-vpn": "node scripts/firestick-vpn-seo-research.mjs",
+    "seo:privacy-vpn": "node scripts/privacy-vpn-seo-research.mjs",
     "seo:gaming": "node scripts/gaming-seo-research.mjs",
     "seo:chatgpt-vpn": "node scripts/chatgpt-vpn-seo-research.mjs",
     "seo:reddit-free-vpn": "node scripts/reddit-free-vpn-seo-research.mjs",

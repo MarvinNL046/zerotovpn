@@ -1,0 +1,423 @@
+{
+  "schemaVersion": 1,
+  "cluster": "VPN privacy, no-logs evidence and threat-model decisions",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "fetchedAt": "2026-08-13T05:29:28.352Z",
+  "refreshed": false,
+  "seeds": [
+    "best vpn for privacy",
+    "most private vpn",
+    "vpn no logs",
+    "privacy vpn",
+    "anonymous vpn"
+  ],
+  "overview": [
+    {
+      "keyword": "anonymous vpn",
+      "currentVolume": null,
+      "latestVolume": 590,
+      "latestMonth": "2024-02",
+      "difficulty": 36,
+      "intent": "informational"
+    },
+    {
+      "keyword": "best vpn for privacy",
+      "currentVolume": null,
+      "latestVolume": 390,
+      "latestMonth": "2024-02",
+      "difficulty": 52,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "most private vpn",
+      "currentVolume": null,
+      "latestVolume": 110,
+      "latestMonth": "2024-02",
+      "difficulty": 64,
+      "intent": "informational"
+    },
+    {
+      "keyword": "privacy vpn",
+      "currentVolume": null,
+      "latestVolume": 390,
+      "latestMonth": "2024-02",
+      "difficulty": 53,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "vpn no logs",
+      "currentVolume": null,
+      "latestVolume": 720,
+      "latestMonth": "2024-02",
+      "difficulty": 21,
+      "intent": "informational"
+    }
+  ],
+  "suggestions": [
+    {
+      "seed": "privacy vpn",
+      "keyword": "best vpn for privacy and speed",
+      "volume": 30
+    },
+    {
+      "seed": "best vpn for privacy",
+      "keyword": "atlas vpn best free vpn for privacy",
+      "volume": 0
+    },
+    {
+      "seed": "best vpn for privacy",
+      "keyword": "best vpn for privacy 2021",
+      "volume": 0
+    },
+    {
+      "seed": "best vpn for privacy",
+      "keyword": "best vpn for privacy 2023",
+      "volume": 0
+    },
+    {
+      "seed": "best vpn for privacy",
+      "keyword": "best vpn for privacy 2020",
+      "volume": 0
+    },
+    {
+      "seed": "best vpn for privacy",
+      "keyword": "all best vpn scholarship for online privacy",
+      "volume": 0
+    },
+    {
+      "seed": "best vpn for privacy",
+      "keyword": "best vpn for security and privacy",
+      "volume": null
+    },
+    {
+      "seed": "best vpn for privacy",
+      "keyword": "best vpn for online privacy",
+      "volume": null
+    },
+    {
+      "seed": "best vpn for privacy",
+      "keyword": "best vpn for security and privacy reddit",
+      "volume": null
+    },
+    {
+      "seed": "best vpn for privacy",
+      "keyword": "best vpn service for privacy",
+      "volume": null
+    },
+    {
+      "seed": "best vpn for privacy",
+      "keyword": "best vpn for privacy and security",
+      "volume": null
+    },
+    {
+      "seed": "best vpn for privacy",
+      "keyword": "best vpn country for privacy",
+      "volume": null
+    },
+    {
+      "seed": "best vpn for privacy",
+      "keyword": "best vpn for privacy free",
+      "volume": null
+    },
+    {
+      "seed": "best vpn for privacy",
+      "keyword": "which vpn is best for privacy",
+      "volume": null
+    },
+    {
+      "seed": "best vpn for privacy",
+      "keyword": "best free vpn for privacy",
+      "volume": null
+    },
+    {
+      "seed": "most private vpn",
+      "keyword": "most secure and private vpn",
+      "volume": 10
+    },
+    {
+      "seed": "most private vpn",
+      "keyword": "most private vpn 2020",
+      "volume": 0
+    },
+    {
+      "seed": "most private vpn",
+      "keyword": "most private free vpn",
+      "volume": null
+    },
+    {
+      "seed": "most private vpn",
+      "keyword": "what is the most private vpn",
+      "volume": null
+    },
+    {
+      "seed": "vpn no logs",
+      "keyword": "vpn provider no logs",
+      "volume": 720
+    },
+    {
+      "seed": "vpn no logs",
+      "keyword": "vpn service with no logs",
+      "volume": 720
+    },
+    {
+      "seed": "vpn no logs",
+      "keyword": "vpn providers no logs",
+      "volume": 720
+    },
+    {
+      "seed": "vpn no logs",
+      "keyword": "vpn with strict no logs policy",
+      "volume": 480
+    },
+    {
+      "seed": "vpn no logs",
+      "keyword": "no logs vpn free",
+      "volume": 260
+    },
+    {
+      "seed": "vpn no logs",
+      "keyword": "proton vpn no-logs policy",
+      "volume": 170
+    },
+    {
+      "seed": "vpn no logs",
+      "keyword": "proton vpn no logs policy",
+      "volume": 170
+    },
+    {
+      "seed": "vpn no logs",
+      "keyword": "express vpn no logs policy",
+      "volume": 90
+    },
+    {
+      "seed": "vpn no logs",
+      "keyword": "mullvad vpn no logs",
+      "volume": 30
+    },
+    {
+      "seed": "privacy vpn",
+      "keyword": "x vpn no logs vpn proxy & wifi privacy security",
+      "volume": 10
+    },
+    {
+      "seed": "vpn no logs",
+      "keyword": "cheap vpn no logs",
+      "volume": 10
+    },
+    {
+      "seed": "vpn no logs",
+      "keyword": "private vpn no logs",
+      "volume": 10
+    },
+    {
+      "seed": "vpn no logs",
+      "keyword": "fast vpn no logs",
+      "volume": 10
+    },
+    {
+      "seed": "vpn no logs",
+      "keyword": "best vpn provider no-logs",
+      "volume": 10
+    },
+    {
+      "seed": "vpn no logs",
+      "keyword": "kaspersky vpn no logs",
+      "volume": 10
+    },
+    {
+      "seed": "privacy vpn",
+      "keyword": "vpn privacy best",
+      "volume": 90500
+    },
+    {
+      "seed": "privacy vpn",
+      "keyword": "privacy internet vpn",
+      "volume": 1000
+    },
+    {
+      "seed": "privacy vpn",
+      "keyword": "privacy hero 2 vpn router",
+      "volume": 170
+    },
+    {
+      "seed": "privacy vpn",
+      "keyword": "does a vpn protect my privacy",
+      "volume": 70
+    },
+    {
+      "seed": "privacy vpn",
+      "keyword": "mullvad vpn privacy",
+      "volume": 40
+    },
+    {
+      "seed": "privacy vpn",
+      "keyword": "free vpn for privacy",
+      "volume": 30
+    },
+    {
+      "seed": "privacy vpn",
+      "keyword": "proton vpn privacy reddit",
+      "volume": 20
+    },
+    {
+      "seed": "privacy vpn",
+      "keyword": "best privacy vpn service",
+      "volume": 20
+    },
+    {
+      "seed": "privacy vpn",
+      "keyword": "vpn stands for visible privacy nest",
+      "volume": 20
+    },
+    {
+      "seed": "privacy vpn",
+      "keyword": "thunder vpn privacy policy",
+      "volume": 10
+    },
+    {
+      "seed": "privacy vpn",
+      "keyword": "perfect privacy vpn free",
+      "volume": 10
+    },
+    {
+      "seed": "privacy vpn",
+      "keyword": "free vpn to protect your privacy",
+      "volume": 10
+    },
+    {
+      "seed": "privacy vpn",
+      "keyword": "privacy guardian vpn",
+      "volume": 10
+    },
+    {
+      "seed": "anonymous vpn",
+      "keyword": "vpn anonymous surfing",
+      "volume": 165000
+    },
+    {
+      "seed": "anonymous vpn",
+      "keyword": "anonymous surfing vpn",
+      "volume": 165000
+    },
+    {
+      "seed": "anonymous vpn",
+      "keyword": "vpn anonymous web surfing",
+      "volume": 165000
+    },
+    {
+      "seed": "anonymous vpn",
+      "keyword": "vpn anonymous service",
+      "volume": 720
+    },
+    {
+      "seed": "anonymous vpn",
+      "keyword": "best vpn anonymous surfing",
+      "volume": 90
+    },
+    {
+      "seed": "anonymous vpn",
+      "keyword": "anonymous vpn reviews",
+      "volume": 90
+    },
+    {
+      "seed": "anonymous vpn",
+      "keyword": "best vpn for anonymous surfing",
+      "volume": 90
+    },
+    {
+      "seed": "anonymous vpn",
+      "keyword": "anonymous vpn best",
+      "volume": 50
+    },
+    {
+      "seed": "anonymous vpn",
+      "keyword": "anonymous vpn popcorn time",
+      "volume": 10
+    },
+    {
+      "seed": "anonymous vpn",
+      "keyword": "best vpn anonymous service",
+      "volume": 10
+    },
+    {
+      "seed": "anonymous vpn",
+      "keyword": "are vpn really anonymous",
+      "volume": 10
+    },
+    {
+      "seed": "anonymous vpn",
+      "keyword": "anonymous vpn for pc",
+      "volume": 10
+    },
+    {
+      "seed": "anonymous vpn",
+      "keyword": "free anonymous vpn services",
+      "volume": 10
+    },
+    {
+      "seed": "anonymous vpn",
+      "keyword": "totally anonymous vpn",
+      "volume": 10
+    },
+    {
+      "seed": "anonymous vpn",
+      "keyword": "express vpn anonymous",
+      "volume": 10
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "best vpn for privacy",
+      "paa": [
+        "What is the most secure VPN for privacy?",
+        "Why avoid NordVPN?",
+        "Can the FBI see through VPNs?",
+        "Which VPN do hackers use?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "most private vpn",
+      "paa": [
+        "Which VPN is truly private?",
+        "Which VPN is most anonymous?",
+        "Can the FBI see through VPNs?",
+        "Why avoid NordVPN?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn no logs",
+      "paa": [
+        "Is no log VPN legal?",
+        "Can the FBI see through VPNs?",
+        "Do VPN providers keep logs?",
+        "Does NordVPN have a no log policy?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "privacy vpn",
+      "paa": [
+        "What is the best VPN for privacy?",
+        "Can the FBI see through VPNs?",
+        "Is using a VPN really private?",
+        "Is using VPN illegal in the US?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "anonymous vpn",
+      "paa": [
+        "Which VPN is truly anonymous?",
+        "Is a VPN really anonymous?",
+        "Can the FBI track a VPN?",
+        "Is using a VPN illegal in the US?"
+      ],
+      "hasAiOverview": false
+    }
+  ],
+  "sourcePolicy": "DataForSEO signals prioritise privacy intent and question coverage; they do not prove anonymity, no-logs enforcement, jurisdictional outcomes, audit quality or conversion value."
+}

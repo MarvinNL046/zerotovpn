@@ -128,4 +128,13 @@ export const editorialContentBriefs = {
     affiliateContext: "vpn-selection",
     schemaType: "CollectionPage",
   },
+  privacyVpn: {
+    primaryKeyword: "best vpn for privacy",
+    intent: "commercial",
+    cluster: "privacy-and-trust",
+    lastReviewedAt: "2026-08-13",
+    evidence: ["docs/research/dataforseo-privacy-vpn-cluster-2026-08-13.md", "/methodology", "/guides/vpn-privacy-guide"],
+    affiliateContext: "vpn-selection",
+    schemaType: "CollectionPage",
+  },
 } satisfies Record<string, EditorialContentBrief>;

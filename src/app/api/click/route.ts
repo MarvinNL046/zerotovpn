@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { vpnId, affiliateSlug, page, referrer } = body;
+    const { vpnId, affiliateSlug, affiliateSubId, page, referrer } = body;
 
     const country =
       request.headers.get("x-vercel-ip-country") ||
@@ -14,6 +14,7 @@ export async function POST(request: NextRequest) {
     console.log("[affiliate-click]", JSON.stringify({
       vpnId,
       affiliateSlug,
+      affiliateSubId,
       page,
       referrer,
       country,

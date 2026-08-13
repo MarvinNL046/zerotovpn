@@ -60,9 +60,16 @@ export function buildAffiliateHref(
 }
 
 export function trackAffiliateClick(vpnId: string, affiliateUrl: string) {
+  let affiliateSubId: string | undefined;
+  try {
+    affiliateSubId = new URL(affiliateUrl, window.location.origin).searchParams.get("aff_sub") || undefined;
+  } catch {
+    // A malformed destination must never prevent the affiliate navigation.
+  }
   const payload = JSON.stringify({
     vpnId,
     affiliateSlug: getShortIoSlug(affiliateUrl),
+    affiliateSubId,
     page: window.location.pathname,
     referrer: document.referrer,
   });

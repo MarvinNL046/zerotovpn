@@ -1,0 +1,503 @@
+{
+  "schemaVersion": 1,
+  "cluster": "Windows VPN / native app / split tunneling / kill switch",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "fetchedAt": "2026-08-13T09:33:02.939Z",
+  "refreshed": true,
+  "seeds": [
+    "best vpn for windows",
+    "vpn for windows 11",
+    "vpn windows pc",
+    "windows vpn kill switch",
+    "windows vpn split tunneling",
+    "vpn for windows 10"
+  ],
+  "overview": [
+    {
+      "keyword": "best vpn for windows",
+      "currentVolume": null,
+      "latestVolume": 720,
+      "latestMonth": "2024-02",
+      "difficulty": 52,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "vpn for windows 10",
+      "currentVolume": null,
+      "latestVolume": 390,
+      "latestMonth": "2024-02",
+      "difficulty": 56,
+      "intent": "informational"
+    },
+    {
+      "keyword": "vpn for windows 11",
+      "currentVolume": null,
+      "latestVolume": 260,
+      "latestMonth": "2024-02",
+      "difficulty": 24,
+      "intent": "informational"
+    },
+    {
+      "keyword": "vpn windows pc",
+      "currentVolume": null,
+      "latestVolume": 30,
+      "latestMonth": "2024-02",
+      "difficulty": 52,
+      "intent": "informational"
+    },
+    {
+      "keyword": "windows vpn kill switch",
+      "currentVolume": null,
+      "latestVolume": 10,
+      "latestMonth": "2024-02",
+      "difficulty": 44,
+      "intent": "informational"
+    },
+    {
+      "keyword": "windows vpn split tunneling",
+      "currentVolume": null,
+      "latestVolume": 50,
+      "latestMonth": "2024-02",
+      "difficulty": 0,
+      "intent": "informational"
+    }
+  ],
+  "suggestions": [
+    {
+      "seed": "best vpn for windows",
+      "keyword": "best vpn software for windows free",
+      "volume": 720
+    },
+    {
+      "seed": "vpn for windows 10",
+      "keyword": "best freeware vpn for windows 10",
+      "volume": 90
+    },
+    {
+      "seed": "best vpn for windows",
+      "keyword": "best vpn application for windows",
+      "volume": 50
+    },
+    {
+      "seed": "best vpn for windows",
+      "keyword": "best free vpn software for windows 7",
+      "volume": 30
+    },
+    {
+      "seed": "best vpn for windows",
+      "keyword": "best free vpn for windows 2024",
+      "volume": 20
+    },
+    {
+      "seed": "best vpn for windows",
+      "keyword": "best vpn clients for windows",
+      "volume": 20
+    },
+    {
+      "seed": "best vpn for windows",
+      "keyword": "best free vpn software for windows 8.1",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for windows",
+      "keyword": "best vpn services for windows",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for windows",
+      "keyword": "best vpn service for windows 10",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for windows",
+      "keyword": "best free vpn software for windows 8",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for windows",
+      "keyword": "best free fast vpn for windows",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for windows",
+      "keyword": "what's the best vpn for windows",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for windows",
+      "keyword": "best proxy vpn for windows",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for windows",
+      "keyword": "best vpn proxy for windows",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for windows",
+      "keyword": "best vpn service for windows",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for windows 11",
+      "keyword": "forticlient vpn free download for windows 11 64 bit",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for windows 11",
+      "keyword": "ostrich vpn for windows 11",
+      "volume": 10
+    },
+    {
+      "seed": "vpn windows pc",
+      "keyword": "top vpn for pc windows 11",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for windows 11",
+      "keyword": "server name for vpn windows 11",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for windows 11",
+      "keyword": "free vpn servers for windows 11",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for windows 11",
+      "keyword": "vpn username and password for windows 11",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for windows 11",
+      "keyword": "globalprotect vpn download for windows 11",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for windows 11",
+      "keyword": "free vpn server address for windows 11",
+      "volume": 10
+    },
+    {
+      "seed": "vpn windows pc",
+      "keyword": "psiphon vpn for pc windows 11",
+      "volume": 10
+    },
+    {
+      "seed": "vpn windows pc",
+      "keyword": "download vpn for pc free windows 11",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for windows 11",
+      "keyword": "jump jump vpn for windows 11",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for windows 11",
+      "keyword": "vpn server address for windows 11",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for windows 11",
+      "keyword": "secure vpn for pc free download windows 11",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for windows 11",
+      "keyword": "free vpn address for windows 11",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for windows 11",
+      "keyword": "best antivirus for windows 11 with vpn",
+      "volume": 10
+    },
+    {
+      "seed": "vpn windows pc",
+      "keyword": "thunder vpn for pc windows 7",
+      "volume": 10
+    },
+    {
+      "seed": "vpn windows pc",
+      "keyword": "vpn for pc windows 8 free",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for windows 10",
+      "keyword": "secure vpn download for pc windows 10",
+      "volume": 10
+    },
+    {
+      "seed": "vpn windows pc",
+      "keyword": "octohide vpn download for pc windows 10",
+      "volume": 10
+    },
+    {
+      "seed": "vpn windows pc",
+      "keyword": "hotspot shield vpn for pc windows 7",
+      "volume": 10
+    },
+    {
+      "seed": "vpn windows pc",
+      "keyword": "1111 vpn download for pc windows 10",
+      "volume": 10
+    },
+    {
+      "seed": "vpn windows pc",
+      "keyword": "download vpn for pc windows 8.1",
+      "volume": 10
+    },
+    {
+      "seed": "vpn windows pc",
+      "keyword": "download express vpn for pc windows 7",
+      "volume": 10
+    },
+    {
+      "seed": "vpn windows pc",
+      "keyword": "download star vpn for pc windows 10",
+      "volume": 10
+    },
+    {
+      "seed": "vpn windows pc",
+      "keyword": "warp vpn for pc windows 10",
+      "volume": 10
+    },
+    {
+      "seed": "vpn windows pc",
+      "keyword": "vpn for pc windows 7 64 bit",
+      "volume": 10
+    },
+    {
+      "seed": "vpn windows pc",
+      "keyword": "panda vpn for pc windows 10",
+      "volume": 10
+    },
+    {
+      "seed": "windows vpn kill switch",
+      "keyword": "windows vpn kill switch",
+      "volume": null
+    },
+    {
+      "seed": "windows vpn kill switch",
+      "keyword": "windows 10 vpn kill switch",
+      "volume": null
+    },
+    {
+      "seed": "windows vpn kill switch",
+      "keyword": "windows 10 firewall vpn kill switch",
+      "volume": null
+    },
+    {
+      "seed": "windows vpn split tunneling",
+      "keyword": "split tunneling vpn windows 11",
+      "volume": 10
+    },
+    {
+      "seed": "windows vpn split tunneling",
+      "keyword": "how to enable vpn split tunneling in windows 10",
+      "volume": 10
+    },
+    {
+      "seed": "windows vpn split tunneling",
+      "keyword": "vpn split tunneling windows",
+      "volume": 10
+    },
+    {
+      "seed": "windows vpn split tunneling",
+      "keyword": "set-vpn connection split tunneling windows 10",
+      "volume": 0
+    },
+    {
+      "seed": "windows vpn split tunneling",
+      "keyword": "split tunneling vpn windows 7",
+      "volume": 0
+    },
+    {
+      "seed": "windows vpn split tunneling",
+      "keyword": "set vpn connection split tunneling windows 10",
+      "volume": 0
+    },
+    {
+      "seed": "windows vpn split tunneling",
+      "keyword": "vpn split tunneling windows 7",
+      "volume": 0
+    },
+    {
+      "seed": "windows vpn split tunneling",
+      "keyword": "split tunneling windows 10 vpn",
+      "volume": 0
+    },
+    {
+      "seed": "windows vpn split tunneling",
+      "keyword": "windows vpn split tunneling",
+      "volume": null
+    },
+    {
+      "seed": "windows vpn split tunneling",
+      "keyword": "windows server 2016 vpn split tunneling",
+      "volume": null
+    },
+    {
+      "seed": "windows vpn split tunneling",
+      "keyword": "windows 10 vpn split tunneling not working",
+      "volume": null
+    },
+    {
+      "seed": "windows vpn split tunneling",
+      "keyword": "cisco vpn client split tunneling windows 10",
+      "volume": null
+    },
+    {
+      "seed": "windows vpn split tunneling",
+      "keyword": "windows server 2012 vpn split tunneling",
+      "volume": null
+    },
+    {
+      "seed": "windows vpn split tunneling",
+      "keyword": "express vpn split tunneling windows",
+      "volume": null
+    },
+    {
+      "seed": "windows vpn split tunneling",
+      "keyword": "cyberghost vpn split tunneling windows",
+      "volume": null
+    },
+    {
+      "seed": "vpn for windows 10",
+      "keyword": "vpn for free for windows 10",
+      "volume": 210
+    },
+    {
+      "seed": "vpn for windows 10",
+      "keyword": "vpn software for windows 10 free",
+      "volume": 210
+    },
+    {
+      "seed": "vpn for windows 10",
+      "keyword": "free vpn downloads for windows 10",
+      "volume": 110
+    },
+    {
+      "seed": "vpn for windows 10",
+      "keyword": "download free vpn software for windows 10",
+      "volume": 110
+    },
+    {
+      "seed": "vpn for windows 10",
+      "keyword": "vpn software free download for windows 10",
+      "volume": 110
+    },
+    {
+      "seed": "vpn for windows 10",
+      "keyword": "vpn configuration for windows 10",
+      "volume": 90
+    },
+    {
+      "seed": "vpn for windows 10",
+      "keyword": "vpn programs for windows 10",
+      "volume": 20
+    },
+    {
+      "seed": "vpn for windows 10",
+      "keyword": "jump jump vpn for windows 10",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for windows 10",
+      "keyword": "biubiu vpn free download for windows 10",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for windows 10",
+      "keyword": "cisco vpn client software for windows 10",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for windows 10",
+      "keyword": "free download proton vpn for windows 10",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for windows 10",
+      "keyword": "vpn 360 for windows 10",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for windows 10",
+      "keyword": "free download vpn client for windows 10 64 bit",
+      "volume": 10
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "best vpn for windows",
+      "paa": [
+        "Does Windows have a built-in VPN?",
+        "What are the top 3 best VPNs?",
+        "Is there a 100% free VPN for PC?",
+        "Which VPN is safest to use?"
+      ],
+      "hasAiOverview": true,
+      "error": null
+    },
+    {
+      "keyword": "vpn for windows 11",
+      "paa": [
+        "Does Windows 11 have a VPN built in?",
+        "Does Windows 11 have a free VPN?",
+        "What is the best free VPN for a Windows 11 PC?",
+        "What VPN should I use for Windows 11?"
+      ],
+      "hasAiOverview": true,
+      "error": null
+    },
+    {
+      "keyword": "vpn windows pc",
+      "paa": [
+        "Does Windows have a built-in VPN?",
+        "Is there a 100% free VPN for PC?",
+        "Which VPN is best for PC Windows?",
+        "Does PC have built-in VPN?"
+      ],
+      "hasAiOverview": true,
+      "error": null
+    },
+    {
+      "keyword": "windows vpn kill switch",
+      "paa": [
+        "Should the VPN kill switch be on?",
+        "What does kill switch do in VPN?",
+        "How do I turn off kill switch on VPN?",
+        "How does a kill switch work on a VPN?"
+      ],
+      "hasAiOverview": true,
+      "error": null
+    },
+    {
+      "keyword": "windows vpn split tunneling",
+      "paa": [
+        "Why is split tunneling bad?",
+        "How do I turn off split tunneling on my VPN?",
+        "What VPN has free split tunneling?",
+        "Should I use split tunneling on my VPN?"
+      ],
+      "hasAiOverview": true,
+      "error": null
+    },
+    {
+      "keyword": "vpn for windows 10",
+      "paa": [
+        "Does Windows 10 have a built-in VPN?",
+        "Which VPN is free for Windows 10?",
+        "Does Windows have a built-in VPN?",
+        "What's the best VPN for Windows 10?"
+      ],
+      "hasAiOverview": true,
+      "error": null
+    }
+  ],
+  "sourcePolicy": "DataForSEO signals prioritise Windows search intent and FAQ coverage; they do not prove current app behaviour, speed, security or provider performance."
+}

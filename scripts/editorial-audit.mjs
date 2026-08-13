@@ -182,6 +182,17 @@ const checks = [
     forbiddenPatterns: [/35\+|35以上|35개|35个|über 35|más de 35|plus de 35|มากกว่า 35/i],
   },
   {
+    name: "Windows page uses bounded OS and app evidence",
+    file: "src/components/editorial/windows-vpn-editorial-page.tsx",
+    patterns: [/Best VPNs for Windows in 2026/, /Windows VPN comparison checklist/, /Which VPN is best for Windows\?/, /Six Windows checks before you subscribe/],
+    forbiddenPatterns: [/expert-tested|fastest protocol|excellent performance|30-day money-back guarantee on all picks|35\+|best overall Windows VPN/i],
+  },
+  {
+    name: "Windows route uses the audited English editorial component",
+    file: "src/app/[locale]/best/vpn-windows/page.tsx",
+    patterns: [/WindowsVpnEditorialPage/, /if \(locale === "en"\)/, /windowsVpnEditorialTitle/, /dateModified="2026-08-13"/],
+  },
+  {
     name: "laptop use-case page avoids unsupported test counts",
     file: "src/app/[locale]/best/vpn-laptops/page.tsx",
     patterns: [/We compare several VPNs for laptops/, /We vergelijken meerdere VPN-providers voor laptopgebruik/],

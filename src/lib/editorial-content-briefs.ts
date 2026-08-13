@@ -137,6 +137,15 @@ export const editorialContentBriefs = {
     affiliateContext: "vpn-selection",
     schemaType: "CollectionPage",
   },
+  windowsVpn: {
+    primaryKeyword: "best vpn for windows",
+    intent: "commercial",
+    cluster: "mobile-and-device-privacy",
+    lastReviewedAt: "2026-08-13",
+    evidence: ["docs/research/dataforseo-windows-vpn-cluster-2026-08-13.md", "/methodology", "https://support.nordvpn.com/hc/en-us/articles/19472023025169-How-to-install-and-use-the-NordVPN-app-on-Windows", "https://www.expressvpn.com/support/vpn-setup/app-for-windows/", "https://support.surfshark.com/hc/en-us/articles/360009416914-How-to-set-up-Surfshark-VPN-on-Windows"],
+    affiliateContext: "vpn-selection",
+    schemaType: "CollectionPage",
+  },
   chromebookVpn: {
     primaryKeyword: "best vpn for chromebook",
     intent: "informational",

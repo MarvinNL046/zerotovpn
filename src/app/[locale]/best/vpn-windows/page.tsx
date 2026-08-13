@@ -7,12 +7,13 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { VpnFeatureCard, type VpnFeatureCardAccent } from "@/components/vpn/vpn-feature-card";
-import { RatingStars } from "@/components/vpn/rating-stars";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { getVpnBySlug, type VpnProvider } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
+import { ArticleJsonLd } from "@/components/seo/json-ld";
+import { WindowsVpnEditorialPage, windowsVpnEditorialDescription, windowsVpnEditorialTitle } from "@/components/editorial/windows-vpn-editorial-page";
 import {
   Monitor,
   Shield,
@@ -55,6 +56,15 @@ const baseUrl = "https://www.zerotovpn.com";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  if (locale === "en") {
+    return {
+      metadataBase: new URL(baseUrl),
+      title: { absolute: titelMetMerk(windowsVpnEditorialTitle) },
+      description: windowsVpnEditorialDescription,
+      openGraph: { locale: "en_US", title: windowsVpnEditorialTitle, description: windowsVpnEditorialDescription, type: "article", images: [DEFAULT_OG_IMAGE] },
+      alternates: generateAlternates("/best/vpn-windows", locale),
+    };
+  }
   const shortMonthYear = getShortMonthYear();
 
   const titles: Record<string, string> = {
@@ -122,6 +132,10 @@ function ItemListSchema({ windowsVpns }: { windowsVpns: { vpn: VpnProvider | nul
 export default async function WindowsVpnPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  if (locale === "en") {
+    return <><ArticleJsonLd title={windowsVpnEditorialTitle} description={windowsVpnEditorialDescription} url={`${baseUrl}/best/vpn-windows`} datePublished="2026-01-01" dateModified="2026-08-13" /><WindowsVpnEditorialPage /></>;
+  }
 
   // Get Windows VPNs data
   const nordvpn = await getVpnBySlug("nordvpn");

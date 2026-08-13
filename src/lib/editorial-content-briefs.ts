@@ -146,4 +146,13 @@ export const editorialContentBriefs = {
     affiliateContext: "vpn-selection",
     schemaType: "CollectionPage",
   },
+  nordvpnReview: {
+    primaryKeyword: "nordvpn review",
+    intent: "commercial",
+    cluster: "provider-reviews-and-comparisons",
+    lastReviewedAt: "2026-08-13",
+    evidence: ["docs/research/dataforseo-nordvpn-review-cluster-2026-08-13.md", "/methodology", "https://nordvpn.com/blog/nordvpn-no-logs-assurance-engagement-2025/", "https://support.nordvpn.com/hc/en-us/articles/19476991311121-What-is-your-money-back-policy"],
+    affiliateContext: "vpn-selection",
+    schemaType: "Article",
+  },
 } satisfies Record<string, EditorialContentBrief>;

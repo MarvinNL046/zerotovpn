@@ -351,6 +351,17 @@ const checks = [
     patterns: [/gamingVpnEditorialTitle/, /gamingVpnEditorialDescription/, /locale === "en"/, /images: \[DEFAULT_OG_IMAGE\]/],
   },
   {
+    name: "NordVPN review uses bounded evidence-led editorial component",
+    file: "src/components/editorial/nordvpn-review-editorial-page.tsx",
+    patterns: [/NordVpnReviewEditorialPage/, /NordVPN evidence and limitation checklist/, /id="evidence"/, /id="performance"/, /id="faq"/, /DataForSEO/, /point-in-time/i, /money-back guarantee/i],
+    forbiddenPatterns: [/We tested NordVPN for 30\+ days/i, /98\.3%|94\.7%|95\.5%/, /guarantee.*(?:Netflix|streaming)/i, /completely anonymous/i],
+  },
+  {
+    name: "NordVPN review route uses the audited English component and metadata",
+    file: "src/app/[locale]/reviews/[slug]/page.tsx",
+    patterns: [/NordVpnReviewEditorialPage/, /_locale === "en" && vpn\.slug === "nordvpn"/, /nordvpnReviewTitle/, /nordvpnReviewDescription/],
+  },
+  {
     name: "macOS use-case metadata avoids unsupported test counts",
     file: "src/app/[locale]/best/vpn-macos/page.tsx",
     patterns: [/Compare current macOS VPN picks/, /Native Apps, M1\/M2/],

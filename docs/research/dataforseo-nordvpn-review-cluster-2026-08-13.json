@@ -1,0 +1,649 @@
+{
+  "schemaVersion": 1,
+  "cluster": "NordVPN review / price / speed / privacy / streaming",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "fetchedAt": "2026-08-13T06:02:38.261Z",
+  "refreshed": false,
+  "seeds": [
+    "nordvpn review",
+    "nordvpn review 2026",
+    "nordvpn price",
+    "nordvpn speed test",
+    "nordvpn netflix",
+    "is nordvpn worth it",
+    "nordvpn vs expressvpn",
+    "nordvpn no logs audit",
+    "nordvpn free trial"
+  ],
+  "overview": [
+    {
+      "keyword": "is nordvpn worth it",
+      "currentVolume": 880,
+      "latestVolume": 880,
+      "latestMonth": "2026-06",
+      "difficulty": 24,
+      "intent": "informational"
+    },
+    {
+      "keyword": "nordvpn free trial",
+      "currentVolume": 18100,
+      "latestVolume": 14800,
+      "latestMonth": "2026-06",
+      "difficulty": 19,
+      "intent": "transactional"
+    },
+    {
+      "keyword": "nordvpn netflix",
+      "currentVolume": 9900,
+      "latestVolume": 6600,
+      "latestMonth": "2026-06",
+      "difficulty": 19,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "nordvpn no logs audit",
+      "currentVolume": 10,
+      "latestVolume": 10,
+      "latestMonth": "2026-06",
+      "difficulty": null,
+      "intent": "informational"
+    },
+    {
+      "keyword": "nordvpn price",
+      "currentVolume": 5400,
+      "latestVolume": 5400,
+      "latestMonth": "2026-06",
+      "difficulty": 40,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "nordvpn review",
+      "currentVolume": 1900,
+      "latestVolume": 1000,
+      "latestMonth": "2026-06",
+      "difficulty": 33,
+      "intent": "informational"
+    },
+    {
+      "keyword": "nordvpn review 2026",
+      "currentVolume": 30,
+      "latestVolume": 10,
+      "latestMonth": "2026-06",
+      "difficulty": null,
+      "intent": "informational"
+    },
+    {
+      "keyword": "nordvpn speed test",
+      "currentVolume": 590,
+      "latestVolume": 260,
+      "latestMonth": "2026-06",
+      "difficulty": 16,
+      "intent": "informational"
+    },
+    {
+      "keyword": "nordvpn vs expressvpn",
+      "currentVolume": 1000,
+      "latestVolume": 1000,
+      "latestMonth": "2026-06",
+      "difficulty": 11,
+      "intent": "commercial"
+    }
+  ],
+  "suggestions": [
+    {
+      "seed": "nordvpn review",
+      "keyword": "review of nordvpn",
+      "volume": 1900
+    },
+    {
+      "seed": "nordvpn review",
+      "keyword": "nordvpn review",
+      "volume": 1900
+    },
+    {
+      "seed": "nordvpn review",
+      "keyword": "nordvpn reddit review",
+      "volume": 110
+    },
+    {
+      "seed": "nordvpn review",
+      "keyword": "nordvpn review reddit",
+      "volume": 110
+    },
+    {
+      "seed": "nordvpn review",
+      "keyword": "nordvpn review 2025",
+      "volume": 70
+    },
+    {
+      "seed": "nordvpn review",
+      "keyword": "review nordvpn",
+      "volume": 70
+    },
+    {
+      "seed": "nordvpn review",
+      "keyword": "nordvpn incogni review",
+      "volume": 40
+    },
+    {
+      "seed": "nordvpn review",
+      "keyword": "nordvpn threat protection pro review",
+      "volume": 30
+    },
+    {
+      "seed": "nordvpn review 2026",
+      "keyword": "nordvpn review 2026",
+      "volume": 30
+    },
+    {
+      "seed": "nordvpn review",
+      "keyword": "nordvpn cloud storage review",
+      "volume": 20
+    },
+    {
+      "seed": "nordvpn review",
+      "keyword": "nordvpn antivirus review",
+      "volume": 20
+    },
+    {
+      "seed": "nordvpn review",
+      "keyword": "nordvpn threat protection review",
+      "volume": 20
+    },
+    {
+      "seed": "nordvpn review",
+      "keyword": "nordvpn dedicated ip review",
+      "volume": 20
+    },
+    {
+      "seed": "nordvpn review",
+      "keyword": "incogni nordvpn review",
+      "volume": 20
+    },
+    {
+      "seed": "nordvpn review",
+      "keyword": "review on nordvpn",
+      "volume": 20
+    },
+    {
+      "seed": "nordvpn price",
+      "keyword": "price nordvpn",
+      "volume": 5400
+    },
+    {
+      "seed": "nordvpn price",
+      "keyword": "nordvpn price",
+      "volume": 5400
+    },
+    {
+      "seed": "nordvpn price",
+      "keyword": "best price for nordvpn",
+      "volume": 260
+    },
+    {
+      "seed": "nordvpn price",
+      "keyword": "nordvpn price per month",
+      "volume": 210
+    },
+    {
+      "seed": "nordvpn price",
+      "keyword": "nordvpn price plans",
+      "volume": 170
+    },
+    {
+      "seed": "nordvpn price",
+      "keyword": "nordvpn subscription price",
+      "volume": 90
+    },
+    {
+      "seed": "nordvpn price",
+      "keyword": "nordvpn best price",
+      "volume": 70
+    },
+    {
+      "seed": "nordvpn price",
+      "keyword": "nordvpn monthly price",
+      "volume": 70
+    },
+    {
+      "seed": "nordvpn price",
+      "keyword": "nordvpn 2-year plan price",
+      "volume": 70
+    },
+    {
+      "seed": "nordvpn price",
+      "keyword": "nordvpn price in india",
+      "volume": 70
+    },
+    {
+      "seed": "nordvpn price",
+      "keyword": "nordvpn 2 year plan price",
+      "volume": 70
+    },
+    {
+      "seed": "nordvpn price",
+      "keyword": "price of nordvpn",
+      "volume": 70
+    },
+    {
+      "seed": "nordvpn price",
+      "keyword": "nordvpn dedicated ip price",
+      "volume": 70
+    },
+    {
+      "seed": "nordvpn price",
+      "keyword": "nordvpn stock price",
+      "volume": 50
+    },
+    {
+      "seed": "nordvpn price",
+      "keyword": "nordvpn india price",
+      "volume": 50
+    },
+    {
+      "seed": "nordvpn speed test",
+      "keyword": "nordvpn speed test",
+      "volume": 590
+    },
+    {
+      "seed": "nordvpn speed test",
+      "keyword": "surfshark vs nordvpn speed test",
+      "volume": 10
+    },
+    {
+      "seed": "nordvpn speed test",
+      "keyword": "expressvpn vs nordvpn speed test",
+      "volume": 10
+    },
+    {
+      "seed": "nordvpn speed test",
+      "keyword": "speed test expressvpn vs nordvpn",
+      "volume": 10
+    },
+    {
+      "seed": "nordvpn speed test",
+      "keyword": "speed test nordvpn",
+      "volume": 10
+    },
+    {
+      "seed": "nordvpn speed test",
+      "keyword": "nordvpn vs surfshark speed test",
+      "volume": 10
+    },
+    {
+      "seed": "nordvpn speed test",
+      "keyword": "nordvpn server speed test",
+      "volume": 10
+    },
+    {
+      "seed": "nordvpn speed test",
+      "keyword": "nordvpn speed test reddit",
+      "volume": 10
+    },
+    {
+      "seed": "nordvpn speed test",
+      "keyword": "nordvpn vs expressvpn speed test",
+      "volume": 10
+    },
+    {
+      "seed": "nordvpn speed test",
+      "keyword": "ipvanish vs nordvpn speed test",
+      "volume": 0
+    },
+    {
+      "seed": "nordvpn speed test",
+      "keyword": "nordvpn vs pia speed test",
+      "volume": null
+    },
+    {
+      "seed": "nordvpn speed test",
+      "keyword": "nordvpn speed test gigabit",
+      "volume": null
+    },
+    {
+      "seed": "nordvpn netflix",
+      "keyword": "nordvpn with netflix",
+      "volume": 9900
+    },
+    {
+      "seed": "nordvpn netflix",
+      "keyword": "netflix with nordvpn",
+      "volume": 9900
+    },
+    {
+      "seed": "nordvpn netflix",
+      "keyword": "netflix and nordvpn",
+      "volume": 9900
+    },
+    {
+      "seed": "nordvpn netflix",
+      "keyword": "nordvpn for netflix",
+      "volume": 9900
+    },
+    {
+      "seed": "nordvpn netflix",
+      "keyword": "netflix nordvpn",
+      "volume": 9900
+    },
+    {
+      "seed": "nordvpn netflix",
+      "keyword": "nordvpn and netflix",
+      "volume": 9900
+    },
+    {
+      "seed": "nordvpn netflix",
+      "keyword": "nordvpn netflix",
+      "volume": 9900
+    },
+    {
+      "seed": "nordvpn netflix",
+      "keyword": "does nordvpn works with netflix",
+      "volume": 260
+    },
+    {
+      "seed": "nordvpn netflix",
+      "keyword": "does netflix work with nordvpn",
+      "volume": 260
+    },
+    {
+      "seed": "nordvpn netflix",
+      "keyword": "does nordvpn work with netflix",
+      "volume": 260
+    },
+    {
+      "seed": "nordvpn netflix",
+      "keyword": "does nordvpn work for netflix",
+      "volume": 260
+    },
+    {
+      "seed": "nordvpn netflix",
+      "keyword": "netflix nordvpn not working",
+      "volume": 140
+    },
+    {
+      "seed": "nordvpn netflix",
+      "keyword": "nordvpn netflix not working",
+      "volume": 140
+    },
+    {
+      "seed": "nordvpn netflix",
+      "keyword": "nordvpn not working netflix",
+      "volume": 140
+    },
+    {
+      "seed": "nordvpn netflix",
+      "keyword": "nordvpn not working with netflix",
+      "volume": 140
+    },
+    {
+      "seed": "is nordvpn worth it",
+      "keyword": "is nordvpn worth it",
+      "volume": 880
+    },
+    {
+      "seed": "is nordvpn worth it",
+      "keyword": "is nordvpn worth it reddit",
+      "volume": 170
+    },
+    {
+      "seed": "is nordvpn worth it",
+      "keyword": "is nordvpn plus worth it",
+      "volume": 50
+    },
+    {
+      "seed": "is nordvpn worth it",
+      "keyword": "is nordvpn dedicated ip worth it",
+      "volume": 40
+    },
+    {
+      "seed": "is nordvpn worth it",
+      "keyword": "is nordvpn prime worth it",
+      "volume": 40
+    },
+    {
+      "seed": "is nordvpn worth it",
+      "keyword": "is nordvpn incogni worth it",
+      "volume": 30
+    },
+    {
+      "seed": "is nordvpn worth it",
+      "keyword": "is dedicated ip worth it nordvpn",
+      "volume": 30
+    },
+    {
+      "seed": "is nordvpn worth it",
+      "keyword": "nordvpn is it worth it",
+      "volume": 20
+    },
+    {
+      "seed": "is nordvpn worth it",
+      "keyword": "is nordvpn threat protection pro worth it",
+      "volume": 20
+    },
+    {
+      "seed": "is nordvpn worth it",
+      "keyword": "is nordvpn plus worth it reddit",
+      "volume": 10
+    },
+    {
+      "seed": "is nordvpn worth it",
+      "keyword": "is nordvpn worth it 2025",
+      "volume": 10
+    },
+    {
+      "seed": "is nordvpn worth it",
+      "keyword": "is nordvpn still worth it in 2026 reddit",
+      "volume": 10
+    },
+    {
+      "seed": "is nordvpn worth it",
+      "keyword": "is nordvpn ultimate worth it",
+      "volume": 10
+    },
+    {
+      "seed": "is nordvpn worth it",
+      "keyword": "is it worth getting nordvpn",
+      "volume": 10
+    },
+    {
+      "seed": "is nordvpn worth it",
+      "keyword": "is a dedicated ip worth it nordvpn",
+      "volume": 10
+    },
+    {
+      "seed": "nordvpn vs expressvpn",
+      "keyword": "expressvpn vs nordvpn",
+      "volume": 1300
+    },
+    {
+      "seed": "nordvpn vs expressvpn",
+      "keyword": "nordvpn vs expressvpn",
+      "volume": 1000
+    },
+    {
+      "seed": "nordvpn vs expressvpn",
+      "keyword": "nordvpn vs expressvpn: reddit",
+      "volume": 90
+    },
+    {
+      "seed": "nordvpn vs expressvpn",
+      "keyword": "expressvpn vs nordvpn reddit",
+      "volume": 90
+    },
+    {
+      "seed": "nordvpn vs expressvpn",
+      "keyword": "nordvpn vs expressvpn reddit",
+      "volume": 90
+    },
+    {
+      "seed": "nordvpn vs expressvpn",
+      "keyword": "surfshark vs nordvpn vs expressvpn",
+      "volume": 70
+    },
+    {
+      "seed": "nordvpn vs expressvpn",
+      "keyword": "nordvpn vs surfshark vs expressvpn",
+      "volume": 50
+    },
+    {
+      "seed": "nordvpn vs expressvpn",
+      "keyword": "nordvpn vs expressvpn vs surfshark",
+      "volume": 40
+    },
+    {
+      "seed": "nordvpn vs expressvpn",
+      "keyword": "expressvpn vs nordvpn vs surfshark",
+      "volume": 40
+    },
+    {
+      "seed": "nordvpn vs expressvpn",
+      "keyword": "expressvpn vs nordvpn speed",
+      "volume": 30
+    },
+    {
+      "seed": "nordvpn vs expressvpn",
+      "keyword": "nordvpn vs expressvpn speed",
+      "volume": 30
+    },
+    {
+      "seed": "nordvpn vs expressvpn",
+      "keyword": "surfshark vs expressvpn vs nordvpn",
+      "volume": 30
+    },
+    {
+      "seed": "nordvpn vs expressvpn",
+      "keyword": "expressvpn vs nordvpn price",
+      "volume": 20
+    },
+    {
+      "seed": "nordvpn vs expressvpn",
+      "keyword": "nordvpn vs expressvpn price",
+      "volume": 20
+    },
+    {
+      "seed": "nordvpn vs expressvpn",
+      "keyword": "expressvpn vs surfshark vs nordvpn",
+      "volume": 20
+    },
+    {
+      "seed": "nordvpn no logs audit",
+      "keyword": "nordvpn no-logs audit",
+      "volume": 10
+    },
+    {
+      "seed": "nordvpn no logs audit",
+      "keyword": "nordvpn no logs audit",
+      "volume": 10
+    },
+    {
+      "seed": "nordvpn free trial",
+      "keyword": "nordvpn free trial",
+      "volume": 18100
+    },
+    {
+      "seed": "nordvpn free trial",
+      "keyword": "nordvpn trial free",
+      "volume": 18100
+    },
+    {
+      "seed": "nordvpn free trial",
+      "keyword": "free nordvpn trial",
+      "volume": 18100
+    },
+    {
+      "seed": "nordvpn free trial",
+      "keyword": "nordvpn free trial android",
+      "volume": 590
+    },
+    {
+      "seed": "nordvpn free trial",
+      "keyword": "does nordvpn have a free trial",
+      "volume": 390
+    },
+    {
+      "seed": "nordvpn free trial",
+      "keyword": "nordvpn 7 days free trial",
+      "volume": 320
+    },
+    {
+      "seed": "nordvpn free trial",
+      "keyword": "nordvpn 7 day free trial",
+      "volume": 320
+    },
+    {
+      "seed": "nordvpn free trial",
+      "keyword": "nordvpn 7-day free trial",
+      "volume": 320
+    },
+    {
+      "seed": "nordvpn free trial",
+      "keyword": "nordvpn 3 day free trial",
+      "volume": 260
+    },
+    {
+      "seed": "nordvpn free trial",
+      "keyword": "nordvpn free trial 3 days",
+      "volume": 260
+    },
+    {
+      "seed": "nordvpn free trial",
+      "keyword": "nordvpn 3-day free trial",
+      "volume": 260
+    },
+    {
+      "seed": "nordvpn free trial",
+      "keyword": "nordvpn 3 days free trial",
+      "volume": 260
+    },
+    {
+      "seed": "nordvpn free trial",
+      "keyword": "3 day free trial nordvpn",
+      "volume": 260
+    },
+    {
+      "seed": "nordvpn free trial",
+      "keyword": "free trial nordvpn",
+      "volume": 210
+    },
+    {
+      "seed": "nordvpn free trial",
+      "keyword": "nordvpn 30 day free trial",
+      "volume": 140
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "nordvpn review",
+      "paa": [
+        "Is NordVPN still trustworthy?",
+        "Is it worth it to use NordVPN?",
+        "Why is Netflix blocking NordVPN?",
+        "What are the disadvantages of NordVPN?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "nordvpn review 2026",
+      "paa": [
+        "What are the downsides of using NordVPN?",
+        "Why is Netflix blocking NordVPN?",
+        "Can FBI track NordVPN?",
+        "Which VPN is better than NordVPN?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "nordvpn price",
+      "paa": [
+        "Is NordVPN still worth it?",
+        "How much does a NordVPN account cost?",
+        "Why is Netflix blocking NordVPN?",
+        "What's cheaper than NordVPN?"
+      ],
+      "hasAiOverview": true
+    }
+  ],
+  "sourcePolicy": "DataForSEO signals prioritise query intent, comparison structure and FAQ coverage; they do not prove NordVPN performance, current pricing, audit scope or conversion value. Provider facts must be tied to dated first-party sources or reproducible tests."
+}

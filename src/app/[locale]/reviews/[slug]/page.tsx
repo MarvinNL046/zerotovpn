@@ -39,6 +39,7 @@ import { AuthorBio } from "@/components/author-bio";
 import { vpnProviders } from "@/lib/vpn-data";
 import { getVpnAffiliateUrl } from "@/lib/vpn-links";
 import { formatAuditStatus, formatLoggingPolicy, getTransparencySnapshotForVpn } from "@/lib/vpn-transparency-data";
+import { NordVpnReviewEditorialPage, nordvpnReviewDescription, nordvpnReviewTitle } from "@/components/editorial/nordvpn-review-editorial-page";
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
@@ -525,6 +526,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     th: `รีวิว ${vpn.name} (${getLocalizedMonthYear("th")}) - ทดสอบและให้คะแนนอย่างตรงไปตรงมา | ZeroToVPN`,
   };
 
+  if (isNordVpn && locale === "en") {
+    descriptions.en = nordvpnReviewDescription;
+    titles.en = `${nordvpnReviewTitle} | ZeroToVPN`;
+  }
+
   return {
     metadataBase: new URL(baseUrl),
     title: { absolute: titelMetMerk((titles[locale] || titles.en).replace(" | ZeroToVPN", "")) },
@@ -592,6 +598,9 @@ export default async function ReviewPage({ params }: Props) {
 
   if (!vpn) {
     notFound();
+  }
+  if (_locale === "en" && vpn.slug === "nordvpn") {
+    return <NordVpnReviewEditorialPage />;
   }
   const nordvpn = vpnProviders.find((provider) => provider.slug === "nordvpn");
 

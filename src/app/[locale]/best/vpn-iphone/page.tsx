@@ -30,6 +30,8 @@ import { RelatedPages } from "@/components/seo/related-pages";
 import { LastUpdated } from "@/components/last-updated";
 import { generateAlternates } from "@/lib/seo-utils";
 import { getVpnAffiliateUrl } from "@/lib/vpn-links";
+import { getAllVpns } from "@/lib/vpn-data-layer";
+import { IphoneVpnEditorialPage, iphoneVpnEditorialDescription, iphoneVpnEditorialTitle } from "@/components/editorial/iphone-vpn-editorial-page";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -39,6 +41,15 @@ const baseUrl = "https://www.zerotovpn.com";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  if (locale === "en") {
+    return {
+      metadataBase: new URL(baseUrl),
+      title: { absolute: titelMetMerk(iphoneVpnEditorialTitle) },
+      description: iphoneVpnEditorialDescription,
+      openGraph: { locale: "en_US", title: iphoneVpnEditorialTitle, description: iphoneVpnEditorialDescription, type: "article" },
+      alternates: generateAlternates("/best/vpn-iphone", locale),
+    };
+  }
   const t = await getTranslations({ locale, namespace: "iphoneVpn" });
 
   return {
@@ -170,6 +181,11 @@ function IphoneVpnListSchema() {
 export default async function IphoneVpnPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  if (locale === "en") {
+    const allVpns = await getAllVpns();
+    return <IphoneVpnEditorialPage vpns={allVpns} />;
+  }
 
   const t = await getTranslations("iphoneVpn");
 

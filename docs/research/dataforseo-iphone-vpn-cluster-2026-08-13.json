@@ -1,0 +1,464 @@
+{
+  "schemaVersion": 1,
+  "cluster": "iPhone and iOS VPN device privacy",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "fetchedAt": "2026-08-13T10:29:28.187Z",
+  "refreshed": false,
+  "seeds": [
+    "best vpn for iphone",
+    "vpn for iphone",
+    "iphone vpn",
+    "best vpn ios",
+    "vpn for ios privacy",
+    "iphone vpn setup"
+  ],
+  "overview": [
+    {
+      "keyword": "best vpn for iphone",
+      "currentVolume": null,
+      "latestVolume": 8100,
+      "latestMonth": "2024-02",
+      "difficulty": 24,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "best vpn ios",
+      "currentVolume": null,
+      "latestVolume": 140,
+      "latestMonth": "2024-02",
+      "difficulty": 22,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "iphone vpn",
+      "currentVolume": null,
+      "latestVolume": 3600,
+      "latestMonth": "2024-02",
+      "difficulty": 40,
+      "intent": "informational"
+    },
+    {
+      "keyword": "iphone vpn setup",
+      "currentVolume": null,
+      "latestVolume": 480,
+      "latestMonth": "2024-02",
+      "difficulty": 21,
+      "intent": "informational"
+    },
+    {
+      "keyword": "vpn for iphone",
+      "currentVolume": null,
+      "latestVolume": 27100,
+      "latestMonth": "2024-02",
+      "difficulty": 40,
+      "intent": "informational"
+    }
+  ],
+  "suggestions": [
+    {
+      "seed": "vpn for iphone",
+      "keyword": "best vpn application for iphone",
+      "volume": 720
+    },
+    {
+      "seed": "vpn for iphone",
+      "keyword": "best vpn for iphone ipad",
+      "volume": 140
+    },
+    {
+      "seed": "best vpn for iphone",
+      "keyword": "best vpn in china for iphone",
+      "volume": 70
+    },
+    {
+      "seed": "best vpn for iphone",
+      "keyword": "best iphone vpn for china",
+      "volume": 70
+    },
+    {
+      "seed": "best vpn for iphone",
+      "keyword": "best vpn for china iphone",
+      "volume": 70
+    },
+    {
+      "seed": "best vpn for iphone",
+      "keyword": "best vpn for iphone china",
+      "volume": 70
+    },
+    {
+      "seed": "best vpn for iphone",
+      "keyword": "best vpn for iphone cnet",
+      "volume": 20
+    },
+    {
+      "seed": "best vpn for iphone",
+      "keyword": "best free vpn for iphone 2024",
+      "volume": 20
+    },
+    {
+      "seed": "best vpn for iphone",
+      "keyword": "best vpn for iphone pay monthly",
+      "volume": 20
+    },
+    {
+      "seed": "best vpn for iphone",
+      "keyword": "best vpn app for iphone in china",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for iphone",
+      "keyword": "best vpn for pubg mobile iphone",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for iphone",
+      "keyword": "best vpn app for iphone reddit",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for iphone",
+      "keyword": "best iphone vpn for pubg",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for iphone",
+      "keyword": "best vpn for iphone 5",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for iphone",
+      "keyword": "best iphone vpn for netflix",
+      "volume": 10
+    },
+    {
+      "seed": "iphone vpn",
+      "keyword": "apps vpn for iphone",
+      "volume": 12100
+    },
+    {
+      "seed": "iphone vpn",
+      "keyword": "vpn for the iphone",
+      "volume": 2900
+    },
+    {
+      "seed": "iphone vpn",
+      "keyword": "vpn setting for iphone",
+      "volume": 2400
+    },
+    {
+      "seed": "iphone vpn setup",
+      "keyword": "how to setup a vpn for iphone",
+      "volume": 2400
+    },
+    {
+      "seed": "iphone vpn setup",
+      "keyword": "setup vpn for iphone free",
+      "volume": 720
+    },
+    {
+      "seed": "vpn for iphone",
+      "keyword": "free vpn configurations for iphone",
+      "volume": 720
+    },
+    {
+      "seed": "vpn for iphone",
+      "keyword": "vpn for iphone turn off",
+      "volume": 260
+    },
+    {
+      "seed": "vpn for iphone",
+      "keyword": "are there any free vpn for iphone",
+      "volume": 170
+    },
+    {
+      "seed": "vpn for iphone",
+      "keyword": "free vpn application for iphone",
+      "volume": 140
+    },
+    {
+      "seed": "vpn for iphone",
+      "keyword": "vpn for iphone hotspot shield",
+      "volume": 140
+    },
+    {
+      "seed": "vpn for iphone",
+      "keyword": "vpn hotspot shield for iphone",
+      "volume": 140
+    },
+    {
+      "seed": "vpn for iphone",
+      "keyword": "mullvad vpn for iphone",
+      "volume": 140
+    },
+    {
+      "seed": "vpn for iphone",
+      "keyword": "how to use vpn on iphone for free",
+      "volume": 90
+    },
+    {
+      "seed": "iphone vpn",
+      "keyword": "free vpn mobile iphone",
+      "volume": 18100
+    },
+    {
+      "seed": "iphone vpn",
+      "keyword": "best phone vpn iphone",
+      "volume": 12100
+    },
+    {
+      "seed": "iphone vpn",
+      "keyword": "iphone apps vpn",
+      "volume": 12100
+    },
+    {
+      "seed": "iphone vpn",
+      "keyword": "vpn what is it iphone",
+      "volume": 8100
+    },
+    {
+      "seed": "iphone vpn",
+      "keyword": "what vpn iphone",
+      "volume": 8100
+    },
+    {
+      "seed": "iphone vpn",
+      "keyword": "iphone vpn express",
+      "volume": 8100
+    },
+    {
+      "seed": "iphone vpn",
+      "keyword": "what is a vpn in iphone",
+      "volume": 8100
+    },
+    {
+      "seed": "iphone vpn",
+      "keyword": "what is the vpn in iphone",
+      "volume": 8100
+    },
+    {
+      "seed": "iphone vpn",
+      "keyword": "vpn on phone iphone",
+      "volume": 4400
+    },
+    {
+      "seed": "iphone vpn",
+      "keyword": "vpn turns off iphone",
+      "volume": 3600
+    },
+    {
+      "seed": "iphone vpn",
+      "keyword": "vpn iphone vpn",
+      "volume": 2900
+    },
+    {
+      "seed": "iphone vpn",
+      "keyword": "how set up vpn on iphone",
+      "volume": 2400
+    },
+    {
+      "seed": "best vpn ios",
+      "keyword": "ios vpn best",
+      "volume": 590
+    },
+    {
+      "seed": "best vpn ios",
+      "keyword": "best vpn app ios free",
+      "volume": 40
+    },
+    {
+      "seed": "best vpn ios",
+      "keyword": "best free ios vpn apps",
+      "volume": 40
+    },
+    {
+      "seed": "best vpn ios",
+      "keyword": "best ios free vpn app",
+      "volume": 40
+    },
+    {
+      "seed": "best vpn ios",
+      "keyword": "best vpn for pubg mobile ios",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn ios",
+      "keyword": "best fast vpn for ios",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn ios",
+      "keyword": "best ios vpn client",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn ios",
+      "keyword": "best free vpn for pubg mobile ios",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn ios",
+      "keyword": "best indian vpn for ios",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn ios",
+      "keyword": "best vpn for ios 12.5 7",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn ios",
+      "keyword": "best free vpn for ios 11",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn ios",
+      "keyword": "best vpn ios 9",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn ios",
+      "keyword": "best vpn for ios 11",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn ios",
+      "keyword": "best vpn for ios 12",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn ios",
+      "keyword": "best vpn client for ios",
+      "volume": 10
+    },
+    {
+      "seed": "iphone vpn setup",
+      "keyword": "how do you setup vpn on iphone",
+      "volume": 2400
+    },
+    {
+      "seed": "iphone vpn setup",
+      "keyword": "how to setup a vpn in iphone",
+      "volume": 2400
+    },
+    {
+      "seed": "iphone vpn setup",
+      "keyword": "how do i setup vpn on iphone",
+      "volume": 2400
+    },
+    {
+      "seed": "iphone vpn setup",
+      "keyword": "setup free vpn on iphone",
+      "volume": 720
+    },
+    {
+      "seed": "iphone vpn setup",
+      "keyword": "free vpn setup iphone",
+      "volume": 720
+    },
+    {
+      "seed": "iphone vpn setup",
+      "keyword": "iphone vpn setup free",
+      "volume": 720
+    },
+    {
+      "seed": "iphone vpn setup",
+      "keyword": "free vpn iphone setup",
+      "volume": 720
+    },
+    {
+      "seed": "iphone vpn setup",
+      "keyword": "setup vpn on iphone free",
+      "volume": 720
+    },
+    {
+      "seed": "iphone vpn setup",
+      "keyword": "how to setup free vpn for iphone",
+      "volume": 50
+    },
+    {
+      "seed": "iphone vpn setup",
+      "keyword": "how to setup your vpn on iphone",
+      "volume": 20
+    },
+    {
+      "seed": "iphone vpn setup",
+      "keyword": "how to setup a vpn on your iphone",
+      "volume": 20
+    },
+    {
+      "seed": "iphone vpn setup",
+      "keyword": "setup vpn on iphone 6",
+      "volume": 10
+    },
+    {
+      "seed": "iphone vpn setup",
+      "keyword": "how to setup vpn on iphone 7",
+      "volume": 10
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "best vpn for iphone",
+      "paa": [
+        "What is the best VPN to use on iPhone?",
+        "Do Apple iPhones have built-in VPN?",
+        "Which VPN is totally free for iPhone?",
+        "Is a VPN recommended for iPhone?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn for iphone",
+      "paa": [
+        "Does iPhone have a built-in VPN?",
+        "Is there a VPN for iPhone free?",
+        "Should you put a VPN on your iPhone?",
+        "How much does a VPN for iPhone cost?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "iphone vpn",
+      "paa": [
+        "Does the iPhone have a built-in VPN?",
+        "Is it free to use VPN on iPhone?",
+        "Should VPN be turned on on iPhone?",
+        "Can I use a VPN on my iPhone?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "best vpn ios",
+      "paa": [
+        "Does iPhone have a built-in VPN?",
+        "What is the best VPN for iPhones in 2026?",
+        "Is there a 100% free VPN for iPhone?",
+        "Which VPN works best with Apple?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn for ios privacy",
+      "paa": [
+        "Which VPN is safe for iOS?",
+        "Is it a good idea to have a VPN on your iPhone?",
+        "Can I use a PrivateVPN on my iPhone?",
+        "Does Apple iOS have a built-in VPN?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "iphone vpn setup",
+      "paa": [
+        "Does the iPhone have a built-in VPN?",
+        "Should you set up a VPN on an iPhone?",
+        "Do I have a free VPN on my iPhone?",
+        "Should I leave my VPN on all the time on my iPhone?"
+      ],
+      "hasAiOverview": true
+    }
+  ],
+  "sourcePolicy": "DataForSEO signals guide intent coverage only; they do not prove App Store ratings, battery use, speed, security or provider performance."
+}

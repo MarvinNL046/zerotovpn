@@ -1,5 +1,5 @@
 import { setRequestLocale } from "next-intl/server";
-import { OG_LOCALE_MAP, getLocalizedMonthYear, stripBrand, titelMetMerk } from "@/lib/seo-utils";
+import { DEFAULT_OG_IMAGE, OG_LOCALE_MAP, getLocalizedMonthYear, stripBrand, titelMetMerk } from "@/lib/seo-utils";
 import { getTranslations } from "next-intl/server";
 import { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       metadataBase: new URL(baseUrl),
       title: { absolute: titelMetMerk(iphoneVpnEditorialTitle) },
       description: iphoneVpnEditorialDescription,
-      openGraph: { locale: "en_US", title: iphoneVpnEditorialTitle, description: iphoneVpnEditorialDescription, type: "article" },
+      openGraph: { locale: "en_US", title: iphoneVpnEditorialTitle, description: iphoneVpnEditorialDescription, type: "article", images: [DEFAULT_OG_IMAGE] },
       alternates: generateAlternates("/best/vpn-iphone", locale),
     };
   }

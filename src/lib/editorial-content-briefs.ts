@@ -155,6 +155,15 @@ export const editorialContentBriefs = {
     affiliateContext: "vpn-selection",
     schemaType: "CollectionPage",
   },
+  bestVpnEs: {
+    primaryKeyword: "mejor vpn",
+    intent: "commercial",
+    cluster: "commercial-choice",
+    lastReviewedAt: "2026-08-13",
+    evidence: ["docs/research/dataforseo-spanish-best-vpn-cluster-2026-08-13.md", "/es/methodology", "/es/editorial-policy"],
+    affiliateContext: "vpn-selection",
+    schemaType: "CollectionPage",
+  },
   chromebookVpn: {
     primaryKeyword: "best vpn for chromebook",
     intent: "informational",

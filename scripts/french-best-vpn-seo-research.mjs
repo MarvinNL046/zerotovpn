@@ -6,8 +6,14 @@ import { dfs, DFS_DEFAULTS } from "./dfs.mjs";
 const ROOT = resolve(import.meta.dirname, "..");
 const CACHE = resolve(ROOT, ".cache", "dataforseo", "french-best-vpn");
 const OUT = resolve(ROOT, "docs", "research");
-const context = { ...DFS_DEFAULTS, location_code: 2250, language_code: "fr" };
-const seeds = ["meilleur vpn", "meilleur vpn 2026", "vpn pour streaming", "vpn pas cher", "vpn confidentialité", "vpn gratuit"];
+const localeArg = process.argv.find((arg) => arg.startsWith("--locale="))?.split("=")[1] ?? "fr";
+const localeConfig = {
+  fr: { location_code: 2250, language_code: "fr", seeds: ["meilleur vpn", "meilleur vpn 2026", "vpn pour streaming", "vpn pas cher", "vpn confidentialité", "vpn gratuit"], label: "meilleur VPN", slug: "french-best-vpn" },
+  es: { location_code: 2724, language_code: "es", seeds: ["mejor vpn", "mejor vpn 2026", "vpn para streaming", "vpn barato", "vpn privacidad", "vpn gratis"], label: "mejor VPN", slug: "spanish-best-vpn" },
+};
+const selected = localeConfig[localeArg] ?? localeConfig.fr;
+const context = { ...DFS_DEFAULTS, location_code: selected.location_code, language_code: selected.language_code };
+const seeds = selected.seeds;
 
 const stable = (value) => value && typeof value === "object" ? JSON.stringify(value, Object.keys(value).sort()) : JSON.stringify(value);
 const cachePath = (endpoint, task) => resolve(CACHE, `${createHash("sha256").update(`${endpoint}:${stable(task)}`).digest("hex")}.json`);
@@ -50,12 +56,12 @@ async function main() {
   }
   const serp = [];
   for (const keyword of seeds) { const payload = await cached("serp/google/organic/live/advanced", { ...context, keyword, depth: 20 }); serp.push({ keyword, paa: [...new Set(collectPaa(payload.result))].slice(0, 12), hasAiOverview: JSON.stringify(payload.result).includes('"type":"ai_overview"') }); }
-  const report = { schemaVersion: 1, cluster: "French best VPN commercial pillar", targetDomain: "zerotovpn.com", ...context, fetchedAt: new Date().toISOString(), refreshed: process.argv.includes("--refresh"), seeds, overview, suggestions: [...new Map(suggestions.map((row) => [row.keyword, row])).values()], serp, sourcePolicy: "Les signaux DataForSEO structurent la couverture d'intention ; ils ne prouvent ni performance, ni prix, ni disponibilité, ni conversion." };
+  const report = { schemaVersion: 1, locale: localeArg, cluster: `${selected.label} commercial pillar`, targetDomain: "zerotovpn.com", ...context, fetchedAt: new Date().toISOString(), refreshed: process.argv.includes("--refresh"), seeds, overview, suggestions: [...new Map(suggestions.map((row) => [row.keyword, row])).values()], serp, sourcePolicy: "Les signaux DataForSEO structurent la couverture d'intention ; ils ne prouvent ni performance, ni prix, ni disponibilité, ni conversion." };
   mkdirSync(OUT, { recursive: true });
-  const jsonPath = resolve(OUT, "dataforseo-french-best-vpn-cluster-2026-08-13.json");
-  const mdPath = resolve(OUT, "dataforseo-french-best-vpn-cluster-2026-08-13.md");
+  const jsonPath = resolve(OUT, `dataforseo-${selected.slug}-cluster-2026-08-13.json`);
+  const mdPath = resolve(OUT, `dataforseo-${selected.slug}-cluster-2026-08-13.md`);
   writeFileSync(jsonPath, JSON.stringify(report, null, 2));
-  const lines = ["# Recherche DataForSEO — meilleur VPN (France)", "", `Récupéré : ${report.fetchedAt} | location ${report.location_code} | langue ${report.language_code}`, "", "## Vue d'ensemble des mots-clés", "", "| Mot-clé | Actuel | Dernier non nul | KD | Intention |", "|---|---:|---:|---:|---|", ...overview.map((row) => `| ${row.keyword} | ${row.currentVolume ?? "n/d"} | ${row.latestVolume ?? "n/d"}${row.latestMonth ? ` (${row.latestMonth})` : ""} | ${row.difficulty ?? "n/d"} | ${row.intent ?? "n/d"} |`), "", "## PAA et fonctionnalités SERP", "", ...serp.flatMap((row) => [`### ${row.keyword}`, `- AI Overview : ${row.hasAiOverview ? "oui" : "non"}`, ...(row.paa.length ? row.paa.map((question) => `- PAA : ${question}`) : ["- Aucun PAA retourné"]), ""]), "## Suggestions", "", "| Graine | Mot-clé | Volume |", "|---|---|---:|", ...report.suggestions.slice(0, 90).map((row) => `| ${row.seed} | ${row.keyword} | ${row.volume ?? "n/d"} |`), "", "## Interprétation éditoriale", "", "Utiliser ces signaux pour organiser le comparatif français existant. Vérifier chaque prix, fonction et résultat avec une source officielle datée ; ne pas transformer ces champs en promesse de performance ou de conversion.", ""];
+  const lines = [`# DataForSEO research — ${selected.label}`, "", `Fetched: ${report.fetchedAt} | location ${report.location_code} | language ${report.language_code}`, "", "## Keyword overview", "", "| Keyword | Current | Latest non-zero | KD | Intent |", "|---|---:|---:|---:|---|", ...overview.map((row) => `| ${row.keyword} | ${row.currentVolume ?? "n/a"} | ${row.latestVolume ?? "n/a"}${row.latestMonth ? ` (${row.latestMonth})` : ""} | ${row.difficulty ?? "n/a"} | ${row.intent ?? "n/a"} |`), "", "## PAA and SERP features", "", ...serp.flatMap((row) => [`### ${row.keyword}`, `- AI Overview: ${row.hasAiOverview ? "yes" : "no"}`, ...(row.paa.length ? row.paa.map((question) => `- PAA: ${question}`) : ["- No PAA returned"]), ""]), "## Suggestions", "", "| Seed | Keyword | Volume |", "|---|---|---:|", ...report.suggestions.slice(0, 90).map((row) => `| ${row.seed} | ${row.keyword} | ${row.volume ?? "n/a"} |`), "", "## Editorial interpretation", "", "Use these signals to organize the existing localized commercial pillar. Verify every price, feature and test result with dated first-party or reproducible evidence; do not turn these fields into performance or conversion promises.", ""];
   writeFileSync(mdPath, `${lines.join("\n")}\n`);
   console.log(JSON.stringify({ jsonPath, mdPath, overviewRows: overview.length, suggestionRows: report.suggestions.length, serpRows: serp.length }, null, 2));
 }

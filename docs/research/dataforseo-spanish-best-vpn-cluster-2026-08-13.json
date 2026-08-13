@@ -1,0 +1,395 @@
+{
+  "schemaVersion": 1,
+  "locale": "es",
+  "cluster": "mejor VPN commercial pillar",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2724,
+  "language_code": "es",
+  "fetchedAt": "2026-08-13T10:04:24.030Z",
+  "refreshed": true,
+  "seeds": [
+    "mejor vpn",
+    "mejor vpn 2026",
+    "vpn para streaming",
+    "vpn barato",
+    "vpn privacidad",
+    "vpn gratis"
+  ],
+  "overview": [
+    {
+      "keyword": "mejor vpn",
+      "currentVolume": null,
+      "latestVolume": 2900,
+      "latestMonth": "2024-02",
+      "difficulty": 19,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "vpn barato",
+      "currentVolume": null,
+      "latestVolume": 480,
+      "latestMonth": "2024-02",
+      "difficulty": 0,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "vpn gratis",
+      "currentVolume": null,
+      "latestVolume": 33100,
+      "latestMonth": "2024-02",
+      "difficulty": 29,
+      "intent": "informational"
+    },
+    {
+      "keyword": "vpn para streaming",
+      "currentVolume": null,
+      "latestVolume": 70,
+      "latestMonth": "2024-02",
+      "difficulty": 16,
+      "intent": "informational"
+    },
+    {
+      "keyword": "vpn privacidad",
+      "currentVolume": null,
+      "latestVolume": 20,
+      "latestMonth": "2024-02",
+      "difficulty": null,
+      "intent": "informational"
+    }
+  ],
+  "suggestions": [
+    {
+      "seed": "vpn gratis",
+      "keyword": "mejor vpn para fire stick gratis",
+      "volume": 90
+    },
+    {
+      "seed": "mejor vpn",
+      "keyword": "mejor vpn 2025",
+      "volume": 70
+    },
+    {
+      "seed": "mejor vpn",
+      "keyword": "mejor vpn en china",
+      "volume": 70
+    },
+    {
+      "seed": "mejor vpn",
+      "keyword": "mejor vpn para macbook",
+      "volume": 30
+    },
+    {
+      "seed": "mejor vpn",
+      "keyword": "que vpn gratis es mejor",
+      "volume": 30
+    },
+    {
+      "seed": "mejor vpn",
+      "keyword": "mejor vpn para viajar a china",
+      "volume": 30
+    },
+    {
+      "seed": "mejor vpn",
+      "keyword": "cual es la mejor vpn para china",
+      "volume": 20
+    },
+    {
+      "seed": "mejor vpn",
+      "keyword": "mejor vpn apk gratis",
+      "volume": 20
+    },
+    {
+      "seed": "mejor vpn",
+      "keyword": "mejor vpn para ver futbol",
+      "volume": 20
+    },
+    {
+      "seed": "mejor vpn",
+      "keyword": "certificado wifi o vpn cuál es mejor",
+      "volume": 20
+    },
+    {
+      "seed": "mejor vpn",
+      "keyword": "el mejor vpn para windows",
+      "volume": 10
+    },
+    {
+      "seed": "mejor vpn",
+      "keyword": "mejor vpn gratis china",
+      "volume": 10
+    },
+    {
+      "seed": "mejor vpn",
+      "keyword": "mejor vpn para juegos android",
+      "volume": 10
+    },
+    {
+      "seed": "mejor vpn",
+      "keyword": "mejor vpn para usar en cuba",
+      "volume": 10
+    },
+    {
+      "seed": "mejor vpn",
+      "keyword": "mejor vpn para tv",
+      "volume": 10
+    },
+    {
+      "seed": "vpn para streaming",
+      "keyword": "como usar vpn para streaming",
+      "volume": 10
+    },
+    {
+      "seed": "vpn para streaming",
+      "keyword": "vpn para plataformas de streaming",
+      "volume": 10
+    },
+    {
+      "seed": "vpn para streaming",
+      "keyword": "vpn para streaming gratis",
+      "volume": null
+    },
+    {
+      "seed": "vpn para streaming",
+      "keyword": "mejor vpn para ver streaming",
+      "volume": null
+    },
+    {
+      "seed": "vpn para streaming",
+      "keyword": "mejor vpn para streaming",
+      "volume": null
+    },
+    {
+      "seed": "vpn para streaming",
+      "keyword": "vpn para ver streaming",
+      "volume": null
+    },
+    {
+      "seed": "vpn para streaming",
+      "keyword": "mejor vpn gratis para streaming",
+      "volume": null
+    },
+    {
+      "seed": "vpn barato",
+      "keyword": "nord vpn barato",
+      "volume": 170
+    },
+    {
+      "seed": "vpn barato",
+      "keyword": "spotify barato vpn",
+      "volume": 30
+    },
+    {
+      "seed": "vpn barato",
+      "keyword": "netflix vpn barato",
+      "volume": 20
+    },
+    {
+      "seed": "vpn barato",
+      "keyword": "vpn bueno y barato",
+      "volume": 10
+    },
+    {
+      "seed": "vpn barato",
+      "keyword": "crunchyroll vpn barato",
+      "volume": 10
+    },
+    {
+      "seed": "vpn barato",
+      "keyword": "youtube premium barato vpn",
+      "volume": 10
+    },
+    {
+      "seed": "vpn barato",
+      "keyword": "vpn mensual barato",
+      "volume": 10
+    },
+    {
+      "seed": "vpn barato",
+      "keyword": "crunchyroll barato vpn",
+      "volume": 10
+    },
+    {
+      "seed": "vpn barato",
+      "keyword": "comprar más barato con vpn",
+      "volume": 10
+    },
+    {
+      "seed": "vpn barato",
+      "keyword": "youtube premium barato sin vpn",
+      "volume": 10
+    },
+    {
+      "seed": "vpn barato",
+      "keyword": "hbo mas barato vpn",
+      "volume": 0
+    },
+    {
+      "seed": "vpn barato",
+      "keyword": "disney plus vpn barato",
+      "volume": null
+    },
+    {
+      "seed": "vpn barato",
+      "keyword": "vpn para viajar barato",
+      "volume": null
+    },
+    {
+      "seed": "vpn barato",
+      "keyword": "spotify premium más barato vpn",
+      "volume": null
+    },
+    {
+      "seed": "vpn barato",
+      "keyword": "vpn netflix barato",
+      "volume": null
+    },
+    {
+      "seed": "vpn privacidad",
+      "keyword": "mejor vpn privacidad",
+      "volume": 10
+    },
+    {
+      "seed": "vpn privacidad",
+      "keyword": "vpn opera privacidad",
+      "volume": null
+    },
+    {
+      "seed": "vpn privacidad",
+      "keyword": "touch vpn proxy gratuito seguridad privacidad wifi apk",
+      "volume": null
+    },
+    {
+      "seed": "vpn gratis",
+      "keyword": "proton vpn gratis android",
+      "volume": 170
+    },
+    {
+      "seed": "vpn gratis",
+      "keyword": "free vpn gratis de planet vpn",
+      "volume": 170
+    },
+    {
+      "seed": "vpn gratis",
+      "keyword": "vpn gratis ilimitadas",
+      "volume": 140
+    },
+    {
+      "seed": "vpn gratis",
+      "keyword": "planet vpn gratis",
+      "volume": 110
+    },
+    {
+      "seed": "vpn gratis",
+      "keyword": "gratis usa vpn",
+      "volume": 90
+    },
+    {
+      "seed": "vpn gratis",
+      "keyword": "crear cuenta proton vpn gratis",
+      "volume": 90
+    },
+    {
+      "seed": "vpn gratis",
+      "keyword": "vpn venezuela online gratis",
+      "volume": 70
+    },
+    {
+      "seed": "vpn gratis",
+      "keyword": "octohide vpn gratis",
+      "volume": 70
+    },
+    {
+      "seed": "vpn gratis",
+      "keyword": "proton vpn gratis apk",
+      "volume": 70
+    },
+    {
+      "seed": "vpn gratis",
+      "keyword": "vpn gratis windows gratis",
+      "volume": 70
+    },
+    {
+      "seed": "vpn gratis",
+      "keyword": "vpn gratis android tv apk",
+      "volume": 50
+    },
+    {
+      "seed": "vpn gratis",
+      "keyword": "vpn tv lg gratis",
+      "volume": 50
+    },
+    {
+      "seed": "vpn gratis",
+      "keyword": "vpn gratis para magis tv",
+      "volume": 50
+    },
+    {
+      "seed": "vpn gratis",
+      "keyword": "programas gratis vpn",
+      "volume": 50
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "mejor vpn",
+      "paa": [
+        "¿Cuál es el VPN más recomendable?",
+        "¿Cuál es la VPN más fiable?",
+        "¿Qué VPN es mejor para España?",
+        "¿Qué VPN me recomiendan usar?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "mejor vpn 2026",
+      "paa": [
+        "¿Cuáles son las 5 mejores VPN?",
+        "¿Cuál es la VPN más fiable?",
+        "¿Cuál es la mejor VPN para España?",
+        "¿Cuál es la mejor VPN mundial?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn para streaming",
+      "paa": [
+        "¿Cuál es la mejor VPN para hacer streaming?",
+        "¿Cuál es la mejor VPN para ver streaming?",
+        "¿Qué VPN gratuita es buena para streaming?",
+        "¿Qué VPN es mejor para TV?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn barato",
+      "paa": [
+        "¿Cuál es el VPN más económico?",
+        "¿Cuál es la VPN más barata por mes?",
+        "¿Cuál es la mejor VPN gratuita?",
+        "¿Qué VPN es 100% gratis?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn privacidad",
+      "paa": [
+        "¿Cómo tener un VPN privado?",
+        "¿Qué pasa si me conecto a una VPN?",
+        "¿Cuál es la VPN más segura?",
+        "¿Qué tan seguro es usar un VPN?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn gratis",
+      "paa": [
+        "¿Cuál es la mejor VPN gratuita?",
+        "¿Qué VPN gratuito puedo usar sin pagar?",
+        "¿Cómo poner VPN España gratis?",
+        "¿Cuál es la mejor VPN para España?"
+      ],
+      "hasAiOverview": true
+    }
+  ],
+  "sourcePolicy": "Les signaux DataForSEO structurent la couverture d'intention ; ils ne prouvent ni performance, ni prix, ni disponibilité, ni conversion."
+}

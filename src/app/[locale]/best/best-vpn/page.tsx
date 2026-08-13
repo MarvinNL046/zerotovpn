@@ -34,6 +34,7 @@ import {
 } from "lucide-react";
 import { BestVpnPillarPage } from "@/components/editorial/best-vpn-pillar-page";
 import { FrenchBestVpnPillarPage, frenchBestVpnDescription, frenchBestVpnTitle } from "@/components/editorial/french-best-vpn-pillar-page";
+import { SpanishBestVpnPillarPage, spanishBestVpnDescription, spanishBestVpnTitle } from "@/components/editorial/spanish-best-vpn-pillar-page";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -65,7 +66,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     en: "Best VPN in 2026 — Tested & Ranked on Speed and Privacy | ZeroToVPN",
     nl: "Beste VPN van 2026 (Getest & Gerangschikt op Snelheid, Privacy en Streaming) | ZeroToVPN",
     de: "Bester VPN 2026 (Unabhängig Getestet für Speed, Datenschutz und Streaming) | ZeroToVPN",
-    es: "Mejor VPN 2026 (Probado y Clasificado por Velocidad, Privacidad y Streaming) | ZeroToVPN",
+    es: spanishBestVpnTitle,
     fr: frenchBestVpnTitle,
     zh: "2026年最佳VPN（速度、隐私和流媒体独立测试排名）| ZeroToVPN",
     ja: "2026年おすすめVPN（速度・プライバシー・ストリーミングを独自テストしてランキング）| ZeroToVPN",
@@ -77,7 +78,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     en: "We independently tested speed, privacy, streaming and logging transparency to rank the top VPNs of 2026. Compare prices and find your perfect VPN today.",
     nl: "We testten onafhankelijk snelheid, privacy, streaming en loggingtransparantie om de top VPNs van 2026 te ranken. Vergelijk prijzen en vind jouw ideale VPN.",
     de: "Wir haben Speed, Datenschutz, Streaming und Logging-Transparenz unabhängig getestet. Vergleichen Sie Preise und finden Sie Ihren idealen VPN noch heute.",
-    es: "Probamos velocidad, privacidad, streaming y transparencia de registros de forma independiente. Compara precios y encuentra tu VPN ideal hoy.",
+    es: spanishBestVpnDescription,
     fr: frenchBestVpnDescription,
     zh: "我们独立测试了速度、隐私、流媒体和日志透明度，为您排名2026年最佳VPN。比较价格，立即找到您的理想VPN。",
     ja: "速度、プライバシー、ストリーミング、ログの透明性を独自にテストし、2026年のトップVPNをランキングしました。料金を比較して、あなたに最適なVPNを見つけましょう。",
@@ -170,6 +171,10 @@ export default async function BestVpnPage({ params }: Props) {
 
   if (locale === "fr") {
     return <FrenchBestVpnPillarPage vpns={allVpns} />;
+  }
+
+  if (locale === "es") {
+    return <SpanishBestVpnPillarPage vpns={allVpns} />;
   }
 
   // Content translations

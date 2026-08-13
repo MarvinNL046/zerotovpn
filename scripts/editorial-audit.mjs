@@ -102,6 +102,17 @@ const checks = [
     patterns: [/FrenchBestVpnPillarPage/, /locale === "fr"/, /frenchBestVpnTitle/, /frenchBestVpnDescription/],
   },
   {
+    name: "Spanish Best VPN pillar uses localized evidence-led structure",
+    file: "src/components/editorial/spanish-best-vpn-pillar-page.tsx",
+    patterns: [/Mejor VPN en 2026/, /id="quick-picks"/, /id="rankings"/, /id="comparison"/, /id="methodology"/, /id="faq"/, /id="sources"/, /mejor vpn/, /commercial-choice/, /AffiliateTextLink/, /FAQSchema/],
+    forbiddenPatterns: [/Probado y Clasificado/i],
+  },
+  {
+    name: "Spanish Best VPN route uses localized editorial component",
+    file: "src/app/[locale]/best/best-vpn/page.tsx",
+    patterns: [/SpanishBestVpnPillarPage/, /locale === "es"/, /spanishBestVpnTitle/, /spanishBestVpnDescription/],
+  },
+  {
     name: "Best VPN English SERP metadata matches commercial intent",
     file: "src/app/[locale]/best/best-vpn/page.tsx",
     patterns: [/Best VPN 2026: Compare Privacy, Streaming & Value Picks/, /Find the best VPN for privacy, streaming, speed or price/],
@@ -133,7 +144,7 @@ const checks = [
   {
     name: "cluster page briefs stay centralized",
     file: "src/lib/editorial-content-briefs.ts",
-    patterns: [/china:/, /freeVpn:/, /travel:/, /restrictedNetworks:/, /obfuscation:/, /protocols:/, /russia:/, /telegram:/, /bestVpnFr:/, /censorship-restricted-networks/, /protocol-and-technical-literacy/, /travel-and-public-wifi/],
+    patterns: [/china:/, /freeVpn:/, /travel:/, /restrictedNetworks:/, /obfuscation:/, /protocols:/, /russia:/, /telegram:/, /bestVpnFr:/, /bestVpnEs:/, /censorship-restricted-networks/, /protocol-and-technical-literacy/, /travel-and-public-wifi/],
   },
   {
     name: "Russia brief freshness and dossier path",

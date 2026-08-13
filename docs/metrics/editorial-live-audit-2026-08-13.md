@@ -1,6 +1,6 @@
 # Live editorial page audit
 
-Generated: 2026-08-13T14:42:25.099Z
+Generated: 2026-08-13T14:51:23.587Z
 
 - Target pages: **63**
 - Passing pages: **63**
@@ -81,6 +81,6 @@ Generated: 2026-08-13T14:42:25.099Z
 | pass | /blog/best-vpn-for-torrenting-reddit-2026 | Best VPN for Torrenting in 2026: What Reddit Gets Right (and Wrong) | 1 | 55 | 0 | — | — |
 | pass | /blog/vpn-account-sharing-safe-guide-2026 | Can You Share a VPN Account? Simultaneous Devices, Family Use and Provider Terms (2026) | 1 | 50 | 0 | — | — |
 | pass | /blog/vpn-simultaneous-connections-limits-workarounds-2026 | How Many Devices Can Use a VPN? Simultaneous Connections and Device Limits (2026) | 1 | 51 | 4 | — | — |
-| pass | /blog/vpn-fitness-tracking-apps-strava-apple-health-garmin-privacy | Fitness App Privacy: What a VPN Can—and Cannot—Hide From Strava, Apple Health and Garmin (2026) | 1 | 50 | 4 | — | — |
+| pass | /blog/vpn-fitness-tracking-apps-strava-apple-health-garmin-privacy | Fitness App Privacy &amp; VPNs: Strava, Apple Health and Garmin (2026) | 1 | 50 | 4 | — | — |
 
 Raw records: [editorial-live-audit-2026-08-13.json](./editorial-live-audit-2026-08-13.json)

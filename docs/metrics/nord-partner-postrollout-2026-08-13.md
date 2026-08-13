@@ -30,3 +30,15 @@ The importer now accepts Nord's UI/API spelling (`Stat.affiliate_info1`, plus th
 ## Next measurement action
 
 Keep the existing `aff_sub=zt_<public-page-slug>` implementation live. Capture another dated export after fresh production clicks have had time to settle, retaining **Sub ID 1** and **Advertiser Sub ID 1** in the report fields. If both remain blank, ask Nord support which report/API field exposes the affiliate sub-ID before changing the redirect contract.
+
+## Follow-up export — both sub-ID fields selected
+
+The report was re-run in the authenticated dashboard for the same **13 August 2026** period with both **Sub ID 1** and **Advertiser Sub ID 1** selected. The dashboard showed **2 clicks, 0 conversions, $0.00 payout and $0.00 EPC** for `NordVPN / Cyber 3y deal`. Both sub-ID cells were blank:
+
+| Offer / offer URL | Sub ID 1 | Advertiser Sub ID 1 | Date | Clicks | Conversions | Payout | EPC |
+| --- | --- | --- | --- | ---: | ---: | ---: | ---: |
+| NordVPN / Cyber 3y deal | *(blank)* | *(blank)* | 2026-08-13 | 2 | 0 | $0.00 | $0.00 |
+
+The raw CSV is retained locally at `.cache/metrics/nord-partner-2026-08-13/partner-2026-08-13-subid1-advid1.csv` (ignored by Git). Its headers are `Stat.affiliate_info1` and `Stat.adv_sub1`, confirming that both requested fields were present in the export rather than omitted from the report. This rules out the earlier narrow explanation that only Sub ID 1 had been selected; it still does not identify the source page of either click.
+
+**Measurement decision:** page-level Nord attribution remains open. The next safe action is a support question to Nord asking which Performance Report/API field exposes forwarded `aff_sub`/TUNE sub IDs, while keeping the live redirect contract unchanged.

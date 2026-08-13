@@ -174,7 +174,7 @@ const checks = [
   {
     name: "gaming use-case page avoids unsupported test counts",
     file: "src/app/[locale]/best/vpn-gaming/page.tsx",
-    patterns: [/Compare current VPN provider records for gaming performance/, /We vergelijken meerdere VPN-providers voor gaming/, /Do VPNs really work for gaming\?/, /Will a VPN slow down gaming\?/],
+    patterns: [/gamingVpnEditorialDescription/, /We vergelijken meerdere VPN-providers voor gaming/, /Do VPNs really work for gaming\?/, /Will a VPN slow down gaming\?/],
     forbiddenPatterns: [/35\+|35以上|35개|35个|über 35|más de 35|plus de 35|มากกว่า 35|We tested 12 VPNs/i],
   },
   {
@@ -338,6 +338,17 @@ const checks = [
     name: "Privacy route metadata uses evidence-led title and social image",
     file: "src/app/[locale]/best/vpn-privacy/page.tsx",
     patterns: [/privacyVpnEditorialTitle/, /privacyVpnEditorialDescription/, /locale === "en"/, /images: \[DEFAULT_OG_IMAGE\]/],
+  },
+  {
+    name: "Gaming English route uses bounded editorial component",
+    file: "src/components/editorial/gaming-vpn-editorial-page.tsx",
+    patterns: [/GamingVpnEditorialPage/, /Gaming VPN route and evidence checklist/, /id="comparison"/, /id="test"/, /DataForSEO/, /network/i],
+    forbiddenPatterns: [/Lowest Ping/i, /tested.*VPNs/i, /optimized gaming servers/i, /guarantee every game/i],
+  },
+  {
+    name: "Gaming route metadata uses evidence-led title and social image",
+    file: "src/app/[locale]/best/vpn-gaming/page.tsx",
+    patterns: [/gamingVpnEditorialTitle/, /gamingVpnEditorialDescription/, /locale === "en"/, /images: \[DEFAULT_OG_IMAGE\]/],
   },
   {
     name: "macOS use-case metadata avoids unsupported test counts",

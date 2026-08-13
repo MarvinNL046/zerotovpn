@@ -137,4 +137,13 @@ export const editorialContentBriefs = {
     affiliateContext: "vpn-selection",
     schemaType: "CollectionPage",
   },
+  gamingVpn: {
+    primaryKeyword: "best vpn for gaming",
+    intent: "commercial",
+    cluster: "gaming-and-performance",
+    lastReviewedAt: "2026-08-13",
+    evidence: ["docs/research/dataforseo-gaming-cluster-2026-08-13.md", "/methodology", "/best/vpn-port-forwarding"],
+    affiliateContext: "vpn-selection",
+    schemaType: "CollectionPage",
+  },
 } satisfies Record<string, EditorialContentBrief>;

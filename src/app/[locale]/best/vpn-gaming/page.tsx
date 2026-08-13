@@ -3,9 +3,7 @@ import { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { VpnFeatureCard, type VpnFeatureCardAccent } from "@/components/vpn/vpn-feature-card";
-import { RatingStars } from "@/components/vpn/rating-stars";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
@@ -13,6 +11,7 @@ import { getVpnBySlug, type VpnProvider } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
 import { DEFAULT_OG_IMAGE, OG_LOCALE_MAP, generateAlternates, getLocalizedMonthYear, getShortMonthYear, titelMetMerk } from "@/lib/seo-utils";
 import { LastUpdated } from "@/components/last-updated";
+import { GamingVpnEditorialPage, gamingVpnEditorialDescription, gamingVpnEditorialTitle } from "@/components/editorial/gaming-vpn-editorial-page";
 import {
   Shield,
   Zap,
@@ -42,7 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const shortMonthYear = getShortMonthYear();
 
   const titles: Record<string, string> = {
-    en: "Best VPN for Gaming (2026) — Lowest Ping, Tested | ZeroToVPN",
+    en: gamingVpnEditorialTitle,
     nl: "Beste VPN voor Gaming 2026 - Laagste Ping & Snelste Servers Getest | ZeroToVPN",
     de: "Bestes VPN für Gaming 2026 - Niedrigster Ping & Schnellste Server Getestet | ZeroToVPN",
     es: "Mejor VPN para Gaming 2026 - Menor Ping y Servidores Más Rápidos Probados | ZeroToVPN",
@@ -54,7 +53,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const descriptions: Record<string, string> = {
-    en: "Compare current VPN provider records for gaming performance, then test ping, stability and server choice on your own network in 2026.",
+    en: gamingVpnEditorialDescription,
     nl: "Vergelijk actuele VPN-providergegevens voor gaming en test ping, stabiliteit en serverkeuze op je eigen netwerk in 2026.",
     de: "Vergleichen Sie aktuelle VPN-Anbieterdaten für Gaming und testen Sie Ping, Stabilität und Serverwahl in Ihrem eigenen Netzwerk 2026.",
     es: "Compara datos actuales de proveedores VPN para gaming y prueba el ping, la estabilidad y el servidor en tu propia red en 2026.",
@@ -106,6 +105,8 @@ function ItemListSchema({ gamingVpns }: { gamingVpns: { vpn: VpnProvider | null 
 export default async function GamingVpnPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  if (locale === "en") return <GamingVpnEditorialPage />;
 
   // Get gaming VPNs data
   const nordvpn = await getVpnBySlug("nordvpn");

@@ -25,13 +25,13 @@
       "status": "ready-aggregate",
       "export": ".cache/metrics/nord-partner-2026-08-13/partner.csv",
       "evidence": "docs/metrics/nord-partner-export-2026-08-13.md",
-      "note": "The dated export matches the window, but its offer rows do not expose the shared Short.io slug or page-level sub-ID; totals are diagnostic, not page attribution."
+      "note": "The dated export matches the window, but its offer rows do not expose the shared Short.io slug or page-level sub-ID; totals are diagnostic, not page attribution. New Nord clicks now carry a deterministic public-page aff_sub that the next export must return."
     }
   },
   "gate": {
     "matched": true,
     "ready": true,
     "blockedMetrics": [],
-    "nextRequiredInput": "A Nord partner export with the shared Short.io slug or page-level sub-ID so conversions can be attributed to pages and clusters."
+    "nextRequiredInput": "A Nord partner export after the aff_sub rollout that returns the public-page sub-ID so conversions can be attributed to pages and clusters."
   }
 }

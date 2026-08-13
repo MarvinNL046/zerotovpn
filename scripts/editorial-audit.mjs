@@ -6,7 +6,7 @@ const checks = [
   {
     name: "shared affiliate rel policy",
     file: "src/components/vpn/affiliate-button.tsx",
-    patterns: [/sponsored\s+nofollow/, /trackAffiliateClick/, /affiliateSlug/, /data-affiliate-slug/],
+    patterns: [/sponsored\s+nofollow/, /trackAffiliateClick/, /affiliateSlug/, /data-affiliate-slug/, /buildAffiliateHref/, /aff_sub/, /vpnId !== "nordvpn"/],
   },
   {
     name: "NordVPN affiliate resolver fails closed without approval",

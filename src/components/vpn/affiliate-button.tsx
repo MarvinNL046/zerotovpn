@@ -29,6 +29,36 @@ function getShortIoSlug(affiliateUrl: string): string | null {
   }
 }
 
+/**
+ * TUNE accepts aff_sub as a publisher-controlled placement identifier. Keep
+ * the value short, deterministic and free of user data so Nord's conversion
+ * export can be joined back to a public page without changing Short.io's path
+ * analytics. Short.io merges query parameters into the destination URL.
+ */
+export function buildAffiliateHref(
+  vpnId: string,
+  affiliateUrl: string,
+  pathname: string,
+): string {
+  if (vpnId !== "nordvpn") return affiliateUrl;
+
+  try {
+    const url = new URL(affiliateUrl, "https://go.zerotovpn.com");
+    if (url.hostname !== "go.zerotovpn.com") return affiliateUrl;
+
+    const page = pathname
+      .replace(/^\/+|\/+$/g, "")
+      .replace(/[^a-zA-Z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "")
+      .toLowerCase()
+      .slice(0, 90);
+    url.searchParams.set("aff_sub", `zt_${page || "home"}`.slice(0, 100));
+    return url.toString();
+  } catch {
+    return affiliateUrl;
+  }
+}
+
 export function trackAffiliateClick(vpnId: string, affiliateUrl: string) {
   const payload = JSON.stringify({
     vpnId,
@@ -78,7 +108,15 @@ export function AffiliateButton({
         target="_blank"
         rel="noopener noreferrer sponsored nofollow"
         data-affiliate-slug={getShortIoSlug(affiliateUrl) ?? undefined}
-        onClick={() => trackAffiliateClick(vpnId, affiliateUrl)}
+        onClick={(event) => {
+          const trackedHref = buildAffiliateHref(
+            vpnId,
+            affiliateUrl,
+            window.location.pathname,
+          );
+          event.currentTarget.href = trackedHref;
+          trackAffiliateClick(vpnId, trackedHref);
+        }}
       >
         {children || (
           <>
@@ -122,7 +160,15 @@ export function AffiliateTextLink({
       aria-label={`Visit ${vpnName}`}
       data-price-link={dataPriceLink ? "true" : undefined}
       data-affiliate-slug={getShortIoSlug(affiliateUrl) ?? undefined}
-      onClick={() => trackAffiliateClick(vpnId, affiliateUrl)}
+      onClick={(event) => {
+        const trackedHref = buildAffiliateHref(
+          vpnId,
+          affiliateUrl,
+          window.location.pathname,
+        );
+        event.currentTarget.href = trackedHref;
+        trackAffiliateClick(vpnId, trackedHref);
+      }}
     >
       {children}
     </a>

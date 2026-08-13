@@ -24,10 +24,17 @@ import {
   connectionDropsEditorialTitle,
   connectionDropsEditorialUpdatedAt,
 } from "@/data/editorial/connection-drops-2026";
+import {
+  serverLocationEditorialContent,
+  serverLocationEditorialExcerpt,
+  serverLocationEditorialTitle,
+  serverLocationEditorialUpdatedAt,
+} from "@/data/editorial/server-location-2026";
 
 const IRAN_EDITORIAL_SLUG = "best-vpn-for-iran-2026-bypass-internet-censorship";
 const TELEGRAM_EDITORIAL_SLUG = "best-vpn-for-telegram-2026";
 const CONNECTION_DROPS_EDITORIAL_SLUG = "vpn-connection-drops-why-disconnects-how-to-fix-2026";
+const SERVER_LOCATION_EDITORIAL_SLUG = "best-country-for-vpn-server-location-2026";
 
 // Legacy deal/coupon content is not a compliant commercial surface: it contains
 // unassigned coupon language and stale promotional prices. Keep the records for
@@ -113,6 +120,11 @@ const EDITORIAL_SUMMARIES: Record<string, { title: string; excerpt: string; upda
     excerpt: connectionDropsEditorialExcerpt,
     updatedAt: connectionDropsEditorialUpdatedAt,
   },
+  [SERVER_LOCATION_EDITORIAL_SLUG]: {
+    title: serverLocationEditorialTitle,
+    excerpt: serverLocationEditorialExcerpt,
+    updatedAt: serverLocationEditorialUpdatedAt,
+  },
 };
 
 function toSummary(raw: RawSummary): BlogPostSummary {
@@ -184,12 +196,15 @@ async function readPostFile(
     const isIranEditorial = language === "en" && slug === IRAN_EDITORIAL_SLUG;
     const isTelegramEditorial = language === "en" && slug === TELEGRAM_EDITORIAL_SLUG;
     const isConnectionDropsEditorial = language === "en" && slug === CONNECTION_DROPS_EDITORIAL_SLUG;
+    const isServerLocationEditorial = language === "en" && slug === SERVER_LOCATION_EDITORIAL_SLUG;
     const editorial = isIranEditorial
       ? { title: iranVpnEditorialTitle, excerpt: iranVpnEditorialExcerpt, content: iranVpnEditorialContent, updatedAt: iranVpnEditorialUpdatedAt }
       : isTelegramEditorial
         ? { title: telegramVpnEditorialTitle, excerpt: telegramVpnEditorialExcerpt, content: telegramVpnEditorialContent, updatedAt: telegramVpnEditorialUpdatedAt }
         : isConnectionDropsEditorial
           ? { title: connectionDropsEditorialTitle, excerpt: connectionDropsEditorialExcerpt, content: connectionDropsEditorialContent, updatedAt: connectionDropsEditorialUpdatedAt }
+          : isServerLocationEditorial
+            ? { title: serverLocationEditorialTitle, excerpt: serverLocationEditorialExcerpt, content: serverLocationEditorialContent, updatedAt: serverLocationEditorialUpdatedAt }
         : null;
     return {
       id: p.id,

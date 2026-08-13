@@ -138,7 +138,7 @@ const checks = [
   {
     name: "localized Iran blog routes use the evidence-led body",
     file: "src/app/[locale]/blog/[slug]/page.tsx",
-    patterns: [/iranVpnEditorialContent/, /const articleContent = isIranEditorial/, /iranContentBrief/, /best vpn for iran/, /censorship-restricted-networks/, /brief=\{isIranEditorial \? iranContentBrief : isTelegramEditorial \? editorialContentBriefs\.telegram : isConnectionDropsEditorial \? connectionDropsContentBrief : undefined\}/],
+    patterns: [/iranVpnEditorialContent/, /const articleContent = isIranEditorial/, /iranContentBrief/, /best vpn for iran/, /censorship-restricted-networks/, /brief=\{isIranEditorial \? iranContentBrief : isTelegramEditorial \? editorialContentBriefs\.telegram : isConnectionDropsEditorial \? connectionDropsContentBrief : isServerLocationEditorial \? serverLocationContentBrief : undefined\}/],
     forbiddenPatterns: [/articleContent = isRestrictedAffiliateContext\s*\?\s*verwijderAffiliateLinks\(post\.content\)/i],
   },
   {
@@ -192,6 +192,17 @@ const checks = [
     name: "connection-drops blog route uses the audited editorial override",
     file: "src/app/[locale]/blog/[slug]/page.tsx",
     patterns: [/connectionDropsEditorialTitle/, /connectionDropsContentBrief/, /connectionDropsEditorialFaq/, /technicalClusterLinks/, /isConnectionDropsEditorial/],
+  },
+  {
+    name: "server-location page uses PAA-led bounded location copy",
+    file: "src/data/editorial/server-location-2026.ts",
+    patterns: [/What country should I set my VPN to\?/, /Which country server is fastest for a VPN\?/, /Which country is best for using a VPN for streaming\?/, /Can the FBI track someone using a VPN\?/, /VPN server location decision guide/, /2026/],
+    forbiddenPatterns: [/50\+ server locations|tested 50\+/i, /permanent-unblocking guarantee/i],
+  },
+  {
+    name: "server-location blog route uses the audited editorial override",
+    file: "src/app/[locale]/blog/[slug]/page.tsx",
+    patterns: [/serverLocationEditorialTitle/, /serverLocationContentBrief/, /serverLocationEditorialFaq/, /locationClusterLinks/, /isServerLocationEditorial/],
   },
   {
     name: "Chromebook use-case page avoids unsupported test counts",

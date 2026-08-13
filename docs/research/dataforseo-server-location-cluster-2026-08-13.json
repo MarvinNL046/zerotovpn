@@ -1,0 +1,194 @@
+{
+  "schemaVersion": 1,
+  "cluster": "VPN server location / speed / privacy / streaming choice",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "fetchedAt": "2026-08-13T02:08:53.666Z",
+  "refreshed": true,
+  "seeds": [
+    "best country for vpn server",
+    "best vpn server location",
+    "fastest vpn server location",
+    "best country for vpn privacy",
+    "which vpn server should i use",
+    "vpn server location for streaming"
+  ],
+  "overview": [
+    {
+      "keyword": "best country for vpn privacy",
+      "currentVolume": null,
+      "latestVolume": 20,
+      "latestMonth": "2024-02",
+      "difficulty": null,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "best country for vpn server",
+      "currentVolume": null,
+      "latestVolume": 10,
+      "latestMonth": "2024-02",
+      "difficulty": null,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "best vpn server location",
+      "currentVolume": null,
+      "latestVolume": 40,
+      "latestMonth": "2024-02",
+      "difficulty": 16,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "fastest vpn server location",
+      "currentVolume": 10,
+      "latestVolume": 10,
+      "latestMonth": "2026-06",
+      "difficulty": 64,
+      "intent": "informational"
+    },
+    {
+      "keyword": "which vpn server should i use",
+      "currentVolume": 10,
+      "latestVolume": 10,
+      "latestMonth": "2026-04",
+      "difficulty": 59,
+      "intent": "informational"
+    }
+  ],
+  "suggestions": [
+    {
+      "seed": "best country for vpn server",
+      "keyword": "which country vpn server is best for india",
+      "volume": 10
+    },
+    {
+      "seed": "best country for vpn server",
+      "keyword": "best vpn server country for pubg",
+      "volume": 0
+    },
+    {
+      "seed": "best country for vpn server",
+      "keyword": "best country for vpn server",
+      "volume": null
+    },
+    {
+      "seed": "best country for vpn server",
+      "keyword": "best country server for vpn",
+      "volume": null
+    },
+    {
+      "seed": "best country for vpn server",
+      "keyword": "best server country for vpn",
+      "volume": null
+    },
+    {
+      "seed": "vpn server location for streaming",
+      "keyword": "best vpn server location for streaming",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn server location",
+      "keyword": "best location for vpn server",
+      "volume": null
+    },
+    {
+      "seed": "best vpn server location",
+      "keyword": "best vpn server location for pubg",
+      "volume": null
+    },
+    {
+      "seed": "best vpn server location",
+      "keyword": "best vpn server location for warzone",
+      "volume": null
+    },
+    {
+      "seed": "best vpn server location",
+      "keyword": "how to choose the best vpn server location",
+      "volume": null
+    },
+    {
+      "seed": "fastest vpn server location",
+      "keyword": "fastest vpn server location",
+      "volume": 10
+    },
+    {
+      "seed": "best country for vpn privacy",
+      "keyword": "best vpn country for privacy",
+      "volume": null
+    },
+    {
+      "seed": "best country for vpn privacy",
+      "keyword": "what country provides the best privacy laws for a vpn",
+      "volume": null
+    },
+    {
+      "seed": "which vpn server should i use",
+      "keyword": "which vpn server should i use",
+      "volume": 10
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "best country for vpn server",
+      "paa": [
+        "What country should I set my VPN to?",
+        "Can the FBI track a VPN?",
+        "Which country is the best for using a VPN for streaming?",
+        "Which location should I use for my VPN?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "best vpn server location",
+      "paa": [
+        "Which country is best for a VPN server location?",
+        "Can FBI track NordVPN?",
+        "Which country server is fastest for VPN?",
+        "Can the FBI see through VPNs?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "fastest vpn server location",
+      "paa": [
+        "Which VPN server is the fastest?",
+        "Which VPN server location is best?",
+        "Can FBI track NordVPN?",
+        "Which VPN location is best for fast internet?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "best country for vpn privacy",
+      "paa": [
+        "Which countries should I avoid using VPNs?",
+        "What country should I put my VPN on?",
+        "Can the FBI see through VPNs?",
+        "What is the most secure VPN for privacy?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "which vpn server should i use",
+      "paa": [
+        "Which server to choose for VPN?",
+        "Why avoid NordVPN?",
+        "Which VPN server is the best?",
+        "Which VPN server is faster?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn server location for streaming",
+      "paa": [
+        "Which VPN server location is best for streaming?",
+        "Will Netflix ban me for using a VPN?",
+        "What is the best location to set my VPN?",
+        "How to find server address for VPN?"
+      ],
+      "hasAiOverview": true
+    }
+  ],
+  "sourcePolicy": "DataForSEO signals prioritise intent coverage and FAQ structure; they do not prove a country is fastest, safest, legal or able to unlock a particular service."
+}

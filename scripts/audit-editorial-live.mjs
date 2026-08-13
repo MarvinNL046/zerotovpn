@@ -33,6 +33,7 @@ const targets = [
   { path: "/best/vpn-free-trial", name: "Free-trial comparison", ids: ["sources"], links: ["/best/free-vpn", "/best/best-vpn", "/methodology"], expectFaq: true },
   { path: "/best/vpn-port-forwarding", name: "Port-forwarding comparison", ids: [], links: ["/best/best-vpn", "/best/vpn-torrenting", "/guides/vpn-protocols-explained"], expectFaq: true, expectTable: false },
   { path: "/blog/vpn-connection-drops-why-disconnects-how-to-fix-2026", name: "VPN connection troubleshooting guide", ids: ["sources", "related-content"], links: ["/guides/vpn-protocols-explained", "/guides/vpn-speed-guide", "/best/vpn-mobile", "/best/best-vpn"], expectFaq: true, expectTable: true, brief: { primaryKeyword: "vpn keeps disconnecting", intent: "informational", cluster: "protocol-and-technical-literacy", lastReviewedAt: "2026-08-13", affiliateContext: "none", schemaType: "Article" } },
+  { path: "/blog/best-country-for-vpn-server-location-2026", name: "VPN server location guide", ids: ["sources", "related-content"], links: ["/guides/vpn-speed-guide", "/best/vpn-privacy", "/guides/vpn-for-travel"], expectFaq: true, expectTable: true, brief: { primaryKeyword: "best vpn server location", intent: "commercial", cluster: "travel-and-public-wifi", lastReviewedAt: "2026-08-13", affiliateContext: "none", schemaType: "Article" } },
 ];
 
 const affiliateHref = /(?:go\.zerotovpn\.com|go\.nordvpn\.net|nordvpn\.tpo\.lv|[?&](?:offer_id|aff_id|url_id)=)/i;

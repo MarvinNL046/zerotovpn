@@ -44,6 +44,11 @@ import {
   connectionDropsEditorialTitle,
   connectionDropsEditorialExcerpt,
 } from "@/data/editorial/connection-drops-2026";
+import {
+  serverLocationEditorialFaq,
+  serverLocationEditorialTitle,
+  serverLocationEditorialExcerpt,
+} from "@/data/editorial/server-location-2026";
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
@@ -74,6 +79,20 @@ const connectionDropsContentBrief = {
     "docs/research/dataforseo-connection-drops-cluster-2026-08-13.md",
     "/methodology",
     "/guides/vpn-protocols-explained",
+  ],
+  affiliateContext: "none",
+  schemaType: "Article",
+} satisfies EditorialContentBrief;
+
+const serverLocationContentBrief = {
+  primaryKeyword: "best vpn server location",
+  intent: "commercial",
+  cluster: "travel-and-public-wifi",
+  lastReviewedAt: "2026-08-13",
+  evidence: [
+    "docs/research/dataforseo-server-location-cluster-2026-08-13.md",
+    "/methodology",
+    "/guides/vpn-speed-guide",
   ],
   affiliateContext: "none",
   schemaType: "Article",
@@ -142,6 +161,10 @@ const clusterMetadata: Record<string, { title: string; description: string }> = 
     title: connectionDropsEditorialTitle,
     description: connectionDropsEditorialExcerpt,
   },
+  "best-country-for-vpn-server-location-2026": {
+    title: serverLocationEditorialTitle,
+    description: serverLocationEditorialExcerpt,
+  },
 };
 
 const aiPrivacyClusterLinks: Record<string, ClusterLink[]> = {
@@ -180,6 +203,26 @@ const technicalClusterLinks: Record<string, ClusterLink[]> = {
       title: "VPNs for mobile devices",
       description: "Check background permissions and network handoffs on phones and tablets.",
       href: "/best/vpn-mobile",
+    },
+  ],
+};
+
+const locationClusterLinks: Record<string, ClusterLink[]> = {
+  "best-country-for-vpn-server-location-2026": [
+    {
+      title: "VPN speed guide",
+      description: "Measure latency, throughput and stability instead of trusting a fixed country ranking.",
+      href: "/guides/vpn-speed-guide",
+    },
+    {
+      title: "VPN privacy comparison",
+      description: "Review logging policy, ownership and jurisdiction evidence separately from server location.",
+      href: "/best/vpn-privacy",
+    },
+    {
+      title: "VPNs for travel",
+      description: "Prepare devices and networks before relying on a VPN while travelling.",
+      href: "/guides/vpn-for-travel",
     },
   ],
 };
@@ -251,11 +294,12 @@ export default async function DynamicBlogPost({ params }: Props) {
     notFound();
   }
 
-  const clusterLinks = censorshipClusterLinks[slug] || aiPrivacyClusterLinks[slug] || technicalClusterLinks[slug] || [];
+  const clusterLinks = censorshipClusterLinks[slug] || aiPrivacyClusterLinks[slug] || technicalClusterLinks[slug] || locationClusterLinks[slug] || [];
   const isIranEditorial = slug === "best-vpn-for-iran-2026-bypass-internet-censorship";
   const isTelegramEditorial = slug === "best-vpn-for-telegram-2026";
   const isChatgptEditorial = slug === "best-vpn-for-chatgpt-2026";
   const isConnectionDropsEditorial = slug === "vpn-connection-drops-why-disconnects-how-to-fix-2026";
+  const isServerLocationEditorial = slug === "best-country-for-vpn-server-location-2026";
   const isCensorshipEditorial = isIranEditorial || isTelegramEditorial;
   const isRestrictedAffiliateContext =
     slug === "vpn-blockchain-privacy-mask-wallet-activity-2026";
@@ -317,7 +361,7 @@ export default async function DynamicBlogPost({ params }: Props) {
 
       {/* Article Header and shared editorial disclosure/jump navigation */}
       <BestVpnEditorialTemplate
-        brief={isIranEditorial ? iranContentBrief : isTelegramEditorial ? editorialContentBriefs.telegram : isConnectionDropsEditorial ? connectionDropsContentBrief : undefined}
+        brief={isIranEditorial ? iranContentBrief : isTelegramEditorial ? editorialContentBriefs.telegram : isConnectionDropsEditorial ? connectionDropsContentBrief : isServerLocationEditorial ? serverLocationContentBrief : undefined}
         navigation={[
           { href: "#article-content", label: "Article" },
           ...(isCensorshipEditorial ? [{ href: "#quick-picks", label: "Shortlist" }] : []),
@@ -369,11 +413,11 @@ export default async function DynamicBlogPost({ params }: Props) {
           {clusterLinks.length > 0 && (
             <nav
               id="cluster-links"
-              aria-label={isConnectionDropsEditorial ? "Technical VPN troubleshooting cluster" : "Censorship research cluster"}
+              aria-label={isConnectionDropsEditorial ? "Technical VPN troubleshooting cluster" : isServerLocationEditorial ? "VPN server location cluster" : "Censorship research cluster"}
               className="rounded-xl border border-primary/20 bg-primary/5 p-4 sm:p-5"
             >
               <p className="mb-3 text-sm font-semibold text-primary">
-                {isConnectionDropsEditorial ? "Technical VPN troubleshooting cluster" : "Censorship research cluster"}
+                {isConnectionDropsEditorial ? "Technical VPN troubleshooting cluster" : isServerLocationEditorial ? "VPN server location cluster" : "Censorship research cluster"}
               </p>
               <div className="grid gap-3 sm:grid-cols-3">
                 {clusterLinks.map((link) => (
@@ -447,6 +491,7 @@ export default async function DynamicBlogPost({ params }: Props) {
         {isIranEditorial && <FAQSchema title="Iran VPN FAQ" faqs={iranVpnEditorialFaq} />}
         {isTelegramEditorial && <FAQSchema title="Telegram VPN FAQ" faqs={telegramVpnEditorialFaq} />}
         {isConnectionDropsEditorial && <FAQSchema title="VPN disconnection FAQ" faqs={connectionDropsEditorialFaq} />}
+        {isServerLocationEditorial && <FAQSchema title="VPN server location FAQ" faqs={serverLocationEditorialFaq} />}
 
         {/* Ad placement */}
         <InlineAd />

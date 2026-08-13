@@ -30,6 +30,9 @@ import { RelatedPages } from "@/components/seo/related-pages";
 import { LastUpdated } from "@/components/last-updated";
 import { OG_LOCALE_MAP, generateAlternates, titelMetMerk } from "@/lib/seo-utils";
 import { getVpnAffiliateUrl } from "@/lib/vpn-links";
+import { getAllVpns } from "@/lib/vpn-data-layer";
+import { DEFAULT_OG_IMAGE } from "@/lib/seo-utils";
+import { IpadVpnEditorialPage, ipadVpnEditorialDescription, ipadVpnEditorialTitle } from "@/components/editorial/ipad-vpn-editorial-page";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -39,6 +42,9 @@ const baseUrl = "https://www.zerotovpn.com";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  if (locale === "en") {
+    return { metadataBase: new URL(baseUrl), title: { absolute: titelMetMerk(ipadVpnEditorialTitle) }, description: ipadVpnEditorialDescription, openGraph: { locale: "en_US", title: ipadVpnEditorialTitle, description: ipadVpnEditorialDescription, type: "article", images: [DEFAULT_OG_IMAGE] }, alternates: generateAlternates("/best/vpn-ipad", locale) };
+  }
   const t = await getTranslations({ locale, namespace: "ipadVpn" });
 
   return {
@@ -170,6 +176,11 @@ function IpadVpnListSchema() {
 export default async function IpadVpnPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  if (locale === "en") {
+    const allVpns = await getAllVpns();
+    return <IpadVpnEditorialPage vpns={allVpns} />;
+  }
 
   const t = await getTranslations("ipadVpn");
 

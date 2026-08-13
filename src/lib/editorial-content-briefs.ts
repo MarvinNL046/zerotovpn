@@ -182,6 +182,15 @@ export const editorialContentBriefs = {
     affiliateContext: "vpn-selection",
     schemaType: "CollectionPage",
   },
+  ipadVpn: {
+    primaryKeyword: "best vpn for ipad",
+    intent: "commercial",
+    cluster: "mobile-and-device-privacy",
+    lastReviewedAt: "2026-08-13",
+    evidence: ["docs/research/dataforseo-ipad-vpn-cluster-2026-08-13.md", "/methodology", "/best/vpn-mobile"],
+    affiliateContext: "vpn-selection",
+    schemaType: "CollectionPage",
+  },
   chromebookVpn: {
     primaryKeyword: "best vpn for chromebook",
     intent: "informational",

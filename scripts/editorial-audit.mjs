@@ -135,6 +135,17 @@ const checks = [
     patterns: [/IphoneVpnEditorialPage/, /locale === "en"/, /iphoneVpnEditorialTitle/, /iphoneVpnEditorialDescription/],
   },
   {
+    name: "iPad VPN English route uses bounded iPadOS evidence",
+    file: "src/components/editorial/ipad-vpn-editorial-page.tsx",
+    patterns: [/Best VPNs for iPad in 2026/, /id="quick-picks"/, /id="comparison"/, /id="setup"/, /id="faq"/, /id="sources"/, /iPadOS|iPad/, /DataForSEO/, /AffiliateTextLink/],
+    forbiddenPatterns: [/battery impact \(~[0-9]+%\)|[0-9]\.[0-9]\/5|Fastest speeds|expert-tested/i],
+  },
+  {
+    name: "iPad route uses audited English editorial component",
+    file: "src/app/[locale]/best/vpn-ipad/page.tsx",
+    patterns: [/IpadVpnEditorialPage/, /locale === "en"/, /ipadVpnEditorialTitle/, /ipadVpnEditorialDescription/],
+  },
+  {
     name: "Best VPN English SERP metadata matches commercial intent",
     file: "src/app/[locale]/best/best-vpn/page.tsx",
     patterns: [/Best VPN 2026: Compare Privacy, Streaming & Value Picks/, /Find the best VPN for privacy, streaming, speed or price/],
@@ -166,7 +177,7 @@ const checks = [
   {
     name: "cluster page briefs stay centralized",
     file: "src/lib/editorial-content-briefs.ts",
-    patterns: [/china:/, /freeVpn:/, /travel:/, /restrictedNetworks:/, /obfuscation:/, /protocols:/, /russia:/, /telegram:/, /bestVpnFr:/, /bestVpnEs:/, /laptopVpn:/, /iphoneVpn:/, /censorship-restricted-networks/, /protocol-and-technical-literacy/, /travel-and-public-wifi/],
+    patterns: [/china:/, /freeVpn:/, /travel:/, /restrictedNetworks:/, /obfuscation:/, /protocols:/, /russia:/, /telegram:/, /bestVpnFr:/, /bestVpnEs:/, /laptopVpn:/, /iphoneVpn:/, /ipadVpn:/, /censorship-restricted-networks/, /protocol-and-technical-literacy/, /travel-and-public-wifi/],
   },
   {
     name: "Russia brief freshness and dossier path",

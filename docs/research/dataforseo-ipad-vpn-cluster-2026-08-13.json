@@ -1,0 +1,366 @@
+{
+  "schemaVersion": 1,
+  "cluster": "iPad and iPadOS VPN device privacy",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "fetchedAt": "2026-08-13T10:44:55.966Z",
+  "refreshed": false,
+  "seeds": [
+    "best vpn for ipad",
+    "vpn for ipad",
+    "ipad vpn",
+    "best vpn ipados",
+    "vpn for ipad privacy",
+    "ipad vpn setup"
+  ],
+  "overview": [
+    {
+      "keyword": "best vpn for ipad",
+      "currentVolume": null,
+      "latestVolume": 590,
+      "latestMonth": "2024-02",
+      "difficulty": 20,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "ipad vpn",
+      "currentVolume": null,
+      "latestVolume": 480,
+      "latestMonth": "2024-02",
+      "difficulty": 45,
+      "intent": "transactional"
+    },
+    {
+      "keyword": "ipad vpn setup",
+      "currentVolume": null,
+      "latestVolume": 390,
+      "latestMonth": "2024-02",
+      "difficulty": 22,
+      "intent": "informational"
+    },
+    {
+      "keyword": "vpn for ipad",
+      "currentVolume": null,
+      "latestVolume": 1300,
+      "latestMonth": "2024-02",
+      "difficulty": 56,
+      "intent": "informational"
+    }
+  ],
+  "suggestions": [
+    {
+      "seed": "vpn for ipad",
+      "keyword": "best vpn for iphone ipad",
+      "volume": 140
+    },
+    {
+      "seed": "vpn for ipad",
+      "keyword": "best free vpn apps for ipad",
+      "volume": 20
+    },
+    {
+      "seed": "vpn for ipad",
+      "keyword": "best free vpn for ipad mini",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for ipad",
+      "keyword": "best vpn software for ipad",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for ipad",
+      "keyword": "what's the best vpn for ipad",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for ipad",
+      "keyword": "best free vpn for ipad air",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for ipad",
+      "keyword": "best vpn for ipad 2",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for ipad",
+      "keyword": "best vpn for ipad air 2",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for ipad",
+      "keyword": "which free vpn is best for ipad",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for ipad",
+      "keyword": "best free vpn for ipad without subscription",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for ipad",
+      "keyword": "best vpn blocker for ipad",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for ipad",
+      "keyword": "best vpn for ipad pubg",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for ipad",
+      "keyword": "best free uk vpn for ipad",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for ipad",
+      "keyword": "best vpn client for ipad",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for ipad",
+      "keyword": "best free vpn service for ipad",
+      "volume": 10
+    },
+    {
+      "seed": "ipad vpn",
+      "keyword": "what is a vpn for ipad",
+      "volume": 480
+    },
+    {
+      "seed": "ipad vpn",
+      "keyword": "vpn for ipad app",
+      "volume": 390
+    },
+    {
+      "seed": "ipad vpn setup",
+      "keyword": "vpn setup for ipad",
+      "volume": 260
+    },
+    {
+      "seed": "vpn for ipad",
+      "keyword": "how to get free vpn for ipad",
+      "volume": 30
+    },
+    {
+      "seed": "vpn for ipad",
+      "keyword": "setting up vpn for ipad",
+      "volume": 20
+    },
+    {
+      "seed": "vpn for ipad",
+      "keyword": "what is vpn configuration for ipad",
+      "volume": 20
+    },
+    {
+      "seed": "vpn for ipad",
+      "keyword": "vpn for netflix on ipad",
+      "volume": 20
+    },
+    {
+      "seed": "vpn for ipad",
+      "keyword": "vpn for netflix ipad",
+      "volume": 20
+    },
+    {
+      "seed": "vpn for ipad",
+      "keyword": "vpn connection for ipad",
+      "volume": 20
+    },
+    {
+      "seed": "vpn for ipad",
+      "keyword": "netflix vpn for ipad",
+      "volume": 20
+    },
+    {
+      "seed": "vpn for ipad",
+      "keyword": "expressvpn vpn for ipad",
+      "volume": 10
+    },
+    {
+      "seed": "ipad vpn",
+      "keyword": "vpn to ipad",
+      "volume": 2400
+    },
+    {
+      "seed": "ipad vpn",
+      "keyword": "hola vpn on ipad",
+      "volume": 480
+    },
+    {
+      "seed": "ipad vpn",
+      "keyword": "on ipad what is vpn",
+      "volume": 480
+    },
+    {
+      "seed": "ipad vpn",
+      "keyword": "vpn software ipad",
+      "volume": 390
+    },
+    {
+      "seed": "ipad vpn",
+      "keyword": "ipad app vpn",
+      "volume": 390
+    },
+    {
+      "seed": "ipad vpn setup",
+      "keyword": "setup vpn in ipad",
+      "volume": 260
+    },
+    {
+      "seed": "ipad vpn",
+      "keyword": "vpn express ipad",
+      "volume": 260
+    },
+    {
+      "seed": "ipad vpn",
+      "keyword": "ipad vpn set up",
+      "volume": 260
+    },
+    {
+      "seed": "ipad vpn setup",
+      "keyword": "vpn ipad setup",
+      "volume": 260
+    },
+    {
+      "seed": "ipad vpn",
+      "keyword": "configure ipad vpn",
+      "volume": 260
+    },
+    {
+      "seed": "ipad vpn",
+      "keyword": "set up a vpn on ipad",
+      "volume": 260
+    },
+    {
+      "seed": "ipad vpn",
+      "keyword": "how to create vpn on ipad",
+      "volume": 210
+    },
+    {
+      "seed": "ipad vpn setup",
+      "keyword": "how to setup a vpn ipad",
+      "volume": 210
+    },
+    {
+      "seed": "ipad vpn setup",
+      "keyword": "setup vpn on ipad pro",
+      "volume": 10
+    },
+    {
+      "seed": "ipad vpn setup",
+      "keyword": "setup cisco vpn on ipad",
+      "volume": 10
+    },
+    {
+      "seed": "ipad vpn setup",
+      "keyword": "how to setup vpn on my ipad",
+      "volume": 10
+    },
+    {
+      "seed": "ipad vpn setup",
+      "keyword": "express vpn ipad setup",
+      "volume": 10
+    },
+    {
+      "seed": "ipad vpn setup",
+      "keyword": "ipad vpn pptp setup",
+      "volume": 10
+    },
+    {
+      "seed": "ipad vpn setup",
+      "keyword": "how do i setup vpn on my ipad",
+      "volume": 10
+    },
+    {
+      "seed": "ipad vpn setup",
+      "keyword": "how to setup vpn on ipad mini",
+      "volume": 10
+    },
+    {
+      "seed": "ipad vpn setup",
+      "keyword": "setup pptp vpn on ipad",
+      "volume": 10
+    },
+    {
+      "seed": "ipad vpn setup",
+      "keyword": "how setup vpn on ipad",
+      "volume": 10
+    },
+    {
+      "seed": "ipad vpn setup",
+      "keyword": "how to setup a vpn on my ipad",
+      "volume": 10
+    },
+    {
+      "seed": "ipad vpn setup",
+      "keyword": "setup vpn on ipad 3",
+      "volume": 10
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "best vpn for ipad",
+      "paa": [
+        "What's the best VPN to use on an iPad?",
+        "Do I really need a VPN on my iPad?",
+        "Is there a built-in VPN on iPad?",
+        "Is there a truly free VPN for iPad?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn for ipad",
+      "paa": [
+        "Do iPads have built-in VPN?",
+        "Should I put a VPN on my iPad?",
+        "How do I know if my iPad has VPN?",
+        "Is there a free VPN available for Apple devices?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "ipad vpn",
+      "paa": [
+        "Do iPads have a built-in VPN?",
+        "Can I use VPN on my iPad?",
+        "Does the iPad have free VPN?",
+        "Should I have VPN turned on on my iPad?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "best vpn ipados",
+      "paa": [
+        "Do iPads have a built-in VPN?",
+        "Do I really need a VPN on my iPad?",
+        "Is there a truly free VPN for iPad?",
+        "Can you get VPN on an iPad?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn for ipad privacy",
+      "paa": [
+        "Should you use a VPN on your iPad?",
+        "Does an iPad have a built-in VPN?",
+        "Why do I see VPN on my iPad?",
+        "Can I use VPN on my iPad?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "ipad vpn setup",
+      "paa": [
+        "Does an iPad have a built-in VPN?",
+        "Should I set up a VPN on my iPad?",
+        "Does the iPad have free VPN?",
+        "Does Apple have a built-in VPN?"
+      ],
+      "hasAiOverview": true
+    }
+  ],
+  "sourcePolicy": "DataForSEO signals guide intent coverage only; they do not prove App Store ratings, battery use, speed, security or provider performance."
+}

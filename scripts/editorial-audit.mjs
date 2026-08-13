@@ -403,7 +403,7 @@ const checks = [
   {
     name: "VPN simultaneous-connections guide uses PAA-led bounded device copy",
     file: "src/data/editorial/vpn-simultaneous-connections-2026.ts",
-    patterns: [/Can I use VPN on two devices\?/, /Can I use two VPN connections simultaneously\?/, /Which VPN allows unlimited devices\?/, /Do I need a separate VPN for each device\?/, /How many devices can you use with a VPN\?/, /Can multiple people use one VPN\?/, /Published simultaneous-connection examples/, /2026/],
+    patterns: [/Can I use VPN on two devices\?/, /Can I use two VPN connections simultaneously\?/, /Which VPN allows unlimited devices\?/, /Do I need a separate VPN for each device\?/, /How many devices can you use with a VPN\?/, /Can multiple people use one VPN\?/, /Can I share my VPN with another household\?/, /Published simultaneous-connection examples/, /2026/],
     forbiddenPatterns: [/71% of VPN users|1-10\+|tested dozens|unblocked Netflix|guaranteed/i, /\b(?:83|69|46|40|36|81)%\s*(?:off|savings)/i],
   },
   {

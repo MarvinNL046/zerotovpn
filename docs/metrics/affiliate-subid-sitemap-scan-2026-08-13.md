@@ -16,6 +16,10 @@ npm run audit:affiliate-subid-live
 
 It passes **4/4 pages**, with **2/2 Nord anchors tagged** and **0 non-Nord redirects tagged**. The full sitemap scan is retained as a diagnostic signal, not as a false failure requiring every client-generated CTA to expose a query parameter in pre-hydration HTML.
 
+## Browser hydration check
+
+A live browser check of `/best/best-vpn` after page hydration returned Nord anchors with `aff_sub=zt_nl-best-best-vpn`. This confirms that the shared client CTA path carries the same deterministic placement value before the user can click; the raw HTML snapshot alone cannot observe that client-side update.
+
 ## Attribution boundary
 
 Short.io remains the redirect-click source of truth and Nord/TUNE remains the conversion/payout source. This scan does not establish conversions or EPC and does not remove the open requirement for a non-empty Nord `Stat.affiliate_info1` value that joins to a public page slug.

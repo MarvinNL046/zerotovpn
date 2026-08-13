@@ -335,4 +335,13 @@ export const editorialContentBriefs = {
     affiliateContext: "vpn-selection",
     schemaType: "CollectionPage",
   },
+  protonAirvpnComparison: {
+    primaryKeyword: "proton vpn vs airvpn",
+    intent: "commercial",
+    cluster: "provider-reviews-and-comparisons",
+    lastReviewedAt: "2026-08-13",
+    evidence: ["docs/research/protonvpn-vs-airvpn-comparison-brief-2026-08-13.md", "/methodology", "https://protonvpn.com/support/port-forwarding", "https://airvpn.org/faq/port_forwarding/"],
+    affiliateContext: "vpn-selection",
+    schemaType: "Article",
+  },
 } satisfies Record<string, EditorialContentBrief>;

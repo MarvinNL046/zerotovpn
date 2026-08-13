@@ -582,6 +582,17 @@ const checks = [
     patterns: [/VpnComparisonEditorialPage/, /locale === "en"/, /vpnComparisonEditorialTitle/, /vpnComparisonEditorialDescription/],
   },
   {
+    name: "Proton VPN versus AirVPN pair stays evidence-led before promotion",
+    file: "src/components/editorial/proton-airvpn-comparison-editorial-page.tsx",
+    patterns: [/ProtonAirvpnComparisonEditorialPage/, /Proton VPN vs AirVPN/, /id="decision"/, /id="comparison"/, /id="method"/, /id="faq"/, /id="sources"/, /FAQSchema/, /AffiliateDisclosure/, /AirVPN is not an approved ZeroToVPN affiliate destination/],
+    forbiddenPatterns: [/overallRating/, /speedScore/, /streamingScore/, /ENDWINTERDEAL/i, /€2\.06/i],
+  },
+  {
+    name: "Proton VPN versus AirVPN route uses the staged evidence-led renderer",
+    file: "src/app/[locale]/compare/[comparison]/page.tsx",
+    patterns: [/ProtonAirvpnComparisonEditorialPage/, /locale === "en" && comparison === "protonvpn-vs-airvpn"/, /protonAirvpnComparisonTitle/, /protonAirvpnComparisonDescription/],
+  },
+  {
     name: "macOS use-case metadata avoids unsupported test counts",
     file: "src/app/[locale]/best/vpn-macos/page.tsx",
     patterns: [/Compare macOS VPN options in/, /app support, network behavior/],

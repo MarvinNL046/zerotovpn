@@ -22,6 +22,11 @@ import { ProsConsCard } from "@/components/vpn/pros-cons-card";
 import { AffiliateDisclosure } from "@/components/vpn/affiliate-disclosure";
 // Gedeeld met de sitemap, zodat we nooit meer adverteren dan we linken.
 import { LINKED_COMPARISONS } from "@/lib/linked-comparisons";
+import {
+  ProtonAirvpnComparisonEditorialPage,
+  protonAirvpnComparisonDescription,
+  protonAirvpnComparisonTitle,
+} from "@/components/editorial/proton-airvpn-comparison-editorial-page";
 
 type Props = {
   params: Promise<{ locale: string; comparison: string }>;
@@ -78,11 +83,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: "comparePage.meta" });
   const maand = getLocalizedMonthYear(locale);
   const namen = { a: vpn1.name, b: vpn2.name, month: maand };
+  const isProtonAirvpn = locale === "en" && comparison === "protonvpn-vs-airvpn";
+  const pageTitle = isProtonAirvpn ? protonAirvpnComparisonTitle : t("title", namen);
+  const pageDescription = isProtonAirvpn ? protonAirvpnComparisonDescription : t("description", namen);
 
   return {
     metadataBase: new URL(baseUrl),
-    title: { absolute: titelMetMerk(t("title", namen)) },
-    description: t("description", namen),
+    title: { absolute: titelMetMerk(pageTitle) },
+    description: pageDescription,
     alternates: {
       canonical: canonicalUrl,
       languages: languages,
@@ -93,8 +101,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     openGraph: {
       locale: OG_LOCALE_MAP[locale] ?? "en_US",
-      title: t("title", namen),
-      description: t("description", namen),
+      title: pageTitle,
+      description: pageDescription,
       url: canonicalUrl,
       type: "article",
       siteName: "ZeroToVPN",
@@ -229,6 +237,10 @@ export default async function ComparisonPage({ params }: Props) {
   // If either VPN doesn't exist, show 404
   if (!vpn1 || !vpn2) {
     notFound();
+  }
+
+  if (locale === "en" && comparison === "protonvpn-vs-airvpn") {
+    return <ProtonAirvpnComparisonEditorialPage />;
   }
 
   // Determine overall winner based on rating

@@ -93,7 +93,7 @@ The comparison should also be reachable from `PopularComparisons` before it is a
 Do not promote this draft into the sitemap or use it as the next 4–8 page conversion batch until all gates pass:
 
 1. Nord confirms which report/API field exposes forwarded `aff_sub`; the current report still has blank Sub ID 1 and Advertiser Sub ID 1.
-2. The pair route is rendered from an evidence-led component, not the legacy score/winner FAQ generator.
+2. **Passed locally:** the English pair route now renders from an evidence-led component, not the legacy score/winner FAQ generator. The browser smoke is recorded in `docs/metrics/proton-airvpn-comparison-browser-smoke-2026-08-13.md`. This does not yet add the route to the sitemap or production live gate.
 3. `npm run audit:editorial` and the live editorial gate cover the route, including one H1, canonical/indexability, table semantics, FAQ schema, disclosure, cluster links and affiliate rel/slug attributes.
 4. A browser smoke confirms no unsupported score, speed, server-count or streaming-guarantee claims and no horizontal overflow.
 5. The route is added to `LINKED_COMPARISONS` only after it has a real internal-link path and passes the sitemap audit.

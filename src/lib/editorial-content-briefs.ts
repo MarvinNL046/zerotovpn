@@ -92,4 +92,13 @@ export const editorialContentBriefs = {
     affiliateContext: "vpn-selection",
     schemaType: "Article",
   },
+  androidVpn: {
+    primaryKeyword: "best vpn for android",
+    intent: "commercial",
+    cluster: "mobile-and-device-privacy",
+    lastReviewedAt: "2026-08-13",
+    evidence: ["docs/research/dataforseo-android-vpn-cluster-2026-08-13.md", "/methodology", "https://support.google.com/android/answer/9089766"],
+    affiliateContext: "vpn-selection",
+    schemaType: "CollectionPage",
+  },
 } satisfies Record<string, EditorialContentBrief>;

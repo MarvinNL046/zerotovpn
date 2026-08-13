@@ -280,6 +280,16 @@ const checks = [
     patterns: [/RedditFreeVpnEditorialPage/, /locale === "en" && slug === "best-free-vpn-reddit-2026"/],
   },
   {
+    name: "Android VPN page uses bounded app and battery evidence",
+    file: "src/components/editorial/android-vpn-editorial-page.tsx",
+    patterns: [/Do Android phones have a built-in VPN\?/, /Why is my VPN draining my Android battery\?/, /Android VPN comparison: what to verify before choosing/, /Google Android VPN help/, /DataForSEO US\/English dossier/],
+  },
+  {
+    name: "Android VPN route uses the audited English editorial component",
+    file: "src/app/[locale]/best/vpn-android/page.tsx",
+    patterns: [/AndroidVpnEditorialPage/, /if \(locale === "en"\) return <AndroidVpnEditorialPage \/>/],
+  },
+  {
     name: "mobile VPN page uses PAA-led bounded mobile copy",
     file: "src/components/editorial/mobile-vpn-editorial-page.tsx",
     patterns: [/Which mobile VPN is the best\?/, /Should you put a VPN on your iPhone\?/, /Should I have a VPN on my Android phone\?/, /Does using a VPN affect mobile data\?/, /Does a VPN drain your battery\?/, /Does a VPN hide your location on iPhone or Android\?/, /Mobile VPN comparison: what to verify before choosing/, /mobile-and-device-privacy/, /DataForSEO|dataforseo-mobile-vpn/],

@@ -33,6 +33,7 @@ import {
 } from "lucide-react";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { getVpnAffiliateUrl } from "@/lib/vpn-links";
+import { AndroidVpnEditorialPage } from "@/components/editorial/android-vpn-editorial-page";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -46,7 +47,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const shortMonthYear = getShortMonthYear();
 
   const titles: Record<string, string> = {
-    en: `5 Best VPNs for Android (${shortMonthYear}) - Top Apps | ZeroToVPN`,
+    en: `Best VPNs for Android in 2026: Apps, Battery and Setup`,
     nl: `5 Beste VPNs voor Android (Getest ${shortMonthYear}) - Top Apps | ZeroToVPN`,
     de: `5 Beste VPNs für Android (Getestet ${shortMonthYear}) - Top Apps | ZeroToVPN`,
     es: `5 Mejores VPNs para Android (Probadas ${shortMonthYear}) - Las Mejores Apps | ZeroToVPN`,
@@ -58,7 +59,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const descriptions: Record<string, string> = {
-    en: `We tested 25+ VPN apps for Android. Expert picks updated ${shortMonthYear} with battery usage, speeds & security compared. 30-day money-back guarantee on all picks.`,
+    en: "Compare Android VPN apps by network privacy, permissions, battery trade-offs and current plan terms—not unsupported speed scores.",
     nl: "We installeerden 25+ VPN-apps op Android — de meeste vreten batterij en lekken data. Deze 5 slaagden voor onze kill switch-, snelheids- en beveiligingstests.",
     de: "Wir haben 25+ VPN-Apps auf Android installiert — die meisten verbrauchen Akku und leaken Daten. Diese 5 bestanden unsere Kill-Switch-, Geschwindigkeits- und Sicherheitstests.",
     es: "Instalamos más de 25 apps VPN en Android — la mayoría agotan la batería y filtran datos. Estas 5 pasaron nuestras pruebas de kill switch, velocidad y seguridad.",
@@ -180,6 +181,8 @@ function AndroidVpnListSchema() {
 export default async function AndroidVpnPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  if (locale === "en") return <AndroidVpnEditorialPage />;
 
   const t = await getTranslations("androidVpn");
 

@@ -1,0 +1,308 @@
+{
+  "schemaVersion": 1,
+  "cluster": "Android VPN / app permissions / battery / setup",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "fetchedAt": "2026-08-13T04:33:57.488Z",
+  "refreshed": false,
+  "seeds": [
+    "best vpn for android",
+    "vpn for android",
+    "best free vpn for android",
+    "does android need a vpn",
+    "vpn android battery",
+    "android vpn kill switch"
+  ],
+  "overview": [
+    {
+      "keyword": "android vpn kill switch",
+      "currentVolume": null,
+      "latestVolume": 20,
+      "latestMonth": "2024-02",
+      "difficulty": 1,
+      "intent": "informational"
+    },
+    {
+      "keyword": "best free vpn for android",
+      "currentVolume": null,
+      "latestVolume": 4400,
+      "latestMonth": "2024-02",
+      "difficulty": 29,
+      "intent": "informational"
+    },
+    {
+      "keyword": "best vpn for android",
+      "currentVolume": null,
+      "latestVolume": 4400,
+      "latestMonth": "2024-02",
+      "difficulty": 62,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "vpn android battery",
+      "currentVolume": 10,
+      "latestVolume": 10,
+      "latestMonth": "2026-04",
+      "difficulty": null,
+      "intent": "transactional"
+    },
+    {
+      "keyword": "vpn for android",
+      "currentVolume": null,
+      "latestVolume": 9900,
+      "latestMonth": "2024-02",
+      "difficulty": 48,
+      "intent": "informational"
+    }
+  ],
+  "suggestions": [
+    {
+      "seed": "vpn for android",
+      "keyword": "best vpn program for android",
+      "volume": 4400
+    },
+    {
+      "seed": "best free vpn for android",
+      "keyword": "best free vpn software for android",
+      "volume": 3600
+    },
+    {
+      "seed": "vpn for android",
+      "keyword": "what the best vpn for android",
+      "volume": 210
+    },
+    {
+      "seed": "best free vpn for android",
+      "keyword": "best vpn for android free unlimited",
+      "volume": 90
+    },
+    {
+      "seed": "best free vpn for android",
+      "keyword": "best free vpn for android 2025",
+      "volume": 70
+    },
+    {
+      "seed": "best free vpn for android",
+      "keyword": "what the best free vpn for android",
+      "volume": 30
+    },
+    {
+      "seed": "best vpn for android",
+      "keyword": "best vpn browsers for android",
+      "volume": 30
+    },
+    {
+      "seed": "best vpn for android",
+      "keyword": "best vpn for china android",
+      "volume": 20
+    },
+    {
+      "seed": "best vpn for android",
+      "keyword": "best vpn for android boxes",
+      "volume": 20
+    },
+    {
+      "seed": "best vpn for android",
+      "keyword": "best vpn setting for android",
+      "volume": 20
+    },
+    {
+      "seed": "best vpn for android",
+      "keyword": "best android vpn for china",
+      "volume": 20
+    },
+    {
+      "seed": "best vpn for android",
+      "keyword": "best vpn in china for android",
+      "volume": 20
+    },
+    {
+      "seed": "best vpn for android",
+      "keyword": "best vpn for android in china",
+      "volume": 20
+    },
+    {
+      "seed": "best vpn for android",
+      "keyword": "best vpn for android china",
+      "volume": 20
+    },
+    {
+      "seed": "best free vpn for android",
+      "keyword": "best free vpn for android in myanmar",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for android",
+      "keyword": "vpn applications for android",
+      "volume": 5400
+    },
+    {
+      "seed": "vpn for android",
+      "keyword": "vpn program for android",
+      "volume": 5400
+    },
+    {
+      "seed": "vpn for android",
+      "keyword": "great vpn for android",
+      "volume": 4400
+    },
+    {
+      "seed": "vpn for android",
+      "keyword": "expressvpn vpn for android",
+      "volume": 1600
+    },
+    {
+      "seed": "vpn for android",
+      "keyword": "vpn free apps for android",
+      "volume": 720
+    },
+    {
+      "seed": "vpn for android",
+      "keyword": "app vpn free for android",
+      "volume": 720
+    },
+    {
+      "seed": "vpn for android",
+      "keyword": "vpn for android devices",
+      "volume": 590
+    },
+    {
+      "seed": "vpn for android",
+      "keyword": "vpn software free download for android",
+      "volume": 590
+    },
+    {
+      "seed": "vpn for android",
+      "keyword": "vpn services for android",
+      "volume": 480
+    },
+    {
+      "seed": "vpn for android",
+      "keyword": "opera mini with vpn for android",
+      "volume": 260
+    },
+    {
+      "seed": "vpn for android",
+      "keyword": "opera mini vpn for android",
+      "volume": 260
+    },
+    {
+      "seed": "vpn for android",
+      "keyword": "download vpn software for android",
+      "volume": 210
+    },
+    {
+      "seed": "best free vpn for android",
+      "keyword": "best free vpn for android in philippines",
+      "volume": 10
+    },
+    {
+      "seed": "best free vpn for android",
+      "keyword": "best mobile vpn for android free",
+      "volume": 10
+    },
+    {
+      "seed": "best free vpn for android",
+      "keyword": "best free vpn app for android tablet",
+      "volume": 10
+    },
+    {
+      "seed": "best free vpn for android",
+      "keyword": "best free vpn for android 2024",
+      "volume": 10
+    },
+    {
+      "seed": "best free vpn for android",
+      "keyword": "what are the best free vpn apps for android",
+      "volume": 10
+    },
+    {
+      "seed": "best free vpn for android",
+      "keyword": "best free android vpn for china",
+      "volume": 10
+    },
+    {
+      "seed": "best free vpn for android",
+      "keyword": "best free vpn for android tv 2020",
+      "volume": 10
+    },
+    {
+      "seed": "best free vpn for android",
+      "keyword": "best free vpn for capcut android",
+      "volume": 10
+    },
+    {
+      "seed": "best free vpn for android",
+      "keyword": "best free vpn chrome extension for android",
+      "volume": 10
+    },
+    {
+      "seed": "best free vpn for android",
+      "keyword": "best fastest vpn for android free",
+      "volume": 10
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "best vpn for android",
+      "paa": [
+        "What is the best 100% free VPN for Android?",
+        "Do Android phones have a built-in VPN?",
+        "What is the best safe VPN for Android?",
+        "What is the best VPN app for Android?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn for android",
+      "paa": [
+        "Does Android have a built-in VPN?",
+        "Which VPN is free for Android?",
+        "Should I have a VPN on my Android phone?",
+        "What is the purpose of a VPN?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "best free vpn for android",
+      "paa": [
+        "Are there any 100% free VPNs?",
+        "What is the best free, unlimited VPN for Android?",
+        "What is the no. 1 free VPN?",
+        "Do Android phones have a built-in VPN?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "does android need a vpn",
+      "paa": [
+        "Should VPN be on or off on a cell phone?",
+        "Do Android phones have a built-in VPN?",
+        "What's the downside of a VPN on your cell phone?",
+        "When shouldn't you use a VPN?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn android battery",
+      "paa": [
+        "Why is my VPN draining my battery?",
+        "What drains the most battery on Android?",
+        "Is it okay to leave a VPN on 24/7?",
+        "Do VPNs take battery?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "android vpn kill switch",
+      "paa": [
+        "Should the VPN kill switch be on?",
+        "How do I turn off kill switch on VPN?",
+        "How does a kill switch work on a VPN?"
+      ],
+      "hasAiOverview": true
+    }
+  ],
+  "sourcePolicy": "DataForSEO signals prioritise Android search intent and FAQ coverage; they do not prove current app behaviour, battery impact, security or provider performance."
+}

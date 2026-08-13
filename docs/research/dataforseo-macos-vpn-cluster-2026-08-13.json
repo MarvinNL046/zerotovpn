@@ -1,0 +1,431 @@
+{
+  "schemaVersion": 1,
+  "cluster": "macOS and MacBook VPN device privacy",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "fetchedAt": "2026-08-13T10:55:47.866Z",
+  "refreshed": false,
+  "seeds": [
+    "best vpn for mac",
+    "best vpn for macos",
+    "vpn for macbook",
+    "macos vpn",
+    "vpn for apple silicon",
+    "mac vpn setup"
+  ],
+  "overview": [
+    {
+      "keyword": "best vpn for mac",
+      "currentVolume": null,
+      "latestVolume": 2400,
+      "latestMonth": "2024-02",
+      "difficulty": 30,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "best vpn for macos",
+      "currentVolume": null,
+      "latestVolume": 170,
+      "latestMonth": "2024-02",
+      "difficulty": 56,
+      "intent": "informational"
+    },
+    {
+      "keyword": "mac vpn setup",
+      "currentVolume": null,
+      "latestVolume": 20,
+      "latestMonth": "2024-02",
+      "difficulty": 6,
+      "intent": "informational"
+    },
+    {
+      "keyword": "macos vpn",
+      "currentVolume": null,
+      "latestVolume": 4400,
+      "latestMonth": "2024-02",
+      "difficulty": 48,
+      "intent": "informational"
+    },
+    {
+      "keyword": "vpn for macbook",
+      "currentVolume": null,
+      "latestVolume": 4400,
+      "latestMonth": "2024-02",
+      "difficulty": 56,
+      "intent": "informational"
+    }
+  ],
+  "suggestions": [
+    {
+      "seed": "best vpn for mac",
+      "keyword": "best free vpn for mac book",
+      "volume": 1900
+    },
+    {
+      "seed": "best vpn for mac",
+      "keyword": "best vpn program for mac",
+      "volume": 90
+    },
+    {
+      "seed": "best vpn for mac",
+      "keyword": "best vpn for mac os x",
+      "volume": 90
+    },
+    {
+      "seed": "best vpn for mac",
+      "keyword": "best vpn software for mac free",
+      "volume": 70
+    },
+    {
+      "seed": "best vpn for mac",
+      "keyword": "download best vpn for mac",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for mac",
+      "keyword": "best vpn app for mac free",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for mac",
+      "keyword": "best free mac vpn for torrenting",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for mac",
+      "keyword": "best vpn providers for mac",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for mac",
+      "keyword": "best vpn for mac torrenting",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for mac",
+      "keyword": "best free vpn service for mac",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for mac",
+      "keyword": "best free vpn for apple mac",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for mac",
+      "keyword": "best vpn for mac in china",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for mac",
+      "keyword": "best free vpn for mac netflix",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for mac",
+      "keyword": "best unlimited vpn for mac",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for mac",
+      "keyword": "best vpn for china mac",
+      "volume": 10
+    },
+    {
+      "seed": "macos vpn",
+      "keyword": "best vpn for macos catalina",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for macos",
+      "keyword": "what is the best vpn for macos",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for macos",
+      "keyword": "best vpn for macos big sur",
+      "volume": null
+    },
+    {
+      "seed": "vpn for macbook",
+      "keyword": "free vpn download for macbook air",
+      "volume": 720
+    },
+    {
+      "seed": "vpn for macbook",
+      "keyword": "best free vpn for macbook reddit",
+      "volume": 70
+    },
+    {
+      "seed": "vpn for macbook",
+      "keyword": "vpn for macbook reddit",
+      "volume": 50
+    },
+    {
+      "seed": "vpn for macbook",
+      "keyword": "what is the best free vpn for macbook air",
+      "volume": 50
+    },
+    {
+      "seed": "vpn for macbook",
+      "keyword": "best free vpn app for macbook pro",
+      "volume": 30
+    },
+    {
+      "seed": "vpn for macbook",
+      "keyword": "best vpn app for macbook pro",
+      "volume": 30
+    },
+    {
+      "seed": "vpn for macbook",
+      "keyword": "free vpn app for macbook pro",
+      "volume": 30
+    },
+    {
+      "seed": "vpn for macbook",
+      "keyword": "vpn browser for macbook",
+      "volume": 20
+    },
+    {
+      "seed": "vpn for macbook",
+      "keyword": "cisco vpn for macbook",
+      "volume": 20
+    },
+    {
+      "seed": "vpn for macbook",
+      "keyword": "super vpn for macbook",
+      "volume": 20
+    },
+    {
+      "seed": "vpn for macbook",
+      "keyword": "vpn for chrome macbook",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for macbook",
+      "keyword": "free unlimited vpn for macbook air",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for macbook",
+      "keyword": "do i need a vpn for my macbook",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for macbook",
+      "keyword": "free unlimited vpn for macbook pro",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for macbook",
+      "keyword": "download vpn for macbook pro free",
+      "volume": 10
+    },
+    {
+      "seed": "macos vpn",
+      "keyword": "surfshark vpn macos",
+      "volume": 40
+    },
+    {
+      "seed": "macos vpn",
+      "keyword": "tunnelbear vpn macos",
+      "volume": 30
+    },
+    {
+      "seed": "macos vpn",
+      "keyword": "macos show vpn in menu bar",
+      "volume": 20
+    },
+    {
+      "seed": "macos vpn",
+      "keyword": "viscosity vpn macos",
+      "volume": 20
+    },
+    {
+      "seed": "macos vpn",
+      "keyword": "macos mojave pptp vpn",
+      "volume": 10
+    },
+    {
+      "seed": "macos vpn",
+      "keyword": "macos sequoia vpn",
+      "volume": 10
+    },
+    {
+      "seed": "macos vpn",
+      "keyword": "macos sonoma vpn",
+      "volume": 10
+    },
+    {
+      "seed": "macos vpn",
+      "keyword": "vpn tunnel macos",
+      "volume": 10
+    },
+    {
+      "seed": "macos vpn",
+      "keyword": "macos sonoma vpn issues",
+      "volume": 10
+    },
+    {
+      "seed": "macos vpn",
+      "keyword": "macos vpn logs ikev2",
+      "volume": 10
+    },
+    {
+      "seed": "macos vpn",
+      "keyword": "vpn macos catalina",
+      "volume": 10
+    },
+    {
+      "seed": "macos vpn",
+      "keyword": "macos x vpn",
+      "volume": 10
+    },
+    {
+      "seed": "macos vpn",
+      "keyword": "teamviewer vpn macos",
+      "volume": 10
+    },
+    {
+      "seed": "macos vpn",
+      "keyword": "macos ventura l2tp vpn not working",
+      "volume": 10
+    },
+    {
+      "seed": "mac vpn setup",
+      "keyword": "setup vpn on mac os",
+      "volume": 320
+    },
+    {
+      "seed": "mac vpn setup",
+      "keyword": "setup a vpn on a mac",
+      "volume": 320
+    },
+    {
+      "seed": "mac vpn setup",
+      "keyword": "how to setup a vpn in mac",
+      "volume": 90
+    },
+    {
+      "seed": "mac vpn setup",
+      "keyword": "how do you setup a vpn on a mac",
+      "volume": 90
+    },
+    {
+      "seed": "mac vpn setup",
+      "keyword": "how do i setup a vpn on a mac",
+      "volume": 90
+    },
+    {
+      "seed": "mac vpn setup",
+      "keyword": "mac vpn pptp setup",
+      "volume": 10
+    },
+    {
+      "seed": "mac vpn setup",
+      "keyword": "mac vpn server setup",
+      "volume": 10
+    },
+    {
+      "seed": "mac vpn setup",
+      "keyword": "l2tp vpn setup mac",
+      "volume": 10
+    },
+    {
+      "seed": "mac vpn setup",
+      "keyword": "setup ipsec vpn on mac",
+      "volume": 10
+    },
+    {
+      "seed": "mac vpn setup",
+      "keyword": "setup vpn on mac sierra",
+      "volume": 10
+    },
+    {
+      "seed": "mac vpn setup",
+      "keyword": "setup mac vpn server",
+      "volume": 10
+    },
+    {
+      "seed": "mac vpn setup",
+      "keyword": "express vpn manual setup mac",
+      "volume": 10
+    },
+    {
+      "seed": "mac vpn setup",
+      "keyword": "mac os server vpn setup",
+      "volume": 10
+    },
+    {
+      "seed": "mac vpn setup",
+      "keyword": "mac setup pptp vpn",
+      "volume": 10
+    },
+    {
+      "seed": "mac vpn setup",
+      "keyword": "how to setup a pptp vpn on mac",
+      "volume": 10
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "best vpn for mac",
+      "paa": [
+        "Do Apple Macs have a built-in VPN?",
+        "Is there a 100% free VPN for Mac?",
+        "Which VPN works best with Apple?",
+        "Can I get a VPN on a Mac?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "best vpn for macos",
+      "paa": [
+        "Do Apple Macs have a built-in VPN?",
+        "Is there a 100% free VPN for Mac?",
+        "Which VPN works best with Apple?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn for macbook",
+      "paa": [
+        "Does Mac have a built-in VPN?",
+        "How do I get a free VPN on my MacBook?",
+        "Which is the best VPN for a MacBook?",
+        "Is there a free VPN available for MacBook Air?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "macos vpn",
+      "paa": [
+        "Does macOS have a built-in VPN?",
+        "Is there a 100% free VPN for Mac?",
+        "Is there a free VPN available for MacBook Air?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn for apple silicon",
+      "paa": [
+        "What is the best VPN for an Apple Macbook Air?",
+        "Does Apple Mac have a built-in VPN?",
+        "Is NordVPN available on macOS?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "mac vpn setup",
+      "paa": [
+        "Does Apple Mac have a built-in VPN?",
+        "Is there a 100% free VPN for Mac?",
+        "Is it safe to use a VPN on a Mac?",
+        "Why isn't my VPN connecting on my Mac?"
+      ],
+      "hasAiOverview": true
+    }
+  ],
+  "sourcePolicy": "DataForSEO signals guide intent coverage only; they do not prove Apple Silicon support, battery use, speed, security or provider performance."
+}

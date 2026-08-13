@@ -1,6 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { Metadata } from "next";
-import { OG_LOCALE_MAP, generateAlternates, getLocalizedMonthYear, getShortMonthYear, titelMetMerk } from "@/lib/seo-utils";
+import { DEFAULT_OG_IMAGE, OG_LOCALE_MAP, generateAlternates, getLocalizedMonthYear, getShortMonthYear, titelMetMerk } from "@/lib/seo-utils";
 import { LastUpdated } from "@/components/last-updated";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -11,7 +11,8 @@ import { VpnLogo } from "@/components/ui/vpn-logo";
 import { RelatedPages } from "@/components/seo/related-pages";
 import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
-import { getVpnBySlug, type VpnProvider } from "@/lib/vpn-data-layer";
+import { getAllVpns, getVpnBySlug, type VpnProvider } from "@/lib/vpn-data-layer";
+import { MacosVpnEditorialPage, macosVpnEditorialDescription, macosVpnEditorialTitle } from "@/components/editorial/macos-vpn-editorial-page";
 import { Link } from "@/i18n/navigation";
 import {
   Zap,
@@ -34,6 +35,10 @@ const baseUrl = "https://www.zerotovpn.com";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+
+  if (locale === "en") {
+    return { metadataBase: new URL(baseUrl), title: { absolute: titelMetMerk(macosVpnEditorialTitle) }, description: macosVpnEditorialDescription, openGraph: { locale: "en_US", title: macosVpnEditorialTitle, description: macosVpnEditorialDescription, type: "article", images: [DEFAULT_OG_IMAGE] }, alternates: generateAlternates("/best/vpn-macos", locale) };
+  }
 
   const shortMonthYear = getShortMonthYear();
 
@@ -101,6 +106,11 @@ function ItemListSchema({ macosVpns }: { macosVpns: { vpn: VpnProvider | null }[
 export default async function MacOSVpnPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  if (locale === "en") {
+    const allVpns = await getAllVpns();
+    return <MacosVpnEditorialPage vpns={allVpns} />;
+  }
 
   // Get macOS VPNs data
   const nordvpn = await getVpnBySlug("nordvpn");

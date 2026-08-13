@@ -1,0 +1,551 @@
+{
+  "schemaVersion": 1,
+  "cluster": "VPN for gaming / latency / DDoS / console setup",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "fetchedAt": "2026-08-13T01:40:43.035Z",
+  "refreshed": true,
+  "seeds": [
+    "best vpn for gaming",
+    "gaming vpn",
+    "vpn for gaming",
+    "vpn reduce ping",
+    "vpn ddos protection",
+    "vpn for playstation",
+    "vpn for xbox"
+  ],
+  "overview": [
+    {
+      "keyword": "best vpn for gaming",
+      "currentVolume": null,
+      "latestVolume": 2400,
+      "latestMonth": "2024-02",
+      "difficulty": 36,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "gaming vpn",
+      "currentVolume": null,
+      "latestVolume": 3600,
+      "latestMonth": "2024-02",
+      "difficulty": 30,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "vpn ddos protection",
+      "currentVolume": null,
+      "latestVolume": 140,
+      "latestMonth": "2024-02",
+      "difficulty": 19,
+      "intent": "informational"
+    },
+    {
+      "keyword": "vpn for gaming",
+      "currentVolume": null,
+      "latestVolume": 3600,
+      "latestMonth": "2024-02",
+      "difficulty": 30,
+      "intent": "informational"
+    },
+    {
+      "keyword": "vpn for playstation",
+      "currentVolume": null,
+      "latestVolume": 70,
+      "latestMonth": "2024-02",
+      "difficulty": 1,
+      "intent": "informational"
+    },
+    {
+      "keyword": "vpn for xbox",
+      "currentVolume": null,
+      "latestVolume": 1900,
+      "latestMonth": "2024-02",
+      "difficulty": 23,
+      "intent": "informational"
+    },
+    {
+      "keyword": "vpn reduce ping",
+      "currentVolume": null,
+      "latestVolume": 20,
+      "latestMonth": "2024-02",
+      "difficulty": 4,
+      "intent": "informational"
+    }
+  ],
+  "suggestions": [
+    {
+      "seed": "vpn for xbox",
+      "keyword": "best vpn for xbox gaming",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for gaming",
+      "keyword": "best gaming vpn for pubg mobile",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for gaming",
+      "keyword": "best free vpn for gaming in india",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for gaming",
+      "keyword": "best vpn protocol for gaming reddit",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for gaming",
+      "keyword": "best free vpn for gaming online",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for gaming",
+      "keyword": "best gaming vpn for ios",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for gaming",
+      "keyword": "best free vpn for cloud gaming",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for gaming",
+      "keyword": "best free vpn for gaming low ping pc",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for gaming",
+      "keyword": "what is the best vpn protocol for gaming",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for gaming",
+      "keyword": "best vpn for gaming free pc",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for gaming",
+      "keyword": "best vpn for pubg gaming",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for gaming",
+      "keyword": "best free pc vpn for gaming",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for gaming",
+      "keyword": "best vpn for gaming online",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for gaming",
+      "keyword": "best vpn for gaming 2018",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn for gaming",
+      "keyword": "best vpn for gaming 2024",
+      "volume": 10
+    },
+    {
+      "seed": "gaming vpn",
+      "keyword": "gaming and vpn",
+      "volume": 2900
+    },
+    {
+      "seed": "gaming vpn",
+      "keyword": "online gaming with vpn",
+      "volume": 210
+    },
+    {
+      "seed": "gaming vpn",
+      "keyword": "vpn gaming online",
+      "volume": 210
+    },
+    {
+      "seed": "gaming vpn",
+      "keyword": "gaming vpn services",
+      "volume": 90
+    },
+    {
+      "seed": "vpn for gaming",
+      "keyword": "gaming vpn for valorant",
+      "volume": 90
+    },
+    {
+      "seed": "vpn for gaming",
+      "keyword": "radmin vpn for gaming",
+      "volume": 70
+    },
+    {
+      "seed": "vpn for gaming",
+      "keyword": "gaming vpn for fortnite",
+      "volume": 70
+    },
+    {
+      "seed": "gaming vpn",
+      "keyword": "vpn gaming lan",
+      "volume": 40
+    },
+    {
+      "seed": "gaming vpn",
+      "keyword": "vpn server gaming",
+      "volume": 30
+    },
+    {
+      "seed": "gaming vpn",
+      "keyword": "rain city gaming vpn",
+      "volume": 30
+    },
+    {
+      "seed": "vpn for gaming",
+      "keyword": "gaming vpn for ps5",
+      "volume": 20
+    },
+    {
+      "seed": "vpn for gaming",
+      "keyword": "free vpn turbo for fast gaming",
+      "volume": 20
+    },
+    {
+      "seed": "vpn for xbox",
+      "keyword": "gaming vpn for xbox",
+      "volume": 20
+    },
+    {
+      "seed": "vpn for gaming",
+      "keyword": "gaming vpn for ios",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for gaming",
+      "keyword": "vpn for gaming lag",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for gaming",
+      "keyword": "vpn for gaming free pc",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for gaming",
+      "keyword": "free vpn for gaming ping",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for gaming",
+      "keyword": "low ping vpn for gaming",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for gaming",
+      "keyword": "singapore vpn for gaming",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for gaming",
+      "keyword": "is surfshark vpn good for gaming",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for gaming",
+      "keyword": "free vpn gaming for pc",
+      "volume": 10
+    },
+    {
+      "seed": "vpn reduce ping",
+      "keyword": "reduce ping using vpn",
+      "volume": 10
+    },
+    {
+      "seed": "vpn reduce ping",
+      "keyword": "express vpn reduce ping",
+      "volume": 10
+    },
+    {
+      "seed": "vpn reduce ping",
+      "keyword": "using vpn to reduce ping",
+      "volume": 10
+    },
+    {
+      "seed": "vpn reduce ping",
+      "keyword": "best free vpn to reduce ping",
+      "volume": 10
+    },
+    {
+      "seed": "vpn reduce ping",
+      "keyword": "vpn to reduce ping in games",
+      "volume": 10
+    },
+    {
+      "seed": "vpn reduce ping",
+      "keyword": "does nord vpn reduce ping",
+      "volume": 10
+    },
+    {
+      "seed": "vpn reduce ping",
+      "keyword": "will a vpn help reduce ping",
+      "volume": 10
+    },
+    {
+      "seed": "vpn reduce ping",
+      "keyword": "does vpn help reduce ping",
+      "volume": 10
+    },
+    {
+      "seed": "vpn reduce ping",
+      "keyword": "vpn to reduce ping reddit",
+      "volume": 10
+    },
+    {
+      "seed": "vpn reduce ping",
+      "keyword": "how does a vpn reduce ping",
+      "volume": 10
+    },
+    {
+      "seed": "vpn reduce ping",
+      "keyword": "best vpn to reduce ping in pubg",
+      "volume": 0
+    },
+    {
+      "seed": "vpn reduce ping",
+      "keyword": "best free vpn to reduce ping in pubg",
+      "volume": 0
+    },
+    {
+      "seed": "vpn reduce ping",
+      "keyword": "how to reduce ping in pubg emulator without vpn",
+      "volume": null
+    },
+    {
+      "seed": "vpn reduce ping",
+      "keyword": "reduce ping with vpn",
+      "volume": null
+    },
+    {
+      "seed": "vpn reduce ping",
+      "keyword": "does vpn reduce ping",
+      "volume": null
+    },
+    {
+      "seed": "vpn ddos protection",
+      "keyword": "vpn for ddos protection",
+      "volume": 210
+    },
+    {
+      "seed": "vpn ddos protection",
+      "keyword": "free ddos protection vpn",
+      "volume": 10
+    },
+    {
+      "seed": "vpn ddos protection",
+      "keyword": "free vpn ddos protection",
+      "volume": 10
+    },
+    {
+      "seed": "vpn ddos protection",
+      "keyword": "nord vpn ddos protection",
+      "volume": null
+    },
+    {
+      "seed": "vpn ddos protection",
+      "keyword": "free vpn with ddos protection",
+      "volume": null
+    },
+    {
+      "seed": "vpn ddos protection",
+      "keyword": "best vpn for ddos protection",
+      "volume": null
+    },
+    {
+      "seed": "vpn ddos protection",
+      "keyword": "best vpn for ddos protection reddit",
+      "volume": null
+    },
+    {
+      "seed": "vpn ddos protection",
+      "keyword": "express vpn ddos protection",
+      "volume": null
+    },
+    {
+      "seed": "vpn ddos protection",
+      "keyword": "free vpn for ddos protection",
+      "volume": null
+    },
+    {
+      "seed": "vpn for playstation",
+      "keyword": "vpn for playstation 3",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for playstation",
+      "keyword": "best vpn for playstation vue",
+      "volume": 0
+    },
+    {
+      "seed": "vpn for playstation",
+      "keyword": "best free vpn for playstation 4",
+      "volume": 0
+    },
+    {
+      "seed": "vpn for playstation",
+      "keyword": "best vpn for playstation",
+      "volume": null
+    },
+    {
+      "seed": "vpn for playstation",
+      "keyword": "vpn for playstation 5",
+      "volume": null
+    },
+    {
+      "seed": "vpn for playstation",
+      "keyword": "free vpn for playstation 4",
+      "volume": null
+    },
+    {
+      "seed": "vpn for playstation",
+      "keyword": "free vpn for playstation",
+      "volume": null
+    },
+    {
+      "seed": "vpn for xbox",
+      "keyword": "vpn service for xbox",
+      "volume": 320
+    },
+    {
+      "seed": "vpn for xbox",
+      "keyword": "surfshark vpn for xbox",
+      "volume": 40
+    },
+    {
+      "seed": "vpn for xbox",
+      "keyword": "vpn service for xbox one",
+      "volume": 40
+    },
+    {
+      "seed": "vpn for xbox",
+      "keyword": "proton vpn for xbox",
+      "volume": 40
+    },
+    {
+      "seed": "vpn for xbox",
+      "keyword": "best vpn for xbox live",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for xbox",
+      "keyword": "how to change vpn on xbox for netflix",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for xbox",
+      "keyword": "how to use vpn for xbox one",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for xbox",
+      "keyword": "vpn for xbox live",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for xbox",
+      "keyword": "free vpn for xbox cloud gaming",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for xbox",
+      "keyword": "best vpn for xbox one x",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for xbox",
+      "keyword": "free vpn app for xbox one",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for xbox",
+      "keyword": "vpn apps for xbox one",
+      "volume": 10
+    },
+    {
+      "seed": "vpn for xbox",
+      "keyword": "is there a vpn for xbox one",
+      "volume": 10
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "best vpn for gaming",
+      "paa": [
+        "Do VPNs really work for gaming?",
+        "Which country VPN is best for gaming?",
+        "What is the no. 1 fastest VPN in the world?",
+        "Will a VPN slow down gaming?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "gaming vpn",
+      "paa": [
+        "Is a VPN good for gaming?",
+        "Which VPN is best for gaming?",
+        "Can the FBI track a VPN?",
+        "Is VPN bannable in games?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn for gaming",
+      "paa": [
+        "Is a VPN good for gaming?",
+        "What VPN can I use for gaming?",
+        "Can the FBI track a VPN?",
+        "Is using a VPN bannable in games?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn reduce ping",
+      "paa": [
+        "Can the FBI track a VPN?",
+        "Is VPN better for gaming?",
+        "How to drastically lower ping?",
+        "Is using VPN illegal in the US?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn ddos protection",
+      "paa": [
+        "Can a VPN protect you from DDoS?",
+        "Why is DDoS illegal?",
+        "Is DDoS protection worth it?",
+        "What is DDoS protection?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn for playstation",
+      "paa": [
+        "Does the PS5 have a built-in VPN?",
+        "Which VPNs work on PS5?",
+        "Can I put NordVPN on my PS5?",
+        "What is the best free VPN for PS5?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn for xbox",
+      "paa": [
+        "Can you put a VPN on an Xbox?",
+        "Does Xbox have a built-in VPN?",
+        "What is the best VPN to use with Xbox?",
+        "Can I put NordVPN on my Xbox?"
+      ],
+      "hasAiOverview": true
+    }
+  ],
+  "sourcePolicy": "DataForSEO signals prioritise intent coverage and FAQ structure; they do not prove current provider latency, DDoS protection, console support, pricing or conversion value."
+}

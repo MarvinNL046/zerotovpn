@@ -174,8 +174,13 @@ const checks = [
   {
     name: "gaming use-case page avoids unsupported test counts",
     file: "src/app/[locale]/best/vpn-gaming/page.tsx",
-    patterns: [/Compare current VPN provider records for gaming performance/, /We vergelijken meerdere VPN-providers voor gaming/],
+    patterns: [/Compare current VPN provider records for gaming performance/, /We vergelijken meerdere VPN-providers voor gaming/, /Do VPNs really work for gaming\?/, /Will a VPN slow down gaming\?/],
     forbiddenPatterns: [/35\+|35以上|35개|35个|über 35|más de 35|plus de 35|มากกว่า 35|We tested 12 VPNs/i],
+  },
+  {
+    name: "gaming page PAA evidence and bounded latency copy",
+    file: "src/app/[locale]/best/vpn-gaming/page.tsx",
+    patterns: [/Do VPNs really work for gaming\?/, /Will a VPN slow down gaming\?/, /DataForSEO US\/English intent dossier fetched August 13, 2026/],
   },
   {
     name: "Chromebook use-case page avoids unsupported test counts",

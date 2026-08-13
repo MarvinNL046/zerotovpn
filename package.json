@@ -16,6 +16,7 @@
     "seo:free-trial": "node scripts/free-trial-seo-research.mjs",
     "seo:port-forwarding": "node scripts/port-forwarding-seo-research.mjs",
     "seo:best-vpn": "node scripts/best-vpn-seo-research.mjs",
+    "seo:gaming": "node scripts/gaming-seo-research.mjs",
     "seo:smoke": "node scripts/dfs-smoke.mjs",
     "export:shortio": "node scripts/export-shortio-metrics.mjs",
     "audit:sitemap": "node scripts/audit-sitemap-live.mjs",

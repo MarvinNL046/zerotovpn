@@ -1,6 +1,6 @@
 # Live editorial page audit
 
-Generated: 2026-08-13T10:11:39.188Z
+Generated: 2026-08-13T10:23:23.703Z
 
 - Target pages: **60**
 - Passing pages: **60**
@@ -24,7 +24,7 @@ Generated: 2026-08-13T10:11:39.188Z
 | pass | /compare | VPN Comparison 2026: Compare Price, Privacy and Device Limits | ZeroToVPN | 1 | 46 | 11 | — | — |
 | pass | /best/vpn-linux | Best VPNs for Linux in 2026: Native Apps, CLI and Distro Support | 1 | 45 | 6 | — | — |
 | pass | /best/vpn-windows | Best VPNs for Windows in 2026: App Support, Controls and Trade-offs | 1 | 46 | 6 | — | — |
-| pass | /best/vpn-laptops | Best VPNs for Laptops (Aug 2026) — Lightweight &amp; Secure | 1 | 42 | 6 | — | — |
+| pass | /best/vpn-laptops | Best VPNs for Laptops in 2026: Public Wi-Fi, Travel and Device Checks | 1 | 44 | 6 | — | — |
 | pass | /best/vpn-privacy | Best VPNs for Privacy in 2026: Compare No-Logs Evidence and Threat Models | 1 | 43 | 6 | — | — |
 | pass | /best/vpn-gaming | Best VPNs for Gaming in 2026: Ping, Stability and DDoS Boundaries | 1 | 42 | 6 | — | — |
 | pass | /blog/does-vpn-reduce-ping-gaming-2026 | Does a VPN Reduce Ping? What Gaming Tests Can Actually Show (2026) | 1 | 55 | 0 | — | — |

@@ -20,6 +20,15 @@ export const editorialContentBriefs = {
     affiliateContext: "vpn-selection",
     schemaType: "Article",
   },
+  cheapVpn: {
+    primaryKeyword: "best cheap vpn",
+    intent: "commercial",
+    cluster: "free-and-low-cost-access",
+    lastReviewedAt: "2026-08-13",
+    evidence: ["docs/research/dataforseo-best-vpn-cluster-2026-08-13.md", "/methodology", "/best/free-vpn"],
+    affiliateContext: "vpn-selection",
+    schemaType: "CollectionPage",
+  },
   travel: {
     primaryKeyword: "vpn for travel",
     intent: "commercial",

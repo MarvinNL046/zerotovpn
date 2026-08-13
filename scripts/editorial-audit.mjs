@@ -392,15 +392,21 @@ const checks = [
     patterns: [/what is actually free/, /Meilleurs VPN gratuits/, /Mejores VPN gratis/, /protonvpn.com\/free-vpn/, /DataForSEO/, /100% free/, /Updated August 13, 2026/, /What’s the best free VPN right now\?/, /fetched August 13, 2026/],
   },
   {
-    name: "cheap VPN page exposes tracked inline prices",
-    file: "src/app/[locale]/best/vpn-cheap/page.tsx",
-    patterns: [/AffiliateTextLink/, /price=\{item\.vpn \?/, /monthlyPrice/, /Price Comparison Table/],
+    name: "cheap VPN editorial page exposes tracked inline prices",
+    file: "src/components/editorial/cheap-vpn-editorial-page.tsx",
+    patterns: [/CheapVpnEditorialPage/, /AffiliateTextLink/, /dataPriceLink/, /getVpnAffiliateUrl/, /catalog/i],
   },
   {
     name: "cheap VPN pillar SERP metadata and table semantics",
     file: "src/app/[locale]/best/vpn-cheap/page.tsx",
-    patterns: [/Best Cheap VPNs \(\$\{shortMonthYear\}\): Cheapest Plans Compared/, /Compare the best cheap VPNs under \$3\/month by plan price/, /<caption className="sr-only">Cheap VPN price comparison<\/caption>/, /scope="col"/],
+    patterns: [/cheapVpnEditorialTitle/, /cheapVpnEditorialDescription/, /DEFAULT_OG_IMAGE/, /locale === "en"/],
     forbiddenPatterns: [/5 Cheapest VPNs \(\$\{shortMonthYear\}\) — Tested, From \$1\.99\/mo \| ZeroToVPN/],
+  },
+  {
+    name: "cheap VPN editorial page covers DataForSEO affordability questions",
+    file: "src/components/editorial/cheap-vpn-editorial-page.tsx",
+    patterns: [/What is the best affordable VPN service\?/, /Which VPN is safe and cheap\?/, /Are free VPNs illegal\?/, /id="comparison"/, /id="value-checks"/, /id="faq"/, /DataForSEO/],
+    forbiddenPatterns: [/all VPNs on our list use AES-256/i, /all our recommended budget VPNs/i, /unblocks Netflix and other streaming services/i, /\$1\.99\/month/],
   },
   {
     name: "free-trial pillar SERP metadata and table semantics",

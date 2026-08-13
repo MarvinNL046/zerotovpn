@@ -12,6 +12,8 @@ import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { getVpnBySlug, type VpnProvider } from "@/lib/vpn-data-layer";
 import { Link } from "@/i18n/navigation";
 import { OG_LOCALE_MAP, generateAlternates, getLocalizedMonthYear, getShortMonthYear, titelMetMerk } from "@/lib/seo-utils";
+import { DEFAULT_OG_IMAGE } from "@/lib/seo-utils";
+import { CheapVpnEditorialPage, cheapVpnEditorialDescription, cheapVpnEditorialTitle } from "@/components/editorial/cheap-vpn-editorial-page";
 import { LastUpdated } from "@/components/last-updated";
 import {
   Shield,
@@ -38,7 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const shortMonthYear = getShortMonthYear();
 
   const titles: Record<string, string> = {
-    en: `Best Cheap VPNs (${shortMonthYear}): Cheapest Plans Compared | ZeroToVPN`,
+    en: cheapVpnEditorialTitle,
     nl: `5 Goedkoopste VPNs (Getest ${shortMonthYear}) - Budget Vanaf $1,99/maand | ZeroToVPN`,
     de: `5 Günstigste VPNs (Getestet ${shortMonthYear}) - Budget Ab $1,99/Monat | ZeroToVPN`,
     es: `5 VPNs Más Baratos (Probados ${shortMonthYear}) - Económicos Desde $1,99/mes | ZeroToVPN`,
@@ -50,7 +52,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const descriptions: Record<string, string> = {
-    en: `Compare the best cheap VPNs under $3/month by plan price, speed, streaming, security and refund terms. Updated ${shortMonthYear} with source-led value checks.`,
+    en: cheapVpnEditorialDescription,
     nl: "Op zoek naar een goedkope VPN die echt werkt? We testten budget VPNs onder $3/maand op snelheid, streaming, beveiliging en privacy. Deze 5 bieden de beste waarde.",
     de: "Auf der Suche nach einem gunstigen VPN? Wir haben Budget-VPNs unter $3/Monat auf Geschwindigkeit, Streaming, Sicherheit und Datenschutz getestet.",
     es: "Buscas un VPN barato que funcione? Probamos VPNs economicos por menos de $3/mes en velocidad, streaming, seguridad y privacidad.",
@@ -70,6 +72,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: titles[locale] || titles.en,
       description: descriptions[locale] || descriptions.en,
       type: "article",
+      images: [DEFAULT_OG_IMAGE],
     },
     alternates: generateAlternates("/best/vpn-cheap", locale),
   };
@@ -100,6 +103,8 @@ function ItemListSchema({ vpns }: { vpns: { vpn: VpnProvider | null }[] }) {
 export default async function VpnCheapPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  if (locale === "en") return <CheapVpnEditorialPage />;
 
   const surfshark = await getVpnBySlug("surfshark");
   const cyberghost = await getVpnBySlug("cyberghost");

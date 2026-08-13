@@ -1,7 +1,11 @@
 # Nord support question — forwarded affiliate sub-ID
 
 **Status:** draft only; not sent.  
-**Purpose:** ask Nord Security which report/API field exposes the `aff_sub` value forwarded by ZeroToVPN so page-level conversion attribution can be joined safely.
+**Purpose:** ask Nord Security whether offer 15 / URL 902 retains the already-identified `aff_sub` value in `Stat.affiliate_info1` so page-level conversion attribution can be joined safely.
+
+## Field mapping already confirmed
+
+TUNE documents `aff_sub` as Publisher sub ID 1 and `Stat.affiliate_info1` as the corresponding stats field. Nord's authenticated Performance Report exposes those as **Sub ID 1** and **Advertiser Sub ID 1**. The open question is retention/propagation for this offer, not which column name to select. See [the field audit](nord-tune-subid-field-audit-2026-08-13.md).
 
 ## Draft message
 
@@ -22,12 +26,11 @@ I exported the report twice. The first export selected **Sub ID 1**. The follow-
 
 Could you confirm:
 
-1. Which Performance Report column or API field returns a forwarded TUNE `aff_sub` value for this offer?
-2. Whether `aff_sub` is supported for offer 15 / offer URL 902 and whether it is retained on click or conversion?
-3. Whether any advertiser/network setting must be enabled before the value is returned?
-4. Whether there is a recommended test URL or report filter that can verify the value without generating a self-referral or a subscription?
+1. Is forwarded `aff_sub` supported and retained in `Stat.affiliate_info1` for offer 15 / offer URL 902 on click and conversion?
+2. Could a propagation delay, report aggregation rule or offer-level setting explain a blank Sub ID 1 value on the 13 August row?
+3. Is there a recommended test URL, report/API endpoint or filter that can verify the value without generating a self-referral or subscription?
 
-We are not trying to attribute our own subscription. We only need the field name and a compliant way to join partner rows to public page slugs. We will keep the current redirect contract unchanged until you confirm the correct field.
+We are not trying to attribute our own subscription. We only need a compliant way to verify retention and join partner rows to public page slugs. We will keep the current redirect contract unchanged until you confirm the offer behaviour.
 
 Best regards,  
 Marvin  

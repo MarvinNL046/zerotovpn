@@ -54,6 +54,7 @@
     "export:shortio": "node scripts/export-shortio-metrics.mjs",
     "audit:sitemap": "node scripts/audit-sitemap-live.mjs",
     "audit:affiliate-context": "node scripts/audit-affiliate-context-live.mjs",
+    "audit:affiliate-subid-live": "node scripts/audit-affiliate-subid-live.mjs",
     "audit:claims-live": "node scripts/audit-claims-live.mjs",
     "audit:cluster-links": "node scripts/audit-cluster-links-live.mjs",
     "audit:editorial-live": "node scripts/audit-editorial-live.mjs",

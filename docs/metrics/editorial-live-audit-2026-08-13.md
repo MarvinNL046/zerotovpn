@@ -1,9 +1,9 @@
 # Live editorial page audit
 
-Generated: 2026-08-13T08:26:19.773Z
+Generated: 2026-08-13T08:37:42.470Z
 
-- Target pages: **47**
-- Passing pages: **47**
+- Target pages: **55**
+- Passing pages: **55**
 - Pages needing review: **0**
 - Affiliate links checked: **214**
 - Affiliate links missing sponsored/nofollow: **0**
@@ -29,6 +29,14 @@ Generated: 2026-08-13T08:26:19.773Z
 | pass | /best/vpn-gaming | Best VPNs for Gaming in 2026: Ping, Stability and DDoS Boundaries | 1 | 42 | 6 | — | — |
 | pass | /blog/does-vpn-reduce-ping-gaming-2026 | Does a VPN Reduce Ping? What Gaming Tests Can Actually Show (2026) | 1 | 55 | 0 | — | — |
 | pass | /speed-test | Internet Speed Test: Measure Download, Upload, Ping and Jitter (2026) | 1 | 43 | 0 | — | — |
+| pass | /nl/speed-test | Gratis Internet Snelheidstest | ZeroToVPN | 1 | 37 | 0 | — | — |
+| pass | /de/speed-test | Kostenloser Internet Geschwindigkeitstest | ZeroToVPN | 1 | 37 | 0 | — | — |
+| pass | /fr/speed-test | Test de Vitesse Internet Gratuit | ZeroToVPN | 1 | 37 | 0 | — | — |
+| pass | /es/speed-test | Test de Velocidad de Internet Gratis | ZeroToVPN | 1 | 37 | 0 | — | — |
+| pass | /ja/speed-test | 無料インターネット速度テスト | ZeroToVPN | 1 | 37 | 0 | — | — |
+| pass | /ko/speed-test | 무료 인터넷 속도 테스트 | ZeroToVPN | 1 | 37 | 0 | — | — |
+| pass | /th/speed-test | ทดสอบความเร็วอินเทอร์เน็ตฟรี | ZeroToVPN | 1 | 37 | 0 | — | — |
+| pass | /zh/speed-test | 免费网络速度测试 | ZeroToVPN | 1 | 37 | 0 | — | — |
 | pass | /best/vpn-chromebook | Best VPNs for Chromebook in 2026: Android, Chrome Extension and Linux Options | 1 | 42 | 6 | — | — |
 | pass | /best/vpn-firestick | Best VPNs for Fire TV Stick in 2026: Apps, Router Setup and Streaming Checks | 1 | 42 | 6 | — | — |
 | pass | /best/vpn-mobile | Best Mobile VPNs in 2026: iPhone, Android, Battery and Setup Limits | 1 | 41 | 6 | — | — |

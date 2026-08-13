@@ -65,6 +65,17 @@ const checks = [
     patterns: [/Freedom House/, /id=\"faq\"/, /id=\"sources\"/, /IranEditorialQuickPicks/],
   },
   {
+    name: "Vietnam country page uses bounded current evidence",
+    file: "src/components/editorial/vietnam-vpn-editorial-page.tsx",
+    patterns: [/Can you use a VPN in Vietnam\?/, /Which VPN works best in Vietnam\?/, /Is VPN use legal in Vietnam\?/, /Should I install a VPN before travelling to Vietnam\?/, /What to verify before choosing/, /A bounded Vietnam test plan/, /2026/],
+    forbiddenPatterns: [/94%|92%|90%|87%|reliably bypass|most restrictive.*Southeast Asia|guarantee.*(bypass|circumvent).*Vietnam/i],
+  },
+  {
+    name: "Vietnam country route uses the audited English editorial component",
+    file: "src/app/[locale]/countries/vietnam/page.tsx",
+    patterns: [/VietnamVpnEditorialPage/, /locale === "en"/],
+  },
+  {
     name: "Protocol support page",
     file: "src/components/editorial/protocols-editorial-page.tsx",
     patterns: [/WireGuard vs OpenVPN/, /id=\"comparison\"/, /id=\"test-plan\"/, /id=\"faq\"/, /DataForSEO/],

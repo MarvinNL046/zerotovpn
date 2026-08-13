@@ -74,6 +74,15 @@ export const editorialContentBriefs = {
     affiliateContext: "vpn-selection",
     schemaType: "Article",
   },
+  vietnam: {
+    primaryKeyword: "best vpn for vietnam",
+    intent: "commercial",
+    cluster: "censorship-restricted-networks",
+    lastReviewedAt: "2026-08-13",
+    evidence: ["docs/research/dataforseo-vietnam-cluster-2026-08-13.md", "/methodology", "https://freedomhouse.org/country/vietnam/freedom-net/2025", "https://www.hrw.org/world-report/2026/country-chapters/vietnam"],
+    affiliateContext: "vpn-selection",
+    schemaType: "Article",
+  },
   telegram: {
     primaryKeyword: "best vpn for telegram",
     intent: "commercial",

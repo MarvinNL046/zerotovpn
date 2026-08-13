@@ -9,6 +9,7 @@ import { OG_LOCALE_MAP, generateAlternates, getLocalizedMonthYear, titelMetMerk 
 import { Shield, CheckCircle, XCircle, Globe, Clock, ArrowRight, Smartphone, Lock, AlertTriangle, Eye } from "lucide-react";
 
 import { FaqSchema } from "@/components/structured-data";
+import { VietnamVpnEditorialPage } from "@/components/editorial/vietnam-vpn-editorial-page";
 type Props = { params: Promise<{ locale: string }> };
 const baseUrl = "https://www.zerotovpn.com";
 
@@ -42,6 +43,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function VietnamVpnPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
+  if (locale === "en") {
+    return <VietnamVpnEditorialPage vpns={await getAllVpns()} />;
+  }
   const allVpns = await getAllVpns();
   const vietnamVpns = allVpns.filter((vpn) => ["expressvpn", "nordvpn", "surfshark", "protonvpn"].includes(vpn.slug));
 

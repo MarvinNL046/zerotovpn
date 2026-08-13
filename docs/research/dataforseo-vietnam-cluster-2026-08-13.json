@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "cluster": "Vietnam VPN / censorship / travel setup",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "fetchedAt": "2026-08-13",
+  "overview": [
+    { "keyword": "best vpn for vietnam", "currentVolume": null, "latestVolume": 40, "latestMonth": "2024-02", "difficulty": 11, "intent": "commercial" },
+    { "keyword": "is vpn legal in vietnam", "currentVolume": null, "latestVolume": 10, "latestMonth": "2024-02", "difficulty": 0, "intent": "informational" },
+    { "keyword": "vpn vietnam", "currentVolume": null, "latestVolume": 210, "latestMonth": "2024-02", "difficulty": 10, "intent": "commercial" }
+  ],
+  "suggestions": [
+    { "keyword": "vpn vietnam mien phi", "volume": 20 },
+    { "keyword": "how to use vpn in vietnam", "volume": 10 },
+    { "keyword": "can i use vpn in vietnam", "volume": 10 },
+    { "keyword": "vietnam vpn iphone", "volume": 10 },
+    { "keyword": "vpn extension vietnam", "volume": 10 },
+    { "keyword": "vietnam vpn android", "volume": 10 }
+  ],
+  "paa": [
+    "Is NordVPN legal in Vietnam?",
+    "Should you use a VPN in Vietnam?",
+    "How to get a Vietnamese VPN?",
+    "Which VPN works best in Vietnam?"
+  ],
+  "sourcePolicy": "DataForSEO informs intent and question coverage only; it does not prove current demand, legality, provider performance or conversion value."
+}

@@ -39,7 +39,7 @@ These pages have useful demand signals but were just changed, so another rewrite
 
 ## Why this queue is safer than a new URL batch
 
-The current sitemap intentionally avoids thousands of empty pairwise comparison pages. The ProtonVPN/AirVPN page is a useful exception to investigate because it already receives impressions and clicks, but adding it to the sitemap before the generic comparison component is evidence-bounded would advertise a page whose claims have not passed the current editorial gate. The queue therefore separates:
+The current sitemap intentionally avoids thousands of empty pairwise comparison pages. The ProtonVPN/AirVPN page is a useful exception to investigate because it already receives impressions and clicks, but adding it to the sitemap before the generic comparison component is evidence-bounded would advertise a page whose claims have not passed the current editorial gate. The detailed preparation is recorded in the [ProtonVPN/AirVPN comparison brief](../research/protonvpn-vs-airvpn-comparison-brief-2026-08-13.md). The queue therefore separates:
 
 1. **copy and evidence readiness**;
 2. **internal-link and sitemap eligibility**; and

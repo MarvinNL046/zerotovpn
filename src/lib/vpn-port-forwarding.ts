@@ -1,31 +1,10 @@
-/**
- * Port forwarding per VPN, nagelezen bij de bron.
- *
- * Waarom dit een eigen bestand is: port forwarding staat in geen enkel veld
- * van vpn-data, en het is precies het punt waarop de grote aanbieders van
- * elkaar verschillen. Het kwam bovendrijven in de PAA en de gerelateerde
- * zoekopdrachten bij "best vpn for torrenting", en het is verifieerbaar —
- * anders dan "snelheid", waar iedereen zijn eigen meting bij haalt.
- *
- * Het punt waarop de meeste lijsten verouderd zijn: Mullvad stond er jarenlang
- * als aanrader op en heeft de functie op 1 juli 2023 verwijderd. Lijsten die
- * Mullvad nog noemen zijn dus minstens twee jaar oud, ook als er "2026" boven
- * staat.
- *
- * `status`:
- *   ja         — werkt, inbegrepen in het abonnement
- *   betaald    — werkt, maar kost extra
- *   verwijderd — had het, heeft het niet meer
- *   nee        — heeft het nooit gehad of biedt het bewust niet aan
- */
+/** Provider feature records checked against dated source pages. */
 export type PortForwardingStatus = "ja" | "betaald" | "verwijderd" | "nee";
 
 export interface PortForwarding {
   slug: string;
   status: PortForwardingStatus;
-  /** Hoe het werkt, of waarom het er niet is. */
   details: string;
-  /** Waar het werkt — servers, besturingssystemen. */
   beperkingen?: string;
   bron: { label: string; url: string };
 }
@@ -34,77 +13,47 @@ export const PORT_FORWARDING: PortForwarding[] = [
   {
     slug: "protonvpn",
     status: "ja",
-    details:
-      "Up to five ports, chosen by you rather than assigned at random. Included in the paid plans at no extra cost.",
-    beperkingen:
-      "Works on the P2P-optimised servers, via the Windows and Linux apps. Not available in the macOS app.",
-    bron: {
-      label: "All About Cookies — best VPNs with port forwarding",
-      url: "https://allaboutcookies.org/best-vpns-with-port-forwarding",
-    },
+    details: "Port forwarding is included on paid plans, but Proton's current support documentation says the server assigns the active port; it is not a permanent port you choose.",
+    beperkingen: "Use a P2P server and the current Windows, macOS or Linux workflow. The active port can change when you reconnect, so update the client that listens on it.",
+    bron: { label: "Proton VPN - port forwarding support", url: "https://protonvpn.com/support/port-forwarding" },
   },
   {
     slug: "private-internet-access",
     status: "ja",
-    details:
-      "One port, assigned at random rather than chosen. Included in the standard subscription and available on every platform.",
-    beperkingen: "Works on most locations, but not on the US servers.",
-    bron: {
-      label: "All About Cookies — best VPNs with port forwarding",
-      url: "https://allaboutcookies.org/best-vpns-with-port-forwarding",
-    },
+    details: "PIA documents port forwarding as a client feature with one assigned port; the port number is not chosen manually.",
+    beperkingen: "Availability varies by location and current client support. Check the provider's location list and setup guide before relying on a specific server.",
+    bron: { label: "Private Internet Access - port-forwarding documentation", url: "https://helpdesk.privateinternetaccess.com/kb/articles/pdf/next-generation-port-forwarding" },
   },
   {
     slug: "purevpn",
     status: "betaald",
-    details:
-      "Up to fifteen ports, manually configured — the most flexible of the three. It is an add-on, so it costs extra on top of the subscription.",
-    beperkingen:
-      "Requires the dedicated servers, and works on Windows, macOS and Android.",
-    bron: {
-      label: "All About Cookies — best VPNs with port forwarding",
-      url: "https://allaboutcookies.org/best-vpns-with-port-forwarding",
-    },
+    details: "PureVPN's current support page advertises port forwarding for up to sixteen ports as a paid add-on.",
+    beperkingen: "Confirm the add-on price, eligible servers and supported app before purchase; the feature is not included in every plan by default.",
+    bron: { label: "PureVPN support - port forwarding add-on", url: "https://support.purevpn.com/en_US/port-forwarding-/purevpn-port-forwarding-addon" },
   },
   {
     slug: "mullvad",
     status: "verwijderd",
-    details:
-      "Mullvad offered port forwarding for years and removed it on 1 July 2023, announced on 29 May. The reason was abuse: forwarded ports were used to host malicious services, which led to law enforcement contact, blacklisted IPs and hosting providers dropping them.",
-    beperkingen:
-      "Lists that still recommend Mullvad for port forwarding are at least two years out of date, whatever year is in the title.",
-    bron: {
-      label: "Mullvad — Removing the support for forwarded ports",
-      url: "https://mullvad.net/en/blog/removing-the-support-for-forwarded-ports",
-    },
+    details: "Mullvad removed forwarded ports on 1 July 2023 after documenting abuse and operational problems. Treat older comparison lists as historical, not current availability.",
+    beperkingen: "The feature is not available on current Mullvad accounts; verify any future change on Mullvad's own announcement page.",
+    bron: { label: "Mullvad - removal of forwarded ports", url: "https://mullvad.net/en/blog/removing-the-support-for-forwarded-ports" },
   },
   {
     slug: "nordvpn",
     status: "nee",
-    details:
-      "Not offered on any server. NordVPN presents this as a deliberate security choice — an open port is an attack surface — which is defensible, but it does not help if you need one.",
-    bron: {
-      label: "Engadget — NordVPN review",
-      url: "https://www.engadget.com/cybersecurity/vpn/nordvpn-review-2025-innovative-features-a-few-missteps-163000578.html",
-    },
+    details: "NordVPN's current support page says port forwarding is not offered because customers share server infrastructure.",
+    bron: { label: "NordVPN support - port forwarding", url: "https://support.nordvpn.com/hc/en-us/articles/19483392309649-Does-NordVPN-offer-port-forwarding" },
   },
   {
     slug: "expressvpn",
     status: "nee",
-    details: "Not offered.",
-    bron: {
-      label: "All About Cookies — best VPNs with port forwarding",
-      url: "https://allaboutcookies.org/best-vpns-with-port-forwarding",
-    },
+    details: "No port-forwarding feature is documented in the current comparison record; verify the provider's support pages if this requirement is decisive.",
+    bron: { label: "ExpressVPN support", url: "https://www.expressvpn.com/support/" },
   },
   {
     slug: "cyberghost",
     status: "nee",
-    details:
-      "Not offered, despite the dedicated P2P servers. Worth knowing if you picked CyberGhost specifically for torrenting.",
-    bron: {
-      label: "All About Cookies — best VPNs with port forwarding",
-      url: "https://allaboutcookies.org/best-vpns-with-port-forwarding",
-    },
+    details: "No port-forwarding feature is documented in the current comparison record; P2P server support does not automatically mean inbound ports are available.",
+    bron: { label: "CyberGhost support", url: "https://support.cyberghostvpn.com/" },
   },
 ];

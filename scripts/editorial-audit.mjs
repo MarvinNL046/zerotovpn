@@ -536,6 +536,12 @@ const checks = [
     forbiddenPatterns: [/VPNs With Port Forwarding \(\$\{m\}\) — Who Still Has It/],
   },
   {
+    name: "port-forwarding English route uses evidence-led comparison component",
+    file: "src/components/editorial/port-forwarding-editorial-page.tsx",
+    patterns: [/PortForwardingEditorialPage/, /Provider evidence matrix/, /id="quick-picks"/, /id="evidence"/, /id="comparison"/, /id="alternatives"/, /id="faq"/, /DataForSEO/, /AffiliateTextLink/, /AffiliateButton/, /13 August 2026/],
+    forbiddenPatterns: [/up to five ports that you choose/i, /€2\.06/i, /guarantee.*(?:Netflix|streaming)/i],
+  },
+  {
     name: "torrenting page preserves affiliate boundary",
     file: "src/app/[locale]/best/vpn-torrenting/page.tsx",
     patterns: [/affiliateUrl=""/],

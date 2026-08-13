@@ -146,6 +146,15 @@ export const editorialContentBriefs = {
     affiliateContext: "vpn-selection",
     schemaType: "CollectionPage",
   },
+  portForwarding: {
+    primaryKeyword: "best vpn with port forwarding",
+    intent: "commercial",
+    cluster: "gaming-and-performance",
+    lastReviewedAt: "2026-08-13",
+    evidence: ["docs/research/dataforseo-port-forwarding-cluster-2026-08-13.md", "/methodology", "https://protonvpn.com/support/port-forwarding", "https://support.nordvpn.com/hc/en-us/articles/19483392309649-Does-NordVPN-offer-port-forwarding"],
+    affiliateContext: "vpn-selection",
+    schemaType: "CollectionPage",
+  },
   nordvpnReview: {
     primaryKeyword: "nordvpn review",
     intent: "commercial",

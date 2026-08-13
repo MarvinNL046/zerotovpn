@@ -14,6 +14,7 @@ import {
   type PortForwardingStatus,
 } from "@/lib/vpn-port-forwarding";
 import { CheckCircle, XCircle, CreditCard, History } from "lucide-react";
+import { PortForwardingEditorialPage } from "@/components/editorial/port-forwarding-editorial-page";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -38,7 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const descriptions: Record<string, string> = {
-    en: "Looking for a VPN with port forwarding? Compare Proton VPN, Private Internet Access and PureVPN, see who dropped the feature, and check the limits at the source.",
+    en: "Looking for a VPN with port forwarding? Compare Proton VPN, Private Internet Access and PureVPN, see who dropped the feature, and check current limits at the source.",
     nl: "Drie grote aanbieders ondersteunen port forwarding, vier niet, en één heeft het in 2023 verwijderd — wat de meeste lijstjes gemist hebben. Bij de bron nagelezen, met wat je per aanbieder echt krijgt.",
     de: "Drei große Anbieter unterstützen Portweiterleitung, vier nicht, und einer hat sie 2023 entfernt — was die meisten Listen übersehen haben. An der Quelle geprüft.",
     es: "Tres grandes proveedores admiten reenvío de puertos, cuatro no, y uno lo eliminó en 2023 — algo que casi ninguna lista ha notado. Verificado en la fuente.",
@@ -96,6 +97,8 @@ const STATUS_STIJL: Record<
 export default async function VpnPortForwardingPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  if (locale === "en") return <PortForwardingEditorialPage />;
 
   // Alleen Engels redactioneel uitgewerkt, conform de fase-3-scope; de
   // metadata is wel per taal. Bewust, niet vergeten.
@@ -204,7 +207,7 @@ export default async function VpnPortForwardingPage({ params }: Props) {
       />
 
       <main>
-        <section className="border-b py-12 lg:py-16">
+        <section id="quick-picks" className="scroll-mt-24 border-b py-12 lg:py-16">
           <div className="container">
             <div className="mx-auto max-w-3xl text-center">
               <Badge variant="secondary" className="mb-4">
@@ -214,6 +217,7 @@ export default async function VpnPortForwardingPage({ params }: Props) {
                 {t.title}
               </h1>
               <p className="mt-4 text-lg text-muted-foreground">{t.subtitle}</p>
+              <p className="mt-4 text-sm text-muted-foreground">Reviewed 13 August 2026. Provider features can change by plan, server and app version; the linked source pages are the decision evidence.</p>
               <div className="mt-6">
                 <AffiliateDisclosure variant="inline" />
               </div>
@@ -221,7 +225,7 @@ export default async function VpnPortForwardingPage({ params }: Props) {
           </div>
         </section>
 
-        <section className="py-12">
+        <section id="evidence" className="scroll-mt-24 py-12">
           <div className="container">
             <Card className="mx-auto max-w-3xl">
               <CardContent className="pt-6">
@@ -232,11 +236,11 @@ export default async function VpnPortForwardingPage({ params }: Props) {
           </div>
         </section>
 
-        <section className="border-y bg-muted/30 py-12 lg:py-16">
+        <section id="comparison" className="scroll-mt-24 border-y bg-muted/30 py-12 lg:py-16">
           <div className="container">
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="text-2xl font-bold md:text-3xl">{t.tableTitle}</h2>
-              <p className="mt-3 text-muted-foreground">{t.tableIntro}</p>
+            <p className="mt-3 text-muted-foreground">{t.tableIntro} We separate documented feature support from what still needs a plan-, location- or device-level check.</p>
             </div>
 
             <div className="mx-auto mt-8 flex max-w-4xl flex-col gap-4">
@@ -274,7 +278,7 @@ export default async function VpnPortForwardingPage({ params }: Props) {
           </div>
         </section>
 
-        <section className="py-12 lg:py-16">
+        <section id="context" className="scroll-mt-24 py-12 lg:py-16">
           <div className="container">
             <Card className="mx-auto max-w-3xl border-2 border-blue-500/40">
               <CardContent className="pt-6">
@@ -288,7 +292,7 @@ export default async function VpnPortForwardingPage({ params }: Props) {
           </div>
         </section>
 
-        <section className="border-y bg-muted/30 py-12 lg:py-16">
+        <section id="alternatives" className="scroll-mt-24 border-y bg-muted/30 py-12 lg:py-16">
           <div className="container">
             <h2 className="mb-8 text-center text-2xl font-bold md:text-3xl">
               {t.pickTitle}
@@ -333,7 +337,7 @@ export default async function VpnPortForwardingPage({ params }: Props) {
           </div>
         </section>
 
-        <section className="py-12 lg:py-16">
+        <section id="faq" className="scroll-mt-24 py-12 lg:py-16">
           <div className="container">
             <div className="mx-auto max-w-3xl">
               <h2 className="mb-6 text-center text-2xl font-bold md:text-3xl">
@@ -346,7 +350,7 @@ export default async function VpnPortForwardingPage({ params }: Props) {
           </div>
         </section>
 
-        <section className="border-t py-12">
+        <section id="sources" className="scroll-mt-24 border-t py-12">
           <div className="container">
             <div className="mx-auto max-w-3xl">
               <h2 className="mb-2 text-lg font-semibold">{t.sourcesTitle}</h2>

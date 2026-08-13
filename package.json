@@ -33,6 +33,7 @@
     "seo:iphone-vpn": "node scripts/iphone-vpn-seo-research.mjs",
     "seo:ipad-vpn": "node scripts/ipad-vpn-seo-research.mjs",
     "seo:macos-vpn": "node scripts/macos-vpn-seo-research.mjs",
+    "audit:macos-localized": "node scripts/audit-macos-localized-metadata.mjs",
     "seo:dns-leak": "node scripts/dns-leak-seo-research.mjs",
     "seo:torrenting-reddit": "node scripts/torrenting-reddit-seo-research.mjs",
     "seo:connection-drops": "node scripts/connection-drops-seo-research.mjs",

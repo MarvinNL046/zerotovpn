@@ -573,7 +573,7 @@ const checks = [
   {
     name: "macOS use-case metadata avoids unsupported test counts",
     file: "src/app/[locale]/best/vpn-macos/page.tsx",
-    patterns: [/Compare current macOS VPN picks/, /Native Apps, M1\/M2/],
+    patterns: [/Compare macOS VPN options in/, /app support, network behavior/],
     forbiddenPatterns: [/35\+|35ä»¥ä¸Š|35ê°œ|35ä¸ª|Ã¼ber 35|mÃ¡s de 35|plus de 35|à¸¡à¸²à¸à¸à¸§à¹ˆà¸² 35/i],
   },
   {

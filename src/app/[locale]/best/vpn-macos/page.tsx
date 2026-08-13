@@ -43,27 +43,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const shortMonthYear = getShortMonthYear();
 
   const titles: Record<string, string> = {
-    en: `Best VPNs for macOS (${shortMonthYear}) — Native Apps, M-Series | ZeroToVPN`,
-    nl: `Beste VPNs voor macOS (Getest ${shortMonthYear}) - Native Apps, M1/M2 Geoptimaliseerd | ZeroToVPN`,
-    de: `Beste VPNs für macOS (Getestet ${shortMonthYear}) - Native Apps, M1/M2 Optimiert | ZeroToVPN`,
-    es: `Mejores VPNs para macOS (Probados ${shortMonthYear}) - Apps Nativas, Optimizadas M1/M2 | ZeroToVPN`,
-    fr: `Meilleurs VPNs pour macOS (Testés ${shortMonthYear}) - Apps Natives, Optimisées M1/M2 | ZeroToVPN`,
-    zh: `最佳macOS VPN (测试于 ${shortMonthYear}) - 原生应用，M1/M2优化 | ZeroToVPN`,
-    ja: `macOS向けベストVPN (テスト済み ${shortMonthYear}) - ネイティブアプリ、M1/M2最適化 | ZeroToVPN`,
-    ko: `macOS 최고의 VPN (테스트됨 ${shortMonthYear}) - 네이티브 앱, M1/M2 최적화 | ZeroToVPN`,
-    th: `VPN ที่ดีที่สุดสำหรับ macOS (ทดสอบ ${shortMonthYear}) - แอปเนทีฟ, M1/M2 เหมาะสม | ZeroToVPN`,
+    en: `Best VPNs for macOS (${shortMonthYear}) — App Support and Privacy Checks | ZeroToVPN`,
+    nl: `Beste VPNs voor macOS (${shortMonthYear}) - Mac-apps en privacychecks | ZeroToVPN`,
+    de: `Beste VPNs für macOS (${shortMonthYear}) - Mac-Apps und Datenschutzchecks | ZeroToVPN`,
+    es: `Mejores VPN para macOS (${shortMonthYear}) - Apps y comprobaciones de privacidad | ZeroToVPN`,
+    fr: `Meilleurs VPN pour macOS (${shortMonthYear}) - Applications et vérifications de confidentialité | ZeroToVPN`,
+    zh: `macOS VPN 指南（${shortMonthYear}）- 应用支持与隐私检查 | ZeroToVPN`,
+    ja: `macOS向けVPNガイド（${shortMonthYear}）- アプリ対応とプライバシー確認 | ZeroToVPN`,
+    ko: `macOS VPN 가이드 (${shortMonthYear}) - 앱 지원 및 개인정보 보호 점검 | ZeroToVPN`,
+    th: `คู่มือ VPN สำหรับ macOS (${shortMonthYear}) - การรองรับแอปและการตรวจสอบความเป็นส่วนตัว | ZeroToVPN`,
   };
 
   const descriptions: Record<string, string> = {
-    en: `Compare current macOS VPN picks in ${shortMonthYear}, with M1/M2 optimization, speed and security evidence. We explain the test setup and what each provider supports.`,
-    nl: "Vind de beste VPN voor macOS 2026. Native apps geoptimaliseerd voor M1/M2 chips, Safari extensies en naadloze iCloud integratie. Getest op Ventura, Sonoma & Sequoia.",
-    de: "Finden Sie das beste VPN für macOS 2026. Native Apps optimiert für M1/M2 Chips, Safari-Erweiterungen und nahtlose iCloud-Integration. Getestet auf Ventura, Sonoma & Sequoia.",
-    es: "Encuentra la mejor VPN para macOS 2026. Apps nativas optimizadas para chips M1/M2, extensiones de Safari e integración perfecta con iCloud. Probado en Ventura, Sonoma y Sequoia.",
-    fr: "Trouvez le meilleur VPN pour macOS 2026. Applications natives optimisées pour les puces M1/M2, extensions Safari et intégration transparente iCloud. Testé sur Ventura, Sonoma & Sequoia.",
-    zh: "找到2026年最佳macOS VPN。针对M1/M2芯片优化的原生应用，Safari扩展和无缝iCloud集成。在Ventura、Sonoma和Sequoia上测试。",
-    janswer: "macOS用最高のVPNを見つけよう2026。M1/M2チップに最適化されたネイティブアプリ、Safari拡張機能、シームレスなiCloud統合。Ventura、Sonoma、Seqouiaでテスト済み。",
-    ko: "2026년 최고의 macOS VPN을 찾으세요. M1/M2 칩에 최적화된 네이티브 앱, Safari 확장 프로그램 및 원활한 iCloud 통합. Ventura, Sonoma 및 Sequoia에서 테스트됨.",
-    th: "ค้นหา VPN ที่ดีที่สุดสำหรับ macOS 2026 แอปเนทีฟที่ปรับให้เหมาะกับชิป M1/M2, ส่วนขยาย Safari และการผสานรวม iCloud อย่างราบรื่น ทดสอบบน Ventura, Sonoma และ Sequoia",
+    en: `Compare macOS VPN options in ${shortMonthYear} by app support, network behavior, privacy boundaries, and current terms.`,
+    nl: "Vergelijk VPN-opties voor macOS op app-ondersteuning, netwerkgedrag, privacygrenzen en actuele voorwaarden.",
+    de: "Vergleichen Sie VPN-Optionen für macOS nach App-Unterstützung, Netzwerkverhalten, Datenschutzgrenzen und aktuellen Bedingungen.",
+    es: "Compara VPN para macOS por compatibilidad de la app, comportamiento de red, límites de privacidad y condiciones actuales.",
+    fr: "Comparez les VPN pour macOS selon l’application, le comportement réseau, les limites de confidentialité et les conditions actuelles.",
+    zh: "比较适用于 macOS 的 VPN，关注应用支持、网络行为、隐私边界和当前条款。",
+    ja: "macOS向けVPNを、アプリ対応、ネットワーク動作、プライバシーの範囲、現在の条件で比較します。",
+    ko: "앱 지원, 네트워크 동작, 개인정보 보호 범위와 현재 조건을 기준으로 macOS용 VPN을 비교합니다.",
+    th: "เปรียบเทียบ VPN สำหรับ macOS โดยดูการรองรับแอป พฤติกรรมเครือข่าย ขอบเขตความเป็นส่วนตัว และเงื่อนไขปัจจุบัน",
   };
 
   return {

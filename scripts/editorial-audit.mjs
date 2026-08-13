@@ -149,7 +149,7 @@ const checks = [
   {
     name: "localized Iran blog routes use the evidence-led body",
     file: "src/app/[locale]/blog/[slug]/page.tsx",
-    patterns: [/iranVpnEditorialContent/, /const articleContent = isIranEditorial/, /iranContentBrief/, /best vpn for iran/, /censorship-restricted-networks/, /brief=\{isIranEditorial[\s\S]*?isFitnessTrackingPrivacyEditorial \? fitnessTrackingPrivacyContentBrief : undefined\}/],
+    patterns: [/iranVpnEditorialContent/, /const articleContent = isIranEditorial/, /iranContentBrief/, /best vpn for iran/, /censorship-restricted-networks/, /brief=\{isIranEditorial[\s\S]*?isFitnessTrackingPrivacyEditorial/],
     forbiddenPatterns: [/articleContent = isRestrictedAffiliateContext\s*\?\s*verwijderAffiliateLinks\(post\.content\)/i],
   },
   {
@@ -192,6 +192,17 @@ const checks = [
     name: "gaming page PAA evidence and bounded latency copy",
     file: "src/app/[locale]/best/vpn-gaming/page.tsx",
     patterns: [/Do VPNs really work for gaming\?/, /Will a VPN slow down gaming\?/, /DataForSEO US\/English intent dossier fetched August 13, 2026/],
+  },
+  {
+    name: "VPN ping article uses bounded gaming evidence",
+    file: "src/data/editorial/vpn-ping-gaming-2026.ts",
+    patterns: [/Can a VPN reduce gaming ping\?/, /Will a VPN slow down gaming\?/, /Gaming VPN decision matrix/, /A repeatable five-minute ping test/, /DataForSEO gaming dossier/, /2026/],
+    forbiddenPatterns: [/10-20ms|30-50ms|reduced ping by|tested multiple VPNs|guarantee.*ping/i, /lowest ping|fastest VPN.*gaming/i],
+  },
+  {
+    name: "VPN ping article blog route uses the audited editorial override",
+    file: "src/app/[locale]/blog/[slug]/page.tsx",
+    patterns: [/vpnPingGamingEditorialTitle/, /vpnPingGamingEditorialContent/, /vpnPingGamingEditorialFaq/, /gamingLatencyClusterLinks/, /isGamingLatencyEditorial/, /editorialContentBriefs\.vpnPingGaming/],
   },
   {
     name: "connection-drops page uses PAA-led bounded troubleshooting copy",

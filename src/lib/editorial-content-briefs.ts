@@ -155,6 +155,15 @@ export const editorialContentBriefs = {
     affiliateContext: "vpn-selection",
     schemaType: "CollectionPage",
   },
+  vpnPingGaming: {
+    primaryKeyword: "vpn reduce ping",
+    intent: "informational",
+    cluster: "gaming-and-performance",
+    lastReviewedAt: "2026-08-13",
+    evidence: ["docs/research/dataforseo-gaming-cluster-2026-08-13.md", "/methodology", "https://support.nordvpn.com/hc/en-us/articles/20280919698577-What-are-the-pros-and-cons-of-TCP-and-UDP"],
+    affiliateContext: "none",
+    schemaType: "Article",
+  },
   portForwarding: {
     primaryKeyword: "best vpn with port forwarding",
     intent: "commercial",

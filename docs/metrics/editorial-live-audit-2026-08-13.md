@@ -1,11 +1,11 @@
 # Live editorial page audit
 
-Generated: 2026-08-13T06:21:46.915Z
+Generated: 2026-08-13T06:33:44.355Z
 
-- Target pages: **40**
-- Passing pages: **40**
+- Target pages: **41**
+- Passing pages: **41**
 - Pages needing review: **0**
-- Affiliate links checked: **202**
+- Affiliate links checked: **204**
 - Affiliate links missing sponsored/nofollow: **0**
 - Affiliate links missing Short.io slug telemetry: **0**
 - Missing required cluster links: **0**
@@ -36,6 +36,7 @@ Generated: 2026-08-13T06:21:46.915Z
 | pass | /best/best-vpn | Best VPN 2026: Compare Privacy, Streaming &amp; Value Picks | ZeroToVPN | 1 | 69 | 21 | — | — |
 | pass | /best/vpn-cheap | Best Cheap VPNs in 2026: Compare Value, Terms and Trade-offs | 1 | 45 | 6 | — | — |
 | pass | /reviews/nordvpn | NordVPN Review 2026: Privacy Evidence, Price and Performance | 1 | 43 | 2 | — | — |
+| pass | /reviews/protonvpn | Proton VPN Review 2026: Privacy Evidence, Free Plan and Performance | 1 | 43 | 2 | — | — |
 | pass | /reviews/surfshark | Surfshark Review (Aug 2026) - Tested &amp; Rated | ZeroToVPN | 1 | 50 | 3 | — | — |
 | pass | /reviews/mullvad | Mullvad VPN Review (Aug 2026) - Tested &amp; Rated | ZeroToVPN | 1 | 50 | 3 | — | — |
 | pass | /blog/best-vpn-for-iran-2026-bypass-internet-censorship | Best VPN for Iran 2026: Tested Options &amp; Setup Limits | 1 | 60 | 6 | — | — |

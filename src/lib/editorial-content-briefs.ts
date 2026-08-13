@@ -173,6 +173,15 @@ export const editorialContentBriefs = {
     affiliateContext: "vpn-selection",
     schemaType: "Article",
   },
+  surfsharkReview: {
+    primaryKeyword: "surfshark review",
+    intent: "commercial",
+    cluster: "provider-reviews-and-comparisons",
+    lastReviewedAt: "2026-08-13",
+    evidence: ["docs/research/dataforseo-surfshark-review-cluster-2026-08-13.md", "/methodology", "https://surfshark.com/trust-center/no-logs", "https://surfshark.com/features/unlimited-devices"],
+    affiliateContext: "vpn-selection",
+    schemaType: "Article",
+  },
   vpnComparison: {
     primaryKeyword: "vpn comparison",
     intent: "commercial",

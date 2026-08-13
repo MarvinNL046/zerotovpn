@@ -384,6 +384,17 @@ const checks = [
     patterns: [/UrbanVpnReviewEditorialPage/, /_locale === "en" && vpn\.slug === "urban-vpn"/, /urbanVpnReviewTitle/, /urbanVpnReviewDescription/],
   },
   {
+    name: "Surfshark review uses bounded evidence-led editorial component",
+    file: "src/components/editorial/surfshark-review-editorial-page.tsx",
+    patterns: [/SurfsharkReviewEditorialPage/, /Surfshark evidence and limitation checklist/, /id="evidence"/, /id="performance"/, /id="faq"/, /DataForSEO/, /unlimited simultaneous connections/i, /money-back policy/i],
+    forbiddenPatterns: [/We tested Surfshark for 30\+ days/i, /guarantee.*(?:Netflix|streaming)/i, /completely anonymous/i],
+  },
+  {
+    name: "Surfshark review route uses the audited English component and metadata",
+    file: "src/app/[locale]/reviews/[slug]/page.tsx",
+    patterns: [/SurfsharkReviewEditorialPage/, /_locale === "en" && vpn\.slug === "surfshark"/, /surfsharkReviewTitle/, /surfsharkReviewDescription/],
+  },
+  {
     name: "VPN comparison uses bounded criteria and tracked prices",
     file: "src/components/editorial/vpn-comparison-editorial-page.tsx",
     patterns: [/VpnComparisonEditorialPage/, /VPN provider comparison by price, terms and device criteria/, /id="shortlist"/, /id="comparison"/, /id="method"/, /id="faq"/, /DataForSEO/, /AffiliateTextLink/],

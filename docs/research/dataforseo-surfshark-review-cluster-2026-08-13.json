@@ -1,0 +1,462 @@
+{
+  "schemaVersion": 1,
+  "cluster": "Surfshark review / privacy / unlimited devices / price / streaming",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "fetchedAt": "2026-08-13T06:49:56.972Z",
+  "refreshed": false,
+  "seeds": [
+    "surfshark review",
+    "surfshark review 2026",
+    "surfshark no logs",
+    "surfshark unlimited devices",
+    "surfshark price",
+    "is surfshark worth it",
+    "surfshark speed test",
+    "surfshark netflix"
+  ],
+  "overview": [
+    {
+      "keyword": "is surfshark worth it",
+      "currentVolume": 110,
+      "latestVolume": 110,
+      "latestMonth": "2026-06",
+      "difficulty": 26,
+      "intent": "informational"
+    },
+    {
+      "keyword": "surfshark netflix",
+      "currentVolume": 110,
+      "latestVolume": 50,
+      "latestMonth": "2026-06",
+      "difficulty": 0,
+      "intent": "informational"
+    },
+    {
+      "keyword": "surfshark no logs",
+      "currentVolume": 40,
+      "latestVolume": 30,
+      "latestMonth": "2026-06",
+      "difficulty": 0,
+      "intent": "informational"
+    },
+    {
+      "keyword": "surfshark price",
+      "currentVolume": 1300,
+      "latestVolume": 1000,
+      "latestMonth": "2026-06",
+      "difficulty": 34,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "surfshark review",
+      "currentVolume": 1300,
+      "latestVolume": 720,
+      "latestMonth": "2026-06",
+      "difficulty": 37,
+      "intent": "informational"
+    },
+    {
+      "keyword": "surfshark speed test",
+      "currentVolume": 20,
+      "latestVolume": 10,
+      "latestMonth": "2026-06",
+      "difficulty": 16,
+      "intent": "informational"
+    },
+    {
+      "keyword": "surfshark unlimited devices",
+      "currentVolume": 40,
+      "latestVolume": 40,
+      "latestMonth": "2026-06",
+      "difficulty": 0,
+      "intent": "transactional"
+    }
+  ],
+  "suggestions": [
+    {
+      "seed": "surfshark review",
+      "keyword": "surfshark review",
+      "volume": 1300
+    },
+    {
+      "seed": "surfshark review",
+      "keyword": "surfshark antivirus review",
+      "volume": 210
+    },
+    {
+      "seed": "surfshark review",
+      "keyword": "surfshark one review",
+      "volume": 90
+    },
+    {
+      "seed": "surfshark review",
+      "keyword": "surfshark review reddit",
+      "volume": 90
+    },
+    {
+      "seed": "surfshark review",
+      "keyword": "surfshark review 2025",
+      "volume": 50
+    },
+    {
+      "seed": "surfshark review",
+      "keyword": "surfshark vpn review 2025",
+      "volume": 50
+    },
+    {
+      "seed": "surfshark review",
+      "keyword": "review of surfshark",
+      "volume": 30
+    },
+    {
+      "seed": "surfshark review",
+      "keyword": "review surfshark",
+      "volume": 30
+    },
+    {
+      "seed": "surfshark review",
+      "keyword": "surfshark incogni review",
+      "volume": 30
+    },
+    {
+      "seed": "surfshark review",
+      "keyword": "surfshark cleanweb review",
+      "volume": 20
+    },
+    {
+      "seed": "surfshark review",
+      "keyword": "surfshark ad blocker review",
+      "volume": 20
+    },
+    {
+      "seed": "surfshark review",
+      "keyword": "surfshark reddit review",
+      "volume": 20
+    },
+    {
+      "seed": "surfshark review",
+      "keyword": "surfshark review 2023",
+      "volume": 10
+    },
+    {
+      "seed": "surfshark review",
+      "keyword": "surfshark review australia",
+      "volume": 10
+    },
+    {
+      "seed": "surfshark review",
+      "keyword": "surfshark vpn review trustpilot",
+      "volume": 10
+    },
+    {
+      "seed": "surfshark no logs",
+      "keyword": "surfshark no-logs",
+      "volume": 40
+    },
+    {
+      "seed": "surfshark no logs",
+      "keyword": "surfshark no logs",
+      "volume": 40
+    },
+    {
+      "seed": "surfshark no logs",
+      "keyword": "surfshark no-logs policy",
+      "volume": 30
+    },
+    {
+      "seed": "surfshark no logs",
+      "keyword": "surfshark no logs policy",
+      "volume": 30
+    },
+    {
+      "seed": "surfshark no logs",
+      "keyword": "surfshark no-logs audit",
+      "volume": 10
+    },
+    {
+      "seed": "surfshark no logs",
+      "keyword": "surfshark no logs audit",
+      "volume": 10
+    },
+    {
+      "seed": "surfshark no logs",
+      "keyword": "surfshark no logs reddit",
+      "volume": 10
+    },
+    {
+      "seed": "surfshark no logs",
+      "keyword": "surfshark no-logs reddit",
+      "volume": 10
+    },
+    {
+      "seed": "surfshark no logs",
+      "keyword": "surfshark vpn no-logs",
+      "volume": null
+    },
+    {
+      "seed": "surfshark unlimited devices",
+      "keyword": "surfshark unlimited devices",
+      "volume": 40
+    },
+    {
+      "seed": "surfshark unlimited devices",
+      "keyword": "surfshark unlimited devices reddit",
+      "volume": 10
+    },
+    {
+      "seed": "surfshark unlimited devices",
+      "keyword": "is surfshark unlimited devices",
+      "volume": 10
+    },
+    {
+      "seed": "surfshark unlimited devices",
+      "keyword": "surfshark vpn unlimited devices 2-month trial key global",
+      "volume": 10
+    },
+    {
+      "seed": "surfshark price",
+      "keyword": "surfshark price",
+      "volume": 1300
+    },
+    {
+      "seed": "surfshark price",
+      "keyword": "surfshark price after 2 years",
+      "volume": 50
+    },
+    {
+      "seed": "surfshark price",
+      "keyword": "surfshark renewal price",
+      "volume": 50
+    },
+    {
+      "seed": "surfshark price",
+      "keyword": "surfshark dedicated ip price",
+      "volume": 40
+    },
+    {
+      "seed": "surfshark price",
+      "keyword": "surfshark vpn price per year",
+      "volume": 40
+    },
+    {
+      "seed": "surfshark price",
+      "keyword": "surfshark india price",
+      "volume": 40
+    },
+    {
+      "seed": "surfshark price",
+      "keyword": "surfshark subscription price",
+      "volume": 40
+    },
+    {
+      "seed": "surfshark price",
+      "keyword": "surfshark vpn price per month",
+      "volume": 40
+    },
+    {
+      "seed": "surfshark price",
+      "keyword": "nordvpn vs surfshark price",
+      "volume": 30
+    },
+    {
+      "seed": "surfshark price",
+      "keyword": "surfshark price per month",
+      "volume": 20
+    },
+    {
+      "seed": "surfshark price",
+      "keyword": "surfshark vs nordvpn price",
+      "volume": 20
+    },
+    {
+      "seed": "surfshark price",
+      "keyword": "surfshark one price",
+      "volume": 20
+    },
+    {
+      "seed": "surfshark price",
+      "keyword": "surfshark price increase",
+      "volume": 10
+    },
+    {
+      "seed": "surfshark price",
+      "keyword": "surfshark 1 year price",
+      "volume": 10
+    },
+    {
+      "seed": "surfshark price",
+      "keyword": "surfshark monthly subscription price",
+      "volume": 10
+    },
+    {
+      "seed": "is surfshark worth it",
+      "keyword": "is surfshark worth it",
+      "volume": 110
+    },
+    {
+      "seed": "is surfshark worth it",
+      "keyword": "is surfshark one worth it",
+      "volume": 40
+    },
+    {
+      "seed": "is surfshark worth it",
+      "keyword": "is surfshark one plus worth it",
+      "volume": 20
+    },
+    {
+      "seed": "is surfshark worth it",
+      "keyword": "is surfshark vpn worth it",
+      "volume": 20
+    },
+    {
+      "seed": "is surfshark worth it",
+      "keyword": "is surfshark worth it reddit",
+      "volume": 10
+    },
+    {
+      "seed": "is surfshark worth it",
+      "keyword": "is surfshark incogni worth it",
+      "volume": 10
+    },
+    {
+      "seed": "is surfshark worth it",
+      "keyword": "is surfshark one worth it reddit",
+      "volume": 10
+    },
+    {
+      "seed": "is surfshark worth it",
+      "keyword": "is surfshark search worth it",
+      "volume": null
+    },
+    {
+      "seed": "surfshark speed test",
+      "keyword": "surfshark speed test",
+      "volume": 20
+    },
+    {
+      "seed": "surfshark speed test",
+      "keyword": "surfshark vs nordvpn speed test",
+      "volume": 10
+    },
+    {
+      "seed": "surfshark speed test",
+      "keyword": "nordvpn vs surfshark speed test",
+      "volume": 10
+    },
+    {
+      "seed": "surfshark speed test",
+      "keyword": "expressvpn vs surfshark speed test",
+      "volume": 10
+    },
+    {
+      "seed": "surfshark netflix",
+      "keyword": "surfshark netflix",
+      "volume": 110
+    },
+    {
+      "seed": "surfshark netflix",
+      "keyword": "does surfshark work with netflix",
+      "volume": 90
+    },
+    {
+      "seed": "surfshark netflix",
+      "keyword": "surfshark netflix not working",
+      "volume": 40
+    },
+    {
+      "seed": "surfshark netflix",
+      "keyword": "surfshark not working with netflix",
+      "volume": 30
+    },
+    {
+      "seed": "surfshark netflix",
+      "keyword": "netflix surfshark",
+      "volume": 30
+    },
+    {
+      "seed": "surfshark netflix",
+      "keyword": "does surfshark work on netflix",
+      "volume": 20
+    },
+    {
+      "seed": "surfshark netflix",
+      "keyword": "surfshark does not work with netflix",
+      "volume": 10
+    },
+    {
+      "seed": "surfshark netflix",
+      "keyword": "surfshark netflix not working reddit",
+      "volume": 10
+    },
+    {
+      "seed": "surfshark netflix",
+      "keyword": "why isn't surfshark working with netflix",
+      "volume": 10
+    },
+    {
+      "seed": "surfshark netflix",
+      "keyword": "surfshark netflix libraries",
+      "volume": 10
+    },
+    {
+      "seed": "surfshark netflix",
+      "keyword": "surfshark netflix not working 2022",
+      "volume": 10
+    },
+    {
+      "seed": "surfshark netflix",
+      "keyword": "is surfshark a good vpn for netflix",
+      "volume": 10
+    },
+    {
+      "seed": "surfshark netflix",
+      "keyword": "netflix proxy surfshark",
+      "volume": 10
+    },
+    {
+      "seed": "surfshark netflix",
+      "keyword": "netflix surfshark reddit",
+      "volume": 10
+    },
+    {
+      "seed": "surfshark netflix",
+      "keyword": "surfshark vs nordvpn netflix",
+      "volume": 10
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "surfshark review",
+      "paa": [
+        "What are the downsides of Surfshark?",
+        "Is Surfshark VPN actually good?",
+        "Has Netflix blocked Surfshark?",
+        "Is Surfshark legal in the USA?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "surfshark review 2026",
+      "paa": [
+        "Is Surfshark a good VPN in 2026?",
+        "Has Netflix blocked Surfshark?",
+        "Which is better, NordVPN or Surfshark?",
+        "Is it worth getting Surfshark VPN?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "surfshark no logs",
+      "paa": [
+        "What does \"no-logs\" mean in VPN?",
+        "Does Surfshark track logs?",
+        "Is no log VPN legal?",
+        "Which VPN offers a no-logs policy?"
+      ],
+      "hasAiOverview": true
+    }
+  ],
+  "sourcePolicy": "DataForSEO signals prioritise query intent, comparison structure and FAQ coverage; they do not prove Surfshark performance, current pricing, assurance scope or conversion value. Provider facts must be tied to dated first-party sources or reproducible tests."
+}

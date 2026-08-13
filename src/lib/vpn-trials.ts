@@ -7,14 +7,15 @@
  * drie door elkaar halen is waarom de meeste "VPN met gratis proefperiode"-
  * lijstjes niet kloppen.
  *
- * Elke regel is gecontroleerd op de pagina van de aanbieder op 25 juli 2026.
+ * Elke regel is gecontroleerd op de pagina van de aanbieder op 13 augustus 2026.
  * Twee bevindingen die afwijken van wat er elders staat:
  *
- * - Googles AI Overview meldt voor ExpressVPN een proefperiode van 7 dagen.
- *   ExpressVPN schrijft zelf 3 dagen ("a 3-day free trial on iOS and Android
- *   when you sign up through the app").
- * - Security.org en TechRadar melden voor NordVPN 7 dagen op iOS én Android.
- *   NordVPN schrijft zelf 3 dagen, alleen Android.
+ * - Google's AI Overview meldde voor ExpressVPN een proefperiode van 7 dagen.
+ *   ExpressVPN schrijft zelf 3 dagen voor iOS en Android via de app; de
+ *   30-daagse websiteoptie is een geld-terug-garantie, geen gratis trial.
+ * - NordVPN's actuele trialpagina noemt 7 dagen voor nieuwe gebruikers op
+ *   1- en 2-jaarsplannen, naast een aparte 3-daagse Android-route via Google
+ *   Play. De voorwaarden en platformen moeten daarom altijd worden genoemd.
  *
  * Bij tegenspraak wint de aanbieder. Zet `bron` op de pagina waar het staat,
  * en `gecontroleerd` op de datum waarop dat is nagekeken — zonder die datum is
@@ -45,7 +46,7 @@ export const VPN_TRIALS: VpnTrial[] = [
     voorwaarde: "Alleen op de 12- en 24-maandsplannen; $0,00 vooraf, opzegbaar binnen de 7 dagen.",
     moneyBackDagen: 30,
     bron: "https://surfshark.com/vpn-free-trial",
-    gecontroleerd: "2026-07-25",
+    gecontroleerd: "2026-08-13",
   },
   {
     slug: "cyberghost",
@@ -56,7 +57,7 @@ export const VPN_TRIALS: VpnTrial[] = [
       "24 uur op desktop zonder betaalgegevens. Op mobiel 3 dagen (Android) en 7 dagen (iOS), maar daar eist de appstore wél een betaalmethode.",
     moneyBackDagen: 45,
     bron: "https://www.cyberghostvpn.com/vpn-free-trial",
-    gecontroleerd: "2026-07-25",
+    gecontroleerd: "2026-08-13",
   },
   {
     slug: "expressvpn",
@@ -67,17 +68,18 @@ export const VPN_TRIALS: VpnTrial[] = [
       "Alleen via de App Store of Google Play. Een aankoop via de appstore valt buiten de 30 dagen geld terug — daar gelden de regels van Apple of Google.",
     moneyBackDagen: 30,
     bron: "https://www.expressvpn.com/features/vpn-trial",
-    gecontroleerd: "2026-07-25",
+    gecontroleerd: "2026-08-13",
   },
   {
     slug: "nordvpn",
-    dagen: 3,
-    platforms: ["Android"],
+    dagen: 7,
+    platforms: ["Windows", "macOS", "Android", "iOS", "smart-tv"],
     betaalgegevensNodig: true,
-    voorwaarde: "Alleen via Google Play; op andere platforms is er geen proefperiode.",
+    voorwaarde:
+      "7 dagen voor nieuwe gebruikers op 1- en 2-jaarsplannen; betaling via kaart of PayPal; na dag 7 wordt het plan automatisch gefactureerd als je niet opzegt. Daarnaast bestaat een aparte 3-daagse Android-route via Google Play.",
     moneyBackDagen: 30,
-    bron: "https://nordvpn.com/risk-free-vpn/",
-    gecontroleerd: "2026-07-25",
+    bron: "https://nordvpn.com/risk-free-vpn/free-trial-site/",
+    gecontroleerd: "2026-08-13",
   },
 ];
 

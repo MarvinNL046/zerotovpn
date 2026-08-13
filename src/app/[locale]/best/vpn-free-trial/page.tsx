@@ -143,7 +143,7 @@ export default async function VpnFreeTrialPage({ params }: Props) {
       faqs: [
         {
           q: "Is there a VPN free trial without a credit card?",
-          a: "Yes, one: CyberGhost's 24-hour trial on Windows and macOS asks for no payment details at all. Their mobile trials do require a payment method, because Apple and Google demand one for anything installed from their stores.",
+          a: "Yes. CyberGhost's 24-hour Windows and macOS trial asks for no payment details. NordVPN says its 7-day trial can use PayPal instead of a card, while mobile app-store trials generally require a payment method. Check the provider's current checkout and country rules before starting.",
         },
         {
           q: "Is a 30-day money-back guarantee the same as a free trial?",
@@ -151,15 +151,27 @@ export default async function VpnFreeTrialPage({ params }: Props) {
         },
         {
           q: "What is the longest VPN free trial?",
-          a: "Seven days, from Surfshark, and it is the only trial of that length that works on a desktop computer. CyberGhost also offers seven days but only on iOS.",
+          a: "Seven days is currently listed by Surfshark and NordVPN's new-user plan. CyberGhost also lists seven days on iOS; its Windows and macOS option is 24 hours. Eligibility, plan length and payment rules differ, so compare the provider source rather than the headline number.",
         },
         {
           q: "Will I be charged automatically after the trial?",
-          a: "Yes, if you entered payment details. Surfshark states the subscription starts and renews automatically after seven days unless you cancel. Set a reminder a day before it ends.",
+          a: "Often, yes. Surfshark and NordVPN state that the selected plan is charged when the trial ends unless you cancel in time. Set a reminder, read the cancellation path and keep the confirmation; app-store billing follows the store's own rules.",
         },
         {
           q: "Can I just use a free VPN instead?",
           a: "For testing, often yes. Proton VPN, Windscribe, hide.me and TunnelBear have free plans that never expire. They are slower and more limited, but there is no clock running and no payment details involved.",
+        },
+        {
+          q: "Which VPN has a 30-day free trial?",
+          a: "A standard 30-day free trial is not the same as a 30-day money-back guarantee. ExpressVPN and several other providers use the latter: you pay first and request a refund within the window. The genuine trials listed here are shorter and device- or plan-specific.",
+        },
+        {
+          q: "Which VPN gives you a free trial?",
+          a: "The current provider pages list Surfshark for 7 days, CyberGhost for 24 hours on Windows and macOS plus mobile trials, ExpressVPN for 3 days through its iOS or Android app, and NordVPN for 7 days on eligible new-user plans plus a separate Android route. These are not interchangeable offers, so check the source and eligibility before clicking through.",
+        },
+        {
+          q: "Is there any 100% free VPN?",
+          a: "Yes, some providers offer a permanent free tier, but that is a different product from a time-limited trial. Compare limits, data policies, supported locations and device coverage in our evidence-led free VPN comparison before choosing one.",
         },
       ],
       sourcesTitle: "Sources",
@@ -172,6 +184,12 @@ export default async function VpnFreeTrialPage({ params }: Props) {
   // Engelse tekst tot ze vertaald zijn. Beter zichtbaar Engels dan een half
   // vertaalde pagina met verzonnen termen — de metadata is wél per taal.
   const t = content.en;
+  const picks = t.picks.map((pick) => pick.slug === "nordvpn"
+    ? {
+        ...pick,
+        verdict: "Seven days for new users on 1- and 2-year plans, with payment details required. NordVPN also lists a separate 3-day Android route through Google Play; cancel before the trial ends or the chosen plan is charged.",
+      }
+    : pick);
   const localizedPageUrl = locale === "en" ? `${baseUrl}/best/vpn-free-trial` : `${baseUrl}/${locale}/best/vpn-free-trial`;
 
   const rijen = VPN_TRIALS.map((trial) => ({
@@ -193,7 +211,7 @@ export default async function VpnFreeTrialPage({ params }: Props) {
         description="Compare genuine VPN trials with money-back guarantees and permanently free tiers, using provider sources and checked dates."
         url={localizedPageUrl}
         datePublished="2026-01-01"
-        dateModified="2026-08-12"
+        dateModified="2026-08-13"
       />
       <BreadcrumbSchema
         items={[
@@ -216,8 +234,16 @@ export default async function VpnFreeTrialPage({ params }: Props) {
               <div className="mt-6">
                 <AffiliateDisclosure variant="inline" />
               </div>
-              <p className="mt-4 text-sm text-muted-foreground">
+              {false && (
+              <p className="mt-4 text-sm text-muted-foreground hidden" aria-hidden="true">
                 Last reviewed: 11 August 2026 ·{" "}
+                <Link href="/methodology" className="text-primary hover:underline">
+                  How we test and verify provider claims
+                </Link>
+              </p>
+              )}
+              <p className="mt-2 text-sm text-muted-foreground">
+                Last reviewed: 13 August 2026 ·{" "}
                 <Link href="/methodology" className="text-primary hover:underline">
                   How we test and verify provider claims
                 </Link>
@@ -336,7 +362,7 @@ export default async function VpnFreeTrialPage({ params }: Props) {
               {t.pickTitle}
             </h2>
             <div className="mx-auto flex max-w-4xl flex-col gap-6">
-              {t.picks.map((pick) => {
+              {picks.map((pick) => {
                 const vpn = getVpnBySlug(pick.slug);
                 const trial = VPN_TRIALS.find((x) => x.slug === pick.slug);
                 if (!vpn || !trial) return null;

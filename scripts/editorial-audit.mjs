@@ -272,8 +272,13 @@ const checks = [
   {
     name: "free-trial pillar SERP metadata and table semantics",
     file: "src/app/[locale]/best/vpn-free-trial/page.tsx",
-    patterns: [/Best VPN Free Trials \(\$\{m\}\): 7-Day & No-Card Options/, /Compare genuine VPN free trials, 7-day options and no-card tests/, /<caption className=\"sr-only\">VPN free trial comparison<\/caption>/, /scope=\"col\"/],
+    patterns: [/Best VPN Free Trials \(\$\{m\}\): 7-Day & No-Card Options/, /Compare genuine VPN free trials, 7-day options and no-card tests/, /<caption className=\"sr-only\">VPN free trial comparison<\/caption>/, /scope=\"col\"/, /dateModified=\"2026-08-13\"/, /Last reviewed: 13 August 2026/, /Which VPN has a 30-day free trial\?/, /Which VPN gives you a free trial\?/, /Is there any 100% free VPN\?/],
     forbiddenPatterns: [/VPNs With a Real Free Trial \(\$\{m\}\) — Checked at Source/],
+  },
+  {
+    name: "free-trial provider terms are dated and distinguish Nord plan eligibility",
+    file: "src/lib/vpn-trials.ts",
+    patterns: [/13 augustus 2026/, /slug: "nordvpn"/, /dagen: 7/, /1- en 2-jaarsplannen/, /risk-free-vpn\/free-trial-site/],
   },
   {
     name: "port-forwarding comparison SERP metadata and cluster link",

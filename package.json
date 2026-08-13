@@ -13,6 +13,7 @@
     "seo:restricted-networks": "node scripts/restricted-networks-seo-research.mjs",
     "seo:travel": "node scripts/travel-seo-research.mjs",
     "seo:free-vpn": "node scripts/free-vpn-seo-research.mjs",
+    "seo:free-trial": "node scripts/free-trial-seo-research.mjs",
     "seo:port-forwarding": "node scripts/port-forwarding-seo-research.mjs",
     "seo:best-vpn": "node scripts/best-vpn-seo-research.mjs",
     "seo:smoke": "node scripts/dfs-smoke.mjs",

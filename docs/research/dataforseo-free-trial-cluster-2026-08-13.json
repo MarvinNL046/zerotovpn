@@ -1,0 +1,423 @@
+{
+  "schemaVersion": 1,
+  "cluster": "VPN free trials / temporary access / plan eligibility",
+  "targetUrl": "/best/vpn-free-trial",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "fetchedAt": "2026-08-13T00:39:33.340Z",
+  "refreshed": false,
+  "seeds": [
+    "best vpn free trial",
+    "vpn free trial",
+    "vpn trial no credit card",
+    "free trial vpn",
+    "vpn 30 day free trial",
+    "free vpn trial"
+  ],
+  "overview": [
+    {
+      "keyword": "best vpn free trial",
+      "currentVolume": null,
+      "latestVolume": 320,
+      "latestMonth": "2024-02",
+      "difficulty": 20,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "free trial vpn",
+      "currentVolume": null,
+      "latestVolume": 2400,
+      "latestMonth": "2024-02",
+      "difficulty": 32,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "free vpn trial",
+      "currentVolume": null,
+      "latestVolume": 1300,
+      "latestMonth": "2024-02",
+      "difficulty": 36,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "vpn 30 day free trial",
+      "currentVolume": null,
+      "latestVolume": 140,
+      "latestMonth": "2024-02",
+      "difficulty": 46,
+      "intent": "informational"
+    },
+    {
+      "keyword": "vpn free trial",
+      "currentVolume": null,
+      "latestVolume": 9900,
+      "latestMonth": "2024-02",
+      "difficulty": 32,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "vpn trial no credit card",
+      "currentVolume": null,
+      "latestVolume": 170,
+      "latestMonth": "2024-02",
+      "difficulty": 16,
+      "intent": "transactional"
+    }
+  ],
+  "suggestions": [
+    {
+      "seed": "best vpn free trial",
+      "keyword": "best vpn service with free trial",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn free trial",
+      "keyword": "best vpn for netflix free trial",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn free trial",
+      "keyword": "best vpn for china free trial",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn free trial",
+      "keyword": "best vpn service free trial",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn free trial",
+      "keyword": "best free trial vpn service",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn free trial",
+      "keyword": "best vpn for free trial",
+      "volume": 10
+    },
+    {
+      "seed": "best vpn free trial",
+      "keyword": "best vpn 2020 free trial",
+      "volume": 0
+    },
+    {
+      "seed": "best vpn free trial",
+      "keyword": "best vpn 2021 free trial",
+      "volume": 0
+    },
+    {
+      "seed": "best vpn free trial",
+      "keyword": "best vpn for android with free trial",
+      "volume": null
+    },
+    {
+      "seed": "best vpn free trial",
+      "keyword": "best vpn free trial reddit",
+      "volume": null
+    },
+    {
+      "seed": "vpn trial no credit card",
+      "keyword": "best vpn free trial no credit card reddit",
+      "volume": null
+    },
+    {
+      "seed": "best vpn free trial",
+      "keyword": "best vpn with a free trial",
+      "volume": null
+    },
+    {
+      "seed": "best vpn free trial",
+      "keyword": "best vpn uk free trial",
+      "volume": null
+    },
+    {
+      "seed": "best vpn free trial",
+      "keyword": "best vpn with free trial reddit",
+      "volume": null
+    },
+    {
+      "seed": "best vpn free trial",
+      "keyword": "best vpn for uae free trial",
+      "volume": null
+    },
+    {
+      "seed": "free vpn trial",
+      "keyword": "free vpn 7 days trial",
+      "volume": 320
+    },
+    {
+      "seed": "free vpn trial",
+      "keyword": "free vpn 30 days trial",
+      "volume": 260
+    },
+    {
+      "seed": "free vpn trial",
+      "keyword": "free vpn trial iphone",
+      "volume": 210
+    },
+    {
+      "seed": "free vpn trial",
+      "keyword": "proton vpn plus free trial",
+      "volume": 90
+    },
+    {
+      "seed": "free vpn trial",
+      "keyword": "brave vpn free trial",
+      "volume": 90
+    },
+    {
+      "seed": "free vpn trial",
+      "keyword": "free trial vpn services",
+      "volume": 70
+    },
+    {
+      "seed": "free vpn trial",
+      "keyword": "free vpn service trial",
+      "volume": 70
+    },
+    {
+      "seed": "free vpn trial",
+      "keyword": "vpn free trial for mac",
+      "volume": 50
+    },
+    {
+      "seed": "free vpn trial",
+      "keyword": "norton vpn free trial 30 days",
+      "volume": 50
+    },
+    {
+      "seed": "free vpn trial",
+      "keyword": "vpn that offer free trial",
+      "volume": 30
+    },
+    {
+      "seed": "free vpn trial",
+      "keyword": "indian vpn free trial",
+      "volume": 30
+    },
+    {
+      "seed": "free vpn trial",
+      "keyword": "eset vpn free trial",
+      "volume": 30
+    },
+    {
+      "seed": "free vpn trial",
+      "keyword": "norton vpn 30 day free trial",
+      "volume": 20
+    },
+    {
+      "seed": "free vpn trial",
+      "keyword": "vpn free download trial",
+      "volume": 20
+    },
+    {
+      "seed": "free vpn trial",
+      "keyword": "total vpn free trial",
+      "volume": 20
+    },
+    {
+      "seed": "vpn trial no credit card",
+      "keyword": "free vpn trial no credit card required",
+      "volume": 10
+    },
+    {
+      "seed": "vpn trial no credit card",
+      "keyword": "free trial vpn no credit card needed",
+      "volume": 10
+    },
+    {
+      "seed": "vpn trial no credit card",
+      "keyword": "no credit card vpn free trial",
+      "volume": 10
+    },
+    {
+      "seed": "vpn trial no credit card",
+      "keyword": "vpn free trial no credit card needed",
+      "volume": 10
+    },
+    {
+      "seed": "vpn trial no credit card",
+      "keyword": "express vpn trial no credit card",
+      "volume": 0
+    },
+    {
+      "seed": "vpn trial no credit card",
+      "keyword": "vpn free trial no credit card uk",
+      "volume": 0
+    },
+    {
+      "seed": "vpn trial no credit card",
+      "keyword": "free trial vpn canada no credit card",
+      "volume": null
+    },
+    {
+      "seed": "vpn trial no credit card",
+      "keyword": "vpn no credit card trial",
+      "volume": null
+    },
+    {
+      "seed": "vpn trial no credit card",
+      "keyword": "vpn trial free no credit card",
+      "volume": null
+    },
+    {
+      "seed": "vpn trial no credit card",
+      "keyword": "free trial no credit card vpn",
+      "volume": null
+    },
+    {
+      "seed": "vpn trial no credit card",
+      "keyword": "vpn free trial no credit card reddit",
+      "volume": null
+    },
+    {
+      "seed": "vpn trial no credit card",
+      "keyword": "android vpn free trial no credit card",
+      "volume": null
+    },
+    {
+      "seed": "vpn trial no credit card",
+      "keyword": "vpn trial no credit card reddit",
+      "volume": null
+    },
+    {
+      "seed": "vpn trial no credit card",
+      "keyword": "free vpn trial no credit card reddit",
+      "volume": null
+    },
+    {
+      "seed": "vpn 30 day free trial",
+      "keyword": "proton vpn 30 day free trial",
+      "volume": 10
+    },
+    {
+      "seed": "vpn 30 day free trial",
+      "keyword": "30 day vpn free trial",
+      "volume": 10
+    },
+    {
+      "seed": "vpn 30 day free trial",
+      "keyword": "astrill vpn 30 day free trial",
+      "volume": 10
+    },
+    {
+      "seed": "vpn 30 day free trial",
+      "keyword": "30 day free trial express vpn",
+      "volume": 10
+    },
+    {
+      "seed": "vpn 30 day free trial",
+      "keyword": "proton vpn 30-day free trial",
+      "volume": 10
+    },
+    {
+      "seed": "vpn 30 day free trial",
+      "keyword": "avg vpn free 30 day trial download",
+      "volume": 0
+    },
+    {
+      "seed": "vpn 30 day free trial",
+      "keyword": "avg vpn 30 day free trial",
+      "volume": 0
+    },
+    {
+      "seed": "vpn 30 day free trial",
+      "keyword": "avg vpn 30 day free trial download",
+      "volume": 0
+    },
+    {
+      "seed": "vpn 30 day free trial",
+      "keyword": "openvpn 30 day free vpn trial",
+      "volume": 0
+    },
+    {
+      "seed": "vpn 30 day free trial",
+      "keyword": "avg vpn 30-day free trial download",
+      "volume": 0
+    },
+    {
+      "seed": "vpn 30 day free trial",
+      "keyword": "free 30-day vpn trial",
+      "volume": null
+    },
+    {
+      "seed": "vpn 30 day free trial",
+      "keyword": "vpn free 30 day trial",
+      "volume": null
+    },
+    {
+      "seed": "vpn 30 day free trial",
+      "keyword": "express vpn free 30 day trial",
+      "volume": null
+    },
+    {
+      "seed": "vpn 30 day free trial",
+      "keyword": "free 30 day vpn trial",
+      "volume": null
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "best vpn free trial",
+      "paa": [
+        "Can the FBI track a VPN?",
+        "Is there a VPN with a 1-month free trial?",
+        "Is there a VPN that is 100% free?",
+        "What are the top 5 free VPNs?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn free trial",
+      "paa": [
+        "Which VPN gives you a free trial?",
+        "Is there any 100% free VPN?",
+        "Which VPN has a 30 day free trial?",
+        "Which VPN offers the best free trial?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn trial no credit card",
+      "paa": [
+        "Can I get a VPN free trial without a credit card?",
+        "How to get free trials without a credit card?",
+        "Can I start a NordVPN free trial without a credit card?",
+        "Is there a free VPN that requires no payment?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "free trial vpn",
+      "paa": [
+        "Do any VPNs give a free trial?",
+        "Which VPN has a 30 day free trial?",
+        "Is there any 100% free VPN?",
+        "Can the FBI track a VPN?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn 30 day free trial",
+      "paa": [
+        "Can I get a VPN for 1 month only?",
+        "Which app gives 30 days free trial?",
+        "Is there a VPN that is 100% free?",
+        "Does NordVPN have 30 days free?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "free vpn trial",
+      "paa": [
+        "Do any VPNs give a free trial?",
+        "Is there any 100% free VPN?",
+        "Which VPN has a 30 day free trial?",
+        "Can the FBI track a VPN?"
+      ],
+      "hasAiOverview": true
+    }
+  ],
+  "sourcePolicy": "Use PAA and keyword signals to improve question coverage only. Verify every trial, refund, eligibility and payment condition on the provider's current first-party plan page; never present a temporary trial as a permanent free tier or an unassigned coupon."
+}

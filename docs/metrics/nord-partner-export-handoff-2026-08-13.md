@@ -1,6 +1,6 @@
 # Nord partner export handoff
 
-Status: the dated export was captured and the windowed measurement gate now passes. The remaining limitation is page-level attribution: the Nord report exposes offer/offer-URL labels, but no shared Short.io slug or page sub-ID.
+Status: the dated historical export was captured and the windowed measurement gate passes. A first post-rollout dashboard query was also captured, but its selected `Sub ID 1` field is blank; page-level attribution therefore remains open.
 
 ## Captured export
 
@@ -29,11 +29,11 @@ The importer accepts localized header names, but every row must provide:
 | Conversions | `conversions`, `sales`, `orders`, `transactions` |
 | Payout/revenue | `revenue`, `commission`, `earnings`, `payout`, `total_revenue` |
 | EPC | `epc`, `earnings_per_click`, `revenue_per_click` |
-| Page placement (new rollout) | `aff_sub`, `aff_sub1`, `sub_id`, `subid`, `affiliate_sub_id` |
+| Page placement (new rollout) | `aff_sub`, `aff_sub1`, `sub_id`, `subid`, `affiliate_sub_id`, `Stat.affiliate_info1`, `Stat.adv_sub1` |
 
 Rows without a dated field are rejected for a windowed report. Rows outside 28 July–10 August are rejected rather than silently trimmed. The script also rejects fixture/sample/example paths.
 
-For page-level attribution, retain the returned `aff_sub` value exactly. Production clicks use the format `zt_<public-page-slug>`; do not decode or replace it during export.
+For page-level attribution, retain the returned `aff_sub`/`Sub ID 1` value exactly. In Nord's UI, select **Sub ID 1** (and, when available, **Advertiser Sub ID 1**) before downloading. Production clicks use the format `zt_<public-page-slug>`; do not decode or replace it during export. The first post-rollout observation is documented in [nord-partner-postrollout-2026-08-13.md](nord-partner-postrollout-2026-08-13.md) and returned a blank field.
 
 ## Verification command
 

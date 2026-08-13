@@ -101,6 +101,8 @@ The latest production release gates cover **26/26** editorial targets, including
 
 The exact matched-window contract is machine-readable in [measurement-window-manifest-2026-08-12.json](./measurement-window-manifest-2026-08-12.json) and summarized in [measurement-window-manifest-2026-08-12.md](./measurement-window-manifest-2026-08-12.md). The authenticated GSC, Short.io and dated Nord partner exports now pass the input/date gate; the remaining limitation is attribution, because the Nord offer rows do not expose the shared Short.io slug or page-level sub-ID.
 
+The first post-rollout Nord query for 13 August is documented in [nord-partner-postrollout-2026-08-13.md](./nord-partner-postrollout-2026-08-13.md). Its CSV explicitly selected Nord's `Sub ID 1` (`Stat.affiliate_info1`), but the two dated clicks returned a blank value; this is evidence that the report field is available, not evidence of page attribution.
+
 The input guard also requires the authoritative Search Console `Chart.csv`; Pages and Queries alone cannot satisfy the production measurement contract.
 
 `measure:editorial` now records the shared window when called with paired `--window-start` and `--window-end` flags and rejects malformed or reversed dates. This prevents a valid-looking report from losing its period when the partner export is joined later.

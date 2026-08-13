@@ -270,7 +270,29 @@ function summarizePartner(rows) {
     conversions: number(pick(row, ["conversions", "conversion", "sales", "orders", "transactions", "stat_conversions"])),
     revenue: number(pick(row, ["revenue", "commission", "earnings", "payout", "total_revenue", "stat_payout"])),
     epc: number(pick(row, ["epc", "earnings_per_click", "revenue_per_click", "stat_epc", "stat_erpc"])),
-    subId: pick(row, ["aff_sub", "aff_sub1", "sub_id", "subid", "affiliate_sub_id", "stat_aff_sub", "stat_aff_sub1"]),
+    // Nord's dashboard labels the first affiliate sub-ID as `Sub ID 1` and
+    // exports it as `Stat.affiliate_info1`; some TUNE reports use the
+    // `Stat.adv_sub1` or direct `aff_sub` spelling instead. Accept all of
+    // these without requiring a manual CSV rewrite.
+    subId: pick(row, [
+      "aff_sub",
+      "aff_sub1",
+      "sub_id",
+      "subid",
+      "affiliate_sub_id",
+      "stat_aff_sub",
+      "stat_aff_sub1",
+      "stat_affiliate_info1",
+      "stat_affiliate_info2",
+      "stat_affiliate_info3",
+      "stat_affiliate_info4",
+      "stat_affiliate_info5",
+      "stat_adv_sub1",
+      "stat_adv_sub2",
+      "stat_adv_sub3",
+      "stat_adv_sub4",
+      "stat_adv_sub5",
+    ]),
     slug: slugFromLink(pick(row, ["link", "short_url", "short_link", "url", "offer", "offerurl_name", "offer_name"])),
   })).filter((row) => row.conversions !== null || row.revenue !== null || row.epc !== null);
   const clicks = normalized.reduce((sum, row) => sum + (row.clicks ?? 0), 0);

@@ -74,6 +74,15 @@ try {
   assert(nord.affiliate.partner.bySubId[0].subId === "zt_nl-best-best-vpn", "Nord aff_sub should remain available for page attribution");
   assert(nord.affiliate.partner.bySlug.some((row) => row.slug === "cyber-3y-deal"), "Nord offer URL names should remain inspectable partner slugs");
 
+  const nordUiSubId = write(
+    "nord-ui-sub-id.csv",
+    "Offer.name,OfferUrl.name,Stat.affiliate_info1,Stat.impressions,Stat.conversions,Stat.clicks,Stat.payout,Stat.date,Stat.erpc\nNordVPN,Cyber 3y deal,zt_nl-best-vpn-macos,0,0,2,0,2026-08-13,0.00000\n,, ,0,0,2,0,,,0.00000\n",
+  );
+  const nordUiOut = join(temp, "nord-ui.json");
+  run(["--label", "test-nord-ui-sub-id", "--window-start", "2026-08-13", "--window-end", "2026-08-13", "--gsc-pages", pages, "--gsc-queries", queries, "--gsc-chart", chart, "--shortio", shortIo, "--partner", nordUiSubId, "--out", nordUiOut]);
+  const nordUi = JSON.parse(readFileSync(nordUiOut, "utf8"));
+  assert(nordUi.affiliate.partner.bySubId[0].subId === "zt_nl-best-vpn-macos", "Nord UI Sub ID 1 should map from Stat.affiliate_info1");
+
   const localizedPages = write(
     "localized-pages.csv",
     "Pagina;Klikken;Vertoningen;Gemiddelde CTR;Gemiddelde positie\nhttps://www.zerotovpn.com/;30;1.409;2,13%;15,0\nhttps://www.zerotovpn.com/blog/best-vpn-for-iran-2026-bypass-internet-censorship;24;12.034;0,20%;9,0\n",
@@ -105,7 +114,7 @@ try {
   const outsideWindow = spawnSync(process.execPath, [importer, "--label", "outside-partner", "--window-start", "2026-07-28", "--window-end", "2026-08-10", "--gsc-pages", pages, "--gsc-queries", queries, "--gsc-chart", chart, "--shortio", shortIo, "--partner", outsidePartner, "--out", join(temp, "outside-partner.json")], { encoding: "utf8" });
   assert(outsideWindow.status !== 0 && outsideWindow.stderr.includes("does not match"), "Partner rows outside the measurement window should fail closed");
 
-  console.log(JSON.stringify({ passed: true, cases: ["english-window", "nord-prefixed-partner", "localized", "empty-partner", "missing-required-input", "reversed-window", "partner-window-mismatch"] }, null, 2));
+  console.log(JSON.stringify({ passed: true, cases: ["english-window", "nord-prefixed-partner", "nord-ui-sub-id", "localized", "empty-partner", "missing-required-input", "reversed-window", "partner-window-mismatch"] }, null, 2));
 } finally {
   rmSync(temp, { recursive: true, force: true });
 }

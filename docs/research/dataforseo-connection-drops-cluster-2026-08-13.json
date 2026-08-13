@@ -1,0 +1,328 @@
+{
+  "schemaVersion": 1,
+  "cluster": "VPN connection drops / troubleshooting / network switching",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "fetchedAt": "2026-08-13T01:53:40.820Z",
+  "refreshed": true,
+  "seeds": [
+    "vpn keeps disconnecting",
+    "vpn connection drops",
+    "why does my vpn keep disconnecting",
+    "how to fix vpn connection drops",
+    "vpn disconnects when switching wifi",
+    "vpn kill switch disconnects internet"
+  ],
+  "overview": [
+    {
+      "keyword": "vpn connection drops",
+      "currentVolume": 20,
+      "latestVolume": 10,
+      "latestMonth": "2026-06",
+      "difficulty": 0,
+      "intent": "informational"
+    },
+    {
+      "keyword": "vpn keeps disconnecting",
+      "currentVolume": null,
+      "latestVolume": 390,
+      "latestMonth": "2024-02",
+      "difficulty": 3,
+      "intent": "informational"
+    },
+    {
+      "keyword": "why does my vpn keep disconnecting",
+      "currentVolume": null,
+      "latestVolume": 720,
+      "latestMonth": "2024-02",
+      "difficulty": 3,
+      "intent": "informational"
+    }
+  ],
+  "suggestions": [
+    {
+      "seed": "vpn keeps disconnecting",
+      "keyword": "why does my vpn keeps disconnecting",
+      "volume": 590
+    },
+    {
+      "seed": "vpn keeps disconnecting",
+      "keyword": "proton vpn keeps disconnecting",
+      "volume": 90
+    },
+    {
+      "seed": "vpn keeps disconnecting",
+      "keyword": "sonicwall global vpn client keeps disconnecting",
+      "volume": 10
+    },
+    {
+      "seed": "vpn keeps disconnecting",
+      "keyword": "anyconnect vpn keeps disconnecting and reconnecting",
+      "volume": 10
+    },
+    {
+      "seed": "vpn keeps disconnecting",
+      "keyword": "pulse secure vpn keeps disconnecting",
+      "volume": 10
+    },
+    {
+      "seed": "vpn keeps disconnecting",
+      "keyword": "google one vpn keeps disconnecting",
+      "volume": 10
+    },
+    {
+      "seed": "vpn keeps disconnecting",
+      "keyword": "private vpn keeps disconnecting",
+      "volume": 10
+    },
+    {
+      "seed": "vpn keeps disconnecting",
+      "keyword": "why mcafee vpn keeps disconnecting",
+      "volume": 10
+    },
+    {
+      "seed": "vpn keeps disconnecting",
+      "keyword": "vpn keeps disconnecting on firestick",
+      "volume": 10
+    },
+    {
+      "seed": "vpn keeps disconnecting",
+      "keyword": "cisco anyconnect vpn client keeps disconnecting and reconnecting",
+      "volume": 10
+    },
+    {
+      "seed": "vpn keeps disconnecting",
+      "keyword": "covenant eyes vpn keeps connecting and disconnecting",
+      "volume": 10
+    },
+    {
+      "seed": "vpn keeps disconnecting",
+      "keyword": "fortinet ssl vpn client keeps disconnecting",
+      "volume": 10
+    },
+    {
+      "seed": "vpn keeps disconnecting",
+      "keyword": "opera vpn keeps disconnecting",
+      "volume": 10
+    },
+    {
+      "seed": "vpn keeps disconnecting",
+      "keyword": "google vpn keeps disconnecting",
+      "volume": 10
+    },
+    {
+      "seed": "vpn keeps disconnecting",
+      "keyword": "aws vpn keeps disconnecting",
+      "volume": 10
+    },
+    {
+      "seed": "vpn connection drops",
+      "keyword": "vpn connection drops",
+      "volume": 20
+    },
+    {
+      "seed": "vpn connection drops",
+      "keyword": "why vpn drops connection",
+      "volume": 10
+    },
+    {
+      "seed": "vpn connection drops",
+      "keyword": "sonicwall vpn drops connection at random",
+      "volume": 10
+    },
+    {
+      "seed": "vpn connection drops",
+      "keyword": "vpn connection drops internet",
+      "volume": 10
+    },
+    {
+      "seed": "vpn connection drops",
+      "keyword": "vpn connection drops wifi",
+      "volume": null
+    },
+    {
+      "seed": "vpn connection drops",
+      "keyword": "vpn drops wireless connection",
+      "volume": null
+    },
+    {
+      "seed": "vpn connection drops",
+      "keyword": "cisco vpn connection drops intermittently",
+      "volume": null
+    },
+    {
+      "seed": "vpn connection drops",
+      "keyword": "sonicwall global vpn drops connection",
+      "volume": null
+    },
+    {
+      "seed": "vpn connection drops",
+      "keyword": "watchguard vpn drops connection",
+      "volume": null
+    },
+    {
+      "seed": "vpn connection drops",
+      "keyword": "vpn connection drops windows 10",
+      "volume": null
+    },
+    {
+      "seed": "vpn connection drops",
+      "keyword": "cisco asa vpn drops connection",
+      "volume": null
+    },
+    {
+      "seed": "vpn connection drops",
+      "keyword": "vpn connection drops every few minutes",
+      "volume": null
+    },
+    {
+      "seed": "vpn connection drops",
+      "keyword": "router drops vpn connection",
+      "volume": null
+    },
+    {
+      "seed": "vpn connection drops",
+      "keyword": "rdp connection drops over vpn",
+      "volume": null
+    },
+    {
+      "seed": "vpn connection drops",
+      "keyword": "vpn connection drops after a few seconds",
+      "volume": null
+    },
+    {
+      "seed": "why does my vpn keep disconnecting",
+      "keyword": "why does my vpn keep disconnecting on my phone",
+      "volume": 50
+    },
+    {
+      "seed": "why does my vpn keep disconnecting",
+      "keyword": "why does my cisco anyconnect vpn keep disconnecting and reconnecting",
+      "volume": 10
+    },
+    {
+      "seed": "why does my vpn keep disconnecting",
+      "keyword": "why does my vpn keep disconnecting my wifi",
+      "volume": null
+    },
+    {
+      "seed": "why does my vpn keep disconnecting",
+      "keyword": "why does my avast vpn keep disconnecting",
+      "volume": null
+    },
+    {
+      "seed": "why does my vpn keep disconnecting",
+      "keyword": "why does my cisco anyconnect vpn keep disconnecting",
+      "volume": null
+    },
+    {
+      "seed": "why does my vpn keep disconnecting",
+      "keyword": "why does my vpn keep disconnecting on my ipad",
+      "volume": null
+    },
+    {
+      "seed": "why does my vpn keep disconnecting",
+      "keyword": "why does my vpn keep disconnecting on my laptop",
+      "volume": null
+    },
+    {
+      "seed": "why does my vpn keep disconnecting",
+      "keyword": "why does my vpn keep disconnecting on my iphone",
+      "volume": null
+    },
+    {
+      "seed": "why does my vpn keep disconnecting",
+      "keyword": "why does my vpn keep disconnecting on iphone",
+      "volume": null
+    },
+    {
+      "seed": "why does my vpn keep disconnecting",
+      "keyword": "why does my vpn keep disconnecting",
+      "volume": null
+    },
+    {
+      "seed": "why does my vpn keep disconnecting",
+      "keyword": "why does my vpn connection keep disconnecting",
+      "volume": null
+    },
+    {
+      "seed": "why does my vpn keep disconnecting",
+      "keyword": "why does my cisco vpn keep disconnecting",
+      "volume": null
+    },
+    {
+      "seed": "why does my vpn keep disconnecting",
+      "keyword": "why does my company vpn keep disconnecting",
+      "volume": null
+    },
+    {
+      "seed": "why does my vpn keep disconnecting",
+      "keyword": "why does my vpn keep disconnecting iphone",
+      "volume": null
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "vpn keeps disconnecting",
+      "paa": [
+        "How do I stop my VPN from disconnecting?",
+        "Why won't my VPN stay on?",
+        "How do I keep my VPN connected all the time?",
+        "How can I fix VPN disconnection problems?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn connection drops",
+      "paa": [
+        "Why is my VPN connection dropping randomly?",
+        "Why is my VPN causing connection issues?",
+        "How to keep your VPN from disconnecting?",
+        "Why does my VPN keep disconnecting and reconnecting my iPhone?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "why does my vpn keep disconnecting",
+      "paa": [
+        "How do I stop a VPN from disconnecting?",
+        "How do I keep my VPN connected all the time?",
+        "Why won't my VPN stay on?",
+        "How can I fix VPN disconnection problems?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "how to fix vpn connection drops",
+      "paa": [
+        "Why does my VPN connection keep dropping?",
+        "Why is my VPN killing my internet connection?",
+        "How to keep your VPN from disconnecting?",
+        "Why does a VPN drop?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn disconnects when switching wifi",
+      "paa": [
+        "Why does my Wi-Fi disconnect when I turn on a VPN?",
+        "How do I stop my VPN from automatically disconnecting?",
+        "Why does my VPN keep disconnecting even though my internet is working fine?",
+        "How can I fix VPN disconnection problems?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "vpn kill switch disconnects internet",
+      "paa": [
+        "Why does my VPN make my internet disconnect?",
+        "Can a VPN mess up your internet connection?",
+        "When I switch off VPN, my internet connection is terminated.?",
+        "How do I stop a VPN from blocking my internet?"
+      ],
+      "hasAiOverview": true
+    }
+  ],
+  "sourcePolicy": "DataForSEO signals prioritise intent coverage and FAQ structure; they do not prove provider stability, fix success, security outcomes, pricing or conversion value."
+}

@@ -39,6 +39,11 @@ import {
   telegramVpnEditorialTitle,
   telegramVpnEditorialExcerpt,
 } from "@/data/editorial/telegram-vpn-2026";
+import {
+  connectionDropsEditorialFaq,
+  connectionDropsEditorialTitle,
+  connectionDropsEditorialExcerpt,
+} from "@/data/editorial/connection-drops-2026";
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
@@ -57,6 +62,20 @@ const iranContentBrief = {
     "https://freedomhouse.org/country/iran/freedom-net/2025",
   ],
   affiliateContext: "vpn-selection",
+  schemaType: "Article",
+} satisfies EditorialContentBrief;
+
+const connectionDropsContentBrief = {
+  primaryKeyword: "vpn keeps disconnecting",
+  intent: "informational",
+  cluster: "protocol-and-technical-literacy",
+  lastReviewedAt: "2026-08-13",
+  evidence: [
+    "docs/research/dataforseo-connection-drops-cluster-2026-08-13.md",
+    "/methodology",
+    "/guides/vpn-protocols-explained",
+  ],
+  affiliateContext: "none",
   schemaType: "Article",
 } satisfies EditorialContentBrief;
 
@@ -119,6 +138,10 @@ const clusterMetadata: Record<string, { title: string; description: string }> = 
     description:
       "Compare VPNs for ChatGPT and OpenAI in restricted countries: access checks, latency, mobile setup and privacy limits before you connect.",
   },
+  "vpn-connection-drops-why-disconnects-how-to-fix-2026": {
+    title: connectionDropsEditorialTitle,
+    description: connectionDropsEditorialExcerpt,
+  },
 };
 
 const aiPrivacyClusterLinks: Record<string, ClusterLink[]> = {
@@ -137,6 +160,26 @@ const aiPrivacyClusterLinks: Record<string, ClusterLink[]> = {
       title: "VPNs for China",
       description: "Check obfuscation, app preparation and network limits before travelling.",
       href: "/countries/china",
+    },
+  ],
+};
+
+const technicalClusterLinks: Record<string, ClusterLink[]> = {
+  "vpn-connection-drops-why-disconnects-how-to-fix-2026": [
+    {
+      title: "VPN protocol guide",
+      description: "Compare WireGuard, OpenVPN and IKEv2 before changing the protocol.",
+      href: "/guides/vpn-protocols-explained",
+    },
+    {
+      title: "VPN speed guide",
+      description: "Separate baseline internet problems from VPN route and server effects.",
+      href: "/guides/vpn-speed-guide",
+    },
+    {
+      title: "VPNs for mobile devices",
+      description: "Check background permissions and network handoffs on phones and tablets.",
+      href: "/best/vpn-mobile",
     },
   ],
 };
@@ -208,10 +251,11 @@ export default async function DynamicBlogPost({ params }: Props) {
     notFound();
   }
 
-  const clusterLinks = censorshipClusterLinks[slug] || aiPrivacyClusterLinks[slug] || [];
+  const clusterLinks = censorshipClusterLinks[slug] || aiPrivacyClusterLinks[slug] || technicalClusterLinks[slug] || [];
   const isIranEditorial = slug === "best-vpn-for-iran-2026-bypass-internet-censorship";
   const isTelegramEditorial = slug === "best-vpn-for-telegram-2026";
   const isChatgptEditorial = slug === "best-vpn-for-chatgpt-2026";
+  const isConnectionDropsEditorial = slug === "vpn-connection-drops-why-disconnects-how-to-fix-2026";
   const isCensorshipEditorial = isIranEditorial || isTelegramEditorial;
   const isRestrictedAffiliateContext =
     slug === "vpn-blockchain-privacy-mask-wallet-activity-2026";
@@ -273,7 +317,7 @@ export default async function DynamicBlogPost({ params }: Props) {
 
       {/* Article Header and shared editorial disclosure/jump navigation */}
       <BestVpnEditorialTemplate
-        brief={isIranEditorial ? iranContentBrief : isTelegramEditorial ? editorialContentBriefs.telegram : undefined}
+        brief={isIranEditorial ? iranContentBrief : isTelegramEditorial ? editorialContentBriefs.telegram : isConnectionDropsEditorial ? connectionDropsContentBrief : undefined}
         navigation={[
           { href: "#article-content", label: "Article" },
           ...(isCensorshipEditorial ? [{ href: "#quick-picks", label: "Shortlist" }] : []),
@@ -325,11 +369,11 @@ export default async function DynamicBlogPost({ params }: Props) {
           {clusterLinks.length > 0 && (
             <nav
               id="cluster-links"
-              aria-label="Censorship research cluster"
+              aria-label={isConnectionDropsEditorial ? "Technical VPN troubleshooting cluster" : "Censorship research cluster"}
               className="rounded-xl border border-primary/20 bg-primary/5 p-4 sm:p-5"
             >
               <p className="mb-3 text-sm font-semibold text-primary">
-                Censorship research cluster
+                {isConnectionDropsEditorial ? "Technical VPN troubleshooting cluster" : "Censorship research cluster"}
               </p>
               <div className="grid gap-3 sm:grid-cols-3">
                 {clusterLinks.map((link) => (
@@ -402,6 +446,7 @@ export default async function DynamicBlogPost({ params }: Props) {
 
         {isIranEditorial && <FAQSchema title="Iran VPN FAQ" faqs={iranVpnEditorialFaq} />}
         {isTelegramEditorial && <FAQSchema title="Telegram VPN FAQ" faqs={telegramVpnEditorialFaq} />}
+        {isConnectionDropsEditorial && <FAQSchema title="VPN disconnection FAQ" faqs={connectionDropsEditorialFaq} />}
 
         {/* Ad placement */}
         <InlineAd />

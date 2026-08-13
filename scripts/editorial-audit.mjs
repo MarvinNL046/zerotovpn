@@ -138,7 +138,7 @@ const checks = [
   {
     name: "localized Iran blog routes use the evidence-led body",
     file: "src/app/[locale]/blog/[slug]/page.tsx",
-    patterns: [/iranVpnEditorialContent/, /const articleContent = isIranEditorial/, /iranContentBrief/, /best vpn for iran/, /censorship-restricted-networks/, /brief=\{isIranEditorial \? iranContentBrief : isTelegramEditorial \? editorialContentBriefs\.telegram : undefined\}/],
+    patterns: [/iranVpnEditorialContent/, /const articleContent = isIranEditorial/, /iranContentBrief/, /best vpn for iran/, /censorship-restricted-networks/, /brief=\{isIranEditorial \? iranContentBrief : isTelegramEditorial \? editorialContentBriefs\.telegram : isConnectionDropsEditorial \? connectionDropsContentBrief : undefined\}/],
     forbiddenPatterns: [/articleContent = isRestrictedAffiliateContext\s*\?\s*verwijderAffiliateLinks\(post\.content\)/i],
   },
   {
@@ -181,6 +181,17 @@ const checks = [
     name: "gaming page PAA evidence and bounded latency copy",
     file: "src/app/[locale]/best/vpn-gaming/page.tsx",
     patterns: [/Do VPNs really work for gaming\?/, /Will a VPN slow down gaming\?/, /DataForSEO US\/English intent dossier fetched August 13, 2026/],
+  },
+  {
+    name: "connection-drops page uses PAA-led bounded troubleshooting copy",
+    file: "src/data/editorial/connection-drops-2026.ts",
+    patterns: [/How do I stop my VPN from disconnecting\?/, /Why won't my VPN stay on\?/, /Why does my VPN keep disconnecting and reconnecting on iPhone\?/, /Why is my VPN killing my internet connection\?/, /VPN disconnection diagnosis checklist/, /2026/],
+    forbiddenPatterns: [/approximately\s+\d+%|\b\d+%\s+of\s+(?:VPN|users|cases)/i, /permanent guarantee|will stay connected/i],
+  },
+  {
+    name: "connection-drops blog route uses the audited editorial override",
+    file: "src/app/[locale]/blog/[slug]/page.tsx",
+    patterns: [/connectionDropsEditorialTitle/, /connectionDropsContentBrief/, /connectionDropsEditorialFaq/, /technicalClusterLinks/, /isConnectionDropsEditorial/],
   },
   {
     name: "Chromebook use-case page avoids unsupported test counts",

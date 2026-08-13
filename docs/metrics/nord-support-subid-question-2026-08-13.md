@@ -47,3 +47,11 @@ Do not attach the signed dashboard download URL or any account credential to a p
 ## API route discovered in authenticated dashboard
 
 The Nord publisher dashboard exposes **Tools -> APIs -> API V3** and links to TUNE's affiliate API documentation. It states that an API key is required and offers a **Request API Key** action. No key was requested or stored during this audit because that action changes account state and could issue a credential. If the key is approved, query the performance endpoint with the same date/offer filters and inspect whether `Stat.affiliate_info1` (or an equivalent sub-ID field) is returned even when the dashboard grid is blank.
+
+The repository now contains a credential-safe scaffold for that check:
+
+```powershell
+npm run nord:api-smoke -- --start 2026-07-28 --end 2026-08-13
+```
+
+It reads `TUNE_NETWORK_ID` and `TUNE_AFFILIATE_API_KEY` only from `.env.local`, never prints the key, requests the stats fields needed for the attribution join and reports only returned sub-ID values. TUNE's official `Affiliate_Report::getStats` documentation identifies `Stat.affiliate_info1` as affiliate sub 1 and supports date-window parameters.

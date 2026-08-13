@@ -61,6 +61,7 @@
     "audit:editorial": "node scripts/editorial-audit.mjs",
     "measure:editorial": "node scripts/measure-editorial.mjs",
     "measure:check-inputs": "node scripts/check-measurement-inputs.mjs",
+    "nord:api-smoke": "node scripts/nord-api-smoke.mjs",
     "test:measurement-inputs": "node scripts/test-check-measurement-inputs.mjs",
     "test:measure-editorial": "node scripts/test-measure-editorial.mjs",
     "test:affiliate-attribution": "node --experimental-strip-types scripts/test-affiliate-attribution.mjs",

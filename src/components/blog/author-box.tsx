@@ -138,6 +138,21 @@ export function SourcesSection({ content }: { content: string }) {
               href={source.url}
               target="_blank"
               rel={isAffiliateUrl(source.url) ? "noopener noreferrer sponsored nofollow" : "noopener noreferrer"}
+              {...(isAffiliateUrl(source.url)
+                ? {
+                    "data-affiliate-slug": (() => {
+                      try {
+                        const parsed = new URL(source.url);
+                        const pathSlug = parsed.pathname.split("/").filter(Boolean)[0];
+                        return parsed.hostname === "go.zerotovpn.com" && pathSlug
+                          ? pathSlug
+                          : "vpn-provider";
+                      } catch {
+                        return "vpn-provider";
+                      }
+                    })(),
+                  }
+                : {})}
               className="text-primary hover:underline"
             >
               {source.text}

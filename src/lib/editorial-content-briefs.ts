@@ -164,6 +164,15 @@ export const editorialContentBriefs = {
     affiliateContext: "vpn-selection",
     schemaType: "Article",
   },
+  urbanVpnReview: {
+    primaryKeyword: "urban vpn review",
+    intent: "commercial",
+    cluster: "provider-reviews-and-comparisons",
+    lastReviewedAt: "2026-08-13",
+    evidence: ["docs/research/dataforseo-urban-vpn-review-cluster-2026-08-13.md", "/methodology", "https://www.urban-vpn.com/privacy/", "https://www.koi.ai/blog/urban-vpn-browser-extension-ai-conversations-data-collection"],
+    affiliateContext: "vpn-selection",
+    schemaType: "Article",
+  },
   vpnComparison: {
     primaryKeyword: "vpn comparison",
     intent: "commercial",

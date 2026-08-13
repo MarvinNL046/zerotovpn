@@ -373,6 +373,17 @@ const checks = [
     patterns: [/ProtonVpnReviewEditorialPage/, /_locale === "en" && vpn\.slug === "protonvpn"/, /protonvpnReviewTitle/, /protonvpnReviewDescription/],
   },
   {
+    name: "Urban VPN review uses bounded evidence-led editorial component",
+    file: "src/components/editorial/urban-vpn-review-editorial-page.tsx",
+    patterns: [/UrbanVpnReviewEditorialPage/, /Urban VPN evidence and limitation checklist/, /id="evidence"/, /id="alternatives"/, /id="faq"/, /DataForSEO/, /Koi Security/i, /privacy policy/i],
+    forbiddenPatterns: [/We tested Urban VPN for 30\+ days/i, /completely anonymous/i, /guarantee.*(?:Netflix|streaming)/i],
+  },
+  {
+    name: "Urban VPN review route uses the audited English component and metadata",
+    file: "src/app/[locale]/reviews/[slug]/page.tsx",
+    patterns: [/UrbanVpnReviewEditorialPage/, /_locale === "en" && vpn\.slug === "urban-vpn"/, /urbanVpnReviewTitle/, /urbanVpnReviewDescription/],
+  },
+  {
     name: "VPN comparison uses bounded criteria and tracked prices",
     file: "src/components/editorial/vpn-comparison-editorial-page.tsx",
     patterns: [/VpnComparisonEditorialPage/, /VPN provider comparison by price, terms and device criteria/, /id="shortlist"/, /id="comparison"/, /id="method"/, /id="faq"/, /DataForSEO/, /AffiliateTextLink/],

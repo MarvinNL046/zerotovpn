@@ -41,6 +41,7 @@ import { getVpnAffiliateUrl } from "@/lib/vpn-links";
 import { formatAuditStatus, formatLoggingPolicy, getTransparencySnapshotForVpn } from "@/lib/vpn-transparency-data";
 import { NordVpnReviewEditorialPage, nordvpnReviewDescription, nordvpnReviewTitle } from "@/components/editorial/nordvpn-review-editorial-page";
 import { ProtonVpnReviewEditorialPage, protonvpnReviewDescription, protonvpnReviewTitle } from "@/components/editorial/protonvpn-review-editorial-page";
+import { UrbanVpnReviewEditorialPage, urbanVpnReviewDescription, urbanVpnReviewTitle } from "@/components/editorial/urban-vpn-review-editorial-page";
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
@@ -498,6 +499,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const shortMonthYear = getShortMonthYear();
   const isNordVpn = vpn.slug === "nordvpn";
   const isProtonVpn = vpn.slug === "protonvpn";
+  const isUrbanVpn = vpn.slug === "urban-vpn";
 
   // Generate locale-specific descriptions
   const descriptions: Record<string, string> = {
@@ -536,6 +538,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     descriptions.en = protonvpnReviewDescription;
     titles.en = `${protonvpnReviewTitle} | ZeroToVPN`;
   }
+  if (isUrbanVpn && locale === "en") {
+    descriptions.en = urbanVpnReviewDescription;
+    titles.en = `${urbanVpnReviewTitle} | ZeroToVPN`;
+  }
 
   return {
     metadataBase: new URL(baseUrl),
@@ -562,6 +568,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           "proton vpn speed test",
           "is proton vpn worth it",
           "proton vpn streaming",
+        ]
+      : isUrbanVpn && locale === "en"
+      ? [
+          "urban vpn review",
+          "urban vpn review 2026",
+          "is urban vpn safe",
+          "urban vpn free",
+          "urban vpn privacy",
+          "urban vpn ai chats",
         ]
       : [
           vpn.name,
@@ -620,6 +635,9 @@ export default async function ReviewPage({ params }: Props) {
   }
   if (_locale === "en" && vpn.slug === "protonvpn") {
     return <ProtonVpnReviewEditorialPage />;
+  }
+  if (_locale === "en" && vpn.slug === "urban-vpn") {
+    return <UrbanVpnReviewEditorialPage />;
   }
   const nordvpn = vpnProviders.find((provider) => provider.slug === "nordvpn");
 

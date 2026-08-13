@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "cluster": "Urban VPN review / free plan / privacy / browser-extension reporting",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2840,
+  "language_code": "en",
+  "fetchedAt": "2026-08-13T06:38:59.300Z",
+  "refreshed": false,
+  "seeds": [
+    "urban vpn review",
+    "urban vpn review 2026",
+    "is urban vpn safe",
+    "urban vpn free",
+    "urban vpn privacy",
+    "urban vpn ai chats",
+    "urban vpn vs proton vpn"
+  ],
+  "overview": [
+    {
+      "keyword": "is urban vpn safe",
+      "currentVolume": null,
+      "latestVolume": 480,
+      "latestMonth": "2024-02",
+      "difficulty": 12,
+      "intent": "informational"
+    },
+    {
+      "keyword": "urban vpn free",
+      "currentVolume": null,
+      "latestVolume": 50,
+      "latestMonth": "2024-02",
+      "difficulty": 33,
+      "intent": "informational"
+    },
+    {
+      "keyword": "urban vpn privacy",
+      "currentVolume": null,
+      "latestVolume": null,
+      "latestMonth": null,
+      "difficulty": null,
+      "intent": "informational"
+    },
+    {
+      "keyword": "urban vpn review",
+      "currentVolume": null,
+      "latestVolume": 390,
+      "latestMonth": "2024-02",
+      "difficulty": 15,
+      "intent": "informational"
+    }
+  ],
+  "suggestions": [
+    {
+      "seed": "urban vpn review",
+      "keyword": "urban vpn proxy review",
+      "volume": 10
+    },
+    {
+      "seed": "urban vpn review",
+      "keyword": "urban shield vpn review",
+      "volume": 10
+    },
+    {
+      "seed": "urban vpn review",
+      "keyword": "urban free vpn review",
+      "volume": null
+    },
+    {
+      "seed": "urban vpn review",
+      "keyword": "urban vpn review reddit",
+      "volume": null
+    },
+    {
+      "seed": "urban vpn review",
+      "keyword": "urban vpn malaysia review",
+      "volume": null
+    },
+    {
+      "seed": "urban vpn review",
+      "keyword": "review urban vpn",
+      "volume": null
+    },
+    {
+      "seed": "is urban vpn safe",
+      "keyword": "is urban vpn proxy safe",
+      "volume": 20
+    },
+    {
+      "seed": "is urban vpn safe",
+      "keyword": "is urban shield vpn safe",
+      "volume": 10
+    },
+    {
+      "seed": "is urban vpn safe",
+      "keyword": "is urban free vpn safe",
+      "volume": null
+    },
+    {
+      "seed": "is urban vpn safe",
+      "keyword": "urban vpn is it safe",
+      "volume": null
+    },
+    {
+      "seed": "is urban vpn safe",
+      "keyword": "is urban vpn safe to use",
+      "volume": null
+    },
+    {
+      "seed": "is urban vpn safe",
+      "keyword": "urban vpn is safe or not",
+      "volume": null
+    },
+    {
+      "seed": "urban vpn free",
+      "keyword": "urban vpn extension chrome free",
+      "volume": 20
+    },
+    {
+      "seed": "urban vpn free",
+      "keyword": "free download urban vpn for chrome",
+      "volume": 10
+    },
+    {
+      "seed": "urban vpn free",
+      "keyword": "urban vpn alternative free",
+      "volume": 10
+    },
+    {
+      "seed": "urban vpn free",
+      "keyword": "urban vpn chrome free",
+      "volume": 10
+    },
+    {
+      "seed": "urban vpn free",
+      "keyword": "how is urban vpn free",
+      "volume": 10
+    },
+    {
+      "seed": "urban vpn free",
+      "keyword": "why urban vpn is free",
+      "volume": 10
+    },
+    {
+      "seed": "urban vpn free",
+      "keyword": "urban vpn premium free",
+      "volume": 10
+    },
+    {
+      "seed": "urban vpn free",
+      "keyword": "urban vpn download pc free",
+      "volume": 10
+    },
+    {
+      "seed": "urban vpn free",
+      "keyword": "urban vpn is free",
+      "volume": 10
+    },
+    {
+      "seed": "urban vpn free",
+      "keyword": "free urban vpn firefox",
+      "volume": 10
+    },
+    {
+      "seed": "urban vpn free",
+      "keyword": "urban vpn apk free download",
+      "volume": 10
+    },
+    {
+      "seed": "urban vpn free",
+      "keyword": "free urban vpn chrome",
+      "volume": 10
+    },
+    {
+      "seed": "urban vpn free",
+      "keyword": "urban vpn for chrome free download",
+      "volume": 10
+    },
+    {
+      "seed": "urban vpn free",
+      "keyword": "urban vpn chrome extension free download",
+      "volume": 10
+    },
+    {
+      "seed": "urban vpn free",
+      "keyword": "why is urban vpn free",
+      "volume": 10
+    },
+    {
+      "seed": "urban vpn privacy",
+      "keyword": "urban vpn privacy",
+      "volume": null
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "urban vpn review",
+      "paa": [
+        "Is Urban VPN safe and legit?",
+        "What happened to Urban VPN?",
+        "Is Urban VPN completely free to use?",
+        "What is the safest free VPN to use?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "urban vpn review 2026",
+      "paa": [
+        "Is Urban VPN safe and legit?",
+        "What is the best VPN in the world in 2026?",
+        "What happened to Urban VPN?",
+        "What is the most trustworthy VPN provider?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "is urban vpn safe",
+      "paa": [
+        "Which is the safest free VPN to use?",
+        "Does Urban VPN collect and sell my data?",
+        "Can the FBI track a VPN?",
+        "Which VPN is most trustworthy?"
+      ],
+      "hasAiOverview": true
+    }
+  ],
+  "sourcePolicy": "DataForSEO signals prioritise query intent, comparison structure and FAQ coverage; they do not prove Urban VPN safety, current pricing, incident scope or conversion value. Provider facts must be tied to current first-party terms, dated reporting or reproducible tests."
+}

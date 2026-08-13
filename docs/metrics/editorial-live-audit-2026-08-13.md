@@ -1,6 +1,6 @@
 # Live editorial page audit
 
-Generated: 2026-08-13T05:06:11.941Z
+Generated: 2026-08-13T05:15:55.308Z
 
 - Target pages: **38**
 - Passing pages: **38**
@@ -26,7 +26,7 @@ Generated: 2026-08-13T05:06:11.941Z
 | pass | /best/vpn-laptops | Best VPNs for Laptops (Aug 2026) — Lightweight &amp; Secure | 1 | 42 | 6 | — | — |
 | pass | /best/vpn-privacy | Best VPNs for Privacy (Aug 2026) — Audited No-Logs Picks | 1 | 42 | 5 | — | — |
 | pass | /best/vpn-gaming | Best VPN for Gaming (2026) — Lowest Ping, Tested | ZeroToVPN | 1 | 44 | 4 | — | — |
-| pass | /best/vpn-chromebook | Best VPN for Chromebook (2026) - Easy Setup &amp; Fast Speeds | 1 | 41 | 6 | — | — |
+| pass | /best/vpn-chromebook | Best VPNs for Chromebook in 2026: Android, Chrome Extension and Linux Options | 1 | 42 | 6 | — | — |
 | pass | /best/vpn-mobile | Best Mobile VPNs in 2026: iPhone, Android, Battery and Setup Limits | 1 | 41 | 6 | — | — |
 | pass | /blog/best-vpn-for-chatgpt-2026 | Best VPNs for ChatGPT in 2026: Access, Privacy and Setup Limits | 1 | 48 | 9 | — | — |
 | pass | /blog/best-free-vpn-reddit-2026 | Best Free VPNs Reddit Discussions Can Point You Toward in 2026 | 1 | 45 | 4 | — | — |

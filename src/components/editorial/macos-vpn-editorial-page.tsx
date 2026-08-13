@@ -84,7 +84,7 @@ const baseCopy: MacosCopy = {
   sourcesTitle: "Sources and related checks",
   sourcesIntro: "The US/English DataForSEO dossier was refreshed 13 August 2026. Verify current macOS support and terms on the provider page before subscribing.",
   sourceLinks: [["Laptop VPN comparison", "/best/vpn-laptops"], ["iPhone VPN comparison", "/best/vpn-iphone"], ["iPad VPN comparison", "/best/vpn-ipad"], ["VPN privacy comparison", "/best/vpn-privacy"], ["VPN protocols explained", "/guides/vpn-protocols-explained"], ["ZeroToVPN methodology", "/methodology"]],
-  measurementLead: "Need a deeper measurement? Use the DNS leak test and record the result with your device and network context.",
+  measurementLead: "Need a deeper measurement? Record the result with your device and network context using the linked tool.",
 };
 
 const localizedCopy: Record<string, Partial<MacosCopy>> = {
@@ -117,7 +117,7 @@ const localizedCopy: Record<string, Partial<MacosCopy>> = {
     sourcesTitle: "Bronnen en gerelateerde checks",
     sourcesIntro: "Het Amerikaanse/Engelse DataForSEO-dossier is vernieuwd op 13 augustus 2026. Controleer actuele macOS-ondersteuning en voorwaarden op de providerpagina.",
     sourceLinks: [["Laptop-VPN-vergelijking", "/best/vpn-laptops"], ["iPhone-VPN-vergelijking", "/best/vpn-iphone"], ["iPad-VPN-vergelijking", "/best/vpn-ipad"], ["VPN-privacyvergelijking", "/best/vpn-privacy"], ["VPN-protocollen uitgelegd", "/guides/vpn-protocols-explained"], ["ZeroToVPN-methodologie", "/methodology"]],
-    measurementLead: "Wil je dieper meten? Gebruik de DNS-lektest en noteer het resultaat samen met je apparaat- en netwerkcontext.",
+    measurementLead: "Wil je dieper meten? Noteer het resultaat met je apparaat- en netwerkcontext via de gekoppelde tool.",
   },
   de: {
     title: "Beste VPNs für macOS 2026: App-Unterstützung und Datenschutzchecks",
@@ -148,7 +148,7 @@ const localizedCopy: Record<string, Partial<MacosCopy>> = {
     sourcesTitle: "Quellen und weitere Checks",
     sourcesIntro: "Das US/englische DataForSEO-Dossier wurde am 13. August 2026 erneuert. Prüfen Sie aktuelle macOS-Unterstützung und Bedingungen auf der Anbieterseite.",
     sourceLinks: [["Laptop-VPN-Vergleich", "/best/vpn-laptops"], ["iPhone-VPN-Vergleich", "/best/vpn-iphone"], ["iPad-VPN-Vergleich", "/best/vpn-ipad"], ["VPN-Datenschutzvergleich", "/best/vpn-privacy"], ["VPN-Protokolle erklärt", "/guides/vpn-protocols-explained"], ["ZeroToVPN-Methodik", "/methodology"]],
-    measurementLead: "Für eine tiefere Messung: Nutzen Sie den DNS-Leak-Test und notieren Sie das Ergebnis mit Geräte- und Netzwerkkontext.",
+    measurementLead: "Für eine tiefere Messung: Notieren Sie das Ergebnis mit Geräte- und Netzwerkkontext über das verlinkte Tool.",
   },
   es: {
     title: "Mejores VPN para macOS en 2026: compatibilidad de la app y privacidad",
@@ -179,7 +179,7 @@ const localizedCopy: Record<string, Partial<MacosCopy>> = {
     sourcesTitle: "Fuentes y comprobaciones relacionadas",
     sourcesIntro: "El dossier estadounidense/inglés de DataForSEO se actualizó el 13 de agosto de 2026. Verifica el soporte y las condiciones actuales en la página del proveedor.",
     sourceLinks: [["Comparativa de VPN para portátiles", "/best/vpn-laptops"], ["Comparativa para iPhone", "/best/vpn-iphone"], ["Comparativa para iPad", "/best/vpn-ipad"], ["Comparativa de privacidad", "/best/vpn-privacy"], ["Protocolos VPN explicados", "/guides/vpn-protocols-explained"], ["Metodología de ZeroToVPN", "/methodology"]],
-    measurementLead: "¿Quieres medir más? Usa la prueba de fugas DNS y registra el resultado junto con el contexto del dispositivo y la red.",
+    measurementLead: "¿Quieres medir más? Registra el resultado con el contexto del dispositivo y la red mediante la herramienta enlazada.",
   },
   fr: {
     title: "Meilleurs VPN pour macOS en 2026 : application et vérifications de confidentialité",
@@ -210,7 +210,7 @@ const localizedCopy: Record<string, Partial<MacosCopy>> = {
     sourcesTitle: "Sources et vérifications associées",
     sourcesIntro: "Le dossier DataForSEO américain/anglais a été actualisé le 13 août 2026. Vérifiez le support macOS et les conditions actuelles sur la page du fournisseur.",
     sourceLinks: [["Comparatif VPN pour ordinateur portable", "/best/vpn-laptops"], ["Comparatif VPN iPhone", "/best/vpn-iphone"], ["Comparatif VPN iPad", "/best/vpn-ipad"], ["Comparatif confidentialité VPN", "/best/vpn-privacy"], ["Protocoles VPN expliqués", "/guides/vpn-protocols-explained"], ["Méthodologie ZeroToVPN", "/methodology"]],
-    measurementLead: "Besoin d’une mesure plus poussée ? Utilisez le test de fuite DNS et notez le résultat avec le contexte de l’appareil et du réseau.",
+    measurementLead: "Besoin d’une mesure plus poussée ? Notez le résultat avec le contexte de l’appareil et du réseau via l’outil lié.",
   },
 };
 

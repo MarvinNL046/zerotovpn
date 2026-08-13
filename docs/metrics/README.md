@@ -48,6 +48,8 @@ The importer accepts localized or English headers for pages/queries, clicks, imp
 
 Each report also includes `searchConsole.pages.byCluster` and `searchConsole.queries.byCluster` for the roadmap groups (`censorship`, `free-vpn`, `commercial-pillar`, `protocols`, `travel`, `other`). Short.io and partner rows are grouped under `affiliate.bySlug` and `affiliate.partner.bySlug`; use these for cluster-specific review when links have dedicated slugs, while treating an aggregate provider slug as diagnostic rather than page attribution.
 
+Partner reports also retain `affiliate.partner.subIdFields`. This records which Nord/TUNE sub-ID columns were present in the CSV and how many rows populated each one, so a blank returned value can be distinguished from a report that never selected the field. It does not expose credentials or infer a page join.
+
 Run the importer regression suite before using a new export format:
 
 ```powershell

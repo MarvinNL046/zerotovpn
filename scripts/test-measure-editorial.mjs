@@ -76,12 +76,14 @@ try {
 
   const nordUiSubId = write(
     "nord-ui-sub-id.csv",
-    "Offer.name,OfferUrl.name,Stat.affiliate_info1,Stat.impressions,Stat.conversions,Stat.clicks,Stat.payout,Stat.date,Stat.erpc\nNordVPN,Cyber 3y deal,zt_nl-best-vpn-macos,0,0,2,0,2026-08-13,0.00000\n,, ,0,0,2,0,,,0.00000\n",
+    "Offer.name,OfferUrl.name,Stat.affiliate_info1,Stat.adv_sub1,Stat.impressions,Stat.conversions,Stat.clicks,Stat.payout,Stat.date,Stat.erpc\nNordVPN,Cyber 3y deal,zt_nl-best-vpn-macos,,0,0,2,0,2026-08-13,0.00000\n,, , ,0,0,2,0,,,0.00000\n",
   );
   const nordUiOut = join(temp, "nord-ui.json");
   run(["--label", "test-nord-ui-sub-id", "--window-start", "2026-08-13", "--window-end", "2026-08-13", "--gsc-pages", pages, "--gsc-queries", queries, "--gsc-chart", chart, "--shortio", shortIo, "--partner", nordUiSubId, "--out", nordUiOut]);
   const nordUi = JSON.parse(readFileSync(nordUiOut, "utf8"));
   assert(nordUi.affiliate.partner.bySubId[0].subId === "zt_nl-best-vpn-macos", "Nord UI Sub ID 1 should map from Stat.affiliate_info1");
+  assert(nordUi.affiliate.partner.subIdFields.some((field) => field.field === "stat_affiliate_info1" && field.populatedRows === 1), "Nord UI Sub ID field presence should be retained");
+  assert(nordUi.affiliate.partner.subIdFields.some((field) => field.field === "stat_adv_sub1" && field.populatedRows === 0), "Blank Advertiser Sub ID field should remain distinguishable from an omitted column");
 
   const localizedPages = write(
     "localized-pages.csv",

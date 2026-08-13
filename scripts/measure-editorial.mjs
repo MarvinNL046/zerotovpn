@@ -194,6 +194,36 @@ function summarizePartnerSlugs(rows) {
   return summarizePartnerGroups(rows, "slug");
 }
 
+const partnerSubIdFields = [
+  "aff_sub",
+  "aff_sub1",
+  "sub_id",
+  "subid",
+  "affiliate_sub_id",
+  "stat_aff_sub",
+  "stat_aff_sub1",
+  "stat_affiliate_info1",
+  "stat_affiliate_info2",
+  "stat_affiliate_info3",
+  "stat_affiliate_info4",
+  "stat_affiliate_info5",
+  "stat_adv_sub1",
+  "stat_adv_sub2",
+  "stat_adv_sub3",
+  "stat_adv_sub4",
+  "stat_adv_sub5",
+];
+
+function summarizePartnerSubIdFields(rows) {
+  return partnerSubIdFields
+    .filter((field) => rows.some((row) => Object.prototype.hasOwnProperty.call(row, field)))
+    .map((field) => ({
+      field,
+      rows: rows.length,
+      populatedRows: rows.filter((row) => String(row[field] ?? "").trim() !== "").length,
+    }));
+}
+
 function readRows(path) {
   if (!path) return [];
   const absolute = resolve(ROOT, path);
@@ -313,6 +343,7 @@ function summarizePartner(rows) {
     },
     bySlug: summarizePartnerSlugs(normalized),
     bySubId: summarizePartnerGroups(normalized.filter((row) => row.subId), "subId"),
+    subIdFields: summarizePartnerSubIdFields(rows),
   };
 }
 

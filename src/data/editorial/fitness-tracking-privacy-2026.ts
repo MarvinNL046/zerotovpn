@@ -4,7 +4,8 @@ export const fitnessTrackingPrivacyEditorialTitle =
 export const fitnessTrackingPrivacyEditorialExcerpt =
   "A VPN can protect the network path to a fitness service, but it cannot turn off GPS or app-level health-data collection. Use this checklist to tighten Strava, Apple Health and Garmin privacy settings.";
 
-export const fitnessTrackingPrivacyEditorialUpdatedAt = "2026-08-13T00:00:00.000Z";
+export const fitnessTrackingPrivacyEditorialUpdatedAt =
+  "2026-08-13T00:00:00.000Z";
 
 export const fitnessTrackingPrivacyEditorialFaq = [
   {
@@ -92,11 +93,11 @@ export const fitnessTrackingPrivacyEditorialContent = `
 <p>Test the combination you actually use: phone, watch, companion app, home Wi-Fi and mobile data. If syncing fails, check the app's network requirements and support guidance before using split tunneling. Split tunneling may restore compatibility, but traffic excluded from the VPN no longer receives the VPN's network protection.</p>
 
 <h2>VPN options to compare for network privacy</h2>
-<p>If your goal is to protect the network path while a fitness app syncs, compare current plan terms, mobile support, kill-switch behaviour and privacy documentation. These are affiliate links; ZeroToVPN may earn a commission at no extra cost to you. The VPN does not change the app-level limits described above.</p>
+<p>If your goal is to protect the network path while a fitness app syncs, compare current plan terms, mobile support, kill-switch behaviour and privacy documentation. The NordVPN link is a commission link; ZeroToVPN may earn a commission at no extra cost to you. The Surfshark and ExpressVPN links open their official sites and are not commission links. A VPN does not change the app-level limits described above.</p>
 <ul>
-<li><a href="https://go.zerotovpn.com/surfshark" target="_blank" rel="noopener noreferrer sponsored nofollow" data-affiliate-slug="surfshark">Compare Surfshark's current mobile plan</a>.</li>
+<li><a href="https://surfshark.com" target="_blank" rel="noopener noreferrer">Compare Surfshark's current mobile plan on its official site</a>.</li>
 <li><a href="https://go.zerotovpn.com/nordvpn" target="_blank" rel="noopener noreferrer sponsored nofollow" data-affiliate-slug="nordvpn">Compare NordVPN's current mobile plan</a>.</li>
-<li><a href="https://go.zerotovpn.com/expressvpn" target="_blank" rel="noopener noreferrer sponsored nofollow" data-affiliate-slug="expressvpn">Compare ExpressVPN's current mobile plan</a>.</li>
+<li><a href="https://www.expressvpn.com" target="_blank" rel="noopener noreferrer">Compare ExpressVPN's current mobile plan on its official site</a>.</li>
 </ul>
 
 <h2>Fitness tracking privacy FAQ</h2>

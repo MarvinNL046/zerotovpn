@@ -158,7 +158,6 @@ export function Header() {
         toolsOverview: "Alle tools",
         ipChecker: "Bekijk je IP-adres",
         speedTest: "Internetsnelheid testen",
-        dnsBeta: "DNS-lektest (begeleide bèta)",
         reportsOverview: "Onderzoeksrapporten",
         editorialPolicy: "Redactioneel beleid",
         about: "Over ZeroToVPN",
@@ -181,7 +180,6 @@ export function Header() {
         toolsOverview: "All tools",
         ipChecker: "Check your IP address",
         speedTest: "Test your internet speed",
-        dnsBeta: "DNS leak test (guided beta)",
         reportsOverview: "Research reports",
         editorialPolicy: "Editorial policy",
         about: "About ZeroToVPN",
@@ -358,11 +356,6 @@ export function Header() {
                       href: "/speed-test",
                       label: copy.speedTest,
                       icon: Zap,
-                    },
-                    {
-                      href: "/tools/dns-leak-test",
-                      label: copy.dnsBeta,
-                      icon: ShieldAlert,
                     },
                   ].map((item) => (
                     <Link
@@ -568,7 +561,6 @@ export function Header() {
                   { href: "/tools", label: copy.toolsOverview },
                   { href: "/tools/what-is-my-ip", label: copy.ipChecker },
                   { href: "/speed-test", label: copy.speedTest },
-                  { href: "/tools/dns-leak-test", label: copy.dnsBeta },
                   { href: "/methodology", label: t("methodology") },
                   { href: "/editorial-policy", label: copy.editorialPolicy },
                 ].map((item) => (

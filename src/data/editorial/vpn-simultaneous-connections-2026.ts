@@ -4,7 +4,8 @@ export const vpnSimultaneousConnectionsEditorialTitle =
 export const vpnSimultaneousConnectionsEditorialExcerpt =
   "A VPN app can be installed on many devices, but the number that may connect at once depends on the plan. Compare current device limits, router options and household terms before subscribing.";
 
-export const vpnSimultaneousConnectionsEditorialUpdatedAt = "2026-08-13T00:00:00.000Z";
+export const vpnSimultaneousConnectionsEditorialUpdatedAt =
+  "2026-08-13T00:00:00.000Z";
 
 export const vpnSimultaneousConnectionsEditorialFaq = [
   {
@@ -92,11 +93,11 @@ export const vpnSimultaneousConnectionsEditorialContent = `
 <p>No. A plan can technically allow several active connections while its terms still limit use to one person or household. Check the provider's personal-use, household or multi-user wording before sharing credentials outside your home. For the privacy and security trade-offs of sharing, see the <a href="/blog/vpn-account-sharing-safe-guide-2026">VPN account-sharing guide</a>.</p>
 
 <h2>Provider options to check</h2>
-<p>For a large household, compare the current plan before clicking through. These links go to the provider destinations used by ZeroToVPN and are affiliate links; a commission may be earned at no extra cost to you.</p>
+<p>For a large household, compare the current plan before clicking through. The NordVPN link is a commission link; ZeroToVPN may earn a commission at no extra cost to you. The Surfshark and ExpressVPN links open their official sites and are not commission links.</p>
 <ul>
-<li><a href="https://go.zerotovpn.com/surfshark" target="_blank" rel="noopener noreferrer sponsored nofollow" data-affiliate-slug="surfshark">Check Surfshark's current unlimited-device plan</a>.</li>
+<li><a href="https://surfshark.com" target="_blank" rel="noopener noreferrer">Check Surfshark's current unlimited-device plan on its official site</a>.</li>
 <li><a href="https://go.zerotovpn.com/nordvpn" target="_blank" rel="noopener noreferrer sponsored nofollow" data-affiliate-slug="nordvpn">Check NordVPN's current device plan</a>.</li>
-<li><a href="https://go.zerotovpn.com/expressvpn" target="_blank" rel="noopener noreferrer sponsored nofollow" data-affiliate-slug="expressvpn">Check ExpressVPN's current tier limit</a>.</li>
+<li><a href="https://www.expressvpn.com" target="_blank" rel="noopener noreferrer">Check ExpressVPN's current tier limit on its official site</a>.</li>
 </ul>
 
 <h2>VPN simultaneous-connections FAQ</h2>

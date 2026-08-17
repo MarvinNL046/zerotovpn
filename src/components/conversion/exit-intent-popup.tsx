@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Mail } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
 import {
   Dialog,
   DialogContent,
@@ -18,12 +19,19 @@ const DISMISS_DURATION_MS = 30 * 24 * 60 * 60 * 1000;
 
 /** Owned-media newsletter prompt shown on exit intent. */
 export function ExitIntentPopup() {
+  const pathname = usePathname() ?? "/";
   const t = useTranslations("newsletter");
   const [isOpen, setIsOpen] = useState(false);
   const [hasShown, setHasShown] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
+    if (
+      /^\/(?:[a-z]{2}\/)?(?:quiz|speed-test|tools(?:\/(?:dns-leak-test|what-is-my-ip))?)\/?$/.test(
+        pathname,
+      )
+    )
+      return;
 
     const sessionShown = sessionStorage.getItem(SESSION_KEY);
     const permanentDismiss = localStorage.getItem(PERMANENT_DISMISS_KEY);
@@ -57,12 +65,20 @@ export function ExitIntentPopup() {
       clearTimeout(timer);
       document.removeEventListener("mouseleave", handleMouseLeave);
     };
-  }, [hasShown]);
+  }, [hasShown, pathname]);
 
   const handleDontShowAgain = () => {
     localStorage.setItem(PERMANENT_DISMISS_KEY, Date.now().toString());
     setIsOpen(false);
   };
+
+  if (
+    /^\/(?:[a-z]{2}\/)?(?:quiz|speed-test|tools(?:\/(?:dns-leak-test|what-is-my-ip))?)\/?$/.test(
+      pathname,
+    )
+  ) {
+    return null;
+  }
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
@@ -75,7 +91,9 @@ export function ExitIntentPopup() {
             <Mail className="h-5 w-5 text-primary" aria-hidden="true" />
             {t("popupTitle")}
           </DialogTitle>
-          <DialogDescription className="text-center">{t("popupSubtitle")}</DialogDescription>
+          <DialogDescription className="text-center">
+            {t("popupSubtitle")}
+          </DialogDescription>
         </DialogHeader>
 
         <div className="rounded-lg border border-primary/20 bg-primary/5 p-6 shadow-lg">

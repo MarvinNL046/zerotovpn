@@ -44,6 +44,9 @@
     "compare": "Vergelijken",
     "guides": "Gidsen",
     "blog": "Blog",
+    "selectLanguage": "Kies taal",
+    "openMenu": "Open navigatiemenu",
+    "closeMenu": "Sluit navigatiemenu",
     "about": "Over ons",
     "speedTest": "Snelheidstest",
     "countries": "Landen",
@@ -54,10 +57,14 @@
     "vpnChromebook": "VPN voor Chromebook",
     "vpnLinux": "VPN voor Linux",
     "tools": "Tools",
+    "resources": "Kennisbank",
+    "mainNavigation": "Hoofdnavigatie",
+    "mobileNavigation": "Mobiele navigatie",
+    "toggleTheme": "Wissel kleurthema",
     "ipChecker": "IP Checker",
     "dnsLeakTest": "DNS Lek Test",
     "vpnIndex": "VPN Index",
-    "methodology": "Methodology",
+    "methodology": "Methodologie",
     "vpnThailand": "Beste VPN voor Thailand"
   },
   "hero": {
@@ -115,7 +122,7 @@
     "legal": "Juridisch",
     "privacy": "Privacybeleid",
     "terms": "Algemene Voorwaarden",
-    "disclosure": "Affiliate Disclosure",
+    "disclosure": "Uitleg over commissie",
     "company": "Bedrijf",
     "about": "Over Ons",
     "contactPage": "Contact",
@@ -143,7 +150,7 @@
     "ipChecker": "IP Checker",
     "dnsLeakTest": "DNS Lek Test",
     "vpnIndex": "VPN Index",
-    "methodology": "Methodology",
+    "methodology": "Methodologie",
     "transparencyReport": "Transparency Report 2026",
     "cookiePolicy": "Cookiebeleid",
     "howWeTest": "Hoe we testen",
@@ -169,7 +176,7 @@
     "subscribe": "Abonneren",
     "subscribing": "Bezig met abonneren...",
     "success": "Bedankt voor je aanmelding!",
-    "checkEmail": "Controleer je e-mail om je abonnement te bevestigen",
+    "checkEmail": "Je bent ingeschreven. Mogelijk ontvang je zo een welkomstmail.",
     "error": "Er is iets misgegaan. Probeer het opnieuw.",
     "consent": "Ik ga akkoord met het ontvangen van e-mails en kan me op elk moment afmelden",
     "consentRequired": "Ga akkoord met het ontvangen van e-mails",
@@ -869,11 +876,7 @@
               "icon": "BBC",
               "iconColor": "pink-600",
               "description": "Gratis met VK TV-licentie. Toegang vereist VK IP-adres. Geweldig voor Britse tv-shows, documentaires en live TV.",
-              "features": [
-                "Gratis (VK licentie)",
-                "Live TV",
-                "BBC Originals"
-              ]
+              "features": ["Gratis (VK licentie)", "Live TV", "BBC Originals"]
             },
             {
               "name": "Amazon Prime Video",
@@ -882,11 +885,7 @@
               "icon": "P",
               "iconColor": "sky-500",
               "description": "Verschillende bibliotheken per land. Sommige content inbegrepen bij Prime, andere beschikbaar om te huren of kopen.",
-              "features": [
-                "Prime Originals",
-                "X-Ray functies",
-                "Huur opties"
-              ]
+              "features": ["Prime Originals", "X-Ray functies", "Huur opties"]
             },
             {
               "name": "Hulu",
@@ -895,11 +894,7 @@
               "icon": "H",
               "iconColor": "green-500",
               "description": "VS-exclusieve dienst met afleveringen van de volgende dag, originals en live TV optie. Vereist VS betaalmethode.",
-              "features": [
-                "TV volgende dag",
-                "Live TV optie",
-                "FX content"
-              ]
+              "features": ["TV volgende dag", "Live TV optie", "FX content"]
             }
           ]
         },
@@ -4078,10 +4073,7 @@
           "Beste prijs",
           "GPS spoofing (Android)"
         ],
-        "cons": [
-          "Minder servers",
-          "Nieuwer bedrijf"
-        ]
+        "cons": ["Minder servers", "Nieuwer bedrijf"]
       },
       "nordvpn": {
         "description": "NordVPN's eigen NordLynx protocol levert de snelste snelheden op mobiel. De apps krijgen topbeoordelingen in zowel App Store als Google Play.",
@@ -4091,10 +4083,7 @@
           "Split tunneling (Android)",
           "Threat Protection"
         ],
-        "cons": [
-          "Complex voor beginners",
-          "Geen GPS spoofing"
-        ]
+        "cons": ["Complex voor beginners", "Geen GPS spoofing"]
       },
       "expressvpn": {
         "description": "ExpressVPN is de meest betrouwbare keuze voor reizigers. Het werkt in China, VAE en Turkije, met ongelooflijk stabiele verbindingen op 4G/5G.",
@@ -4104,10 +4093,7 @@
           "Lightway protocol",
           "Beste voor reizen"
         ],
-        "cons": [
-          "Duurder",
-          "8 apparaten limiet"
-        ]
+        "cons": ["Duurder", "8 apparaten limiet"]
       },
       "pros": "Voordelen",
       "cons": "Nadelen",
@@ -4338,10 +4324,7 @@
           "Intuïtieve interface",
           "24/7 klantenondersteuning"
         ],
-        "cons": [
-          "Hogere prijs",
-          "Beperkt tot 8 apparaten"
-        ]
+        "cons": ["Hogere prijs", "Beperkt tot 8 apparaten"]
       },
       "nordvpn": {
         "description": "NordVPN's iOS app bevat NordLynx protocol voor snelste snelheden, Siri shortcuts en Apple Watch integratie.",
@@ -4352,10 +4335,7 @@
           "Apple Watch app",
           "Threat Protection"
         ],
-        "cons": [
-          "Geen split tunneling op iOS",
-          "App kan complex zijn"
-        ]
+        "cons": ["Geen split tunneling op iOS", "App kan complex zijn"]
       },
       "surfshark": {
         "description": "Surfshark biedt onbeperkte apparaten op één abonnement met een schone iOS interface en uitstekende waarde.",
@@ -4366,10 +4346,7 @@
           "CleanWeb advertentieblokker",
           "GPS spoofing"
         ],
-        "cons": [
-          "Kleiner servernetwerk",
-          "Geen Apple Watch app"
-        ]
+        "cons": ["Kleiner servernetwerk", "Geen Apple Watch app"]
       },
       "pros": "Voordelen",
       "cons": "Nadelen",
@@ -4533,10 +4510,7 @@
           "Uitstekende streaming ondersteuning",
           "Siri Shortcuts integratie"
         ],
-        "cons": [
-          "Geen systeembrede split tunneling",
-          "Premium prijsstelling"
-        ]
+        "cons": ["Geen systeembrede split tunneling", "Premium prijsstelling"]
       },
       "surfshark": {
         "badge": "Beste voor Gezinnen",
@@ -4548,10 +4522,7 @@
           "CleanWeb adblocker",
           "Lichtgewicht app"
         ],
-        "cons": [
-          "Kleiner servernetwerk",
-          "Geen Siri Shortcuts"
-        ]
+        "cons": ["Kleiner servernetwerk", "Geen Siri Shortcuts"]
       },
       "expressvpn": {
         "badge": "Beste voor Reizen",
@@ -4563,10 +4534,7 @@
           "24/7 ondersteuning",
           "MediaStreamer voor Apple TV"
         ],
-        "cons": [
-          "Hogere prijs",
-          "Slechts 8 apparaten"
-        ]
+        "cons": ["Hogere prijs", "Slechts 8 apparaten"]
       }
     },
     "features": {
@@ -4710,10 +4678,7 @@
           "7.400+ servers",
           "Split tunneling"
         ],
-        "cons": [
-          "Grotere app grootte",
-          "Geen GPS spoofing"
-        ]
+        "cons": ["Grotere app grootte", "Geen GPS spoofing"]
       },
       "surfshark": {
         "badge": "Lichtste App",
@@ -4725,10 +4690,7 @@
           "Beste prijs",
           "CleanWeb adblocker"
         ],
-        "cons": [
-          "Minder servers dan Nord",
-          "Iets langzamer"
-        ]
+        "cons": ["Minder servers dan Nord", "Iets langzamer"]
       },
       "expressvpn": {
         "badge": "Beste voor Reizen",
@@ -4740,10 +4702,7 @@
           "Uitstekende ondersteuning",
           "Eenvoudig te gebruiken"
         ],
-        "cons": [
-          "Hogere prijs",
-          "Beperkt tot 8 apparaten"
-        ]
+        "cons": ["Hogere prijs", "Beperkt tot 8 apparaten"]
       }
     },
     "features": {
@@ -4927,10 +4886,7 @@
           "7.400+ servers in 118 landen",
           "Perfect voor streaming"
         ],
-        "cons": [
-          "Geen split tunneling op iPad",
-          "Iets hogere prijs"
-        ]
+        "cons": ["Geen split tunneling op iPad", "Iets hogere prijs"]
       },
       "surfshark": {
         "badge": "Beste Waarde",
@@ -4942,10 +4898,7 @@
           "CleanWeb blokkeert ads & malware",
           "GPS spoofing op Android"
         ],
-        "cons": [
-          "Kleiner servernetwerk",
-          "Iets langzamer dan NordVPN"
-        ]
+        "cons": ["Kleiner servernetwerk", "Iets langzamer dan NordVPN"]
       },
       "expressvpn": {
         "badge": "Beste voor Reizen",
@@ -4957,10 +4910,7 @@
           "24/7 klantenondersteuning",
           "105 landen gedekt"
         ],
-        "cons": [
-          "Duurder",
-          "Beperkt tot 8 apparaten"
-        ]
+        "cons": ["Duurder", "Beperkt tot 8 apparaten"]
       }
     },
     "platforms": {
@@ -5203,10 +5153,7 @@
           "Touch-vriendelijke UI",
           "Bedrijfsfuncties"
         ],
-        "cons": [
-          "Hogere prijs",
-          "Resource gebruik"
-        ]
+        "cons": ["Hogere prijs", "Resource gebruik"]
       },
       "surfshark": {
         "badge": "Beste Waarde",
@@ -5218,10 +5165,7 @@
           "CleanWeb functie",
           "Goede snelheden"
         ],
-        "cons": [
-          "Minder functies",
-          "Kleiner netwerk"
-        ]
+        "cons": ["Minder functies", "Kleiner netwerk"]
       },
       "expressvpn": {
         "badge": "Beste Stabiliteit",
@@ -5233,10 +5177,7 @@
           "24/7 ondersteuning",
           "Eenvoudige installatie"
         ],
-        "cons": [
-          "Duurste",
-          "8 apparaten limiet"
-        ]
+        "cons": ["Duurste", "8 apparaten limiet"]
       }
     },
     "features": {

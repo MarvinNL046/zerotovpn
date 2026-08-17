@@ -1,0 +1,441 @@
+.page {
+  --navy: #071226;
+  --navy-soft: #0d1d38;
+  --blue: #1268f3;
+  --lime: #b8e34a;
+  --paper: #f7f7f2;
+  --ink: #071226;
+  --muted: #53627a;
+  --line: #d8e0ea;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.hero {
+  background: var(--navy);
+  color: #fff;
+  padding: 2rem 1rem 3.5rem;
+}
+
+.heroInner,
+.container {
+  width: min(100%, 76rem);
+  margin: 0 auto;
+}
+
+.breadcrumb {
+  display: flex;
+  min-height: 3rem;
+  align-items: center;
+  gap: 0.75rem;
+  color: #adbbcf;
+  font-size: 0.875rem;
+}
+
+.breadcrumb a {
+  display: inline-flex;
+  min-width: 3rem;
+  min-height: 3rem;
+  align-items: center;
+  color: #dce5f2;
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+}
+
+.heroGrid {
+  display: grid;
+  gap: 2rem;
+  align-items: end;
+  padding-top: 1.75rem;
+}
+
+.eyebrow,
+.cardLabel {
+  margin: 0 0 0.8rem;
+  color: var(--blue);
+  font-size: 0.75rem;
+  font-weight: 850;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.hero .eyebrow,
+.hero .cardLabel {
+  color: var(--lime);
+}
+
+.hero h1 {
+  max-width: 13ch;
+  margin: 0;
+  font-size: clamp(2.45rem, 7vw, 4.7rem);
+  font-weight: 850;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+}
+
+.heroIntro {
+  max-width: 43rem;
+  margin: 1.45rem 0 0;
+  color: #cfdae8;
+  font-size: clamp(1rem, 2vw, 1.16rem);
+  line-height: 1.75;
+}
+
+.cueList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+}
+
+.cueList span {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: 0.45rem;
+  border: 1px solid #2b4566;
+  border-radius: 999px;
+  padding: 0.55rem 0.85rem;
+  color: #dce5f2;
+  font-size: 0.8rem;
+  font-weight: 750;
+}
+
+.cueList svg {
+  width: 1rem;
+  color: var(--lime);
+}
+
+.directCard {
+  border: 1px solid #36516f;
+  border-radius: 1.5rem;
+  background: var(--navy-soft);
+  padding: clamp(1.25rem, 4vw, 2rem);
+  box-shadow: 0 24px 60px rgb(0 0 0 / 0.2);
+}
+
+.directAnswer {
+  margin: 0;
+  color: #fff;
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.primaryButton,
+.textAction {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  border-radius: 0.75rem;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.primaryButton {
+  width: 100%;
+  margin-top: 1.35rem;
+  background: var(--lime);
+  color: var(--navy);
+  padding: 0.75rem 1.25rem;
+}
+
+.primaryButton:hover {
+  background: #a9d63d;
+}
+
+.primaryButton svg,
+.textAction svg {
+  width: 1.1rem;
+}
+
+.dataNote {
+  margin: 1rem 0 0;
+  color: #aebed2;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.section,
+.prepareSection,
+.faqSection {
+  padding: clamp(3.75rem, 8vw, 6.5rem) 1rem;
+}
+
+.section {
+  background: var(--paper);
+}
+
+.prepareSection {
+  background: #fff;
+}
+
+.faqSection {
+  background: var(--navy);
+  color: #fff;
+}
+
+.sectionHeader {
+  max-width: 47rem;
+  margin-bottom: 2rem;
+}
+
+.sectionHeader h2,
+.prepareIntro h2 {
+  margin: 0;
+  font-size: clamp(2rem, 4.5vw, 3.15rem);
+  letter-spacing: -0.035em;
+  line-height: 1.03;
+}
+
+.sectionHeader > p:last-child,
+.prepareIntro > p:last-child {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.routeGrid,
+.linkGrid,
+.prepareGrid {
+  display: grid;
+  gap: 1rem;
+}
+
+.routeCard,
+.checkCard,
+.linkCard,
+.faqList details {
+  border: 1px solid var(--line);
+  border-radius: 1.15rem;
+  background: #fff;
+}
+
+.routeCard {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 1.4rem;
+}
+
+.iconFrame {
+  display: grid;
+  width: 3rem;
+  height: 3rem;
+  place-items: center;
+  border-radius: 0.85rem;
+  background: var(--navy);
+  color: var(--lime);
+}
+
+.iconFrame svg {
+  width: 1.35rem;
+}
+
+.routeCard h3,
+.checkCard h3 {
+  margin: 1.15rem 0 0;
+  font-size: 1.12rem;
+  line-height: 1.3;
+}
+
+.routeCard p {
+  flex: 1;
+  margin: 0.75rem 0 1.2rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.textAction {
+  align-self: flex-start;
+  color: var(--blue);
+  padding: 0.45rem 0;
+}
+
+.textAction:hover,
+.linkCard:hover strong {
+  text-decoration: underline;
+  text-underline-offset: 0.24em;
+}
+
+.prepareIntro {
+  max-width: 47rem;
+  margin-bottom: 2rem;
+}
+
+.checkCard {
+  padding: clamp(1.25rem, 4vw, 2rem);
+}
+
+.checkHeading {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.checkHeading h3 {
+  margin: 0;
+}
+
+.checkHeading svg {
+  width: 1.4rem;
+  color: #1a9067;
+}
+
+.warningCard {
+  border-color: #f1c58a;
+  background: #fffaf2;
+}
+
+.warningCard .checkHeading svg {
+  color: #b45309;
+}
+
+.checkCard ul {
+  display: grid;
+  gap: 0.7rem;
+  margin: 1.25rem 0 0;
+  padding-left: 1.25rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.linkCard {
+  display: flex;
+  min-height: 7.5rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--ink);
+  padding: 1.25rem;
+  text-decoration: none;
+}
+
+.linkCard span {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.linkCard strong {
+  font-size: 1rem;
+}
+
+.linkCard small {
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
+.linkCard > svg {
+  width: 1.15rem;
+  flex: 0 0 auto;
+  color: var(--blue);
+}
+
+.faqSection .sectionHeader h2 {
+  color: #fff;
+}
+
+.faqList {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.faqList details {
+  border-color: #2f4664;
+  background: var(--navy-soft);
+}
+
+.faqList summary {
+  display: flex;
+  min-height: 3.5rem;
+  cursor: pointer;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.15rem;
+  color: #fff;
+  font-weight: 800;
+  list-style: none;
+}
+
+.faqList summary::-webkit-details-marker {
+  display: none;
+}
+
+.faqList summary svg {
+  width: 1.1rem;
+  flex: 0 0 auto;
+  color: var(--lime);
+}
+
+.faqList details p {
+  margin: 0;
+  padding: 0 1.15rem 1.25rem 3rem;
+  color: #bdcadd;
+  line-height: 1.7;
+}
+
+.page a:focus-visible,
+.page summary:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
+}
+
+@media (min-width: 44rem) {
+  .hero {
+    padding-inline: 1.5rem;
+  }
+
+  .section,
+  .prepareSection,
+  .faqSection {
+    padding-inline: 1.5rem;
+  }
+
+  .routeGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .prepareGrid,
+  .linkGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 64rem) {
+  .heroGrid {
+    grid-template-columns: minmax(0, 1.4fr) minmax(20rem, 0.75fr);
+    gap: 4rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page *,
+  .page *::before,
+  .page *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+:global(.dark) .page {
+  --paper: #0b1629;
+  --ink: #f4f7fb;
+  --muted: #b6c2d3;
+  --line: #2d405b;
+}
+
+:global(.dark) .prepareSection,
+:global(.dark) .routeCard,
+:global(.dark) .checkCard,
+:global(.dark) .linkCard {
+  background: #101f36;
+}
+
+:global(.dark) .warningCard {
+  border-color: #76531d;
+  background: #231c12;
+}

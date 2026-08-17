@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { withNordAffiliateSubId } from "@/lib/affiliate-attribution";
+import { VPN_LINKS, type VpnLinkSlug } from "@/lib/vpn-links";
 
 interface AffiliateButtonProps {
   vpnId: string;
@@ -31,6 +32,11 @@ function getShortIoSlug(affiliateUrl: string): string | null {
   }
 }
 
+function getOfficialWebsite(vpnId: string): string | null {
+  if (!(vpnId in VPN_LINKS)) return null;
+  return VPN_LINKS[vpnId as VpnLinkSlug].website;
+}
+
 /**
  * TUNE accepts aff_sub as a publisher-controlled placement identifier. Keep
  * the value short, deterministic and free of user data so Nord's conversion
@@ -50,7 +56,10 @@ export function buildAffiliateHref(
 export function trackAffiliateClick(vpnId: string, affiliateUrl: string) {
   let affiliateSubId: string | undefined;
   try {
-    affiliateSubId = new URL(affiliateUrl, window.location.origin).searchParams.get("aff_sub") || undefined;
+    affiliateSubId =
+      new URL(affiliateUrl, window.location.origin).searchParams.get(
+        "aff_sub",
+      ) || undefined;
   } catch {
     // A malformed destination must never prevent the affiliate navigation.
   }
@@ -92,6 +101,23 @@ export function AffiliateButton({
   children,
 }: AffiliateButtonProps) {
   const pathname = usePathname() ?? "/";
+  if (!affiliateUrl) {
+    const officialWebsite = getOfficialWebsite(vpnId);
+    if (!officialWebsite) return null;
+
+    return (
+      <Button asChild variant={variant} size={size} className={className}>
+        <a href={officialWebsite} target="_blank" rel="noopener noreferrer">
+          {children || (
+            <>
+              Visit {vpnName}
+              <ExternalLink className="ml-2 h-4 w-4" aria-hidden="true" />
+            </>
+          )}
+        </a>
+      </Button>
+    );
+  }
   const renderedHref = buildAffiliateHref(vpnId, affiliateUrl, pathname);
   // Dit was een <button> met window.open() ná een await fetch(). Twee problemen:
   // de link had geen href — dus onzichtbaar voor crawlers, geen rel-attributen,
@@ -142,13 +168,28 @@ interface AffiliateTextLinkProps {
  */
 export function AffiliateTextLink({
   vpnId,
-  vpnName,
   affiliateUrl,
   className,
   dataPriceLink,
   children,
 }: AffiliateTextLinkProps) {
   const pathname = usePathname() ?? "/";
+  if (!affiliateUrl) {
+    const officialWebsite = getOfficialWebsite(vpnId);
+    if (!officialWebsite) return null;
+
+    return (
+      <a
+        href={officialWebsite}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={className}
+        data-price-link={dataPriceLink ? "true" : undefined}
+      >
+        {children}
+      </a>
+    );
+  }
   const renderedHref = buildAffiliateHref(vpnId, affiliateUrl, pathname);
 
   return (
@@ -157,7 +198,6 @@ export function AffiliateTextLink({
       target="_blank"
       rel="noopener noreferrer sponsored nofollow"
       className={className}
-      aria-label={`Visit ${vpnName}`}
       data-price-link={dataPriceLink ? "true" : undefined}
       data-affiliate-slug={getShortIoSlug(affiliateUrl) ?? undefined}
       onClick={(event) => {

@@ -1,6 +1,16 @@
-import { CheckCircle2, CircleAlert, Download, Router, Tv, Wifi } from "lucide-react";
+import {
+  CheckCircle2,
+  CircleAlert,
+  Download,
+  Router,
+  Tv,
+  Wifi,
+} from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { AffiliateButton, AffiliateTextLink } from "@/components/vpn/affiliate-button";
+import {
+  AffiliateButton,
+  AffiliateTextLink,
+} from "@/components/vpn/affiliate-button";
 import { FAQSchema } from "@/components/seo/faq-schema";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { BestVpnEditorialTemplate } from "@/components/editorial/best-vpn-editorial-template";
@@ -8,46 +18,344 @@ import { getVpnById } from "@/lib/vpn-data";
 import { getVpnAffiliateUrl, type VpnLinkSlug } from "@/lib/vpn-links";
 import { editorialContentBriefs } from "@/lib/editorial-content-briefs";
 
-export const firestickVpnEditorialTitle = "Best VPNs for Fire TV Stick in 2026: Apps, Router Setup and Streaming Checks";
-export const firestickVpnEditorialDescription = "Compare Fire TV VPN routes by app availability, remote-friendly setup, router coverage and streaming evidence—not fixed speed or unblocking promises.";
+export const firestickVpnEditorialTitle =
+  "Best VPNs for Fire TV Stick in 2026: Apps, Router Setup and Streaming Checks";
+export const firestickVpnEditorialDescription =
+  "Compare Fire TV VPN routes by app availability, remote-friendly setup, router coverage and streaming evidence—not fixed speed or unblocking promises.";
 
 export const firestickVpnEditorialFaq = [
-  { question: "Can I put a VPN on an Amazon Fire TV Stick?", answer: "Often, yes, through a provider app where the current Amazon Appstore listing supports your device. Router setup is another route, but it affects the network rather than only the Fire TV app. Check the model, region and current provider instructions." },
-  { question: "Do I need a VPN for my Fire Stick?", answer: "It depends on your goal. A VPN can change the network path and reduce local-network or ISP visibility, but it does not make unlicensed content lawful or guarantee access to a streaming catalogue." },
-  { question: "How much does a VPN cost for Fire Stick?", answer: "The price depends on the provider, country, billing term and renewal. Compare total checkout cost, device limits and refund terms instead of treating a monthly equivalent as a permanent price." },
-  { question: "Is there a free VPN for Fire TV?", answer: "Some providers offer free tiers, but Fire TV app availability, data limits and streaming support vary. Verify the official app listing and privacy terms; do not sideload an unknown APK just because it is free." },
-  { question: "Will a VPN make Fire TV streaming work everywhere?", answer: "No provider can guarantee every service, country or account. Streaming platforms change detection and licensing rules; test the exact app and region within the provider's current refund window." },
+  {
+    question: "Can I put a VPN on an Amazon Fire TV Stick?",
+    answer:
+      "Often, yes, through a provider app where the current Amazon Appstore listing supports your device. Router setup is another route, but it affects the network rather than only the Fire TV app. Check the model, region and current provider instructions.",
+  },
+  {
+    question: "Do I need a VPN for my Fire Stick?",
+    answer:
+      "It depends on your goal. A VPN can change the network path and reduce local-network or ISP visibility, but it does not make unlicensed content lawful or guarantee access to a streaming catalogue.",
+  },
+  {
+    question: "How much does a VPN cost for Fire Stick?",
+    answer:
+      "The price depends on the provider, country, billing term and renewal. Compare total checkout cost, device limits and refund terms instead of treating a monthly equivalent as a permanent price.",
+  },
+  {
+    question: "Is there a free VPN for Fire TV?",
+    answer:
+      "Some providers offer free tiers, but Fire TV app availability, data limits and streaming support vary. Verify the official app listing and privacy terms; do not sideload an unknown APK just because it is free.",
+  },
+  {
+    question: "Will a VPN make Fire TV streaming work everywhere?",
+    answer:
+      "No provider can guarantee every service, country or account. Streaming platforms change detection and licensing rules; test the exact app and region within the provider's current refund window.",
+  },
 ];
 
 const providers = [
-  { id: "nordvpn", label: "Fire TV app to verify", note: "Inspect the current Amazon Appstore listing, remote navigation and device limit before subscribing." },
-  { id: "expressvpn", label: "App-first comparison", note: "Compare the app route with router coverage when several home devices need the same network path." },
-  { id: "surfshark", label: "Household value check", note: "Check simultaneous-device wording and whether the current plan fits your Fire TV plus other devices." },
-] as const satisfies ReadonlyArray<{ id: VpnLinkSlug; label: string; note: string }>;
+  {
+    id: "nordvpn",
+    label: "Fire TV app to verify",
+    note: "Inspect the current Amazon Appstore listing, remote navigation and device limit before subscribing.",
+  },
+  {
+    id: "expressvpn",
+    label: "App-first comparison",
+    note: "Compare the app route with router coverage when several home devices need the same network path.",
+  },
+  {
+    id: "surfshark",
+    label: "Household value check",
+    note: "Check simultaneous-device wording and whether the current plan fits your Fire TV plus other devices.",
+  },
+] as const satisfies ReadonlyArray<{
+  id: VpnLinkSlug;
+  label: string;
+  note: string;
+}>;
 
 export function FirestickVpnEditorialPage() {
   return (
-    <BestVpnEditorialTemplate brief={editorialContentBriefs.firestickVpn} navigation={[{ href: "#quick-picks", label: "Options" }, { href: "#comparison", label: "Compare routes" }, { href: "#setup", label: "Setup" }, { href: "#faq", label: "FAQ" }, { href: "#sources", label: "Sources" }]}> 
+    <BestVpnEditorialTemplate
+      brief={editorialContentBriefs.firestickVpn}
+      navigation={[
+        { href: "#quick-picks", label: "Options" },
+        { href: "#comparison", label: "Compare routes" },
+        { href: "#setup", label: "Setup" },
+        { href: "#faq", label: "FAQ" },
+        { href: "#sources", label: "Sources" },
+      ]}
+    >
       <div className="flex flex-col">
-        <div className="container pt-6"><BreadcrumbSchema items={[{ name: "Best VPNs", href: "/best/best-vpn" }, { name: "Fire TV VPNs", href: "/best/vpn-firestick" }]} /></div>
-        <main className="container max-w-5xl py-8 lg:py-12">
+        <div className="container pt-6">
+          <BreadcrumbSchema
+            items={[
+              { name: "Best VPNs", href: "/best/best-vpn" },
+              { name: "Fire TV VPNs", href: "/best/vpn-firestick" },
+            ]}
+          />
+        </div>
+        <article className="container max-w-5xl py-8 lg:py-12">
           <header className="mb-10 max-w-4xl">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-primary">Fire TV privacy and setup guide</p>
-            <h1 className="text-4xl font-bold tracking-tight md:text-5xl">{firestickVpnEditorialTitle}</h1>
-            <p className="mt-5 text-xl text-muted-foreground">{firestickVpnEditorialDescription}</p>
-            <div className="mt-5 flex items-start gap-3 rounded-xl border border-amber-500/30 bg-amber-500/10 p-4 text-sm leading-6"><CircleAlert className="mt-0.5 size-5 shrink-0 text-amber-700" aria-hidden="true" /><p><strong>Evidence boundary:</strong> Fire TV models, Amazon Appstore availability, streaming catalogues and provider apps change by country and release. Verify the exact app, account and network path before relying on it.</p></div>
-            <p className="mt-4 text-sm text-muted-foreground">Reviewed 13 August 2026 · DataForSEO surfaced Fire TV setup, free-plan and cost questions; it does not prove app availability, playback quality or unblocking.</p>
+            <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-primary">
+              Fire TV privacy and setup guide
+            </p>
+            <h1 className="text-4xl font-bold tracking-tight md:text-5xl">
+              {firestickVpnEditorialTitle}
+            </h1>
+            <p className="mt-5 text-xl text-muted-foreground">
+              {firestickVpnEditorialDescription}
+            </p>
+            <div className="mt-5 flex items-start gap-3 rounded-xl border border-amber-500/30 bg-amber-500/10 p-4 text-sm leading-6">
+              <CircleAlert
+                className="mt-0.5 size-5 shrink-0 text-amber-700"
+                aria-hidden="true"
+              />
+              <p>
+                <strong>Evidence boundary:</strong> Fire TV models, Amazon
+                Appstore availability, streaming catalogues and provider apps
+                change by country and release. Verify the exact app, account and
+                network path before relying on it.
+              </p>
+            </div>
+            <p className="mt-4 text-sm text-muted-foreground">
+              Reviewed 13 August 2026 · DataForSEO surfaced Fire TV setup,
+              free-plan and cost questions; it does not prove app availability,
+              playback quality or unblocking.
+            </p>
           </header>
 
-          <section id="quick-picks" className="scroll-mt-24"><h2 className="text-3xl font-bold">Fire TV VPN options to verify</h2><p className="mt-3 max-w-3xl text-muted-foreground">These commercial starting points use catalog data and tracked provider links. Open the provider page and confirm the Fire TV route, price and refund window.</p><div className="mt-6 grid gap-5 md:grid-cols-3">{providers.map((provider) => { const vpn = getVpnById(provider.id); if (!vpn) return null; const price = vpn.priceTwoYear ?? vpn.priceYearly; const affiliateUrl = getVpnAffiliateUrl(provider.id); return <article key={provider.id} className="rounded-xl border bg-card p-5 shadow-sm"><div className="mb-3 flex items-center gap-2 text-sm text-muted-foreground"><Tv className="size-4 text-primary" aria-hidden="true" /><span>{provider.label}</span></div><h3 className="text-xl font-semibold">{vpn.name}</h3><p className="mt-2 text-sm text-muted-foreground">{provider.note}</p><div className="mt-4 text-2xl font-bold text-primary"><AffiliateTextLink vpnId={vpn.id} vpnName={vpn.name} affiliateUrl={affiliateUrl} dataPriceLink>${price.toFixed(2)}</AffiliateTextLink><span className="ml-1 text-sm font-normal text-muted-foreground">/mo equivalent</span></div><p className="mt-1 text-xs text-muted-foreground">Catalog checked {vpn.priceLastVerified ?? "date not recorded"}; verify checkout terms.</p><AffiliateButton vpnId={vpn.id} vpnName={vpn.name} affiliateUrl={affiliateUrl} className="mt-4 w-full">Check {vpn.name} Fire TV option</AffiliateButton></article>; })}</div></section>
+          <section id="quick-picks" className="scroll-mt-24">
+            <h2 className="text-3xl font-bold">
+              Fire TV VPN options to verify
+            </h2>
+            <p className="mt-3 max-w-3xl text-muted-foreground">
+              These commercial starting points use catalog data and tracked
+              provider links. Open the provider page and confirm the Fire TV
+              route, price and refund window.
+            </p>
+            <div className="mt-6 grid gap-5 md:grid-cols-3">
+              {providers.map((provider) => {
+                const vpn = getVpnById(provider.id);
+                if (!vpn) return null;
+                const price = vpn.priceTwoYear ?? vpn.priceYearly;
+                const affiliateUrl = getVpnAffiliateUrl(provider.id);
+                return (
+                  <article
+                    key={provider.id}
+                    className="rounded-xl border bg-card p-5 shadow-sm"
+                  >
+                    <div className="mb-3 flex items-center gap-2 text-sm text-muted-foreground">
+                      <Tv className="size-4 text-primary" aria-hidden="true" />
+                      <span>{provider.label}</span>
+                    </div>
+                    <h3 className="text-xl font-semibold">{vpn.name}</h3>
+                    <p className="mt-2 text-sm text-muted-foreground">
+                      {provider.note}
+                    </p>
+                    <div className="mt-4 text-2xl font-bold text-primary">
+                      <AffiliateTextLink
+                        vpnId={vpn.id}
+                        vpnName={vpn.name}
+                        affiliateUrl={affiliateUrl}
+                        dataPriceLink
+                      >
+                        ${price.toFixed(2)}
+                      </AffiliateTextLink>
+                      <span className="ml-1 text-sm font-normal text-muted-foreground">
+                        /mo equivalent
+                      </span>
+                    </div>
+                    <p className="mt-1 text-xs text-muted-foreground">
+                      Catalog checked{" "}
+                      {vpn.priceLastVerified ?? "date not recorded"}; verify
+                      checkout terms.
+                    </p>
+                    <AffiliateButton
+                      vpnId={vpn.id}
+                      vpnName={vpn.name}
+                      affiliateUrl={affiliateUrl}
+                      className="mt-4 w-full"
+                    >
+                      Check {vpn.name} Fire TV option
+                    </AffiliateButton>
+                  </article>
+                );
+              })}
+            </div>
+          </section>
 
-          <section id="comparison" className="mt-16 scroll-mt-24"><h2 className="text-3xl font-bold">Compare the route that is actually covered</h2><p className="mt-3 max-w-3xl text-muted-foreground">An app on Fire TV, a browser/device route and a VPN on the router have different coverage. Make that distinction visible before comparing streaming results.</p><div className="mt-6 overflow-x-auto rounded-xl border"><table className="w-full min-w-[720px] text-left text-sm"><caption className="sr-only">Fire TV VPN route comparison</caption><thead className="bg-muted/60"><tr><th scope="col" className="p-4">Route</th><th scope="col" className="p-4">Coverage</th><th scope="col" className="p-4">Checks before relying on it</th></tr></thead><tbody><tr className="border-t"><th scope="row" className="p-4 font-semibold">Fire TV app</th><td className="p-4">Traffic from the supported Fire TV app/device route</td><td className="p-4">Amazon listing, remote usability, sign-in, reconnect and kill-switch behaviour</td></tr><tr className="border-t"><th scope="row" className="p-4 font-semibold">Router setup</th><td className="p-4">Potentially covers devices on the configured network</td><td className="p-4">Router firmware, provider instructions, performance and how to bypass local services</td></tr><tr className="border-t"><th scope="row" className="p-4 font-semibold">Streaming test</th><td className="p-4">One service/account/region at a point in time</td><td className="p-4">Exact app, catalogue rules, playback quality, error handling and refund window</td></tr></tbody></table></div></section>
+          <section id="comparison" className="mt-16 scroll-mt-24">
+            <h2 className="text-3xl font-bold">
+              Compare the route that is actually covered
+            </h2>
+            <p className="mt-3 max-w-3xl text-muted-foreground">
+              An app on Fire TV, a browser/device route and a VPN on the router
+              have different coverage. Make that distinction visible before
+              comparing streaming results.
+            </p>
+            <div className="mt-6 overflow-x-auto rounded-xl border">
+              <table className="w-full min-w-[720px] text-left text-sm">
+                <caption className="sr-only">
+                  Fire TV VPN route comparison
+                </caption>
+                <thead className="bg-muted/60">
+                  <tr>
+                    <th scope="col" className="p-4">
+                      Route
+                    </th>
+                    <th scope="col" className="p-4">
+                      Coverage
+                    </th>
+                    <th scope="col" className="p-4">
+                      Checks before relying on it
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-t">
+                    <th scope="row" className="p-4 font-semibold">
+                      Fire TV app
+                    </th>
+                    <td className="p-4">
+                      Traffic from the supported Fire TV app/device route
+                    </td>
+                    <td className="p-4">
+                      Amazon listing, remote usability, sign-in, reconnect and
+                      kill-switch behaviour
+                    </td>
+                  </tr>
+                  <tr className="border-t">
+                    <th scope="row" className="p-4 font-semibold">
+                      Router setup
+                    </th>
+                    <td className="p-4">
+                      Potentially covers devices on the configured network
+                    </td>
+                    <td className="p-4">
+                      Router firmware, provider instructions, performance and
+                      how to bypass local services
+                    </td>
+                  </tr>
+                  <tr className="border-t">
+                    <th scope="row" className="p-4 font-semibold">
+                      Streaming test
+                    </th>
+                    <td className="p-4">
+                      One service/account/region at a point in time
+                    </td>
+                    <td className="p-4">
+                      Exact app, catalogue rules, playback quality, error
+                      handling and refund window
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
 
-          <section id="setup" className="mt-16 scroll-mt-24"><h2 className="text-3xl font-bold">Fire TV setup sequence</h2><ol className="mt-5 grid gap-4 md:grid-cols-2">{["Record the Fire TV model, OS version, country and whether the device is managed.", "Search the official Amazon Appstore listing and confirm the publisher before installing.", "Install the app, sign in and test remote navigation, connect/reconnect and local-network access.", "Test the streaming app you actually use; do not generalise one successful catalogue check.", "If using a router, document which devices are covered and how to turn the tunnel off for local services.", "Record total price, renewal, device limit and refund terms before subscribing."].map((item, index) => <li key={item} className="flex gap-3 rounded-lg border p-4"><CheckCircle2 className="mt-0.5 size-5 shrink-0 text-green-600" aria-hidden="true" /><span><strong>{index + 1}.</strong> {item}</span></li>)}</ol><div className="mt-6 grid gap-4 md:grid-cols-3"><div className="rounded-xl border p-5"><Download className="size-6 text-primary" aria-hidden="true" /><h3 className="mt-3 font-semibold">Official listing</h3><p className="mt-2 text-sm text-muted-foreground">Avoid unknown APKs and confirm the current publisher.</p></div><div className="rounded-xl border p-5"><Wifi className="size-6 text-primary" aria-hidden="true" /><h3 className="mt-3 font-semibold">Network boundary</h3><p className="mt-2 text-sm text-muted-foreground">App and router coverage are different; test both when relevant.</p></div><div className="rounded-xl border p-5"><Router className="size-6 text-primary" aria-hidden="true" /><h3 className="mt-3 font-semibold">Home network</h3><p className="mt-2 text-sm text-muted-foreground">A router route can affect other devices and local services.</p></div></div></section>
+          <section id="setup" className="mt-16 scroll-mt-24">
+            <h2 className="text-3xl font-bold">Fire TV setup sequence</h2>
+            <ol className="mt-5 grid gap-4 md:grid-cols-2">
+              {[
+                "Record the Fire TV model, OS version, country and whether the device is managed.",
+                "Search the official Amazon Appstore listing and confirm the publisher before installing.",
+                "Install the app, sign in and test remote navigation, connect/reconnect and local-network access.",
+                "Test the streaming app you actually use; do not generalise one successful catalogue check.",
+                "If using a router, document which devices are covered and how to turn the tunnel off for local services.",
+                "Record total price, renewal, device limit and refund terms before subscribing.",
+              ].map((item, index) => (
+                <li key={item} className="flex gap-3 rounded-lg border p-4">
+                  <CheckCircle2
+                    className="mt-0.5 size-5 shrink-0 text-green-600"
+                    aria-hidden="true"
+                  />
+                  <span>
+                    <strong>{index + 1}.</strong> {item}
+                  </span>
+                </li>
+              ))}
+            </ol>
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
+              <div className="rounded-xl border p-5">
+                <Download className="size-6 text-primary" aria-hidden="true" />
+                <h3 className="mt-3 font-semibold">Official listing</h3>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Avoid unknown APKs and confirm the current publisher.
+                </p>
+              </div>
+              <div className="rounded-xl border p-5">
+                <Wifi className="size-6 text-primary" aria-hidden="true" />
+                <h3 className="mt-3 font-semibold">Network boundary</h3>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  App and router coverage are different; test both when
+                  relevant.
+                </p>
+              </div>
+              <div className="rounded-xl border p-5">
+                <Router className="size-6 text-primary" aria-hidden="true" />
+                <h3 className="mt-3 font-semibold">Home network</h3>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  A router route can affect other devices and local services.
+                </p>
+              </div>
+            </div>
+          </section>
 
-          <section id="faq" className="mt-16 scroll-mt-24"><h2 className="text-3xl font-bold">Fire TV VPN FAQ</h2><div className="mt-5 space-y-5">{firestickVpnEditorialFaq.map((item) => <div key={item.question} className="rounded-xl border p-5"><h3 className="font-semibold">{item.question}</h3><p className="mt-2 text-muted-foreground">{item.answer}</p></div>)}</div><FAQSchema title="Fire TV VPN FAQ" faqs={firestickVpnEditorialFaq} /></section>
-          <section id="sources" className="mt-16 scroll-mt-24 border-t pt-8"><h2 className="text-2xl font-bold">Sources and related checks</h2><p className="mt-2 text-sm text-muted-foreground">The US/English DataForSEO dossier was refreshed 13 August 2026 for Fire TV intent and PAA coverage. Verify device support and streaming rules at the provider and platform sources.</p><ul className="mt-4 grid gap-2 text-sm sm:grid-cols-2"><li><Link href="/best/vpn-streaming" className="text-primary underline">Streaming VPN comparison</Link></li><li><Link href="/guides/vpn-for-streaming" className="text-primary underline">Streaming setup guide</Link></li><li><Link href="/best/vpn-privacy" className="text-primary underline">VPN privacy comparison</Link></li><li><Link href="/methodology" className="text-primary underline">ZeroToVPN methodology</Link></li></ul></section>
-        </main>
+          <section id="faq" className="mt-16 scroll-mt-24">
+            <h2 className="text-3xl font-bold">Fire TV VPN FAQ</h2>
+            <div className="mt-5 space-y-5">
+              {firestickVpnEditorialFaq.map((item) => (
+                <div key={item.question} className="rounded-xl border p-5">
+                  <h3 className="font-semibold">{item.question}</h3>
+                  <p className="mt-2 text-muted-foreground">{item.answer}</p>
+                </div>
+              ))}
+            </div>
+            <FAQSchema
+              title="Fire TV VPN FAQ"
+              faqs={firestickVpnEditorialFaq}
+            />
+          </section>
+          <section id="sources" className="mt-16 scroll-mt-24 border-t pt-8">
+            <h2 className="text-2xl font-bold">Sources and related checks</h2>
+            <p className="mt-2 text-sm text-muted-foreground">
+              The US/English DataForSEO dossier was refreshed 13 August 2026 for
+              Fire TV intent and PAA coverage. Verify device support and
+              streaming rules at the provider and platform sources.
+            </p>
+            <ul className="mt-4 grid gap-2 text-sm sm:grid-cols-2">
+              <li>
+                <Link
+                  href="/best/vpn-streaming"
+                  className="text-primary underline"
+                >
+                  Streaming VPN comparison
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/guides/vpn-for-streaming"
+                  className="text-primary underline"
+                >
+                  Streaming setup guide
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/best/vpn-privacy"
+                  className="text-primary underline"
+                >
+                  VPN privacy comparison
+                </Link>
+              </li>
+              <li>
+                <Link href="/methodology" className="text-primary underline">
+                  ZeroToVPN methodology
+                </Link>
+              </li>
+            </ul>
+          </section>
+        </article>
       </div>
     </BestVpnEditorialTemplate>
   );

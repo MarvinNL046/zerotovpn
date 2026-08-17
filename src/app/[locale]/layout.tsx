@@ -50,8 +50,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   // OG locale mapping (ISO 639-1 → Open Graph format)
   const ogLocaleMap: Record<string, string> = {
-    en: "en_US", nl: "nl_NL", de: "de_DE", es: "es_ES",
-    fr: "fr_FR", zh: "zh_CN", ja: "ja_JP", ko: "ko_KR", th: "th_TH",
+    en: "en_US",
+    nl: "nl_NL",
+    de: "de_DE",
+    es: "es_ES",
+    fr: "fr_FR",
+    zh: "zh_CN",
+    ja: "ja_JP",
+    ko: "ko_KR",
+    th: "th_TH",
   };
 
   return {
@@ -122,7 +129,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params;
 
   // Validate locale
-  if (!routing.locales.includes(locale as typeof routing.locales[number])) {
+  if (!routing.locales.includes(locale as (typeof routing.locales)[number])) {
     notFound();
   }
 
@@ -151,35 +158,36 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <ThemeProvider
-        attribute="class"
-        defaultTheme="system"
-        enableSystem
-        disableTransitionOnChange
-      >
-        <NextIntlClientProvider messages={clientMessages}>
-          <div className="relative flex min-h-screen flex-col">
-            {/* Toetsenbord- en schermlezergebruikers moesten eerst door de
+      locale={locale}
+      attribute="class"
+      defaultTheme="system"
+      enableSystem
+      disableTransitionOnChange
+    >
+      <NextIntlClientProvider messages={clientMessages}>
+        <div className="relative flex min-h-screen flex-col">
+          {/* Toetsenbord- en schermlezergebruikers moesten eerst door de
                 banner en het volledige mega-menu heen voordat ze bij de
                 inhoud kwamen. Alleen zichtbaar zodra hij focus krijgt. */}
-            <a
-              href="#main"
-              className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
-            >
-              Skip to content
-            </a>
-            <Header />
-            <main id="main" className="flex-1">
-              {children}
-            </main>
-            <Footer />
-            {/* Conversion optimization components */}
-            <LazyConversionWidgets />
-            <CookieConsent />
-            {/* JSON-LD Structured Data - placed in body to avoid hydration issues */}
-            <OrganizationJsonLd />
-            <WebsiteJsonLd />
-          </div>
-        </NextIntlClientProvider>
-      </ThemeProvider>
+          <a
+            href="#main"
+            className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
+          >
+            {locale === "nl" ? "Ga naar inhoud" : "Skip to content"}
+          </a>
+          <Header />
+          <main id="main" className="flex-1">
+            {children}
+          </main>
+          <Footer />
+          {/* Conversion optimization components */}
+          <LazyConversionWidgets />
+          <CookieConsent />
+          {/* JSON-LD Structured Data - placed in body to avoid hydration issues */}
+          <OrganizationJsonLd />
+          <WebsiteJsonLd />
+        </div>
+      </NextIntlClientProvider>
+    </ThemeProvider>
   );
 }

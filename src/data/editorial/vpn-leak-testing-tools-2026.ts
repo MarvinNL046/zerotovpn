@@ -61,7 +61,7 @@ export const vpnLeakTestingEditorialContent = `
 <li><strong>Test a failure case.</strong> Temporarily switch networks or stop the VPN and verify that the kill switch behaves as documented. Do not leave a real connection exposed while troubleshooting.</li>
 <li><strong>Repeat.</strong> Reconnect to a second server and repeat later. Save screenshots or notes with the date; a single pass is not a lifetime guarantee.</li>
 </ol>
-<p>Our <a href="/tools/what-is-my-ip">IP-check tool</a> and <a href="/tools/dns-leak-test">DNS leak test</a> make the first checks easy. For the broader evaluation, see our <a href="/methodology">VPN testing methodology</a> and <a href="/vpn-encryption-explained">VPN encryption guide</a>.</p>
+<p>Our <a href="/tools/what-is-my-ip">IP-check tool</a> makes the first route check easy; use your provider's documented DNS diagnostics for resolver checks. For the broader evaluation, see our <a href="/methodology">VPN testing methodology</a> and <a href="/guides/vpn-privacy-guide">VPN privacy guide</a>.</p>
 
 <h2 id="interpretation">How to interpret a warning</h2>
 <p><strong>DNS warning:</strong> identify the resolver owner before concluding that the ISP is seeing your queries. VPN providers may use hosted or partner infrastructure. Proton's current documentation, for example, explains that its apps route DNS through provider-controlled servers and also warns that custom DNS settings can interfere with protection.</p>

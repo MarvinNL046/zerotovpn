@@ -1,436 +1,95 @@
-import { setRequestLocale, getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
-import { getShortMonthYear } from "@/lib/seo-utils";
-import { Button } from "@/components/ui/button";
-import { ComparisonTable } from "@/components/vpn/comparison-table";
-import { VpnCard } from "@/components/vpn/vpn-card";
-import { AffiliateButton } from "@/components/vpn/affiliate-button";
+import { setRequestLocale } from "next-intl/server";
+import { permanentRedirect } from "next/navigation";
+import { EditorialHomepage } from "@/components/home/editorial-homepage";
+import { getHomepageEditorialCopy } from "@/data/homepage";
 import { getFeaturedVpns } from "@/lib/vpn-data-layer";
-import { Link } from "@/i18n/navigation";
-import { Shield, Zap, Globe, CheckCircle, ArrowRight, FlaskConical, BarChart3, FileSpreadsheet } from "lucide-react";
-import {
-  ComparisonTableSchema,
-} from "@/components/structured-data";
-import { FAQAccordion } from "@/components/seo/faq-schema";
-import { routing } from "@/i18n/routing";
-import { HighlightedText } from "@/components/ui/highlighted-text";
-import { MetricBadge } from "@/components/ui/metric-badge";
-import { PulseIndicator } from "@/components/ui/pulse-indicator";
-import { LazyHeroIllustration } from "@/components/lazy-hero-illustration";
-import InlineAd from "@/components/ads/InlineAd";
-import { getVpnAffiliateUrl } from "@/lib/vpn-links";
+import { OG_LOCALE_MAP } from "@/lib/seo-utils";
 
 type Props = {
   params: Promise<{ locale: string }>;
 };
 
 const baseUrl = "https://www.zerotovpn.com";
+const HOMEPAGE_RESEARCH_REVIEWED_AT = new Date("2026-08-17T00:00:00.000Z");
+
+const titles: Record<string, string> = {
+  en: "ZeroToVPN: Clear VPN Guides, Reviews & Tools",
+  nl: "ZeroToVPN: duidelijke VPN-gidsen, reviews en tools",
+};
+
+const descriptions: Record<string, string> = {
+  en: "Compare VPN evidence, read plain-language guides and use free browser tools. ZeroToVPN shows sources, dates and limits instead of mystery scores.",
+  nl: "Vergelijk VPN-bewijs, lees duidelijke gidsen en gebruik gratis browsertools. ZeroToVPN toont bronnen, datums en grenzen in plaats van vage scores.",
+};
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  const shortMonthYear = getShortMonthYear();
+  const contentLocale = locale === "nl" ? "nl" : "en";
+  const canonicalUrl = contentLocale === "en" ? baseUrl : `${baseUrl}/nl`;
+  const title = titles[contentLocale];
+  const description = descriptions[contentLocale];
 
-  const canonicalUrl = locale === "en" ? baseUrl : `${baseUrl}/${locale}`;
-
-  // Generate alternates for all languages
-  const languages: Record<string, string> = { "x-default": baseUrl };
-  routing.locales.forEach((l) => {
-    languages[l] = l === "en" ? baseUrl : `${baseUrl}/${l}`;
-  });
-
-  const isEnglish = locale === "en";
+  const languages: Record<string, string> = {
+    "x-default": baseUrl,
+    en: baseUrl,
+    nl: `${baseUrl}/nl`,
+  };
 
   return {
     metadataBase: new URL(baseUrl),
-    title: ({
-      en: "ZeroToVPN: Independent VPN Research, Transparency & Real-World Testing",
-      nl: "ZeroToVPN: Onafhankelijk VPN Onderzoek & Real-World Tests 2026",
-      de: "ZeroToVPN: Unabhängige VPN-Forschung & Praxistests 2026",
-      es: "ZeroToVPN: Investigación VPN Independiente & Pruebas Reales 2026",
-      fr: "ZeroToVPN: Recherche VPN Indépendante & Tests Réels 2026",
-      zh: "ZeroToVPN：独立VPN研究与实测 2026",
-      ja: "ZeroToVPN：独立VPN調査＆実測テスト 2026",
-      ko: "ZeroToVPN: 독립 VPN 연구 & 실제 테스트 2026",
-      th: "ZeroToVPN: การวิจัย VPN อิสระและการทดสอบจริง 2026",
-    } as Record<string, string>)[locale] || "ZeroToVPN: Independent VPN Research, Transparency & Real-World Testing",
-    description: isEnglish
-      ? `Independent VPN research and real-world testing. See measurable rankings updated ${shortMonthYear}, full methodology, and the VPN Transparency & Performance Index 2026.`
-      : `Independent VPN research and real-world testing. See measurable rankings updated ${shortMonthYear}, full methodology, and transparency reports.`,
-    keywords: isEnglish
-      ? [
-          "vpn transparency report",
-          "independent vpn research",
-          "vpn testing methodology",
-          "vpn performance index 2026",
-          "vpn comparison",
-          "vpn review data",
-        ]
-      : undefined,
-    alternates: {
-      canonical: canonicalUrl,
-      languages: languages,
+    title: { absolute: title },
+    description,
+    robots:
+      locale === "en" || locale === "nl"
+        ? { index: true, follow: true }
+        : { index: false, follow: true },
+    alternates: { canonical: canonicalUrl, languages },
+    openGraph: {
+      type: "website",
+      url: canonicalUrl,
+      title,
+      description,
+      siteName: "ZeroToVPN",
+      locale: OG_LOCALE_MAP[contentLocale] ?? "en_US",
+      images: [
+        {
+          url: "/images/home/og-homepage.webp",
+          width: 1200,
+          height: 630,
+          alt: getHomepageEditorialCopy(contentLocale).lead.alt,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["/images/home/og-homepage.webp"],
     },
   };
 }
-
 export default async function HomePage({ params }: Props) {
   const { locale } = await params;
+  if (locale !== "en" && locale !== "nl") permanentRedirect("/en");
   setRequestLocale(locale);
-  const t = await getTranslations("home");
 
   const featuredVpns = await getFeaturedVpns();
-  const nordvpn = featuredVpns.find((vpn) => vpn.slug === "nordvpn") ?? null;
-  const currentReview = getShortMonthYear();
-
-  // Get FAQ data from translations
-  const faqData = t.raw("faq") as Array<{ question: string; answer: string }>;
-
-  // Icons for whyVpn features
-  const featureIcons = [Shield, Globe, Zap];
+  const shortlist = featuredVpns
+    .filter((vpn) => ["nordvpn", "surfshark", "protonvpn"].includes(vpn.slug))
+    .toSorted((a, b) => a.name.localeCompare(b.name, locale));
+  const copy = getHomepageEditorialCopy(locale);
+  const currentReview = new Intl.DateTimeFormat(locale, {
+    dateStyle: "long",
+    timeZone: "UTC",
+  }).format(HOMEPAGE_RESEARCH_REVIEWED_AT);
 
   return (
-    <>
-      <ComparisonTableSchema vpns={featuredVpns} />
-      <div className="flex flex-col">
-        {/* Hero Section */}
-        <section className="relative py-20 lg:py-32 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-background to-background dark:from-primary/5" />
-          {/* Background Decorations - PostForge style ambient glow */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute -top-40 -right-40 w-96 h-96 bg-primary/10 dark:bg-primary/5 rounded-full blur-3xl" />
-            <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-green-500/8 dark:bg-green-500/5 rounded-full blur-3xl" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/3 dark:bg-primary/2 rounded-full blur-3xl" />
-          </div>
-          <div className="container relative">
-            <div className="max-w-3xl mx-auto text-center space-y-8">
-              <PulseIndicator variant="success" label={t("hero.badge")} size="sm" />
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight animate-fade-in-up">
-                {t("hero.title")}{" "}
-                <HighlightedText variant="primary">
-                  {t("hero.titleHighlight")}
-                </HighlightedText>
-                {" "}
-                <HighlightedText variant="cursive" className="text-3xl md:text-4xl lg:text-5xl">
-                  {t("hero.titleAccent")}
-                </HighlightedText>
-              </h1>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto animate-fade-in-up stagger-1">
-                {t("hero.subtitle")}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up stagger-2">
-                <Button size="lg" asChild className="group">
-                  <a href="#comparison">
-                    {t("hero.primaryCta")}
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </a>
-                </Button>
-                <Button size="lg" variant="outline" asChild>
-                  <Link href="/guides/what-is-vpn">{t("hero.secondaryCta")}</Link>
-                </Button>
-              </div>
-              <p className="text-sm text-muted-foreground animate-fade-in-up stagger-3">
-                {t("hero.trusted")}
-              </p>
-            </div>
-
-            {/* Hero Illustration - Dashboard Preview */}
-            <div className="mt-16 lg:mt-24">
-              <LazyHeroIllustration />
-            </div>
-          </div>
-        </section>
-
-        {/* Evidence signals: deliberately bounded to verifiable site state. */}
-        <section className="py-12 relative">
-          {/* Soft gradient background that fades at edges */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-muted/40 to-transparent" />
-          <div className="container relative">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <div className="text-center animate-fade-in-up stagger-1">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 mb-3 icon-glow">
-                  <Shield className="h-6 w-6 text-primary" />
-                </div>
-                <div className="text-3xl font-bold text-primary mb-1">
-                  {featuredVpns.length}
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  Providers in this comparison
-                </div>
-              </div>
-              <div className="text-center animate-fade-in-up stagger-2">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-green-500/10 mb-3 icon-glow">
-                  <FileSpreadsheet className="h-6 w-6 text-green-500" />
-                </div>
-                <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-1">
-                  2026
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  Transparency report
-                </div>
-              </div>
-              <div className="text-center animate-fade-in-up stagger-3">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/10 mb-3 icon-glow">
-                  <FlaskConical className="h-6 w-6 text-blue-500" />
-                </div>
-                <div className="text-3xl font-bold text-primary mb-1">
-                  Test plan
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  Methodology and sources
-                </div>
-              </div>
-              <div className="text-center animate-fade-in-up stagger-4">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-orange-500/10 mb-3 icon-glow">
-                  <BarChart3 className="h-6 w-6 text-orange-500" />
-                </div>
-                <div className="text-3xl font-bold text-primary mb-1">
-                  {currentReview}
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  Last reviewed
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Authority Pack */}
-        <section className="py-12 border-y bg-muted/20">
-          <div className="container">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold mb-3">The ZeroToVPN Authority Pack</h2>
-              <p className="text-muted-foreground max-w-3xl mx-auto">
-                Built for measurable, explainable, repeatable, data-driven VPN research.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
-              <Link href="/reports/vpn-transparency-performance-index-2026" className="rounded-xl border bg-card p-6 hover:border-primary/40 transition-colors">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4">
-                  <FileSpreadsheet className="h-5 w-5" />
-                </div>
-                <h3 className="font-semibold mb-2">VPN Transparency Report 2026</h3>
-                <p className="text-sm text-muted-foreground">Full matrix with speed, latency, logging, ownership, jurisdiction, streaming, torrenting, and kill switch reliability.</p>
-              </Link>
-              <Link href="/methodology" className="rounded-xl border bg-card p-6 hover:border-primary/40 transition-colors">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4">
-                  <FlaskConical className="h-5 w-5" />
-                </div>
-                <h3 className="font-semibold mb-2">Testing Methodology</h3>
-                <p className="text-sm text-muted-foreground">Detailed protocol: test locations, baseline rules, re-test cadence, scoring weights, and affiliate safeguards.</p>
-              </Link>
-              <Link href="/vpn-index" className="rounded-xl border bg-card p-6 hover:border-primary/40 transition-colors">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4">
-                  <BarChart3 className="h-5 w-5" />
-                </div>
-                <h3 className="font-semibold mb-2">VPN Index Dashboard</h3>
-                <p className="text-sm text-muted-foreground">Scorecards and filters for budget, privacy-first, streaming, and gaming decisions.</p>
-              </Link>
-              <div className="rounded-xl border bg-card p-6">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4">
-                  <Shield className="h-5 w-5" />
-                </div>
-                <h3 className="font-semibold mb-2">Censorship research</h3>
-                <p className="text-sm text-muted-foreground">
-                  Start with the <Link href="/blog/best-vpn-for-iran-2026-bypass-internet-censorship" className="underline underline-offset-2">Iran evidence dossier</Link> or compare the <Link href="/guides/vpn-protocols-explained" className="underline underline-offset-2">VPN protocol guide</Link> before changing settings.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Comparison Table */}
-        <section id="comparison" className="py-16 lg:py-24">
-          <div className="container">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                {t("comparison.title")}
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                {t("comparison.subtitle")}
-              </p>
-            </div>
-            <ComparisonTable vpns={featuredVpns} />
-          </div>
-        </section>
-
-        {/* VPN Cards (Mobile-friendly alternative) */}
-        <section className="py-16 relative">
-          {/* Flowing gradient background */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-muted/30 to-transparent" />
-          <div className="container relative">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">{t("topPicks.title")}</h2>
-              <p className="text-muted-foreground">{t("topPicks.subtitle")}</p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {featuredVpns.slice(0, 3).map((vpn, index) => (
-                <VpnCard key={vpn.id} vpn={vpn} rank={index + 1} locale={locale} />
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* NordVPN Spotlight */}
-        <section className="py-12 md:py-16">
-          <div className="container max-w-4xl mx-auto">
-            <div className="relative overflow-hidden rounded-2xl border bg-gradient-to-br from-primary/5 via-background to-primary/10 p-8 md:p-12">
-              {/* Editor's Choice Badge */}
-              <div className="flex items-center gap-2 mb-4">
-                <span className="inline-flex items-center bg-primary text-primary-foreground text-sm font-bold px-3 py-1 rounded-full">
-                  &#11088; Shortlist candidate
-                </span>
-              </div>
-
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">
-                Why NordVPN is on the shortlist
-              </h2>
-
-              <p className="text-muted-foreground mb-6 max-w-2xl">
-                NordVPN is a starting point for readers who want a broad feature set. We compare its catalog data and documented options with alternatives; verify the current plan and test conditions before subscribing.
-              </p>
-
-              {/* Key stats grid */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                <div>
-                  <div className="text-2xl font-bold text-primary">{nordvpn?.countries ?? "—"}</div>
-                  <div className="text-sm text-muted-foreground">Provider-stated countries</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-primary">{nordvpn?.protocols.length ?? "—"}</div>
-                  <div className="text-sm text-muted-foreground">Catalog protocols: {nordvpn?.protocols.length ?? "—"}</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-primary">{nordvpn?.moneyBackDays ?? "—"} days</div>
-                  <div className="text-sm text-muted-foreground">Refund window in catalog</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-primary">{nordvpn?.maxDevices ?? "—"}</div>
-                  <div className="text-sm text-muted-foreground">Max devices in catalog</div>
-                </div>
-              </div>
-
-              {/* CTA buttons */}
-              <div className="flex flex-wrap gap-3">
-                <AffiliateButton
-                  vpnId="nordvpn"
-                  vpnName="NordVPN"
-                  affiliateUrl={getVpnAffiliateUrl("nordvpn")}
-                  className="inline-flex items-center bg-primary text-primary-foreground font-semibold px-6 py-3 rounded-lg hover:bg-primary/90 transition"
-                >
-                  Visit NordVPN &rarr;
-                </AffiliateButton>
-                <Link
-                  href="/reviews/nordvpn"
-                  className="inline-flex items-center border font-semibold px-6 py-3 rounded-lg hover:bg-muted transition"
-                >
-                  Read Full Review
-                </Link>
-              </div>
-              <p className="mt-3 text-xs text-muted-foreground">
-                Advertisement · affiliate link · our editorial ratings are independent.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Why Use a VPN */}
-        <section className="py-16 lg:py-24">
-          <div className="container">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                {t("whyVpn.title")}
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                {t("whyVpn.subtitle")}
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {(t.raw("whyVpn.features") as Array<{ title: string; description: string; icon: string }>).map((feature, index) => {
-                const Icon = featureIcons[index];
-                const iconColors = ["text-primary bg-primary/10", "text-green-500 bg-green-500/10", "text-orange-500 bg-orange-500/10"];
-                return (
-                  <div
-                    key={index}
-                    className={`text-center p-6 rounded-xl border bg-card card-hover animate-fade-in-up stagger-${index + 1}`}
-                  >
-                    <div className={`w-14 h-14 rounded-xl ${iconColors[index]} flex items-center justify-center mx-auto mb-4`}>
-                      <Icon className="h-7 w-7" />
-                    </div>
-                    <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                    <p className="text-muted-foreground">{feature.description}</p>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* Ad placement */}
-        <div className="container">
-          <InlineAd />
-        </div>
-
-        {/* How We Test */}
-        <section className="py-16 relative">
-          {/* Flowing gradient background */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-muted/30 to-transparent" />
-          <div className="container relative">
-            <div className="max-w-3xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold mb-4">{t("howWeTest.title")}</h2>
-                <p className="text-muted-foreground">{t("howWeTest.subtitle")}</p>
-              </div>
-              <div className="space-y-4">
-                {(t.raw("howWeTest.items") as string[]).map((item, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ Section */}
-        <section className="py-16 lg:py-24 relative">
-          {/* Flowing gradient background */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-muted/30 to-transparent" />
-          <div className="container relative">
-            <div className="max-w-3xl mx-auto">
-              <FAQAccordion
-                faqs={faqData}
-                title={t("faqSection.title")}
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-16 lg:py-24 relative overflow-hidden">
-          {/* Background Gradient */}
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-purple-500/5 to-primary/5 animate-gradient" />
-          <div className="container relative">
-            <div className="max-w-3xl mx-auto text-center space-y-6 bg-card/80 backdrop-blur-sm rounded-2xl border p-8 md:p-12 card-hover">
-              <div className="inline-flex items-center gap-2 mb-2">
-                <MetricBadge value="Free" label="to compare" variant="success" icon="trending-up" />
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold">
-                {t("ctaSection.title")}
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                {t("ctaSection.subtitle")}
-              </p>
-              <Button size="lg" asChild className="group">
-                <a href="#comparison">
-                  {t("ctaSection.button")}
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </a>
-              </Button>
-            </div>
-          </div>
-        </section>
-      </div>
-    </>
+    <EditorialHomepage
+      currentReview={currentReview}
+      featuredVpns={shortlist}
+      copy={copy}
+      locale={locale}
+    />
   );
 }

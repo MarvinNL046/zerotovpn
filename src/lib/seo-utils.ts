@@ -4,6 +4,7 @@
  */
 
 import { routing } from "@/i18n/routing";
+import { getIndexableLocalesForPath } from "@/lib/indexability";
 
 // Altijd www: de apex stuurt met een 307 door, dus een apex-URL in een
 // canonical, breadcrumb of JSON-LD laat elke crawler op een omleiding landen.
@@ -28,10 +29,14 @@ export function generateAlternates(path: string, locale: string) {
   const prefix = locale === "en" ? "" : `/${locale}`;
   const canonicalUrl = `${BASE_URL}${prefix}${path}`;
 
-  const languages: Record<string, string> = {
-    "x-default": `${BASE_URL}${path}`,
-  };
-  for (const l of routing.locales) {
+  const admittedLocales = getIndexableLocalesForPath(path);
+  const alternateLocales = admittedLocales ?? routing.locales;
+  const languages: Record<string, string> = {};
+
+  if (alternateLocales.length > 0) {
+    languages["x-default"] = `${BASE_URL}${path}`;
+  }
+  for (const l of alternateLocales) {
     const p = l === "en" ? "" : `/${l}`;
     languages[l] = `${BASE_URL}${p}${path}`;
   }
@@ -80,14 +85,31 @@ export function titelMetMerk(titel: string): string {
 
 /** OG locale mapping (ISO 639-1 → Open Graph format) */
 export const OG_LOCALE_MAP: Record<string, string> = {
-  en: "en_US", nl: "nl_NL", de: "de_DE", es: "es_ES",
-  fr: "fr_FR", zh: "zh_CN", ja: "ja_JP", ko: "ko_KR", th: "th_TH",
+  en: "en_US",
+  nl: "nl_NL",
+  de: "de_DE",
+  es: "es_ES",
+  fr: "fr_FR",
+  zh: "zh_CN",
+  ja: "ja_JP",
+  ko: "ko_KR",
+  th: "th_TH",
 };
 
 /** Short 3-letter English month abbreviations, indexed 0-11. */
 const SHORT_MONTH_ABBR = [
-  "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
 ] as const;
 
 /**

@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { Check, Loader2, Mail } from "lucide-react";
+import { NEWSLETTER_CONSENT_VERSION } from "@/lib/newsletter-consent";
 
 interface NewsletterFormProps {
   variant?: "default" | "compact" | "inline";
@@ -18,17 +19,18 @@ interface NewsletterFormProps {
 export function NewsletterForm({
   variant = "default",
   source = "website",
-  className = ""
+  className = "",
 }: NewsletterFormProps) {
   const t = useTranslations("newsletter");
   const params = useParams();
-  const locale = params.locale as string || "en";
+  const locale = (params.locale as string) || "en";
 
   const [email, setEmail] = useState("");
   const [consent, setConsent] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const errorId = `newsletter-${source}-error`;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -53,6 +55,8 @@ export function NewsletterForm({
           email,
           language: locale,
           source,
+          marketingConsent: true,
+          consentVersion: NEWSLETTER_CONSENT_VERSION,
         }),
       });
 
@@ -75,7 +79,11 @@ export function NewsletterForm({
 
   if (status === "success") {
     return (
-      <div className={`flex items-center gap-2 text-green-600 dark:text-green-400 ${className}`}>
+      <div
+        aria-live="polite"
+        className={`flex items-center gap-2 text-green-600 dark:text-green-400 ${className}`}
+        role="status"
+      >
         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-100 dark:bg-green-900/30">
           <Check className="h-5 w-5" />
         </div>
@@ -89,18 +97,27 @@ export function NewsletterForm({
 
   if (variant === "inline") {
     return (
-      <form onSubmit={handleSubmit} className={`flex flex-col gap-2 ${className}`}>
+      <form
+        onSubmit={handleSubmit}
+        className={`flex flex-col gap-2 ${className}`}
+      >
         <div className="flex gap-2">
           <Input
             type="email"
+            aria-label={t("emailLabel")}
+            aria-describedby={status === "error" ? errorId : undefined}
             placeholder={t("placeholder")}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             disabled={isLoading}
-            className="flex-1"
+            className="min-h-12 flex-1"
             required
           />
-          <Button type="submit" disabled={isLoading || !consent}>
+          <Button
+            type="submit"
+            disabled={isLoading || !consent}
+            className="min-h-12 px-4"
+          >
             {isLoading ? (
               <Loader2 className="h-4 w-4 animate-spin" />
             ) : (
@@ -108,7 +125,7 @@ export function NewsletterForm({
             )}
           </Button>
         </div>
-        <div className="flex items-center space-x-2">
+        <div className="flex min-h-12 items-center space-x-2">
           <Checkbox
             id={`consent-${source}`}
             checked={consent}
@@ -117,13 +134,19 @@ export function NewsletterForm({
           />
           <Label
             htmlFor={`consent-${source}`}
-            className="text-xs text-muted-foreground cursor-pointer"
+            className="flex min-h-12 flex-1 cursor-pointer items-center text-xs text-current"
           >
             {t("consent")}
           </Label>
         </div>
         {status === "error" && (
-          <p className="text-sm text-red-600 dark:text-red-400">{errorMessage}</p>
+          <p
+            className="text-sm text-red-600 dark:text-red-400"
+            id={errorId}
+            role="alert"
+          >
+            {errorMessage}
+          </p>
         )}
       </form>
     );
@@ -135,13 +158,16 @@ export function NewsletterForm({
         <form onSubmit={handleSubmit} className="space-y-3">
           <Input
             type="email"
+            aria-label={t("emailLabel")}
+            aria-describedby={status === "error" ? errorId : undefined}
             placeholder={t("placeholder")}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             disabled={isLoading}
+            className="min-h-12 placeholder:text-current"
             required
           />
-          <div className="flex items-center space-x-2">
+          <div className="flex min-h-12 items-center space-x-2">
             <Checkbox
               id={`consent-${source}`}
               checked={consent}
@@ -150,12 +176,16 @@ export function NewsletterForm({
             />
             <Label
               htmlFor={`consent-${source}`}
-              className="text-xs text-muted-foreground cursor-pointer"
+              className="flex min-h-12 flex-1 cursor-pointer items-center text-xs text-current"
             >
               {t("consent")}
             </Label>
           </div>
-          <Button type="submit" disabled={isLoading || !consent} className="w-full">
+          <Button
+            type="submit"
+            disabled={isLoading || !consent}
+            className="min-h-12 w-full"
+          >
             {isLoading ? (
               <>
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -169,7 +199,13 @@ export function NewsletterForm({
             )}
           </Button>
           {status === "error" && (
-            <p className="text-sm text-red-600 dark:text-red-400">{errorMessage}</p>
+            <p
+              className="text-sm text-red-600 dark:text-red-400"
+              id={errorId}
+              role="alert"
+            >
+              {errorMessage}
+            </p>
           )}
         </form>
       </div>
@@ -185,6 +221,7 @@ export function NewsletterForm({
           <Input
             id={`email-${source}`}
             type="email"
+            aria-describedby={status === "error" ? errorId : undefined}
             placeholder={t("placeholder")}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -207,13 +244,15 @@ export function NewsletterForm({
             >
               {t("consent")}
             </Label>
-            <p className="text-xs text-muted-foreground">
-              {t("privacy")}
-            </p>
+            <p className="text-xs text-muted-foreground">{t("privacy")}</p>
           </div>
         </div>
 
-        <Button type="submit" disabled={isLoading || !consent} className="w-full">
+        <Button
+          type="submit"
+          disabled={isLoading || !consent}
+          className="w-full"
+        >
           {isLoading ? (
             <>
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -228,7 +267,13 @@ export function NewsletterForm({
         </Button>
 
         {status === "error" && (
-          <p className="text-sm text-red-600 dark:text-red-400">{errorMessage}</p>
+          <p
+            className="text-sm text-red-600 dark:text-red-400"
+            id={errorId}
+            role="alert"
+          >
+            {errorMessage}
+          </p>
         )}
       </form>
     </div>

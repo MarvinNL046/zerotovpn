@@ -4,10 +4,11 @@ type Props = {
   params: Promise<{ locale: string }>;
 };
 
-const DESTINATION = "/guides/how-vpn-works";
+const DESTINATION = "/guides/what-is-vpn";
 
 export default async function LegacyRedirectPage({ params }: Props) {
   const { locale } = await params;
-  const localizedDestination = locale === "en" ? DESTINATION : `/${locale}${DESTINATION}`;
+  const localizedDestination =
+    locale === "nl" ? `/nl${DESTINATION}` : DESTINATION;
   permanentRedirect(localizedDestination);
 }

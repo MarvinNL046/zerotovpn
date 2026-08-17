@@ -7,10 +7,21 @@ import { Link } from "@/i18n/navigation";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { FAQSchema } from "@/components/seo/faq-schema";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
-import { getPostBySlug, getAllPublishedSlugs } from "@/lib/pipeline/blog-service";
+import {
+  getPostBySlug,
+  getAllPublishedSlugs,
+} from "@/lib/pipeline/blog-service";
 import { getAllVpns } from "@/lib/vpn-data-layer";
 import { routing } from "@/i18n/routing";
-import { DEFAULT_OG_IMAGE, generateAlternates, titelMetMerk } from "@/lib/seo-utils";
+import {
+  DEFAULT_OG_IMAGE,
+  generateAlternates,
+  titelMetMerk,
+} from "@/lib/seo-utils";
+import {
+  getIndexableLocalesForPath,
+  shouldNoindexPath,
+} from "@/lib/indexability";
 import { getRelatedContent } from "@/lib/content-links";
 import { RelatedContent } from "@/components/seo/related-content";
 import InlineAd from "@/components/ads/InlineAd";
@@ -25,7 +36,10 @@ import {
   SourcesSection,
 } from "@/components/blog/author-box";
 import { BestVpnEditorialTemplate } from "@/components/editorial/best-vpn-editorial-template";
+import { EvidenceFirstRoutePage } from "@/components/editorial/evidence-first-route-page";
 import { IranEditorialQuickPicks } from "@/components/editorial/iran-editorial-quick-picks";
+import { IranCountryRoundupPage } from "@/components/editorial/iran-country-roundup-page";
+import { ConnectionDropsArticlePage } from "@/components/blog/connection-drops-article-page";
 import {
   ChatgptVpnEditorialPage,
   chatgptVpnEditorialExcerpt,
@@ -38,6 +52,7 @@ import {
 } from "@/components/editorial/reddit-free-vpn-editorial-page";
 import type { EditorialContentBrief } from "@/lib/editorial-content-brief";
 import { editorialContentBriefs } from "@/lib/editorial-content-briefs";
+import { createEvidenceFirstMetadata } from "@/lib/evidence-first-route";
 import {
   iranVpnEditorialFaq,
   iranVpnEditorialContent,
@@ -45,16 +60,18 @@ import {
   iranVpnEditorialExcerpt,
 } from "@/data/editorial/iran-vpn-2026";
 import {
+  telegramVpnEditorialContent,
   telegramVpnEditorialFaq,
   telegramVpnEditorialTitle,
   telegramVpnEditorialExcerpt,
 } from "@/data/editorial/telegram-vpn-2026";
 import {
-  connectionDropsEditorialFaq,
-  connectionDropsEditorialTitle,
-  connectionDropsEditorialExcerpt,
-} from "@/data/editorial/connection-drops-2026";
+  CONNECTION_DROPS_SLUG,
+  connectionDropsCopy,
+  getConnectionDropsLocale,
+} from "@/data/blog-detail/connection-drops";
 import {
+  serverLocationEditorialContent,
   serverLocationEditorialFaq,
   serverLocationEditorialTitle,
   serverLocationEditorialExcerpt,
@@ -107,12 +124,43 @@ import {
   torrentingRedditEditorialExcerpt,
   torrentingRedditEditorialContent,
 } from "@/data/editorial/torrenting-reddit-2026";
+import {
+  getIranRoundupLocale,
+  IRAN_ROUNDUP_SLUG,
+  iranRoundupCopy,
+} from "@/data/roundup/iran-country-roundup";
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
 };
 
 const baseUrl = "https://www.zerotovpn.com";
+
+function getBlogFallbackCopy(locale: string) {
+  if (locale === "nl") {
+    return {
+      title: "Bewijscontrole voor dit artikel loopt",
+      description:
+        "We controleren de bronnen, actualiteit en reikwijdte van dit artikel opnieuw. Tot die controle klaar is, publiceren we geen ranglijst, garantie of actuele productclaim.",
+      subject: "het onderwerp van dit artikel",
+      sectionLabel: "Blog",
+      notes: [
+        "De eerdere artikeltekst, schema-markup en commerciële links worden op deze route niet getoond.",
+      ],
+    };
+  }
+
+  return {
+    title: "Article evidence review in progress",
+    description:
+      "We are rechecking this article's sources, freshness and scope. Until that review is complete, we do not publish a ranking, guarantee or current product claim here.",
+    subject: "the topic requested on this article route",
+    sectionLabel: "Blog",
+    notes: [
+      "The previous article copy, schema markup and commercial links are not shown on this route.",
+    ],
+  };
+}
 
 const iranContentBrief = {
   primaryKeyword: "best vpn for iran",
@@ -125,20 +173,6 @@ const iranContentBrief = {
     "https://freedomhouse.org/country/iran/freedom-net/2025",
   ],
   affiliateContext: "vpn-selection",
-  schemaType: "Article",
-} satisfies EditorialContentBrief;
-
-const connectionDropsContentBrief = {
-  primaryKeyword: "vpn keeps disconnecting",
-  intent: "informational",
-  cluster: "protocol-and-technical-literacy",
-  lastReviewedAt: "2026-08-13",
-  evidence: [
-    "docs/research/dataforseo-connection-drops-cluster-2026-08-13.md",
-    "/methodology",
-    "/guides/vpn-protocols-explained",
-  ],
-  affiliateContext: "none",
   schemaType: "Article",
 } satisfies EditorialContentBrief;
 
@@ -251,111 +285,115 @@ const censorshipClusterLinks: Record<string, ClusterLink[]> = {
   "best-vpn-for-iran-2026-bypass-internet-censorship": [
     {
       title: "Iran evidence checklist",
-      description: "Separate current legal, network, and provider evidence from permanent access claims.",
+      description:
+        "Separate current legal, network, and provider evidence from permanent access claims.",
       href: "/countries/iran",
     },
     {
       title: "VPNs for Russia",
-      description: "Compare the same censorship questions in Russia's changing network environment.",
+      description:
+        "Compare the same censorship questions in Russia's changing network environment.",
       href: "/countries/russia",
     },
     {
       title: "Unblock Telegram",
-      description: "See why obfuscation and a pre-travel setup matter for restricted messaging apps.",
+      description:
+        "See why obfuscation and a pre-travel setup matter for restricted messaging apps.",
       href: "/blog/best-vpn-for-telegram-2026",
     },
   ],
   "best-vpn-for-telegram-2026": [
     {
       title: "Iran evidence checklist",
-      description: "Country-specific checks for lawful VPN testing when network conditions are restrictive.",
+      description:
+        "Country-specific checks for lawful VPN testing when network conditions are restrictive.",
       href: "/countries/iran",
     },
     {
-      title: "VPNs for Russia",
-      description: "A current country guide for blocked services, protocols, and fallback planning.",
-      href: "/countries/russia",
+      title: "VPN testing methodology",
+      description:
+        "See how we separate dated sources, provider claims and repeatable checks.",
+      href: "/methodology",
     },
     {
-      title: "VPNs for China",
-      description: "Understand obfuscation, app preparation, and Great Firewall constraints.",
-      href: "/countries/china",
+      title: "VPN obfuscation explained",
+      description:
+        "Understand what obfuscation changes and which access limits can remain.",
+      href: "/guides/vpn-obfuscation-explained",
     },
   ],
 };
 
-const clusterMetadata: Record<string, { title: string; description: string }> = {
-  "best-vpn-for-iran-2026-bypass-internet-censorship": {
-    title: iranVpnEditorialTitle,
-    description:
-      iranVpnEditorialExcerpt,
-  },
-  "best-vpn-for-telegram-2026": {
-    title: telegramVpnEditorialTitle,
-    description:
-      telegramVpnEditorialExcerpt,
-  },
-  "best-vpn-for-chatgpt-2026": {
-    title: chatgptVpnEditorialTitle,
-    description: chatgptVpnEditorialExcerpt,
-  },
-  "best-free-vpn-reddit-2026": {
-    title: redditFreeVpnEditorialTitle,
-    description: redditFreeVpnEditorialExcerpt,
-  },
-  "vpn-connection-drops-why-disconnects-how-to-fix-2026": {
-    title: connectionDropsEditorialTitle,
-    description: connectionDropsEditorialExcerpt,
-  },
-  "best-country-for-vpn-server-location-2026": {
-    title: serverLocationEditorialTitle,
-    description: serverLocationEditorialExcerpt,
-  },
-  "can-vpn-hide-from-isp": {
-    title: ispPrivacyEditorialTitle,
-    description: ispPrivacyEditorialExcerpt,
-  },
-  "is-brave-vpn-free-2026": {
-    title: braveVpnEditorialTitle,
-    description: braveVpnEditorialExcerpt,
-  },
-  "vpn-leak-testing-tools-compared-2026": {
-    title: vpnLeakTestingEditorialTitle,
-    description: vpnLeakTestingEditorialExcerpt,
-  },
-  "vpn-account-sharing-safe-guide-2026": {
-    title: vpnAccountSharingEditorialTitle,
-    description: vpnAccountSharingEditorialExcerpt,
-  },
-  "vpn-simultaneous-connections-limits-workarounds-2026": {
-    title: vpnSimultaneousConnectionsEditorialTitle,
-    description: vpnSimultaneousConnectionsEditorialExcerpt,
-  },
-  "does-vpn-reduce-ping-gaming-2026": {
-    title: vpnPingGamingEditorialTitle,
-    description: vpnPingGamingEditorialExcerpt,
-  },
-  "best-vpn-for-torrenting-reddit-2026": {
-    title: torrentingRedditEditorialTitle,
-    description: torrentingRedditEditorialExcerpt,
-  },
-};
+const clusterMetadata: Record<string, { title: string; description: string }> =
+  {
+    "best-vpn-for-iran-2026-bypass-internet-censorship": {
+      title: iranVpnEditorialTitle,
+      description: iranVpnEditorialExcerpt,
+    },
+    "best-vpn-for-telegram-2026": {
+      title: telegramVpnEditorialTitle,
+      description: telegramVpnEditorialExcerpt,
+    },
+    "best-vpn-for-chatgpt-2026": {
+      title: chatgptVpnEditorialTitle,
+      description: chatgptVpnEditorialExcerpt,
+    },
+    "best-free-vpn-reddit-2026": {
+      title: redditFreeVpnEditorialTitle,
+      description: redditFreeVpnEditorialExcerpt,
+    },
+    "best-country-for-vpn-server-location-2026": {
+      title: serverLocationEditorialTitle,
+      description: serverLocationEditorialExcerpt,
+    },
+    "can-vpn-hide-from-isp": {
+      title: ispPrivacyEditorialTitle,
+      description: ispPrivacyEditorialExcerpt,
+    },
+    "is-brave-vpn-free-2026": {
+      title: braveVpnEditorialTitle,
+      description: braveVpnEditorialExcerpt,
+    },
+    "vpn-leak-testing-tools-compared-2026": {
+      title: vpnLeakTestingEditorialTitle,
+      description: vpnLeakTestingEditorialExcerpt,
+    },
+    "vpn-account-sharing-safe-guide-2026": {
+      title: vpnAccountSharingEditorialTitle,
+      description: vpnAccountSharingEditorialExcerpt,
+    },
+    "vpn-simultaneous-connections-limits-workarounds-2026": {
+      title: vpnSimultaneousConnectionsEditorialTitle,
+      description: vpnSimultaneousConnectionsEditorialExcerpt,
+    },
+    "does-vpn-reduce-ping-gaming-2026": {
+      title: vpnPingGamingEditorialTitle,
+      description: vpnPingGamingEditorialExcerpt,
+    },
+    "best-vpn-for-torrenting-reddit-2026": {
+      title: torrentingRedditEditorialTitle,
+      description: torrentingRedditEditorialExcerpt,
+    },
+  };
 
 const aiPrivacyClusterLinks: Record<string, ClusterLink[]> = {
   "best-vpn-for-chatgpt-2026": [
     {
       title: "Best VPNs overall",
-      description: "Compare privacy, streaming, speed and value before choosing a provider.",
+      description:
+        "Compare privacy, streaming, speed and value before choosing a provider.",
       href: "/best/vpn",
     },
     {
       title: "AI privacy and data leaks",
-      description: "Learn what a VPN can and cannot protect when you use ChatGPT and other AI tools.",
+      description:
+        "Learn what a VPN can and cannot protect when you use ChatGPT and other AI tools.",
       href: "/blog/vpn-generative-ai-privacy-chatgpt-claude-gemini-data-leaks",
     },
     {
       title: "VPNs for China",
-      description: "Check obfuscation, app preparation and network limits before travelling.",
+      description:
+        "Check obfuscation, app preparation and network limits before travelling.",
       href: "/countries/china",
     },
   ],
@@ -365,17 +403,20 @@ const technicalClusterLinks: Record<string, ClusterLink[]> = {
   "vpn-connection-drops-why-disconnects-how-to-fix-2026": [
     {
       title: "VPN protocol guide",
-      description: "Compare WireGuard, OpenVPN and IKEv2 before changing the protocol.",
+      description:
+        "Compare WireGuard, OpenVPN and IKEv2 before changing the protocol.",
       href: "/guides/vpn-protocols-explained",
     },
     {
       title: "VPN speed guide",
-      description: "Separate baseline internet problems from VPN route and server effects.",
+      description:
+        "Separate baseline internet problems from VPN route and server effects.",
       href: "/guides/vpn-speed-guide",
     },
     {
       title: "VPNs for mobile devices",
-      description: "Check background permissions and network handoffs on phones and tablets.",
+      description:
+        "Check background permissions and network handoffs on phones and tablets.",
       href: "/best/vpn-mobile",
     },
   ],
@@ -385,17 +426,20 @@ const locationClusterLinks: Record<string, ClusterLink[]> = {
   "best-country-for-vpn-server-location-2026": [
     {
       title: "VPN speed guide",
-      description: "Measure latency, throughput and stability instead of trusting a fixed country ranking.",
+      description:
+        "Measure latency, throughput and stability instead of trusting a fixed country ranking.",
       href: "/guides/vpn-speed-guide",
     },
     {
       title: "VPN privacy comparison",
-      description: "Review logging policy, ownership and jurisdiction evidence separately from server location.",
+      description:
+        "Review logging policy, ownership and jurisdiction evidence separately from server location.",
       href: "/best/vpn-privacy",
     },
     {
       title: "VPNs for travel",
-      description: "Prepare devices and networks before relying on a VPN while travelling.",
+      description:
+        "Prepare devices and networks before relying on a VPN while travelling.",
       href: "/guides/vpn-for-travel",
     },
   ],
@@ -404,18 +448,21 @@ const locationClusterLinks: Record<string, ClusterLink[]> = {
 const ispPrivacyClusterLinks: Record<string, ClusterLink[]> = {
   "can-vpn-hide-from-isp": [
     {
-      title: "VPN encryption explained",
-      description: "Understand what the encrypted tunnel protects and where its boundary ends.",
-      href: "/vpn-encryption-explained",
+      title: "VPN privacy guide",
+      description:
+        "Understand what the encrypted tunnel protects and where its boundary ends.",
+      href: "/guides/vpn-privacy-guide",
     },
     {
-      title: "DNS leak test",
-      description: "Check whether DNS requests follow the VPN instead of falling back to the ISP.",
-      href: "/tools/dns-leak-test",
+      title: "Current IP check",
+      description:
+        "Record the public address your current route exposes before comparing connections.",
+      href: "/tools/what-is-my-ip",
     },
     {
       title: "VPN privacy comparison",
-      description: "Compare logging, ownership and jurisdiction evidence before trusting a provider.",
+      description:
+        "Compare logging, ownership and jurisdiction evidence before trusting a provider.",
       href: "/best/vpn-privacy",
     },
   ],
@@ -425,17 +472,20 @@ const braveVpnClusterLinks: Record<string, ClusterLink[]> = {
   "is-brave-vpn-free-2026": [
     {
       title: "Free VPN guide",
-      description: "Compare documented limits and privacy trade-offs instead of assuming every free VPN is equivalent.",
+      description:
+        "Compare documented limits and privacy trade-offs instead of assuming every free VPN is equivalent.",
       href: "/best/free-vpn",
     },
     {
       title: "VPN privacy comparison",
-      description: "Review logging, ownership and jurisdiction evidence before trusting a provider.",
+      description:
+        "Review logging, ownership and jurisdiction evidence before trusting a provider.",
       href: "/best/vpn-privacy",
     },
     {
       title: "VPN methodology",
-      description: "See how current provider terms and hands-on checks should be evaluated.",
+      description:
+        "See how current provider terms and hands-on checks should be evaluated.",
       href: "/methodology",
     },
   ],
@@ -444,18 +494,20 @@ const braveVpnClusterLinks: Record<string, ClusterLink[]> = {
 const vpnLeakTestingClusterLinks: Record<string, ClusterLink[]> = {
   "vpn-leak-testing-tools-compared-2026": [
     {
-      title: "DNS leak test",
-      description: "Run a focused resolver check after connecting to a VPN.",
-      href: "/tools/dns-leak-test",
+      title: "Current IP check",
+      description:
+        "Record the public address your current route exposes before and after connecting.",
+      href: "/tools/what-is-my-ip",
     },
     {
-      title: "VPN encryption explained",
+      title: "VPN privacy guide",
       description: "Understand what the tunnel protects and where it stops.",
-      href: "/vpn-encryption-explained",
+      href: "/guides/vpn-privacy-guide",
     },
     {
       title: "VPN testing methodology",
-      description: "See how we separate provider claims, test results and limitations.",
+      description:
+        "See how we separate provider claims, test results and limitations.",
       href: "/methodology",
     },
   ],
@@ -465,17 +517,20 @@ const vpnAccountSharingClusterLinks: Record<string, ClusterLink[]> = {
   "vpn-account-sharing-safe-guide-2026": [
     {
       title: "VPN privacy comparison",
-      description: "Review logging, account controls and jurisdiction evidence before choosing a provider.",
+      description:
+        "Review logging, account controls and jurisdiction evidence before choosing a provider.",
       href: "/best/vpn-privacy",
     },
     {
       title: "VPN testing methodology",
-      description: "See how provider terms and device behaviour should be checked over time.",
+      description:
+        "See how provider terms and device behaviour should be checked over time.",
       href: "/methodology",
     },
     {
       title: "VPN terms and policies",
-      description: "Start with the site's current terms before treating any sharing rule as permission.",
+      description:
+        "Start with the site's current terms before treating any sharing rule as permission.",
       href: "/terms",
     },
   ],
@@ -485,17 +540,20 @@ const vpnSimultaneousConnectionsClusterLinks: Record<string, ClusterLink[]> = {
   "vpn-simultaneous-connections-limits-workarounds-2026": [
     {
       title: "VPN account-sharing guide",
-      description: "Separate device limits from household access and credential-sharing terms.",
+      description:
+        "Separate device limits from household access and credential-sharing terms.",
       href: "/blog/vpn-account-sharing-safe-guide-2026",
     },
     {
       title: "VPN privacy comparison",
-      description: "Compare logging, ownership and jurisdiction evidence alongside device limits.",
+      description:
+        "Compare logging, ownership and jurisdiction evidence alongside device limits.",
       href: "/best/vpn-privacy",
     },
     {
       title: "VPN testing methodology",
-      description: "See how plan terms and device behaviour should be checked over time.",
+      description:
+        "See how plan terms and device behaviour should be checked over time.",
       href: "/methodology",
     },
   ],
@@ -505,17 +563,20 @@ const fitnessTrackingPrivacyClusterLinks: Record<string, ClusterLink[]> = {
   "vpn-fitness-tracking-apps-strava-apple-health-garmin-privacy": [
     {
       title: "VPN privacy comparison",
-      description: "Compare logging, ownership and jurisdiction evidence before choosing a provider.",
+      description:
+        "Compare logging, ownership and jurisdiction evidence before choosing a provider.",
       href: "/best/vpn-privacy",
     },
     {
       title: "Can a VPN hide you from your ISP?",
-      description: "Understand the network-visibility boundary before treating a VPN as a complete privacy solution.",
+      description:
+        "Understand the network-visibility boundary before treating a VPN as a complete privacy solution.",
       href: "/blog/can-vpn-hide-from-isp",
     },
     {
       title: "VPNs for mobile devices",
-      description: "Check app permissions, network handoffs and mobile reliability on the phone that syncs your watch.",
+      description:
+        "Check app permissions, network handoffs and mobile reliability on the phone that syncs your watch.",
       href: "/best/vpn-mobile",
     },
   ],
@@ -525,17 +586,20 @@ const gamingLatencyClusterLinks: Record<string, ClusterLink[]> = {
   "does-vpn-reduce-ping-gaming-2026": [
     {
       title: "Gaming VPN comparison",
-      description: "Compare protocols, route evidence and threat-model boundaries for gaming use.",
+      description:
+        "Compare protocols, route evidence and threat-model boundaries for gaming use.",
       href: "/best/vpn-gaming",
     },
     {
       title: "VPN speed guide",
-      description: "Separate latency, throughput and stability before interpreting a speed result.",
+      description:
+        "Separate latency, throughput and stability before interpreting a speed result.",
       href: "/guides/vpn-speed-guide",
     },
     {
       title: "Port-forwarding guide",
-      description: "Check whether inbound connectivity is the real gaming requirement.",
+      description:
+        "Check whether inbound connectivity is the real gaming requirement.",
       href: "/best/vpn-port-forwarding",
     },
   ],
@@ -543,9 +607,23 @@ const gamingLatencyClusterLinks: Record<string, ClusterLink[]> = {
 
 const torrentingRedditClusterLinks: Record<string, ClusterLink[]> = {
   "best-vpn-for-torrenting-reddit-2026": [
-    { title: "Torrenting VPN guide", description: "Compare current P2P, privacy and setup evidence without fixed performance promises.", href: "/best/vpn-torrenting" },
-    { title: "Port-forwarding comparison", description: "Check whether incoming peer reachability is the real requirement.", href: "/best/vpn-port-forwarding" },
-    { title: "VPN protocol guide", description: "Understand WireGuard, OpenVPN and kill-switch trade-offs.", href: "/guides/vpn-protocols-explained" },
+    {
+      title: "Evidence-led VPN guide",
+      description:
+        "Compare current privacy, plan and setup evidence without fixed performance promises.",
+      href: "/best/best-vpn",
+    },
+    {
+      title: "Port-forwarding comparison",
+      description:
+        "Check whether incoming peer reachability is the real requirement.",
+      href: "/best/vpn-port-forwarding",
+    },
+    {
+      title: "VPN protocol guide",
+      description: "Understand WireGuard, OpenVPN and kill-switch trade-offs.",
+      href: "/guides/vpn-protocols-explained",
+    },
   ],
 };
 
@@ -559,7 +637,7 @@ export async function generateStaticParams() {
   const posts = await getAllPublishedSlugs();
   const slugs = [...new Set(posts.map((p) => p.slug))];
   return routing.locales.flatMap((locale) =>
-    slugs.map((slug) => ({ locale, slug }))
+    slugs.map((slug) => ({ locale, slug })),
   );
 }
 
@@ -569,11 +647,76 @@ export const revalidate = 86400;
 
 function formatDate(date: Date, locale: string): string {
   const months: Record<string, string[]> = {
-    en: ["January","February","March","April","May","June","July","August","September","October","November","December"],
-    nl: ["januari","februari","maart","april","mei","juni","juli","augustus","september","oktober","november","december"],
-    de: ["Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"],
-    es: ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],
-    fr: ["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],
+    en: [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ],
+    nl: [
+      "januari",
+      "februari",
+      "maart",
+      "april",
+      "mei",
+      "juni",
+      "juli",
+      "augustus",
+      "september",
+      "oktober",
+      "november",
+      "december",
+    ],
+    de: [
+      "Januar",
+      "Februar",
+      "März",
+      "April",
+      "Mai",
+      "Juni",
+      "Juli",
+      "August",
+      "September",
+      "Oktober",
+      "November",
+      "Dezember",
+    ],
+    es: [
+      "enero",
+      "febrero",
+      "marzo",
+      "abril",
+      "mayo",
+      "junio",
+      "julio",
+      "agosto",
+      "septiembre",
+      "octubre",
+      "noviembre",
+      "diciembre",
+    ],
+    fr: [
+      "janvier",
+      "février",
+      "mars",
+      "avril",
+      "mai",
+      "juin",
+      "juillet",
+      "août",
+      "septembre",
+      "octobre",
+      "novembre",
+      "décembre",
+    ],
   };
   const m = months[locale] || months.en;
   return `${m[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
@@ -581,6 +724,178 @@ function formatDate(date: Date, locale: string): string {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
+
+  if (shouldNoindexPath(`/${locale}/blog/${slug}`)) {
+    const post = await getPostBySlug(slug, locale);
+    if (!post) {
+      notFound();
+    }
+
+    const copy = getBlogFallbackCopy(locale);
+    return createEvidenceFirstMetadata({
+      locale,
+      path: `/blog/${slug}`,
+      title: copy.title,
+      description: copy.description,
+    });
+  }
+
+  if (slug === CONNECTION_DROPS_SLUG) {
+    const hasDedicatedPage = locale === "en" || locale === "nl";
+
+    if (hasDedicatedPage) {
+      const contentLocale = getConnectionDropsLocale(locale);
+      const copy = connectionDropsCopy[contentLocale];
+      const prefix = contentLocale === "nl" ? "/nl" : "";
+      const canonical = `${baseUrl}${prefix}/blog/${CONNECTION_DROPS_SLUG}`;
+      const image = {
+        url: `${baseUrl}/images/blog/zerotovpn-journal-og-v1.webp`,
+        width: 1200,
+        height: 630,
+        alt: copy.metadata.imageAlt,
+      };
+
+      return {
+        metadataBase: new URL(baseUrl),
+        title: { absolute: titelMetMerk(copy.metadata.title) },
+        description: copy.metadata.description,
+        alternates: {
+          canonical,
+          languages: {
+            en: `${baseUrl}/blog/${CONNECTION_DROPS_SLUG}`,
+            nl: `${baseUrl}/nl/blog/${CONNECTION_DROPS_SLUG}`,
+            "x-default": `${baseUrl}/blog/${CONNECTION_DROPS_SLUG}`,
+          },
+        },
+        robots: {
+          index: true,
+          follow: true,
+          googleBot: {
+            index: true,
+            follow: true,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+          },
+        },
+        openGraph: {
+          title: copy.metadata.title,
+          description: copy.metadata.description,
+          type: "article",
+          url: canonical,
+          siteName: "ZeroToVPN",
+          locale: contentLocale === "nl" ? "nl_NL" : "en_US",
+          images: [image],
+          publishedTime: "2026-02-16T00:00:00.000Z",
+          modifiedTime: "2026-08-16T00:00:00.000Z",
+          authors: ["Marvin Smit"],
+        },
+        twitter: {
+          card: "summary_large_image",
+          title: copy.metadata.title,
+          description: copy.metadata.description,
+          images: [image.url],
+        },
+      };
+    }
+
+    const translatedPost = await getPostBySlug(slug, locale);
+    if (!translatedPost) return { title: "Post Not Found" };
+
+    const hasReviewedTranslation = !shouldNoindexPath(
+      `/${locale}/blog/${slug}`,
+    );
+    const localePrefix = hasReviewedTranslation ? `/${locale}` : "";
+    const canonical = `${baseUrl}${localePrefix}/blog/${CONNECTION_DROPS_SLUG}`;
+
+    return {
+      metadataBase: new URL(baseUrl),
+      title: {
+        absolute: titelMetMerk(
+          translatedPost.metaTitle || translatedPost.title,
+        ),
+      },
+      description: translatedPost.metaDescription || translatedPost.excerpt,
+      alternates: { canonical },
+      robots: {
+        index: hasReviewedTranslation,
+        follow: true,
+        googleBot: { index: hasReviewedTranslation, follow: true },
+      },
+      openGraph: {
+        title: translatedPost.metaTitle || translatedPost.title,
+        description: translatedPost.metaDescription || translatedPost.excerpt,
+        type: "article",
+        url: canonical,
+        images: [
+          {
+            url: `${baseUrl}/images/blog/zerotovpn-journal-og-v1.webp`,
+            width: 1200,
+            height: 630,
+            alt: translatedPost.title,
+          },
+        ],
+        publishedTime: translatedPost.publishedAt?.toISOString(),
+        modifiedTime: translatedPost.updatedAt.toISOString(),
+      },
+    };
+  }
+
+  if (slug === IRAN_ROUNDUP_SLUG) {
+    const contentLocale = getIranRoundupLocale(locale);
+    const copy = iranRoundupCopy[contentLocale];
+    const prefix = contentLocale === "nl" ? "/nl" : "";
+    const canonical = `${baseUrl}${prefix}/blog/${IRAN_ROUNDUP_SLUG}`;
+    const indexable = locale === "en" || locale === "nl";
+    const socialImage = {
+      url: `${baseUrl}/images/home/iran-tehran-editorial-og-v2.webp`,
+      width: 1200,
+      height: 630,
+      alt: copy.imageAlt,
+    };
+
+    return {
+      metadataBase: new URL(baseUrl),
+      title: { absolute: titelMetMerk(copy.metadataTitle) },
+      description: copy.metadataDescription,
+      alternates: {
+        canonical,
+        languages: {
+          en: `${baseUrl}/blog/${IRAN_ROUNDUP_SLUG}`,
+          nl: `${baseUrl}/nl/blog/${IRAN_ROUNDUP_SLUG}`,
+          "x-default": `${baseUrl}/blog/${IRAN_ROUNDUP_SLUG}`,
+        },
+      },
+      robots: {
+        index: indexable,
+        follow: true,
+        googleBot: {
+          index: indexable,
+          follow: true,
+          "max-image-preview": "large",
+          "max-snippet": -1,
+        },
+      },
+      openGraph: {
+        title: copy.metadataTitle,
+        description: copy.metadataDescription,
+        type: "article",
+        url: canonical,
+        siteName: "ZeroToVPN",
+        locale: contentLocale === "nl" ? "nl_NL" : "en_US",
+        images: [socialImage],
+        publishedTime: "2026-02-15T22:01:45.000Z",
+        modifiedTime: "2026-08-15T00:00:00.000Z",
+        authors: ["Marvin Smit"],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: copy.metadataTitle,
+        description: copy.metadataDescription,
+        images: [socialImage.url],
+      },
+    };
+  }
+
   const post = await getPostBySlug(slug, locale);
 
   if (!post) {
@@ -588,19 +903,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const override = clusterMetadata[slug];
+  const indexable = !shouldNoindexPath(`/${locale}/blog/${slug}`);
 
   return {
     metadataBase: new URL(baseUrl),
-    title: { absolute: titelMetMerk(override?.title || post.metaTitle || post.title) },
+    title: {
+      absolute: titelMetMerk(override?.title || post.metaTitle || post.title),
+    },
     description: override?.description || post.metaDescription || post.excerpt,
+    robots: { index: indexable, follow: true },
     openGraph: {
       title: override?.title || post.metaTitle || post.title,
-      description: override?.description || post.metaDescription || post.excerpt,
+      description:
+        override?.description || post.metaDescription || post.excerpt,
       type: "article",
       images: [DEFAULT_OG_IMAGE],
       publishedTime: post.publishedAt?.toISOString(),
       modifiedTime: post.updatedAt.toISOString(),
-      authors: ["ZeroToVPN Expert Team"],
+      authors: ["Marvin Smit"],
     },
     alternates: generateAlternates(`/blog/${slug}`, locale),
   };
@@ -609,6 +929,35 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function DynamicBlogPost({ params }: Props) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
+
+  if (shouldNoindexPath(`/${locale}/blog/${slug}`)) {
+    const post = await getPostBySlug(slug, locale);
+    if (!post) {
+      notFound();
+    }
+
+    const copy = getBlogFallbackCopy(locale);
+    return (
+      <EvidenceFirstRoutePage
+        locale={locale}
+        kind="article"
+        title={copy.title}
+        description={copy.description}
+        subject={copy.subject}
+        sectionHref="/blog"
+        sectionLabel={copy.sectionLabel}
+        notes={copy.notes}
+      />
+    );
+  }
+
+  if (slug === IRAN_ROUNDUP_SLUG) {
+    return <IranCountryRoundupPage locale={locale} vpns={await getAllVpns()} />;
+  }
+
+  if (slug === CONNECTION_DROPS_SLUG && (locale === "en" || locale === "nl")) {
+    return <ConnectionDropsArticlePage locale={locale} />;
+  }
 
   if (locale === "en" && slug === "best-vpn-for-chatgpt-2026") {
     return <ChatgptVpnEditorialPage vpns={await getAllVpns()} />;
@@ -624,20 +973,39 @@ export default async function DynamicBlogPost({ params }: Props) {
     notFound();
   }
 
-  const clusterLinks = censorshipClusterLinks[slug] || aiPrivacyClusterLinks[slug] || technicalClusterLinks[slug] || locationClusterLinks[slug] || ispPrivacyClusterLinks[slug] || braveVpnClusterLinks[slug] || vpnLeakTestingClusterLinks[slug] || vpnAccountSharingClusterLinks[slug] || vpnSimultaneousConnectionsClusterLinks[slug] || fitnessTrackingPrivacyClusterLinks[slug] || gamingLatencyClusterLinks[slug] || torrentingRedditClusterLinks[slug] || [];
-  const isIranEditorial = slug === "best-vpn-for-iran-2026-bypass-internet-censorship";
+  const clusterLinks =
+    censorshipClusterLinks[slug] ||
+    aiPrivacyClusterLinks[slug] ||
+    technicalClusterLinks[slug] ||
+    locationClusterLinks[slug] ||
+    ispPrivacyClusterLinks[slug] ||
+    braveVpnClusterLinks[slug] ||
+    vpnLeakTestingClusterLinks[slug] ||
+    vpnAccountSharingClusterLinks[slug] ||
+    vpnSimultaneousConnectionsClusterLinks[slug] ||
+    fitnessTrackingPrivacyClusterLinks[slug] ||
+    gamingLatencyClusterLinks[slug] ||
+    torrentingRedditClusterLinks[slug] ||
+    [];
+  const isIranEditorial =
+    slug === "best-vpn-for-iran-2026-bypass-internet-censorship";
   const isTelegramEditorial = slug === "best-vpn-for-telegram-2026";
   const isChatgptEditorial = slug === "best-vpn-for-chatgpt-2026";
-  const isConnectionDropsEditorial = slug === "vpn-connection-drops-why-disconnects-how-to-fix-2026";
-  const isServerLocationEditorial = slug === "best-country-for-vpn-server-location-2026";
+  const isServerLocationEditorial =
+    slug === "best-country-for-vpn-server-location-2026";
   const isIspPrivacyEditorial = slug === "can-vpn-hide-from-isp";
   const isBraveVpnEditorial = slug === "is-brave-vpn-free-2026";
-  const isVpnLeakTestingEditorial = slug === "vpn-leak-testing-tools-compared-2026";
-  const isVpnAccountSharingEditorial = slug === "vpn-account-sharing-safe-guide-2026";
-  const isVpnSimultaneousConnectionsEditorial = slug === "vpn-simultaneous-connections-limits-workarounds-2026";
-  const isFitnessTrackingPrivacyEditorial = slug === "vpn-fitness-tracking-apps-strava-apple-health-garmin-privacy";
+  const isVpnLeakTestingEditorial =
+    slug === "vpn-leak-testing-tools-compared-2026";
+  const isVpnAccountSharingEditorial =
+    slug === "vpn-account-sharing-safe-guide-2026";
+  const isVpnSimultaneousConnectionsEditorial =
+    slug === "vpn-simultaneous-connections-limits-workarounds-2026";
+  const isFitnessTrackingPrivacyEditorial =
+    slug === "vpn-fitness-tracking-apps-strava-apple-health-garmin-privacy";
   const isGamingLatencyEditorial = slug === "does-vpn-reduce-ping-gaming-2026";
-  const isTorrentingRedditEditorial = slug === "best-vpn-for-torrenting-reddit-2026";
+  const isTorrentingRedditEditorial =
+    slug === "best-vpn-for-torrenting-reddit-2026";
   const isCensorshipEditorial = isIranEditorial || isTelegramEditorial;
   const isRestrictedAffiliateContext =
     slug === "vpn-blockchain-privacy-mask-wallet-activity-2026";
@@ -653,17 +1021,17 @@ export default async function DynamicBlogPost({ params }: Props) {
             ? braveVpnEditorialTitle
             : isVpnLeakTestingEditorial
               ? vpnLeakTestingEditorialTitle
-            : isVpnAccountSharingEditorial
-              ? vpnAccountSharingEditorialTitle
-              : isVpnSimultaneousConnectionsEditorial
-                ? vpnSimultaneousConnectionsEditorialTitle
-                : isFitnessTrackingPrivacyEditorial
-                  ? fitnessTrackingPrivacyEditorialTitle
-        : isGamingLatencyEditorial
-                    ? vpnPingGamingEditorialTitle
-                    : isTorrentingRedditEditorial
-                      ? torrentingRedditEditorialTitle
-        : post.title;
+              : isVpnAccountSharingEditorial
+                ? vpnAccountSharingEditorialTitle
+                : isVpnSimultaneousConnectionsEditorial
+                  ? vpnSimultaneousConnectionsEditorialTitle
+                  : isFitnessTrackingPrivacyEditorial
+                    ? fitnessTrackingPrivacyEditorialTitle
+                    : isGamingLatencyEditorial
+                      ? vpnPingGamingEditorialTitle
+                      : isTorrentingRedditEditorial
+                        ? torrentingRedditEditorialTitle
+                        : post.title;
   const displayExcerpt = isIranEditorial
     ? iranVpnEditorialExcerpt
     : isTelegramEditorial
@@ -676,17 +1044,17 @@ export default async function DynamicBlogPost({ params }: Props) {
             ? braveVpnEditorialExcerpt
             : isVpnLeakTestingEditorial
               ? vpnLeakTestingEditorialExcerpt
-            : isVpnAccountSharingEditorial
-              ? vpnAccountSharingEditorialExcerpt
-              : isVpnSimultaneousConnectionsEditorial
-                ? vpnSimultaneousConnectionsEditorialExcerpt
-                : isFitnessTrackingPrivacyEditorial
-                  ? fitnessTrackingPrivacyEditorialExcerpt
-                : isGamingLatencyEditorial
-                    ? vpnPingGamingEditorialExcerpt
-                    : isTorrentingRedditEditorial
-                      ? torrentingRedditEditorialExcerpt
-        : post.excerpt;
+              : isVpnAccountSharingEditorial
+                ? vpnAccountSharingEditorialExcerpt
+                : isVpnSimultaneousConnectionsEditorial
+                  ? vpnSimultaneousConnectionsEditorialExcerpt
+                  : isFitnessTrackingPrivacyEditorial
+                    ? fitnessTrackingPrivacyEditorialExcerpt
+                    : isGamingLatencyEditorial
+                      ? vpnPingGamingEditorialExcerpt
+                      : isTorrentingRedditEditorial
+                        ? torrentingRedditEditorialExcerpt
+                        : post.excerpt;
   const editorialVpns = isCensorshipEditorial ? await getAllVpns() : [];
   const relatedLinks = getRelatedContent({
     currentHref: `/blog/${slug}`,
@@ -701,6 +1069,13 @@ export default async function DynamicBlogPost({ params }: Props) {
       tags: ["censorship", "country", "obfuscation"],
       icon: "globe",
     })),
+  }).filter((link) => {
+    const localizedPath =
+      locale === "en" ? link.href : `/${locale}${link.href}`;
+    return (
+      getIndexableLocalesForPath(localizedPath) !== undefined &&
+      !shouldNoindexPath(localizedPath)
+    );
   });
 
   // Strip base64 images and HTML tags before calculating read time
@@ -713,25 +1088,29 @@ export default async function DynamicBlogPost({ params }: Props) {
   const lastUpdated = formatDate(post.updatedAt, locale);
   const articleContent = isIranEditorial
     ? iranVpnEditorialContent
-    : isIspPrivacyEditorial
-      ? ispPrivacyEditorialContent
-    : isBraveVpnEditorial
-      ? braveVpnEditorialContent
-    : isVpnLeakTestingEditorial
-      ? vpnLeakTestingEditorialContent
-    : isVpnAccountSharingEditorial
-      ? vpnAccountSharingEditorialContent
-    : isVpnSimultaneousConnectionsEditorial
-      ? vpnSimultaneousConnectionsEditorialContent
-    : isFitnessTrackingPrivacyEditorial
-      ? fitnessTrackingPrivacyEditorialContent
-    : isGamingLatencyEditorial
-      ? vpnPingGamingEditorialContent
-    : isTorrentingRedditEditorial
-      ? torrentingRedditEditorialContent
-    : isRestrictedAffiliateContext
-      ? verwijderAffiliateLinks(post.content)
-      : post.content;
+    : isTelegramEditorial
+      ? telegramVpnEditorialContent
+      : isServerLocationEditorial
+        ? serverLocationEditorialContent
+        : isIspPrivacyEditorial
+          ? ispPrivacyEditorialContent
+          : isBraveVpnEditorial
+            ? braveVpnEditorialContent
+            : isVpnLeakTestingEditorial
+              ? vpnLeakTestingEditorialContent
+              : isVpnAccountSharingEditorial
+                ? vpnAccountSharingEditorialContent
+                : isVpnSimultaneousConnectionsEditorial
+                  ? vpnSimultaneousConnectionsEditorialContent
+                  : isFitnessTrackingPrivacyEditorial
+                    ? fitnessTrackingPrivacyEditorialContent
+                    : isGamingLatencyEditorial
+                      ? vpnPingGamingEditorialContent
+                      : isTorrentingRedditEditorial
+                        ? torrentingRedditEditorialContent
+                        : isRestrictedAffiliateContext
+                          ? verwijderAffiliateLinks(post.content)
+                          : post.content;
 
   return (
     <div className="flex flex-col">
@@ -747,165 +1126,294 @@ export default async function DynamicBlogPost({ params }: Props) {
 
       {/* Article Header and shared editorial disclosure/jump navigation */}
       <BestVpnEditorialTemplate
-        brief={isIranEditorial ? iranContentBrief : isTelegramEditorial ? editorialContentBriefs.telegram : isConnectionDropsEditorial ? connectionDropsContentBrief : isServerLocationEditorial ? serverLocationContentBrief : isIspPrivacyEditorial ? ispPrivacyContentBrief : isBraveVpnEditorial ? braveVpnContentBrief : isVpnLeakTestingEditorial ? vpnLeakTestingContentBrief : isVpnAccountSharingEditorial ? vpnAccountSharingContentBrief : isVpnSimultaneousConnectionsEditorial ? vpnSimultaneousConnectionsContentBrief : isFitnessTrackingPrivacyEditorial ? fitnessTrackingPrivacyContentBrief : isGamingLatencyEditorial ? editorialContentBriefs.vpnPingGaming : isTorrentingRedditEditorial ? editorialContentBriefs.torrentingReddit : undefined}
+        brief={
+          isIranEditorial
+            ? iranContentBrief
+            : isTelegramEditorial
+              ? editorialContentBriefs.telegram
+              : isServerLocationEditorial
+                ? serverLocationContentBrief
+                : isIspPrivacyEditorial
+                  ? ispPrivacyContentBrief
+                  : isBraveVpnEditorial
+                    ? braveVpnContentBrief
+                    : isVpnLeakTestingEditorial
+                      ? vpnLeakTestingContentBrief
+                      : isVpnAccountSharingEditorial
+                        ? vpnAccountSharingContentBrief
+                        : isVpnSimultaneousConnectionsEditorial
+                          ? vpnSimultaneousConnectionsContentBrief
+                          : isFitnessTrackingPrivacyEditorial
+                            ? fitnessTrackingPrivacyContentBrief
+                            : isGamingLatencyEditorial
+                              ? editorialContentBriefs.vpnPingGaming
+                              : isTorrentingRedditEditorial
+                                ? editorialContentBriefs.torrentingReddit
+                                : undefined
+        }
         navigation={[
           { href: "#article-content", label: "Article" },
-          ...(isCensorshipEditorial ? [{ href: "#quick-picks", label: "Shortlist" }] : []),
-          ...(clusterLinks.length > 0 ? [{ href: "#cluster-links", label: "Cluster" }] : []),
+          ...(isCensorshipEditorial
+            ? [{ href: "#quick-picks", label: "Shortlist" }]
+            : []),
+          ...(clusterLinks.length > 0
+            ? [{ href: "#cluster-links", label: "Cluster" }]
+            : []),
           { href: "#sources", label: "Sources" },
           { href: "#related-content", label: "Related" },
         ]}
       >
-      <article id="article-content" className="container max-w-4xl py-8 lg:py-12">
-        <div className="mb-8">
-          <Link
-            href="/blog"
-            className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground mb-6"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back to Blog
-          </Link>
+        <article
+          id="article-content"
+          className="container max-w-4xl py-8 lg:py-12"
+        >
+          <div className="mb-8">
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground mb-6"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              Back to Blog
+            </Link>
 
-          <div className="flex items-center gap-3 mb-4">
-            <Badge variant="secondary" className="capitalize">{post.category}</Badge>
-            {post.publishedAt && (
+            <div className="flex items-center gap-3 mb-4">
+              <Badge variant="secondary" className="capitalize">
+                {post.category}
+              </Badge>
+              {post.publishedAt && (
+                <span className="text-sm text-muted-foreground flex items-center gap-1">
+                  <Calendar className="h-4 w-4" />
+                  Posted: {formatDate(post.publishedAt, locale)}
+                </span>
+              )}
               <span className="text-sm text-muted-foreground flex items-center gap-1">
                 <Calendar className="h-4 w-4" />
-                Posted: {formatDate(post.publishedAt, locale)}
+                Updated: {lastUpdated}
               </span>
-            )}
-            <span className="text-sm text-muted-foreground flex items-center gap-1">
-              <Calendar className="h-4 w-4" />
-              Updated: {lastUpdated}
-            </span>
-            {!post.publishedAt && (
+              {!post.publishedAt && (
+                <span className="text-sm text-muted-foreground flex items-center gap-1">
+                  <Calendar className="h-4 w-4" />
+                  Posted: {formatDate(post.createdAt, locale)}
+                </span>
+              )}
               <span className="text-sm text-muted-foreground flex items-center gap-1">
-                <Calendar className="h-4 w-4" />
-                Posted: {formatDate(post.createdAt, locale)}
+                <Clock className="h-4 w-4" />
+                {readTime}
               </span>
+            </div>
+
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
+              {displayTitle}
+            </h1>
+
+            <p className="text-xl text-muted-foreground mb-6">
+              {displayExcerpt}
+            </p>
+
+            {clusterLinks.length > 0 && (
+              <nav
+                id="cluster-links"
+                aria-label={
+                  isServerLocationEditorial
+                    ? "VPN server location cluster"
+                    : isIspPrivacyEditorial
+                      ? "VPN ISP privacy cluster"
+                      : isBraveVpnEditorial
+                        ? "Brave VPN research cluster"
+                        : isVpnLeakTestingEditorial
+                          ? "VPN leak-testing cluster"
+                          : isVpnAccountSharingEditorial
+                            ? "VPN account-sharing cluster"
+                            : isVpnSimultaneousConnectionsEditorial
+                              ? "VPN simultaneous-connections cluster"
+                              : isFitnessTrackingPrivacyEditorial
+                                ? "Fitness tracking privacy cluster"
+                                : isGamingLatencyEditorial
+                                  ? "Gaming latency cluster"
+                                  : "Censorship research cluster"
+                }
+                className="rounded-xl border border-primary/20 bg-primary/5 p-4 sm:p-5"
+              >
+                <p className="mb-3 text-sm font-semibold text-primary">
+                  {isServerLocationEditorial
+                    ? "VPN server location cluster"
+                    : isIspPrivacyEditorial
+                      ? "VPN ISP privacy cluster"
+                      : isBraveVpnEditorial
+                        ? "Brave VPN research cluster"
+                        : isVpnLeakTestingEditorial
+                          ? "VPN leak-testing cluster"
+                          : isVpnAccountSharingEditorial
+                            ? "VPN account-sharing cluster"
+                            : isVpnSimultaneousConnectionsEditorial
+                              ? "VPN simultaneous-connections cluster"
+                              : isFitnessTrackingPrivacyEditorial
+                                ? "Fitness tracking privacy cluster"
+                                : isGamingLatencyEditorial
+                                  ? "Gaming latency cluster"
+                                  : "Censorship research cluster"}
+                </p>
+                <div className="grid gap-3 sm:grid-cols-3">
+                  {clusterLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="rounded-lg bg-background/80 p-3 transition-colors hover:bg-background"
+                    >
+                      <span className="block text-sm font-semibold">
+                        {link.title}
+                      </span>
+                      <span className="mt-1 block text-xs leading-5 text-muted-foreground">
+                        {link.description}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </nav>
             )}
-            <span className="text-sm text-muted-foreground flex items-center gap-1">
-              <Clock className="h-4 w-4" />
-              {readTime}
-            </span>
+
+            {/* E-E-A-T: Fact-checked badge + author + last updated */}
+            <FactCheckedBadge lastUpdated={lastUpdated} />
           </div>
 
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
-            {displayTitle}
-          </h1>
-
-          <p className="text-xl text-muted-foreground mb-6">{displayExcerpt}</p>
-
-          {clusterLinks.length > 0 && (
-            <nav
-              id="cluster-links"
-              aria-label={isConnectionDropsEditorial ? "Technical VPN troubleshooting cluster" : isServerLocationEditorial ? "VPN server location cluster" : isIspPrivacyEditorial ? "VPN ISP privacy cluster" : isBraveVpnEditorial ? "Brave VPN research cluster" : isVpnLeakTestingEditorial ? "VPN leak-testing cluster" : isVpnAccountSharingEditorial ? "VPN account-sharing cluster" : isVpnSimultaneousConnectionsEditorial ? "VPN simultaneous-connections cluster" : isFitnessTrackingPrivacyEditorial ? "Fitness tracking privacy cluster" : isGamingLatencyEditorial ? "Gaming latency cluster" : "Censorship research cluster"}
-              className="rounded-xl border border-primary/20 bg-primary/5 p-4 sm:p-5"
-            >
-              <p className="mb-3 text-sm font-semibold text-primary">
-                {isConnectionDropsEditorial ? "Technical VPN troubleshooting cluster" : isServerLocationEditorial ? "VPN server location cluster" : isIspPrivacyEditorial ? "VPN ISP privacy cluster" : isBraveVpnEditorial ? "Brave VPN research cluster" : isVpnLeakTestingEditorial ? "VPN leak-testing cluster" : isVpnAccountSharingEditorial ? "VPN account-sharing cluster" : isVpnSimultaneousConnectionsEditorial ? "VPN simultaneous-connections cluster" : isFitnessTrackingPrivacyEditorial ? "Fitness tracking privacy cluster" : isGamingLatencyEditorial ? "Gaming latency cluster" : "Censorship research cluster"}
-              </p>
-              <div className="grid gap-3 sm:grid-cols-3">
-                {clusterLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="rounded-lg bg-background/80 p-3 transition-colors hover:bg-background"
-                  >
-                    <span className="block text-sm font-semibold">{link.title}</span>
-                    <span className="mt-1 block text-xs leading-5 text-muted-foreground">
-                      {link.description}
-                    </span>
-                  </Link>
-                ))}
-              </div>
-            </nav>
+          {isCensorshipEditorial && (
+            <IranEditorialQuickPicks
+              vpns={editorialVpns}
+              heading={
+                isTelegramEditorial
+                  ? "Start with documented Telegram options"
+                  : undefined
+              }
+              eyebrow={isTelegramEditorial ? "Telegram shortlist" : undefined}
+              description={
+                isTelegramEditorial
+                  ? "These are contextual affiliate links to providers worth evaluating for Telegram access. They are not proof of a current connection on your network; compare Telegram's MTProxy option and verify the live provider documentation first."
+                  : undefined
+              }
+            />
           )}
 
-          {/* E-E-A-T: Fact-checked badge + author + last updated */}
-          <FactCheckedBadge lastUpdated={lastUpdated} />
-        </div>
-
-        {isCensorshipEditorial && (
-          <IranEditorialQuickPicks
-            vpns={editorialVpns}
-            heading={isTelegramEditorial ? "Start with documented Telegram options" : undefined}
-            eyebrow={isTelegramEditorial ? "Telegram shortlist" : undefined}
-            description={isTelegramEditorial
-              ? "These are contextual affiliate links to providers worth evaluating for Telegram access. They are not proof of a current connection on your network; compare Telegram's MTProxy option and verify the live provider documentation first."
-              : undefined}
-          />
-        )}
-
-        {/* Featured Image */}
-        {(post.featuredImageUrl || post.featuredImage) && (
-          <div className="mb-8 rounded-xl overflow-hidden shadow-lg">
-            {/* Blob-URL heeft voorrang; de oude base64 blijft als vangnet tot
+          {/* Featured Image */}
+          {(post.featuredImageUrl || post.featuredImage) && (
+            <div className="mb-8 rounded-xl overflow-hidden shadow-lg">
+              {/* Blob-URL heeft voorrang; de oude base64 blijft als vangnet tot
                 de featuredImage-kolom is opgeschoond. Die inlinede ~1 MB aan
                 base64 in de HTML van elke blogpagina. */}
-            <img
-              src={post.featuredImageUrl || post.featuredImage!}
-              alt={displayTitle}
-              width="1200"
-              height="630"
-              loading="eager"
-              decoding="async"
-              className="w-full h-auto object-cover max-h-[400px]"
+              <img
+                src={post.featuredImageUrl || post.featuredImage!}
+                alt={displayTitle}
+                width="1200"
+                height="630"
+                loading="eager"
+                decoding="async"
+                className="w-full h-auto object-cover max-h-[400px]"
+              />
+            </div>
+          )}
+
+          {/* Tags */}
+          {post.tags && post.tags.length > 0 && (
+            <div className="flex flex-wrap gap-2 mb-8">
+              {post.tags.map((tag) => (
+                <Badge key={tag} variant="outline" className="text-xs">
+                  {tag}
+                </Badge>
+              ))}
+            </div>
+          )}
+
+          {/* Article Content */}
+          <div
+            className="blog-content max-w-none"
+            dangerouslySetInnerHTML={{
+              __html: normaliseerAffiliateLinks(
+                normaliseerArtikelKoppen(articleContent),
+                `/${locale}/blog/${slug}`,
+              ),
+            }}
+          />
+
+          {isIranEditorial && (
+            <FAQSchema title="Iran VPN FAQ" faqs={iranVpnEditorialFaq} />
+          )}
+          {isTelegramEditorial && (
+            <FAQSchema
+              title="Telegram VPN FAQ"
+              faqs={telegramVpnEditorialFaq}
+            />
+          )}
+          {isServerLocationEditorial && (
+            <FAQSchema
+              title="VPN server location FAQ"
+              faqs={serverLocationEditorialFaq}
+            />
+          )}
+          {isIspPrivacyEditorial && (
+            <FAQSchema
+              title="VPN ISP privacy FAQ"
+              faqs={ispPrivacyEditorialFaq}
+            />
+          )}
+          {isBraveVpnEditorial && (
+            <FAQSchema title="Brave VPN FAQ" faqs={braveVpnEditorialFaq} />
+          )}
+          {isVpnLeakTestingEditorial && (
+            <FAQSchema
+              title="VPN leak-testing FAQ"
+              faqs={vpnLeakTestingEditorialFaq}
+            />
+          )}
+          {isVpnAccountSharingEditorial && (
+            <FAQSchema
+              title="VPN account-sharing FAQ"
+              faqs={vpnAccountSharingEditorialFaq}
+            />
+          )}
+          {isVpnSimultaneousConnectionsEditorial && (
+            <FAQSchema
+              title="VPN simultaneous-connections FAQ"
+              faqs={vpnSimultaneousConnectionsEditorialFaq}
+            />
+          )}
+          {isFitnessTrackingPrivacyEditorial && (
+            <FAQSchema
+              title="Fitness tracking privacy FAQ"
+              faqs={fitnessTrackingPrivacyEditorialFaq}
+            />
+          )}
+          {isGamingLatencyEditorial && (
+            <FAQSchema
+              title="Gaming latency FAQ"
+              faqs={vpnPingGamingEditorialFaq}
+            />
+          )}
+          {isTorrentingRedditEditorial && (
+            <FAQSchema
+              title="Torrenting VPN FAQ"
+              faqs={torrentingRedditEditorialFaq}
+            />
+          )}
+
+          {/* Ad placement */}
+          <InlineAd />
+
+          {/* E-E-A-T: Sources & References */}
+          <div id="sources" className="scroll-mt-20">
+            <SourcesSection content={articleContent} />
+          </div>
+
+          {/* E-E-A-T: Author Box */}
+          <AuthorBox />
+
+          {/* Related Content */}
+          <div id="related-content" className="scroll-mt-20">
+            <RelatedContent
+              links={relatedLinks}
+              locale={locale}
+              className="mt-12"
             />
           </div>
-        )}
-
-        {/* Tags */}
-        {post.tags && post.tags.length > 0 && (
-          <div className="flex flex-wrap gap-2 mb-8">
-            {post.tags.map((tag) => (
-              <Badge key={tag} variant="outline" className="text-xs">
-                {tag}
-              </Badge>
-            ))}
-          </div>
-        )}
-
-        {/* Article Content */}
-        <div
-          className="blog-content max-w-none"
-          dangerouslySetInnerHTML={{
-            __html: normaliseerAffiliateLinks(
-              normaliseerArtikelKoppen(articleContent),
-              `/${locale}/blog/${slug}`,
-            ),
-          }}
-        />
-
-        {isIranEditorial && <FAQSchema title="Iran VPN FAQ" faqs={iranVpnEditorialFaq} />}
-        {isTelegramEditorial && <FAQSchema title="Telegram VPN FAQ" faqs={telegramVpnEditorialFaq} />}
-        {isConnectionDropsEditorial && <FAQSchema title="VPN disconnection FAQ" faqs={connectionDropsEditorialFaq} />}
-        {isServerLocationEditorial && <FAQSchema title="VPN server location FAQ" faqs={serverLocationEditorialFaq} />}
-        {isIspPrivacyEditorial && <FAQSchema title="VPN ISP privacy FAQ" faqs={ispPrivacyEditorialFaq} />}
-        {isBraveVpnEditorial && <FAQSchema title="Brave VPN FAQ" faqs={braveVpnEditorialFaq} />}
-        {isVpnLeakTestingEditorial && <FAQSchema title="VPN leak-testing FAQ" faqs={vpnLeakTestingEditorialFaq} />}
-        {isVpnAccountSharingEditorial && <FAQSchema title="VPN account-sharing FAQ" faqs={vpnAccountSharingEditorialFaq} />}
-        {isVpnSimultaneousConnectionsEditorial && <FAQSchema title="VPN simultaneous-connections FAQ" faqs={vpnSimultaneousConnectionsEditorialFaq} />}
-        {isFitnessTrackingPrivacyEditorial && <FAQSchema title="Fitness tracking privacy FAQ" faqs={fitnessTrackingPrivacyEditorialFaq} />}
-        {isGamingLatencyEditorial && <FAQSchema title="Gaming latency FAQ" faqs={vpnPingGamingEditorialFaq} />}
-        {isTorrentingRedditEditorial && <FAQSchema title="Torrenting VPN FAQ" faqs={torrentingRedditEditorialFaq} />}
-
-        {/* Ad placement */}
-        <InlineAd />
-
-        {/* E-E-A-T: Sources & References */}
-        <div id="sources" className="scroll-mt-20">
-          <SourcesSection content={articleContent} />
-        </div>
-
-        {/* E-E-A-T: Author Box */}
-        <AuthorBox />
-
-        {/* Related Content */}
-        <div id="related-content" className="scroll-mt-20">
-          <RelatedContent links={relatedLinks} locale={locale} className="mt-12" />
-        </div>
-      </article>
+        </article>
       </BestVpnEditorialTemplate>
 
       {/* Structured Data */}
@@ -917,6 +1425,8 @@ export default async function DynamicBlogPost({ params }: Props) {
         }
         dateModified={post.updatedAt.toISOString()}
         url={`${baseUrl}/${locale === "en" ? "" : `${locale}/`}blog/${post.slug}`}
+        authorName="Marvin Smit"
+        authorUrl="https://www.zerotovpn.com/authors/marvin-smit"
       />
     </div>
   );

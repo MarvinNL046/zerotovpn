@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { ArrowRight, Compass, X } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
 import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 
@@ -10,11 +11,19 @@ interface StickyCTABarProps {
   position?: "top" | "bottom";
 }
 
+const COMPARISON_DETAIL_PATH_RE = /\/compare\/[^/]+\/?$/;
+const QUIZ_PATH_RE = /^\/(?:[a-z]{2}\/)?quiz\/?$/;
+const DNS_DIAGNOSTIC_PATH_RE = /^\/(?:[a-z]{2}\/)?tools\/dns-leak-test\/?$/;
+const IP_CHECKER_PATH_RE = /^\/(?:[a-z]{2}\/)?tools\/what-is-my-ip\/?$/;
+const SPEED_TEST_PATH_RE = /^\/(?:[a-z]{2}\/)?speed-test\/?$/;
+const TOOLS_HUB_PATH_RE = /^\/(?:[a-z]{2}\/)?tools\/?$/;
+
 /**
  * A non-commercial, site-owned conversion aid. Affiliate offers belong in
  * contextual editorial placements, not in a global promotion banner.
  */
 export function StickyCTABar({ position = "bottom" }: StickyCTABarProps) {
+  const pathname = usePathname() ?? "/";
   const sticky = useTranslations("stickyBar");
   const footer = useTranslations("footer");
   const cta = useTranslations("cta");
@@ -40,32 +49,63 @@ export function StickyCTABar({ position = "bottom" }: StickyCTABarProps) {
     sessionStorage.setItem("stickyBarDismissed", "true");
   };
 
-  if (isDismissed || !isVisible) return null;
+  const isComparisonDetail = COMPARISON_DETAIL_PATH_RE.test(pathname);
+  const isQuizPage = QUIZ_PATH_RE.test(pathname);
+  const isDnsDiagnostic = DNS_DIAGNOSTIC_PATH_RE.test(pathname);
+  const isIpChecker = IP_CHECKER_PATH_RE.test(pathname);
+  const isSpeedTest = SPEED_TEST_PATH_RE.test(pathname);
+  const isToolsHub = TOOLS_HUB_PATH_RE.test(pathname);
 
-  const positionClasses = position === "top" ? "top-0 border-b" : "bottom-0 border-t";
+  if (
+    isComparisonDetail ||
+    isQuizPage ||
+    isDnsDiagnostic ||
+    isIpChecker ||
+    isSpeedTest ||
+    isToolsHub ||
+    isDismissed ||
+    !isVisible
+  ) {
+    return null;
+  }
+
+  const positionClasses =
+    position === "top" ? "top-0 border-b" : "bottom-0 border-t";
 
   return (
     <div
-      className={`fixed left-0 right-0 ${positionClasses} bg-primary text-primary-foreground z-40 shadow-lg animate-in slide-in-from-bottom duration-300`}
+      className={`fixed left-0 right-0 ${positionClasses} z-40 animate-in border-white/10 bg-[#071226] text-white shadow-lg duration-300 slide-in-from-bottom`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between gap-4 py-3">
           <div className="flex items-center gap-3 flex-1 min-w-0">
-            <div className="hidden sm:flex items-center justify-center w-10 h-10 bg-primary-foreground/20 rounded-full flex-shrink-0">
+            <div className="hidden h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-white/10 text-[#b8e34a] sm:flex">
               <Compass className="h-5 w-5" aria-hidden="true" />
             </div>
             <div className="min-w-0">
               <div className="flex items-center gap-2 flex-wrap">
-                <span className="font-bold text-lg whitespace-nowrap">{footer("quiz")}</span>
-                <span className="hidden md:inline text-primary-foreground/90">{footer("bestVpns")}</span>
-                <span className="md:hidden text-primary-foreground/90 truncate">{footer("compare")}</span>
+                <span className="font-bold text-lg whitespace-nowrap">
+                  {footer("quiz")}
+                </span>
+                <span className="hidden text-slate-200 md:inline">
+                  {footer("bestVpns")}
+                </span>
+                <span className="truncate text-slate-200 md:hidden">
+                  {footer("compare")}
+                </span>
               </div>
-              <p className="text-sm text-primary-foreground/80 hidden lg:block">{footer("aboutText")}</p>
+              <p className="hidden text-sm text-slate-300 lg:block">
+                {footer("aboutText")}
+              </p>
             </div>
           </div>
 
           <div className="flex items-center gap-2 flex-shrink-0">
-            <Button asChild variant="secondary" size="sm" className="font-bold whitespace-nowrap">
+            <Button
+              asChild
+              size="sm"
+              className="whitespace-nowrap bg-[#b8e34a] font-bold text-[#0b1736] hover:bg-[#c8ee67]"
+            >
               <Link href="/quiz">
                 <span className="hidden sm:inline">{cta("compare")}</span>
                 <span className="sm:hidden">{cta("learnMore")}</span>
@@ -74,7 +114,7 @@ export function StickyCTABar({ position = "bottom" }: StickyCTABarProps) {
             </Button>
             <button
               onClick={handleDismiss}
-              className="p-2 hover:bg-primary-foreground/20 rounded-full transition-colors"
+              className="rounded-full p-2 text-slate-300 transition-colors hover:bg-white/10 hover:text-white"
               aria-label={sticky("dismiss")}
             >
               <X className="h-4 w-4" aria-hidden="true" />

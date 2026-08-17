@@ -1,6 +1,6 @@
 "use client";
 
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import {
   Select,
@@ -37,6 +37,7 @@ const languageFlags: Record<Locale, string> = {
 
 export function LanguageSwitcher() {
   const locale = useLocale() as Locale;
+  const t = useTranslations("nav");
   const router = useRouter();
   const pathname = usePathname();
 
@@ -46,7 +47,7 @@ export function LanguageSwitcher() {
 
   return (
     <Select value={locale} onValueChange={handleChange}>
-      <SelectTrigger className="w-[68px] sm:w-[140px]">
+      <SelectTrigger aria-label={t("selectLanguage")} className="min-h-12 w-[68px] sm:w-[140px]">
         <SelectValue>
           <span className="flex items-center gap-2">
             <span>{languageFlags[locale]}</span>

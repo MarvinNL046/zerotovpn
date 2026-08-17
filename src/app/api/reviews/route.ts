@@ -23,36 +23,43 @@ export async function POST(request: NextRequest) {
       userPros = [],
       userCons = [],
       locale = "en",
-      newsletterConsent = false,
     } = body;
 
     // Validation
-    if (!vpnSlug || !rating || !title || !content || !authorName || !authorEmail) {
+    if (
+      !vpnSlug ||
+      !rating ||
+      !title ||
+      !content ||
+      !authorName ||
+      !authorEmail
+    ) {
       return NextResponse.json(
         { error: "Missing required fields" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     if (rating < 1 || rating > 5) {
       return NextResponse.json(
         { error: "Rating must be between 1 and 5" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(authorEmail)) {
       return NextResponse.json(
         { error: "Invalid email address" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     // Get request metadata
     const headersList = await headers();
+    const forwardedFor = headersList.get("x-forwarded-for");
     const ipAddress =
-      headersList.get("x-forwarded-for") ||
-      headersList.get("x-real-ip") ||
+      forwardedFor?.split(",")[0]?.trim() ||
+      headersList.get("x-real-ip")?.trim() ||
       "unknown";
     const userAgent = headersList.get("user-agent") || "unknown";
 
@@ -72,7 +79,6 @@ export async function POST(request: NextRequest) {
         pros: Array.isArray(userPros) ? userPros : undefined,
         cons: Array.isArray(userCons) ? userCons : undefined,
         locale,
-        newsletterConsent: newsletterConsent === true,
         ip: ipAddress,
         userAgent,
       }),
@@ -82,7 +88,7 @@ export async function POST(request: NextRequest) {
       console.error("Review-backend gaf status", res.status);
       return NextResponse.json(
         { error: "Failed to submit review" },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
@@ -98,7 +104,7 @@ export async function POST(request: NextRequest) {
     console.error("Error submitting review:", error);
     return NextResponse.json(
       { error: "Failed to submit review" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -113,25 +119,25 @@ export async function GET(request: NextRequest) {
     if (!vpnSlug) {
       return NextResponse.json(
         { error: "vpnSlug parameter is required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     if (page < 1 || limit < 1 || limit > 100) {
       return NextResponse.json(
         { error: "Invalid pagination parameters" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     const res = await fetch(
       `${SITES_LEADS_URL}/reviews?site=zerotovpn&slug=${encodeURIComponent(vpnSlug)}&limit=${limit}`,
-      { next: { revalidate: 300 } }
+      { next: { revalidate: 300 } },
     );
     if (!res.ok) {
       return NextResponse.json(
         { error: "Failed to fetch reviews" },
-        { status: 500 }
+        { status: 500 },
       );
     }
     const data = (await res.json()) as {
@@ -181,7 +187,7 @@ export async function GET(request: NextRequest) {
     console.error("Error fetching reviews:", error);
     return NextResponse.json(
       { error: "Failed to fetch reviews" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

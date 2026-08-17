@@ -1,0 +1,949 @@
+.page {
+  --legal-navy: #07162f;
+  --legal-navy-soft: #0d284b;
+  --legal-lime: #b8e34a;
+  --legal-blue: #1268f3;
+  --legal-ink: #071226;
+  --legal-muted: #536176;
+  --legal-line: #d7e0ea;
+  --legal-paper: #fbfbf7;
+  --legal-surface: #ffffff;
+  overflow-x: clip;
+  background: var(--legal-paper);
+  color: var(--legal-ink);
+}
+
+.page :where(h1, h2, h3, p, ol, ul, dl, dd) {
+  margin-top: 0;
+}
+
+.page :where(h1, h2, h3) {
+  text-wrap: balance;
+}
+
+.page :where(p, li, dd, small) {
+  text-wrap: pretty;
+}
+
+.container {
+  width: min(calc(100% - 2rem), 76rem);
+  margin-inline: auto;
+}
+
+.hero {
+  background:
+    radial-gradient(
+      circle at 86% 12%,
+      rgb(184 227 74 / 17%),
+      transparent 24rem
+    ),
+    linear-gradient(145deg, var(--legal-navy), #091e3d 64%, #0c2b51);
+  color: #ffffff;
+  padding-bottom: clamp(3.75rem, 8vw, 6.5rem);
+}
+
+.breadcrumb {
+  display: flex;
+  min-height: 4rem;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+  color: #aebdd0;
+  font-size: 0.84rem;
+}
+
+.breadcrumb a {
+  display: inline-flex;
+  min-width: 3rem;
+  min-height: 3rem;
+  align-items: center;
+  color: #dce6f4;
+  font-weight: 750;
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+}
+
+.heroGrid {
+  display: grid;
+  gap: 2rem;
+  align-items: end;
+  padding-top: clamp(1.5rem, 4vw, 3rem);
+}
+
+.heroCopy {
+  min-width: 0;
+}
+
+.eyebrow,
+.cardLabel {
+  margin-bottom: 0.75rem;
+  color: var(--legal-blue);
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero .eyebrow,
+.hero .cardLabel,
+.registerSection .eyebrow,
+.contactCard .eyebrow {
+  color: var(--legal-lime);
+}
+
+.hero h1 {
+  max-width: 14ch;
+  margin-bottom: 0;
+  font-size: clamp(2.55rem, 7vw, 5rem);
+  font-weight: 900;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+}
+
+.heroIntro {
+  max-width: 47rem;
+  margin: 1.5rem 0 0;
+  color: #d6e0ed;
+  font-size: clamp(1rem, 2vw, 1.18rem);
+  line-height: 1.75;
+}
+
+.cues {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.35rem;
+}
+
+.cues span {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: 0.45rem;
+  border: 1px solid #314c6c;
+  border-radius: 999px;
+  padding: 0.55rem 0.8rem;
+  color: #d4dfed;
+  font-size: 0.78rem;
+  font-weight: 760;
+}
+
+.cues svg {
+  width: 1rem;
+  height: 1rem;
+  color: var(--legal-lime);
+}
+
+.updated {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.65rem;
+  margin: 1.15rem 0 0;
+  color: #aebdd0;
+  font-size: 0.78rem;
+}
+
+.updated svg {
+  width: 1rem;
+  height: 1rem;
+  color: var(--legal-lime);
+}
+
+.updated time {
+  color: #ffffff;
+  font-weight: 780;
+}
+
+.directCard {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #3a5778;
+  border-radius: 1.35rem;
+  background: rgb(5 20 44 / 84%);
+  padding: clamp(1.25rem, 3vw, 1.7rem);
+  box-shadow: 0 1.4rem 3.4rem rgb(0 0 0 / 24%);
+}
+
+.directCard::after {
+  position: absolute;
+  right: -4rem;
+  bottom: -5rem;
+  width: 11rem;
+  height: 11rem;
+  border-radius: 999px;
+  background: rgb(184 227 74 / 10%);
+  content: "";
+  pointer-events: none;
+}
+
+.heroIcon {
+  display: grid;
+  width: 3.25rem;
+  height: 3.25rem;
+  margin-bottom: 1.25rem;
+  place-items: center;
+  border-radius: 0.95rem;
+  background: var(--legal-lime);
+  color: var(--legal-ink);
+}
+
+.heroIcon svg {
+  width: 1.55rem;
+  height: 1.55rem;
+}
+
+.directAnswer {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 0;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 690;
+  line-height: 1.75;
+}
+
+.directLinks {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0.55rem;
+  margin-top: 1.4rem;
+}
+
+.directLinks a {
+  display: flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  border: 1px solid #3b5778;
+  border-radius: 0.8rem;
+  padding: 0.65rem 0.8rem;
+  color: #e5edf8;
+  font-size: 0.83rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition:
+    border-color 160ms ease,
+    background 160ms ease;
+}
+
+.directLinks a:first-child {
+  border-color: var(--legal-lime);
+  background: var(--legal-lime);
+  color: var(--legal-ink);
+}
+
+.directLinks a:hover {
+  border-color: var(--legal-lime);
+  background: rgb(184 227 74 / 12%);
+}
+
+.directLinks a:first-child:hover {
+  background: #c8ed66;
+}
+
+.directLinks svg {
+  width: 1.05rem;
+  height: 1.05rem;
+  flex: 0 0 auto;
+}
+
+.section,
+.servicesSection,
+.controlsSection,
+.faqSection,
+.relatedSection {
+  padding-block: clamp(4rem, 8vw, 7rem);
+}
+
+.sectionHeader {
+  max-width: 48rem;
+}
+
+.sectionHeader h2,
+.relatedSection > .container > h2 {
+  margin-bottom: 1rem;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 900;
+  letter-spacing: -0.045em;
+  line-height: 1.03;
+}
+
+.sectionHeader > p:last-child {
+  margin-bottom: 0;
+  color: var(--legal-muted);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.factGrid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.factCard {
+  min-width: 0;
+  border: 1px solid var(--legal-line);
+  border-radius: 1.15rem;
+  background: var(--legal-surface);
+  padding: 1.2rem;
+  box-shadow: 0 0.7rem 2rem rgb(7 22 47 / 5%);
+}
+
+.factCard > span,
+.explanationCard > span {
+  display: grid;
+  width: 2.85rem;
+  height: 2.85rem;
+  margin-bottom: 1rem;
+  place-items: center;
+  border-radius: 0.85rem;
+  background: #eaf6c8;
+  color: var(--legal-ink);
+}
+
+.factCard svg,
+.explanationCard svg {
+  width: 1.35rem;
+  height: 1.35rem;
+}
+
+.factCard h3,
+.explanationCard h3,
+.serviceCard h3,
+.stepList h3 {
+  margin-bottom: 0.55rem;
+  font-size: 1.08rem;
+  font-weight: 850;
+  line-height: 1.25;
+}
+
+.factCard p,
+.explanationCard p,
+.serviceCard > p,
+.stepList p {
+  margin-bottom: 0;
+  color: var(--legal-muted);
+  font-size: 0.91rem;
+  line-height: 1.7;
+}
+
+.registerSection {
+  background:
+    radial-gradient(circle at 10% 0%, rgb(18 104 243 / 14%), transparent 28rem),
+    var(--legal-navy);
+  padding-block: clamp(4rem, 8vw, 7rem);
+  color: #ffffff;
+}
+
+.registerSection .sectionHeader > p:last-child {
+  color: #b8c7da;
+}
+
+.registerList {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.registerCard {
+  min-width: 0;
+  border: 1px solid #2d486a;
+  border-radius: 1.15rem;
+  background: #0b2242;
+  padding: clamp(1rem, 3vw, 1.35rem);
+}
+
+.registerCard > header {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+}
+
+.recordNumber {
+  display: grid;
+  width: 3rem;
+  height: 3rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 0.8rem;
+  background: var(--legal-lime);
+  color: var(--legal-ink);
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.registerCard header p {
+  margin-bottom: 0.2rem;
+  color: var(--legal-lime);
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.registerCard h3 {
+  margin-bottom: 0;
+  color: #ffffff;
+  font-size: 1.18rem;
+  line-height: 1.25;
+}
+
+.registerCard dl {
+  display: grid;
+  gap: 0.65rem;
+  margin: 1.1rem 0 0;
+}
+
+.registerCard dl > div {
+  min-width: 0;
+  border: 1px solid #2a4669;
+  border-radius: 0.8rem;
+  background: #0d294d;
+  padding: 0.8rem;
+}
+
+.registerCard dt {
+  margin-bottom: 0.35rem;
+  color: #92a8c3;
+  font-size: 0.66rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.registerCard dd {
+  margin: 0;
+  color: #e1eaf5;
+  font-size: 0.86rem;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.explanationGrid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.explanationCard {
+  min-width: 0;
+  border: 1px solid var(--legal-line);
+  border-radius: 1.15rem;
+  background: var(--legal-surface);
+  padding: 1.25rem;
+}
+
+.explanationCard ul {
+  display: grid;
+  gap: 0.65rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.explanationCard li {
+  position: relative;
+  padding-left: 1.3rem;
+  color: var(--legal-muted);
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+
+.explanationCard li::before {
+  position: absolute;
+  top: 0.58rem;
+  left: 0;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 999px;
+  background: var(--legal-blue);
+  content: "";
+}
+
+.noteCard {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.9rem;
+  max-width: 58rem;
+  margin-top: 1rem;
+  border: 1px solid #edb55e;
+  border-radius: 1rem;
+  background: #fff6e8;
+  padding: 1rem;
+}
+
+.noteCard > svg {
+  width: 1.35rem;
+  height: 1.35rem;
+  color: #9d5b00;
+}
+
+.noteCard h3 {
+  margin-bottom: 0.35rem;
+  font-size: 0.98rem;
+}
+
+.noteCard p {
+  margin-bottom: 0;
+  color: #654c2c;
+  font-size: 0.86rem;
+  line-height: 1.65;
+}
+
+.servicesSection {
+  border-block: 1px solid var(--legal-line);
+  background: #f2f5f8;
+}
+
+.serviceGrid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.serviceCard {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  border: 1px solid var(--legal-line);
+  border-radius: 1.15rem;
+  background: var(--legal-surface);
+  padding: 1.2rem;
+}
+
+.serviceCard > div > p {
+  margin-bottom: 0.25rem;
+  color: var(--legal-blue);
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.serviceCard h3 {
+  margin-bottom: 0.75rem;
+}
+
+.serviceCard > p {
+  flex: 1 1 auto;
+}
+
+.serviceCard a {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 1rem;
+  color: #0b55ce;
+  font-size: 0.82rem;
+  font-weight: 820;
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+}
+
+.serviceCard a svg {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
+}
+
+.controlsSection {
+  background: var(--legal-paper);
+}
+
+.controlsGrid {
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+}
+
+.stepList {
+  display: grid;
+  gap: 0;
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stepList li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.9rem;
+  border-top: 1px solid var(--legal-line);
+  padding-block: 1.15rem;
+}
+
+.stepList li:last-child {
+  border-bottom: 1px solid var(--legal-line);
+}
+
+.stepList li > span {
+  display: grid;
+  width: 2.2rem;
+  height: 2.2rem;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--legal-navy);
+  color: var(--legal-lime);
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.contactCard {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.35rem;
+  background:
+    radial-gradient(
+      circle at 100% 100%,
+      rgb(184 227 74 / 15%),
+      transparent 16rem
+    ),
+    var(--legal-navy);
+  padding: clamp(1.3rem, 4vw, 2rem);
+  color: #ffffff;
+  box-shadow: 0 1.4rem 3rem rgb(7 22 47 / 14%);
+}
+
+.contactCard > span {
+  display: grid;
+  width: 3.25rem;
+  height: 3.25rem;
+  margin-bottom: 1.2rem;
+  place-items: center;
+  border-radius: 0.9rem;
+  background: var(--legal-lime);
+  color: var(--legal-ink);
+}
+
+.contactCard > span svg {
+  width: 1.45rem;
+  height: 1.45rem;
+}
+
+.contactCard h2 {
+  margin-bottom: 0.8rem;
+  font-size: clamp(1.65rem, 4vw, 2.35rem);
+  font-weight: 900;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+}
+
+.contactCard > p {
+  margin-bottom: 1.3rem;
+  color: #c1cee0;
+  line-height: 1.7;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  border: 1px solid var(--legal-lime);
+  border-radius: 0.8rem;
+  padding: 0.7rem 0.9rem;
+  font-size: 0.84rem;
+  font-weight: 850;
+  text-align: center;
+  text-decoration: none;
+}
+
+.primaryButton {
+  background: var(--legal-lime);
+  color: var(--legal-ink);
+}
+
+.primaryButton:hover {
+  background: #c8ed66;
+}
+
+.secondaryButton {
+  margin-top: 0.65rem;
+  border-color: #395575;
+  color: #ffffff;
+}
+
+.secondaryButton:hover {
+  border-color: var(--legal-lime);
+  background: rgb(184 227 74 / 10%);
+}
+
+.primaryButton svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.contactCard small {
+  display: block;
+  margin-top: 1rem;
+  color: #9fb1c8;
+  font-size: 0.74rem;
+  line-height: 1.55;
+}
+
+.faqSection {
+  border-top: 1px solid var(--legal-line);
+  background: #f2f5f8;
+}
+
+.faqList {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 58rem;
+  margin-top: 2rem;
+}
+
+.faqList details {
+  border: 1px solid var(--legal-line);
+  border-radius: 1rem;
+  background: var(--legal-surface);
+  overflow: hidden;
+}
+
+.faqList summary {
+  display: grid;
+  min-height: 4rem;
+  cursor: pointer;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.9rem 1rem;
+  color: var(--legal-ink);
+  font-weight: 820;
+  list-style: none;
+}
+
+.faqList summary::-webkit-details-marker {
+  display: none;
+}
+
+.faqList summary svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  color: var(--legal-blue);
+}
+
+.faqList details[open] summary {
+  border-bottom: 1px solid var(--legal-line);
+  background: #f8fafc;
+}
+
+.faqList details > p {
+  margin-bottom: 0;
+  padding: 1rem;
+  color: var(--legal-muted);
+  font-size: 0.92rem;
+  line-height: 1.75;
+}
+
+.relatedSection {
+  background: var(--legal-navy);
+  color: #ffffff;
+}
+
+.relatedSection > .container > h2 {
+  margin-bottom: 1.5rem;
+  font-size: clamp(1.65rem, 3vw, 2.2rem);
+}
+
+.relatedGrid {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.relatedCard {
+  display: grid;
+  min-height: 5.25rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: center;
+  border: 1px solid #304a6b;
+  border-radius: 1rem;
+  background: #0b2343;
+  padding: 1rem;
+  color: #ffffff;
+  text-decoration: none;
+  transition:
+    border-color 160ms ease,
+    transform 160ms ease;
+}
+
+.relatedCard:hover {
+  border-color: var(--legal-lime);
+  transform: translateY(-2px);
+}
+
+.relatedCard strong,
+.relatedCard small {
+  display: block;
+}
+
+.relatedCard strong {
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+}
+
+.relatedCard small {
+  color: #aebed2;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.relatedCard > svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  color: var(--legal-lime);
+}
+
+.footerNote {
+  max-width: 58rem;
+  margin: 1.5rem 0 0;
+  color: #91a5bf;
+  font-size: 0.76rem;
+  line-height: 1.6;
+}
+
+:global(.dark) .page {
+  --legal-ink: #eff5ff;
+  --legal-muted: #b0bfd2;
+  --legal-line: #29415f;
+  --legal-paper: #071226;
+  --legal-surface: #0b203c;
+}
+
+:global(.dark) .factCard,
+:global(.dark) .explanationCard,
+:global(.dark) .serviceCard,
+:global(.dark) .faqList details {
+  box-shadow: none;
+}
+
+:global(.dark) .factCard > span,
+:global(.dark) .explanationCard > span {
+  background: #20394a;
+  color: var(--legal-lime);
+}
+
+:global(.dark) .noteCard {
+  border-color: #8f681e;
+  background: #2b2417;
+}
+
+:global(.dark) .noteCard > svg {
+  color: #f0bf66;
+}
+
+:global(.dark) .noteCard p {
+  color: #e0cba7;
+}
+
+:global(.dark) .servicesSection,
+:global(.dark) .faqSection {
+  background: #091a31;
+}
+
+:global(.dark) .serviceCard a {
+  color: #8db8ff;
+}
+
+:global(.dark) .stepList li > span {
+  background: var(--legal-lime);
+  color: #071226;
+}
+
+:global(.dark) .faqList details[open] summary {
+  background: #102946;
+}
+
+@media (min-width: 42rem) {
+  .factGrid,
+  .serviceGrid,
+  .relatedGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .registerCard dl {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 64rem) {
+  .heroGrid {
+    grid-template-columns: minmax(0, 1.45fr) minmax(20rem, 0.75fr);
+    gap: 3rem;
+  }
+
+  .factGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .registerList {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .explanationGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .serviceGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .controlsGrid {
+    grid-template-columns: minmax(0, 1.35fr) minmax(19rem, 0.65fr);
+    gap: 4rem;
+  }
+
+  .contactCard {
+    position: sticky;
+    top: 7rem;
+  }
+
+  .relatedGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 30rem) {
+  .container {
+    width: min(calc(100% - 1.25rem), 76rem);
+  }
+
+  .hero h1 {
+    font-size: clamp(2.2rem, 12vw, 3.3rem);
+  }
+
+  .cues {
+    display: grid;
+  }
+
+  .cues span {
+    border-radius: 0.8rem;
+  }
+
+  .registerCard > header {
+    align-items: flex-start;
+  }
+
+  .recordNumber {
+    width: 2.65rem;
+    height: 2.65rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .directLinks a,
+  .relatedCard {
+    transition: none;
+  }
+}

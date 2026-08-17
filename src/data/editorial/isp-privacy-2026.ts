@@ -59,7 +59,7 @@ export const ispPrivacyEditorialContent = `
 <li><strong>Test the failure case.</strong> Confirm what happens when the tunnel drops; a kill switch may block traffic, while a misconfigured client may fall back to the ordinary connection.</li>
 <li><strong>Record the context.</strong> Keep the date, device, protocol, network and app version with the result. One successful check is not a permanent guarantee.</li>
 </ol>
-<p>Our <a href="/tools/what-is-my-ip">IP-check tool</a> and <a href="/tools/dns-leak-test">DNS leak test</a> help with the basic checks. For the broader evaluation method, see our <a href="/methodology">VPN testing methodology</a> and <a href="/vpn-encryption-explained">VPN encryption guide</a>.</p>
+<p>Our <a href="/tools/what-is-my-ip">IP-check tool</a> helps with the basic route check; use your provider's documented DNS diagnostics for resolver checks. For the broader evaluation method, see our <a href="/methodology">VPN testing methodology</a> and <a href="/guides/vpn-privacy-guide">VPN privacy guide</a>.</p>
 
 <h2>What a VPN still cannot hide</h2>
 <p>A VPN does not hide the fact that you voluntarily identify yourself to a website, sign in to an account, install a tracking SDK or carry a device with its own identifiers. Browser fingerprinting, cookies, app telemetry and account records can connect activity even when the network path is encrypted. A VPN also cannot correct malware on the device or prevent a service from enforcing its own terms.</p>

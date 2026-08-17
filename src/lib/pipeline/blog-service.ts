@@ -63,13 +63,18 @@ import {
 
 const IRAN_EDITORIAL_SLUG = "best-vpn-for-iran-2026-bypass-internet-censorship";
 const TELEGRAM_EDITORIAL_SLUG = "best-vpn-for-telegram-2026";
-const CONNECTION_DROPS_EDITORIAL_SLUG = "vpn-connection-drops-why-disconnects-how-to-fix-2026";
-const SERVER_LOCATION_EDITORIAL_SLUG = "best-country-for-vpn-server-location-2026";
+const CONNECTION_DROPS_EDITORIAL_SLUG =
+  "vpn-connection-drops-why-disconnects-how-to-fix-2026";
+const SERVER_LOCATION_EDITORIAL_SLUG =
+  "best-country-for-vpn-server-location-2026";
 const ISP_PRIVACY_EDITORIAL_SLUG = "can-vpn-hide-from-isp";
 const BRAVE_VPN_EDITORIAL_SLUG = "is-brave-vpn-free-2026";
-const VPN_ACCOUNT_SHARING_EDITORIAL_SLUG = "vpn-account-sharing-safe-guide-2026";
-const VPN_SIMULTANEOUS_CONNECTIONS_EDITORIAL_SLUG = "vpn-simultaneous-connections-limits-workarounds-2026";
-const FITNESS_TRACKING_PRIVACY_EDITORIAL_SLUG = "vpn-fitness-tracking-apps-strava-apple-health-garmin-privacy";
+const VPN_ACCOUNT_SHARING_EDITORIAL_SLUG =
+  "vpn-account-sharing-safe-guide-2026";
+const VPN_SIMULTANEOUS_CONNECTIONS_EDITORIAL_SLUG =
+  "vpn-simultaneous-connections-limits-workarounds-2026";
+const FITNESS_TRACKING_PRIVACY_EDITORIAL_SLUG =
+  "vpn-fitness-tracking-apps-strava-apple-health-garmin-privacy";
 
 // Legacy deal/coupon content is not a compliant commercial surface: it contains
 // unassigned coupon language and stale promotional prices. Keep the records for
@@ -139,7 +144,10 @@ interface RawSummary {
 const INDEX = postIndex as unknown as Record<string, RawSummary[]>;
 const POSTS_DIR = path.join(process.cwd(), "src", "data", "posts");
 
-const EDITORIAL_SUMMARIES: Record<string, { title: string; excerpt: string; updatedAt: string }> = {
+const EDITORIAL_SUMMARIES: Record<
+  string,
+  { title: string; excerpt: string; updatedAt: string }
+> = {
   [IRAN_EDITORIAL_SLUG]: {
     title: iranVpnEditorialTitle,
     excerpt: iranVpnEditorialExcerpt,
@@ -188,7 +196,8 @@ const EDITORIAL_SUMMARIES: Record<string, { title: string; excerpt: string; upda
 };
 
 function toSummary(raw: RawSummary): BlogPostSummary {
-  const editorial = raw.language === "en" ? EDITORIAL_SUMMARIES[raw.slug] : undefined;
+  const editorial =
+    raw.language === "en" ? EDITORIAL_SUMMARIES[raw.slug] : undefined;
   return {
     id: raw.id,
     slug: raw.slug,
@@ -218,7 +227,9 @@ export async function getAllPublishedPostSummaries(
   const rows = (INDEX[language] ?? []).filter(
     (r) => !BLOCKED_PUBLISHED_SLUGS.has(r.slug),
   );
-  const filtered = category ? rows.filter((r) => r.category === category) : rows;
+  const filtered = category
+    ? rows.filter((r) => r.category === category)
+    : rows;
   return filtered.map(toSummary);
 }
 
@@ -241,6 +252,85 @@ export async function getPostBySlug(
   return null;
 }
 
+const BLOG_READING_WORDS_PER_MINUTE = 220;
+
+function decodeHtmlEntity(
+  entity: string,
+  decimal?: string,
+  hex?: string,
+): string {
+  const numericEntity = decimal ?? hex;
+  if (numericEntity) {
+    const codePoint = Number.parseInt(numericEntity, decimal ? 10 : 16);
+    return Number.isInteger(codePoint) &&
+      codePoint >= 0 &&
+      codePoint <= 0x10ffff
+      ? String.fromCodePoint(codePoint)
+      : " ";
+  }
+
+  const namedEntities: Record<string, string> = {
+    amp: "&",
+    apos: "'",
+    gt: ">",
+    lt: "<",
+    nbsp: " ",
+    quot: '"',
+  };
+
+  return namedEntities[entity.toLowerCase()] ?? " ";
+}
+
+function countArticleWords(html: string, language: string): number {
+  const text = html
+    .replace(/<(script|style|noscript)\b[^>]*>[\s\S]*?<\/\1>/gi, " ")
+    .replace(/<!--[\s\S]*?-->/g, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(
+      /&(?:#(\d+)|#x([\da-f]+)|([a-z][a-z\d]+));/gi,
+      (_, decimal, hex, named) => decodeHtmlEntity(named ?? "", decimal, hex),
+    );
+
+  if (typeof Intl.Segmenter === "function") {
+    const segmenter = new Intl.Segmenter(language, { granularity: "word" });
+    return Array.from(segmenter.segment(text)).filter(
+      (segment) => segment.isWordLike,
+    ).length;
+  }
+
+  return text.match(/[\p{L}\p{N}]+(?:['’\-][\p{L}\p{N}]+)*/gu)?.length ?? 0;
+}
+
+/**
+ * Calculate reading time from the actual article bodies. `getPostBySlug`
+ * deliberately supplies the same English fallback used by article pages, so
+ * localized overview cards never disagree with their destination page.
+ * Missing or blocked slugs are omitted from the returned record.
+ */
+export async function getPostReadingMinutes(
+  slugs: string[],
+  language: string,
+): Promise<Record<string, number>> {
+  const uniqueSlugs = [...new Set(slugs)];
+  const entries = await Promise.all(
+    uniqueSlugs.map(async (slug) => {
+      const post = await getPostBySlug(slug, language);
+      if (!post) return null;
+
+      const minutes = Math.max(
+        2,
+        Math.ceil(
+          countArticleWords(post.content, language) /
+            BLOG_READING_WORDS_PER_MINUTE,
+        ),
+      );
+      return [slug, minutes] as const;
+    }),
+  );
+
+  return Object.fromEntries(entries.filter((entry) => entry !== null));
+}
+
 async function readPostFile(
   language: string,
   slug: string,
@@ -254,33 +344,86 @@ async function readPostFile(
     );
     const p = JSON.parse(raw);
     const isIranEditorial = language === "en" && slug === IRAN_EDITORIAL_SLUG;
-    const isTelegramEditorial = language === "en" && slug === TELEGRAM_EDITORIAL_SLUG;
-    const isConnectionDropsEditorial = language === "en" && slug === CONNECTION_DROPS_EDITORIAL_SLUG;
-    const isServerLocationEditorial = language === "en" && slug === SERVER_LOCATION_EDITORIAL_SLUG;
-    const isIspPrivacyEditorial = language === "en" && slug === ISP_PRIVACY_EDITORIAL_SLUG;
-    const isBraveVpnEditorial = language === "en" && slug === BRAVE_VPN_EDITORIAL_SLUG;
-    const isVpnAccountSharingEditorial = language === "en" && slug === VPN_ACCOUNT_SHARING_EDITORIAL_SLUG;
-    const isVpnSimultaneousConnectionsEditorial = language === "en" && slug === VPN_SIMULTANEOUS_CONNECTIONS_EDITORIAL_SLUG;
-    const isFitnessTrackingPrivacyEditorial = language === "en" && slug === FITNESS_TRACKING_PRIVACY_EDITORIAL_SLUG;
+    const isTelegramEditorial =
+      language === "en" && slug === TELEGRAM_EDITORIAL_SLUG;
+    const isConnectionDropsEditorial =
+      language === "en" && slug === CONNECTION_DROPS_EDITORIAL_SLUG;
+    const isServerLocationEditorial =
+      language === "en" && slug === SERVER_LOCATION_EDITORIAL_SLUG;
+    const isIspPrivacyEditorial =
+      language === "en" && slug === ISP_PRIVACY_EDITORIAL_SLUG;
+    const isBraveVpnEditorial =
+      language === "en" && slug === BRAVE_VPN_EDITORIAL_SLUG;
+    const isVpnAccountSharingEditorial =
+      language === "en" && slug === VPN_ACCOUNT_SHARING_EDITORIAL_SLUG;
+    const isVpnSimultaneousConnectionsEditorial =
+      language === "en" && slug === VPN_SIMULTANEOUS_CONNECTIONS_EDITORIAL_SLUG;
+    const isFitnessTrackingPrivacyEditorial =
+      language === "en" && slug === FITNESS_TRACKING_PRIVACY_EDITORIAL_SLUG;
     const editorial = isIranEditorial
-      ? { title: iranVpnEditorialTitle, excerpt: iranVpnEditorialExcerpt, content: iranVpnEditorialContent, updatedAt: iranVpnEditorialUpdatedAt }
+      ? {
+          title: iranVpnEditorialTitle,
+          excerpt: iranVpnEditorialExcerpt,
+          content: iranVpnEditorialContent,
+          updatedAt: iranVpnEditorialUpdatedAt,
+        }
       : isTelegramEditorial
-        ? { title: telegramVpnEditorialTitle, excerpt: telegramVpnEditorialExcerpt, content: telegramVpnEditorialContent, updatedAt: telegramVpnEditorialUpdatedAt }
+        ? {
+            title: telegramVpnEditorialTitle,
+            excerpt: telegramVpnEditorialExcerpt,
+            content: telegramVpnEditorialContent,
+            updatedAt: telegramVpnEditorialUpdatedAt,
+          }
         : isConnectionDropsEditorial
-          ? { title: connectionDropsEditorialTitle, excerpt: connectionDropsEditorialExcerpt, content: connectionDropsEditorialContent, updatedAt: connectionDropsEditorialUpdatedAt }
+          ? {
+              title: connectionDropsEditorialTitle,
+              excerpt: connectionDropsEditorialExcerpt,
+              content: connectionDropsEditorialContent,
+              updatedAt: connectionDropsEditorialUpdatedAt,
+            }
           : isServerLocationEditorial
-            ? { title: serverLocationEditorialTitle, excerpt: serverLocationEditorialExcerpt, content: serverLocationEditorialContent, updatedAt: serverLocationEditorialUpdatedAt }
+            ? {
+                title: serverLocationEditorialTitle,
+                excerpt: serverLocationEditorialExcerpt,
+                content: serverLocationEditorialContent,
+                updatedAt: serverLocationEditorialUpdatedAt,
+              }
             : isIspPrivacyEditorial
-              ? { title: ispPrivacyEditorialTitle, excerpt: ispPrivacyEditorialExcerpt, content: ispPrivacyEditorialContent, updatedAt: ispPrivacyEditorialUpdatedAt }
+              ? {
+                  title: ispPrivacyEditorialTitle,
+                  excerpt: ispPrivacyEditorialExcerpt,
+                  content: ispPrivacyEditorialContent,
+                  updatedAt: ispPrivacyEditorialUpdatedAt,
+                }
               : isBraveVpnEditorial
-                ? { title: braveVpnEditorialTitle, excerpt: braveVpnEditorialExcerpt, content: braveVpnEditorialContent, updatedAt: braveVpnEditorialUpdatedAt }
+                ? {
+                    title: braveVpnEditorialTitle,
+                    excerpt: braveVpnEditorialExcerpt,
+                    content: braveVpnEditorialContent,
+                    updatedAt: braveVpnEditorialUpdatedAt,
+                  }
                 : isVpnAccountSharingEditorial
-                  ? { title: vpnAccountSharingEditorialTitle, excerpt: vpnAccountSharingEditorialExcerpt, content: vpnAccountSharingEditorialContent, updatedAt: vpnAccountSharingEditorialUpdatedAt }
+                  ? {
+                      title: vpnAccountSharingEditorialTitle,
+                      excerpt: vpnAccountSharingEditorialExcerpt,
+                      content: vpnAccountSharingEditorialContent,
+                      updatedAt: vpnAccountSharingEditorialUpdatedAt,
+                    }
                   : isVpnSimultaneousConnectionsEditorial
-                    ? { title: vpnSimultaneousConnectionsEditorialTitle, excerpt: vpnSimultaneousConnectionsEditorialExcerpt, content: vpnSimultaneousConnectionsEditorialContent, updatedAt: vpnSimultaneousConnectionsEditorialUpdatedAt }
+                    ? {
+                        title: vpnSimultaneousConnectionsEditorialTitle,
+                        excerpt: vpnSimultaneousConnectionsEditorialExcerpt,
+                        content: vpnSimultaneousConnectionsEditorialContent,
+                        updatedAt: vpnSimultaneousConnectionsEditorialUpdatedAt,
+                      }
                     : isFitnessTrackingPrivacyEditorial
-                      ? { title: fitnessTrackingPrivacyEditorialTitle, excerpt: fitnessTrackingPrivacyEditorialExcerpt, content: fitnessTrackingPrivacyEditorialContent, updatedAt: fitnessTrackingPrivacyEditorialUpdatedAt }
-                  : null;
+                      ? {
+                          title: fitnessTrackingPrivacyEditorialTitle,
+                          excerpt: fitnessTrackingPrivacyEditorialExcerpt,
+                          content: fitnessTrackingPrivacyEditorialContent,
+                          updatedAt: fitnessTrackingPrivacyEditorialUpdatedAt,
+                        }
+                      : null;
     return {
       id: p.id,
       slug: p.slug,

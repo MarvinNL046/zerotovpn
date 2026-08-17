@@ -10,14 +10,10 @@ export function OrganizationSchema() {
     url: "https://www.zerotovpn.com",
     logo: {
       "@type": "ImageObject",
-      url: "https://www.zerotovpn.com/logo.png",
+      url: "https://www.zerotovpn.com/icon-512.png",
       width: 512,
       height: 512,
     },
-    sameAs: [
-      "https://twitter.com/zerotovpn",
-      "https://facebook.com/zerotovpn",
-    ],
     contactPoint: {
       "@type": "ContactPoint",
       email: "hello@zerotovpn.com",
@@ -54,9 +50,11 @@ export function WebsiteSchema() {
 export function VpnReviewSchema({
   vpn,
   datePublished,
+  includeOffer = true,
 }: {
   vpn: VpnProvider;
   datePublished?: string;
+  includeOffer?: boolean;
 }) {
   const schema = {
     "@context": "https://schema.org",
@@ -75,14 +73,20 @@ export function VpnReviewSchema({
       name: vpn.name,
       applicationCategory: "VPN Service",
       operatingSystem: "Windows, macOS, iOS, Android, Linux",
-      offers: {
-        "@type": "Offer",
-        price: vpn.priceTwoYear || vpn.priceYearly,
-        priceCurrency: "USD",
-        priceValidUntil: new Date(
-          new Date().setFullYear(new Date().getFullYear() + 1)
-        ).toISOString().split("T")[0],
-      },
+      ...(includeOffer
+        ? {
+            offers: {
+              "@type": "Offer",
+              price: vpn.priceTwoYear || vpn.priceYearly,
+              priceCurrency: "USD",
+              priceValidUntil: new Date(
+                new Date().setFullYear(new Date().getFullYear() + 1),
+              )
+                .toISOString()
+                .split("T")[0],
+            },
+          }
+        : {}),
     },
     reviewRating: {
       "@type": "Rating",
@@ -121,10 +125,12 @@ export function VpnProductSchema({
   vpn,
   ratingCount,
   datePublished,
+  includeOffer = true,
 }: {
   vpn: VpnProvider;
   ratingCount?: number;
   datePublished?: string;
+  includeOffer?: boolean;
 }) {
   const schema = {
     "@context": "https://schema.org",
@@ -164,15 +170,21 @@ export function VpnProductSchema({
         bestRating: 5,
       },
     },
-    offers: {
-      "@type": "Offer",
-      price: vpn.priceTwoYear || vpn.priceYearly,
-      priceCurrency: "USD",
-      availability: "https://schema.org/InStock",
-      priceValidUntil: new Date(
-        new Date().setFullYear(new Date().getFullYear() + 1)
-      ).toISOString().split("T")[0],
-    },
+    ...(includeOffer
+      ? {
+          offers: {
+            "@type": "Offer",
+            price: vpn.priceTwoYear || vpn.priceYearly,
+            priceCurrency: "USD",
+            availability: "https://schema.org/InStock",
+            priceValidUntil: new Date(
+              new Date().setFullYear(new Date().getFullYear() + 1),
+            )
+              .toISOString()
+              .split("T")[0],
+          },
+        }
+      : {}),
   };
 
   return (
@@ -189,7 +201,8 @@ export function ComparisonTableSchema({ vpns }: { vpns: VpnProvider[] }) {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: "Best VPNs of 2026",
-    description: "Comparison of the best VPN services tested and reviewed by experts",
+    description:
+      "Comparison of the best VPN services tested and reviewed by experts",
     numberOfItems: vpns.length,
     itemListElement: vpns.map((vpn, index) => ({
       "@type": "ListItem",
@@ -277,6 +290,8 @@ export function ArticleJsonLd({
   dateModified,
   url,
   imageUrl,
+  authorName,
+  authorUrl,
 }: {
   title: string;
   description: string;
@@ -284,6 +299,8 @@ export function ArticleJsonLd({
   dateModified?: string;
   url: string;
   imageUrl?: string;
+  authorName?: string;
+  authorUrl?: string;
 }) {
   const schema = {
     "@context": "https://schema.org",
@@ -293,30 +310,27 @@ export function ArticleJsonLd({
     url: url,
     datePublished: datePublished,
     dateModified: dateModified || datePublished,
-    author: {
-      "@type": "Person",
-      name: "ZeroToVPN Expert Team",
-      url: "https://www.zerotovpn.com/about",
-      jobTitle: "VPN Security Researchers",
-      description:
-        "Cybersecurity professionals who maintain dated provider records, test notes, and evidence-bounded VPN comparisons.",
-      sameAs: [
-        "https://twitter.com/zerotovpn",
-        "https://facebook.com/zerotovpn",
-      ],
-      worksFor: {
-        "@type": "Organization",
-        name: "ZeroToVPN",
-        url: "https://www.zerotovpn.com",
-      },
-    },
+    author:
+      authorName && authorUrl
+        ? {
+            "@type": "Person",
+            name: authorName,
+            url: authorUrl,
+          }
+        : {
+            "@type": "Organization",
+            name: "ZeroToVPN",
+            url: "https://www.zerotovpn.com/about",
+          },
     publisher: {
       "@type": "Organization",
       name: "ZeroToVPN",
       url: "https://www.zerotovpn.com",
       logo: {
         "@type": "ImageObject",
-        url: "https://www.zerotovpn.com/logo.png",
+        url: "https://www.zerotovpn.com/icon-512.png",
+        width: 512,
+        height: 512,
       },
     },
     isAccessibleForFree: true,

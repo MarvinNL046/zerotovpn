@@ -45,22 +45,26 @@ const iranEvidenceMatrix = [
   {
     criterion: "Current legal and policy context",
     status: "Needs test",
-    evidence: "Save current authoritative guidance and the policy that applies to your purpose before installing anything.",
+    evidence:
+      "Save current authoritative guidance and the policy that applies to your purpose before installing anything.",
   },
   {
     criterion: "Official app and update path",
     status: "Needs test",
-    evidence: "Confirm official distribution, updates, account recovery, and support access on the actual device.",
+    evidence:
+      "Confirm official distribution, updates, account recovery, and support access on the actual device.",
   },
   {
     criterion: "Network and protocol behavior",
     status: "Unknown",
-    evidence: "No retained, reproducible record currently proves a stable result across Iranian networks and dates.",
+    evidence:
+      "No retained, reproducible record currently proves a stable result across Iranian networks and dates.",
   },
   {
     criterion: "Failure and fallback behavior",
     status: "Needs test",
-    evidence: "Record reconnects, Wi-Fi changes, protocol fallback, and any traffic leak or account-access failure.",
+    evidence:
+      "Record reconnects, Wi-Fi changes, protocol fallback, and any traffic leak or account-access failure.",
   },
 ] as const;
 
@@ -70,35 +74,61 @@ const iranProviderDossiers = [
   "protonvpn",
   "mullvad",
   "expressvpn",
-].map(slug => ({
-  name: slug === "protonvpn" ? "Proton VPN" : slug.replace("vpn", " VPN").replace(/^./, letter => letter.toUpperCase()),
+].map((slug) => ({
+  name:
+    slug === "protonvpn"
+      ? "Proton VPN"
+      : slug
+          .replace("vpn", " VPN")
+          .replace(/^./, (letter) => letter.toUpperCase()),
   slug,
   status: "Dossier pending" as const,
   body: "A general provider dossier exists, but it is not evidence that this provider currently works in Iran. The country-specific record remains to be tested and dated.",
 }));
 
 const iranRelatedGuides = [
-  { label: "Iran VPN research", href: "/blog/best-vpn-for-iran-2026-bypass-internet-censorship", body: "Read the current testing notes, obfuscation checks, and preparation steps." },
-  { label: "Unblock Telegram", href: "/blog/best-vpn-for-telegram-2026", body: "See how restricted messaging fits into the wider censorship cluster." },
-  { label: "VPN use in Russia", href: "/countries/russia", body: "Compare the same evidence boundary in another high-censorship context." },
-  { label: "VPN use in China", href: "/countries/china", body: "Compare the same evidence boundary in another high-censorship context." },
-  { label: "VPN use in Turkey", href: "/best/vpn-turkey", body: "Review country-specific legal, network, and operational questions." },
-  { label: "VPN choice helper", href: "/tools/vpn-choice-helper", body: "Turn your device, network, and failure conditions into a checklist." },
-  { label: "How we research VPNs", href: "/methodology", body: "See how source dates, observations, and commercial links are separated." },
+  {
+    label: "Iran VPN research",
+    href: "/blog/best-vpn-for-iran-2026-bypass-internet-censorship",
+    body: "Read the current testing notes, obfuscation checks, and preparation steps.",
+  },
+  {
+    label: "Unblock Telegram",
+    href: "/blog/best-vpn-for-telegram-2026",
+    body: "See how restricted messaging fits into the wider censorship cluster.",
+  },
+  {
+    label: "Explore country guides",
+    href: "/countries",
+    body: "Browse country guides with clearly scoped legal, network, and operational questions.",
+  },
+  {
+    label: "VPN finder",
+    href: "/quiz",
+    body: "Turn your device, network, and preferences into a shortlist to verify.",
+  },
+  {
+    label: "How we research VPNs",
+    href: "/methodology",
+    body: "See how source dates, observations, and commercial links are separated.",
+  },
 ] as const;
 
 const iranFaq = [
   {
     question: "Does ZeroToVPN currently recommend one VPN for Iran?",
-    answer: "No. The historical ranking is withheld until current, reproducible records cover the relevant networks, devices, dates, and legal context.",
+    answer:
+      "No. The historical ranking is withheld until current, reproducible records cover the relevant networks, devices, dates, and legal context.",
   },
   {
     question: "Why is a provider dossier not enough?",
-    answer: "A general review can document product behavior or provider statements, but it cannot prove current availability on your network. Treat the country-specific test as a separate evidence record.",
+    answer:
+      "A general review can document product behavior or provider statements, but it cannot prove current availability on your network. Treat the country-specific test as a separate evidence record.",
   },
   {
     question: "What should I record during a lawful test?",
-    answer: "Record the device, network, protocol, server region, date and time, reconnect behavior, fallback behavior, and any support or account-access failure.",
+    answer:
+      "Record the device, network, protocol, server region, date and time, reconnect behavior, fallback behavior, and any support or account-access failure.",
   },
 ] as const;
 

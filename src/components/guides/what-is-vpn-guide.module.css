@@ -1,0 +1,720 @@
+.page {
+  --navy: #071226;
+  --navy-soft: #0d1d38;
+  --blue: #1268f3;
+  --lime: #b8e34a;
+  --paper: #f7f7f2;
+  --surface: #ffffff;
+  --ink: #071226;
+  --muted: #53627a;
+  --line: #d7dfe9;
+  --good: #08765a;
+  --warn: #b65114;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.container {
+  width: min(100%, 76rem);
+  margin: 0 auto;
+}
+
+.hero {
+  background: var(--navy);
+  color: #fff;
+  padding: 1.25rem 1rem clamp(4rem, 8vw, 6.5rem);
+}
+
+.breadcrumb {
+  display: flex;
+  min-height: 3rem;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem;
+  color: #9fb0c7;
+  font-size: 0.82rem;
+}
+
+.breadcrumb a {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  color: #e1e9f4;
+  text-decoration: underline;
+  text-underline-offset: 0.24em;
+}
+
+.heroGrid {
+  display: grid;
+  gap: clamp(2rem, 6vw, 4.5rem);
+  align-items: center;
+  padding-top: clamp(1.5rem, 5vw, 3rem);
+}
+
+.eyebrow {
+  margin: 0 0 0.85rem;
+  color: var(--blue);
+  font-size: 0.75rem;
+  font-weight: 850;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.hero .eyebrow,
+.limitsSection .eyebrow,
+.relatedSection .eyebrow {
+  color: var(--lime);
+}
+
+.heroCopy h1 {
+  max-width: 11ch;
+  margin: 0;
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  font-weight: 880;
+  letter-spacing: -0.055em;
+  line-height: 0.96;
+}
+
+.heroIntro {
+  max-width: 45rem;
+  margin: 1.5rem 0 0;
+  color: #d2ddeb;
+  font-size: clamp(1rem, 2vw, 1.16rem);
+  line-height: 1.72;
+}
+
+.directAnswer {
+  max-width: 44rem;
+  margin-top: 1.6rem;
+  border-left: 0.25rem solid var(--lime);
+  background: #0c1b33;
+  padding: 1.05rem 1.2rem;
+}
+
+.directAnswer p {
+  margin: 0 0 0.45rem;
+  color: var(--lime);
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.directAnswer strong {
+  display: block;
+  color: #fff;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.byline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1.35rem;
+}
+
+.byline span {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: 0.42rem;
+  border: 1px solid #2d4665;
+  border-radius: 999px;
+  padding: 0.55rem 0.8rem;
+  color: #b9c7da;
+  font-size: 0.74rem;
+  font-weight: 720;
+  line-height: 1.35;
+}
+
+.byline svg {
+  width: 0.95rem;
+  flex: 0 0 auto;
+  color: var(--lime);
+}
+
+.routeVisual {
+  min-width: 0;
+  margin: 0;
+  border: 1px solid #314b69;
+  border-radius: 1.5rem;
+  background: #0a1930;
+  padding: clamp(1.25rem, 4vw, 2rem);
+  box-shadow: 0 1.5rem 4rem rgb(0 0 0 / 22%);
+}
+
+.routeHeading {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.routeHeading svg {
+  width: 1.25rem;
+  color: var(--lime);
+}
+
+.routeHeading h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.routeLabels {
+  display: grid;
+  grid-template-columns: 2.15fr 0.85fr;
+  gap: 0.6rem;
+  margin: 1.35rem 0 0.7rem;
+}
+
+.routeLabels span {
+  border-radius: 999px;
+  padding: 0.4rem 0.65rem;
+  color: #dce6f2;
+  font-size: 0.65rem;
+  font-weight: 780;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.routeLabels span:first-child {
+  border: 1px solid #7fa62c;
+  background: rgb(184 227 74 / 10%);
+  color: var(--lime);
+}
+
+.routeLabels span:last-child {
+  border: 1px solid #35506e;
+  background: #10223e;
+}
+
+.routeFlow {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr) 1.25rem minmax(0, 1fr) 1.25rem minmax(0, 1fr)
+    1.25rem minmax(0, 1fr);
+  gap: 0.35rem;
+  align-items: center;
+}
+
+.routeNode {
+  min-width: 0;
+  text-align: center;
+}
+
+.routeNode > span {
+  display: grid;
+  width: 3.25rem;
+  height: 3.25rem;
+  margin: 0 auto 0.65rem;
+  place-items: center;
+  border: 1px solid #405978;
+  border-radius: 0.9rem;
+  background: #12233f;
+}
+
+.routeNode:nth-of-type(3) > span {
+  border-color: #8cae3d;
+  background: rgb(184 227 74 / 12%);
+}
+
+.routeNode svg {
+  width: 1.35rem;
+  color: #e4ecf6;
+}
+
+.routeNode strong {
+  display: block;
+  color: #d8e2ef;
+  font-size: 0.68rem;
+  line-height: 1.35;
+}
+
+.routeArrow {
+  width: 1.05rem;
+  color: var(--lime);
+}
+
+.routeVisual figcaption {
+  margin-top: 1.35rem;
+  border-top: 1px solid #2b435f;
+  padding-top: 1rem;
+  color: #9fb0c7;
+  font-size: 0.72rem;
+  line-height: 1.55;
+}
+
+.section,
+.useCasesSection,
+.limitsSection,
+.checklistSection,
+.glossarySection,
+.evidenceSection,
+.relatedSection,
+.faqSection {
+  padding: clamp(4rem, 8vw, 6.5rem) 1rem;
+}
+
+.section,
+.checklistSection,
+.evidenceSection {
+  background: var(--paper);
+}
+
+.useCasesSection,
+.glossarySection,
+.faqSection {
+  background: var(--surface);
+}
+
+.limitsSection,
+.relatedSection {
+  background: var(--navy);
+  color: #fff;
+}
+
+.sectionHeader {
+  max-width: 49rem;
+  margin-bottom: 2rem;
+}
+
+.sectionHeader h2 {
+  margin: 0;
+  font-size: clamp(2rem, 4.7vw, 3.35rem);
+  letter-spacing: -0.045em;
+  line-height: 1.02;
+}
+
+.sectionHeader > p:last-child {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.limitsSection .sectionHeader > p:last-child,
+.relatedSection .sectionHeader > p:last-child {
+  color: #b9c7da;
+}
+
+.changeGrid,
+.useCaseGrid,
+.limitsGrid,
+.glossaryGrid,
+.evidenceGrid,
+.relatedGrid {
+  display: grid;
+  gap: 1rem;
+}
+
+.doesCard,
+.doesNotCard {
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  background: var(--surface);
+  padding: clamp(1.25rem, 4vw, 1.75rem);
+}
+
+.doesCard {
+  border-top: 0.3rem solid var(--good);
+}
+
+.doesNotCard {
+  border-top: 0.3rem solid var(--warn);
+}
+
+.cardTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.cardTitle > span,
+.iconBox {
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 0.8rem;
+}
+
+.doesCard .cardTitle > span {
+  background: #e5f5ef;
+  color: var(--good);
+}
+
+.doesNotCard .cardTitle > span {
+  background: #fff0e8;
+  color: var(--warn);
+}
+
+.cardTitle svg,
+.iconBox svg {
+  width: 1.25rem;
+}
+
+.cardTitle h3 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.doesCard ul,
+.doesNotCard ul {
+  display: grid;
+  gap: 1rem;
+  margin: 1.35rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.doesCard li,
+.doesNotCard li {
+  display: grid;
+  grid-template-columns: 1.15rem minmax(0, 1fr);
+  gap: 0.7rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.doesCard li svg,
+.doesNotCard li svg {
+  width: 1rem;
+  margin-top: 0.15rem;
+}
+
+.doesCard li svg {
+  color: var(--good);
+}
+
+.doesNotCard li svg {
+  color: var(--warn);
+}
+
+.useCaseGrid article {
+  display: flex;
+  min-width: 0;
+  gap: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 1.1rem;
+  background: var(--paper);
+  padding: 1.3rem;
+}
+
+.iconBox {
+  background: var(--navy);
+  color: var(--lime);
+}
+
+.useCaseGrid h3,
+.limitsGrid h3,
+.checklist h3 {
+  margin: 0;
+  font-size: 1.04rem;
+}
+
+.useCaseGrid p,
+.limitsGrid p,
+.checklist p {
+  margin: 0.55rem 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+.limitsGrid article {
+  min-width: 0;
+  border: 1px solid #2e4765;
+  border-radius: 1.1rem;
+  background: var(--navy-soft);
+  padding: 1.25rem;
+}
+
+.limitsGrid article > svg {
+  width: 1.25rem;
+  color: var(--lime);
+}
+
+.limitsGrid h3 {
+  margin-top: 0.9rem;
+  color: #fff;
+}
+
+.limitsGrid p {
+  color: #afbed1;
+}
+
+.checklistGrid {
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+}
+
+.checklist {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.checklist li {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr);
+  gap: 1rem;
+  border-top: 1px solid var(--line);
+  padding: 1.25rem 0;
+}
+
+.checklist li:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.checklist li > span {
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--lime);
+  color: var(--navy);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.75rem;
+  font-weight: 900;
+}
+
+.glossaryGrid {
+  margin: 0;
+}
+
+.glossaryGrid > div {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: var(--paper);
+  padding: 1.2rem;
+}
+
+.glossaryGrid dt {
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 850;
+}
+
+.glossaryGrid dd {
+  margin: 0.55rem 0 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.evidenceGrid > a,
+.relatedGrid > a {
+  display: flex;
+  min-width: 0;
+  min-height: 8.5rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 1.1rem;
+  background: var(--surface);
+  color: var(--ink);
+  padding: 1.2rem;
+  text-decoration: none;
+}
+
+.evidenceGrid > a > span,
+.relatedGrid > a > span {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.evidenceGrid small {
+  color: var(--blue);
+  font-size: 0.65rem;
+  font-weight: 850;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.evidenceGrid strong,
+.relatedGrid strong {
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.evidenceGrid > a > span > span,
+.relatedGrid small {
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+
+.evidenceGrid > a > svg,
+.relatedGrid > a > svg {
+  width: 1.05rem;
+  flex: 0 0 auto;
+  color: var(--blue);
+}
+
+.evidenceGrid > a:hover strong,
+.relatedGrid > a:hover strong {
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+}
+
+.relatedGrid > a {
+  border-color: #2f4865;
+  background: var(--navy-soft);
+  color: #fff;
+}
+
+.relatedGrid small {
+  color: #afbed1;
+}
+
+.relatedGrid > a > svg {
+  color: var(--lime);
+}
+
+.faqList {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 58rem;
+}
+
+.faqList details {
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: var(--paper);
+}
+
+.faqList summary {
+  display: flex;
+  min-height: 3.5rem;
+  cursor: pointer;
+  align-items: center;
+  padding: 1rem 1.15rem;
+  font-weight: 820;
+  line-height: 1.45;
+  list-style-position: inside;
+}
+
+.faqList details p {
+  margin: 0;
+  padding: 0 1.15rem 1.25rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.page a:focus-visible,
+.page summary:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
+}
+
+@media (min-width: 44rem) {
+  .hero,
+  .section,
+  .useCasesSection,
+  .limitsSection,
+  .checklistSection,
+  .glossarySection,
+  .evidenceSection,
+  .relatedSection,
+  .faqSection {
+    padding-inline: 1.5rem;
+  }
+
+  .changeGrid,
+  .useCaseGrid,
+  .glossaryGrid,
+  .evidenceGrid,
+  .relatedGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .limitsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 64rem) {
+  .heroGrid {
+    grid-template-columns: minmax(0, 1.05fr) minmax(28rem, 0.95fr);
+  }
+
+  .limitsGrid,
+  .glossaryGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .checklistGrid {
+    grid-template-columns: minmax(18rem, 0.75fr) minmax(0, 1.25fr);
+    gap: 4rem;
+  }
+
+  .checklistGrid .sectionHeader {
+    position: sticky;
+    top: 7.5rem;
+  }
+}
+
+@media (max-width: 35rem) {
+  .routeLabels {
+    grid-template-columns: 1fr;
+  }
+
+  .routeFlow {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 0.4rem;
+  }
+
+  .routeNode {
+    width: 100%;
+  }
+
+  .routeNode > span {
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .routeArrow {
+    transform: rotate(90deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page *,
+  .page *::before,
+  .page *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+:global(.dark) .page {
+  --paper: #0b1629;
+  --surface: #101f36;
+  --ink: #f4f7fb;
+  --muted: #b6c2d3;
+  --line: #2c405a;
+  --good: #5ed1a7;
+  --warn: #f0a06c;
+}
+
+:global(.dark) .doesCard .cardTitle > span {
+  background: rgb(94 209 167 / 12%);
+}
+
+:global(.dark) .doesNotCard .cardTitle > span {
+  background: rgb(240 160 108 / 12%);
+}
+
+:global(.dark) .iconBox {
+  border: 1px solid #3c5571;
+}

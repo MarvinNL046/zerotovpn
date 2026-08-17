@@ -1,0 +1,285 @@
+{
+  "schemaVersion": 1,
+  "cluster": "NordVPN review / price / speed / privacy / streaming",
+  "targetDomain": "zerotovpn.com",
+  "location_code": 2528,
+  "language_code": "nl",
+  "fetchedAt": "2026-08-14T18:01:47.820Z",
+  "refreshed": true,
+  "seeds": [
+    "nordvpn review",
+    "is nordvpn goed",
+    "is nordvpn betrouwbaar",
+    "nordvpn nadelen",
+    "nordvpn prijs",
+    "nordvpn netflix",
+    "nordvpn snelheid"
+  ],
+  "overview": [
+    {
+      "keyword": "is nordvpn goed",
+      "currentVolume": 20,
+      "latestVolume": 20,
+      "latestMonth": "2026-06",
+      "difficulty": null,
+      "intent": "informational"
+    },
+    {
+      "keyword": "nordvpn netflix",
+      "currentVolume": 90,
+      "latestVolume": 50,
+      "latestMonth": "2026-06",
+      "difficulty": 0,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "nordvpn prijs",
+      "currentVolume": 70,
+      "latestVolume": 40,
+      "latestMonth": "2026-06",
+      "difficulty": 1,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "nordvpn review",
+      "currentVolume": 210,
+      "latestVolume": 110,
+      "latestMonth": "2026-06",
+      "difficulty": 23,
+      "intent": "informational"
+    },
+    {
+      "keyword": "nordvpn snelheid",
+      "currentVolume": 10,
+      "latestVolume": 10,
+      "latestMonth": "2026-06",
+      "difficulty": 55,
+      "intent": "informational"
+    }
+  ],
+  "suggestions": [
+    {
+      "seed": "nordvpn review",
+      "keyword": "nordvpn review",
+      "volume": 210
+    },
+    {
+      "seed": "nordvpn review",
+      "keyword": "review of nordvpn",
+      "volume": 210
+    },
+    {
+      "seed": "nordvpn review",
+      "keyword": "review nordvpn",
+      "volume": 30
+    },
+    {
+      "seed": "nordvpn review",
+      "keyword": "nordvpn review tweakers",
+      "volume": 10
+    },
+    {
+      "seed": "nordvpn review",
+      "keyword": "nordvpn meshnet review",
+      "volume": 10
+    },
+    {
+      "seed": "nordvpn review",
+      "keyword": "expressvpn vs nordvpn review",
+      "volume": 10
+    },
+    {
+      "seed": "nordvpn review",
+      "keyword": "nordvpn review reddit",
+      "volume": 10
+    },
+    {
+      "seed": "nordvpn netflix",
+      "keyword": "nordvpn review netflix",
+      "volume": 10
+    },
+    {
+      "seed": "nordvpn review",
+      "keyword": "nordvpn ios review",
+      "volume": 10
+    },
+    {
+      "seed": "nordvpn review",
+      "keyword": "nordvpn speed review",
+      "volume": 10
+    },
+    {
+      "seed": "nordvpn review",
+      "keyword": "nordvpn india review",
+      "volume": 10
+    },
+    {
+      "seed": "nordvpn review",
+      "keyword": "nordvpn review privacy",
+      "volume": 10
+    },
+    {
+      "seed": "nordvpn review",
+      "keyword": "nordvpn firestick review",
+      "volume": 10
+    },
+    {
+      "seed": "nordvpn review",
+      "keyword": "nordvpn linux review",
+      "volume": 10
+    },
+    {
+      "seed": "nordvpn review",
+      "keyword": "nordvpn review uk",
+      "volume": 10
+    },
+    {
+      "seed": "is nordvpn goed",
+      "keyword": "is nordvpn goed",
+      "volume": 20
+    },
+    {
+      "seed": "nordvpn prijs",
+      "keyword": "nordvpn prijs",
+      "volume": 70
+    },
+    {
+      "seed": "nordvpn prijs",
+      "keyword": "prijs nordvpn",
+      "volume": 20
+    },
+    {
+      "seed": "nordvpn prijs",
+      "keyword": "nordvpn-abonnement prijs",
+      "volume": 10
+    },
+    {
+      "seed": "nordvpn prijs",
+      "keyword": "nordvpn prijs per jaar",
+      "volume": 10
+    },
+    {
+      "seed": "nordvpn prijs",
+      "keyword": "nordvpn abonnement prijs",
+      "volume": 10
+    },
+    {
+      "seed": "nordvpn netflix",
+      "keyword": "nordvpn for netflix",
+      "volume": 90
+    },
+    {
+      "seed": "nordvpn netflix",
+      "keyword": "nordvpn netflix",
+      "volume": 90
+    },
+    {
+      "seed": "nordvpn netflix",
+      "keyword": "nordvpn and netflix",
+      "volume": 90
+    },
+    {
+      "seed": "nordvpn netflix",
+      "keyword": "nordvpn netflix reddit",
+      "volume": 10
+    },
+    {
+      "seed": "nordvpn netflix",
+      "keyword": "nordvpn netflix werkt niet",
+      "volume": 10
+    },
+    {
+      "seed": "nordvpn netflix",
+      "keyword": "nordvpn apple tv netflix",
+      "volume": 10
+    },
+    {
+      "seed": "nordvpn netflix",
+      "keyword": "how to use nordvpn for netflix",
+      "volume": 10
+    },
+    {
+      "seed": "nordvpn netflix",
+      "keyword": "how to watch netflix with nordvpn",
+      "volume": 10
+    },
+    {
+      "seed": "nordvpn netflix",
+      "keyword": "nordvpn netflix servers",
+      "volume": 10
+    },
+    {
+      "seed": "nordvpn netflix",
+      "keyword": "nordvpn netflix tv",
+      "volume": 10
+    },
+    {
+      "seed": "nordvpn netflix",
+      "keyword": "nordvpn netflix usa",
+      "volume": 10
+    },
+    {
+      "seed": "nordvpn netflix",
+      "keyword": "how to use nordvpn for netflix on tv",
+      "volume": 10
+    },
+    {
+      "seed": "nordvpn netflix",
+      "keyword": "nordvpn firestick netflix",
+      "volume": 10
+    },
+    {
+      "seed": "nordvpn netflix",
+      "keyword": "nordvpn chromecast netflix",
+      "volume": 10
+    },
+    {
+      "seed": "nordvpn snelheid",
+      "keyword": "snelheid nordvpn",
+      "volume": 10
+    },
+    {
+      "seed": "nordvpn snelheid",
+      "keyword": "nordvpn snelheid",
+      "volume": 10
+    },
+    {
+      "seed": "nordvpn snelheid",
+      "keyword": "nordvpn snelheid verhogen",
+      "volume": null
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "nordvpn review",
+      "paa": [
+        "Is NordVPN te vertrouwen?",
+        "Waarom is VPN onzin?",
+        "Hoe duur is NordVPN per maand?",
+        "Wat is de meest betrouwbare VPN?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "is nordvpn goed",
+      "paa": [
+        "Hoe betrouwbaar is NordVPN?",
+        "Wat is het voordeel van NordVPN?",
+        "Waarom is VPN onzin?",
+        "Wat is de meest betrouwbare VPN?"
+      ],
+      "hasAiOverview": true
+    },
+    {
+      "keyword": "is nordvpn betrouwbaar",
+      "paa": [
+        "Wat zijn de nadelen van NordVPN?",
+        "Is NordVPN echt veilig?",
+        "Waarom is VPN onzin?",
+        "Is NordVPN legaal in Nederland?"
+      ],
+      "hasAiOverview": true
+    }
+  ],
+  "sourcePolicy": "DataForSEO signals prioritise query intent, comparison structure and FAQ coverage; they do not prove NordVPN performance, current pricing, audit scope or conversion value. Provider facts must be tied to dated first-party sources or reproducible tests."
+}

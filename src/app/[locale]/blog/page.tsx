@@ -1,551 +1,686 @@
-import { setRequestLocale, getTranslations } from "next-intl/server";
-import { Metadata } from "next";
-import { OG_LOCALE_MAP, generateAlternates, titelMetMerk } from "@/lib/seo-utils";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
-import { Link } from "@/i18n/navigation";
-import Image from "next/image";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import {
-  Calendar,
-  Clock,
-  ArrowRight,
-  TrendingUp,
-  Shield,
-  Globe,
-  Newspaper,
-} from "lucide-react";
-import { cn } from "@/lib/utils";
-import { RelatedPages } from "@/components/seo/related-pages";
-import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
-import { getRelatedContent } from "@/lib/content-links";
-import { RelatedContent } from "@/components/seo/related-content";
-import { getCachedPostSummaries } from "@/lib/pipeline/blog-service";
+  BlogOverviewEditorial,
+  type JournalStoryView,
+} from "@/components/blog/blog-overview-editorial";
+import {
+  getBlogOverviewCuration,
+  getJournalBreadcrumbLabels,
+  getJournalCopy,
+  getJournalMedia,
+  getJournalTopic,
+  isJournalLocaleFullyLocalized,
+  type JournalStory,
+  type JournalTopic,
+} from "@/data/blog-overview";
+import {
+  getCachedPostSummaries,
+  getPostReadingMinutes,
+  type BlogPostSummary,
+} from "@/lib/pipeline/blog-service";
+import {
+  BASE_URL,
+  OG_LOCALE_MAP,
+  generateAlternates,
+  titelMetMerk,
+} from "@/lib/seo-utils";
+import { shouldNoindexPath } from "@/lib/indexability";
+import {
+  torrentingRedditEditorialExcerpt,
+  torrentingRedditEditorialTitle,
+} from "@/data/editorial/torrenting-reddit-2026";
 
-// Revalidate every 10 minutes — new posts appear within 10 min without sacrificing speed
 export const revalidate = 600;
 
 type Props = {
   params: Promise<{ locale: string }>;
-  searchParams?: Promise<{ page?: string | string[] }>;
+  searchParams?: Promise<{
+    page?: string | string[];
+    q?: string | string[];
+    topic?: string | string[];
+  }>;
 };
 
-const baseUrl = "https://www.zerotovpn.com";
-const BLOG_PAGE_SIZE = 24;
-const paginationLabels: Record<string, { label: string; previous: string; next: string; page: (page: number, total: number) => string }> = {
-  en: { label: "Blog pagination", previous: "Previous", next: "Next", page: (page, total) => `Page ${page} of ${total}` },
-  nl: { label: "Blogpaginering", previous: "Vorige", next: "Volgende", page: (page, total) => `Pagina ${page} van ${total}` },
-  de: { label: "Blog-Seitennavigation", previous: "Zurück", next: "Weiter", page: (page, total) => `Seite ${page} von ${total}` },
-  es: { label: "Paginación del blog", previous: "Anterior", next: "Siguiente", page: (page, total) => `Página ${page} de ${total}` },
-  fr: { label: "Pagination du blog", previous: "Précédent", next: "Suivant", page: (page, total) => `Page ${page} sur ${total}` },
-  zh: { label: "\u535a\u5ba2\u5206\u9875", previous: "\u4e0a\u4e00\u9875", next: "\u4e0b\u4e00\u9875", page: (page, total) => `\u7b2c ${page} \u9875\uff0c\u5171 ${total} \u9875` },
-  ja: { label: "\u30d6\u30ed\u30b0\u306e\u30da\u30fc\u30b8\u30cd\u30fc\u30b7\u30e7\u30f3", previous: "\u524d\u3078", next: "\u6b21\u3078", page: (page, total) => `${total}\u30da\u30fc\u30b8\u4e2d${page}\u30da\u30fc\u30b8` },
-  ko: { label: "\ube14\ub85c\uadf8 \ud398\uc774\uc9c0 \ud0d0\uc0c9", previous: "\uc774\uc804", next: "\ub2e4\uc74c", page: (page, total) => `${total}\ud398\uc774\uc9c0 \uc911 ${page}\ud398\uc774\uc9c0` },
-  th: { label: "\u0e01\u0e32\u0e23\u0e41\u0e1a\u0e48\u0e07\u0e2b\u0e19\u0e49\u0e32\u0e1a\u0e25\u0e47\u0e2d\u0e01", previous: "\u0e01\u0e48\u0e2d\u0e19\u0e2b\u0e19\u0e49\u0e32", next: "\u0e16\u0e31\u0e14\u0e44\u0e1b", page: (page, total) => `\u0e2b\u0e19\u0e49\u0e32 ${page} \u0e08\u0e32\u0e01 ${total}` },
+type DraftStory = Omit<JournalStoryView, "readingMinutes"> & {
+  fallbackReadingMinutes?: number;
+  tags: string[];
 };
 
-function parsePage(value: string | string[] | undefined): number {
-  const raw = Array.isArray(value) ? value[0] : value;
-  const parsed = Number.parseInt(raw ?? "1", 10);
-  return Number.isFinite(parsed) && parsed > 0 ? parsed : 1;
-}
+const ARCHIVE_PAGE_SIZE = 12;
+const CURATED_STORY_COUNT = 1 + 5 + 2 + 6 + 3;
+const JOURNAL_OG_IMAGE = `${BASE_URL}/images/blog/zerotovpn-journal-og-v1.webp`;
+const REVIEWED_ARCHIVE_COPY: Readonly<
+  Record<string, { title: string; excerpt: string }>
+> = {
+  "best-vpn-for-torrenting-reddit-2026": {
+    title: torrentingRedditEditorialTitle,
+    excerpt: torrentingRedditEditorialExcerpt,
+  },
+};
+const LAB_MEDIA_COPY: Readonly<
+  Record<string, { alt: string; caption: string }>
+> = {
+  en: {
+    alt: "English ZeroToVPN browser route check in its idle state",
+    caption:
+      "Current English browser-route check, captured on 17 August 2026 before it was started. It contains no personal test data and does not measure the DNS resolver.",
+  },
+  nl: {
+    alt: "Engelstalige ZeroToVPN-controle van de browserroute in de beginstand",
+    caption:
+      "Actuele Engelstalige browserroutecontrole, vastgelegd op 17 augustus 2026 vóór de start. De afbeelding bevat geen persoonlijke testgegevens en meet de DNS-resolver niet.",
+  },
+  de: {
+    alt: "Englische ZeroToVPN-Browserroutenprüfung im Startzustand",
+    caption:
+      "Aktuelle englische Browserroutenprüfung vom 17. August 2026 vor dem Start. Sie enthält keine persönlichen Testdaten und misst den DNS-Resolver nicht.",
+  },
+  es: {
+    alt: "Comprobación en inglés de la ruta del navegador de ZeroToVPN en reposo",
+    caption:
+      "Comprobación actual de la ruta del navegador en inglés, capturada el 17 de agosto de 2026 antes de iniciarla. No contiene datos personales ni mide el resolver DNS.",
+  },
+  fr: {
+    alt: "Vérification en anglais de la route du navigateur ZeroToVPN au repos",
+    caption:
+      "Vérification actuelle de la route du navigateur en anglais, capturée le 17 août 2026 avant son lancement. Elle ne contient aucune donnée personnelle et ne mesure pas le résolveur DNS.",
+  },
+  zh: {
+    alt: "ZeroToVPN 浏览器路线检查初始状态的英文截图",
+    caption:
+      "当前英文浏览器路线检查于 2026 年 8 月 17 日启动前截取，不含个人测试数据，也不会测量 DNS 解析器。",
+  },
+  ja: {
+    alt: "開始前のZeroToVPNブラウザ経路チェック英語画面",
+    caption:
+      "2026年8月17日に開始前の状態で記録した現在の英語版ブラウザ経路チェックです。個人データは含まず、DNSリゾルバーは測定しません。",
+  },
+  ko: {
+    alt: "시작 전 ZeroToVPN 브라우저 경로 확인 영문 화면",
+    caption:
+      "2026년 8월 17일 시작 전에 기록한 최신 영문 브라우저 경로 확인 화면입니다. 개인 테스트 데이터가 없으며 DNS 리졸버를 측정하지 않습니다.",
+  },
+  th: {
+    alt: "ภาพหน้าจอภาษาอังกฤษของการตรวจสอบเส้นทางเบราว์เซอร์ ZeroToVPN ก่อนเริ่ม",
+    caption:
+      "การตรวจสอบเส้นทางเบราว์เซอร์ภาษาอังกฤษปัจจุบัน บันทึกก่อนเริ่มเมื่อ 17 สิงหาคม 2026 ไม่มีข้อมูลส่วนบุคคลและไม่ได้วัด DNS resolver",
+  },
+};
+const TOPICS = new Set<JournalTopic>([
+  "privacy-security",
+  "censorship-access",
+  "apps-devices",
+  "speed-troubleshooting",
+  "tests-evidence",
+  "industry-policy",
+]);
 
-function formatDateLong(dateStr: string, locale: string): string {
-  const date = new Date(dateStr);
-  const months: Record<string, string[]> = {
-    en: ["January","February","March","April","May","June","July","August","September","October","November","December"],
-    nl: ["januari","februari","maart","april","mei","juni","juli","augustus","september","oktober","november","december"],
-    de: ["Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"],
-    es: ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],
-    fr: ["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],
-  };
-  const m = (months[locale] || months.en);
-  return `${m[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
-}
-
-function formatDateShort(dateStr: string, locale: string): string {
-  const date = new Date(dateStr);
-  const months: Record<string, string[]> = {
-    en: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
-    nl: ["jan","feb","mrt","apr","mei","jun","jul","aug","sep","okt","nov","dec"],
-    de: ["Jan","Feb","Mär","Apr","Mai","Jun","Jul","Aug","Sep","Okt","Nov","Dez"],
-    es: ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],
-    fr: ["jan","fév","mar","avr","mai","jun","jul","aoû","sep","oct","nov","déc"],
-  };
-  const m = (months[locale] || months.en);
-  return `${m[date.getMonth()]} ${date.getDate()}`;
-}
-
-export async function generateMetadata({ params, searchParams }: Props): Promise<Metadata> {
-  const { locale } = await params;
-  const query = searchParams ? await searchParams : undefined;
-  const page = parsePage(query?.page);
-
-  const titles: Record<string, string> = {
-    en: "VPN Blog - News, Tips & Security Guides | ZeroToVPN",
-    nl: "VPN Blog - Nieuws, Tips & Beveiligingsgidsen | ZeroToVPN",
-    de: "VPN Blog - Neuigkeiten, Tipps & Sicherheitsleitfäden | ZeroToVPN",
-    es: "Blog VPN - Noticias, Consejos y Guías de Seguridad | ZeroToVPN",
-    fr: "Blog VPN - Actualités, Conseils et Guides de Sécurité | ZeroToVPN",
-    zh: "VPN博客 - 新闻、技巧和安全指南 | ZeroToVPN",
-    ja: "VPNブログ - ニュース、ヒント、セキュリティガイド | ZeroToVPN",
-    ko: "VPN 블로그 - 뉴스, 팁 및 보안 가이드 | ZeroToVPN",
-    th: "VPN บล็อก - ข่าว เคล็ดลับ และคู่มือความปลอดภัย | ZeroToVPN",
-  };
-
-  const descriptions: Record<string, string> = {
-    en: "Stay updated with the latest VPN news, security tips, and in-depth guides. Learn about VPN deals, privacy, and online security.",
-    nl: "Blijf op de hoogte van het laatste VPN-nieuws, beveiligingstips en uitgebreide gidsen. Leer over VPN-deals, privacy en online beveiliging.",
-    de: "Bleiben Sie auf dem Laufenden mit den neuesten VPN-Nachrichten, Sicherheitstipps und ausführlichen Leitfäden. Erfahren Sie mehr über VPN-Angebote, Datenschutz und Online-Sicherheit.",
-    es: "Mantente actualizado con las últimas noticias de VPN, consejos de seguridad y guías detalladas. Aprende sobre ofertas de VPN, privacidad y seguridad en línea.",
-    fr: "Restez informé des dernières actualités VPN, conseils de sécurité et guides détaillés. Apprenez-en plus sur les offres VPN, la confidentialité et la sécurité en ligne.",
-    zh: "了解最新的VPN新闻、安全提示和深入指南。学习VPN优惠、隐私和在线安全知识。",
-    ja: "最新のVPNニュース、セキュリティのヒント、詳細なガイドで最新情報を入手。VPNのお得な情報、プライバシー、オンラインセキュリティについて学びましょう。",
-    ko: "최신 VPN 뉴스, 보안 팁 및 심층 가이드로 최신 정보를 유지하세요. VPN 거래, 개인 정보 보호 및 온라인 보안에 대해 알아보세요.",
-    th: "อัปเดตข่าวสาร VPN ล่าสุด เคล็ดลับความปลอดภัย และคู่มือเชิงลึก เรียนรู้เกี่ยวกับดีล VPN ความเป็นส่วนตัว และความปลอดภัยออนไลน์",
-  };
-
-  return {
-    metadataBase: new URL(baseUrl),
-    title: { absolute: titelMetMerk((titles[locale] || titles.en).replace(" | ZeroToVPN", "")) },
-    description: descriptions[locale] || descriptions.en,
-    openGraph: {
-      locale: OG_LOCALE_MAP[locale] ?? "en_US",
-      title: titles[locale] || titles.en,
-      description: descriptions[locale] || descriptions.en,
-      type: "website",
-    },
-    alternates: generateAlternates("/blog", locale),
-    ...(page > 1 ? { robots: { index: false, follow: true } } : {}),
-  };
-}
-
-// Blog posts data
-// De Black Friday-post staat hier bewust NIET in: die belooft een actie met
-// "beperkte tijd" en is buiten november misleidend. De pagina blijft bestaan
-// (noindex, zie de post zelf), alleen niet meer in de index of de sitemap.
-const blogPosts = [
+const STATIC_POSTS = [
   {
     slug: "is-vpn-legal",
     category: "security",
     date: "2026-01-15",
-    readTime: "8 min",
+    readingMinutes: 8,
   },
   {
     slug: "vpn-vs-proxy",
-    category: "tips",
+    category: "guide",
     date: "2026-01-10",
-    readTime: "6 min",
+    readingMinutes: 6,
   },
-];
+] as const;
 
-const categoryConfig: Record<string, {
-  icon: typeof TrendingUp;
-  color: string;
-  gradient: string;
-  iconColor: string;
-  bgPattern: string;
-  label: string;
-}> = {
-  deals: {
-    icon: TrendingUp,
-    color: "text-green-600",
-    gradient: "from-emerald-500/20 via-green-500/10 to-yellow-500/20",
-    iconColor: "text-emerald-600",
-    bgPattern: "bg-[radial-gradient(circle_at_30%_50%,rgba(16,185,129,0.15),transparent_50%)]",
-    label: "deals",
-  },
-  deal: {
-    icon: TrendingUp,
-    color: "text-green-600",
-    gradient: "from-emerald-500/20 via-green-500/10 to-yellow-500/20",
-    iconColor: "text-emerald-600",
-    bgPattern: "bg-[radial-gradient(circle_at_30%_50%,rgba(16,185,129,0.15),transparent_50%)]",
-    label: "deals",
-  },
-  security: {
-    icon: Shield,
-    color: "text-blue-600",
-    gradient: "from-blue-500/20 via-indigo-500/10 to-purple-500/20",
-    iconColor: "text-blue-600",
-    bgPattern: "bg-[radial-gradient(circle_at_70%_50%,rgba(59,130,246,0.15),transparent_50%)]",
-    label: "security",
-  },
-  tips: {
-    icon: Globe,
-    color: "text-purple-600",
-    gradient: "from-orange-500/20 via-amber-500/10 to-yellow-500/20",
-    iconColor: "text-orange-600",
-    bgPattern: "bg-[radial-gradient(circle_at_50%_30%,rgba(249,115,22,0.15),transparent_50%)]",
-    label: "tips",
-  },
-  guide: {
-    icon: Globe,
-    color: "text-purple-600",
-    gradient: "from-orange-500/20 via-amber-500/10 to-yellow-500/20",
-    iconColor: "text-orange-600",
-    bgPattern: "bg-[radial-gradient(circle_at_50%_30%,rgba(249,115,22,0.15),transparent_50%)]",
-    label: "tips",
-  },
-  news: {
-    icon: Newspaper,
-    color: "text-orange-600",
-    gradient: "from-rose-500/20 via-pink-500/10 to-orange-500/20",
-    iconColor: "text-rose-600",
-    bgPattern: "bg-[radial-gradient(circle_at_50%_70%,rgba(244,63,94,0.15),transparent_50%)]",
-    label: "news",
-  },
-  comparison: {
-    icon: Shield,
-    color: "text-blue-600",
-    gradient: "from-blue-500/20 via-indigo-500/10 to-purple-500/20",
-    iconColor: "text-blue-600",
-    bgPattern: "bg-[radial-gradient(circle_at_70%_50%,rgba(59,130,246,0.15),transparent_50%)]",
-    label: "security",
-  },
-};
+function single(value: string | string[] | undefined): string | undefined {
+  return Array.isArray(value) ? value[0] : value;
+}
+
+function parsePage(value: string | string[] | undefined): number {
+  const parsed = Number.parseInt(single(value) ?? "1", 10);
+  return Number.isFinite(parsed) && parsed > 0 ? parsed : 1;
+}
+
+function parseTopic(
+  value: string | string[] | undefined,
+): JournalTopic | undefined {
+  const topic = single(value);
+  return topic && TOPICS.has(topic as JournalTopic)
+    ? (topic as JournalTopic)
+    : undefined;
+}
+
+function localePath(locale: string, path: string): string {
+  return `${locale === "en" ? "" : `/${locale}`}${path}`;
+}
+
+function canonicalPath(page: number, filtered: boolean): string {
+  return !filtered && page > 1 ? `/blog?page=${page}` : "/blog";
+}
+
+export async function generateMetadata({
+  params,
+  searchParams,
+}: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const query = searchParams ? await searchParams : undefined;
+  const page = parsePage(query?.page);
+  const searchQuery = single(query?.q)?.trim();
+  const topic = parseTopic(query?.topic);
+  const filtered = Boolean(searchQuery || topic);
+  const copy = getJournalCopy(locale);
+  const path = canonicalPath(page, filtered);
+  const bareTitle = copy.metadata.title.replace(/\s*\|\s*ZeroToVPN$/u, "");
+  const storyCount =
+    page > 1 && !filtered
+      ? (await getCachedPostSummaries(locale)).filter(
+          (post) => !shouldNoindexPath(`/${locale}/blog/${post.slug}`),
+        ).length +
+        STATIC_POSTS.filter(
+          (post) => !shouldNoindexPath(`/${locale}/blog/${post.slug}`),
+        ).length
+      : 0;
+  const archiveCount =
+    storyCount > 30
+      ? Math.max(0, storyCount - CURATED_STORY_COUNT)
+      : storyCount;
+  const archivePageCount = Math.max(
+    1,
+    Math.ceil(archiveCount / ARCHIVE_PAGE_SIZE),
+  );
+  const pageTitle =
+    page > 1 && !filtered
+      ? `${bareTitle} — ${copy.archive.page(page, archivePageCount)}`
+      : copy.metadata.title;
+  const canonicalUrl = `${BASE_URL}${localePath(locale, path)}`;
+
+  return {
+    metadataBase: new URL(BASE_URL),
+    title: { absolute: titelMetMerk(pageTitle) },
+    description: copy.metadata.description,
+    alternates:
+      page > 1 && !filtered
+        ? { canonical: canonicalUrl }
+        : generateAlternates(path, locale),
+    openGraph: {
+      type: "website",
+      locale: OG_LOCALE_MAP[locale] ?? "en_US",
+      url: canonicalUrl,
+      siteName: "ZeroToVPN",
+      title: pageTitle,
+      description: copy.metadata.description,
+      images: [
+        {
+          url: JOURNAL_OG_IMAGE,
+          width: 1200,
+          height: 630,
+          alt: copy.metadata.imageAlt,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: pageTitle,
+      description: copy.metadata.description,
+      images: [JOURNAL_OG_IMAGE],
+    },
+    robots:
+      filtered || !isJournalLocaleFullyLocalized(locale)
+        ? { index: false, follow: true }
+        : { index: true, follow: true },
+  };
+}
+
+function dateValue(post: BlogPostSummary): string {
+  return (post.publishedAt ?? post.createdAt).toISOString().slice(0, 10);
+}
+
+function updatedValue(post: BlogPostSummary): string | null {
+  if (!post.updatedAt) return null;
+  const updated = post.updatedAt.toISOString().slice(0, 10);
+  return updated === dateValue(post) ? null : updated;
+}
+
+function sortDate(story: DraftStory): number {
+  return new Date(story.updatedAt ?? story.date).getTime();
+}
+
+function withMedia(
+  story: Omit<DraftStory, "image">,
+  contentLocale: "en" | "nl",
+): DraftStory {
+  const media = getJournalMedia(story.slug);
+  return {
+    ...story,
+    image: media
+      ? {
+          src: media.src,
+          alt: media.alt[contentLocale],
+          focalPoint: media.focalPoint,
+          caption: media.caption?.[contentLocale],
+        }
+      : undefined,
+  };
+}
+
+function fromSummary(
+  post: BlogPostSummary,
+  contentLocale: "en" | "nl",
+  topicLabels: ReturnType<typeof getJournalCopy>["topics"],
+): DraftStory {
+  const topic = getJournalTopic(post);
+  return withMedia(
+    {
+      slug: post.slug,
+      title: post.title,
+      excerpt: post.excerpt,
+      eyebrow: topicLabels[topic].label,
+      topic,
+      date: dateValue(post),
+      updatedAt: updatedValue(post),
+      tags: post.tags ?? [],
+    },
+    contentLocale,
+  );
+}
+
+function overlayCuration(
+  base: DraftStory,
+  curated: JournalStory,
+  contentLocale: "en" | "nl",
+  allowLocalizedDisplayCopy: boolean,
+  topicLabels: ReturnType<typeof getJournalCopy>["topics"],
+): DraftStory {
+  const topic = curated.topic ?? base.topic;
+  return withMedia(
+    {
+      ...base,
+      title: allowLocalizedDisplayCopy ? curated.title : base.title,
+      excerpt: allowLocalizedDisplayCopy ? curated.excerpt : base.excerpt,
+      eyebrow: allowLocalizedDisplayCopy
+        ? curated.eyebrow
+        : topicLabels[topic].label,
+      topic,
+    },
+    contentLocale,
+  );
+}
+
+function fillGroup(
+  requested: JournalStory[],
+  count: number,
+  bySlug: Map<string, DraftStory>,
+  sorted: DraftStory[],
+  claimed: Set<string>,
+  contentLocale: "en" | "nl",
+  allowLocalizedDisplayCopy: boolean,
+  topicLabels: ReturnType<typeof getJournalCopy>["topics"],
+): DraftStory[] {
+  const stories: DraftStory[] = [];
+  for (const curated of requested) {
+    const base = bySlug.get(curated.slug);
+    if (!base || claimed.has(base.slug)) continue;
+    stories.push(
+      overlayCuration(
+        base,
+        curated,
+        contentLocale,
+        allowLocalizedDisplayCopy,
+        topicLabels,
+      ),
+    );
+    claimed.add(base.slug);
+    if (stories.length === count) return stories;
+  }
+
+  for (const story of sorted) {
+    if (claimed.has(story.slug)) continue;
+    stories.push(story);
+    claimed.add(story.slug);
+    if (stories.length === count) break;
+  }
+  return stories;
+}
+
+function finalize(
+  story: DraftStory,
+  readingMinutes: Record<string, number>,
+): JournalStoryView {
+  return {
+    slug: story.slug,
+    title: story.title,
+    excerpt: story.excerpt,
+    eyebrow: story.eyebrow,
+    topic: story.topic,
+    date: story.date,
+    updatedAt: story.updatedAt,
+    image: story.image,
+    readingMinutes:
+      readingMinutes[story.slug] ?? story.fallbackReadingMinutes ?? 5,
+  };
+}
+
+function visibleStoryUrls(locale: string, stories: JournalStoryView[]) {
+  return stories.map((story, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    url: `${BASE_URL}${localePath(locale, `/blog/${story.slug}`)}`,
+    name: story.title,
+  }));
+}
+
+function JournalJsonLd({
+  locale,
+  copy,
+  page,
+  filtered,
+  stories,
+}: {
+  locale: string;
+  copy: ReturnType<typeof getJournalCopy>;
+  page: number;
+  filtered: boolean;
+  stories: JournalStoryView[];
+}) {
+  const path = canonicalPath(page, filtered);
+  const url = `${BASE_URL}${localePath(locale, path)}`;
+  const blogUrl = `${BASE_URL}${localePath(locale, "/blog")}`;
+  const breadcrumbs = getJournalBreadcrumbLabels(locale);
+  const data = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": `${url}#collection`,
+        url,
+        name: copy.metadata.title,
+        description: copy.metadata.description,
+        inLanguage: locale,
+        isPartOf: { "@id": `${BASE_URL}/#website` },
+        mainEntity: {
+          "@type": "ItemList",
+          itemListOrder: "https://schema.org/ItemListOrderDescending",
+          itemListElement: visibleStoryUrls(locale, stories),
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: breadcrumbs.home,
+            item: `${BASE_URL}${localePath(locale, "/")}`,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: breadcrumbs.journal,
+            item: blogUrl,
+          },
+        ],
+      },
+    ],
+  };
+
+  return (
+    <script
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(data).replace(/</g, "\\u003c"),
+      }}
+      type="application/ld+json"
+    />
+  );
+}
 
 export default async function BlogPage({ params, searchParams }: Props) {
   const { locale } = await params;
-  const query = searchParams ? await searchParams : undefined;
-  const requestedPage = parsePage(query?.page);
+  const queryParams = searchParams ? await searchParams : undefined;
+  const requestedPage = parsePage(queryParams?.page);
+  const searchQuery = single(queryParams?.q)?.trim().slice(0, 100);
+  const activeTopic = parseTopic(queryParams?.topic);
+  const filtered = Boolean(searchQuery || activeTopic);
   setRequestLocale(locale);
-  const t = await getTranslations("blog");
 
-  const relatedLinks = getRelatedContent({
-    currentHref: "/blog",
-    tags: ["general", "overview", "education"],
-    currentType: "blog",
-    limit: 6,
+  const [postSummaries, t] = await Promise.all([
+    getCachedPostSummaries(locale),
+    getTranslations("blog"),
+  ]);
+  const copy = getJournalCopy(locale);
+  const labMediaCopy = LAB_MEDIA_COPY[locale] ?? LAB_MEDIA_COPY.en;
+  const curation = getBlogOverviewCuration(locale);
+  const allowLocalizedDisplayCopy = !curation.isFallback;
+
+  const dynamicStories = postSummaries.map((post) =>
+    fromSummary(post, copy.contentLocale, copy.topics),
+  );
+  const staticStories: DraftStory[] = STATIC_POSTS.map((post) => {
+    const topic = getJournalTopic(post);
+    return withMedia(
+      {
+        slug: post.slug,
+        topic,
+        eyebrow: copy.topics[topic].label,
+        title: t(`posts.${post.slug}.title`),
+        excerpt: t(`posts.${post.slug}.excerpt`),
+        date: post.date,
+        updatedAt: null,
+        fallbackReadingMinutes: post.readingMinutes,
+        tags: [],
+      },
+      copy.contentLocale,
+    );
   });
+  const curatedDisplayBySlug = new Map(
+    [
+      curation.lead,
+      ...curation.editorsPicks,
+      ...curation.secondary,
+      ...curation.latest,
+      ...curation.deepReads,
+    ].map((story) => [story.slug, story]),
+  );
+  const allStories = [...dynamicStories, ...staticStories]
+    .filter((story) => !shouldNoindexPath(`/${locale}/blog/${story.slug}`))
+    .map((story) => {
+      const curatedStory = curatedDisplayBySlug.get(story.slug);
+      const withCuratedCopy = curatedStory
+        ? overlayCuration(
+            story,
+            curatedStory,
+            copy.contentLocale,
+            allowLocalizedDisplayCopy,
+            copy.topics,
+          )
+        : story;
+      const reviewedCopy =
+        copy.contentLocale === "en"
+          ? REVIEWED_ARCHIVE_COPY[withCuratedCopy.slug]
+          : undefined;
 
-  // Fetch dynamic posts from DB (graceful fallback on error)
-  let dynamicPosts: Array<{
-    slug: string;
-    category: string;
-    date: string;
-    readTime: string;
-    title: string;
-    excerpt: string;
-    hasFeaturedImage: boolean;
-    featuredImageUrl: string | null;
-    isDynamic: true;
-  }> = [];
+      return reviewedCopy
+        ? { ...withCuratedCopy, ...reviewedCopy }
+        : withCuratedCopy;
+    })
+    .sort((a, b) => sortDate(b) - sortDate(a));
+  const bySlug = new Map(allStories.map((story) => [story.slug, story]));
 
-  try {
-    // Fetch locale + English fallback in parallel for speed
-    const [localePosts, enPosts] = await Promise.all([
-      getCachedPostSummaries(locale),
-      locale !== "en" ? getCachedPostSummaries("en") : Promise.resolve([]),
-    ]);
+  let leadDraft: DraftStory | undefined;
+  let editorsDraft: DraftStory[] = [];
+  let secondaryDraft: DraftStory[] = [];
+  let latestDraft: DraftStory[] = [];
+  let deepDraft: DraftStory[] = [];
+  let archiveSource: DraftStory[];
 
-    const dbPosts = [...localePosts];
-    const seenSlugs = new Set(dbPosts.map((p) => p.slug));
+  if (!filtered) {
+    const claimed = new Set<string>();
+    const requestedLead = bySlug.get(curation.lead.slug);
+    const curatedLead = requestedLead
+      ? overlayCuration(
+          requestedLead,
+          curation.lead,
+          copy.contentLocale,
+          allowLocalizedDisplayCopy,
+          copy.topics,
+        )
+      : allStories[0];
+    if (curatedLead) claimed.add(curatedLead.slug);
+    const curatedEditors = fillGroup(
+      curation.editorsPicks,
+      5,
+      bySlug,
+      allStories,
+      claimed,
+      copy.contentLocale,
+      allowLocalizedDisplayCopy,
+      copy.topics,
+    );
+    const curatedSecondary = fillGroup(
+      curation.secondary,
+      2,
+      bySlug,
+      allStories,
+      claimed,
+      copy.contentLocale,
+      allowLocalizedDisplayCopy,
+      copy.topics,
+    );
+    const curatedLatest = fillGroup(
+      curation.latest,
+      6,
+      bySlug,
+      allStories,
+      claimed,
+      copy.contentLocale,
+      allowLocalizedDisplayCopy,
+      copy.topics,
+    );
+    const curatedDeep = fillGroup(
+      curation.deepReads,
+      3,
+      bySlug,
+      allStories,
+      claimed,
+      copy.contentLocale,
+      allowLocalizedDisplayCopy,
+      copy.topics,
+    );
 
-    // Add English posts that don't have a translation in the current locale
-    for (const enPost of enPosts) {
-      if (!seenSlugs.has(enPost.slug)) {
-        dbPosts.push(enPost);
-      }
+    if (requestedPage === 1) {
+      leadDraft = curatedLead;
+      editorsDraft = curatedEditors;
+      secondaryDraft = curatedSecondary;
+      latestDraft = curatedLatest;
+      deepDraft = curatedDeep;
     }
 
-    dynamicPosts = dbPosts.map((post) => ({
-      slug: post.slug,
-      category: post.category,
-      date: (post.publishedAt ? new Date(post.publishedAt).toISOString().split("T")[0] : null) || new Date(post.createdAt).toISOString().split("T")[0],
-      readTime: `${Math.max(1, Math.ceil(post.excerpt.length / 300))} min`,
-      title: post.title,
-      excerpt: post.excerpt,
-      hasFeaturedImage: post.hasFeaturedImage,
-      featuredImageUrl: post.featuredImageUrl ?? null,
-      isDynamic: true as const,
-    }));
-  } catch (err) {
-    // DB might not be available during build — continue with static posts only
-    console.error("[blog] DB fetch failed:", err instanceof Error ? err.message : err);
+    // On smaller locale corpora the curated shelves already use nearly every
+    // story. Keep the complete archive searchable even when that means a card
+    // also appears in a curated shelf; larger corpora avoid those duplicates.
+    archiveSource =
+      allStories.length <= 30
+        ? allStories
+        : allStories.filter((story) => !claimed.has(story.slug));
+  } else {
+    archiveSource = allStories;
   }
 
-  // Merge static + dynamic, then sort newest first
-  const allPosts = [
-    ...blogPosts.map((p) => ({ ...p, isDynamic: false as const, title: "", excerpt: "", hasFeaturedImage: false, featuredImageUrl: null })),
-    ...dynamicPosts,
-  ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  if (activeTopic)
+    archiveSource = archiveSource.filter(
+      (story) => story.topic === activeTopic,
+    );
+  if (searchQuery) {
+    const needle = searchQuery.toLocaleLowerCase(locale);
+    archiveSource = archiveSource.filter((story) =>
+      [story.title, story.excerpt, story.eyebrow, ...story.tags]
+        .join(" ")
+        .toLocaleLowerCase(locale)
+        .includes(needle),
+    );
+  }
 
-  const pageCount = Math.max(1, Math.ceil(allPosts.length / BLOG_PAGE_SIZE));
-  const page = Math.min(requestedPage, pageCount);
-  const pagination = paginationLabels[locale] ?? paginationLabels.en;
-  const featuredPost = page === 1 ? allPosts[0] : undefined;
-  const firstPostIndex = page === 1 ? 1 : (page - 1) * BLOG_PAGE_SIZE;
-  const lastPostIndex = page === 1 ? BLOG_PAGE_SIZE : page * BLOG_PAGE_SIZE;
-  const otherPosts = allPosts.slice(firstPostIndex, lastPostIndex);
+  const pageCount = Math.max(
+    1,
+    Math.ceil(archiveSource.length / ARCHIVE_PAGE_SIZE),
+  );
+  if (requestedPage > pageCount && requestedPage > 1) notFound();
+  const currentPage = Math.min(requestedPage, pageCount);
+  const archiveDrafts = archiveSource.slice(
+    (currentPage - 1) * ARCHIVE_PAGE_SIZE,
+    currentPage * ARCHIVE_PAGE_SIZE,
+  );
+  const visibleDrafts = [
+    ...(leadDraft ? [leadDraft] : []),
+    ...editorsDraft,
+    ...secondaryDraft,
+    ...latestDraft,
+    ...deepDraft,
+    ...archiveDrafts,
+  ];
+  const readingMinutes = await getPostReadingMinutes(
+    visibleDrafts
+      .filter((story) => !story.fallbackReadingMinutes)
+      .map((story) => story.slug),
+    locale,
+  );
+
+  const lead = leadDraft ? finalize(leadDraft, readingMinutes) : undefined;
+  const editorsPicks = editorsDraft.map((story) =>
+    finalize(story, readingMinutes),
+  );
+  const secondaryStories = secondaryDraft.map((story) =>
+    finalize(story, readingMinutes),
+  );
+  const latestStories = latestDraft.map((story) =>
+    finalize(story, readingMinutes),
+  );
+  const deepReads = deepDraft.map((story) => finalize(story, readingMinutes));
+  const archiveStories = archiveDrafts.map((story) =>
+    finalize(story, readingMinutes),
+  );
+  const visibleStoriesWithDuplicates = [
+    ...(lead ? [lead] : []),
+    ...editorsPicks,
+    ...secondaryStories,
+    ...latestStories,
+    ...deepReads,
+    ...archiveStories,
+  ];
+  const visibleStories = Array.from(
+    new Map(
+      visibleStoriesWithDuplicates.map((story) => [story.slug, story]),
+    ).values(),
+  );
 
   return (
-    <div className="flex flex-col">
-      {/* Breadcrumbs */}
-      <div className="container pt-6">
-        <BreadcrumbSchema items={[{ name: "Blog", href: "/blog" }]} />
-      </div>
-
-      {/* Hero Section */}
-      <section className="relative py-12 lg:py-16 overflow-hidden border-b">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background" />
-        <div className="container relative">
-          <div className="max-w-3xl">
-            <Badge variant="secondary" className="mb-4">
-              {t("hero.badge")}
-            </Badge>
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-              {t("hero.title")}
-            </h1>
-            <p className="text-xl text-muted-foreground">
-              {t("hero.subtitle")}
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Category Filters */}
-      <section className="py-8 border-b bg-muted/30">
-        <div className="container">
-          <div className="flex flex-wrap gap-3">
-            <Badge variant="default" className="cursor-pointer">
-              {t("categories.all")}
-            </Badge>
-            <Badge variant="outline" className="cursor-pointer">
-              {t("categories.deals")}
-            </Badge>
-            <Badge variant="outline" className="cursor-pointer">
-              {t("categories.security")}
-            </Badge>
-            <Badge variant="outline" className="cursor-pointer">
-              {t("categories.tips")}
-            </Badge>
-            <Badge variant="outline" className="cursor-pointer">
-              {t("categories.news")}
-            </Badge>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Post */}
-      {featuredPost && (
-        <section className="py-12 lg:py-16">
-          <div className="container">
-            <div className="mb-6">
-              <h2 className="text-2xl font-bold">{t("featured.title")}</h2>
-            </div>
-            <Link href={`/blog/${featuredPost.slug}`}>
-              <Card className="overflow-hidden hover:shadow-lg transition-shadow border-primary/20">
-                <CardContent className="p-0">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    {/* Image */}
-                    <div
-                      className={cn(
-                        "aspect-video md:aspect-auto flex items-center justify-center relative overflow-hidden",
-                        "bg-gradient-to-br",
-                        categoryConfig[featuredPost.category]?.gradient || "from-primary/20 to-primary/5",
-                        categoryConfig[featuredPost.category]?.bgPattern
-                      )}
-                    >
-                      {featuredPost.isDynamic && featuredPost.hasFeaturedImage ? (
-                        <Image
-                          // Blob-URL rechtstreeks; /api/blog-image deed per
-                          // afbeelding een database-query en hield de compute wakker.
-                          src={featuredPost.featuredImageUrl || `/api/blog-image/${featuredPost.slug}`}
-                          alt={featuredPost.title}
-                          fill
-                          className="object-cover"
-                          sizes="(max-width: 768px) 100vw, 50vw"
-                          loading="lazy"
-                        />
-                      ) : (
-                        <>
-                          <div className="absolute inset-0 bg-grid-white/5" />
-                          {(() => {
-                            const FeaturedIcon = categoryConfig[featuredPost.category]?.icon || TrendingUp;
-                            return (
-                              <FeaturedIcon
-                                className={cn(
-                                  "h-20 w-20 relative z-10",
-                                  categoryConfig[featuredPost.category]?.iconColor || "text-primary/40"
-                                )}
-                              />
-                            );
-                          })()}
-                        </>
-                      )}
-                    </div>
-                    {/* Content */}
-                    <div className="p-6 md:p-8 flex flex-col justify-center">
-                      <div className="flex items-center gap-3 mb-4">
-                        <Badge variant="default">
-                          {t(`categories.${categoryConfig[featuredPost.category]?.label || featuredPost.category}`)}
-                        </Badge>
-                        <span className="text-sm text-muted-foreground flex items-center gap-1">
-                          <Calendar className="h-4 w-4" />
-                          {formatDateLong(featuredPost.date, locale)}
-                        </span>
-                      </div>
-                      <h3 className="text-2xl md:text-3xl font-bold mb-3">
-                        {featuredPost.isDynamic ? featuredPost.title : t(`posts.${featuredPost.slug}.title`)}
-                      </h3>
-                      <p className="text-muted-foreground mb-4">
-                        {featuredPost.isDynamic ? featuredPost.excerpt : t(`posts.${featuredPost.slug}.excerpt`)}
-                      </p>
-                      <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                        <span className="flex items-center gap-1">
-                          <Clock className="h-4 w-4" />
-                          {featuredPost.readTime}
-                        </span>
-                        <span className="flex items-center gap-1 text-primary font-medium">
-                          {t("readMore")}
-                          <ArrowRight className="h-4 w-4" />
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </Link>
-          </div>
-        </section>
-      )}
-
-      {/* Recent Posts Grid */}
-      <section className="py-12 lg:py-16 bg-muted/30">
-        <div className="container">
-          <div className="mb-8">
-            <h2 className="text-2xl font-bold">{t("recent.title")}</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {otherPosts.map((post) => {
-              const config = categoryConfig[post.category];
-              const CategoryIcon = config?.icon || Newspaper;
-
-              // Dynamic posts use DB title/excerpt; static posts use i18n
-              const postTitle = post.isDynamic
-                ? post.title
-                : t(`posts.${post.slug}.title`);
-              const postExcerpt = post.isDynamic
-                ? post.excerpt
-                : t(`posts.${post.slug}.excerpt`);
-
-              return (
-                <Link key={post.slug} href={`/blog/${post.slug}`}>
-                  <Card className="h-full hover:shadow-lg transition-all hover:border-primary/50 group">
-                    <CardContent className="p-0">
-                      {/* Image */}
-                      <div
-                        className={cn(
-                          "aspect-video flex items-center justify-center border-b relative overflow-hidden",
-                          "bg-gradient-to-br",
-                          config?.gradient || "from-muted to-muted/50",
-                          config?.bgPattern,
-                          "group-hover:scale-105 transition-transform duration-300"
-                        )}
-                      >
-                        {post.isDynamic && post.hasFeaturedImage ? (
-                          <Image
-                            src={post.featuredImageUrl || `/api/blog-image/${post.slug}`}
-                            alt={postTitle}
-                            fill
-                            className="object-cover"
-                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                            loading="lazy"
-                          />
-                        ) : (
-                          <>
-                            <div className="absolute inset-0 bg-grid-white/5" />
-                            <CategoryIcon
-                              className={cn(
-                                "h-14 w-14 relative z-10",
-                                config?.iconColor || "text-muted-foreground/40"
-                              )}
-                            />
-                          </>
-                        )}
-                      </div>
-                      {/* Content */}
-                      <div className="p-6">
-                        <div className="flex items-center gap-2 mb-3">
-                          <Badge variant="secondary" className="text-xs">
-                            {t(`categories.${categoryConfig[post.category]?.label || post.category}`)}
-                          </Badge>
-                          <span className="text-xs text-muted-foreground flex items-center gap-1">
-                            <Calendar className="h-3 w-3" />
-                            {formatDateShort(post.date, locale)}
-                          </span>
-                        </div>
-                        <h3 className="text-lg font-bold mb-2 line-clamp-2">
-                          {postTitle}
-                        </h3>
-                        <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
-                          {postExcerpt}
-                        </p>
-                        <div className="flex items-center justify-between text-sm">
-                          <span className="flex items-center gap-1 text-muted-foreground">
-                            <Clock className="h-3 w-3" />
-                            {post.readTime}
-                          </span>
-                          <span className="flex items-center gap-1 text-primary font-medium">
-                            {t("readMore")}
-                            <ArrowRight className="h-3 w-3" />
-                          </span>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {pageCount > 1 && (
-        <nav aria-label={pagination.label} className="container flex items-center justify-between gap-4 py-8">
-          {page > 1 ? (
-            <Link href={`/blog?page=${page - 1}`} className="rounded-lg border px-4 py-2 text-sm font-semibold hover:bg-muted">
-              {pagination.previous}
-            </Link>
-          ) : <span />}
-          <span className="text-sm text-muted-foreground">{pagination.page(page, pageCount)}</span>
-          {page < pageCount ? (
-            <Link href={`/blog?page=${page + 1}`} className="rounded-lg border px-4 py-2 text-sm font-semibold hover:bg-muted">
-              {pagination.next}
-            </Link>
-          ) : <span />}
-        </nav>
-      )}
-
-      {/* CTA Section */}
-      <section className="py-12 lg:py-16 border-t">
-        <div className="container">
-          <div className="max-w-3xl mx-auto text-center space-y-4">
-            <h2 className="text-3xl font-bold">{t("cta.title")}</h2>
-            <p className="text-lg text-muted-foreground">{t("cta.subtitle")}</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Related Content */}
-      <RelatedContent links={relatedLinks} locale={locale} className="mt-12" />
-
-      {/* Related Pages */}
-      <section className="py-12 lg:py-16 bg-muted/30">
-        <div className="container">
-          <div className="max-w-6xl mx-auto">
-            <RelatedPages
-              title="Explore More"
-              pages={[
-                { title: "Best VPNs 2026", description: "Our top-rated VPN services", href: "/best/best-vpn", icon: "trophy" },
-                { title: "What Is a VPN?", description: "How a VPN works, in plain language", href: "/guides/what-is-vpn", icon: "shield" },
-                { title: "Is VPN Legal?", description: "VPN legality around the world", href: "/blog/is-vpn-legal", icon: "shield" },
-                { title: "VPN vs Proxy", description: "Differences and when to use each", href: "/blog/vpn-vs-proxy", icon: "zap" }
-              ]}
-            />
-          </div>
-        </div>
-      </section>
-    </div>
+    <>
+      <JournalJsonLd
+        copy={copy}
+        filtered={filtered}
+        locale={locale}
+        page={currentPage}
+        stories={visibleStories}
+      />
+      <BlogOverviewEditorial
+        activeTopic={activeTopic}
+        archiveStories={archiveStories}
+        copy={copy}
+        currentPage={currentPage}
+        deepReads={deepReads}
+        editorsPicks={editorsPicks}
+        labImage={{
+          src: "/images/blog/dns-route-check-tool-card-2026-08-17.webp",
+          alt: labMediaCopy.alt,
+          caption: labMediaCopy.caption,
+        }}
+        latestStories={latestStories}
+        lead={lead}
+        locale={locale}
+        pageCount={pageCount}
+        query={searchQuery}
+        secondaryStories={secondaryStories}
+        totalResults={archiveSource.length}
+      />
+    </>
   );
 }

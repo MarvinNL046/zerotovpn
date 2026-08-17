@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { sendWelcomeEmail } from "@/lib/resend";
+import { NEWSLETTER_CONSENT_VERSION } from "@/lib/newsletter-consent";
 
 // Nieuwsbrief-inschrijvingen gaan sinds de Neon-uitfasering naar de
 // gedeelde wetry-sites-leads Convex-backend (zelfde plek als de andere
@@ -23,7 +24,7 @@ function isRateLimited(key: string): boolean {
   const now = Date.now();
   const requests = rateLimitMap.get(key) || [];
   const recentRequests = requests.filter(
-    (timestamp) => now - timestamp < RATE_LIMIT_WINDOW_MS
+    (timestamp) => now - timestamp < RATE_LIMIT_WINDOW_MS,
   );
   rateLimitMap.set(key, recentRequests);
   if (recentRequests.length >= MAX_REQUESTS_PER_WINDOW) {
@@ -44,20 +45,33 @@ export async function POST(request: NextRequest) {
     if (isRateLimited(rateLimitKey)) {
       return NextResponse.json(
         { error: "Too many requests. Please try again later." },
-        { status: 429 }
+        { status: 429 },
       );
     }
 
     // Parse request body
     const body = await request.json();
-    const { email, language = "en", source = "website" } = body;
+    const {
+      email,
+      language = "en",
+      source = "website",
+      marketingConsent,
+      consentVersion,
+    } = body;
+
+    if (
+      marketingConsent !== true ||
+      consentVersion !== NEWSLETTER_CONSENT_VERSION
+    ) {
+      return NextResponse.json(
+        { error: "Newsletter consent is required" },
+        { status: 400 },
+      );
+    }
 
     // Validate email
     if (!email || typeof email !== "string") {
-      return NextResponse.json(
-        { error: "Email is required" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "Email is required" }, { status: 400 });
     }
 
     const normalizedEmail = email.toLowerCase().trim();
@@ -65,13 +79,25 @@ export async function POST(request: NextRequest) {
     if (!EMAIL_REGEX.test(normalizedEmail)) {
       return NextResponse.json(
         { error: "Invalid email address" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     // Validate language
-    const validLanguages = ["en", "nl", "de", "es", "fr", "zh", "ja", "ko", "th"];
-    const normalizedLanguage = validLanguages.includes(language) ? language : "en";
+    const validLanguages = [
+      "en",
+      "nl",
+      "de",
+      "es",
+      "fr",
+      "zh",
+      "ja",
+      "ko",
+      "th",
+    ];
+    const normalizedLanguage = validLanguages.includes(language)
+      ? language
+      : "en";
 
     // Doorsturen naar de gedeelde subscribers-backend. "already_subscribed"
     // geeft daar ook ok:true terug, dus e-mail-enumeratie blijft onmogelijk.
@@ -83,6 +109,9 @@ export async function POST(request: NextRequest) {
         email: normalizedEmail,
         locale: normalizedLanguage,
         source: typeof source === "string" ? source : "website",
+        marketingConsent: true,
+        consentVersion: NEWSLETTER_CONSENT_VERSION,
+        consentAt: new Date().toISOString(),
       }),
     });
 
@@ -90,7 +119,7 @@ export async function POST(request: NextRequest) {
       console.error("Subscribe-backend gaf status", res.status);
       return NextResponse.json(
         { error: "An error occurred. Please try again later." },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
@@ -112,22 +141,19 @@ export async function POST(request: NextRequest) {
         success: true,
         message: "Successfully subscribed!",
       },
-      { status: isNew ? 201 : 200 }
+      { status: isNew ? 201 : 200 },
     );
   } catch (error) {
     console.error("Newsletter subscription error:", error);
 
     return NextResponse.json(
       { error: "An error occurred. Please try again later." },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
 
 // Handle other methods
 export async function GET() {
-  return NextResponse.json(
-    { error: "Method not allowed" },
-    { status: 405 }
-  );
+  return NextResponse.json({ error: "Method not allowed" }, { status: 405 });
 }

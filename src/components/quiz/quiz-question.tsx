@@ -1,85 +1,143 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Label } from "@/components/ui/label";
-import { ArrowLeft, ArrowRight } from "lucide-react";
-import { useTranslations } from "next-intl";
+import type { RefObject } from "react";
+import type { LucideIcon } from "lucide-react";
+import {
+  BriefcaseBusiness,
+  Check,
+  CircleHelp,
+  Code2,
+  Gamepad2,
+  Gift,
+  Home,
+  Laptop,
+  LockKeyhole,
+  Monitor,
+  Plane,
+  Play,
+  Router,
+  ShieldCheck,
+  Smartphone,
+  Sparkles,
+  TabletSmartphone,
+  Terminal,
+  Tv,
+  UserRound,
+  Wifi,
+} from "lucide-react";
+import type { FinderQuestion, FinderQuestionId } from "@/data/vpn-finder";
+import styles from "./vpn-finder.module.css";
+
+const optionIcons: Record<
+  FinderQuestion["options"][number]["icon"],
+  LucideIcon
+> = {
+  shield: ShieldCheck,
+  play: Play,
+  gamepad: Gamepad2,
+  plane: Plane,
+  briefcase: BriefcaseBusiness,
+  monitor: Monitor,
+  smartphone: Smartphone,
+  tablet: TabletSmartphone,
+  terminal: Terminal,
+  tv: Tv,
+  router: Router,
+  devices: Laptop,
+  gift: Gift,
+  code: Code2,
+  user: UserRound,
+  sparkles: Sparkles,
+  home: Home,
+  wifi: Wifi,
+  lock: LockKeyhole,
+  building: BriefcaseBusiness,
+  help: CircleHelp,
+};
 
 type QuizQuestionProps = {
-  question: {
-    id: string;
-    title: string;
-    options: { value: string; label: string }[];
-  };
-  selectedValue?: string;
-  onAnswer: (questionId: string, value: string) => void;
-  onNext: () => void;
-  onBack: () => void;
-  isFirstQuestion: boolean;
-  isLastQuestion: boolean;
+  question: FinderQuestion;
+  selectedValue: string | string[] | undefined;
+  onAnswer: (questionId: FinderQuestionId, value: string) => void;
+  headingRef: RefObject<HTMLHeadingElement | null>;
+  validationMessage?: string;
 };
 
 export function QuizQuestion({
   question,
   selectedValue,
   onAnswer,
-  onNext,
-  onBack,
-  isFirstQuestion,
-  isLastQuestion,
+  headingRef,
+  validationMessage,
 }: QuizQuestionProps) {
-  const t = useTranslations("quiz");
-
-  const handleOptionChange = (value: string) => {
-    onAnswer(question.id, value);
-  };
-
-  const canProceed = !!selectedValue;
+  const selectedValues = Array.isArray(selectedValue)
+    ? selectedValue
+    : selectedValue
+      ? [selectedValue]
+      : [];
+  const headingId = `finder-question-${question.id}`;
+  const descriptionId = `${headingId}-description`;
 
   return (
-    <div className="space-y-8">
-      <div className="space-y-4">
-        <h2 className="text-2xl md:text-3xl font-bold text-center">
+    <div className={styles.questionPanel}>
+      <div className={styles.questionHeading}>
+        <p>{question.eyebrow}</p>
+        <h2 ref={headingRef} id={headingId} tabIndex={-1}>
           {question.title}
         </h2>
+        <p id={descriptionId}>{question.description}</p>
       </div>
 
-      <RadioGroup value={selectedValue} onValueChange={handleOptionChange}>
-        <div className="grid gap-3">
-          {question.options.map((option) => (
-            <div key={option.value}>
-              <RadioGroupItem
-                value={option.value}
-                id={`${question.id}-${option.value}`}
-                className="peer sr-only"
-              />
-              <Label
-                htmlFor={`${question.id}-${option.value}`}
-                className="flex items-center justify-between rounded-lg border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary peer-data-[state=checked]:bg-primary/5 cursor-pointer transition-all"
+      <fieldset
+        className={styles.questionFieldset}
+        aria-labelledby={headingId}
+        aria-describedby={descriptionId}
+      >
+        <legend className="sr-only">{question.title}</legend>
+        <div className={styles.choiceGrid}>
+          {question.options.map((option) => {
+            const Icon = optionIcons[option.icon];
+            const checked = selectedValues.includes(option.value);
+            const inputId = `${question.id}-${option.value}`;
+
+            return (
+              <label
+                key={option.value}
+                className={styles.choiceWrap}
+                htmlFor={inputId}
               >
-                <span className="text-base font-medium">{option.label}</span>
-              </Label>
-            </div>
-          ))}
+                <input
+                  id={inputId}
+                  name={question.type === "single" ? question.id : inputId}
+                  type={question.type === "single" ? "radio" : "checkbox"}
+                  value={option.value}
+                  checked={checked}
+                  onChange={() => onAnswer(question.id, option.value)}
+                  className={styles.choiceControl}
+                />
+                <span className={styles.choiceTile}>
+                  <span className={styles.choiceIcon} aria-hidden="true">
+                    <Icon />
+                  </span>
+                  <span className={styles.choiceText}>
+                    <strong>{option.label}</strong>
+                    <span>{option.description}</span>
+                  </span>
+                  <span className={styles.choiceCheck} aria-hidden="true">
+                    <Check />
+                  </span>
+                </span>
+              </label>
+            );
+          })}
         </div>
-      </RadioGroup>
+      </fieldset>
 
-      <div className="flex items-center justify-between gap-4 pt-4">
-        <Button
-          variant="outline"
-          onClick={onBack}
-          disabled={isFirstQuestion}
-          className="w-24"
-        >
-          <ArrowLeft className="mr-2 h-4 w-4" />
-          {t("navigation.back")}
-        </Button>
-        <Button onClick={onNext} disabled={!canProceed} className="w-32">
-          {isLastQuestion ? t("navigation.showResults") : t("navigation.next")}
-          {!isLastQuestion && <ArrowRight className="ml-2 h-4 w-4" />}
-        </Button>
-      </div>
+      {validationMessage ? (
+        <p className={styles.validation} role="alert">
+          {validationMessage}
+        </p>
+      ) : null}
     </div>
   );
 }

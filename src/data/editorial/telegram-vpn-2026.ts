@@ -77,7 +77,7 @@ export const telegramVpnEditorialContent = `
 
 <p>Network rules and enforcement can change. Check the current laws, regulator guidance, employer or school policy and service terms that apply to you. This page is not legal advice and does not authorise a particular use. Do not use a VPN or proxy to facilitate criminal activity, expose someone else's data or defeat an organisation's security controls.</p>
 
-<p>For the country-specific evidence boundary, see our <a href="/blog/best-vpn-for-iran-2026-bypass-internet-censorship">Iran VPN guide</a> and <a href="/countries/iran">Iran evidence checklist</a>. Compare the same questions in <a href="/countries/russia">Russia</a> and <a href="/countries/china">China</a>, and review our <a href="/guides/vpn-protocols-explained">VPN protocol explainer</a> and <a href="/guides/vpn-obfuscation-explained">VPN obfuscation guide</a> before changing settings.</p>
+<p>For the country-specific evidence boundary, see our <a href="/blog/best-vpn-for-iran-2026-bypass-internet-censorship">Iran VPN guide</a> and <a href="/countries/iran">Iran evidence checklist</a>. Compare its dated assumptions with our <a href="/methodology">editorial methodology</a>, and review our <a href="/guides/vpn-protocols-explained">VPN protocol explainer</a> and <a href="/guides/vpn-obfuscation-explained">VPN obfuscation guide</a> before changing settings.</p>
 
 <h2>FAQ from the current search results</h2>
 
@@ -117,12 +117,44 @@ export const telegramVpnEditorialContent = `
 `;
 
 export const telegramVpnEditorialFaq = [
-  { question: "Which VPN is best for Telegram?", answer: "There is no permanently verifiable winner for every network. Shortlist providers with documented anti-censorship or stealth options, then test the exact Telegram features, device and network you need." },
-  { question: "Can I use a VPN to access Telegram?", answer: "Sometimes, depending on the local network and current filtering. A VPN can route more than Telegram traffic, but it can still be blocked or unstable. Record the result rather than treating a provider feature list as proof." },
-  { question: "How do I unblock Telegram?", answer: "First check whether the issue is an account block, an app error or network filtering. Telegram documents MTProto and SOCKS5 proxy settings; a VPN is another option when you need whole-device routing. Use trusted sources and test failure behaviour." },
-  { question: "Will Telegram ban me if I use a VPN?", answer: "Telegram's public documentation does not establish a universal ban for VPN use. Account, local-law and service terms still matter, so check the current rules and avoid automated abuse or spam." },
-  { question: "Is there a free VPN for Telegram?", answer: "Some providers offer free tiers, but they may lack the protocol, locations, limits or support needed on a restricted network. Compare privacy terms and official distribution before installing anything." },
-  { question: "Which free VPN is best for Telegram?", answer: "There is no universal free-tier winner for every network. Compare the provider's current data limit, protocol options, app distribution, privacy policy and whether the tier supports the Telegram features you need. A free plan is not evidence of access on a blocked network." },
-  { question: "Should I use a VPN with Telegram?", answer: "Use a VPN when you need whole-device routing or a trusted tunnel on a network that blocks or observes Telegram traffic; use Telegram's proxy settings when you only need app-level routing and trust the proxy operator. Choose based on your threat model, local rules and the features you need, and test the failure boundary." },
-  { question: "Where can I find safe VPN links for Telegram?", answer: "Use the provider's official website, official app store listing or a documented support page. Avoid links copied from random Telegram channels, shortened URLs with no provenance or APKs whose publisher you cannot verify." },
+  {
+    question: "Which VPN is best for Telegram?",
+    answer:
+      "There is no permanently verifiable winner for every network. Shortlist providers with documented anti-censorship or stealth options, then test the exact Telegram features, device and network you need.",
+  },
+  {
+    question: "Can I use a VPN to access Telegram?",
+    answer:
+      "Sometimes, depending on the local network and current filtering. A VPN can route more than Telegram traffic, but it can still be blocked or unstable. Record the result rather than treating a provider feature list as proof.",
+  },
+  {
+    question: "How do I unblock Telegram?",
+    answer:
+      "First check whether the issue is an account block, an app error or network filtering. Telegram documents MTProto and SOCKS5 proxy settings; a VPN is another option when you need whole-device routing. Use trusted sources and test failure behaviour.",
+  },
+  {
+    question: "Will Telegram ban me if I use a VPN?",
+    answer:
+      "Telegram's public documentation does not establish a universal ban for VPN use. Account, local-law and service terms still matter, so check the current rules and avoid automated abuse or spam.",
+  },
+  {
+    question: "Is there a free VPN for Telegram?",
+    answer:
+      "Some providers offer free tiers, but they may lack the protocol, locations, limits or support needed on a restricted network. Compare privacy terms and official distribution before installing anything.",
+  },
+  {
+    question: "Which free VPN is best for Telegram?",
+    answer:
+      "There is no universal free-tier winner for every network. Compare the provider's current data limit, protocol options, app distribution, privacy policy and whether the tier supports the Telegram features you need. A free plan is not evidence of access on a blocked network.",
+  },
+  {
+    question: "Should I use a VPN with Telegram?",
+    answer:
+      "Use a VPN when you need whole-device routing or a trusted tunnel on a network that blocks or observes Telegram traffic; use Telegram's proxy settings when you only need app-level routing and trust the proxy operator. Choose based on your threat model, local rules and the features you need, and test the failure boundary.",
+  },
+  {
+    question: "Where can I find safe VPN links for Telegram?",
+    answer:
+      "Use the provider's official website, official app store listing or a documented support page. Avoid links copied from random Telegram channels, shortened URLs with no provenance or APKs whose publisher you cannot verify.",
+  },
 ];

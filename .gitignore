@@ -50,6 +50,7 @@ auth.json
 
 # lokaal opgehaalde productie-env (nooit committen)
 .env.local
+public/affiliate/nordvpn/review/*.webp
 .cache/
 .env.prod
 
@@ -60,3 +61,7 @@ auth.json
 
 # Large affiliate source archives are local reference material, not deployable app assets
 /assets/affiliate-source/
+
+# Local visual-QA screenshots and temporary browser captures
+/artifacts/
+/tmp/

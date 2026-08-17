@@ -10,7 +10,7 @@ export function NewsletterFooter() {
     <div className="space-y-3">
       <div>
         <h4 className="font-semibold mb-2">{t("footerTitle")}</h4>
-        <p className="text-xs text-muted-foreground mb-3">
+        <p className="mb-3 text-xs text-slate-300">
           {t("footerSubtitle")}
         </p>
       </div>

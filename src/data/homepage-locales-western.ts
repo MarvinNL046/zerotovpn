@@ -1,0 +1,621 @@
+import type { HomepageEditorialCopy } from "./homepage";
+
+const german: HomepageEditorialCopy = {
+  providerSuppliedLabel: "Vom Anbieter bereitgestelltes Bild",
+  protectionBar: {
+    checking: "Öffentliche IP-Adresse wird geprüft …",
+    visibleIp: "Websites sehen derzeit diese öffentliche IP-Adresse",
+    localPreview: "Lokale Vorschau",
+    estimatedLocation: "Geschätzter Standort",
+    network: "Netzwerk",
+    unavailable: "Nicht verfügbar",
+    disclaimer:
+      "Dieser Check kann nicht feststellen, ob ein VPN aktiv ist. Mit einem VPN sehen Websites normalerweise die IP-Adresse des VPN-Servers.",
+    cta: "NordVPN ansehen",
+    partner: "Partnerlink",
+    review: "Unseren NordVPN-Test lesen",
+  },
+  announcement: {
+    label: "Neue Studie",
+    text: "Der VPN Transparency & Performance Index 2026 ist jetzt verfügbar.",
+    cta: "Bericht ansehen",
+  },
+  lead: {
+    eyebrow: "Unabhängiger Praxistest",
+    title: "Wir haben die größten VPNs getestet. Das hat sich wirklich bewährt.",
+    description:
+      "Ein visueller, evidenzbasierter Weg zum passenden VPN – mit klaren Abwägungen, Quellenständen und einer transparenten Testmethode.",
+    cta: "Unsere besten VPNs ansehen",
+    alt: "Unabhängiger VPN-Testplatz mit Laptop, Router, Smartphone und Messnotizen",
+  },
+  supportingStories: [
+    {
+      eyebrow: "Ratgeber",
+      title: "Die besten VPNs fürs Streaming – ohne Rätselraten",
+      description: "Entscheidend sind Kompatibilität, Geschwindigkeitsverlust und Geräteunterstützung.",
+    },
+    {
+      eyebrow: "Anbietertest",
+      title: "NordVPN: unser aktueller evidenzbasierter Test",
+      description: "Stärken, Einschränkungen und der derzeitige Produktstand.",
+    },
+    {
+      eyebrow: "Direktvergleich",
+      title: "Mullvad vs. Proton VPN: Datenschutzoptionen im Vergleich",
+      description: "Ein praxisnaher Vergleich ohne pauschalen Sieger für alle.",
+    },
+  ],
+  trendingTitle: "Aktuell gefragt",
+  trending: [
+    { eyebrow: "Land", title: "Kann ein VPN dich im Iran schützen?" },
+    { eyebrow: "Datenschutz", title: "Was ein VPN verbirgt – und was nicht" },
+    { eyebrow: "Ratgeber", title: "Sind kostenlose VPNs die Kompromisse wert?" },
+    { eyebrow: "Geräte", title: "Die besten VPN-Lösungen für Android-Smartphones" },
+    { eyebrow: "Erklärung", title: "Warum sich die VPN-Geschwindigkeit beim Testen verändert" },
+  ],
+  freshness: {
+    updated: "Studie überprüft",
+    methodology: "Bewertungsmodell mit 9 Faktoren",
+    disclosure: "Affiliate-Links können uns eine Provision einbringen; Provisionen fließen nicht in die Gewichtung ein.",
+  },
+  useCasesTitle: "Wofür brauchst du ein VPN?",
+  useCases: [
+    { label: "Streaming", description: "Kompatibilität, Qualität und Geräteunterstützung" },
+    { label: "Datenschutz", description: "Protokollierung, Eigentümerstruktur und Schutz vor Leaks" },
+    { label: "Reisen", description: "Länder, Netzwerke und Einrichtung vor der Abreise" },
+    { label: "Geräte", description: "Anleitungen für Windows, Mobilgeräte, TV und Router" },
+  ],
+  picks: {
+    eyebrow: "Entscheidungshilfe",
+    title: "Unsere VPN-Empfehlungen",
+    subtitle: "Drei sinnvolle Ausgangspunkte – jeweils mit einer klaren Stärke und Einschränkung.",
+    disclosure: "Kommerzieller Bereich · Affiliate-Links sind gekennzeichnet und beeinflussen unsere Gewichtung nie.",
+    score: "Redaktionelle Bewertung",
+    bestFor: "Am besten für",
+    strength: "Das spricht dafür",
+    limitation: "Das solltest du beachten",
+    review: "Test lesen",
+    visit: "Aktuellen Tarif prüfen",
+    methodology: "So entstehen die Bewertungen",
+    providerDetails: {
+      nordvpn: {
+        bestFor: "Ein ausgewogenes Funktionsangebot",
+        strength: "Breite App- und Protokollunterstützung in einem ausgereiften Produktökosystem.",
+        limitation: "Der langfristige Gegenwert hängt vom aktuellen Tarif und den Verlängerungsbedingungen ab.",
+      },
+      surfshark: {
+        bestFor: "Haushalte mit vielen Geräten",
+        strength: "Unbegrenzte gleichzeitige Verbindungen und ein breites Funktionsangebot für den Alltag.",
+        limitation: "Die Leistung kann je nach Route, Server und Gerät schwanken.",
+      },
+      expressvpn: {
+        bestFor: "Einfache Nutzung auf mehreren Plattformen",
+        strength: "Übersichtliche Apps und eine konsistente Einrichtung.",
+        limitation: "Der Preis liegt meist über dem günstigerer Alternativen.",
+      },
+    },
+  },
+  comparison: {
+    eyebrow: "Evidenz vergleichen",
+    title: "Die engere Auswahl auf einen Blick",
+    subtitle: "Eine kompakte Übersicht unseres aktuellen Anbieterkatalogs. In den vollständigen Tests findest du Kontext und Quellen.",
+    caption: "Vergleich der vorgestellten VPN-Anbieter",
+    headers: {
+      provider: "VPN",
+      rating: "Bewertung",
+      privacy: "Datenschutz",
+      speed: "Geschwindigkeit",
+      streaming: "Streaming",
+      fit: "Geeignet für",
+      action: "Nächster Schritt",
+    },
+    fit: {
+      nordvpn: "Ausgewogenes Funktionsangebot",
+      surfshark: "Viele Geräte im Haushalt",
+      expressvpn: "Einfache plattformübergreifende Apps",
+      cyberghost: "Lange Geld-zurück-Frist",
+      protonvpn: "Datenschutzorientierte Nutzer",
+    },
+  },
+  methodology: {
+    eyebrow: "So testen wir",
+    title: "Empfehlungen brauchen eine überprüfbare Grundlage.",
+    description:
+      "Unser veröffentlichtes Bewertungsmodell trennt Leistung, Datenschutzsignale und Produktfunktionen. Kommerzielle Konditionen erhalten niemals Gewicht in der Rangliste.",
+    featuredProviders: "Anbieter im vorgestellten Vergleich",
+    scoreFactors: "festgelegte Bewertungsfaktoren",
+    commissionWeight: "Provisionsgewichtung",
+    chartTitle: "Veröffentlichte Bewertungsgewichte",
+    chartNote: "Die übrigen Faktoren decken Latenz, Eigentümerstruktur, Rechtsraum, Audits, Torrent-Richtlinien und die Zuverlässigkeit des Kill Switch ab.",
+    published: "100 % veröffentlicht",
+    weights: {
+      speed: "Geschwindigkeit",
+      logging: "Protokollierung",
+      streaming: "Streaming",
+      latency: "Latenz",
+      audit: "Audit",
+    },
+    cta: "Methodik öffnen",
+    howWeTest: "So testen wir",
+  },
+  latest: {
+    eyebrow: "Aus der Redaktion",
+    title: "Aktuelle Ratgeber und Untersuchungen",
+    all: "Alle Artikel ansehen",
+    items: [
+      {
+        eyebrow: "Fehlerbehebung",
+        title: "Warum trennt sich mein VPN ständig?",
+        description: "Ein Diagnoseweg vom Netzwerk über das Protokoll bis zum Kill Switch.",
+      },
+      {
+        eyebrow: "Eingeschränkte Netzwerke",
+        title: "Die besten VPN-Optionen für den Iran 2026",
+        description: "Einrichtungsgrenzen, Evidenz und Sicherheitshinweise.",
+      },
+      {
+        eyebrow: "Datenschutz",
+        title: "Kann dein Internetanbieter sehen, dass du ein VPN nutzt?",
+        description: "Was auf beiden Seiten des VPN-Tunnels sichtbar bleibt.",
+      },
+      {
+        eyebrow: "Anbietercheck",
+        title: "Ist Brave VPN kostenlos? Was die Produktseite tatsächlich sagt",
+        description: "Preise, Browserversprechen und die praktische Alternative.",
+      },
+    ],
+  },
+  finder: {
+    eyebrow: "VPN Finder",
+    title: "Finde in rund 60 Sekunden eine passendere Option.",
+    description: "Beantworte einige praktische Fragen. Wir gleichen deine Prioritäten mit denselben Anbieterdaten ab, die auch in unseren Vergleichen verwendet werden.",
+    tags: ["Datenschutz", "Streaming", "Reisen", "Budget", "Geräte"],
+    cta: "VPN Finder starten",
+    note: "Zuerst ein hilfreiches Ergebnis. Deine E-Mail-Adresse ist danach optional.",
+  },
+  tools: {
+    eyebrow: "Kostenlose Tools",
+    title: "Prüfe deine Verbindung, bevor du etwas kaufst.",
+    items: ["Wie lautet meine IP?", "DNS-Leak-Test", "Geschwindigkeitstest", "VPN Index"],
+  },
+  newsletter: {
+    eyebrow: "Auf dem Laufenden bleiben",
+    title: "Neue Testergebnisse statt täglichem Rauschen.",
+    description: "Erhalte relevante VPN-Updates, verständliche Datenschutzerklärungen und neue Studien. Du kannst dich jederzeit abmelden.",
+  },
+  faqTitle: "VPN-Fragen, sorgfältig beantwortet",
+  faqs: [
+    {
+      question: "Wovor schützt ein VPN tatsächlich?",
+      answer: "Ein VPN verschlüsselt den Datenverkehr zwischen deinem Gerät und dem VPN-Server und ersetzt die IP-Adresse, die Websites normalerweise sehen. Es macht dich nicht anonym, entfernt keine Schadsoftware und ersetzt weder HTTPS noch eine gute Kontosicherheit.",
+    },
+    {
+      question: "Wie bewertet ZeroToVPN die Anbieter?",
+      answer: "Das veröffentlichte Modell verwendet feste Gewichte für Geschwindigkeit, Latenz, Protokollierung, Eigentümerstruktur, Rechtsraumrisiko, Auditstatus, Streaming, Torrent-Richtlinien und die Zuverlässigkeit des Kill Switch. Kommerzielle Provisionen sind von der Formel ausgeschlossen.",
+    },
+    {
+      question: "Sind kostenlose VPNs immer unsicher?",
+      answer: "Nein, aber die Kompromisse unterscheiden sich. Prüfe Geschäftsmodell, Datenlimits, Protokollierungsrichtlinie, Audits und App-Berechtigungen. Ein begrenzter Gratis-Tarif eines seriösen Anbieters kann nützlich sein; ein unbekannter unbegrenzter Dienst verdient besondere Vorsicht.",
+    },
+    {
+      question: "Verändern Affiliate-Links die Empfehlungen?",
+      answer: "Nein. Affiliate-Links können die Website finanzieren, Provisionen sind jedoch kein Bestandteil des Bewertungsmodells. Kommerzielle Links sind gekennzeichnet, tragen Sponsored-Attribute und stehen neben der Methodik und dem vollständigen Test.",
+    },
+  ],
+};
+
+const spanish: HomepageEditorialCopy = {
+  providerSuppliedLabel: "Imagen proporcionada por el proveedor",
+  protectionBar: {
+    checking: "Comprobando tu dirección IP pública…",
+    visibleIp: "Los sitios web ven actualmente esta dirección IP pública",
+    localPreview: "Vista previa local",
+    estimatedLocation: "Ubicación estimada",
+    network: "Red",
+    unavailable: "No disponible",
+    disclaimer:
+      "Esta comprobación no puede determinar si hay una VPN activa. Con una VPN, los sitios web normalmente ven la IP del servidor VPN.",
+    cta: "Ver NordVPN",
+    partner: "Enlace de socio",
+    review: "Leer nuestro análisis de NordVPN",
+  },
+  announcement: {
+    label: "Nueva investigación",
+    text: "Ya está disponible el Índice de transparencia y rendimiento de VPN 2026.",
+    cta: "Ver el informe",
+  },
+  lead: {
+    eyebrow: "Prueba independiente en condiciones reales",
+    title: "Probamos las VPN más conocidas. Esto es lo que realmente dio la talla.",
+    description: "Una guía visual basada en pruebas para elegir la VPN adecuada, con sus contrapartidas, la fecha de las fuentes y el método de análisis siempre a la vista.",
+    cta: "Ver nuestras mejores VPN",
+    alt: "Mesa de pruebas de VPN independiente con portátil, router, teléfono y notas de medición",
+  },
+  supportingStories: [
+    {
+      eyebrow: "Guía",
+      title: "Las mejores VPN para streaming, sin tener que adivinar",
+      description: "Empieza por la compatibilidad, la pérdida de velocidad y los dispositivos admitidos.",
+    },
+    {
+      eyebrow: "Análisis de proveedor",
+      title: "NordVPN: nuestro análisis más reciente basado en pruebas",
+      description: "Ventajas, limitaciones y estado actual del producto.",
+    },
+    {
+      eyebrow: "Cara a cara",
+      title: "Mullvad frente a Proton VPN: comparamos dos opciones centradas en la privacidad",
+      description: "Una comparación práctica sin declarar un ganador universal.",
+    },
+  ],
+  trendingTitle: "Tendencias",
+  trending: [
+    { eyebrow: "País", title: "¿Puede protegerte una VPN en Irán?" },
+    { eyebrow: "Privacidad", title: "Qué oculta una VPN y qué no" },
+    { eyebrow: "Guía", title: "¿Compensan las limitaciones de las VPN gratuitas?" },
+    { eyebrow: "Dispositivos", title: "Las mejores opciones de VPN para teléfonos Android" },
+    { eyebrow: "Explicación", title: "Por qué cambia la velocidad de una VPN al medirla" },
+  ],
+  freshness: {
+    updated: "Investigación revisada",
+    methodology: "Modelo de puntuación de 9 factores",
+    disclosure: "Los enlaces de afiliación pueden generarnos una comisión; las comisiones no influyen en la ponderación del ranking.",
+  },
+  useCasesTitle: "¿Para qué necesitas una VPN?",
+  useCases: [
+    { label: "Streaming", description: "Compatibilidad, calidad y dispositivos admitidos" },
+    { label: "Privacidad", description: "Registros, propiedad y protección contra fugas" },
+    { label: "Viajes", description: "Países, redes y preparación antes de salir" },
+    { label: "Dispositivos", description: "Guías para Windows, móvil, TV y router" },
+  ],
+  picks: {
+    eyebrow: "Selección para decidir",
+    title: "Nuestras VPN recomendadas",
+    subtitle: "Tres buenos puntos de partida, cada uno con una ventaja y una limitación explícitas.",
+    disclosure: "Sección comercial · los enlaces de afiliación están identificados y nunca afectan a la ponderación de nuestras puntuaciones.",
+    score: "Puntuación editorial",
+    bestFor: "Mejor para",
+    strength: "Por qué destaca",
+    limitation: "Ten en cuenta",
+    review: "Leer análisis",
+    visit: "Consultar el plan actual",
+    methodology: "Cómo funcionan estas puntuaciones",
+    providerDetails: {
+      nordvpn: {
+        bestFor: "Un conjunto de funciones equilibrado",
+        strength: "Amplia compatibilidad con aplicaciones y protocolos dentro de un ecosistema de productos consolidado.",
+        limitation: "El valor a largo plazo depende del plan vigente y de sus condiciones de renovación.",
+      },
+      surfshark: {
+        bestFor: "Hogares con muchos dispositivos",
+        strength: "Conexiones simultáneas ilimitadas y un amplio conjunto de funciones para el día a día.",
+        limitation: "El rendimiento puede variar según la ruta, el servidor y el dispositivo.",
+      },
+      expressvpn: {
+        bestFor: "Uso sencillo en varias plataformas",
+        strength: "Aplicaciones claras y una experiencia de configuración coherente.",
+        limitation: "Su precio suele ser superior al de alternativas más económicas.",
+      },
+    },
+  },
+  comparison: {
+    eyebrow: "Compara las pruebas",
+    title: "La selección de un vistazo",
+    subtitle: "Una vista compacta del catálogo actual de proveedores. Abre el análisis completo para consultar el contexto y las fuentes.",
+    caption: "Comparación de proveedores de VPN destacados",
+    headers: {
+      provider: "VPN",
+      rating: "Puntuación",
+      privacy: "Privacidad",
+      speed: "Velocidad",
+      streaming: "Streaming",
+      fit: "Más adecuada para",
+      action: "Siguiente paso",
+    },
+    fit: {
+      nordvpn: "Funciones equilibradas",
+      surfshark: "Muchos dispositivos en casa",
+      expressvpn: "Aplicaciones sencillas multiplataforma",
+      cyberghost: "Periodo de reembolso amplio",
+      protonvpn: "Usuarios centrados en la privacidad",
+    },
+  },
+  methodology: {
+    eyebrow: "Cómo probamos",
+    title: "Toda recomendación necesita un rastro verificable.",
+    description: "Nuestro modelo de puntuación publicado separa el rendimiento, las señales de privacidad y las funciones del producto. Las condiciones comerciales nunca reciben peso en el ranking.",
+    featuredProviders: "proveedores en la comparación destacada",
+    scoreFactors: "factores de puntuación fijos",
+    commissionWeight: "peso de las comisiones",
+    chartTitle: "Ponderaciones de puntuación publicadas",
+    chartNote: "Los factores restantes cubren latencia, propiedad, jurisdicción, auditorías, política de torrents y fiabilidad del interruptor de corte.",
+    published: "100 % publicado",
+    weights: {
+      speed: "Velocidad",
+      logging: "Registros",
+      streaming: "Streaming",
+      latency: "Latencia",
+      audit: "Auditoría",
+    },
+    cta: "Abrir la metodología",
+    howWeTest: "Ver cómo probamos",
+  },
+  latest: {
+    eyebrow: "Desde la mesa de investigación",
+    title: "Últimas guías e investigaciones",
+    all: "Ver todos los artículos",
+    items: [
+      {
+        eyebrow: "Solución de problemas",
+        title: "¿Por qué se desconecta mi VPN continuamente?",
+        description: "Un proceso de diagnóstico que va de la red al protocolo y al interruptor de corte.",
+      },
+      {
+        eyebrow: "Redes restringidas",
+        title: "Mejores opciones de VPN para Irán en 2026",
+        description: "Límites de configuración, pruebas y consideraciones de seguridad.",
+      },
+      {
+        eyebrow: "Privacidad",
+        title: "¿Puede tu proveedor de internet ver que usas una VPN?",
+        description: "Lo que sigue siendo visible a cada lado del túnel.",
+      },
+      {
+        eyebrow: "Comprobación de proveedor",
+        title: "¿Brave VPN es gratis? Lo que realmente dice su página de producto",
+        description: "Precios, afirmaciones del navegador y la alternativa práctica.",
+      },
+    ],
+  },
+  finder: {
+    eyebrow: "VPN Finder",
+    title: "Encuentra una opción más adecuada en unos 60 segundos.",
+    description: "Responde a unas preguntas prácticas. Comparamos tus prioridades con los mismos datos de proveedores que utilizamos en nuestras comparativas.",
+    tags: ["Privacidad", "Streaming", "Viajes", "Presupuesto", "Dispositivos"],
+    cta: "Iniciar VPN Finder",
+    note: "Primero obtienes un resultado útil. El correo electrónico es opcional después de la recomendación.",
+  },
+  tools: {
+    eyebrow: "Herramientas gratuitas",
+    title: "Comprueba tu conexión antes de comprar nada.",
+    items: ["¿Cuál es mi IP?", "Prueba de fugas DNS", "Prueba de velocidad", "Índice de VPN"],
+  },
+  newsletter: {
+    eyebrow: "Mantente al día",
+    title: "Nuevos resultados de pruebas, no ruido diario.",
+    description: "Recibe novedades relevantes sobre VPN, explicaciones de privacidad y nuevas investigaciones. Puedes darte de baja en cualquier momento.",
+  },
+  faqTitle: "Preguntas sobre VPN, respondidas con rigor",
+  faqs: [
+    {
+      question: "¿Qué protege realmente una VPN?",
+      answer: "Una VPN cifra el tráfico entre tu dispositivo y el servidor VPN y sustituye la dirección IP que normalmente ven los sitios web. No te hace anónimo, no elimina malware ni sustituye HTTPS o una buena seguridad de cuenta.",
+    },
+    {
+      question: "¿Cómo clasifica ZeroToVPN a los proveedores?",
+      answer: "El modelo publicado aplica ponderaciones fijas a la velocidad, la latencia, los registros, la propiedad, el riesgo jurisdiccional, el estado de las auditorías, el streaming, la política de torrents y la fiabilidad del interruptor de corte. Las comisiones comerciales quedan fuera de la fórmula.",
+    },
+    {
+      question: "¿Las VPN gratuitas son siempre inseguras?",
+      answer: "No, pero las contrapartidas varían. Revisa el modelo de negocio, los límites de datos, la política de registros, las auditorías y los permisos de la aplicación. El plan gratuito limitado de un proveedor fiable puede resultar útil; un servicio ilimitado desconocido merece mayor cautela.",
+    },
+    {
+      question: "¿Los enlaces de afiliación cambian las recomendaciones?",
+      answer: "No. Los enlaces de afiliación pueden financiar el sitio, pero las comisiones no forman parte del modelo de puntuación. Los enlaces comerciales están identificados, incluyen atributos sponsored y aparecen junto a la metodología y el análisis completo.",
+    },
+  ],
+};
+
+const french: HomepageEditorialCopy = {
+  providerSuppliedLabel: "Visuel fourni par le fournisseur",
+  protectionBar: {
+    checking: "Vérification de votre adresse IP publique…",
+    visibleIp: "Les sites web voient actuellement cette adresse IP publique",
+    localPreview: "Aperçu local",
+    estimatedLocation: "Localisation estimée",
+    network: "Réseau",
+    unavailable: "Indisponible",
+    disclaimer:
+      "Cette vérification ne permet pas de déterminer si un VPN est actif. Avec un VPN, les sites web voient généralement l’adresse IP du serveur VPN.",
+    cta: "Voir NordVPN",
+    partner: "Lien partenaire",
+    review: "Lire notre test de NordVPN",
+  },
+  announcement: {
+    label: "Nouvelle étude",
+    text: "L’Indice 2026 de transparence et de performance des VPN est disponible.",
+    cta: "Découvrir le rapport",
+  },
+  lead: {
+    eyebrow: "Test indépendant en conditions réelles",
+    title: "Nous avons testé les principaux VPN. Voici ceux qui ont réellement tenu leurs promesses.",
+    description: "Un parcours visuel fondé sur des éléments vérifiables pour choisir le bon VPN, avec les compromis, la date des sources et la méthode de test clairement indiqués.",
+    cta: "Découvrir nos meilleurs VPN",
+    alt: "Poste de test VPN indépendant avec ordinateur portable, routeur, téléphone et notes de mesure",
+  },
+  supportingStories: [
+    {
+      eyebrow: "Guide",
+      title: "Les meilleurs VPN pour le streaming, sans naviguer à l’aveugle",
+      description: "Commencez par la compatibilité, la perte de débit et la prise en charge des appareils.",
+    },
+    {
+      eyebrow: "Test de fournisseur",
+      title: "NordVPN : notre dernier test fondé sur des éléments vérifiables",
+      description: "Points forts, limites et état actuel du produit.",
+    },
+    {
+      eyebrow: "Face-à-face",
+      title: "Mullvad face à Proton VPN : deux choix axés sur la confidentialité",
+      description: "Une comparaison pratique sans désigner de vainqueur universel.",
+    },
+  ],
+  trendingTitle: "Tendances du moment",
+  trending: [
+    { eyebrow: "Pays", title: "Un VPN peut-il vous protéger en Iran ?" },
+    { eyebrow: "Confidentialité", title: "Ce qu’un VPN masque — et ce qu’il ne masque pas" },
+    { eyebrow: "Guide", title: "Les compromis des VPN gratuits en valent-ils la peine ?" },
+    { eyebrow: "Appareils", title: "Les meilleures solutions VPN pour les téléphones Android" },
+    { eyebrow: "Décryptage", title: "Pourquoi le débit d’un VPN varie pendant les tests" },
+  ],
+  freshness: {
+    updated: "Étude vérifiée",
+    methodology: "Modèle de notation à 9 facteurs",
+    disclosure: "Les liens d’affiliation peuvent nous rapporter une commission ; les commissions n’entrent pas dans la pondération du classement.",
+  },
+  useCasesTitle: "Pour quel usage avez-vous besoin d’un VPN ?",
+  useCases: [
+    { label: "Streaming", description: "Compatibilité, qualité et prise en charge des appareils" },
+    { label: "Confidentialité", description: "Journalisation, propriété et protection contre les fuites" },
+    { label: "Voyages", description: "Pays, réseaux et préparation avant le départ" },
+    { label: "Appareils", description: "Guides pour Windows, mobile, TV et routeur" },
+  ],
+  picks: {
+    eyebrow: "Sélection pour vous décider",
+    title: "Nos VPN recommandés",
+    subtitle: "Trois bons points de départ, chacun avec un avantage et une limite clairement indiqués.",
+    disclosure: "Section commerciale · les liens d’affiliation sont signalés et n’influencent jamais la pondération de nos notes.",
+    score: "Note éditoriale",
+    bestFor: "Idéal pour",
+    strength: "Pourquoi il se distingue",
+    limitation: "À garder en tête",
+    review: "Lire le test",
+    visit: "Voir l’offre actuelle",
+    methodology: "Comment fonctionnent ces notes",
+    providerDetails: {
+      nordvpn: {
+        bestFor: "Un ensemble de fonctionnalités équilibré",
+        strength: "Une large prise en charge des applications et protocoles dans un écosystème de produits mature.",
+        limitation: "La valeur à long terme dépend de l’offre en cours et des conditions de renouvellement.",
+      },
+      surfshark: {
+        bestFor: "Les foyers avec de nombreux appareils",
+        strength: "Des connexions simultanées illimitées et un large éventail de fonctions pour le quotidien.",
+        limitation: "Les performances peuvent varier selon l’itinéraire, le serveur et l’appareil.",
+      },
+      expressvpn: {
+        bestFor: "Une utilisation simple sur plusieurs plateformes",
+        strength: "Des applications claires et une expérience de configuration cohérente.",
+        limitation: "Son tarif est généralement supérieur à celui des solutions moins coûteuses.",
+      },
+    },
+  },
+  comparison: {
+    eyebrow: "Comparer les éléments",
+    title: "La sélection en un coup d’œil",
+    subtitle: "Une vue synthétique de notre catalogue actuel de fournisseurs. Consultez le test complet pour le contexte et les sources.",
+    caption: "Comparaison des fournisseurs de VPN mis en avant",
+    headers: {
+      provider: "VPN",
+      rating: "Note",
+      privacy: "Confidentialité",
+      speed: "Vitesse",
+      streaming: "Streaming",
+      fit: "Profil idéal",
+      action: "Étape suivante",
+    },
+    fit: {
+      nordvpn: "Fonctionnalités équilibrées",
+      surfshark: "Nombreux appareils au foyer",
+      expressvpn: "Applications simples multiplateformes",
+      cyberghost: "Longue période de remboursement",
+      protonvpn: "Utilisateurs axés sur la confidentialité",
+    },
+  },
+  methodology: {
+    eyebrow: "Notre méthode de test",
+    title: "Une recommandation doit pouvoir être vérifiée.",
+    description: "Notre modèle de notation publié distingue les performances, les indicateurs de confidentialité et les capacités du produit. Les conditions commerciales ne reçoivent jamais de poids dans le classement.",
+    featuredProviders: "fournisseurs dans la comparaison mise en avant",
+    scoreFactors: "facteurs de notation fixes",
+    commissionWeight: "poids des commissions",
+    chartTitle: "Pondérations de notation publiées",
+    chartNote: "Les autres facteurs couvrent la latence, la propriété, la juridiction, les audits, la politique relative aux torrents et la fiabilité du coupe-circuit.",
+    published: "100 % publié",
+    weights: {
+      speed: "Vitesse",
+      logging: "Journalisation",
+      streaming: "Streaming",
+      latency: "Latence",
+      audit: "Audit",
+    },
+    cta: "Consulter la méthodologie",
+    howWeTest: "Voir comment nous testons",
+  },
+  latest: {
+    eyebrow: "Depuis notre pôle recherche",
+    title: "Derniers guides et enquêtes",
+    all: "Voir tous les articles",
+    items: [
+      {
+        eyebrow: "Dépannage",
+        title: "Pourquoi mon VPN se déconnecte-t-il sans cesse ?",
+        description: "Une démarche de diagnostic, du réseau au protocole et au coupe-circuit.",
+      },
+      {
+        eyebrow: "Réseaux restreints",
+        title: "Les meilleures options de VPN pour l’Iran en 2026",
+        description: "Contraintes de configuration, éléments vérifiables et limites de sécurité.",
+      },
+      {
+        eyebrow: "Confidentialité",
+        title: "Votre fournisseur d’accès peut-il voir que vous utilisez un VPN ?",
+        description: "Ce qui reste visible de chaque côté du tunnel.",
+      },
+      {
+        eyebrow: "Vérification fournisseur",
+        title: "Brave VPN est-il gratuit ? Ce que dit réellement la page produit",
+        description: "Tarifs, affirmations du navigateur et solution de remplacement pratique.",
+      },
+    ],
+  },
+  finder: {
+    eyebrow: "VPN Finder",
+    title: "Trouvez une solution plus adaptée en 60 secondes environ.",
+    description: "Répondez à quelques questions pratiques. Nous confrontons vos priorités aux mêmes données fournisseurs que celles de nos comparatifs.",
+    tags: ["Confidentialité", "Streaming", "Voyages", "Budget", "Appareils"],
+    cta: "Lancer VPN Finder",
+    note: "Un résultat utile d’abord. Votre adresse e-mail reste facultative après la recommandation.",
+  },
+  tools: {
+    eyebrow: "Outils gratuits",
+    title: "Vérifiez votre connexion avant tout achat.",
+    items: ["Quelle est mon IP ?", "Test de fuite DNS", "Test de débit", "Indice VPN"],
+  },
+  newsletter: {
+    eyebrow: "Restez informé",
+    title: "De nouveaux résultats de test, sans bruit quotidien.",
+    description: "Recevez les mises à jour VPN importantes, nos décryptages sur la confidentialité et nos nouvelles études. Désinscription possible à tout moment.",
+  },
+  faqTitle: "Vos questions sur les VPN, traitées avec rigueur",
+  faqs: [
+    {
+      question: "Que protège réellement un VPN ?",
+      answer: "Un VPN chiffre le trafic entre votre appareil et le serveur VPN et remplace l’adresse IP que les sites web voient habituellement. Il ne vous rend pas anonyme, ne supprime pas les logiciels malveillants et ne remplace ni HTTPS ni une bonne sécurité des comptes.",
+    },
+    {
+      question: "Comment ZeroToVPN classe-t-il les fournisseurs ?",
+      answer: "Le modèle publié applique des pondérations fixes à la vitesse, la latence, la journalisation, la propriété, le risque juridictionnel, le statut des audits, le streaming, la politique relative aux torrents et la fiabilité du coupe-circuit. Les commissions commerciales sont exclues de la formule.",
+    },
+    {
+      question: "Les VPN gratuits sont-ils toujours dangereux ?",
+      answer: "Non, mais les compromis varient. Examinez le modèle économique, les limites de données, la politique de journalisation, les audits et les autorisations de l’application. L’offre gratuite limitée d’un fournisseur fiable peut être utile ; un service illimité inconnu appelle davantage de prudence.",
+    },
+    {
+      question: "Les liens d’affiliation modifient-ils les recommandations ?",
+      answer: "Non. Les liens d’affiliation peuvent financer le site, mais les commissions ne font pas partie du modèle de notation. Les liens commerciaux sont signalés, utilisent des attributs sponsored et figurent à côté de la méthodologie et du test complet.",
+    },
+  ],
+};
+
+export const westernHomepageCopies: Record<"de" | "es" | "fr", HomepageEditorialCopy> = {
+  de: german,
+  es: spanish,
+  fr: french,
+};
+
+export const westernHomepageDescriptions: Record<"de" | "es" | "fr", string> = {
+  de: "Unabhängige VPN-Forschung, transparente Bewertungsgewichte und praktische Vergleiche. Aktuelle Tests, Tools und den VPN-Transparenzindex entdecken.",
+  es: "Investigación independiente sobre VPN, puntuaciones transparentes y comparativas prácticas. Consulta análisis actuales, herramientas y el Índice de VPN.",
+  fr: "Recherche VPN indépendante, pondérations transparentes et comparatifs pratiques. Découvrez les tests actuels, les outils et l’Indice de transparence VPN.",
+};

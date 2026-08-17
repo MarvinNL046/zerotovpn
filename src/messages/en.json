@@ -44,6 +44,9 @@
     "compare": "Compare",
     "guides": "Guides",
     "blog": "Blog",
+    "selectLanguage": "Select language",
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close navigation menu",
     "about": "About",
     "speedTest": "Speed Test",
     "countries": "Countries",
@@ -54,6 +57,10 @@
     "vpnChromebook": "VPN for Chromebook",
     "vpnLinux": "VPN for Linux",
     "tools": "Tools",
+    "resources": "Resources",
+    "mainNavigation": "Main navigation",
+    "mobileNavigation": "Mobile navigation",
+    "toggleTheme": "Toggle color theme",
     "ipChecker": "IP Checker",
     "dnsLeakTest": "DNS Leak Test",
     "vpnIndex": "VPN Index",
@@ -169,7 +176,7 @@
     "subscribe": "Subscribe",
     "subscribing": "Subscribing...",
     "success": "Thanks for subscribing!",
-    "checkEmail": "Check your email to confirm your subscription",
+    "checkEmail": "You are subscribed. A welcome email may arrive shortly.",
     "error": "Something went wrong. Please try again.",
     "consent": "I agree to receive emails and can unsubscribe anytime",
     "consentRequired": "Please agree to receive emails",
@@ -765,11 +772,7 @@
               "icon": "BBC",
               "iconColor": "pink-600",
               "description": "Free with UK TV license. Access requires UK IP address. Great for British TV shows, documentaries, and live TV.",
-              "features": [
-                "Free (UK license)",
-                "Live TV",
-                "BBC Originals"
-              ]
+              "features": ["Free (UK license)", "Live TV", "BBC Originals"]
             },
             {
               "name": "Amazon Prime Video",
@@ -791,11 +794,7 @@
               "icon": "H",
               "iconColor": "green-500",
               "description": "US-exclusive service with next-day TV episodes, originals, and live TV option. Requires US payment method.",
-              "features": [
-                "Next-day TV",
-                "Live TV option",
-                "FX content"
-              ]
+              "features": ["Next-day TV", "Live TV option", "FX content"]
             }
           ]
         },
@@ -2373,13 +2372,7 @@
         "comparison": {
           "title": "Protocol Comparison Chart",
           "table": {
-            "headers": [
-              "Protocol",
-              "Speed",
-              "Security",
-              "Stability",
-              "Mobile"
-            ],
+            "headers": ["Protocol", "Speed", "Security", "Stability", "Mobile"],
             "rows": [
               {
                 "protocol": "WireGuard",
@@ -4076,10 +4069,7 @@
           "Best price",
           "GPS spoofing (Android)"
         ],
-        "cons": [
-          "Fewer servers",
-          "Newer company"
-        ]
+        "cons": ["Fewer servers", "Newer company"]
       },
       "nordvpn": {
         "description": "NordVPN's proprietary NordLynx protocol delivers the fastest speeds on mobile. The apps are top-rated on both App Store and Google Play.",
@@ -4089,10 +4079,7 @@
           "Split tunneling (Android)",
           "Threat Protection"
         ],
-        "cons": [
-          "Complex for beginners",
-          "No GPS spoofing"
-        ]
+        "cons": ["Complex for beginners", "No GPS spoofing"]
       },
       "expressvpn": {
         "description": "ExpressVPN is the most reliable choice for travelers. It works in China, UAE, and Turkey, with incredibly stable connections on 4G/5G.",
@@ -4102,10 +4089,7 @@
           "Lightway protocol",
           "Best for travel"
         ],
-        "cons": [
-          "More expensive",
-          "8 device limit"
-        ]
+        "cons": ["More expensive", "8 device limit"]
       },
       "pros": "Pros",
       "cons": "Cons",
@@ -4336,10 +4320,7 @@
           "Intuitive interface",
           "24/7 customer support"
         ],
-        "cons": [
-          "Higher price",
-          "Limited to 8 devices"
-        ]
+        "cons": ["Higher price", "Limited to 8 devices"]
       },
       "nordvpn": {
         "description": "NordVPN's iOS app features NordLynx protocol for fastest speeds, Siri shortcuts, and Apple Watch integration.",
@@ -4350,10 +4331,7 @@
           "Apple Watch app",
           "Threat Protection"
         ],
-        "cons": [
-          "No split tunneling on iOS",
-          "App can be complex"
-        ]
+        "cons": ["No split tunneling on iOS", "App can be complex"]
       },
       "surfshark": {
         "description": "Surfshark offers unlimited devices on one subscription with a clean iOS interface and excellent value.",
@@ -4364,10 +4342,7 @@
           "CleanWeb ad blocker",
           "GPS spoofing"
         ],
-        "cons": [
-          "Smaller server network",
-          "No Apple Watch app"
-        ]
+        "cons": ["Smaller server network", "No Apple Watch app"]
       },
       "pros": "Pros",
       "cons": "Cons",
@@ -4531,10 +4506,7 @@
           "Excellent streaming support",
           "Siri Shortcuts integration"
         ],
-        "cons": [
-          "No system-wide split tunneling",
-          "Premium pricing"
-        ]
+        "cons": ["No system-wide split tunneling", "Premium pricing"]
       },
       "surfshark": {
         "badge": "Best for Families",
@@ -4546,10 +4518,7 @@
           "CleanWeb ad blocker",
           "Lightweight app"
         ],
-        "cons": [
-          "Smaller server network",
-          "No Siri Shortcuts"
-        ]
+        "cons": ["Smaller server network", "No Siri Shortcuts"]
       },
       "expressvpn": {
         "badge": "Best for Travel",
@@ -4561,10 +4530,7 @@
           "24/7 support",
           "MediaStreamer for Apple TV"
         ],
-        "cons": [
-          "Higher price",
-          "Only 8 devices"
-        ]
+        "cons": ["Higher price", "Only 8 devices"]
       }
     },
     "features": {
@@ -4708,10 +4674,7 @@
           "7,400+ servers",
           "Split tunneling"
         ],
-        "cons": [
-          "Larger app size",
-          "No GPS spoofing"
-        ]
+        "cons": ["Larger app size", "No GPS spoofing"]
       },
       "surfshark": {
         "badge": "Lightest App",
@@ -4723,10 +4686,7 @@
           "Best price",
           "CleanWeb ad blocker"
         ],
-        "cons": [
-          "Fewer servers than Nord",
-          "Slightly slower"
-        ]
+        "cons": ["Fewer servers than Nord", "Slightly slower"]
       },
       "expressvpn": {
         "badge": "Best for Travel",
@@ -4738,10 +4698,7 @@
           "Excellent support",
           "Easy to use"
         ],
-        "cons": [
-          "Higher price",
-          "Limited to 8 devices"
-        ]
+        "cons": ["Higher price", "Limited to 8 devices"]
       }
     },
     "features": {
@@ -4925,10 +4882,7 @@
           "7,400+ servers in 118 countries",
           "Perfect for streaming"
         ],
-        "cons": [
-          "No split tunneling on iPad",
-          "Slightly higher price"
-        ]
+        "cons": ["No split tunneling on iPad", "Slightly higher price"]
       },
       "surfshark": {
         "badge": "Best Value",
@@ -4940,10 +4894,7 @@
           "CleanWeb blocks ads & malware",
           "GPS spoofing on Android"
         ],
-        "cons": [
-          "Smaller server network",
-          "Slightly slower than NordVPN"
-        ]
+        "cons": ["Smaller server network", "Slightly slower than NordVPN"]
       },
       "expressvpn": {
         "badge": "Best for Travel",
@@ -4955,10 +4906,7 @@
           "24/7 customer support",
           "105 countries covered"
         ],
-        "cons": [
-          "More expensive",
-          "Limited to 8 devices"
-        ]
+        "cons": ["More expensive", "Limited to 8 devices"]
       }
     },
     "platforms": {
@@ -5164,10 +5112,7 @@
           "Touch-friendly UI",
           "Business features"
         ],
-        "cons": [
-          "Higher price",
-          "Resource usage"
-        ]
+        "cons": ["Higher price", "Resource usage"]
       },
       "surfshark": {
         "badge": "Best Value",
@@ -5179,10 +5124,7 @@
           "CleanWeb feature",
           "Good speeds"
         ],
-        "cons": [
-          "Fewer features",
-          "Smaller network"
-        ]
+        "cons": ["Fewer features", "Smaller network"]
       },
       "expressvpn": {
         "badge": "Best Stability",
@@ -5194,10 +5136,7 @@
           "24/7 support",
           "Easy setup"
         ],
-        "cons": [
-          "Most expensive",
-          "8 device limit"
-        ]
+        "cons": ["Most expensive", "8 device limit"]
       }
     },
     "features": {

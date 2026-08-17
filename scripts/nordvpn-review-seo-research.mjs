@@ -4,11 +4,23 @@ import { resolve } from "node:path";
 import { dfs, DFS_DEFAULTS } from "./dfs.mjs";
 
 const ROOT = resolve(import.meta.dirname, "..");
-const CACHE = resolve(ROOT, ".cache", "dataforseo", "nordvpn-review");
+const isDutch = process.argv.includes("--nl");
+const localeKey = isDutch ? "nl" : "en";
+const CACHE = resolve(ROOT, ".cache", "dataforseo", `nordvpn-review-${localeKey}`);
 const OUT = resolve(ROOT, "docs", "research");
 const reportDate = new Date().toISOString().slice(0, 10);
-const context = { ...DFS_DEFAULTS };
-const seeds = [
+const context = isDutch
+  ? { location_code: 2528, language_code: "nl" }
+  : { ...DFS_DEFAULTS };
+const seeds = isDutch ? [
+  "nordvpn review",
+  "is nordvpn goed",
+  "is nordvpn betrouwbaar",
+  "nordvpn nadelen",
+  "nordvpn prijs",
+  "nordvpn netflix",
+  "nordvpn snelheid",
+] : [
   "nordvpn review",
   "nordvpn review 2026",
   "nordvpn price",
@@ -85,11 +97,12 @@ async function main() {
     sourcePolicy: "DataForSEO signals prioritise query intent, comparison structure and FAQ coverage; they do not prove NordVPN performance, current pricing, audit scope or conversion value. Provider facts must be tied to dated first-party sources or reproducible tests.",
   };
   mkdirSync(OUT, { recursive: true });
-  const jsonPath = resolve(OUT, `dataforseo-nordvpn-review-cluster-${reportDate}.json`);
-  const mdPath = resolve(OUT, `dataforseo-nordvpn-review-cluster-${reportDate}.md`);
+  const localeSuffix = isDutch ? "-nl" : "";
+  const jsonPath = resolve(OUT, `dataforseo-nordvpn-review-cluster${localeSuffix}-${reportDate}.json`);
+  const mdPath = resolve(OUT, `dataforseo-nordvpn-review-cluster${localeSuffix}-${reportDate}.md`);
   writeFileSync(jsonPath, JSON.stringify(report, null, 2));
   const lines = [
-    "# DataForSEO research — NordVPN review cluster",
+    `# DataForSEO research — NordVPN review cluster${isDutch ? " (Netherlands / Dutch)" : ""}`,
     "",
     `Fetched: ${report.fetchedAt} | location ${report.location_code} | language ${report.language_code}`,
     "",

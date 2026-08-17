@@ -8,12 +8,12 @@ export function OrganizationJsonLd() {
     url: "https://www.zerotovpn.com",
     logo: {
       "@type": "ImageObject",
-      url: "https://www.zerotovpn.com/logo.png",
+      url: "https://www.zerotovpn.com/icon-512.png",
       width: 512,
       height: 512,
     },
     description:
-      "Expert VPN reviews, honest comparisons, and evidence-led plan comparisons for top VPN services.",
+      "Plain-language VPN guides, reviews, comparisons and browser tools with visible sources and limitations.",
     sameAs: [
       // Add social media links when available
       // "https://twitter.com/zerotovpn",
@@ -41,15 +41,7 @@ export function WebsiteJsonLd() {
     name: "ZeroToVPN",
     url: "https://www.zerotovpn.com",
     description:
-      "Find the perfect VPN for your needs with expert reviews, honest comparisons, and evidence-led plan context.",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: "https://www.zerotovpn.com/reviews?q={search_term_string}",
-      },
-      "query-input": "required name=search_term_string",
-    },
+      "Compare VPN evidence, read plain-language guides and use free browser tools with visible sources and limitations.",
   };
 
   return (
@@ -75,7 +67,7 @@ export function ArticleJsonLd({
   url,
   datePublished = "2026-01-01",
   dateModified,
-  image = "https://www.zerotovpn.com/og-image.png",
+  image = "https://www.zerotovpn.com/images/home/og-homepage.webp",
 }: ArticleJsonLdProps) {
   const schema = {
     "@context": "https://schema.org",
@@ -97,7 +89,7 @@ export function ArticleJsonLd({
       url: "https://www.zerotovpn.com",
       logo: {
         "@type": "ImageObject",
-        url: "https://www.zerotovpn.com/logo.png",
+        url: "https://www.zerotovpn.com/icon-512.png",
       },
     },
     mainEntityOfPage: {

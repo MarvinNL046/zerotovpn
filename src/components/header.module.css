@@ -1,0 +1,29 @@
+.headerGrid {
+  grid-template-columns: auto minmax(0, 1fr);
+}
+
+.responsiveWordmark {
+  display: none !important;
+}
+
+.megaMenuPanel a {
+  min-height: 3rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.megaMenuPanel {
+  width: min(44rem, calc(100vw - 3rem));
+  min-width: 0 !important;
+}
+
+@media (min-width: 23.4375rem) {
+  .responsiveWordmark {
+    display: inline-flex !important;
+  }
+}
+
+@media (min-width: 64rem) {
+  .headerGrid {
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  }
+}

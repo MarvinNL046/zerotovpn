@@ -1,8 +1,7 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
-import { AffiliateButton, AffiliateTextLink } from "@/components/vpn/affiliate-button";
-import { RatingStars } from "@/components/vpn/rating-stars";
+import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { Link } from "@/i18n/navigation";
 import type { EditorialContentBrief } from "@/lib/editorial-content-brief";
 import type { VpnData } from "@/lib/vpn-data-layer";
@@ -33,7 +32,7 @@ export function BestVpnEditorialTemplate({
   navigation,
   navigationAriaLabel = "On this page",
   disclosureHref = "/affiliate-disclosure",
-  disclosureText = "Independent editorial ratings · affiliate links may earn us a commission",
+  disclosureText = "Independent editorial guidance · paid links are clearly marked",
   disclosureLabel = "disclosure",
   brief,
   children,
@@ -51,24 +50,45 @@ export function BestVpnEditorialTemplate({
         data-schema-type={brief?.schemaType}
         data-evidence-count={brief ? String(brief.evidence.length) : undefined}
       >
-        <div className="container flex items-center gap-4 overflow-x-auto py-3">
-          <nav aria-label={navigationAriaLabel} className="flex min-w-max items-center gap-4 text-sm">
-            {navigation.map((item, index) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className={index === 0 ? "font-semibold hover:text-primary" : "hover:text-primary"}
+        <div className="container py-3">
+          <div className="flex items-center gap-4 overflow-x-auto">
+            <nav
+              aria-label={navigationAriaLabel}
+              className="flex min-w-max items-center gap-4 text-sm"
+            >
+              {navigation.map((item, index) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className={
+                    index === 0
+                      ? "font-semibold hover:text-primary"
+                      : "hover:text-primary"
+                  }
+                >
+                  {item.label}
+                </a>
+              ))}
+            </nav>
+            <span className="ml-auto hidden whitespace-nowrap text-xs text-muted-foreground lg:block">
+              {disclosureText} ·{" "}
+              <Link
+                href={disclosureHref}
+                className="underline underline-offset-2 hover:text-primary"
               >
-                {item.label}
-              </a>
-            ))}
-          </nav>
-          <span className="ml-auto hidden whitespace-nowrap text-xs text-muted-foreground lg:block">
+                {disclosureLabel}
+              </Link>
+            </span>
+          </div>
+          <p className="mt-2 text-xs leading-5 text-muted-foreground lg:hidden">
             {disclosureText} ·{" "}
-            <Link href={disclosureHref} className="underline underline-offset-2 hover:text-primary">
+            <Link
+              href={disclosureHref}
+              className="underline underline-offset-2 hover:text-primary"
+            >
               {disclosureLabel}
             </Link>
-          </span>
+          </p>
         </div>
       </section>
       {children}
@@ -85,7 +105,10 @@ interface EditorialQuickPickCardProps {
   tone: QuickPickTone;
 }
 
-const toneClasses: Record<QuickPickTone, { border: string; background: string; badge: string }> = {
+const toneClasses: Record<
+  QuickPickTone,
+  { border: string; background: string; badge: string }
+> = {
   gold: {
     border: "border-yellow-500/50",
     background: "from-yellow-500/5",
@@ -103,7 +126,7 @@ const toneClasses: Record<QuickPickTone, { border: string; background: string; b
   },
 };
 
-/** A reusable top-pick block with contextual price and primary affiliate CTA. */
+/** A reusable top-pick block without catalog ratings or stale price claims. */
 export function EditorialQuickPickCard({
   vpn,
   label,
@@ -111,18 +134,24 @@ export function EditorialQuickPickCard({
   tone,
 }: EditorialQuickPickCardProps) {
   const styles = toneClasses[tone];
-  const price = vpn.priceTwoYear ?? vpn.priceYearly;
 
   return (
-    <Card className={`relative border-2 ${styles.border} bg-gradient-to-b ${styles.background} to-transparent`}>
+    <Card
+      className={`relative border-2 ${styles.border} bg-gradient-to-b ${styles.background} to-transparent`}
+    >
       <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-        <span className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold ${styles.badge}`}>
+        <span
+          className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold ${styles.badge}`}
+        >
           {icon}
           {label}
         </span>
       </div>
       <CardContent className="pt-8 text-center space-y-4">
-        <div className="flex h-12 items-center justify-center" data-provider-mark="true">
+        <div
+          className="flex h-12 items-center justify-center"
+          data-provider-mark="true"
+        >
           {vpn.logo ? (
             <Image
               src={vpn.logo}
@@ -132,7 +161,9 @@ export function EditorialQuickPickCard({
               className="max-h-10 w-auto object-contain"
             />
           ) : (
-            <span className="text-sm font-semibold text-muted-foreground">{vpn.name}</span>
+            <span className="text-sm font-semibold text-muted-foreground">
+              {vpn.name}
+            </span>
           )}
         </div>
         <h3 className="text-2xl font-bold">
@@ -140,25 +171,13 @@ export function EditorialQuickPickCard({
             {vpn.name}
           </Link>
         </h3>
-        <RatingStars rating={vpn.overallRating} size="md" />
         <p className="text-sm text-muted-foreground">{vpn.shortDescription}</p>
-        <div className="text-3xl font-bold text-primary">
-          <AffiliateTextLink
-            vpnId={vpn.id}
-            vpnName={vpn.name}
-            affiliateUrl={vpn.affiliateUrl}
-            className="underline decoration-primary/40 underline-offset-4 hover:decoration-primary"
-          >
-            ${price.toFixed(2)}
-          </AffiliateTextLink>
-          <span className="text-sm font-normal text-muted-foreground">/mo</span>
-        </div>
-        <p className="text-xs text-muted-foreground" data-plan-context="true">
-          {vpn.priceTwoYear ? "Long-term plan equivalent" : "Annual plan equivalent"}
-          {vpn.moneyBackDays > 0 ? ` · ${vpn.moneyBackDays}-day refund window` : " · Check provider refund terms"}
-        </p>
-        <p className="text-xs text-muted-foreground" data-price-freshness="true">
-          Price checked: {vpn.priceLastVerified ?? "not recorded"}
+        <p
+          className="text-xs text-muted-foreground"
+          data-price-freshness="true"
+        >
+          Price and terms can change. Check the total, renewal price and refund
+          rules before paying.
         </p>
         <AffiliateButton
           vpnId={vpn.id}
@@ -166,7 +185,7 @@ export function EditorialQuickPickCard({
           affiliateUrl={vpn.affiliateUrl}
           className="w-full"
         >
-          Visit {vpn.name}
+          Check current {vpn.name} plans
         </AffiliateButton>
       </CardContent>
     </Card>

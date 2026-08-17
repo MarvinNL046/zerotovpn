@@ -1,49 +1,70 @@
 "use client";
 
-import { Link, usePathname } from "@/i18n/navigation";
+import { ZeroToVpnLogo } from "@/components/brand/zerotovpn-logo";
 import { Button } from "@/components/ui/button";
 import {
-  Shield, Menu, X, Star, Zap, Globe, ChevronDown, Trophy, Gamepad2,
-  Gift, Smartphone, Laptop, Monitor, Apple, Wrench, ShieldAlert, BarChart3,
-  FlaskConical, BookOpen, ArrowLeftRight, Newspaper, FileText,
+  getBestVpnNavigationGroups,
+  type SiteNavigationItemId,
+} from "@/data/site-navigation";
+import { Link, usePathname } from "@/i18n/navigation";
+import { cn } from "@/lib/utils";
+import {
+  ArrowLeftRight,
+  BookOpen,
+  ChevronDown,
+  FileText,
+  FlaskConical,
+  Gamepad2,
+  Globe,
+  Laptop,
+  Menu,
+  ShieldAlert,
+  Smartphone,
+  Star,
+  Trophy,
+  Wrench,
+  X,
+  Zap,
 } from "lucide-react";
-import { useState, useRef, useEffect, useId } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { useEffect, useId, useRef, useState } from "react";
+import styles from "./header.module.css";
 import { LanguageSwitcher } from "./language-switcher";
 import { ThemeToggle } from "./theme-toggle";
-import { cn } from "@/lib/utils";
 
-// Mega menu component
 function MegaMenu({
   trigger,
   children,
   isOpen,
+  active = false,
   onToggle,
 }: {
   trigger: React.ReactNode;
   children: React.ReactNode;
   isOpen: boolean;
+  active?: boolean;
   onToggle: () => void;
 }) {
   const menuRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
-  const panelId = `megamenu-${useId()}`;
+  const instanceId = useId();
+  const triggerId = `megamenu-trigger-${instanceId}`;
+  const panelId = `megamenu-panel-${instanceId}`;
 
   useEffect(() => {
-    function handleClickOutside(e: MouseEvent) {
-      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+    function handleClickOutside(event: MouseEvent) {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
         if (isOpen) onToggle();
       }
     }
-    // Het menu sloot alleen op een muisklik buiten het menu, dus wie met het
-    // toetsenbord navigeerde zat eraan vast. Escape sluit nu en geeft de focus
-    // terug aan de knop die het opende.
-    function handleKeyDown(e: KeyboardEvent) {
-      if (e.key === "Escape" && isOpen) {
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape" && isOpen) {
         onToggle();
         triggerRef.current?.focus();
       }
     }
+
     document.addEventListener("mousedown", handleClickOutside);
     document.addEventListener("keydown", handleKeyDown);
     return () => {
@@ -55,191 +76,344 @@ function MegaMenu({
   return (
     <div className="relative" ref={menuRef}>
       <button
+        id={triggerId}
         ref={triggerRef}
+        type="button"
         onClick={onToggle}
         aria-expanded={isOpen}
-        aria-haspopup="true"
         aria-controls={panelId}
-        className="inline-flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary text-muted-foreground"
+        className={cn(
+          "inline-flex min-h-12 items-center gap-2 rounded-xl px-4 text-sm font-semibold transition-all",
+          active || isOpen
+            ? "bg-[#b8e34a] text-[#071226] shadow-sm hover:bg-[#a9d63d]"
+            : "text-slate-600 hover:bg-white hover:text-[#071226] dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-white",
+        )}
       >
         {trigger}
-        <ChevronDown className={cn("h-3.5 w-3.5 transition-transform", isOpen && "rotate-180")} aria-hidden="true" />
+        <ChevronDown
+          className={cn(
+            "h-3.5 w-3.5 transition-transform",
+            isOpen && "rotate-180",
+          )}
+          aria-hidden="true"
+        />
       </button>
-      {isOpen && (
-        <div id={panelId} className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-background border rounded-xl shadow-xl p-5 z-50 min-w-[480px]">
+      {isOpen ? (
+        <div
+          id={panelId}
+          role="group"
+          aria-labelledby={triggerId}
+          className={cn(
+            "absolute left-1/2 top-full z-50 mt-3 -translate-x-1/2 rounded-2xl border border-slate-200 bg-white p-5 shadow-2xl shadow-slate-950/15 dark:border-slate-700 dark:bg-slate-900",
+            styles.megaMenuPanel,
+          )}
+        >
           {children}
         </div>
-      )}
+      ) : null}
     </div>
   );
 }
 
 export function Header() {
   const t = useTranslations("nav");
+  const locale = useLocale();
+  const isNl = locale === "nl";
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const bestNavigationGroups = getBestVpnNavigationGroups(locale);
+
+  const bestNavigationIcons: Record<SiteNavigationItemId, typeof Trophy> = {
+    "best-vpn": Trophy,
+    reviews: Star,
+    compare: ArrowLeftRight,
+    "vpn-picker": Wrench,
+    gaming: Gamepad2,
+    privacy: ShieldAlert,
+    macos: Laptop,
+    android: Smartphone,
+    countries: Globe,
+    china: Globe,
+    iran: Globe,
+    netherlands: Globe,
+  };
+
+  const copy = isNl
+    ? {
+        choose: "Kiezen",
+        countryGuides: "Landengidsen",
+        startSimple: "Begin bij de basis",
+        learn: "Uitleg",
+        evidence: "Bewijs en beleid",
+        reports: "Rapporten",
+        bestOverview: "Beste VPN's vergelijken",
+        vpnPicker: "VPN-keuzehulp",
+        countriesOverview: "Alle landengidsen",
+        netherlands: "VPN in Nederland",
+        whatIsVpn: "Wat is een VPN?",
+        privacyGuide: "VPN en privacy",
+        speedGuide: "VPN en snelheid",
+        guidesOverview: "Alle gidsen",
+        toolsOverview: "Alle tools",
+        ipChecker: "Bekijk je IP-adres",
+        speedTest: "Internetsnelheid testen",
+        dnsBeta: "DNS-lektest (begeleide bèta)",
+        reportsOverview: "Onderzoeksrapporten",
+        editorialPolicy: "Redactioneel beleid",
+        about: "Over ZeroToVPN",
+      }
+    : {
+        choose: "Choose",
+        countryGuides: "Country guides",
+        startSimple: "Start with the basics",
+        learn: "Learn",
+        evidence: "Evidence and policy",
+        reports: "Reports",
+        bestOverview: "Compare the best VPNs",
+        vpnPicker: "VPN picker",
+        countriesOverview: "All country guides",
+        netherlands: "VPN in the Netherlands",
+        whatIsVpn: "What is a VPN?",
+        privacyGuide: "VPN and privacy",
+        speedGuide: "VPN and speed",
+        guidesOverview: "All guides",
+        toolsOverview: "All tools",
+        ipChecker: "Check your IP address",
+        speedTest: "Test your internet speed",
+        dnsBeta: "DNS leak test (guided beta)",
+        reportsOverview: "Research reports",
+        editorialPolicy: "Editorial policy",
+        about: "About ZeroToVPN",
+      };
+
+  const bestMenuActive =
+    pathname.startsWith("/best") ||
+    pathname.startsWith("/countries") ||
+    pathname.startsWith("/compare") ||
+    pathname.startsWith("/quiz");
+  const resourcesMenuActive = [
+    "/guides",
+    "/tools",
+    "/speed-test",
+    "/methodology",
+    "/editorial-policy",
+    "/about",
+  ].some((route) => pathname.startsWith(route));
 
   const toggleMenu = (menu: string) => {
     setOpenMenu(openMenu === menu ? null : menu);
   };
 
+  const closeMobileMenu = () => setMobileMenuOpen(false);
+
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-slate-200/50 dark:border-slate-700/50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg">
-      <div className="container flex h-16 items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="flex items-center space-x-2">
-          <Shield className="h-6 w-6 text-primary" />
-          <span className="font-bold text-xl">
-            Zero<span className="text-primary">To</span>VPN
-          </span>
+    <header className="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white/95 shadow-[0_1px_0_rgba(15,23,42,0.03)] backdrop-blur-xl dark:border-slate-700/80 dark:bg-slate-900/95">
+      <div
+        className={cn(
+          "container grid h-16 items-center gap-3 lg:gap-5",
+          styles.headerGrid,
+        )}
+      >
+        <Link
+          href="/"
+          aria-label="ZeroToVPN"
+          className="flex min-h-12 items-center justify-self-start"
+          style={{ justifySelf: "start" }}
+        >
+          <ZeroToVpnLogo wordmarkClassName={styles.responsiveWordmark} />
         </Link>
 
-        {/* Desktop Navigation — consolidated to 5 items */}
-        <nav className="hidden lg:flex items-center gap-1">
-          {/* Reviews */}
+        <nav
+          aria-label={t("mainNavigation")}
+          className="hidden items-center gap-1.5 rounded-2xl border border-slate-200/80 bg-slate-100 p-0.5 shadow-sm lg:flex dark:border-slate-700/80 dark:bg-slate-800"
+        >
           <Link
             href="/reviews"
             className={cn(
-              "px-3 py-2 text-sm font-medium rounded-lg transition-colors hover:text-primary hover:bg-muted",
-              pathname.startsWith("/reviews") ? "text-primary bg-muted" : "text-muted-foreground"
+              "inline-flex min-h-12 items-center rounded-xl px-4 py-2 text-sm font-semibold transition-all",
+              pathname.startsWith("/reviews")
+                ? "bg-[#b8e34a] text-[#071226] shadow-sm hover:bg-[#a9d63d]"
+                : "text-slate-600 hover:bg-white hover:text-[#071226] dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-white",
             )}
           >
             {t("reviews")}
           </Link>
 
-          {/* Best VPNs — Mega Menu */}
           <MegaMenu
-            trigger={<><Star className="h-3.5 w-3.5" /> {t("best")}</>}
+            trigger={
+              <>
+                <Star className="h-3.5 w-3.5" aria-hidden="true" />
+                {t("best")}
+              </>
+            }
             isOpen={openMenu === "best"}
+            active={bestMenuActive}
             onToggle={() => toggleMenu("best")}
           >
             <div className="grid grid-cols-3 gap-6">
-              {/* Column 1: By Use Case */}
-              <div>
-                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">By Use Case</p>
-                <div className="space-y-1">
-                  {[
-                    { href: "/best/best-vpn", label: t("bestVpn"), icon: Trophy },
-                    { href: "/best/free-vpn", label: t("freeVpn"), icon: Gift },
-                    { href: "/best/vpn-free-trial", label: t("vpnFreeTrial"), icon: Gift },
-                    { href: "/best/vpn-gaming", label: t("vpnGaming"), icon: Gamepad2 },
-                    { href: "/best/vpn-streaming", label: "Streaming", icon: Monitor },
-                    { href: "/best/vpn-torrenting", label: "Torrenting", icon: Zap },
-                    { href: "/best/vpn-privacy", label: "Privacy", icon: ShieldAlert },
-                  ].map(item => (
-                    <Link key={item.href} href={item.href} onClick={() => setOpenMenu(null)}
-                      className="flex items-center gap-2 px-2 py-1.5 text-sm rounded-md hover:bg-muted transition-colors">
-                      <item.icon className="h-4 w-4 text-muted-foreground" />
-                      {item.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
+              {bestNavigationGroups.map((group) => (
+                <div key={group.id}>
+                  <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                    {group.label}
+                  </p>
+                  <div className="space-y-1">
+                    {group.items.map((item) => {
+                      const ItemIcon = bestNavigationIcons[item.id];
 
-              {/* Column 2: By Country */}
-              <div>
-                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">By Country</p>
-                <div className="space-y-1">
-                  {[
-                    { href: "/countries/china", label: t("vpnChina") },
-                    { href: "/countries/russia", label: t("vpnRussia") },
-                    { href: "/countries/uae", label: t("vpnUae") },
-                    { href: "/countries/iran", label: t("vpnIran") },
-                    { href: "/countries/thailand", label: t("vpnThailand") },
-                  ].map(item => (
-                    <Link key={item.href} href={item.href} onClick={() => setOpenMenu(null)}
-                      className="flex items-center gap-2 px-2 py-1.5 text-sm rounded-md hover:bg-muted transition-colors">
-                      <Globe className="h-4 w-4 text-muted-foreground" />
-                      {item.label}
-                    </Link>
-                  ))}
-                  <Link href="/countries" onClick={() => setOpenMenu(null)}
-                    className="flex items-center gap-2 px-2 py-1.5 text-sm text-primary font-medium rounded-md hover:bg-muted transition-colors">
-                    All 59+ Countries →
-                  </Link>
+                      return (
+                        <Link
+                          key={item.id}
+                          href={item.href}
+                          locale={item.targetLocale}
+                          onClick={() => setOpenMenu(null)}
+                          className="flex min-h-11 items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100 hover:text-[#071226] dark:text-slate-200 dark:hover:bg-slate-800"
+                        >
+                          <ItemIcon
+                            className="h-4 w-4 shrink-0 text-[#1268f3] dark:text-cyan-300"
+                            aria-hidden="true"
+                          />
+                          {item.label}
+                        </Link>
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
-
-              {/* Column 3: By Device */}
-              <div>
-                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">By Device</p>
-                <div className="space-y-1">
-                  {[
-                    { href: "/best/vpn-windows", label: t("vpnWindows"), icon: Monitor },
-                    { href: "/best/vpn-macos", label: t("vpnMacos"), icon: Apple },
-                    { href: "/best/vpn-laptops", label: t("vpnLaptops"), icon: Laptop },
-                    { href: "/best/vpn-linux", label: t("vpnLinux"), icon: Monitor },
-                    { href: "/best/vpn-chromebook", label: t("vpnChromebook"), icon: Laptop },
-                    { href: "/best/vpn-mobile", label: t("vpnMobile"), icon: Smartphone },
-                  ].map(item => (
-                    <Link key={item.href} href={item.href} onClick={() => setOpenMenu(null)}
-                      className="flex items-center gap-2 px-2 py-1.5 text-sm rounded-md hover:bg-muted transition-colors">
-                      <item.icon className="h-4 w-4 text-muted-foreground" />
-                      {item.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
+              ))}
             </div>
           </MegaMenu>
 
-          {/* Resources — Mega Menu */}
           <MegaMenu
-            trigger={<><BookOpen className="h-3.5 w-3.5" /> Resources</>}
+            trigger={
+              <>
+                <BookOpen className="h-3.5 w-3.5" aria-hidden="true" />
+                {t("resources")}
+              </>
+            }
             isOpen={openMenu === "resources"}
+            active={resourcesMenuActive}
             onToggle={() => toggleMenu("resources")}
           >
             <div className="grid grid-cols-3 gap-6">
-              {/* Column 1: Learn */}
               <div>
-                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">Learn</p>
+                <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                  {copy.learn}
+                </p>
                 <div className="space-y-1">
                   {[
-                    { href: "/guides", label: t("guides"), icon: BookOpen },
-                    { href: "/guides/what-is-vpn", label: "What is a VPN?", icon: ShieldAlert },
-                    { href: "/blog", label: "Blog", icon: Newspaper },
-                    { href: "/vpn-index", label: t("vpnIndex"), icon: BarChart3 },
-                  ].map(item => (
-                    <Link key={item.href} href={item.href} onClick={() => setOpenMenu(null)}
-                      className="flex items-center gap-2 px-2 py-1.5 text-sm rounded-md hover:bg-muted transition-colors">
-                      <item.icon className="h-4 w-4 text-muted-foreground" />
+                    {
+                      href: "/guides",
+                      label: copy.guidesOverview,
+                      icon: BookOpen,
+                    },
+                    {
+                      href: "/guides/what-is-vpn",
+                      label: copy.whatIsVpn,
+                      icon: ShieldAlert,
+                    },
+                    {
+                      href: "/guides/vpn-privacy-guide",
+                      label: copy.privacyGuide,
+                      icon: ShieldAlert,
+                    },
+                    {
+                      href: "/guides/vpn-speed-guide",
+                      label: copy.speedGuide,
+                      icon: Zap,
+                    },
+                  ].map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setOpenMenu(null)}
+                      className="flex items-center gap-2 rounded-lg text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100 hover:text-[#071226] dark:text-slate-200 dark:hover:bg-slate-800"
+                    >
+                      <item.icon
+                        className="h-4 w-4 shrink-0 text-[#1268f3] dark:text-cyan-300"
+                        aria-hidden="true"
+                      />
                       {item.label}
                     </Link>
                   ))}
                 </div>
               </div>
 
-              {/* Column 2: Tools */}
               <div>
-                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">{t("tools")}</p>
+                <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                  {t("tools")}
+                </p>
                 <div className="space-y-1">
                   {[
-                    { href: "/tools/what-is-my-ip", label: t("ipChecker"), icon: Globe },
-                    { href: "/tools/dns-leak-test", label: t("dnsLeakTest"), icon: ShieldAlert },
-                    { href: "/speed-test", label: t("speedTest"), icon: Zap },
-                  ].map(item => (
-                    <Link key={item.href} href={item.href} onClick={() => setOpenMenu(null)}
-                      className="flex items-center gap-2 px-2 py-1.5 text-sm rounded-md hover:bg-muted transition-colors">
-                      <item.icon className="h-4 w-4 text-muted-foreground" />
+                    {
+                      href: "/tools",
+                      label: copy.toolsOverview,
+                      icon: Wrench,
+                    },
+                    {
+                      href: "/tools/what-is-my-ip",
+                      label: copy.ipChecker,
+                      icon: Globe,
+                    },
+                    {
+                      href: "/speed-test",
+                      label: copy.speedTest,
+                      icon: Zap,
+                    },
+                    {
+                      href: "/tools/dns-leak-test",
+                      label: copy.dnsBeta,
+                      icon: ShieldAlert,
+                    },
+                  ].map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setOpenMenu(null)}
+                      className="flex items-center gap-2 rounded-lg text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100 hover:text-[#071226] dark:text-slate-200 dark:hover:bg-slate-800"
+                    >
+                      <item.icon
+                        className="h-4 w-4 shrink-0 text-[#1268f3] dark:text-cyan-300"
+                        aria-hidden="true"
+                      />
                       {item.label}
                     </Link>
                   ))}
                 </div>
               </div>
 
-              {/* Column 3: Compare */}
               <div>
-                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">Compare</p>
+                <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                  {copy.evidence}
+                </p>
                 <div className="space-y-1">
                   {[
-                    { href: "/compare", label: t("compare"), icon: ArrowLeftRight },
-                    { href: "/methodology", label: t("methodology"), icon: FlaskConical },
-                    { href: "/reports/vpn-transparency-performance-index-2026", label: "Transparency Report", icon: FileText },
-                  ].map(item => (
-                    <Link key={item.href} href={item.href} onClick={() => setOpenMenu(null)}
-                      className="flex items-center gap-2 px-2 py-1.5 text-sm rounded-md hover:bg-muted transition-colors">
-                      <item.icon className="h-4 w-4 text-muted-foreground" />
+                    {
+                      href: "/methodology",
+                      label: t("methodology"),
+                      icon: FlaskConical,
+                    },
+                    {
+                      href: "/reports",
+                      label: copy.reportsOverview,
+                      icon: FileText,
+                    },
+                    {
+                      href: "/editorial-policy",
+                      label: copy.editorialPolicy,
+                      icon: FileText,
+                    },
+                    { href: "/about", label: copy.about, icon: Star },
+                  ].map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setOpenMenu(null)}
+                      className="flex items-center gap-2 rounded-lg text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100 hover:text-[#071226] dark:text-slate-200 dark:hover:bg-slate-800"
+                    >
+                      <item.icon
+                        className="h-4 w-4 shrink-0 text-[#1268f3] dark:text-cyan-300"
+                        aria-hidden="true"
+                      />
                       {item.label}
                     </Link>
                   ))}
@@ -248,117 +422,170 @@ export function Header() {
             </div>
           </MegaMenu>
 
-          {/* Blog */}
           <Link
-            href="/blog"
+            href="/reports"
             className={cn(
-              "px-3 py-2 text-sm font-medium rounded-lg transition-colors hover:text-primary hover:bg-muted",
-              pathname.startsWith("/blog") ? "text-primary bg-muted" : "text-muted-foreground"
+              "inline-flex min-h-12 items-center rounded-xl px-4 py-2 text-sm font-semibold transition-all",
+              pathname.startsWith("/reports")
+                ? "bg-[#b8e34a] text-[#071226] shadow-sm hover:bg-[#a9d63d]"
+                : "text-slate-600 hover:bg-white hover:text-[#071226] dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-white",
             )}
           >
-            Blog
+            {copy.reports}
           </Link>
-
         </nav>
 
-        {/* Right side */}
-        <div className="flex items-center gap-2">
+        <div
+          className="flex items-center justify-self-end gap-2 lg:border-l lg:border-slate-200 lg:pl-4 dark:lg:border-slate-700"
+          style={{ justifySelf: "end" }}
+        >
           <ThemeToggle />
           <LanguageSwitcher />
           <Button
             variant="ghost"
             size="icon"
-            className="lg:hidden"
+            className="min-h-12 min-w-12 lg:hidden"
+            aria-label={mobileMenuOpen ? t("closeMenu") : t("openMenu")}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-navigation"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {mobileMenuOpen ? (
+              <X className="h-5 w-5" aria-hidden="true" />
+            ) : (
+              <Menu className="h-5 w-5" aria-hidden="true" />
+            )}
           </Button>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
-      {mobileMenuOpen && (
-        <nav className="lg:hidden border-t bg-white/95 dark:bg-slate-900/95 backdrop-blur-lg max-h-[80vh] overflow-y-auto">
-          <div className="container py-4 space-y-4">
-            {/* Main links */}
-            <Link href="/reviews" onClick={() => setMobileMenuOpen(false)}
-              className="block text-sm font-medium py-2 hover:text-primary">
-              {t("reviews")}
-            </Link>
-            <Link href="/blog" onClick={() => setMobileMenuOpen(false)}
-              className="block text-sm font-medium py-2 hover:text-primary">
-              Blog
-            </Link>
+      {mobileMenuOpen ? (
+        <nav
+          id="mobile-navigation"
+          aria-label={t("mobileNavigation")}
+          className="max-h-[80vh] overflow-y-auto border-t border-slate-200 bg-white/95 shadow-xl backdrop-blur-xl lg:hidden dark:border-slate-700 dark:bg-slate-900/95"
+        >
+          <div className="container space-y-5 py-5">
+            <div className="grid grid-cols-2 gap-2">
+              <Link
+                href="/reviews"
+                onClick={closeMobileMenu}
+                className={cn(
+                  "flex min-h-12 items-center rounded-xl px-4 text-sm font-semibold",
+                  pathname.startsWith("/reviews")
+                    ? "bg-[#b8e34a] text-[#071226]"
+                    : "bg-slate-50 text-slate-700 dark:bg-slate-800 dark:text-slate-200",
+                )}
+              >
+                {t("reviews")}
+              </Link>
+              <Link
+                href="/reports"
+                onClick={closeMobileMenu}
+                className={cn(
+                  "flex min-h-12 items-center rounded-xl px-4 text-sm font-semibold",
+                  pathname.startsWith("/reports")
+                    ? "bg-[#b8e34a] text-[#071226]"
+                    : "bg-slate-50 text-slate-700 dark:bg-slate-800 dark:text-slate-200",
+                )}
+              >
+                {copy.reports}
+              </Link>
+            </div>
 
-            {/* Best VPNs */}
-            <div>
-              <p className="text-sm font-semibold text-primary flex items-center gap-2 mb-2">
-                <Star className="h-4 w-4" /> {t("best")}
+            {bestNavigationGroups.map((group) => (
+              <div
+                key={group.id}
+                className="rounded-2xl border border-slate-200 bg-slate-50/80 p-3 dark:border-slate-700 dark:bg-slate-800/70"
+              >
+                <p className="mb-2 flex items-center gap-2 px-2 text-sm font-semibold text-[#1268f3] dark:text-cyan-300">
+                  {group.id === "needs" ? (
+                    <Gamepad2 className="h-4 w-4" aria-hidden="true" />
+                  ) : group.id === "countries" ? (
+                    <Globe className="h-4 w-4" aria-hidden="true" />
+                  ) : (
+                    <Star className="h-4 w-4" aria-hidden="true" />
+                  )}
+                  {group.label}
+                </p>
+                <div className="grid grid-cols-2 gap-1">
+                  {group.items
+                    .filter(
+                      (item) => group.id !== "choose" || item.id !== "reviews",
+                    )
+                    .map((item) => (
+                      <Link
+                        key={item.id}
+                        href={item.href}
+                        locale={item.targetLocale}
+                        onClick={closeMobileMenu}
+                        className="flex min-h-12 items-center rounded-lg px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-white hover:text-[#071226] dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-white"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                </div>
+              </div>
+            ))}
+
+            <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-3 dark:border-slate-700 dark:bg-slate-800/70">
+              <p className="mb-2 flex items-center gap-2 px-2 text-sm font-semibold text-slate-700 dark:text-slate-200">
+                <BookOpen className="h-4 w-4" aria-hidden="true" />
+                {copy.learn}
               </p>
-              <div className="grid grid-cols-2 gap-1 pl-2">
+              <div className="grid grid-cols-2 gap-1">
                 {[
-                  { href: "/best/best-vpn", label: t("bestVpn") },
-                  { href: "/best/free-vpn", label: t("freeVpn") },
-                  { href: "/best/vpn-free-trial", label: t("vpnFreeTrial") },
-                  { href: "/best/vpn-gaming", label: t("vpnGaming") },
-                  { href: "/best/vpn-streaming", label: "Streaming" },
-                  { href: "/countries/china", label: t("vpnChina") },
-                  { href: "/countries/russia", label: t("vpnRussia") },
-                  { href: "/countries", label: "All Countries →" },
-                ].map(item => (
-                  <Link key={item.href} href={item.href} onClick={() => setMobileMenuOpen(false)}
-                    className="text-sm text-muted-foreground hover:text-primary py-1.5">
+                  { href: "/guides", label: copy.guidesOverview },
+                  { href: "/guides/what-is-vpn", label: copy.whatIsVpn },
+                  {
+                    href: "/guides/vpn-privacy-guide",
+                    label: copy.privacyGuide,
+                  },
+                  {
+                    href: "/guides/vpn-speed-guide",
+                    label: copy.speedGuide,
+                  },
+                ].map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={closeMobileMenu}
+                    className="flex min-h-12 items-center rounded-lg px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-white hover:text-[#071226] dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-white"
+                  >
                     {item.label}
                   </Link>
                 ))}
               </div>
             </div>
 
-            {/* Devices */}
-            <div>
-              <p className="text-sm font-semibold text-muted-foreground flex items-center gap-2 mb-2">
-                <Laptop className="h-4 w-4" /> Devices
+            <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-3 dark:border-slate-700 dark:bg-slate-800/70">
+              <p className="mb-2 flex items-center gap-2 px-2 text-sm font-semibold text-slate-700 dark:text-slate-200">
+                <Wrench className="h-4 w-4" aria-hidden="true" />
+                {t("resources")}
               </p>
-              <div className="grid grid-cols-2 gap-1 pl-2">
+              <div className="grid grid-cols-2 gap-1">
                 {[
-                  { href: "/best/vpn-windows", label: t("vpnWindows") },
-                  { href: "/best/vpn-macos", label: t("vpnMacos") },
-                  { href: "/best/vpn-laptops", label: t("vpnLaptops") },
-                  { href: "/best/vpn-linux", label: t("vpnLinux") },
-                ].map(item => (
-                  <Link key={item.href} href={item.href} onClick={() => setMobileMenuOpen(false)}
-                    className="text-sm text-muted-foreground hover:text-primary py-1.5">
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Tools & Resources */}
-            <div>
-              <p className="text-sm font-semibold text-muted-foreground flex items-center gap-2 mb-2">
-                <Wrench className="h-4 w-4" /> Resources
-              </p>
-              <div className="grid grid-cols-2 gap-1 pl-2">
-                {[
-                  { href: "/guides", label: t("guides") },
-                  { href: "/compare", label: t("compare") },
-                  { href: "/speed-test", label: t("speedTest") },
-                  { href: "/tools/what-is-my-ip", label: t("ipChecker") },
-                  { href: "/vpn-index", label: t("vpnIndex") },
+                  { href: "/tools", label: copy.toolsOverview },
+                  { href: "/tools/what-is-my-ip", label: copy.ipChecker },
+                  { href: "/speed-test", label: copy.speedTest },
+                  { href: "/tools/dns-leak-test", label: copy.dnsBeta },
                   { href: "/methodology", label: t("methodology") },
-                ].map(item => (
-                  <Link key={item.href} href={item.href} onClick={() => setMobileMenuOpen(false)}
-                    className="text-sm text-muted-foreground hover:text-primary py-1.5">
+                  { href: "/editorial-policy", label: copy.editorialPolicy },
+                ].map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={closeMobileMenu}
+                    className="flex min-h-12 items-center rounded-lg px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-white hover:text-[#071226] dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-white"
+                  >
                     {item.label}
                   </Link>
                 ))}
               </div>
             </div>
-
           </div>
         </nav>
-      )}
+      ) : null}
     </header>
   );
 }

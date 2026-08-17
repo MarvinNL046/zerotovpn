@@ -44,6 +44,9 @@
     "compare": "Comparer",
     "guides": "Guides",
     "blog": "Blog",
+    "selectLanguage": "Choisir la langue",
+    "openMenu": "Ouvrir le menu de navigation",
+    "closeMenu": "Fermer le menu de navigation",
     "about": "À propos",
     "speedTest": "Test de Vitesse",
     "countries": "Pays",
@@ -54,6 +57,10 @@
     "vpnChromebook": "VPN pour Chromebook",
     "vpnLinux": "VPN pour Linux",
     "tools": "Outils",
+    "resources": "Ressources",
+    "mainNavigation": "Navigation principale",
+    "mobileNavigation": "Navigation mobile",
+    "toggleTheme": "Changer le thème de couleur",
     "ipChecker": "Vérificateur d'IP",
     "dnsLeakTest": "Test de Fuite DNS",
     "vpnIndex": "VPN Index",
@@ -169,7 +176,7 @@
     "subscribe": "S'abonner",
     "subscribing": "Abonnement en cours...",
     "success": "Merci de votre inscription!",
-    "checkEmail": "Vérifiez votre email pour confirmer votre abonnement",
+    "checkEmail": "Vous êtes inscrit. Un e-mail de bienvenue peut arriver bientôt.",
     "error": "Une erreur s'est produite. Veuillez réessayer.",
     "consent": "J'accepte de recevoir des emails et peux me désabonner à tout moment",
     "consentRequired": "Veuillez accepter de recevoir des emails",
@@ -4085,10 +4092,7 @@
           "Meilleur prix",
           "Usurpation GPS (Android)"
         ],
-        "cons": [
-          "Moins de serveurs",
-          "Entreprise plus récente"
-        ]
+        "cons": ["Moins de serveurs", "Entreprise plus récente"]
       },
       "nordvpn": {
         "description": "Le protocole propriétaire NordLynx de NordVPN offre les vitesses les plus rapides sur mobile. Les applications sont les mieux notées sur l'App Store et Google Play.",
@@ -4098,10 +4102,7 @@
           "Tunneling fractionné (Android)",
           "Protection contre les menaces"
         ],
-        "cons": [
-          "Complexe pour les débutants",
-          "Pas d'usurpation GPS"
-        ]
+        "cons": ["Complexe pour les débutants", "Pas d'usurpation GPS"]
       },
       "expressvpn": {
         "description": "ExpressVPN est le choix le plus fiable pour les voyageurs. Il fonctionne en Chine, aux Émirats arabes unis et en Turquie, avec des connexions incroyablement stables sur 4G/5G.",
@@ -4111,10 +4112,7 @@
           "Protocole Lightway",
           "Meilleur pour voyager"
         ],
-        "cons": [
-          "Plus cher",
-          "Limite de 8 appareils"
-        ]
+        "cons": ["Plus cher", "Limite de 8 appareils"]
       },
       "pros": "Avantages",
       "cons": "Inconvénients",
@@ -4345,10 +4343,7 @@
           "Interface intuitive",
           "Support client 24h/24 et 7j/7"
         ],
-        "cons": [
-          "Prix plus élevé",
-          "Limité à 8 appareils"
-        ]
+        "cons": ["Prix plus élevé", "Limité à 8 appareils"]
       },
       "nordvpn": {
         "description": "L'application iOS de NordVPN propose le protocole NordLynx pour des vitesses maximales, des raccourcis Siri et une intégration Apple Watch.",
@@ -4555,10 +4550,7 @@
           "Bloqueur de publicités CleanWeb",
           "Application légère"
         ],
-        "cons": [
-          "Réseau de serveurs plus petit",
-          "Pas de Raccourcis Siri"
-        ]
+        "cons": ["Réseau de serveurs plus petit", "Pas de Raccourcis Siri"]
       },
       "expressvpn": {
         "badge": "Meilleur pour voyager",
@@ -4570,10 +4562,7 @@
           "Support 24/7",
           "MediaStreamer pour Apple TV"
         ],
-        "cons": [
-          "Prix plus élevé",
-          "Seulement 8 appareils"
-        ]
+        "cons": ["Prix plus élevé", "Seulement 8 appareils"]
       }
     },
     "features": {
@@ -4717,10 +4706,7 @@
           "7 400+ serveurs",
           "Tunneling fractionné"
         ],
-        "cons": [
-          "Taille d'app plus grande",
-          "Pas d'usurpation GPS"
-        ]
+        "cons": ["Taille d'app plus grande", "Pas d'usurpation GPS"]
       },
       "surfshark": {
         "badge": "App la plus légère",
@@ -4732,10 +4718,7 @@
           "Meilleur prix",
           "Bloqueur de publicités CleanWeb"
         ],
-        "cons": [
-          "Moins de serveurs que Nord",
-          "Légèrement plus lent"
-        ]
+        "cons": ["Moins de serveurs que Nord", "Légèrement plus lent"]
       },
       "expressvpn": {
         "badge": "Meilleur pour voyager",
@@ -4747,10 +4730,7 @@
           "Excellent support",
           "Facile à utiliser"
         ],
-        "cons": [
-          "Prix plus élevé",
-          "Limité à 8 appareils"
-        ]
+        "cons": ["Prix plus élevé", "Limité à 8 appareils"]
       }
     },
     "features": {
@@ -4964,10 +4944,7 @@
           "Support client 24/7",
           "105 pays couverts"
         ],
-        "cons": [
-          "Plus cher",
-          "Limité à 8 appareils"
-        ]
+        "cons": ["Plus cher", "Limité à 8 appareils"]
       }
     },
     "platforms": {
@@ -5173,10 +5150,7 @@
           "Interface tactile conviviale",
           "Fonctionnalités professionnelles"
         ],
-        "cons": [
-          "Prix plus élevé",
-          "Utilisation des ressources"
-        ]
+        "cons": ["Prix plus élevé", "Utilisation des ressources"]
       },
       "surfshark": {
         "badge": "Meilleur rapport qualité-prix",
@@ -5188,10 +5162,7 @@
           "Fonction CleanWeb",
           "Bonnes vitesses"
         ],
-        "cons": [
-          "Moins de fonctionnalités",
-          "Réseau plus petit"
-        ]
+        "cons": ["Moins de fonctionnalités", "Réseau plus petit"]
       },
       "expressvpn": {
         "badge": "Meilleure stabilité",
@@ -5203,10 +5174,7 @@
           "Support 24/7",
           "Installation facile"
         ],
-        "cons": [
-          "Le plus cher",
-          "Limite de 8 appareils"
-        ]
+        "cons": ["Le plus cher", "Limite de 8 appareils"]
       }
     },
     "features": {

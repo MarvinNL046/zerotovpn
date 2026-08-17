@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { Shield, Check, Globe, Zap, Lock, Server, Wifi, Eye } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { PulseIndicator } from "@/components/ui/pulse-indicator";
 import { Link } from "@/i18n/navigation";
 
 // Real visitor data from our own /api/ip endpoint
@@ -13,7 +12,7 @@ interface VisitorInfo {
   country: string;
   countryCode: string;
   isp: string;
-  isVpn: boolean;
+  vpnDetection: "unsupported";
 }
 
 function useVisitorInfo() {
@@ -28,7 +27,7 @@ function useVisitorInfo() {
         country: data.country || "Unknown",
         countryCode: data.countryCode || "",
         isp: data.isp || "",
-        isVpn: data.isVpn || false,
+        vpnDetection: "unsupported",
       }))
       .catch(() => setInfo({
         ip: "Unknown",
@@ -36,7 +35,7 @@ function useVisitorInfo() {
         country: "Unknown",
         countryCode: "",
         isp: "",
-        isVpn: false,
+        vpnDetection: "unsupported",
       }));
   }, []);
 
@@ -74,23 +73,19 @@ export function HeroIllustration({ className }: HeroIllustrationProps) {
           {/* VPN Status Card */}
           <div className={cn(
             "col-span-1 md:col-span-2 rounded-xl p-4 border animate-fade-in-up stagger-1",
-            info === null
-              ? "bg-muted/30 border-border"
-              : info.isVpn
-              ? "bg-gradient-to-br from-green-500/10 to-emerald-500/5 border-green-500/20"
-              : "bg-gradient-to-br from-red-500/10 to-orange-500/5 border-red-500/20"
+            "bg-muted/30 border-border"
           )}>
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
-                <Shield className={cn("h-5 w-5", info === null ? "text-muted-foreground" : info.isVpn ? "text-green-500" : "text-red-500")} />
-                <span className="font-semibold">VPN Status</span>
+                <Shield className="h-5 w-5 text-muted-foreground" />
+                <span className="font-semibold">VPN check</span>
               </div>
               {info === null ? (
                 <span className="text-xs text-muted-foreground animate-pulse">Checking...</span>
-              ) : info.isVpn ? (
-                <PulseIndicator variant="success" label="Protected" />
               ) : (
-                <PulseIndicator variant="danger" label="Not Protected" />
+                <span className="rounded-full border px-2.5 py-1 text-xs font-medium text-muted-foreground">
+                  Not performed
+                </span>
               )}
             </div>
             <div className="grid grid-cols-2 gap-4">
@@ -109,16 +104,8 @@ export function HeroIllustration({ className }: HeroIllustrationProps) {
                 <p className="text-xs text-muted-foreground mb-1">ISP</p>
                 <p className="font-mono text-sm truncate">{info ? info.isp : <span className="animate-pulse">•••</span>}</p>
               </div>
-              <div className="flex items-end">
-                {info && !info.isVpn && (
-                  <Link
-                    href="/quiz"
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary text-primary-foreground text-xs font-semibold rounded-lg hover:bg-primary/90 transition-colors"
-                  >
-                    <Shield className="h-3 w-3" />
-                    Find your VPN
-                  </Link>
-                )}
+              <div className="flex items-end text-xs text-muted-foreground">
+                This card does not detect a VPN.
               </div>
             </div>
           </div>
@@ -195,18 +182,11 @@ export function MiniDashboard({ className }: { className?: string }) {
     <div className={cn("bg-card border rounded-lg p-4 shadow-lg", className)}>
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2">
-          <Shield className={cn("h-4 w-4", info === null ? "text-muted-foreground" : info.isVpn ? "text-green-500" : "text-red-500")} />
+          <Shield className="h-4 w-4 text-muted-foreground" />
           <span className="text-sm font-medium">
-            {info === null ? "Checking..." : info.isVpn ? "Protected" : "Not Protected"}
+            {info === null ? "Checking route..." : "VPN check not performed"}
           </span>
         </div>
-        {info === null ? (
-          <PulseIndicator variant="success" size="sm" />
-        ) : info.isVpn ? (
-          <PulseIndicator variant="success" size="sm" />
-        ) : (
-          <PulseIndicator variant="danger" size="sm" />
-        )}
       </div>
       <div className="space-y-2">
         <div className="flex justify-between text-xs">

@@ -1,56 +1,487 @@
-import { AlertTriangle, CheckCircle2, CircleHelp, Lock, ShieldCheck } from "lucide-react";
+import Image from "next/image";
+import {
+  AlertTriangle,
+  ArrowRight,
+  CheckCircle2,
+  CircleHelp,
+  ExternalLink,
+  EyeOff,
+  Gauge,
+  Globe2,
+  Info,
+  Laptop,
+  Network,
+  Server,
+  ShieldCheck,
+  Wifi,
+} from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { AffiliateButton, AffiliateTextLink } from "@/components/vpn/affiliate-button";
-import { FAQSchema } from "@/components/seo/faq-schema";
-import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
-import { BestVpnEditorialTemplate } from "@/components/editorial/best-vpn-editorial-template";
+import { AffiliateButton } from "@/components/vpn/affiliate-button";
+import { FAQAccordion } from "@/components/seo/faq-schema";
+import { NewsletterForm } from "@/components/newsletter/newsletter-form";
 import { DnsLeakWidget } from "@/components/tools/dns-leak-widget";
-import { getVpnById } from "@/lib/vpn-data";
+import { DnsFixTabs } from "@/components/tools/dns-fix-tabs";
+import {
+  DNS_LEAK_PAGE_REVIEWED_AT,
+  DNS_ROUTE_CHECK_VERSION,
+  dnsLeakSources,
+  dnsProviderGuides,
+  type DnsLeakCopy,
+} from "@/data/dns-leak-test";
 import { getVpnAffiliateUrl, type VpnLinkSlug } from "@/lib/vpn-links";
-import { editorialContentBriefs } from "@/lib/editorial-content-briefs";
+import { BASE_URL } from "@/lib/seo-utils";
+import styles from "@/components/tools/dns-leak-diagnostic.module.css";
 
-export const dnsLeakEditorialTitle = "DNS Leak Test: Check Whether Your VPN Is Routing DNS Correctly";
-export const dnsLeakEditorialDescription = "Run a browser-based DNS leak test, then learn how to interpret resolver ownership, IPv6, browser DNS settings and VPN-client routing without treating one result as a complete privacy audit.";
+const trustIcons = [ShieldCheck, EyeOff, CircleHelp] as const;
+const relatedIcons = [Globe2, Gauge, ShieldCheck] as const;
 
-export const dnsLeakEditorialFaq = [
-  { question: "What is a DNS leak?", answer: "A DNS leak happens when a device sends a domain lookup outside the encrypted path you intended to use, such as to an ISP resolver while a VPN is connected. The result can reveal resolver or network context even when your public IP is different." },
-  { question: "How can I check if my VPN has a DNS leak?", answer: "Run the test before and after connecting the VPN, compare the listed resolver organisations and locations, and repeat it on Wi-Fi and mobile data. A single browser result cannot verify every app, IPv6 path or split-tunnel rule." },
-  { question: "Can a DNS leak expose my location?", answer: "It can expose information about the network or resolver handling your queries. Treat the location as an indicator, not a precise GPS result; DNS, IP, browser and account signals can disagree." },
-  { question: "How do I fix a DNS leak?", answer: "Check the VPN app's DNS and kill-switch settings, remove unexpected custom DNS entries, review browser Secure DNS or DoH settings, and test IPv4 and IPv6 again. Follow the provider's current support steps for your device." },
-  { question: "Is a DNS leak test safe?", answer: "A normal test performs DNS lookups for test domains and reports the resolvers that answer. Use a reputable test, avoid entering credentials, and read its privacy policy before relying on it." },
-  { question: "Does a DNS leak test prove that a VPN is private?", answer: "No. It checks one part of the network path. It does not audit the provider's logging, app permissions, WebRTC behaviour, account telemetry or the privacy of the destination websites you use." },
-];
-
-const providers = [
-  { id: "nordvpn", label: "NordVPN", angle: "Check the app's DNS, kill-switch and protocol settings against the current support documentation" },
-  { id: "surfshark", label: "Surfshark", angle: "Compare the device-specific routing and custom-DNS guidance before relying on the tunnel" },
-  { id: "expressvpn", label: "ExpressVPN", angle: "Use the provider's current leak-protection instructions as a second source of verification" },
-] as const satisfies ReadonlyArray<{ id: VpnLinkSlug; label: string; angle: string }>;
-
-function ProviderCard({ provider }: { provider: (typeof providers)[number] }) {
-  const vpn = getVpnById(provider.id);
-  if (!vpn) return null;
-  const affiliateUrl = getVpnAffiliateUrl(provider.id);
-  const price = vpn.priceTwoYear ?? vpn.priceYearly;
-  return <article className="rounded-xl border bg-card p-5 shadow-sm"><p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Privacy option to verify</p><h3 className="mt-2 text-xl font-semibold">{provider.label}</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">{provider.angle}.</p><p className="mt-4 text-2xl font-bold text-primary"><AffiliateTextLink vpnId={vpn.id} vpnName={vpn.name} affiliateUrl={affiliateUrl} dataPriceLink>${price.toFixed(2)}</AffiliateTextLink><span className="ml-1 text-sm font-normal text-muted-foreground">/mo equivalent</span></p><p className="mt-1 text-xs text-muted-foreground">Catalog snapshot checked {vpn.priceLastVerified ?? "date not recorded"}; verify current terms.</p><AffiliateButton vpnId={vpn.id} vpnName={vpn.name} affiliateUrl={affiliateUrl} className="mt-4 w-full">Check {provider.label} privacy options</AffiliateButton></article>;
+function localePath(locale: DnsLeakCopy["locale"], path: string) {
+  return `${locale === "en" ? "" : `/${locale}`}${path}`;
 }
 
-export function DnsLeakEditorialPage() {
-  return <BestVpnEditorialTemplate brief={editorialContentBriefs.dnsLeak} navigation={[{ href: "#test", label: "Test" }, { href: "#interpret", label: "Interpret" }, { href: "#fix", label: "Fix" }, { href: "#faq", label: "FAQ" }, { href: "#sources", label: "Sources" }]}>
-    <div className="flex flex-col"><div className="container pt-6"><BreadcrumbSchema items={[{ name: "Tools", href: "/tools" }, { name: "DNS leak test", href: "/tools/dns-leak-test" }]} /></div>
-      <main className="container max-w-5xl py-8 lg:py-12"><header className="mb-10 max-w-4xl"><p className="mb-3 text-sm font-semibold uppercase tracking-wide text-primary">Privacy diagnostic tool</p><h1 className="text-4xl font-bold tracking-tight md:text-5xl">{dnsLeakEditorialTitle}</h1><p className="mt-5 text-xl text-muted-foreground">{dnsLeakEditorialDescription}</p><div className="mt-5 flex items-start gap-3 rounded-xl border border-amber-500/30 bg-amber-500/10 p-4 text-sm leading-6"><AlertTriangle className="mt-0.5 size-5 shrink-0 text-amber-700" aria-hidden="true" /><p><strong>Evidence boundary:</strong> a DNS result is a route check, not a provider audit. Repeat it after network, browser or VPN changes and keep account, app-permission and WebRTC checks separate.</p></div><p className="mt-4 text-sm text-muted-foreground">Reviewed 13 August 2026 · DataForSEO US/English questions guide the coverage; they do not prove that a VPN prevents every leak.</p></header>
+function PageStructuredData({ copy }: { copy: DnsLeakCopy }) {
+  const path = localePath(copy.locale, "/tools/dns-leak-test");
+  const pageUrl = `${BASE_URL}${path}`;
+  const breadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: `${BASE_URL}${localePath(copy.locale, "") || "/"}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Tools",
+        item: `${BASE_URL}${localePath(copy.locale, "/tools")}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: copy.breadcrumb,
+        item: pageUrl,
+      },
+    ],
+  };
+  const application = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: copy.hero.title,
+    url: pageUrl,
+    description: copy.metadata.description,
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any operating system with a modern web browser",
+    browserRequirements: "JavaScript",
+    isAccessibleForFree: true,
+    inLanguage: copy.locale,
+    dateModified: DNS_LEAK_PAGE_REVIEWED_AT,
+    softwareVersion: DNS_ROUTE_CHECK_VERSION,
+    featureList: [
+      "Public browser route snapshot",
+      "DNS resolver comparison guide",
+      "Device-specific DNS troubleshooting steps",
+    ],
+  };
 
-        <section id="test" className="scroll-mt-24"><h2 className="text-3xl font-bold">Run the DNS leak test</h2><p className="mt-3 max-w-3xl text-muted-foreground">Run it once without a VPN, again after connecting, and once more after switching between Wi-Fi and mobile data. Compare resolver names, organisations and locations rather than looking only for a green label.</p><div className="mt-6"><DnsLeakWidget /></div></section>
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(application) }}
+      />
+    </>
+  );
+}
 
-        <section id="interpret" className="mt-16 scroll-mt-24"><h2 className="text-3xl font-bold">How to interpret the result</h2><div className="mt-6 overflow-x-auto rounded-xl border"><table className="w-full min-w-[720px] text-left text-sm"><caption className="sr-only">DNS leak test interpretation guide</caption><thead className="bg-muted/60"><tr><th scope="col" className="p-4">Signal</th><th scope="col" className="p-4">What it can indicate</th><th scope="col" className="p-4">What it cannot prove</th></tr></thead><tbody className="divide-y"><tr><th scope="row" className="p-4 font-semibold">ISP resolver appears</th><td className="p-4">DNS queries may be leaving through the local network or a custom resolver.</td><td className="p-4">It does not by itself prove that every app is leaking or that the VPN is logging.</td></tr><tr><th scope="row" className="p-4 font-semibold">VPN/data-centre resolver appears</th><td className="p-4">The browser test is seeing a resolver associated with the tunnel.</td><td className="p-4">It does not verify IPv6, WebRTC, split tunnelling or other devices.</td></tr><tr><th scope="row" className="p-4 font-semibold">Mixed locations or providers</th><td className="p-4">Different paths, browser settings, networks or fallback resolvers may be active.</td><td className="p-4">Geo-location databases can be imprecise; repeat the test before diagnosing.</td></tr></tbody></table></div></section>
+function HeroNetwork({ copy }: { copy: DnsLeakCopy }) {
+  const nodes = [
+    {
+      label: copy.tool.route.device,
+      detail: copy.tool.route.measured,
+      Icon: Laptop,
+      unknown: false,
+    },
+    {
+      label: copy.tool.route.publicRoute,
+      detail: copy.tool.route.measured,
+      Icon: Network,
+      unknown: false,
+    },
+    {
+      label: copy.tool.route.resolver,
+      detail: copy.tool.route.notMeasured,
+      Icon: Server,
+      unknown: true,
+    },
+    {
+      label: copy.tool.route.destination,
+      detail: copy.tool.route.notMeasured,
+      Icon: Globe2,
+      unknown: true,
+    },
+  ];
 
-        <section id="fix" className="mt-16 scroll-mt-24"><h2 className="text-3xl font-bold">A practical fix checklist</h2><ol className="mt-5 grid gap-4 md:grid-cols-2">{["Disconnect the VPN and record the baseline resolver list.", "Reconnect and check the app's DNS protection, kill switch and split-tunnel settings.", "Remove custom OS DNS entries unless you understand how they interact with the VPN.", "Review browser Secure DNS/DoH and Android Private DNS settings separately.", "Repeat on IPv4 and IPv6-capable networks, then test after sleep, reconnect and network switching.", "If the issue persists, save the resolver output and follow the provider's current support instructions."].map((item, index) => <li key={item} className="flex gap-3 rounded-lg border p-4"><CheckCircle2 className="mt-0.5 size-5 shrink-0 text-green-600" aria-hidden="true" /><span><strong>{index + 1}.</strong> {item}</span></li>)}</ol><div className="mt-6 grid gap-5 md:grid-cols-3"><div className="rounded-xl border p-5"><Lock className="size-6 text-primary" aria-hidden="true" /><h3 className="mt-3 font-semibold">DNS path</h3><p className="mt-2 text-sm text-muted-foreground">A VPN can route DNS through its tunnel, but custom settings and browser features can change the path.</p></div><div className="rounded-xl border p-5"><ShieldCheck className="size-6 text-primary" aria-hidden="true" /><h3 className="mt-3 font-semibold">Kill switch</h3><p className="mt-2 text-sm text-muted-foreground">A kill switch may block traffic during tunnel failure; confirm what it covers on your device.</p></div><div className="rounded-xl border p-5"><CircleHelp className="size-6 text-primary" aria-hidden="true" /><h3 className="mt-3 font-semibold">Broader privacy</h3><p className="mt-2 text-sm text-muted-foreground">For a broader threat model, compare our <Link href="/best/vpn-privacy" className="text-primary underline">VPN privacy guide</Link> and <Link href="/blog/vpn-leak-testing-tools-compared-2026" className="text-primary underline">leak-testing tools guide</Link>.</p></div></div></section>
+  return (
+    <div className={styles.heroVisual} aria-hidden="true">
+      <div className={styles.heroVisualHeader}>
+        <span>{DNS_ROUTE_CHECK_VERSION}</span>
+        <span>{copy.tool.labels.notMeasured}</span>
+      </div>
+      <div className={styles.heroNetwork}>
+        {nodes.map(({ label, detail, Icon, unknown }, index) => (
+          <div
+            className={styles.heroNetworkNode}
+            data-unknown={unknown}
+            key={label}
+          >
+            <Icon />
+            <strong>{label}</strong>
+            <span>{detail}</span>
+            {index < nodes.length - 1 ? (
+              <ArrowRight className={styles.heroNetworkArrow} />
+            ) : null}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
-        <section className="mt-16 scroll-mt-24"><h2 className="text-3xl font-bold">VPN options to verify</h2><p className="mt-3 max-w-3xl text-muted-foreground">These are contextual starting points for readers who found a routing problem. They are not a guarantee of leak-free behaviour; open the provider documentation, test your device and check the current plan before subscribing.</p><div className="mt-6 grid gap-5 md:grid-cols-3">{providers.map((provider) => <ProviderCard key={provider.id} provider={provider} />)}</div></section>
+function SectionHeader({
+  eyebrow,
+  title,
+  intro,
+}: {
+  eyebrow: string;
+  title: string;
+  intro: string;
+}) {
+  return (
+    <header className={styles.sectionHeader}>
+      <p className={styles.eyebrow}>{eyebrow}</p>
+      <h2>{title}</h2>
+      <p>{intro}</p>
+    </header>
+  );
+}
 
-        <section id="faq" className="mt-16 scroll-mt-24"><h2 className="text-3xl font-bold">DNS leak FAQ</h2><div className="mt-5 space-y-5">{dnsLeakEditorialFaq.map((item) => <div key={item.question} className="rounded-xl border p-5"><h3 className="font-semibold">{item.question}</h3><p className="mt-2 text-muted-foreground">{item.answer}</p></div>)}</div><FAQSchema title="DNS leak test FAQ" faqs={dnsLeakEditorialFaq} /></section>
+function SignalIcon({ tone }: { tone: "info" | "good" | "warning" }) {
+  const Icon =
+    tone === "warning" ? AlertTriangle : tone === "good" ? CheckCircle2 : Info;
+  return (
+    <span className={styles.signalIcon} data-tone={tone}>
+      <Icon aria-hidden="true" />
+    </span>
+  );
+}
 
-        <section id="sources" className="mt-16 scroll-mt-24 border-t pt-8"><h2 className="text-2xl font-bold">Sources and related checks</h2><p className="mt-2 text-sm text-muted-foreground">The research dossier was refreshed 13 August 2026. Provider behaviour and browser settings should be checked at source because they change by platform and release.</p><ul className="mt-4 grid gap-2 text-sm sm:grid-cols-2"><li><a href="https://browserleaks.com/dns" target="_blank" rel="noopener noreferrer" className="text-primary underline">BrowserLeaks DNS test reference</a></li><li><a href="https://protonvpn.com/support/dns-leaks-privacy" target="_blank" rel="noopener noreferrer" className="text-primary underline">Proton VPN: DNS leak guidance</a></li><li><Link href="/blog/vpn-leak-testing-tools-compared-2026" className="text-primary underline">Compare leak-testing tools</Link></li><li><Link href="/methodology" className="text-primary underline">ZeroToVPN methodology</Link></li></ul></section>
-      </main></div>
-  </BestVpnEditorialTemplate>;
+function ProviderCard({
+  provider,
+  copy,
+}: {
+  provider: (typeof dnsProviderGuides)[number];
+  copy: DnsLeakCopy;
+}) {
+  const affiliateUrl = getVpnAffiliateUrl(provider.id as VpnLinkSlug);
+  const description =
+    copy.locale === "nl" ? provider.descriptionNl : provider.descriptionEn;
+
+  return (
+    <article
+      className={styles.providerCard}
+      aria-labelledby={`provider-${provider.id}`}
+    >
+      <div className={styles.providerLogo}>
+        <Image src={provider.logo} alt="" width={160} height={48} />
+      </div>
+      <h3 id={`provider-${provider.id}`}>{provider.name}</h3>
+      <p>{description}</p>
+      <p className={styles.sourceStamp}>{copy.providers.sourceLabel}</p>
+      <div className={styles.providerActions}>
+        <a
+          className={styles.providerDoc}
+          href={provider.documentationUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {copy.providers.documentation}
+          <ExternalLink aria-hidden="true" />
+        </a>
+        <Link className={styles.providerReview} href={provider.reviewHref}>
+          {copy.providers.review}
+          <ArrowRight aria-hidden="true" />
+        </Link>
+        {affiliateUrl ? (
+          <AffiliateButton
+            vpnId={provider.id}
+            vpnName={provider.name}
+            affiliateUrl={affiliateUrl}
+            className={styles.providerPlans}
+          >
+            {copy.providers.plans}
+            <ExternalLink aria-hidden="true" />
+          </AffiliateButton>
+        ) : null}
+      </div>
+    </article>
+  );
+}
+
+export function DnsLeakEditorialPage({ copy }: { copy: DnsLeakCopy }) {
+  const interpretMeaning = copy.interpret.headers[1];
+  const interpretLimit = copy.interpret.headers[2];
+
+  return (
+    <article className={styles.page}>
+      <PageStructuredData copy={copy} />
+
+      <nav className={styles.stickyNav} aria-label={copy.breadcrumb}>
+        <div className={`container ${styles.stickyNavInner}`}>
+          {copy.navigation.map((item) => (
+            <a href={item.href} key={item.href}>
+              {item.label}
+            </a>
+          ))}
+        </div>
+      </nav>
+
+      <header className={styles.hero}>
+        <div className="container">
+          <nav className={styles.breadcrumb} aria-label="Breadcrumb">
+            <Link href="/">Home</Link>
+            <span aria-hidden="true">/</span>
+            <Link href="/tools">Tools</Link>
+            <span aria-hidden="true">/</span>
+            <span aria-current="page">{copy.breadcrumb}</span>
+          </nav>
+          <div className={styles.heroGrid}>
+            <div>
+              <p className={styles.eyebrow}>{copy.hero.eyebrow}</p>
+              <h1 className={styles.heroTitle}>{copy.hero.title}</h1>
+              <p className={styles.heroSubtitle}>{copy.hero.subtitle}</p>
+              <a className={styles.heroCta} href="#check">
+                {copy.tool.start}
+                <ArrowRight aria-hidden="true" />
+              </a>
+              <aside className={styles.boundary}>
+                <AlertTriangle aria-hidden="true" />
+                <p>
+                  <strong>{copy.hero.boundaryTitle}</strong>
+                  {copy.hero.boundaryBody}
+                </p>
+              </aside>
+              <ul className={styles.trustRow}>
+                {copy.hero.cues.map((cue, index) => {
+                  const Icon = trustIcons[index] ?? ShieldCheck;
+                  return (
+                    <li key={cue}>
+                      <Icon aria-hidden="true" />
+                      {cue}
+                    </li>
+                  );
+                })}
+              </ul>
+              <p className={styles.reviewed}>{copy.hero.reviewed}</p>
+            </div>
+            <HeroNetwork copy={copy} />
+          </div>
+        </div>
+      </header>
+
+      <section className={styles.toolSection} id="check">
+        <div className="container">
+          <DnsLeakWidget copy={copy.tool} />
+        </div>
+      </section>
+
+      <section
+        className={`${styles.section} ${styles.sectionAlt}`}
+        id="interpret"
+      >
+        <div className="container">
+          <SectionHeader
+            eyebrow={copy.interpret.eyebrow}
+            title={copy.interpret.title}
+            intro={copy.interpret.intro}
+          />
+          <table className={styles.interpretTable}>
+            <caption className="sr-only">{copy.interpret.title}</caption>
+            <thead>
+              <tr>
+                {copy.interpret.headers.map((header) => (
+                  <th scope="col" key={header}>
+                    {header}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {copy.interpret.rows.map((row) => (
+                <tr key={row.signal}>
+                  <th scope="row">
+                    <span className={styles.signalLabel}>
+                      <SignalIcon tone={row.tone} />
+                      {row.signal}
+                    </span>
+                  </th>
+                  <td>{row.meaning}</td>
+                  <td>{row.limitation}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <div className={styles.interpretCards}>
+            {copy.interpret.rows.map((row) => (
+              <article className={styles.interpretCard} key={row.signal}>
+                <h3>
+                  <SignalIcon tone={row.tone} />
+                  {row.signal}
+                </h3>
+                <dl>
+                  <div>
+                    <dt>{interpretMeaning}</dt>
+                    <dd>{row.meaning}</dd>
+                  </div>
+                  <div>
+                    <dt>{interpretLimit}</dt>
+                    <dd>{row.limitation}</dd>
+                  </div>
+                </dl>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.section} id="fix">
+        <div className="container">
+          <SectionHeader
+            eyebrow={copy.workflow.eyebrow}
+            title={copy.workflow.title}
+            intro={copy.workflow.intro}
+          />
+          <div className={styles.workflowGrid}>
+            {copy.workflow.steps.map((step, index) => (
+              <article className={styles.workflowCard} key={step.title}>
+                <span className={styles.stepNumber}>{index + 1}</span>
+                <h3>{step.title}</h3>
+                <p>{step.body}</p>
+              </article>
+            ))}
+          </div>
+          <DnsFixTabs copy={copy.deviceFix} />
+        </div>
+      </section>
+
+      <section className={`${styles.section} ${styles.sectionAlt}`}>
+        <div className="container">
+          <SectionHeader
+            eyebrow={copy.related.eyebrow}
+            title={copy.related.title}
+            intro={copy.hero.boundaryBody}
+          />
+          <div className={styles.relatedGrid}>
+            {copy.related.items.map((item, index) => {
+              const Icon = relatedIcons[index] ?? Wifi;
+              return (
+                <Link
+                  className={styles.relatedCard}
+                  href={item.href}
+                  key={item.href}
+                >
+                  <Icon aria-hidden="true" />
+                  <strong>{item.title}</strong>
+                  <p>{item.body}</p>
+                  <span>
+                    {item.action}
+                    <ArrowRight aria-hidden="true" />
+                  </span>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className={`${styles.section} ${styles.providerSection}`}>
+        <div className="container">
+          <SectionHeader
+            eyebrow={copy.providers.eyebrow}
+            title={copy.providers.title}
+            intro={copy.providers.intro}
+          />
+          <aside className={styles.disclosure}>
+            <Info aria-hidden="true" />
+            <p>
+              {copy.providers.disclosure}{" "}
+              <Link href="/affiliate-disclosure">
+                {copy.providers.disclosureLink}
+              </Link>
+            </p>
+          </aside>
+          <div className={styles.providerGrid}>
+            {dnsProviderGuides.map((provider) => (
+              <ProviderCard copy={copy} key={provider.id} provider={provider} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <FAQAccordion
+        className={`container ${styles.faqSection}`}
+        faqs={copy.faqs}
+        title={copy.faqTitle}
+      />
+
+      <section className={`container ${styles.bottomGrid}`} id="sources">
+        <div className={styles.sourcePanel}>
+          <p className={styles.eyebrow}>{copy.sources.eyebrow}</p>
+          <h2>{copy.sources.title}</h2>
+          <p>{copy.sources.intro}</p>
+          <details className={styles.sourceLedger}>
+            <summary>{copy.sources.open}</summary>
+            <ul className={styles.sourceList}>
+              {dnsLeakSources.map((source) => (
+                <li key={source.url}>
+                  <a
+                    href={source.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span>
+                      <strong>
+                        {copy.locale === "nl" ? source.labelNl : source.labelEn}
+                      </strong>
+                      <span>
+                        {source.organisation} ·{" "}
+                        {copy.locale === "nl" ? source.typeNl : source.typeEn}
+                      </span>
+                    </span>
+                    <ExternalLink aria-hidden="true" />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </details>
+        </div>
+        <aside className={styles.newsletterPanel}>
+          <p className={styles.eyebrow}>{copy.newsletter.eyebrow}</p>
+          <h2>{copy.newsletter.title}</h2>
+          <p>{copy.newsletter.body}</p>
+          <NewsletterForm
+            className={styles.newsletterForm}
+            source="dns-leak-test"
+            variant="compact"
+          />
+        </aside>
+      </section>
+    </article>
+  );
 }

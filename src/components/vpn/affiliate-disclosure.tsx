@@ -17,11 +17,13 @@ export async function AffiliateDisclosure({
   variant = "inline",
   tone = "default",
   className = "",
+  linkLabel,
 }: {
   variant?: "inline" | "card";
   /** "onDark" voor de donkere hero's, waar de thema-tokens niet gelden. */
   tone?: "default" | "onDark";
   className?: string;
+  linkLabel?: string;
 }) {
   const t = await getTranslations("footer");
   const onDark = tone === "onDark";
@@ -42,7 +44,7 @@ export async function AffiliateDisclosure({
               onDark ? "hover:text-white" : "hover:text-foreground"
             }`}
           >
-            How we fund this site
+            {linkLabel ?? t("disclosure")}
           </Link>
         </span>
       </p>
@@ -53,14 +55,17 @@ export async function AffiliateDisclosure({
     <aside
       className={`flex items-start gap-3 rounded-lg border border-border bg-muted/40 p-4 text-sm text-muted-foreground ${className}`}
     >
-      <Info className="mt-0.5 size-5 shrink-0 text-primary" aria-hidden="true" />
+      <Info
+        className="mt-0.5 size-5 shrink-0 text-primary"
+        aria-hidden="true"
+      />
       <span>
         {t("disclaimer")}{" "}
         <Link
           href="/affiliate-disclosure"
           className="font-medium underline underline-offset-2 hover:text-foreground"
         >
-          How we fund this site
+          {linkLabel ?? t("disclosure")}
         </Link>
       </span>
     </aside>

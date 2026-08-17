@@ -1,141 +1,79 @@
-import { getTranslations, setRequestLocale } from "next-intl/server";
-import { DnsLeakWidget } from "@/components/tools/dns-leak-widget";
-import { DnsLeakEditorialPage, dnsLeakEditorialDescription, dnsLeakEditorialTitle } from "@/components/editorial/dns-leak-editorial-page";
-import { VpnCard } from "@/components/vpn/vpn-card";
-import { vpnProviders } from "@/lib/vpn-data";
-import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
-import { FAQAccordion } from "@/components/seo/faq-schema";
-import { ShieldAlert, Shield, Lock, AlertTriangle } from "lucide-react";
 import type { Metadata } from "next";
-import { generateAlternates, titelMetMerk } from "@/lib/seo-utils";
+import { permanentRedirect } from "next/navigation";
+import { setRequestLocale } from "next-intl/server";
+import { DnsLeakEditorialPage } from "@/components/editorial/dns-leak-editorial-page";
+import {
+  getDnsLeakCopy,
+  isDnsLeakLocaleFullyLocalized,
+} from "@/data/dns-leak-test";
+import { BASE_URL, OG_LOCALE_MAP } from "@/lib/seo-utils";
+
 type Props = {
   params: Promise<{ locale: string }>;
 };
 
+const PATH = "/tools/dns-leak-test";
+
+function localizedUrl(locale: string) {
+  return `${BASE_URL}${locale === "en" ? "" : `/${locale}`}${PATH}`;
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  if (locale === "en") {
-    return {
-      title: { absolute: titelMetMerk(dnsLeakEditorialTitle) },
-      description: dnsLeakEditorialDescription,
-      alternates: generateAlternates("/tools/dns-leak-test", locale),
-    };
-  }
-  const t = await getTranslations({ locale, namespace: "dnsLeakTest" });
+  const isLocalized = isDnsLeakLocaleFullyLocalized(locale);
+  const copy = getDnsLeakCopy(locale);
+  const canonical = isLocalized
+    ? localizedUrl(copy.locale)
+    : localizedUrl("en");
+  const languages = {
+    "x-default": localizedUrl("en"),
+    en: localizedUrl("en"),
+    nl: localizedUrl("nl"),
+  };
 
   return {
-    title: { absolute: titelMetMerk(t("pageTitle")) },
-    description: t("pageSubtitle"),
-    // Canonicaliseerde naar de apex (307) én naar /en/…, een pad dat onder
-    // localePrefix "as-needed" niet bestaat. generateAlternates doet het goed
-    // en levert meteen de hreflang-set die hier ontbrak.
-    alternates: generateAlternates("/tools/dns-leak-test", locale),
+    title: { absolute: copy.metadata.title },
+    description: copy.metadata.description,
+    alternates: {
+      canonical,
+      ...(isLocalized ? { languages } : {}),
+    },
+    // The content and route check are useful, but this URL stays out of the
+    // index until a real resolver-probe backend replaces the public-IP route.
+    robots: { index: false, follow: true },
+    openGraph: {
+      type: "website",
+      url: canonical,
+      title: copy.metadata.title,
+      description: copy.metadata.description,
+      locale: OG_LOCALE_MAP[copy.locale],
+      images: [
+        {
+          url: `${BASE_URL}${PATH}/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: copy.metadata.ogAlt,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: copy.metadata.title,
+      description: copy.metadata.description,
+      images: [`${BASE_URL}${PATH}/opengraph-image`],
+    },
   };
 }
 
 export default async function DnsLeakTestPage({ params }: Props) {
   const { locale } = await params;
+
+  if (!isDnsLeakLocaleFullyLocalized(locale)) {
+    permanentRedirect(`/en${PATH}`);
+  }
+
   setRequestLocale(locale);
-  if (locale === "en") return <DnsLeakEditorialPage />;
-  const t = await getTranslations("dnsLeakTest");
+  const copy = getDnsLeakCopy(locale);
 
-  // Get top 3 VPNs with best security for DNS leak protection
-  const secureVpns = [...vpnProviders]
-    .sort((a, b) => b.securityScore - a.securityScore)
-    .slice(0, 3);
-
-  // FAQ data
-  const faqData = t.raw("faq") as Array<{ question: string; answer: string }>;
-
-  return (
-    <div className="container mx-auto px-4 py-8 max-w-6xl">
-      {/* Breadcrumbs */}
-      <BreadcrumbSchema
-        items={[
-          { name: "Tools", href: "/tools" },
-          { name: t("title"), href: "/tools/dns-leak-test" },
-        ]}
-        className="mb-8"
-      />
-
-      {/* Hero Section */}
-      <div className="text-center mb-10">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-          <ShieldAlert className="h-4 w-4" />
-          {t("title")}
-        </div>
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">
-          {t("pageTitle")}
-        </h1>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          {t("pageSubtitle")}
-        </p>
-      </div>
-
-      {/* DNS Leak Test Widget */}
-      <div className="mb-12">
-        <DnsLeakWidget />
-      </div>
-
-      {/* Info Cards */}
-      <div className="grid md:grid-cols-3 gap-6 mb-12">
-        <div className="bg-card rounded-xl border p-6">
-          <div className="flex items-start gap-4">
-            <div className="p-3 rounded-lg bg-red-500/10">
-              <AlertTriangle className="h-6 w-6 text-red-500" />
-            </div>
-            <div>
-              <h2 className="font-semibold text-lg mb-2">{t("whatIsDns")}</h2>
-              <p className="text-muted-foreground text-sm">{t("whatIsDnsDesc")}</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-card rounded-xl border p-6">
-          <div className="flex items-start gap-4">
-            <div className="p-3 rounded-lg bg-amber-500/10">
-              <Lock className="h-6 w-6 text-amber-500" />
-            </div>
-            <div>
-              <h2 className="font-semibold text-lg mb-2">{t("whyDangerous")}</h2>
-              <p className="text-muted-foreground text-sm">{t("whyDangerousDesc")}</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-card rounded-xl border p-6">
-          <div className="flex items-start gap-4">
-            <div className="p-3 rounded-lg bg-green-500/10">
-              <Shield className="h-6 w-6 text-green-500" />
-            </div>
-            <div>
-              <h2 className="font-semibold text-lg mb-2">{t("howToFix")}</h2>
-              <p className="text-muted-foreground text-sm">{t("howToFixDesc")}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* FAQ Section */}
-      <div className="mb-12">
-        <FAQAccordion
-          faqs={faqData}
-          title="Frequently Asked Questions"
-        />
-      </div>
-
-      {/* Recommended VPNs */}
-      <div className="mb-8">
-        <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-          <Shield className="h-6 w-6 text-primary" />
-          {t("recommendedVpns")}
-        </h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          {secureVpns.map((vpn, index) => (
-            <VpnCard key={vpn.id} vpn={vpn} rank={index + 1} locale={locale} />
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+  return <DnsLeakEditorialPage copy={copy} />;
 }

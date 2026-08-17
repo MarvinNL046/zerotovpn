@@ -1,162 +1,288 @@
 "use client";
 
-import { useState } from "react";
-import { Card } from "@/components/ui/card";
+import { useEffect, useRef, useState } from "react";
+import { ArrowLeft, ArrowRight, RotateCcw } from "lucide-react";
+import { Progress } from "@/components/ui/progress";
+import type {
+  FinderAnswers,
+  FinderCopy,
+  FinderProvider,
+  FinderPlatform,
+  FinderQuestion,
+  FinderQuestionId,
+  FinderSource,
+} from "@/data/vpn-finder";
 import { QuizQuestion } from "./quiz-question";
 import { QuizResults } from "./quiz-results";
-import { Progress } from "@/components/ui/progress";
-import type { VpnProvider } from "@/lib/vpn-data";
-import type { VpnData } from "@/lib/db/vpn-service";
-import { useTranslations } from "next-intl";
-
-export type QuizAnswers = {
-  primaryUse?: string;
-  budget?: string;
-  devices?: string;
-  speedPriority?: string;
-  location?: string;
-};
+import styles from "./vpn-finder.module.css";
 
 type QuizWizardProps = {
-  vpns: (VpnProvider | VpnData)[];
-  locale: string;
+  copy: FinderCopy;
+  providers: FinderProvider[];
+  sources: FinderSource[];
 };
 
-export function QuizWizard({ vpns, locale }: QuizWizardProps) {
-  const t = useTranslations("quiz");
-  const [currentStep, setCurrentStep] = useState(0);
-  const [answers, setAnswers] = useState<QuizAnswers>({});
-  const [showResults, setShowResults] = useState(false);
+function valueForQuestion(
+  answers: FinderAnswers,
+  questionId: FinderQuestionId,
+): string | string[] | undefined {
+  return answers[questionId];
+}
 
-  const totalSteps = 5;
-  const progress = ((currentStep + 1) / totalSteps) * 100;
+function hasAnswer(value: string | string[] | undefined): boolean {
+  return Array.isArray(value) ? value.length > 0 : Boolean(value);
+}
 
-  const handleAnswer = (questionId: string, value: string) => {
-    setAnswers({ ...answers, [questionId]: value });
-  };
+function answerLabel(
+  question: FinderQuestion,
+  value: string | string[] | undefined,
+  empty: string,
+): string {
+  if (!hasAnswer(value)) return empty;
+  const values = Array.isArray(value) ? value : [value];
+  return values
+    .map(
+      (selected) =>
+        question.options.find((option) => option.value === selected)?.label ??
+        selected,
+    )
+    .join(", ");
+}
 
-  const handleNext = () => {
-    if (currentStep < totalSteps - 1) {
-      setCurrentStep(currentStep + 1);
-    } else {
-      setShowResults(true);
-    }
-  };
+function AnswerSummary({
+  copy,
+  answers,
+  currentStep,
+  onEdit,
+  onReset,
+  mobile = false,
+}: {
+  copy: FinderCopy;
+  answers: FinderAnswers;
+  currentStep: number;
+  onEdit: (step: number) => void;
+  onReset: () => void;
+  mobile?: boolean;
+}) {
+  const content = (
+    <>
+      <ol className={styles.answerList}>
+        {copy.questions.map((question, index) => {
+          const value = valueForQuestion(answers, question.id);
+          const answered = hasAnswer(value);
+          return (
+            <li
+              key={question.id}
+              className={
+                index === currentStep ? styles.currentAnswer : undefined
+              }
+            >
+              <span className={styles.answerNumber}>{index + 1}</span>
+              <span>
+                <strong>{question.eyebrow}</strong>
+                <small>
+                  {answerLabel(question, value, copy.answers.empty)}
+                </small>
+              </span>
+              {answered ? (
+                <button type="button" onClick={() => onEdit(index)}>
+                  {copy.answers.edit}
+                </button>
+              ) : null}
+            </li>
+          );
+        })}
+      </ol>
+      <button type="button" className={styles.resetLink} onClick={onReset}>
+        <RotateCcw aria-hidden="true" />
+        {copy.answers.reset}
+      </button>
+    </>
+  );
 
-  const handleBack = () => {
-    if (showResults) {
-      setShowResults(false);
-      setCurrentStep(totalSteps - 1);
-    } else if (currentStep > 0) {
-      setCurrentStep(currentStep - 1);
-    }
-  };
-
-  const handleReset = () => {
-    setCurrentStep(0);
-    setAnswers({});
-    setShowResults(false);
-  };
-
-  if (showResults) {
+  if (mobile) {
     return (
-      <QuizResults
-        answers={answers}
-        vpns={vpns}
-        onBack={handleBack}
-        onReset={handleReset}
-        locale={locale}
-      />
+      <details className={`${styles.answerSummary} ${styles.answerMobile}`}>
+        <summary>{copy.answers.mobileSummary}</summary>
+        {content}
+      </details>
     );
   }
 
-  const questions = [
-    {
-      id: "primaryUse",
-      title: t("questions.primaryUse.title"),
-      options: [
-        { value: "streaming", label: t("questions.primaryUse.options.streaming") },
-        { value: "privacy", label: t("questions.primaryUse.options.privacy") },
-        { value: "gaming", label: t("questions.primaryUse.options.gaming") },
-        { value: "torrenting", label: t("questions.primaryUse.options.torrenting") },
-        { value: "work", label: t("questions.primaryUse.options.work") },
-      ],
-    },
-    {
-      id: "budget",
-      title: t("questions.budget.title"),
-      options: [
-        { value: "free", label: t("questions.budget.options.free") },
-        { value: "budget", label: t("questions.budget.options.budget") },
-        { value: "midrange", label: t("questions.budget.options.midrange") },
-        { value: "premium", label: t("questions.budget.options.premium") },
-      ],
-    },
-    {
-      id: "devices",
-      title: t("questions.devices.title"),
-      options: [
-        { value: "1-2", label: t("questions.devices.options.few") },
-        { value: "3-5", label: t("questions.devices.options.several") },
-        { value: "6-10", label: t("questions.devices.options.many") },
-        { value: "unlimited", label: t("questions.devices.options.unlimited") },
-      ],
-    },
-    {
-      id: "speedPriority",
-      title: t("questions.speedPriority.title"),
-      options: [
-        { value: "critical", label: t("questions.speedPriority.options.critical") },
-        { value: "important", label: t("questions.speedPriority.options.important") },
-        { value: "notPriority", label: t("questions.speedPriority.options.notPriority") },
-      ],
-    },
-    {
-      id: "location",
-      title: t("questions.location.title"),
-      options: [
-        { value: "europe", label: t("questions.location.options.europe") },
-        { value: "northAmerica", label: t("questions.location.options.northAmerica") },
-        { value: "asia", label: t("questions.location.options.asia") },
-        { value: "middleEast", label: t("questions.location.options.middleEast") },
-        { value: "other", label: t("questions.location.options.other") },
-      ],
-    },
-  ];
+  return (
+    <aside className={`${styles.answerSummary} ${styles.answerDesktop}`}>
+      <h2>{copy.answers.title}</h2>
+      {content}
+    </aside>
+  );
+}
 
-  const currentQuestion = questions[currentStep];
-  const currentAnswer = answers[currentQuestion.id as keyof QuizAnswers];
+export function QuizWizard({ copy, providers, sources }: QuizWizardProps) {
+  const [currentStep, setCurrentStep] = useState(0);
+  const [answers, setAnswers] = useState<FinderAnswers>({});
+  const [showResults, setShowResults] = useState(false);
+  const [showValidation, setShowValidation] = useState(false);
+  const questionHeadingRef = useRef<HTMLHeadingElement>(null);
+  const resultHeadingRef = useRef<HTMLHeadingElement>(null);
+  const hasMountedRef = useRef(false);
+
+  const currentQuestion = copy.questions[currentStep];
+  const currentValue = valueForQuestion(answers, currentQuestion.id);
+  const progressValue = ((currentStep + 1) / copy.questions.length) * 100;
+
+  useEffect(() => {
+    if (!hasMountedRef.current) {
+      hasMountedRef.current = true;
+      return;
+    }
+    if (showResults) {
+      resultHeadingRef.current?.focus({ preventScroll: true });
+      resultHeadingRef.current?.scrollIntoView({
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+          ? "auto"
+          : "smooth",
+        block: "start",
+      });
+      return;
+    }
+    questionHeadingRef.current?.focus({ preventScroll: true });
+  }, [currentStep, showResults]);
+
+  const handleAnswer = (questionId: FinderQuestionId, value: string) => {
+    const question = copy.questions.find((item) => item.id === questionId);
+    if (!question) return;
+
+    setAnswers((previous) => {
+      if (question.type === "multi") {
+        const current = Array.isArray(previous.platforms)
+          ? previous.platforms
+          : [];
+        const platform = value as FinderPlatform;
+        const platforms = current.includes(platform)
+          ? current.filter((item) => item !== platform)
+          : [...current, platform];
+        return { ...previous, platforms } as FinderAnswers;
+      }
+      return { ...previous, [questionId]: value } as FinderAnswers;
+    });
+    setShowValidation(false);
+  };
+
+  const moveToStep = (step: number) => {
+    setShowResults(false);
+    setShowValidation(false);
+    setCurrentStep(Math.max(0, Math.min(step, copy.questions.length - 1)));
+  };
+
+  const handleNext = () => {
+    if (!hasAnswer(currentValue)) {
+      setShowValidation(true);
+      return;
+    }
+    if (currentStep < copy.questions.length - 1) {
+      moveToStep(currentStep + 1);
+      return;
+    }
+    setShowValidation(false);
+    setShowResults(true);
+  };
+
+  const handleReset = () => {
+    setAnswers({});
+    setCurrentStep(0);
+    setShowResults(false);
+    setShowValidation(false);
+  };
+
+  const hasAnyAnswer = Object.values(answers).some((value) => hasAnswer(value));
+
+  if (showResults) {
+    return (
+      <div className={styles.wizardShell}>
+        <QuizResults
+          answers={answers}
+          providers={providers}
+          sources={sources}
+          copy={copy}
+          resultRef={resultHeadingRef}
+          onEdit={moveToStep}
+          onBack={() => moveToStep(copy.questions.length - 1)}
+          onReset={handleReset}
+        />
+      </div>
+    );
+  }
 
   return (
-    <div className="w-full max-w-3xl mx-auto space-y-6">
-      {/* Progress Bar */}
-      <div className="space-y-2">
-        <div className="flex items-center justify-between text-sm text-muted-foreground">
-          <span>
-            {t("progress.step")} {currentStep + 1} {t("progress.of")} {totalSteps}
-          </span>
-          <span>{Math.round(progress)}%</span>
-        </div>
-        <Progress value={progress} className="h-2" />
+    <div className={styles.wizardShell}>
+      <div className={styles.progressRow} aria-live="polite">
+        <span>
+          {copy.progress.step} {currentStep + 1} {copy.progress.of}{" "}
+          {copy.questions.length}
+        </span>
+        <strong>{Math.round(progressValue)}%</strong>
       </div>
+      <Progress
+        value={progressValue}
+        className={styles.progressTrack}
+        aria-label={`${copy.progress.step} ${currentStep + 1} ${copy.progress.of} ${copy.questions.length}`}
+        aria-valuetext={`${Math.round(progressValue)}% ${copy.progress.complete}`}
+      />
 
-      {/* Question Card */}
-      <Card className="p-6 md:p-8">
-        <QuizQuestion
-          question={currentQuestion}
-          selectedValue={currentAnswer}
-          onAnswer={handleAnswer}
-          onNext={handleNext}
-          onBack={handleBack}
-          isFirstQuestion={currentStep === 0}
-          isLastQuestion={currentStep === totalSteps - 1}
+      {hasAnyAnswer ? (
+        <AnswerSummary
+          copy={copy}
+          answers={answers}
+          currentStep={currentStep}
+          onEdit={moveToStep}
+          onReset={handleReset}
+          mobile
         />
-      </Card>
+      ) : null}
 
-      {/* Help Text */}
-      <p className="text-center text-sm text-muted-foreground">
-        {t("helpText")}
-      </p>
+      <div className={styles.wizardGrid}>
+        <div>
+          <QuizQuestion
+            question={currentQuestion}
+            selectedValue={currentValue}
+            onAnswer={handleAnswer}
+            headingRef={questionHeadingRef}
+            validationMessage={
+              showValidation ? copy.navigation.chooseOne : undefined
+            }
+          />
+
+          <nav className={styles.wizardNavigation} aria-label="Quiz navigation">
+            <button
+              type="button"
+              onClick={() => moveToStep(currentStep - 1)}
+              disabled={currentStep === 0}
+            >
+              <ArrowLeft aria-hidden="true" />
+              {copy.navigation.back}
+            </button>
+            <button
+              type="button"
+              className={styles.primaryCta}
+              onClick={handleNext}
+              disabled={!hasAnswer(currentValue)}
+            >
+              {currentStep === copy.questions.length - 1
+                ? copy.navigation.results
+                : copy.navigation.next}
+              <ArrowRight aria-hidden="true" />
+            </button>
+          </nav>
+        </div>
+
+        <AnswerSummary
+          copy={copy}
+          answers={answers}
+          currentStep={currentStep}
+          onEdit={moveToStep}
+          onReset={handleReset}
+        />
+      </div>
     </div>
   );
 }

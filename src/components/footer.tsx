@@ -1,342 +1,204 @@
-import { Link } from "@/i18n/navigation";
-import { Shield } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { ZeroToVpnLogo } from "@/components/brand/zerotovpn-logo";
 import { NewsletterFooter } from "@/components/newsletter/newsletter-footer";
+import { getFooterExploreNavigation } from "@/data/site-navigation";
+import { Link } from "@/i18n/navigation";
+import { useLocale, useTranslations } from "next-intl";
+import type { ReactNode } from "react";
+
+function FooterNavLink({
+  href,
+  children,
+  locale,
+}: {
+  href: string;
+  children: ReactNode;
+  locale?: "en";
+}) {
+  return (
+    <li>
+      <Link
+        prefetch={false}
+        href={href}
+        locale={locale}
+        className="inline-flex min-h-12 items-center rounded-lg py-2 text-sm leading-snug text-slate-300 transition-colors hover:text-[#b8e34a] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b8e34a] focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
+      >
+        {children}
+      </Link>
+    </li>
+  );
+}
 
 export function Footer() {
   const t = useTranslations("footer");
+  const locale = useLocale();
+  const isNl = locale === "nl";
   const currentYear = new Date().getFullYear();
+  const exploreNavigation = getFooterExploreNavigation(locale);
+
+  const copy = isNl
+    ? {
+        explore: "Kiezen en vergelijken",
+        learn: "Duidelijke uitleg",
+        tools: "Gratis tools",
+        trust: "Over ons werk",
+        best: "Beste VPN's vergelijken",
+        compare: "VPN's naast elkaar",
+        countries: "Landengidsen",
+        netherlands: "VPN in Nederland",
+        quiz: "VPN-keuzehulp",
+        guides: "Alle VPN-gidsen",
+        whatIsVpn: "Wat is een VPN?",
+        privacyGuide: "VPN en privacy",
+        speedGuide: "VPN en snelheid",
+        reports: "Onderzoeksrapporten",
+        allTools: "Alle tools",
+        ip: "Bekijk je IP-adres",
+        speedTest: "Internetsnelheid testen",
+        dnsBeta: "DNS-lektest (begeleide bèta)",
+        methodology: "Zo beoordelen we",
+        editorial: "Redactioneel beleid",
+        about: "Over ZeroToVPN",
+        contact: "Contact",
+        privacy: "Privacybeleid",
+        terms: "Voorwaarden",
+        affiliate: "Uitleg over partnerlinks",
+        cookies: "Cookiebeleid",
+      }
+    : {
+        explore: "Choose and compare",
+        learn: "Clear guides",
+        tools: "Free tools",
+        trust: "About our work",
+        best: "Compare the best VPNs",
+        compare: "Compare VPNs",
+        countries: "Country guides",
+        netherlands: "VPN in the Netherlands",
+        quiz: "VPN picker",
+        guides: "All VPN guides",
+        whatIsVpn: "What is a VPN?",
+        privacyGuide: "VPN and privacy",
+        speedGuide: "VPN and speed",
+        reports: "Research reports",
+        allTools: "All tools",
+        ip: "Check your IP address",
+        speedTest: "Test your internet speed",
+        dnsBeta: "DNS leak test (guided beta)",
+        methodology: "How we review",
+        editorial: "Editorial policy",
+        about: "About ZeroToVPN",
+        contact: "Contact",
+        privacy: "Privacy policy",
+        terms: "Terms",
+        affiliate: "Affiliate disclosure",
+        cookies: "Cookie policy",
+      };
 
   return (
-    <footer className="bg-slate-900 text-white">
-      <div className="container py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
-          {/* Brand */}
+    <footer className="bg-[#071226] text-white">
+      <div className="container py-12 lg:py-16">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
           <div className="space-y-4">
-            <Link prefetch={false} href="/" className="flex items-center space-x-2">
-              <Shield className="h-6 w-6 text-orange-400" />
-              <span className="font-bold text-xl">
-                Zero<span className="text-orange-400">To</span>VPN
-              </span>
+            <Link
+              prefetch={false}
+              href="/"
+              aria-label="ZeroToVPN"
+              className="flex min-h-12 items-center"
+            >
+              <ZeroToVpnLogo inverse wordmarkClassName="text-white" />
             </Link>
-            <p className="text-sm text-slate-400">{t("aboutText")}</p>
+            <p className="max-w-xs text-sm leading-6 text-slate-300">
+              {t("aboutText")}
+            </p>
           </div>
 
-          {/* Quick Links */}
           <div>
-            <h3 className="text-white font-semibold mb-4">{t("links")}</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/reviews"
-                  className="text-slate-400 hover:text-orange-400"
+            <h2 className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-[#b8e34a]">
+              {copy.explore}
+            </h2>
+            <ul>
+              {exploreNavigation.map((item) => (
+                <FooterNavLink
+                  key={item.id}
+                  href={item.href}
+                  locale={item.targetLocale}
                 >
-                  {t("reviews")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/is-nordvpn-safe"
-                  className="text-slate-400 hover:text-orange-400"
-                >
-                  {t("isNordvpnSafe")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/vpn-index"
-                  className="text-slate-400 hover:text-orange-400"
-                >
-                  {t("vpnIndex")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/best/best-vpn"
-                  className="text-slate-400 hover:text-orange-400"
-                >
-                  {t("bestVpns")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/best/free-vpn"
-                  className="text-slate-400 hover:text-orange-400"
-                >
-                  {t("freeVpn")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/best/vpn-free-trial"
-                  className="text-slate-400 hover:text-orange-400"
-                >
-                  {t("vpnFreeTrial")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/best/vpn-port-forwarding"
-                  className="text-slate-400 hover:text-orange-400"
-                >
-                  {t("portForwarding")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/best/vpn-gaming"
-                  className="text-slate-400 hover:text-orange-400"
-                >
-                  {t("gamingVpn")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/compare"
-                  className="text-slate-400 hover:text-orange-400"
-                >
-                  {t("compare")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/countries"
-                  className="text-slate-400 hover:text-orange-400"
-                >
-                  {t("countries")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/quiz"
-                  className="text-slate-400 hover:text-orange-400"
-                >
-                  {t("quiz")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/speed-test"
-                  className="text-slate-400 hover:text-orange-400"
-                >
-                  {t("speedTest")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/tools/what-is-my-ip"
-                  className="text-slate-400 hover:text-orange-400"
-                >
-                  {t("ipChecker")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/tools/dns-leak-test"
-                  className="text-slate-400 hover:text-orange-400"
-                >
-                  {t("dnsLeakTest")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/guides/what-is-vpn"
-                  className="text-slate-400 hover:text-orange-400"
-                >
-                  {t("whatIsVpn")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/reports/vpn-transparency-performance-index-2026"
-                  className="text-slate-400 hover:text-orange-400"
-                >
-                  {t("transparencyReport")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/blog"
-                  className="text-slate-400 hover:text-orange-400"
-                >
-                  {t("blog")}
-                </Link>
-              </li>
+                  {item.label}
+                </FooterNavLink>
+              ))}
             </ul>
           </div>
 
-          {/* Devices */}
           <div>
-            <h3 className="text-white font-semibold mb-4">{t("devices")}</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/best/vpn-laptops"
-                  className="text-slate-400 hover:text-orange-400"
-                >
-                  {t("vpnLaptops")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/best/vpn-windows"
-                  className="text-slate-400 hover:text-orange-400"
-                >
-                  {t("vpnWindows")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/best/vpn-macos"
-                  className="text-slate-400 hover:text-orange-400"
-                >
-                  {t("vpnMacos")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/best/vpn-chromebook"
-                  className="text-slate-400 hover:text-orange-400"
-                >
-                  {t("vpnChromebook")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/best/vpn-linux"
-                  className="text-slate-400 hover:text-orange-400"
-                >
-                  {t("vpnLinux")}
-                </Link>
-              </li>
+            <h2 className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-[#b8e34a]">
+              {copy.learn}
+            </h2>
+            <ul>
+              <FooterNavLink href="/guides">{copy.guides}</FooterNavLink>
+              <FooterNavLink href="/guides/what-is-vpn">
+                {copy.whatIsVpn}
+              </FooterNavLink>
+              <FooterNavLink href="/guides/vpn-privacy-guide">
+                {copy.privacyGuide}
+              </FooterNavLink>
+              <FooterNavLink href="/guides/vpn-speed-guide">
+                {copy.speedGuide}
+              </FooterNavLink>
+              <FooterNavLink href="/reports">{copy.reports}</FooterNavLink>
             </ul>
           </div>
 
-          {/* Legal */}
           <div>
-            <h3 className="text-white font-semibold mb-4">{t("legal")}</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/privacy-policy"
-                  className="text-slate-400 hover:text-orange-400"
-                >
-                  {t("privacy")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/terms"
-                  className="text-slate-400 hover:text-orange-400"
-                >
-                  {t("terms")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/affiliate-disclosure"
-                  className="text-slate-400 hover:text-orange-400"
-                >
-                  {t("disclosure")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/cookie-policy"
-                  className="text-slate-400 hover:text-orange-400"
-                >
-                  {t("cookiePolicy")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/methodology"
-                  className="text-slate-400 hover:text-orange-400"
-                >
-                  {t("methodology")}
-                </Link>
-              </li>
+            <h2 className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-[#b8e34a]">
+              {copy.tools}
+            </h2>
+            <ul>
+              <FooterNavLink href="/tools">{copy.allTools}</FooterNavLink>
+              <FooterNavLink href="/tools/what-is-my-ip">
+                {copy.ip}
+              </FooterNavLink>
+              <FooterNavLink href="/speed-test">{copy.speedTest}</FooterNavLink>
+              <FooterNavLink href="/tools/dns-leak-test">
+                {copy.dnsBeta}
+              </FooterNavLink>
             </ul>
           </div>
 
-          {/* Company */}
           <div>
-            <h3 className="text-white font-semibold mb-4">{t("company")}</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/about"
-                  className="text-slate-400 hover:text-orange-400"
-                >
-                  {t("about")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/how-we-test"
-                  className="text-slate-400 hover:text-orange-400"
-                >
-                  {t("howWeTest")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/contact"
-                  className="text-slate-400 hover:text-orange-400"
-                >
-                  {t("contactPage")}
-                </Link>
-              </li>
-              <li className="text-slate-400">hello@zerotovpn.com</li>
+            <h2 className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-[#b8e34a]">
+              {copy.trust}
+            </h2>
+            <ul>
+              <FooterNavLink href="/methodology">
+                {copy.methodology}
+              </FooterNavLink>
+              <FooterNavLink href="/editorial-policy">
+                {copy.editorial}
+              </FooterNavLink>
+              <FooterNavLink href="/about">{copy.about}</FooterNavLink>
+              <FooterNavLink href="/contact">{copy.contact}</FooterNavLink>
+              <FooterNavLink href="/privacy-policy">
+                {copy.privacy}
+              </FooterNavLink>
+              <FooterNavLink href="/terms">{copy.terms}</FooterNavLink>
+              <FooterNavLink href="/affiliate-disclosure">
+                {copy.affiliate}
+              </FooterNavLink>
+              <FooterNavLink href="/cookie-policy">
+                {copy.cookies}
+              </FooterNavLink>
             </ul>
           </div>
 
-          {/* Newsletter */}
           <div>
             <NewsletterFooter />
           </div>
         </div>
 
-        {/* Bottom */}
-        {/* De affiliate-disclosure stond in text-slate-500 op bg-slate-900:
-            ongeveer 3,6:1 contrast, onder de AA-drempel van 4,5:1 — juist bij
-            de tekst die volgens de FTC leesbaar móét zijn. slate-400 haalt ~6:1.
-            En text-xs maakte 'm nog kleiner dan de copyright eronder. */}
-        <div className="border-t border-slate-700/50 mt-8 pt-8 flex flex-col gap-4">
-          <p className="text-sm text-slate-300 text-center">
+        <div className="mt-8 flex flex-col gap-4 border-t border-slate-700/60 pt-8">
+          <p className="text-center text-sm leading-6 text-slate-300">
             {t("disclaimer")}
           </p>
-          <p className="text-sm text-slate-400 text-center">
+          <p className="text-center text-sm text-slate-400">
             {t("copyright", { year: currentYear })}
           </p>
         </div>

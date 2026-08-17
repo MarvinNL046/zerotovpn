@@ -1,0 +1,129 @@
+.heroGrid {
+  display: grid;
+}
+
+.heroFigure {
+  position: relative;
+  min-height: 20rem;
+}
+
+.heroSection {
+  margin-top: 3rem;
+}
+
+.heroCaption {
+  color: #334155;
+  background-color: rgb(241 245 249 / 96%);
+  backdrop-filter: blur(8px);
+}
+
+.bodyGrid {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.desktopSidebar {
+  display: none;
+}
+
+.mobileGlance {
+  display: block;
+}
+
+.stickySidebar {
+  position: sticky;
+  top: 9rem;
+}
+
+.phoneShot {
+  display: block;
+  width: auto;
+  height: auto;
+  max-height: 32rem;
+  margin-inline: auto;
+}
+
+.reviewMetaBand {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.reviewDisclosure {
+  max-width: none;
+  margin: 0;
+}
+
+.sidebarCta {
+  height: auto !important;
+  min-height: 3rem;
+  padding-inline: 1.5rem !important;
+  padding-block: 0.75rem !important;
+  text-align: center;
+  line-height: 1.25;
+  white-space: normal !important;
+}
+
+.reviewCta {
+  height: auto !important;
+  min-height: 3rem !important;
+  white-space: normal !important;
+}
+
+.pricingCta {
+  border: 1px solid #9fc533 !important;
+  background: #b8e34a !important;
+  color: #071226 !important;
+  font-weight: 800;
+  box-shadow: 0 1px 0 rgb(7 18 38 / 12%);
+}
+
+.pricingCta:hover {
+  border-color: #91b72d !important;
+  background: #a9d63d !important;
+  color: #071226 !important;
+}
+
+.pricingCta:focus-visible {
+  outline: 3px solid #1268f3 !important;
+  outline-offset: 3px;
+}
+
+@media (min-width: 48rem) {
+  .reviewMetaBand {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    padding: 1.25rem;
+  }
+
+  .reviewDisclosure {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 64rem) {
+  .heroSection {
+    margin-top: 4rem;
+  }
+
+  .heroGrid {
+    grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.82fr);
+  }
+
+  .heroFigure {
+    min-height: 32rem;
+  }
+}
+
+@media (min-width: 75rem) {
+  .bodyGrid {
+    grid-template-columns: 11.875rem minmax(0, 1fr) 18.75rem;
+  }
+
+  .desktopSidebar {
+    display: block;
+  }
+
+  .mobileGlance {
+    display: none;
+  }
+}

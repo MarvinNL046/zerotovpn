@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
-import { redirect } from "next/navigation";
 import { getAllVpns } from "@/lib/vpn-data-layer";
 import { DEFAULT_OG_IMAGE, generateAlternates } from "@/lib/seo-utils";
 import { ObfuscationEditorialPage } from "@/components/editorial/obfuscation-editorial-page";
@@ -39,6 +38,9 @@ export default async function VpnObfuscationExplainedPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
   const vpns = await getAllVpns();
-  if (locale === "en") return <ObfuscationEditorialPage vpns={vpns} />;
-  redirect("/guides/vpn-obfuscation-explained");
+  // The previous non-English redirect pointed to the same locale-aware route.
+  // With a saved locale cookie that became an endless /nl -> unprefixed -> /nl
+  // loop. Until this guide has translated copy, render the English fallback on
+  // the already-noindex locale URL instead of trapping readers and crawlers.
+  return <ObfuscationEditorialPage vpns={vpns} />;
 }

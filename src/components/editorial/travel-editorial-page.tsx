@@ -1,4 +1,11 @@
-﻿import { ArrowRight, CheckCircle2, ExternalLink, Globe2, ShieldCheck, Wifi } from "lucide-react";
+﻿import {
+  ArrowRight,
+  CheckCircle2,
+  ExternalLink,
+  Globe2,
+  ShieldCheck,
+  Wifi,
+} from "lucide-react";
 import { ArticleJsonLd } from "@/components/seo/json-ld";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { FAQSchema } from "@/components/seo/faq-schema";
@@ -10,12 +17,36 @@ import { editorialContentBriefs } from "@/lib/editorial-content-briefs";
 
 const pageUrl = "https://www.zerotovpn.com/guides/vpn-for-travel";
 const faq = [
-  { question: "Do I really need a VPN while traveling?", answer: "It depends on the network, device and purpose. A VPN can add a protected tunnel on an untrusted connection, but it does not replace HTTPS, device updates, account security or local travel advice. Decide what risk you are trying to reduce before you subscribe." },
-  { question: "What is the best VPN for international travel?", answer: "There is no universal winner. Compare the platforms you carry, the protocol and fallback behaviour, support before departure, refund terms and evidence for the destination network. A documented feature is not proof of access on your next trip." },
-  { question: "Do VPNs work on hotel or airport Wi-Fi?", answer: "Often they can connect after the captive portal is completed, but hotel and airport networks differ. Join the network, complete its sign-in page, then connect the VPN and test the services you actually need. Keep cellular data or another approved connection as a fallback." },
-  { question: "Why won't my hotel Wi-Fi allow me to use my VPN?", answer: "The network may require its captive-portal sign-in first, block VPN protocols, or limit traffic until you accept its terms. Disconnect the VPN, complete the portal on a harmless page, then retry with a supported protocol. If it still fails, use an approved fallback such as cellular data and follow the property's rules." },
-  { question: "Can a VPN make flights or hotels cheaper?", answer: "Do not treat location switching as a saving guarantee. Prices change for many reasons and a provider or booking site may restrict or prohibit certain behaviour. Compare the final price, taxes, currency, cancellation terms and payment requirements directly." },
-  { question: "Should I install a VPN before I leave?", answer: "Yes, if a VPN is part of your lawful travel plan. Install the official app, sign in, save recovery details, test the kill switch and record a fallback route before the network or app store becomes difficult to reach." },
+  {
+    question: "Do I really need a VPN while traveling?",
+    answer:
+      "It depends on the network, device and purpose. A VPN can add a protected tunnel on an untrusted connection, but it does not replace HTTPS, device updates, account security or local travel advice. Decide what risk you are trying to reduce before you subscribe.",
+  },
+  {
+    question: "What is the best VPN for international travel?",
+    answer:
+      "There is no universal winner. Compare the platforms you carry, the protocol and fallback behaviour, support before departure, refund terms and evidence for the destination network. A documented feature is not proof of access on your next trip.",
+  },
+  {
+    question: "Do VPNs work on hotel or airport Wi-Fi?",
+    answer:
+      "Often they can connect after the captive portal is completed, but hotel and airport networks differ. Join the network, complete its sign-in page, then connect the VPN and test the services you actually need. Keep cellular data or another approved connection as a fallback.",
+  },
+  {
+    question: "Why won't my hotel Wi-Fi allow me to use my VPN?",
+    answer:
+      "The network may require its captive-portal sign-in first, block VPN protocols, or limit traffic until you accept its terms. Disconnect the VPN, complete the portal on a harmless page, then retry with a supported protocol. If it still fails, use an approved fallback such as cellular data and follow the property's rules.",
+  },
+  {
+    question: "Can a VPN make flights or hotels cheaper?",
+    answer:
+      "Do not treat location switching as a saving guarantee. Prices change for many reasons and a provider or booking site may restrict or prohibit certain behaviour. Compare the final price, taxes, currency, cancellation terms and payment requirements directly.",
+  },
+  {
+    question: "Should I install a VPN before I leave?",
+    answer:
+      "Yes, if a VPN is part of your lawful travel plan. Install the official app, sign in, save recovery details, test the kill switch and record a fallback route before the network or app store becomes difficult to reach.",
+  },
 ];
 
 const nav = [
@@ -30,28 +61,368 @@ const nav = [
 export function TravelEditorialPage({ vpns }: { vpns: VpnData[] }) {
   return (
     <>
-      <ArticleJsonLd title="VPN for Travel: What to Test Before You Leave" description="A bounded travel VPN guide for hotel and airport Wi-Fi, device preparation, destination restrictions and safer connectivity." url={pageUrl} datePublished="2026-01-01" dateModified="2026-08-12" />
-      <BreadcrumbSchema items={[{ name: "Guides", href: "/guides" }, { name: "VPN for travel", href: "/guides/vpn-for-travel" }]} />
+      <ArticleJsonLd
+        title="VPN for Travel: What to Test Before You Leave"
+        description="A bounded travel VPN guide for hotel and airport Wi-Fi, device preparation, destination restrictions and safer connectivity."
+        url={pageUrl}
+        datePublished="2026-01-01"
+        dateModified="2026-08-12"
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Guides", href: "/guides" },
+          { name: "VPN for travel", href: "/guides/vpn-for-travel" },
+        ]}
+      />
       <FAQSchema title="VPN for travel FAQ" faqs={faq} />
-      <BestVpnEditorialTemplate brief={editorialContentBriefs.travel} navigation={nav}>
+      <BestVpnEditorialTemplate
+        brief={editorialContentBriefs.travel}
+        navigation={nav}
+      >
         <article>
-          <section className="border-b bg-gradient-to-br from-cyan-500/10 via-background to-background py-14 lg:py-20"><div className="container max-w-5xl"><div className="max-w-3xl"><p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">Updated August 12, 2026 Â· travel preparation guide</p><h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-6xl">VPN for travel: what to test before you leave</h1><p className="mt-6 text-xl leading-8 text-muted-foreground">A VPN can be useful on an untrusted connection or in a location with network restrictions, but it is not a passport, a universal access key or a guaranteed way to lower a booking price. Match the tool to the risk, prepare before departure and keep a fallback.</p><p className="mt-5 text-sm leading-6 text-muted-foreground">Independent editorial research. Affiliate links may earn us a commission; <Link href="/affiliate-disclosure" className="underline">read our disclosure</Link>. Destination rules and service availability can change.</p></div></div></section>
+          <section className="border-b bg-gradient-to-br from-cyan-500/10 via-background to-background py-14 lg:py-20">
+            <div className="container max-w-5xl">
+              <div className="max-w-3xl">
+                <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">
+                  Updated August 12, 2026 Â· travel preparation guide
+                </p>
+                <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-6xl">
+                  VPN for travel: what to test before you leave
+                </h1>
+                <p className="mt-6 text-xl leading-8 text-muted-foreground">
+                  A VPN can be useful on an untrusted connection or in a
+                  location with network restrictions, but it is not a passport,
+                  a universal access key or a guaranteed way to lower a booking
+                  price. Match the tool to the risk, prepare before departure
+                  and keep a fallback.
+                </p>
+                <p className="mt-5 text-sm leading-6 text-muted-foreground">
+                  Independent editorial research. Affiliate links may earn us a
+                  commission;{" "}
+                  <Link href="/affiliate-disclosure" className="underline">
+                    read our disclosure
+                  </Link>
+                  . Destination rules and service availability can change.
+                </p>
+              </div>
+            </div>
+          </section>
 
-          <IranEditorialQuickPicks vpns={vpns} heading="Providers worth evaluating for your itinerary" eyebrow="Contextual shortlist" description="These are affiliate links to providers worth comparing for travel features and support. They are not a guarantee that a provider works in a particular country, airport or hotel network; verify the current app, policy and refund terms first." />
+          <IranEditorialQuickPicks
+            vpns={vpns}
+            heading="Providers worth evaluating for your itinerary"
+            eyebrow="Contextual shortlist"
+            description="These are affiliate links to providers worth comparing for travel features and support. They are not a guarantee that a provider works in a particular country, airport or hotel network; verify the current app, policy and refund terms first."
+          />
 
-          <section id="why" className="container max-w-5xl scroll-mt-24 py-12 lg:py-16"><div className="max-w-3xl"><p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">Start with the risk</p><h2 className="mt-3 text-3xl font-bold">What a travel VPN can - and cannot - do</h2><p className="mt-4 leading-7 text-muted-foreground">A VPN is one layer in a travel security plan. It can encrypt traffic between your device and the VPN server, but it cannot make a malicious app safe, override a captive portal, guarantee access to a service or authorise conduct under local law.</p></div><div className="mt-6 grid gap-4 sm:grid-cols-3"><div className="rounded-xl border bg-card p-5"><Wifi className="size-5 text-primary" aria-hidden="true" /><h3 className="mt-3 font-semibold">Hotel and airport Wi-Fi</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">Complete the network sign-in first, then test the tunnel and the exact service you need.</p></div><div className="rounded-xl border bg-card p-5"><Globe2 className="size-5 text-primary" aria-hidden="true" /><h3 className="mt-3 font-semibold">Destination restrictions</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">Check current travel advice and provider documentation; never convert a feature label into a promise.</p></div><div className="rounded-xl border bg-card p-5"><ShieldCheck className="size-5 text-primary" aria-hidden="true" /><h3 className="mt-3 font-semibold">Account and device safety</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">Updates, recovery details, MFA and a non-VPN fallback often matter more than raw server count.</p></div></div></section>
+          <section
+            id="why"
+            className="container max-w-5xl scroll-mt-24 py-12 lg:py-16"
+          >
+            <div className="max-w-3xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">
+                Start with the risk
+              </p>
+              <h2 className="mt-3 text-3xl font-bold">
+                What a travel VPN can - and cannot - do
+              </h2>
+              <p className="mt-4 leading-7 text-muted-foreground">
+                A VPN is one layer in a travel security plan. It can encrypt
+                traffic between your device and the VPN server, but it cannot
+                make a malicious app safe, override a captive portal, guarantee
+                access to a service or authorise conduct under local law.
+              </p>
+            </div>
+            <div className="mt-6 grid gap-4 sm:grid-cols-3">
+              <div className="rounded-xl border bg-card p-5">
+                <Wifi className="size-5 text-primary" aria-hidden="true" />
+                <h3 className="mt-3 font-semibold">Hotel and airport Wi-Fi</h3>
+                <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                  Complete the network sign-in first, then test the tunnel and
+                  the exact service you need.
+                </p>
+              </div>
+              <div className="rounded-xl border bg-card p-5">
+                <Globe2 className="size-5 text-primary" aria-hidden="true" />
+                <h3 className="mt-3 font-semibold">Destination restrictions</h3>
+                <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                  Check current travel advice and provider documentation; never
+                  convert a feature label into a promise.
+                </p>
+              </div>
+              <div className="rounded-xl border bg-card p-5">
+                <ShieldCheck
+                  className="size-5 text-primary"
+                  aria-hidden="true"
+                />
+                <h3 className="mt-3 font-semibold">
+                  Account and device safety
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                  Updates, recovery details, MFA and a non-VPN fallback often
+                  matter more than raw server count.
+                </p>
+              </div>
+            </div>
+          </section>
 
-          <section id="prepare" className="scroll-mt-24 border-y bg-muted/30 py-12 lg:py-16"><div className="container max-w-5xl"><div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]"><div><p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">Before departure</p><h2 className="mt-3 text-3xl font-bold">Build a recovery path, not just a subscription</h2><p className="mt-4 leading-7 text-muted-foreground">The most useful travel test happens while you still have a reliable connection and access to the official app store.</p></div><ul className="grid gap-3 sm:grid-cols-2">{["Install the official app, sign in and update it before leaving.","Save recovery codes, support details and essential contacts offline.","Record the supported protocols and what happens when the tunnel drops.","Test hotel/airport captive-portal behaviour on a harmless page first.","Check current government or consular guidance for the destination.","Keep an approved fallback such as cellular data, eSIM or trusted Wi-Fi."].map((item) => <li key={item} className="flex gap-3 border bg-card p-4 text-sm leading-6"><CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-600" aria-hidden="true" />{item}</li>)}</ul></div></div></section>
+          <section
+            id="prepare"
+            className="scroll-mt-24 border-y bg-muted/30 py-12 lg:py-16"
+          >
+            <div className="container max-w-5xl">
+              <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">
+                    Before departure
+                  </p>
+                  <h2 className="mt-3 text-3xl font-bold">
+                    Build a recovery path, not just a subscription
+                  </h2>
+                  <p className="mt-4 leading-7 text-muted-foreground">
+                    The most useful travel test happens while you still have a
+                    reliable connection and access to the official app store.
+                  </p>
+                </div>
+                <ul className="grid gap-3 sm:grid-cols-2">
+                  {[
+                    "Install the official app, sign in and update it before leaving.",
+                    "Save recovery codes, support details and essential contacts offline.",
+                    "Record the supported protocols and what happens when the tunnel drops.",
+                    "Test hotel/airport captive-portal behaviour on a harmless page first.",
+                    "Check current government or consular guidance for the destination.",
+                    "Keep an approved fallback such as cellular data, eSIM or trusted Wi-Fi.",
+                  ].map((item) => (
+                    <li
+                      key={item}
+                      className="flex gap-3 border bg-card p-4 text-sm leading-6"
+                    >
+                      <CheckCircle2
+                        className="mt-0.5 size-4 shrink-0 text-emerald-600"
+                        aria-hidden="true"
+                      />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </section>
 
-          <section id="compare" className="container max-w-5xl scroll-mt-24 py-12 lg:py-16"><div className="max-w-3xl"><p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">Compare the real requirement</p><h2 className="mt-3 text-3xl font-bold">Choose evidence over a country-count headline</h2><p className="mt-4 leading-7 text-muted-foreground">Use the matrix below to compare a travel provider. The relevant evidence is the current app path and failure behaviour on your device - not a generic claim that it works everywhere.</p></div><div className="mt-6 overflow-x-auto rounded-xl border"><table className="w-full min-w-[760px] text-left text-sm"><caption className="sr-only">Travel VPN decision criteria</caption><thead className="bg-muted/60"><tr><th className="p-4 font-semibold">Question</th><th className="p-4 font-semibold">Evidence to save</th><th className="p-4 font-semibold">Why it matters</th></tr></thead><tbody className="divide-y"><tr><th scope="row" className="p-4">Can I install and recover it?</th><td className="p-4">Official app, account recovery and support path</td><td className="p-4">A connection is not useful if the next update or login is blocked.</td></tr><tr><th scope="row" className="p-4">Does it handle the network I will use?</th><td className="p-4">Protocol, captive portal behaviour and dated test notes</td><td className="p-4">Airport, hotel, cellular and country filters fail differently.</td></tr><tr><th scope="row" className="p-4">What happens if it disconnects?</th><td className="p-4">Kill-switch state and fallback behaviour</td><td className="p-4">Silent fallback can cross the privacy boundary you intended.</td></tr><tr><th scope="row" className="p-4">What is the commercial boundary?</th><td className="p-4">Plan, renewal, refund terms and current price</td><td className="p-4">Prices and features change; the provider page remains the source of truth.</td></tr></tbody></table></div><div className="mt-8 rounded-xl border border-amber-300 bg-amber-50 p-5 text-sm leading-6 text-amber-950"><strong>Evidence boundary:</strong> one successful page load is not stable access, and a VPN does not make a booking cheaper by default. Keep both successful and failed tests with their date, network and device.</div></section>
+          <section
+            id="compare"
+            className="container max-w-5xl scroll-mt-24 py-12 lg:py-16"
+          >
+            <div className="max-w-3xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">
+                Compare the real requirement
+              </p>
+              <h2 className="mt-3 text-3xl font-bold">
+                Choose evidence over a country-count headline
+              </h2>
+              <p className="mt-4 leading-7 text-muted-foreground">
+                Use the matrix below to compare a travel provider. The relevant
+                evidence is the current app path and failure behaviour on your
+                device - not a generic claim that it works everywhere.
+              </p>
+            </div>
+            <div className="mt-6 overflow-x-auto rounded-xl border">
+              <table className="w-full min-w-[760px] text-left text-sm">
+                <caption className="sr-only">
+                  Travel VPN decision criteria
+                </caption>
+                <thead className="bg-muted/60">
+                  <tr>
+                    <th className="p-4 font-semibold">Question</th>
+                    <th className="p-4 font-semibold">Evidence to save</th>
+                    <th className="p-4 font-semibold">Why it matters</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y">
+                  <tr>
+                    <th scope="row" className="p-4">
+                      Can I install and recover it?
+                    </th>
+                    <td className="p-4">
+                      Official app, account recovery and support path
+                    </td>
+                    <td className="p-4">
+                      A connection is not useful if the next update or login is
+                      blocked.
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" className="p-4">
+                      Does it handle the network I will use?
+                    </th>
+                    <td className="p-4">
+                      Protocol, captive portal behaviour and dated test notes
+                    </td>
+                    <td className="p-4">
+                      Airport, hotel, cellular and country filters fail
+                      differently.
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" className="p-4">
+                      What happens if it disconnects?
+                    </th>
+                    <td className="p-4">
+                      Kill-switch state and fallback behaviour
+                    </td>
+                    <td className="p-4">
+                      Silent fallback can cross the privacy boundary you
+                      intended.
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" className="p-4">
+                      What is the commercial boundary?
+                    </th>
+                    <td className="p-4">
+                      Plan, renewal, refund terms and current price
+                    </td>
+                    <td className="p-4">
+                      Prices and features change; the provider page remains the
+                      source of truth.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div className="mt-8 rounded-xl border border-amber-300 bg-amber-50 p-5 text-sm leading-6 text-amber-950">
+              <strong>Evidence boundary:</strong> one successful page load is
+              not stable access, and a VPN does not make a booking cheaper by
+              default. Keep both successful and failed tests with their date,
+              network and device.
+            </div>
+          </section>
 
-          <section id="faq" className="container max-w-5xl scroll-mt-24 py-12 lg:py-16"><h2 className="text-3xl font-bold">VPN for travel FAQ</h2><div className="mt-6 divide-y rounded-xl border">{faq.map((item) => <details key={item.question} className="group p-5"><summary className="cursor-pointer pr-8 font-semibold">{item.question}<ArrowRight className="float-right size-4 transition-transform group-open:rotate-90" aria-hidden="true" /></summary><p className="mt-3 max-w-3xl leading-7 text-muted-foreground">{item.answer}</p></details>)}</div></section>
+          <section
+            id="faq"
+            className="container max-w-5xl scroll-mt-24 py-12 lg:py-16"
+          >
+            <h2 className="text-3xl font-bold">VPN for travel FAQ</h2>
+            <div className="mt-6 divide-y rounded-xl border">
+              {faq.map((item) => (
+                <details key={item.question} className="group p-5">
+                  <summary className="cursor-pointer pr-8 font-semibold">
+                    {item.question}
+                    <ArrowRight
+                      className="float-right size-4 transition-transform group-open:rotate-90"
+                      aria-hidden="true"
+                    />
+                  </summary>
+                  <p className="mt-3 max-w-3xl leading-7 text-muted-foreground">
+                    {item.answer}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </section>
 
-          <section id="sources" className="container max-w-5xl scroll-mt-24 border-t py-12 lg:py-16"><h2 className="text-3xl font-bold">Sources and related guides</h2><ul className="mt-5 list-disc space-y-2 pl-5 text-sm leading-6 text-muted-foreground"><li><a className="underline" href="https://travel.state.gov/en/international-travel/planning/guidance/communication-abroad.html" target="_blank" rel="noopener noreferrer">U.S. State Department: communicating while abroad</a> â€” device, Wi-Fi and fallback guidance.</li><li><a className="underline" href="https://www.cisa.gov/news-events/news/holiday-traveling-personal-internet-enabled-devices" target="_blank" rel="noopener noreferrer">CISA: holiday travel with internet-enabled devices</a> â€” public Wi-Fi risk context.</li><li><a className="underline" href="https://www.gov.uk/foreign-travel-advice/china/safety-and-security" target="_blank" rel="noopener noreferrer">GOV.UK China travel advice</a> â€” example of destination-specific internet and legal context.</li><li>DataForSEO US/English dossier refreshed August 12, 2026: PAA questions about travel VPN need, hotel/airport Wi-Fi, destination access, protocol blocking and price claims. Search metrics prioritise questions; they do not prove outcomes.</li></ul><p className="mt-6 text-sm leading-6 text-muted-foreground">For a specific network, continue with <Link href="/guides/vpn-for-restricted-networks" className="underline">restricted-network preparation</Link>, <Link href="/guides/vpn-obfuscation-explained" className="underline">obfuscation explained</Link>, <Link href="/guides/vpn-protocols-explained" className="underline">protocols explained</Link> or the <Link href="/best/best-vpn" className="underline">Best VPN comparison</Link>.</p><div className="mt-6 flex flex-wrap gap-3"><Link href="/best/best-vpn" className="inline-flex items-center gap-2 rounded-lg border px-4 py-2 text-sm font-semibold hover:bg-muted">Compare providers <ArrowRight className="size-4" aria-hidden="true" /></Link><a href="https://travel.state.gov/en/international-travel/planning/guidance/communication-abroad.html" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg border px-4 py-2 text-sm font-semibold hover:bg-muted">Read travel guidance <ExternalLink className="size-4" aria-hidden="true" /></a></div></section>
-        <p className="container max-w-5xl mt-6 text-sm leading-6 text-muted-foreground">For country-specific evidence, continue with the <Link href="/countries/iran" className="underline">Iran evidence checklist</Link>.</p>
+          <section
+            id="sources"
+            className="container max-w-5xl scroll-mt-24 border-t py-12 lg:py-16"
+          >
+            <h2 className="text-3xl font-bold">Sources and related guides</h2>
+            <ul className="mt-5 list-disc space-y-2 pl-5 text-sm leading-6 text-muted-foreground">
+              <li>
+                <a
+                  className="underline"
+                  href="https://travel.state.gov/en/international-travel/planning/guidance/communication-abroad.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  U.S. State Department: communicating while abroad
+                </a>{" "}
+                â€” device, Wi-Fi and fallback guidance.
+              </li>
+              <li>
+                <a
+                  className="underline"
+                  href="https://www.cisa.gov/news-events/news/holiday-traveling-personal-internet-enabled-devices"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  CISA: holiday travel with internet-enabled devices
+                </a>{" "}
+                â€” public Wi-Fi risk context.
+              </li>
+              <li>
+                <a
+                  className="underline"
+                  href="https://www.gov.uk/foreign-travel-advice/china/safety-and-security"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GOV.UK China travel advice
+                </a>{" "}
+                â€” example of destination-specific internet and legal context.
+              </li>
+              <li>
+                DataForSEO US/English dossier refreshed August 12, 2026: PAA
+                questions about travel VPN need, hotel/airport Wi-Fi,
+                destination access, protocol blocking and price claims. Search
+                metrics prioritise questions; they do not prove outcomes.
+              </li>
+            </ul>
+            <p className="mt-6 text-sm leading-6 text-muted-foreground">
+              For a specific network, continue with{" "}
+              <Link
+                href="/guides/vpn-for-restricted-networks"
+                className="underline"
+              >
+                restricted-network preparation
+              </Link>
+              ,{" "}
+              <Link
+                href="/guides/vpn-obfuscation-explained"
+                className="underline"
+              >
+                obfuscation explained
+              </Link>
+              ,{" "}
+              <Link
+                href="/guides/vpn-protocols-explained"
+                className="underline"
+              >
+                protocols explained
+              </Link>{" "}
+              or the{" "}
+              <Link href="/best/best-vpn" className="underline">
+                Best VPN comparison
+              </Link>
+              .
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link
+                href="/best/best-vpn"
+                className="inline-flex items-center gap-2 rounded-lg border px-4 py-2 text-sm font-semibold hover:bg-muted"
+              >
+                Compare providers{" "}
+                <ArrowRight className="size-4" aria-hidden="true" />
+              </Link>
+              <a
+                href="https://travel.state.gov/en/international-travel/planning/guidance/communication-abroad.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg border px-4 py-2 text-sm font-semibold hover:bg-muted"
+              >
+                Read travel guidance{" "}
+                <ExternalLink className="size-4" aria-hidden="true" />
+              </a>
+            </div>
+          </section>
+          <p className="container max-w-5xl mt-6 text-sm leading-6 text-muted-foreground">
+            For country-specific evidence, continue with the{" "}
+            <Link href="/countries/iran" className="underline">
+              Iran evidence checklist
+            </Link>
+            .
+          </p>
         </article>
       </BestVpnEditorialTemplate>
     </>
   );
 }
-

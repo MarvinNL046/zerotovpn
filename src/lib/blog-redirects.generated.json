@@ -621,12 +621,12 @@
   },
   {
     "source": "/blog/vpn-price-comparison-best-deals-2026-03",
-    "destination": "/blog/vpn-price-comparison-best-deals",
+    "destination": "/best/vpn-cheap",
     "permanent": true
   },
   {
     "source": "/:locale(nl|de|es|fr|zh|ja|ko|th)/blog/vpn-price-comparison-best-deals-2026-03",
-    "destination": "/:locale/blog/vpn-price-comparison-best-deals",
+    "destination": "/:locale/best/vpn-cheap",
     "permanent": true
   },
   {

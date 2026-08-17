@@ -138,6 +138,7 @@
   .cursor-pointer {
     cursor: pointer;
   }
+
 }
 
 /* Design System Animations */
@@ -692,3 +693,28 @@
 .review-content td { @apply p-3 border border-slate-200 dark:border-slate-700; }
 .review-content .pro-tip { @apply bg-orange-50 dark:bg-orange-950/20 border-l-4 border-orange-500 p-4 my-6 rounded-r-lg; }
 .review-content .screenshot-placeholder { @apply bg-slate-100 dark:bg-slate-800 border-2 border-dashed border-slate-300 dark:border-slate-600 rounded-xl p-8 my-6 text-center text-slate-500; }
+
+/* Editorial homepage: keep the research lead visually dominant without
+   relying on newly discovered utility classes in long-running dev sessions. */
+@media (min-width: 64rem) {
+  .homepage-latest-grid {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  }
+
+  .homepage-latest-lead {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+  }
+
+  .homepage-latest-secondary {
+    display: grid;
+    grid-column: 2;
+    grid-template-columns: 180px minmax(0, 1fr);
+    align-items: stretch;
+  }
+
+  .homepage-latest-secondary-media {
+    min-height: 11rem;
+    aspect-ratio: auto;
+  }
+}

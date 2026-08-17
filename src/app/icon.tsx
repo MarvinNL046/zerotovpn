@@ -13,21 +13,18 @@ export default function Icon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)",
-          borderRadius: 6,
+          background: "#f7f7f2",
+          borderRadius: 7,
         }}
       >
         <svg
-          width="22"
-          height="22"
-          viewBox="0 0 24 24"
+          width="30"
+          height="30"
+          viewBox="0 0 40 40"
           fill="none"
-          stroke="white"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
         >
-          <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+          <path fill="#071226" d="M20 2.4 34.8 8.8v10.4c0 8.7-5.7 15.1-14.8 18.4C10.9 34.3 5.2 27.9 5.2 19.2V8.8L20 2.4Z" />
+          <path d="M11.1 11.1h18.1L10.9 28.8h18.2" fill="none" stroke="#B8E34A" strokeWidth="5.2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </div>
     ),

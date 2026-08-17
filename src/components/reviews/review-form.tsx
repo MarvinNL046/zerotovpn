@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -13,7 +14,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Checkbox } from "@/components/ui/checkbox";
 import { Star, Plus, X, Loader2, CheckCircle } from "lucide-react";
 import { usageTypeLabels, usagePeriodLabels } from "@/lib/user-reviews";
 
@@ -39,7 +39,6 @@ export function ReviewForm({ vpnSlug, vpnName, locale }: ReviewFormProps) {
   const [usagePeriod, setUsagePeriod] = useState("");
   const [pros, setPros] = useState<string[]>([""]);
   const [cons, setCons] = useState<string[]>([""]);
-  const [newsletterConsent, setNewsletterConsent] = useState(false);
 
   const labels = {
     en: {
@@ -50,7 +49,8 @@ export function ReviewForm({ vpnSlug, vpnName, locale }: ReviewFormProps) {
       reviewTitle: "Review Title",
       titlePlaceholder: "Summarize your experience",
       yourReview: "Your Review",
-      reviewPlaceholder: "What did you like or dislike? What did you use this VPN for?",
+      reviewPlaceholder:
+        "What did you like or dislike? What did you use this VPN for?",
       yourName: "Your Name",
       namePlaceholder: "John D.",
       yourEmail: "Your Email",
@@ -68,13 +68,17 @@ export function ReviewForm({ vpnSlug, vpnName, locale }: ReviewFormProps) {
       submitting: "Submitting...",
       cancel: "Cancel",
       success: "Thank you for your review!",
-      successMessage: "Your review has been submitted and is pending moderation.",
+      successMessage:
+        "Your review has been submitted and is pending moderation.",
       submitAnother: "Submit Another Review",
       error: "Something went wrong. Please try again.",
       required: "This field is required",
       invalidEmail: "Please enter a valid email",
       ratingRequired: "Please select a rating",
-      newsletterConsent: "Yes, I want to receive VPN deals and tips via email",
+      privacyNote:
+        "Your name and review may be published after moderation. We send your email, IP address and browser details to our review backend for moderation and abuse prevention. Your email is not published.",
+      privacyLink: "Privacy policy",
+      termsLink: "Submission rules",
     },
     nl: {
       writeReview: "Schrijf een Review",
@@ -84,7 +88,8 @@ export function ReviewForm({ vpnSlug, vpnName, locale }: ReviewFormProps) {
       reviewTitle: "Review Titel",
       titlePlaceholder: "Vat je ervaring samen",
       yourReview: "Jouw Review",
-      reviewPlaceholder: "Wat vond je goed of slecht? Waarvoor heb je deze VPN gebruikt?",
+      reviewPlaceholder:
+        "Wat vond je goed of slecht? Waarvoor heb je deze VPN gebruikt?",
       yourName: "Je Naam",
       namePlaceholder: "Jan de V.",
       yourEmail: "Je E-mail",
@@ -108,7 +113,10 @@ export function ReviewForm({ vpnSlug, vpnName, locale }: ReviewFormProps) {
       required: "Dit veld is verplicht",
       invalidEmail: "Voer een geldig e-mailadres in",
       ratingRequired: "Selecteer een beoordeling",
-      newsletterConsent: "Ja, ik wil graag VPN deals en tips ontvangen per email",
+      privacyNote:
+        "Je naam en review kunnen na controle openbaar worden. Voor controle en misbruikpreventie sturen we je e-mail, IP-adres en browsergegevens naar onze reviewbackend. Je e-mailadres wordt niet gepubliceerd.",
+      privacyLink: "Privacybeleid",
+      termsLink: "Regels voor inzendingen",
     },
   };
 
@@ -117,7 +125,8 @@ export function ReviewForm({ vpnSlug, vpnName, locale }: ReviewFormProps) {
   const periodLabels = usagePeriodLabels[locale] || usagePeriodLabels.en;
 
   const addPro = () => setPros([...pros, ""]);
-  const removePro = (index: number) => setPros(pros.filter((_, i) => i !== index));
+  const removePro = (index: number) =>
+    setPros(pros.filter((_, i) => i !== index));
   const updatePro = (index: number, value: string) => {
     const newPros = [...pros];
     newPros[index] = value;
@@ -125,7 +134,8 @@ export function ReviewForm({ vpnSlug, vpnName, locale }: ReviewFormProps) {
   };
 
   const addCon = () => setCons([...cons, ""]);
-  const removeCon = (index: number) => setCons(cons.filter((_, i) => i !== index));
+  const removeCon = (index: number) =>
+    setCons(cons.filter((_, i) => i !== index));
   const updateCon = (index: number, value: string) => {
     const newCons = [...cons];
     newCons[index] = value;
@@ -142,7 +152,6 @@ export function ReviewForm({ vpnSlug, vpnName, locale }: ReviewFormProps) {
     setUsagePeriod("");
     setPros([""]);
     setCons([""]);
-    setNewsletterConsent(false);
     setError(null);
   };
 
@@ -155,7 +164,12 @@ export function ReviewForm({ vpnSlug, vpnName, locale }: ReviewFormProps) {
       setError(t.ratingRequired);
       return;
     }
-    if (!title.trim() || !content.trim() || !authorName.trim() || !authorEmail.trim()) {
+    if (
+      !title.trim() ||
+      !content.trim() ||
+      !authorName.trim() ||
+      !authorEmail.trim()
+    ) {
       setError(t.required);
       return;
     }
@@ -182,7 +196,6 @@ export function ReviewForm({ vpnSlug, vpnName, locale }: ReviewFormProps) {
           userPros: pros.filter((p) => p.trim()),
           userCons: cons.filter((c) => c.trim()),
           locale,
-          newsletterConsent,
         }),
       });
 
@@ -353,7 +366,12 @@ export function ReviewForm({ vpnSlug, vpnName, locale }: ReviewFormProps) {
                 </div>
               ))}
               {pros.length < 5 && (
-                <Button type="button" variant="outline" size="sm" onClick={addPro}>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  onClick={addPro}
+                >
                   <Plus className="h-4 w-4 mr-1" />
                   {t.addPro}
                 </Button>
@@ -386,7 +404,12 @@ export function ReviewForm({ vpnSlug, vpnName, locale }: ReviewFormProps) {
                 </div>
               ))}
               {cons.length < 5 && (
-                <Button type="button" variant="outline" size="sm" onClick={addCon}>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  onClick={addCon}
+                >
                   <Plus className="h-4 w-4 mr-1" />
                   {t.addCon}
                 </Button>
@@ -419,20 +442,22 @@ export function ReviewForm({ vpnSlug, vpnName, locale }: ReviewFormProps) {
             </div>
           </div>
 
-          {/* Newsletter Consent */}
-          <div className="flex items-start space-x-3">
-            <Checkbox
-              id="newsletterConsent"
-              checked={newsletterConsent}
-              onCheckedChange={(checked) => setNewsletterConsent(checked === true)}
-            />
-            <label
-              htmlFor="newsletterConsent"
-              className="text-sm leading-relaxed cursor-pointer"
+          <p className="rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm leading-6 text-slate-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200">
+            {t.privacyNote}{" "}
+            <Link
+              href={locale === "nl" ? "/nl/privacy-policy" : "/privacy-policy"}
+              className="font-semibold underline underline-offset-4"
             >
-              {t.newsletterConsent}
-            </label>
-          </div>
+              {t.privacyLink}
+            </Link>{" "}
+            ·{" "}
+            <Link
+              href={locale === "nl" ? "/nl/terms" : "/terms"}
+              className="font-semibold underline underline-offset-4"
+            >
+              {t.termsLink}
+            </Link>
+          </p>
 
           {/* Error Message */}
           {error && (

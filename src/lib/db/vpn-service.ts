@@ -10,6 +10,7 @@
 // Nu is er één bron en is dat verschil weg. Wijzigingen gaan via een commit in
 // vpn-data.ts.
 import { vpnProviders, type VpnProvider } from "../vpn-data";
+import { getVpnAffiliateUrl, VPN_LINKS, type VpnLinkSlug } from "../vpn-links";
 
 // Type for VPN data that matches the frontend interface
 export interface VpnData {
@@ -55,8 +56,13 @@ export interface VpnData {
 // (priceLastVerified, priceSource) en gebruikt undefined waar de database
 // null had. Deze mapper vertaalt dat naar de vorm die de site verwacht.
 function toVpnData(vpn: VpnProvider): VpnData {
+  const affiliateUrl = Object.prototype.hasOwnProperty.call(VPN_LINKS, vpn.slug)
+    ? getVpnAffiliateUrl(vpn.slug as VpnLinkSlug)
+    : "";
+
   return {
     ...vpn,
+    affiliateUrl,
     priceTwoYear: vpn.priceTwoYear ?? null,
     protocols: vpn.protocols ?? [],
     pros: vpn.pros ?? [],
@@ -79,7 +85,9 @@ export async function getFeaturedVpnsFromDb(): Promise<VpnData[]> {
 }
 
 // Eén VPN op slug (reviews/[slug], compare/[comparison], countries/[country])
-export async function getVpnBySlugFromDb(slug: string): Promise<VpnData | null> {
+export async function getVpnBySlugFromDb(
+  slug: string,
+): Promise<VpnData | null> {
   return ALL_VPNS.find((v) => v.slug === slug) ?? null;
 }
 

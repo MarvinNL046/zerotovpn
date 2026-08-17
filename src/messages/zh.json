@@ -44,6 +44,9 @@
     "compare": "比较",
     "guides": "指南",
     "blog": "博客",
+    "selectLanguage": "选择语言",
+    "openMenu": "打开导航菜单",
+    "closeMenu": "关闭导航菜单",
     "about": "关于我们",
     "speedTest": "速度测试",
     "countries": "国家",
@@ -54,6 +57,10 @@
     "vpnChromebook": "Chromebook VPN",
     "vpnLinux": "Linux VPN",
     "tools": "工具",
+    "resources": "资源",
+    "mainNavigation": "主导航",
+    "mobileNavigation": "移动端导航",
+    "toggleTheme": "切换颜色主题",
     "ipChecker": "IP查询",
     "dnsLeakTest": "DNS泄漏测试",
     "vpnIndex": "VPN Index",
@@ -169,7 +176,7 @@
     "subscribe": "订阅",
     "subscribing": "正在订阅...",
     "success": "感谢您的订阅！",
-    "checkEmail": "请检查您的邮箱以确认订阅",
+    "checkEmail": "您已订阅，稍后可能会收到欢迎邮件。",
     "error": "发生错误，请重试。",
     "consent": "我同意接收邮件，并可随时取消订阅",
     "consentRequired": "请同意接收邮件",
@@ -843,11 +850,7 @@
               "icon": "N",
               "iconColor": "red-600",
               "description": "在190多个国家拥有不同的内容库。美国、英国、日本和加拿大拥有最大的选择。",
-              "features": [
-                "全球15,000多部作品",
-                "4K超高清",
-                "多个配置文件"
-              ]
+              "features": ["全球15,000多部作品", "4K超高清", "多个配置文件"]
             },
             {
               "name": "Disney+",
@@ -856,11 +859,7 @@
               "icon": "D+",
               "iconColor": "blue-700",
               "description": "内容因地区而异。美国拥有星球大战、漫威等内容。一些国家包含Star内容(成人作品)。",
-              "features": [
-                "迪士尼、漫威、星球大战",
-                "IMAX增强",
-                "可下载"
-              ]
+              "features": ["迪士尼、漫威、星球大战", "IMAX增强", "可下载"]
             },
             {
               "name": "BBC iPlayer",
@@ -869,11 +868,7 @@
               "icon": "BBC",
               "iconColor": "pink-600",
               "description": "需要英国电视许可证免费观看。访问需要英国IP地址。适合观看英国电视节目、纪录片和直播电视。",
-              "features": [
-                "免费(需英国许可证)",
-                "直播电视",
-                "BBC原创作品"
-              ]
+              "features": ["免费(需英国许可证)", "直播电视", "BBC原创作品"]
             },
             {
               "name": "Amazon Prime Video",
@@ -882,11 +877,7 @@
               "icon": "P",
               "iconColor": "sky-500",
               "description": "每个国家的内容库不同。一些内容包含在Prime会员中,其他内容可以租赁或购买。",
-              "features": [
-                "Prime原创作品",
-                "X-Ray功能",
-                "租赁选项"
-              ]
+              "features": ["Prime原创作品", "X-Ray功能", "租赁选项"]
             },
             {
               "name": "Hulu",
@@ -895,11 +886,7 @@
               "icon": "H",
               "iconColor": "green-500",
               "description": "美国独家服务,提供次日电视剧集、原创内容和直播电视选项。需要美国支付方式。",
-              "features": [
-                "次日电视",
-                "直播电视选项",
-                "FX内容"
-              ]
+              "features": ["次日电视", "直播电视选项", "FX内容"]
             }
           ]
         },
@@ -1176,12 +1163,7 @@
               "badge": "最佳P2P",
               "rating": "9.7/10",
               "description": "在45个以上国家拥有专用P2P服务器。经过审计的无日志政策。双重VPN提供额外安全性。快速的WireGuard速度。",
-              "features": [
-                "终止开关",
-                "无日志",
-                "P2P服务器",
-                "WireGuard"
-              ],
+              "features": ["终止开关", "无日志", "P2P服务器", "WireGuard"],
               "visitLink": "访问NordVPN"
             },
             {
@@ -1189,12 +1171,7 @@
               "badge": "最快",
               "rating": "9.6/10",
               "description": "所有服务器上允许P2P。TrustedServer技术(仅RAM)。Lightway协议实现快速下载。经过验证的无日志。",
-              "features": [
-                "终止开关",
-                "无日志",
-                "所有服务器P2P",
-                "仅RAM"
-              ],
+              "features": ["终止开关", "无日志", "所有服务器P2P", "仅RAM"],
               "visitLink": "访问ExpressVPN"
             },
             {
@@ -1202,12 +1179,7 @@
               "badge": "最隐私",
               "rating": "9.2/10",
               "description": "匿名账号编号(不需要电子邮件)。接受现金或加密货币支付。支持端口转发。开源应用程序。",
-              "features": [
-                "终止开关",
-                "匿名",
-                "端口转发",
-                "WireGuard"
-              ]
+              "features": ["终止开关", "匿名", "端口转发", "WireGuard"]
             }
           ],
           "viewFullComparison": "查看完整VPN比较"
@@ -2473,13 +2445,7 @@
         "comparison": {
           "title": "协议比较图表",
           "table": {
-            "headers": [
-              "协议",
-              "速度",
-              "安全性",
-              "稳定性",
-              "移动"
-            ],
+            "headers": ["协议", "速度", "安全性", "稳定性", "移动"],
             "rows": [
               {
                 "protocol": "WireGuard",
@@ -4073,16 +4039,8 @@
       "surfshark": {
         "badge": "最佳综合",
         "description": "Surfshark为移动用户提供最佳价值，支持无限设备连接、轻量级应用程序，在iOS和Android上都有出色的速度。",
-        "pros": [
-          "无限设备",
-          "轻量级应用",
-          "最优价格",
-          "GPS欺骗（Android）"
-        ],
-        "cons": [
-          "服务器较少",
-          "较新公司"
-        ]
+        "pros": ["无限设备", "轻量级应用", "最优价格", "GPS欺骗（Android）"],
+        "cons": ["服务器较少", "较新公司"]
       },
       "nordvpn": {
         "description": "NordVPN的专有NordLynx协议在移动设备上提供最快的速度。该应用在App Store和Google Play上均获得高评分。",
@@ -4092,10 +4050,7 @@
           "分流隧道（Android）",
           "威胁保护"
         ],
-        "cons": [
-          "对初学者复杂",
-          "无GPS欺骗"
-        ]
+        "cons": ["对初学者复杂", "无GPS欺骗"]
       },
       "expressvpn": {
         "description": "ExpressVPN是旅行者最可靠的选择。它在中国、阿联酋和土耳其可用，在4G/5G上连接极其稳定。",
@@ -4105,10 +4060,7 @@
           "Lightway协议",
           "最适合旅行"
         ],
-        "cons": [
-          "价格较贵",
-          "8台设备限制"
-        ]
+        "cons": ["价格较贵", "8台设备限制"]
       },
       "pros": "优点",
       "cons": "缺点",
@@ -4339,10 +4291,7 @@
           "直观界面",
           "24/7客户支持"
         ],
-        "cons": [
-          "价格较高",
-          "限制8台设备"
-        ]
+        "cons": ["价格较高", "限制8台设备"]
       },
       "nordvpn": {
         "description": "NordVPN的iOS应用具有NordLynx协议以实现最快速度、Siri快捷方式和Apple Watch集成。",
@@ -4353,24 +4302,13 @@
           "Apple Watch应用",
           "威胁保护"
         ],
-        "cons": [
-          "iOS上无分流隧道",
-          "应用可能复杂"
-        ]
+        "cons": ["iOS上无分流隧道", "应用可能复杂"]
       },
       "surfshark": {
         "description": "Surfshark在一个订阅中提供无限设备，具有简洁的iOS界面和出色的性价比。",
         "appStoreRating": "4.5★（100K+评论）",
-        "pros": [
-          "无限设备",
-          "最优价格",
-          "CleanWeb广告拦截器",
-          "GPS欺骗"
-        ],
-        "cons": [
-          "服务器网络较小",
-          "无Apple Watch应用"
-        ]
+        "pros": ["无限设备", "最优价格", "CleanWeb广告拦截器", "GPS欺骗"],
+        "cons": ["服务器网络较小", "无Apple Watch应用"]
       },
       "pros": "优点",
       "cons": "缺点",
@@ -4534,10 +4472,7 @@
           "出色的流媒体支持",
           "Siri快捷指令集成"
         ],
-        "cons": [
-          "无系统级分离隧道",
-          "高级定价"
-        ]
+        "cons": ["无系统级分离隧道", "高级定价"]
       },
       "surfshark": {
         "badge": "最佳家庭",
@@ -4549,10 +4484,7 @@
           "CleanWeb广告拦截器",
           "轻量级应用"
         ],
-        "cons": [
-          "服务器网络较小",
-          "无Siri快捷指令"
-        ]
+        "cons": ["服务器网络较小", "无Siri快捷指令"]
       },
       "expressvpn": {
         "badge": "最佳旅行",
@@ -4564,10 +4496,7 @@
           "全天候支持",
           "MediaStreamer用于Apple TV"
         ],
-        "cons": [
-          "价格较高",
-          "仅8台设备"
-        ]
+        "cons": ["价格较高", "仅8台设备"]
       }
     },
     "features": {
@@ -4711,10 +4640,7 @@
           "7,400+服务器",
           "分离隧道"
         ],
-        "cons": [
-          "应用体积较大",
-          "无GPS欺骗"
-        ]
+        "cons": ["应用体积较大", "无GPS欺骗"]
       },
       "surfshark": {
         "badge": "最轻应用",
@@ -4726,10 +4652,7 @@
           "最优价格",
           "CleanWeb广告拦截器"
         ],
-        "cons": [
-          "服务器少于Nord",
-          "稍慢一些"
-        ]
+        "cons": ["服务器少于Nord", "稍慢一些"]
       },
       "expressvpn": {
         "badge": "最佳旅行",
@@ -4741,10 +4664,7 @@
           "出色支持",
           "易于使用"
         ],
-        "cons": [
-          "价格较高",
-          "限制8台设备"
-        ]
+        "cons": ["价格较高", "限制8台设备"]
       }
     },
     "features": {
@@ -4818,12 +4738,7 @@
     "gaming": {
       "title": "Android平板游戏VPN",
       "description": "在Android平板上降低延迟并访问地理限制游戏。",
-      "games": [
-        "PUBG Mobile",
-        "Call of Duty Mobile",
-        "原神",
-        "Free Fire"
-      ]
+      "games": ["PUBG Mobile", "Call of Duty Mobile", "原神", "Free Fire"]
     },
     "torrenting": {
       "title": "在Android平板上下载种子",
@@ -4847,13 +4762,7 @@
     "avoid": {
       "title": "要避免的免费Android VPN",
       "description": "这些免费VPN对您的Android平板危险。",
-      "reasons": [
-        "数据收集",
-        "广告注入",
-        "恶意软件风险",
-        "无加密",
-        "带宽限制"
-      ]
+      "reasons": ["数据收集", "广告注入", "恶意软件风险", "无加密", "带宽限制"]
     },
     "conclusion": {
       "title": "选择您的Android平板VPN",
@@ -4928,10 +4837,7 @@
           "118个国家的7,400+服务器",
           "完美流媒体"
         ],
-        "cons": [
-          "iPad无分离隧道",
-          "价格稍高"
-        ]
+        "cons": ["iPad无分离隧道", "价格稍高"]
       },
       "surfshark": {
         "badge": "最佳性价比",
@@ -4943,10 +4849,7 @@
           "CleanWeb拦截广告和恶意软件",
           "Android上的GPS欺骗"
         ],
-        "cons": [
-          "服务器网络较小",
-          "比NordVPN稍慢"
-        ]
+        "cons": ["服务器网络较小", "比NordVPN稍慢"]
       },
       "expressvpn": {
         "badge": "最佳旅行",
@@ -4958,10 +4861,7 @@
           "全天候客户支持",
           "覆盖105个国家"
         ],
-        "cons": [
-          "更贵",
-          "限制8台设备"
-        ]
+        "cons": ["更贵", "限制8台设备"]
       }
     },
     "platforms": {
@@ -5167,10 +5067,7 @@
           "触控友好UI",
           "商业功能"
         ],
-        "cons": [
-          "价格较高",
-          "资源使用"
-        ]
+        "cons": ["价格较高", "资源使用"]
       },
       "surfshark": {
         "badge": "最佳性价比",
@@ -5182,10 +5079,7 @@
           "CleanWeb功能",
           "良好速度"
         ],
-        "cons": [
-          "功能较少",
-          "网络较小"
-        ]
+        "cons": ["功能较少", "网络较小"]
       },
       "expressvpn": {
         "badge": "最佳稳定性",
@@ -5197,10 +5091,7 @@
           "全天候支持",
           "易于设置"
         ],
-        "cons": [
-          "最贵",
-          "8台设备限制"
-        ]
+        "cons": ["最贵", "8台设备限制"]
       }
     },
     "features": {

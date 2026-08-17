@@ -1,63 +1,48 @@
 export const VPN_LINKS = {
   nordvpn: {
     website: "https://nordvpn.com",
-    affiliateUrl: "https://go.zerotovpn.com/nordvpn",
   },
   surfshark: {
     website: "https://surfshark.com",
-    affiliateUrl: "https://go.zerotovpn.com/surfshark",
   },
   expressvpn: {
     website: "https://expressvpn.com",
-    affiliateUrl: "https://go.zerotovpn.com/expressvpn",
   },
   protonvpn: {
     website: "https://protonvpn.com",
-    affiliateUrl: "https://go.zerotovpn.com/protonvpn",
   },
   cyberghost: {
     website: "https://cyberghostvpn.com",
-    affiliateUrl: "https://go.zerotovpn.com/cyberghost",
   },
   "private-internet-access": {
     website: "https://privateinternetaccess.com",
-    affiliateUrl: "https://go.zerotovpn.com/private-internet-access",
   },
   pia: {
     website: "https://privateinternetaccess.com",
-    affiliateUrl: "https://go.zerotovpn.com/pia",
   },
   mullvad: {
     website: "https://mullvad.net",
-    affiliateUrl: "https://go.zerotovpn.com/mullvad",
   },
   windscribe: {
     website: "https://windscribe.com",
-    affiliateUrl: "https://go.zerotovpn.com/windscribe",
   },
   tunnelbear: {
     website: "https://tunnelbear.com",
-    affiliateUrl: "https://go.zerotovpn.com/tunnelbear",
   },
   "hide-me": {
     website: "https://hide.me",
-    affiliateUrl: "https://go.zerotovpn.com/hide-me",
   },
   hideme: {
     website: "https://hide.me",
-    affiliateUrl: "https://go.zerotovpn.com/hideme",
   },
   astrill: {
     website: "https://astrill.com",
-    affiliateUrl: "https://go.zerotovpn.com/astrill",
   },
   vyprvpn: {
     website: "https://vyprvpn.com",
-    affiliateUrl: "https://go.zerotovpn.com/vyprvpn",
   },
   nordpass: {
     website: "https://nordpass.com",
-    affiliateUrl: "https://go.zerotovpn.com/nordpass",
   },
 } as const;
 
@@ -70,9 +55,30 @@ const approvedAffiliateIds = new Set(
     .filter(Boolean),
 );
 
-function getConfiguredNordVpnAffiliateUrl(): string {
-  if (!approvedAffiliateIds.has("nordvpn")) return "";
-  const configured = process.env.AFFILIATE_VPN_NORDVPN_URL?.trim() ?? "";
+const configuredAffiliateUrls: Partial<
+  Record<VpnLinkSlug, string | undefined>
+> = {
+  nordvpn: process.env.AFFILIATE_VPN_NORDVPN_URL,
+  surfshark: process.env.AFFILIATE_VPN_SURFSHARK_URL,
+  expressvpn: process.env.AFFILIATE_VPN_EXPRESSVPN_URL,
+  protonvpn: process.env.AFFILIATE_VPN_PROTONVPN_URL,
+  cyberghost: process.env.AFFILIATE_VPN_CYBERGHOST_URL,
+  "private-internet-access":
+    process.env.AFFILIATE_VPN_PRIVATE_INTERNET_ACCESS_URL,
+  pia: process.env.AFFILIATE_VPN_PIA_URL,
+  mullvad: process.env.AFFILIATE_VPN_MULLVAD_URL,
+  windscribe: process.env.AFFILIATE_VPN_WINDSCRIBE_URL,
+  tunnelbear: process.env.AFFILIATE_VPN_TUNNELBEAR_URL,
+  "hide-me": process.env.AFFILIATE_VPN_HIDE_ME_URL,
+  hideme: process.env.AFFILIATE_VPN_HIDEME_URL,
+  astrill: process.env.AFFILIATE_VPN_ASTRILL_URL,
+  vyprvpn: process.env.AFFILIATE_VPN_VYPRVPN_URL,
+  nordpass: process.env.AFFILIATE_NORDPASS_URL,
+};
+
+function getConfiguredAffiliateUrl(slug: VpnLinkSlug): string {
+  if (!approvedAffiliateIds.has(slug)) return "";
+  const configured = configuredAffiliateUrls[slug]?.trim() ?? "";
   try {
     const url = new URL(configured);
     if (url.protocol !== "https:") return "";
@@ -87,8 +93,7 @@ export function getVpnWebsiteUrl(slug: VpnLinkSlug): string {
 }
 
 export function getVpnAffiliateUrl(slug: VpnLinkSlug): string {
-  if (slug === "nordvpn") return getConfiguredNordVpnAffiliateUrl();
-  return VPN_LINKS[slug].affiliateUrl;
+  return getConfiguredAffiliateUrl(slug);
 }
 
 export function getVpnPricingUrl(slug: VpnLinkSlug): string {

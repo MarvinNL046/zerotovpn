@@ -1,7 +1,9 @@
 import { Resend } from "resend";
 
 // Initialize Resend client
-export const resend = new Resend(process.env.RESEND_API_KEY || "re_placeholder");
+export const resend = new Resend(
+  process.env.RESEND_API_KEY || "re_placeholder",
+);
 
 // Email sender configuration
 export const EMAIL_FROM = "ZeroToVPN <hello@zerotovpn.com>";
@@ -13,22 +15,26 @@ export type NewsletterWelcomeEmailProps = {
 };
 
 // Translations for welcome email
-const welcomeEmailTranslations: Record<string, {
-  subject: string;
-  title: string;
-  greeting: string;
-  thankYou: string;
-  whatToExpect: string;
-  expectItems: string[];
-  cta: string;
-  footer: string;
-  unsubscribe: string;
-}> = {
+const welcomeEmailTranslations: Record<
+  string,
+  {
+    subject: string;
+    title: string;
+    greeting: string;
+    thankYou: string;
+    whatToExpect: string;
+    expectItems: string[];
+    cta: string;
+    footer: string;
+    unsubscribe: string;
+  }
+> = {
   en: {
     subject: "Welcome to ZeroToVPN! 🔒",
     title: "Welcome to ZeroToVPN",
     greeting: "Hey there!",
-    thankYou: "Thank you for subscribing to our newsletter. You're now part of a community that cares about online privacy and security.",
+    thankYou:
+      "Thank you for subscribing to our newsletter. You're now part of a community that cares about online privacy and security.",
     whatToExpect: "Here's what you can expect from us:",
     expectItems: [
       "Exclusive VPN deals and discounts",
@@ -36,15 +42,17 @@ const welcomeEmailTranslations: Record<string, {
       "Latest VPN reviews and comparisons",
       "Privacy news and updates",
     ],
-    cta: "Browse VPN Deals",
+    cta: "Read our guides",
     footer: "Stay safe online!",
-    unsubscribe: "If you didn't subscribe to this newsletter, you can safely ignore this email.",
+    unsubscribe:
+      "To stop these emails or ask us to remove this address, email hello@zerotovpn.com.",
   },
   nl: {
     subject: "Welkom bij ZeroToVPN! 🔒",
     title: "Welkom bij ZeroToVPN",
     greeting: "Hallo!",
-    thankYou: "Bedankt voor je aanmelding voor onze nieuwsbrief. Je maakt nu deel uit van een community die geeft om online privacy en veiligheid.",
+    thankYou:
+      "Bedankt voor je aanmelding voor onze nieuwsbrief. Je maakt nu deel uit van een community die geeft om online privacy en veiligheid.",
     whatToExpect: "Dit kun je van ons verwachten:",
     expectItems: [
       "Exclusieve VPN-deals en kortingen",
@@ -52,15 +60,17 @@ const welcomeEmailTranslations: Record<string, {
       "Nieuwste VPN-reviews en vergelijkingen",
       "Privacy nieuws en updates",
     ],
-    cta: "Bekijk VPN Deals",
+    cta: "Lees onze gidsen",
     footer: "Blijf veilig online!",
-    unsubscribe: "Als je je niet hebt aangemeld voor deze nieuwsbrief, kun je deze e-mail veilig negeren.",
+    unsubscribe:
+      "Wil je geen e-mails meer of dit adres laten verwijderen? Mail hello@zerotovpn.com.",
   },
   de: {
     subject: "Willkommen bei ZeroToVPN! 🔒",
     title: "Willkommen bei ZeroToVPN",
     greeting: "Hallo!",
-    thankYou: "Vielen Dank für Ihre Anmeldung zu unserem Newsletter. Sie sind jetzt Teil einer Community, die sich um Online-Privatsphäre und Sicherheit kümmert.",
+    thankYou:
+      "Vielen Dank für Ihre Anmeldung zu unserem Newsletter. Sie sind jetzt Teil einer Community, die sich um Online-Privatsphäre und Sicherheit kümmert.",
     whatToExpect: "Das können Sie von uns erwarten:",
     expectItems: [
       "Exklusive VPN-Angebote und Rabatte",
@@ -68,15 +78,17 @@ const welcomeEmailTranslations: Record<string, {
       "Neueste VPN-Bewertungen und Vergleiche",
       "Datenschutz-News und Updates",
     ],
-    cta: "VPN-Angebote ansehen",
+    cta: "Ratgeber lesen",
     footer: "Bleiben Sie sicher online!",
-    unsubscribe: "Wenn Sie sich nicht für diesen Newsletter angemeldet haben, können Sie diese E-Mail ignorieren.",
+    unsubscribe:
+      "Um diese E-Mails zu stoppen oder die Adresse löschen zu lassen, schreiben Sie an hello@zerotovpn.com.",
   },
   es: {
     subject: "¡Bienvenido a ZeroToVPN! 🔒",
     title: "Bienvenido a ZeroToVPN",
     greeting: "¡Hola!",
-    thankYou: "Gracias por suscribirte a nuestro boletín. Ahora eres parte de una comunidad que se preocupa por la privacidad y seguridad en línea.",
+    thankYou:
+      "Gracias por suscribirte a nuestro boletín. Ahora eres parte de una comunidad que se preocupa por la privacidad y seguridad en línea.",
     whatToExpect: "Esto es lo que puedes esperar de nosotros:",
     expectItems: [
       "Ofertas y descuentos exclusivos de VPN",
@@ -84,15 +96,17 @@ const welcomeEmailTranslations: Record<string, {
       "Las últimas reseñas y comparaciones de VPN",
       "Noticias y actualizaciones de privacidad",
     ],
-    cta: "Ver ofertas VPN",
+    cta: "Ver guías",
     footer: "¡Mantente seguro en línea!",
-    unsubscribe: "Si no te suscribiste a este boletín, puedes ignorar este correo.",
+    unsubscribe:
+      "Para dejar de recibir correos o pedir que eliminemos esta dirección, escribe a hello@zerotovpn.com.",
   },
   fr: {
     subject: "Bienvenue chez ZeroToVPN ! 🔒",
     title: "Bienvenue chez ZeroToVPN",
     greeting: "Bonjour !",
-    thankYou: "Merci de vous être inscrit à notre newsletter. Vous faites maintenant partie d'une communauté qui se soucie de la confidentialité et de la sécurité en ligne.",
+    thankYou:
+      "Merci de vous être inscrit à notre newsletter. Vous faites maintenant partie d'une communauté qui se soucie de la confidentialité et de la sécurité en ligne.",
     whatToExpect: "Voici ce que vous pouvez attendre de nous :",
     expectItems: [
       "Offres et réductions VPN exclusives",
@@ -100,15 +114,17 @@ const welcomeEmailTranslations: Record<string, {
       "Dernières critiques et comparaisons VPN",
       "Actualités et mises à jour sur la confidentialité",
     ],
-    cta: "Voir les offres VPN",
+    cta: "Lire les guides",
     footer: "Restez en sécurité en ligne !",
-    unsubscribe: "Si vous ne vous êtes pas inscrit à cette newsletter, vous pouvez ignorer cet e-mail.",
+    unsubscribe:
+      "Pour arrêter ces e-mails ou demander la suppression de cette adresse, écrivez à hello@zerotovpn.com.",
   },
   zh: {
     subject: "欢迎加入 ZeroToVPN！🔒",
     title: "欢迎加入 ZeroToVPN",
     greeting: "您好！",
-    thankYou: "感谢您订阅我们的通讯。您现在是一个关注在线隐私和安全的社区的一员。",
+    thankYou:
+      "感谢您订阅我们的通讯。您现在是一个关注在线隐私和安全的社区的一员。",
     whatToExpect: "您可以期待我们提供：",
     expectItems: [
       "独家VPN优惠和折扣",
@@ -116,15 +132,16 @@ const welcomeEmailTranslations: Record<string, {
       "最新的VPN评测和比较",
       "隐私新闻和更新",
     ],
-    cta: "查看VPN优惠",
+    cta: "浏览指南",
     footer: "保持在线安全！",
-    unsubscribe: "如果您没有订阅此通讯，可以忽略此邮件。",
+    unsubscribe: "如需停止邮件或删除此地址，请联系 hello@zerotovpn.com。",
   },
   ja: {
     subject: "ZeroToVPNへようこそ！🔒",
     title: "ZeroToVPNへようこそ",
     greeting: "こんにちは！",
-    thankYou: "ニュースレターにご登録いただきありがとうございます。オンラインプライバシーとセキュリティを大切にするコミュニティの一員になりました。",
+    thankYou:
+      "ニュースレターにご登録いただきありがとうございます。オンラインプライバシーとセキュリティを大切にするコミュニティの一員になりました。",
     whatToExpect: "私たちから期待できること：",
     expectItems: [
       "限定VPNセールと割引",
@@ -132,15 +149,17 @@ const welcomeEmailTranslations: Record<string, {
       "最新のVPNレビューと比較",
       "プライバシーニュースとアップデート",
     ],
-    cta: "VPNセールを見る",
+    cta: "ガイドを読む",
     footer: "オンラインで安全に！",
-    unsubscribe: "このニュースレターに登録していない場合は、このメールを無視してください。",
+    unsubscribe:
+      "配信停止またはこのアドレスの削除は hello@zerotovpn.com へご連絡ください。",
   },
   ko: {
     subject: "ZeroToVPN에 오신 것을 환영합니다! 🔒",
     title: "ZeroToVPN에 오신 것을 환영합니다",
     greeting: "안녕하세요!",
-    thankYou: "뉴스레터를 구독해 주셔서 감사합니다. 이제 온라인 개인정보 보호와 보안에 관심을 가진 커뮤니티의 일원이 되셨습니다.",
+    thankYou:
+      "뉴스레터를 구독해 주셔서 감사합니다. 이제 온라인 개인정보 보호와 보안에 관심을 가진 커뮤니티의 일원이 되셨습니다.",
     whatToExpect: "저희에게 기대할 수 있는 것:",
     expectItems: [
       "독점 VPN 거래 및 할인",
@@ -148,15 +167,17 @@ const welcomeEmailTranslations: Record<string, {
       "최신 VPN 리뷰 및 비교",
       "개인정보 보호 뉴스 및 업데이트",
     ],
-    cta: "VPN 거래 보기",
+    cta: "가이드 보기",
     footer: "온라인에서 안전하세요!",
-    unsubscribe: "이 뉴스레터를 구독하지 않으셨다면 이 이메일을 무시하셔도 됩니다.",
+    unsubscribe:
+      "이메일 중단 또는 주소 삭제는 hello@zerotovpn.com 으로 요청해 주세요.",
   },
   th: {
     subject: "ยินดีต้อนรับสู่ ZeroToVPN! 🔒",
     title: "ยินดีต้อนรับสู่ ZeroToVPN",
     greeting: "สวัสดี!",
-    thankYou: "ขอบคุณที่สมัครรับจดหมายข่าวของเรา คุณเป็นส่วนหนึ่งของชุมชนที่ใส่ใจเรื่องความเป็นส่วนตัวและความปลอดภัยออนไลน์",
+    thankYou:
+      "ขอบคุณที่สมัครรับจดหมายข่าวของเรา คุณเป็นส่วนหนึ่งของชุมชนที่ใส่ใจเรื่องความเป็นส่วนตัวและความปลอดภัยออนไลน์",
     whatToExpect: "นี่คือสิ่งที่คุณสามารถคาดหวังจากเรา:",
     expectItems: [
       "ดีล VPN และส่วนลดพิเศษ",
@@ -164,17 +185,20 @@ const welcomeEmailTranslations: Record<string, {
       "รีวิวและเปรียบเทียบ VPN ล่าสุด",
       "ข่าวสารและอัปเดตด้านความเป็นส่วนตัว",
     ],
-    cta: "ดูดีล VPN",
+    cta: "อ่านคู่มือ",
     footer: "รักษาความปลอดภัยออนไลน์!",
-    unsubscribe: "หากคุณไม่ได้สมัครรับจดหมายข่าวนี้ คุณสามารถเพิกเฉยอีเมลนี้ได้",
+    unsubscribe:
+      "หากต้องการหยุดอีเมลหรือลบที่อยู่นี้ โปรดติดต่อ hello@zerotovpn.com",
   },
 };
 
 // Generate welcome email HTML
-export function generateWelcomeEmailHtml({ language }: NewsletterWelcomeEmailProps): string {
+export function generateWelcomeEmailHtml({
+  language,
+}: NewsletterWelcomeEmailProps): string {
   const t = welcomeEmailTranslations[language] || welcomeEmailTranslations.en;
-  const baseUrl = "https://zerotovpn.com";
-  const dealsUrl = `${baseUrl}/${language === 'en' ? '' : language + '/'}deals`;
+  const baseUrl = "https://www.zerotovpn.com";
+  const guidesUrl = `${baseUrl}${language === "en" ? "" : `/${language}`}/blog`;
 
   return `
 <!DOCTYPE html>
@@ -260,7 +284,9 @@ export function generateWelcomeEmailHtml({ language }: NewsletterWelcomeEmailPro
                         ${t.whatToExpect}
                       </p>
                       <table role="presentation" style="width: 100%; border-collapse: collapse;">
-                        ${t.expectItems.map(item => `
+                        ${t.expectItems
+                          .map(
+                            (item) => `
                         <tr>
                           <td style="padding: 8px 0; vertical-align: top; width: 28px;">
                             <span style="color: #22c55e; font-size: 16px;">✓</span>
@@ -269,7 +295,9 @@ export function generateWelcomeEmailHtml({ language }: NewsletterWelcomeEmailPro
                             ${item}
                           </td>
                         </tr>
-                        `).join('')}
+                        `,
+                          )
+                          .join("")}
                       </table>
                     </div>
 
@@ -277,7 +305,7 @@ export function generateWelcomeEmailHtml({ language }: NewsletterWelcomeEmailPro
                     <table role="presentation" style="width: 100%; border-collapse: collapse;">
                       <tr>
                         <td align="center">
-                          <a href="${dealsUrl}"
+                          <a href="${guidesUrl}"
                              style="display: inline-block; padding: 16px 40px; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: #ffffff; text-decoration: none; font-size: 16px; font-weight: 700; border-radius: 10px; box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);">
                             ${t.cta} →
                           </a>
@@ -342,7 +370,8 @@ export function generateWelcomeEmailHtml({ language }: NewsletterWelcomeEmailPro
 
 // Get email subject by language
 export function getWelcomeEmailSubject(language: string): string {
-  return (welcomeEmailTranslations[language] || welcomeEmailTranslations.en).subject;
+  return (welcomeEmailTranslations[language] || welcomeEmailTranslations.en)
+    .subject;
 }
 
 // Send notification when a blog post is published
@@ -416,7 +445,10 @@ export async function sendPostPublishedNotification({
 }
 
 // Send welcome email
-export async function sendWelcomeEmail({ email, language }: NewsletterWelcomeEmailProps) {
+export async function sendWelcomeEmail({
+  email,
+  language,
+}: NewsletterWelcomeEmailProps) {
   const html = generateWelcomeEmailHtml({ email, language });
   const subject = getWelcomeEmailSubject(language);
 

@@ -1,0 +1,694 @@
+.page {
+  --navy: #071226;
+  --navy-soft: #0d1d38;
+  --blue: #1268f3;
+  --lime: #b8e34a;
+  --paper: #f7f7f2;
+  --surface: #ffffff;
+  --soft: #eef2f6;
+  --ink: #071226;
+  --muted: #526178;
+  --line: #d7dfe9;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.container {
+  width: min(100%, 76rem);
+  margin: 0 auto;
+}
+
+.hero {
+  padding: 2rem 1rem clamp(4rem, 8vw, 7rem);
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgb(184 227 74 / 15%),
+      transparent 24rem
+    ),
+    var(--navy);
+  color: #ffffff;
+}
+
+.breadcrumb {
+  display: flex;
+  min-height: 3rem;
+  align-items: center;
+  gap: 0.75rem;
+  color: #9fb0c7;
+  font-size: 0.875rem;
+}
+
+.breadcrumb a {
+  display: inline-flex;
+  min-width: 3rem;
+  min-height: 3rem;
+  align-items: center;
+  color: #e4ebf5;
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+}
+
+.heroGrid {
+  display: grid;
+  gap: 2rem;
+  align-items: end;
+  padding-top: 1.75rem;
+}
+
+.eyebrow,
+.cardLabel {
+  margin: 0 0 0.85rem;
+  color: var(--blue);
+  font-size: 0.75rem;
+  font-weight: 850;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.hero .eyebrow,
+.hero .cardLabel,
+.principlesSection .eyebrow,
+.accountabilitySection .eyebrow {
+  color: var(--lime);
+}
+
+.hero h1 {
+  max-width: 12ch;
+  margin: 0;
+  font-size: clamp(2.5rem, 7.5vw, 5.1rem);
+  font-weight: 880;
+  letter-spacing: -0.05em;
+  line-height: 0.97;
+}
+
+.heroIntro {
+  max-width: 47rem;
+  margin: 1.5rem 0 0;
+  color: #c8d4e4;
+  font-size: clamp(1rem, 2vw, 1.18rem);
+  line-height: 1.75;
+}
+
+.cues {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+}
+
+.cues span {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: 0.45rem;
+  border: 1px solid #2e4867;
+  border-radius: 999px;
+  padding: 0.55rem 0.85rem;
+  color: #e3eaf3;
+  font-size: 0.8rem;
+  font-weight: 750;
+}
+
+.cues svg {
+  width: 1rem;
+  color: var(--lime);
+}
+
+.summaryCard {
+  border: 1px solid #36516f;
+  border-radius: 1.45rem;
+  background: rgb(13 29 56 / 88%);
+  padding: clamp(1.35rem, 4vw, 2rem);
+  box-shadow: 0 1.5rem 4rem rgb(0 0 0 / 18%);
+}
+
+.summaryCard h2 {
+  margin: 0;
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  line-height: 1.2;
+}
+
+.summaryCard dl {
+  display: grid;
+  gap: 0;
+  margin: 1.3rem 0 0;
+}
+
+.summaryCard dl > div {
+  display: grid;
+  gap: 0.3rem;
+  border-top: 1px solid #2d4563;
+  padding: 0.9rem 0;
+}
+
+.summaryCard dt {
+  color: #9fb0c7;
+  font-size: 0.75rem;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.summaryCard dd {
+  margin: 0;
+  color: #ffffff;
+  line-height: 1.5;
+}
+
+.summaryCard time {
+  display: block;
+  border-top: 1px solid #2d4563;
+  padding-top: 1rem;
+  color: #aebed2;
+  font-size: 0.78rem;
+}
+
+.founderSection,
+.principlesSection,
+.evidenceSection,
+.boundariesSection,
+.accountabilitySection,
+.linksSection,
+.faqSection {
+  padding: clamp(4rem, 8vw, 6.5rem) 1rem;
+}
+
+.founderSection,
+.boundariesSection {
+  background: var(--surface);
+}
+
+.evidenceSection,
+.linksSection {
+  background: var(--paper);
+}
+
+.principlesSection,
+.accountabilitySection {
+  background: var(--navy);
+  color: #ffffff;
+}
+
+.faqSection {
+  background: var(--soft);
+}
+
+.sectionHeader {
+  max-width: 50rem;
+  margin-bottom: 2.25rem;
+}
+
+.sectionHeader h2 {
+  margin: 0;
+  font-size: clamp(2rem, 4.5vw, 3.35rem);
+  letter-spacing: -0.04em;
+  line-height: 1.04;
+}
+
+.sectionHeader > p:last-child {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.75;
+}
+
+.principlesSection .sectionHeader > p:last-child,
+.accountabilitySection .sectionHeader > p:last-child {
+  color: #bdcadd;
+}
+
+.founderGrid {
+  display: grid;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.portraitCard {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1rem;
+  align-items: center;
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 1.35rem;
+  background: var(--paper);
+  padding: 1.25rem;
+}
+
+.portraitCard img {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+.portraitCard figcaption {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.portraitCard strong {
+  font-size: 1.3rem;
+}
+
+.portraitCard span {
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.founderCopy {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 1.35rem;
+  background: var(--surface);
+  padding: clamp(1.4rem, 4vw, 2.25rem);
+}
+
+.founderCopy > svg {
+  width: 2rem;
+  height: 2rem;
+  color: var(--blue);
+}
+
+.founderCopy > p {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.boundaryNote {
+  display: grid;
+  grid-template-columns: 1.5rem minmax(0, 1fr);
+  gap: 0.9rem;
+  margin-top: 1.4rem;
+  border-radius: 1rem;
+  background: #eef5ff;
+  padding: 1.2rem;
+}
+
+.boundaryNote > svg {
+  width: 1.35rem;
+  color: var(--blue);
+}
+
+.boundaryNote h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.boundaryNote p {
+  margin: 0.55rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.primaryButton {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1.35rem;
+  border-radius: 0.8rem;
+  background: var(--lime);
+  padding: 0.7rem 1.05rem;
+  color: var(--navy);
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.primaryButton:hover {
+  background: #c8ef62;
+}
+
+.primaryButton svg {
+  width: 1rem;
+}
+
+.principlesGrid,
+.evidenceGrid,
+.boundariesGrid,
+.accountabilityGrid,
+.linkGrid {
+  display: grid;
+  gap: 1rem;
+}
+
+.principlesGrid section {
+  border: 1px solid #314967;
+  border-radius: 1.15rem;
+  background: var(--navy-soft);
+  padding: 1.45rem;
+}
+
+.principlesGrid section > span {
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--lime);
+  color: var(--navy);
+  font-weight: 900;
+}
+
+.principlesGrid h3,
+.evidenceCard h3,
+.boundariesGrid h3,
+.accountabilityGrid h3 {
+  margin: 1rem 0 0;
+  font-size: 1.15rem;
+}
+
+.principlesGrid p,
+.accountabilityGrid p {
+  margin: 0.65rem 0 0;
+  color: #bdcadd;
+  line-height: 1.68;
+}
+
+.evidenceCard {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 1.15rem;
+  background: var(--surface);
+  padding: 1.45rem;
+}
+
+.evidenceCard::before {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0.32rem;
+  background: var(--tone);
+  content: "";
+}
+
+.evidenceCard > svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--tone);
+}
+
+.evidenceCard p {
+  margin: 0.65rem 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.provider {
+  --tone: #c56d11;
+}
+
+.outside {
+  --tone: #1268f3;
+}
+
+.observed {
+  --tone: #12865d;
+}
+
+.unknown {
+  --tone: #6b7280;
+}
+
+.boundariesGrid section {
+  border: 1px solid var(--line);
+  border-radius: 1.15rem;
+  padding: clamp(1.35rem, 4vw, 2rem);
+}
+
+.boundariesGrid section > svg {
+  width: 1.65rem;
+  height: 1.65rem;
+}
+
+.canCard {
+  background: #effaf3;
+}
+
+.canCard > svg {
+  color: #12865d;
+}
+
+.cannotCard {
+  background: #fff6ed;
+}
+
+.cannotCard > svg {
+  color: #c56d11;
+}
+
+.boundariesGrid ul {
+  display: grid;
+  gap: 0.8rem;
+  margin: 1rem 0 0;
+  padding-left: 1.2rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.migrationNote {
+  display: grid;
+  grid-template-columns: 1.6rem minmax(0, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+  border: 1px solid #e5c273;
+  border-radius: 1.15rem;
+  background: #fff9e9;
+  padding: clamp(1.3rem, 4vw, 1.8rem);
+}
+
+.migrationNote > svg {
+  width: 1.45rem;
+  color: #a86108;
+}
+
+.migrationNote h3 {
+  margin: 0;
+  font-size: 1.08rem;
+}
+
+.migrationNote p {
+  margin: 0.6rem 0 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.migrationNote a,
+.accountabilityGrid a {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 0.75rem;
+  color: inherit;
+  font-weight: 850;
+  text-decoration: underline;
+  text-underline-offset: 0.24em;
+}
+
+.migrationNote a svg,
+.accountabilityGrid a svg {
+  width: 1rem;
+}
+
+.accountabilityGrid section {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  border: 1px solid #314967;
+  border-radius: 1.15rem;
+  background: var(--navy-soft);
+  padding: clamp(1.4rem, 4vw, 2rem);
+}
+
+.accountabilityGrid section > svg {
+  width: 1.7rem;
+  height: 1.7rem;
+  color: var(--lime);
+}
+
+.accountabilityGrid p {
+  flex: 1;
+}
+
+.accountabilityGrid a {
+  align-self: flex-start;
+  color: var(--lime);
+}
+
+.linkGrid > a {
+  display: flex;
+  min-width: 0;
+  min-height: 7.5rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 1.15rem;
+  background: var(--surface);
+  padding: 1.2rem;
+  color: var(--ink);
+  text-decoration: none;
+  transition:
+    border-color 160ms ease,
+    transform 160ms ease;
+}
+
+.linkGrid > a:hover {
+  border-color: var(--blue);
+  transform: translateY(-2px);
+}
+
+.linkGrid span {
+  display: grid;
+  min-width: 0;
+  gap: 0.45rem;
+}
+
+.linkGrid strong {
+  font-size: 1rem;
+}
+
+.linkGrid small {
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+.linkGrid > a > svg {
+  width: 1.1rem;
+  flex: 0 0 auto;
+  color: var(--blue);
+}
+
+.faqList {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.faqList details {
+  border: 1px solid var(--line);
+  border-radius: 1.05rem;
+  background: var(--surface);
+}
+
+.faqList summary {
+  display: flex;
+  min-height: 3.5rem;
+  cursor: pointer;
+  align-items: center;
+  padding: 1rem 1.2rem;
+  font-weight: 850;
+  list-style: none;
+}
+
+.faqList summary::-webkit-details-marker {
+  display: none;
+}
+
+.faqList details p {
+  margin: 0;
+  padding: 0 1.2rem 1.25rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.page a:focus-visible,
+.page summary:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
+}
+
+@media (min-width: 44rem) {
+  .hero,
+  .founderSection,
+  .principlesSection,
+  .evidenceSection,
+  .boundariesSection,
+  .accountabilitySection,
+  .linksSection,
+  .faqSection {
+    padding-inline: 1.5rem;
+  }
+
+  .founderGrid {
+    grid-template-columns: minmax(15rem, 0.55fr) minmax(0, 1.45fr);
+  }
+
+  .portraitCard {
+    grid-template-columns: 1fr;
+    align-content: start;
+  }
+
+  .portraitCard img {
+    width: min(100%, 13.75rem);
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .evidenceGrid,
+  .boundariesGrid,
+  .accountabilityGrid,
+  .linkGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 64rem) {
+  .heroGrid {
+    grid-template-columns: minmax(0, 1.35fr) minmax(21rem, 0.72fr);
+    gap: 4rem;
+  }
+
+  .principlesGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .evidenceGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page *,
+  .page *::before,
+  .page *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+:global(.dark) .page {
+  --paper: #0b1629;
+  --surface: #101f36;
+  --soft: #0f1d32;
+  --ink: #f4f7fb;
+  --muted: #b6c2d3;
+  --line: #2c405a;
+}
+
+:global(.dark) .portraitCard {
+  background: #0d1b30;
+}
+
+:global(.dark) .boundaryNote {
+  background: #112949;
+}
+
+:global(.dark) .canCard {
+  background: #102d28;
+}
+
+:global(.dark) .cannotCard {
+  background: #332318;
+}
+
+:global(.dark) .migrationNote {
+  border-color: #755d29;
+  background: #2b2416;
+}

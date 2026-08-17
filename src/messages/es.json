@@ -44,6 +44,9 @@
     "compare": "Comparar",
     "guides": "Guías",
     "blog": "Blog",
+    "selectLanguage": "Seleccionar idioma",
+    "openMenu": "Abrir menú de navegación",
+    "closeMenu": "Cerrar menú de navegación",
     "about": "Sobre nosotros",
     "speedTest": "Test de Velocidad",
     "countries": "Países",
@@ -54,6 +57,10 @@
     "vpnChromebook": "VPN para Chromebook",
     "vpnLinux": "VPN para Linux",
     "tools": "Herramientas",
+    "resources": "Recursos",
+    "mainNavigation": "Navegación principal",
+    "mobileNavigation": "Navegación móvil",
+    "toggleTheme": "Cambiar tema de color",
     "ipChecker": "Verificador de IP",
     "dnsLeakTest": "Test de Fugas DNS",
     "vpnIndex": "VPN Index",
@@ -169,7 +176,7 @@
     "subscribe": "Suscribirse",
     "subscribing": "Suscribiendo...",
     "success": "¡Gracias por suscribirte!",
-    "checkEmail": "Revisa tu correo para confirmar tu suscripción",
+    "checkEmail": "Ya estás suscrito. Puede que recibas pronto un correo de bienvenida.",
     "error": "Algo salió mal. Por favor intenta de nuevo.",
     "consent": "Acepto recibir correos y puedo cancelar cuando quiera",
     "consentRequired": "Por favor acepta recibir correos",
@@ -2191,32 +2198,22 @@
               {
                 "country": "Suiza",
                 "description": "Leyes de privacidad fuertes, no miembro de 14 Eyes, históricamente neutral.",
-                "vpnExamples": [
-                  "ProtonVPN",
-                  "Perfect Privacy"
-                ]
+                "vpnExamples": ["ProtonVPN", "Perfect Privacy"]
               },
               {
                 "country": "Panamá",
                 "description": "Sin leyes de retención de datos obligatorias, no miembro de alianzas de vigilancia.",
-                "vpnExamples": [
-                  "NordVPN",
-                  "Surfshark"
-                ]
+                "vpnExamples": ["NordVPN", "Surfshark"]
               },
               {
                 "country": "Islas Vírgenes Británicas",
                 "description": "Independiente del Reino Unido para privacidad de datos, sin leyes de retención de datos.",
-                "vpnExamples": [
-                  "ExpressVPN"
-                ]
+                "vpnExamples": ["ExpressVPN"]
               },
               {
                 "country": "Rumania",
                 "description": "No en 14 Eyes, sin leyes de retención de datos para empresas privadas.",
-                "vpnExamples": [
-                  "CyberGhost"
-                ]
+                "vpnExamples": ["CyberGhost"]
               }
             ]
           },
@@ -2703,10 +2700,7 @@
               "security": "Desconocido",
               "speed": "Rápido",
               "status": "Propietario - Transparencia Limitada",
-              "pros": [
-                "Velocidades rápidas",
-                "Optimizado para streaming"
-              ],
+              "pros": ["Velocidades rápidas", "Optimizado para streaming"],
               "cons": [
                 "Cerrado (no código abierto)",
                 "Difícil de auditar independientemente",
@@ -4432,10 +4426,7 @@
           "Mejor precio",
           "Suplantación GPS (Android)"
         ],
-        "cons": [
-          "Menos servidores",
-          "Empresa más nueva"
-        ]
+        "cons": ["Menos servidores", "Empresa más nueva"]
       },
       "nordvpn": {
         "description": "El protocolo propietario NordLynx de NordVPN ofrece las velocidades más rápidas en móvil. Las aplicaciones tienen las mejores calificaciones en App Store y Google Play.",
@@ -4445,10 +4436,7 @@
           "Túnel dividido (Android)",
           "Protección contra amenazas"
         ],
-        "cons": [
-          "Complejo para principiantes",
-          "Sin suplantación GPS"
-        ]
+        "cons": ["Complejo para principiantes", "Sin suplantación GPS"]
       },
       "expressvpn": {
         "description": "ExpressVPN es la opción más confiable para viajeros. Funciona en China, EAU y Turquía, con conexiones increíblemente estables en 4G/5G.",
@@ -4458,10 +4446,7 @@
           "Protocolo Lightway",
           "Mejor para viajes"
         ],
-        "cons": [
-          "Más caro",
-          "Límite de 8 dispositivos"
-        ]
+        "cons": ["Más caro", "Límite de 8 dispositivos"]
       },
       "pros": "Pros",
       "cons": "Contras",
@@ -4692,10 +4677,7 @@
           "Interfaz intuitiva",
           "Soporte al cliente 24/7"
         ],
-        "cons": [
-          "Precio más alto",
-          "Limitado a 8 dispositivos"
-        ]
+        "cons": ["Precio más alto", "Limitado a 8 dispositivos"]
       },
       "nordvpn": {
         "description": "La aplicación iOS de NordVPN incluye el protocolo NordLynx para las velocidades más rápidas, atajos de Siri e integración con Apple Watch.",
@@ -4720,10 +4702,7 @@
           "Bloqueador de anuncios CleanWeb",
           "Suplantación GPS"
         ],
-        "cons": [
-          "Red de servidores más pequeña",
-          "Sin aplicación Apple Watch"
-        ]
+        "cons": ["Red de servidores más pequeña", "Sin aplicación Apple Watch"]
       },
       "pros": "Pros",
       "cons": "Contras",
@@ -4887,10 +4866,7 @@
           "Excelente soporte de streaming",
           "Integración con Atajos de Siri"
         ],
-        "cons": [
-          "Sin túnel dividido a nivel del sistema",
-          "Precio premium"
-        ]
+        "cons": ["Sin túnel dividido a nivel del sistema", "Precio premium"]
       },
       "surfshark": {
         "badge": "Mejor para Familias",
@@ -4902,10 +4878,7 @@
           "Bloqueador de anuncios CleanWeb",
           "Aplicación ligera"
         ],
-        "cons": [
-          "Red de servidores más pequeña",
-          "Sin Atajos de Siri"
-        ]
+        "cons": ["Red de servidores más pequeña", "Sin Atajos de Siri"]
       },
       "expressvpn": {
         "badge": "Mejor para Viajes",
@@ -4917,10 +4890,7 @@
           "Soporte 24/7",
           "MediaStreamer para Apple TV"
         ],
-        "cons": [
-          "Precio más alto",
-          "Solo 8 dispositivos"
-        ]
+        "cons": ["Precio más alto", "Solo 8 dispositivos"]
       }
     },
     "features": {
@@ -5064,10 +5034,7 @@
           "7,400+ servidores",
           "Túnel dividido"
         ],
-        "cons": [
-          "Tamaño de aplicación mayor",
-          "Sin suplantación de GPS"
-        ]
+        "cons": ["Tamaño de aplicación mayor", "Sin suplantación de GPS"]
       },
       "surfshark": {
         "badge": "Aplicación Más Ligera",
@@ -5079,10 +5046,7 @@
           "Mejor precio",
           "Bloqueador de anuncios CleanWeb"
         ],
-        "cons": [
-          "Menos servidores que Nord",
-          "Ligeramente más lenta"
-        ]
+        "cons": ["Menos servidores que Nord", "Ligeramente más lenta"]
       },
       "expressvpn": {
         "badge": "Mejor para Viajes",
@@ -5094,10 +5058,7 @@
           "Excelente soporte",
           "Fácil de usar"
         ],
-        "cons": [
-          "Precio más alto",
-          "Limitado a 8 dispositivos"
-        ]
+        "cons": ["Precio más alto", "Limitado a 8 dispositivos"]
       }
     },
     "features": {
@@ -5281,10 +5242,7 @@
           "7,400+ servidores en 118 países",
           "Perfecta para streaming"
         ],
-        "cons": [
-          "Sin túnel dividido en iPad",
-          "Precio ligeramente más alto"
-        ]
+        "cons": ["Sin túnel dividido en iPad", "Precio ligeramente más alto"]
       },
       "surfshark": {
         "badge": "Mejor Valor",
@@ -5311,10 +5269,7 @@
           "Soporte al cliente 24/7",
           "105 países cubiertos"
         ],
-        "cons": [
-          "Más cara",
-          "Limitado a 8 dispositivos"
-        ]
+        "cons": ["Más cara", "Limitado a 8 dispositivos"]
       }
     },
     "platforms": {
@@ -5520,10 +5475,7 @@
           "Interfaz táctil amigable",
           "Características empresariales"
         ],
-        "cons": [
-          "Precio más alto",
-          "Uso de recursos"
-        ]
+        "cons": ["Precio más alto", "Uso de recursos"]
       },
       "surfshark": {
         "badge": "Mejor Valor",
@@ -5535,10 +5487,7 @@
           "Función CleanWeb",
           "Buenas velocidades"
         ],
-        "cons": [
-          "Menos características",
-          "Red más pequeña"
-        ]
+        "cons": ["Menos características", "Red más pequeña"]
       },
       "expressvpn": {
         "badge": "Mejor Estabilidad",
@@ -5550,10 +5499,7 @@
           "Soporte 24/7",
           "Configuración fácil"
         ],
-        "cons": [
-          "Más cara",
-          "Límite de 8 dispositivos"
-        ]
+        "cons": ["Más cara", "Límite de 8 dispositivos"]
       }
     },
     "features": {

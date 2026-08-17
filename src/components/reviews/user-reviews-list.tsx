@@ -34,7 +34,9 @@ export function UserReviewsList({
   totalReviews,
 }: UserReviewsListProps) {
   const [showAll, setShowAll] = useState(false);
-  const [sortBy, setSortBy] = useState<"recent" | "helpful" | "rating">("recent");
+  const [sortBy, setSortBy] = useState<"recent" | "helpful" | "rating">(
+    "recent",
+  );
 
   const displayedReviews = showAll ? reviews : reviews.slice(0, 3);
 
@@ -75,7 +77,8 @@ export function UserReviewsList({
       cons: "Cons",
       showAll: "Show All Reviews",
       showLess: "Show Less",
-      noReviews: "No reviews yet. Be the first to review!",
+      noReviews:
+        "No published visitor reviews yet. New submissions appear only after moderation.",
     },
     nl: {
       userReviews: "Gebruikersreviews",
@@ -94,7 +97,8 @@ export function UserReviewsList({
       cons: "Nadelen",
       showAll: "Toon Alle Reviews",
       showLess: "Toon Minder",
-      noReviews: "Nog geen reviews. Wees de eerste!",
+      noReviews:
+        "Er zijn nog geen gepubliceerde bezoekersreviews. Nieuwe inzendingen verschijnen pas na controle.",
     },
   };
 
@@ -121,7 +125,9 @@ export function UserReviewsList({
             {/* Average Rating */}
             <div className="text-center md:text-left">
               <div className="flex items-center justify-center md:justify-start gap-4">
-                <span className="text-5xl font-bold">{averageRating.toFixed(1)}</span>
+                <span className="text-5xl font-bold">
+                  {averageRating.toFixed(1)}
+                </span>
                 <div>
                   <RatingStars rating={averageRating} size="lg" />
                   <p className="text-sm text-muted-foreground mt-1">
@@ -142,7 +148,9 @@ export function UserReviewsList({
                       style={{ width: `${percentage}%` }}
                     />
                   </div>
-                  <span className="text-sm text-muted-foreground w-8">{count}</span>
+                  <span className="text-sm text-muted-foreground w-8">
+                    {count}
+                  </span>
                 </div>
               ))}
             </div>
@@ -202,7 +210,8 @@ export function UserReviewsList({
               </>
             ) : (
               <>
-                {t.showAll} ({reviews.length}) <ChevronDown className="ml-2 h-4 w-4" />
+                {t.showAll} ({reviews.length}){" "}
+                <ChevronDown className="ml-2 h-4 w-4" />
               </>
             )}
           </Button>
@@ -220,7 +229,13 @@ interface ReviewCardProps {
   periodLabels: Record<string, string>;
 }
 
-function ReviewCard({ review, locale, t, usageLabels, periodLabels }: ReviewCardProps) {
+function ReviewCard({
+  review,
+  locale,
+  t,
+  usageLabels,
+  periodLabels,
+}: ReviewCardProps) {
   const [expanded, setExpanded] = useState(false);
   const contentPreviewLength = 200;
   const shouldTruncate = review.content.length > contentPreviewLength;
@@ -251,7 +266,9 @@ function ReviewCard({ review, locale, t, usageLabels, periodLabels }: ReviewCard
                   </Badge>
                 )}
                 {review.featured && (
-                  <Badge className="bg-yellow-500 text-yellow-950 text-xs">Featured</Badge>
+                  <Badge className="bg-yellow-500 text-yellow-950 text-xs">
+                    Featured
+                  </Badge>
                 )}
               </div>
               <div className="flex items-center gap-3 text-sm text-muted-foreground">
@@ -285,7 +302,8 @@ function ReviewCard({ review, locale, t, usageLabels, periodLabels }: ReviewCard
             )}
             {review.usagePeriod && (
               <Badge variant="outline">
-                {t.experience}: {periodLabels[review.usagePeriod] || review.usagePeriod}
+                {t.experience}:{" "}
+                {periodLabels[review.usagePeriod] || review.usagePeriod}
               </Badge>
             )}
           </div>
@@ -313,7 +331,9 @@ function ReviewCard({ review, locale, t, usageLabels, periodLabels }: ReviewCard
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
             {review.userPros.length > 0 && (
               <div className="space-y-2">
-                <span className="text-sm font-medium text-green-600">{t.pros}</span>
+                <span className="text-sm font-medium text-green-600">
+                  {t.pros}
+                </span>
                 <ul className="space-y-1">
                   {review.userPros.map((pro, index) => (
                     <li key={index} className="flex items-start gap-2 text-sm">
@@ -326,7 +346,9 @@ function ReviewCard({ review, locale, t, usageLabels, periodLabels }: ReviewCard
             )}
             {review.userCons.length > 0 && (
               <div className="space-y-2">
-                <span className="text-sm font-medium text-red-600">{t.cons}</span>
+                <span className="text-sm font-medium text-red-600">
+                  {t.cons}
+                </span>
                 <ul className="space-y-1">
                   {review.userCons.map((con, index) => (
                     <li key={index} className="flex items-start gap-2 text-sm">
@@ -342,7 +364,9 @@ function ReviewCard({ review, locale, t, usageLabels, periodLabels }: ReviewCard
 
         {/* Helpfulness */}
         <div className="flex items-center gap-4 pt-4 border-t">
-          <span className="text-sm text-muted-foreground">Was this helpful?</span>
+          <span className="text-sm text-muted-foreground">
+            Was this helpful?
+          </span>
           <div className="flex items-center gap-2">
             <Button variant="ghost" size="sm" className="h-8">
               <ThumbsUp className="h-4 w-4 mr-1" />

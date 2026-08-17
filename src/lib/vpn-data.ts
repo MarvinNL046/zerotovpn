@@ -80,7 +80,8 @@ export const vpnProviders: VpnProvider[] = [
     torrentSupport: true,
     overallRating: 4.8,
     editorChoice: true,
-    shortDescription: "Industry-leading VPN with exceptional speed and security features.",
+    shortDescription:
+      "Industry-leading VPN with exceptional speed and security features.",
     pros: [
       "Excellent speeds with WireGuard protocol",
       "Huge server network (7,400+ servers)",
@@ -111,7 +112,8 @@ export const vpnProviders: VpnProvider[] = [
     priceYearly: 3.19,
     priceTwoYear: 2.49,
     priceLastVerified: "2026-07-25",
-    priceSource: "https://cybernews.com/best-vpn/surfshark-review/surfshark-cost/",
+    priceSource:
+      "https://cybernews.com/best-vpn/surfshark-review/surfshark-cost/",
     moneyBackDays: 30,
     freeTier: false,
     servers: 4500,
@@ -176,7 +178,8 @@ export const vpnProviders: VpnProvider[] = [
     torrentSupport: true,
     overallRating: 4.7,
     editorChoice: false,
-    shortDescription: "Premium VPN with fastest speeds and best streaming support.",
+    shortDescription:
+      "Premium VPN with fastest speeds and best streaming support.",
     pros: [
       "Fastest VPN speeds overall",
       "Best for streaming (works everywhere)",
@@ -222,7 +225,8 @@ export const vpnProviders: VpnProvider[] = [
     torrentSupport: true,
     overallRating: 4.4,
     editorChoice: false,
-    shortDescription: "Largest server network with specialized streaming servers.",
+    shortDescription:
+      "Largest server network with specialized streaming servers.",
     pros: [
       "Huge server network (11,000+)",
       "45-day money-back guarantee",
@@ -253,7 +257,8 @@ export const vpnProviders: VpnProvider[] = [
     priceYearly: 4.99,
     priceTwoYear: 2.99,
     priceLastVerified: "2026-07-25",
-    priceSource: "https://vpnpro.com/best-vpn-services/proton-vpn-pricing-2026/",
+    priceSource:
+      "https://vpnpro.com/best-vpn-services/proton-vpn-pricing-2026/",
     moneyBackDays: 30,
     freeTier: true,
     servers: 15000,
@@ -270,7 +275,8 @@ export const vpnProviders: VpnProvider[] = [
     torrentSupport: true,
     overallRating: 4.5,
     editorChoice: false,
-    shortDescription: "Swiss-based VPN with strongest privacy focus and free tier.",
+    shortDescription:
+      "Swiss-based VPN with strongest privacy focus and free tier.",
     pros: [
       "Free tier available (no data limits)",
       "Based in privacy-friendly Switzerland",
@@ -290,7 +296,7 @@ export const vpnProviders: VpnProvider[] = [
     id: "pia",
     name: "Private Internet Access",
     slug: "private-internet-access",
-    logo: "/logos/pia.svg",
+    logo: "/logos/private-internet-access.svg",
     screenshot: "/vpn-images/private-internet-access-hero.webp",
     thumbnailImage: "/vpn-images/private-internet-access-thumb.webp",
     cardImage: "/vpn-images/private-internet-access-card.webp",
@@ -316,7 +322,8 @@ export const vpnProviders: VpnProvider[] = [
     torrentSupport: true,
     overallRating: 4.3,
     editorChoice: false,
-    shortDescription: "Veteran VPN with massive server network and proven no-logs policy.",
+    shortDescription:
+      "Veteran VPN with massive server network and proven no-logs policy.",
     pros: [
       "Massive server network (35,000+)",
       "Unlimited simultaneous connections",
@@ -343,8 +350,8 @@ export const vpnProviders: VpnProvider[] = [
     ogImage: "/vpn-images/mullvad-og.webp",
     website: "https://mullvad.net",
     affiliateUrl: "https://go.zerotovpn.com/mullvad",
-    priceMonthly: 5.00,
-    priceYearly: 5.00,
+    priceMonthly: 5.0,
+    priceYearly: 5.0,
     moneyBackDays: 30,
     freeTier: false,
     servers: 800,
@@ -361,7 +368,8 @@ export const vpnProviders: VpnProvider[] = [
     torrentSupport: true,
     overallRating: 4.5,
     editorChoice: false,
-    shortDescription: "Privacy-first VPN with anonymous account creation and flat pricing.",
+    shortDescription:
+      "Privacy-first VPN with anonymous account creation and flat pricing.",
     pros: [
       "No email required - account numbers only",
       "Accept cash payments for anonymity",
@@ -407,7 +415,8 @@ export const vpnProviders: VpnProvider[] = [
     torrentSupport: true,
     overallRating: 4.2,
     editorChoice: false,
-    shortDescription: "US-based VPN with unlimited connections and Kodi support.",
+    shortDescription:
+      "US-based VPN with unlimited connections and Kodi support.",
     pros: [
       "Unlimited simultaneous connections",
       "Owns its entire server network",
@@ -435,7 +444,7 @@ export const vpnProviders: VpnProvider[] = [
     ogImage: "/vpn-images/vyprvpn-og.webp",
     website: "https://vyprvpn.com",
     affiliateUrl: "https://go.zerotovpn.com/vyprvpn",
-    priceMonthly: 15.00,
+    priceMonthly: 15.0,
     priceYearly: 8.33,
     moneyBackDays: 30,
     freeTier: false,
@@ -453,7 +462,8 @@ export const vpnProviders: VpnProvider[] = [
     torrentSupport: true,
     overallRating: 4.1,
     editorChoice: false,
-    shortDescription: "Swiss-based VPN with proprietary Chameleon protocol for censorship bypass.",
+    shortDescription:
+      "Swiss-based VPN with proprietary Chameleon protocol for censorship bypass.",
     pros: [
       "Owns 100% of server infrastructure",
       "Chameleon protocol defeats VPN blocks",
@@ -499,7 +509,8 @@ export const vpnProviders: VpnProvider[] = [
     torrentSupport: false,
     overallRating: 3.9,
     editorChoice: false,
-    shortDescription: "User-friendly VPN with cute bear theme and free tier option.",
+    shortDescription:
+      "User-friendly VPN with cute bear theme and free tier option.",
     pros: [
       "Free tier with 2GB/month",
       "Very user-friendly interface",
@@ -527,7 +538,7 @@ export const vpnProviders: VpnProvider[] = [
     ogImage: "/vpn-images/windscribe-og.webp",
     website: "https://windscribe.com",
     affiliateUrl: "https://go.zerotovpn.com/windscribe",
-    priceMonthly: 9.00,
+    priceMonthly: 9.0,
     priceYearly: 5.75,
     moneyBackDays: 3,
     freeTier: true,
@@ -545,7 +556,8 @@ export const vpnProviders: VpnProvider[] = [
     torrentSupport: true,
     overallRating: 4.0,
     editorChoice: false,
-    shortDescription: "Generous free tier VPN with 10GB/month and unlimited connections.",
+    shortDescription:
+      "Generous free tier VPN with 10GB/month and unlimited connections.",
     pros: [
       "Generous free tier (10GB/month)",
       "Unlimited simultaneous connections",
@@ -566,7 +578,7 @@ export const vpnProviders: VpnProvider[] = [
     id: "hotspotshield",
     name: "Hotspot Shield",
     slug: "hotspot-shield",
-    logo: "/logos/hotspotshield.svg",
+    logo: "/logos/hotspot-shield.svg",
     screenshot: "/vpn-images/hotspot-shield-hero.webp",
     thumbnailImage: "/vpn-images/hotspot-shield-thumb.webp",
     cardImage: "/vpn-images/hotspot-shield-card.webp",
@@ -612,7 +624,7 @@ export const vpnProviders: VpnProvider[] = [
     id: "strongvpn",
     name: "StrongVPN",
     slug: "strongvpn",
-    logo: "/logos/strongvpn.svg",
+    logo: "/logos/strongvpn.png",
     screenshot: "/vpn-images/strongvpn-hero.webp",
     thumbnailImage: "/vpn-images/strongvpn-thumb.webp",
     cardImage: "/vpn-images/strongvpn-card.webp",
@@ -637,7 +649,8 @@ export const vpnProviders: VpnProvider[] = [
     torrentSupport: true,
     overallRating: 3.7,
     editorChoice: false,
-    shortDescription: "Long-standing VPN with focus on streaming and simplicity.",
+    shortDescription:
+      "Long-standing VPN with focus on streaming and simplicity.",
     pros: [
       "Works with major streaming services",
       "12 simultaneous connections",
@@ -658,7 +671,7 @@ export const vpnProviders: VpnProvider[] = [
     id: "purevpn",
     name: "PureVPN",
     slug: "purevpn",
-    logo: "/logos/purevpn.svg",
+    logo: "/logos/purevpn.png",
     screenshot: "/vpn-images/purevpn-hero.webp",
     thumbnailImage: "/vpn-images/purevpn-thumb.webp",
     cardImage: "/vpn-images/purevpn-card.webp",
@@ -684,7 +697,8 @@ export const vpnProviders: VpnProvider[] = [
     torrentSupport: true,
     overallRating: 3.9,
     editorChoice: false,
-    shortDescription: "Feature-rich VPN with dedicated IPs and port forwarding.",
+    shortDescription:
+      "Feature-rich VPN with dedicated IPs and port forwarding.",
     pros: [
       "Dedicated IP addresses available",
       "Port forwarding supported",
@@ -705,7 +719,7 @@ export const vpnProviders: VpnProvider[] = [
     id: "atlasvpn",
     name: "Atlas VPN",
     slug: "atlas-vpn",
-    logo: "/logos/atlasvpn.svg",
+    logo: "/logos/atlas-vpn.svg",
     screenshot: "/vpn-images/atlas-vpn-hero.webp",
     thumbnailImage: "/vpn-images/atlas-vpn-thumb.webp",
     cardImage: "/vpn-images/atlas-vpn-card.webp",
@@ -731,7 +745,8 @@ export const vpnProviders: VpnProvider[] = [
     torrentSupport: true,
     overallRating: 3.8,
     editorChoice: false,
-    shortDescription: "Budget-friendly VPN with free tier and unlimited devices.",
+    shortDescription:
+      "Budget-friendly VPN with free tier and unlimited devices.",
     pros: [
       "Very affordable pricing",
       "Unlimited simultaneous devices",
@@ -759,7 +774,7 @@ export const vpnProviders: VpnProvider[] = [
     ogImage: "/vpn-images/privatevpn-og.webp",
     website: "https://privatevpn.com",
     affiliateUrl: "https://go.zerotovpn.com/privatevpn",
-    priceMonthly: 9.90,
+    priceMonthly: 9.9,
     priceYearly: 3.82,
     moneyBackDays: 30,
     freeTier: false,
@@ -777,7 +792,8 @@ export const vpnProviders: VpnProvider[] = [
     torrentSupport: true,
     overallRating: 4.0,
     editorChoice: false,
-    shortDescription: "Small but reliable VPN with excellent streaming support.",
+    shortDescription:
+      "Small but reliable VPN with excellent streaming support.",
     pros: [
       "Excellent streaming unblocking",
       "Based in privacy-friendly Sweden",
@@ -844,14 +860,14 @@ export const vpnProviders: VpnProvider[] = [
     id: "airvpn",
     name: "AirVPN",
     slug: "airvpn",
-    logo: "/logos/airvpn.svg",
+    logo: "/logos/airvpn.png",
     screenshot: "/vpn-images/airvpn-hero.webp",
     thumbnailImage: "/vpn-images/airvpn-thumb.webp",
     cardImage: "/vpn-images/airvpn-card.webp",
     ogImage: "/vpn-images/airvpn-og.webp",
     website: "https://airvpn.org",
     affiliateUrl: "https://go.zerotovpn.com/airvpn",
-    priceMonthly: 7.00,
+    priceMonthly: 7.0,
     priceYearly: 4.08,
     moneyBackDays: 3,
     freeTier: false,
@@ -897,8 +913,8 @@ export const vpnProviders: VpnProvider[] = [
     ogImage: "/vpn-images/ivpn-og.webp",
     website: "https://ivpn.net",
     affiliateUrl: "https://go.zerotovpn.com/ivpn",
-    priceMonthly: 6.00,
-    priceYearly: 5.00,
+    priceMonthly: 6.0,
+    priceYearly: 5.0,
     moneyBackDays: 30,
     freeTier: false,
     servers: 100,
@@ -915,7 +931,8 @@ export const vpnProviders: VpnProvider[] = [
     torrentSupport: true,
     overallRating: 4.1,
     editorChoice: false,
-    shortDescription: "Privacy-focused VPN with transparent practices and ethical approach.",
+    shortDescription:
+      "Privacy-focused VPN with transparent practices and ethical approach.",
     pros: [
       "Extremely privacy-focused",
       "Transparent company practices",
@@ -936,7 +953,7 @@ export const vpnProviders: VpnProvider[] = [
     id: "mozillavpn",
     name: "Mozilla VPN",
     slug: "mozilla-vpn",
-    logo: "/logos/mozillavpn.svg",
+    logo: "/logos/mozilla-vpn.svg",
     screenshot: "/vpn-images/mozilla-vpn-hero.webp",
     thumbnailImage: "/vpn-images/mozilla-vpn-thumb.webp",
     cardImage: "/vpn-images/mozilla-vpn-card.webp",
@@ -961,7 +978,8 @@ export const vpnProviders: VpnProvider[] = [
     torrentSupport: true,
     overallRating: 4.0,
     editorChoice: false,
-    shortDescription: "Simple VPN from Mozilla using Mullvad's network infrastructure.",
+    shortDescription:
+      "Simple VPN from Mozilla using Mullvad's network infrastructure.",
     pros: [
       "Backed by trusted Mozilla",
       "Uses Mullvad's secure network",
@@ -982,7 +1000,7 @@ export const vpnProviders: VpnProvider[] = [
     id: "hideme",
     name: "Hide.me",
     slug: "hide-me",
-    logo: "/logos/hideme.svg",
+    logo: "/logos/hide-me.svg",
     screenshot: "/vpn-images/hide-me-hero.webp",
     thumbnailImage: "/vpn-images/hide-me-thumb.webp",
     cardImage: "/vpn-images/hide-me-card.webp",
@@ -1054,7 +1072,8 @@ export const vpnProviders: VpnProvider[] = [
     torrentSupport: true,
     overallRating: 3.6,
     editorChoice: false,
-    shortDescription: "German VPN with unlimited connections and affordable pricing.",
+    shortDescription:
+      "German VPN with unlimited connections and affordable pricing.",
     pros: [
       "Unlimited simultaneous connections",
       "Very affordable yearly plan",
@@ -1083,7 +1102,7 @@ export const vpnProviders: VpnProvider[] = [
     website: "https://privadovpn.com",
     affiliateUrl: "https://go.zerotovpn.com/privadovpn",
     priceMonthly: 10.99,
-    priceYearly: 2.50,
+    priceYearly: 2.5,
     priceTwoYear: 1.99,
     moneyBackDays: 30,
     freeTier: true,
@@ -1101,7 +1120,8 @@ export const vpnProviders: VpnProvider[] = [
     torrentSupport: true,
     overallRating: 3.9,
     editorChoice: false,
-    shortDescription: "Swiss-based VPN with generous free tier and competitive pricing.",
+    shortDescription:
+      "Swiss-based VPN with generous free tier and competitive pricing.",
     pros: [
       "Free tier with 10GB/month",
       "Based in Switzerland",
@@ -1148,7 +1168,8 @@ export const vpnProviders: VpnProvider[] = [
     torrentSupport: false,
     overallRating: 3.5,
     editorChoice: false,
-    shortDescription: "VPN with servers in most countries worldwide (210+ locations).",
+    shortDescription:
+      "VPN with servers in most countries worldwide (210+ locations).",
     pros: [
       "Servers in 210+ countries",
       "Easy to use interface",
@@ -1176,8 +1197,8 @@ export const vpnProviders: VpnProvider[] = [
     ogImage: "/vpn-images/astrill-og.webp",
     website: "https://astrill.com",
     affiliateUrl: "https://go.zerotovpn.com/astrill",
-    priceMonthly: 30.00,
-    priceYearly: 12.50,
+    priceMonthly: 30.0,
+    priceYearly: 12.5,
     moneyBackDays: 7,
     freeTier: false,
     servers: 300,
@@ -1215,7 +1236,7 @@ export const vpnProviders: VpnProvider[] = [
     id: "perfectprivacy",
     name: "Perfect Privacy",
     slug: "perfect-privacy",
-    logo: "/logos/perfectprivacy.svg",
+    logo: "/logos/perfect-privacy.svg",
     screenshot: "/vpn-images/perfect-privacy-hero.webp",
     thumbnailImage: "/vpn-images/perfect-privacy-thumb.webp",
     cardImage: "/vpn-images/perfect-privacy-card.webp",
@@ -1262,7 +1283,7 @@ export const vpnProviders: VpnProvider[] = [
     id: "goosevpn",
     name: "Goose VPN",
     slug: "goose-vpn",
-    logo: "/logos/goosevpn.svg",
+    logo: "/logos/goose-vpn.png",
     screenshot: "/vpn-images/goose-vpn-hero.webp",
     thumbnailImage: "/vpn-images/goose-vpn-thumb.webp",
     cardImage: "/vpn-images/goose-vpn-card.webp",
@@ -1287,7 +1308,8 @@ export const vpnProviders: VpnProvider[] = [
     torrentSupport: true,
     overallRating: 3.4,
     editorChoice: false,
-    shortDescription: "Dutch VPN with unlimited connections and simple interface.",
+    shortDescription:
+      "Dutch VPN with unlimited connections and simple interface.",
     pros: [
       "Unlimited simultaneous devices",
       "Based in Netherlands",
@@ -1308,7 +1330,7 @@ export const vpnProviders: VpnProvider[] = [
     id: "trustzone",
     name: "Trust.Zone",
     slug: "trust-zone",
-    logo: "/logos/trustzone.svg",
+    logo: "/logos/trust-zone.png",
     screenshot: "/vpn-images/trust-zone-hero.webp",
     thumbnailImage: "/vpn-images/trust-zone-thumb.webp",
     cardImage: "/vpn-images/trust-zone-card.webp",
@@ -1334,7 +1356,8 @@ export const vpnProviders: VpnProvider[] = [
     torrentSupport: true,
     overallRating: 3.5,
     editorChoice: false,
-    shortDescription: "Seychelles-based VPN with no-logs policy and Bitcoin support.",
+    shortDescription:
+      "Seychelles-based VPN with no-logs policy and Bitcoin support.",
     pros: [
       "Based in Seychelles (privacy-friendly)",
       "Accepts Bitcoin payments",
@@ -1362,7 +1385,7 @@ export const vpnProviders: VpnProvider[] = [
     ogImage: "/vpn-images/fastestvpn-og.webp",
     website: "https://fastestvpn.com",
     affiliateUrl: "https://go.zerotovpn.com/fastestvpn",
-    priceMonthly: 10.00,
+    priceMonthly: 10.0,
     priceYearly: 2.49,
     priceTwoYear: 1.11,
     moneyBackDays: 31,
@@ -1409,7 +1432,7 @@ export const vpnProviders: VpnProvider[] = [
     ogImage: "/vpn-images/ovpn-og.webp",
     website: "https://ovpn.com",
     affiliateUrl: "https://go.zerotovpn.com/ovpn",
-    priceMonthly: 11.00,
+    priceMonthly: 11.0,
     priceYearly: 4.99,
     moneyBackDays: 10,
     freeTier: false,
@@ -1427,7 +1450,8 @@ export const vpnProviders: VpnProvider[] = [
     torrentSupport: true,
     overallRating: 4.0,
     editorChoice: false,
-    shortDescription: "Swedish VPN with physical servers only and strong privacy.",
+    shortDescription:
+      "Swedish VPN with physical servers only and strong privacy.",
     pros: [
       "Physical servers only (no virtual)",
       "Based in privacy-friendly Sweden",
@@ -1448,7 +1472,7 @@ export const vpnProviders: VpnProvider[] = [
     id: "cactus",
     name: "CactusVPN",
     slug: "cactusvpn",
-    logo: "/logos/cactusvpn.svg",
+    logo: "/logos/cactusvpn.png",
     screenshot: "/vpn-images/cactusvpn-hero.webp",
     thumbnailImage: "/vpn-images/cactusvpn-thumb.webp",
     cardImage: "/vpn-images/cactusvpn-card.webp",
@@ -1546,7 +1570,7 @@ export const vpnProviders: VpnProvider[] = [
     id: "speedify",
     name: "Speedify",
     slug: "speedify",
-    logo: "/logos/speedify.svg",
+    logo: "/logos/speedify.png",
     screenshot: "/vpn-images/speedify-hero.webp",
     thumbnailImage: "/vpn-images/speedify-thumb.webp",
     cardImage: "/vpn-images/speedify-card.webp",
@@ -1571,7 +1595,8 @@ export const vpnProviders: VpnProvider[] = [
     torrentSupport: true,
     overallRating: 3.8,
     editorChoice: false,
-    shortDescription: "Unique VPN that bonds multiple internet connections for speed.",
+    shortDescription:
+      "Unique VPN that bonds multiple internet connections for speed.",
     pros: [
       "Channel bonding technology",
       "Combines multiple connections",
@@ -1592,7 +1617,7 @@ export const vpnProviders: VpnProvider[] = [
     id: "vpnunlimited",
     name: "VPN Unlimited",
     slug: "vpn-unlimited",
-    logo: "/logos/vpnunlimited.svg",
+    logo: "/logos/vpn-unlimited.png",
     screenshot: "/vpn-images/vpn-unlimited-hero.webp",
     thumbnailImage: "/vpn-images/vpn-unlimited-thumb.webp",
     cardImage: "/vpn-images/vpn-unlimited-card.webp",
@@ -1600,7 +1625,7 @@ export const vpnProviders: VpnProvider[] = [
     website: "https://vpnunlimitedapp.com",
     affiliateUrl: "https://go.zerotovpn.com/vpn-unlimited",
     priceMonthly: 9.99,
-    priceYearly: 5.00,
+    priceYearly: 5.0,
     moneyBackDays: 30,
     freeTier: true,
     servers: 3000,
@@ -1617,7 +1642,8 @@ export const vpnProviders: VpnProvider[] = [
     torrentSupport: true,
     overallRating: 3.7,
     editorChoice: false,
-    shortDescription: "KeepSolid VPN with lifetime plans and personal server option.",
+    shortDescription:
+      "KeepSolid VPN with lifetime plans and personal server option.",
     pros: [
       "Lifetime subscription available",
       "Personal server option",
@@ -1645,8 +1671,8 @@ export const vpnProviders: VpnProvider[] = [
     ogImage: "/vpn-images/nordlayer-og.webp",
     website: "https://nordlayer.com",
     affiliateUrl: "https://go.zerotovpn.com/nordlayer",
-    priceMonthly: 8.00,
-    priceYearly: 6.00,
+    priceMonthly: 8.0,
+    priceYearly: 6.0,
     moneyBackDays: 14,
     freeTier: false,
     servers: 60,
@@ -1663,7 +1689,8 @@ export const vpnProviders: VpnProvider[] = [
     torrentSupport: false,
     overallRating: 4.1,
     editorChoice: false,
-    shortDescription: "Business VPN by Nord Security for teams and organizations.",
+    shortDescription:
+      "Business VPN by Nord Security for teams and organizations.",
     pros: [
       "Built for businesses",
       "Team management features",
@@ -1684,15 +1711,15 @@ export const vpnProviders: VpnProvider[] = [
     id: "perimeterjv",
     name: "Perimeter 81",
     slug: "perimeter-81",
-    logo: "/logos/perimeter81.svg",
+    logo: "/logos/perimeter-81.svg",
     screenshot: "/vpn-images/perimeter-81-hero.webp",
     thumbnailImage: "/vpn-images/perimeter-81-thumb.webp",
     cardImage: "/vpn-images/perimeter-81-card.webp",
     ogImage: "/vpn-images/perimeter-81-og.webp",
     website: "https://perimeter81.com",
     affiliateUrl: "https://go.zerotovpn.com/perimeter-81",
-    priceMonthly: 10.00,
-    priceYearly: 8.00,
+    priceMonthly: 10.0,
+    priceYearly: 8.0,
     moneyBackDays: 30,
     freeTier: false,
     servers: 700,
@@ -1709,7 +1736,8 @@ export const vpnProviders: VpnProvider[] = [
     torrentSupport: false,
     overallRating: 4.0,
     editorChoice: false,
-    shortDescription: "Enterprise-grade SASE platform with zero-trust network access.",
+    shortDescription:
+      "Enterprise-grade SASE platform with zero-trust network access.",
     pros: [
       "Zero Trust architecture",
       "Enterprise security features",
@@ -1730,7 +1758,7 @@ export const vpnProviders: VpnProvider[] = [
     id: "urbanvpn",
     name: "Urban VPN",
     slug: "urban-vpn",
-    logo: "/logos/urbanvpn.svg",
+    logo: "/logos/urban-vpn.svg",
     screenshot: "/vpn-images/urban-vpn-hero.webp",
     thumbnailImage: "/vpn-images/urban-vpn-thumb.webp",
     cardImage: "/vpn-images/urban-vpn-card.webp",
@@ -1776,7 +1804,7 @@ export const vpnProviders: VpnProvider[] = [
     id: "rayvpn",
     name: "X-VPN",
     slug: "x-vpn",
-    logo: "/logos/xvpn.svg",
+    logo: "/logos/x-vpn.png",
     screenshot: "/vpn-images/x-vpn-hero.webp",
     thumbnailImage: "/vpn-images/x-vpn-thumb.webp",
     cardImage: "/vpn-images/x-vpn-card.webp",
@@ -1832,7 +1860,9 @@ export function getVpnById(id: string): VpnProvider | undefined {
 }
 
 export function getFeaturedVpns(): VpnProvider[] {
-  return vpnProviders.filter((vpn) => vpn.featured).sort((a, b) => a.sortOrder - b.sortOrder);
+  return vpnProviders
+    .filter((vpn) => vpn.featured)
+    .sort((a, b) => a.sortOrder - b.sortOrder);
 }
 
 export function getAllVpns(): VpnProvider[] {

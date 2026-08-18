@@ -1,7 +1,7 @@
 # NordVPN Promotion Rules audit
 
 **Initial audit date:** 2026-08-10
-**Status rechecked:** 2026-08-13
+**Status rechecked:** 2026-08-18
 **Scope:** ZeroToVPN website and codebase  
 **Offer:** NordVPN Offer 15  
 **Rules source:** Nord Affiliate Program Promotion Rules supplied by the account owner
@@ -12,7 +12,9 @@ The initial audit found several unsafe global placements. They are now remediate
 
 ## Remediation update — 2026-08-10
 
-The three urgent placements have now been neutralized in the codebase: the exit-intent dialog is a consented newsletter/VPN-finder prompt with no affiliate URL, the sticky bar links only to the internal quiz/comparison flow, and the global security banner no longer advertises NordVPN. Nord affiliate CTAs were also removed from the torrenting/P2P guide and ranking pages. The legacy price/deal page was subsequently blocked and redirected to the evidence-led cheap-VPN pillar because it contained unassigned coupon language and stale savings claims. A later scan found coupon/deal labels in the Nvidia Shield TV guide; those labels are now neutral and guarded by the editorial audit. Nord promotion should stay limited to clearly relevant, compliant review and comparison pages.
+The three urgent placements have now been neutralized in the codebase: the exit-intent dialog is a consented newsletter/VPN-finder prompt with no affiliate URL, the sticky bar links only to the internal quiz/comparison flow, and the global protection banner uses a fail-closed route allowlist rather than advertising NordVPN everywhere. Nord affiliate CTAs were also removed from the torrenting/P2P guide and ranking pages. The legacy price/deal page was subsequently blocked and redirected to the evidence-led cheap-VPN pillar because it contained unassigned coupon language and stale savings claims. A later scan found coupon/deal labels in the Nvidia Shield TV guide; those labels are now neutral and guarded by the editorial audit. Nord promotion should stay limited to clearly relevant, compliant selection contexts.
+
+**Rechecked 2026-08-18:** The public IP checker now contains one separate, fail-closed NordVPN commercial option below the tool. Its copy states that the IP check does not detect a VPN and that the link is not based on the result. The CTA has a nearby commission disclosure, contains no coupon, discount or protection verdict, and remains absent when the approved affiliate URL is unavailable.
 
 ## Findings
 
@@ -86,4 +88,4 @@ The public link `https://go.zerotovpn.com/nordvpn` now returns a 302 to the dire
 
 ## Operating rule
 
-Until remediation is complete, treat NordVPN as approved only for general reviews, comparisons, privacy guides and legitimate streaming/device pages. Do not place Nord affiliate CTAs on P2P/torrenting, piracy, hacking or circumvention content, and do not use discount or coupon language.
+Until remediation is complete, treat NordVPN as approved only for general reviews, comparisons, privacy guides, legitimate streaming/device pages and the specifically disclosed commercial option below the public IP checker. Do not place Nord affiliate CTAs on P2P/torrenting, piracy, hacking or circumvention content, and do not use discount or coupon language.

@@ -60,6 +60,14 @@ export type IpCheckerCopy = {
     refresh: string;
     limitation: string;
   };
+  nordOption: {
+    eyebrow: string;
+    title: string;
+    body: string;
+    cta: string;
+    disclosure: string;
+    disclosureLink: string;
+  };
   meaning: {
     eyebrow: string;
     title: string;
@@ -179,6 +187,15 @@ const en: IpCheckerCopy = {
     refresh: "Check again",
     limitation:
       "This result covers one request from this browser. Another app, device, IPv4/IPv6 route or later request can use a different address.",
+  },
+  nordOption: {
+    eyebrow: "Optional commercial next step",
+    title: "Want to compare this route with a VPN?",
+    body: "NordVPN is one commercial option to research. This IP check does not determine whether a VPN is active, and this link is not based on your result.",
+    cta: "Check current NordVPN plans",
+    disclosure:
+      "Commission link · we may earn a commission if you buy. This does not change or explain your IP result.",
+    disclosureLink: "How affiliate links work",
   },
   meaning: {
     eyebrow: "Read the result",
@@ -389,6 +406,15 @@ const nl: IpCheckerCopy = {
     refresh: "Controleer opnieuw",
     limitation:
       "Deze uitslag geldt voor één verzoek uit deze browser. Een andere app, apparaat, IPv4/IPv6-route of later verzoek kan een ander adres gebruiken.",
+  },
+  nordOption: {
+    eyebrow: "Optionele commerciële vervolgstap",
+    title: "Wil je deze route met een VPN vergelijken?",
+    body: "NordVPN is één commerciële optie om te bekijken. Deze IP-check stelt niet vast of een VPN actief is en deze link is niet gebaseerd op je uitslag.",
+    cta: "Bekijk actuele NordVPN-abonnementen",
+    disclosure:
+      "Commissielink · wij kunnen commissie ontvangen als je koopt. Dit verandert of verklaart je IP-uitslag niet.",
+    disclosureLink: "Zo werken affiliatelinks",
   },
   meaning: {
     eyebrow: "Lees de uitslag",

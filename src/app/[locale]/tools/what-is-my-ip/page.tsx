@@ -4,6 +4,7 @@ import { setRequestLocale } from "next-intl/server";
 import { IpCheckerEditorialPage } from "@/components/editorial/ip-checker-editorial-page";
 import { getIpCheckerCopy, isIpCheckerLocale } from "@/data/ip-checker";
 import { BASE_URL, OG_LOCALE_MAP, titelMetMerk } from "@/lib/seo-utils";
+import { getVpnAffiliateUrl } from "@/lib/vpn-links";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -69,5 +70,10 @@ export default async function WhatIsMyIpPage({ params }: Props) {
   const { locale } = await params;
   if (!isIpCheckerLocale(locale)) permanentRedirect(`/en${PATH}`);
   setRequestLocale(locale);
-  return <IpCheckerEditorialPage copy={getIpCheckerCopy(locale)} />;
+  return (
+    <IpCheckerEditorialPage
+      copy={getIpCheckerCopy(locale)}
+      nordAffiliateUrl={getVpnAffiliateUrl("nordvpn")}
+    />
+  );
 }

@@ -62,6 +62,33 @@ const checks = [
     ],
   },
   {
+    name: "IP checker resolves the approved Nord destination server-side",
+    file: "src/app/[locale]/tools/what-is-my-ip/page.tsx",
+    patterns: [/getVpnAffiliateUrl\("nordvpn"\)/, /nordAffiliateUrl=/],
+  },
+  {
+    name: "IP checker keeps its Nord option fail-closed and separate from the result",
+    file: "src/components/editorial/ip-checker-editorial-page.tsx",
+    patterns: [
+      /nordAffiliateUrl \?/,
+      /data-ip-nord-option/,
+      /data-result-dependent="false"/,
+      /AffiliateButton/,
+      /href="\/affiliate-disclosure"/,
+    ],
+  },
+  {
+    name: "IP checker commercial copy preserves the measurement boundary",
+    file: "src/data/ip-checker.ts",
+    patterns: [
+      /This IP check does not determine whether a VPN is active, and this link is not based on your result/,
+      /Deze IP-check stelt niet vast of een VPN actief is en deze link is niet gebaseerd op je uitslag/,
+      /Commission link/,
+      /Commissielink/,
+    ],
+    forbiddenPatterns: [/You pay no extra/, /Jij betaalt niets extra/],
+  },
+  {
     name: "shared editorial disclosure",
     file: "src/components/editorial/best-vpn-editorial-template.tsx",
     patterns: [/paid links are clearly marked/, /affiliate-disclosure/],

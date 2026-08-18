@@ -17,6 +17,16 @@ const cases = [
     expected: "zt_en-blog-vpn-simultaneous-connections-limits-workarounds-2026",
   },
   {
+    name: "attributes the English IP checker placement",
+    actual: buildPublicAffiliateSubId("/tools/what-is-my-ip"),
+    expected: "zt_tools-what-is-my-ip",
+  },
+  {
+    name: "attributes the Dutch IP checker placement",
+    actual: buildPublicAffiliateSubId("/nl/tools/what-is-my-ip"),
+    expected: "zt_nl-tools-what-is-my-ip",
+  },
+  {
     name: "adds aff_sub to the ZeroToVPN Nord redirect",
     actual: withNordAffiliateSubId(
       "https://go.zerotovpn.com/nordvpn",

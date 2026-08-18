@@ -1,5 +1,6 @@
 import {
   ArrowRight,
+  ArrowUpRight,
   CheckCircle2,
   ExternalLink,
   Gauge,
@@ -15,6 +16,7 @@ import {
 import { Link } from "@/i18n/navigation";
 import { NewsletterForm } from "@/components/newsletter/newsletter-form";
 import { IpLookupWidget } from "@/components/tools/ip-lookup-widget";
+import { AffiliateButton } from "@/components/vpn/affiliate-button";
 import { ipCheckerSources, type IpCheckerCopy } from "@/data/ip-checker";
 import { BASE_URL } from "@/lib/seo-utils";
 import styles from "@/components/tools/ip-checker.module.css";
@@ -149,7 +151,13 @@ function SectionHeader({
   );
 }
 
-export function IpCheckerEditorialPage({ copy }: { copy: IpCheckerCopy }) {
+export function IpCheckerEditorialPage({
+  copy,
+  nordAffiliateUrl,
+}: {
+  copy: IpCheckerCopy;
+  nordAffiliateUrl: string;
+}) {
   const isNl = copy.locale === "nl";
   const homeLabel = isNl ? "Start" : "Home";
   const toolsLabel = isNl ? "Hulpmiddelen" : "Tools";
@@ -223,6 +231,42 @@ export function IpCheckerEditorialPage({ copy }: { copy: IpCheckerCopy }) {
       <section className={styles.toolSection} id="result">
         <div className={styles.pageInner}>
           <IpLookupWidget copy={copy.tool} locale={copy.locale} />
+          {nordAffiliateUrl ? (
+            <aside
+              className={styles.nordOption}
+              aria-labelledby="ip-checker-nord-option-title"
+              data-ip-nord-option
+              data-result-dependent="false"
+            >
+              <div className={styles.nordOptionCopy}>
+                <p className={styles.nordOptionEyebrow}>
+                  {copy.nordOption.eyebrow}
+                </p>
+                <h2 id="ip-checker-nord-option-title">
+                  {copy.nordOption.title}
+                </h2>
+                <p>{copy.nordOption.body}</p>
+              </div>
+              <div className={styles.nordOptionAction}>
+                <p className={styles.nordOptionDisclosure}>
+                  {copy.nordOption.disclosure}{" "}
+                  <Link href="/affiliate-disclosure">
+                    {copy.nordOption.disclosureLink}
+                  </Link>
+                </p>
+                <AffiliateButton
+                  vpnId="nordvpn"
+                  vpnName="NordVPN"
+                  affiliateUrl={nordAffiliateUrl}
+                  size="lg"
+                  className={styles.nordOptionButton}
+                >
+                  {copy.nordOption.cta}
+                  <ArrowUpRight aria-hidden="true" />
+                </AffiliateButton>
+              </div>
+            </aside>
+          ) : null}
         </div>
       </section>
 

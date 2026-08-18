@@ -22,6 +22,7 @@ export interface HomepageEditorialCopy {
     network: string;
     unavailable: string;
     disclaimer: string;
+    publicDisclaimer?: string;
     cta: string;
     partner: string;
     review: string;
@@ -117,15 +118,18 @@ const english: HomepageEditorialCopy = {
   providerSuppliedLabel: "Provider-supplied visual",
   protectionBar: {
     checking: "Checking your public network address…",
-    visibleIp: "Websites currently see this public IP",
+    visibleIp: "VPN protection not verified",
     localPreview: "Local preview",
     estimatedLocation: "Estimated location",
     network: "Network",
     unavailable: "Your public IP could not be checked.",
     disclaimer:
-      "This check cannot determine whether a VPN is active. With a VPN, websites usually see the VPN server's IP.",
-    cta: "Open the IP checker",
-    partner: "",
+      "This check cannot determine whether a VPN is active. A visible IP alone is not proof that you are unprotected.",
+    publicDisclaimer:
+      "Your public IP is visible to this site. This check cannot determine whether a VPN is active, so a visible IP alone is not proof that you are unprotected.",
+    cta: "Check current NordVPN plans",
+    partner:
+      "Commission link · we may earn a commission. This does not prove anything about your protection status.",
     review: "Open the IP checker",
   },
   announcement: {
@@ -360,15 +364,18 @@ const dutch: HomepageEditorialCopy = {
   providerSuppliedLabel: "Beeld aangeleverd door provider",
   protectionBar: {
     checking: "Je openbare netwerkadres wordt gecontroleerd…",
-    visibleIp: "Websites zien momenteel dit openbare IP-adres",
+    visibleIp: "VPN-bescherming niet geverifieerd",
     localPreview: "Lokale preview",
     estimatedLocation: "Geschatte locatie",
     network: "Netwerk",
     unavailable: "Je openbare IP-adres kon niet worden gecontroleerd.",
     disclaimer:
-      "Deze controle kan niet vaststellen of een VPN actief is. Met een VPN zien websites meestal het IP-adres van de VPN-server.",
-    cta: "Open de IP-checker",
-    partner: "",
+      "Deze controle kan niet vaststellen of een VPN actief is. Alleen een zichtbaar IP-adres bewijst niet dat je onbeschermd bent.",
+    publicDisclaimer:
+      "Je openbare IP-adres is zichtbaar voor deze site. Deze controle kan niet vaststellen of een VPN actief is. Alleen een zichtbaar IP-adres bewijst dus niet dat je onbeschermd bent.",
+    cta: "Bekijk actuele NordVPN-abonnementen",
+    partner:
+      "Commissielink · wij kunnen commissie ontvangen. Dit bewijst niets over je beschermingsstatus.",
     review: "Open de IP-checker",
   },
   announcement: {

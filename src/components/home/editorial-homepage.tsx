@@ -21,6 +21,7 @@ import { NewsletterForm } from "@/components/newsletter/newsletter-form";
 import { ZeroToVpnMark } from "@/components/brand/zerotovpn-logo";
 import { HomepageProtectionBar } from "@/components/home/homepage-protection-bar";
 import { isIndexableReviewRoute } from "@/lib/review-route-policy";
+import { getVpnAffiliateUrl } from "@/lib/vpn-links";
 
 interface EditorialHomepageProps {
   currentReview: string;
@@ -1059,11 +1060,14 @@ export function EditorialHomepage({
   copy,
   locale,
 }: EditorialHomepageProps) {
+  const nordAffiliateUrl = getVpnAffiliateUrl("nordvpn");
+
   return (
     <div className="min-h-screen bg-[#f7f7f2] text-[#172033] dark:bg-[#071226] dark:text-slate-100">
       <HomepageProtectionBar
         copy={copy.protectionBar}
         announcement={copy.announcement}
+        nordAffiliateUrl={nordAffiliateUrl}
       />
 
       <EditorialMosaic copy={copy} currentReview={currentReview} />

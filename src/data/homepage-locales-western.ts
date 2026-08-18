@@ -12,8 +12,8 @@ const german: HomepageEditorialCopy = {
     disclaimer:
       "Dieser Check kann nicht feststellen, ob ein VPN aktiv ist. Mit einem VPN sehen Websites normalerweise die IP-Adresse des VPN-Servers.",
     cta: "NordVPN ansehen",
-    partner: "Partnerlink",
-    review: "Unseren NordVPN-Test lesen",
+    partner: "Provisionslink · wir können eine Provision erhalten. Dies sagt nichts über Ihren Schutzstatus aus.",
+    review: "IP-Checker öffnen",
   },
   announcement: {
     label: "Neue Studie",
@@ -216,8 +216,8 @@ const spanish: HomepageEditorialCopy = {
     disclaimer:
       "Esta comprobación no puede determinar si hay una VPN activa. Con una VPN, los sitios web normalmente ven la IP del servidor VPN.",
     cta: "Ver NordVPN",
-    partner: "Enlace de socio",
-    review: "Leer nuestro análisis de NordVPN",
+    partner: "Enlace con comisión · podemos recibir una comisión. Esto no demuestra nada sobre tu estado de protección.",
+    review: "Abrir el comprobador de IP",
   },
   announcement: {
     label: "Nueva investigación",
@@ -418,8 +418,8 @@ const french: HomepageEditorialCopy = {
     disclaimer:
       "Cette vérification ne permet pas de déterminer si un VPN est actif. Avec un VPN, les sites web voient généralement l’adresse IP du serveur VPN.",
     cta: "Voir NordVPN",
-    partner: "Lien partenaire",
-    review: "Lire notre test de NordVPN",
+    partner: "Lien rémunéré · nous pouvons percevoir une commission. Cela ne prouve rien sur votre niveau de protection.",
+    review: "Ouvrir l’outil de vérification IP",
   },
   announcement: {
     label: "Nouvelle étude",

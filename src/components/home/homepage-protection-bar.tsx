@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import {
-  ArrowRight,
   ArrowUpRight,
   Globe2,
   MapPin,
@@ -12,6 +12,11 @@ import {
 import { Link } from "@/i18n/navigation";
 import type { HomepageEditorialCopy } from "@/data/homepage";
 import { AffiliateButton } from "@/components/vpn/affiliate-button";
+import {
+  isNordVpnBannerPromotionAllowed,
+  normalizeNordPromotionPath,
+} from "@/lib/nordvpn-promotion-context";
+import styles from "./homepage-protection-bar.module.css";
 
 interface IpSummary {
   ip: string;
@@ -27,12 +32,16 @@ type IpStatus =
 
 interface HomepageProtectionBarProps {
   copy: HomepageEditorialCopy["protectionBar"];
-  announcement: HomepageEditorialCopy["announcement"];
   nordAffiliateUrl: string;
 }
 
 function readString(value: unknown): string {
   return typeof value === "string" ? value.trim() : "";
+}
+
+function firstSentence(value: string): string {
+  const sentenceEnd = value.search(/[.!?。]/);
+  return sentenceEnd >= 0 ? value.slice(0, sentenceEnd + 1) : value;
 }
 
 function parseIpSummary(value: unknown): IpSummary | null {
@@ -52,10 +61,11 @@ function parseIpSummary(value: unknown): IpSummary | null {
 
 export function HomepageProtectionBar({
   copy,
-  announcement,
   nordAffiliateUrl,
 }: HomepageProtectionBarProps) {
   const [status, setStatus] = useState<IpStatus>({ state: "loading" });
+  const pathname = usePathname() ?? "/";
+  const normalizedPath = normalizeNordPromotionPath(pathname);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -100,6 +110,13 @@ export function HomepageProtectionBar({
       ? [status.data.city, status.data.country].filter(Boolean).join(", ")
       : "";
   const isPublicRoute = status.state === "success" && !isLocalPreview;
+  const showNordCta =
+    isPublicRoute &&
+    Boolean(nordAffiliateUrl) &&
+    isNordVpnBannerPromotionAllowed(pathname);
+  const showIpCheckerLink = normalizedPath !== "/tools/what-is-my-ip";
+  const compactBoundary = firstSentence(copy.disclaimer);
+  const compactPartnerDisclosure = firstSentence(copy.partner);
 
   return (
     <section
@@ -121,7 +138,9 @@ export function HomepageProtectionBar({
             : status.state
       }
     >
-      <div className="mx-auto grid min-h-[8.5rem] max-w-7xl gap-4 px-4 py-4 sm:min-h-[6.5rem] sm:px-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center lg:gap-6 lg:px-8">
+      <div
+        className={`${styles.layout} mx-auto max-w-7xl gap-3 px-4 py-3 sm:min-h-[6.5rem] sm:gap-4 sm:px-6 sm:py-4 md:items-center md:gap-6 lg:px-8`}
+      >
         <div className="min-w-0">
           <div className="flex items-start gap-3">
             <span
@@ -159,7 +178,7 @@ export function HomepageProtectionBar({
                   </p>
 
                   <div
-                    className="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-2"
+                    className="mt-1.5 hidden flex-wrap items-center gap-x-4 gap-y-2 sm:flex"
                     data-screenshot-sensitive
                   >
                     <p className="flex min-w-0 items-center gap-2 text-sm">
@@ -209,60 +228,56 @@ export function HomepageProtectionBar({
                     : "mt-1 max-w-4xl text-xs leading-5 text-white/60"
                 }
               >
-                {isPublicRoute && copy.publicDisclaimer
-                  ? copy.publicDisclaimer
-                  : copy.disclaimer}
+                <span className={styles.compactOnly}>{compactBoundary}</span>
+                <span className={styles.fullOnly}>
+                  {isPublicRoute && copy.publicDisclaimer
+                    ? copy.publicDisclaimer
+                    : copy.disclaimer}
+                </span>
               </p>
             </div>
           </div>
-
-          <Link
-            href="/reports"
-            className={
-              isPublicRoute
-                ? "mt-3 hidden flex-wrap items-center gap-x-2 gap-y-1 pl-12 text-xs font-semibold text-white/85 transition-colors hover:text-[#d9ff73] sm:flex"
-                : "mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 pl-12 text-xs font-semibold text-white/85 transition-colors hover:text-[#d9ff73]"
-            }
-          >
-            <span className="text-[#d9ff73]">{announcement.label}:</span>
-            <span>{announcement.text}</span>
-            <span className="inline-flex shrink-0 items-center gap-1 text-white">
-              {announcement.cta}
-              <ArrowRight className="size-3.5" aria-hidden="true" />
-            </span>
-          </Link>
         </div>
 
-        <div className="flex shrink-0 flex-col items-stretch gap-2 lg:w-[19rem] lg:items-stretch">
-          {isPublicRoute && nordAffiliateUrl ? (
-            <>
-              <AffiliateButton
-                vpnId="nordvpn"
-                vpnName="NordVPN"
-                affiliateUrl={nordAffiliateUrl}
-                size="lg"
-                className="h-12 w-full bg-[#b8e34a] px-5 text-sm font-black text-[#071226] shadow-[0_10px_30px_rgba(0,0,0,0.2)] hover:bg-[#d0f473]"
+        {showNordCta || showIpCheckerLink ? (
+          <div className="flex shrink-0 flex-col items-stretch gap-1.5">
+            {showNordCta ? (
+              <>
+                <AffiliateButton
+                  vpnId="nordvpn"
+                  vpnName="NordVPN"
+                  affiliateUrl={nordAffiliateUrl}
+                  size="lg"
+                  className="h-11 w-full bg-[#b8e34a] px-5 text-sm font-black text-[#071226] shadow-[0_10px_30px_rgba(0,0,0,0.2)] hover:bg-[#d0f473] sm:h-12"
+                >
+                  {copy.cta}
+                  <ArrowUpRight className="size-4" aria-hidden="true" />
+                </AffiliateButton>
+                <p
+                  className={`${styles.partnerDisclosure} font-medium text-white/80`}
+                >
+                  <span className={styles.compactOnly}>
+                    {compactPartnerDisclosure}
+                  </span>
+                  <span className={styles.fullOnly}>{copy.partner}</span>
+                </p>
+              </>
+            ) : null}
+
+            {showIpCheckerLink ? (
+              <Link
+                href="/tools/what-is-my-ip"
+                className={
+                  showNordCta
+                    ? `${styles.secondaryWhenWide} min-h-6 items-center justify-center text-xs font-bold text-white underline decoration-white/45 underline-offset-4 transition-colors hover:text-[#d9ff73]`
+                    : "inline-flex min-h-11 items-center justify-center rounded-md bg-[#b8e34a] px-4 py-2 text-sm font-bold text-[#071226] transition-colors hover:bg-[#c9ee69] sm:min-h-12"
+                }
               >
-                {copy.cta}
-                <ArrowUpRight className="size-4" aria-hidden="true" />
-              </AffiliateButton>
-              <p className="max-w-[19rem] text-[0.68rem] font-medium leading-4 text-white/80">
-                {copy.partner}
-              </p>
-            </>
-          ) : null}
-
-          <Link
-            href="/tools/what-is-my-ip"
-            className={
-              isPublicRoute && nordAffiliateUrl
-                ? "inline-flex min-h-11 items-center justify-center rounded-md border border-white/35 px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-white/10"
-                : "inline-flex min-h-12 items-center justify-center rounded-md bg-[#b8e34a] px-4 py-2 text-sm font-bold text-[#071226] transition-colors hover:bg-[#c9ee69]"
-            }
-          >
-            {copy.review}
-          </Link>
-        </div>
+                {copy.review}
+              </Link>
+            ) : null}
+          </div>
+        ) : null}
       </div>
     </section>
   );

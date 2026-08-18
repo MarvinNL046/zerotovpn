@@ -8,6 +8,9 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { OrganizationJsonLd, WebsiteJsonLd } from "@/components/seo/json-ld";
 import { LazyConversionWidgets } from "@/components/lazy-conversion-widgets";
 import { CookieConsent } from "@/components/cookie-consent";
+import { HomepageProtectionBar } from "@/components/home/homepage-protection-bar";
+import { getHomepageEditorialCopy } from "@/data/homepage";
+import { getVpnAffiliateUrl } from "@/lib/vpn-links";
 import type { Metadata } from "next";
 
 type Props = {
@@ -155,6 +158,8 @@ export default async function LocaleLayout({ children, params }: Props) {
   // The homepage now renders evidence signals from live catalog state; do not
   // serialize the retired traffic/test-count claims from the message bundle.
   delete clientMessages.home?.trustIndicators;
+  const homepageCopy = getHomepageEditorialCopy(locale);
+  const nordAffiliateUrl = getVpnAffiliateUrl("nordvpn");
 
   return (
     <ThemeProvider
@@ -176,6 +181,10 @@ export default async function LocaleLayout({ children, params }: Props) {
             {locale === "nl" ? "Ga naar inhoud" : "Skip to content"}
           </a>
           <Header />
+          <HomepageProtectionBar
+            copy={homepageCopy.protectionBar}
+            nordAffiliateUrl={nordAffiliateUrl}
+          />
           <main id="main" className="flex-1">
             {children}
           </main>

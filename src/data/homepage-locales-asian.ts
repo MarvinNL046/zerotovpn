@@ -19,8 +19,8 @@ export const asianHomepageCopies: Record<"zh" | "ja" | "ko" | "th", HomepageEdit
       unavailable: "暂时无法获取",
       disclaimer: "这项检查无法判断 VPN 是否已启用。使用 VPN 时，网站通常会看到 VPN 服务器的 IP 地址。",
       cta: "查看 NordVPN",
-      partner: "合作伙伴链接",
-      review: "阅读我们的 NordVPN 评测",
+      partner: "佣金链接 · 我们可能获得佣金。这不能证明你的保护状态。",
+      review: "打开 IP 检查工具",
     },
     announcement: {
       label: "最新研究",
@@ -177,8 +177,8 @@ export const asianHomepageCopies: Record<"zh" | "ja" | "ko" | "th", HomepageEdit
       unavailable: "取得できません",
       disclaimer: "この確認だけでは、VPNが有効かどうかを判定できません。VPNを使用すると、通常ウェブサイトにはVPNサーバーのIPアドレスが表示されます。",
       cta: "NordVPNを見る",
-      partner: "パートナーリンク",
-      review: "NordVPNのレビューを読む",
+      partner: "コミッションリンク · 当サイトが報酬を受け取る場合があります。保護状態を示すものではありません。",
+      review: "IPチェッカーを開く",
     },
     announcement: {
       label: "最新リサーチ",
@@ -335,8 +335,8 @@ export const asianHomepageCopies: Record<"zh" | "ja" | "ko" | "th", HomepageEdit
       unavailable: "확인할 수 없음",
       disclaimer: "이 확인만으로는 VPN이 활성화되어 있는지 판단할 수 없습니다. VPN을 사용하면 일반적으로 웹사이트에는 VPN 서버의 IP 주소가 표시됩니다.",
       cta: "NordVPN 보기",
-      partner: "파트너 링크",
-      review: "NordVPN 리뷰 읽기",
+      partner: "수수료 링크 · 당사가 수수료를 받을 수 있습니다. 이는 보호 상태를 입증하지 않습니다.",
+      review: "IP 확인 도구 열기",
     },
     announcement: {
       label: "새 연구",
@@ -493,8 +493,8 @@ export const asianHomepageCopies: Record<"zh" | "ja" | "ko" | "th", HomepageEdit
       unavailable: "ไม่สามารถตรวจสอบได้",
       disclaimer: "การตรวจสอบนี้ไม่สามารถระบุได้ว่า VPN กำลังทำงานอยู่หรือไม่ เมื่อใช้ VPN โดยทั่วไปเว็บไซต์จะมองเห็น IP ของเซิร์ฟเวอร์ VPN",
       cta: "ดู NordVPN",
-      partner: "ลิงก์พันธมิตร",
-      review: "อ่านรีวิว NordVPN ของเรา",
+      partner: "ลิงก์ค่าคอมมิชชัน · เราอาจได้รับค่าคอมมิชชัน. ข้อมูลนี้ไม่ได้ยืนยันสถานะการป้องกันของคุณ",
+      review: "เปิดเครื่องมือตรวจสอบ IP",
     },
     announcement: {
       label: "งานวิจัยใหม่",

@@ -367,7 +367,7 @@ const privacyCopy: Record<PolicyLocale, PolicyPageCopy> = {
           title: "IP and guided DNS tools",
           badge: "Tool use",
           first:
-            "The homepage and IP checker request the IP endpoint automatically. The built-in DNS guide requests it after Start.",
+            "The protection banner on public pages and the IP checker request the IP endpoint automatically. The built-in DNS guide requests it after Start.",
           second:
             "Public IP address and approximate Vercel city, region, country and timezone headers are returned to the browser.",
           third:
@@ -671,7 +671,7 @@ const privacyCopy: Record<PolicyLocale, PolicyPageCopy> = {
           title: "IP- en begeleide DNS-tools",
           badge: "Gebruik van tool",
           first:
-            "De homepage en IP-checker vragen het IP-punt automatisch op. De ingebouwde DNS-gids doet dit na Start.",
+            "De beschermingsbalk op openbare pagina’s en de IP-checker vragen het IP-punt automatisch op. De ingebouwde DNS-gids doet dit na Start.",
           second:
             "Openbaar IP-adres en geschatte Vercel-headers voor stad, regio, land en tijdzone worden teruggestuurd naar de browser.",
           third:
